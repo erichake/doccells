@@ -424,6 +424,7 @@ const App = () => {
     loadExcelFromURL(fileName, fileName).catch(handleLoadError);
   }, [loadExcelFromURL, handleLoadError]);
 
+
   useEffect(() => {
     if (sheetData.length === 0) return;
 
@@ -601,6 +602,8 @@ const App = () => {
             "|",
             "freeze",
             "quick-formula",
+            "|",
+            "filter",
             "|",
             "image",
           ]}
