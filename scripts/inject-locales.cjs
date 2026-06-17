@@ -16,22 +16,18 @@ const SCRIPTS = __dirname;
 const CORE_DIST = path.join(SCRIPTS, "..", "node_modules", "@fortune-sheet", "core", "dist");
 const BUNDLES = ["index.js", "index.esm.js"];
 
-// Load all locale data from scripts/
-const locales = {
-  en:    require("./en-locale.cjs"),
-  zh:    require("./zh-locale.cjs"),
-  es:    require("./es-locale.cjs"),
-  hi:    require("./hi-locale.cjs"),
-  ru:    require("./ru-locale.cjs"),
-  zh_tw: require("./zh_tw-locale.cjs"),
-  fr:    require("./fr-locale.cjs"),
-};
+const LOCALE_NAMES = ["en", "zh", "es", "hi", "ru", "zh_tw", "fr"];
 
-// Build the replacement locale block (variables + localeObj)
+// Build the replacement locale block by injecting the raw JS source of each
+// locale file. JSON.stringify is NOT used because locale objects contain
+// functions (e.g. defaultFmt) that JSON.stringify would silently drop.
 function buildLocaleBlock() {
   let block = "";
-  for (const [name, data] of Object.entries(locales)) {
-    block += `var ${name} = ${JSON.stringify(data)};\n\n`;
+  for (const name of LOCALE_NAMES) {
+    const code = fs.readFileSync(path.join(SCRIPTS, `${name}-locale.cjs`), "utf-8");
+    // Replace "module.exports = {" with "var NAME = {"
+    const varCode = code.replace(/^module\.exports = /, `var ${name} = `);
+    block += varCode + "\n";
   }
   block += `var localeObj = {\n`;
   block += `  en: en,\n`;
