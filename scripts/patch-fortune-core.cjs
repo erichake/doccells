@@ -109,10 +109,27 @@ const NEW2 = `  } else if (last.row[1] - last.row[0] < 2) {
     }
   }`;
 
+// Patch 3: filter values list shows "(Vide)" when cell.m is missing
+// Falls back to String(cell.v) so real values are displayed
+const OLD3 = `      } else {
+        v = cell.v;
+        _m = cell.m;
+      }
+      var data = valuesMap.get("".concat(v));
+      var text = _m == null ? filter.valueBlank : "".concat(_m);`;
+
+const NEW3 = `      } else {
+        v = cell.v;
+        _m = cell.m != null ? cell.m : String(cell.v);
+      }
+      var data = valuesMap.get("".concat(v));
+      var text = _m == null ? filter.valueBlank : "".concat(_m);`;
+
 // Groups: each group has variants, exactly one must match per bundle
 const PATCH_GROUPS = [
   { name: "single-cell header fix",    variants: [{ old: OLD1, new: NEW1 }] },
   { name: "multi-column header fix",   variants: [{ old: OLD2, new: NEW2 }, { old: OLD2_CJS, new: NEW2_CJS }] },
+  { name: "filter values blank label fix", variants: [{ old: OLD3, new: NEW3 }] },
 ];
 
 let allPatched = 0;
