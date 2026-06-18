@@ -11,6 +11,26 @@ const detectedLang =
     : (SUPPORTED_LANGS.find((l) => navigator.language.startsWith(l.split("-")[0])) ?? "en");
 const t = customLocales[detectedLang] ?? customLocales["en"];
 
+const dataToCelldata = (data) => {
+  const celldata = [];
+  if (!Array.isArray(data)) return celldata;
+  data.forEach((row, r) => {
+    if (!Array.isArray(row)) return;
+    row.forEach((cell, c) => {
+      if (cell == null) return;
+      celldata.push({
+        r,
+        c,
+        v:
+          typeof cell === "object"
+            ? cell
+            : { v: cell, m: String(cell) },
+      });
+    });
+  });
+  return celldata;
+};
+
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
   const [appMode, setAppMode] = useState("teacher");
@@ -457,11 +477,16 @@ const App = () => {
           sheet: isProtected ? 0 : 1,
         };
 
-        const updatedSheets = sheetDataRef.current.map((s) =>
+        const allSheets = wb.getAllSheets();
+        const updatedSheets = allSheets.map((s) =>
           s.id === sheet.id
             ? { ...s, config: { ...s.config, authority: newAuthority } }
             : s,
-        );
+        ).map((s) => ({
+          ...s,
+          celldata: s.celldata || dataToCelldata(s.data),
+        }));
+
         sheetDataRef.current = updatedSheets;
         setSheetData(updatedSheets);
         setWorkbookKey((key) => key + 1);
