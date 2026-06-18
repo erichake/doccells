@@ -145,6 +145,11 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
       if (cellXf.attributeList.applyProtection != null) {
         applyProtection = cellXf.attributeList.applyProtection;
       }
+      // lo=0 : cellule explicitement déverrouillée dans le xlsx
+      const protEls = cellXf.getInnerElements("protection");
+      if (protEls != null && protEls.length > 0 && protEls[0].attributeList.locked === "0") {
+        cellValue.lo = 0;
+      }
       if (cellXf.attributeList.quotePrefix != null) {
         quotePrefix = cellXf.attributeList.quotePrefix;
       }

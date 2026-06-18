@@ -128,6 +128,11 @@ export const exportToExcel = async (
         };
       }
 
+      // Cellule explicitement déverrouillée (lo=0) : protection = false
+      if (v?.lo === 0) {
+        cellStyle.protection = { locked: false };
+      }
+
       if (Object.keys(cellStyle).length > 0) {
         cell.style = cellStyle;
       }
@@ -188,6 +193,11 @@ export const exportToExcel = async (
         }
       });
     }
+    // Protection de la feuille
+    if (config?.authority?.sheet === 1) {
+      await worksheet.protect("", { selectLockedCells: true, selectUnlockedCells: true });
+    }
+
     // Images
     // ⚠️ L'API fractionnaire col/row d'ExcelJS est buggée pour les colonnes
     // avec largeur personnalisée : elle écrit `chars × 10000` au lieu d'EMU.

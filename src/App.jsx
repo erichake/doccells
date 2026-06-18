@@ -2,6 +2,14 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Workbook } from "@fortune-sheet/react";
 import { transformExcelToFortune } from "./lib/FortuneSheetExcel/main.js";
 import { exportToExcel } from "./utils/exportToExcel.js";
+import { customLocales } from "./locales/custom.js";
+
+const SUPPORTED_LANGS = ["zh-CN", "zh-TW", "en", "fr-FR", "es-ES"];
+const detectedLang =
+  SUPPORTED_LANGS.includes(navigator.language)
+    ? navigator.language
+    : (SUPPORTED_LANGS.find((l) => navigator.language.startsWith(l.split("-")[0])) ?? "en");
+const t = customLocales[detectedLang] ?? customLocales["en"];
 
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
@@ -186,13 +194,6 @@ const App = () => {
 
       formulasRef.current = formulas;
 
-      const detectedLang = ["zh-CN", "zh-TW", "en", "fr-FR", "es-ES"].includes(
-        navigator.language,
-      )
-        ? navigator.language
-        : (["zh-CN", "zh-TW", "en", "fr-FR", "es-ES"].find((l) =>
-            navigator.language.startsWith(l.split("-")[0]),
-          ) ?? "en");
       const sheetPrefix =
         {
           "zh-CN": "工作表",
@@ -240,6 +241,7 @@ const App = () => {
           rowlen: sheet.config?.rowlen || {},
           borderInfo: sheet.config?.borderInfo || [],
           merge: sheet.config?.merge || {},
+          authority: sheet.config?.authority,
         },
         images: convertImages(sheet.images),
       }));
@@ -385,6 +387,7 @@ const App = () => {
     // 🔹 Supprimer les anciens boutons pour éviter les doublons
     document.getElementById("custom-open-button")?.remove();
     document.getElementById("custom-export-button")?.remove();
+    document.getElementById("custom-protect-sheet-button")?.remove();
 
     // 🔹 Création du bouton "Ouvrir..."
     const openButton = document.createElement("div");
@@ -416,6 +419,153 @@ const App = () => {
     });
 
     toolbar.insertBefore(exportButton, openButton.nextSibling);
+
+    // 🔹 Création du bouton "Protéger / Déprotéger la feuille"
+    const protectSheetButton = document.createElement("div");
+    protectSheetButton.id = "custom-protect-sheet-button";
+    protectSheetButton.className = "fortune-toolbar-button fortune-toolbar-item";
+    protectSheetButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L4 6v5c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V6L12 2z" stroke="#222" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="8.5" y="10.5" width="7" height="5" rx="1" stroke="#222" stroke-width="1.2"/>
+<path d="M10 10.5V9a2 2 0 0 1 4 0v1.5" stroke="#222" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
+<div class="fortune-tooltip">${t.toggleSheetProtection}</div>`;
+
+    const updateProtectButtonStyle = () => {
+      const wb = workbookRef.current;
+      if (!wb) return;
+      const sheet = wb.getSheet();
+      const isProtected = sheet?.config?.authority?.sheet === 1;
+      protectSheetButton.style.background = isProtected
+        ? "rgba(0,120,212,0.15)"
+        : "";
+      protectSheetButton.style.outline = isProtected
+        ? "1px solid rgba(0,120,212,0.4)"
+        : "";
+    };
+
+    protectSheetButton.addEventListener("click", () => {
+      const wb = workbookRef.current;
+      if (!wb) return;
+      const sheet = wb.getSheet();
+      const isProtected = sheet?.config?.authority?.sheet === 1;
+      const newAuthority = isProtected ? { sheet: 0 } : { sheet: 1 };
+
+      const allSheets = wb.getAllSheets();
+      const updatedSheets = allSheets.map((s) =>
+        s.id === sheet.id
+          ? { ...s, config: { ...s.config, authority: newAuthority } }
+          : s,
+      );
+      wb.updateSheet(updatedSheets);
+
+      sheetDataRef.current = sheetDataRef.current.map((s) =>
+        s.id === sheet.id
+          ? { ...s, config: { ...s.config, authority: newAuthority } }
+          : s,
+      );
+
+      const willBeProtected = !isProtected;
+      protectSheetButton.style.background = willBeProtected
+        ? "rgba(0,120,212,0.15)"
+        : "";
+      protectSheetButton.style.outline = willBeProtected
+        ? "1px solid rgba(0,120,212,0.4)"
+        : "";
+    });
+
+    updateProtectButtonStyle();
+    toolbar.insertBefore(protectSheetButton, exportButton.nextSibling);
+  }, []);
+
+  // Bloque le redimensionnement colonnes/lignes quand la feuille est protégée
+  useEffect(() => {
+    const blockResizeIfProtected = (e) => {
+      const target = e.target;
+      const isResizeHandle =
+        target?.id === "fortune-cols-change-size" ||
+        target?.classList?.contains("fortune-rows-change-size");
+      if (!isResizeHandle) return;
+
+      const wb = workbookRef.current;
+      if (!wb) return;
+      const sheet = wb.getSheet();
+      if (sheet?.config?.authority?.sheet === 1) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("mousedown", blockResizeIfProtected, true);
+    return () =>
+      document.removeEventListener("mousedown", blockResizeIfProtected, true);
+  }, []);
+
+  // Injecte "Verrouiller / Déverrouiller" dans le menu contextuel FortuneSheet
+  useEffect(() => {
+    const injectLockMenuItem = (menuEl) => {
+      const wb = workbookRef.current;
+      if (!wb) return;
+      const sel = wb.getSelection();
+      if (!sel?.length) return;
+
+      // lo===0 → déverrouillé explicitement ; lo===1 ou undefined → verrouillé (par défaut)
+      const allUnlocked = sel.every((range) => {
+        const cells = wb.getCellsByRange(range);
+        return cells.every((row) => row.every((cell) => cell?.lo === 0));
+      });
+      const label = allUnlocked ? t.lockCells : t.unlockCells;
+      const newLo = allUnlocked ? 1 : 0;
+
+      const divider = document.createElement("div");
+      divider.className = "fortune-context-menu-divider";
+
+      const item = document.createElement("div");
+      item.className = "luckysheet-cols-menuitem";
+      const content = document.createElement("div");
+      content.className = "luckysheet-cols-menuitem-content";
+      content.textContent = label;
+      item.appendChild(content);
+
+      item.addEventListener("click", () => {
+        sel.forEach((range) => wb.setCellFormatByRange("lo", newLo, range));
+        // Ferme le menu contextuel : mousedown hors-limites sur la zone cellule
+        // handleCellAreaMouseDown efface contextMenu avant le bounds-check
+        const cellArea = document.querySelector(".fortune-cell-area");
+        if (cellArea) {
+          cellArea.dispatchEvent(
+            new MouseEvent("mousedown", {
+              bubbles: true,
+              cancelable: true,
+              button: 0,
+              clientX: 999999,
+              clientY: 999999,
+            }),
+          );
+        }
+      });
+
+      menuEl.appendChild(divider);
+      menuEl.appendChild(item);
+    };
+
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        for (const node of mutation.addedNodes) {
+          if (
+            node instanceof Element &&
+            node.classList.contains("fortune-context-menu") &&
+            !node.classList.contains("fortune-filter-menu") &&
+            !node.classList.contains("fortune-sheet-list")
+          ) {
+            injectLockMenuItem(node);
+          }
+        }
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -478,15 +628,7 @@ const App = () => {
       <Workbook
           ref={workbookRef}
           data={sheetData}
-          lang={
-            ["zh-CN", "zh-TW", "en", "fr-FR", "es-ES"].includes(
-              navigator.language,
-            )
-              ? navigator.language
-              : (["zh-CN", "zh-TW", "en", "fr-FR", "es-ES"].find((l) =>
-                  navigator.language.startsWith(l.split("-")[0]),
-                ) ?? "en")
-          }
+          lang={detectedLang}
           onChange={(newData) => {
             if (Array.isArray(newData) && newData.length > 0) {
               const updatedData = newData.map((sheet, index) => {

@@ -196,6 +196,14 @@ export class FortuneSheet extends FortuneSheetBase {
     this.dataVerification = this.generateConfigDataValidations();
     // hyperlink config
     this.hyperlink = this.generateConfigHyperlinks();
+    // sheet protection
+    const sheetProtectionEls = this.readXml.getElementsByTagName("sheetProtection", this.sheetFile);
+    if (sheetProtectionEls != null && sheetProtectionEls.length > 0) {
+      const attr = sheetProtectionEls[0].attributeList;
+      if (attr.sheet === "1") {
+        this.config.authority = { sheet: 1 };
+      }
+    }
     // sheet hide
     this.hide = this.hide;
     if (this.mergeCells != null) {
