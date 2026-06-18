@@ -696,9 +696,9 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
           cellValue.ct = cellFormat;
         }
       }
-      // to be confirmed
       else if (t == ST_CellType["InlineString"] && v != null) {
-        cellValue.v = "'" + value;
+        value = escapeCharacter(value);
+        cellValue.v = value;
       } else {
         value = escapeCharacter(value);
         cellValue.v = value;
