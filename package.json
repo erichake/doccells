@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postinstall": "node scripts/patch-fortune-core.cjs && node scripts/inject-locales.cjs"
+    "postinstall": "node scripts/patch-fortune-core.cjs && node scripts/patch-fortune-react.cjs && node scripts/inject-locales.cjs"
   },
   "dependencies": {
     "@fortune-sheet/core": "^1.0.4",

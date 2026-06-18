@@ -4,3 +4,247 @@ body,
   width: 100%;
   height: 100%;
 }
+
+.fortune-filter-menu {
+  min-width: 316px;
+  max-width: min(420px, calc(100vw - 32px));
+  padding: 8px 0 0;
+  overflow: hidden;
+  color: #202124;
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  box-shadow:
+    0 12px 28px rgba(60, 64, 67, 0.18),
+    0 2px 8px rgba(60, 64, 67, 0.12);
+  font-family:
+    Inter, Roboto, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+/* Sort icons on the first two menu items (sort-by-asc, sort-by-desc) */
+.fortune-filter-menu > .luckysheet-cols-menuitem:nth-child(1) .luckysheet-cols-menuitem-content::before {
+  content: "↑";
+  margin-right: 10px;
+  font-size: 15px;
+  color: #5f6670;
+  line-height: 1;
+}
+
+.fortune-filter-menu > .luckysheet-cols-menuitem:nth-child(2) .luckysheet-cols-menuitem-content::before {
+  content: "↓";
+  margin-right: 10px;
+  font-size: 15px;
+  color: #5f6670;
+  line-height: 1;
+}
+
+.fortune-filter-menu .fortune-context-menu-divider {
+  margin: 8px 0;
+  background: #edf0f2;
+}
+
+.fortune-filter-menu .luckysheet-cols-menuitem {
+  padding: 0 8px;
+}
+
+.fortune-filter-menu
+  .luckysheet-cols-menuitem
+  .luckysheet-cols-menuitem-content {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 40px;
+  border-radius: 6px;
+  color: #2f3337;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.fortune-filter-menu .luckysheet-cols-menuitem:hover,
+.fortune-filter-menu .luckysheet-cols-menuitem-hover {
+  background: transparent;
+}
+
+.fortune-filter-menu
+  .luckysheet-cols-menuitem:hover
+  .luckysheet-cols-menuitem-content,
+.fortune-filter-menu
+  .luckysheet-cols-menuitem-hover
+  .luckysheet-cols-menuitem-content {
+  background: #f3f6f9;
+}
+
+.fortune-filter-menu .filter-bycolor-container {
+  width: 100%;
+  gap: 18px;
+}
+
+.fortune-filter-menu .filter-caret.right {
+  border-left-color: #5f6670;
+}
+
+.fortune-filter-menu .fortune-menuitem-row {
+  padding: 6px 40px;
+  color: #30343a;
+  font-size: 14px;
+}
+
+.fortune-filter-menu .byvalue-btn-row {
+  padding-top: 2px;
+  padding-bottom: 6px;
+  gap: 16px;
+}
+
+.fortune-filter-menu .fortune-byvalue-btn {
+  color: #0b57d0;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.fortune-filter-menu .fortune-byvalue-btn:hover {
+  border-bottom-color: currentColor;
+}
+
+.fortune-filter-menu .byvalue-filter-icon svg {
+  color: #5f6670;
+}
+
+.fortune-filter-menu .filtermenu-input-container {
+  padding: 0 40px 8px;
+}
+
+.fortune-filter-menu
+  .filtermenu-input-container
+  input.luckysheet-mousedown-cancel {
+  width: 100%;
+  height: 34px;
+  margin: 0;
+  padding: 0 11px;
+  color: #202124;
+  background: #fff;
+  border: 1px solid #c7cdd4;
+  border-radius: 6px;
+  font-size: 14px;
+  box-shadow: inset 0 1px 2px rgba(60, 64, 67, 0.06);
+}
+
+.fortune-filter-menu
+  .filtermenu-input-container
+  input.luckysheet-mousedown-cancel::placeholder {
+  color: #7b8087;
+}
+
+.fortune-filter-menu
+  .filtermenu-input-container
+  input.luckysheet-mousedown-cancel:focus {
+  border-color: #1a73e8;
+  box-shadow:
+    0 0 0 3px rgba(26, 115, 232, 0.14),
+    inset 0 1px 2px rgba(60, 64, 67, 0.04);
+}
+
+.fortune-filter-menu #luckysheet-filter-byvalue-select {
+  min-height: 104px;
+  max-height: 220px;
+  padding: 2px 40px 12px;
+  scrollbar-color: #c2c8d0 transparent;
+  scrollbar-width: thin;
+}
+
+.fortune-filter-menu #luckysheet-filter-byvalue-select .select-item {
+  min-height: 28px;
+  gap: 8px;
+  color: #202124;
+  line-height: 1.3;
+}
+
+.fortune-filter-menu #luckysheet-filter-byvalue-select input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #1a73e8;
+}
+
+.fortune-filter-menu #luckysheet-filter-byvalue-select .count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 6px;
+  margin-left: auto;
+  color: #5f6670;
+  background: #f1f3f4;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.fortune-filter-menu > .fortune-menuitem-row:last-of-type {
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 14px 24px;
+  background: #f8fafc;
+  border-top: 1px solid #edf0f2;
+}
+
+.fortune-filter-menu .button-basic {
+  min-height: 36px;
+  padding: 0 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.fortune-filter-menu .button-primary {
+  background: #1a73e8;
+  box-shadow: 0 1px 2px rgba(26, 115, 232, 0.22);
+}
+
+.fortune-filter-menu .button-primary:hover {
+  background: #1765cc;
+}
+
+.fortune-filter-menu .button-default {
+  margin-left: 0;
+  color: #30343a;
+  background: #fff;
+  border-color: #dadce0;
+}
+
+.fortune-filter-menu .button-default:hover {
+  background: #f3f6f9;
+  border-color: #c7cdd4;
+}
+
+.fortune-filter-menu .button-danger {
+  margin-left: 0;
+  background: #d93025;
+}
+
+.fortune-filter-menu .button-danger:hover {
+  background: #b3261e;
+}
+
+.luckysheet-filter-bycolor-submenu {
+  overflow: hidden;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  box-shadow:
+    0 12px 28px rgba(60, 64, 67, 0.18),
+    0 2px 8px rgba(60, 64, 67, 0.12);
+  font-family:
+    Inter, Roboto, Arial, Helvetica, sans-serif;
+}
+
+.luckysheet-filter-bycolor-submenu .title {
+  color: #30343a;
+  background: #f8fafc;
+}
