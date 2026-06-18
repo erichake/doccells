@@ -13,6 +13,7 @@ const t = customLocales[detectedLang] ?? customLocales["en"];
 
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
+  const [appMode, setAppMode] = useState("teacher");
   const sheetDataRef = useRef([]);
   useEffect(() => {
     sheetDataRef.current = sheetData;
@@ -420,63 +421,65 @@ const App = () => {
 
     toolbar.insertBefore(exportButton, openButton.nextSibling);
 
-    // 🔹 Création du bouton "Protéger / Déprotéger la feuille"
-    const protectSheetButton = document.createElement("div");
-    protectSheetButton.id = "custom-protect-sheet-button";
-    protectSheetButton.className = "fortune-toolbar-button fortune-toolbar-item";
-    protectSheetButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    if (appMode !== "student") {
+      // 🔹 Création du bouton "Protéger / Déprotéger la feuille"
+      const protectSheetButton = document.createElement("div");
+      protectSheetButton.id = "custom-protect-sheet-button";
+      protectSheetButton.className = "fortune-toolbar-button fortune-toolbar-item";
+      protectSheetButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 2L4 6v5c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V6L12 2z" stroke="#222" stroke-width="1.5" stroke-linejoin="round"/>
 <rect x="8.5" y="10.5" width="7" height="5" rx="1" stroke="#222" stroke-width="1.2"/>
 <path d="M10 10.5V9a2 2 0 0 1 4 0v1.5" stroke="#222" stroke-width="1.2" stroke-linecap="round"/>
 </svg>
 <div class="fortune-tooltip">${t.toggleSheetProtection}</div>`;
 
-    const updateProtectButtonStyle = () => {
-      const wb = workbookRef.current;
-      if (!wb) return;
-      const sheet = wb.getSheet();
-      const isProtected = sheet?.config?.authority?.sheet === 1;
-      protectSheetButton.style.background = isProtected
-        ? "rgba(0,120,212,0.15)"
-        : "";
-      protectSheetButton.style.outline = isProtected
-        ? "1px solid rgba(0,120,212,0.4)"
-        : "";
-    };
+      const updateProtectButtonStyle = () => {
+        const wb = workbookRef.current;
+        if (!wb) return;
+        const sheet = wb.getSheet();
+        const isProtected = sheet?.config?.authority?.sheet === 1;
+        protectSheetButton.style.background = isProtected
+          ? "rgba(0,120,212,0.15)"
+          : "";
+        protectSheetButton.style.outline = isProtected
+          ? "1px solid rgba(0,120,212,0.4)"
+          : "";
+      };
 
-    protectSheetButton.addEventListener("click", () => {
-      const wb = workbookRef.current;
-      if (!wb) return;
-      const sheet = wb.getSheet();
-      const isProtected = sheet?.config?.authority?.sheet === 1;
-      const newAuthority = isProtected ? { sheet: 0 } : { sheet: 1 };
+      protectSheetButton.addEventListener("click", () => {
+        const wb = workbookRef.current;
+        if (!wb) return;
+        const sheet = wb.getSheet();
+        const isProtected = sheet?.config?.authority?.sheet === 1;
+        const newAuthority = isProtected ? { sheet: 0 } : { sheet: 1 };
 
-      const allSheets = wb.getAllSheets();
-      const updatedSheets = allSheets.map((s) =>
-        s.id === sheet.id
-          ? { ...s, config: { ...s.config, authority: newAuthority } }
-          : s,
-      );
-      wb.updateSheet(updatedSheets);
+        const allSheets = wb.getAllSheets();
+        const updatedSheets = allSheets.map((s) =>
+          s.id === sheet.id
+            ? { ...s, config: { ...s.config, authority: newAuthority } }
+            : s,
+        );
+        wb.updateSheet(updatedSheets);
 
-      sheetDataRef.current = sheetDataRef.current.map((s) =>
-        s.id === sheet.id
-          ? { ...s, config: { ...s.config, authority: newAuthority } }
-          : s,
-      );
+        sheetDataRef.current = sheetDataRef.current.map((s) =>
+          s.id === sheet.id
+            ? { ...s, config: { ...s.config, authority: newAuthority } }
+            : s,
+        );
 
-      const willBeProtected = !isProtected;
-      protectSheetButton.style.background = willBeProtected
-        ? "rgba(0,120,212,0.15)"
-        : "";
-      protectSheetButton.style.outline = willBeProtected
-        ? "1px solid rgba(0,120,212,0.4)"
-        : "";
-    });
+        const willBeProtected = !isProtected;
+        protectSheetButton.style.background = willBeProtected
+          ? "rgba(0,120,212,0.15)"
+          : "";
+        protectSheetButton.style.outline = willBeProtected
+          ? "1px solid rgba(0,120,212,0.4)"
+          : "";
+      });
 
-    updateProtectButtonStyle();
-    toolbar.insertBefore(protectSheetButton, exportButton.nextSibling);
-  }, []);
+      updateProtectButtonStyle();
+      toolbar.insertBefore(protectSheetButton, exportButton.nextSibling);
+    }
+  }, [appMode]);
 
   // Bloque le redimensionnement colonnes/lignes quand la feuille est protégée
   useEffect(() => {
@@ -558,7 +561,9 @@ const App = () => {
             !node.classList.contains("fortune-filter-menu") &&
             !node.classList.contains("fortune-sheet-list")
           ) {
-            injectLockMenuItem(node);
+            if (appMode !== "student") {
+              injectLockMenuItem(node);
+            }
           }
         }
       }
@@ -566,10 +571,21 @@ const App = () => {
 
     observer.observe(document.body, { childList: true, subtree: true });
     return () => observer.disconnect();
-  }, []);
+  }, [appMode]);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
+    const mode = urlParams.get("mode")?.toLowerCase();
+    const knownModes = ["teacher", "student"];
+    if (knownModes.includes(mode)) {
+      setAppMode(mode);
+    } else if (window.DOCELLS_MODE) {
+      const externalMode = String(window.DOCELLS_MODE).toLowerCase();
+      if (knownModes.includes(externalMode)) {
+        setAppMode(externalMode);
+      }
+    }
+
     const fileName = urlParams.get("url") || "empty.xlsx";
     loadExcelFromURL(fileName, fileName).catch(handleLoadError);
   }, [loadExcelFromURL, handleLoadError]);
