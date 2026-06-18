@@ -14,6 +14,7 @@ const t = customLocales[detectedLang] ?? customLocales["en"];
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
   const [appMode, setAppMode] = useState("teacher");
+  const [workbookKey, setWorkbookKey] = useState(0);
   const sheetDataRef = useRef([]);
   useEffect(() => {
     sheetDataRef.current = sheetData;
@@ -451,21 +452,19 @@ const App = () => {
         if (!wb) return;
         const sheet = wb.getSheet();
         const isProtected = sheet?.config?.authority?.sheet === 1;
-        const newAuthority = isProtected ? { sheet: 0 } : { sheet: 1 };
+        const newAuthority = {
+          ...(sheet?.config?.authority || {}),
+          sheet: isProtected ? 0 : 1,
+        };
 
-        const allSheets = wb.getAllSheets();
-        const updatedSheets = allSheets.map((s) =>
+        const updatedSheets = sheetDataRef.current.map((s) =>
           s.id === sheet.id
             ? { ...s, config: { ...s.config, authority: newAuthority } }
             : s,
         );
-        wb.updateSheet(updatedSheets);
-
-        sheetDataRef.current = sheetDataRef.current.map((s) =>
-          s.id === sheet.id
-            ? { ...s, config: { ...s.config, authority: newAuthority } }
-            : s,
-        );
+        sheetDataRef.current = updatedSheets;
+        setSheetData(updatedSheets);
+        setWorkbookKey((key) => key + 1);
 
         const willBeProtected = !isProtected;
         protectSheetButton.style.background = willBeProtected
@@ -642,6 +641,7 @@ const App = () => {
       />
 
       <Workbook
+          key={workbookKey}
           ref={workbookRef}
           data={sheetData}
           lang={detectedLang}
