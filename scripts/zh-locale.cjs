@@ -10599,6 +10599,11 @@ module.exports = {
     close: "WebSocket连接关闭",
     contact: "服务器通信发生错误，请刷新页面后再试，如若不行请联系管理员！",
     support: "当前浏览器不支持WebSocket"
+  },
+  custom: {
+    lockCells: "锁定单元格",
+    unlockCells: "取消锁定单元格",
+    toggleSheetProtection: "保护/取消保护工作表"
   }
 };
 

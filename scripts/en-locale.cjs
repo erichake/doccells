@@ -10582,6 +10582,11 @@ module.exports = {
     close: "WebSocket connection closed",
     contact: "Server communication error occurred, please refresh the page and try again, if not, please contact the administrator!",
     support: "The current browser does not support WebSocket"
+  },
+  custom: {
+    lockCells: "Lock cells",
+    unlockCells: "Unlock cells",
+    toggleSheetProtection: "Protect / Unprotect sheet"
   }
 };
 

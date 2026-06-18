@@ -10042,6 +10042,11 @@ module.exports = {
     close: "Conexión WebSocket cerrada",
     contact: "Ocurrió un error de comunicación con el servidor, actualice la página y vuelva a intentarlo; de lo contrario, comuníquese con el administrador.",
     support: "El navegador actual no es compatible con WebSocket"
+  },
+  custom: {
+    lockCells: "Bloquear celdas",
+    unlockCells: "Desbloquear celdas",
+    toggleSheetProtection: "Proteger / Desproteger hoja"
   }
 };
 
