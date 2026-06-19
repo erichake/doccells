@@ -258,9 +258,12 @@ const App = () => {
         status: 1,
         order: index,
         celldata: sheet.celldata || [],
+        filter: sheet.filter,
+        filter_select: sheet.filter_select,
         config: {
           columnlen: sheet.config?.columnlen || {},
           rowlen: sheet.config?.rowlen || {},
+          rowhidden: sheet.config?.rowhidden,
           borderInfo: sheet.config?.borderInfo || [],
           merge: sheet.config?.merge || {},
           authority: sheet.config?.authority,

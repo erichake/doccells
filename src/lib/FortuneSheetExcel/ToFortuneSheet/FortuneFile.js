@@ -420,6 +420,12 @@ export class FortuneFile {
             if (sheet.hyperlink != null) {
                 sheetout.hyperlink = sheet.hyperlink;
             }
+            if (sheet.filter != null) {
+                sheetout.filter = sheet.filter;
+            }
+            if (sheet.filter_select != null) {
+                sheetout.filter_select = sheet.filter_select;
+            }
             if (sheet.hide != null) {
                 sheetout.hide = sheet.hide;
             }

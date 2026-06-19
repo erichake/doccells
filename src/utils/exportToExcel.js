@@ -18,8 +18,16 @@ export const exportToExcel = async (
 
   const workbook = new ExcelJS.Workbook();
 
+  const colToLetter = (idx) => {
+    let r = "";
+    let n = idx + 1;
+    while (n > 0) { n--; r = String.fromCharCode(65 + (n % 26)) + r; n = Math.floor(n / 26); }
+    return r;
+  };
+
   for (const sheet of sheetsData) {
     const { name, celldata, config } = sheet;
+    const filter_select = sheet.filter_select;
     const hasImages = sheet.images && (
       Array.isArray(sheet.images) ? sheet.images.length > 0 : Object.keys(sheet.images).length > 0
     );
@@ -36,6 +44,22 @@ export const exportToExcel = async (
     // 73px → (73-5)/8+0.83 = 9.33 chars ; 19px → 19×0.75 = 14.25 pt
     worksheet.properties.defaultColWidth = (73 - 5) / 8 + 0.83; // 9.33 chars
     worksheet.properties.defaultRowHeight = 19 * 0.75;           // 14.25 pt
+
+    // Lignes cachées par le filtre (ou manuellement)
+    if (config?.rowhidden) {
+      Object.keys(config.rowhidden).forEach((rowIndex) => {
+        worksheet.getRow(parseInt(rowIndex, 10) + 1).hidden = true;
+      });
+    }
+
+    // AutoFilter
+    if (filter_select) {
+      const headerRow = filter_select.row[0] + 1;
+      const endRow = filter_select.row[1] + 1;
+      const startColLetter = colToLetter(filter_select.column[0]);
+      const endColLetter = colToLetter(filter_select.column[1]);
+      worksheet.autoFilter = `${startColLetter}${headerRow}:${endColLetter}${endRow}`;
+    }
 
     if (config?.columnlen) {
       worksheet.columns = Object.keys(config.columnlen).map((colIndex) => ({

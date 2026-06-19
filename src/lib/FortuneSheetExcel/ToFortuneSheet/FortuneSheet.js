@@ -204,6 +204,33 @@ export class FortuneSheet extends FortuneSheetBase {
         this.config.authority = { sheet: 1 };
       }
     }
+    // autoFilter → filter_select + filter
+    const autoFilterEls = this.readXml.getElementsByTagName("autoFilter", this.sheetFile);
+    if (autoFilterEls != null && autoFilterEls.length > 0) {
+      const ref = getXmlAttibute(autoFilterEls[0].attributeList, "ref", null);
+      if (ref) {
+        const range = getcellrange(ref, this.sheetList, sheetId);
+        if (range) {
+          this.filter_select = {
+            row: range.row,
+            column: range.column,
+          };
+          const rowhidden = this.config?.rowhidden;
+          if (rowhidden && Object.keys(rowhidden).length > 0) {
+            this.filter = {
+              0: {
+                rowhidden: { ...rowhidden },
+                str: range.row[0],
+                edr: range.row[1],
+                cindex: range.column[0],
+                stc: range.column[0],
+                edc: range.column[1],
+              },
+            };
+          }
+        }
+      }
+    }
     // sheet hide
     this.hide = this.hide;
     if (this.mergeCells != null) {
