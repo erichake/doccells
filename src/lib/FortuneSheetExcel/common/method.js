@@ -526,14 +526,20 @@ export class fromulaRef {
             let col = ABCatNum(rangetxt.replace(/[^A-Za-z]/g, ""));
             let freezonFuc = _this.isfreezonFuc(rangetxt);
             let $row = freezonFuc[0] ? "$" : "", $col = freezonFuc[1] ? "$" : "";
-            if (orient == "u" && !freezonFuc[0]) {
-                row -= step;
+            if (orient == "u") {
+                if (!freezonFuc[0]) {
+                    row -= step;
+                }
             }
-            else if (orient == "r" && !freezonFuc[1]) {
-                col += step;
+            else if (orient == "r") {
+                if (!freezonFuc[1]) {
+                    col += step;
+                }
             }
-            else if (orient == "l" && !freezonFuc[1]) {
-                col -= step;
+            else if (orient == "l") {
+                if (!freezonFuc[1]) {
+                    col -= step;
+                }
             }
             else if (!freezonFuc[0]) {
                 row += step;

@@ -198,8 +198,6 @@ const App = () => {
               const key = `${sheetIndex}-${cell.r}-${cell.c}`;
               formulas[key] = cell.v.f;
               cell.v.VF = { v: cell.v.v, f: cell.v.f };
-              delete cell.v.f;
-              delete cell.v.v;
             } else if (cell.v?.v === undefined) {
               if (
                 Array.isArray(cell.v?.ct?.s) &&
@@ -277,22 +275,6 @@ const App = () => {
 
   useEffect(() => {
     if (workbookRef.current && sheetData.length > 0) {
-      const instance = workbookRef.current;
-
-      const sortedFormulas = Object.entries(formulasRef.current).sort(
-        (a, b) => {
-          const [sheetIndexA] = a[0].split("-").map(Number);
-          const [sheetIndexB] = b[0].split("-").map(Number);
-          return sheetIndexB - sheetIndexA;
-        },
-      );
-
-      sortedFormulas.forEach(([key, formula]) => {
-        const [sheetIndex, row, col] = key.split("-").map(Number);
-        instance?.activateSheet?.({ index: sheetIndex });
-        instance?.setCellValue?.(row, col, formula);
-      });
-
       // Workbook vraiment exploitable
       markReady();
     }

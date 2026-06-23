@@ -581,7 +581,6 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
                 cellValue.ct = cellFormat;
               } else {
                 cellValue.v = text;
-                quotePrefix = "1";
               }
             }
           }
