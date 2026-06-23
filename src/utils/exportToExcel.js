@@ -10,6 +10,15 @@ export const exportToExcel = async (
     const cleanHex = hex.replace("#", "").toUpperCase();
     return `FF${cleanHex}`;
   };
+  const sanitizeCellValue = (value) => {
+    if (value === null || value === undefined) {
+      return undefined;
+    }
+    if (typeof value === "number") {
+      return Number.isFinite(value) ? value : undefined;
+    }
+    return value;
+  };
 
   if (!sheetsData || sheetsData.length === 0) {
     console.error("❌ Aucune donnée à exporter !");
@@ -84,12 +93,18 @@ export const exportToExcel = async (
     (celldata || []).forEach(({ r, c, v }) => {
       // Récupération et modification d'une cellule spécifique
       const cell = worksheet.getCell(r + 1, c + 1);
-      if (v?.VF) {
+      const formula = v?.VF?.f || v?.f;
+      if (formula) {
+        const result = sanitizeCellValue(v?.VF?.v ?? v?.v);
         cell.value = {
-          formula: v.VF.f.startsWith("=") ? v.VF.f.slice(1) : v.VF.f,
+          formula: formula.startsWith("=") ? formula.slice(1) : formula,
+          ...(result !== undefined ? { result } : {}),
         };
       } else if (v?.v !== undefined) {
-        cell.value = v.v;
+        const value = sanitizeCellValue(v.v);
+        if (value !== undefined) {
+          cell.value = value;
+        }
       }
 
       let cellStyle = {};

@@ -676,17 +676,25 @@ const App = () => {
                           updatedVF = {};
                         }
 
+                        const parsedValue =
+                          cell.v === null
+                            ? null
+                            : typeof cell.v === "number"
+                              ? Number.isFinite(cell.v)
+                                ? cell.v
+                                : undefined
+                            : typeof cell.v === "string" && cell.v.trim() === ""
+                              ? cell.v
+                              : typeof cell.v === "string" && !Number.isNaN(Number(cell.v))
+                                ? parseFloat(cell.v)
+                                : cell.v;
+
                         newCells.push({
                           r,
                           c,
                           v: {
                             ...cell,
-                            v:
-                              cell.v === null
-                                ? null
-                                : isNaN(cell.v)
-                                  ? cell.v
-                                  : parseFloat(cell.v),
+                            v: parsedValue,
                             VF: Object.keys(updatedVF).length
                               ? updatedVF
                               : undefined,

@@ -253,6 +253,7 @@ export class FortuneSheet extends FortuneSheetBase {
         this.config.merge[range.row[0] + "_" + range.column[0]] = mergeValue;
       }
     }
+    this.normalizeWrappedMergedText();
     let drawingFile = allFileOption.drawingFile,
       drawingRelsFile = allFileOption.drawingRelsFile;
     if (drawingFile != null && drawingRelsFile != null) {
@@ -524,6 +525,99 @@ export class FortuneSheet extends FortuneSheetBase {
         }
       }
     }
+  }
+  /**
+   * @desc Normalize wrapped merged text so it renders and exports as full text.
+   */
+  normalizeWrappedMergedText() {
+    if (!this.isInitialCell || this.config.merge == null || this.celldata.length === 0) {
+      return;
+    }
+    for (let i = 0; i < this.celldata.length; i++) {
+      const cell = this.celldata[i];
+      const value = cell.v;
+      if (value == null || value.tb !== "2") {
+        continue;
+      }
+      const merge = this.config.merge[cell.r + "_" + cell.c];
+      if (merge == null || merge.rs !== 1 || merge.cs <= 1) {
+        continue;
+      }
+      const text = this.getCellTextForWrappedMerge(value);
+      if (text.length === 0) {
+        continue;
+      }
+      if (value.ct?.t === "inlineStr" && Array.isArray(value.ct.s)) {
+        value.v = text;
+        value.m = text;
+        value.ct = { ...value.ct, t: "s" };
+        delete value.ct.s;
+      }
+      const fontSize = value.fs || 11;
+      const cellWidth = this.getMergedCellWidthForWrappedText(merge.c, merge.cs);
+      const currentHeight = this.config.rowlen?.[cell.r] || this.defaultRowHeight;
+      const estimatedHeight = this.estimateWrappedTextHeight(
+        text,
+        cellWidth,
+        fontSize,
+      );
+      if (estimatedHeight > currentHeight + 2) {
+        if (this.config.rowlen == null) {
+          this.config.rowlen = {};
+        }
+        this.config.rowlen[cell.r] = estimatedHeight;
+      }
+    }
+  }
+  getCellTextForWrappedMerge(value) {
+    if (value.ct?.s != null && value.ct.s.length > 0) {
+      return value.ct.s.map((item) => item.v || "").join("");
+    }
+    return (value.m ?? value.v ?? "").toString();
+  }
+  getMergedCellWidthForWrappedText(startColumn, columnCount) {
+    let width = 0;
+    for (let c = startColumn; c < startColumn + columnCount; c++) {
+      width += this.config.columnlen?.[c] || this.defaultColWidth;
+    }
+    return Math.max(width - 8, 1);
+  }
+  estimateWrappedTextHeight(text, cellWidth, fontSize) {
+    const lineHeight = Math.ceil(fontSize * 1.35);
+    let lineCount = 0;
+    text.split(/\r\n|\r|\n/).forEach((line) => {
+      let lineWidth = 0;
+      let hasContent = false;
+      const parts = line.match(/[^\S\r\n]+|\S+/g) || [""];
+      parts.forEach((part) => {
+        const partWidth = this.estimateTextWidthForWrappedText(part, fontSize);
+        if (lineWidth > 0 && lineWidth + partWidth > cellWidth) {
+          lineCount += 1;
+          lineWidth = partWidth;
+        } else {
+          lineWidth += partWidth;
+        }
+        hasContent = hasContent || part.length > 0;
+      });
+      lineCount += hasContent ? 1 : 0;
+    });
+    return Math.ceil(lineCount * lineHeight + 6);
+  }
+  estimateTextWidthForWrappedText(text, fontSize) {
+    let width = 0;
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      if (/\s/.test(char)) {
+        width += fontSize * 0.3;
+      } else if (char.charCodeAt(0) > 255) {
+        width += fontSize;
+      } else if (/[A-Z0-9]/.test(char)) {
+        width += fontSize * 0.62;
+      } else {
+        width += fontSize * 0.52;
+      }
+    }
+    return width;
   }
   /**
    * @desc This will convert cols/col to fortunesheet config of column'width
