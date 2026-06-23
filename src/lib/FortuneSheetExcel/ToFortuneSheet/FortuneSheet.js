@@ -366,6 +366,92 @@ export class FortuneSheet extends FortuneSheetBase {
           }
         }
       }
+      let oneCellAnchors = this.readXml.getElementsByTagName(
+        "xdr:oneCellAnchor",
+        drawingFile,
+      );
+      if (oneCellAnchors != null && oneCellAnchors.length > 0) {
+        for (let i = 0; i < oneCellAnchors.length; i++) {
+          let oneCellAnchor = oneCellAnchors[i];
+          let xdrFroms = oneCellAnchor.getInnerElements("xdr:from"),
+            xdrExts = oneCellAnchor.getInnerElements("xdr:ext");
+          let xdr_blipfills = oneCellAnchor.getInnerElements("a:blip");
+          if (
+            xdrFroms != null &&
+            xdrExts != null &&
+            xdr_blipfills != null &&
+            xdrFroms.length > 0 &&
+            xdrExts.length > 0 &&
+            xdr_blipfills.length > 0
+          ) {
+            let xdrFrom = xdrFroms[0],
+              xdrExt = xdrExts[0],
+              xdr_blipfill = xdr_blipfills[0];
+            let rembed = getXmlAttibute(
+              xdr_blipfill.attributeList,
+              "r:embed",
+              null,
+            );
+            let imageObject = this.getBase64ByRid(rembed, drawingRelsFile);
+            if (imageObject == null) {
+              continue;
+            }
+            let cx_n = getPxByEMUs(
+              parseInt(getXmlAttibute(xdrExt.attributeList, "cx", "0")),
+            );
+            let cy_n = getPxByEMUs(
+              parseInt(getXmlAttibute(xdrExt.attributeList, "cy", "0")),
+            );
+            imageObject.fromCol = this.getXdrValue(
+              xdrFrom.getInnerElements("xdr:col"),
+            );
+            imageObject.fromColOff = getPxByEMUs(
+              this.getXdrValue(xdrFrom.getInnerElements("xdr:colOff")),
+            );
+            imageObject.fromRow = this.getXdrValue(
+              xdrFrom.getInnerElements("xdr:row"),
+            );
+            imageObject.fromRowOff = getPxByEMUs(
+              this.getXdrValue(xdrFrom.getInnerElements("xdr:rowOff")),
+            );
+            imageObject.toCol = imageObject.fromCol;
+            imageObject.toColOff = imageObject.fromColOff + cx_n;
+            imageObject.toRow = imageObject.fromRow;
+            imageObject.toRowOff = imageObject.fromRowOff + cy_n;
+            imageObject.originWidth = cx_n;
+            imageObject.originHeight = cy_n;
+            imageObject.type = "2";
+            imageObject.isFixedPos = false;
+            imageObject.fixedLeft = 0;
+            imageObject.fixedTop = 0;
+            let imageBorder = {
+              color: "#000",
+              radius: 0,
+              style: "solid",
+              width: 0,
+            };
+            imageObject.border = imageBorder;
+            let imageCrop = {
+              height: cy_n,
+              offsetLeft: 0,
+              offsetTop: 0,
+              width: cx_n,
+            };
+            imageObject.crop = imageCrop;
+            let imageDefault = {
+              height: cy_n,
+              left: 0,
+              top: 0,
+              width: cx_n,
+            };
+            imageObject.default = imageDefault;
+            if (this.images == null) {
+              this.images = {};
+            }
+            this.images[generateRandomIndex("image")] = imageObject;
+          }
+        }
+      }
     }
   }
   getXdrValue(ele) {

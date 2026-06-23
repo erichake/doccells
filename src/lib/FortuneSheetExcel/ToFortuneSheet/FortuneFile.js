@@ -249,9 +249,6 @@ export class FortuneFile {
                 cy_n = this.rowHeightSet[toRow - 1];
             }
             cy_n = cy_n + toRowOff - y_n;
-            console.log(defaultColWidth, colhidden, columnlen);
-            console.log(fromCol, this.columnWidthSet[fromCol], fromColOff);
-            console.log(toCol, this.columnWidthSet[toCol], toColOff, JSON.stringify(this.columnWidthSet));
             imageObject.originWidth = cx_n;
             imageObject.originHeight = cy_n;
             imageObject.crop.height = cy_n;
