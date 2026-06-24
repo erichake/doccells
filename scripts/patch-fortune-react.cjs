@@ -21,9 +21,14 @@ const NEW1 = `  }, "".concat(item.rows.length)))) : null;
 const OLD2 = `  }, "( ".concat(item.rows.length, " )"))), expand && item.children.map(function (v) {`;
 const NEW2 = `  }, "".concat(item.rows.length))), expand && item.children.map(function (v) {`;
 
+// LocationBox — hide transient invalid selection label at startup
+const OLD3 = `  }, rangeText));`;
+const NEW3 = `  }, rangeText && !rangeText.includes("NaN") ? rangeText : ""));`;
+
 const PATCH_GROUPS = [
   { name: "SelectItem count parens fix",      variants: [{ old: OLD1, new: NEW1 }] },
   { name: "DateSelectTreeItem count parens fix", variants: [{ old: OLD2, new: NEW2 }] },
+  { name: "LocationBox NaN range guard", variants: [{ old: OLD3, new: NEW3 }] },
 ];
 
 let allPatched = 0;

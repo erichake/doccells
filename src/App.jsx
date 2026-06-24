@@ -319,6 +319,32 @@ const App = () => {
     }
   }, [sheetData, markReady]);
 
+  useEffect(() => {
+    const sanitizeNameBox = () => {
+      document.querySelectorAll(".fortune-name-box").forEach((box) => {
+        const text = box.textContent || "";
+        if (!text.includes("NaN")) return;
+
+        const sanitized = text.replace(/:?NaN/g, "");
+        box.textContent = sanitized || "A1";
+      });
+    };
+
+    sanitizeNameBox();
+    const rafId = requestAnimationFrame(sanitizeNameBox);
+    const observer = new MutationObserver(sanitizeNameBox);
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      observer.disconnect();
+    };
+  }, []);
+
   const loadExcelFromURL = useCallback(
     async (url, fileName = "empty.xlsx") => {
       const response = await fetch(url);
