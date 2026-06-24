@@ -40,6 +40,9 @@ const setWorkbookGridLines = (sheets, showGridLines) =>
     showGridLines,
   }));
 
+const getWorkbookGridLinesPreference = (sheets) =>
+  areGridLinesHidden(sheets) ? false : true;
+
 const getDefaultSheetNumber = (name, fallback) => {
   const match = String(name || "").match(/\d+$/);
   return match ? Number(match[0]) : fallback;
@@ -726,6 +729,7 @@ const App = () => {
 
   const workbookHooks = useMemo(() => ({
     beforeAddSheet: (sheet) => {
+      sheet.showGridLines = getWorkbookGridLinesPreference(sheetDataRef.current);
       if (!isDefaultSheetName(sheet?.name)) return;
       const preferredNumber = getDefaultSheetNumber(
         sheet?.name,
@@ -737,6 +741,23 @@ const App = () => {
       );
     },
     afterAddSheet: (sheet) => {
+      const showGridLines = normalizeShowGridLines(sheet?.showGridLines);
+      if (!showGridLines) {
+        const wb = workbookRef.current;
+        const allSheets = wb?.getAllSheets?.() || sheetDataRef.current;
+        const updatedSheets = setWorkbookGridLines(
+          allSheets,
+          showGridLines,
+        ).map((currentSheet) => ({
+          ...currentSheet,
+          celldata: currentSheet.celldata || dataToCelldata(currentSheet.data),
+        }));
+
+        sheetDataRef.current = updatedSheets;
+        setSheetData(updatedSheets);
+        setWorkbookKey((key) => key + 1);
+      }
+
       if (!isDefaultSheetName(sheet?.name) || sheet?.name?.startsWith(sheetPrefix)) {
         return;
       }
