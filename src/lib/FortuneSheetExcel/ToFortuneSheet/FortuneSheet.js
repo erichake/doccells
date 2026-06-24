@@ -619,6 +619,51 @@ export class FortuneSheet extends FortuneSheetBase {
     }
     return width;
   }
+  isBlankImportCell(cell) {
+    return !/<(?:v|f|is|t)\b/.test(cell.elementString);
+  }
+  getBlankCellStyleSkip(styleId) {
+    if (this.blankCellStyleSkipCache == null) {
+      this.blankCellStyleSkipCache = {};
+    }
+    const key = styleId ?? "";
+    if (key in this.blankCellStyleSkipCache) {
+      return this.blankCellStyleSkipCache[key];
+    }
+    const attributeList = { r: "A1" };
+    if (styleId != null) {
+      attributeList.s = styleId;
+    }
+    const sampleCell = {
+      attributeList,
+      getInnerElements: () => null,
+    };
+    const sampleValue = new FortuneSheetCelldata(
+      sampleCell,
+      this.styles,
+      this.sharedStrings,
+      this.mergeCells,
+      this.sheetFile,
+      this.readXml,
+    );
+    const shouldSkip = this.isSkippableEmptyCellValue(sampleValue);
+    this.blankCellStyleSkipCache[key] = shouldSkip;
+    return shouldSkip;
+  }
+  isSkippableEmptyCellValue(cellValue) {
+    const value = cellValue?.v;
+    if (value == null || cellValue._borderObject != null) {
+      return false;
+    }
+    if (value.v != null || value.m != null || value.f != null || value.mc != null) {
+      return false;
+    }
+    if (value.bg != null || value.lo != null || value.qp != null) {
+      return false;
+    }
+    const richText = value.ct?.s;
+    return !(Array.isArray(richText) && richText.some((item) => item?.v));
+  }
   /**
    * @desc This will convert cols/col to fortunesheet config of column'width
    */
@@ -667,6 +712,12 @@ export class FortuneSheet extends FortuneSheetBase {
         let cells = row.getInnerElements("c");
         for (let key in cells) {
           let cell = cells[key];
+          if (
+            this.isBlankImportCell(cell) &&
+            this.getBlankCellStyleSkip(cell.attributeList.s)
+          ) {
+            continue;
+          }
           let cellValue = new FortuneSheetCelldata(
             cell,
             this.styles,

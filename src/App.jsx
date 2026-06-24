@@ -95,6 +95,62 @@ const setWorkbookProtection = (sheets, sheetProtectionValue) =>
     },
   }));
 
+const normalizeImportedMerges = (sheet) => {
+  if (!sheet) return;
+  sheet.config ||= {};
+  sheet.config.merge ||= {};
+
+  const celldata = sheet.celldata || [];
+  const cellByPosition = new Map();
+  celldata.forEach((cell) => {
+    cellByPosition.set(`${cell.r}_${cell.c}`, cell);
+  });
+
+  Object.assign(
+    sheet.config.merge,
+    Object.fromEntries(
+      celldata
+        .map((cell) => cell.v?.mc)
+        .filter((merge) => merge?.rs && merge?.cs)
+        .map((merge) => [`${merge.r}_${merge.c}`, merge]),
+    ),
+  );
+
+  const merges = Object.values(sheet.config.merge);
+  merges.forEach((merge) => {
+    const mainCell = cellByPosition.get(`${merge.r}_${merge.c}`);
+    if (!mainCell) return;
+    mainCell.v ||= {};
+    mainCell.v.mc = {
+      r: merge.r,
+      c: merge.c,
+      rs: merge.rs || 1,
+      cs: merge.cs || 1,
+    };
+  });
+
+  merges.forEach((merge) => {
+    const { r, c, rs = 1, cs = 1 } = merge;
+    for (let row = r; row < r + rs; row++) {
+      for (let col = c; col < c + cs; col++) {
+        if (row === r && col === c) continue;
+        const key = `${row}_${col}`;
+        const secondaryCell = cellByPosition.get(key);
+        if (secondaryCell) {
+          secondaryCell.v ||= {};
+          secondaryCell.v.mc = { r, c };
+        } else {
+          const cell = { r: row, c: col, v: { mc: { r, c } } };
+          celldata.push(cell);
+          cellByPosition.set(key, cell);
+        }
+      }
+    }
+  });
+
+  sheet.celldata = celldata.filter((cell) => !("v" in cell && cell.v?.v === null));
+};
+
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
   const [appMode, setAppMode] = useState("teacher");
@@ -164,95 +220,7 @@ const App = () => {
       const fortuneData = await transformExcelToFortune(file);
       const formulas = {};
 
-      if (!fortuneData.sheets[0].config) {
-        fortuneData.sheets[0].config = {}; // S'assurer que l'objet config existe
-      }
-      if (!fortuneData.sheets[0].config.merge) {
-        fortuneData.sheets[0].config.merge = {}; // Initialiser l'objet merge s'il est manquant
-      }
-
-      fortuneData.sheets[0].celldata.forEach((cell) => {
-        if (cell.v?.mc) {
-          const { r, c } = cell.v.mc;
-
-          // Vérifier si cette fusion existe déjà dans config.merge
-          if (!fortuneData.sheets[0].config.merge[`${r}_${c}`]) {
-            // Trouver la cellule principale
-            const mainCell = fortuneData.sheets[0].celldata.find(
-              (cellItem) => cellItem.r === r && cellItem.c === c,
-            );
-
-            if (mainCell?.v?.mc?.rs && mainCell?.v?.mc?.cs) {
-              // Ajouter la fusion à config.merge
-              fortuneData.sheets[0].config.merge[`${r}_${c}`] = {
-                r,
-                c,
-                rs: mainCell.v.mc.rs,
-                cs: mainCell.v.mc.cs,
-              };
-            }
-          }
-        }
-      });
-
-      // 🔹 Vérification et correction des cellules fusionnées
-      if (fortuneData.sheets[0].config?.merge) {
-        const merges = fortuneData.sheets[0].config.merge;
-
-        fortuneData.sheets[0].celldata.forEach((cell) => {
-          const { r, c } = cell;
-
-          // Vérifier si la cellule est la principale d'une fusion
-          const isMergedMainCell = Object.values(merges).some(
-            (merge) => merge.r === r && merge.c === c,
-          );
-
-          if (isMergedMainCell) {
-            // Ajout des informations de fusion sur la cellule principale
-            cell.v = cell.v || {};
-            cell.v.mc = {
-              r,
-              c,
-              rs: merges[`${r}_${c}`]?.rs || 1,
-              cs: merges[`${r}_${c}`]?.cs || 1,
-            };
-          }
-        });
-
-        // 🔹 Ajouter les cellules fusionnées secondaires
-        Object.entries(merges).forEach(([, merge]) => {
-          const { r, c, rs, cs } = merge;
-
-          for (let row = r; row < r + rs; row++) {
-            for (let col = c; col < c + cs; col++) {
-              if (row === r && col === c) continue; // Ne pas modifier la cellule principale
-
-              // Chercher si la cellule fusionnée secondaire existe déjà
-              let secondaryCell = fortuneData.sheets[0].celldata.find(
-                (cell) => cell.r === row && cell.c === col,
-              );
-
-              if (secondaryCell) {
-                // 🔹 Corriger les cellules fusionnées secondaires en leur assignant "mc"
-                secondaryCell.v = secondaryCell.v || {};
-                secondaryCell.v.mc = { r, c };
-              } else {
-                // 🔹 Ajouter une nouvelle cellule fusionnée secondaire si elle n'existe pas encore
-                fortuneData.sheets[0].celldata.push({
-                  r: row,
-                  c: col,
-                  v: { mc: { r, c } },
-                });
-              }
-            }
-          }
-        });
-
-        // 🔹 Supprimer les cellules fusionnées secondaires avec "v": null
-        fortuneData.sheets[0].celldata = fortuneData.sheets[0].celldata.filter(
-          (cell) => !("v" in cell && cell.v?.v === null),
-        );
-      }
+      fortuneData.sheets.forEach(normalizeImportedMerges);
 
       // 🔹 Traitement des formules et valeurs affichées
       fortuneData.sheets.forEach((sheet, sheetIndex) => {
