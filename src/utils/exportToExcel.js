@@ -1,5 +1,5 @@
 import ExcelJS from "exceljs";
-import { saveAs } from "file-saver";
+import saveAs from "file-saver";
 
 export const exportToExcel = async (
   sheetsData,
@@ -20,10 +20,9 @@ export const exportToExcel = async (
     return value;
   };
 
-  if (!sheetsData || sheetsData.length === 0) {
-    console.error("❌ Aucune donnée à exporter !");
-    return;
-  }
+  const sheetsToExport = Array.isArray(sheetsData) && sheetsData.length > 0
+    ? sheetsData
+    : [{ name: "Feuille1", celldata: [], config: {} }];
 
   const workbook = new ExcelJS.Workbook();
 
@@ -34,17 +33,11 @@ export const exportToExcel = async (
     return r;
   };
 
-  for (const sheet of sheetsData) {
-    const { name, celldata, config } = sheet;
+  for (let sheetIndex = 0; sheetIndex < sheetsToExport.length; sheetIndex++) {
+    const sheet = sheetsToExport[sheetIndex] || {};
+    const { celldata, config = {} } = sheet;
+    const name = sheet.name || `Feuille${sheetIndex + 1}`;
     const filter_select = sheet.filter_select;
-    const hasImages = sheet.images && (
-      Array.isArray(sheet.images) ? sheet.images.length > 0 : Object.keys(sheet.images).length > 0
-    );
-
-    if ((!celldata || celldata.length === 0) && !hasImages) {
-      console.warn(`⚠️ La feuille "${name}" est vide, elle ne sera pas exportée.`);
-      continue;
-    }
 
     const worksheet = workbook.addWorksheet(name);
 
