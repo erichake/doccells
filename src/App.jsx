@@ -60,6 +60,25 @@ const dataToCelldata = (data) => {
   return celldata;
 };
 
+const isSheetProtected = (sheet) =>
+  sheet?.config?.authority?.sheet === 1 ||
+  sheet?.config?.authority?.sheet === "1";
+
+const isWorkbookProtected = (sheets) =>
+  Array.isArray(sheets) && sheets.some(isSheetProtected);
+
+const setWorkbookProtection = (sheets, sheetProtectionValue) =>
+  sheets.map((sheet) => ({
+    ...sheet,
+    config: {
+      ...sheet.config,
+      authority: {
+        ...(sheet.config?.authority || {}),
+        sheet: sheetProtectionValue,
+      },
+    },
+  }));
+
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
   const [appMode, setAppMode] = useState("teacher");
@@ -285,8 +304,11 @@ const App = () => {
         },
         images: convertImages(sheet.images),
       }));
+      const normalizedData = isWorkbookProtected(formattedData)
+        ? setWorkbookProtection(formattedData, 1)
+        : formattedData;
 
-      setSheetData(formattedData);
+      setSheetData(normalizedData);
     }
   }, []);
 
@@ -459,8 +481,8 @@ const App = () => {
       const updateProtectButtonStyle = () => {
         const wb = workbookRef.current;
         if (!wb) return;
-        const sheet = wb.getSheet();
-        const isProtected = sheet?.config?.authority?.sheet === 1;
+        const allSheets = wb.getAllSheets?.() || sheetDataRef.current;
+        const isProtected = isWorkbookProtected(allSheets);
         protectSheetButton.style.background = isProtected
           ? "rgba(0,120,212,0.15)"
           : "";
@@ -472,18 +494,13 @@ const App = () => {
       protectSheetButton.addEventListener("click", () => {
         const wb = workbookRef.current;
         if (!wb) return;
-        const sheet = wb.getSheet();
-        const isProtected = sheet?.config?.authority?.sheet === 1;
-        const newAuthority = {
-          ...(sheet?.config?.authority || {}),
-          sheet: isProtected ? 0 : 1,
-        };
-
         const allSheets = wb.getAllSheets();
-        const updatedSheets = allSheets.map((s) =>
-          s.id === sheet.id
-            ? { ...s, config: { ...s.config, authority: newAuthority } }
-            : s,
+        const isProtected = isWorkbookProtected(allSheets);
+        const nextProtectionValue = isProtected ? 0 : 1;
+
+        const updatedSheets = setWorkbookProtection(
+          allSheets,
+          nextProtectionValue,
         ).map((s) => ({
           ...s,
           celldata: s.celldata || dataToCelldata(s.data),
@@ -493,7 +510,7 @@ const App = () => {
         setSheetData(updatedSheets);
         setWorkbookKey((key) => key + 1);
 
-        const willBeProtected = !isProtected;
+        const willBeProtected = nextProtectionValue === 1;
         protectSheetButton.style.background = willBeProtected
           ? "rgba(0,120,212,0.15)"
           : "";
