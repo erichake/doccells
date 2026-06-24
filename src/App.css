@@ -248,3 +248,10 @@ body,
   color: #30343a;
   background: #f8fafc;
 }
+
+.luckysheet-modal-dialog-image img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
