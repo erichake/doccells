@@ -297,6 +297,7 @@ const App = () => {
         config: {
           columnlen: sheet.config?.columnlen || {},
           rowlen: sheet.config?.rowlen || {},
+          colhidden: sheet.config?.colhidden,
           rowhidden: sheet.config?.rowhidden,
           borderInfo: sheet.config?.borderInfo || [],
           merge: sheet.config?.merge || {},

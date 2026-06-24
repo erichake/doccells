@@ -1,0 +1,33 @@
+Audit Codex 02 - Differences restantes entre Excel et DocCells
+
+1. Le titre de droite affiche "Rentree 2025.0" au lieu de "Rentree 2025".
+   Cause probable : probleme de format numerique/texte.
+
+2. Les lignes de grille sont visibles dans DocCells.
+   Dans Excel, le fichier masque le quadrillage. DocCells devrait respecter showGridLines="0".
+
+3. Les textes descriptifs ne sont pas correctement affiches.
+   Exemple : "Droite graduee, comparer, addition, soustraction." est coupe et partiellement masque.
+   Dans Excel, le texte est centre et presente sur plusieurs lignes.
+
+4. Plusieurs textes deviennent bleus.
+   Les descriptions apparaissent en bleu dans DocCells, alors qu'elles sont noires dans Excel.
+   Cause possible : confusion avec un style de lien ou avec une partie de texte riche.
+
+5. Le retour a la ligne / wrap text n'est pas respecte.
+   Les descriptions devraient tenir dans les blocs colores sur deux lignes.
+   Dans DocCells, elles debordent horizontalement.
+
+6. Certains blocs fusionnes coupent le contenu.
+   Notamment les blocs C09, C10 et C11 : le texte deborde ou est cache par les limites/fusions.
+
+7. Les hauteurs de lignes semblent legerement differentes.
+   Les blocs de cours sont moins confortables verticalement dans DocCells, ce qui accentue la coupe du texte.
+
+8. La bordure noire verticale entre les blocs et les calendriers est trop visible ou mal placee a certains endroits.
+   Exemple visible : entre les blocs C09/C10 et le calendrier de mars.
+
+Conclusion :
+Le respect du masquage des colonnes est maintenant nettement ameliore.
+Les prochains sujets principaux sont le format numerique du titre, le masquage du quadrillage,
+la couleur du texte et surtout le retour a la ligne dans les cellules fusionnees.

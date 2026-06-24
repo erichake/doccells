@@ -64,9 +64,16 @@ export const exportToExcel = async (
     }
 
     if (config?.columnlen) {
-      worksheet.columns = Object.keys(config.columnlen).map((colIndex) => ({
-        width: (config.columnlen[colIndex] - 5) / 8 + 0.83,
-      }));
+      Object.keys(config.columnlen).forEach((colIndex) => {
+        worksheet.getColumn(parseInt(colIndex, 10) + 1).width =
+          (config.columnlen[colIndex] - 5) / 8 + 0.83;
+      });
+    }
+
+    if (config?.colhidden) {
+      Object.keys(config.colhidden).forEach((colIndex) => {
+        worksheet.getColumn(parseInt(colIndex, 10) + 1).hidden = true;
+      });
     }
 
     if (config?.rowlen) {
