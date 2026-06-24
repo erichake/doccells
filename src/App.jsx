@@ -24,6 +24,22 @@ const sheetPrefix =
 const isDefaultSheetName = (name) =>
   !name || DEFAULT_SHEET_NAME_RE.test(name);
 
+const normalizeShowGridLines = (showGridLines) => {
+  if (showGridLines == null) return true;
+  return !(showGridLines === "0" || showGridLines === 0 || showGridLines === false);
+};
+
+const areGridLinesHidden = (sheets) =>
+  Array.isArray(sheets) &&
+  sheets.length > 0 &&
+  sheets.every((sheet) => !normalizeShowGridLines(sheet?.showGridLines));
+
+const setWorkbookGridLines = (sheets, showGridLines) =>
+  sheets.map((sheet) => ({
+    ...sheet,
+    showGridLines,
+  }));
+
 const getDefaultSheetNumber = (name, fallback) => {
   const match = String(name || "").match(/\d+$/);
   return match ? Number(match[0]) : fallback;
@@ -294,6 +310,7 @@ const App = () => {
         celldata: sheet.celldata || [],
         filter: sheet.filter,
         filter_select: sheet.filter_select,
+        showGridLines: normalizeShowGridLines(sheet.showGridLines),
         config: {
           columnlen: sheet.config?.columnlen || {},
           rowlen: sheet.config?.rowlen || {},
@@ -460,6 +477,7 @@ const App = () => {
     // 🔹 Supprimer les anciens boutons pour éviter les doublons
     document.getElementById("custom-open-button")?.remove();
     document.getElementById("custom-export-button")?.remove();
+    document.getElementById("custom-gridlines-button")?.remove();
     document.getElementById("custom-protect-sheet-button")?.remove();
 
     // 🔹 Création du bouton "Ouvrir..."
@@ -492,6 +510,53 @@ const App = () => {
     });
 
     toolbar.insertBefore(exportButton, openButton.nextSibling);
+
+    // 🔹 Création du bouton "Afficher / masquer le quadrillage"
+    const gridLinesButton = document.createElement("div");
+    gridLinesButton.id = "custom-gridlines-button";
+    gridLinesButton.className = "fortune-toolbar-button fortune-toolbar-item";
+    gridLinesButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="4" width="16" height="16" rx="1.5" stroke="#222" stroke-width="1.5"/>
+<path d="M9.33 4v16M14.67 4v16M4 9.33h16M4 14.67h16" stroke="#222" stroke-width="1.2"/>
+<path d="M5 19L19 5" stroke="#222" stroke-width="1.8" stroke-linecap="round"/>
+</svg>
+<div class="fortune-tooltip">${t.toggleGridLines ?? "Afficher / masquer le quadrillage"}</div>`;
+
+    const updateGridLinesButtonStyle = () => {
+      const wb = workbookRef.current;
+      const allSheets = wb?.getAllSheets?.() || sheetDataRef.current;
+      const isHidden = areGridLinesHidden(allSheets);
+      gridLinesButton.style.background = isHidden
+        ? "rgba(0,120,212,0.15)"
+        : "";
+      gridLinesButton.style.outline = isHidden
+        ? "1px solid rgba(0,120,212,0.4)"
+        : "";
+      gridLinesButton.setAttribute("aria-pressed", String(isHidden));
+    };
+
+    gridLinesButton.addEventListener("click", () => {
+      const wb = workbookRef.current;
+      if (!wb) return;
+      const allSheets = wb.getAllSheets?.() || sheetDataRef.current;
+      const nextShowGridLines = areGridLinesHidden(allSheets);
+
+      const updatedSheets = setWorkbookGridLines(
+        allSheets,
+        nextShowGridLines,
+      ).map((s) => ({
+        ...s,
+        celldata: s.celldata || dataToCelldata(s.data),
+      }));
+
+      sheetDataRef.current = updatedSheets;
+      setSheetData(updatedSheets);
+      setWorkbookKey((key) => key + 1);
+      updateGridLinesButtonStyle();
+    });
+
+    updateGridLinesButtonStyle();
+    toolbar.insertBefore(gridLinesButton, exportButton.nextSibling);
 
     if (appMode !== "student") {
       // 🔹 Création du bouton "Protéger / Déprotéger la feuille"
@@ -547,7 +612,7 @@ const App = () => {
       });
 
       updateProtectButtonStyle();
-      toolbar.insertBefore(protectSheetButton, exportButton.nextSibling);
+      toolbar.insertBefore(protectSheetButton, gridLinesButton.nextSibling);
     }
   }, [appMode]);
 
@@ -799,6 +864,10 @@ const App = () => {
                 return {
                   ...sheet,
                   celldata: newCells.length > 0 ? newCells : oldCells,
+                  showGridLines: normalizeShowGridLines(
+                    sheet.showGridLines ??
+                      sheetDataRef.current[index]?.showGridLines,
+                  ),
                 };
               });
 

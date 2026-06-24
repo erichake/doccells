@@ -19,6 +19,10 @@ export const exportToExcel = async (
     }
     return value;
   };
+  const normalizeShowGridLines = (showGridLines) => {
+    if (showGridLines == null) return true;
+    return !(showGridLines === "0" || showGridLines === 0 || showGridLines === false);
+  };
 
   const sheetsToExport = Array.isArray(sheetsData) && sheetsData.length > 0
     ? sheetsData
@@ -40,6 +44,7 @@ export const exportToExcel = async (
     const filter_select = sheet.filter_select;
 
     const worksheet = workbook.addWorksheet(name);
+    worksheet.views = [{ showGridLines: normalizeShowGridLines(sheet.showGridLines) }];
 
     // Déclarer les dimensions par défaut FortuneSheet dans le fichier Excel
     // pour que le ré-import reconstruise les positions d'images correctement.

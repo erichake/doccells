@@ -706,6 +706,10 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
       } else {
         value = escapeCharacter(value);
         cellValue.v = value;
+        const displayValue = this.getGeneralNumberDisplayValue(value, cellValue.ct);
+        if (displayValue !== value) {
+          cellValue.m = displayValue;
+        }
       }
     }
     if (quotePrefix != null) {
@@ -720,6 +724,16 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
       .replace(/&#13;/g, "\r")
       .replace(/&#10;/g, "\n");
     return text;
+  }
+  getGeneralNumberDisplayValue(value, cellFormat) {
+    const format = cellFormat?.fa;
+    if (format != null && format !== "General") {
+      return value;
+    }
+    if (!/^-?\d+\.0+$/.test(value)) {
+      return value;
+    }
+    return value.replace(/\.0+$/, "");
   }
   getBackgroundByFill(fill, clrScheme) {
     let patternFills = fill.getInnerElements("patternFill");
