@@ -10100,7 +10100,8 @@ module.exports = {
     noHide: "Impossible de masquer, il doit rester au moins un onglet de feuille",
     chartEditNoOpt: "Cette opération n'est pas autorisée en mode d'édition de graphique !",
     sheetNameSpecCharError: "Le nom ne peut pas contenir : [ ] : ? * / ' \"",
-    sheetNamecannotIsEmptyError: "Le nom de la feuille ne peut pas être vide"
+    sheetNamecannotIsEmptyError: "Le nom de la feuille ne peut pas être vide",
+    text: "Feuille"
   },
   conditionformat: {
     conditionformat_greaterThan: "Format conditionnel - Supérieur à",
@@ -10226,7 +10227,7 @@ module.exports = {
     text: "Cell range",
     value: "cellrange"
   }, {
-    text: "Sheet",
+    text: "Feuille",
     value: "sheet"
   }],
   dataVerification: {

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { Workbook } from "@fortune-sheet/react";
 import { transformExcelToFortune } from "./lib/FortuneSheetExcel/main.js";
 import { exportToExcel } from "./utils/exportToExcel.js";
@@ -10,6 +10,35 @@ const detectedLang =
     ? navigator.language
     : (SUPPORTED_LANGS.find((l) => navigator.language.startsWith(l.split("-")[0])) ?? "en");
 const t = customLocales[detectedLang] ?? customLocales["en"];
+const DEFAULT_COLUMN_WIDTH = 99;
+const DEFAULT_SHEET_NAME_RE = /^(Sheet|Feuille|Hoja|工作表)\d+$/;
+const sheetPrefix =
+  {
+    "zh-CN": "工作表",
+    "zh-TW": "工作表",
+    en: "Sheet",
+    "fr-FR": "Feuille",
+    "es-ES": "Hoja",
+  }[detectedLang] ?? "Sheet";
+
+const isDefaultSheetName = (name) =>
+  !name || DEFAULT_SHEET_NAME_RE.test(name);
+
+const getDefaultSheetNumber = (name, fallback) => {
+  const match = String(name || "").match(/\d+$/);
+  return match ? Number(match[0]) : fallback;
+};
+
+const getAvailableDefaultSheetName = (sheets, preferredNumber) => {
+  const usedNames = new Set((sheets || []).map((sheet) => sheet?.name));
+  let number = Math.max(1, preferredNumber || 1);
+  let name = `${sheetPrefix}${number}`;
+  while (usedNames.has(name)) {
+    number += 1;
+    name = `${sheetPrefix}${number}`;
+  }
+  return name;
+};
 
 const dataToCelldata = (data) => {
   const celldata = [];
@@ -213,18 +242,6 @@ const App = () => {
       });
 
       formulasRef.current = formulas;
-
-      const sheetPrefix =
-        {
-          "zh-CN": "工作表",
-          "zh-TW": "工作表",
-          en: "Sheet",
-          "fr-FR": "Feuille",
-          "es-ES": "Hoja",
-        }[detectedLang] ?? "Sheet";
-
-      const isDefaultSheetName = (name) =>
-        !name || /^(Sheet|Feuille|Hoja|工作表)\d+$/.test(name);
 
       // Convertit les images du format importeur Excel (objet keyed avec .default)
       // vers le tableau {id, src, left, top, width, height} attendu par FortuneSheet
@@ -630,6 +647,34 @@ const App = () => {
     return () => observer.disconnect();
   }, [addButtons]);
 
+  const workbookHooks = useMemo(() => ({
+    beforeAddSheet: (sheet) => {
+      if (!isDefaultSheetName(sheet?.name)) return;
+      const preferredNumber = getDefaultSheetNumber(
+        sheet?.name,
+        (sheet?.order ?? sheetDataRef.current.length) + 1,
+      );
+      sheet.name = getAvailableDefaultSheetName(
+        sheetDataRef.current,
+        preferredNumber,
+      );
+    },
+    afterAddSheet: (sheet) => {
+      if (!isDefaultSheetName(sheet?.name) || sheet?.name?.startsWith(sheetPrefix)) {
+        return;
+      }
+      const preferredNumber = getDefaultSheetNumber(
+        sheet?.name,
+        (sheet?.order ?? sheetDataRef.current.length) + 1,
+      );
+      const name = getAvailableDefaultSheetName(
+        sheetDataRef.current,
+        preferredNumber,
+      );
+      requestAnimationFrame(() => workbookRef.current?.setSheetName(name));
+    },
+  }), []);
+
   return sheetData.length !== 0 ? (
     <>
       <input
@@ -655,6 +700,8 @@ const App = () => {
           ref={workbookRef}
           data={sheetData}
           lang={detectedLang}
+          defaultColWidth={DEFAULT_COLUMN_WIDTH}
+          hooks={workbookHooks}
           onChange={(newData) => {
             if (Array.isArray(newData) && newData.length > 0) {
               const updatedData = newData.map((sheet, index) => {

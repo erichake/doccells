@@ -296,6 +296,46 @@ const NEW5 = `  str += 1;
   return null;
 }`;
 
+// Patch 6: generated sheet names use the active locale prefix.
+// Upstream always returns "SheetN"; this uses sheetconfig.text so French creates
+// Feuille2 while still counting existing SheetN names from older workbooks.
+const OLD6 = `function generateRandomSheetName(file, isPivotTable, ctx) {
+  var index = file.length;
+  var locale_pivotTable = locale(ctx).pivotTable;
+  var title = locale_pivotTable.title;
+  for (var i = 0; i < file.length; i += 1) {
+    if (file[i].name.indexOf("Sheet") > -1 || file[i].name.indexOf(title) > -1) {
+      var suffix = parseFloat(file[i].name.replace("Sheet", "").replace(title, ""));
+      if (!Number.isNaN(suffix) && Math.ceil(suffix) > index) {
+        index = Math.ceil(suffix);
+      }
+    }
+  }
+  if (isPivotTable) {
+    return title + (index + 1);
+  }
+  return "Sheet".concat(index + 1);
+}`;
+
+const NEW6 = `function generateRandomSheetName(file, isPivotTable, ctx) {
+  var index = file.length;
+  var locale_pivotTable = locale(ctx).pivotTable;
+  var title = locale_pivotTable.title;
+  var sheetTitle = locale(ctx).sheetconfig.text || "Sheet";
+  for (var i = 0; i < file.length; i += 1) {
+    if (file[i].name.indexOf("Sheet") > -1 || file[i].name.indexOf(sheetTitle) > -1 || file[i].name.indexOf(title) > -1) {
+      var suffix = parseFloat(file[i].name.replace("Sheet", "").replace(sheetTitle, "").replace(title, ""));
+      if (!Number.isNaN(suffix) && Math.ceil(suffix) > index) {
+        index = Math.ceil(suffix);
+      }
+    }
+  }
+  if (isPivotTable) {
+    return title + (index + 1);
+  }
+  return "".concat(sheetTitle).concat(index + 1);
+}`;
+
 // Groups: each group has variants, exactly one must match per bundle
 const PATCH_GROUPS = [
   { name: "single-cell header fix",    variants: [{ old: OLD1, new: NEW1 }] },
@@ -303,6 +343,7 @@ const PATCH_GROUPS = [
   { name: "filter values blank label fix", variants: [{ old: OLD3, new: NEW3 }] },
   { name: "sort respects active filter", variants: [{ old: OLD4, new: NEW4 }] },
   { name: "filter-dropdown sort respects active filter", variants: [{ old: OLD5, new: NEW5 }] },
+  { name: "localized generated sheet names", variants: [{ old: OLD6, new: NEW6 }] },
 ];
 
 let allPatched = 0;
