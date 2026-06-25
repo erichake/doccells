@@ -271,28 +271,35 @@ const App = () => {
         return result.length > 0 ? result : undefined;
       };
 
-      const formattedData = fortuneData.sheets.map((sheet, index) => ({
-        name: isDefaultSheetName(sheet.name)
-          ? `${sheetPrefix}${index + 1}`
-          : sheet.name,
-        id: index.toString(),
-        status: 1,
-        order: index,
-        celldata: sheet.celldata || [],
-        filter: sheet.filter,
-        filter_select: sheet.filter_select,
-        showGridLines: normalizeShowGridLines(sheet.showGridLines),
-        config: {
-          columnlen: sheet.config?.columnlen || {},
-          rowlen: sheet.config?.rowlen || {},
-          colhidden: sheet.config?.colhidden,
-          rowhidden: sheet.config?.rowhidden,
-          borderInfo: sheet.config?.borderInfo || [],
-          merge: sheet.config?.merge || {},
-          authority: sheet.config?.authority,
-        },
-        images: convertImages(sheet.images),
-      }));
+      const formattedData = fortuneData.sheets.map((sheet, index) => {
+        const sheetId = index.toString();
+        const calcChain = Array.isArray(sheet.calcChain)
+          ? sheet.calcChain.map((entry) => ({ ...entry, id: sheetId }))
+          : undefined;
+        return {
+          name: isDefaultSheetName(sheet.name)
+            ? `${sheetPrefix}${index + 1}`
+            : sheet.name,
+          id: sheetId,
+          status: 1,
+          order: index,
+          celldata: sheet.celldata || [],
+          calcChain,
+          filter: sheet.filter,
+          filter_select: sheet.filter_select,
+          showGridLines: normalizeShowGridLines(sheet.showGridLines),
+          config: {
+            columnlen: sheet.config?.columnlen || {},
+            rowlen: sheet.config?.rowlen || {},
+            colhidden: sheet.config?.colhidden,
+            rowhidden: sheet.config?.rowhidden,
+            borderInfo: sheet.config?.borderInfo || [],
+            merge: sheet.config?.merge || {},
+            authority: sheet.config?.authority,
+          },
+          images: convertImages(sheet.images),
+        };
+      });
       const normalizedData = isWorkbookProtected(formattedData)
         ? setWorkbookProtection(formattedData, 1)
         : formattedData;
