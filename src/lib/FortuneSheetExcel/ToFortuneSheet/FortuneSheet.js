@@ -196,6 +196,8 @@ export class FortuneSheet extends FortuneSheetBase {
     this.dataVerification = this.generateConfigDataValidations();
     // hyperlink config
     this.hyperlink = this.generateConfigHyperlinks();
+    // conditional formatting config
+    this.customConditionalFormatting = this.generateCustomConditionalFormatting();
     // sheet protection
     const sheetProtectionEls = this.readXml.getElementsByTagName("sheetProtection", this.sheetFile);
     if (sheetProtectionEls != null && sheetProtectionEls.length > 0) {
@@ -454,6 +456,229 @@ export class FortuneSheet extends FortuneSheetBase {
         }
       }
     }
+  }
+  decodeConditionalFormulaText(value) {
+    return String(value || "")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&amp;/g, "&")
+      .replace(/&quot;/g, '"')
+      .replace(/^=/, "")
+      .trim();
+  }
+  getColumnNameFromIndex(index) {
+    let name = "";
+    let current = index + 1;
+    while (current > 0) {
+      current--;
+      name = String.fromCharCode(65 + (current % 26)) + name;
+      current = Math.floor(current / 26);
+    }
+    return name;
+  }
+  getConditionalRangeText(range) {
+    const start = `${this.getColumnNameFromIndex(range.column[0])}${range.row[0] + 1}`;
+    const end = `${this.getColumnNameFromIndex(range.column[1])}${range.row[1] + 1}`;
+    return start === end ? start : `${start}:${end}`;
+  }
+  getConditionalFormulaValues(ruleElement) {
+    const formulaElements = ruleElement.getInnerElements("formula");
+    if (formulaElements == null) return [];
+    return formulaElements.map((formula) =>
+      this.decodeConditionalFormulaText(formula.value),
+    );
+  }
+  cleanConditionalFormulaValue(value) {
+    const text = this.decodeConditionalFormulaText(value);
+    if (
+      (text.startsWith('"') && text.endsWith('"')) ||
+      (text.startsWith("'") && text.endsWith("'"))
+    ) {
+      return text.substring(1, text.length - 1).replace(/""/g, '"');
+    }
+    return text;
+  }
+  parseConditionalTarget(value) {
+    const text = this.cleanConditionalFormulaValue(value).replace(/\$/g, "");
+    const cellMatch = text.match(/^([A-Z]+)(\d+)$/i);
+    if (cellMatch) {
+      return {
+        compareType: "cell",
+        reference: `${cellMatch[1].toUpperCase()}${cellMatch[2]}`,
+      };
+    }
+    return { compareType: "value", value: text };
+  }
+  getConditionalDxfStyle(dxfId) {
+    const dxfs = this.styles["dxfs"] || [];
+    const dxf = dxfId == null ? null : dxfs[parseInt(dxfId)];
+    const style = {};
+    if (dxf == null) return style;
+
+    const font = dxf.getInnerElements("font");
+    const fontColor =
+      font != null && font[0] ? font[0].getInnerElements("color") : null;
+    if (fontColor != null && fontColor[0]) {
+      style.textColor = getColor(fontColor[0], this.styles, "t");
+    }
+
+    const fill = dxf.getInnerElements("fill");
+    const patternFill =
+      fill != null && fill[0] ? fill[0].getInnerElements("patternFill") : null;
+    if (patternFill != null && patternFill[0]) {
+      const fgColor = patternFill[0].getInnerElements("fgColor");
+      const bgColor = patternFill[0].getInnerElements("bgColor");
+      const colorElement =
+        fgColor != null && fgColor[0]
+          ? fgColor[0]
+          : bgColor != null && bgColor[0]
+            ? bgColor[0]
+            : null;
+      if (colorElement != null) {
+        style.backgroundColor = getColor(colorElement, this.styles, "b");
+      }
+    }
+
+    return style;
+  }
+  getConditionalTextContainsValue(ruleElement, formulaValues) {
+    const text = getXmlAttibute(ruleElement.attributeList, "text", null);
+    if (text != null) return text;
+    const formula = formulaValues[0] || "";
+    const match = formula.match(/SEARCH\("((?:[^"]|"")*)"/i);
+    return match ? match[1].replace(/""/g, '"') : "";
+  }
+  parseConditionalExpressionRule(ruleElement, range, style, id) {
+    const formulaValues = this.getConditionalFormulaValues(ruleElement);
+    const formula = formulaValues[0] || "";
+    const comparison = formula.match(
+      /^\$?([A-Z]+)\$?(\d+)\s*(<>|[<>=])\s*\$?([A-Z]+)\$?(\d+)$/i,
+    );
+    if (comparison == null) return null;
+
+    const leftRow = parseInt(comparison[2]);
+    const rightRow = parseInt(comparison[5]);
+    const conditionMap = {
+      ">": "greaterThan",
+      "<": "lessThan",
+      "=": "equal",
+      "<>": "notEqual",
+    };
+    if (leftRow !== rightRow || !conditionMap[comparison[3]]) return null;
+
+    return {
+      id,
+      enabled: true,
+      rangeText: this.getConditionalRangeText(range),
+      range,
+      condition: conditionMap[comparison[3]],
+      compareType: "sameRowColumn",
+      value: "",
+      value2: "",
+      reference: comparison[4].toUpperCase(),
+      textColor: style.textColor,
+      backgroundColor: style.backgroundColor,
+    };
+  }
+  parseConditionalCellIsRule(ruleElement, range, style, id) {
+    const operator = getXmlAttibute(ruleElement.attributeList, "operator", null);
+    const conditionMap = {
+      greaterThan: "greaterThan",
+      lessThan: "lessThan",
+      equal: "equal",
+      notEqual: "notEqual",
+      between: "between",
+    };
+    const condition = conditionMap[operator];
+    if (!condition) return null;
+    const formulaValues = this.getConditionalFormulaValues(ruleElement);
+    const firstTarget = this.parseConditionalTarget(formulaValues[0] || "");
+    const rule = {
+      id,
+      enabled: true,
+      rangeText: this.getConditionalRangeText(range),
+      range,
+      condition,
+      compareType: firstTarget.compareType,
+      value: firstTarget.value || "",
+      value2: "",
+      reference: firstTarget.reference || "",
+      textColor: style.textColor,
+      backgroundColor: style.backgroundColor,
+    };
+    if (condition === "between") {
+      rule.compareType = "value";
+      rule.value = this.cleanConditionalFormulaValue(formulaValues[0] || "");
+      rule.value2 = this.cleanConditionalFormulaValue(formulaValues[1] || "");
+      rule.reference = "";
+    }
+    return rule;
+  }
+  parseConditionalContainsTextRule(ruleElement, range, style, id) {
+    const formulaValues = this.getConditionalFormulaValues(ruleElement);
+    return {
+      id,
+      enabled: true,
+      rangeText: this.getConditionalRangeText(range),
+      range,
+      condition: "textContains",
+      compareType: "value",
+      value: this.getConditionalTextContainsValue(ruleElement, formulaValues),
+      value2: "",
+      reference: "",
+      textColor: style.textColor,
+      backgroundColor: style.backgroundColor,
+    };
+  }
+  generateCustomConditionalFormatting() {
+    const conditionalFormattingElements = this.readXml.getElementsByTagName(
+      "conditionalFormatting",
+      this.sheetFile,
+    );
+    const rules = [];
+    if (conditionalFormattingElements == null) return rules;
+
+    for (let i = 0; i < conditionalFormattingElements.length; i++) {
+      const conditionalFormatting = conditionalFormattingElements[i];
+      const sqref = getXmlAttibute(
+        conditionalFormatting.attributeList,
+        "sqref",
+        null,
+      );
+      if (!sqref) continue;
+
+      const cfRules = conditionalFormatting.getInnerElements("cfRule");
+      if (cfRules == null) continue;
+
+      const refs = sqref.split(/\s+/).filter(Boolean);
+      for (let refIndex = 0; refIndex < refs.length; refIndex++) {
+        const range = getcellrange(refs[refIndex], this.sheetList, this.id);
+        if (!range) continue;
+
+        for (let ruleIndex = 0; ruleIndex < cfRules.length; ruleIndex++) {
+          const cfRule = cfRules[ruleIndex];
+          const type = getXmlAttibute(cfRule.attributeList, "type", null);
+          const dxfId = getXmlAttibute(cfRule.attributeList, "dxfId", null);
+          const style = this.getConditionalDxfStyle(dxfId);
+          const id = `xlsx_cf_${this.id}_${i}_${refIndex}_${ruleIndex}`;
+          let rule = null;
+
+          if (type === "expression") {
+            rule = this.parseConditionalExpressionRule(cfRule, range, style, id);
+          } else if (type === "cellIs") {
+            rule = this.parseConditionalCellIsRule(cfRule, range, style, id);
+          } else if (type === "containsText") {
+            rule = this.parseConditionalContainsTextRule(cfRule, range, style, id);
+          }
+
+          if (rule != null && (rule.textColor || rule.backgroundColor)) {
+            rules.push(rule);
+          }
+        }
+      }
+    }
+
+    return rules;
   }
   getXdrValue(ele) {
     if (ele == null || ele.length == 0) {

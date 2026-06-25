@@ -23,19 +23,139 @@ export const exportToExcel = async (
     if (showGridLines == null) return true;
     return !(showGridLines === "0" || showGridLines === 0 || showGridLines === false);
   };
+  const columnToLetter = (idx) => {
+    let r = "";
+    let n = idx + 1;
+    while (n > 0) { n--; r = String.fromCharCode(65 + (n % 26)) + r; n = Math.floor(n / 26); }
+    return r;
+  };
+  const columnNameToIndex = (name) => {
+    const text = String(name || "").replace(/[^A-Za-z]/g, "").toUpperCase();
+    if (!text) return null;
+    let value = 0;
+    for (const char of text) value = value * 26 + char.charCodeAt(0) - 64;
+    return value - 1;
+  };
+  const rangeToExcelRef = (range) => {
+    if (!range?.row || !range?.column) return null;
+    const start = `${columnToLetter(range.column[0])}${range.row[0] + 1}`;
+    const end = `${columnToLetter(range.column[1])}${range.row[1] + 1}`;
+    return start === end ? start : `${start}:${end}`;
+  };
+  const absoluteCellRef = (text) => {
+    const match = String(text || "").trim().replace(/\$/g, "").match(/^([A-Za-z]+)(\d+)$/);
+    if (!match) return null;
+    return `$${match[1].toUpperCase()}$${match[2]}`;
+  };
+  const cfStyle = (rule) => {
+    const style = {};
+    if (rule.textColor) {
+      style.font = { color: { argb: convertColor(rule.textColor) } };
+    }
+    if (rule.backgroundColor) {
+      style.fill = {
+        type: "pattern",
+        pattern: "solid",
+        bgColor: { argb: convertColor(rule.backgroundColor) },
+        fgColor: { argb: convertColor(rule.backgroundColor) },
+      };
+    }
+    return style;
+  };
+  const getFixedFormulaValue = (value) => {
+    if (typeof value === "number") return String(value);
+    const parsed = Number(String(value || "").replace(",", "."));
+    if (String(value || "").trim() !== "" && Number.isFinite(parsed)) {
+      return String(parsed);
+    }
+    return `"${String(value || "").replace(/"/g, '""')}"`;
+  };
+  const getConditionalFormattingRule = (rule, priority) => {
+    const style = cfStyle(rule);
+    if (!Object.keys(style).length) return null;
+    const topLeft = `${columnToLetter(rule.range.column[0])}${rule.range.row[0] + 1}`;
+    const opMap = {
+      greaterThan: ">",
+      lessThan: "<",
+      equal: "=",
+      notEqual: "<>",
+    };
+    if (rule.condition === "textContains") {
+      const text = String(rule.value || "").replace(/"/g, '""');
+      return {
+        type: "containsText",
+        operator: "containsText",
+        text,
+        priority,
+        formulae: [`NOT(ISERROR(SEARCH("${text}",${topLeft})))`],
+        style,
+      };
+    }
+    if (rule.condition === "between") {
+      return {
+        type: "cellIs",
+        operator: "between",
+        priority,
+        formulae: [getFixedFormulaValue(rule.value), getFixedFormulaValue(rule.value2)],
+        style,
+      };
+    }
+    if (!opMap[rule.condition]) return null;
+    if (rule.compareType === "sameRowColumn") {
+      const column = columnNameToIndex(rule.reference);
+      if (column == null) return null;
+      const compareRef = `$${columnToLetter(column)}${rule.range.row[0] + 1}`;
+      return {
+        type: "expression",
+        priority,
+        formulae: [`${topLeft}${opMap[rule.condition]}${compareRef}`],
+        style,
+      };
+    }
+    const formulae =
+      rule.compareType === "cell"
+        ? [absoluteCellRef(rule.reference)]
+        : [getFixedFormulaValue(rule.value)];
+    if (!formulae[0]) return null;
+    return {
+      type: "cellIs",
+      operator:
+        rule.condition === "greaterThan"
+          ? "greaterThan"
+          : rule.condition === "lessThan"
+            ? "lessThan"
+            : rule.condition === "notEqual"
+              ? "notEqual"
+              : "equal",
+      priority,
+      formulae,
+      style,
+    };
+  };
+  const isCellInRuleRange = (r, c, rule) =>
+    rule?.range?.row &&
+    rule?.range?.column &&
+    r >= rule.range.row[0] &&
+    r <= rule.range.row[1] &&
+    c >= rule.range.column[0] &&
+    c <= rule.range.column[1];
+  const stripConditionalDisplayStyle = (v, r, c, rules) => {
+    if (!v || typeof v !== "object") return v;
+    const isInConditionalRange = (rules || []).some((rule) =>
+      rule.enabled !== false && isCellInRuleRange(r, c, rule),
+    );
+    if (!isInConditionalRange) return v;
+    const cleanValue = { ...v };
+    delete cleanValue.fc;
+    delete cleanValue.bg;
+    return cleanValue;
+  };
 
   const sheetsToExport = Array.isArray(sheetsData) && sheetsData.length > 0
     ? sheetsData
     : [{ name: "Feuille1", celldata: [], config: {} }];
 
   const workbook = new ExcelJS.Workbook();
-
-  const colToLetter = (idx) => {
-    let r = "";
-    let n = idx + 1;
-    while (n > 0) { n--; r = String.fromCharCode(65 + (n % 26)) + r; n = Math.floor(n / 26); }
-    return r;
-  };
 
   for (let sheetIndex = 0; sheetIndex < sheetsToExport.length; sheetIndex++) {
     const sheet = sheetsToExport[sheetIndex] || {};
@@ -63,8 +183,8 @@ export const exportToExcel = async (
     if (filter_select) {
       const headerRow = filter_select.row[0] + 1;
       const endRow = filter_select.row[1] + 1;
-      const startColLetter = colToLetter(filter_select.column[0]);
-      const endColLetter = colToLetter(filter_select.column[1]);
+      const startColLetter = columnToLetter(filter_select.column[0]);
+      const endColLetter = columnToLetter(filter_select.column[1]);
       worksheet.autoFilter = `${startColLetter}${headerRow}:${endColLetter}${endRow}`;
     }
 
@@ -96,6 +216,12 @@ export const exportToExcel = async (
     }
 
     (celldata || []).forEach(({ r, c, v }) => {
+      const styleValue = stripConditionalDisplayStyle(
+        v,
+        r,
+        c,
+        sheet.customConditionalFormatting,
+      );
       // Récupération et modification d'une cellule spécifique
       const cell = worksheet.getCell(r + 1, c + 1);
       const formula = v?.VF?.f || v?.f;
@@ -114,24 +240,31 @@ export const exportToExcel = async (
 
       let cellStyle = {};
 
-      if (v?.bg) {
+      if (styleValue?.bg) {
         // Remplissage des cellules avec une couleur de fond
         cellStyle.fill = {
           type: "pattern",
           pattern: "solid",
-          fgColor: { argb: convertColor(v.bg) },
+          fgColor: { argb: convertColor(styleValue.bg) },
         };
       }
 
-      if (v?.fc || v?.fs || v?.ff || v?.bl || v?.it || v?.ul) {
+      if (
+        styleValue?.fc ||
+        styleValue?.fs ||
+        styleValue?.ff ||
+        styleValue?.bl ||
+        styleValue?.it ||
+        styleValue?.ul
+      ) {
         // Définition du style de police (gras, italique, taille...)
         cellStyle.font = {
-          name: v.ff || "Arial",
-          size: v.fs ? parseInt(v.fs) : 11,
-          bold: !!v.bl,
-          italic: !!v.it,
-          underline: v.ul ? "single" : false,
-          color: v.fc ? { argb: convertColor(v.fc) } : null,
+          name: styleValue.ff || "Arial",
+          size: styleValue.fs ? parseInt(styleValue.fs) : 11,
+          bold: !!styleValue.bl,
+          italic: !!styleValue.it,
+          underline: styleValue.ul ? "single" : false,
+          color: styleValue.fc ? { argb: convertColor(styleValue.fc) } : null,
         };
       }
       if (
@@ -337,6 +470,20 @@ export const exportToExcel = async (
 
         worksheet.addImage(imageId, { tl, br });
       }
+    }
+    if (Array.isArray(sheet.customConditionalFormatting)) {
+      sheet.customConditionalFormatting
+        .filter((rule) => rule.enabled !== false && rule.range)
+        .forEach((rule, ruleIndex) => {
+          const ref = rangeToExcelRef(rule.range);
+          if (!ref) return;
+          const cfRule = getConditionalFormattingRule(rule, ruleIndex + 1);
+          if (!cfRule) return;
+          worksheet.addConditionalFormatting({
+            ref,
+            rules: [cfRule],
+          });
+        });
     }
   }
 

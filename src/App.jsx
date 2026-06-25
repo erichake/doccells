@@ -4,6 +4,8 @@ import { transformExcelToFortune } from "./lib/FortuneSheetExcel/main.js";
 import { exportToExcel } from "./utils/exportToExcel.js";
 import { customLocales } from "./locales/custom.js";
 
+/* eslint-disable react/prop-types */
+
 const SUPPORTED_LANGS = ["zh-CN", "zh-TW", "en", "fr-FR", "es-ES"];
 const detectedLang =
   SUPPORTED_LANGS.includes(navigator.language)
@@ -12,6 +14,32 @@ const detectedLang =
 const t = customLocales[detectedLang] ?? customLocales["en"];
 const DEFAULT_COLUMN_WIDTH = 99;
 const DEFAULT_SHEET_NAME_RE = /^(Sheet|Feuille|Hoja|工作表)\d+$/;
+const CONDITIONAL_RULE_TYPES = [
+  { value: "lessThan", label: "est inferieure a", symbol: "<" },
+  { value: "greaterThan", label: "est superieure a", symbol: ">" },
+  { value: "equal", label: "est egale a", symbol: "=" },
+  { value: "notEqual", label: "est differente de", symbol: "!=" },
+  { value: "between", label: "est comprise entre", symbol: "[]" },
+  { value: "textContains", label: "contient le texte", symbol: "abc" },
+];
+const CONDITIONAL_COMPARE_TYPES = [
+  { value: "value", label: "une valeur fixe" },
+  { value: "cell", label: "une cellule fixe" },
+  { value: "sameRowColumn", label: "une colonne meme ligne" },
+];
+const DEFAULT_CONDITIONAL_RULE = {
+  id: "",
+  enabled: true,
+  rangeText: "A1",
+  range: { row: [0, 0], column: [0, 0] },
+  condition: "lessThan",
+  compareType: "value",
+  value: "",
+  value2: "",
+  reference: "",
+  textColor: "#d93025",
+  backgroundColor: "",
+};
 const sheetPrefix =
   {
     "zh-CN": "工作表",
@@ -77,6 +105,305 @@ const dataToCelldata = (data) => {
     });
   });
   return celldata;
+};
+
+const columnToName = (index) => {
+  let name = "";
+  let value = index + 1;
+  while (value > 0) {
+    value -= 1;
+    name = String.fromCharCode(65 + (value % 26)) + name;
+    value = Math.floor(value / 26);
+  }
+  return name;
+};
+
+const columnNameToIndex = (name) => {
+  const text = String(name || "").replace(/[^A-Za-z]/g, "").toUpperCase();
+  if (!text) return null;
+  let value = 0;
+  for (const char of text) {
+    value = value * 26 + char.charCodeAt(0) - 64;
+  }
+  return value - 1;
+};
+
+const cellToText = (row, column) => `${columnToName(column)}${row + 1}`;
+
+const rangeToText = (range) => {
+  if (!range?.row || !range?.column) return "A1";
+  const start = cellToText(range.row[0], range.column[0]);
+  const end = cellToText(range.row[1], range.column[1]);
+  return start === end ? start : `${start}:${end}`;
+};
+
+const parseCellReference = (text) => {
+  const match = String(text || "")
+    .trim()
+    .replace(/\$/g, "")
+    .match(/^([A-Za-z]+)(\d+)$/);
+  if (!match) return null;
+  const column = columnNameToIndex(match[1]);
+  const row = Number(match[2]) - 1;
+  if (column == null || row < 0) return null;
+  return { row, column };
+};
+
+const parseRangeText = (text) => {
+  const clean = String(text || "").trim().replace(/\$/g, "");
+  const parts = clean.split(":");
+  if (parts.length > 2) return null;
+  const start = parseCellReference(parts[0]);
+  const end = parseCellReference(parts[1] || parts[0]);
+  if (!start || !end) return null;
+  return {
+    row: [Math.min(start.row, end.row), Math.max(start.row, end.row)],
+    column: [
+      Math.min(start.column, end.column),
+      Math.max(start.column, end.column),
+    ],
+  };
+};
+
+const getCellKey = (row, column) => `${row}_${column}`;
+
+const getCellDisplayValue = (cell) => {
+  const value = cell?.v;
+  if (!value || typeof value !== "object") return value;
+  return value.v ?? value.m ?? "";
+};
+
+const toComparableNumber = (value) => {
+  if (typeof value === "number") return Number.isFinite(value) ? value : null;
+  if (typeof value === "string" && value.trim() !== "") {
+    const parsed = Number(value.replace(",", "."));
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+  return null;
+};
+
+const compareConditionalValue = (cellValue, ruleValue, ruleValue2, condition) => {
+  if (condition === "textContains") {
+    return String(cellValue ?? "")
+      .toLowerCase()
+      .includes(String(ruleValue ?? "").toLowerCase());
+  }
+
+  const leftNumber = toComparableNumber(cellValue);
+  const rightNumber = toComparableNumber(ruleValue);
+  const rightNumber2 = toComparableNumber(ruleValue2);
+
+  if (condition === "equal") {
+    if (leftNumber != null && rightNumber != null) return leftNumber === rightNumber;
+    return String(cellValue ?? "") === String(ruleValue ?? "");
+  }
+  if (condition === "notEqual") {
+    if (leftNumber != null && rightNumber != null) return leftNumber !== rightNumber;
+    return String(cellValue ?? "") !== String(ruleValue ?? "");
+  }
+
+  if (leftNumber == null || rightNumber == null) return false;
+  if (condition === "greaterThan") return leftNumber > rightNumber;
+  if (condition === "lessThan") return leftNumber < rightNumber;
+  if (condition === "between") {
+    if (rightNumber2 == null) return false;
+    const min = Math.min(rightNumber, rightNumber2);
+    const max = Math.max(rightNumber, rightNumber2);
+    return leftNumber >= min && leftNumber <= max;
+  }
+  return false;
+};
+
+const cloneSheetForConditionalFormatting = (sheet) => ({
+  ...sheet,
+  celldata: (sheet.celldata || dataToCelldata(sheet.data)).map((cell) => ({
+    ...cell,
+    v:
+      cell.v && typeof cell.v === "object"
+        ? { ...cell.v, ct: cell.v.ct ? { ...cell.v.ct } : cell.v.ct }
+        : cell.v,
+  })),
+});
+
+const resetConditionalFormattingCells = (sheet) => {
+  sheet.celldata.forEach((cell) => {
+    if (!cell.v || typeof cell.v !== "object" || !cell.v._dcCf) return;
+    const { baseFc, baseBg } = cell.v._dcCf;
+    if (baseFc == null) delete cell.v.fc;
+    else cell.v.fc = baseFc;
+    if (baseBg == null) delete cell.v.bg;
+    else cell.v.bg = baseBg;
+    delete cell.v._dcCf;
+  });
+};
+
+const clearConditionalDisplayStyles = (sheet, rules) => {
+  const touchedCells = new Set();
+  rules
+    .filter((rule) => rule.enabled !== false && rule.range)
+    .forEach((rule) => {
+      const { row, column } = rule.range;
+      for (let r = row[0]; r <= row[1]; r++) {
+        for (let c = column[0]; c <= column[1]; c++) {
+          touchedCells.add(getCellKey(r, c));
+        }
+      }
+    });
+
+  if (!touchedCells.size) return;
+
+  sheet.celldata.forEach((cell) => {
+    if (!touchedCells.has(getCellKey(cell.r, cell.c)) || !cell.v) return;
+    const v = cell.v;
+    if (typeof v !== "object") return;
+    delete v.fc;
+    delete v.bg;
+  });
+};
+
+const buildCellMap = (sheet) => {
+  const map = new Map();
+  sheet.celldata.forEach((cell) => {
+    map.set(getCellKey(cell.r, cell.c), cell);
+  });
+  return map;
+};
+
+const resolveRuleCompareValue = (rule, row, cellMap) => {
+  if (rule.condition === "between") {
+    return [rule.value, rule.value2];
+  }
+  if (rule.compareType === "cell") {
+    const ref = parseCellReference(rule.reference);
+    const refCell = ref ? cellMap.get(getCellKey(ref.row, ref.column)) : null;
+    return [getCellDisplayValue(refCell), null];
+  }
+  if (rule.compareType === "sameRowColumn") {
+    const column = columnNameToIndex(rule.reference);
+    const refCell =
+      column == null ? null : cellMap.get(getCellKey(row, column));
+    return [getCellDisplayValue(refCell), null];
+  }
+  return [rule.value, null];
+};
+
+const applyConditionalStyle = (cell, rule) => {
+  if (!cell.v || typeof cell.v !== "object") cell.v = {};
+  if (!cell.v._dcCf) {
+    cell.v._dcCf = {
+      baseFc: cell.v.fc ?? null,
+      baseBg: cell.v.bg ?? null,
+    };
+  }
+  if (rule.textColor) cell.v.fc = rule.textColor;
+  if (rule.backgroundColor) cell.v.bg = rule.backgroundColor;
+};
+
+const applyConditionalFormatting = (sheets) =>
+  sheets.map((originalSheet) => {
+    const sheet = cloneSheetForConditionalFormatting(originalSheet);
+    resetConditionalFormattingCells(sheet);
+    const rules = sheet.customConditionalFormatting || [];
+    if (!rules.length) return sheet;
+    clearConditionalDisplayStyles(sheet, rules);
+
+    const cellMap = buildCellMap(sheet);
+    rules
+      .filter((rule) => rule.enabled !== false && rule.range)
+      .forEach((rule) => {
+        const { row, column } = rule.range;
+        for (let r = row[0]; r <= row[1]; r++) {
+          for (let c = column[0]; c <= column[1]; c++) {
+            let cell = cellMap.get(getCellKey(r, c));
+            if (!cell) {
+              cell = { r, c, v: {} };
+              sheet.celldata.push(cell);
+              cellMap.set(getCellKey(r, c), cell);
+            }
+            const cellValue = getCellDisplayValue(cell);
+            const [value1, value2] = resolveRuleCompareValue(rule, r, cellMap);
+            if (
+              compareConditionalValue(cellValue, value1, value2, rule.condition)
+            ) {
+              applyConditionalStyle(cell, rule);
+            }
+          }
+        }
+      });
+
+    return sheet;
+  });
+
+const stripConditionalFormattingMarkers = (sheets) =>
+  sheets.map((sheet) => ({
+    ...sheet,
+    celldata: (sheet.celldata || []).map((cell) => {
+      if (!cell.v || typeof cell.v !== "object" || !cell.v._dcCf) return cell;
+      const v = { ...cell.v };
+      const { baseFc, baseBg } = v._dcCf;
+      if (baseFc == null) delete v.fc;
+      else v.fc = baseFc;
+      if (baseBg == null) delete v.bg;
+      else v.bg = baseBg;
+      delete v._dcCf;
+      return { ...cell, v };
+    }),
+  }));
+
+const describeConditionalRule = (rule) => {
+  const type = CONDITIONAL_RULE_TYPES.find((item) => item.value === rule.condition);
+  if (!type) return "";
+  if (rule.condition === "between") {
+    return `cellule entre ${rule.value || "..."} et ${rule.value2 || "..."}`;
+  }
+  if (rule.condition === "textContains") {
+    return `texte contient "${rule.value || ""}"`;
+  }
+  const compareLabel =
+    rule.compareType === "sameRowColumn"
+      ? `colonne ${String(rule.reference || "").toUpperCase()} meme ligne`
+      : rule.compareType === "cell"
+        ? `cellule ${String(rule.reference || "").toUpperCase()}`
+        : rule.value || "...";
+  return `cellule ${type.symbol} ${compareLabel}`;
+};
+
+const getRulePreviewStyle = (rule) => ({
+  color: rule.textColor || "#202124",
+  background: rule.backgroundColor || "#ffffff",
+});
+
+const createConditionalFormatApiCalls = (sheets) => {
+  const calls = [];
+  sheets.forEach((sheet) => {
+    const rules = sheet.customConditionalFormatting || [];
+    if (!rules.length) return;
+
+    const touchedCells = new Set();
+    rules
+      .filter((rule) => rule.enabled !== false && rule.range)
+      .forEach((rule) => {
+        const { row, column } = rule.range;
+        for (let r = row[0]; r <= row[1]; r++) {
+          for (let c = column[0]; c <= column[1]; c++) {
+            touchedCells.add(getCellKey(r, c));
+          }
+        }
+      });
+
+    const cellMap = buildCellMap(sheet);
+    touchedCells.forEach((key) => {
+      const [row, column] = key.split("_").map(Number);
+      const cellValue = cellMap.get(key)?.v;
+      const fc = cellValue && typeof cellValue === "object" ? cellValue.fc : undefined;
+      const bg = cellValue && typeof cellValue === "object" ? cellValue.bg : undefined;
+      const options = sheet.id != null ? { id: sheet.id } : {};
+
+      calls.push({ name: "setCellFormat", args: [row, column, "fc", fc, options] });
+      calls.push({ name: "setCellFormat", args: [row, column, "bg", bg, options] });
+    });
+  });
+  return calls;
 };
 
 const isSheetProtected = (sheet) =>
@@ -154,10 +481,329 @@ const normalizeImportedMerges = (sheet) => {
   sheet.celldata = celldata.filter((cell) => !("v" in cell && cell.v?.v === null));
 };
 
+const ConditionalFormattingDialog = ({
+  open,
+  sheetName,
+  rules,
+  initialRangeText,
+  onClose,
+  onSave,
+  onDelete,
+}) => {
+  const [editingId, setEditingId] = useState(null);
+  const [form, setForm] = useState(DEFAULT_CONDITIONAL_RULE);
+  const [error, setError] = useState("");
+
+  const resetForm = useCallback(() => {
+    const range = parseRangeText(initialRangeText) || DEFAULT_CONDITIONAL_RULE.range;
+    setEditingId(null);
+    setForm({
+      ...DEFAULT_CONDITIONAL_RULE,
+      id: `dc_cf_${Date.now()}`,
+      rangeText: rangeToText(range),
+      range,
+    });
+    setError("");
+  }, [initialRangeText]);
+
+  useEffect(() => {
+    if (open) resetForm();
+  }, [open, resetForm]);
+
+  const updateForm = (field, value) => {
+    setForm((current) => {
+      const next = { ...current, [field]: value };
+      if (field === "rangeText") {
+        const parsed = parseRangeText(value);
+        if (parsed) next.range = parsed;
+      }
+      if (field === "condition" && value === "between") {
+        next.compareType = "value";
+      }
+      if (field === "condition" && value === "textContains") {
+        next.compareType = "value";
+      }
+      return next;
+    });
+  };
+
+  const startEdit = (rule) => {
+    setEditingId(rule.id);
+    setForm({
+      ...DEFAULT_CONDITIONAL_RULE,
+      ...rule,
+      rangeText: rule.rangeText || rangeToText(rule.range),
+    });
+    setError("");
+  };
+
+  const validateForm = () => {
+    const range = parseRangeText(form.rangeText);
+    if (!range) return "La plage doit ressembler a A2:A100.";
+    if (form.condition === "between") {
+      if (form.value === "" || form.value2 === "") {
+        return "Indique deux valeurs pour la condition entre.";
+      }
+    } else if (form.condition === "textContains") {
+      if (!form.value) return "Indique le texte a rechercher.";
+    } else if (form.compareType === "cell") {
+      if (!parseCellReference(form.reference)) {
+        return "La cellule de comparaison doit ressembler a B1.";
+      }
+    } else if (form.compareType === "sameRowColumn") {
+      if (columnNameToIndex(form.reference) == null) {
+        return "La colonne de comparaison doit ressembler a B.";
+      }
+    } else if (form.value === "") {
+      return "Indique une valeur de comparaison.";
+    }
+    if (!form.textColor && !form.backgroundColor) {
+      return "Choisis au moins une couleur de texte ou de fond.";
+    }
+    return "";
+  };
+
+  const submitForm = (event) => {
+    event.preventDefault();
+    const validation = validateForm();
+    if (validation) {
+      setError(validation);
+      return;
+    }
+    const parsedRange = parseRangeText(form.rangeText);
+    const normalized = {
+      ...form,
+      id: editingId || form.id || `dc_cf_${Date.now()}`,
+      range: parsedRange,
+      rangeText: rangeToText(parsedRange),
+      reference:
+        form.compareType === "sameRowColumn"
+          ? String(form.reference || "").replace(/[^A-Za-z]/g, "").toUpperCase()
+          : form.reference,
+    };
+    onSave(normalized);
+    resetForm();
+  };
+
+  if (!open) return null;
+
+  const hasRules = rules.length > 0;
+  const compareOptions = CONDITIONAL_COMPARE_TYPES.filter(
+    (option) =>
+      form.condition !== "between" &&
+      (form.condition !== "textContains" || option.value === "value"),
+  );
+
+  return (
+    <div className="dc-cf-backdrop" role="presentation" onMouseDown={onClose}>
+      <section
+        className="dc-cf-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Formatage conditionnel"
+        onMouseDown={(event) => event.stopPropagation()}
+      >
+        <header className="dc-cf-header">
+          <div>
+            <h2>Formatage conditionnel</h2>
+            <p>{sheetName || "Feuille active"}</p>
+          </div>
+          <button className="dc-cf-icon-button" type="button" onClick={onClose}>
+            <span aria-hidden="true">x</span>
+          </button>
+        </header>
+
+        <div className="dc-cf-body">
+          <aside className="dc-cf-rules">
+            <div className="dc-cf-section-title">Regles appliquees</div>
+            {hasRules ? (
+              <div className="dc-cf-rule-list">
+                {rules.map((rule) => (
+                  <article
+                    className={`dc-cf-rule-card${
+                      editingId === rule.id ? " is-active" : ""
+                    }`}
+                    key={rule.id}
+                  >
+                    <div className="dc-cf-rule-main">
+                      <strong>{rule.rangeText || rangeToText(rule.range)}</strong>
+                      <span>{describeConditionalRule(rule)}</span>
+                    </div>
+                    <div className="dc-cf-rule-sample" style={getRulePreviewStyle(rule)}>
+                      Aa
+                    </div>
+                    <div className="dc-cf-rule-actions">
+                      <button type="button" onClick={() => startEdit(rule)}>
+                        Modifier
+                      </button>
+                      <button type="button" onClick={() => onDelete(rule.id)}>
+                        Supprimer
+                      </button>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className="dc-cf-empty">
+                Aucune regle pour cette feuille.
+              </div>
+            )}
+          </aside>
+
+          <form className="dc-cf-form" onSubmit={submitForm}>
+            <div className="dc-cf-section-title">
+              {editingId ? "Modifier la regle" : "Nouvelle regle"}
+            </div>
+
+            <label className="dc-cf-field">
+              <span>Appliquer a</span>
+              <input
+                value={form.rangeText}
+                onChange={(event) => updateForm("rangeText", event.target.value)}
+                placeholder="A2:A100"
+              />
+            </label>
+
+            <div className="dc-cf-field">
+              <span>Condition</span>
+              <div className="dc-cf-segmented">
+                {CONDITIONAL_RULE_TYPES.map((type) => (
+                  <button
+                    className={form.condition === type.value ? "is-active" : ""}
+                    key={type.value}
+                    type="button"
+                    onClick={() => updateForm("condition", type.value)}
+                  >
+                    {type.symbol}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <label className="dc-cf-field">
+              <span>Comparer a</span>
+              <select
+                value={form.compareType}
+                onChange={(event) => updateForm("compareType", event.target.value)}
+                disabled={form.condition === "between" || form.condition === "textContains"}
+              >
+                {compareOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            {form.condition === "between" ? (
+              <div className="dc-cf-pair">
+                <label className="dc-cf-field">
+                  <span>Valeur min</span>
+                  <input
+                    value={form.value}
+                    onChange={(event) => updateForm("value", event.target.value)}
+                    placeholder="0"
+                  />
+                </label>
+                <label className="dc-cf-field">
+                  <span>Valeur max</span>
+                  <input
+                    value={form.value2}
+                    onChange={(event) => updateForm("value2", event.target.value)}
+                    placeholder="10"
+                  />
+                </label>
+              </div>
+            ) : form.compareType === "cell" ? (
+              <label className="dc-cf-field">
+                <span>Cellule</span>
+                <input
+                  value={form.reference}
+                  onChange={(event) => updateForm("reference", event.target.value)}
+                  placeholder="B1"
+                />
+              </label>
+            ) : form.compareType === "sameRowColumn" ? (
+              <label className="dc-cf-field">
+                <span>Colonne meme ligne</span>
+                <input
+                  value={form.reference}
+                  onChange={(event) => updateForm("reference", event.target.value)}
+                  placeholder="B"
+                />
+              </label>
+            ) : (
+              <label className="dc-cf-field">
+                <span>{form.condition === "textContains" ? "Texte" : "Valeur"}</span>
+                <input
+                  value={form.value}
+                  onChange={(event) => updateForm("value", event.target.value)}
+                  placeholder={form.condition === "textContains" ? "retard" : "10"}
+                />
+              </label>
+            )}
+
+            <div className="dc-cf-colors">
+              <label className="dc-cf-color-field">
+                <span>Texte</span>
+                <input
+                  type="color"
+                  value={form.textColor || "#000000"}
+                  onChange={(event) => updateForm("textColor", event.target.value)}
+                />
+                <button
+                  type="button"
+                  onClick={() => updateForm("textColor", "")}
+                >
+                  Aucun
+                </button>
+              </label>
+              <label className="dc-cf-color-field">
+                <span>Fond</span>
+                <input
+                  type="color"
+                  value={form.backgroundColor || "#fff2cc"}
+                  onChange={(event) =>
+                    updateForm("backgroundColor", event.target.value)
+                  }
+                />
+                <button
+                  type="button"
+                  onClick={() => updateForm("backgroundColor", "")}
+                >
+                  Aucun
+                </button>
+              </label>
+            </div>
+
+            <div className="dc-cf-preview" style={getRulePreviewStyle(form)}>
+              Apercu de cellule
+            </div>
+
+            {error && <div className="dc-cf-error">{error}</div>}
+
+            <footer className="dc-cf-footer">
+              <button type="button" onClick={resetForm}>
+                Nouvelle
+              </button>
+              <button className="dc-cf-primary" type="submit">
+                {editingId ? "Enregistrer" : "Ajouter"}
+              </button>
+            </footer>
+          </form>
+        </div>
+      </section>
+    </div>
+  );
+};
+
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
   const [appMode, setAppMode] = useState("teacher");
   const [workbookKey, setWorkbookKey] = useState(0);
+  const [conditionalDialogOpen, setConditionalDialogOpen] = useState(false);
+  const [conditionalSheetIndex, setConditionalSheetIndex] = useState(0);
+  const [conditionalInitialRange, setConditionalInitialRange] = useState("A1");
   const sheetDataRef = useRef([]);
   useEffect(() => {
     sheetDataRef.current = sheetData;
@@ -165,6 +811,7 @@ const App = () => {
 
   const workbookRef = useRef(null);
   const formulasRef = useRef({});
+  const syncingConditionalRef = useRef(false);
 
   // Ready state for external API (docshare iframe caller)
   const isReadyRef = useRef(false);
@@ -287,6 +934,7 @@ const App = () => {
           calcChain,
           filter: sheet.filter,
           filter_select: sheet.filter_select,
+          customConditionalFormatting: sheet.customConditionalFormatting || [],
           showGridLines: normalizeShowGridLines(sheet.showGridLines),
           config: {
             columnlen: sheet.config?.columnlen || {},
@@ -304,7 +952,7 @@ const App = () => {
         ? setWorkbookProtection(formattedData, 1)
         : formattedData;
 
-      setSheetData(normalizedData);
+      setSheetData(applyConditionalFormatting(normalizedData));
     }
   }, []);
 
@@ -375,6 +1023,91 @@ const App = () => {
     [loadFallback],
   );
 
+  const getActiveSheetIndex = useCallback(() => {
+    const wb = workbookRef.current;
+    const currentSheet = wb?.getSheet?.();
+    const sheets = wb?.getAllSheets?.() || sheetDataRef.current;
+    if (currentSheet?.id != null) {
+      const byId = sheets.findIndex((sheet) => sheet.id === currentSheet.id);
+      if (byId >= 0) return byId;
+    }
+    if (currentSheet?.name) {
+      const byName = sheets.findIndex((sheet) => sheet.name === currentSheet.name);
+      if (byName >= 0) return byName;
+    }
+    return 0;
+  }, []);
+
+  const getWorkbookSheetsForCommit = useCallback(() => {
+    const wb = workbookRef.current;
+    const liveSheets = wb?.getAllSheets?.() || sheetDataRef.current;
+    return liveSheets.map((sheet, index) => ({
+      ...sheet,
+      celldata: sheet.celldata || dataToCelldata(sheet.data),
+      customConditionalFormatting:
+        sheet.customConditionalFormatting ||
+        sheetDataRef.current[index]?.customConditionalFormatting ||
+        [],
+      showGridLines: normalizeShowGridLines(
+        sheet.showGridLines ?? sheetDataRef.current[index]?.showGridLines,
+      ),
+    }));
+  }, []);
+
+  const commitConditionalSheets = useCallback((sheets, { remount = true } = {}) => {
+    const formatted = applyConditionalFormatting(sheets);
+    syncingConditionalRef.current = true;
+    sheetDataRef.current = formatted;
+    setSheetData(formatted);
+    if (remount) setWorkbookKey((key) => key + 1);
+    requestAnimationFrame(() => {
+      syncingConditionalRef.current = false;
+    });
+  }, []);
+
+  const openConditionalDialog = useCallback(() => {
+    const sheetIndex = getActiveSheetIndex();
+    const selection = workbookRef.current?.getSelection?.();
+    const range = selection?.[selection.length - 1];
+    setConditionalSheetIndex(sheetIndex);
+    setConditionalInitialRange(range ? rangeToText(range) : "A1");
+    setConditionalDialogOpen(true);
+  }, [getActiveSheetIndex]);
+
+  const saveConditionalRule = useCallback(
+    (rule) => {
+      const sheets = getWorkbookSheetsForCommit();
+      const sheetIndex = Math.min(conditionalSheetIndex, sheets.length - 1);
+      if (sheetIndex < 0) return;
+      const currentRules = sheets[sheetIndex].customConditionalFormatting || [];
+      const exists = currentRules.some((item) => item.id === rule.id);
+      sheets[sheetIndex] = {
+        ...sheets[sheetIndex],
+        customConditionalFormatting: exists
+          ? currentRules.map((item) => (item.id === rule.id ? rule : item))
+          : [...currentRules, rule],
+      };
+      commitConditionalSheets(sheets);
+    },
+    [commitConditionalSheets, conditionalSheetIndex, getWorkbookSheetsForCommit],
+  );
+
+  const deleteConditionalRule = useCallback(
+    (ruleId) => {
+      const sheets = getWorkbookSheetsForCommit();
+      const sheetIndex = Math.min(conditionalSheetIndex, sheets.length - 1);
+      if (sheetIndex < 0) return;
+      sheets[sheetIndex] = {
+        ...sheets[sheetIndex],
+        customConditionalFormatting: (
+          sheets[sheetIndex].customConditionalFormatting || []
+        ).filter((rule) => rule.id !== ruleId),
+      };
+      commitConditionalSheets(sheets);
+    },
+    [commitConditionalSheets, conditionalSheetIndex, getWorkbookSheetsForCommit],
+  );
+
   // 🌐 Exposition des fonctions globales sur window pour pilotage externe
   useEffect(() => {
     window.whenDocCellsReady = () => waitUntilReady();
@@ -424,7 +1157,9 @@ const App = () => {
       });
 
     window.getExcelAsBase64 = async () => {
-      return await exportToExcel(sheetDataRef.current, { returnBase64: true });
+      return await exportToExcel(stripConditionalFormattingMarkers(sheetDataRef.current), {
+        returnBase64: true,
+      });
     };
 
     return () => {
@@ -456,6 +1191,7 @@ const App = () => {
     document.getElementById("custom-open-button")?.remove();
     document.getElementById("custom-export-button")?.remove();
     document.getElementById("custom-gridlines-button")?.remove();
+    document.getElementById("custom-conditional-format-button")?.remove();
     document.getElementById("custom-protect-sheet-button")?.remove();
 
     // 🔹 Création du bouton "Ouvrir..."
@@ -481,7 +1217,7 @@ const App = () => {
 
     exportButton.addEventListener("click", () => {
       if (sheetDataRef.current.length > 0) {
-        exportToExcel(sheetDataRef.current);
+        exportToExcel(stripConditionalFormattingMarkers(sheetDataRef.current));
       } else {
         console.error("❌ Aucune donnée à exporter !");
       }
@@ -535,6 +1271,19 @@ const App = () => {
 
     updateGridLinesButtonStyle();
     toolbar.insertBefore(gridLinesButton, exportButton.nextSibling);
+
+    // 🔹 Création du bouton "Formatage conditionnel"
+    const conditionalFormatButton = document.createElement("div");
+    conditionalFormatButton.id = "custom-conditional-format-button";
+    conditionalFormatButton.className = "fortune-toolbar-button fortune-toolbar-item";
+    conditionalFormatButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="5" width="16" height="14" rx="2" stroke="#222" stroke-width="1.4"/>
+<path d="M8 9h8M8 12h4" stroke="#222" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M8 16l2-2 2 2 4-4" stroke="#d93025" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<div class="fortune-tooltip">Formatage conditionnel</div>`;
+    conditionalFormatButton.addEventListener("click", openConditionalDialog);
+    toolbar.insertBefore(conditionalFormatButton, gridLinesButton.nextSibling);
 
     if (appMode !== "student") {
       // 🔹 Création du bouton "Protéger / Déprotéger la feuille"
@@ -590,9 +1339,9 @@ const App = () => {
       });
 
       updateProtectButtonStyle();
-      toolbar.insertBefore(protectSheetButton, gridLinesButton.nextSibling);
+      toolbar.insertBefore(protectSheetButton, conditionalFormatButton.nextSibling);
     }
-  }, [appMode]);
+  }, [appMode, openConditionalDialog]);
 
   // Bloque le redimensionnement colonnes/lignes quand la feuille est protégée
   useEffect(() => {
@@ -800,6 +1549,19 @@ const App = () => {
         }}
       />
 
+      <ConditionalFormattingDialog
+        open={conditionalDialogOpen}
+        sheetName={sheetDataRef.current[conditionalSheetIndex]?.name}
+        rules={
+          sheetDataRef.current[conditionalSheetIndex]?.customConditionalFormatting ||
+          []
+        }
+        initialRangeText={conditionalInitialRange}
+        onClose={() => setConditionalDialogOpen(false)}
+        onSave={saveConditionalRule}
+        onDelete={deleteConditionalRule}
+      />
+
       <Workbook
           key={workbookKey}
           ref={workbookRef}
@@ -808,6 +1570,7 @@ const App = () => {
           defaultColWidth={DEFAULT_COLUMN_WIDTH}
           hooks={workbookHooks}
           onChange={(newData) => {
+            if (syncingConditionalRef.current) return;
             if (Array.isArray(newData) && newData.length > 0) {
               const updatedData = newData.map((sheet, index) => {
                 const oldCells = sheetDataRef.current[index]?.celldata || [];
@@ -860,6 +1623,10 @@ const App = () => {
                 return {
                   ...sheet,
                   celldata: newCells.length > 0 ? newCells : oldCells,
+                  customConditionalFormatting:
+                    sheet.customConditionalFormatting ||
+                    sheetDataRef.current[index]?.customConditionalFormatting ||
+                    [],
                   showGridLines: normalizeShowGridLines(
                     sheet.showGridLines ??
                       sheetDataRef.current[index]?.showGridLines,
@@ -899,7 +1666,26 @@ const App = () => {
                 }
               });
 
-              sheetDataRef.current = updatedData;
+              const hasConditionalRules = updatedData.some(
+                (sheet) => (sheet.customConditionalFormatting || []).length > 0,
+              );
+              const finalData = hasConditionalRules
+                ? applyConditionalFormatting(updatedData)
+                : updatedData;
+              sheetDataRef.current = finalData;
+              if (hasConditionalRules) {
+                syncingConditionalRef.current = true;
+                setSheetData(finalData);
+                requestAnimationFrame(() => {
+                  const apiCalls = createConditionalFormatApiCalls(finalData);
+                  if (apiCalls.length > 0) {
+                    workbookRef.current?.batchCallApis?.(apiCalls);
+                  }
+                  requestAnimationFrame(() => {
+                    syncingConditionalRef.current = false;
+                  });
+                });
+              }
             } else {
               console.warn(
                 "⚠️ `onChange` a capturé des données invalides, mise à jour ignorée !",
