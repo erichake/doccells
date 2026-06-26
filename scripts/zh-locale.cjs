@@ -10603,7 +10603,72 @@ module.exports = {
   custom: {
     lockCells: "锁定单元格",
     unlockCells: "取消锁定单元格",
-    toggleSheetProtection: "保护/取消保护工作表"
+    toggleSheetProtection: "保护/取消保护工作表",
+    conditionalFormatting: {
+      toolbar: "条件格式",
+      title: "条件格式",
+      activeSheet: "当前工作表",
+      appliedRules: "已应用规则",
+      noRules: "此工作表没有规则。",
+      editRule: "编辑规则",
+      newRule: "新建规则",
+      applyTo: "应用于",
+      condition: "条件",
+      compareTo: "比较对象",
+      minValue: "最小值",
+      maxValue: "最大值",
+      cell: "单元格",
+      sameRowColumn: "同一行的列",
+      text: "文本",
+      value: "值",
+      textColor: "文本",
+      backgroundColor: "背景",
+      style: "样式",
+      preview: "单元格预览",
+      close: "关闭",
+      reset: "新建",
+      save: "保存",
+      add: "添加",
+      edit: "编辑",
+      delete: "删除",
+      none: "无",
+      sample: "Aa",
+      textPlaceholder: "延迟",
+      conditions: {
+        lessThan: "小于",
+        greaterThan: "大于",
+        equal: "等于",
+        notEqual: "不等于",
+        between: "介于",
+        textContains: "文本包含"
+      },
+      compareTypes: {
+        value: "固定值",
+        cell: "固定单元格",
+        sameRowColumn: "同一行的列"
+      },
+      descriptions: {
+        cell: "单元格",
+        between: "单元格介于 {value1} 和 {value2} 之间",
+        textContains: "文本包含 \"{value}\"",
+        sameRowColumn: "同一行的 {reference} 列",
+        fixedCell: "单元格 {reference}",
+        comparison: "单元格 {operator} {target}"
+      },
+      errors: {
+        range: "区域格式应类似 A2:A100。",
+        between: "请输入两个介于条件的值。",
+        text: "请输入要查找的文本。",
+        compareCell: "比较单元格格式应类似 B1。",
+        compareColumn: "比较列格式应类似 B。",
+        compareValue: "请输入比较值。",
+        style: "请至少选择一种颜色或样式。"
+      },
+      styleLabels: {
+        bold: "加粗",
+        italic: "斜体",
+        underline: "下划线"
+      }
+    }
   }
 };
-

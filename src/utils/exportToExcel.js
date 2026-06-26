@@ -49,8 +49,14 @@ export const exportToExcel = async (
   };
   const cfStyle = (rule) => {
     const style = {};
-    if (rule.textColor) {
-      style.font = { color: { argb: convertColor(rule.textColor) } };
+    if (rule.textColor || rule.bold || rule.italic || rule.underline) {
+      style.font = {};
+      if (rule.textColor) {
+        style.font.color = { argb: convertColor(rule.textColor) };
+      }
+      if (rule.bold) style.font.bold = true;
+      if (rule.italic) style.font.italic = true;
+      if (rule.underline) style.font.underline = true;
     }
     if (rule.backgroundColor) {
       style.fill = {
@@ -148,6 +154,9 @@ export const exportToExcel = async (
     const cleanValue = { ...v };
     delete cleanValue.fc;
     delete cleanValue.bg;
+    delete cleanValue.bl;
+    delete cleanValue.it;
+    delete cleanValue.ul;
     return cleanValue;
   };
 

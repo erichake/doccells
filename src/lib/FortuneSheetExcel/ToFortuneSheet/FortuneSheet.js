@@ -516,6 +516,20 @@ export class FortuneSheet extends FortuneSheetBase {
     if (dxf == null) return style;
 
     const font = dxf.getInnerElements("font");
+    if (font != null && font[0]) {
+      const bold = font[0].getInnerElements("b");
+      const italic = font[0].getInnerElements("i");
+      const underline = font[0].getInnerElements("u");
+      if (bold != null && bold[0]?.attributeList?.val !== "0") {
+        style.bold = true;
+      }
+      if (italic != null && italic[0]?.attributeList?.val !== "0") {
+        style.italic = true;
+      }
+      if (underline != null && underline[0]?.attributeList?.val !== "0") {
+        style.underline = true;
+      }
+    }
     const fontColor =
       font != null && font[0] ? font[0].getInnerElements("color") : null;
     if (fontColor != null && fontColor[0]) {
@@ -578,6 +592,9 @@ export class FortuneSheet extends FortuneSheetBase {
       reference: comparison[4].toUpperCase(),
       textColor: style.textColor,
       backgroundColor: style.backgroundColor,
+      bold: !!style.bold,
+      italic: !!style.italic,
+      underline: !!style.underline,
     };
   }
   parseConditionalCellIsRule(ruleElement, range, style, id) {
@@ -605,6 +622,9 @@ export class FortuneSheet extends FortuneSheetBase {
       reference: firstTarget.reference || "",
       textColor: style.textColor,
       backgroundColor: style.backgroundColor,
+      bold: !!style.bold,
+      italic: !!style.italic,
+      underline: !!style.underline,
     };
     if (condition === "between") {
       rule.compareType = "value";
@@ -628,6 +648,9 @@ export class FortuneSheet extends FortuneSheetBase {
       reference: "",
       textColor: style.textColor,
       backgroundColor: style.backgroundColor,
+      bold: !!style.bold,
+      italic: !!style.italic,
+      underline: !!style.underline,
     };
   }
   generateCustomConditionalFormatting() {
@@ -671,7 +694,14 @@ export class FortuneSheet extends FortuneSheetBase {
             rule = this.parseConditionalContainsTextRule(cfRule, range, style, id);
           }
 
-          if (rule != null && (rule.textColor || rule.backgroundColor)) {
+          if (
+            rule != null &&
+            (rule.textColor ||
+              rule.backgroundColor ||
+              rule.bold ||
+              rule.italic ||
+              rule.underline)
+          ) {
             rules.push(rule);
           }
         }

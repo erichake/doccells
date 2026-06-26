@@ -10046,7 +10046,72 @@ module.exports = {
   custom: {
     lockCells: "Bloquear celdas",
     unlockCells: "Desbloquear celdas",
-    toggleSheetProtection: "Proteger / Desproteger hoja"
+    toggleSheetProtection: "Proteger / Desproteger hoja",
+    conditionalFormatting: {
+      toolbar: "Formato condicional",
+      title: "Formato condicional",
+      activeSheet: "Hoja activa",
+      appliedRules: "Reglas aplicadas",
+      noRules: "No hay reglas para esta hoja.",
+      editRule: "Editar regla",
+      newRule: "Nueva regla",
+      applyTo: "Aplicar a",
+      condition: "Condición",
+      compareTo: "Comparar con",
+      minValue: "Valor mínimo",
+      maxValue: "Valor máximo",
+      cell: "Celda",
+      sameRowColumn: "Columna de la misma fila",
+      text: "Texto",
+      value: "Valor",
+      textColor: "Texto",
+      backgroundColor: "Fondo",
+      style: "Estilo",
+      preview: "Vista previa de celda",
+      close: "Cerrar",
+      reset: "Nueva",
+      save: "Guardar",
+      add: "Agregar",
+      edit: "Editar",
+      delete: "Eliminar",
+      none: "Ninguno",
+      sample: "Aa",
+      textPlaceholder: "tarde",
+      conditions: {
+        lessThan: "es menor que",
+        greaterThan: "es mayor que",
+        equal: "es igual a",
+        notEqual: "es diferente de",
+        between: "está entre",
+        textContains: "contiene texto"
+      },
+      compareTypes: {
+        value: "un valor fijo",
+        cell: "una celda fija",
+        sameRowColumn: "una columna de la misma fila"
+      },
+      descriptions: {
+        cell: "celda",
+        between: "celda entre {value1} y {value2}",
+        textContains: "texto contiene \"{value}\"",
+        sameRowColumn: "columna {reference} misma fila",
+        fixedCell: "celda {reference}",
+        comparison: "celda {operator} {target}"
+      },
+      errors: {
+        range: "El rango debe parecerse a A2:A100.",
+        between: "Indica dos valores para la condición entre.",
+        text: "Indica el texto que se debe buscar.",
+        compareCell: "La celda de comparación debe parecerse a B1.",
+        compareColumn: "La columna de comparación debe parecerse a B.",
+        compareValue: "Indica un valor de comparación.",
+        style: "Elige al menos un color o un estilo."
+      },
+      styleLabels: {
+        bold: "Negrita",
+        italic: "Cursiva",
+        underline: "Subrayado"
+      }
+    }
   }
 };
-

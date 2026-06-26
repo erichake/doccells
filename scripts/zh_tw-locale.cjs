@@ -10108,7 +10108,72 @@ module.exports = {
   custom: {
     lockCells: "鎖定儲存格",
     unlockCells: "取消鎖定儲存格",
-    toggleSheetProtection: "保護/取消保護工作表"
+    toggleSheetProtection: "保護/取消保護工作表",
+    conditionalFormatting: {
+      toolbar: "條件格式",
+      title: "條件格式",
+      activeSheet: "目前工作表",
+      appliedRules: "已套用規則",
+      noRules: "此工作表沒有規則。",
+      editRule: "編輯規則",
+      newRule: "新增規則",
+      applyTo: "套用到",
+      condition: "條件",
+      compareTo: "比較對象",
+      minValue: "最小值",
+      maxValue: "最大值",
+      cell: "儲存格",
+      sameRowColumn: "同一列的欄",
+      text: "文字",
+      value: "值",
+      textColor: "文字",
+      backgroundColor: "背景",
+      style: "樣式",
+      preview: "儲存格預覽",
+      close: "關閉",
+      reset: "新增",
+      save: "儲存",
+      add: "加入",
+      edit: "編輯",
+      delete: "刪除",
+      none: "無",
+      sample: "Aa",
+      textPlaceholder: "延遲",
+      conditions: {
+        lessThan: "小於",
+        greaterThan: "大於",
+        equal: "等於",
+        notEqual: "不等於",
+        between: "介於",
+        textContains: "文字包含"
+      },
+      compareTypes: {
+        value: "固定值",
+        cell: "固定儲存格",
+        sameRowColumn: "同一列的欄"
+      },
+      descriptions: {
+        cell: "儲存格",
+        between: "儲存格介於 {value1} 和 {value2} 之間",
+        textContains: "文字包含 \"{value}\"",
+        sameRowColumn: "同一列的 {reference} 欄",
+        fixedCell: "儲存格 {reference}",
+        comparison: "儲存格 {operator} {target}"
+      },
+      errors: {
+        range: "範圍格式應類似 A2:A100。",
+        between: "請輸入兩個介於條件的值。",
+        text: "請輸入要搜尋的文字。",
+        compareCell: "比較儲存格格式應類似 B1。",
+        compareColumn: "比較欄格式應類似 B。",
+        compareValue: "請輸入比較值。",
+        style: "請至少選擇一種顏色或樣式。"
+      },
+      styleLabels: {
+        bold: "粗體",
+        italic: "斜體",
+        underline: "底線"
+      }
+    }
   }
 };
-

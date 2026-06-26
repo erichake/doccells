@@ -4,6 +4,7 @@ import { transformExcelToFortune } from "./lib/FortuneSheetExcel/main.js";
 import { exportToExcel } from "./utils/exportToExcel.js";
 import { customLocales } from "./locales/custom.js";
 import { ConditionalFormattingDialog } from "./features/conditionalFormatting/ConditionalFormattingDialog.jsx";
+import { getConditionalFormattingTexts } from "./features/conditionalFormatting/conditionalFormattingConstants.js";
 import {
   applyConditionalFormatting,
   createConditionalFormatApiCalls,
@@ -17,6 +18,7 @@ const detectedLang =
     ? navigator.language
     : (SUPPORTED_LANGS.find((l) => navigator.language.startsWith(l.split("-")[0])) ?? "en");
 const t = customLocales[detectedLang] ?? customLocales["en"];
+const conditionalFormattingTexts = getConditionalFormattingTexts(t.conditionalFormatting);
 const DEFAULT_COLUMN_WIDTH = 99;
 const DEFAULT_SHEET_NAME_RE = /^(Sheet|Feuille|Hoja|工作表)\d+$/;
 const sheetPrefix =
@@ -645,7 +647,7 @@ const App = () => {
 <path d="M8 9h8M8 12h4" stroke="#222" stroke-width="1.4" stroke-linecap="round"/>
 <path d="M8 16l2-2 2 2 4-4" stroke="#d93025" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-<div class="fortune-tooltip">Formatage conditionnel</div>`;
+<div class="fortune-tooltip">${conditionalFormattingTexts.toolbar}</div>`;
     conditionalFormatButton.addEventListener("click", openConditionalDialog);
     toolbar.insertBefore(conditionalFormatButton, gridLinesButton.nextSibling);
 
@@ -924,6 +926,7 @@ const App = () => {
         onClose={() => setConditionalDialogOpen(false)}
         onSave={saveConditionalRule}
         onDelete={deleteConditionalRule}
+        texts={conditionalFormattingTexts}
       />
 
       <Workbook

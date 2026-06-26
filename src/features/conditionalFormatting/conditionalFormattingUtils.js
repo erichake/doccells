@@ -1,4 +1,13 @@
-import { CONDITIONAL_RULE_TYPES } from "./conditionalFormattingConstants.js";
+import {
+  CONDITIONAL_RULE_TYPES,
+  getConditionalFormattingTexts,
+} from "./conditionalFormattingConstants.js";
+
+const CONDITIONAL_STYLE_KEYS = [
+  ["bold", "bl"],
+  ["italic", "it"],
+  ["underline", "ul"],
+];
 
 const dataToCelldata = (data) => {
   const celldata = [];
@@ -141,11 +150,17 @@ const cloneSheetForConditionalFormatting = (sheet) => ({
 const resetConditionalFormattingCells = (sheet) => {
   sheet.celldata.forEach((cell) => {
     if (!cell.v || typeof cell.v !== "object" || !cell.v._dcCf) return;
-    const { baseFc, baseBg } = cell.v._dcCf;
+    const { baseFc, baseBg, baseBl, baseIt, baseUl } = cell.v._dcCf;
     if (baseFc == null) delete cell.v.fc;
     else cell.v.fc = baseFc;
     if (baseBg == null) delete cell.v.bg;
     else cell.v.bg = baseBg;
+    if (baseBl == null) delete cell.v.bl;
+    else cell.v.bl = baseBl;
+    if (baseIt == null) delete cell.v.it;
+    else cell.v.it = baseIt;
+    if (baseUl == null) delete cell.v.ul;
+    else cell.v.ul = baseUl;
     delete cell.v._dcCf;
   });
 };
@@ -171,6 +186,9 @@ const clearConditionalDisplayStyles = (sheet, rules) => {
     if (typeof v !== "object") return;
     delete v.fc;
     delete v.bg;
+    delete v.bl;
+    delete v.it;
+    delete v.ul;
   });
 };
 
@@ -206,10 +224,16 @@ const applyConditionalStyle = (cell, rule) => {
     cell.v._dcCf = {
       baseFc: cell.v.fc ?? null,
       baseBg: cell.v.bg ?? null,
+      baseBl: cell.v.bl ?? null,
+      baseIt: cell.v.it ?? null,
+      baseUl: cell.v.ul ?? null,
     };
   }
   if (rule.textColor) cell.v.fc = rule.textColor;
   if (rule.backgroundColor) cell.v.bg = rule.backgroundColor;
+  if (rule.bold) cell.v.bl = 1;
+  if (rule.italic) cell.v.it = 1;
+  if (rule.underline) cell.v.ul = 1;
 };
 
 export const applyConditionalFormatting = (sheets) =>
@@ -253,37 +277,63 @@ export const stripConditionalFormattingMarkers = (sheets) =>
     celldata: (sheet.celldata || []).map((cell) => {
       if (!cell.v || typeof cell.v !== "object" || !cell.v._dcCf) return cell;
       const v = { ...cell.v };
-      const { baseFc, baseBg } = v._dcCf;
+      const { baseFc, baseBg, baseBl, baseIt, baseUl } = v._dcCf;
       if (baseFc == null) delete v.fc;
       else v.fc = baseFc;
       if (baseBg == null) delete v.bg;
       else v.bg = baseBg;
+      if (baseBl == null) delete v.bl;
+      else v.bl = baseBl;
+      if (baseIt == null) delete v.it;
+      else v.it = baseIt;
+      if (baseUl == null) delete v.ul;
+      else v.ul = baseUl;
       delete v._dcCf;
       return { ...cell, v };
     }),
   }));
 
-export const describeConditionalRule = (rule) => {
+const interpolate = (template, values) =>
+  String(template || "").replace(/\{(\w+)\}/g, (_, key) => values[key] ?? "");
+
+export const describeConditionalRule = (rule, texts) => {
+  const cf = getConditionalFormattingTexts(texts);
   const type = CONDITIONAL_RULE_TYPES.find((item) => item.value === rule.condition);
   if (!type) return "";
   if (rule.condition === "between") {
-    return `cellule entre ${rule.value || "..."} et ${rule.value2 || "..."}`;
+    return interpolate(cf.descriptions.between, {
+      value1: rule.value || "...",
+      value2: rule.value2 || "...",
+    });
   }
   if (rule.condition === "textContains") {
-    return `texte contient "${rule.value || ""}"`;
+    return interpolate(cf.descriptions.textContains, {
+      value: rule.value || "",
+    });
   }
   const compareLabel =
     rule.compareType === "sameRowColumn"
-      ? `colonne ${String(rule.reference || "").toUpperCase()} meme ligne`
+      ? interpolate(cf.descriptions.sameRowColumn, {
+          reference: String(rule.reference || "").toUpperCase(),
+        })
       : rule.compareType === "cell"
-        ? `cellule ${String(rule.reference || "").toUpperCase()}`
+        ? interpolate(cf.descriptions.fixedCell, {
+            reference: String(rule.reference || "").toUpperCase(),
+          })
         : rule.value || "...";
-  return `cellule ${type.symbol} ${compareLabel}`;
+  return interpolate(cf.descriptions.comparison, {
+    cell: cf.descriptions.cell,
+    operator: type.symbol,
+    target: compareLabel,
+  });
 };
 
 export const getRulePreviewStyle = (rule) => ({
   color: rule.textColor || "#202124",
   background: rule.backgroundColor || "#ffffff",
+  fontWeight: rule.bold ? 700 : 400,
+  fontStyle: rule.italic ? "italic" : "normal",
+  textDecoration: rule.underline ? "underline" : "none",
 });
 
 export const createConditionalFormatApiCalls = (sheets) => {
@@ -314,6 +364,14 @@ export const createConditionalFormatApiCalls = (sheets) => {
 
       calls.push({ name: "setCellFormat", args: [row, column, "fc", fc, options] });
       calls.push({ name: "setCellFormat", args: [row, column, "bg", bg, options] });
+      CONDITIONAL_STYLE_KEYS.forEach(([, cellKey]) => {
+        const value =
+          cellValue && typeof cellValue === "object" ? cellValue[cellKey] : undefined;
+        calls.push({
+          name: "setCellFormat",
+          args: [row, column, cellKey, value, options],
+        });
+      });
     });
   });
   return calls;

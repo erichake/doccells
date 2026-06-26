@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   CONDITIONAL_COMPARE_TYPES,
   CONDITIONAL_RULE_TYPES,
   DEFAULT_CONDITIONAL_RULE,
+  getConditionalFormattingTexts,
 } from "./conditionalFormattingConstants.js";
 import {
   columnNameToIndex,
@@ -22,10 +23,15 @@ export const ConditionalFormattingDialog = ({
   onClose,
   onSave,
   onDelete,
+  texts,
 }) => {
   const [editingId, setEditingId] = useState(null);
   const [form, setForm] = useState(DEFAULT_CONDITIONAL_RULE);
   const [error, setError] = useState("");
+  const [dialogOffset, setDialogOffset] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartRef = useRef(null);
+  const cf = getConditionalFormattingTexts(texts);
 
   const resetForm = useCallback(() => {
     const range = parseRangeText(initialRangeText) || DEFAULT_CONDITIONAL_RULE.range;
@@ -42,6 +48,54 @@ export const ConditionalFormattingDialog = ({
   useEffect(() => {
     if (open) resetForm();
   }, [open, resetForm]);
+
+  useEffect(() => {
+    if (!open) return;
+    setDialogOffset({ x: 0, y: 0 });
+    setIsDragging(false);
+    dragStartRef.current = null;
+  }, [open]);
+
+  const startDialogDrag = useCallback(
+    (event) => {
+      if (event.button !== 0 || event.target.closest("button")) return;
+      if (window.matchMedia("(max-width: 760px)").matches) return;
+      event.preventDefault();
+      dragStartRef.current = {
+        startX: event.clientX,
+        startY: event.clientY,
+        offsetX: dialogOffset.x,
+        offsetY: dialogOffset.y,
+      };
+      setIsDragging(true);
+    },
+    [dialogOffset],
+  );
+
+  useEffect(() => {
+    if (!isDragging) return undefined;
+
+    const moveDialog = (event) => {
+      const dragStart = dragStartRef.current;
+      if (!dragStart) return;
+      setDialogOffset({
+        x: dragStart.offsetX + event.clientX - dragStart.startX,
+        y: dragStart.offsetY + event.clientY - dragStart.startY,
+      });
+    };
+
+    const stopDialogDrag = () => {
+      setIsDragging(false);
+      dragStartRef.current = null;
+    };
+
+    window.addEventListener("mousemove", moveDialog);
+    window.addEventListener("mouseup", stopDialogDrag);
+    return () => {
+      window.removeEventListener("mousemove", moveDialog);
+      window.removeEventListener("mouseup", stopDialogDrag);
+    };
+  }, [isDragging]);
 
   const updateForm = (field, value) => {
     setForm((current) => {
@@ -72,26 +126,32 @@ export const ConditionalFormattingDialog = ({
 
   const validateForm = () => {
     const range = parseRangeText(form.rangeText);
-    if (!range) return "La plage doit ressembler a A2:A100.";
+    if (!range) return cf.errors.range;
     if (form.condition === "between") {
       if (form.value === "" || form.value2 === "") {
-        return "Indique deux valeurs pour la condition entre.";
+        return cf.errors.between;
       }
     } else if (form.condition === "textContains") {
-      if (!form.value) return "Indique le texte a rechercher.";
+      if (!form.value) return cf.errors.text;
     } else if (form.compareType === "cell") {
       if (!parseCellReference(form.reference)) {
-        return "La cellule de comparaison doit ressembler a B1.";
+        return cf.errors.compareCell;
       }
     } else if (form.compareType === "sameRowColumn") {
       if (columnNameToIndex(form.reference) == null) {
-        return "La colonne de comparaison doit ressembler a B.";
+        return cf.errors.compareColumn;
       }
     } else if (form.value === "") {
-      return "Indique une valeur de comparaison.";
+      return cf.errors.compareValue;
     }
-    if (!form.textColor && !form.backgroundColor) {
-      return "Choisis au moins une couleur de texte ou de fond.";
+    if (
+      !form.textColor &&
+      !form.backgroundColor &&
+      !form.bold &&
+      !form.italic &&
+      !form.underline
+    ) {
+      return cf.errors.style;
     }
     return "";
   };
@@ -130,25 +190,41 @@ export const ConditionalFormattingDialog = ({
   return (
     <div className="dc-cf-backdrop" role="presentation" onMouseDown={onClose}>
       <section
-        className="dc-cf-dialog"
+        className={`dc-cf-dialog${isDragging ? " is-dragging" : ""}`}
         role="dialog"
         aria-modal="true"
-        aria-label="Formatage conditionnel"
+        aria-label={cf.title}
+        style={{
+          "--dc-cf-offset-x": `${dialogOffset.x}px`,
+          "--dc-cf-offset-y": `${dialogOffset.y}px`,
+        }}
         onMouseDown={(event) => event.stopPropagation()}
       >
-        <header className="dc-cf-header">
+        <header className="dc-cf-header" onMouseDown={startDialogDrag}>
           <div>
-            <h2>Formatage conditionnel</h2>
-            <p>{sheetName || "Feuille active"}</p>
+            <h2>{cf.title}</h2>
+            <p>{sheetName || cf.activeSheet}</p>
           </div>
-          <button className="dc-cf-icon-button" type="button" onClick={onClose}>
-            <span aria-hidden="true">x</span>
+          <button
+            className="dc-cf-icon-button"
+            type="button"
+            aria-label={cf.close}
+            title={cf.close}
+            onClick={onClose}
+          >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 20 20"
+              focusable="false"
+            >
+              <path d="M5.5 5.5 14.5 14.5M14.5 5.5 5.5 14.5" />
+            </svg>
           </button>
         </header>
 
         <div className="dc-cf-body">
           <aside className="dc-cf-rules">
-            <div className="dc-cf-section-title">Regles appliquees</div>
+            <div className="dc-cf-section-title">{cf.appliedRules}</div>
             {hasRules ? (
               <div className="dc-cf-rule-list">
                 {rules.map((rule) => (
@@ -160,17 +236,17 @@ export const ConditionalFormattingDialog = ({
                   >
                     <div className="dc-cf-rule-main">
                       <strong>{rule.rangeText || rangeToText(rule.range)}</strong>
-                      <span>{describeConditionalRule(rule)}</span>
+                      <span>{describeConditionalRule(rule, cf)}</span>
                     </div>
                     <div className="dc-cf-rule-sample" style={getRulePreviewStyle(rule)}>
-                      Aa
+                      {cf.sample}
                     </div>
                     <div className="dc-cf-rule-actions">
                       <button type="button" onClick={() => startEdit(rule)}>
-                        Modifier
+                        {cf.edit}
                       </button>
                       <button type="button" onClick={() => onDelete(rule.id)}>
-                        Supprimer
+                        {cf.delete}
                       </button>
                     </div>
                   </article>
@@ -178,18 +254,18 @@ export const ConditionalFormattingDialog = ({
               </div>
             ) : (
               <div className="dc-cf-empty">
-                Aucune regle pour cette feuille.
+                {cf.noRules}
               </div>
             )}
           </aside>
 
           <form className="dc-cf-form" onSubmit={submitForm}>
             <div className="dc-cf-section-title">
-              {editingId ? "Modifier la regle" : "Nouvelle regle"}
+              {editingId ? cf.editRule : cf.newRule}
             </div>
 
             <label className="dc-cf-field">
-              <span>Appliquer a</span>
+              <span>{cf.applyTo}</span>
               <input
                 value={form.rangeText}
                 onChange={(event) => updateForm("rangeText", event.target.value)}
@@ -198,13 +274,15 @@ export const ConditionalFormattingDialog = ({
             </label>
 
             <div className="dc-cf-field">
-              <span>Condition</span>
+              <span>{cf.condition}</span>
               <div className="dc-cf-segmented">
                 {CONDITIONAL_RULE_TYPES.map((type) => (
                   <button
                     className={form.condition === type.value ? "is-active" : ""}
                     key={type.value}
                     type="button"
+                    title={cf.conditions[type.value]}
+                    aria-label={cf.conditions[type.value]}
                     onClick={() => updateForm("condition", type.value)}
                   >
                     {type.symbol}
@@ -214,7 +292,7 @@ export const ConditionalFormattingDialog = ({
             </div>
 
             <label className="dc-cf-field">
-              <span>Comparer a</span>
+              <span>{cf.compareTo}</span>
               <select
                 value={form.compareType}
                 onChange={(event) => updateForm("compareType", event.target.value)}
@@ -222,7 +300,7 @@ export const ConditionalFormattingDialog = ({
               >
                 {compareOptions.map((option) => (
                   <option key={option.value} value={option.value}>
-                    {option.label}
+                    {cf.compareTypes[option.value]}
                   </option>
                 ))}
               </select>
@@ -231,7 +309,7 @@ export const ConditionalFormattingDialog = ({
             {form.condition === "between" ? (
               <div className="dc-cf-pair">
                 <label className="dc-cf-field">
-                  <span>Valeur min</span>
+                  <span>{cf.minValue}</span>
                   <input
                     value={form.value}
                     onChange={(event) => updateForm("value", event.target.value)}
@@ -239,7 +317,7 @@ export const ConditionalFormattingDialog = ({
                   />
                 </label>
                 <label className="dc-cf-field">
-                  <span>Valeur max</span>
+                  <span>{cf.maxValue}</span>
                   <input
                     value={form.value2}
                     onChange={(event) => updateForm("value2", event.target.value)}
@@ -249,7 +327,7 @@ export const ConditionalFormattingDialog = ({
               </div>
             ) : form.compareType === "cell" ? (
               <label className="dc-cf-field">
-                <span>Cellule</span>
+                <span>{cf.cell}</span>
                 <input
                   value={form.reference}
                   onChange={(event) => updateForm("reference", event.target.value)}
@@ -258,7 +336,7 @@ export const ConditionalFormattingDialog = ({
               </label>
             ) : form.compareType === "sameRowColumn" ? (
               <label className="dc-cf-field">
-                <span>Colonne meme ligne</span>
+                <span>{cf.sameRowColumn}</span>
                 <input
                   value={form.reference}
                   onChange={(event) => updateForm("reference", event.target.value)}
@@ -267,18 +345,18 @@ export const ConditionalFormattingDialog = ({
               </label>
             ) : (
               <label className="dc-cf-field">
-                <span>{form.condition === "textContains" ? "Texte" : "Valeur"}</span>
+                <span>{form.condition === "textContains" ? cf.text : cf.value}</span>
                 <input
                   value={form.value}
                   onChange={(event) => updateForm("value", event.target.value)}
-                  placeholder={form.condition === "textContains" ? "retard" : "10"}
+                  placeholder={form.condition === "textContains" ? cf.textPlaceholder : "10"}
                 />
               </label>
             )}
 
             <div className="dc-cf-colors">
               <label className="dc-cf-color-field">
-                <span>Texte</span>
+                <span>{cf.textColor}</span>
                 <input
                   type="color"
                   value={form.textColor || "#000000"}
@@ -288,11 +366,11 @@ export const ConditionalFormattingDialog = ({
                   type="button"
                   onClick={() => updateForm("textColor", "")}
                 >
-                  Aucun
+                  {cf.none}
                 </button>
               </label>
               <label className="dc-cf-color-field">
-                <span>Fond</span>
+                <span>{cf.backgroundColor}</span>
                 <input
                   type="color"
                   value={form.backgroundColor || "#fff2cc"}
@@ -304,24 +382,65 @@ export const ConditionalFormattingDialog = ({
                   type="button"
                   onClick={() => updateForm("backgroundColor", "")}
                 >
-                  Aucun
+                  {cf.none}
                 </button>
               </label>
             </div>
 
+            <div className="dc-cf-field">
+              <span>{cf.style}</span>
+              <div className="dc-cf-style-toggles">
+                <button
+                  className={form.bold ? "is-active" : ""}
+                  type="button"
+                  aria-pressed={form.bold}
+                  title={cf.styleLabels.bold}
+                  aria-label={cf.styleLabels.bold}
+                  onClick={() => updateForm("bold", !form.bold)}
+                >
+                  B
+                </button>
+                <button
+                  className={form.italic ? "is-active" : ""}
+                  type="button"
+                  aria-pressed={form.italic}
+                  title={cf.styleLabels.italic}
+                  aria-label={cf.styleLabels.italic}
+                  onClick={() => updateForm("italic", !form.italic)}
+                >
+                  I
+                </button>
+                <button
+                  className={form.underline ? "is-active" : ""}
+                  type="button"
+                  aria-pressed={form.underline}
+                  title={cf.styleLabels.underline}
+                  aria-label={cf.styleLabels.underline}
+                  onClick={() => updateForm("underline", !form.underline)}
+                >
+                  U
+                </button>
+              </div>
+            </div>
+
             <div className="dc-cf-preview" style={getRulePreviewStyle(form)}>
-              Apercu de cellule
+              {cf.preview}
             </div>
 
             {error && <div className="dc-cf-error">{error}</div>}
 
             <footer className="dc-cf-footer">
-              <button type="button" onClick={resetForm}>
-                Nouvelle
+              <button type="button" onClick={onClose}>
+                {cf.close}
               </button>
-              <button className="dc-cf-primary" type="submit">
-                {editingId ? "Enregistrer" : "Ajouter"}
-              </button>
+              <div className="dc-cf-footer-actions">
+                <button type="button" onClick={resetForm}>
+                  {cf.reset}
+                </button>
+                <button className="dc-cf-primary" type="submit">
+                  {editingId ? cf.save : cf.add}
+                </button>
+              </div>
             </footer>
           </form>
         </div>

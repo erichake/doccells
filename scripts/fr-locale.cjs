@@ -10506,6 +10506,72 @@ module.exports = {
   custom: {
     lockCells: "Verrouiller les cellules",
     unlockCells: "Déverrouiller les cellules",
-    toggleSheetProtection: "Protéger / Déprotéger la feuille"
+    toggleSheetProtection: "Protéger / Déprotéger la feuille",
+    conditionalFormatting: {
+      toolbar: "Formatage conditionnel",
+      title: "Formatage conditionnel",
+      activeSheet: "Feuille active",
+      appliedRules: "Règles appliquées",
+      noRules: "Aucune règle pour cette feuille.",
+      editRule: "Modifier la règle",
+      newRule: "Nouvelle règle",
+      applyTo: "Appliquer à",
+      condition: "Condition",
+      compareTo: "Comparer à",
+      minValue: "Valeur min",
+      maxValue: "Valeur max",
+      cell: "Cellule",
+      sameRowColumn: "Colonne même ligne",
+      text: "Texte",
+      value: "Valeur",
+      textColor: "Texte",
+      backgroundColor: "Fond",
+      style: "Style",
+      preview: "Aperçu de cellule",
+      close: "Fermer",
+      reset: "Nouvelle",
+      save: "Enregistrer",
+      add: "Ajouter",
+      edit: "Modifier",
+      delete: "Supprimer",
+      none: "Aucun",
+      sample: "Aa",
+      textPlaceholder: "retard",
+      conditions: {
+        lessThan: "est inférieure à",
+        greaterThan: "est supérieure à",
+        equal: "est égale à",
+        notEqual: "est différente de",
+        between: "est comprise entre",
+        textContains: "contient le texte"
+      },
+      compareTypes: {
+        value: "une valeur fixe",
+        cell: "une cellule fixe",
+        sameRowColumn: "une colonne même ligne"
+      },
+      descriptions: {
+        cell: "cellule",
+        between: "cellule entre {value1} et {value2}",
+        textContains: "texte contient \"{value}\"",
+        sameRowColumn: "colonne {reference} même ligne",
+        fixedCell: "cellule {reference}",
+        comparison: "cellule {operator} {target}"
+      },
+      errors: {
+        range: "La plage doit ressembler à A2:A100.",
+        between: "Indique deux valeurs pour la condition entre.",
+        text: "Indique le texte à rechercher.",
+        compareCell: "La cellule de comparaison doit ressembler à B1.",
+        compareColumn: "La colonne de comparaison doit ressembler à B.",
+        compareValue: "Indique une valeur de comparaison.",
+        style: "Choisis au moins une couleur ou un style."
+      },
+      styleLabels: {
+        bold: "Gras",
+        italic: "Italique",
+        underline: "Souligné"
+      }
+    }
   }
 };
