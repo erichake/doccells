@@ -1,11 +1,21 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { Workbook } from "@fortune-sheet/react";
-import { Parser } from "@fortune-sheet/formula-parser";
 import { transformExcelToFortune } from "./lib/FortuneSheetExcel/main.js";
 import { exportToExcel } from "./utils/exportToExcel.js";
 import { customLocales } from "./locales/custom.js";
 import { ConditionalFormattingDialog } from "./features/conditionalFormatting/ConditionalFormattingDialog.jsx";
 import { getConditionalFormattingTexts } from "./features/conditionalFormatting/conditionalFormattingConstants.js";
+import { normalizeImportedWorkbook } from "./features/excelImport/normalizeImportedWorkbook.js";
+import { useFortuneToolbarButtons } from "./features/fortuneSheet/useFortuneToolbarButtons.js";
+import {
+  dataToCelldata,
+  getAvailableDefaultSheetName,
+  getDefaultSheetNumber,
+  getWorkbookGridLinesPreference,
+  isDefaultSheetName,
+  normalizeShowGridLines,
+  setWorkbookGridLines,
+} from "./features/workbook/workbookUtils.js";
 import {
   applyConditionalFormatting,
   createConditionalFormatApiCalls,
@@ -21,7 +31,6 @@ const detectedLang =
 const t = customLocales[detectedLang] ?? customLocales["en"];
 const conditionalFormattingTexts = getConditionalFormattingTexts(t.conditionalFormatting);
 const DEFAULT_COLUMN_WIDTH = 99;
-const DEFAULT_SHEET_NAME_RE = /^(Sheet|Feuille|Hoja|工作表)\d+$/;
 const sheetPrefix =
   {
     "zh-CN": "工作表",
@@ -30,274 +39,6 @@ const sheetPrefix =
     "fr-FR": "Feuille",
     "es-ES": "Hoja",
   }[detectedLang] ?? "Sheet";
-
-const isDefaultSheetName = (name) =>
-  !name || DEFAULT_SHEET_NAME_RE.test(name);
-
-const normalizeShowGridLines = (showGridLines) => {
-  if (showGridLines == null) return true;
-  return !(showGridLines === "0" || showGridLines === 0 || showGridLines === false);
-};
-
-const areGridLinesHidden = (sheets) =>
-  Array.isArray(sheets) &&
-  sheets.length > 0 &&
-  sheets.every((sheet) => !normalizeShowGridLines(sheet?.showGridLines));
-
-const setWorkbookGridLines = (sheets, showGridLines) =>
-  sheets.map((sheet) => ({
-    ...sheet,
-    showGridLines,
-  }));
-
-const getWorkbookGridLinesPreference = (sheets) =>
-  areGridLinesHidden(sheets) ? false : true;
-
-const getDefaultSheetNumber = (name, fallback) => {
-  const match = String(name || "").match(/\d+$/);
-  return match ? Number(match[0]) : fallback;
-};
-
-const getAvailableDefaultSheetName = (sheets, preferredNumber) => {
-  const usedNames = new Set((sheets || []).map((sheet) => sheet?.name));
-  let number = Math.max(1, preferredNumber || 1);
-  let name = `${sheetPrefix}${number}`;
-  while (usedNames.has(name)) {
-    number += 1;
-    name = `${sheetPrefix}${number}`;
-  }
-  return name;
-};
-
-const getFormulaDisplayValue = (value) => {
-  if (value == null) return undefined;
-  if (typeof value === "number") {
-    return Number.isFinite(value) ? String(value) : undefined;
-  }
-  if (typeof value === "boolean") return value ? "TRUE" : "FALSE";
-  return String(value);
-};
-
-const getFormulaCellText = (cellValue) => {
-  if (Array.isArray(cellValue?.ct?.s)) {
-    return cellValue.ct.s.map((item) => item?.v || "").join("");
-  }
-  return cellValue?.v ?? cellValue?.m;
-};
-
-const normalizeFormulaOperand = (value, cellValue) => {
-  if (value == null) return undefined;
-  if (typeof value === "number" || typeof value === "boolean") return value;
-  const text = String(value);
-  if (
-    cellValue?.ct?.t !== "s" &&
-    cellValue?.ct?.t !== "inlineStr" &&
-    /^-?(?:\d+|\d*\.\d+)$/.test(text.trim())
-  ) {
-    const number = Number(text);
-    return Number.isFinite(number) ? number : value;
-  }
-  return value;
-};
-
-const applyImportedFormulaResults = (sheets) => {
-  if (!Array.isArray(sheets) || sheets.length === 0) return;
-
-  const parser = new Parser();
-  let activeFormulaStack = null;
-  const sheetNameToIndex = new Map();
-  const cellMaps = sheets.map((sheet, sheetIndex) => {
-    if (sheet?.name) sheetNameToIndex.set(sheet.name, sheetIndex);
-    const map = new Map();
-    (sheet?.celldata || []).forEach((cell) => {
-      map.set(`${cell.r}_${cell.c}`, cell);
-    });
-    return map;
-  });
-
-  const getSheetIndex = (sheetName, fallbackSheetIndex) => {
-    if (!sheetName) return fallbackSheetIndex;
-    return sheetNameToIndex.get(String(sheetName).replace(/^'|'$/g, "").replace(/''/g, "'"));
-  };
-
-  const getCellValue = (sheetIndex, row, column, visiting) => {
-    const cell = cellMaps[sheetIndex]?.get(`${row}_${column}`);
-    const cellValue = cell?.v;
-    if (cellValue == null) return undefined;
-
-    if (cellValue.f && cellValue.v == null) {
-      const result = calculateCellFormula(sheetIndex, cell, visiting);
-      if (result !== undefined) return result;
-    }
-
-    return normalizeFormulaOperand(getFormulaCellText(cellValue), cellValue);
-  };
-
-  const getRangeValues = (sheetIndex, startCell, endCell, visiting) => {
-    const values = [];
-    for (let row = startCell.row.index; row <= endCell.row.index; row += 1) {
-      const rowValues = [];
-      for (let column = startCell.column.index; column <= endCell.column.index; column += 1) {
-        rowValues.push(getCellValue(sheetIndex, row, column, visiting));
-      }
-      values.push(rowValues);
-    }
-    return values;
-  };
-
-  const calculateCellFormula = (sheetIndex, cell, visiting = new Set()) => {
-    const cellValue = cell?.v;
-    const formula = cellValue?.f;
-    if (!formula) return undefined;
-
-    const key = `${sheetIndex}_${cell.r}_${cell.c}`;
-    if (visiting.has(key)) return undefined;
-    visiting.add(key);
-
-    const expression = formula.startsWith("=") ? formula.slice(1) : formula;
-    const previousFormulaStack = activeFormulaStack;
-    let response;
-    try {
-      activeFormulaStack = visiting;
-      response = parser.parse(expression, { sheetIndex });
-    } finally {
-      activeFormulaStack = previousFormulaStack;
-      visiting.delete(key);
-    }
-
-    if (response?.error != null || response?.result == null) return undefined;
-
-    cellValue.v = response.result;
-    cellValue.m = getFormulaDisplayValue(response.result);
-    return normalizeFormulaOperand(response.result, cellValue);
-  };
-
-  parser.on("callCellValue", (cellCoord, options, done) => {
-    const sheetIndex = getSheetIndex(cellCoord.sheetName, options.sheetIndex);
-    done(
-      sheetIndex == null
-        ? undefined
-        : getCellValue(
-            sheetIndex,
-            cellCoord.row.index,
-            cellCoord.column.index,
-            activeFormulaStack || new Set(),
-          ),
-    );
-  });
-
-  parser.on("callRangeValue", (startCell, endCell, options, done) => {
-    const sheetIndex = getSheetIndex(startCell.sheetName, options.sheetIndex);
-    done(
-      sheetIndex == null
-        ? []
-        : getRangeValues(sheetIndex, startCell, endCell, activeFormulaStack || new Set()),
-    );
-  });
-
-  sheets.forEach((sheet, sheetIndex) => {
-    (sheet?.celldata || []).forEach((cell) => {
-      if (cell?.v?.f && cell.v.v == null) {
-        calculateCellFormula(sheetIndex, cell);
-      }
-    });
-  });
-};
-
-const dataToCelldata = (data) => {
-  const celldata = [];
-  if (!Array.isArray(data)) return celldata;
-  data.forEach((row, r) => {
-    if (!Array.isArray(row)) return;
-    row.forEach((cell, c) => {
-      if (cell == null) return;
-      celldata.push({
-        r,
-        c,
-        v:
-          typeof cell === "object"
-            ? cell
-            : { v: cell, m: String(cell) },
-      });
-    });
-  });
-  return celldata;
-};
-
-const isSheetProtected = (sheet) =>
-  sheet?.config?.authority?.sheet === 1 ||
-  sheet?.config?.authority?.sheet === "1";
-
-const isWorkbookProtected = (sheets) =>
-  Array.isArray(sheets) && sheets.some(isSheetProtected);
-
-const setWorkbookProtection = (sheets, sheetProtectionValue) =>
-  sheets.map((sheet) => ({
-    ...sheet,
-    config: {
-      ...sheet.config,
-      authority: {
-        ...(sheet.config?.authority || {}),
-        sheet: sheetProtectionValue,
-      },
-    },
-  }));
-
-const normalizeImportedMerges = (sheet) => {
-  if (!sheet) return;
-  sheet.config ||= {};
-  sheet.config.merge ||= {};
-
-  const celldata = sheet.celldata || [];
-  const cellByPosition = new Map();
-  celldata.forEach((cell) => {
-    cellByPosition.set(`${cell.r}_${cell.c}`, cell);
-  });
-
-  Object.assign(
-    sheet.config.merge,
-    Object.fromEntries(
-      celldata
-        .map((cell) => cell.v?.mc)
-        .filter((merge) => merge?.rs && merge?.cs)
-        .map((merge) => [`${merge.r}_${merge.c}`, merge]),
-    ),
-  );
-
-  const merges = Object.values(sheet.config.merge);
-  merges.forEach((merge) => {
-    const mainCell = cellByPosition.get(`${merge.r}_${merge.c}`);
-    if (!mainCell) return;
-    mainCell.v ||= {};
-    mainCell.v.mc = {
-      r: merge.r,
-      c: merge.c,
-      rs: merge.rs || 1,
-      cs: merge.cs || 1,
-    };
-  });
-
-  merges.forEach((merge) => {
-    const { r, c, rs = 1, cs = 1 } = merge;
-    for (let row = r; row < r + rs; row++) {
-      for (let col = c; col < c + cs; col++) {
-        if (row === r && col === c) continue;
-        const key = `${row}_${col}`;
-        const secondaryCell = cellByPosition.get(key);
-        if (secondaryCell) {
-          secondaryCell.v ||= {};
-          secondaryCell.v.mc = { r, c };
-        } else {
-          const cell = { r: row, c: col, v: { mc: { r, c } } };
-          celldata.push(cell);
-          cellByPosition.set(key, cell);
-        }
-      }
-    }
-  });
-
-  sheet.celldata = celldata.filter((cell) => !("v" in cell && cell.v?.v === null));
-};
 
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
@@ -368,95 +109,13 @@ const App = () => {
   }, [nextFrame]);
 
   const handleExcelLoad = useCallback(async (file) => {
-    {
-      const fortuneData = await transformExcelToFortune(file);
-      const formulas = {};
+    const fortuneData = await transformExcelToFortune(file);
+    const { formulas, sheets } = normalizeImportedWorkbook(fortuneData.sheets, {
+      sheetPrefix,
+    });
 
-      fortuneData.sheets.forEach(normalizeImportedMerges);
-      applyImportedFormulaResults(fortuneData.sheets);
-
-      // 🔹 Traitement des formules et valeurs affichées
-      fortuneData.sheets.forEach((sheet, sheetIndex) => {
-        if (sheet.celldata) {
-          sheet.celldata.forEach((cell) => {
-            if (cell.v?.f) {
-              const key = `${sheetIndex}-${cell.r}-${cell.c}`;
-              formulas[key] = cell.v.f;
-              cell.v.VF = { v: cell.v.v, f: cell.v.f };
-            } else if (cell.v?.v === undefined) {
-              if (
-                Array.isArray(cell.v?.ct?.s) &&
-                cell.v.ct.s.length > 0 &&
-                cell.v.ct.s[0]?.v
-              ) {
-                cell.v.v = cell.v.ct.s[0].v;
-                cell.v.m = cell.v.ct.s[0].v;
-              }
-            }
-          });
-        }
-      });
-
-      formulasRef.current = formulas;
-
-      // Convertit les images du format importeur Excel (objet keyed avec .default)
-      // vers le tableau {id, src, left, top, width, height} attendu par FortuneSheet
-      const convertImages = (images) => {
-        if (!images) return undefined;
-        const entries = Array.isArray(images)
-          ? images.map((img, i) => [img.id ?? `img_${i}`, img])
-          : Object.entries(images);
-        const result = [];
-        for (const [key, img] of entries) {
-          if (!img?.src) continue;
-          result.push({
-            id: img.id ?? key,
-            src: img.src,
-            left:   img.left   ?? img.default?.left   ?? 0,
-            top:    img.top    ?? img.default?.top    ?? 0,
-            width:  img.width  ?? img.default?.width  ?? 144,
-            height: img.height ?? img.default?.height ?? 84,
-          });
-        }
-        return result.length > 0 ? result : undefined;
-      };
-
-      const formattedData = fortuneData.sheets.map((sheet, index) => {
-        const sheetId = index.toString();
-        const calcChain = Array.isArray(sheet.calcChain)
-          ? sheet.calcChain.map((entry) => ({ ...entry, id: sheetId }))
-          : undefined;
-        return {
-          name: isDefaultSheetName(sheet.name)
-            ? `${sheetPrefix}${index + 1}`
-            : sheet.name,
-          id: sheetId,
-          status: 1,
-          order: index,
-          celldata: sheet.celldata || [],
-          calcChain,
-          filter: sheet.filter,
-          filter_select: sheet.filter_select,
-          customConditionalFormatting: sheet.customConditionalFormatting || [],
-          showGridLines: normalizeShowGridLines(sheet.showGridLines),
-          config: {
-            columnlen: sheet.config?.columnlen || {},
-            rowlen: sheet.config?.rowlen || {},
-            colhidden: sheet.config?.colhidden,
-            rowhidden: sheet.config?.rowhidden,
-            borderInfo: sheet.config?.borderInfo || [],
-            merge: sheet.config?.merge || {},
-            authority: sheet.config?.authority,
-          },
-          images: convertImages(sheet.images),
-        };
-      });
-      const normalizedData = isWorkbookProtected(formattedData)
-        ? setWorkbookProtection(formattedData, 1)
-        : formattedData;
-
-      setSheetData(applyConditionalFormatting(normalizedData));
-    }
+    formulasRef.current = formulas;
+    setSheetData(applyConditionalFormatting(sheets));
   }, []);
 
   useEffect(() => {
@@ -681,170 +340,18 @@ const App = () => {
     waitUntilReady,
   ]);
 
-  const addButtons = useCallback(() => {
-    const toolbar = document.getElementsByClassName("fortune-toolbar")[0];
-    if (!toolbar) return;
-    const statArea = document.getElementsByClassName("fortune-stat-area")[0];
-    if (statArea) {
-      statArea.style.height = "0px";
-      statArea.style.display = "none";
-    }
-
-    // 🔹 Supprimer les anciens boutons pour éviter les doublons
-    document.getElementById("custom-open-button")?.remove();
-    document.getElementById("custom-export-button")?.remove();
-    document.getElementById("custom-gridlines-button")?.remove();
-    document.getElementById("custom-conditional-format-button")?.remove();
-    document.getElementById("custom-protect-sheet-button")?.remove();
-
-    // 🔹 Création du bouton "Ouvrir..."
-    const openButton = document.createElement("div");
-    openButton.id = "custom-open-button";
-    openButton.className = "fortune-toolbar-button fortune-toolbar-item";
-    openButton.innerHTML = `<svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14.5 18.5004H5.9C5.05992 18.5004 4.63988 18.5004 4.31901 18.3369C4.03677 18.1931 3.8073 17.9636 3.66349 17.6814C3.5 17.3605 3.5 16.9405 3.5 16.1004V6.9C3.5 6.05992 3.5 5.63988 3.66349 5.31901C3.8073 5.03677 4.03677 4.8073 4.31901 4.66349C4.63988 4.5 5.05992 4.5 5.9 4.5H8.47237C8.84808 4.5 9.03594 4.5 9.20646 4.55179C9.35741 4.59763 9.49785 4.6728 9.61972 4.77298C9.75739 4.88614 9.86159 5.04245 10.07 5.35507L10.93 6.64533C11.1384 6.95795 11.2426 7.11426 11.3803 7.22742C11.5022 7.3276 11.6426 7.40277 11.7935 7.44861C11.9641 7.5004 12.1519 7.5004 12.5276 7.5004H16.5004C16.965 7.5004 17.1973 7.5004 17.3879 7.55143C17.9058 7.69008 18.3103 8.09459 18.449 8.61248C18.5 8.80308 18.5 9.03539 18.5 9.5V9.5M9.5 13.5H16.5" stroke="#222222" stroke-linecap="round"/><path d="M5.95298 11.1411C6.14969 10.551 6.24804 10.2559 6.43047 10.0378C6.59157 9.84512 6.79845 9.69601 7.03216 9.6041C7.2968 9.50002 7.60783 9.50003 8.2299 9.50005L18.1703 9.50031C19.2945 9.50034 19.8566 9.50036 20.2255 9.7357C20.5485 9.94171 20.7804 10.2635 20.8737 10.635C20.9803 11.0595 20.8025 11.5928 20.447 12.6593L19.047 16.8593C18.8503 17.4495 18.752 17.7445 18.5695 17.9627C18.4084 18.1553 18.2016 18.3044 17.9679 18.3963C17.7032 18.5004 17.3922 18.5004 16.7702 18.5004H6.82977C5.70557 18.5004 5.14347 18.5004 4.77449 18.2651C4.4515 18.0591 4.21958 17.7373 4.12628 17.3657C4.01969 16.9413 4.19744 16.408 4.55293 15.3415L5.95298 11.1411Z" stroke="#222222"/>
-</svg>
-<div class="fortune-tooltip">Ouvrir...</div>`;
-    openButton.addEventListener("click", () => {
-      document.getElementById("fileInput").click();
-    });
-
-    toolbar.insertBefore(openButton, toolbar.firstChild);
-
-    // 🔹 Création du bouton "Exporter..."
-    const exportButton = document.createElement("div");
-    exportButton.id = "custom-export-button";
-    exportButton.className = "fortune-toolbar-button fortune-toolbar-item";
-    exportButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#000000" fill="none"><path d="M51,53.48H10.52V13A2.48,2.48,0,0,1,13,10.52H46.07l7.41,6.4V51A2.48,2.48,0,0,1,51,53.48Z" stroke-linecap="round"/><rect x="21.5" y="10.52" width="21.01" height="15.5" stroke-linecap="round"/><rect x="17.86" y="36.46" width="28.28" height="17.02" stroke-linecap="round"/></svg>
-    <div class="fortune-tooltip">Exporter...</div>`;
-
-    exportButton.addEventListener("click", () => {
-      if (sheetDataRef.current.length > 0) {
-        exportToExcel(stripConditionalFormattingMarkers(sheetDataRef.current));
-      } else {
-        console.error("❌ Aucune donnée à exporter !");
-      }
-    });
-
-    toolbar.insertBefore(exportButton, openButton.nextSibling);
-
-    // 🔹 Création du bouton "Afficher / masquer le quadrillage"
-    const gridLinesButton = document.createElement("div");
-    gridLinesButton.id = "custom-gridlines-button";
-    gridLinesButton.className = "fortune-toolbar-button fortune-toolbar-item";
-    gridLinesButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="4" y="4" width="16" height="16" rx="1.5" stroke="#222" stroke-width="1.5"/>
-<path d="M9.33 4v16M14.67 4v16M4 9.33h16M4 14.67h16" stroke="#222" stroke-width="1.2"/>
-<path d="M5 19L19 5" stroke="#222" stroke-width="1.8" stroke-linecap="round"/>
-</svg>
-<div class="fortune-tooltip">${t.toggleGridLines ?? "Afficher / masquer le quadrillage"}</div>`;
-
-    const updateGridLinesButtonStyle = () => {
-      const wb = workbookRef.current;
-      const allSheets = wb?.getAllSheets?.() || sheetDataRef.current;
-      const isHidden = areGridLinesHidden(allSheets);
-      gridLinesButton.style.background = isHidden
-        ? "rgba(0,120,212,0.15)"
-        : "";
-      gridLinesButton.style.outline = isHidden
-        ? "1px solid rgba(0,120,212,0.4)"
-        : "";
-      gridLinesButton.setAttribute("aria-pressed", String(isHidden));
-    };
-
-    gridLinesButton.addEventListener("click", () => {
-      const wb = workbookRef.current;
-      if (!wb) return;
-      const allSheets = wb.getAllSheets?.() || sheetDataRef.current;
-      const nextShowGridLines = areGridLinesHidden(allSheets);
-
-      const updatedSheets = setWorkbookGridLines(
-        allSheets,
-        nextShowGridLines,
-      ).map((s) => ({
-        ...s,
-        celldata: s.celldata || dataToCelldata(s.data),
-      }));
-
-      sheetDataRef.current = updatedSheets;
-      setSheetData(updatedSheets);
-      setWorkbookKey((key) => key + 1);
-      updateGridLinesButtonStyle();
-    });
-
-    updateGridLinesButtonStyle();
-    toolbar.insertBefore(gridLinesButton, exportButton.nextSibling);
-
-    // 🔹 Création du bouton "Formatage conditionnel"
-    const conditionalFormatButton = document.createElement("div");
-    conditionalFormatButton.id = "custom-conditional-format-button";
-    conditionalFormatButton.className = "fortune-toolbar-button fortune-toolbar-item";
-    conditionalFormatButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="4" y="5" width="16" height="14" rx="2" stroke="#222" stroke-width="1.4"/>
-<path d="M8 9h8M8 12h4" stroke="#222" stroke-width="1.4" stroke-linecap="round"/>
-<path d="M8 16l2-2 2 2 4-4" stroke="#d93025" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-<div class="fortune-tooltip">${conditionalFormattingTexts.toolbar}</div>`;
-    conditionalFormatButton.addEventListener("click", openConditionalDialog);
-    toolbar.insertBefore(conditionalFormatButton, gridLinesButton.nextSibling);
-
-    if (appMode !== "student") {
-      // 🔹 Création du bouton "Protéger / Déprotéger la feuille"
-      const protectSheetButton = document.createElement("div");
-      protectSheetButton.id = "custom-protect-sheet-button";
-      protectSheetButton.className = "fortune-toolbar-button fortune-toolbar-item";
-      protectSheetButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2L4 6v5c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V6L12 2z" stroke="#222" stroke-width="1.5" stroke-linejoin="round"/>
-<rect x="8.5" y="10.5" width="7" height="5" rx="1" stroke="#222" stroke-width="1.2"/>
-<path d="M10 10.5V9a2 2 0 0 1 4 0v1.5" stroke="#222" stroke-width="1.2" stroke-linecap="round"/>
-</svg>
-<div class="fortune-tooltip">${t.toggleSheetProtection}</div>`;
-
-      const updateProtectButtonStyle = () => {
-        const wb = workbookRef.current;
-        if (!wb) return;
-        const allSheets = wb.getAllSheets?.() || sheetDataRef.current;
-        const isProtected = isWorkbookProtected(allSheets);
-        protectSheetButton.style.background = isProtected
-          ? "rgba(0,120,212,0.15)"
-          : "";
-        protectSheetButton.style.outline = isProtected
-          ? "1px solid rgba(0,120,212,0.4)"
-          : "";
-      };
-
-      protectSheetButton.addEventListener("click", () => {
-        const wb = workbookRef.current;
-        if (!wb) return;
-        const allSheets = wb.getAllSheets();
-        const isProtected = isWorkbookProtected(allSheets);
-        const nextProtectionValue = isProtected ? 0 : 1;
-
-        const updatedSheets = setWorkbookProtection(
-          allSheets,
-          nextProtectionValue,
-        ).map((s) => ({
-          ...s,
-          celldata: s.celldata || dataToCelldata(s.data),
-        }));
-
-        sheetDataRef.current = updatedSheets;
-        setSheetData(updatedSheets);
-        setWorkbookKey((key) => key + 1);
-
-        const willBeProtected = nextProtectionValue === 1;
-        protectSheetButton.style.background = willBeProtected
-          ? "rgba(0,120,212,0.15)"
-          : "";
-        protectSheetButton.style.outline = willBeProtected
-          ? "1px solid rgba(0,120,212,0.4)"
-          : "";
-      });
-
-      updateProtectButtonStyle();
-      toolbar.insertBefore(protectSheetButton, conditionalFormatButton.nextSibling);
-    }
-  }, [appMode, openConditionalDialog]);
+  useFortuneToolbarButtons({
+    appMode,
+    sheetData,
+    sheetDataRef,
+    workbookRef,
+    setSheetData,
+    setWorkbookKey,
+    openConditionalDialog,
+    toggleGridLinesText: t.toggleGridLines ?? "Afficher / masquer le quadrillage",
+    toggleSheetProtectionText: t.toggleSheetProtection,
+    conditionalFormattingToolbarText: conditionalFormattingTexts.toolbar,
+  });
 
   // Bloque le redimensionnement colonnes/lignes quand la feuille est protégée
   useEffect(() => {
@@ -954,38 +461,6 @@ const App = () => {
     const fileName = urlParams.get("url") || "empty.xlsx";
     loadExcelFromURL(fileName, fileName).catch(handleLoadError);
   }, [loadExcelFromURL, handleLoadError]);
-
-
-  useEffect(() => {
-    if (sheetData.length === 0) return;
-
-    const observer = new MutationObserver(() => {
-      const toolbar = document.getElementsByClassName("fortune-toolbar")[0];
-      if (toolbar) {
-        addButtons();
-        observer.disconnect();
-      }
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    return () => observer.disconnect();
-  }, [sheetData, addButtons]);
-
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      const toolbar = document.getElementsByClassName("fortune-toolbar")[0];
-      if (toolbar) {
-        addButtons();
-        observer.disconnect();
-      }
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    return () => observer.disconnect();
-  }, [addButtons]);
-
   const workbookHooks = useMemo(() => ({
     beforeAddSheet: (sheet) => {
       sheet.showGridLines = getWorkbookGridLinesPreference(sheetDataRef.current);
@@ -997,6 +472,7 @@ const App = () => {
       sheet.name = getAvailableDefaultSheetName(
         sheetDataRef.current,
         preferredNumber,
+        sheetPrefix,
       );
     },
     afterAddSheet: (sheet) => {
@@ -1027,6 +503,7 @@ const App = () => {
       const name = getAvailableDefaultSheetName(
         sheetDataRef.current,
         preferredNumber,
+        sheetPrefix,
       );
       requestAnimationFrame(() => workbookRef.current?.setSheetName(name));
     },
