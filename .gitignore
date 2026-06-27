@@ -40,4 +40,5 @@ yarn.lock
 pnpm-lock.yaml
 
 # Memory
+memory
 memory/*.md
