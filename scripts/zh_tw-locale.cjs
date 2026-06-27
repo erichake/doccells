@@ -9278,7 +9278,7 @@ module.exports = {
   fontFamily: {
     MicrosoftYaHei: "Microsoft YaHei"
   },
-  fontarray: ["Times New Roman", "Arial", "Tahoma", "Verdana", "微軟雅黑", "宋體", "黑體", "楷體", "仿宋", "新宋體", "華文新魏", "華文行楷", "華文隸書"],
+  fontarray: ["Times New Roman", "Arial", "Tahoma", "Verdana", "微軟雅黑", "宋體", "黑體", "楷體", "仿宋", "新宋體", "華文新魏", "華文行楷", "華文隸書", "Helvetica", "Trebuchet MS", "Georgia", "Garamond", "Courier New", "Lucida Console", "Impact", "Comic Sans MS", "Segoe UI"],
   fontjson: {
     "times new roman": 0,
     arial: 1,
@@ -9301,7 +9301,16 @@ module.exports = {
     華文行楷: 11,
     stxingkai: 11,
     華文隸書: 12,
-    stliti: 12
+    stliti: 12,
+    helvetica: 13,
+    "trebuchet ms": 14,
+    georgia: 15,
+    garamond: 16,
+    "courier new": 17,
+    "lucida console": 18,
+    impact: 19,
+    "comic sans ms": 20,
+    "segoe ui": 21
   },
   border: {
     borderTop: "上框線",

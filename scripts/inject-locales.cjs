@@ -80,6 +80,12 @@ for (const bundle of BUNDLES) {
 
 console.log(`[inject-locales] Done. ${patchedCount} bundle(s) patched with all locales.`);
 
+const viteCacheDir = path.join(SCRIPTS, "..", "node_modules", ".vite");
+if (fs.existsSync(viteCacheDir)) {
+  fs.rmSync(viteCacheDir, { recursive: true, force: true });
+  console.log("[inject-locales] Cleared Vite dependency cache");
+}
+
 // Generate src/locales/custom.js — ESM file importable by React/Vite
 // Maps each locale's `custom` section to the language key used by App.jsx
 const LANG_KEY_MAP = {

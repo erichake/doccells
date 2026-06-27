@@ -9760,12 +9760,21 @@ module.exports = {
   fontFamily: {
     MicrosoftYaHei: "YaHei"
   },
-  fontarray: ["Times New Roman", "Arial", "Tahoma", "Verdana"],
+  fontarray: ["Times New Roman", "Arial", "Tahoma", "Verdana", "Helvetica", "Trebuchet MS", "Georgia", "Garamond", "Courier New", "Lucida Console", "Impact", "Comic Sans MS", "Segoe UI"],
   fontjson: {
     "times new roman": 0,
     arial: 1,
     tahoma: 2,
-    verdana: 3
+    verdana: 3,
+    helvetica: 4,
+    "trebuchet ms": 5,
+    georgia: 6,
+    garamond: 7,
+    "courier new": 8,
+    "lucida console": 9,
+    impact: 10,
+    "comic sans ms": 11,
+    "segoe ui": 12
   },
   border: {
     borderTop: "Top border",

@@ -1069,6 +1069,7 @@ const App = () => {
             "number-decrease",
             "number-increase",
             "format",
+            "font",
             "font-size",
             "|",
             "bold",
