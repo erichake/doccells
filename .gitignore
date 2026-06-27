@@ -22,9 +22,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+zz_*
+fr.json
+Icon?
 
 # macOS app bundles (local dev scripts)
 *.app
+
+# Local macOS build scripts
+__build_for_doctools.command
 
 # Audit files (internal)
 audit_*.txt
@@ -32,3 +38,6 @@ audit_*.txt
 # Alternate lockfiles (npm only)
 yarn.lock
 pnpm-lock.yaml
+
+# Memory
+memory/*.md

@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --force",
+    "dev": "vite --force --port 5174 --strictPort",
     "build": "vite build",
+    "build:doctools": "vite build --mode doctools",
     "lint": "eslint .",
     "preview": "vite preview",
     "postinstall": "node scripts/patch-fortune-core.cjs && node scripts/patch-fortune-react.cjs && node scripts/patch-fortune-formula-parser.cjs && node scripts/inject-locales.cjs"
