@@ -1,5 +1,9 @@
 import ExcelJS from "exceljs";
 import saveAs from "file-saver";
+import {
+  patchWorkbookWithNativeCharts,
+} from "../features/charts/excelChartOoxml.js";
+import { DOCCELLS_METADATA_SHEET_NAME } from "../features/charts/chartUtils.js";
 
 export const exportToExcel = async (
   sheetsData,
@@ -161,8 +165,15 @@ export const exportToExcel = async (
   };
 
   const sheetsToExport = Array.isArray(sheetsData) && sheetsData.length > 0
-    ? sheetsData
+    ? sheetsData.filter((sheet) => sheet?.name !== DOCCELLS_METADATA_SHEET_NAME)
     : [{ name: "Feuille1", celldata: [], config: {} }];
+  const chartMetadata = sheetsToExport
+    .map((sheet, index) => ({
+      index,
+      name: sheet.name || `Feuille${index + 1}`,
+      customCharts: sheet.customCharts || [],
+    }))
+    .filter((sheet) => sheet.customCharts.length > 0);
 
   const workbook = new ExcelJS.Workbook();
 
@@ -496,16 +507,27 @@ export const exportToExcel = async (
     }
   }
 
+  if (chartMetadata.length > 0) {
+    const metadataWorksheet = workbook.addWorksheet(DOCCELLS_METADATA_SHEET_NAME, {
+      state: "veryHidden",
+    });
+    metadataWorksheet.getCell("A1").value = JSON.stringify({
+      version: 1,
+      sheets: chartMetadata,
+    });
+  }
+
   const buffer = await workbook.xlsx.writeBuffer();
+  const finalBuffer = await patchWorkbookWithNativeCharts(buffer, sheetsToExport);
   if (returnBase64) {
-    const bytes = new Uint8Array(buffer);
+    const bytes = new Uint8Array(finalBuffer);
     let binary = "";
     for (let i = 0; i < bytes.length; i++)
       binary += String.fromCharCode(bytes[i]);
     return btoa(binary);
   }
   saveAs(
-    new Blob([buffer], {
+    new Blob([finalBuffer], {
       type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     }),
     "export.xlsx",

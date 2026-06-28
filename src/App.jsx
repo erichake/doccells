@@ -5,6 +5,9 @@ import { exportToExcel } from "./utils/exportToExcel.js";
 import { customLocales } from "./locales/custom.js";
 import { ConditionalFormattingDialog } from "./features/conditionalFormatting/ConditionalFormattingDialog.jsx";
 import { getConditionalFormattingTexts } from "./features/conditionalFormatting/conditionalFormattingConstants.js";
+import { ChartDialog } from "./features/charts/ChartDialog.jsx";
+import { ChartLayer } from "./features/charts/ChartRenderer.jsx";
+import { getChartTexts, normalizeChart } from "./features/charts/chartUtils.js";
 import { normalizeImportedWorkbook } from "./features/excelImport/normalizeImportedWorkbook.js";
 import { useFortuneToolbarButtons } from "./features/fortuneSheet/useFortuneToolbarButtons.js";
 import {
@@ -30,6 +33,7 @@ const detectedLang =
     : (SUPPORTED_LANGS.find((l) => navigator.language.startsWith(l.split("-")[0])) ?? "en");
 const t = customLocales[detectedLang] ?? customLocales["en"];
 const conditionalFormattingTexts = getConditionalFormattingTexts(t.conditionalFormatting);
+const chartTexts = getChartTexts(t.charts);
 const DEFAULT_COLUMN_WIDTH = 99;
 const sheetPrefix =
   {
@@ -40,6 +44,11 @@ const sheetPrefix =
     "es-ES": "Hoja",
   }[detectedLang] ?? "Sheet";
 
+const preserveCustomList = (liveList, previousList) => {
+  if (Array.isArray(previousList)) return previousList;
+  return Array.isArray(liveList) ? liveList : [];
+};
+
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
   const [appMode, setAppMode] = useState("teacher");
@@ -47,6 +56,12 @@ const App = () => {
   const [conditionalDialogOpen, setConditionalDialogOpen] = useState(false);
   const [conditionalSheetIndex, setConditionalSheetIndex] = useState(0);
   const [conditionalInitialRange, setConditionalInitialRange] = useState("A1");
+  const [chartDialogOpen, setChartDialogOpen] = useState(false);
+  const [chartSheetIndex, setChartSheetIndex] = useState(0);
+  const [chartInitialRange, setChartInitialRange] = useState("A1:B5");
+  const [chartEditing, setChartEditing] = useState(null);
+  const [activeSheetIndex, setActiveSheetIndex] = useState(0);
+  const [, setChartRenderKey] = useState(0);
   const sheetDataRef = useRef([]);
   useEffect(() => {
     sheetDataRef.current = sheetData;
@@ -206,10 +221,14 @@ const App = () => {
     return liveSheets.map((sheet, index) => ({
       ...sheet,
       celldata: sheet.celldata || dataToCelldata(sheet.data),
-      customConditionalFormatting:
-        sheet.customConditionalFormatting ||
-        sheetDataRef.current[index]?.customConditionalFormatting ||
-        [],
+      customConditionalFormatting: preserveCustomList(
+        sheet.customConditionalFormatting,
+        sheetDataRef.current[index]?.customConditionalFormatting,
+      ),
+      customCharts: preserveCustomList(
+        sheet.customCharts,
+        sheetDataRef.current[index]?.customCharts,
+      ),
       showGridLines: normalizeShowGridLines(
         sheet.showGridLines ?? sheetDataRef.current[index]?.showGridLines,
       ),
@@ -234,6 +253,16 @@ const App = () => {
     setConditionalSheetIndex(sheetIndex);
     setConditionalInitialRange(range ? rangeToText(range) : "A1");
     setConditionalDialogOpen(true);
+  }, [getActiveSheetIndex]);
+
+  const openChartDialog = useCallback(() => {
+    const sheetIndex = getActiveSheetIndex();
+    const selection = workbookRef.current?.getSelection?.();
+    const range = selection?.[selection.length - 1];
+    setChartSheetIndex(sheetIndex);
+    setChartInitialRange(range ? rangeToText(range) : "A1:B5");
+    setChartEditing(null);
+    setChartDialogOpen(true);
   }, [getActiveSheetIndex]);
 
   const saveConditionalRule = useCallback(
@@ -268,6 +297,75 @@ const App = () => {
       commitConditionalSheets(sheets);
     },
     [commitConditionalSheets, conditionalSheetIndex, getWorkbookSheetsForCommit],
+  );
+
+  const saveChart = useCallback(
+    (chart) => {
+      const sheets = getWorkbookSheetsForCommit();
+      const sheetIndex = Math.min(chartSheetIndex, sheets.length - 1);
+      if (sheetIndex < 0) return;
+      const normalized = normalizeChart(chart);
+      const currentCharts = sheets[sheetIndex].customCharts || [];
+      const exists = currentCharts.some((item) => item.id === normalized.id);
+      sheets[sheetIndex] = {
+        ...sheets[sheetIndex],
+        customCharts: exists
+          ? currentCharts.map((item) => (item.id === normalized.id ? normalized : item))
+          : [...currentCharts, normalized],
+      };
+      sheetDataRef.current = sheets;
+      setSheetData(sheets);
+    },
+    [chartSheetIndex, getWorkbookSheetsForCommit],
+  );
+
+  const deleteChart = useCallback(
+    (chartId, sheetIndexOverride = chartSheetIndex) => {
+      const sheets = getWorkbookSheetsForCommit();
+      const sheetIndex = Math.min(sheetIndexOverride, sheets.length - 1);
+      if (sheetIndex < 0) return;
+      sheets[sheetIndex] = {
+        ...sheets[sheetIndex],
+        customCharts: (sheets[sheetIndex].customCharts || []).filter(
+          (chart) => chart.id !== chartId,
+        ),
+      };
+      sheetDataRef.current = sheets;
+      setSheetData(sheets);
+      setChartEditing((chart) => (chart?.id === chartId ? null : chart));
+    },
+    [chartSheetIndex, getWorkbookSheetsForCommit],
+  );
+
+  const updateChartPosition = useCallback(
+    (chartId, position) => {
+      const sheets = sheetDataRef.current.map((sheet) => ({
+        ...sheet,
+        celldata: sheet.celldata || dataToCelldata(sheet.data),
+      }));
+      const sheetIndex = Math.min(activeSheetIndex, sheets.length - 1);
+      if (sheetIndex < 0) return;
+      const currentCharts = sheets[sheetIndex].customCharts || [];
+      sheets[sheetIndex] = {
+        ...sheets[sheetIndex],
+        customCharts: currentCharts.map((chart) =>
+          chart.id === chartId ? normalizeChart({ ...chart, position }) : chart,
+        ),
+      };
+      sheetDataRef.current = sheets;
+      setSheetData(sheets);
+    },
+    [activeSheetIndex],
+  );
+
+  const editChartFromLayer = useCallback(
+    (chart) => {
+      setChartSheetIndex(activeSheetIndex);
+      setChartInitialRange(chart.rangeText || rangeToText(chart.range));
+      setChartEditing(chart);
+      setChartDialogOpen(true);
+    },
+    [activeSheetIndex],
   );
 
   // 🌐 Exposition des fonctions globales sur window pour pilotage externe
@@ -347,7 +445,9 @@ const App = () => {
     workbookRef,
     setSheetData,
     setWorkbookKey,
+    openChartDialog,
     openConditionalDialog,
+    chartToolbarText: chartTexts.toolbar,
     toggleGridLinesText: t.toggleGridLines ?? "Afficher / masquer le quadrillage",
     toggleSheetProtectionText: t.toggleSheetProtection,
     conditionalFormattingToolbarText: conditionalFormattingTexts.toolbar,
@@ -507,6 +607,11 @@ const App = () => {
       );
       requestAnimationFrame(() => workbookRef.current?.setSheetName(name));
     },
+    afterActivateSheet: (id) => {
+      const sheets = workbookRef.current?.getAllSheets?.() || sheetDataRef.current;
+      const index = sheets.findIndex((sheet) => sheet.id === id);
+      setActiveSheetIndex(index >= 0 ? index : 0);
+    },
   }), []);
 
   return sheetData.length !== 0 ? (
@@ -541,6 +646,21 @@ const App = () => {
         onSave={saveConditionalRule}
         onDelete={deleteConditionalRule}
         texts={conditionalFormattingTexts}
+      />
+
+      <ChartDialog
+        open={chartDialogOpen}
+        sheet={sheetDataRef.current[chartSheetIndex]}
+        charts={sheetDataRef.current[chartSheetIndex]?.customCharts || []}
+        initialRangeText={chartInitialRange}
+        editingChart={chartEditing}
+        onClose={() => {
+          setChartDialogOpen(false);
+          setChartEditing(null);
+        }}
+        onSave={saveChart}
+        onDelete={deleteChart}
+        texts={chartTexts}
       />
 
       <Workbook
@@ -604,10 +724,14 @@ const App = () => {
                 return {
                   ...sheet,
                   celldata: newCells.length > 0 ? newCells : oldCells,
-                  customConditionalFormatting:
-                    sheet.customConditionalFormatting ||
-                    sheetDataRef.current[index]?.customConditionalFormatting ||
-                    [],
+                  customConditionalFormatting: preserveCustomList(
+                    sheet.customConditionalFormatting,
+                    sheetDataRef.current[index]?.customConditionalFormatting,
+                  ),
+                  customCharts: preserveCustomList(
+                    sheet.customCharts,
+                    sheetDataRef.current[index]?.customCharts,
+                  ),
                   showGridLines: normalizeShowGridLines(
                     sheet.showGridLines ??
                       sheetDataRef.current[index]?.showGridLines,
@@ -654,6 +778,13 @@ const App = () => {
                 ? applyConditionalFormatting(updatedData)
                 : updatedData;
               sheetDataRef.current = finalData;
+              if (
+                finalData.some(
+                  (sheet) => (sheet.customCharts || []).length > 0,
+                )
+              ) {
+                setChartRenderKey((key) => key + 1);
+              }
               if (hasConditionalRules) {
                 syncingConditionalRef.current = true;
                 setSheetData(finalData);
@@ -707,6 +838,13 @@ const App = () => {
             "|",
             "image",
           ]}
+      />
+      <ChartLayer
+        sheet={sheetDataRef.current[activeSheetIndex]}
+        appMode={appMode}
+        onEdit={editChartFromLayer}
+        onDelete={(chartId) => deleteChart(chartId, activeSheetIndex)}
+        onPositionChange={updateChartPosition}
       />
     </>
   ) : null;

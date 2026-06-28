@@ -10612,7 +10612,7 @@ module.exports = {
   custom: {
     lockCells: "锁定单元格",
     unlockCells: "取消锁定单元格",
-    toggleSheetProtection: "保护/取消保护工作表",
+    toggleSheetProtection: "保护/取消保护工作簿",
     conditionalFormatting: {
       toolbar: "条件格式",
       title: "条件格式",
@@ -10677,6 +10677,53 @@ module.exports = {
         bold: "加粗",
         italic: "斜体",
         underline: "下划线"
+      }
+    },
+    charts: {
+      toolbar: "插入图表",
+      title: "图表",
+      activeSheet: "当前工作表",
+      existingCharts: "此工作表的图表",
+      noCharts: "此工作表没有图表。",
+      newChart: "新建图表",
+      editChart: "编辑图表",
+      chartTitle: "标题",
+      type: "类型",
+      range: "数据",
+      labels: "标签",
+      labelReference: "引用",
+      values: "显示数值",
+      legend: "显示图例",
+      color: "颜色",
+      xAxis: "显示横轴刻度",
+      yAxis: "显示纵轴刻度",
+      gridlines: "显示网格线",
+      displayOptions: "显示",
+      preview: "预览",
+      close: "关闭",
+      reset: "新建",
+      add: "添加",
+      save: "保存",
+      edit: "编辑",
+      delete: "删除",
+      types: {
+        bar: "柱状图",
+        line: "折线图",
+        scatter: "散点图",
+        pie: "饼图"
+      },
+      labelTypes: {
+        none: "无",
+        sameRowColumn: "同一行的列",
+        range: "自定义区域"
+      },
+      errors: {
+        range: "区域格式应类似 A1:B5。",
+        dataColumn: "数据区域必须是一列数值。",
+        labelColumn: "标签列格式应类似 B。",
+        labelRange: "标签区域格式应类似 B3:B24。",
+        labelRangeSize: "标签区域的行数必须与数据相同。",
+        title: "请添加一个简短的图表标题。"
       }
     }
   }

@@ -10055,7 +10055,7 @@ module.exports = {
   custom: {
     lockCells: "Bloquear celdas",
     unlockCells: "Desbloquear celdas",
-    toggleSheetProtection: "Proteger / Desproteger hoja",
+    toggleSheetProtection: "Proteger / Desproteger libro",
     conditionalFormatting: {
       toolbar: "Formato condicional",
       title: "Formato condicional",
@@ -10120,6 +10120,53 @@ module.exports = {
         bold: "Negrita",
         italic: "Cursiva",
         underline: "Subrayado"
+      }
+    },
+    charts: {
+      toolbar: "Insertar gráfico",
+      title: "Gráficos",
+      activeSheet: "Hoja activa",
+      existingCharts: "Gráficos de la hoja",
+      noCharts: "No hay gráficos para esta hoja.",
+      newChart: "Nuevo gráfico",
+      editChart: "Editar gráfico",
+      chartTitle: "Título",
+      type: "Tipo",
+      range: "Datos",
+      labels: "Etiquetas",
+      labelReference: "Referencia",
+      values: "Mostrar valores",
+      legend: "Mostrar leyenda",
+      color: "Color",
+      xAxis: "Mostrar abscisas",
+      yAxis: "Mostrar ordenadas",
+      gridlines: "Mostrar cuadrícula",
+      displayOptions: "Visualización",
+      preview: "Vista previa",
+      close: "Cerrar",
+      reset: "Nuevo",
+      add: "Agregar",
+      save: "Guardar",
+      edit: "Editar",
+      delete: "Eliminar",
+      types: {
+        bar: "Barras",
+        line: "Línea",
+        scatter: "Dispersión",
+        pie: "Sectores"
+      },
+      labelTypes: {
+        none: "Sin etiquetas",
+        sameRowColumn: "Columna de la misma fila",
+        range: "Rango personalizado"
+      },
+      errors: {
+        range: "El rango debe parecerse a A1:B5.",
+        dataColumn: "El rango de datos debe ser una sola columna de valores.",
+        labelColumn: "La columna de etiquetas debe parecerse a B.",
+        labelRange: "El rango de etiquetas debe parecerse a B3:B24.",
+        labelRangeSize: "El rango de etiquetas debe tener el mismo número de filas que los datos.",
+        title: "Agrega un título corto al gráfico."
       }
     }
   }

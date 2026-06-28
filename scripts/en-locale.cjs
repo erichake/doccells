@@ -10595,7 +10595,7 @@ module.exports = {
   custom: {
     lockCells: "Lock cells",
     unlockCells: "Unlock cells",
-    toggleSheetProtection: "Protect / Unprotect sheet",
+    toggleSheetProtection: "Protect / Unprotect workbook",
     conditionalFormatting: {
       toolbar: "Conditional formatting",
       title: "Conditional formatting",
@@ -10660,6 +10660,53 @@ module.exports = {
         bold: "Bold",
         italic: "Italic",
         underline: "Underline"
+      }
+    },
+    charts: {
+      toolbar: "Insert chart",
+      title: "Charts",
+      activeSheet: "Active sheet",
+      existingCharts: "Charts in this sheet",
+      noCharts: "No charts for this sheet.",
+      newChart: "New chart",
+      editChart: "Edit chart",
+      chartTitle: "Title",
+      type: "Type",
+      range: "Data",
+      labels: "Labels",
+      labelReference: "Reference",
+      values: "Show values",
+      legend: "Show legend",
+      color: "Color",
+      xAxis: "Show x-axis labels",
+      yAxis: "Show y-axis labels",
+      gridlines: "Show gridlines",
+      displayOptions: "Display",
+      preview: "Preview",
+      close: "Close",
+      reset: "New",
+      add: "Add",
+      save: "Save",
+      edit: "Edit",
+      delete: "Delete",
+      types: {
+        bar: "Bars",
+        line: "Line",
+        scatter: "Scatter",
+        pie: "Pie"
+      },
+      labelTypes: {
+        none: "None",
+        sameRowColumn: "Column on the same row",
+        range: "Custom range"
+      },
+      errors: {
+        range: "The range must look like A1:B5.",
+        dataColumn: "The data range must be a single column of values.",
+        labelColumn: "The label column must look like B.",
+        labelRange: "The label range must look like B3:B24.",
+        labelRangeSize: "The label range must have the same number of rows as the data.",
+        title: "Add a short chart title."
       }
     }
   }

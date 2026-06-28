@@ -10586,7 +10586,53 @@ module.exports = {
   custom: {
     lockCells: "कोशिकाओं को लॉक करें",
     unlockCells: "कोशिकाओं को अनलॉक करें",
-    toggleSheetProtection: "शीट सुरक्षित/असुरक्षित करें"
+    toggleSheetProtection: "कार्यपुस्तिका सुरक्षित/असुरक्षित करें",
+    charts: {
+      toolbar: "चार्ट डालें",
+      title: "चार्ट",
+      activeSheet: "सक्रिय शीट",
+      existingCharts: "इस शीट के चार्ट",
+      noCharts: "इस शीट में कोई चार्ट नहीं है।",
+      newChart: "नया चार्ट",
+      editChart: "चार्ट संपादित करें",
+      chartTitle: "शीर्षक",
+      type: "प्रकार",
+      range: "डेटा",
+      labels: "लेबल",
+      labelReference: "संदर्भ",
+      values: "मान दिखाएँ",
+      legend: "लेजेंड दिखाएँ",
+      color: "रंग",
+      xAxis: "X-अक्ष मान दिखाएँ",
+      yAxis: "Y-अक्ष मान दिखाएँ",
+      gridlines: "ग्रिड दिखाएँ",
+      displayOptions: "दिखावट",
+      preview: "पूर्वावलोकन",
+      close: "बंद करें",
+      reset: "नया",
+      add: "जोड़ें",
+      save: "सहेजें",
+      edit: "संपादित करें",
+      delete: "हटाएँ",
+      types: {
+        bar: "बार",
+        line: "रेखा",
+        scatter: "स्कैटर",
+        pie: "पाई"
+      },
+      labelTypes: {
+        none: "नहीं",
+        sameRowColumn: "उसी पंक्ति का स्तंभ",
+        range: "कस्टम रेंज"
+      },
+      errors: {
+        range: "रेंज A1:B5 जैसी होनी चाहिए।",
+        dataColumn: "डेटा रेंज मानों का एक ही स्तंभ होना चाहिए।",
+        labelColumn: "लेबल स्तंभ B जैसा होना चाहिए।",
+        labelRange: "लेबल रेंज B3:B24 जैसी होनी चाहिए।",
+        labelRangeSize: "लेबल रेंज में डेटा जितनी ही पंक्तियाँ होनी चाहिए।",
+        title: "चार्ट के लिए छोटा शीर्षक जोड़ें।"
+      }
+    }
   }
 };
-

@@ -1,10 +1,52 @@
 import { applyImportedFormulaResults } from "./importedFormulaResults.js";
 import {
+  DOCCELLS_METADATA_SHEET_NAME,
+  normalizeChart,
+} from "../charts/chartUtils.js";
+import {
   isDefaultSheetName,
   isWorkbookProtected,
   normalizeShowGridLines,
   setWorkbookProtection,
 } from "../workbook/workbookUtils.js";
+
+const getCellRawValue = (cell) => {
+  const value = cell?.v;
+  if (!value || typeof value !== "object") return value;
+  return value.v ?? value.m ?? "";
+};
+
+const extractDocCellsMetadata = (sheets) => {
+  const metadataSheet = sheets.find(
+    (sheet) => sheet?.name === DOCCELLS_METADATA_SHEET_NAME,
+  );
+  const metadataText = getCellRawValue(
+    metadataSheet?.celldata?.find((cell) => cell.r === 0 && cell.c === 0),
+  );
+  if (!metadataText) return null;
+  try {
+    const parsed = JSON.parse(String(metadataText));
+    return parsed?.version === 1 && Array.isArray(parsed.sheets) ? parsed : null;
+  } catch {
+    return null;
+  }
+};
+
+const removeDocCellsMetadataSheets = (sheets) =>
+  sheets.filter((sheet) => sheet?.name !== DOCCELLS_METADATA_SHEET_NAME);
+
+const applyDocCellsMetadata = (sheets, metadata) => {
+  if (!metadata?.sheets) return sheets;
+  const byName = new Map(metadata.sheets.map((sheet) => [sheet.name, sheet]));
+  return sheets.map((sheet, index) => {
+    const stored = metadata.sheets.find((item) => item.index === index) || byName.get(sheet.name);
+    if (!Array.isArray(stored?.customCharts)) return sheet;
+    return {
+      ...sheet,
+      customCharts: stored.customCharts.map(normalizeChart),
+    };
+  });
+};
 
 const normalizeImportedMerges = (sheet) => {
   if (!sheet) return;
@@ -129,6 +171,7 @@ const formatImportedSheets = (sheets, sheetPrefix) =>
       filter: sheet.filter,
       filter_select: sheet.filter_select,
       customConditionalFormatting: sheet.customConditionalFormatting || [],
+      customCharts: sheet.customCharts || [],
       showGridLines: normalizeShowGridLines(sheet.showGridLines),
       config: {
         columnlen: sheet.config?.columnlen || {},
@@ -144,11 +187,16 @@ const formatImportedSheets = (sheets, sheetPrefix) =>
   });
 
 export const normalizeImportedWorkbook = (sheets, { sheetPrefix }) => {
-  sheets.forEach(normalizeImportedMerges);
-  applyImportedFormulaResults(sheets);
+  const metadata = extractDocCellsMetadata(sheets);
+  const workbookSheets = removeDocCellsMetadataSheets(sheets);
+  workbookSheets.forEach(normalizeImportedMerges);
+  applyImportedFormulaResults(workbookSheets);
 
-  const formulas = collectFormulaMetadata(sheets);
-  const formattedSheets = formatImportedSheets(sheets, sheetPrefix);
+  const formulas = collectFormulaMetadata(workbookSheets);
+  const formattedSheets = applyDocCellsMetadata(
+    formatImportedSheets(workbookSheets, sheetPrefix),
+    metadata,
+  );
   const normalizedSheets = isWorkbookProtected(formattedSheets)
     ? setWorkbookProtection(formattedSheets, 1)
     : formattedSheets;

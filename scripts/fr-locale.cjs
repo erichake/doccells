@@ -10516,7 +10516,7 @@ module.exports = {
   custom: {
     lockCells: "Verrouiller les cellules",
     unlockCells: "Déverrouiller les cellules",
-    toggleSheetProtection: "Protéger / Déprotéger la feuille",
+    toggleSheetProtection: "Protéger / Déprotéger le classeur",
     conditionalFormatting: {
       toolbar: "Formatage conditionnel",
       title: "Formatage conditionnel",
@@ -10581,6 +10581,53 @@ module.exports = {
         bold: "Gras",
         italic: "Italique",
         underline: "Souligné"
+      }
+    },
+    charts: {
+      toolbar: "Insérer un graphique",
+      title: "Graphiques",
+      activeSheet: "Feuille active",
+      existingCharts: "Graphiques de la feuille",
+      noCharts: "Aucun graphique pour cette feuille.",
+      newChart: "Nouveau graphique",
+      editChart: "Modifier le graphique",
+      chartTitle: "Titre",
+      type: "Type",
+      range: "Données",
+      labels: "Étiquettes",
+      labelReference: "Référence",
+      values: "Afficher les valeurs",
+      legend: "Afficher la légende",
+      color: "Couleur",
+      xAxis: "Afficher les abscisses",
+      yAxis: "Afficher les ordonnées",
+      gridlines: "Afficher la grille",
+      displayOptions: "Affichage",
+      preview: "Aperçu",
+      close: "Fermer",
+      reset: "Nouveau",
+      add: "Ajouter",
+      save: "Enregistrer",
+      edit: "Modifier",
+      delete: "Supprimer",
+      types: {
+        bar: "Barres",
+        line: "Courbe",
+        scatter: "Nuage de points",
+        pie: "Secteurs"
+      },
+      labelTypes: {
+        none: "Sans",
+        sameRowColumn: "Colonne d'une même ligne",
+        range: "Plage personnalisée"
+      },
+      errors: {
+        range: "La plage doit ressembler à A1:B5.",
+        dataColumn: "La plage de données doit être une seule colonne de valeurs.",
+        labelColumn: "La colonne d'étiquettes doit ressembler à B.",
+        labelRange: "La plage d'étiquettes doit ressembler à B3:B24.",
+        labelRangeSize: "La plage d'étiquettes doit avoir le même nombre de lignes que les données.",
+        title: "Ajoute un titre court au graphique."
       }
     }
   }

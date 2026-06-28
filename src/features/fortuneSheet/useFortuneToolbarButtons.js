@@ -16,7 +16,9 @@ export const useFortuneToolbarButtons = ({
   workbookRef,
   setSheetData,
   setWorkbookKey,
+  openChartDialog,
   openConditionalDialog,
+  chartToolbarText,
   toggleGridLinesText,
   toggleSheetProtectionText,
   conditionalFormattingToolbarText,
@@ -34,8 +36,49 @@ export const useFortuneToolbarButtons = ({
     document.getElementById("custom-open-button")?.remove();
     document.getElementById("custom-export-button")?.remove();
     document.getElementById("custom-gridlines-button")?.remove();
+    document.getElementById("custom-chart-button")?.remove();
     document.getElementById("custom-conditional-format-button")?.remove();
     document.getElementById("custom-protect-sheet-button")?.remove();
+    document.getElementById("custom-after-protect-divider")?.remove();
+
+    const createToolbarDivider = (id) => {
+      const divider = document.createElement("div");
+      divider.id = id;
+      divider.className = "fortune-toolbar-divider";
+      return divider;
+    };
+
+    const getNativeImageButton = () => {
+      const nativeButtons = Array.from(
+        toolbar.getElementsByClassName("fortune-toolbar-button"),
+      ).filter((button) => !button.id?.startsWith("custom-"));
+
+      const labelledImageButton = nativeButtons.find((button) => {
+        const label = [
+          button.getAttribute("aria-label"),
+          button.getAttribute("title"),
+          button.textContent,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+        return (
+          label.includes("image") ||
+          label.includes("insérer une image") ||
+          label.includes("inserer une image")
+        );
+      });
+
+      return labelledImageButton || nativeButtons.at(-1) || null;
+    };
+
+    const moveNativeImageButtonAfter = (referenceNode) => {
+      const imageButton = getNativeImageButton();
+      if (!referenceNode || !imageButton || imageButton === referenceNode) {
+        return;
+      }
+      toolbar.insertBefore(imageButton, referenceNode.nextSibling);
+    };
 
     // 🔹 Création du bouton "Ouvrir..."
     const openButton = document.createElement("div");
@@ -115,6 +158,23 @@ export const useFortuneToolbarButtons = ({
     updateGridLinesButtonStyle();
     toolbar.insertBefore(gridLinesButton, exportButton.nextSibling);
 
+    // 🔹 Création du bouton "Graphique"
+    let chartButton = null;
+    if (appMode !== "student") {
+      chartButton = document.createElement("div");
+      chartButton.id = "custom-chart-button";
+      chartButton.className = "fortune-toolbar-button fortune-toolbar-item";
+      chartButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 19.5h16" stroke="#222" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="6" y="10" width="3" height="7" rx="0.8" stroke="#222" stroke-width="1.4"/>
+<rect x="11" y="6" width="3" height="11" rx="0.8" stroke="#222" stroke-width="1.4"/>
+<rect x="16" y="12" width="3" height="5" rx="0.8" stroke="#222" stroke-width="1.4"/>
+<path d="M6.5 7.5 10 5l4 2.5 4-4" stroke="#1a73e8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<div class="fortune-tooltip">${chartToolbarText}</div>`;
+      chartButton.addEventListener("click", openChartDialog);
+    }
+
     // 🔹 Création du bouton "Formatage conditionnel"
     const conditionalFormatButton = document.createElement("div");
     conditionalFormatButton.id = "custom-conditional-format-button";
@@ -183,10 +243,22 @@ export const useFortuneToolbarButtons = ({
 
       updateProtectButtonStyle();
       toolbar.insertBefore(protectSheetButton, conditionalFormatButton.nextSibling);
+
+      const afterProtectDivider = createToolbarDivider(
+        "custom-after-protect-divider",
+      );
+      toolbar.insertBefore(afterProtectDivider, protectSheetButton.nextSibling);
+
+      if (chartButton) {
+        toolbar.insertBefore(chartButton, afterProtectDivider.nextSibling);
+        moveNativeImageButtonAfter(chartButton);
+      }
     }
   }, [
     appMode,
+    chartToolbarText,
     conditionalFormattingToolbarText,
+    openChartDialog,
     openConditionalDialog,
     setSheetData,
     setWorkbookKey,

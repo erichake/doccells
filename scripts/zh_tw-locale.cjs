@@ -10117,7 +10117,7 @@ module.exports = {
   custom: {
     lockCells: "鎖定儲存格",
     unlockCells: "取消鎖定儲存格",
-    toggleSheetProtection: "保護/取消保護工作表",
+    toggleSheetProtection: "保護/取消保護活頁簿",
     conditionalFormatting: {
       toolbar: "條件格式",
       title: "條件格式",
@@ -10182,6 +10182,53 @@ module.exports = {
         bold: "粗體",
         italic: "斜體",
         underline: "底線"
+      }
+    },
+    charts: {
+      toolbar: "插入圖表",
+      title: "圖表",
+      activeSheet: "目前工作表",
+      existingCharts: "此工作表的圖表",
+      noCharts: "此工作表沒有圖表。",
+      newChart: "新增圖表",
+      editChart: "編輯圖表",
+      chartTitle: "標題",
+      type: "類型",
+      range: "資料",
+      labels: "標籤",
+      labelReference: "參照",
+      values: "顯示數值",
+      legend: "顯示圖例",
+      color: "顏色",
+      xAxis: "顯示橫軸刻度",
+      yAxis: "顯示縱軸刻度",
+      gridlines: "顯示格線",
+      displayOptions: "顯示",
+      preview: "預覽",
+      close: "關閉",
+      reset: "新增",
+      add: "加入",
+      save: "儲存",
+      edit: "編輯",
+      delete: "刪除",
+      types: {
+        bar: "長條圖",
+        line: "折線圖",
+        scatter: "散佈圖",
+        pie: "圓餅圖"
+      },
+      labelTypes: {
+        none: "無",
+        sameRowColumn: "同一列的欄",
+        range: "自訂範圍"
+      },
+      errors: {
+        range: "範圍格式應類似 A1:B5。",
+        dataColumn: "資料範圍必須是一欄數值。",
+        labelColumn: "標籤欄格式應類似 B。",
+        labelRange: "標籤範圍格式應類似 B3:B24。",
+        labelRangeSize: "標籤範圍的列數必須與資料相同。",
+        title: "請加入簡短的圖表標題。"
       }
     }
   }
