@@ -53,6 +53,11 @@ export const useFortuneToolbarButtons = ({
         toolbar.getElementsByClassName("fortune-toolbar-button"),
       ).filter((button) => !button.id?.startsWith("custom-"));
 
+      const uploadImageButton = nativeButtons.find((button) =>
+        button.querySelector("#fortune-img-upload"),
+      );
+      if (uploadImageButton) return uploadImageButton;
+
       const labelledImageButton = nativeButtons.find((button) => {
         const label = [
           button.getAttribute("aria-label"),
@@ -69,7 +74,7 @@ export const useFortuneToolbarButtons = ({
         );
       });
 
-      return labelledImageButton || nativeButtons.at(-1) || null;
+      return labelledImageButton || null;
     };
 
     const moveNativeImageButtonAfter = (referenceNode) => {

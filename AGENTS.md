@@ -1,29 +1,21 @@
-# Instructions Obligatoires Pour Codex
+# Instructions pour les agents
 
-Avant toute analyse, commande, modification de fichier, lancement de serveur ou réponse finale dans ce projet, lire :
+## Serveur de developpement DocCells
 
-```bash
-memory/MEMORY.md
-```
+DocCells doit etre lance uniquement sur le port `5174`.
 
-Puis lire les fichiers `memory/*.md` qui y sont référencés et appliquer leurs règles.
-
-## Règle Critique: Serveur DocCells
-
-DocCells doit être lancé uniquement via :
+Ne jamais demarrer DocCells automatiquement. Seul Eric lance manuellement le
+serveur de developpement avec la commande normale :
 
 ```bash
 npm run dev
 ```
 
-Le port autorisé est uniquement `5174`.
+Les agents ne doivent pas executer `npm run dev`, ni arreter ou relancer une
+instance DocCells/Vite, sauf demande explicite d'Eric.
 
-Ne jamais lancer DocCells sur un port de secours (`5175`, `5176`, etc.).
+Ne jamais demarrer DocCells sur un autre port, y compris un port de secours
+comme `5175`, meme si `5174` est deja occupe.
 
-Si `5174` est occupé, considérer que c'est une ancienne instance DocCells/Vite à arrêter, puis relancer `npm run dev`.
-
-## Règle Critique: Modifications De Dépendances
-
-Toute modification doit survivre à `npm install`.
-
-Ne jamais modifier directement `node_modules/` sans ajouter le patch correspondant dans les scripts `postinstall` du projet.
+Le script `dev` utilise `vite --force --port 5174 --strictPort` pour garantir
+que l'application ne bascule pas silencieusement vers un autre port.

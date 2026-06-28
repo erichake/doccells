@@ -845,6 +845,7 @@ const App = () => {
           hooks={workbookHooks}
           onChange={handleWorkbookChange}
           toolbarItems={[
+            "image",
             "|",
             "undo",
             "redo",
@@ -876,7 +877,6 @@ const App = () => {
             "|",
             "filter",
             "|",
-            "image",
           ]}
       />
       <ChartLayer
