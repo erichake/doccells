@@ -50,8 +50,14 @@ const columnToLetter = (idx) => {
   return result;
 };
 
-const rangeFormula = (sheetName, column, rowStart, rowEnd) =>
-  `${quoteSheetName(sheetName)}!$${columnToLetter(column)}$${rowStart + 1}:$${columnToLetter(column)}$${rowEnd + 1}`;
+const cellFormulaAddress = (row, column) =>
+  `$${columnToLetter(column)}$${row + 1}`;
+
+const rangeFormula = (sheetName, range) => {
+  const start = cellFormulaAddress(range.row[0], range.column[0]);
+  const end = cellFormulaAddress(range.row[1], range.column[1]);
+  return `${quoteSheetName(sheetName)}!${start}:${end}`;
+};
 
 const isChartUsable = (chart) => {
   if (!chart || typeof chart !== "object") return false;
@@ -234,19 +240,9 @@ const scatterAxesXml = (xAxId, yAxId, chart) => `
 const buildChartXml = ({ chart, sheetName, chartNo }) => {
   const valueRange = getChartValueRange(chart);
   const labelRange = getChartLabelRange(chart);
-  const valueFormula = rangeFormula(
-    sheetName,
-    valueRange.column[0],
-    valueRange.row[0],
-    valueRange.row[1],
-  );
+  const valueFormula = rangeFormula(sheetName, valueRange);
   const categoryFormula = labelRange
-    ? rangeFormula(
-        sheetName,
-        labelRange.column[0],
-        labelRange.row[0],
-        labelRange.row[1],
-      )
+    ? rangeFormula(sheetName, labelRange)
     : "";
   const catAxId = 100000 + chartNo * 2;
   const valAxId = catAxId + 1;

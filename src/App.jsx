@@ -51,8 +51,15 @@ const sheetPrefix =
 const isSingleColumnRange = (range) =>
   Boolean(range?.row && range?.column && range.column[0] === range.column[1]);
 
+const isSingleRowRange = (range) =>
+  Boolean(range?.row && range?.column && range.row[0] === range.row[1]);
+
 const haveSameRows = (left, right) =>
   left?.row?.[0] === right?.row?.[0] && left?.row?.[1] === right?.row?.[1];
+
+const haveSameColumns = (left, right) =>
+  left?.column?.[0] === right?.column?.[0] &&
+  left?.column?.[1] === right?.column?.[1];
 
 const getChartInitialSelection = (selection) => {
   const ranges = Array.isArray(selection)
@@ -68,6 +75,19 @@ const getChartInitialSelection = (selection) => {
       labels: {
         type: "sameRowColumn",
         reference: columnToName(ranges[0].column[0]),
+      },
+    };
+  }
+  if (
+    ranges.length === 2 &&
+    ranges.every(isSingleRowRange) &&
+    haveSameColumns(ranges[0], ranges[1])
+  ) {
+    return {
+      rangeText: rangeToText(ranges[1]),
+      labels: {
+        type: "sameColumnRow",
+        reference: String(ranges[0].row[0] + 1),
       },
     };
   }

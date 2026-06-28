@@ -14,6 +14,7 @@ export const CHART_TYPES = [
 export const CHART_LABEL_TYPES = [
   { value: "none" },
   { value: "sameRowColumn" },
+  { value: "sameColumnRow" },
   { value: "range" },
 ];
 
@@ -67,6 +68,8 @@ export const CHART_TEXTS = {
   displayOptions: "Affichage",
   labels: "Étiquettes",
   labelReference: "Référence",
+  labelColumnReference: "Lettre de la colonne",
+  labelRowReference: "Numéro de la ligne",
   preview: "Aperçu",
   close: "Fermer",
   reset: "Nouveau",
@@ -83,14 +86,16 @@ export const CHART_TEXTS = {
   labelTypes: {
     none: "Sans",
     sameRowColumn: "Colonne d'une même ligne",
+    sameColumnRow: "Ligne d'une même colonne",
     range: "Plage personnalisée",
   },
   errors: {
     range: "La plage doit ressembler à A1:B5.",
-    dataColumn: "La plage de données doit être une seule colonne de valeurs.",
+    dataColumn: "La plage de données doit être une seule ligne ou une seule colonne de valeurs.",
     labelColumn: "La colonne d'étiquettes doit ressembler à B.",
+    labelRow: "La ligne d'étiquettes doit ressembler à 2.",
     labelRange: "La plage d'étiquettes doit ressembler à B3:B24.",
-    labelRangeSize: "La plage d'étiquettes doit avoir le même nombre de lignes que les données.",
+    labelRangeSize: "La plage d'étiquettes doit avoir le même nombre de valeurs que les données.",
     title: "Ajoute un titre court au graphique.",
   },
 };
@@ -161,6 +166,13 @@ export const columnToName = (index) => {
   return name;
 };
 
+export const rowReferenceToIndex = (reference) => {
+  const text = String(reference || "").trim().replace(/\$/g, "");
+  if (!/^\d+$/.test(text)) return null;
+  const row = Number(text) - 1;
+  return row >= 0 ? row : null;
+};
+
 const normalizeChartType = (type) =>
   CHART_TYPES.some((item) => item.value === type) ? type : "bar";
 
@@ -169,6 +181,28 @@ const normalizeLabelType = (type) =>
 
 const getRangeHeight = (range) =>
   range?.row ? range.row[1] - range.row[0] + 1 : 0;
+
+const getRangeWidth = (range) =>
+  range?.column ? range.column[1] - range.column[0] + 1 : 0;
+
+const getRangeLength = (range) => {
+  const height = getRangeHeight(range);
+  const width = getRangeWidth(range);
+  if (!height || !width) return 0;
+  return width === 1 ? height : width;
+};
+
+const isHorizontalRange = (range) =>
+  getRangeHeight(range) === 1 && getRangeWidth(range) > 1;
+
+const isOneDimensionalRange = (range) =>
+  Boolean(
+    range?.row &&
+      range?.column &&
+      getRangeHeight(range) > 0 &&
+      getRangeWidth(range) > 0 &&
+      (getRangeHeight(range) === 1 || getRangeWidth(range) === 1),
+  );
 
 const toFiniteNumber = (value, fallback) => {
   const number = Number(value);
@@ -180,23 +214,37 @@ const normalizeColor = (color) =>
 
 export const normalizeChart = (chart) => {
   const sourceRange = chart?.range || parseRangeText(chart?.rangeText);
+  const sourceRows = sourceRange?.row
+    ? sourceRange.row[1] - sourceRange.row[0] + 1
+    : 1;
   const sourceColumns = sourceRange?.column
     ? sourceRange.column[1] - sourceRange.column[0] + 1
     : 1;
   const hasExplicitLabels = Boolean(chart?.labels?.type);
-  const legacyTwoColumnLabels = !hasExplicitLabels && sourceColumns >= 2;
-  const range = legacyTwoColumnLabels
-    ? {
-        row: [...sourceRange.row],
-        column: [sourceRange.column[0] + 1, sourceRange.column[0] + 1],
-      }
-    : sourceRange;
-  const labelType = legacyTwoColumnLabels
-    ? "sameRowColumn"
-    : normalizeLabelType(chart?.labels?.type);
-  const labelReference = legacyTwoColumnLabels
-    ? columnToName(sourceRange.column[0])
-    : String(chart?.labels?.reference || "");
+  const legacyTwoRowLabels =
+    !hasExplicitLabels && sourceRows === 2 && sourceColumns > 1;
+  const legacyTwoColumnLabels =
+    !legacyTwoRowLabels && !hasExplicitLabels && sourceRows > 1 && sourceColumns >= 2;
+  let range = sourceRange;
+  let labelType = normalizeLabelType(chart?.labels?.type);
+  let labelReference = String(chart?.labels?.reference || "");
+
+  if (legacyTwoRowLabels) {
+    range = {
+      row: [sourceRange.row[0] + 1, sourceRange.row[0] + 1],
+      column: [...sourceRange.column],
+    };
+    labelType = "sameColumnRow";
+    labelReference = String(sourceRange.row[0] + 1);
+  } else if (legacyTwoColumnLabels) {
+    range = {
+      row: [...sourceRange.row],
+      column: [sourceRange.column[0] + 1, sourceRange.column[0] + 1],
+    };
+    labelType = "sameRowColumn";
+    labelReference = columnToName(sourceRange.column[0]);
+  }
+
   return {
     ...DEFAULT_CHART,
     ...chart,
@@ -241,9 +289,20 @@ export const getChartLabelRange = (chart) => {
       column: [column, column],
     };
   }
+  if (labels.type === "sameColumnRow") {
+    const row = rowReferenceToIndex(labels.reference);
+    if (row == null) return null;
+    return {
+      row: [row, row],
+      column: [...dataRange.column],
+    };
+  }
   if (labels.type === "range") {
     const labelRange = parseRangeText(labels.reference);
     if (!labelRange) return null;
+    if (isOneDimensionalRange(labelRange)) {
+      return labelRange;
+    }
     return {
       row: [...labelRange.row],
       column: [labelRange.column[0], labelRange.column[0]],
@@ -252,11 +311,10 @@ export const getChartLabelRange = (chart) => {
   return null;
 };
 
-export const isChartDataRangeValid = (range) =>
-  Boolean(range?.row && range?.column && range.column[0] === range.column[1]);
+export const isChartDataRangeValid = (range) => isOneDimensionalRange(range);
 
 export const isChartLabelRangeSizeValid = (dataRange, labelRange) =>
-  !labelRange || getRangeHeight(dataRange) === getRangeHeight(labelRange);
+  !labelRange || getRangeLength(dataRange) === getRangeLength(labelRange);
 
 export const extractChartData = (sheet, chart) => {
   const normalized = normalizeChart(chart);
@@ -270,25 +328,42 @@ export const extractChartData = (sheet, chart) => {
   if (rows < 1 || columns < 1) {
     return { points: [], error: "La plage est vide." };
   }
+  if (!isChartDataRangeValid(range)) {
+    return {
+      points: [],
+      error: "La plage de données doit être une seule ligne ou une seule colonne de valeurs.",
+    };
+  }
   const cellMap = new Map(
     getSheetCelldata(sheet).map((cell) => [getCellKey(cell.r, cell.c), cell]),
   );
-  const valueColumn = range.column[0];
+  const isHorizontalData = isHorizontalRange(range);
+  const pointCount = getRangeLength(range);
   const labelRange = getChartLabelRange(normalized);
-  const labelColumn = labelRange?.column?.[0];
+  const isHorizontalLabelRange = isHorizontalRange(labelRange);
   const points = [];
 
-  for (let row = range.row[0]; row <= range.row[1]; row++) {
+  for (let index = 0; index < pointCount; index++) {
+    const row = isHorizontalData ? range.row[0] : range.row[0] + index;
+    const valueColumn = isHorizontalData ? range.column[0] + index : range.column[0];
     const valueCell = cellMap.get(getCellKey(row, valueColumn));
     const value = toNumber(getCellDisplayValue(valueCell));
-    const labelRow =
-      labelRange?.row?.[0] != null ? labelRange.row[0] + row - range.row[0] : null;
+    const labelRow = labelRange
+      ? isHorizontalLabelRange
+        ? labelRange.row[0]
+        : labelRange.row[0] + index
+      : null;
+    const labelColumn = labelRange
+      ? isHorizontalLabelRange
+        ? labelRange.column[0] + index
+        : labelRange.column[0]
+      : null;
     const labelCell =
       labelRow == null || labelColumn == null
         ? null
         : cellMap.get(getCellKey(labelRow, labelColumn));
-    const rawLabel = labelCell ? getCellDisplayValue(labelCell) : row - range.row[0] + 1;
-    const label = String(rawLabel ?? "").trim() || String(row - range.row[0] + 1);
+    const rawLabel = labelCell ? getCellDisplayValue(labelCell) : index + 1;
+    const label = String(rawLabel ?? "").trim() || String(index + 1);
     if (value == null) continue;
     points.push({
       label,

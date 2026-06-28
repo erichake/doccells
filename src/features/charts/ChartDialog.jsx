@@ -12,6 +12,7 @@ import {
   isChartDataRangeValid,
   isChartLabelRangeSizeValid,
   normalizeChart,
+  rowReferenceToIndex,
 } from "./chartUtils.js";
 import {
   columnNameToIndex,
@@ -19,6 +20,27 @@ import {
   rangeToText,
 } from "../conditionalFormatting/conditionalFormattingUtils.js";
 import { ChartCard } from "./ChartRenderer.jsx";
+
+const getRangeOrientation = (range) => {
+  if (!range?.row || !range?.column) return "unknown";
+  const rows = range.row[1] - range.row[0] + 1;
+  const columns = range.column[1] - range.column[0] + 1;
+  if (rows === 1 && columns > 1) return "horizontal";
+  if (columns === 1 && rows > 1) return "vertical";
+  return "unknown";
+};
+
+const getAllowedLabelTypes = (range) => {
+  const orientation = getRangeOrientation(range);
+  return CHART_LABEL_TYPES.filter((type) => {
+    if (orientation === "horizontal") return type.value !== "sameRowColumn";
+    if (orientation === "vertical") return type.value !== "sameColumnRow";
+    return true;
+  });
+};
+
+const isLabelTypeAllowed = (type, range) =>
+  getAllowedLabelTypes(range).some((item) => item.value === type);
 
 export const ChartDialog = ({
   open,
@@ -42,25 +64,41 @@ export const ChartDialog = ({
 
   const resetForm = useCallback(() => {
     const sourceRange = parseRangeText(initialRangeText) || DEFAULT_CHART.range;
-    const hasLabelColumn =
-      sourceRange?.column && sourceRange.column[1] > sourceRange.column[0];
-    const range = hasLabelColumn
-      ? {
-          row: [...sourceRange.row],
-          column: [sourceRange.column[0] + 1, sourceRange.column[0] + 1],
-        }
-      : sourceRange;
-    const labels = initialLabels?.type
+    const sourceRows = sourceRange?.row
+      ? sourceRange.row[1] - sourceRange.row[0] + 1
+      : 1;
+    const sourceColumns = sourceRange?.column
+      ? sourceRange.column[1] - sourceRange.column[0] + 1
+      : 1;
+    const hasLabelRow = sourceRows === 2 && sourceColumns > 1;
+    const hasLabelColumn = !hasLabelRow && sourceRows > 1 && sourceColumns > 1;
+    let range = sourceRange;
+    let labels = initialLabels?.type
       ? {
           ...DEFAULT_CHART.labels,
           ...initialLabels,
         }
-      : hasLabelColumn
-        ? {
-            type: "sameRowColumn",
-            reference: columnToName(sourceRange.column[0]),
-          }
-        : DEFAULT_CHART.labels;
+      : DEFAULT_CHART.labels;
+
+    if (!initialLabels?.type && hasLabelRow) {
+      range = {
+        row: [sourceRange.row[0] + 1, sourceRange.row[0] + 1],
+        column: [...sourceRange.column],
+      };
+      labels = {
+        type: "sameColumnRow",
+        reference: String(sourceRange.row[0] + 1),
+      };
+    } else if (!initialLabels?.type && hasLabelColumn) {
+      range = {
+        row: [...sourceRange.row],
+        column: [sourceRange.column[0] + 1, sourceRange.column[0] + 1],
+      };
+      labels = {
+        type: "sameRowColumn",
+        reference: columnToName(sourceRange.column[0]),
+      };
+    }
     setEditingId(null);
     setForm({
       ...DEFAULT_CHART,
@@ -139,13 +177,23 @@ export const ChartDialog = ({
     [normalizedPreview, sheet],
   );
   const usesAxes = form.type !== "pie";
+  const labelTypes = useMemo(() => {
+    const range = parseRangeText(form.rangeText);
+    return getAllowedLabelTypes(range);
+  }, [form.rangeText]);
 
   const updateForm = (field, value) => {
     setForm((current) => {
       const next = { ...current, [field]: value };
       if (field === "rangeText") {
         const parsed = parseRangeText(value);
-        if (parsed) next.range = parsed;
+        if (parsed) {
+          next.range = parsed;
+          const labelType = current.labels?.type || "none";
+          if (!isLabelTypeAllowed(labelType, parsed)) {
+            next.labels = DEFAULT_CHART.labels;
+          }
+        }
       }
       return next;
     });
@@ -180,6 +228,11 @@ export const ChartDialog = ({
     if (normalized.labels.type === "sameRowColumn") {
       if (columnNameToIndex(normalized.labels.reference) == null) {
         return texts.errors.labelColumn;
+      }
+    }
+    if (normalized.labels.type === "sameColumnRow") {
+      if (rowReferenceToIndex(normalized.labels.reference) == null) {
+        return texts.errors.labelRow;
       }
     }
     if (normalized.labels.type === "range") {
@@ -371,7 +424,7 @@ export const ChartDialog = ({
                   value={form.labels?.type || "none"}
                   onChange={(event) => updateLabels("type", event.target.value)}
                 >
-                  {CHART_LABEL_TYPES.map((type) => (
+                  {labelTypes.map((type) => (
                     <option key={type.value} value={type.value}>
                       {texts.labelTypes[type.value]}
                     </option>
@@ -381,11 +434,22 @@ export const ChartDialog = ({
 
               {form.labels?.type === "sameRowColumn" && (
                 <label className="dc-chart-field">
-                  <span>{texts.labelReference}</span>
+                  <span>{texts.labelColumnReference}</span>
                   <input
                     value={form.labels?.reference || ""}
                     onChange={(event) => updateLabels("reference", event.target.value)}
                     placeholder="A"
+                  />
+                </label>
+              )}
+
+              {form.labels?.type === "sameColumnRow" && (
+                <label className="dc-chart-field">
+                  <span>{texts.labelRowReference}</span>
+                  <input
+                    value={form.labels?.reference || ""}
+                    onChange={(event) => updateLabels("reference", event.target.value)}
+                    placeholder="2"
                   />
                 </label>
               )}
