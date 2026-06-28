@@ -25,6 +25,7 @@ export const ChartDialog = ({
   sheet,
   charts,
   initialRangeText,
+  initialLabels,
   editingChart,
   onClose,
   onSave,
@@ -49,22 +50,28 @@ export const ChartDialog = ({
           column: [sourceRange.column[0] + 1, sourceRange.column[0] + 1],
         }
       : sourceRange;
+    const labels = initialLabels?.type
+      ? {
+          ...DEFAULT_CHART.labels,
+          ...initialLabels,
+        }
+      : hasLabelColumn
+        ? {
+            type: "sameRowColumn",
+            reference: columnToName(sourceRange.column[0]),
+          }
+        : DEFAULT_CHART.labels;
     setEditingId(null);
     setForm({
       ...DEFAULT_CHART,
       id: `dc_chart_${Date.now()}`,
       range,
       rangeText: rangeToText(range),
-      labels: hasLabelColumn
-        ? {
-            type: "sameRowColumn",
-            reference: columnToName(sourceRange.column[0]),
-          }
-        : DEFAULT_CHART.labels,
+      labels,
       position: getInitialChartPosition(),
     });
     setError("");
-  }, [initialRangeText]);
+  }, [initialLabels, initialRangeText]);
 
   useEffect(() => {
     if (!open) return;
@@ -280,150 +287,6 @@ export const ChartDialog = ({
           </aside>
 
           <form className="dc-chart-form" onSubmit={submitForm}>
-            <div className="dc-chart-section-title">
-              {editingId ? texts.editChart : texts.newChart}
-            </div>
-
-            <label className="dc-chart-field">
-              <span>{texts.chartTitle}</span>
-              <input
-                value={form.title}
-                onChange={(event) => updateForm("title", event.target.value)}
-                placeholder="Graphique"
-              />
-            </label>
-
-            <div className="dc-chart-field">
-              <span>{texts.type}</span>
-              <select
-                value={form.type}
-                onChange={(event) => updateForm("type", event.target.value)}
-              >
-                {CHART_TYPES.map((type) => (
-                  <option key={type.value} value={type.value}>
-                    {texts.types[type.value] || type.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <label className="dc-chart-field">
-              <span>{texts.color}</span>
-              <span className="dc-chart-color-control">
-                <input
-                  type="color"
-                  value={
-                    /^#[0-9a-f]{6}$/i.test(form.color || "")
-                      ? form.color
-                      : DEFAULT_CHART.color
-                  }
-                  onChange={(event) => updateForm("color", event.target.value)}
-                />
-                <input
-                  value={form.color}
-                  onChange={(event) => updateForm("color", event.target.value)}
-                  placeholder="#4F81BD"
-                />
-              </span>
-            </label>
-
-            <label className="dc-chart-field">
-              <span>{texts.range}</span>
-              <input
-                value={form.rangeText}
-                onChange={(event) => updateForm("rangeText", event.target.value)}
-                placeholder="B3:B24"
-              />
-            </label>
-
-            <div className="dc-chart-field">
-              <span>{texts.labels}</span>
-              <select
-                value={form.labels?.type || "none"}
-                onChange={(event) => updateLabels("type", event.target.value)}
-              >
-                {CHART_LABEL_TYPES.map((type) => (
-                  <option key={type.value} value={type.value}>
-                    {texts.labelTypes[type.value]}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {form.labels?.type === "sameRowColumn" && (
-              <label className="dc-chart-field">
-                <span>{texts.labelReference}</span>
-                <input
-                  value={form.labels?.reference || ""}
-                  onChange={(event) => updateLabels("reference", event.target.value)}
-                  placeholder="A"
-                />
-              </label>
-            )}
-
-            {form.labels?.type === "range" && (
-              <label className="dc-chart-field">
-                <span>{texts.labelReference}</span>
-                <input
-                  value={form.labels?.reference || ""}
-                  onChange={(event) => updateLabels("reference", event.target.value)}
-                  placeholder="A3:A24"
-                />
-              </label>
-            )}
-
-            <div className="dc-chart-options">
-              <div className="dc-chart-section-title">{texts.displayOptions}</div>
-              <div className="dc-chart-switch-grid">
-                <label className="dc-chart-switch">
-                  <input
-                    type="checkbox"
-                    checked={form.showValues}
-                    onChange={(event) => updateForm("showValues", event.target.checked)}
-                  />
-                  <span>{texts.values}</span>
-                </label>
-                <label className="dc-chart-switch">
-                  <input
-                    type="checkbox"
-                    checked={form.showLegend}
-                    onChange={(event) => updateForm("showLegend", event.target.checked)}
-                  />
-                  <span>{texts.legend}</span>
-                </label>
-                {usesAxes && (
-                  <label className="dc-chart-switch">
-                    <input
-                      type="checkbox"
-                      checked={form.showXAxis}
-                      onChange={(event) => updateForm("showXAxis", event.target.checked)}
-                    />
-                    <span>{texts.xAxis}</span>
-                  </label>
-                )}
-                {usesAxes && (
-                  <label className="dc-chart-switch">
-                    <input
-                      type="checkbox"
-                      checked={form.showYAxis}
-                      onChange={(event) => updateForm("showYAxis", event.target.checked)}
-                    />
-                    <span>{texts.yAxis}</span>
-                  </label>
-                )}
-                {usesAxes && (
-                  <label className="dc-chart-switch">
-                    <input
-                      type="checkbox"
-                      checked={form.showGridlines}
-                      onChange={(event) => updateForm("showGridlines", event.target.checked)}
-                    />
-                    <span>{texts.gridlines}</span>
-                  </label>
-                )}
-              </div>
-            </div>
-
             <div className="dc-chart-preview-shell">
               <div className="dc-chart-section-title">{texts.preview}</div>
               <div className="dc-chart-preview">
@@ -433,7 +296,7 @@ export const ChartDialog = ({
                   <ChartCard
                     chart={{
                       ...normalizedPreview,
-                      position: { left: 0, top: 0, width: 360, height: 238 },
+                      position: { left: 0, top: 0, width: 360, height: 228 },
                     }}
                     sheet={sheet}
                     editable={false}
@@ -442,6 +305,154 @@ export const ChartDialog = ({
                     onPositionChange={() => {}}
                   />
                 )}
+              </div>
+            </div>
+
+            <div className="dc-chart-controls">
+              <div className="dc-chart-section-title">
+                {editingId ? texts.editChart : texts.newChart}
+              </div>
+
+              <label className="dc-chart-field">
+                <span>{texts.chartTitle}</span>
+                <input
+                  value={form.title}
+                  onChange={(event) => updateForm("title", event.target.value)}
+                  placeholder="Graphique"
+                />
+              </label>
+
+              <div className="dc-chart-field">
+                <span>{texts.type}</span>
+                <select
+                  value={form.type}
+                  onChange={(event) => updateForm("type", event.target.value)}
+                >
+                  {CHART_TYPES.map((type) => (
+                    <option key={type.value} value={type.value}>
+                      {texts.types[type.value] || type.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <label className="dc-chart-field">
+                <span>{texts.color}</span>
+                <span className="dc-chart-color-control">
+                  <input
+                    type="color"
+                    value={
+                      /^#[0-9a-f]{6}$/i.test(form.color || "")
+                        ? form.color
+                        : DEFAULT_CHART.color
+                    }
+                    onChange={(event) => updateForm("color", event.target.value)}
+                  />
+                  <input
+                    value={form.color}
+                    onChange={(event) => updateForm("color", event.target.value)}
+                    placeholder="#4F81BD"
+                  />
+                </span>
+              </label>
+
+              <label className="dc-chart-field">
+                <span>{texts.range}</span>
+                <input
+                  value={form.rangeText}
+                  onChange={(event) => updateForm("rangeText", event.target.value)}
+                  placeholder="B3:B24"
+                />
+              </label>
+
+              <div className="dc-chart-field">
+                <span>{texts.labels}</span>
+                <select
+                  value={form.labels?.type || "none"}
+                  onChange={(event) => updateLabels("type", event.target.value)}
+                >
+                  {CHART_LABEL_TYPES.map((type) => (
+                    <option key={type.value} value={type.value}>
+                      {texts.labelTypes[type.value]}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {form.labels?.type === "sameRowColumn" && (
+                <label className="dc-chart-field">
+                  <span>{texts.labelReference}</span>
+                  <input
+                    value={form.labels?.reference || ""}
+                    onChange={(event) => updateLabels("reference", event.target.value)}
+                    placeholder="A"
+                  />
+                </label>
+              )}
+
+              {form.labels?.type === "range" && (
+                <label className="dc-chart-field">
+                  <span>{texts.labelReference}</span>
+                  <input
+                    value={form.labels?.reference || ""}
+                    onChange={(event) => updateLabels("reference", event.target.value)}
+                    placeholder="A3:A24"
+                  />
+                </label>
+              )}
+
+              <div className="dc-chart-options">
+                <div className="dc-chart-section-title">{texts.displayOptions}</div>
+                <div className="dc-chart-switch-grid">
+                  <label className="dc-chart-switch">
+                    <input
+                      type="checkbox"
+                      checked={form.showValues}
+                      onChange={(event) => updateForm("showValues", event.target.checked)}
+                    />
+                    <span>{texts.values}</span>
+                  </label>
+                  <label className="dc-chart-switch">
+                    <input
+                      type="checkbox"
+                      checked={form.showLegend}
+                      onChange={(event) => updateForm("showLegend", event.target.checked)}
+                    />
+                    <span>{texts.legend}</span>
+                  </label>
+                  {usesAxes && (
+                    <label className="dc-chart-switch">
+                      <input
+                        type="checkbox"
+                        checked={form.showXAxis}
+                        onChange={(event) => updateForm("showXAxis", event.target.checked)}
+                      />
+                      <span>{texts.xAxis}</span>
+                    </label>
+                  )}
+                  {usesAxes && (
+                    <label className="dc-chart-switch">
+                      <input
+                        type="checkbox"
+                        checked={form.showYAxis}
+                        onChange={(event) => updateForm("showYAxis", event.target.checked)}
+                      />
+                      <span>{texts.yAxis}</span>
+                    </label>
+                  )}
+                  {usesAxes && (
+                    <label className="dc-chart-switch">
+                      <input
+                        type="checkbox"
+                        checked={form.showGridlines}
+                        onChange={(event) =>
+                          updateForm("showGridlines", event.target.checked)
+                        }
+                      />
+                      <span>{texts.gridlines}</span>
+                    </label>
+                  )}
+                </div>
               </div>
             </div>
 

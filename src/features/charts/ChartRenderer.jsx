@@ -7,6 +7,12 @@ const formatValue = (value) =>
 
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
+const arePositionsEqual = (left, right) =>
+  left?.left === right?.left &&
+  left?.top === right?.top &&
+  left?.width === right?.width &&
+  left?.height === right?.height;
+
 const getChartTypography = (width, height) => {
   const base = Math.sqrt(Math.max(1, width * height));
   const axisFontSize = clamp(base / 24, 10, 20);
@@ -570,21 +576,48 @@ export const ChartCard = ({
   const [chartSize, setChartSize] = useState({ width: 320, height: 170 });
   const cardRef = useRef(null);
   const chartSlotRef = useRef(null);
+  const pendingPositionRef = useRef(null);
+  const {
+    left: normalizedLeft,
+    top: normalizedTop,
+    width: normalizedWidth,
+    height: normalizedHeight,
+  } = normalized.position;
 
   useEffect(() => {
     if (dragState || resizeState) return;
-    setDraftPosition(normalized.position);
-  }, [dragState, normalized.position, resizeState]);
+    const normalizedPosition = {
+      left: normalizedLeft,
+      top: normalizedTop,
+      width: normalizedWidth,
+      height: normalizedHeight,
+    };
+    setDraftPosition((current) =>
+      arePositionsEqual(current, normalizedPosition) ? current : normalizedPosition,
+    );
+  }, [
+    dragState,
+    normalizedHeight,
+    normalizedLeft,
+    normalizedTop,
+    normalizedWidth,
+    resizeState,
+  ]);
 
   useEffect(() => {
     const node = chartSlotRef.current;
     if (!node || typeof ResizeObserver === "undefined") return undefined;
     const updateSize = () => {
       const rect = node.getBoundingClientRect();
-      setChartSize({
+      const nextSize = {
         width: Math.max(160, Math.round(rect.width)),
         height: Math.max(90, Math.round(rect.height)),
-      });
+      };
+      setChartSize((current) =>
+        current.width === nextSize.width && current.height === nextSize.height
+          ? current
+          : nextSize,
+      );
     };
     updateSize();
     const observer = new ResizeObserver(updateSize);
@@ -600,6 +633,7 @@ export const ChartCard = ({
     (event) => {
       if (!editable || event.button !== 0 || event.target.closest("button")) return;
       event.preventDefault();
+      pendingPositionRef.current = null;
       setDragState({
         startX: event.clientX,
         startY: event.clientY,
@@ -614,6 +648,7 @@ export const ChartCard = ({
       if (!editable || event.button !== 0) return;
       event.preventDefault();
       event.stopPropagation();
+      pendingPositionRef.current = null;
       setResizeState({
         startX: event.clientX,
         startY: event.clientY,
@@ -633,8 +668,8 @@ export const ChartCard = ({
           left: Math.max(8, dragState.position.left + event.clientX - dragState.startX),
           top: Math.max(48, dragState.position.top + event.clientY - dragState.startY),
         };
+        pendingPositionRef.current = nextPosition;
         setDraftPosition(nextPosition);
-        onPositionChange(normalized.id, nextPosition);
       }
       if (resizeState) {
         const nextPosition = {
@@ -642,11 +677,16 @@ export const ChartCard = ({
           width: Math.max(260, resizeState.position.width + event.clientX - resizeState.startX),
           height: Math.max(190, resizeState.position.height + event.clientY - resizeState.startY),
         };
+        pendingPositionRef.current = nextPosition;
         setDraftPosition(nextPosition);
-        onPositionChange(normalized.id, nextPosition);
       }
     };
     const stop = () => {
+      const nextPosition = pendingPositionRef.current;
+      if (nextPosition) {
+        onPositionChange(normalized.id, nextPosition);
+        pendingPositionRef.current = null;
+      }
       setDragState(null);
       setResizeState(null);
     };

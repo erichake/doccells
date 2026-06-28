@@ -7,7 +7,11 @@ import { ConditionalFormattingDialog } from "./features/conditionalFormatting/Co
 import { getConditionalFormattingTexts } from "./features/conditionalFormatting/conditionalFormattingConstants.js";
 import { ChartDialog } from "./features/charts/ChartDialog.jsx";
 import { ChartLayer } from "./features/charts/ChartRenderer.jsx";
-import { getChartTexts, normalizeChart } from "./features/charts/chartUtils.js";
+import {
+  columnToName,
+  getChartTexts,
+  normalizeChart,
+} from "./features/charts/chartUtils.js";
 import { normalizeImportedWorkbook } from "./features/excelImport/normalizeImportedWorkbook.js";
 import { useFortuneToolbarButtons } from "./features/fortuneSheet/useFortuneToolbarButtons.js";
 import {
@@ -44,6 +48,36 @@ const sheetPrefix =
     "es-ES": "Hoja",
   }[detectedLang] ?? "Sheet";
 
+const isSingleColumnRange = (range) =>
+  Boolean(range?.row && range?.column && range.column[0] === range.column[1]);
+
+const haveSameRows = (left, right) =>
+  left?.row?.[0] === right?.row?.[0] && left?.row?.[1] === right?.row?.[1];
+
+const getChartInitialSelection = (selection) => {
+  const ranges = Array.isArray(selection)
+    ? selection.filter((range) => range?.row && range?.column)
+    : [];
+  if (
+    ranges.length === 2 &&
+    ranges.every(isSingleColumnRange) &&
+    haveSameRows(ranges[0], ranges[1])
+  ) {
+    return {
+      rangeText: rangeToText(ranges[1]),
+      labels: {
+        type: "sameRowColumn",
+        reference: columnToName(ranges[0].column[0]),
+      },
+    };
+  }
+  const range = ranges[ranges.length - 1];
+  return {
+    rangeText: range ? rangeToText(range) : "A1:B5",
+    labels: null,
+  };
+};
+
 const preserveCustomList = (liveList, previousList) => {
   if (Array.isArray(previousList)) return previousList;
   return Array.isArray(liveList) ? liveList : [];
@@ -59,6 +93,7 @@ const App = () => {
   const [chartDialogOpen, setChartDialogOpen] = useState(false);
   const [chartSheetIndex, setChartSheetIndex] = useState(0);
   const [chartInitialRange, setChartInitialRange] = useState("A1:B5");
+  const [chartInitialLabels, setChartInitialLabels] = useState(null);
   const [chartEditing, setChartEditing] = useState(null);
   const [activeSheetIndex, setActiveSheetIndex] = useState(0);
   const [, setChartRenderKey] = useState(0);
@@ -258,9 +293,10 @@ const App = () => {
   const openChartDialog = useCallback(() => {
     const sheetIndex = getActiveSheetIndex();
     const selection = workbookRef.current?.getSelection?.();
-    const range = selection?.[selection.length - 1];
+    const initialSelection = getChartInitialSelection(selection);
     setChartSheetIndex(sheetIndex);
-    setChartInitialRange(range ? rangeToText(range) : "A1:B5");
+    setChartInitialRange(initialSelection.rangeText);
+    setChartInitialLabels(initialSelection.labels);
     setChartEditing(null);
     setChartDialogOpen(true);
   }, [getActiveSheetIndex]);
@@ -362,6 +398,7 @@ const App = () => {
     (chart) => {
       setChartSheetIndex(activeSheetIndex);
       setChartInitialRange(chart.rangeText || rangeToText(chart.range));
+      setChartInitialLabels(null);
       setChartEditing(chart);
       setChartDialogOpen(true);
     },
@@ -614,6 +651,141 @@ const App = () => {
     },
   }), []);
 
+  const handleWorkbookChange = useCallback((newData) => {
+    if (syncingConditionalRef.current) return;
+    if (Array.isArray(newData) && newData.length > 0) {
+      const updatedData = newData.map((sheet, index) => {
+        const oldCells = sheetDataRef.current[index]?.celldata || [];
+        const newCells = [];
+
+        if (sheet.data) {
+          sheet.data.forEach((row, r) => {
+            row.forEach((cell, c) => {
+              if (cell) {
+                const oldCell = oldCells.find(
+                  (oc) => oc.r === r && oc.c === c,
+                );
+
+                let updatedVF = oldCell?.v?.VF || {};
+                if (cell.f) {
+                  updatedVF = { f: cell.f, v: cell.v };
+                } else {
+                  updatedVF = {};
+                }
+
+                const parsedValue =
+                  cell.v === null
+                    ? null
+                    : typeof cell.v === "number"
+                      ? Number.isFinite(cell.v)
+                        ? cell.v
+                        : undefined
+                      : typeof cell.v === "string" && cell.v.trim() === ""
+                        ? cell.v
+                        : typeof cell.v === "string" && !Number.isNaN(Number(cell.v))
+                          ? parseFloat(cell.v)
+                          : cell.v;
+
+                newCells.push({
+                  r,
+                  c,
+                  v: {
+                    ...cell,
+                    v: parsedValue,
+                    VF: Object.keys(updatedVF).length
+                      ? updatedVF
+                      : undefined,
+                  },
+                });
+              }
+            });
+          });
+        }
+
+        return {
+          ...sheet,
+          celldata: newCells.length > 0 ? newCells : oldCells,
+          customConditionalFormatting: preserveCustomList(
+            sheet.customConditionalFormatting,
+            sheetDataRef.current[index]?.customConditionalFormatting,
+          ),
+          customCharts: preserveCustomList(
+            sheet.customCharts,
+            sheetDataRef.current[index]?.customCharts,
+          ),
+          showGridLines: normalizeShowGridLines(
+            sheet.showGridLines ??
+              sheetDataRef.current[index]?.showGridLines,
+          ),
+        };
+      });
+
+      updatedData.forEach((sheet, index) => {
+        if (sheet.config?.borderInfo) {
+          const removedBorders = new Set();
+
+          sheet.config.borderInfo.forEach((border) => {
+            if (
+              border.borderType === "border-none" &&
+              border.range?.[0]
+            ) {
+              const key = `${border.range[0].row_focus}-${border.range[0].column_focus}`;
+              removedBorders.add(key);
+            }
+          });
+
+          const filteredBorders = sheet.config.borderInfo.filter(
+            (border) => {
+              if (!border.range?.[0]) return true;
+              const key = `${border.range[0].row_focus}-${border.range[0].column_focus}`;
+              return !removedBorders.has(key);
+            },
+          );
+
+          updatedData[index] = {
+            ...sheet,
+            config: {
+              ...sheet.config,
+              borderInfo: filteredBorders,
+            },
+          };
+        }
+      });
+
+      const hasConditionalRules = updatedData.some(
+        (sheet) => (sheet.customConditionalFormatting || []).length > 0,
+      );
+      const finalData = hasConditionalRules
+        ? applyConditionalFormatting(updatedData)
+        : updatedData;
+      sheetDataRef.current = finalData;
+      if (
+        finalData.some(
+          (sheet) => (sheet.customCharts || []).length > 0,
+        )
+      ) {
+        setChartRenderKey((key) => key + 1);
+      }
+      if (hasConditionalRules) {
+        syncingConditionalRef.current = true;
+        setSheetData(finalData);
+        requestAnimationFrame(() => {
+          const apiCalls = createConditionalFormatApiCalls(finalData);
+          if (apiCalls.length > 0) {
+            workbookRef.current?.batchCallApis?.(apiCalls);
+          }
+          requestAnimationFrame(() => {
+            syncingConditionalRef.current = false;
+          });
+        });
+      }
+    } else {
+      console.warn(
+        "⚠️ `onChange` a capturé des données invalides, mise à jour ignorée !",
+      );
+    }
+  }, []);
+
   return sheetData.length !== 0 ? (
     <>
       <input
@@ -653,6 +825,7 @@ const App = () => {
         sheet={sheetDataRef.current[chartSheetIndex]}
         charts={sheetDataRef.current[chartSheetIndex]?.customCharts || []}
         initialRangeText={chartInitialRange}
+        initialLabels={chartInitialLabels}
         editingChart={chartEditing}
         onClose={() => {
           setChartDialogOpen(false);
@@ -670,140 +843,7 @@ const App = () => {
           lang={detectedLang}
           defaultColWidth={DEFAULT_COLUMN_WIDTH}
           hooks={workbookHooks}
-          onChange={(newData) => {
-            if (syncingConditionalRef.current) return;
-            if (Array.isArray(newData) && newData.length > 0) {
-              const updatedData = newData.map((sheet, index) => {
-                const oldCells = sheetDataRef.current[index]?.celldata || [];
-                const newCells = [];
-
-                if (sheet.data) {
-                  sheet.data.forEach((row, r) => {
-                    row.forEach((cell, c) => {
-                      if (cell) {
-                        const oldCell = oldCells.find(
-                          (oc) => oc.r === r && oc.c === c,
-                        );
-
-                        let updatedVF = oldCell?.v?.VF || {};
-                        if (cell.f) {
-                          updatedVF = { f: cell.f, v: cell.v };
-                        } else {
-                          updatedVF = {};
-                        }
-
-                        const parsedValue =
-                          cell.v === null
-                            ? null
-                            : typeof cell.v === "number"
-                              ? Number.isFinite(cell.v)
-                                ? cell.v
-                                : undefined
-                            : typeof cell.v === "string" && cell.v.trim() === ""
-                              ? cell.v
-                              : typeof cell.v === "string" && !Number.isNaN(Number(cell.v))
-                                ? parseFloat(cell.v)
-                                : cell.v;
-
-                        newCells.push({
-                          r,
-                          c,
-                          v: {
-                            ...cell,
-                            v: parsedValue,
-                            VF: Object.keys(updatedVF).length
-                              ? updatedVF
-                              : undefined,
-                          },
-                        });
-                      }
-                    });
-                  });
-                }
-
-                return {
-                  ...sheet,
-                  celldata: newCells.length > 0 ? newCells : oldCells,
-                  customConditionalFormatting: preserveCustomList(
-                    sheet.customConditionalFormatting,
-                    sheetDataRef.current[index]?.customConditionalFormatting,
-                  ),
-                  customCharts: preserveCustomList(
-                    sheet.customCharts,
-                    sheetDataRef.current[index]?.customCharts,
-                  ),
-                  showGridLines: normalizeShowGridLines(
-                    sheet.showGridLines ??
-                      sheetDataRef.current[index]?.showGridLines,
-                  ),
-                };
-              });
-
-              updatedData.forEach((sheet, index) => {
-                if (sheet.config?.borderInfo) {
-                  const removedBorders = new Set();
-
-                  sheet.config.borderInfo.forEach((border) => {
-                    if (
-                      border.borderType === "border-none" &&
-                      border.range?.[0]
-                    ) {
-                      const key = `${border.range[0].row_focus}-${border.range[0].column_focus}`;
-                      removedBorders.add(key);
-                    }
-                  });
-
-                  const filteredBorders = sheet.config.borderInfo.filter(
-                    (border) => {
-                      if (!border.range?.[0]) return true;
-                      const key = `${border.range[0].row_focus}-${border.range[0].column_focus}`;
-                      return !removedBorders.has(key);
-                    },
-                  );
-
-                  updatedData[index] = {
-                    ...sheet,
-                    config: {
-                      ...sheet.config,
-                      borderInfo: filteredBorders,
-                    },
-                  };
-                }
-              });
-
-              const hasConditionalRules = updatedData.some(
-                (sheet) => (sheet.customConditionalFormatting || []).length > 0,
-              );
-              const finalData = hasConditionalRules
-                ? applyConditionalFormatting(updatedData)
-                : updatedData;
-              sheetDataRef.current = finalData;
-              if (
-                finalData.some(
-                  (sheet) => (sheet.customCharts || []).length > 0,
-                )
-              ) {
-                setChartRenderKey((key) => key + 1);
-              }
-              if (hasConditionalRules) {
-                syncingConditionalRef.current = true;
-                setSheetData(finalData);
-                requestAnimationFrame(() => {
-                  const apiCalls = createConditionalFormatApiCalls(finalData);
-                  if (apiCalls.length > 0) {
-                    workbookRef.current?.batchCallApis?.(apiCalls);
-                  }
-                  requestAnimationFrame(() => {
-                    syncingConditionalRef.current = false;
-                  });
-                });
-              }
-            } else {
-              console.warn(
-                "⚠️ `onChange` a capturé des données invalides, mise à jour ignorée !",
-              );
-            }
-          }}
+          onChange={handleWorkbookChange}
           toolbarItems={[
             "|",
             "undo",

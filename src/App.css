@@ -924,7 +924,7 @@ body,
   position: fixed;
   top: 50%;
   left: 50%;
-  width: min(900px, calc(100vw - 48px));
+  width: min(920px, calc(100vw - 48px));
   max-height: min(790px, calc(100vh - 48px));
   display: flex;
   flex-direction: column;
@@ -1032,10 +1032,15 @@ body,
 }
 
 .dc-chart-list,
-.dc-chart-form {
+.dc-chart-form,
+.dc-chart-controls {
   display: grid;
   align-content: start;
   gap: 12px;
+}
+
+.dc-chart-form {
+  padding-top: 16px;
 }
 
 .dc-chart-list-card {
@@ -1206,11 +1211,16 @@ body,
 
 .dc-chart-preview-shell {
   min-width: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 4px 0 12px;
+  background: #fff;
 }
 
 .dc-chart-preview {
   position: relative;
-  min-height: 238px;
+  min-height: 228px;
   overflow: hidden;
   background: #f8fafc;
   border: 1px solid #e1e6ed;
@@ -1222,7 +1232,7 @@ body,
   left: auto !important;
   top: auto !important;
   width: 100% !important;
-  height: 238px !important;
+  height: 228px !important;
   min-width: 0;
   box-shadow: none;
   border: 0;
@@ -1275,6 +1285,10 @@ body,
 
   .dc-chart-body {
     grid-template-columns: 1fr;
+  }
+
+  .dc-chart-preview-shell {
+    position: static;
   }
 
   .dc-chart-list-panel {
