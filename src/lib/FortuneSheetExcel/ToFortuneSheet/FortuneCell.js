@@ -726,10 +726,21 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
     if (format != null && format !== "General") {
       return value;
     }
-    if (!/^-?\d+\.0+$/.test(value)) {
+    const text = String(value);
+    if (!/^-?(?:\d+|\d*\.\d+)(?:[eE][+-]?\d+)?$/i.test(text)) {
       return value;
     }
-    return value.replace(/\.0+$/, "");
+    if (/^-?\d+\.0+$/.test(text)) {
+      return text.replace(/\.0+$/, "");
+    }
+    if (!/\.\d*(?:0{6,}\d*|9{6,}\d*)$/i.test(text)) {
+      return value;
+    }
+    const number = Number(text);
+    if (!Number.isFinite(number)) {
+      return value;
+    }
+    return String(Number(number.toPrecision(15)));
   }
   getBackgroundByFill(fill, clrScheme) {
     let patternFills = fill.getInnerElements("patternFill");

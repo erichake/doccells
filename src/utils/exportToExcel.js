@@ -23,6 +23,24 @@ export const exportToExcel = async (
     }
     return value;
   };
+  const numericTextPattern = /^-?(?:\d+|\d*\.\d+)(?:[eE][+-]?\d+)?$/;
+  const hasBinaryFloatTail = (text) =>
+    /\.\d*(?:0{6,}\d*|9{6,}\d*)$/i.test(text);
+  const sanitizeFormulaResult = (value, cellValue) => {
+    const result = sanitizeCellValue(value);
+    if (typeof result !== "string") return result;
+
+    const text = result.trim();
+    if (!text || !numericTextPattern.test(text)) return result;
+
+    const type = cellValue?.ct?.t;
+    const shouldKeepAsText =
+      type === "s" || type === "inlineStr" || type === "str";
+    if (shouldKeepAsText && !hasBinaryFloatTail(text)) return result;
+
+    const numericResult = Number(text);
+    return Number.isFinite(numericResult) ? numericResult : result;
+  };
   const normalizeShowGridLines = (showGridLines) => {
     if (showGridLines == null) return true;
     return !(showGridLines === "0" || showGridLines === 0 || showGridLines === false);
@@ -246,7 +264,7 @@ export const exportToExcel = async (
       const cell = worksheet.getCell(r + 1, c + 1);
       const formula = v?.VF?.f || v?.f;
       if (formula) {
-        const result = sanitizeCellValue(v?.VF?.v ?? v?.v);
+        const result = sanitizeFormulaResult(v?.VF?.v ?? v?.v, v);
         cell.value = {
           formula: formula.startsWith("=") ? formula.slice(1) : formula,
           ...(result !== undefined ? { result } : {}),
