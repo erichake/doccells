@@ -103,6 +103,40 @@ const preserveCustomList = (liveList, previousList) => {
   return Array.isArray(liveList) ? liveList : [];
 };
 
+const areSheetIdsEqual = (left, right) =>
+  left != null && right != null && String(left) === String(right);
+
+const getSheetId = (sheet) => (sheet?.id == null ? null : String(sheet.id));
+
+const findSheetIndexById = (sheets, id) => {
+  if (id == null) return -1;
+  return sheets.findIndex((sheet) => areSheetIdsEqual(sheet.id, id));
+};
+
+const findMatchingSheet = (sheets, sheet, fallbackIndex) => {
+  const byId = findSheetIndexById(sheets, sheet?.id);
+  if (byId >= 0) return sheets[byId];
+
+  if (sheet?.name) {
+    const byName = sheets.findIndex((item) => item.name === sheet.name);
+    if (byName >= 0) return sheets[byName];
+  }
+
+  return sheets[fallbackIndex];
+};
+
+const findKnownSheet = (sheets, sheet) => {
+  const byId = findSheetIndexById(sheets, sheet?.id);
+  if (byId >= 0) return sheets[byId];
+
+  if (sheet?.name) {
+    const byName = sheets.findIndex((item) => item.name === sheet.name);
+    if (byName >= 0) return sheets[byName];
+  }
+
+  return undefined;
+};
+
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
   const [appMode, setAppMode] = useState("teacher");
@@ -116,11 +150,36 @@ const App = () => {
   const [chartInitialLabels, setChartInitialLabels] = useState(null);
   const [chartEditing, setChartEditing] = useState(null);
   const [activeSheetIndex, setActiveSheetIndex] = useState(0);
+  const [activeSheetId, setActiveSheetId] = useState(null);
   const [, setChartRenderKey] = useState(0);
   const sheetDataRef = useRef([]);
   useEffect(() => {
     sheetDataRef.current = sheetData;
   }, [sheetData]);
+
+  useEffect(() => {
+    if (!sheetData.length) {
+      if (activeSheetId !== null) setActiveSheetId(null);
+      if (activeSheetIndex !== 0) setActiveSheetIndex(0);
+      return;
+    }
+
+    const byId = findSheetIndexById(sheetData, activeSheetId);
+    if (byId >= 0) {
+      if (activeSheetIndex !== byId) setActiveSheetIndex(byId);
+      return;
+    }
+
+    if (activeSheetId != null) {
+      if (activeSheetIndex !== -1) setActiveSheetIndex(-1);
+      return;
+    }
+
+    const nextIndex = Math.min(activeSheetIndex, sheetData.length - 1);
+    const nextId = getSheetId(sheetData[nextIndex]);
+    if (activeSheetIndex !== nextIndex) setActiveSheetIndex(nextIndex);
+    if (activeSheetId !== nextId) setActiveSheetId(nextId);
+  }, [activeSheetId, activeSheetIndex, sheetData]);
 
   const workbookRef = useRef(null);
   const formulasRef = useRef({});
@@ -260,34 +319,57 @@ const App = () => {
     const currentSheet = wb?.getSheet?.();
     const sheets = wb?.getAllSheets?.() || sheetDataRef.current;
     if (currentSheet?.id != null) {
-      const byId = sheets.findIndex((sheet) => sheet.id === currentSheet.id);
+      const byId = findSheetIndexById(sheets, currentSheet.id);
       if (byId >= 0) return byId;
     }
     if (currentSheet?.name) {
       const byName = sheets.findIndex((sheet) => sheet.name === currentSheet.name);
       if (byName >= 0) return byName;
     }
+    const byActiveId = findSheetIndexById(sheets, activeSheetId);
+    if (byActiveId >= 0) return byActiveId;
     return 0;
+  }, [activeSheetId]);
+
+  const setActiveSheetById = useCallback((id) => {
+    const sheets = workbookRef.current?.getAllSheets?.() || sheetDataRef.current;
+    const index = findSheetIndexById(sheets, id);
+    const sheet = index >= 0 ? sheets[index] : null;
+
+    setActiveSheetId(getSheetId(sheet) ?? (id == null ? null : String(id)));
+    setActiveSheetIndex(index >= 0 ? index : 0);
   }, []);
+
+  const getResolvedActiveSheetIndex = useCallback((sheets = sheetDataRef.current) => {
+    const byId = findSheetIndexById(sheets, activeSheetId);
+    if (byId >= 0) return byId;
+    if (activeSheetId != null) return -1;
+    return Math.min(activeSheetIndex, Math.max(0, sheets.length - 1));
+  }, [activeSheetId, activeSheetIndex]);
 
   const getWorkbookSheetsForCommit = useCallback(() => {
     const wb = workbookRef.current;
     const liveSheets = wb?.getAllSheets?.() || sheetDataRef.current;
-    return liveSheets.map((sheet, index) => ({
-      ...sheet,
-      celldata: sheet.celldata || dataToCelldata(sheet.data),
-      customConditionalFormatting: preserveCustomList(
-        sheet.customConditionalFormatting,
-        sheetDataRef.current[index]?.customConditionalFormatting,
-      ),
-      customCharts: preserveCustomList(
-        sheet.customCharts,
-        sheetDataRef.current[index]?.customCharts,
-      ),
-      showGridLines: normalizeShowGridLines(
-        sheet.showGridLines ?? sheetDataRef.current[index]?.showGridLines,
-      ),
-    }));
+    return liveSheets.map((sheet, index) => {
+      const previousSheet = findMatchingSheet(sheetDataRef.current, sheet, index);
+      const knownSheet = findKnownSheet(sheetDataRef.current, sheet);
+
+      return {
+        ...sheet,
+        celldata: sheet.celldata || dataToCelldata(sheet.data),
+        customConditionalFormatting: preserveCustomList(
+          sheet.customConditionalFormatting,
+          knownSheet?.customConditionalFormatting,
+        ),
+        customCharts: preserveCustomList(
+          sheet.customCharts,
+          knownSheet?.customCharts,
+        ),
+        showGridLines: normalizeShowGridLines(
+          sheet.showGridLines ?? previousSheet?.showGridLines,
+        ),
+      };
+    });
   }, []);
 
   const commitConditionalSheets = useCallback((sheets, { remount = true } = {}) => {
@@ -399,7 +481,7 @@ const App = () => {
         ...sheet,
         celldata: sheet.celldata || dataToCelldata(sheet.data),
       }));
-      const sheetIndex = Math.min(activeSheetIndex, sheets.length - 1);
+      const sheetIndex = getResolvedActiveSheetIndex(sheets);
       if (sheetIndex < 0) return;
       const currentCharts = sheets[sheetIndex].customCharts || [];
       sheets[sheetIndex] = {
@@ -411,18 +493,18 @@ const App = () => {
       sheetDataRef.current = sheets;
       setSheetData(sheets);
     },
-    [activeSheetIndex],
+    [getResolvedActiveSheetIndex],
   );
 
   const editChartFromLayer = useCallback(
     (chart) => {
-      setChartSheetIndex(activeSheetIndex);
+      setChartSheetIndex(getResolvedActiveSheetIndex());
       setChartInitialRange(chart.rangeText || rangeToText(chart.range));
       setChartInitialLabels(null);
       setChartEditing(chart);
       setChartDialogOpen(true);
     },
-    [activeSheetIndex],
+    [getResolvedActiveSheetIndex],
   );
 
   // 🌐 Exposition des fonctions globales sur window pour pilotage externe
@@ -633,6 +715,8 @@ const App = () => {
       );
     },
     afterAddSheet: (sheet) => {
+      setActiveSheetById(sheet?.id);
+
       const showGridLines = normalizeShowGridLines(sheet?.showGridLines);
       if (!showGridLines) {
         const wb = workbookRef.current;
@@ -665,17 +749,20 @@ const App = () => {
       requestAnimationFrame(() => workbookRef.current?.setSheetName(name));
     },
     afterActivateSheet: (id) => {
-      const sheets = workbookRef.current?.getAllSheets?.() || sheetDataRef.current;
-      const index = sheets.findIndex((sheet) => sheet.id === id);
-      setActiveSheetIndex(index >= 0 ? index : 0);
+      setActiveSheetById(id);
     },
-  }), []);
+    afterSelectionChange: (sheetId) => {
+      setActiveSheetById(sheetId);
+    },
+  }), [setActiveSheetById]);
 
   const handleWorkbookChange = useCallback((newData) => {
     if (syncingConditionalRef.current) return;
     if (Array.isArray(newData) && newData.length > 0) {
       const updatedData = newData.map((sheet, index) => {
-        const oldCells = sheetDataRef.current[index]?.celldata || [];
+        const previousSheet = findMatchingSheet(sheetDataRef.current, sheet, index);
+        const knownSheet = findKnownSheet(sheetDataRef.current, sheet);
+        const oldCells = previousSheet?.celldata || [];
         const newCells = [];
 
         if (sheet.data) {
@@ -727,15 +814,15 @@ const App = () => {
           celldata: newCells.length > 0 ? newCells : oldCells,
           customConditionalFormatting: preserveCustomList(
             sheet.customConditionalFormatting,
-            sheetDataRef.current[index]?.customConditionalFormatting,
+            knownSheet?.customConditionalFormatting,
           ),
           customCharts: preserveCustomList(
             sheet.customCharts,
-            sheetDataRef.current[index]?.customCharts,
+            knownSheet?.customCharts,
           ),
           showGridLines: normalizeShowGridLines(
             sheet.showGridLines ??
-              sheetDataRef.current[index]?.showGridLines,
+              previousSheet?.showGridLines,
           ),
         };
       });
@@ -805,6 +892,10 @@ const App = () => {
       );
     }
   }, []);
+
+  const resolvedActiveSheetIndex = getResolvedActiveSheetIndex();
+  const activeSheet = sheetDataRef.current[resolvedActiveSheetIndex];
+  const activeSheetLayerKey = activeSheet?.id ?? resolvedActiveSheetIndex;
 
   return sheetData.length !== 0 ? (
     <>
@@ -900,10 +991,11 @@ const App = () => {
           ]}
       />
       <ChartLayer
-        sheet={sheetDataRef.current[activeSheetIndex]}
+        key={activeSheetLayerKey}
+        sheet={activeSheet}
         appMode={appMode}
         onEdit={editChartFromLayer}
-        onDelete={(chartId) => deleteChart(chartId, activeSheetIndex)}
+        onDelete={(chartId) => deleteChart(chartId, resolvedActiveSheetIndex)}
         onPositionChange={updateChartPosition}
       />
     </>
