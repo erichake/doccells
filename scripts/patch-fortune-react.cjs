@@ -25,10 +25,102 @@ const NEW2 = `  }, "".concat(item.rows.length))), expand && item.children.map(fu
 const OLD3 = `  }, rangeText));`;
 const NEW3 = `  }, rangeText && !rangeText.includes("NaN") ? rangeText : ""));`;
 
+// Sheet tabs — call the existing activation hook on direct tab clicks.
+// FortuneSheet core calls afterActivateSheet when the API changes sheets, but
+// the React sheet-tab UI updates currentSheetId directly and bypasses it.
+const OLD4 = `        cancelActiveImgItem(draftCtx, refs.globalCache);
+        cancelNormalSelected(draftCtx);
+      });
+    },
+    tabIndex: 0,
+    onContextMenu: function onContextMenu(e) {`;
+const NEW4 = `        cancelActiveImgItem(draftCtx, refs.globalCache);
+        cancelNormalSelected(draftCtx);
+      });
+      if (context.hooks && context.hooks.afterActivateSheet) {
+        setTimeout(function () {
+          context.hooks.afterActivateSheet(sheet.id);
+        });
+      }
+    },
+    tabIndex: 0,
+    onContextMenu: function onContextMenu(e) {`;
+
+const OLD4_CJS = `        core.cancelActiveImgItem(draftCtx, refs.globalCache);
+        core.cancelNormalSelected(draftCtx);
+      });
+    },
+    tabIndex: 0,
+    onContextMenu: function onContextMenu(e) {`;
+const NEW4_CJS = `        core.cancelActiveImgItem(draftCtx, refs.globalCache);
+        core.cancelNormalSelected(draftCtx);
+      });
+      if (context.hooks && context.hooks.afterActivateSheet) {
+        setTimeout(function () {
+          context.hooks.afterActivateSheet(sheet.id);
+        });
+      }
+    },
+    tabIndex: 0,
+    onContextMenu: function onContextMenu(e) {`;
+
+// Sheet list menu — same hook for sheet changes made through the list.
+const OLD5 = `        draftCtx.currentSheetId = sheet.id;
+        draftCtx.zoomRatio = sheet.zoomRatio || 1;
+        cancelActiveImgItem(draftCtx, refs.globalCache);
+        cancelNormalSelected(draftCtx);
+      });
+    },
+    tabIndex: 0
+  }, /*#__PURE__*/React.createElement("span", {`;
+const NEW5 = `        draftCtx.currentSheetId = sheet.id;
+        draftCtx.zoomRatio = sheet.zoomRatio || 1;
+        cancelActiveImgItem(draftCtx, refs.globalCache);
+        cancelNormalSelected(draftCtx);
+      });
+      if (context.hooks && context.hooks.afterActivateSheet) {
+        setTimeout(function () {
+          context.hooks.afterActivateSheet(sheet.id);
+        });
+      }
+    },
+    tabIndex: 0
+  }, /*#__PURE__*/React.createElement("span", {`;
+
+const OLD5_CJS = `        draftCtx.currentSheetId = sheet.id;
+        draftCtx.zoomRatio = sheet.zoomRatio || 1;
+        core.cancelActiveImgItem(draftCtx, refs.globalCache);
+        core.cancelNormalSelected(draftCtx);
+      });
+    },
+    tabIndex: 0
+  }, /*#__PURE__*/React__default['default'].createElement("span", {`;
+const NEW5_CJS = `        draftCtx.currentSheetId = sheet.id;
+        draftCtx.zoomRatio = sheet.zoomRatio || 1;
+        core.cancelActiveImgItem(draftCtx, refs.globalCache);
+        core.cancelNormalSelected(draftCtx);
+      });
+      if (context.hooks && context.hooks.afterActivateSheet) {
+        setTimeout(function () {
+          context.hooks.afterActivateSheet(sheet.id);
+        });
+      }
+    },
+    tabIndex: 0
+  }, /*#__PURE__*/React__default['default'].createElement("span", {`;
+
 const PATCH_GROUPS = [
   { name: "SelectItem count parens fix",      variants: [{ old: OLD1, new: NEW1 }] },
   { name: "DateSelectTreeItem count parens fix", variants: [{ old: OLD2, new: NEW2 }] },
   { name: "LocationBox NaN range guard", variants: [{ old: OLD3, new: NEW3 }] },
+  {
+    name: "Sheet tab afterActivateSheet hook",
+    variants: [{ old: OLD4, new: NEW4 }, { old: OLD4_CJS, new: NEW4_CJS }],
+  },
+  {
+    name: "Sheet list afterActivateSheet hook",
+    variants: [{ old: OLD5, new: NEW5 }, { old: OLD5_CJS, new: NEW5_CJS }],
+  },
 ];
 
 let allPatched = 0;

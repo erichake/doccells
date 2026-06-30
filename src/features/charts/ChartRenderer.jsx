@@ -563,6 +563,7 @@ const SeriesLegend = ({ title, color }) => (
 export const ChartCard = ({
   chart,
   sheet,
+  sheetIndex,
   editable,
   onEdit,
   onDelete,
@@ -684,7 +685,7 @@ export const ChartCard = ({
     const stop = () => {
       const nextPosition = pendingPositionRef.current;
       if (nextPosition) {
-        onPositionChange(normalized.id, nextPosition);
+        onPositionChange(normalized.id, nextPosition, sheetIndex);
         pendingPositionRef.current = null;
       }
       setDragState(null);
@@ -697,7 +698,7 @@ export const ChartCard = ({
       window.removeEventListener("mousemove", handleMove);
       window.removeEventListener("mouseup", stop);
     };
-  }, [dragState, normalized.id, onPositionChange, resizeState]);
+  }, [dragState, normalized.id, onPositionChange, resizeState, sheetIndex]);
 
   const Chart =
     normalized.type === "line"
@@ -712,6 +713,8 @@ export const ChartCard = ({
     <article
       ref={cardRef}
       className="dc-chart-card"
+      data-sheet-id={sheet?.id == null ? "" : String(sheet.id)}
+      data-sheet-name={sheet?.name || ""}
       style={{
         left: draftPosition.left,
         top: draftPosition.top,
@@ -728,10 +731,10 @@ export const ChartCard = ({
         </div>
         {editable && (
           <div className="dc-chart-card-actions">
-            <button type="button" onClick={() => onEdit(normalized)}>
+            <button type="button" onClick={() => onEdit(normalized, sheetIndex)}>
               Modifier
             </button>
-            <button type="button" onClick={() => onDelete(normalized.id)}>
+            <button type="button" onClick={() => onDelete(normalized.id, sheetIndex)}>
               Supprimer
             </button>
           </div>
@@ -777,22 +780,101 @@ export const ChartCard = ({
 };
 
 export const ChartLayer = ({
-  sheet,
+  sheets = [],
+  activeSheetIndex = 0,
   appMode,
   onEdit,
   onDelete,
   onPositionChange,
 }) => {
-  const charts = (sheet?.customCharts || []).map(normalizeChart);
-  if (!charts.length) return null;
+  const layerRef = useRef(null);
+  const lastActiveSheetRef = useRef(null);
+  const chartEntries = sheets.flatMap((sheet, sheetIndex) =>
+    (sheet?.customCharts || []).map((chart) => ({
+      chart: normalizeChart(chart),
+      sheet,
+      sheetIndex,
+    })),
+  );
+
+  useEffect(() => {
+    const layer = layerRef.current;
+    if (!layer) return undefined;
+
+    const getActiveSheet = () => {
+      const activeName = document
+        .querySelector(".luckysheet-sheets-item-active .luckysheet-sheets-item-name")
+        ?.textContent
+        ?.trim();
+
+      if (activeName) {
+        const byName = sheets.find((item) => item?.name === activeName);
+        if (byName) {
+          lastActiveSheetRef.current = {
+            id: byName.id == null ? "" : String(byName.id),
+            name: byName.name || "",
+          };
+          return byName;
+        }
+      }
+
+      const lastActive = lastActiveSheetRef.current;
+      if (lastActive) {
+        const byLastActive = sheets.find((item) => {
+          const itemId = item?.id == null ? "" : String(item.id);
+          const itemName = item?.name || "";
+          return (
+            (lastActive.id && itemId === lastActive.id) ||
+            (!lastActive.id && itemName === lastActive.name)
+          );
+        });
+        if (byLastActive) return byLastActive;
+      }
+
+      return sheets[activeSheetIndex] || sheets[0];
+    };
+
+    const applyVisibility = () => {
+      const activeSheet = getActiveSheet();
+      const activeSheetId = activeSheet?.id == null ? "" : String(activeSheet.id);
+      const activeSheetName = activeSheet?.name || "";
+
+      layer.querySelectorAll(".dc-chart-card").forEach((card) => {
+        const isActiveSheet =
+          (activeSheetId && card.dataset.sheetId === activeSheetId) ||
+          (!activeSheetId && card.dataset.sheetName === activeSheetName);
+        card.hidden = !isActiveSheet;
+        card.style.display = isActiveSheet ? "" : "none";
+      });
+    };
+
+    applyVisibility();
+
+    const tabContainer =
+      document.getElementById("fortune-sheettab-container-c") ||
+      document.getElementById("fortune-sheettab-container");
+    const observer = tabContainer ? new MutationObserver(applyVisibility) : null;
+
+    observer?.observe(tabContainer, {
+      attributes: true,
+      attributeFilter: ["class"],
+      childList: true,
+      subtree: true,
+    });
+
+    return () => observer?.disconnect();
+  }, [activeSheetIndex, sheets]);
+
+  if (!chartEntries.length) return null;
 
   return (
-    <div className="dc-chart-layer" aria-live="polite">
-      {charts.map((chart) => (
+    <div className="dc-chart-layer" aria-live="polite" ref={layerRef}>
+      {chartEntries.map(({ chart, sheet, sheetIndex }) => (
         <ChartCard
-          key={chart.id}
+          key={`${sheet?.id ?? sheetIndex}-${chart.id}`}
           chart={chart}
           sheet={sheet}
+          sheetIndex={sheetIndex}
           editable={appMode !== "student"}
           onEdit={onEdit}
           onDelete={onDelete}

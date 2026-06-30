@@ -9,6 +9,44 @@ import {
   setWorkbookProtection,
 } from "../workbook/workbookUtils.js";
 
+const preserveCustomList = (liveList, previousList) => {
+  if (Array.isArray(previousList)) return previousList;
+  return Array.isArray(liveList) ? liveList : [];
+};
+
+const findPreviousSheet = (previousSheets, sheet, fallbackIndex) => {
+  if (sheet?.id != null) {
+    const byId = previousSheets.find(
+      (item) => item?.id != null && String(item.id) === String(sheet.id),
+    );
+    if (byId) return byId;
+  }
+
+  if (sheet?.name) {
+    const byName = previousSheets.find((item) => item?.name === sheet.name);
+    if (byName) return byName;
+  }
+
+  return previousSheets[fallbackIndex];
+};
+
+const preserveDocCellsMetadata = (sheets, previousSheets) =>
+  sheets.map((sheet, index) => {
+    const previousSheet = findPreviousSheet(previousSheets, sheet, index);
+    return {
+      ...sheet,
+      celldata: sheet.celldata || dataToCelldata(sheet.data),
+      customConditionalFormatting: preserveCustomList(
+        sheet.customConditionalFormatting,
+        previousSheet?.customConditionalFormatting,
+      ),
+      customCharts: preserveCustomList(
+        sheet.customCharts,
+        previousSheet?.customCharts,
+      ),
+    };
+  });
+
 export const useFortuneToolbarButtons = ({
   appMode,
   sheetData,
@@ -149,13 +187,14 @@ export const useFortuneToolbarButtons = ({
       const updatedSheets = setWorkbookGridLines(
         allSheets,
         nextShowGridLines,
-      ).map((s) => ({
-        ...s,
-        celldata: s.celldata || dataToCelldata(s.data),
-      }));
+      );
 
-      sheetDataRef.current = updatedSheets;
-      setSheetData(updatedSheets);
+      const preservedSheets = preserveDocCellsMetadata(
+        updatedSheets,
+        sheetDataRef.current,
+      );
+      sheetDataRef.current = preservedSheets;
+      setSheetData(preservedSheets);
       setWorkbookKey((key) => key + 1);
       updateGridLinesButtonStyle();
     });
@@ -228,13 +267,14 @@ export const useFortuneToolbarButtons = ({
         const updatedSheets = setWorkbookProtection(
           allSheets,
           nextProtectionValue,
-        ).map((s) => ({
-          ...s,
-          celldata: s.celldata || dataToCelldata(s.data),
-        }));
+        );
 
-        sheetDataRef.current = updatedSheets;
-        setSheetData(updatedSheets);
+        const preservedSheets = preserveDocCellsMetadata(
+          updatedSheets,
+          sheetDataRef.current,
+        );
+        sheetDataRef.current = preservedSheets;
+        setSheetData(preservedSheets);
         setWorkbookKey((key) => key + 1);
 
         const willBeProtected = nextProtectionValue === 1;

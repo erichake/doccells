@@ -703,6 +703,10 @@ body,
   pointer-events: auto;
 }
 
+.dc-chart-card[hidden] {
+  display: none !important;
+}
+
 .dc-chart-card-header {
   flex: 0 0 auto;
   display: flex;
