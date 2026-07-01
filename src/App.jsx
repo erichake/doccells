@@ -14,6 +14,7 @@ import {
 } from "./features/charts/chartUtils.js";
 import { normalizeImportedWorkbook } from "./features/excelImport/normalizeImportedWorkbook.js";
 import { useFortuneToolbarButtons } from "./features/fortuneSheet/useFortuneToolbarButtons.js";
+import { StandaloneMenuBar } from "./features/standaloneMenu/StandaloneMenuBar.jsx";
 import {
   dataToCelldata,
   getAvailableDefaultSheetName,
@@ -775,7 +776,7 @@ const App = () => {
   }, []);
 
   return sheetData.length !== 0 ? (
-    <>
+    <div className="dc-app-shell">
       <input
         type="file"
         id="fileInput"
@@ -824,7 +825,16 @@ const App = () => {
         texts={chartTexts}
       />
 
-      <Workbook
+      <StandaloneMenuBar
+        appMode={appMode}
+        sheetDataRef={sheetDataRef}
+        workbookRef={workbookRef}
+        onOpenChartDialog={openChartDialog}
+        onOpenConditionalDialog={openConditionalDialog}
+      />
+
+      <div className="dc-workbook-shell">
+        <Workbook
           key={workbookKey}
           ref={workbookRef}
           data={sheetData}
@@ -866,15 +876,16 @@ const App = () => {
             "filter",
             "|",
           ]}
-      />
-      <ChartLayer
-        sheets={sheetDataRef.current}
-        activeSheetIndex={activeSheetIndex}
-        onEdit={editChartFromLayer}
-        onDelete={deleteChart}
-        onPositionChange={updateChartPosition}
-      />
-    </>
+        />
+        <ChartLayer
+          sheets={sheetDataRef.current}
+          activeSheetIndex={activeSheetIndex}
+          onEdit={editChartFromLayer}
+          onDelete={deleteChart}
+          onPositionChange={updateChartPosition}
+        />
+      </div>
+    </div>
   ) : null;
 };
 
