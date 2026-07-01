@@ -336,6 +336,22 @@ const NEW6 = `function generateRandomSheetName(file, isPivotTable, ctx) {
   return "".concat(sheetTitle).concat(index + 1);
 }`;
 
+// Patch 7: clear content keeps explicit cell protection.
+// FortuneSheet used to replace the whole cell with {}, so an unlocked cell
+// (lo=0) became locked by default after Delete/Backspace or "Clear content".
+const OLD7 = `            if (!data[r]) data[r] = [];
+            if (data[r] && data[r][c]) {
+              data[r][c] = {};
+            }
+            if (hyperlinkMap && hyperlinkMap["".concat(r, "_").concat(c)]) {`;
+
+const NEW7 = `            if (!data[r]) data[r] = [];
+            if (data[r] && data[r][c]) {
+              var protectionLo = data[r][c].lo;
+              data[r][c] = protectionLo == null ? {} : { lo: protectionLo };
+            }
+            if (hyperlinkMap && hyperlinkMap["".concat(r, "_").concat(c)]) {`;
+
 // Groups: each group has variants, exactly one must match per bundle
 const PATCH_GROUPS = [
   { name: "single-cell header fix",    variants: [{ old: OLD1, new: NEW1 }] },
@@ -344,6 +360,7 @@ const PATCH_GROUPS = [
   { name: "sort respects active filter", variants: [{ old: OLD4, new: NEW4 }] },
   { name: "filter-dropdown sort respects active filter", variants: [{ old: OLD5, new: NEW5 }] },
   { name: "localized generated sheet names", variants: [{ old: OLD6, new: NEW6 }] },
+  { name: "clear content keeps cell protection", variants: [{ old: OLD7, new: NEW7 }] },
 ];
 
 let allPatched = 0;
