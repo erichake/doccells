@@ -45,6 +45,162 @@ export const exportToExcel = async (
     if (showGridLines == null) return true;
     return !(showGridLines === "0" || showGridLines === 0 || showGridLines === false);
   };
+  const fortuneBorderStyles = {
+    1: "thin",
+    2: "hair",
+    3: "dotted",
+    4: "dashed",
+    5: "dashDot",
+    6: "dashDotDot",
+    7: "double",
+    8: "medium",
+    9: "mediumDashed",
+    10: "mediumDashDot",
+    11: "mediumDashDotDot",
+    12: "slantDashDot",
+    13: "thick",
+  };
+  const normalizeBorderStyle = (style) => {
+    if (style === "none" || style === 0 || style === "0") return null;
+    return fortuneBorderStyles[Number(style)] || style || "thin";
+  };
+  const normalizeBorderSide = (side) => {
+    if (!side) return undefined;
+    const style = normalizeBorderStyle(side.style);
+    if (!style) return undefined;
+    const color = convertColor(side.color) || "FF000000";
+    return { style, color: { argb: color } };
+  };
+  const borderKey = (rowIndex, colIndex) => `${rowIndex}_${colIndex}`;
+  const getBorderCell = (borderMap, rowIndex, colIndex) => {
+    const key = borderKey(rowIndex, colIndex);
+    if (!borderMap.has(key)) borderMap.set(key, {});
+    return borderMap.get(key);
+  };
+  const pruneBorderCell = (borderMap, rowIndex, colIndex) => {
+    const key = borderKey(rowIndex, colIndex);
+    const cellBorder = borderMap.get(key);
+    if (
+      cellBorder &&
+      !cellBorder.left &&
+      !cellBorder.right &&
+      !cellBorder.top &&
+      !cellBorder.bottom
+    ) {
+      borderMap.delete(key);
+    }
+  };
+  const setBorderSide = (borderMap, rowIndex, colIndex, side, value) => {
+    if (rowIndex < 0 || colIndex < 0) return;
+    const cellBorder = getBorderCell(borderMap, rowIndex, colIndex);
+    const borderSide = normalizeBorderSide(value);
+    if (borderSide) {
+      cellBorder[side] = borderSide;
+    } else {
+      delete cellBorder[side];
+      pruneBorderCell(borderMap, rowIndex, colIndex);
+    }
+  };
+  const clearBorderCell = (borderMap, rowIndex, colIndex) => {
+    borderMap.delete(borderKey(rowIndex, colIndex));
+  };
+  const clearBorderSide = (borderMap, rowIndex, colIndex, side) => {
+    if (rowIndex < 0 || colIndex < 0) return;
+    const cellBorder = borderMap.get(borderKey(rowIndex, colIndex));
+    if (!cellBorder) return;
+    delete cellBorder[side];
+    pruneBorderCell(borderMap, rowIndex, colIndex);
+  };
+  const forEachCellInRange = (range, callback) => {
+    if (!Array.isArray(range?.row) || !Array.isArray(range?.column)) return;
+    for (let rowIndex = range.row[0]; rowIndex <= range.row[1]; rowIndex++) {
+      for (let colIndex = range.column[0]; colIndex <= range.column[1]; colIndex++) {
+        callback(rowIndex, colIndex);
+      }
+    }
+  };
+  const applyRangeBorder = (borderMap, border) => {
+    const style = { style: border.style, color: border.color };
+    (border.range || []).forEach((range) => {
+      if (!Array.isArray(range?.row) || !Array.isArray(range?.column)) return;
+      const [rowStart, rowEnd] = range.row;
+      const [colStart, colEnd] = range.column;
+
+      if (border.borderType === "border-none") {
+        forEachCellInRange(range, (rowIndex, colIndex) => {
+          clearBorderCell(borderMap, rowIndex, colIndex);
+          if (rowIndex === rowStart) clearBorderSide(borderMap, rowStart - 1, colIndex, "bottom");
+          if (rowIndex === rowEnd) clearBorderSide(borderMap, rowEnd + 1, colIndex, "top");
+          if (colIndex === colStart) clearBorderSide(borderMap, rowIndex, colStart - 1, "right");
+          if (colIndex === colEnd) clearBorderSide(borderMap, rowIndex, colEnd + 1, "left");
+        });
+        return;
+      }
+
+      forEachCellInRange(range, (rowIndex, colIndex) => {
+        const onTop = rowIndex === rowStart;
+        const onBottom = rowIndex === rowEnd;
+        const onLeft = colIndex === colStart;
+        const onRight = colIndex === colEnd;
+
+        switch (border.borderType) {
+          case "border-left":
+            if (onLeft) setBorderSide(borderMap, rowIndex, colIndex, "left", style);
+            break;
+          case "border-right":
+            if (onRight) setBorderSide(borderMap, rowIndex, colIndex, "right", style);
+            break;
+          case "border-top":
+            if (onTop) setBorderSide(borderMap, rowIndex, colIndex, "top", style);
+            break;
+          case "border-bottom":
+            if (onBottom) setBorderSide(borderMap, rowIndex, colIndex, "bottom", style);
+            break;
+          case "border-outside":
+            if (onTop) setBorderSide(borderMap, rowIndex, colIndex, "top", style);
+            if (onBottom) setBorderSide(borderMap, rowIndex, colIndex, "bottom", style);
+            if (onLeft) setBorderSide(borderMap, rowIndex, colIndex, "left", style);
+            if (onRight) setBorderSide(borderMap, rowIndex, colIndex, "right", style);
+            break;
+          case "border-inside":
+            if (!onBottom) setBorderSide(borderMap, rowIndex, colIndex, "bottom", style);
+            if (!onRight) setBorderSide(borderMap, rowIndex, colIndex, "right", style);
+            break;
+          case "border-horizontal":
+            if (!onBottom) setBorderSide(borderMap, rowIndex, colIndex, "bottom", style);
+            break;
+          case "border-vertical":
+            if (!onRight) setBorderSide(borderMap, rowIndex, colIndex, "right", style);
+            break;
+          case "border-all":
+          default:
+            setBorderSide(borderMap, rowIndex, colIndex, "left", style);
+            setBorderSide(borderMap, rowIndex, colIndex, "right", style);
+            setBorderSide(borderMap, rowIndex, colIndex, "top", style);
+            setBorderSide(borderMap, rowIndex, colIndex, "bottom", style);
+            break;
+        }
+      });
+    });
+  };
+  const buildBorderMap = (borderInfo) => {
+    const borderMap = new Map();
+    if (!Array.isArray(borderInfo)) return borderMap;
+
+    borderInfo.forEach((border) => {
+      if (border.rangeType === "cell" && border.value) {
+        const { row_index, col_index, l, r, t, b } = border.value;
+        setBorderSide(borderMap, row_index, col_index, "left", l);
+        setBorderSide(borderMap, row_index, col_index, "right", r);
+        setBorderSide(borderMap, row_index, col_index, "top", t);
+        setBorderSide(borderMap, row_index, col_index, "bottom", b);
+      } else if (border.rangeType === "range" && Array.isArray(border.range)) {
+        applyRangeBorder(borderMap, border);
+      }
+    });
+
+    return borderMap;
+  };
   const columnToLetter = (idx) => {
     let r = "";
     let n = idx + 1;
@@ -353,61 +509,17 @@ export const exportToExcel = async (
       }
     });
 
-    if (Array.isArray(config?.borderInfo)) {
-      // Application des bordures aux cellules (épaisseur, type...)
-      config.borderInfo.forEach((border) => {
-        if (border.rangeType === "cell" && border.value) {
-          const { row_index, col_index, l, r, t, b } = border.value;
-          const cell = worksheet.getCell(row_index + 1, col_index + 1);
-          cell.border = {
-            left: l
-              ? { style: "thin", color: { argb: convertColor(l.color) } }
-              : undefined,
-            right: r
-              ? { style: "thin", color: { argb: convertColor(r.color) } }
-              : undefined,
-            top: t
-              ? { style: "thin", color: { argb: convertColor(t.color) } }
-              : undefined,
-            bottom: b
-              ? { style: "thin", color: { argb: convertColor(b.color) } }
-              : undefined,
-          };
-        } else if (
-          border.rangeType === "range" &&
-          Array.isArray(border.range)
-        ) {
-          border.range.forEach((range) => {
-            const { row, column, color } = range;
-            if (Array.isArray(row) && Array.isArray(column)) {
-              for (let r = row[0]; r <= row[1]; r++) {
-                for (let c = column[0]; c <= column[1]; c++) {
-                  const cell = worksheet.getCell(r + 1, c + 1);
-                  cell.border = {
-                    left: {
-                      style: "thin",
-                      color: { argb: convertColor(color) },
-                    },
-                    right: {
-                      style: "thin",
-                      color: { argb: convertColor(color) },
-                    },
-                    top: {
-                      style: "thin",
-                      color: { argb: convertColor(color) },
-                    },
-                    bottom: {
-                      style: "thin",
-                      color: { argb: convertColor(color) },
-                    },
-                  };
-                }
-              }
-            }
-          });
-        }
-      });
-    }
+    const borderMap = buildBorderMap(config?.borderInfo);
+    borderMap.forEach((cellBorder, key) => {
+      const [rowIndex, colIndex] = key.split("_").map(Number);
+      const cell = worksheet.getCell(rowIndex + 1, colIndex + 1);
+      cell.border = {
+        left: cellBorder.left,
+        right: cellBorder.right,
+        top: cellBorder.top,
+        bottom: cellBorder.bottom,
+      };
+    });
     // Protection de la feuille
     if (config?.authority?.sheet === 1) {
       await worksheet.protect("", { selectLockedCells: true, selectUnlockedCells: true });

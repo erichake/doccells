@@ -740,38 +740,6 @@ const App = () => {
         };
       });
 
-      updatedData.forEach((sheet, index) => {
-        if (sheet.config?.borderInfo) {
-          const removedBorders = new Set();
-
-          sheet.config.borderInfo.forEach((border) => {
-            if (
-              border.borderType === "border-none" &&
-              border.range?.[0]
-            ) {
-              const key = `${border.range[0].row_focus}-${border.range[0].column_focus}`;
-              removedBorders.add(key);
-            }
-          });
-
-          const filteredBorders = sheet.config.borderInfo.filter(
-            (border) => {
-              if (!border.range?.[0]) return true;
-              const key = `${border.range[0].row_focus}-${border.range[0].column_focus}`;
-              return !removedBorders.has(key);
-            },
-          );
-
-          updatedData[index] = {
-            ...sheet,
-            config: {
-              ...sheet.config,
-              borderInfo: filteredBorders,
-            },
-          };
-        }
-      });
-
       const hasConditionalRules = updatedData.some(
         (sheet) => (sheet.customConditionalFormatting || []).length > 0,
       );
