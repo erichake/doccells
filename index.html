@@ -14,10 +14,71 @@
         height: 100%;
         margin: 0;
       }
+
+      #splash-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(15, 23, 42, 0.35);
+        transition: opacity 0.3s ease;
+      }
+
+      #splash-screen img {
+        width: 500px;
+        height: 200px;
+        max-width: 90vw;
+        max-height: 60vh;
+        border-radius: 8px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      #splash-screen.splash-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
     </style>
   </head>
   <body>
     <div id="root"></div>
+    <div id="splash-screen"><img src="/splash.svg" alt="DocCells" /></div>
+    <script>
+      (function () {
+        var isTopWindow = true;
+        try {
+          isTopWindow = window.self === window.top;
+        } catch (e) {
+          isTopWindow = false;
+        }
+
+        var splash = document.getElementById("splash-screen");
+
+        if (!isTopWindow) {
+          splash.remove();
+          return;
+        }
+
+        var minDelay = new Promise(function (resolve) {
+          setTimeout(resolve, 1000);
+        });
+        var appReady = new Promise(function (resolve) {
+          window.addEventListener("doccells:ready", resolve, { once: true });
+        });
+
+        Promise.all([minDelay, appReady]).then(function () {
+          splash.classList.add("splash-hidden");
+          splash.addEventListener(
+            "transitionend",
+            function () {
+              splash.remove();
+            },
+            { once: true },
+          );
+        });
+      })();
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
