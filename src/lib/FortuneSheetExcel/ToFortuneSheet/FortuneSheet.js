@@ -81,6 +81,27 @@ export class FortuneSheet extends FortuneSheetBase {
         this.luckysheet_select_save = [];
         this.luckysheet_select_save.push(range);
       }
+      let panes = sheetView[0].getInnerElements("pane");
+      if (panes != null && panes.length > 0) {
+        let paneAttrs = panes[0].attributeList;
+        let state = getXmlAttibute(paneAttrs, "state", "");
+        let xSplit = parseInt(getXmlAttibute(paneAttrs, "xSplit", "0"), 10) || 0;
+        let ySplit = parseInt(getXmlAttibute(paneAttrs, "ySplit", "0"), 10) || 0;
+        if (state === "frozen" && (xSplit > 0 || ySplit > 0)) {
+          let range = {
+            row_focus: Math.max(0, ySplit - 1),
+            column_focus: Math.max(0, xSplit - 1),
+          };
+          this.frozen = {
+            type: xSplit > 0 && ySplit > 0
+              ? "rangeBoth"
+              : ySplit > 0
+                ? "rangeRow"
+                : "rangeColumn",
+            range,
+          };
+        }
+      }
     }
     this.showGridLines = showGridLines;
     this.status = tabSelected;

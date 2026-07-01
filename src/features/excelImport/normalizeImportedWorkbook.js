@@ -168,6 +168,7 @@ const formatImportedSheets = (sheets, sheetPrefix) =>
       order: index,
       celldata: sheet.celldata || [],
       calcChain,
+      frozen: sheet.frozen,
       filter: sheet.filter,
       filter_select: sheet.filter_select,
       customConditionalFormatting: sheet.customConditionalFormatting || [],

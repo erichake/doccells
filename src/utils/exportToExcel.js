@@ -45,6 +45,33 @@ export const exportToExcel = async (
     if (showGridLines == null) return true;
     return !(showGridLines === "0" || showGridLines === 0 || showGridLines === false);
   };
+  const getFrozenView = (sheet) => {
+    const view = { showGridLines: normalizeShowGridLines(sheet.showGridLines) };
+    const frozen = sheet?.frozen;
+    let xSplit = 0;
+    let ySplit = 0;
+
+    if (frozen?.type) {
+      const range = frozen.range || {};
+      if (frozen.type === "column" || frozen.type === "rangeColumn" || frozen.type === "both" || frozen.type === "rangeBoth") {
+        xSplit = Math.max(1, (parseInt(range.column_focus, 10) || 0) + 1);
+      }
+      if (frozen.type === "row" || frozen.type === "rangeRow" || frozen.type === "both" || frozen.type === "rangeBoth") {
+        ySplit = Math.max(1, (parseInt(range.row_focus, 10) || 0) + 1);
+      }
+    } else if (sheet?.freezen) {
+      xSplit = parseInt(sheet.freezen.vertical?.freezenverticaldata?.[1] ?? sheet.freezen.vertical, 10) || 0;
+      ySplit = parseInt(sheet.freezen.horizontal?.freezenhorizontaldata?.[1] ?? sheet.freezen.horizen, 10) || 0;
+    }
+
+    if (xSplit > 0 || ySplit > 0) {
+      view.state = "frozen";
+      if (xSplit > 0) view.xSplit = xSplit;
+      if (ySplit > 0) view.ySplit = ySplit;
+    }
+
+    return view;
+  };
   const fortuneBorderStyles = {
     1: "thin",
     2: "hair",
@@ -358,7 +385,7 @@ export const exportToExcel = async (
     const filter_select = sheet.filter_select;
 
     const worksheet = workbook.addWorksheet(name);
-    worksheet.views = [{ showGridLines: normalizeShowGridLines(sheet.showGridLines) }];
+    worksheet.views = [getFrozenView(sheet)];
 
     // Déclarer les dimensions par défaut FortuneSheet dans le fichier Excel
     // pour que le ré-import reconstruise les positions d'images correctement.
