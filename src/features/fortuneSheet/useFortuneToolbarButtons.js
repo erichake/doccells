@@ -203,12 +203,10 @@ export const useFortuneToolbarButtons = ({
     toolbar.insertBefore(gridLinesButton, exportButton.nextSibling);
 
     // 🔹 Création du bouton "Graphique"
-    let chartButton = null;
-    if (appMode !== "student") {
-      chartButton = document.createElement("div");
-      chartButton.id = "custom-chart-button";
-      chartButton.className = "fortune-toolbar-button fortune-toolbar-item";
-      chartButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    const chartButton = document.createElement("div");
+    chartButton.id = "custom-chart-button";
+    chartButton.className = "fortune-toolbar-button fortune-toolbar-item";
+    chartButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M4 19.5h16" stroke="#222" stroke-width="1.5" stroke-linecap="round"/>
 <rect x="6" y="10" width="3" height="7" rx="0.8" stroke="#222" stroke-width="1.4"/>
 <rect x="11" y="6" width="3" height="11" rx="0.8" stroke="#222" stroke-width="1.4"/>
@@ -216,8 +214,7 @@ export const useFortuneToolbarButtons = ({
 <path d="M6.5 7.5 10 5l4 2.5 4-4" stroke="#1a73e8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 <div class="fortune-tooltip">${chartToolbarText}</div>`;
-      chartButton.addEventListener("click", openChartDialog);
-    }
+    chartButton.addEventListener("click", openChartDialog);
 
     // 🔹 Création du bouton "Formatage conditionnel"
     const conditionalFormatButton = document.createElement("div");
@@ -232,6 +229,7 @@ export const useFortuneToolbarButtons = ({
     conditionalFormatButton.addEventListener("click", openConditionalDialog);
     toolbar.insertBefore(conditionalFormatButton, gridLinesButton.nextSibling);
 
+    let chartAnchor = conditionalFormatButton;
     if (appMode !== "student") {
       // 🔹 Création du bouton "Protéger / Déprotéger la feuille"
       const protectSheetButton = document.createElement("div");
@@ -288,17 +286,15 @@ export const useFortuneToolbarButtons = ({
 
       updateProtectButtonStyle();
       toolbar.insertBefore(protectSheetButton, conditionalFormatButton.nextSibling);
-
-      const afterProtectDivider = createToolbarDivider(
-        "custom-after-protect-divider",
-      );
-      toolbar.insertBefore(afterProtectDivider, protectSheetButton.nextSibling);
-
-      if (chartButton) {
-        toolbar.insertBefore(chartButton, afterProtectDivider.nextSibling);
-        moveNativeImageButtonAfter(chartButton);
-      }
+      chartAnchor = protectSheetButton;
     }
+
+    const afterProtectDivider = createToolbarDivider(
+      "custom-after-protect-divider",
+    );
+    toolbar.insertBefore(afterProtectDivider, chartAnchor.nextSibling);
+    toolbar.insertBefore(chartButton, afterProtectDivider.nextSibling);
+    moveNativeImageButtonAfter(chartButton);
   }, [
     appMode,
     chartToolbarText,

@@ -782,7 +782,6 @@ export const ChartCard = ({
 export const ChartLayer = ({
   sheets = [],
   activeSheetIndex = 0,
-  appMode,
   onEdit,
   onDelete,
   onPositionChange,
@@ -875,7 +874,7 @@ export const ChartLayer = ({
           chart={chart}
           sheet={sheet}
           sheetIndex={sheetIndex}
-          editable={appMode !== "student"}
+          editable
           onEdit={onEdit}
           onDelete={onDelete}
           onPositionChange={onPositionChange}
