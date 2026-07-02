@@ -102,6 +102,7 @@ export const ChartDialog = ({
     setEditingId(null);
     setForm({
       ...DEFAULT_CHART,
+      title: texts.defaultTitle,
       id: `dc_chart_${Date.now()}`,
       range,
       rangeText: rangeToText(range),
@@ -109,7 +110,7 @@ export const ChartDialog = ({
       position: getInitialChartPosition(),
     });
     setError("");
-  }, [initialLabels, initialRangeText]);
+  }, [initialLabels, initialRangeText, texts.defaultTitle]);
 
   useEffect(() => {
     if (!open) return;
@@ -371,7 +372,7 @@ export const ChartDialog = ({
                 <input
                   value={form.title}
                   onChange={(event) => updateForm("title", event.target.value)}
-                  placeholder="Graphique"
+                  placeholder={texts.defaultTitle}
                 />
               </label>
 

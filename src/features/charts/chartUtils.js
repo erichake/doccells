@@ -51,6 +51,7 @@ export const CHART_COLORS = [
 export const CHART_TEXTS = {
   toolbar: "Graphique",
   title: "Graphiques",
+  defaultTitle: "Graphique",
   activeSheet: "Feuille active",
   existingCharts: "Graphiques de la feuille",
   noCharts: "Aucun graphique pour cette feuille.",

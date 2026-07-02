@@ -32,7 +32,7 @@ import {
   stripConditionalFormattingMarkers,
 } from "./features/conditionalFormatting/conditionalFormattingUtils.js";
 
-const SUPPORTED_LANGS = ["zh-CN", "zh-TW", "en", "fr-FR", "es-ES"];
+const SUPPORTED_LANGS = ["zh-CN", "zh-TW", "en", "fr-FR", "es-ES", "hi", "pt", "de", "el", "it", "nl"];
 const detectedLang =
   SUPPORTED_LANGS.includes(navigator.language)
     ? navigator.language
@@ -49,6 +49,12 @@ const sheetPrefix =
     en: "Sheet",
     "fr-FR": "Feuille",
     "es-ES": "Hoja",
+    hi: "शीट",
+    pt: "Folha",
+    de: "Tabelle",
+    el: "Φύλλο",
+    it: "Foglio",
+    nl: "Blad",
   }[detectedLang] ?? "Sheet";
 
 const isSingleColumnRange = (range) =>
