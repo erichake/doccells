@@ -26,7 +26,7 @@
         transition: opacity 0.3s ease;
       }
 
-      #splash-screen img {
+      #splash-screen svg {
         width: 500px;
         height: 200px;
         max-width: 90vw;
@@ -43,9 +43,78 @@
   </head>
   <body>
     <div id="root"></div>
-    <div id="splash-screen"><img src="/splash.svg" alt="DocCells" /></div>
+    <div id="splash-screen" aria-label="DocCells" role="img">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+        <rect width="500" height="200" fill="#ffffff" />
+
+        <g transform="translate(40,36)">
+          <rect x="0" y="0" width="60" height="60" rx="12" fill="#60a5fa" />
+          <rect x="68" y="0" width="60" height="60" rx="12" fill="#64748b" />
+          <rect x="0" y="68" width="60" height="60" rx="12" fill="#64748b" />
+          <rect x="68" y="68" width="60" height="60" rx="12" fill="#64748b" />
+        </g>
+
+        <text
+          x="208"
+          y="92"
+          font-size="48"
+          font-weight="700"
+          fill="#1e293b"
+          font-family="Arial, Helvetica, sans-serif"
+        >
+          DocCells
+        </text>
+        <text
+          id="splash-tagline"
+          x="208"
+          y="130"
+          font-size="22"
+          font-weight="400"
+          fill="#94a3b8"
+          font-family="Arial, Helvetica, sans-serif"
+        >
+          Simple. Fast.
+        </text>
+        <text
+          id="splash-version"
+          x="208"
+          y="154"
+          font-size="13"
+          font-weight="400"
+          fill="#94a3b8"
+          font-family="Arial, Helvetica, sans-serif"
+        >
+          version __DOCCELLS_BUILD_VERSION__
+        </text>
+      </svg>
+    </div>
     <script>
       (function () {
+        var splashTexts = {
+          "zh-CN": "简单。快速。",
+          "zh-TW": "簡單。快速。",
+          en: "Simple. Fast.",
+          "fr-FR": "Simple. Rapide.",
+          "es-ES": "Simple. Rápido.",
+          hi: "सरल. तेज़.",
+          pt: "Simples. Rápido.",
+          de: "Einfach. Schnell.",
+          el: "Απλό. Γρήγορο.",
+          it: "Semplice. Veloce.",
+          nl: "Eenvoudig. Snel.",
+        };
+        var supportedSplashLangs = Object.keys(splashTexts);
+        var browserLang = navigator.language || "en";
+        var splashLang = supportedSplashLangs.includes(browserLang)
+          ? browserLang
+          : supportedSplashLangs.find(function (lang) {
+              return browserLang.startsWith(lang.split("-")[0]);
+            }) || "en";
+        var tagline = document.getElementById("splash-tagline");
+        if (tagline) {
+          tagline.textContent = splashTexts[splashLang] || splashTexts.en;
+        }
+
         var isTopWindow = true;
         try {
           isTopWindow = window.self === window.top;
@@ -61,7 +130,7 @@
         }
 
         var minDelay = new Promise(function (resolve) {
-          setTimeout(resolve, 500);
+          setTimeout(resolve, 1000);
         });
         var appReady = new Promise(function (resolve) {
           window.addEventListener("doccells:ready", resolve, { once: true });
