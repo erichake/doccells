@@ -10118,6 +10118,20 @@ module.exports = {
     lockCells: "鎖定儲存格",
     unlockCells: "取消鎖定儲存格",
     toggleSheetProtection: "保護/取消保護活頁簿",
+    toggleGridLines: "顯示/隱藏格線",
+    standaloneMenu: {
+      menuBarLabel: "DocCells 選單",
+      file: "檔案",
+      edit: "編輯",
+      view: "檢視",
+      insert: "插入",
+      data: "資料",
+      tools: "工具",
+      open: "開啟",
+      export: "匯出",
+      show: "顯示",
+      gridlines: "格線"
+    },
     conditionalFormatting: {
       toolbar: "條件格式",
       title: "條件格式",
@@ -10197,6 +10211,8 @@ module.exports = {
       range: "資料",
       labels: "標籤",
       labelReference: "參照",
+      labelColumnReference: "欄字母",
+      labelRowReference: "列號",
       values: "顯示數值",
       legend: "顯示圖例",
       color: "顏色",
@@ -10220,14 +10236,16 @@ module.exports = {
       labelTypes: {
         none: "無",
         sameRowColumn: "同一列的欄",
+        sameColumnRow: "同一欄範圍的列",
         range: "自訂範圍"
       },
       errors: {
         range: "範圍格式應類似 A1:B5。",
-        dataColumn: "資料範圍必須是一欄數值。",
+        dataColumn: "資料範圍必須是一列或一欄數值。",
         labelColumn: "標籤欄格式應類似 B。",
+        labelRow: "標籤列格式應類似 2。",
         labelRange: "標籤範圍格式應類似 B3:B24。",
-        labelRangeSize: "標籤範圍的列數必須與資料相同。",
+        labelRangeSize: "標籤範圍的數值數量必須與資料相同。",
         title: "請加入簡短的圖表標題。"
       }
     }

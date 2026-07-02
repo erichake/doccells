@@ -10613,6 +10613,20 @@ module.exports = {
     lockCells: "锁定单元格",
     unlockCells: "取消锁定单元格",
     toggleSheetProtection: "保护/取消保护工作簿",
+    toggleGridLines: "显示/隐藏网格线",
+    standaloneMenu: {
+      menuBarLabel: "DocCells 菜单",
+      file: "文件",
+      edit: "编辑",
+      view: "查看",
+      insert: "插入",
+      data: "数据",
+      tools: "工具",
+      open: "打开",
+      export: "导出",
+      show: "显示",
+      gridlines: "网格线"
+    },
     conditionalFormatting: {
       toolbar: "条件格式",
       title: "条件格式",
@@ -10692,6 +10706,8 @@ module.exports = {
       range: "数据",
       labels: "标签",
       labelReference: "引用",
+      labelColumnReference: "列字母",
+      labelRowReference: "行号",
       values: "显示数值",
       legend: "显示图例",
       color: "颜色",
@@ -10715,14 +10731,16 @@ module.exports = {
       labelTypes: {
         none: "无",
         sameRowColumn: "同一行的列",
+        sameColumnRow: "同一列范围的行",
         range: "自定义区域"
       },
       errors: {
         range: "区域格式应类似 A1:B5。",
-        dataColumn: "数据区域必须是一列数值。",
+        dataColumn: "数据区域必须是一行或一列数值。",
         labelColumn: "标签列格式应类似 B。",
+        labelRow: "标签行格式应类似 2。",
         labelRange: "标签区域格式应类似 B3:B24。",
-        labelRangeSize: "标签区域的行数必须与数据相同。",
+        labelRangeSize: "标签区域的数值数量必须与数据相同。",
         title: "请添加一个简短的图表标题。"
       }
     }

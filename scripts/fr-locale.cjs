@@ -10517,6 +10517,20 @@ module.exports = {
     lockCells: "Verrouiller les cellules",
     unlockCells: "Déverrouiller les cellules",
     toggleSheetProtection: "Protéger / Déprotéger le classeur",
+    toggleGridLines: "Afficher / masquer le quadrillage",
+    standaloneMenu: {
+      menuBarLabel: "Menus DocCells",
+      file: "Fichier",
+      edit: "Édition",
+      view: "Affichage",
+      insert: "Insertion",
+      data: "Données",
+      tools: "Outils",
+      open: "Ouvrir",
+      export: "Exporter",
+      show: "Afficher",
+      gridlines: "Quadrillage"
+    },
     conditionalFormatting: {
       toolbar: "Formatage conditionnel",
       title: "Formatage conditionnel",
@@ -10596,6 +10610,8 @@ module.exports = {
       range: "Données",
       labels: "Étiquettes",
       labelReference: "Référence",
+      labelColumnReference: "Lettre de la colonne",
+      labelRowReference: "Numéro de la ligne",
       values: "Afficher les valeurs",
       legend: "Afficher la légende",
       color: "Couleur",
@@ -10619,14 +10635,16 @@ module.exports = {
       labelTypes: {
         none: "Sans",
         sameRowColumn: "Colonne d'une même ligne",
+        sameColumnRow: "Ligne d'une même colonne",
         range: "Plage personnalisée"
       },
       errors: {
         range: "La plage doit ressembler à A1:B5.",
-        dataColumn: "La plage de données doit être une seule colonne de valeurs.",
+        dataColumn: "La plage de données doit être une seule ligne ou une seule colonne de valeurs.",
         labelColumn: "La colonne d'étiquettes doit ressembler à B.",
+        labelRow: "La ligne d'étiquettes doit ressembler à 2.",
         labelRange: "La plage d'étiquettes doit ressembler à B3:B24.",
-        labelRangeSize: "La plage d'étiquettes doit avoir le même nombre de lignes que les données.",
+        labelRangeSize: "La plage d'étiquettes doit avoir le même nombre de valeurs que les données.",
         title: "Ajoute un titre court au graphique."
       }
     }

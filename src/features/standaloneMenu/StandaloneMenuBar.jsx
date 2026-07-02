@@ -100,6 +100,7 @@ const MenuDivider = () => <div className="dc-menu-divider" role="separator" />;
 export const StandaloneMenuBar = ({
   appMode,
   sheetDataRef,
+  texts,
   workbookRef,
   onOpenChartDialog,
   onOpenConditionalDialog,
@@ -200,33 +201,33 @@ export const StandaloneMenuBar = ({
     () => [
       {
         id: "file",
-        label: "Fichier",
+        label: texts.roots.file,
         items: [
-          { icon: "folder", label: "Ouvrir", shortcut: "⌘O", command: openFilePicker },
-          { icon: "download", label: "Exporter", command: exportWorkbook },
+          { icon: "folder", label: texts.items.open, shortcut: "⌘O", command: openFilePicker },
+          { icon: "download", label: texts.items.export, command: exportWorkbook },
         ],
       },
       {
         id: "edit",
-        label: "Édition",
+        label: texts.roots.edit,
         items: [
-          { icon: "undo", label: "Annuler", shortcut: "⌘Z", command: () => triggerWorkbookUndo(workbookRef) },
-          { icon: "redo", label: "Rétablir", shortcut: "⌘Y", command: () => triggerWorkbookRedo(workbookRef) },
+          { icon: "undo", label: texts.items.undo, shortcut: "⌘Z", command: () => triggerWorkbookUndo(workbookRef) },
+          { icon: "redo", label: texts.items.redo, shortcut: "⌘Y", command: () => triggerWorkbookRedo(workbookRef) },
           "divider",
-          { icon: "eraser", label: "Effacer la mise en forme", command: () => clickToolbarIcon("clear-format") },
+          { icon: "eraser", label: texts.items.clearFormat, command: () => clickToolbarIcon("clear-format") },
         ],
       },
       {
         id: "view",
-        label: "Affichage",
+        label: texts.roots.view,
         items: [
           {
             icon: "eye",
-            label: "Afficher",
+            label: texts.items.show,
             items: [
               {
                 icon: "grid",
-                label: "Quadrillage",
+                label: texts.items.gridlines,
                 checked: isGridLinesVisible,
                 command: triggerGridLines,
               },
@@ -234,18 +235,18 @@ export const StandaloneMenuBar = ({
           },
           {
             icon: "freeze",
-            label: "Figer",
+            label: texts.items.freeze,
             items: [
               {
                 icon: "freezeRow",
-                label: "Figer jusqu'à la ligne actuelle",
+                label: texts.items.freezeRow,
                 checked: menuState.activeFrozenType === "row",
                 command: () =>
                   triggerWorkbookFreeze(workbookRef, "row", freezeRangeRef.current),
               },
               {
                 icon: "freezeColumn",
-                label: "Figer jusqu'à la colonne actuelle",
+                label: texts.items.freezeColumn,
                 checked: menuState.activeFrozenType === "column",
                 command: () =>
                   triggerWorkbookFreeze(
@@ -256,7 +257,7 @@ export const StandaloneMenuBar = ({
               },
               {
                 icon: "freeze",
-                label: "Figer jusqu'à la cellule actuelle",
+                label: texts.items.freezeCell,
                 checked: menuState.activeFrozenType === "both",
                 command: () =>
                   triggerWorkbookFreeze(workbookRef, "both", freezeRangeRef.current),
@@ -264,7 +265,7 @@ export const StandaloneMenuBar = ({
               "divider",
               {
                 icon: "freezeCancel",
-                label: "Annuler le figement",
+                label: texts.items.freezeCancel,
                 disabled: !menuState.activeFrozenType,
                 command: () => triggerWorkbookFreeze(workbookRef, "cancel"),
               },
@@ -274,51 +275,51 @@ export const StandaloneMenuBar = ({
       },
       {
         id: "insert",
-        label: "Insertion",
+        label: texts.roots.insert,
         items: [
-          { icon: "image", label: "Image", command: triggerNativeImagePicker },
-          { icon: "chart", label: "Graphique", command: onOpenChartDialog },
+          { icon: "image", label: texts.items.image, command: triggerNativeImagePicker },
+          { icon: "chart", label: texts.items.chart, command: onOpenChartDialog },
         ],
       },
       {
         id: "format",
-        label: "Format",
+        label: texts.roots.format,
         items: [
-          { icon: "bold", label: "Gras", shortcut: "⌘B", checked: menuState.bold, command: () => triggerWorkbookFormat(workbookRef, "bl") },
-          { icon: "italic", label: "Italique", shortcut: "⌘I", checked: menuState.italic, command: () => triggerWorkbookFormat(workbookRef, "it") },
-          { icon: "underline", label: "Souligné", shortcut: "⌘U", checked: menuState.underline, command: () => triggerWorkbookFormat(workbookRef, "un") },
+          { icon: "bold", label: texts.items.bold, shortcut: "⌘B", checked: menuState.bold, command: () => triggerWorkbookFormat(workbookRef, "bl") },
+          { icon: "italic", label: texts.items.italic, shortcut: "⌘I", checked: menuState.italic, command: () => triggerWorkbookFormat(workbookRef, "it") },
+          { icon: "underline", label: texts.items.underline, shortcut: "⌘U", checked: menuState.underline, command: () => triggerWorkbookFormat(workbookRef, "un") },
           "divider",
-          { icon: "spark", label: "Formatage conditionnel", command: onOpenConditionalDialog },
+          { icon: "spark", label: texts.items.conditionalFormatting, command: onOpenConditionalDialog },
         ],
       },
       {
         id: "data",
-        label: "Données",
+        label: texts.roots.data,
         items: [
           {
             icon: "filter",
-            label: "Créer un filtre",
+            label: texts.items.sortAndFilter,
             items: [
               {
                 icon: "sortAsc",
-                label: "Trier de A à Z",
+                label: texts.items.sortAscending,
                 command: () => triggerFilterMenuOption("sort-asc"),
               },
               {
                 icon: "sortDesc",
-                label: "Trier de Z à A",
+                label: texts.items.sortDescending,
                 command: () => triggerFilterMenuOption("sort-desc"),
               },
               "divider",
               {
                 icon: "filter",
-                label: "Créer un filtre",
+                label: texts.items.createFilter,
                 checked: menuState.filter,
                 command: () => triggerFilterMenuOption("filter1"),
               },
               {
                 icon: "eraser",
-                label: "Effacer le filtre",
+                label: texts.items.clearFilter,
                 disabled: !menuState.filter,
                 command: () => triggerFilterMenuOption("eraser"),
               },
@@ -328,11 +329,11 @@ export const StandaloneMenuBar = ({
       },
       {
         id: "tools",
-        label: "Outils",
+        label: texts.roots.tools,
         items: [
           {
             icon: "shield",
-            label: "Protéger / déprotéger le classeur",
+            label: texts.items.protectWorkbook,
             checked: isProtected,
             command: triggerSheetProtection,
             disabled: appMode === "student",
@@ -348,6 +349,7 @@ export const StandaloneMenuBar = ({
       menuState,
       onOpenChartDialog,
       onOpenConditionalDialog,
+      texts,
       workbookRef,
     ],
   );
@@ -357,7 +359,7 @@ export const StandaloneMenuBar = ({
   return (
     <nav
       className="dc-menu-bar"
-      aria-label="Menus DocCells"
+      aria-label={texts.menuBarLabel}
       ref={menuRef}
       onMouseEnter={refreshMenuState}
       onFocus={refreshMenuState}

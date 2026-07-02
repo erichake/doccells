@@ -10596,6 +10596,20 @@ module.exports = {
     lockCells: "Lock cells",
     unlockCells: "Unlock cells",
     toggleSheetProtection: "Protect / Unprotect workbook",
+    toggleGridLines: "Show / hide gridlines",
+    standaloneMenu: {
+      menuBarLabel: "DocCells menus",
+      file: "File",
+      edit: "Edit",
+      view: "View",
+      insert: "Insert",
+      data: "Data",
+      tools: "Tools",
+      open: "Open",
+      export: "Export",
+      show: "Show",
+      gridlines: "Gridlines"
+    },
     conditionalFormatting: {
       toolbar: "Conditional formatting",
       title: "Conditional formatting",
@@ -10675,6 +10689,8 @@ module.exports = {
       range: "Data",
       labels: "Labels",
       labelReference: "Reference",
+      labelColumnReference: "Column letter",
+      labelRowReference: "Row number",
       values: "Show values",
       legend: "Show legend",
       color: "Color",
@@ -10698,14 +10714,16 @@ module.exports = {
       labelTypes: {
         none: "None",
         sameRowColumn: "Column on the same row",
+        sameColumnRow: "Row across the same columns",
         range: "Custom range"
       },
       errors: {
         range: "The range must look like A1:B5.",
-        dataColumn: "The data range must be a single column of values.",
+        dataColumn: "The data range must be a single row or a single column of values.",
         labelColumn: "The label column must look like B.",
+        labelRow: "The label row must look like 2.",
         labelRange: "The label range must look like B3:B24.",
-        labelRangeSize: "The label range must have the same number of rows as the data.",
+        labelRangeSize: "The label range must have the same number of values as the data.",
         title: "Add a short chart title."
       }
     }

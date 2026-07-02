@@ -10056,6 +10056,20 @@ module.exports = {
     lockCells: "Bloquear celdas",
     unlockCells: "Desbloquear celdas",
     toggleSheetProtection: "Proteger / Desproteger libro",
+    toggleGridLines: "Mostrar / ocultar cuadrícula",
+    standaloneMenu: {
+      menuBarLabel: "Menús de DocCells",
+      file: "Archivo",
+      edit: "Edición",
+      view: "Ver",
+      insert: "Insertar",
+      data: "Datos",
+      tools: "Herramientas",
+      open: "Abrir",
+      export: "Exportar",
+      show: "Mostrar",
+      gridlines: "Cuadrícula"
+    },
     conditionalFormatting: {
       toolbar: "Formato condicional",
       title: "Formato condicional",
@@ -10135,6 +10149,8 @@ module.exports = {
       range: "Datos",
       labels: "Etiquetas",
       labelReference: "Referencia",
+      labelColumnReference: "Letra de columna",
+      labelRowReference: "Número de fila",
       values: "Mostrar valores",
       legend: "Mostrar leyenda",
       color: "Color",
@@ -10158,14 +10174,16 @@ module.exports = {
       labelTypes: {
         none: "Sin etiquetas",
         sameRowColumn: "Columna de la misma fila",
+        sameColumnRow: "Fila de las mismas columnas",
         range: "Rango personalizado"
       },
       errors: {
         range: "El rango debe parecerse a A1:B5.",
-        dataColumn: "El rango de datos debe ser una sola columna de valores.",
+        dataColumn: "El rango de datos debe ser una sola fila o una sola columna de valores.",
         labelColumn: "La columna de etiquetas debe parecerse a B.",
+        labelRow: "La fila de etiquetas debe parecerse a 2.",
         labelRange: "El rango de etiquetas debe parecerse a B3:B24.",
-        labelRangeSize: "El rango de etiquetas debe tener el mismo número de filas que los datos.",
+        labelRangeSize: "El rango de etiquetas debe tener el mismo número de valores que los datos.",
         title: "Agrega un título corto al gráfico."
       }
     }

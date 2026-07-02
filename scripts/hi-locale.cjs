@@ -10587,6 +10587,20 @@ module.exports = {
     lockCells: "कोशिकाओं को लॉक करें",
     unlockCells: "कोशिकाओं को अनलॉक करें",
     toggleSheetProtection: "कार्यपुस्तिका सुरक्षित/असुरक्षित करें",
+    toggleGridLines: "ग्रिडलाइन दिखाएँ/छिपाएँ",
+    standaloneMenu: {
+      menuBarLabel: "DocCells मेनू",
+      file: "फ़ाइल",
+      edit: "संपादन",
+      view: "दृश्य",
+      insert: "डालें",
+      data: "डेटा",
+      tools: "टूल",
+      open: "खोलें",
+      export: "निर्यात",
+      show: "दिखाएँ",
+      gridlines: "ग्रिडलाइन"
+    },
     charts: {
       toolbar: "चार्ट डालें",
       title: "चार्ट",
@@ -10600,6 +10614,8 @@ module.exports = {
       range: "डेटा",
       labels: "लेबल",
       labelReference: "संदर्भ",
+      labelColumnReference: "स्तंभ अक्षर",
+      labelRowReference: "पंक्ति संख्या",
       values: "मान दिखाएँ",
       legend: "लेजेंड दिखाएँ",
       color: "रंग",
@@ -10623,14 +10639,16 @@ module.exports = {
       labelTypes: {
         none: "नहीं",
         sameRowColumn: "उसी पंक्ति का स्तंभ",
+        sameColumnRow: "उन्हीं स्तंभों की पंक्ति",
         range: "कस्टम रेंज"
       },
       errors: {
         range: "रेंज A1:B5 जैसी होनी चाहिए।",
-        dataColumn: "डेटा रेंज मानों का एक ही स्तंभ होना चाहिए।",
+        dataColumn: "डेटा रेंज मानों की एक ही पंक्ति या एक ही स्तंभ होनी चाहिए।",
         labelColumn: "लेबल स्तंभ B जैसा होना चाहिए।",
+        labelRow: "लेबल पंक्ति 2 जैसी होनी चाहिए।",
         labelRange: "लेबल रेंज B3:B24 जैसी होनी चाहिए।",
-        labelRangeSize: "लेबल रेंज में डेटा जितनी ही पंक्तियाँ होनी चाहिए।",
+        labelRangeSize: "लेबल रेंज में डेटा जितने ही मान होने चाहिए।",
         title: "चार्ट के लिए छोटा शीर्षक जोड़ें।"
       }
     }

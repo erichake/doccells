@@ -15,6 +15,7 @@ import {
 import { normalizeImportedWorkbook } from "./features/excelImport/normalizeImportedWorkbook.js";
 import { useFortuneToolbarButtons } from "./features/fortuneSheet/useFortuneToolbarButtons.js";
 import { StandaloneMenuBar } from "./features/standaloneMenu/StandaloneMenuBar.jsx";
+import { getStandaloneMenuTexts } from "./features/standaloneMenu/standaloneMenuTexts.js";
 import {
   dataToCelldata,
   getAvailableDefaultSheetName,
@@ -39,6 +40,7 @@ const detectedLang =
 const t = customLocales[detectedLang] ?? customLocales["en"];
 const conditionalFormattingTexts = getConditionalFormattingTexts(t.conditionalFormatting);
 const chartTexts = getChartTexts(t.charts);
+const standaloneMenuTexts = getStandaloneMenuTexts(t, detectedLang);
 const DEFAULT_COLUMN_WIDTH = 99;
 const sheetPrefix =
   {
@@ -506,7 +508,7 @@ const App = () => {
     openChartDialog,
     openConditionalDialog,
     chartToolbarText: chartTexts.toolbar,
-    toggleGridLinesText: t.toggleGridLines ?? "Afficher / masquer le quadrillage",
+    toggleGridLinesText: t.toggleGridLines ?? "Show / hide gridlines",
     toggleSheetProtectionText: t.toggleSheetProtection,
     conditionalFormattingToolbarText: conditionalFormattingTexts.toolbar,
   });
@@ -828,6 +830,7 @@ const App = () => {
       <StandaloneMenuBar
         appMode={appMode}
         sheetDataRef={sheetDataRef}
+        texts={standaloneMenuTexts}
         workbookRef={workbookRef}
         onOpenChartDialog={openChartDialog}
         onOpenConditionalDialog={openConditionalDialog}
