@@ -12,6 +12,55 @@ const FALLBACK_TEXTS = {
   export: "Export",
   show: "Show",
   gridlines: "Gridlines",
+  about: "About...",
+  splashTagline: "Simple. Fast.",
+};
+
+const TRANSLATED_TEXTS = {
+  "zh-CN": {
+    about: "关于...",
+    splashTagline: "简单。快速。",
+  },
+  "zh-TW": {
+    about: "關於...",
+    splashTagline: "簡單。快速。",
+  },
+  en: {
+    about: "About...",
+    splashTagline: "Simple. Fast.",
+  },
+  "fr-FR": {
+    about: "A propos...",
+    splashTagline: "Simple. Rapide.",
+  },
+  "es-ES": {
+    about: "Acerca de...",
+    splashTagline: "Simple. Rápido.",
+  },
+  hi: {
+    about: "परिचय...",
+    splashTagline: "सरल. तेज़.",
+  },
+  pt: {
+    about: "Acerca de...",
+    splashTagline: "Simples. Rápido.",
+  },
+  de: {
+    about: "Über...",
+    splashTagline: "Einfach. Schnell.",
+  },
+  el: {
+    about: "Σχετικά...",
+    splashTagline: "Απλό. Γρήγορο.",
+  },
+  it: {
+    about: "Informazioni...",
+    splashTagline: "Semplice. Veloce.",
+  },
+  nl: {
+    about: "Over...",
+    splashTagline: "Eenvoudig. Snel.",
+  },
 };
 
 const stripShortcutHint = (text) =>
@@ -28,6 +77,7 @@ export const getStandaloneMenuTexts = (appTexts, lang) => {
   const freezen = fortuneTexts.freezen || {};
   const sort = fortuneTexts.sort || {};
   const filter = fortuneTexts.filter || {};
+  const translated = TRANSLATED_TEXTS[lang] || TRANSLATED_TEXTS.en;
 
   return {
     menuBarLabel: pick(custom.menuBarLabel, FALLBACK_TEXTS.menuBarLabel),
@@ -99,6 +149,12 @@ export const getStandaloneMenuTexts = (appTexts, lang) => {
       protectWorkbook: pick(
         appTexts?.toggleSheetProtection,
         "Protect / Unprotect workbook",
+      ),
+      about: pick(custom.about, translated.about, FALLBACK_TEXTS.about),
+      splashTagline: pick(
+        custom.splashTagline,
+        translated.splashTagline,
+        FALLBACK_TEXTS.splashTagline,
       ),
     },
   };

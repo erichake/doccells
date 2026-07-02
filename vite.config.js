@@ -14,6 +14,9 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: forDocTools ? "./" : "/fortunesheet/",
+    define: {
+      "import.meta.env.DOCCELLS_BUILD_VERSION": JSON.stringify(buildDate),
+    },
     plugins: [
       react(),
       {

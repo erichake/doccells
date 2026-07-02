@@ -97,6 +97,56 @@ const MenuItem = ({ item, onRun }) => {
 
 const MenuDivider = () => <div className="dc-menu-divider" role="separator" />;
 
+const SplashLogo = ({ tagline, version }) => (
+  <svg
+    className="dc-about-splash"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 500 200"
+    aria-label="DocCells"
+    role="img"
+  >
+    <rect width="500" height="200" fill="#ffffff" />
+
+    <g transform="translate(40,36)">
+      <rect x="0" y="0" width="60" height="60" rx="12" fill="#60a5fa" />
+      <rect x="68" y="0" width="60" height="60" rx="12" fill="#64748b" />
+      <rect x="0" y="68" width="60" height="60" rx="12" fill="#64748b" />
+      <rect x="68" y="68" width="60" height="60" rx="12" fill="#64748b" />
+    </g>
+
+    <text
+      x="208"
+      y="92"
+      fontSize="48"
+      fontWeight="700"
+      fill="#1e293b"
+      fontFamily="Arial, Helvetica, sans-serif"
+    >
+      DocCells
+    </text>
+    <text
+      x="208"
+      y="130"
+      fontSize="22"
+      fontWeight="400"
+      fill="#94a3b8"
+      fontFamily="Arial, Helvetica, sans-serif"
+    >
+      {tagline}
+    </text>
+    <text
+      x="208"
+      y="154"
+      fontSize="13"
+      fontWeight="400"
+      fill="#94a3b8"
+      fontFamily="Arial, Helvetica, sans-serif"
+    >
+      {version}
+    </text>
+  </svg>
+);
+
 export const StandaloneMenuBar = ({
   appMode,
   sheetDataRef,
@@ -107,9 +157,11 @@ export const StandaloneMenuBar = ({
 }) => {
   const [isStandalone, setIsStandalone] = useState(isTopWindow);
   const [openMenu, setOpenMenu] = useState(null);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [menuState, setMenuState] = useState({});
   const menuRef = useRef(null);
   const freezeRangeRef = useRef({ row: 0, column: 0 });
+  const buildVersion = import.meta.env.DOCCELLS_BUILD_VERSION || "dev";
 
   useEffect(() => {
     setIsStandalone(isTopWindow());
@@ -147,6 +199,21 @@ export const StandaloneMenuBar = ({
     setOpenMenu(null);
     requestAnimationFrame(refreshMenuState);
   }, [refreshMenuState]);
+
+  useEffect(() => {
+    if (!isAboutOpen) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") {
+        setIsAboutOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isAboutOpen]);
 
   const exportWorkbook = useCallback(() => {
     const sheets = sheetDataRef.current;
@@ -338,6 +405,12 @@ export const StandaloneMenuBar = ({
             command: triggerSheetProtection,
             disabled: appMode === "student",
           },
+          "divider",
+          {
+            icon: "info",
+            label: texts.items.about,
+            command: () => setIsAboutOpen(true),
+          },
         ],
       },
     ],
@@ -394,6 +467,21 @@ export const StandaloneMenuBar = ({
           ) : null}
         </div>
       ))}
+
+      {isAboutOpen ? (
+        <div
+          className="dc-about-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label={texts.items.about}
+          onMouseDown={() => setIsAboutOpen(false)}
+        >
+          <SplashLogo
+            tagline={texts.items.splashTagline}
+            version={`version ${buildVersion}`}
+          />
+        </div>
+      ) : null}
     </nav>
   );
 };
@@ -544,6 +632,13 @@ const icons = {
     <svg viewBox="0 0 24 24">
       <path d="M12 3.75 5.25 6.7v4.55c0 4.3 2.8 7.7 6.75 9 3.95-1.3 6.75-4.7 6.75-9V6.7Z" />
       <path d="M9.5 12.25 11.25 14 15 10.25" />
+    </svg>
+  ),
+  info: (
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.25" />
+      <path d="M12 11.5v5" />
+      <path d="M12 7.75h.01" />
     </svg>
   ),
 };

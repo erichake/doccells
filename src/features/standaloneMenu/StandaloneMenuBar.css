@@ -181,6 +181,26 @@ body.dc-suppress-toolbar-combo-popup .fortune-toolbar-combo-popup {
   pointer-events: none !important;
 }
 
+.dc-about-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.35);
+  cursor: default;
+}
+
+.dc-about-splash {
+  width: 500px;
+  height: 200px;
+  max-width: 90vw;
+  max-height: 60vh;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
 @media (max-width: 720px) {
   .dc-menu-bar {
     overflow-x: auto;
