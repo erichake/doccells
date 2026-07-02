@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="google" content="notranslate" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tableur</title>
+    <title>DocCells</title>
     <style>
       html,
       body,
@@ -61,7 +61,7 @@
         }
 
         var minDelay = new Promise(function (resolve) {
-          setTimeout(resolve, 1000);
+          setTimeout(resolve, 500);
         });
         var appReady = new Promise(function (resolve) {
           window.addEventListener("doccells:ready", resolve, { once: true });
