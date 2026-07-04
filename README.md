@@ -5,7 +5,10 @@ DocCells is a spreadsheet app built with React and [FortuneSheet](https://github
 ## Features
 
 - Spreadsheet editing powered by FortuneSheet (formulas, formatting, freeze
-  panes, sort & filter, charts, conditional formatting, sheet protection)
+  panes, sort & filter)
+- Charts, plus conditional formatting and sheet protection that go well
+  beyond what FortuneSheet provides out of the box, built on top of it by
+  DocCells
 - Import/export to Excel (`.xlsx`)
 - Standalone menu bar (File / Edit / View / Insert / Format / Data / Tools)
 - UI localized in 11 languages
