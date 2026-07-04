@@ -207,6 +207,8 @@ body.dc-suppress-toolbar-combo-popup .fortune-toolbar-combo-popup {
 }
 
 .dc-about-license-link {
+  /* TODO: re-enable once the app is more mature */
+  display: none;
   position: absolute;
   right: 14px;
   bottom: 10px;
