@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import SplashLogo from "./src/shared/SplashLogo.js";
+import { SPLASH_TAGLINES } from "./src/shared/splashTaglines.js";
 
 const padDatePart = (value) => String(value).padStart(2, "0");
 
@@ -23,17 +24,22 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       {
-        name: "doccells-splash-logo",
+        name: "doccells-splash-screen",
         transformIndexHtml(html) {
           const splashMarkup = renderToStaticMarkup(
             createElement(SplashLogo, {
-              tagline: "Simple. Fast.",
+              tagline: SPLASH_TAGLINES.en,
               version: `version ${buildDate}`,
               taglineId: "splash-tagline",
               versionId: "splash-version",
             }),
           );
-          return html.replace("<!--SPLASH_LOGO-->", splashMarkup);
+          return html
+            .replace("<!--SPLASH_LOGO-->", splashMarkup)
+            .replace(
+              "/*__SPLASH_TAGLINES__*/ {}",
+              JSON.stringify(SPLASH_TAGLINES),
+            );
         },
       },
     ],

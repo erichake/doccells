@@ -48,19 +48,7 @@
     </div>
     <script>
       (function () {
-        var splashTexts = {
-          "zh-CN": "简单。快速。",
-          "zh-TW": "簡單。快速。",
-          en: "Simple. Fast.",
-          "fr-FR": "Simple. Rapide.",
-          "es-ES": "Simple. Rápido.",
-          hi: "सरल. तेज़.",
-          pt: "Simples. Rápido.",
-          de: "Einfach. Schnell.",
-          el: "Απλό. Γρήγορο.",
-          it: "Semplice. Veloce.",
-          nl: "Eenvoudig. Snel.",
-        };
+        var splashTexts = /*__SPLASH_TAGLINES__*/ {};
         var supportedSplashLangs = Object.keys(splashTexts);
         var browserLang = navigator.language || "en";
         var splashLang = supportedSplashLangs.includes(browserLang)

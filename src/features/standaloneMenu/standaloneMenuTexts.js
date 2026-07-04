@@ -1,4 +1,5 @@
 import { locale as getFortuneLocale } from "@fortune-sheet/core";
+import { SPLASH_TAGLINES } from "../../shared/splashTaglines.js";
 
 const FALLBACK_TEXTS = {
   menuBarLabel: "DocCells menus",
@@ -13,54 +14,21 @@ const FALLBACK_TEXTS = {
   show: "Show",
   gridlines: "Gridlines",
   about: "About...",
-  splashTagline: "Simple. Fast.",
+  splashTagline: SPLASH_TAGLINES.en,
 };
 
-const TRANSLATED_TEXTS = {
-  "zh-CN": {
-    about: "关于...",
-    splashTagline: "简单。快速。",
-  },
-  "zh-TW": {
-    about: "關於...",
-    splashTagline: "簡單。快速。",
-  },
-  en: {
-    about: "About...",
-    splashTagline: "Simple. Fast.",
-  },
-  "fr-FR": {
-    about: "A propos...",
-    splashTagline: "Simple. Rapide.",
-  },
-  "es-ES": {
-    about: "Acerca de...",
-    splashTagline: "Simple. Rápido.",
-  },
-  hi: {
-    about: "परिचय...",
-    splashTagline: "सरल. तेज़.",
-  },
-  pt: {
-    about: "Acerca de...",
-    splashTagline: "Simples. Rápido.",
-  },
-  de: {
-    about: "Über...",
-    splashTagline: "Einfach. Schnell.",
-  },
-  el: {
-    about: "Σχετικά...",
-    splashTagline: "Απλό. Γρήγορο.",
-  },
-  it: {
-    about: "Informazioni...",
-    splashTagline: "Semplice. Veloce.",
-  },
-  nl: {
-    about: "Over...",
-    splashTagline: "Eenvoudig. Snel.",
-  },
+const TRANSLATED_ABOUT = {
+  "zh-CN": "关于...",
+  "zh-TW": "關於...",
+  en: "About...",
+  "fr-FR": "A propos...",
+  "es-ES": "Acerca de...",
+  hi: "परिचय...",
+  pt: "Acerca de...",
+  de: "Über...",
+  el: "Σχετικά...",
+  it: "Informazioni...",
+  nl: "Over...",
 };
 
 const stripShortcutHint = (text) =>
@@ -77,7 +45,8 @@ export const getStandaloneMenuTexts = (appTexts, lang) => {
   const freezen = fortuneTexts.freezen || {};
   const sort = fortuneTexts.sort || {};
   const filter = fortuneTexts.filter || {};
-  const translated = TRANSLATED_TEXTS[lang] || TRANSLATED_TEXTS.en;
+  const about = TRANSLATED_ABOUT[lang] || TRANSLATED_ABOUT.en;
+  const splashTagline = SPLASH_TAGLINES[lang] || SPLASH_TAGLINES.en;
 
   return {
     menuBarLabel: pick(custom.menuBarLabel, FALLBACK_TEXTS.menuBarLabel),
@@ -150,10 +119,10 @@ export const getStandaloneMenuTexts = (appTexts, lang) => {
         appTexts?.toggleSheetProtection,
         "Protect / Unprotect workbook",
       ),
-      about: pick(custom.about, translated.about, FALLBACK_TEXTS.about),
+      about: pick(custom.about, about, FALLBACK_TEXTS.about),
       splashTagline: pick(
         custom.splashTagline,
-        translated.splashTagline,
+        splashTagline,
         FALLBACK_TEXTS.splashTagline,
       ),
     },
