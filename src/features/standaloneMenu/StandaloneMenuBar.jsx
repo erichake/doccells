@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import SplashLogo from "../../shared/SplashLogo.js";
 import { exportToExcel } from "../../utils/exportToExcel.js";
 import { stripConditionalFormattingMarkers } from "../conditionalFormatting/conditionalFormattingUtils.js";
 import { areGridLinesHidden, isWorkbookProtected } from "../workbook/workbookUtils.js";
@@ -96,56 +97,6 @@ const MenuItem = ({ item, onRun }) => {
 };
 
 const MenuDivider = () => <div className="dc-menu-divider" role="separator" />;
-
-const SplashLogo = ({ tagline, version }) => (
-  <svg
-    className="dc-about-splash"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 500 200"
-    aria-label="DocCells"
-    role="img"
-  >
-    <rect width="500" height="200" fill="#ffffff" />
-
-    <g transform="translate(40,36)">
-      <rect x="0" y="0" width="60" height="60" rx="12" fill="#60a5fa" />
-      <rect x="68" y="0" width="60" height="60" rx="12" fill="#64748b" />
-      <rect x="0" y="68" width="60" height="60" rx="12" fill="#64748b" />
-      <rect x="68" y="68" width="60" height="60" rx="12" fill="#64748b" />
-    </g>
-
-    <text
-      x="208"
-      y="92"
-      fontSize="48"
-      fontWeight="700"
-      fill="#1e293b"
-      fontFamily="Arial, Helvetica, sans-serif"
-    >
-      DocCells
-    </text>
-    <text
-      x="208"
-      y="130"
-      fontSize="22"
-      fontWeight="400"
-      fill="#94a3b8"
-      fontFamily="Arial, Helvetica, sans-serif"
-    >
-      {tagline}
-    </text>
-    <text
-      x="208"
-      y="154"
-      fontSize="13"
-      fontWeight="400"
-      fill="#94a3b8"
-      fontFamily="Arial, Helvetica, sans-serif"
-    >
-      {version}
-    </text>
-  </svg>
-);
 
 export const StandaloneMenuBar = ({
   appMode,
@@ -477,6 +428,7 @@ export const StandaloneMenuBar = ({
           onMouseDown={() => setIsAboutOpen(false)}
         >
           <SplashLogo
+            className="dc-about-splash"
             tagline={texts.items.splashTagline}
             version={`version ${buildVersion}`}
           />
