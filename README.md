@@ -1,11 +1,29 @@
-# React + Vite
+# DocCells
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DocCells is a spreadsheet app built with React and [FortuneSheet](https://github.com/ruilisi/fortune-sheet).
 
-Currently, two official plugins are available:
+## Getting started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+git clone https://github.com/erichake/doccells.git
+cd doccells
+npm install
+npm run dev
+```
+
+`npm install` also runs a `postinstall` step that patches the
+`@fortune-sheet` packages and injects the custom locales used by the app
+(see `scripts/`) — no extra setup needed.
+
+The dev server runs at `http://localhost:5174`.
+
+## Available scripts
+
+- `npm run dev` — start the Vite dev server
+- `npm run build` — production build (output in `dist/`)
+- `npm run build:doctools` — production build for the DocTools embed target
+- `npm run preview` — locally preview a production build
+- `npm run lint` — run ESLint
 
 ## License
 
