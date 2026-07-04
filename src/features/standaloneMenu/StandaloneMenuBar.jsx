@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import SplashLogo from "../../shared/SplashLogo.js";
+import woodyGuthriePhoto from "../../assets/woody.png";
 import { exportToExcel } from "../../utils/exportToExcel.js";
+import { LICENSE_QUOTE } from "./standaloneMenuTexts.js";
 import { stripConditionalFormattingMarkers } from "../conditionalFormatting/conditionalFormattingUtils.js";
 import { areGridLinesHidden, isWorkbookProtected } from "../workbook/workbookUtils.js";
 import {
@@ -109,6 +111,7 @@ export const StandaloneMenuBar = ({
   const [isStandalone, setIsStandalone] = useState(isTopWindow);
   const [openMenu, setOpenMenu] = useState(null);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isLicenseOpen, setIsLicenseOpen] = useState(false);
   const [menuState, setMenuState] = useState({});
   const menuRef = useRef(null);
   const freezeRangeRef = useRef({ row: 0, column: 0 });
@@ -152,10 +155,13 @@ export const StandaloneMenuBar = ({
   }, [refreshMenuState]);
 
   useEffect(() => {
-    if (!isAboutOpen) return undefined;
+    if (!isAboutOpen && !isLicenseOpen) return undefined;
 
     const closeOnEscape = (event) => {
-      if (event.key === "Escape") {
+      if (event.key !== "Escape") return;
+      if (isLicenseOpen) {
+        setIsLicenseOpen(false);
+      } else {
         setIsAboutOpen(false);
       }
     };
@@ -164,7 +170,7 @@ export const StandaloneMenuBar = ({
     return () => {
       document.removeEventListener("keydown", closeOnEscape);
     };
-  }, [isAboutOpen]);
+  }, [isAboutOpen, isLicenseOpen]);
 
   const exportWorkbook = useCallback(() => {
     const sheets = sheetDataRef.current;
@@ -427,11 +433,59 @@ export const StandaloneMenuBar = ({
           aria-label={texts.items.about}
           onMouseDown={() => setIsAboutOpen(false)}
         >
-          <SplashLogo
-            className="dc-about-splash"
-            tagline={texts.items.splashTagline}
-            version={`version ${buildVersion}`}
-          />
+          <div
+            className="dc-about-card"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <SplashLogo
+              className="dc-about-splash"
+              tagline={texts.items.splashTagline}
+              version={`version ${buildVersion}`}
+            />
+            <button
+              type="button"
+              className="dc-about-license-link"
+              onClick={() => setIsLicenseOpen(true)}
+            >
+              {texts.items.licenseGithub}
+            </button>
+          </div>
+        </div>
+      ) : null}
+
+      {isLicenseOpen ? (
+        <div
+          className="dc-license-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label={texts.items.licenseGithub}
+          onMouseDown={() => setIsLicenseOpen(false)}
+        >
+          <div
+            className="dc-license-card"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <p className="dc-license-notice">{texts.items.licenseNotice}</p>
+            <a
+              className="dc-license-github-btn"
+              href="https://github.com/erichake/doccells"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {texts.items.goToGithub}
+            </a>
+            <div className="dc-license-quote">
+              <img
+                className="dc-license-quote-photo"
+                src={woodyGuthriePhoto}
+                alt={LICENSE_QUOTE.author}
+              />
+              <blockquote className="dc-license-quote-text">
+                <p>{LICENSE_QUOTE.text}</p>
+                <cite>{LICENSE_QUOTE.author}</cite>
+              </blockquote>
+            </div>
+          </div>
         </div>
       ) : null}
     </nav>
