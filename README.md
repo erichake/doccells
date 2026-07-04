@@ -2,6 +2,15 @@
 
 DocCells is a spreadsheet app built with React and [FortuneSheet](https://github.com/ruilisi/fortune-sheet).
 
+## Features
+
+- Spreadsheet editing powered by FortuneSheet (formulas, formatting, freeze
+  panes, sort & filter, charts, conditional formatting, sheet protection)
+- Import/export to Excel (`.xlsx`)
+- Standalone menu bar (File / Edit / View / Insert / Format / Data / Tools)
+- UI localized in 11 languages
+- Startup splash screen and an in-app "About" dialog with license/GitHub info
+
 ## Getting started
 
 ```bash
@@ -21,7 +30,6 @@ The dev server runs at `http://localhost:5174`.
 
 - `npm run dev` — start the Vite dev server
 - `npm run build` — production build (output in `dist/`)
-- `npm run build:doctools` — production build for the DocTools embed target
 - `npm run preview` — locally preview a production build
 - `npm run lint` — run ESLint
 
