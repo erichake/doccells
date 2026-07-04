@@ -12,7 +12,6 @@ DocCells is a spreadsheet app built with React and [FortuneSheet](https://github
 - Import/export to Excel (`.xlsx`)
 - Standalone menu bar (File / Edit / View / Insert / Format / Data / Tools)
 - UI localized in 11 languages
-- Startup splash screen and an in-app "About" dialog with license/GitHub info
 
 ## Getting started
 
