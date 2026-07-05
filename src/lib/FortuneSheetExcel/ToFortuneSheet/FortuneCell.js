@@ -757,20 +757,10 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
       if (formatted == null) {
         return null;
       }
-      return this.localizeImportedNumberDisplay(String(formatted), format);
+      return String(formatted);
     } catch {
       return null;
     }
-  }
-  localizeImportedNumberDisplay(displayValue, format) {
-    if (isDateFormat(format) || !/[#,]##|0\.0/.test(format)) {
-      return displayValue;
-    }
-    return displayValue.replace(
-      /(^|[^\d])(-?)(\d{1,3}(?:,\d{3})+|\d+)\.(\d+)(?=\D|$)/g,
-      (_, prefix, sign, integer, decimal) =>
-        `${prefix}${sign}${integer.replace(/,/g, " ")},${decimal}`,
-    );
   }
   getBackgroundByFill(fill, clrScheme) {
     let patternFills = fill.getInnerElements("patternFill");
