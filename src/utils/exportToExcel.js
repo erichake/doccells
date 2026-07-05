@@ -14,12 +14,27 @@ export const exportToExcel = async (
     const cleanHex = hex.replace("#", "").toUpperCase();
     return `FF${cleanHex}`;
   };
-  const sanitizeCellValue = (value) => {
+  const shouldKeepCellValueAsText = (cellValue) => {
+    const type = cellValue?.ct?.t;
+    return type === "s" || type === "inlineStr" || type === "str";
+  };
+  const getExcelNumberFormat = (cellValue) => {
+    const format = cellValue?.ct?.fa;
+    if (!format || format === "General" || format === "@") return undefined;
+    return format;
+  };
+  const sanitizeCellValue = (value, cellValue) => {
     if (value === null || value === undefined) {
       return undefined;
     }
     if (typeof value === "number") {
       return Number.isFinite(value) ? value : undefined;
+    }
+    const format = getExcelNumberFormat(cellValue);
+    const text = String(value).trim();
+    if (format && !shouldKeepCellValueAsText(cellValue) && numericTextPattern.test(text)) {
+      const numericValue = Number(text);
+      return Number.isFinite(numericValue) ? numericValue : value;
     }
     return value;
   };
@@ -27,16 +42,13 @@ export const exportToExcel = async (
   const hasBinaryFloatTail = (text) =>
     /\.\d*(?:0{6,}\d*|9{6,}\d*)$/i.test(text);
   const sanitizeFormulaResult = (value, cellValue) => {
-    const result = sanitizeCellValue(value);
+    const result = sanitizeCellValue(value, cellValue);
     if (typeof result !== "string") return result;
 
     const text = result.trim();
     if (!text || !numericTextPattern.test(text)) return result;
 
-    const type = cellValue?.ct?.t;
-    const shouldKeepAsText =
-      type === "s" || type === "inlineStr" || type === "str";
-    if (shouldKeepAsText && !hasBinaryFloatTail(text)) return result;
+    if (shouldKeepCellValueAsText(cellValue) && !hasBinaryFloatTail(text)) return result;
 
     const numericResult = Number(text);
     return Number.isFinite(numericResult) ? numericResult : result;
@@ -453,7 +465,7 @@ export const exportToExcel = async (
           ...(result !== undefined ? { result } : {}),
         };
       } else if (v?.v !== undefined) {
-        const value = sanitizeCellValue(v.v);
+        const value = sanitizeCellValue(v.v, v);
         if (value !== undefined) {
           cell.value = value;
         }
@@ -529,6 +541,11 @@ export const exportToExcel = async (
       // Cellule explicitement déverrouillée (lo=0) : protection = false
       if (v?.lo === 0) {
         cellStyle.protection = { locked: false };
+      }
+
+      const numberFormat = getExcelNumberFormat(v);
+      if (numberFormat) {
+        cellStyle.numFmt = numberFormat;
       }
 
       if (Object.keys(cellStyle).length > 0) {

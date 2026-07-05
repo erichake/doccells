@@ -1,5 +1,9 @@
 import { getColor, getlineStringAttr } from "./ReadXml.js";
 import {
+  is_date as isDateFormat,
+  update as updateNumberFormat,
+} from "@fortune-sheet/core";
+import {
   getcellrange,
   escapeCharacter,
   isChinese,
@@ -702,7 +706,7 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
       } else {
         value = escapeCharacter(value);
         cellValue.v = value;
-        const displayValue = this.getGeneralNumberDisplayValue(value, cellValue.ct);
+        const displayValue = this.getNumberDisplayValue(value, cellValue.ct);
         if (displayValue !== value) {
           cellValue.m = displayValue;
         }
@@ -721,10 +725,11 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
       .replace(/&#10;/g, "\n");
     return text;
   }
-  getGeneralNumberDisplayValue(value, cellFormat) {
+  getNumberDisplayValue(value, cellFormat) {
     const format = cellFormat?.fa;
     if (format != null && format !== "General") {
-      return value;
+      const formatted = this.getFormattedNumberDisplayValue(value, format);
+      return formatted ?? value;
     }
     const text = String(value);
     if (!/^-?(?:\d+|\d*\.\d+)(?:[eE][+-]?\d+)?$/i.test(text)) {
@@ -741,6 +746,31 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
       return value;
     }
     return String(Number(number.toPrecision(15)));
+  }
+  getFormattedNumberDisplayValue(value, format) {
+    const text = String(value);
+    if (!/^-?(?:\d+|\d*\.\d+)(?:[eE][+-]?\d+)?$/i.test(text)) {
+      return null;
+    }
+    try {
+      const formatted = updateNumberFormat(format, Number(text));
+      if (formatted == null) {
+        return null;
+      }
+      return this.localizeImportedNumberDisplay(String(formatted), format);
+    } catch {
+      return null;
+    }
+  }
+  localizeImportedNumberDisplay(displayValue, format) {
+    if (isDateFormat(format) || !/[#,]##|0\.0/.test(format)) {
+      return displayValue;
+    }
+    return displayValue.replace(
+      /(^|[^\d])(-?)(\d{1,3}(?:,\d{3})+|\d+)\.(\d+)(?=\D|$)/g,
+      (_, prefix, sign, integer, decimal) =>
+        `${prefix}${sign}${integer.replace(/,/g, " ")},${decimal}`,
+    );
   }
   getBackgroundByFill(fill, clrScheme) {
     let patternFills = fill.getInnerElements("patternFill");
