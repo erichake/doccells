@@ -352,6 +352,124 @@ const NEW7 = `            if (!data[r]) data[r] = [];
             }
             if (hyperlinkMap && hyperlinkMap["".concat(r, "_").concat(c)]) {`;
 
+// Patch 8: formula date functions should behave like Excel and return serials.
+// FormulaJS returns Date objects for date formulas and its WORKDAY result is
+// off by one in several timezone/date-serial cases. FortuneSheet then displays
+// Date.toString() after fill-drag. Override WORKDAY/WORKDAY.INTL and keep
+// formula results as Excel serial numbers so existing date formats render them.
+const OLD8_ESM = `    this.parser = new Parser();
+    this.parser.on("callCellValue"`;
+
+const OLD8_CJS = `    this.parser = new formulaParser.Parser();
+    this.parser.on("callCellValue"`;
+
+const NEW8_ESM = `    this.parser = new Parser();
+    var __doccellsExcelWorkday = function __doccellsExcelWorkday(startDate, days, weekend, holidays) {
+      var toSerial = function toSerial(value) {
+        if (Object.prototype.toString.call(value) === "[object Date]" && !_.isNil(value)) return datenum_local(value);
+        if (_.isNumber(value)) return Number.isFinite(value) ? Math.floor(value) : null;
+        if (_.isString(value) && value.trim() !== "") {
+          var numeric = Number(value);
+          return Number.isFinite(numeric) ? Math.floor(numeric) : null;
+        }
+        return null;
+      };
+      var serial = toSerial(startDate);
+      var stepCount = Number(days);
+      if (serial == null || !Number.isFinite(stepCount)) return error.v;
+      var weekendMap = {
+        1: [0, 6], 2: [0, 1], 3: [1, 2], 4: [2, 3], 5: [3, 4], 6: [4, 5], 7: [5, 6],
+        11: [0], 12: [1], 13: [2], 14: [3], 15: [4], 16: [5], 17: [6]
+      };
+      var weekendDays = {};
+      if (_.isString(weekend) && /^[01]{7}$/.test(weekend)) {
+        weekend.split("").forEach(function (flag, index) {
+          if (flag === "1") weekendDays[(index + 1) % 7] = true;
+        });
+      } else {
+        (weekendMap[Number(weekend || 1)] || weekendMap[1]).forEach(function (day) { weekendDays[day] = true; });
+      }
+      var holidayDays = {};
+      var holidayList = _.isArray(holidays) ? holidays.flat(Infinity) : holidays == null ? [] : [holidays];
+      holidayList.forEach(function (holiday) {
+        var h = toSerial(holiday);
+        if (h != null) holidayDays[h] = true;
+      });
+      var step = stepCount < 0 ? -1 : 1;
+      var remaining = Math.abs(Math.trunc(stepCount));
+      while (remaining > 0) {
+        serial += step;
+        var day = new Date(Date.UTC(1899, 11, 30) + Math.floor(serial) * 86400000).getUTCDay();
+        if (!weekendDays[day] && !holidayDays[serial]) remaining -= 1;
+      }
+      return serial;
+    };
+    this.parser.setFunction("WORKDAY", function (params) { return __doccellsExcelWorkday(params[0], params[1], 1, params[2]); });
+    this.parser.setFunction("WORKDAY.INTL", function (params) { return __doccellsExcelWorkday(params[0], params[1], params[2], params[3]); });
+    this.parser.on("callCellValue"`;
+
+const NEW8_CJS = `    this.parser = new formulaParser.Parser();
+    var __doccellsExcelWorkday = function __doccellsExcelWorkday(startDate, days, weekend, holidays) {
+      var toSerial = function toSerial(value) {
+        if (Object.prototype.toString.call(value) === "[object Date]" && !___default['default'].isNil(value)) return datenum_local(value);
+        if (___default['default'].isNumber(value)) return Number.isFinite(value) ? Math.floor(value) : null;
+        if (___default['default'].isString(value) && value.trim() !== "") {
+          var numeric = Number(value);
+          return Number.isFinite(numeric) ? Math.floor(numeric) : null;
+        }
+        return null;
+      };
+      var serial = toSerial(startDate);
+      var stepCount = Number(days);
+      if (serial == null || !Number.isFinite(stepCount)) return error.v;
+      var weekendMap = {
+        1: [0, 6], 2: [0, 1], 3: [1, 2], 4: [2, 3], 5: [3, 4], 6: [4, 5], 7: [5, 6],
+        11: [0], 12: [1], 13: [2], 14: [3], 15: [4], 16: [5], 17: [6]
+      };
+      var weekendDays = {};
+      if (___default['default'].isString(weekend) && /^[01]{7}$/.test(weekend)) {
+        weekend.split("").forEach(function (flag, index) {
+          if (flag === "1") weekendDays[(index + 1) % 7] = true;
+        });
+      } else {
+        (weekendMap[Number(weekend || 1)] || weekendMap[1]).forEach(function (day) { weekendDays[day] = true; });
+      }
+      var holidayDays = {};
+      var holidayList = ___default['default'].isArray(holidays) ? holidays.flat(Infinity) : holidays == null ? [] : [holidays];
+      holidayList.forEach(function (holiday) {
+        var h = toSerial(holiday);
+        if (h != null) holidayDays[h] = true;
+      });
+      var step = stepCount < 0 ? -1 : 1;
+      var remaining = Math.abs(Math.trunc(stepCount));
+      while (remaining > 0) {
+        serial += step;
+        var day = new Date(Date.UTC(1899, 11, 30) + Math.floor(serial) * 86400000).getUTCDay();
+        if (!weekendDays[day] && !holidayDays[serial]) remaining -= 1;
+      }
+      return serial;
+    };
+    this.parser.setFunction("WORKDAY", function (params) { return __doccellsExcelWorkday(params[0], params[1], 1, params[2]); });
+    this.parser.setFunction("WORKDAY.INTL", function (params) { return __doccellsExcelWorkday(params[0], params[1], params[2], params[3]); });
+    this.parser.on("callCellValue"`;
+
+// Patch 9: Date formula results are Excel serials, not display strings.
+const OLD9_ESM = `  if (Object.prototype.toString.call(result) === "[object Date]" && !_.isNil(result)) {
+    result = result.toString();
+  }`;
+
+const OLD9_CJS = `  if (Object.prototype.toString.call(result) === "[object Date]" && !___default['default'].isNil(result)) {
+    result = result.toString();
+  }`;
+
+const NEW9_ESM = `  if (Object.prototype.toString.call(result) === "[object Date]" && !_.isNil(result)) {
+    result = datenum_local(result);
+  }`;
+
+const NEW9_CJS = `  if (Object.prototype.toString.call(result) === "[object Date]" && !___default['default'].isNil(result)) {
+    result = datenum_local(result);
+  }`;
+
 // Groups: each group has variants, exactly one must match per bundle
 const PATCH_GROUPS = [
   { name: "single-cell header fix",    variants: [{ old: OLD1, new: NEW1 }] },
@@ -361,6 +479,8 @@ const PATCH_GROUPS = [
   { name: "filter-dropdown sort respects active filter", variants: [{ old: OLD5, new: NEW5 }] },
   { name: "localized generated sheet names", variants: [{ old: OLD6, new: NEW6 }] },
   { name: "clear content keeps cell protection", variants: [{ old: OLD7, new: NEW7 }] },
+  { name: "Excel-compatible date formulas", variants: [{ old: OLD8_ESM, new: NEW8_ESM }, { old: OLD8_CJS, new: NEW8_CJS }] },
+  { name: "Date formula serial values", variants: [{ old: OLD9_ESM, new: NEW9_ESM }, { old: OLD9_CJS, new: NEW9_CJS }] },
 ];
 
 let allPatched = 0;

@@ -30,6 +30,11 @@ import {
   hasExcelGeneralNumericValue,
 } from "./features/workbook/excelGeneralAlignment.js";
 import {
+  calculateSimpleWorkdayFormula,
+  getFormulaDisplayValue,
+  toExcelFormulaValue,
+} from "./features/workbook/excelDateFormulaUtils.js";
+import {
   applyConditionalFormatting,
   createConditionalFormatApiCalls,
   rangeToText,
@@ -280,6 +285,47 @@ const App = () => {
       ]);
     }
   }, []);
+
+  const syncExcelDateFormulaResult = useCallback((row, column, newValue) => {
+    if (!newValue || typeof newValue !== "object" || !newValue.f) return;
+
+    const workbook = workbookRef.current;
+    if (!workbook?.batchCallApis) return;
+
+    const sheets = workbook.getAllSheets?.() || sheetDataRef.current;
+    const currentSheet = workbook.getSheet?.() || sheets[activeSheetIndex];
+    const sheetIndex = Math.max(
+      0,
+      sheets.findIndex((sheet) => sheet?.id === currentSheet?.id),
+    );
+    const sheet = sheets[sheetIndex] || currentSheet;
+    const resolveCellValue = (targetRow, targetColumn) => {
+      const cell = sheet?.data?.[targetRow]?.[targetColumn];
+      if (!cell || typeof cell !== "object") return cell;
+      return cell.v ?? cell.m;
+    };
+
+    const recalculatedValue =
+      calculateSimpleWorkdayFormula(newValue.f, resolveCellValue) ??
+      toExcelFormulaValue(newValue.v);
+
+    if (recalculatedValue == null || recalculatedValue === newValue.v) return;
+
+    workbook.batchCallApis([
+      {
+        name: "setCellValue",
+        args: [
+          row,
+          column,
+          {
+            ...newValue,
+            v: recalculatedValue,
+            m: getFormulaDisplayValue(recalculatedValue, newValue),
+          },
+        ],
+      },
+    ]);
+  }, [activeSheetIndex]);
 
   const handleLoadError = useCallback(
     async (error) => {
@@ -704,9 +750,10 @@ const App = () => {
       setActiveSheetIndex(index >= 0 ? index : 0);
     },
     afterUpdateCell: (row, column, _oldValue, newValue) => {
+      syncExcelDateFormulaResult(row, column, newValue);
       syncExcelGeneralAlignment(row, column, newValue);
     },
-  }), [syncExcelGeneralAlignment]);
+  }), [syncExcelDateFormulaResult, syncExcelGeneralAlignment]);
 
   const handleWorkbookChange = useCallback((newData) => {
     if (syncingConditionalRef.current) return;
@@ -714,22 +761,21 @@ const App = () => {
       const updatedData = newData.map((sheet, index) => {
         const oldCells = sheetDataRef.current[index]?.celldata || [];
         const newCells = [];
+        const normalizedValues = new Map();
 
         if (sheet.data) {
+          const resolveCellValue = (targetRow, targetColumn) => {
+            const normalized = normalizedValues.get(`${targetRow}_${targetColumn}`);
+            if (normalized !== undefined) return normalized;
+
+            const targetCell = sheet.data?.[targetRow]?.[targetColumn];
+            if (!targetCell || typeof targetCell !== "object") return targetCell;
+            return targetCell.v ?? targetCell.m;
+          };
+
           sheet.data.forEach((row, r) => {
             row.forEach((cell, c) => {
               if (cell) {
-                const oldCell = oldCells.find(
-                  (oc) => oc.r === r && oc.c === c,
-                );
-
-                let updatedVF = oldCell?.v?.VF || {};
-                if (cell.f) {
-                  updatedVF = { f: cell.f, v: cell.v };
-                } else {
-                  updatedVF = {};
-                }
-
                 const parsedValue =
                   cell.v === null
                     ? null
@@ -742,13 +788,26 @@ const App = () => {
                         : typeof cell.v === "string" && !Number.isNaN(Number(cell.v))
                           ? parseFloat(cell.v)
                           : cell.v;
+                const formulaValue = cell.f
+                  ? (calculateSimpleWorkdayFormula(cell.f, resolveCellValue) ??
+                    toExcelFormulaValue(parsedValue))
+                  : parsedValue;
+                const displayValue =
+                  cell.f && formulaValue !== parsedValue
+                    ? getFormulaDisplayValue(formulaValue, cell)
+                    : cell.m;
+                const updatedVF = cell.f
+                  ? { f: cell.f, v: formulaValue }
+                  : {};
+                normalizedValues.set(`${r}_${c}`, formulaValue);
 
                 newCells.push({
                   r,
                   c,
                   v: {
                     ...cell,
-                    v: parsedValue,
+                    v: formulaValue,
+                    m: displayValue,
                     VF: Object.keys(updatedVF).length
                       ? updatedVF
                       : undefined,

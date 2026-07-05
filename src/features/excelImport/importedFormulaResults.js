@@ -1,13 +1,10 @@
 import { Parser } from "@fortune-sheet/formula-parser";
-
-const getFormulaDisplayValue = (value) => {
-  if (value == null) return undefined;
-  if (typeof value === "number") {
-    return Number.isFinite(value) ? String(value) : undefined;
-  }
-  if (typeof value === "boolean") return value ? "TRUE" : "FALSE";
-  return String(value);
-};
+import {
+  configureExcelDateFunctions,
+  getFormulaDisplayValue,
+  shouldRecalculateFormula,
+  toExcelFormulaValue,
+} from "../workbook/excelDateFormulaUtils.js";
 
 const getFormulaCellText = (cellValue) => {
   if (Array.isArray(cellValue?.ct?.s)) {
@@ -34,7 +31,7 @@ const normalizeFormulaOperand = (value, cellValue) => {
 export const applyImportedFormulaResults = (sheets) => {
   if (!Array.isArray(sheets) || sheets.length === 0) return;
 
-  const parser = new Parser();
+  const parser = configureExcelDateFunctions(new Parser());
   let activeFormulaStack = null;
   const sheetNameToIndex = new Map();
   const cellMaps = sheets.map((sheet, sheetIndex) => {
@@ -56,7 +53,7 @@ export const applyImportedFormulaResults = (sheets) => {
     const cellValue = cell?.v;
     if (cellValue == null) return undefined;
 
-    if (cellValue.f && cellValue.v == null) {
+    if (cellValue.f && (cellValue.v == null || shouldRecalculateFormula(cellValue))) {
       const result = calculateCellFormula(sheetIndex, cell, visiting);
       if (result !== undefined) return result;
     }
@@ -98,9 +95,10 @@ export const applyImportedFormulaResults = (sheets) => {
 
     if (response?.error != null || response?.result == null) return undefined;
 
-    cellValue.v = response.result;
-    cellValue.m = getFormulaDisplayValue(response.result);
-    return normalizeFormulaOperand(response.result, cellValue);
+    const result = toExcelFormulaValue(response.result);
+    cellValue.v = result;
+    cellValue.m = getFormulaDisplayValue(result, cellValue);
+    return normalizeFormulaOperand(result, cellValue);
   };
 
   parser.on("callCellValue", (cellCoord, options, done) => {
@@ -128,7 +126,7 @@ export const applyImportedFormulaResults = (sheets) => {
 
   sheets.forEach((sheet, sheetIndex) => {
     (sheet?.celldata || []).forEach((cell) => {
-      if (cell?.v?.f && cell.v.v == null) {
+      if (cell?.v?.f && (cell.v.v == null || shouldRecalculateFormula(cell.v))) {
         calculateCellFormula(sheetIndex, cell);
       }
     });
