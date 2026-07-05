@@ -65,6 +65,20 @@ const sheetPrefix =
     it: "Foglio",
     nl: "Blad",
   }[detectedLang] ?? "Sheet";
+const currencySymbol =
+  {
+    "zh-CN": "¥",
+    "zh-TW": "NT$",
+    en: "$",
+    "fr-FR": "€",
+    "es-ES": "€",
+    hi: "₹",
+    pt: "R$",
+    de: "€",
+    el: "€",
+    it: "€",
+    nl: "€",
+  }[detectedLang] ?? "$";
 
 const isSingleColumnRange = (range) =>
   Boolean(range?.row && range?.column && range.column[0] === range.column[1]);
@@ -935,6 +949,7 @@ const App = () => {
           ref={workbookRef}
           data={sheetData}
           lang={detectedLang}
+          currency={currencySymbol}
           defaultColWidth={DEFAULT_COLUMN_WIDTH}
           hooks={workbookHooks}
           onChange={handleWorkbookChange}
