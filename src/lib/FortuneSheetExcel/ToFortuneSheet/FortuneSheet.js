@@ -26,6 +26,11 @@ import {
   FortuneSheetConfigMerge,
 } from "./FortuneBase.js";
 import dayjs from "dayjs";
+
+const EXCEL_MAX_ROW_INDEX = 1048575;
+const DATA_VALIDATION_ROW_BUFFER = 1000;
+const MAX_EXPANDED_DATA_VALIDATION_CELLS = 5000;
+
 export class FortuneSheet extends FortuneSheetBase {
   constructor(
     sheetName,
@@ -500,6 +505,61 @@ export class FortuneSheet extends FortuneSheetBase {
   getConditionalRangeText(range) {
     const start = `${this.getColumnNameFromIndex(range.column[0])}${range.row[0] + 1}`;
     const end = `${this.getColumnNameFromIndex(range.column[1])}${range.row[1] + 1}`;
+    return start === end ? start : `${start}:${end}`;
+  }
+  getLastUsedRowIndex() {
+    let lastRow = -1;
+    for (const cell of this.celldata || []) {
+      if (Number.isFinite(cell?.r)) {
+        lastRow = Math.max(lastRow, cell.r);
+      }
+    }
+    for (const rowIndex of Object.keys(this.config?.rowlen || {})) {
+      const parsed = parseInt(rowIndex, 10);
+      if (Number.isFinite(parsed)) {
+        lastRow = Math.max(lastRow, parsed);
+      }
+    }
+    return lastRow;
+  }
+  getBoundedDataValidationSqref(sqref) {
+    if (!sqref) return sqref;
+
+    const lastRelevantRow = Math.min(
+      EXCEL_MAX_ROW_INDEX,
+      Math.max(0, this.getLastUsedRowIndex() + DATA_VALIDATION_ROW_BUFFER),
+    );
+
+    return sqref
+      .split(/\s+/)
+      .map((ref) => this.getBoundedDataValidationRef(ref, lastRelevantRow))
+      .filter(Boolean)
+      .join(" ");
+  }
+  getBoundedDataValidationRef(ref, lastRelevantRow) {
+    if (!ref || !ref.includes(":")) return ref;
+
+    const range = getcellrange(ref, this.sheetList, this.id);
+    if (!range?.row || !range?.column) return ref;
+
+    const rowCount = range.row[1] - range.row[0] + 1;
+    const columnCount = range.column[1] - range.column[0] + 1;
+    if (rowCount * columnCount <= MAX_EXPANDED_DATA_VALIDATION_CELLS) {
+      return ref;
+    }
+
+    const maxRowsByCellLimit = Math.max(
+      1,
+      Math.floor(MAX_EXPANDED_DATA_VALIDATION_CELLS / columnCount),
+    );
+    const boundedEndRow = Math.min(
+      range.row[1],
+      Math.max(range.row[0], lastRelevantRow),
+      range.row[0] + maxRowsByCellLimit - 1,
+    );
+    const start = `${this.getColumnNameFromIndex(range.column[0])}${range.row[0] + 1}`;
+    const end = `${this.getColumnNameFromIndex(range.column[1])}${boundedEndRow + 1}`;
+
     return start === end ? start : `${start}:${end}`;
   }
   getConditionalFormulaValues(ruleElement) {
@@ -1142,7 +1202,9 @@ export class FortuneSheet extends FortuneSheetBase {
           peelOffData === null || peelOffData === void 0
             ? void 0
             : peelOffData.sqref;
-        sqrefIndexArr = getMultiSequenceToNum(sqref);
+        sqrefIndexArr = getMultiSequenceToNum(
+          this.getBoundedDataValidationSqref(sqref),
+        );
         valueArr = getMultiFormulaValue(
           peelOffData === null || peelOffData === void 0
             ? void 0
@@ -1151,7 +1213,9 @@ export class FortuneSheet extends FortuneSheetBase {
       } else {
         operator = getXmlAttibute(attrList, "operator", null);
         sqref = getXmlAttibute(attrList, "sqref", null);
-        sqrefIndexArr = getMultiSequenceToNum(sqref);
+        sqrefIndexArr = getMultiSequenceToNum(
+          this.getBoundedDataValidationSqref(sqref),
+        );
         valueArr = getMultiFormulaValue(formulaValue);
       }
       let _type = DATA_VERIFICATION_MAP[type];
