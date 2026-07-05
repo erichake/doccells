@@ -9,6 +9,7 @@ import {
   normalizeShowGridLines,
   setWorkbookProtection,
 } from "../workbook/workbookUtils.js";
+import { applyAutoGeneralAlignment } from "../workbook/excelGeneralAlignment.js";
 
 const getCellRawValue = (cell) => {
   const value = cell?.v;
@@ -34,6 +35,12 @@ const extractDocCellsMetadata = (sheets) => {
 
 const removeDocCellsMetadataSheets = (sheets) =>
   sheets.filter((sheet) => sheet?.name !== DOCCELLS_METADATA_SHEET_NAME);
+
+const normalizeImportedGeneralAlignment = (sheet) => {
+  sheet?.celldata?.forEach((cell) => {
+    applyAutoGeneralAlignment(cell.v);
+  });
+};
 
 const applyDocCellsMetadata = (sheets, metadata) => {
   if (!metadata?.sheets) return sheets;
@@ -191,6 +198,7 @@ export const normalizeImportedWorkbook = (sheets, { sheetPrefix }) => {
   const metadata = extractDocCellsMetadata(sheets);
   const workbookSheets = removeDocCellsMetadataSheets(sheets);
   workbookSheets.forEach(normalizeImportedMerges);
+  workbookSheets.forEach(normalizeImportedGeneralAlignment);
   applyImportedFormulaResults(workbookSheets);
 
   const formulas = collectFormulaMetadata(workbookSheets);

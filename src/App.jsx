@@ -26,6 +26,10 @@ import {
   setWorkbookGridLines,
 } from "./features/workbook/workbookUtils.js";
 import {
+  AUTO_GENERAL_ALIGNMENT_KEY,
+  hasExcelGeneralNumericValue,
+} from "./features/workbook/excelGeneralAlignment.js";
+import {
   applyConditionalFormatting,
   createConditionalFormatApiCalls,
   rangeToText,
@@ -255,6 +259,27 @@ const App = () => {
       console.error("❌ Impossible de charger le fichier de repli empty.xlsx");
     }
   }, [loadExcelFromURL]);
+
+  const syncExcelGeneralAlignment = useCallback((row, column, newValue) => {
+    if (!newValue || typeof newValue !== "object") return;
+
+    const isAutoAligned = newValue[AUTO_GENERAL_ALIGNMENT_KEY] === 1;
+    const isNumeric = hasExcelGeneralNumericValue(newValue);
+    const workbook = workbookRef.current;
+    if (!workbook?.batchCallApis) return;
+
+    if (isNumeric && (newValue.ht === undefined || isAutoAligned)) {
+      workbook.batchCallApis([
+        { name: "setCellFormat", args: [row, column, "ht", 2] },
+        { name: "setCellFormat", args: [row, column, AUTO_GENERAL_ALIGNMENT_KEY, 1] },
+      ]);
+    } else if (!isNumeric && isAutoAligned) {
+      workbook.batchCallApis([
+        { name: "setCellFormat", args: [row, column, "ht", undefined] },
+        { name: "setCellFormat", args: [row, column, AUTO_GENERAL_ALIGNMENT_KEY, undefined] },
+      ]);
+    }
+  }, []);
 
   const handleLoadError = useCallback(
     async (error) => {
@@ -678,7 +703,10 @@ const App = () => {
       const index = sheets.findIndex((sheet) => sheet.id === id);
       setActiveSheetIndex(index >= 0 ? index : 0);
     },
-  }), []);
+    afterUpdateCell: (row, column, _oldValue, newValue) => {
+      syncExcelGeneralAlignment(row, column, newValue);
+    },
+  }), [syncExcelGeneralAlignment]);
 
   const handleWorkbookChange = useCallback((newData) => {
     if (syncingConditionalRef.current) return;
