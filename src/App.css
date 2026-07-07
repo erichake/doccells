@@ -5,6 +5,15 @@ body,
   height: 100%;
 }
 
+/* Round fill handle (like Google Sheets), instead of the library's small square */
+.luckysheet-cs-fillhandle {
+  width: 8px;
+  height: 8px;
+  bottom: -6px;
+  right: -6px;
+  border-radius: 50%;
+}
+
 .fortune-filter-menu {
   min-width: 316px;
   max-width: min(420px, calc(100vw - 32px));
