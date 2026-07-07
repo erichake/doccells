@@ -14,6 +14,15 @@ the licenses of the packages it depends on via npm.
 - **`src/lib/ToFortuneSheet/`**, **`src/lib/HandleZip.ts`** — derived from the
   same `@zenmrp/fortune-sheet-excel` sources above, under the same MIT
   license.
+- **`scripts/formula-function-names.json`** — localized (Excel/Google
+  Sheets-compatible) formula function names, derived from the
+  [LibreOffice Calc translation files](https://github.com/LibreOffice/translations)
+  (`source/<lang>/formula/messages.po` and `source/<lang>/scaddins/messages.po`),
+  MPL-2.0 / LGPLv3+ dual-licensed by The Document Foundation. Used by
+  `scripts/patch-fortune-formula-names.cjs` to let formulas be typed using a
+  locale's own function names and argument separator (e.g. French
+  `=SOMME(A1;A2)`), translated to the canonical English/comma form before
+  evaluation and storage.
 
 ## npm dependencies
 
