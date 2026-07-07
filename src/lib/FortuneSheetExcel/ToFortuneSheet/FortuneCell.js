@@ -20,6 +20,31 @@ import {
   FortuneSheetCellFormat,
   FortuneInlineString,
 } from "./FortuneBase.js";
+
+// SSF.format (patched, see scripts/patch-fortune-number-separators.cjs) renders
+// "General" numbers using the detected UI language's decimal separator. Probing
+// it once gives us that separator so imported General-format numbers (which
+// skip SSF entirely below, since they arrive pre-formatted from the XLSX XML
+// rather than through SSF.format) still display "0,5" instead of "0.5" in
+// locales where "," is the decimal separator.
+let cachedDecimalSeparator;
+function getLocaleDecimalSeparator() {
+  if (cachedDecimalSeparator === undefined) {
+    try {
+      const probe = String(updateNumberFormat("General", 1.5));
+      const match = probe.match(/[^0-9-]/);
+      cachedDecimalSeparator = match ? match[0] : ".";
+    } catch {
+      cachedDecimalSeparator = ".";
+    }
+  }
+  return cachedDecimalSeparator;
+}
+function localizeDecimalSeparator(text) {
+  if (typeof text !== "string" || text.indexOf(".") === -1) return text;
+  return text.replace(".", getLocaleDecimalSeparator());
+}
+
 export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
   constructor(cell, styles, sharedStrings, mergeCells, sheetFile, ReadXml) {
     //Private
@@ -736,16 +761,16 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
       return value;
     }
     if (/^-?\d+\.0+$/.test(text)) {
-      return text.replace(/\.0+$/, "");
+      return localizeDecimalSeparator(text.replace(/\.0+$/, ""));
     }
     if (!/\.\d*(?:0{6,}\d*|9{6,}\d*)$/i.test(text)) {
-      return value;
+      return localizeDecimalSeparator(text);
     }
     const number = Number(text);
     if (!Number.isFinite(number)) {
       return value;
     }
-    return String(Number(number.toPrecision(15)));
+    return localizeDecimalSeparator(String(Number(number.toPrecision(15))));
   }
   getFormattedNumberDisplayValue(value, format) {
     const text = String(value);
