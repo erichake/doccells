@@ -46,6 +46,12 @@
  * input unchanged). The locale/separator rewrite is quote-aware: characters
  * inside "..." string literals are left untouched.
  *
+ * Two more choke points patched for the same reason (a locale-agnostic
+ * hardcoded English function name flowing into the same insertion path as
+ * everything above): handleSum() in @fortune-sheet/core (clicking the
+ * toolbar's Σ icon directly), and the quick-formula dropdown's item data in
+ * @fortune-sheet/react (clicking "Somme" etc. from that menu).
+ *
  * Deliberately NOT covered here: the standalone "Insert Function" browsing
  * dialog in @fortune-sheet/react (a separate, independent name-matcher from
  * the inline autocomplete patched above) -- lower priority, still English
@@ -56,6 +62,7 @@ const fs = require("fs");
 const path = require("path");
 
 const CORE_DIST = path.join(__dirname, "..", "node_modules", "@fortune-sheet", "core", "dist");
+const REACT_DIST = path.join(__dirname, "..", "node_modules", "@fortune-sheet", "react", "dist");
 const BUNDLES = [
   { file: "index.js", lodash: "___default['default']" },
   { file: "index.esm.js", lodash: "_" },
@@ -100,6 +107,18 @@ const DECIMAL_COMMA_LOCALES = ["fr", "es", "de", "it", "el", "nl", "pt", "ru"];
 const TO_ENGLISH_JSON = JSON.stringify(toEnglishByShortLocale);
 const TO_LOCALE_JSON = JSON.stringify(toLocaleByShortLocale);
 const DECIMAL_COMMA_LOCALES_JSON = JSON.stringify(DECIMAL_COMMA_LOCALES);
+
+// Just the 5 functions the toolbar's quick-formula (Σ) dropdown offers.
+const QUICK_FORMULA_KEYS = ["SUM", "AVERAGE", "COUNT", "MAX", "MIN"];
+const quickFormulaNamesByShortLocale = {};
+for (const [shortCode, forward] of Object.entries(toLocaleByShortLocale)) {
+  const entry = {};
+  for (const key of QUICK_FORMULA_KEYS) {
+    if (forward[key]) entry[key] = forward[key];
+  }
+  quickFormulaNamesByShortLocale[shortCode] = entry;
+}
+const QUICK_FORMULA_NAMES_JSON = JSON.stringify(quickFormulaNamesByShortLocale);
 
 // ---------------------------------------------------------------------------
 // Patch 1: shared helper tables/functions + execfunction() input translation.
@@ -386,6 +405,69 @@ const FUNCHTML_NEW = `    } else if (s === "," && matchConfig.squote === 0 && ma
     } else if (s === "&" && matchConfig.squote === 0 && matchConfig.dquote === 0 && matchConfig.braces === 0) {`;
 
 // ---------------------------------------------------------------------------
+// Patch 8: handleSum() -- clicking the toolbar's sigma (Σ) icon directly
+// (rather than opening its dropdown) always inserted the hardcoded English
+// "SUM", regardless of locale. Route it through the same English->locale
+// map used elsewhere so it inserts "SOMME" for French, etc.
+// ---------------------------------------------------------------------------
+
+const HANDLESUM_OLD = `function handleSum(ctx, cellInput, fxInput, cache) {
+  autoSelectionFormula(ctx, cellInput, fxInput, "SUM", cache);
+}`;
+const HANDLESUM_NEW = `function handleSum(ctx, cellInput, fxInput, cache) {
+  var __doccellsSumName = (__doccellsFormulaNamesByEnglish[__doccellsShortLocale()] || {}).SUM || "SUM";
+  autoSelectionFormula(ctx, cellInput, fxInput, __doccellsSumName, cache);
+}`;
+
+// ---------------------------------------------------------------------------
+// Patch 9 (@fortune-sheet/react bundles): the toolbar's Σ dropdown menu shows
+// each quick function with the translated label on the left (already correct,
+// from the locale files) but a hardcoded English name ("SUM", "AVERAGE", ...)
+// as the grey subtext on the right, AND that same hardcoded value is what
+// gets inserted into the cell when the item is clicked -- which is why
+// clicking "Somme" wrote "=SUM(...)" instead of "=SOMME(...)" into the
+// editor. Same fix as handleSum above, applied to the 5 quick-formula items.
+// ---------------------------------------------------------------------------
+
+const QUICKFORMULA_ITEMDATA_OLD = `      var _itemData = [{
+        text: formula.sum,
+        value: "SUM"
+      }, {
+        text: formula.average,
+        value: "AVERAGE"
+      }, {
+        text: formula.count,
+        value: "COUNT"
+      }, {
+        text: formula.max,
+        value: "MAX"
+      }, {
+        text: formula.min,
+        value: "MIN"
+      }];`;
+const QUICKFORMULA_ITEMDATA_NEW = `      var __doccellsQuickFormulaNames = (function () {
+        var lang = (typeof navigator !== "undefined" && navigator.language) || "en";
+        var table = ${QUICK_FORMULA_NAMES_JSON};
+        return table[lang.split("-")[0]] || {};
+      })();
+      var _itemData = [{
+        text: formula.sum,
+        value: __doccellsQuickFormulaNames.SUM || "SUM"
+      }, {
+        text: formula.average,
+        value: __doccellsQuickFormulaNames.AVERAGE || "AVERAGE"
+      }, {
+        text: formula.count,
+        value: __doccellsQuickFormulaNames.COUNT || "COUNT"
+      }, {
+        text: formula.max,
+        value: __doccellsQuickFormulaNames.MAX || "MAX"
+      }, {
+        text: formula.min,
+        value: __doccellsQuickFormulaNames.MIN || "MIN"
+      }];`;
+
+// ---------------------------------------------------------------------------
 
 let allPatched = 0;
 for (const { file: bundle, lodash: L } of BUNDLES) {
@@ -412,6 +494,7 @@ for (const { file: bundle, lodash: L } of BUNDLES) {
     { name: "israngeseleciton editor-id branch", old: RANGESEL_2_OLD, new: RANGESEL_2_NEW },
     { name: "israngeseleciton previous-sibling branch", old: RANGESEL_3_OLD, new: RANGESEL_3_NEW },
     { name: "functionHTML semicolon token", old: FUNCHTML_OLD, new: FUNCHTML_NEW },
+    { name: "handleSum locale-aware default", old: HANDLESUM_OLD, new: HANDLESUM_NEW },
   ];
 
   let ok = 0;
@@ -432,4 +515,27 @@ for (const { file: bundle, lodash: L } of BUNDLES) {
     console.warn(`patch-fortune-formula-names: only ${ok}/${patches.length} patterns matched in ${bundle}, aborting write for this file`);
   }
 }
+
+for (const bundle of ["index.js", "index.esm.js"]) {
+  const file = path.join(REACT_DIST, bundle);
+  if (!fs.existsSync(file)) {
+    console.warn(`patch-fortune-formula-names: react ${bundle} not found, skipping`);
+    continue;
+  }
+  let src = fs.readFileSync(file, "utf8");
+  if (src.includes("__doccellsQuickFormulaNames")) {
+    console.log(`patch-fortune-formula-names: react ${bundle} already patched`);
+    allPatched++;
+    continue;
+  }
+  if (src.includes(QUICKFORMULA_ITEMDATA_OLD)) {
+    src = src.replace(QUICKFORMULA_ITEMDATA_OLD, QUICKFORMULA_ITEMDATA_NEW);
+    fs.writeFileSync(file, src, "utf8");
+    console.log(`patch-fortune-formula-names: patched react ${bundle}`);
+    allPatched++;
+  } else {
+    console.warn(`patch-fortune-formula-names: pattern not found for "quick-formula itemData" in react ${bundle}`);
+  }
+}
+
 if (allPatched === 0) process.exit(1);
