@@ -12625,10 +12625,10 @@ module.exports = {
     "Verdana"
   ],
   fontjson: {
-    "0": "Times New Roman",
-    "1": "Arial",
-    "2": "Tahoma",
-    "3": "Verdana"
+    arial: 0,
+    "times new roman": 1,
+    tahoma: 2,
+    verdana: 3
   },
   border: {
     borderTop: "Επάνω περίγραμμα",

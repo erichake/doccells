@@ -12675,8 +12675,8 @@ module.exports = {
     MicrosoftYaHei: "YaHei"
   },
   fontarray: [
-    "Times New Roman",
     "Arial",
+    "Times New Roman",
     "Tahoma",
     "Verdana",
     "Helvetica",
@@ -12690,8 +12690,8 @@ module.exports = {
     "Segoe UI"
   ],
   fontjson: {
-    "times new roman": 0,
-    arial: 1,
+    arial: 0,
+    "times new roman": 1,
     tahoma: 2,
     verdana: 3,
     helvetica: 4,
