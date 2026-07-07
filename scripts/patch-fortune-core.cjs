@@ -470,6 +470,36 @@ const NEW9_CJS = `  if (Object.prototype.toString.call(result) === "[object Date
     result = datenum_local(result);
   }`;
 
+// Patch 10: fill-handle (drag down) mis-formats recalculated formula cells.
+// Bug: when dragging the fill handle down over a formula cell formatted as
+// "##0.00" (the toolbar's "Number" format), updateDropCell stringified the
+// value and literally appended ".00" (e.g. "9.5.00" for 9.5) instead of
+// applying the format properly. genarate() then saw two decimal points and
+// gave up, treating the result as opaque text — so non-integer values in the
+// filled range displayed as garbage like "9.5.00" while integers happened to
+// look fine ("9.00"). Real copy/paste never hit this: pasteHandlerOfCopyPaste
+// already calls update(value.ct.fa, funcV[1]) (SSF.format) to reformat a
+// recalculated formula's value, so we make the down-fill path do the same
+// thing instead of the naive genarate(string-concat) hack.
+const OLD10 = `                    var _cell$ct;
+                    var mask = void 0;
+                    if (((_cell$ct = cell.ct) === null || _cell$ct === void 0 ? void 0 : _cell$ct.fa) === "##0.00") {
+                      mask = genarate("".concat(Math.round(cell.v * 1000000000) / 1000000000, ".00"));
+                      cell.m = mask[0].toString();
+                    } else {
+                      mask = genarate(Math.round(cell.v * 1000000000) / 1000000000);
+                      cell.m = mask[0].toString();
+                    }`;
+
+const NEW10 = `                    var _cell$ct;
+                    var roundedV = Math.round(cell.v * 1000000000) / 1000000000;
+                    if (((_cell$ct = cell.ct) === null || _cell$ct === void 0 ? void 0 : _cell$ct.fa) != null) {
+                      cell.m = update(cell.ct.fa, roundedV);
+                    } else {
+                      var mask = genarate(roundedV);
+                      cell.m = mask[0].toString();
+                    }`;
+
 // Groups: each group has variants, exactly one must match per bundle
 const PATCH_GROUPS = [
   { name: "single-cell header fix",    variants: [{ old: OLD1, new: NEW1 }] },
@@ -481,6 +511,7 @@ const PATCH_GROUPS = [
   { name: "clear content keeps cell protection", variants: [{ old: OLD7, new: NEW7 }] },
   { name: "Excel-compatible date formulas", variants: [{ old: OLD8_ESM, new: NEW8_ESM }, { old: OLD8_CJS, new: NEW8_CJS }] },
   { name: "Date formula serial values", variants: [{ old: OLD9_ESM, new: NEW9_ESM }, { old: OLD9_CJS, new: NEW9_CJS }] },
+  { name: "fill-handle down keeps number format", variants: [{ old: OLD10, new: NEW10 }] },
 ];
 
 let allPatched = 0;
