@@ -56,10 +56,12 @@ export const useFortuneToolbarButtons = ({
   setWorkbookKey,
   openChartDialog,
   openConditionalDialog,
+  openCustomNumberFormatDialog,
   chartToolbarText,
   toggleGridLinesText,
   toggleSheetProtectionText,
   conditionalFormattingToolbarText,
+  customNumberFormatMenuText,
 }) => {
   const addButtons = useCallback(() => {
     const toolbar = document.getElementsByClassName("fortune-toolbar")[0];
@@ -338,4 +340,41 @@ export const useFortuneToolbarButtons = ({
 
     return () => observer.disconnect();
   }, [addButtons]);
+
+  useEffect(() => {
+    if (sheetData.length === 0) return undefined;
+
+    const installMenuItem = () => {
+      document.querySelectorAll(".more-format").forEach((menu) => {
+        if (menu.querySelector(".dc-custom-number-format-menu-item")) return;
+        const item = document.createElement("div");
+        item.className =
+          "set-background-item fortune-toolbar-select-option dc-custom-number-format-menu-item";
+        item.setAttribute("role", "menuitem");
+        item.setAttribute("tabindex", "0");
+        item.innerHTML = `<span class="dc-custom-number-format-menu-icon">0.0</span><span>${customNumberFormatMenuText}</span>`;
+        const openDialog = (event) => {
+          if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          event.stopPropagation();
+          openCustomNumberFormatDialog();
+        };
+        item.addEventListener("click", openDialog);
+        item.addEventListener("keydown", openDialog);
+        menu.appendChild(item);
+      });
+    };
+
+    installMenuItem();
+    const observer = new MutationObserver(installMenuItem);
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => {
+      observer.disconnect();
+      document.querySelectorAll(".dc-custom-number-format-menu-item").forEach((item) => item.remove());
+    };
+  }, [
+    customNumberFormatMenuText,
+    openCustomNumberFormatDialog,
+    sheetData.length,
+  ]);
 };

@@ -9,8 +9,8 @@
  * "," and "." characters), so patching those internals directly is risky.
  * Instead this wraps the single public entry point, `SSF.format`, and
  * post-processes its OUTPUT STRING: swap "," <-> group char and "." <->
- * decimal char, but only when the value being formatted is a plain number
- * (not text) and the format code is not a date/time format (so "dd.MM.yyyy"
+ * decimal char, but only when the value being formatted is a number or a
+ * numeric formula result stored as text, and the format code is not a date/time format (so "dd.MM.yyyy"
  * German dates, which use "." as a date separator, are left untouched) and
  * not the "@" text format (which shows numbers as literal unformatted text
  * in Excel, unaffected by locale).
@@ -50,13 +50,20 @@ const NEW = `  SSF.init_table = init_table;
   }
   SSF.format = function doccellsFormat(fmt, v) {
     var out = __doccellsOrigFormat(fmt, v);
-    if (typeof v === "number" && typeof out === "string" && fmt !== "@" && !fmt_is_date(fmt)) {
+    var numericValue = typeof v === "number" || (typeof v === "string" && /^-?(?:\\d+|\\d*\\.\\d+)(?:[eE][+-]?\\d+)?$/.test(v.trim()));
+    if (numericValue && typeof out === "string" && fmt !== "@" && !fmt_is_date(fmt)) {
       out = __doccellsLocalizeNumberString(out);
     }
     return out;
   };
 };
 make_ssf(SSF);`;
+
+const LEGACY_NEW = NEW.replace(
+  `    var numericValue = typeof v === "number" || (typeof v === "string" && /^-?(?:\\d+|\\d*\\.\\d+)(?:[eE][+-]?\\d+)?$/.test(v.trim()));
+    if (numericValue && typeof out === "string" && fmt !== "@" && !fmt_is_date(fmt)) {`,
+  `    if (typeof v === "number" && typeof out === "string" && fmt !== "@" && !fmt_is_date(fmt)) {`,
+);
 
 let allPatched = 0;
 for (const bundle of BUNDLES) {
@@ -67,6 +74,11 @@ for (const bundle of BUNDLES) {
     src = src.replace(OLD, NEW);
     fs.writeFileSync(file, src, "utf8");
     console.log(`patch-fortune-number-separators: patched ${bundle}`);
+    allPatched++;
+  } else if (src.includes(LEGACY_NEW)) {
+    src = src.replace(LEGACY_NEW, NEW);
+    fs.writeFileSync(file, src, "utf8");
+    console.log(`patch-fortune-number-separators: upgraded ${bundle}`);
     allPatched++;
   } else if (src.includes(NEW)) {
     console.log(`patch-fortune-number-separators: ${bundle} already patched`);

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { Workbook } from "@fortune-sheet/react";
+import { update as formatNumber } from "@fortune-sheet/core";
 import { transformExcelToFortune } from "./lib/FortuneSheetExcel/main.js";
 import { exportToExcel } from "./utils/exportToExcel.js";
 import { customLocales } from "./locales/custom.js";
@@ -7,6 +8,8 @@ import { ConditionalFormattingDialog } from "./features/conditionalFormatting/Co
 import { getConditionalFormattingTexts } from "./features/conditionalFormatting/conditionalFormattingConstants.js";
 import { ChartDialog } from "./features/charts/ChartDialog.jsx";
 import { ChartLayer } from "./features/charts/ChartRenderer.jsx";
+import { CustomNumberFormatDialog } from "./features/customNumberFormat/CustomNumberFormatDialog.jsx";
+import { getCustomNumberFormatTexts } from "./features/customNumberFormat/customNumberFormatUtils.js";
 import {
   columnToName,
   getChartTexts,
@@ -49,6 +52,7 @@ const detectedLang =
 const t = customLocales[detectedLang] ?? customLocales["en"];
 const conditionalFormattingTexts = getConditionalFormattingTexts(t.conditionalFormatting);
 const chartTexts = getChartTexts(t.charts);
+const customNumberFormatTexts = getCustomNumberFormatTexts(t.customNumberFormat);
 const standaloneMenuTexts = getStandaloneMenuTexts(t, detectedLang);
 const DEFAULT_COLUMN_WIDTH = 99;
 const sheetPrefix =
@@ -147,6 +151,10 @@ const App = () => {
   const [chartInitialRange, setChartInitialRange] = useState("A1:B5");
   const [chartInitialLabels, setChartInitialLabels] = useState(null);
   const [chartEditing, setChartEditing] = useState(null);
+  const [customNumberFormatOpen, setCustomNumberFormatOpen] = useState(false);
+  const [customNumberFormatInitial, setCustomNumberFormatInitial] = useState("#,##0.00");
+  const [customNumberFormatSelection, setCustomNumberFormatSelection] = useState([]);
+  const [customNumberFormatSelectionLabel, setCustomNumberFormatSelectionLabel] = useState("A1");
   const [activeSheetIndex, setActiveSheetIndex] = useState(0);
   const [, setChartRenderKey] = useState(0);
   const sheetDataRef = useRef([]);
@@ -415,6 +423,81 @@ const App = () => {
     setChartDialogOpen(true);
   }, [getActiveSheetIndex]);
 
+  const openCustomNumberFormatDialog = useCallback(() => {
+    const workbook = workbookRef.current;
+    if (!workbook) return;
+    const selection = (workbook.getSelection?.() || [])
+      .filter((range) => range?.row && range?.column)
+      .map((range) => ({
+        row: [...range.row],
+        column: [...range.column],
+        row_focus: range.row_focus,
+        column_focus: range.column_focus,
+      }));
+    const ranges = selection.length
+      ? selection
+      : [{ row: [0, 0], column: [0, 0], row_focus: 0, column_focus: 0 }];
+    const focusRange = ranges[ranges.length - 1];
+    const row = focusRange.row_focus ?? focusRange.row[0];
+    const column = focusRange.column_focus ?? focusRange.column[0];
+    const activeCell = workbook.getSheet?.()?.data?.[row]?.[column];
+    const activeFormat = activeCell?.ct?.fa;
+
+    setCustomNumberFormatInitial(
+      activeFormat && activeFormat !== "General" && activeFormat !== "@"
+        ? activeFormat
+        : "#,##0.00",
+    );
+    setCustomNumberFormatSelection(ranges);
+    setCustomNumberFormatSelectionLabel(ranges.map(rangeToText).join(", "));
+    setCustomNumberFormatOpen(true);
+  }, []);
+
+  const applyCustomNumberFormat = useCallback(
+    (format) => {
+      const workbook = workbookRef.current;
+      if (!workbook || customNumberFormatSelection.length === 0) return;
+      const sheet = workbook.getSheet?.();
+      const apiCalls = [{
+        name: "setCellFormatByRange",
+        args: ["ct", { fa: format, t: "n" }, customNumberFormatSelection],
+      }];
+      const numericTextPattern = /^-?(?:\d+|\d*\.\d+)(?:[eE][+-]?\d+)?$/;
+
+      customNumberFormatSelection.forEach((range) => {
+        for (let row = range.row[0]; row <= range.row[1]; row += 1) {
+          for (let column = range.column[0]; column <= range.column[1]; column += 1) {
+            const cell = sheet?.data?.[row]?.[column];
+            const value = cell?.v;
+            const numericValue =
+              typeof value === "number"
+                ? value
+                : cell?.ct?.t !== "s" && numericTextPattern.test(String(value ?? "").trim())
+                  ? Number(value)
+                  : null;
+            if (numericValue == null || !Number.isFinite(numericValue)) continue;
+            apiCalls.push({
+              name: "setCellFormat",
+              args: [row, column, "m", String(formatNumber(format, numericValue))],
+            });
+          }
+        }
+      });
+
+      if (typeof workbook.batchCallApis === "function") {
+        workbook.batchCallApis(apiCalls);
+      } else {
+        workbook.setCellFormatByRange?.(
+          "ct",
+          { fa: format, t: "n" },
+          customNumberFormatSelection,
+        );
+      }
+      setCustomNumberFormatOpen(false);
+    },
+    [customNumberFormatSelection],
+  );
+
   const saveConditionalRule = useCallback(
     (rule) => {
       const sheets = getWorkbookSheetsForCommit();
@@ -598,10 +681,12 @@ const App = () => {
     setWorkbookKey,
     openChartDialog,
     openConditionalDialog,
+    openCustomNumberFormatDialog,
     chartToolbarText: chartTexts.toolbar,
     toggleGridLinesText: t.toggleGridLines ?? "Show / hide gridlines",
     toggleSheetProtectionText: t.toggleSheetProtection,
     conditionalFormattingToolbarText: conditionalFormattingTexts.toolbar,
+    customNumberFormatMenuText: customNumberFormatTexts.menuItem,
   });
 
   // Bloque le redimensionnement colonnes/lignes quand la feuille est protégée
@@ -916,6 +1001,16 @@ const App = () => {
         onSave={saveConditionalRule}
         onDelete={deleteConditionalRule}
         texts={conditionalFormattingTexts}
+      />
+
+      <CustomNumberFormatDialog
+        open={customNumberFormatOpen}
+        initialFormat={customNumberFormatInitial}
+        selectionLabel={customNumberFormatSelectionLabel}
+        locale={detectedLang}
+        onApply={applyCustomNumberFormat}
+        onClose={() => setCustomNumberFormatOpen(false)}
+        texts={customNumberFormatTexts}
       />
 
       <ChartDialog
