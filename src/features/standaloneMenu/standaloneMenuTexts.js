@@ -35,6 +35,21 @@ const TRANSLATED_ABOUT = {
   nl: "Over...",
 };
 
+const TRANSLATED_FORMAT_MENU = {
+  "zh-CN": { format: "格式", alignment: "对齐方式", clearFormat: "清除格式" },
+  "zh-TW": { format: "格式", alignment: "對齊方式", clearFormat: "清除格式" },
+  en: { format: "Format", alignment: "Alignment", clearFormat: "Clear formatting" },
+  "fr-FR": { format: "Format", alignment: "Alignement", clearFormat: "Effacer la mise en forme" },
+  "es-ES": { format: "Formato", alignment: "Alineación", clearFormat: "Borrar formato" },
+  hi: { format: "प्रारूप", alignment: "संरेखण", clearFormat: "फ़ॉर्मेटिंग साफ़ करें" },
+  ru: { format: "Формат", alignment: "Выравнивание", clearFormat: "Очистить форматирование" },
+  pt: { format: "Formato", alignment: "Alinhamento", clearFormat: "Limpar formatação" },
+  de: { format: "Format", alignment: "Ausrichtung", clearFormat: "Formatierung löschen" },
+  el: { format: "Μορφή", alignment: "Στοίχιση", clearFormat: "Εκκαθάριση μορφοποίησης" },
+  it: { format: "Formato", alignment: "Allineamento", clearFormat: "Cancella formattazione" },
+  nl: { format: "Opmaak", alignment: "Uitlijning", clearFormat: "Opmaak wissen" },
+};
+
 const TRANSLATED_LICENSE = {
   "zh-CN": {
     licenseGithub: "许可证与 GitHub",
@@ -116,16 +131,42 @@ const pick = (...values) =>
   values.find((value) => typeof value === "string" && value.trim().length > 0) ||
   "";
 
-export const getStandaloneMenuTexts = (appTexts, lang) => {
+export const getStandaloneMenuTexts = (appTexts, lang, currency = "$") => {
   const fortuneTexts = getFortuneLocale({ lang });
   const custom = appTexts?.standaloneMenu || {};
   const toolbar = fortuneTexts.toolbar || {};
   const freezen = fortuneTexts.freezen || {};
   const sort = fortuneTexts.sort || {};
   const filter = fortuneTexts.filter || {};
+  const align = fortuneTexts.align || {};
+  const textWrap = fortuneTexts.textWrap || {};
+  const rotation = fortuneTexts.rotation || {};
+  const merge = fortuneTexts.merge || {};
+  const defaultFormats =
+    typeof fortuneTexts.defaultFmt === "function"
+      ? fortuneTexts.defaultFmt(currency)
+      : [];
+  const decimalSeparator = new Intl.NumberFormat(lang || "en", {
+    minimumFractionDigits: 1,
+  })
+    .formatToParts(1.1)
+    .find((part) => part.type === "decimal")?.value || ".";
+  const numberFormats = defaultFormats.map((item) =>
+    item.value === "split"
+      ? "divider"
+      : {
+          ...item,
+          example: item.example?.replace(/(?<=\d)\.(?=\d)/g, decimalSeparator),
+        },
+  );
+  const formatLabel = (value, fallback) =>
+    numberFormats.find((item) => item !== "divider" && item.value === value)?.text ||
+    fallback;
   const about = TRANSLATED_ABOUT[lang] || TRANSLATED_ABOUT.en;
   const splashTagline = SPLASH_TAGLINES[lang] || SPLASH_TAGLINES.en;
   const license = TRANSLATED_LICENSE[lang] || TRANSLATED_LICENSE.en;
+  const formatMenu =
+    TRANSLATED_FORMAT_MENU[lang] || TRANSLATED_FORMAT_MENU.en;
 
   return {
     menuBarLabel: pick(custom.menuBarLabel, FALLBACK_TEXTS.menuBarLabel),
@@ -134,7 +175,7 @@ export const getStandaloneMenuTexts = (appTexts, lang) => {
       edit: pick(custom.edit, FALLBACK_TEXTS.edit),
       view: pick(custom.view, FALLBACK_TEXTS.view),
       insert: pick(custom.insert, FALLBACK_TEXTS.insert),
-      format: pick(toolbar.format, "Format"),
+      format: pick(custom.format, toolbar.format, formatMenu.format),
       data: pick(custom.data, FALLBACK_TEXTS.data),
       tools: pick(custom.tools, FALLBACK_TEXTS.tools),
     },
@@ -143,7 +184,7 @@ export const getStandaloneMenuTexts = (appTexts, lang) => {
       export: pick(custom.export, FALLBACK_TEXTS.export),
       undo: pick(toolbar.undo, "Undo"),
       redo: pick(toolbar.redo, "Redo"),
-      clearFormat: pick(toolbar["clear-format"], "Clear format"),
+      clearFormat: pick(toolbar["clear-format"], formatMenu.clearFormat),
       show: pick(custom.show, FALLBACK_TEXTS.show),
       gridlines: pick(custom.gridlines, FALLBACK_TEXTS.gridlines),
       freeze: pick(toolbar.freeze, freezen.default, "Freeze"),
@@ -184,6 +225,46 @@ export const getStandaloneMenuTexts = (appTexts, lang) => {
         appTexts?.conditionalFormatting?.styleLabels?.underline,
         "Underline",
       ),
+      number: formatLabel("##0.00", pick(fortuneTexts.format?.number, "Number")),
+      text: formatLabel("@", pick(fortuneTexts.format?.text, "Text")),
+      alignment: pick(custom.alignment, formatMenu.alignment),
+      alignLeft: pick(align.left, toolbar["align-left"], "Left"),
+      alignCenter: pick(align.center, toolbar["align-center"], "Center"),
+      alignRight: pick(align.right, toolbar["align-right"], "Right"),
+      alignTop: pick(align.top, toolbar["align-top"], "Top"),
+      alignMiddle: pick(align.middle, toolbar["align-mid"], "Middle"),
+      alignBottom: pick(align.bottom, toolbar["align-bottom"], "Bottom"),
+      textWrap: pick(toolbar.textWrap, toolbar.textWrapMode, "Text wrapping"),
+      wrapOverflow: pick(textWrap.overflow, "Overflow"),
+      wrap: pick(textWrap.wrap, "Wrap"),
+      wrapClip: pick(textWrap.clip, "Clip"),
+      rotation: pick(toolbar.textRotate, toolbar.textRotateMode, "Rotation"),
+      rotationNone: pick(rotation.none, "None"),
+      rotationAngleUp: pick(rotation.angleup, "Tilt up"),
+      rotationAngleDown: pick(rotation.angledown, "Tilt down"),
+      rotationVertical: pick(rotation.vertical, "Stack vertically"),
+      rotationUp: pick(rotation.rotationUp, "Rotate up"),
+      rotationDown: pick(rotation.rotationDown, "Rotate down"),
+      mergeCells: pick(toolbar["merge-cell"], toolbar.mergeCell, "Merge cells"),
+      fontSize: pick(toolbar["font-size"], toolbar.fontSize, "Font size"),
+      mergeAll: pick(merge.mergeAll, "Merge all"),
+      mergeVertical: pick(merge.mergeV, "Merge vertically"),
+      mergeHorizontal: pick(merge.mergeH, "Merge horizontally"),
+      unmerge: pick(merge.mergeCancel, "Unmerge"),
+      decreaseDecimals: pick(
+        toolbar["number-decrease"],
+        toolbar.numberDecrease,
+        "Decrease decimal places",
+      ),
+      increaseDecimals: pick(
+        toolbar["number-increase"],
+        toolbar.numberIncrease,
+        "Increase decimal places",
+      ),
+      customNumberFormat: pick(
+        appTexts?.customNumberFormat?.menuItem,
+        "Custom number format…",
+      ),
       conditionalFormatting: pick(
         appTexts?.conditionalFormatting?.toolbar,
         toolbar.conditionalFormat,
@@ -220,5 +301,6 @@ export const getStandaloneMenuTexts = (appTexts, lang) => {
         FALLBACK_TEXTS.goToGithub,
       ),
     },
+    numberFormats,
   };
 };

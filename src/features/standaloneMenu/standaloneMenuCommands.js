@@ -35,6 +35,88 @@ const findToolbarComboOption = (container, optionIconId) => {
   return optionIcon?.closest(".fortune-toolbar-select-option") || null;
 };
 
+const findToolbarComboByOptionIcon = (optionIconId) => {
+  const toolbar = getToolbar();
+  if (!toolbar) return null;
+
+  const optionIcon = Array.from(
+    toolbar.querySelectorAll(".fortune-toolbar-combo-popup use"),
+  ).find((useElement) => getUseHref(useElement) === `#${optionIconId}`);
+
+  return optionIcon?.closest(".fortune-toobar-combo-container") || null;
+};
+
+const toolbarComboIconFamilies = [
+  ["align-left", "align-center", "align-right"],
+  ["align-top", "align-middle", "align-bottom"],
+  ["text-clip", "text-overflow", "text-wrap"],
+  [
+    "text-rotation-none",
+    "text-rotation-angleup",
+    "text-rotation-angledown",
+    "text-rotation-vertical",
+    "text-rotation-up",
+    "text-rotation-down",
+  ],
+  ["merge-all", "merge-vertical", "merge-horizontal", "merge-cancel"],
+];
+
+const findToolbarComboByOptionFamily = (optionIconId) => {
+  const family = toolbarComboIconFamilies.find((icons) =>
+    icons.includes(optionIconId),
+  );
+  if (!family) return null;
+
+  return family
+    .map((iconId) => findToolbarControlByIcon(iconId))
+    .find(Boolean)
+    ?.closest(".fortune-toobar-combo-container") || null;
+};
+
+const findFormatCombo = (formatLabels = []) => {
+  const mountedMenu = document
+    .querySelector(".dc-custom-number-format-menu-item, .more-format")
+    ?.closest(".fortune-toobar-combo-container");
+  if (mountedMenu) return mountedMenu;
+
+  const labels = new Set(formatLabels);
+  const formatText = Array.from(
+    getToolbar()?.querySelectorAll(".fortune-toolbar-combo-text") || [],
+  ).find((element) => labels.has(element.textContent?.trim()));
+  return formatText?.closest(".fortune-toobar-combo-container") || null;
+};
+
+const findFormatOptionByLabel = (container, label) =>
+  Array.from(
+    container?.querySelectorAll(".fortune-toolbar-combo-popup > .fortune-toolbar-select > .fortune-toolbar-select-option") || [],
+  ).find((option) => {
+    if (
+      option.classList.contains("dc-custom-number-format-menu-item") ||
+      option.classList.contains("dc-hidden-native-format-item")
+    ) {
+      return false;
+    }
+    const optionLabel = option.querySelector(
+      ".fortune-toolbar-menu-line > div:first-child",
+    );
+    return optionLabel?.textContent?.trim() === label?.trim();
+  }) || null;
+
+const findToolbarTextCombo = (knownLabels = []) => {
+  const labels = new Set(knownLabels.map(String));
+  const comboText = Array.from(
+    getToolbar()?.querySelectorAll(".fortune-toolbar-combo-text") || [],
+  ).find((element) => labels.has(element.textContent?.trim()));
+  return comboText?.closest(".fortune-toobar-combo-container") || null;
+};
+
+const findTextComboOption = (container, label) =>
+  Array.from(
+    container?.querySelectorAll(
+      ".fortune-toolbar-combo-popup .fortune-toolbar-select-option",
+    ) || [],
+  ).find((option) => option.textContent?.trim() === String(label)) || null;
+
 const cleanupSuppressedToolbarCombo = () => {
   requestAnimationFrame(() => {
     document.body.classList.remove(SUPPRESS_TOOLBAR_COMBO_CLASS);
@@ -56,8 +138,11 @@ export const clickToolbarIcon = (iconId) => {
 };
 
 export const triggerToolbarComboOption = (comboIconId, optionIconId) => {
-  const control = findToolbarControlByIcon(comboIconId);
-  const container = control?.closest(".fortune-toobar-combo-container");
+  const control = comboIconId ? findToolbarControlByIcon(comboIconId) : null;
+  const container =
+    control?.closest(".fortune-toobar-combo-container") ||
+    findToolbarComboByOptionFamily(optionIconId) ||
+    findToolbarComboByOptionIcon(optionIconId);
   const arrow = container?.querySelector(".fortune-toolbar-combo-arrow");
   if (!container || !arrow) return false;
 
@@ -77,6 +162,59 @@ export const triggerToolbarComboOption = (comboIconId, optionIconId) => {
 
     requestAnimationFrame(() => {
       findToolbarComboOption(container, optionIconId)?.click();
+      cleanupSuppressedToolbarCombo();
+    });
+  });
+
+  return true;
+};
+
+export const triggerToolbarFormatOption = (label, formatLabels) => {
+  const container = findFormatCombo(formatLabels);
+  const arrow = container?.querySelector(".fortune-toolbar-combo-arrow");
+  if (!container || !arrow || !label) return false;
+
+  document.body.classList.add(SUPPRESS_TOOLBAR_COMBO_CLASS);
+  if (!findFormatOptionByLabel(container, label)) arrow.click();
+
+  requestAnimationFrame(() => {
+    const option = findFormatOptionByLabel(container, label);
+    if (option) {
+      option.click();
+      cleanupSuppressedToolbarCombo();
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      findFormatOptionByLabel(container, label)?.click();
+      cleanupSuppressedToolbarCombo();
+    });
+  });
+
+  return true;
+};
+
+export const triggerToolbarTextComboOption = (
+  knownCurrentLabels,
+  optionLabel,
+) => {
+  const container = findToolbarTextCombo(knownCurrentLabels);
+  const arrow = container?.querySelector(".fortune-toolbar-combo-arrow");
+  if (!container || !arrow) return false;
+
+  document.body.classList.add(SUPPRESS_TOOLBAR_COMBO_CLASS);
+  arrow.click();
+
+  requestAnimationFrame(() => {
+    const option = findTextComboOption(container, optionLabel);
+    if (option) {
+      option.click();
+      cleanupSuppressedToolbarCombo();
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      findTextComboOption(container, optionLabel)?.click();
       cleanupSuppressedToolbarCombo();
     });
   });

@@ -53,7 +53,6 @@ const t = customLocales[detectedLang] ?? customLocales["en"];
 const conditionalFormattingTexts = getConditionalFormattingTexts(t.conditionalFormatting);
 const chartTexts = getChartTexts(t.charts);
 const customNumberFormatTexts = getCustomNumberFormatTexts(t.customNumberFormat);
-const standaloneMenuTexts = getStandaloneMenuTexts(t, detectedLang);
 const DEFAULT_COLUMN_WIDTH = 99;
 const sheetPrefix =
   {
@@ -85,6 +84,11 @@ const currencySymbol =
     it: "€",
     nl: "€",
   }[detectedLang] ?? "$";
+const standaloneMenuTexts = getStandaloneMenuTexts(
+  t,
+  detectedLang,
+  currencySymbol,
+);
 
 const isSingleColumnRange = (range) =>
   Boolean(range?.row && range?.column && range.column[0] === range.column[1]);
@@ -1039,6 +1043,7 @@ const App = () => {
         workbookRef={workbookRef}
         onOpenChartDialog={openChartDialog}
         onOpenConditionalDialog={openConditionalDialog}
+        onOpenCustomNumberFormatDialog={openCustomNumberFormatDialog}
       />
 
       <div className="dc-workbook-shell">

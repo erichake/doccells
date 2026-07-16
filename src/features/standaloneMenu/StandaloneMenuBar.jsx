@@ -14,6 +14,9 @@ import {
   triggerGridLines,
   triggerFilterMenuOption,
   triggerNativeImagePicker,
+  triggerToolbarComboOption,
+  triggerToolbarFormatOption,
+  triggerToolbarTextComboOption,
   triggerWorkbookFormat,
   triggerWorkbookRedo,
   triggerSheetProtection,
@@ -21,6 +24,8 @@ import {
   triggerWorkbookFreeze,
 } from "./standaloneMenuCommands.js";
 import "./StandaloneMenuBar.css";
+
+const FONT_SIZES = [9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72];
 
 const isTopWindow = () => {
   try {
@@ -80,7 +85,10 @@ const MenuItem = ({ item, onRun }) => {
       </button>
 
       {hasSubmenu ? (
-        <div className="dc-menu-popover dc-menu-submenu" role="menu">
+        <div
+          className={`dc-menu-popover dc-menu-submenu ${item.submenuClassName || ""}`}
+          role="menu"
+        >
           {item.items.map((subItem, index) =>
             subItem === "divider" ? (
               <MenuDivider key={`${item.label}-divider-${index}`} />
@@ -107,6 +115,7 @@ export const StandaloneMenuBar = ({
   workbookRef,
   onOpenChartDialog,
   onOpenConditionalDialog,
+  onOpenCustomNumberFormatDialog,
 }) => {
   const [isStandalone, setIsStandalone] = useState(isTopWindow);
   const [openMenu, setOpenMenu] = useState(null);
@@ -237,8 +246,6 @@ export const StandaloneMenuBar = ({
         items: [
           { icon: "undo", label: texts.items.undo, shortcut: "⌘Z", command: () => triggerWorkbookUndo(workbookRef) },
           { icon: "redo", label: texts.items.redo, shortcut: "⌘Y", command: () => triggerWorkbookRedo(workbookRef) },
-          "divider",
-          { icon: "eraser", label: texts.items.clearFormat, command: () => clickToolbarIcon("clear-format") },
         ],
       },
       {
@@ -309,11 +316,124 @@ export const StandaloneMenuBar = ({
         id: "format",
         label: texts.roots.format,
         items: [
-          { icon: "bold", label: texts.items.bold, shortcut: "⌘B", checked: menuState.bold, command: () => triggerWorkbookFormat(workbookRef, "bl") },
-          { icon: "italic", label: texts.items.italic, shortcut: "⌘I", checked: menuState.italic, command: () => triggerWorkbookFormat(workbookRef, "it") },
-          { icon: "underline", label: texts.items.underline, shortcut: "⌘U", checked: menuState.underline, command: () => triggerWorkbookFormat(workbookRef, "un") },
+          {
+            icon: "number",
+            label: texts.items.number,
+            submenuClassName: "dc-menu-number-submenu",
+            items: [
+              ...texts.numberFormats
+                .filter(
+                  (item, index) =>
+                    item !== "divider"
+                      ? item.value !== "fmtOtherSelf"
+                      : texts.numberFormats
+                          .slice(index + 1)
+                          .some(
+                            (nextItem) =>
+                              nextItem !== "divider" &&
+                              nextItem.value !== "fmtOtherSelf",
+                          ),
+                )
+                .map((item) =>
+                  item === "divider"
+                    ? item
+                    : {
+                        label: item.text,
+                        shortcut: item.example,
+                        command: () =>
+                          triggerToolbarFormatOption(
+                            item.text,
+                            texts.numberFormats
+                              .filter((format) => format !== "divider")
+                              .map((format) => format.text),
+                          ),
+                      },
+                ),
+              "divider",
+              {
+                icon: "decimalLess",
+                label: texts.items.decreaseDecimals,
+                command: () => clickToolbarIcon("number-decrease"),
+              },
+              {
+                icon: "decimalMore",
+                label: texts.items.increaseDecimals,
+                command: () => clickToolbarIcon("number-increase"),
+              },
+              "divider",
+              {
+                label: texts.items.customNumberFormat,
+                command: onOpenCustomNumberFormatDialog,
+              },
+            ],
+          },
+          {
+            icon: "text",
+            label: texts.items.text,
+            items: [
+              { icon: "bold", label: texts.items.bold, shortcut: "⌘B", checked: menuState.bold, command: () => triggerWorkbookFormat(workbookRef, "bl") },
+              { icon: "italic", label: texts.items.italic, shortcut: "⌘I", checked: menuState.italic, command: () => triggerWorkbookFormat(workbookRef, "it") },
+              { icon: "underline", label: texts.items.underline, shortcut: "⌘U", checked: menuState.underline, command: () => triggerWorkbookFormat(workbookRef, "un") },
+            ],
+          },
+          {
+            icon: "alignment",
+            label: texts.items.alignment,
+            items: [
+              { icon: "alignLeft", label: texts.items.alignLeft, command: () => triggerToolbarComboOption(null, "align-left") },
+              { icon: "alignCenter", label: texts.items.alignCenter, command: () => triggerToolbarComboOption(null, "align-center") },
+              { icon: "alignRight", label: texts.items.alignRight, command: () => triggerToolbarComboOption(null, "align-right") },
+              "divider",
+              { icon: "alignTop", label: texts.items.alignTop, command: () => triggerToolbarComboOption(null, "align-top") },
+              { icon: "alignMiddle", label: texts.items.alignMiddle, command: () => triggerToolbarComboOption(null, "align-middle") },
+              { icon: "alignBottom", label: texts.items.alignBottom, command: () => triggerToolbarComboOption(null, "align-bottom") },
+            ],
+          },
+          {
+            icon: "wrap",
+            label: texts.items.textWrap,
+            items: [
+              { label: texts.items.wrapOverflow, command: () => triggerToolbarComboOption(null, "text-overflow") },
+              { label: texts.items.wrap, command: () => triggerToolbarComboOption(null, "text-wrap") },
+              { label: texts.items.wrapClip, command: () => triggerToolbarComboOption(null, "text-clip") },
+            ],
+          },
+          {
+            icon: "rotation",
+            label: texts.items.rotation,
+            items: [
+              { label: texts.items.rotationNone, command: () => triggerToolbarComboOption(null, "text-rotation-none") },
+              { label: texts.items.rotationAngleUp, command: () => triggerToolbarComboOption(null, "text-rotation-angleup") },
+              { label: texts.items.rotationAngleDown, command: () => triggerToolbarComboOption(null, "text-rotation-angledown") },
+              { label: texts.items.rotationVertical, command: () => triggerToolbarComboOption(null, "text-rotation-vertical") },
+              { label: texts.items.rotationUp, command: () => triggerToolbarComboOption(null, "text-rotation-up") },
+              { label: texts.items.rotationDown, command: () => triggerToolbarComboOption(null, "text-rotation-down") },
+            ],
+          },
+          "divider",
+          {
+            icon: "fontSize",
+            label: texts.items.fontSize,
+            items: FONT_SIZES.map((size) => ({
+              label: String(size),
+              command: () =>
+                triggerToolbarTextComboOption(FONT_SIZES, size),
+            })),
+          },
+          {
+            icon: "merge",
+            label: texts.items.mergeCells,
+            items: [
+              { label: texts.items.mergeAll, command: () => triggerToolbarComboOption(null, "merge-all") },
+              { label: texts.items.mergeVertical, command: () => triggerToolbarComboOption(null, "merge-vertical") },
+              { label: texts.items.mergeHorizontal, command: () => triggerToolbarComboOption(null, "merge-horizontal") },
+              { label: texts.items.unmerge, command: () => triggerToolbarComboOption(null, "merge-cancel") },
+            ],
+          },
           "divider",
           { icon: "spark", label: texts.items.conditionalFormatting, command: onOpenConditionalDialog },
+          "divider",
+          { icon: "eraser", label: texts.items.clearFormat, command: () => clickToolbarIcon("clear-format") },
         ],
       },
       {
@@ -379,6 +499,7 @@ export const StandaloneMenuBar = ({
       menuState,
       onOpenChartDialog,
       onOpenConditionalDialog,
+      onOpenCustomNumberFormatDialog,
       texts,
       workbookRef,
     ],
@@ -603,6 +724,66 @@ const icons = {
     <svg viewBox="0 0 24 24">
       <path d="M7.5 5.75v5.5a4.5 4.5 0 0 0 9 0v-5.5" />
       <path d="M6.5 19.25h11" />
+    </svg>
+  ),
+  number: (
+    <svg viewBox="0 0 24 24">
+      <path d="M4 7h5M6.5 7v10M4 17h5M13 7h2.5a2 2 0 0 1 0 4H13h2.5a2 2 0 0 1 0 4H13" />
+    </svg>
+  ),
+  text: (
+    <svg viewBox="0 0 24 24">
+      <path d="M5 6h14M12 6v12M8.5 18h7" />
+    </svg>
+  ),
+  alignment: (
+    <svg viewBox="0 0 24 24">
+      <path d="M4 6h16M4 10h11M4 14h16M4 18h8" />
+    </svg>
+  ),
+  alignLeft: (
+    <svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h11M4 14h16M4 18h9" /></svg>
+  ),
+  alignCenter: (
+    <svg viewBox="0 0 24 24"><path d="M4 6h16M7 10h10M4 14h16M6.5 18h11" /></svg>
+  ),
+  alignRight: (
+    <svg viewBox="0 0 24 24"><path d="M4 6h16M9 10h11M4 14h16M11 18h9" /></svg>
+  ),
+  alignTop: (
+    <svg viewBox="0 0 24 24"><path d="M5 5h14M8 9h8M8 13h8M8 17h8" /></svg>
+  ),
+  alignMiddle: (
+    <svg viewBox="0 0 24 24"><path d="M5 12h14M8 6h8M8 9h8M8 15h8M8 18h8" /></svg>
+  ),
+  alignBottom: (
+    <svg viewBox="0 0 24 24"><path d="M8 7h8M8 11h8M8 15h8M5 19h14" /></svg>
+  ),
+  wrap: (
+    <svg viewBox="0 0 24 24">
+      <path d="M4 6h16M4 10h13a3 3 0 0 1 0 6h-5M14 13l-3 3 3 3M4 16h4" />
+    </svg>
+  ),
+  rotation: (
+    <svg viewBox="0 0 24 24">
+      <path d="m6 17 7-11 5 11M8.5 13h7M5 6l2-2 2 2" />
+    </svg>
+  ),
+  merge: (
+    <svg viewBox="0 0 24 24">
+      <rect x="4" y="5" width="16" height="14" rx="1" />
+      <path d="M4 12h16M12 5v14M8 9l2 3-2 3M16 9l-2 3 2 3" />
+    </svg>
+  ),
+  decimalLess: (
+    <svg viewBox="0 0 24 24"><path d="M4 9h4M6 7v8M11 15h2M16 9h4M18 7v8M15 18h6" /></svg>
+  ),
+  decimalMore: (
+    <svg viewBox="0 0 24 24"><path d="M4 9h4M6 7v8M11 15h2M16 9h4M18 7v8M15 18h6M18 16l3 2-3 2" /></svg>
+  ),
+  fontSize: (
+    <svg viewBox="0 0 24 24">
+      <path d="M4 7V5h8v2M8 5v14M5.5 19h5M14 11V9h6v2M17 9v10M15 19h4" />
     </svg>
   ),
   spark: (
