@@ -265,41 +265,8 @@ body,
   pointer-events: none;
 }
 
-.more-format {
-  min-width: 292px;
-}
-
-.dc-custom-number-format-menu-item {
-  position: relative;
-  min-height: 38px;
-  display: flex !important;
-  align-items: center;
-  gap: 10px;
-  padding: 7px 12px !important;
-  color: #202124;
-  font: 500 13px/1.25 Inter, Roboto, Arial, Helvetica, sans-serif;
-  white-space: nowrap;
-}
-
-.dc-custom-number-format-menu-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 10px;
-  left: 10px;
-  border-top: 1px solid #e5e9ef;
-}
-
-.dc-custom-number-format-menu-icon {
-  width: 30px;
-  height: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #1a73e8;
-  background: #e8f0fe;
-  border-radius: 5px;
-  font: 700 10px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+.dc-hidden-native-format-item {
+  display: none !important;
 }
 
 .dc-nf-backdrop {
@@ -581,6 +548,25 @@ body,
 .dc-nf-presets code { overflow: hidden; font: 600 14px/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; text-overflow: ellipsis; white-space: nowrap; }
 .dc-nf-presets span { color: #5f6368; font-size: 14px; text-align: right; }
 .dc-nf-presets svg { width: 17px; height: 17px; fill: none; stroke: #98a2b3; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+.dc-nf-preset-group + .dc-nf-preset-group {
+  border-top: 1px solid #d9e0e8;
+}
+
+.dc-nf-preset-group-label {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 8px 14px;
+  color: #667085;
+  background: #f7f9fc;
+  border-bottom: 1px solid #e6eaf0;
+  font-size: 11px;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
 
 .dc-nf-footer { display: none; }
 

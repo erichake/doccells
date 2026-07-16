@@ -11,6 +11,30 @@ export const CUSTOM_NUMBER_FORMAT_PRESETS = [
   "0.00E+00",
 ];
 
+const quoteFormatLiteral = (value) => `"${String(value ?? "").replace(/"/g, '""')}"`;
+
+export const getCurrencyFormatPresets = (currency, locale) => {
+  const symbol = quoteFormatLiteral(currency || "$");
+  const shortLocale = String(locale || "en").toLowerCase().split("-")[0];
+  const symbolBefore = ["en", "zh", "hi", "pt", "nl"].includes(shortLocale);
+  const withCurrency = (numberFormat) =>
+    symbolBefore ? `${symbol}${numberFormat}` : `${numberFormat} ${symbol}`;
+
+  return [
+    withCurrency("#,##0.00"),
+    withCurrency("#,##0"),
+    `${withCurrency("#,##0.00")};[Red](${withCurrency("#,##0.00")})`,
+  ];
+};
+
+export const CUSTOM_UNIT_FORMAT_PRESETS = [
+  '0.00 "V"',
+  '0.00 "A"',
+  '0.00 "Ω"',
+  '0.00 "Hz"',
+  '0.00 "mm"',
+];
+
 const stripQuotedText = (format) => format.replace(/"(?:[^"]|"")*"/g, "");
 
 export const getCustomNumberFormatLocale = (locale) => {
@@ -123,6 +147,9 @@ export const getCustomNumberFormatTexts = (custom = {}) => ({
   close: custom.close ?? "Close",
   preview: custom.preview ?? "Preview",
   presets: custom.presets ?? "Suggested formats",
+  standardFormats: custom.standardFormats ?? "Numbers",
+  currencyFormats: custom.currencyFormats ?? "Currency",
+  unitFormats: custom.unitFormats ?? "Units",
   selection: custom.selection ?? "Selection",
   help: custom.help ?? "Format guide",
   helpTitle: custom.helpTitle ?? "How format codes work",

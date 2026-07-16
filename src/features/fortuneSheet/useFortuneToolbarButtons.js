@@ -346,22 +346,37 @@ export const useFortuneToolbarButtons = ({
 
     const installMenuItem = () => {
       document.querySelectorAll(".more-format").forEach((menu) => {
-        if (menu.querySelector(".dc-custom-number-format-menu-item")) return;
-        const item = document.createElement("div");
-        item.className =
-          "set-background-item fortune-toolbar-select-option dc-custom-number-format-menu-item";
-        item.setAttribute("role", "menuitem");
-        item.setAttribute("tabindex", "0");
-        item.innerHTML = `<span class="dc-custom-number-format-menu-icon">0.0</span><span>${customNumberFormatMenuText}</span>`;
-        const openDialog = (event) => {
-          if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
-          event.preventDefault();
-          event.stopPropagation();
-          openCustomNumberFormatDialog();
-        };
-        item.addEventListener("click", openDialog);
-        item.addEventListener("keydown", openDialog);
-        menu.appendChild(item);
+        const nativeCustomFormatsItem = menu.closest(
+          ".fortune-toolbar-select-option",
+        );
+        const mainFormatMenu = nativeCustomFormatsItem?.parentElement;
+        if (!nativeCustomFormatsItem || !mainFormatMenu) return;
+
+        let item = Array.from(mainFormatMenu.children).find((child) =>
+          child.classList.contains("dc-custom-number-format-menu-item"),
+        );
+        if (!item) {
+          item = document.createElement("div");
+          item.className =
+            "fortune-toolbar-select-option dc-custom-number-format-menu-item";
+          item.setAttribute("role", "menuitem");
+          item.setAttribute("tabindex", "0");
+          item.innerHTML = `<div class="fortuen-toolbar-text"><div class="fortune-toolbar-menu-line"><div>${customNumberFormatMenuText}</div><div class="fortune-toolbar-subtext"></div></div></div>`;
+          const openDialog = (event) => {
+            if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
+            event.preventDefault();
+            event.stopPropagation();
+            const popup = item.closest(".fortune-toolbar-combo-popup");
+            popup?.parentElement
+              ?.querySelector(".fortune-toolbar-combo-arrow")
+              ?.click();
+            openCustomNumberFormatDialog();
+          };
+          item.addEventListener("click", openDialog);
+          item.addEventListener("keydown", openDialog);
+          mainFormatMenu.insertBefore(item, nativeCustomFormatsItem);
+        }
+        nativeCustomFormatsItem.classList.add("dc-hidden-native-format-item");
       });
     };
 
@@ -371,6 +386,9 @@ export const useFortuneToolbarButtons = ({
     return () => {
       observer.disconnect();
       document.querySelectorAll(".dc-custom-number-format-menu-item").forEach((item) => item.remove());
+      document.querySelectorAll(".dc-hidden-native-format-item").forEach((item) => {
+        item.classList.remove("dc-hidden-native-format-item");
+      });
     };
   }, [
     customNumberFormatMenuText,

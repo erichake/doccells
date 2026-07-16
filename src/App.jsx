@@ -44,7 +44,7 @@ import {
   stripConditionalFormattingMarkers,
 } from "./features/conditionalFormatting/conditionalFormattingUtils.js";
 
-const SUPPORTED_LANGS = ["zh-CN", "zh-TW", "en", "fr-FR", "es-ES", "hi", "pt", "de", "el", "it", "nl"];
+const SUPPORTED_LANGS = ["zh-CN", "zh-TW", "en", "fr-FR", "es-ES", "hi", "ru", "pt", "de", "el", "it", "nl"];
 const detectedLang =
   SUPPORTED_LANGS.includes(navigator.language)
     ? navigator.language
@@ -63,6 +63,7 @@ const sheetPrefix =
     "fr-FR": "Feuille",
     "es-ES": "Hoja",
     hi: "शीट",
+    ru: "Лист",
     pt: "Folha",
     de: "Tabelle",
     el: "Φύλλο",
@@ -77,6 +78,7 @@ const currencySymbol =
     "fr-FR": "€",
     "es-ES": "€",
     hi: "₹",
+    ru: "₽",
     pt: "R$",
     de: "€",
     el: "€",
@@ -1008,6 +1010,7 @@ const App = () => {
         initialFormat={customNumberFormatInitial}
         selectionLabel={customNumberFormatSelectionLabel}
         locale={detectedLang}
+        currencySymbol={currencySymbol}
         onApply={applyCustomNumberFormat}
         onClose={() => setCustomNumberFormatOpen(false)}
         texts={customNumberFormatTexts}

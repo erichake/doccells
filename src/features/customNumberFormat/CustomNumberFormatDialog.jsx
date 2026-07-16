@@ -3,6 +3,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { update as formatNumber } from "@fortune-sheet/core";
 import {
   CUSTOM_NUMBER_FORMAT_PRESETS,
+  CUSTOM_UNIT_FORMAT_PRESETS,
+  getCurrencyFormatPresets,
   getCustomNumberFormatLocale,
   getCustomNumberFormatTexts,
   localizeCustomNumberFormat,
@@ -15,6 +17,7 @@ export const CustomNumberFormatDialog = ({
   initialFormat,
   selectionLabel,
   locale,
+  currencySymbol,
   onApply,
   onClose,
   texts,
@@ -27,6 +30,14 @@ export const CustomNumberFormatDialog = ({
   const dialogRef = useRef(null);
   const normalizedFormat = normalizeCustomNumberFormat(format, locale);
   const localeSeparators = useMemo(() => getCustomNumberFormatLocale(locale), [locale]);
+  const presetGroups = useMemo(
+    () => [
+      { label: copy.standardFormats, formats: CUSTOM_NUMBER_FORMAT_PRESETS },
+      { label: copy.currencyFormats, formats: getCurrencyFormatPresets(currencySymbol, locale) },
+      { label: copy.unitFormats, formats: CUSTOM_UNIT_FORMAT_PRESETS },
+    ],
+    [copy.currencyFormats, copy.standardFormats, copy.unitFormats, currencySymbol, locale],
+  );
 
   const preview = useCallback((code) => {
     try {
@@ -202,19 +213,24 @@ export const CustomNumberFormatDialog = ({
 
           <div className="dc-nf-presets-heading">{copy.presets}</div>
           <div className="dc-nf-presets" role="listbox" aria-label={copy.presets}>
-            {CUSTOM_NUMBER_FORMAT_PRESETS.map((preset) => (
-              <button
-                type="button"
-                role="option"
-                aria-selected={normalizedFormat === preset}
-                className={normalizedFormat === preset ? "is-selected" : ""}
-                key={preset}
-                onClick={() => choosePreset(preset)}
-              >
-                <code>{localizeCustomNumberFormat(preset, locale)}</code>
-                <span>{preview(preset)}</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
-              </button>
+            {presetGroups.map((group) => (
+              <div className="dc-nf-preset-group" role="group" aria-label={group.label} key={group.label}>
+                <div className="dc-nf-preset-group-label">{group.label}</div>
+                {group.formats.map((preset) => (
+                  <button
+                    type="button"
+                    role="option"
+                    aria-selected={normalizedFormat === preset}
+                    className={normalizedFormat === preset ? "is-selected" : ""}
+                    key={preset}
+                    onClick={() => choosePreset(preset)}
+                  >
+                    <code>{localizeCustomNumberFormat(preset, locale)}</code>
+                    <span>{preview(preset)}</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                  </button>
+                ))}
+              </div>
             ))}
           </div>
         </div>
