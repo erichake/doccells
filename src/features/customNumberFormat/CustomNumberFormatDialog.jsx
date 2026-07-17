@@ -226,7 +226,7 @@ export const CustomNumberFormatDialog = ({
                     onClick={() => choosePreset(preset)}
                   >
                     <code>{localizeCustomNumberFormat(preset, locale)}</code>
-                    <span>{preview(preset)}</span>
+                    <span>{preview(localizeCustomNumberFormat(preset, locale))}</span>
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
                   </button>
                 ))}
