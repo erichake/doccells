@@ -10,8 +10,8 @@ module.exports = {
     {
       n: "SUMIF",
       t: 0,
-      d: "Returns a conditional sum across a range.",
-      a: "A conditional sum across a range.",
+      d: "किसी श्रेणी में एक सशर्त योग देता है।",
+      a: "किसी श्रेणी में एक सशर्त योग।",
       m: [
         2,
         3
@@ -19,7 +19,7 @@ module.exports = {
       p: [
         {
           name: "श्रेणी",
-          detail: "The range which is tested against `criterion`.",
+          detail: "वह श्रेणी जिसकी `मानदंड` के विरुद्ध जांच की जाती है।",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -27,7 +27,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "The pattern or test to apply to `range`.",
+          detail: "वह पैटर्न या परीक्षण जो `श्रेणी` पर लागू होता है।",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -35,7 +35,7 @@ module.exports = {
         },
         {
           name: "योग_श्रेणी",
-          detail: "The range to be summed, if different from `range`.",
+          detail: "वह श्रेणी जिसका योग किया जाएगा, यदि यह `श्रेणी` से भिन्न हो।",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -46,8 +46,8 @@ module.exports = {
     {
       n: "TAN",
       t: 0,
-      d: "Returns the tangent of an angle provided in radians.",
-      a: "Tangent of an angle provided in radians.",
+      d: "रेडियन में दिए गए किसी कोण की स्पर्शरेखा (टैंजेंट) देता है।",
+      a: "रेडियन में दिए गए कोण की स्पर्शरेखा।",
       m: [
         1,
         1
@@ -55,7 +55,7 @@ module.exports = {
       p: [
         {
           name: "कोण",
-          detail: "The angle to find the tangent of, in radians.",
+          detail: "वह कोण जिसकी स्पर्शरेखा ज्ञात करनी है, रेडियन में।",
           example: "45*PI()/180",
           require: "m",
           repeat: "n",
@@ -66,8 +66,8 @@ module.exports = {
     {
       n: "TANH",
       t: 0,
-      d: "Returns the hyperbolic tangent of any real number.",
-      a: "Hyperbolic tangent of any real number.",
+      d: "किसी भी वास्तविक संख्या की अतिपरवलयिक स्पर्शरेखा (हाइपरबॉलिक टैंजेंट) देता है।",
+      a: "किसी भी वास्तविक संख्या की अतिपरवलयिक स्पर्शरेखा।",
       m: [
         1,
         1
@@ -75,7 +75,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "Any real value to calculate the hyperbolic tangent of.",
+          detail: "कोई भी वास्तविक मान जिसकी अतिपरवलयिक स्पर्शरेखा की गणना करनी है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -86,8 +86,8 @@ module.exports = {
     {
       n: "CEILING",
       t: 0,
-      d: "Rounds a number up to the nearest integer multiple of specified significance `factor`.",
-      a: "Rounds number up to nearest multiple of a factor.",
+      d: "किसी संख्या को निर्दिष्ट `गुणक` के निकटतम पूर्णांक गुणज तक ऊपर की ओर पूर्णांकित करता है।",
+      a: "संख्या को किसी गुणक के निकटतम गुणज तक ऊपर पूर्णांकित करता है।",
       m: [
         2,
         2
@@ -95,7 +95,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to round up to the nearest integer multiple of `factor`.",
+          detail: "वह मान जिसे `गुणक` के निकटतम पूर्णांक गुणज तक ऊपर पूर्णांकित करना है।",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -103,7 +103,7 @@ module.exports = {
         },
         {
           name: "गुणक",
-          detail: "The number to whose multiples `value` will be rounded.",
+          detail: "वह संख्या जिसके गुणजों तक `मान` को पूर्णांकित किया जाएगा।",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -114,8 +114,8 @@ module.exports = {
     {
       n: "ATAN",
       t: 0,
-      d: "Returns the inverse tangent of a value, in radians.",
-      a: "Inverse tangent of a value, in radians.",
+      d: "किसी मान का प्रतिलोम स्पर्शरेखा (आर्कटैंजेंट), रेडियन में देता है।",
+      a: "किसी मान का प्रतिलोम स्पर्शरेखा, रेडियन में।",
       m: [
         1,
         1
@@ -123,7 +123,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value for which to calculate the inverse tangent.",
+          detail: "वह मान जिसका प्रतिलोम स्पर्शरेखा ज्ञात करना है।",
           example: "0",
           require: "m",
           repeat: "n",
@@ -134,8 +134,8 @@ module.exports = {
     {
       n: "ASINH",
       t: 0,
-      d: "Returns the inverse hyperbolic sine of a number.",
-      a: "Inverse hyperbolic sine of a number.",
+      d: "किसी संख्या का प्रतिलोम अतिपरवलयिक ज्या (इनवर्स हाइपरबॉलिक साइन) देता है।",
+      a: "किसी संख्या का प्रतिलोम अतिपरवलयिक ज्या।",
       m: [
         1,
         1
@@ -143,7 +143,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value for which to calculate the inverse hyperbolic sine.",
+          detail: "वह मान जिसका प्रतिलोम अतिपरवलयिक ज्या ज्ञात करना है।",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -154,8 +154,8 @@ module.exports = {
     {
       n: "ABS",
       t: 0,
-      d: "Returns the absolute value of a number.",
-      a: "Absolute value of a number.",
+      d: "किसी संख्या का निरपेक्ष मान देता है।",
+      a: "किसी संख्या का निरपेक्ष मान।",
       m: [
         1,
         1
@@ -163,7 +163,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The number of which to return the absolute value.",
+          detail: "वह संख्या जिसका निरपेक्ष मान लौटाया जाएगा।",
           example: "-2",
           require: "m",
           repeat: "n",
@@ -174,8 +174,8 @@ module.exports = {
     {
       n: "ACOS",
       t: 0,
-      d: "Returns the inverse cosine of a value, in radians.",
-      a: "Inverse cosine of a value, in radians.",
+      d: "किसी मान का प्रतिलोम कोज्या (आर्ककोसाइन), रेडियन में देता है।",
+      a: "किसी मान का प्रतिलोम कोज्या, रेडियन में।",
       m: [
         1,
         1
@@ -183,7 +183,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value for which to calculate the inverse cosine. Must be between `-1` and `1`, inclusive.",
+          detail: "वह मान जिसका प्रतिलोम कोज्या ज्ञात करना है। यह `-1` और `1` के बीच होना चाहिए।",
           example: "0",
           require: "m",
           repeat: "n",
@@ -194,8 +194,8 @@ module.exports = {
     {
       n: "ACOSH",
       t: 0,
-      d: "Returns the inverse hyperbolic cosine of a number.",
-      a: "Inverse hyperbolic cosine of a number.",
+      d: "किसी संख्या का प्रतिलोम अतिपरवलयिक कोज्या (इनवर्स हाइपरबॉलिक कोसाइन) देता है।",
+      a: "किसी संख्या का प्रतिलोम अतिपरवलयिक कोज्या।",
       m: [
         1,
         1
@@ -203,7 +203,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value for which to calculate the inverse hyperbolic cosine. Must be greater than or equal to `1`.",
+          detail: "वह मान जिसका प्रतिलोम अतिपरवलयिक कोज्या ज्ञात करना है। यह `1` से बड़ा या उसके बराबर होना चाहिए।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -214,8 +214,8 @@ module.exports = {
     {
       n: "MULTINOMIAL",
       t: 0,
-      d: "Returns the factorial of the sum of values divided by the product of the values' factorials.",
-      a: "Multinomial distribution function.",
+      d: "मानों के योग के भाज्य (फैक्टोरियल) को उन मानों के भाज्यों के गुणनफल से विभाजित करने पर प्राप्त परिणाम देता है।",
+      a: "बहुपद वितरण फलन।",
       m: [
         1,
         255
@@ -223,7 +223,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider.",
+          detail: "पहला मान या श्रेणी जिस पर विचार करना है।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -231,7 +231,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider.",
+          detail: "अतिरिक्त मान या श्रेणियां जिन पर विचार करना है।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -242,8 +242,8 @@ module.exports = {
     {
       n: "ATANH",
       t: 0,
-      d: "Returns the inverse hyperbolic tangent of a number.",
-      a: "Inverse hyperbolic tangent of a number.",
+      d: "किसी संख्या का प्रतिलोम अतिपरवलयिक स्पर्शरेखा देता है।",
+      a: "किसी संख्या का प्रतिलोम अतिपरवलयिक स्पर्शरेखा।",
       m: [
         1,
         1
@@ -251,7 +251,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value for which to calculate the inverse hyperbolic tangent. Must be between -1 and 1, exclusive.",
+          detail: "वह मान जिसका प्रतिलोम अतिपरवलयिक स्पर्शरेखा ज्ञात करना है। यह -1 और 1 के बीच (दोनों को छोड़कर) होना चाहिए।",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -262,8 +262,8 @@ module.exports = {
     {
       n: "ATAN2",
       t: 0,
-      d: "Returns the angle between the x-axis and a line segment from the origin (0,0) to specified coordinate pair (`x`,`y`), in radians.",
-      a: "Arctangent of a value.",
+      d: "मूल बिंदु (0,0) से निर्दिष्ट निर्देशांक युग्म (`x`,`y`) तक की रेखा और x-अक्ष के बीच का कोण, रेडियन में देता है।",
+      a: "किसी मान का आर्कटैंजेंट।",
       m: [
         2,
         2
@@ -271,7 +271,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The x coordinate of the endpoint of the line segment for which to calculate the angle from the x-axis.",
+          detail: "रेखाखंड के अंतिम बिंदु का x निर्देशांक, जिसके लिए x-अक्ष से कोण की गणना करनी है।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -279,7 +279,7 @@ module.exports = {
         },
         {
           name: "y",
-          detail: "The y coordinate of the endpoint of the line segment for which to calculate the angle from the x-axis.",
+          detail: "रेखाखंड के अंतिम बिंदु का y निर्देशांक, जिसके लिए x-अक्ष से कोण की गणना करनी है।",
           example: "3",
           require: "m",
           repeat: "n",
@@ -290,8 +290,8 @@ module.exports = {
     {
       n: "COUNTBLANK",
       t: 1,
-      d: "Returns the number of empty values in a list of values and ranges.",
-      a: "Number of empty values.",
+      d: "मानों और श्रेणियों की सूची में रिक्त मानों की संख्या देता है।",
+      a: "रिक्त मानों की संख्या।",
       m: [
         1,
         1
@@ -299,7 +299,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range in which to count the number of blanks.",
+          detail: "पहला मान या श्रेणी जिसमें रिक्त कोशिकाओं की संख्या गिननी है।",
           example: "A2:C100",
           require: "m",
           repeat: "n",
@@ -310,8 +310,8 @@ module.exports = {
     {
       n: "COSH",
       t: 0,
-      d: "Returns the hyperbolic cosine of any real number.",
-      a: "Hyperbolic cosine of any real number.",
+      d: "किसी भी वास्तविक संख्या की अतिपरवलयिक कोज्या (हाइपरबॉलिक कोसाइन) देता है।",
+      a: "किसी भी वास्तविक संख्या की अतिपरवलयिक कोज्या।",
       m: [
         1,
         1
@@ -319,7 +319,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "Any real value to calculate the hyperbolic cosine of.",
+          detail: "कोई भी वास्तविक मान जिसकी अतिपरवलयिक कोज्या की गणना करनी है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -330,8 +330,8 @@ module.exports = {
     {
       n: "INT",
       t: 0,
-      d: "Rounds a number down to the nearest integer that is less than or equal to it.",
-      a: "Rounds number down to nearest integer.",
+      d: "किसी संख्या को उसके बराबर या उससे छोटे निकटतम पूर्णांक तक नीचे की ओर पूर्णांकित करता है।",
+      a: "संख्या को निकटतम पूर्णांक तक नीचे पूर्णांकित करता है।",
       m: [
         1,
         1
@@ -339,7 +339,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to round down to the nearest integer.",
+          detail: "वह मान जिसे निकटतम पूर्णांक तक नीचे पूर्णांकित करना है।",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -350,8 +350,8 @@ module.exports = {
     {
       n: "ISEVEN",
       t: 0,
-      d: "Checks whether the provided value is even.",
-      a: "Whether the provided value is even.",
+      d: "जांचता है कि दिया गया मान सम (इवन) है या नहीं।",
+      a: "क्या दिया गया मान सम है।",
       m: [
         1,
         1
@@ -359,7 +359,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to be verified as even.",
+          detail: "वह मान जिसे सम के रूप में सत्यापित करना है।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -370,8 +370,8 @@ module.exports = {
     {
       n: "ISODD",
       t: 0,
-      d: "Checks whether the provided value is odd.",
-      a: "Whether the provided value is odd.",
+      d: "जांचता है कि दिया गया मान विषम (ऑड) है या नहीं।",
+      a: "क्या दिया गया मान विषम है।",
       m: [
         1,
         1
@@ -379,7 +379,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to be verified as odd.",
+          detail: "वह मान जिसे विषम के रूप में सत्यापित करना है।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -390,8 +390,8 @@ module.exports = {
     {
       n: "LCM",
       t: 0,
-      d: "Returns the least common multiple of one or more integers.",
-      a: "Least common multiple of one or more integers.",
+      d: "एक या अधिक पूर्णांकों का लघुत्तम समापवर्त्य (LCM) देता है।",
+      a: "एक या अधिक पूर्णांकों का लघुत्तम समापवर्त्य।",
       m: [
         1,
         255
@@ -399,7 +399,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range whose factors to consider in a calculation to find the least common multiple.",
+          detail: "पहला मान या श्रेणी जिसके गुणनखंडों पर लघुत्तम समापवर्त्य ज्ञात करने के लिए विचार करना है।",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -407,7 +407,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges whose factors to consider to find the least common multiple.",
+          detail: "अतिरिक्त मान या श्रेणियां जिनके गुणनखंडों पर लघुत्तम समापवर्त्य ज्ञात करने के लिए विचार करना है।",
           example: "3",
           require: "o",
           repeat: "y",
@@ -418,8 +418,8 @@ module.exports = {
     {
       n: "LN",
       t: 0,
-      d: "Returns the logarithm of a number, base e (Euler's number).",
-      a: "The logarithm of a number, base e (euler's number).",
+      d: "आधार e (यूलर की संख्या) पर किसी संख्या का लघुगणक देता है।",
+      a: "आधार e (यूलर की संख्या) पर किसी संख्या का लघुगणक।",
       m: [
         1,
         1
@@ -427,7 +427,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value for which to calculate the logarithm, base e.",
+          detail: "वह मान जिसके लिए आधार e पर लघुगणक की गणना करनी है।",
           example: "100",
           require: "m",
           repeat: "n",
@@ -438,8 +438,8 @@ module.exports = {
     {
       n: "LOG",
       t: 0,
-      d: "Returns the logarithm of a number with respect to a base.",
-      a: "The logarithm of a number with respect to a base.",
+      d: "किसी संख्या का किसी आधार के सापेक्ष लघुगणक देता है।",
+      a: "किसी संख्या का किसी आधार के सापेक्ष लघुगणक।",
       m: [
         1,
         2
@@ -447,7 +447,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value for which to calculate the logarithm.",
+          detail: "वह मान जिसके लिए लघुगणक की गणना करनी है।",
           example: "128",
           require: "m",
           repeat: "n",
@@ -455,7 +455,7 @@ module.exports = {
         },
         {
           name: "आधार",
-          detail: "The base to use for calculation of the logarithm.",
+          detail: "लघुगणक की गणना के लिए उपयोग किया जाने वाला आधार।",
           example: "2",
           require: "o",
           repeat: "n",
@@ -466,8 +466,8 @@ module.exports = {
     {
       n: "LOG10",
       t: 0,
-      d: "Returns the logarithm of a number, base 10.",
-      a: "The logarithm of a number, base 10.",
+      d: "आधार 10 पर किसी संख्या का लघुगणक देता है।",
+      a: "आधार 10 पर किसी संख्या का लघुगणक।",
       m: [
         1,
         1
@@ -475,7 +475,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value for which to calculate the logarithm, base 10.",
+          detail: "वह मान जिसके लिए आधार 10 पर लघुगणक की गणना करनी है।",
           example: "100",
           require: "m",
           repeat: "n",
@@ -486,8 +486,8 @@ module.exports = {
     {
       n: "MOD",
       t: 0,
-      d: "Returns the result of the modulo operator, the remainder after a division operation.",
-      a: "Modulo (remainder) operator.",
+      d: "मॉड्यूलो संक्रिया का परिणाम, अर्थात भाग की शेषफल, देता है।",
+      a: "मॉड्यूलो (शेषफल) संक्रियक।",
       m: [
         2,
         2
@@ -495,7 +495,7 @@ module.exports = {
       p: [
         {
           name: "भाज्य",
-          detail: "The number to be divided to find the remainder.",
+          detail: "वह संख्या जिसे शेषफल ज्ञात करने के लिए विभाजित करना है।",
           example: "10",
           require: "m",
           repeat: "n",
@@ -503,7 +503,7 @@ module.exports = {
         },
         {
           name: "भाजक",
-          detail: "The number to divide by.",
+          detail: "वह संख्या जिससे विभाजित करना है।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -514,8 +514,8 @@ module.exports = {
     {
       n: "MROUND",
       t: 0,
-      d: "Rounds one number to the nearest integer multiple of another.",
-      a: "Rounds a number to the nearest integer multiple.",
+      d: "किसी संख्या को दूसरी संख्या के निकटतम पूर्णांक गुणज तक पूर्णांकित करता है।",
+      a: "किसी संख्या को निकटतम पूर्णांक गुणज तक पूर्णांकित करता है।",
       m: [
         2,
         2
@@ -523,7 +523,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The number to round to the nearest integer multiple of another.",
+          detail: "वह संख्या जिसे किसी अन्य संख्या के निकटतम पूर्णांक गुणज तक पूर्णांकित करना है।",
           example: "21",
           require: "m",
           repeat: "n",
@@ -531,7 +531,7 @@ module.exports = {
         },
         {
           name: "गुणक",
-          detail: "The number to whose multiples `value` will be rounded.",
+          detail: "वह संख्या जिसके गुणजों तक `मान` को पूर्णांकित किया जाएगा।",
           example: "14",
           require: "m",
           repeat: "n",
@@ -542,8 +542,8 @@ module.exports = {
     {
       n: "ODD",
       t: 0,
-      d: "Rounds a number up to the nearest odd integer.",
-      a: "Rounds a number up to the nearest odd integer.",
+      d: "किसी संख्या को निकटतम विषम पूर्णांक तक ऊपर की ओर पूर्णांकित करता है।",
+      a: "किसी संख्या को निकटतम विषम पूर्णांक तक ऊपर पूर्णांकित करता है।",
       m: [
         1,
         1
@@ -551,7 +551,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to round to the next greatest odd number.",
+          detail: "वह मान जिसे अगली सबसे बड़ी विषम संख्या तक पूर्णांकित करना है।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -562,8 +562,8 @@ module.exports = {
     {
       n: "SUMSQ",
       t: 0,
-      d: "Returns the sum of the squares of a series of numbers and/or cells.",
-      a: "Sum of squares.",
+      d: "संख्याओं और/या कोशिकाओं की एक श्रृंखला के वर्गों का योग देता है।",
+      a: "वर्गों का योग।",
       m: [
         1,
         255
@@ -571,7 +571,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first number or range whose squares to add together.",
+          detail: "पहली संख्या या श्रेणी जिसके वर्ग जोड़े जाएंगे।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -579,7 +579,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional numbers or ranges whose squares to add to the square(s) of `value1`.",
+          detail: "अतिरिक्त संख्याएं या श्रेणियां जिनके वर्ग `मान1` के वर्ग(वर्गों) में जोड़े जाएंगे।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -590,8 +590,8 @@ module.exports = {
     {
       n: "COMBIN",
       t: 0,
-      d: "Returns the number of ways to choose some number of objects from a pool of a given size of objects.",
-      a: "Number of combinations from a set of objects.",
+      d: "किसी दी गई संख्या के वस्तुओं के समूह में से कुछ संख्या में वस्तुएं चुनने के तरीकों की संख्या देता है।",
+      a: "वस्तुओं के समूह से संयोजनों की संख्या।",
       m: [
         2,
         2
@@ -599,7 +599,7 @@ module.exports = {
       p: [
         {
           name: "n",
-          detail: "The size of the pool of objects to choose from.",
+          detail: "उन वस्तुओं के समूह का आकार जिनमें से चुनना है।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -607,7 +607,7 @@ module.exports = {
         },
         {
           name: "k",
-          detail: "The number of objects to choose.",
+          detail: "चुनी जाने वाली वस्तुओं की संख्या।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -618,8 +618,8 @@ module.exports = {
     {
       n: "SUM",
       t: 0,
-      d: "Returns the sum of a series of numbers and/or cells.",
-      a: "Sum of a series of numbers and/or cells.",
+      d: "संख्याओं और/या कोशिकाओं की एक श्रृंखला का योग देता है।",
+      a: "संख्याओं और/या कोशिकाओं की एक श्रृंखला का योग।",
       m: [
         1,
         255
@@ -627,7 +627,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first number or range to add together.",
+          detail: "पहली संख्या या श्रेणी जिसे जोड़ना है।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -635,7 +635,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional numbers or ranges to add to `value1`.",
+          detail: "अतिरिक्त संख्याएं या श्रेणियां जिन्हें `मान1` में जोड़ना है।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -646,8 +646,8 @@ module.exports = {
     {
       n: "SUBTOTAL",
       t: 0,
-      d: "Returns a subtotal for a vertical range of cells using a specified aggregation function.",
-      a: "Subtotal for a range using a specific function.",
+      d: "निर्दिष्ट योग फलन का उपयोग करके कोशिकाओं की एक ऊर्ध्वाधर श्रेणी के लिए उप-योग देता है।",
+      a: "किसी विशिष्ट फलन का उपयोग करके श्रेणी का उप-योग।",
       m: [
         2,
         256
@@ -655,7 +655,7 @@ module.exports = {
       p: [
         {
           name: "फ़ंक्शन_कोड",
-          detail: "The function to use in subtotal aggregation.",
+          detail: "उप-योग एकत्रीकरण में उपयोग किया जाने वाला फलन।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -663,7 +663,7 @@ module.exports = {
         },
         {
           name: "श्रेणी1",
-          detail: "The first range over which to calculate a subtotal.",
+          detail: "पहली श्रेणी जिसके लिए उप-योग की गणना करनी है।",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -671,7 +671,7 @@ module.exports = {
         },
         {
           name: "श्रेणी2",
-          detail: "Additional ranges over which to calculate subtotals.",
+          detail: "अतिरिक्त श्रेणियां जिनके लिए उप-योग की गणना करनी है।",
           example: "B2:B8",
           require: "o",
           repeat: "y",
@@ -682,8 +682,8 @@ module.exports = {
     {
       n: "ASIN",
       t: 0,
-      d: "Returns the inverse sine of a value, in radians.",
-      a: "Inverse sine of a value, in radians.",
+      d: "किसी मान का प्रतिलोम ज्या (आर्कसाइन), रेडियन में देता है।",
+      a: "किसी मान का प्रतिलोम ज्या, रेडियन में।",
       m: [
         1,
         1
@@ -691,7 +691,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value for which to calculate the inverse sine. Must be between `-1` and `1`, inclusive.",
+          detail: "वह मान जिसका प्रतिलोम ज्या ज्ञात करना है। यह `-1` और `1` के बीच होना चाहिए।",
           example: "0",
           require: "m",
           repeat: "n",
@@ -702,8 +702,8 @@ module.exports = {
     {
       n: "COUNTIF",
       t: 1,
-      d: "Returns a conditional count across a range.",
-      a: "A conditional count across a range.",
+      d: "किसी श्रेणी में एक सशर्त गणना देता है।",
+      a: "किसी श्रेणी में एक सशर्त गणना।",
       m: [
         2,
         2
@@ -711,7 +711,7 @@ module.exports = {
       p: [
         {
           name: "श्रेणी",
-          detail: "The range that is tested against `criterion`.",
+          detail: "वह श्रेणी जिसकी `मानदंड` के विरुद्ध जांच की जाती है।",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -719,7 +719,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "The pattern or test to apply to `range`.",
+          detail: "वह पैटर्न या परीक्षण जो `श्रेणी` पर लागू होता है।",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -730,8 +730,8 @@ module.exports = {
     {
       n: "RADIANS",
       t: 0,
-      d: "Converts an angle value in degrees to radians.",
-      a: "Converts an angle value in degrees to radians.",
+      d: "डिग्री में किसी कोण के मान को रेडियन में बदलता है।",
+      a: "डिग्री में किसी कोण के मान को रेडियन में बदलता है।",
       m: [
         1,
         1
@@ -739,7 +739,7 @@ module.exports = {
       p: [
         {
           name: "कोण",
-          detail: "The angle to convert from degrees to radians.",
+          detail: "वह कोण जिसे डिग्री से रेडियन में बदलना है।",
           example: "180",
           require: "m",
           repeat: "n",
@@ -750,8 +750,8 @@ module.exports = {
     {
       n: "RAND",
       t: 0,
-      d: "Returns a random number between 0 inclusive and 1 exclusive.",
-      a: "A random number between 0 inclusive and 1 exclusive.",
+      d: "0 (सहित) और 1 (असहित) के बीच एक यादृच्छिक संख्या देता है।",
+      a: "0 (सहित) और 1 (असहित) के बीच एक यादृच्छिक संख्या।",
       m: [
         0,
         0
@@ -761,8 +761,8 @@ module.exports = {
     {
       n: "COUNTUNIQUE",
       t: 0,
-      d: "Counts the number of unique values in a list of specified values and ranges.",
-      a: "Counts number of unique values in a range.",
+      d: "निर्दिष्ट मानों और श्रेणियों की सूची में अद्वितीय मानों की संख्या गिनता है।",
+      a: "किसी श्रेणी में अद्वितीय मानों की संख्या गिनता है।",
       m: [
         1,
         255
@@ -770,7 +770,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider for uniqueness.",
+          detail: "पहला मान या श्रेणी जिस पर विशिष्टता के लिए विचार करना है।",
           example: "A1:C100",
           require: "m",
           repeat: "n",
@@ -778,7 +778,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider for uniqueness.",
+          detail: "अतिरिक्त मान या श्रेणियां जिन पर विशिष्टता के लिए विचार करना है।",
           example: "1",
           require: "o",
           repeat: "n",
@@ -789,8 +789,8 @@ module.exports = {
     {
       n: "DEGREES",
       t: 0,
-      d: "Converts an angle value in radians to degrees.",
-      a: "Converts an angle value in radians to degrees.",
+      d: "रेडियन में किसी कोण के मान को डिग्री में बदलता है।",
+      a: "रेडियन में किसी कोण के मान को डिग्री में बदलता है।",
       m: [
         1,
         1
@@ -798,7 +798,7 @@ module.exports = {
       p: [
         {
           name: "कोण",
-          detail: "The angle to convert from radians to degrees.",
+          detail: "वह कोण जिसे रेडियन से डिग्री में बदलना है।",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -809,8 +809,8 @@ module.exports = {
     {
       n: "ERFC",
       t: 9,
-      d: "Returns the complementary Gauss error function of a value.",
-      a: "Complementary gauss error function of a value.",
+      d: "किसी मान का पूरक गॉस त्रुटि फलन (कॉम्प्लीमेंटरी एरर फंक्शन) देता है।",
+      a: "किसी मान का पूरक गॉस त्रुटि फलन।",
       m: [
         1,
         1
@@ -818,7 +818,7 @@ module.exports = {
       p: [
         {
           name: "z",
-          detail: "The number for which to calculate the complementary Gauss error function.",
+          detail: "वह संख्या जिसके लिए पूरक गॉस त्रुटि फलन की गणना करनी है।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -829,8 +829,8 @@ module.exports = {
     {
       n: "EVEN",
       t: 0,
-      d: "Rounds a number up to the nearest even integer.",
-      a: "Rounds a number up to the nearest even integer.",
+      d: "किसी संख्या को निकटतम सम पूर्णांक तक ऊपर की ओर पूर्णांकित करता है।",
+      a: "किसी संख्या को निकटतम सम पूर्णांक तक ऊपर पूर्णांकित करता है।",
       m: [
         1,
         1
@@ -838,7 +838,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to round to the next greatest even number.",
+          detail: "वह मान जिसे अगली सबसे बड़ी सम संख्या तक पूर्णांकित करना है।",
           example: "3",
           require: "m",
           repeat: "n",
@@ -849,8 +849,8 @@ module.exports = {
     {
       n: "EXP",
       t: 0,
-      d: "Returns Euler's number, e (~2.718) raised to a power.",
-      a: "Euler's number, e (~2.718) raised to a power.",
+      d: "यूलर की संख्या e (~2.718) को किसी घात तक बढ़ाकर देता है।",
+      a: "यूलर की संख्या e (~2.718), किसी घात तक बढ़ाई गई।",
       m: [
         1,
         1
@@ -858,7 +858,7 @@ module.exports = {
       p: [
         {
           name: "घातांक",
-          detail: "The exponent to raise e to.",
+          detail: "वह घातांक जिस तक e को बढ़ाना है।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -869,8 +869,8 @@ module.exports = {
     {
       n: "FACT",
       t: 0,
-      d: "Returns the factorial of a number.",
-      a: "Factorial of a number.",
+      d: "किसी संख्या का भाज्य (फैक्टोरियल) देता है।",
+      a: "किसी संख्या का भाज्य।",
       m: [
         1,
         1
@@ -878,7 +878,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The number or reference to a number whose factorial will be calculated and returned.",
+          detail: "वह संख्या, या किसी संख्या का संदर्भ, जिसका भाज्य गणना करके लौटाया जाएगा।",
           example: "3",
           require: "m",
           repeat: "n",
@@ -889,8 +889,8 @@ module.exports = {
     {
       n: "FACTDOUBLE",
       t: 0,
-      d: "Returns the \"double factorial\" of a number.",
-      a: "\"double factorial\" of a number.",
+      d: "किसी संख्या का \"दोहरा भाज्य\" (डबल फैक्टोरियल) देता है।",
+      a: "किसी संख्या का \"दोहरा भाज्य\"।",
       m: [
         1,
         1
@@ -898,7 +898,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The number or reference to a number whose double factorial will be calculated and returned.",
+          detail: "वह संख्या, या किसी संख्या का संदर्भ, जिसका दोहरा भाज्य गणना करके लौटाया जाएगा।",
           example: "6",
           require: "m",
           repeat: "n",
@@ -909,8 +909,8 @@ module.exports = {
     {
       n: "PI",
       t: 0,
-      d: "Returns the value of Pi to 14 decimal places.",
-      a: "The number pi.",
+      d: "पाई (Pi) का मान 14 दशमलव स्थानों तक देता है।",
+      a: "पाई संख्या।",
       m: [
         0,
         0
@@ -920,8 +920,8 @@ module.exports = {
     {
       n: "FLOOR",
       t: 0,
-      d: "Rounds a number down to the nearest integer multiple of specified significance `factor`.",
-      a: "Rounds number down to nearest multiple of a factor.",
+      d: "किसी संख्या को निर्दिष्ट `गुणक` के निकटतम पूर्णांक गुणज तक नीचे की ओर पूर्णांकित करता है।",
+      a: "संख्या को किसी गुणक के निकटतम गुणज तक नीचे पूर्णांकित करता है।",
       m: [
         2,
         2
@@ -929,7 +929,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to round down to the nearest integer multiple of `factor`.",
+          detail: "वह मान जिसे `गुणक` के निकटतम पूर्णांक गुणज तक नीचे पूर्णांकित करना है।",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -937,7 +937,7 @@ module.exports = {
         },
         {
           name: "गुणक",
-          detail: "The number to whose multiples `value` will be rounded.",
+          detail: "वह संख्या जिसके गुणजों तक `मान` को पूर्णांकित किया जाएगा।",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -948,8 +948,8 @@ module.exports = {
     {
       n: "GCD",
       t: 0,
-      d: "Returns the greatest common divisor of one or more integers.",
-      a: "Greatest common divisor of one or more integers.",
+      d: "एक या अधिक पूर्णांकों का महत्तम समापवर्तक (GCD) देता है।",
+      a: "एक या अधिक पूर्णांकों का महत्तम समापवर्तक।",
       m: [
         1,
         255
@@ -957,7 +957,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range whose factors to consider in a calculation to find the greatest common divisor.",
+          detail: "पहला मान या श्रेणी जिसके गुणनखंडों पर महत्तम समापवर्तक ज्ञात करने के लिए विचार करना है।",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -965,7 +965,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges whose factors to consider to find the greatest common divisor.",
+          detail: "अतिरिक्त मान या श्रेणियां जिनके गुणनखंडों पर महत्तम समापवर्तक ज्ञात करने के लिए विचार करना है।",
           example: "96",
           require: "o",
           repeat: "y",
@@ -976,8 +976,8 @@ module.exports = {
     {
       n: "RANDBETWEEN",
       t: 0,
-      d: "Returns a uniformly random integer between two values, inclusive.",
-      a: "Random integer between two values, inclusive.",
+      d: "दो मानों के बीच (दोनों सहित) एक समान रूप से यादृच्छिक पूर्णांक देता है।",
+      a: "दो मानों के बीच (दोनों सहित) एक यादृच्छिक पूर्णांक।",
       m: [
         2,
         2
@@ -985,7 +985,7 @@ module.exports = {
       p: [
         {
           name: "निचली_सीमा",
-          detail: "The low end of the random range.",
+          detail: "यादृच्छिक श्रेणी का निचला सिरा।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -993,7 +993,7 @@ module.exports = {
         },
         {
           name: "ऊपरी_सीमा",
-          detail: "The high end of the random range.",
+          detail: "यादृच्छिक श्रेणी का ऊपरी सिरा।",
           example: "10",
           require: "m",
           repeat: "n",
@@ -1004,8 +1004,8 @@ module.exports = {
     {
       n: "ROUND",
       t: 0,
-      d: "Rounds a number to a certain number of decimal places according to standard rules.",
-      a: "Rounds a number according to standard rules.",
+      d: "मानक नियमों के अनुसार किसी संख्या को निश्चित संख्या में दशमलव स्थानों तक पूर्णांकित करता है।",
+      a: "मानक नियमों के अनुसार किसी संख्या को पूर्णांकित करता है।",
       m: [
         2,
         2
@@ -1013,7 +1013,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to round to `places` number of places.",
+          detail: "वह मान जिसे `स्थानों` की संख्या तक पूर्णांकित करना है।",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1021,7 +1021,7 @@ module.exports = {
         },
         {
           name: "दशमलव_स्थान",
-          detail: "The number of decimal places to which to round.",
+          detail: "दशमलव स्थानों की संख्या जिन तक पूर्णांकित करना है।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1032,8 +1032,8 @@ module.exports = {
     {
       n: "ROUNDDOWN",
       t: 0,
-      d: "Rounds a number to a certain number of decimal places, always rounding down to the next valid increment.",
-      a: "Rounds down a number.",
+      d: "किसी संख्या को निश्चित संख्या में दशमलव स्थानों तक पूर्णांकित करता है, हमेशा अगले मान्य वेतनवृद्धि तक नीचे की ओर।",
+      a: "किसी संख्या को नीचे की ओर पूर्णांकित करता है।",
       m: [
         2,
         2
@@ -1041,7 +1041,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to round to `places` number of places, always rounding down.",
+          detail: "वह मान जिसे `स्थानों` की संख्या तक, हमेशा नीचे की ओर, पूर्णांकित करना है।",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1049,7 +1049,7 @@ module.exports = {
         },
         {
           name: "दशमलव_स्थान",
-          detail: "The number of decimal places to which to round.",
+          detail: "दशमलव स्थानों की संख्या जिन तक पूर्णांकित करना है।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1060,8 +1060,8 @@ module.exports = {
     {
       n: "ROUNDUP",
       t: 0,
-      d: "Rounds a number to a certain number of decimal places, always rounding up to the next valid increment.",
-      a: "Rounds up a number.",
+      d: "किसी संख्या को निश्चित संख्या में दशमलव स्थानों तक पूर्णांकित करता है, हमेशा अगले मान्य वेतनवृद्धि तक ऊपर की ओर।",
+      a: "किसी संख्या को ऊपर की ओर पूर्णांकित करता है।",
       m: [
         2,
         2
@@ -1069,7 +1069,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to round to `places` number of places, always rounding up.",
+          detail: "वह मान जिसे `स्थानों` की संख्या तक, हमेशा ऊपर की ओर, पूर्णांकित करना है।",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1077,7 +1077,7 @@ module.exports = {
         },
         {
           name: "दशमलव_स्थान",
-          detail: "The number of decimal places to which to round.",
+          detail: "दशमलव स्थानों की संख्या जिन तक पूर्णांकित करना है।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1088,8 +1088,8 @@ module.exports = {
     {
       n: "SERIESSUM",
       t: 0,
-      d: "Given parameters `x`, `n`, `m`, and `a`, returns the power series sum a",
-      a: "Sum of a power series.",
+      d: "पैरामीटर `x`, `n`, `m` और `a` को देखते हुए, घात श्रेणी का योग a1*x^n + a2*x^(n+m) + a3*x^(n+2m) + ... + ai*x^(n+(i-1)m) देता है।",
+      a: "एक घात श्रेणी (पावर सीरीज) का योग।",
       m: [
         4,
         4
@@ -1097,7 +1097,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the power series. Varies depending on the type of approximation, may be angle, exponent, or some other value.",
+          detail: "घात श्रेणी का इनपुट। सन्निकटन के प्रकार के अनुसार भिन्न हो सकता है; यह कोण, घातांक या कोई अन्य मान हो सकता है।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1105,7 +1105,7 @@ module.exports = {
         },
         {
           name: "n",
-          detail: "The initial power to which to raise `x` in the power series.",
+          detail: "घात श्रेणी में `x` को उठाने के लिए प्रारंभिक घात।",
           example: "0",
           require: "m",
           repeat: "n",
@@ -1113,7 +1113,7 @@ module.exports = {
         },
         {
           name: "m",
-          detail: "The additive increment by which to increase `x`.",
+          detail: "योगात्मक वृद्धि जिससे `x` को बढ़ाया जाएगा।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1121,7 +1121,7 @@ module.exports = {
         },
         {
           name: "a",
-          detail: "The array or range containing the coefficients of the power series.",
+          detail: "वह सरणी या श्रेणी जिसमें घात श्रेणी के गुणांक हैं।",
           example: "{FACT(0)",
           require: "m",
           repeat: "n",
@@ -1132,8 +1132,8 @@ module.exports = {
     {
       n: "SIGN",
       t: 0,
-      d: "Given an input number, returns `-1` if it is negative, `1` if positive, and `0` if it is zero.",
-      a: "Sign of a provided number (+/-/0).",
+      d: "किसी इनपुट संख्या को देखते हुए, यदि वह ऋणात्मक है तो `-1`, यदि धनात्मक है तो `1`, और यदि शून्य है तो `0` देता है।",
+      a: "दी गई संख्या का चिह्न (+/-/0)।",
       m: [
         1,
         1
@@ -1141,7 +1141,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value whose sign will be evaluated.",
+          detail: "वह मान जिसका चिह्न ज्ञात करना है।",
           example: "-42",
           require: "m",
           repeat: "n",
@@ -1152,8 +1152,8 @@ module.exports = {
     {
       n: "SIN",
       t: 0,
-      d: "Returns the sine of an angle provided in radians.",
-      a: "Sine of an angle provided in radians.",
+      d: "रेडियन में दिए गए किसी कोण की ज्या (साइन) देता है।",
+      a: "रेडियन में दिए गए कोण की ज्या।",
       m: [
         1,
         1
@@ -1161,7 +1161,7 @@ module.exports = {
       p: [
         {
           name: "कोण",
-          detail: "The angle to find the sine of, in radians.",
+          detail: "वह कोण जिसकी ज्या ज्ञात करनी है, रेडियन में।",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1172,8 +1172,8 @@ module.exports = {
     {
       n: "SINH",
       t: 0,
-      d: "Returns the hyperbolic sine of any real number.",
-      a: "Hyperbolic sine of any real number.",
+      d: "किसी भी वास्तविक संख्या की अतिपरवलयिक ज्या (हाइपरबॉलिक साइन) देता है।",
+      a: "किसी भी वास्तविक संख्या की अतिपरवलयिक ज्या।",
       m: [
         1,
         1
@@ -1181,7 +1181,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "Any real value to calculate the hyperbolic sine of.",
+          detail: "कोई भी वास्तविक मान जिसकी अतिपरवलयिक ज्या की गणना करनी है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1192,8 +1192,8 @@ module.exports = {
     {
       n: "SQRT",
       t: 0,
-      d: "Returns the positive square root of a positive number.",
-      a: "Positive square root of a positive number.",
+      d: "किसी धनात्मक संख्या का धनात्मक वर्गमूल देता है।",
+      a: "किसी धनात्मक संख्या का धनात्मक वर्गमूल।",
       m: [
         1,
         1
@@ -1201,7 +1201,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The number for which to calculate the positive square root.",
+          detail: "वह संख्या जिसके लिए धनात्मक वर्गमूल की गणना करनी है।",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1212,8 +1212,8 @@ module.exports = {
     {
       n: "SQRTPI",
       t: 0,
-      d: "Returns the positive square root of the product of Pi and the given positive number.",
-      a: "Square root of the product of pi and number.",
+      d: "पाई और दी गई धनात्मक संख्या के गुणनफल का धनात्मक वर्गमूल देता है।",
+      a: "पाई और किसी संख्या के गुणनफल का वर्गमूल।",
       m: [
         1,
         1
@@ -1221,7 +1221,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The number which will be multiplied by Pi and have the product's square root returned",
+          detail: "वह संख्या जिसे पाई से गुणा किया जाएगा और गुणनफल का वर्गमूल लौटाया जाएगा।",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1232,8 +1232,8 @@ module.exports = {
     {
       n: "GAMMALN",
       t: 1,
-      d: "Returns the logarithm of a specified Gamma function, base e (Euler's number).",
-      a: "Logarithm of gamma function.",
+      d: "आधार e (यूलर की संख्या) पर, निर्दिष्ट गामा फलन का लघुगणक देता है।",
+      a: "गामा फलन का लघुगणक।",
       m: [
         1,
         1
@@ -1241,7 +1241,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The input to the Gamma function. The natural logarithm of Gamma(`value`) will be returned.",
+          detail: "गामा फलन का इनपुट। Gamma(`मान`) का प्राकृतिक लघुगणक लौटाया जाएगा।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1252,8 +1252,8 @@ module.exports = {
     {
       n: "COS",
       t: 0,
-      d: "Returns the cosine of an angle provided in radians.",
-      a: "Cosine of an angle provided in radians.",
+      d: "रेडियन में दिए गए किसी कोण की कोज्या (कोसाइन) देता है।",
+      a: "रेडियन में दिए गए कोण की कोज्या।",
       m: [
         1,
         1
@@ -1261,7 +1261,7 @@ module.exports = {
       p: [
         {
           name: "कोण",
-          detail: "The angle to find the cosine of, in radians.",
+          detail: "वह कोण जिसकी कोज्या ज्ञात करनी है, रेडियन में।",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1272,8 +1272,8 @@ module.exports = {
     {
       n: "TRUNC",
       t: 0,
-      d: "Truncates a number to a certain number of significant digits by omitting less significant digits.",
-      a: "Truncates a number.",
+      d: "कम महत्वपूर्ण अंकों को छोड़कर किसी संख्या को निश्चित संख्या में सार्थक अंकों तक छांटता है।",
+      a: "किसी संख्या को छांटता है।",
       m: [
         1,
         2
@@ -1281,7 +1281,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to be truncated.",
+          detail: "वह मान जिसे छांटना है।",
           example: "3.141592654",
           require: "m",
           repeat: "n",
@@ -1289,7 +1289,7 @@ module.exports = {
         },
         {
           name: "दशमलव_स्थान",
-          detail: "The number of significant digits to the right of the decimal point to retain.",
+          detail: "दशमलव बिंदु के दाईं ओर रखे जाने वाले सार्थक अंकों की संख्या।",
           example: "2",
           require: "o",
           repeat: "n",
@@ -1300,8 +1300,8 @@ module.exports = {
     {
       n: "QUOTIENT",
       t: 0,
-      d: "Returns one number divided by another.",
-      a: "One number divided by another.",
+      d: "एक संख्या को दूसरी से विभाजित करने पर प्राप्त परिणाम देता है।",
+      a: "एक संख्या दूसरी से विभाजित।",
       m: [
         2,
         2
@@ -1309,7 +1309,7 @@ module.exports = {
       p: [
         {
           name: "भाज्य",
-          detail: "The number to be divided.",
+          detail: "वह संख्या जिसे विभाजित करना है।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1317,7 +1317,7 @@ module.exports = {
         },
         {
           name: "भाजक",
-          detail: "The number to divide by.",
+          detail: "वह संख्या जिससे विभाजित करना है।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1328,8 +1328,8 @@ module.exports = {
     {
       n: "POWER",
       t: 0,
-      d: "Returns a number raised to a power.",
-      a: "A number raised to a power.",
+      d: "किसी संख्या को किसी घात तक बढ़ाकर देता है।",
+      a: "किसी घात तक बढ़ाई गई एक संख्या।",
       m: [
         2,
         2
@@ -1337,7 +1337,7 @@ module.exports = {
       p: [
         {
           name: "आधार",
-          detail: "The number to raise to the `exponent` power.",
+          detail: "वह संख्या जिसे `घातांक` की घात तक बढ़ाना है।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1345,7 +1345,7 @@ module.exports = {
         },
         {
           name: "घातांक",
-          detail: "The exponent to raise `base` to.",
+          detail: "वह घातांक जिस तक `आधार` को बढ़ाना है।",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -1356,8 +1356,8 @@ module.exports = {
     {
       n: "SUMIFS",
       t: 0,
-      d: "Returns the sum of a range depending on multiple criteria.",
-      a: "Sums a range depending on multiple criteria.",
+      d: "कई मानदंडों के आधार पर किसी श्रेणी का योग देता है।",
+      a: "कई मानदंडों के आधार पर किसी श्रेणी का योग करता है।",
       m: [
         3,
         257
@@ -1365,7 +1365,7 @@ module.exports = {
       p: [
         {
           name: "योग_श्रेणी",
-          detail: "The range to sum.",
+          detail: "वह श्रेणी जिसका योग करना है।",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -1373,7 +1373,7 @@ module.exports = {
         },
         {
           name: "मानदंड_श्रेणी1",
-          detail: "The range to check against criterion1.",
+          detail: "वह श्रेणी जिसकी `मानदंड1` के विरुद्ध जांच करनी है।",
           example: " B1:B10",
           require: "m",
           repeat: "n",
@@ -1381,7 +1381,7 @@ module.exports = {
         },
         {
           name: "मानदंड1",
-          detail: "The pattern or test to apply to criteria_range1.",
+          detail: "वह पैटर्न या परीक्षण जो `मानदंड_श्रेणी1` पर लागू होता है।",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -1389,7 +1389,7 @@ module.exports = {
         },
         {
           name: "मानदंड_श्रेणी2",
-          detail: "Additional ranges to check.",
+          detail: "जांच के लिए अतिरिक्त श्रेणियां।",
           example: " C1:C10",
           require: "o",
           repeat: "y",
@@ -1400,8 +1400,8 @@ module.exports = {
     {
       n: "COUNTIFS",
       t: 1,
-      d: "Returns the count of a range depending on multiple criteria.",
-      a: "Count values depending on multiple criteria.",
+      d: "कई मानदंडों के आधार पर किसी श्रेणी की गणना देता है।",
+      a: "कई मानदंडों के आधार पर मानों की गणना करता है।",
       m: [
         2,
         256
@@ -1409,7 +1409,7 @@ module.exports = {
       p: [
         {
           name: "मानदंड_श्रेणी1",
-          detail: "The range to check against `criterion1`.",
+          detail: "वह श्रेणी जिसकी `मानदंड1` के विरुद्ध जांच करनी है।",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -1417,7 +1417,7 @@ module.exports = {
         },
         {
           name: "मानदंड1",
-          detail: "The pattern or test to apply to `criteria_range1`.",
+          detail: "वह पैटर्न या परीक्षण जो `मानदंड_श्रेणी1` पर लागू होता है।",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -1425,7 +1425,7 @@ module.exports = {
         },
         {
           name: "मानदंड_श्रेणी2",
-          detail: "Additional ranges to check.",
+          detail: "जांच के लिए अतिरिक्त श्रेणियां।",
           example: " B1:B10",
           require: "o",
           repeat: "y",
@@ -1436,8 +1436,8 @@ module.exports = {
     {
       n: "PRODUCT",
       t: 0,
-      d: "Returns the result of multiplying a series of numbers together.",
-      a: "Result of multiplying a series of numbers together.",
+      d: "संख्याओं की एक श्रृंखला को आपस में गुणा करने का परिणाम देता है।",
+      a: "संख्याओं की एक श्रृंखला को आपस में गुणा करने का परिणाम।",
       m: [
         1,
         255
@@ -1445,7 +1445,7 @@ module.exports = {
       p: [
         {
           name: "गुणक1",
-          detail: "The first number or range to calculate for the product.",
+          detail: "गुणनफल की गणना के लिए पहली संख्या या श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1453,7 +1453,7 @@ module.exports = {
         },
         {
           name: "गुणक2",
-          detail: "More numbers or ranges to calculate for the product.",
+          detail: "गुणनफल की गणना के लिए अतिरिक्त संख्याएं या श्रेणियां।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1464,8 +1464,8 @@ module.exports = {
     {
       n: "HARMEAN",
       t: 1,
-      d: "Calculates the harmonic mean of a dataset.",
-      a: "The harmonic mean of a dataset.",
+      d: "किसी डेटासेट का हरात्मक माध्य (हार्मोनिक मीन) परिकलित करता है।",
+      a: "किसी डेटासेट का हरात्मक माध्य।",
       m: [
         1,
         255
@@ -1473,7 +1473,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range of the population.",
+          detail: "जनसंख्या का पहला मान या श्रेणी।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1481,7 +1481,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to include in the population.",
+          detail: "जनसंख्या में शामिल करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1492,8 +1492,8 @@ module.exports = {
     {
       n: "HYPGEOMDIST",
       t: 1,
-      d: "Calculates the probability of drawing a certain number of successes in a certain number of tries given a population of a certain size containing a certain number of successes, without replacement of draws.",
-      a: "Hypergeometric distribution probability.",
+      d: "बिना प्रतिस्थापन के, एक निश्चित आकार की जनसंख्या में एक निश्चित संख्या में सफलताओं को देखते हुए, निश्चित संख्या में प्रयासों में एक निश्चित संख्या में सफलताएं मिलने की प्रायिकता परिकलित करता है।",
+      a: "अतिज्यामितीय (हाइपरज्योमेट्रिक) वितरण प्रायिकता।",
       m: [
         5,
         5
@@ -1501,7 +1501,7 @@ module.exports = {
       p: [
         {
           name: "सफलताओं_की_संख्या",
-          detail: "The desired number of successes.",
+          detail: "सफलताओं की वांछित संख्या।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1509,7 +1509,7 @@ module.exports = {
         },
         {
           name: "प्रयासों_की_संख्या",
-          detail: "The number of permitted draws.",
+          detail: "अनुमत प्रयासों की संख्या।",
           example: "12",
           require: "m",
           repeat: "n",
@@ -1517,7 +1517,7 @@ module.exports = {
         },
         {
           name: "जनसंख्या_में_सफलताएं",
-          detail: "The total number of successes in the population.",
+          detail: "जनसंख्या में सफलताओं की कुल संख्या।",
           example: "20",
           require: "m",
           repeat: "n",
@@ -1525,7 +1525,7 @@ module.exports = {
         },
         {
           name: "जनसंख्या_आकार",
-          detail: "The total size of the population",
+          detail: "जनसंख्या का कुल आकार।",
           example: "40",
           require: "m",
           repeat: "n",
@@ -1533,7 +1533,7 @@ module.exports = {
         },
         {
           name: "संचयी",
-          detail: "Determine the logical value of the function form. \n\nIf cumulative is TRUE(), HYPGEOM.DIST returns the cumulative distribution function;\n\nif FALSE(), it returns the probability density function.",
+          detail: "फलन के स्वरूप का तार्किक मान निर्धारित करता है। \n\nयदि cumulative का मान TRUE() है, तो HYPGEOM.DIST संचयी वितरण फलन देता है; \n\nयदि FALSE() है, तो यह प्रायिकता घनत्व फलन देता है।",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -1544,8 +1544,8 @@ module.exports = {
     {
       n: "INTERCEPT",
       t: 1,
-      d: "Calculates the y-value at which the line resulting from linear regression of a dataset will intersect the y-axis (x=0).",
-      a: "Y-intercept of line derived via linear regression.",
+      d: "वह y-मान परिकलित करता है जिस पर किसी डेटासेट के रैखिक समाश्रयण (लीनियर रीग्रेशन) से प्राप्त रेखा y-अक्ष (x=0) को काटती है।",
+      a: "रैखिक समाश्रयण से प्राप्त रेखा का y-अंतःखंड।",
       m: [
         2,
         2
@@ -1553,7 +1553,7 @@ module.exports = {
       p: [
         {
           name: "डेटा_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "आश्रित डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1561,7 +1561,7 @@ module.exports = {
         },
         {
           name: "डेटा_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "स्वतंत्र डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1572,8 +1572,8 @@ module.exports = {
     {
       n: "KURT",
       t: 1,
-      d: "Calculates the kurtosis of a dataset, which describes the shape, and in particular the \"peakedness\" of that dataset.",
-      a: "Kurtosis of a dataset.",
+      d: "किसी डेटासेट की कुकुदता (कर्टोसिस) परिकलित करता है, जो उस डेटासेट के आकार, और विशेष रूप से \"शीर्षता\" का वर्णन करती है।",
+      a: "किसी डेटासेट की कुकुदता।",
       m: [
         1,
         255
@@ -1581,7 +1581,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range of the dataset.",
+          detail: "डेटासेट का पहला मान या श्रेणी।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1589,7 +1589,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to include in the dataset.",
+          detail: "डेटासेट में शामिल करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1600,8 +1600,8 @@ module.exports = {
     {
       n: "LARGE",
       t: 1,
-      d: "Returns the nth largest element from a data set, where n is user-defined.",
-      a: "Nth largest element from a data set.",
+      d: "किसी डेटा सेट से nवां सबसे बड़ा तत्व देता है, जहां n उपयोगकर्ता द्वारा परिभाषित होता है।",
+      a: "किसी डेटा सेट से nवां सबसे बड़ा तत्व।",
       m: [
         2,
         2
@@ -1609,7 +1609,7 @@ module.exports = {
       p: [
         {
           name: "डेटा",
-          detail: "Array or range containing the dataset to consider.",
+          detail: "सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -1617,7 +1617,7 @@ module.exports = {
         },
         {
           name: "n",
-          detail: "The rank from largest to smallest of the element to return.",
+          detail: "लौटाए जाने वाले तत्व की सबसे बड़े से सबसे छोटे क्रम में स्थिति।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1628,8 +1628,8 @@ module.exports = {
     {
       n: "STDEVA",
       t: 1,
-      d: "Calculates the standard deviation based on a sample, setting text to the value `0`.",
-      a: "Standard deviation of sample (text as 0).",
+      d: "किसी नमूने के आधार पर मानक विचलन परिकलित करता है, टेक्स्ट को मान `0` के रूप में सेट करते हुए।",
+      a: "नमूने का मानक विचलन (टेक्स्ट को 0 मानते हुए)।",
       m: [
         1,
         255
@@ -1637,7 +1637,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range of the sample.",
+          detail: "नमूने का पहला मान या श्रेणी।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1645,7 +1645,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail: "नमूने में शामिल करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1656,8 +1656,8 @@ module.exports = {
     {
       n: "STDEVP",
       t: 1,
-      d: "Calculates the standard deviation based on an entire population.",
-      a: "Standard deviation of an entire population.",
+      d: "संपूर्ण जनसंख्या के आधार पर मानक विचलन परिकलित करता है।",
+      a: "संपूर्ण जनसंख्या का मानक विचलन।",
       m: [
         1,
         255
@@ -1665,7 +1665,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range of the population.",
+          detail: "जनसंख्या का पहला मान या श्रेणी।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1673,7 +1673,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to include in the population.",
+          detail: "जनसंख्या में शामिल करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1684,8 +1684,8 @@ module.exports = {
     {
       n: "GEOMEAN",
       t: 1,
-      d: "Calculates the geometric mean of a dataset.",
-      a: "The geometric mean of a dataset.",
+      d: "किसी डेटासेट का गुणोत्तर माध्य (ज्यामितीय माध्य) परिकलित करता है।",
+      a: "किसी डेटासेट का गुणोत्तर माध्य।",
       m: [
         1,
         255
@@ -1693,7 +1693,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range of the population.",
+          detail: "जनसंख्या का पहला मान या श्रेणी।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1701,7 +1701,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to include in the population.",
+          detail: "जनसंख्या में शामिल करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1712,8 +1712,8 @@ module.exports = {
     {
       n: "RANK_EQ",
       t: 1,
-      d: "Returns the rank of a specified value in a dataset. If there is more than one entry of the same value in the dataset, the top rank of the entries will be returned.",
-      a: "Top rank of a specified value in a dataset.",
+      d: "किसी डेटासेट में निर्दिष्ट मान की रैंक देता है। यदि डेटासेट में समान मान की एक से अधिक प्रविष्टि है, तो प्रविष्टियों की शीर्ष रैंक लौटाई जाएगी।",
+      a: "किसी डेटासेट में निर्दिष्ट मान की शीर्ष रैंक।",
       m: [
         2,
         3
@@ -1721,7 +1721,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value whose rank will be determined.",
+          detail: "वह मान जिसकी रैंक निर्धारित करनी है।",
           example: "A10",
           require: "m",
           repeat: "n",
@@ -1729,7 +1729,7 @@ module.exports = {
         },
         {
           name: "डेटा",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1737,7 +1737,7 @@ module.exports = {
         },
         {
           name: "क्या_आरोही_है",
-          detail: "Whether to consider the values in `data` in descending or ascending order. If omitted, the default is descending (FALSE).",
+          detail: "क्या `डेटा` के मानों को अवरोही या आरोही क्रम में माना जाए। यदि छोड़ दिया जाए, तो डिफ़ॉल्ट अवरोही (FALSE) होता है।",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1748,8 +1748,8 @@ module.exports = {
     {
       n: "RANK_AVG",
       t: 1,
-      d: "Returns the rank of a specified value in a dataset. If there is more than one entry of the same value in the dataset, the average rank of the entries will be returned.",
-      a: "Average rank of a specified value in a dataset.",
+      d: "किसी डेटासेट में निर्दिष्ट मान की रैंक देता है। यदि डेटासेट में समान मान की एक से अधिक प्रविष्टि है, तो प्रविष्टियों की औसत रैंक लौटाई जाएगी।",
+      a: "किसी डेटासेट में निर्दिष्ट मान की औसत रैंक।",
       m: [
         2,
         3
@@ -1757,7 +1757,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value whose rank will be determined.",
+          detail: "वह मान जिसकी रैंक निर्धारित करनी है।",
           example: "A10",
           require: "m",
           repeat: "n",
@@ -1765,7 +1765,7 @@ module.exports = {
         },
         {
           name: "डेटा",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1773,7 +1773,7 @@ module.exports = {
         },
         {
           name: "क्या_आरोही_है",
-          detail: "Whether to consider the values in `data` in descending or ascending order. If omitted, the default is descending (FALSE).",
+          detail: "क्या `डेटा` के मानों को अवरोही या आरोही क्रम में माना जाए। यदि छोड़ दिया जाए, तो डिफ़ॉल्ट अवरोही (FALSE) होता है।",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1784,8 +1784,8 @@ module.exports = {
     {
       n: "PERCENTRANK_EXC",
       t: 1,
-      d: "Returns the percentage rank (percentile) from 0 to 1 exclusive of a specified value in a dataset.",
-      a: "Percentage rank (percentile) from 0 to 1 exclusive.",
+      d: "किसी डेटासेट में निर्दिष्ट मान की प्रतिशत रैंक (पर्सेंटाइल), 0 से 1 (दोनों को छोड़कर) के बीच, देता है।",
+      a: "प्रतिशत रैंक (पर्सेंटाइल), 0 से 1 (दोनों को छोड़कर)।",
       m: [
         2,
         3
@@ -1793,7 +1793,7 @@ module.exports = {
       p: [
         {
           name: "डेटा",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1801,7 +1801,7 @@ module.exports = {
         },
         {
           name: "मान",
-          detail: "The value whose percentage rank will be determined.",
+          detail: "वह मान जिसकी प्रतिशत रैंक निर्धारित करनी है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1809,7 +1809,7 @@ module.exports = {
         },
         {
           name: "सार्थक_अंक",
-          detail: "The number of significant figures to use in the calculation. Default is 3.",
+          detail: "गणना में उपयोग किए जाने वाले सार्थक अंकों की संख्या। डिफ़ॉल्ट 3 है।",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1820,8 +1820,8 @@ module.exports = {
     {
       n: "PERCENTRANK_INC",
       t: 1,
-      d: "Returns the percentage rank (percentile) from 0 to 1 inclusive of a specified value in a dataset.",
-      a: "Percentage rank (percentile) from 0 to 1 inclusive.",
+      d: "किसी डेटासेट में निर्दिष्ट मान की प्रतिशत रैंक (पर्सेंटाइल), 0 से 1 (दोनों सहित) के बीच, देता है।",
+      a: "प्रतिशत रैंक (पर्सेंटाइल), 0 से 1 (दोनों सहित)।",
       m: [
         2,
         3
@@ -1829,7 +1829,7 @@ module.exports = {
       p: [
         {
           name: "डेटा",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1837,7 +1837,7 @@ module.exports = {
         },
         {
           name: "मान",
-          detail: "The value whose percentage rank will be determined.",
+          detail: "वह मान जिसकी प्रतिशत रैंक निर्धारित करनी है।",
           example: " A2",
           require: "m",
           repeat: "n",
@@ -1845,7 +1845,7 @@ module.exports = {
         },
         {
           name: "सार्थक_अंक",
-          detail: "The number of significant figures to use in the calculation. Default is 3.",
+          detail: "गणना में उपयोग किए जाने वाले सार्थक अंकों की संख्या। डिफ़ॉल्ट 3 है।",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1856,8 +1856,8 @@ module.exports = {
     {
       n: "FORECAST",
       t: 1,
-      d: "Calculates the expected y-value for a specified x based on a linear regression of a dataset.",
-      a: "Expected y-value based of linear regression.",
+      d: "किसी डेटासेट के रैखिक समाश्रयण के आधार पर, निर्दिष्ट x के लिए अपेक्षित y-मान परिकलित करता है।",
+      a: "रैखिक समाश्रयण पर आधारित अपेक्षित y-मान।",
       m: [
         3,
         3
@@ -1865,7 +1865,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The value on the x-axis to forecast.",
+          detail: "x-अक्ष पर वह मान जिसका पूर्वानुमान लगाना है।",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -1873,7 +1873,7 @@ module.exports = {
         },
         {
           name: "डेटा_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "आश्रित डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1881,7 +1881,7 @@ module.exports = {
         },
         {
           name: "डेटा_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "स्वतंत्र डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1892,8 +1892,8 @@ module.exports = {
     {
       n: "FISHERINV",
       t: 1,
-      d: "Returns the inverse Fisher transformation of a specified value.",
-      a: "Inverse fisher transformation of a specified value.",
+      d: "किसी निर्दिष्ट मान का प्रतिलोम फ़िशर रूपांतरण देता है।",
+      a: "किसी निर्दिष्ट मान का प्रतिलोम फ़िशर रूपांतरण।",
       m: [
         1,
         1
@@ -1901,7 +1901,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value for which to calculate the inverse Fisher transformation.",
+          detail: "वह मान जिसके लिए प्रतिलोम फ़िशर रूपांतरण की गणना करनी है।",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1912,8 +1912,8 @@ module.exports = {
     {
       n: "FISHER",
       t: 1,
-      d: "Returns the Fisher transformation of a specified value.",
-      a: "Fisher transformation of a specified value.",
+      d: "किसी निर्दिष्ट मान का फ़िशर रूपांतरण देता है।",
+      a: "किसी निर्दिष्ट मान का फ़िशर रूपांतरण।",
       m: [
         1,
         1
@@ -1921,7 +1921,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value for which to calculate the Fisher transformation.",
+          detail: "वह मान जिसके लिए फ़िशर रूपांतरण की गणना करनी है।",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1932,8 +1932,8 @@ module.exports = {
     {
       n: "MODE_SNGL",
       t: 1,
-      d: "Returns the most commonly occurring value in a dataset.",
-      a: "Most commonly occurring value in a dataset.",
+      d: "किसी डेटासेट में सबसे अधिक बार आने वाला मान (बहुलक) देता है।",
+      a: "किसी डेटासेट में सबसे अधिक बार आने वाला मान।",
       m: [
         1,
         255
@@ -1941,7 +1941,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider when calculating mode.",
+          detail: "बहुलक की गणना करते समय विचार करने के लिए पहला मान या श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1949,7 +1949,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider when calculating mode.",
+          detail: "बहुलक की गणना करते समय विचार करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1960,8 +1960,8 @@ module.exports = {
     {
       n: "WEIBULL_DIST",
       t: 1,
-      d: "Returns the value of the Weibull distribution function (or Weibull cumulative distribution function) for a specified shape and scale.",
-      a: "Weibull distribution function.",
+      d: "किसी निर्दिष्ट आकार और स्केल के लिए वेइबुल वितरण फलन (या वेइबुल संचयी वितरण फलन) का मान देता है।",
+      a: "वेइबुल वितरण फलन।",
       m: [
         4,
         4
@@ -1969,7 +1969,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the Weibull distribution function.",
+          detail: "वेइबुल वितरण फलन का इनपुट।",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -1977,7 +1977,7 @@ module.exports = {
         },
         {
           name: "आकृति",
-          detail: "The shape parameter of the Weibull distribution function.",
+          detail: "वेइबुल वितरण फलन का आकार पैरामीटर।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1985,7 +1985,7 @@ module.exports = {
         },
         {
           name: "स्केल",
-          detail: "The scale parameter of the Weibull distribution function.",
+          detail: "वेइबुल वितरण फलन का स्केल पैरामीटर।",
           example: "3",
           require: "m",
           repeat: "n",
@@ -1993,7 +1993,7 @@ module.exports = {
         },
         {
           name: "संचयी",
-          detail: "Whether to use the cumulative distribution function.",
+          detail: "क्या संचयी वितरण फलन का उपयोग करना है।",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -2004,8 +2004,8 @@ module.exports = {
     {
       n: "COUNT",
       t: 1,
-      d: "Returns the number of numeric values in a dataset.",
-      a: "The number of numeric values in dataset.",
+      d: "किसी डेटासेट में संख्यात्मक मानों की संख्या देता है।",
+      a: "डेटासेट में संख्यात्मक मानों की संख्या।",
       m: [
         1,
         255
@@ -2013,7 +2013,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider when counting.",
+          detail: "गणना करते समय विचार करने के लिए पहला मान या श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2021,7 +2021,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider when counting.",
+          detail: "गणना करते समय विचार करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2032,8 +2032,8 @@ module.exports = {
     {
       n: "COUNTA",
       t: 1,
-      d: "Returns the number of values in a dataset.",
-      a: "The number of values in a dataset.",
+      d: "किसी डेटासेट में मानों की संख्या देता है।",
+      a: "किसी डेटासेट में मानों की संख्या।",
       m: [
         1,
         255
@@ -2041,7 +2041,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider when counting.",
+          detail: "गणना करते समय विचार करने के लिए पहला मान या श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2049,7 +2049,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider when counting.",
+          detail: "गणना करते समय विचार करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2060,8 +2060,8 @@ module.exports = {
     {
       n: "AVEDEV",
       t: 1,
-      d: "Calculates the average of the magnitudes of deviations of data from a dataset's mean.",
-      a: "Average magnitude of deviations from mean.",
+      d: "किसी डेटासेट के माध्य से डेटा के विचलन की मात्राओं का औसत परिकलित करता है।",
+      a: "माध्य से विचलन की औसत मात्रा।",
       m: [
         1,
         255
@@ -2069,7 +2069,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range of the sample.",
+          detail: "नमूने का पहला मान या श्रेणी।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2077,7 +2077,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail: "नमूने में शामिल करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2088,8 +2088,8 @@ module.exports = {
     {
       n: "AVERAGE",
       t: 1,
-      d: "Returns the numerical average value in a dataset, ignoring text.",
-      a: "Numerical average value in a dataset, ignoring text.",
+      d: "टेक्स्ट को अनदेखा करते हुए, किसी डेटासेट में संख्यात्मक औसत मान देता है।",
+      a: "टेक्स्ट को अनदेखा करते हुए, डेटासेट में संख्यात्मक औसत मान।",
       m: [
         1,
         255
@@ -2097,7 +2097,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider when calculating the average value.",
+          detail: "औसत मान की गणना करते समय विचार करने के लिए पहला मान या श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2105,7 +2105,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider when calculating the average value.",
+          detail: "औसत मान की गणना करते समय विचार करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2116,8 +2116,8 @@ module.exports = {
     {
       n: "AVERAGEA",
       t: 1,
-      d: "Returns the numerical average value in a dataset.",
-      a: "Numerical average value in a dataset.",
+      d: "किसी डेटासेट में संख्यात्मक औसत मान देता है।",
+      a: "डेटासेट में संख्यात्मक औसत मान।",
       m: [
         1,
         255
@@ -2125,7 +2125,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider when calculating the average value.",
+          detail: "औसत मान की गणना करते समय विचार करने के लिए पहला मान या श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2133,7 +2133,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider when calculating the average value.",
+          detail: "औसत मान की गणना करते समय विचार करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2144,8 +2144,8 @@ module.exports = {
     {
       n: "BINOM_DIST",
       t: 1,
-      d: "Calculates the probability of drawing a certain number of successes (or a maximum number of successes) in a certain number of tries given a population of a certain size containing a certain number of successes, with replacement of draws.",
-      a: "Binomial distribution probability.",
+      d: "प्रतिस्थापन के साथ, एक निश्चित आकार की जनसंख्या में एक निश्चित संख्या में सफलताओं को देखते हुए, निश्चित संख्या में प्रयासों में एक निश्चित संख्या (या अधिकतम संख्या) में सफलताएं मिलने की प्रायिकता परिकलित करता है।",
+      a: "द्विपद (बाइनोमियल) वितरण प्रायिकता।",
       m: [
         4,
         4
@@ -2153,7 +2153,7 @@ module.exports = {
       p: [
         {
           name: "सफलताओं_की_संख्या",
-          detail: "The number of successes for which to calculate the probability in `num_trials` trials.",
+          detail: "`परीक्षणों_की_संख्या` परीक्षणों में सफलताओं की वह संख्या जिसके लिए प्रायिकता परिकलित करनी है।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2161,7 +2161,7 @@ module.exports = {
         },
         {
           name: "परीक्षणों_की_संख्या",
-          detail: "The number of independent trials.",
+          detail: "स्वतंत्र परीक्षणों की संख्या।",
           example: "100",
           require: "m",
           repeat: "n",
@@ -2169,7 +2169,7 @@ module.exports = {
         },
         {
           name: "सफलता_की_प्रायिकता",
-          detail: "The probability of success in any given trial.",
+          detail: "किसी दिए गए परीक्षण में सफलता की प्रायिकता।",
           example: "0.005",
           require: "m",
           repeat: "n",
@@ -2177,7 +2177,7 @@ module.exports = {
         },
         {
           name: "संचयी",
-          detail: "Whether to use the binomial cumulative distribution.",
+          detail: "क्या द्विपद संचयी वितरण का उपयोग करना है।",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2188,8 +2188,8 @@ module.exports = {
     {
       n: "BINOM_INV",
       t: 1,
-      d: "Calculates the smallest value for which the cumulative binomial distribution is greater than or equal to a specified criteria.",
-      a: "Inverse cumulative binomial distribution function.",
+      d: "उस सबसे छोटे मान की गणना करता है जिसके लिए संचयी द्विपद वितरण किसी निर्दिष्ट मानदंड से अधिक या उसके बराबर हो।",
+      a: "प्रतिलोम संचयी द्विपद वितरण फलन।",
       m: [
         3,
         3
@@ -2197,7 +2197,7 @@ module.exports = {
       p: [
         {
           name: "परीक्षणों_की_संख्या",
-          detail: "The number of independent trials.",
+          detail: "स्वतंत्र परीक्षणों की संख्या।",
           example: "100",
           require: "m",
           repeat: "n",
@@ -2205,7 +2205,7 @@ module.exports = {
         },
         {
           name: "सफलता_की_प्रायिकता",
-          detail: "The probability of success in any given trial.",
+          detail: "किसी दिए गए परीक्षण में सफलता की प्रायिकता।",
           example: "0.005",
           require: "m",
           repeat: "n",
@@ -2213,7 +2213,7 @@ module.exports = {
         },
         {
           name: "लक्ष्य_प्रायिकता",
-          detail: "The desired threshold probability.",
+          detail: "वांछित सीमा प्रायिकता।",
           example: "0.8",
           require: "m",
           repeat: "n",
@@ -2224,8 +2224,8 @@ module.exports = {
     {
       n: "CONFIDENCE_NORM",
       t: 1,
-      d: "Calculates the width of half the confidence interval for a normal distribution.",
-      a: "Confidence interval for a normal distribution.",
+      d: "किसी सामान्य वितरण के लिए विश्वास अंतराल की आधी चौड़ाई परिकलित करता है।",
+      a: "सामान्य वितरण के लिए विश्वास अंतराल।",
       m: [
         3,
         3
@@ -2233,7 +2233,7 @@ module.exports = {
       p: [
         {
           name: "अल्फा",
-          detail: "One minus the desired confidence level. E.g. `0.1` for `0.9`, or 90%, confidence.",
+          detail: "वांछित विश्वास स्तर घटा एक। उदाहरण के लिए, 90% विश्वास के लिए `0.9` की जगह `0.1`।",
           example: "0.05",
           require: "m",
           repeat: "n",
@@ -2241,7 +2241,7 @@ module.exports = {
         },
         {
           name: "मानक_विचलन",
-          detail: "The standard deviation of the population.",
+          detail: "जनसंख्या का मानक विचलन।",
           example: "1.6",
           require: "m",
           repeat: "n",
@@ -2249,7 +2249,7 @@ module.exports = {
         },
         {
           name: "जनसंख्या_आकार",
-          detail: "The size of the population.",
+          detail: "जनसंख्या का आकार।",
           example: "250",
           require: "m",
           repeat: "n",
@@ -2260,8 +2260,8 @@ module.exports = {
     {
       n: "CORREL",
       t: 1,
-      d: "Calculates r, the Pearson product-moment correlation coefficient of a dataset.",
-      a: "Pearson Product-Moment Correlation Coefficient.",
+      d: "किसी डेटासेट का पियर्सन प्रॉडक्ट-मोमेंट सहसंबंध गुणांक r परिकलित करता है।",
+      a: "पियर्सन प्रॉडक्ट-मोमेंट सहसंबंध गुणांक।",
       m: [
         2,
         2
@@ -2269,7 +2269,7 @@ module.exports = {
       p: [
         {
           name: "डेटा_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "आश्रित डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2277,7 +2277,7 @@ module.exports = {
         },
         {
           name: "डेटा_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "स्वतंत्र डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2288,8 +2288,8 @@ module.exports = {
     {
       n: "COVARIANCE_P",
       t: 1,
-      d: "Calculates the covariance of a dataset.",
-      a: "The covariance of a dataset.",
+      d: "किसी डेटासेट की सहप्रसरण (कोवेरिएंस) परिकलित करता है।",
+      a: "किसी डेटासेट की सहप्रसरण।",
       m: [
         2,
         2
@@ -2297,7 +2297,7 @@ module.exports = {
       p: [
         {
           name: "डेटा_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "आश्रित डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2305,7 +2305,7 @@ module.exports = {
         },
         {
           name: "डेटा_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "स्वतंत्र डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2316,8 +2316,8 @@ module.exports = {
     {
       n: "COVARIANCE_S",
       t: 1,
-      d: "Calculates the sample covariance of a dataset.",
-      a: "The sample covariance of a dataset.",
+      d: "किसी डेटासेट की नमूना सहप्रसरण परिकलित करता है।",
+      a: "किसी डेटासेट की नमूना सहप्रसरण।",
       m: [
         2,
         2
@@ -2325,7 +2325,7 @@ module.exports = {
       p: [
         {
           name: "डेटा_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "आश्रित डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2333,7 +2333,7 @@ module.exports = {
         },
         {
           name: "डेटा_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "स्वतंत्र डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2344,8 +2344,8 @@ module.exports = {
     {
       n: "DEVSQ",
       t: 1,
-      d: "Calculates the sum of squares of deviations based on a sample.",
-      a: "The sum of squares of deviations based on a sample.",
+      d: "किसी नमूने के आधार पर विचलनों के वर्गों का योग परिकलित करता है।",
+      a: "नमूने के आधार पर विचलनों के वर्गों का योग।",
       m: [
         1,
         255
@@ -2353,7 +2353,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range of the sample.",
+          detail: "नमूने का पहला मान या श्रेणी।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2361,7 +2361,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail: "नमूने में शामिल करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2372,8 +2372,8 @@ module.exports = {
     {
       n: "EXPON_DIST",
       t: 1,
-      d: "Returns the value of the exponential distribution function with a specified lambda at a specified value.",
-      a: "Exponential distribution function.",
+      d: "किसी निर्दिष्ट मान पर, निर्दिष्ट लैम्ब्डा के साथ घातांकी वितरण फलन का मान देता है।",
+      a: "घातांकी (एक्सपोनेंशियल) वितरण फलन।",
       m: [
         3,
         3
@@ -2381,7 +2381,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the exponential distribution function.",
+          detail: "घातांकी वितरण फलन का इनपुट।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2389,7 +2389,7 @@ module.exports = {
         },
         {
           name: "लैम्ब्डा",
-          detail: "The lambda to specify the exponential distribution function.",
+          detail: "घातांकी वितरण फलन को निर्दिष्ट करने वाला लैम्ब्डा।",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -2397,7 +2397,7 @@ module.exports = {
         },
         {
           name: "संचयी",
-          detail: "Whether to use the exponential cumulative distribution.",
+          detail: "क्या घातांकी संचयी वितरण का उपयोग करना है।",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2408,8 +2408,8 @@ module.exports = {
     {
       n: "AVERAGEIF",
       t: 1,
-      d: "Returns the average of a range depending on criteria.",
-      a: "Average of values depending on criteria.",
+      d: "मानदंड के आधार पर किसी श्रेणी का औसत देता है।",
+      a: "मानदंड के आधार पर मानों का औसत।",
       m: [
         2,
         3
@@ -2417,7 +2417,7 @@ module.exports = {
       p: [
         {
           name: "मानदंड_श्रेणी",
-          detail: "The range to check against `criterion`.",
+          detail: "वह श्रेणी जिसकी `मानदंड` के विरुद्ध जांच करनी है।",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -2425,7 +2425,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "The pattern or test to apply to `criteria_range`.",
+          detail: "वह पैटर्न या परीक्षण जो `मानदंड_श्रेणी` पर लागू होता है।",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -2433,7 +2433,7 @@ module.exports = {
         },
         {
           name: "औसत_श्रेणी",
-          detail: "The range to average. If not included, `criteria_range` is used for the average instead.",
+          detail: "वह श्रेणी जिसका औसत निकालना है। यदि शामिल नहीं है, तो औसत के लिए इसके बजाय `मानदंड_श्रेणी` का उपयोग किया जाता है।",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -2444,8 +2444,8 @@ module.exports = {
     {
       n: "AVERAGEIFS",
       t: 1,
-      d: "Returns the average of a range depending on multiple criteria.",
-      a: "Average of values depending on multiple criteria.",
+      d: "कई मानदंडों के आधार पर किसी श्रेणी का औसत देता है।",
+      a: "कई मानदंडों के आधार पर मानों का औसत।",
       m: [
         2,
         255
@@ -2453,7 +2453,7 @@ module.exports = {
       p: [
         {
           name: "औसत_श्रेणी",
-          detail: "The range to average.",
+          detail: "वह श्रेणी जिसका औसत निकालना है।",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -2461,7 +2461,7 @@ module.exports = {
         },
         {
           name: "मानदंड_श्रेणी1",
-          detail: "The range to check against `criterion1`.",
+          detail: "वह श्रेणी जिसकी `मानदंड1` के विरुद्ध जांच करनी है।",
           example: " B1:B10",
           require: "m",
           repeat: "n",
@@ -2469,7 +2469,7 @@ module.exports = {
         },
         {
           name: "मानदंड1",
-          detail: "The pattern or test to apply to `criteria_range1`.",
+          detail: "वह पैटर्न या परीक्षण जो `मानदंड_श्रेणी1` पर लागू होता है।",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -2477,7 +2477,7 @@ module.exports = {
         },
         {
           name: "मानदंड_श्रेणी2",
-          detail: "Additional ranges to check.",
+          detail: "जांच के लिए अतिरिक्त श्रेणियां।",
           example: " C1:C10",
           require: "m",
           repeat: "n",
@@ -2488,8 +2488,8 @@ module.exports = {
     {
       n: "PERMUT",
       t: 1,
-      d: "Returns the number of ways to choose some number of objects from a pool of a given size of objects, considering order.",
-      a: "Number of permutations from a number of objects.",
+      d: "क्रम को ध्यान में रखते हुए, किसी दी गई संख्या के वस्तुओं के समूह में से कुछ संख्या में वस्तुएं चुनने के तरीकों की संख्या देता है।",
+      a: "वस्तुओं की संख्या से क्रमचयों (परम्यूटेशन) की संख्या।",
       m: [
         2,
         2
@@ -2497,7 +2497,7 @@ module.exports = {
       p: [
         {
           name: "n",
-          detail: "The size of the pool of objects to choose from.",
+          detail: "उन वस्तुओं के समूह का आकार जिनमें से चुनना है।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2505,7 +2505,7 @@ module.exports = {
         },
         {
           name: "k",
-          detail: "The number of objects to choose.",
+          detail: "चुनी जाने वाली वस्तुओं की संख्या।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2516,8 +2516,8 @@ module.exports = {
     {
       n: "TRIMMEAN",
       t: 1,
-      d: "Calculates the mean of a dataset excluding some proportion of data from the high and low ends of the dataset.",
-      a: "Mean of a dataset excluding high/low ends.",
+      d: "किसी डेटासेट के उच्च और निम्न सिरों से कुछ अनुपात डेटा को छोड़कर माध्य परिकलित करता है।",
+      a: "उच्च/निम्न सिरों को छोड़कर डेटासेट का माध्य।",
       m: [
         2,
         2
@@ -2525,7 +2525,7 @@ module.exports = {
       p: [
         {
           name: "डेटा",
-          detail: "Array or range containing the dataset to consider.",
+          detail: "सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2533,7 +2533,7 @@ module.exports = {
         },
         {
           name: "अपवर्जित_अनुपात",
-          detail: "The proportion of the dataset to exclude, from the extremities of the set.",
+          detail: "समुच्चय के सिरों से छोड़ा जाने वाला डेटासेट का अनुपात।",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2544,8 +2544,8 @@ module.exports = {
     {
       n: "PERCENTILE_EXC",
       t: 1,
-      d: "Returns the value at a given percentile of a dataset exclusive of 0 and 1.",
-      a: "Value at a given percentile of a dataset exclusive of 0 and 1.",
+      d: "किसी डेटासेट के दिए गए पर्सेंटाइल (0 और 1 को छोड़कर) पर मान देता है।",
+      a: "किसी डेटासेट के दिए गए पर्सेंटाइल (0 और 1 को छोड़कर) पर मान।",
       m: [
         2,
         2
@@ -2553,7 +2553,7 @@ module.exports = {
       p: [
         {
           name: "डेटा",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2561,7 +2561,7 @@ module.exports = {
         },
         {
           name: "प्रतिशतक",
-          detail: "The percentile, exclusive of 0 and 1, whose value within 'data' will be calculated and returned.",
+          detail: "पर्सेंटाइल, 0 और 1 को छोड़कर, जिसका `डेटा` के भीतर मान परिकलित और लौटाया जाएगा।",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2572,8 +2572,8 @@ module.exports = {
     {
       n: "PERCENTILE_INC",
       t: 1,
-      d: "Returns the value at a given percentile of a dataset.",
-      a: "Value at a given percentile of a dataset.",
+      d: "किसी डेटासेट के दिए गए पर्सेंटाइल पर मान देता है।",
+      a: "किसी डेटासेट के दिए गए पर्सेंटाइल पर मान।",
       m: [
         2,
         2
@@ -2581,7 +2581,7 @@ module.exports = {
       p: [
         {
           name: "डेटा",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2589,7 +2589,7 @@ module.exports = {
         },
         {
           name: "प्रतिशतक",
-          detail: "The percentile whose value within `data` will be calculated and returned.`",
+          detail: "पर्सेंटाइल जिसका `डेटा` के भीतर मान परिकलित और लौटाया जाएगा।",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2600,8 +2600,8 @@ module.exports = {
     {
       n: "PEARSON",
       t: 1,
-      d: "Calculates r, the Pearson product-moment correlation coefficient of a dataset.",
-      a: "Pearson Product-Moment Correlation Coefficient.",
+      d: "किसी डेटासेट का पियर्सन प्रॉडक्ट-मोमेंट सहसंबंध गुणांक r परिकलित करता है।",
+      a: "पियर्सन प्रॉडक्ट-मोमेंट सहसंबंध गुणांक।",
       m: [
         2,
         2
@@ -2609,7 +2609,7 @@ module.exports = {
       p: [
         {
           name: "डेटा_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "आश्रित डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2617,7 +2617,7 @@ module.exports = {
         },
         {
           name: "डेटा_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "स्वतंत्र डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2628,8 +2628,8 @@ module.exports = {
     {
       n: "NORM_S_INV",
       t: 1,
-      d: "Returns the value of the inverse standard normal distribution function for a specified value.",
-      a: "Inverse standard normal distribution function.",
+      d: "किसी निर्दिष्ट मान के लिए प्रतिलोम मानक सामान्य वितरण फलन का मान देता है।",
+      a: "प्रतिलोम मानक सामान्य वितरण फलन।",
       m: [
         1,
         1
@@ -2637,7 +2637,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the inverse standard normal distribution function.",
+          detail: "प्रतिलोम मानक सामान्य वितरण फलन का इनपुट।",
           example: "0.75",
           require: "m",
           repeat: "n",
@@ -2648,8 +2648,8 @@ module.exports = {
     {
       n: "NORM_S_DIST",
       t: 1,
-      d: "Returns the value of the standard normal cumulative distribution function for a specified value.",
-      a: "Standard normal cumulative distribution function.",
+      d: "किसी निर्दिष्ट मान के लिए मानक सामान्य संचयी वितरण फलन का मान देता है।",
+      a: "मानक सामान्य संचयी वितरण फलन।",
       m: [
         2,
         2
@@ -2657,7 +2657,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the standard normal cumulative distribution function.",
+          detail: "मानक सामान्य संचयी वितरण फलन का इनपुट।",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -2665,7 +2665,7 @@ module.exports = {
         },
         {
           name: "संचयी",
-          detail: "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
+          detail: "फलन के स्वरूप का तार्किक मान निर्धारित करता है। \n\nयदि TRUE() है, तो यह संचयी वितरण फलन देता है; \n\nयदि FALSE() है, तो यह प्रायिकता घनत्व फलन देता है।",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2676,8 +2676,8 @@ module.exports = {
     {
       n: "NORM_INV",
       t: 1,
-      d: "Returns the value of the inverse normal distribution function for a specified value, mean, and standard deviation.",
-      a: "Inverse normal distribution function.",
+      d: "किसी निर्दिष्ट मान, माध्य और मानक विचलन के लिए प्रतिलोम सामान्य वितरण फलन का मान देता है।",
+      a: "प्रतिलोम सामान्य वितरण फलन।",
       m: [
         3,
         3
@@ -2685,7 +2685,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the inverse normal distribution function.",
+          detail: "प्रतिलोम सामान्य वितरण फलन का इनपुट।",
           example: "0.75",
           require: "m",
           repeat: "n",
@@ -2693,7 +2693,7 @@ module.exports = {
         },
         {
           name: "माध्य",
-          detail: "The mean (mu) of the normal distribution function.",
+          detail: "सामान्य वितरण फलन का माध्य (mu)।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2701,7 +2701,7 @@ module.exports = {
         },
         {
           name: "मानक_विचलन",
-          detail: "The standard deviation (sigma) of the normal distribution function.",
+          detail: "सामान्य वितरण फलन का मानक विचलन (sigma)।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2712,8 +2712,8 @@ module.exports = {
     {
       n: "NORM_DIST",
       t: 1,
-      d: "Returns the value of the normal distribution function (or normal cumulative distribution function) for a specified value, mean, and standard deviation.",
-      a: "Normal distribution function.",
+      d: "किसी निर्दिष्ट मान, माध्य और मानक विचलन के लिए सामान्य वितरण फलन (या सामान्य संचयी वितरण फलन) का मान देता है।",
+      a: "सामान्य वितरण फलन।",
       m: [
         4,
         4
@@ -2721,7 +2721,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the normal distribution function.",
+          detail: "सामान्य वितरण फलन का इनपुट।",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -2729,7 +2729,7 @@ module.exports = {
         },
         {
           name: "माध्य",
-          detail: "The mean (mu) of the normal distribution function.",
+          detail: "सामान्य वितरण फलन का माध्य (mu)।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2737,7 +2737,7 @@ module.exports = {
         },
         {
           name: "मानक_विचलन",
-          detail: "The standard deviation (sigma) of the normal distribution function.",
+          detail: "सामान्य वितरण फलन का मानक विचलन (sigma)।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2745,7 +2745,7 @@ module.exports = {
         },
         {
           name: "संचयी",
-          detail: "Whether to use the normal cumulative distribution function rather than the distribution function.",
+          detail: "क्या वितरण फलन के बजाय सामान्य संचयी वितरण फलन का उपयोग करना है।",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2756,8 +2756,8 @@ module.exports = {
     {
       n: "NEGBINOM_DIST",
       t: 1,
-      d: "Calculates the probability of drawing a certain number of failures before a certain number of successes given a probability of success in independent trials.",
-      a: "Negative binomial distribution probability.",
+      d: "स्वतंत्र परीक्षणों में सफलता की प्रायिकता को देखते हुए, एक निश्चित संख्या में सफलताओं से पहले एक निश्चित संख्या में असफलताएं होने की प्रायिकता परिकलित करता है।",
+      a: "ऋणात्मक द्विपद वितरण प्रायिकता।",
       m: [
         4,
         4
@@ -2765,7 +2765,7 @@ module.exports = {
       p: [
         {
           name: "असफलताओं_की_संख्या",
-          detail: "The number of failures to model.",
+          detail: "मॉडल करने के लिए असफलताओं की संख्या।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2773,7 +2773,7 @@ module.exports = {
         },
         {
           name: "सफलताओं_की_संख्या",
-          detail: "The number of successes to model.",
+          detail: "मॉडल करने के लिए सफलताओं की संख्या।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2781,7 +2781,7 @@ module.exports = {
         },
         {
           name: "सफलता_की_प्रायिकता",
-          detail: "The probability of success in any given trial.",
+          detail: "किसी दिए गए परीक्षण में सफलता की प्रायिकता।",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2789,7 +2789,7 @@ module.exports = {
         },
         {
           name: "संचयी",
-          detail: "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
+          detail: "फलन के स्वरूप का तार्किक मान निर्धारित करता है। \n\nयदि TRUE() है, तो यह संचयी वितरण फलन देता है; \n\nयदि FALSE() है, तो यह प्रायिकता घनत्व फलन देता है।",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2800,8 +2800,8 @@ module.exports = {
     {
       n: "MINA",
       t: 1,
-      d: "Returns the minimum numeric value in a dataset.",
-      a: "Minimum numeric value in a dataset.",
+      d: "किसी डेटासेट में न्यूनतम संख्यात्मक मान देता है।",
+      a: "डेटासेट में न्यूनतम संख्यात्मक मान।",
       m: [
         1,
         255
@@ -2809,7 +2809,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider when calculating the minimum value.",
+          detail: "न्यूनतम मान की गणना करते समय विचार करने के लिए पहला मान या श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2817,7 +2817,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider when calculating the minimum value.",
+          detail: "न्यूनतम मान की गणना करते समय विचार करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2828,8 +2828,8 @@ module.exports = {
     {
       n: "MIN",
       t: 1,
-      d: "Returns the minimum value in a numeric dataset.",
-      a: "Minimum value in a numeric dataset.",
+      d: "किसी संख्यात्मक डेटासेट में न्यूनतम मान देता है।",
+      a: "संख्यात्मक डेटासेट में न्यूनतम मान।",
       m: [
         1,
         255
@@ -2837,7 +2837,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider when calculating the minimum value.",
+          detail: "न्यूनतम मान की गणना करते समय विचार करने के लिए पहला मान या श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2845,7 +2845,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider when calculating the minimum value.",
+          detail: "न्यूनतम मान की गणना करते समय विचार करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2856,8 +2856,8 @@ module.exports = {
     {
       n: "MEDIAN",
       t: 1,
-      d: "Returns the median value in a numeric dataset.",
-      a: "Median value in a numeric dataset.",
+      d: "किसी संख्यात्मक डेटासेट में मध्यिका (मीडियन) मान देता है।",
+      a: "संख्यात्मक डेटासेट में मध्यिका मान।",
       m: [
         1,
         255
@@ -2865,7 +2865,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider when calculating the median value.",
+          detail: "मध्यिका मान की गणना करते समय विचार करने के लिए पहला मान या श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2873,7 +2873,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider when calculating the median value.",
+          detail: "मध्यिका मान की गणना करते समय विचार करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2884,8 +2884,8 @@ module.exports = {
     {
       n: "MAXA",
       t: 1,
-      d: "Returns the maximum numeric value in a dataset.",
-      a: "Maximum numeric value in a dataset.",
+      d: "किसी डेटासेट में अधिकतम संख्यात्मक मान देता है।",
+      a: "डेटासेट में अधिकतम संख्यात्मक मान।",
       m: [
         1,
         255
@@ -2893,7 +2893,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider when calculating the maximum value.",
+          detail: "अधिकतम मान की गणना करते समय विचार करने के लिए पहला मान या श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2901,7 +2901,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider when calculating the maximum value.",
+          detail: "अधिकतम मान की गणना करते समय विचार करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2912,8 +2912,8 @@ module.exports = {
     {
       n: "MAX",
       t: 1,
-      d: "Returns the maximum value in a numeric dataset.",
-      a: "Maximum value in a numeric dataset.",
+      d: "किसी संख्यात्मक डेटासेट में अधिकतम मान देता है।",
+      a: "संख्यात्मक डेटासेट में अधिकतम मान।",
       m: [
         1,
         255
@@ -2921,7 +2921,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value or range to consider when calculating the maximum value.",
+          detail: "अधिकतम मान की गणना करते समय विचार करने के लिए पहला मान या श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2929,7 +2929,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional values or ranges to consider when calculating the maximum value.",
+          detail: "अधिकतम मान की गणना करते समय विचार करने के लिए अतिरिक्त मान या श्रेणियां।",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2940,8 +2940,8 @@ module.exports = {
     {
       n: "LOGNORM_INV",
       t: 1,
-      d: "Returns the value of the inverse log-normal cumulative distribution with given mean and standard deviation at a specified value.",
-      a: "Inverse log-normal cumulative distribution function.",
+      d: "किसी निर्दिष्ट मान पर, दिए गए माध्य और मानक विचलन के साथ प्रतिलोम लॉग-सामान्य संचयी वितरण का मान देता है।",
+      a: "प्रतिलोम लॉग-सामान्य संचयी वितरण फलन।",
       m: [
         3,
         3
@@ -2949,7 +2949,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the inverse log-normal cumulative distribution function.",
+          detail: "प्रतिलोम लॉग-सामान्य संचयी वितरण फलन का इनपुट।",
           example: "0.4",
           require: "m",
           repeat: "n",
@@ -2957,7 +2957,7 @@ module.exports = {
         },
         {
           name: "माध्य",
-          detail: "The mean (mu) of the inverse log-normal cumulative distribution function.",
+          detail: "प्रतिलोम लॉग-सामान्य संचयी वितरण फलन का माध्य (mu)।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2965,7 +2965,7 @@ module.exports = {
         },
         {
           name: "मानक_विचलन",
-          detail: "The standard deviation (sigma) of the inverse log-normal cumulative distribution function.",
+          detail: "प्रतिलोम लॉग-सामान्य संचयी वितरण फलन का मानक विचलन (sigma)।",
           example: "6",
           require: "m",
           repeat: "n",
@@ -2976,8 +2976,8 @@ module.exports = {
     {
       n: "LOGNORM_DIST",
       t: 1,
-      d: "Returns the value of the log-normal cumulative distribution with given mean and standard deviation at a specified value.",
-      a: "Log-normal cumulative distribution probability.",
+      d: "किसी निर्दिष्ट मान पर, दिए गए माध्य और मानक विचलन के साथ लॉग-सामान्य संचयी वितरण का मान देता है।",
+      a: "लॉग-सामान्य संचयी वितरण प्रायिकता।",
       m: [
         4,
         4
@@ -2985,7 +2985,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the log-normal cumulative distribution function.",
+          detail: "लॉग-सामान्य संचयी वितरण फलन का इनपुट।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2993,7 +2993,7 @@ module.exports = {
         },
         {
           name: "माध्य",
-          detail: "The mean (mu) of the log-normal cumulative distribution function.",
+          detail: "लॉग-सामान्य संचयी वितरण फलन का माध्य (mu)।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -3001,7 +3001,7 @@ module.exports = {
         },
         {
           name: "मानक_विचलन",
-          detail: "The standard deviation (sigma) of the log-normal cumulative distribution function.",
+          detail: "लॉग-सामान्य संचयी वितरण फलन का मानक विचलन (sigma)।",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3009,7 +3009,7 @@ module.exports = {
         },
         {
           name: "संचयी",
-          detail: "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
+          detail: "फलन के स्वरूप का तार्किक मान निर्धारित करता है। \n\nयदि TRUE() है, तो यह संचयी वितरण फलन देता है; \n\nयदि FALSE() है, तो यह प्रायिकता घनत्व फलन देता है।",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3020,8 +3020,8 @@ module.exports = {
     {
       n: "Z_TEST",
       t: 1,
-      d: "Returns the one-tailed p-value of a Z-test with standard distribution.",
-      a: "One-tailed p-value of a z-test.",
+      d: "मानक वितरण के साथ Z-परीक्षण का एक-पुच्छीय p-मान देता है।",
+      a: "Z-परीक्षण का एक-पुच्छीय p-मान।",
       m: [
         2,
         3
@@ -3029,7 +3029,7 @@ module.exports = {
       p: [
         {
           name: "डेटा",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3037,7 +3037,7 @@ module.exports = {
         },
         {
           name: "मान",
-          detail: "The test statistic to use in the Z-test.",
+          detail: "Z-परीक्षण में उपयोग किया जाने वाला परीक्षण सांख्यिकी।",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -3045,7 +3045,7 @@ module.exports = {
         },
         {
           name: "मानक_विचलन",
-          detail: "The standard deviation to assume for the Z-test. If this is not provided, the standard deviation of the data will be used.",
+          detail: "Z-परीक्षण के लिए मान लिया जाने वाला मानक विचलन। यदि यह प्रदान नहीं किया गया है, तो डेटा का मानक विचलन उपयोग किया जाएगा।",
           example: "3",
           require: "o",
           repeat: "n",
@@ -3056,8 +3056,8 @@ module.exports = {
     {
       n: "PROB",
       t: 1,
-      d: "Given a set of values and corresponding probabilities, calculates the probability that a value chosen at random falls between two limits.",
-      a: "Probability values lie in a range.",
+      d: "मानों और संगत प्रायिकताओं का एक समुच्चय देखते हुए, यह परिकलित करता है कि यादृच्छिक रूप से चुना गया मान दो सीमाओं के बीच आने की प्रायिकता क्या है।",
+      a: "मानों के किसी श्रेणी में होने की प्रायिकता।",
       m: [
         3,
         4
@@ -3065,7 +3065,7 @@ module.exports = {
       p: [
         {
           name: "डेटा",
-          detail: "Array or range containing the dataset to consider.",
+          detail: "सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A3:A6",
           require: "m",
           repeat: "n",
@@ -3073,7 +3073,7 @@ module.exports = {
         },
         {
           name: "प्रायिकताएं",
-          detail: "Array or range containing probabilities corresponding to `data`.",
+          detail: "सरणी या श्रेणी जिसमें `डेटा` के अनुरूप प्रायिकताएं हैं।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3081,7 +3081,7 @@ module.exports = {
         },
         {
           name: "निचली_सीमा",
-          detail: "The lower bound on the value range for which to calculate the probability.",
+          detail: "मानों की उस श्रेणी की निचली सीमा जिसके लिए प्रायिकता परिकलित करनी है।",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3089,7 +3089,7 @@ module.exports = {
         },
         {
           name: "ऊपरी_सीमा",
-          detail: "The upper bound on the value range for which to calculate the probability.",
+          detail: "मानों की उस श्रेणी की ऊपरी सीमा जिसके लिए प्रायिकता परिकलित करनी है।",
           example: "4",
           require: "o",
           repeat: "n",
@@ -3100,8 +3100,8 @@ module.exports = {
     {
       n: "QUARTILE_EXC",
       t: 1,
-      d: "Returns a value nearest to a specified quartile of a dataset exclusive of 0 and 4.",
-      a: "Value nearest to a specific quartile of a dataset exclusive of 0 and 4.",
+      d: "किसी डेटासेट के निर्दिष्ट चतुर्थक (0 और 4 को छोड़कर) के निकटतम मान देता है।",
+      a: "डेटासेट के किसी चतुर्थक (0 और 4 को छोड़कर) के निकटतम मान।",
       m: [
         2,
         2
@@ -3109,7 +3109,7 @@ module.exports = {
       p: [
         {
           name: "डेटा",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3117,7 +3117,7 @@ module.exports = {
         },
         {
           name: "चतुर्थक_संख्या",
-          detail: "Which quartile to return.",
+          detail: "कौन सा चतुर्थक लौटाना है।",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3128,8 +3128,8 @@ module.exports = {
     {
       n: "QUARTILE_INC",
       t: 1,
-      d: "Returns a value nearest to a specified quartile of a dataset.",
-      a: "Value nearest to a specific quartile of a dataset.",
+      d: "किसी डेटासेट के निर्दिष्ट चतुर्थक के निकटतम मान देता है।",
+      a: "डेटासेट के किसी चतुर्थक के निकटतम मान।",
       m: [
         2,
         2
@@ -3137,7 +3137,7 @@ module.exports = {
       p: [
         {
           name: "डेटा",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटासेट है।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3145,7 +3145,7 @@ module.exports = {
         },
         {
           name: "चतुर्थक_संख्या",
-          detail: "Which quartile value to return.",
+          detail: "कौन सा चतुर्थक मान लौटाना है।",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3156,8 +3156,8 @@ module.exports = {
     {
       n: "POISSON_DIST",
       t: 1,
-      d: "Returns the value of the Poisson distribution function (or Poisson cumulative distribution function) for a specified value and mean.",
-      a: "Poisson distribution function.",
+      d: "किसी निर्दिष्ट मान और माध्य के लिए पॉइसों वितरण फलन (या पॉइसों संचयी वितरण फलन) का मान देता है।",
+      a: "पॉइसों वितरण फलन।",
       m: [
         3,
         3
@@ -3165,7 +3165,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the Poisson distribution function.",
+          detail: "पॉइसों वितरण फलन का इनपुट।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3173,7 +3173,7 @@ module.exports = {
         },
         {
           name: "माध्य",
-          detail: "The mean (mu) of the Poisson distribution function.",
+          detail: "पॉइसों वितरण फलन का माध्य (mu)।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3181,7 +3181,7 @@ module.exports = {
         },
         {
           name: "संचयी",
-          detail: "Whether to use the Poisson cumulative distribution function rather than the distribution function.",
+          detail: "क्या वितरण फलन के बजाय पॉइसों संचयी वितरण फलन का उपयोग करना है।",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3192,8 +3192,8 @@ module.exports = {
     {
       n: "RSQ",
       t: 1,
-      d: "Calculates the square of r, the Pearson product-moment correlation coefficient of a dataset.",
-      a: "Square of the correlation coefficient.",
+      d: "किसी डेटासेट के पियर्सन प्रॉडक्ट-मोमेंट सहसंबंध गुणांक r का वर्ग परिकलित करता है।",
+      a: "सहसंबंध गुणांक का वर्ग।",
       m: [
         2,
         2
@@ -3201,7 +3201,7 @@ module.exports = {
       p: [
         {
           name: "डेटा_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "आश्रित डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3209,7 +3209,7 @@ module.exports = {
         },
         {
           name: "डेटा_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "स्वतंत्र डेटा की सरणी या मैट्रिक्स का प्रतिनिधित्व करने वाली श्रेणी।",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3220,8 +3220,8 @@ module.exports = {
     {
       n: "T_DIST",
       t: 1,
-      d: "Calculates the left tail probability for a Student's t-distribution with a given input (x).",
-      a: "The left-tailed Student's t-distribution",
+      d: "किसी दिए गए इनपुट (x) के लिए स्टूडेंट t-वितरण की बाईं पुच्छ प्रायिकता परिकलित करता है।",
+      a: "बाईं-पुच्छ वाला स्टूडेंट t-वितरण।",
       m: [
         3,
         3
@@ -3229,7 +3229,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the t-distribution function.",
+          detail: "t-वितरण फलन का इनपुट।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3237,7 +3237,7 @@ module.exports = {
         },
         {
           name: "स्वतंत्रता_की_कोटियां",
-          detail: "The number of degrees of freedom.",
+          detail: "स्वतंत्रता कोटियों की संख्या।",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3245,7 +3245,7 @@ module.exports = {
         },
         {
           name: "संचयी",
-          detail: "If cumulative is TRUE, T.DIST returns the cumulative distribution function; if FALSE, it returns the probability density function.",
+          detail: "यदि cumulative TRUE है, तो T.DIST संचयी वितरण फलन देता है; यदि FALSE है, तो यह प्रायिकता घनत्व फलन देता है।",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3256,8 +3256,8 @@ module.exports = {
     {
       n: "T_DIST_2T",
       t: 1,
-      d: "Calculates the probability for two tailed Student's t-distribution with a given input (x).",
-      a: "The two tailed Student's t-distribution",
+      d: "किसी दिए गए इनपुट (x) के लिए द्वि-पुच्छीय स्टूडेंट t-वितरण की प्रायिकता परिकलित करता है।",
+      a: "द्वि-पुच्छीय स्टूडेंट t-वितरण।",
       m: [
         2,
         2
@@ -3265,7 +3265,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the t-distribution function.",
+          detail: "t-वितरण फलन का इनपुट।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3273,7 +3273,7 @@ module.exports = {
         },
         {
           name: "स्वतंत्रता_की_कोटियां",
-          detail: "The number of degrees of freedom.",
+          detail: "स्वतंत्रता कोटियों की संख्या।",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3284,8 +3284,8 @@ module.exports = {
     {
       n: "T_DIST_RT",
       t: 1,
-      d: "Calculates the right tail probability for a Student's t-distribution with a given input (x).",
-      a: "The right-tailed Student's t-distribution",
+      d: "किसी दिए गए इनपुट (x) के लिए स्टूडेंट t-वितरण की दाईं पुच्छ प्रायिकता परिकलित करता है।",
+      a: "दाईं-पुच्छ वाला स्टूडेंट t-वितरण।",
       m: [
         2,
         2
@@ -3293,7 +3293,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "The input to the t-distribution function.",
+          detail: "t-वितरण फलन का इनपुट।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3301,7 +3301,7 @@ module.exports = {
         },
         {
           name: "स्वतंत्रता_की_कोटियां",
-          detail: "The number of degrees of freedom.",
+          detail: "स्वतंत्रता कोटियों की संख्या।",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3312,7 +3312,7 @@ module.exports = {
     {
       n: "T_INV",
       t: 1,
-      d: "Calculates the negative inverse of the one-tailed TDIST function.",
+      d: "एक-पुच्छीय TDIST फलन का ऋणात्मक प्रतिलोम परिकलित करता है।",
       a: "T.INV",
       m: [
         2,
@@ -3321,7 +3321,7 @@ module.exports = {
       p: [
         {
           name: "प्रायिकता",
-          detail: "The probability associated with the two-tailed t-distribution.",
+          detail: "द्वि-पुच्छीय t-वितरण से संबद्ध प्रायिकता।",
           example: "0.35",
           require: "m",
           repeat: "n",
@@ -3329,7 +3329,7 @@ module.exports = {
         },
         {
           name: "स्वतंत्रता_की_कोटियां",
-          detail: "The number of degrees of freedom.",
+          detail: "स्वतंत्रता कोटियों की संख्या।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3340,7 +3340,7 @@ module.exports = {
     {
       n: "T_INV_2T",
       t: 1,
-      d: "Calculates the inverse of the two-tailed TDIST function.",
+      d: "द्वि-पुच्छीय TDIST फलन का प्रतिलोम परिकलित करता है।",
       a: "T.INV.2T",
       m: [
         2,
@@ -3349,7 +3349,7 @@ module.exports = {
       p: [
         {
           name: "प्रायिकता",
-          detail: "The probability associated with the two-tailed t-distribution.",
+          detail: "द्वि-पुच्छीय t-वितरण से संबद्ध प्रायिकता।",
           example: "0.35",
           require: "m",
           repeat: "n",
@@ -3357,7 +3357,7 @@ module.exports = {
         },
         {
           name: "स्वतंत्रता_की_कोटियां",
-          detail: "The number of degrees of freedom.",
+          detail: "स्वतंत्रता कोटियों की संख्या।",
           example: "1",
           require: "m",
           repeat: "n",
