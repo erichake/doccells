@@ -9743,8 +9743,8 @@ module.exports = {
     {
       n: "TO_TEXT",
       t: 16,
-      d: "Descrizione della funzione TO_TEXT.",
-      a: "Sintesi della funzione TO_TEXT.",
+      d: "Converte un valore numerico specificato in un valore di testo.",
+      a: "Converte un valore numerico specificato in un valore di testo.",
       m: [
         1,
         1
@@ -9752,7 +9752,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione TO_TEXT.",
+          detail: "L'argomento o il riferimento a una cella da convertire in testo.",
           example: "24",
           require: "m",
           repeat: "n",
@@ -9763,8 +9763,8 @@ module.exports = {
     {
       n: "TO_DOLLARS",
       t: 16,
-      d: "Descrizione della funzione TO_DOLLARS.",
-      a: "Sintesi della funzione TO_DOLLARS.",
+      d: "Converte un numero specificato in un valore in dollari.",
+      a: "Converte un numero specificato in un valore in dollari.",
       m: [
         1,
         1
@@ -9772,7 +9772,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione TO_DOLLARS.",
+          detail: "L'argomento o il riferimento a una cella da convertire in un valore in dollari.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9783,8 +9783,8 @@ module.exports = {
     {
       n: "TO_PERCENT",
       t: 16,
-      d: "Descrizione della funzione TO_PERCENT.",
-      a: "Sintesi della funzione TO_PERCENT.",
+      d: "Converte un numero specificato in una percentuale.",
+      a: "Converte un numero specificato in una percentuale.",
       m: [
         1,
         1
@@ -9792,7 +9792,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione TO_PERCENT.",
+          detail: "L'argomento o il riferimento a una cella da convertire in una percentuale.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9803,8 +9803,8 @@ module.exports = {
     {
       n: "DGET",
       t: 17,
-      d: "Descrizione della funzione DGET.",
-      a: "Sintesi della funzione DGET.",
+      d: "Restituisce un singolo valore da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Valore singolo da un intervallo simile a una tabella.",
       m: [
         3,
         3
@@ -9812,7 +9812,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DGET.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9820,7 +9820,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DGET.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9828,7 +9828,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DGET.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9839,8 +9839,8 @@ module.exports = {
     {
       n: "DMAX",
       t: 17,
-      d: "Descrizione della funzione DMAX.",
-      a: "Sintesi della funzione DMAX.",
+      d: "Restituisce il valore più grande selezionato da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Massimo dei valori di un intervallo simile a una tabella.",
       m: [
         3,
         3
@@ -9848,7 +9848,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DMAX.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9856,7 +9856,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DMAX.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9864,7 +9864,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DMAX.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9875,8 +9875,8 @@ module.exports = {
     {
       n: "DMIN",
       t: 17,
-      d: "Descrizione della funzione DMIN.",
-      a: "Sintesi della funzione DMIN.",
+      d: "Restituisce il valore più piccolo selezionato da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Minimo dei valori di un intervallo simile a una tabella.",
       m: [
         3,
         3
@@ -9884,7 +9884,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DMIN.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9892,7 +9892,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DMIN.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9900,7 +9900,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DMIN.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9911,8 +9911,8 @@ module.exports = {
     {
       n: "DAVERAGE",
       t: 17,
-      d: "Descrizione della funzione DAVERAGE.",
-      a: "Sintesi della funzione DAVERAGE.",
+      d: "Restituisce la media di un insieme di valori selezionati da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Media di un insieme di valori di un intervallo simile a una tabella.",
       m: [
         3,
         3
@@ -9920,7 +9920,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DAVERAGE.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9928,7 +9928,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DAVERAGE.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9936,7 +9936,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DAVERAGE.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9947,8 +9947,8 @@ module.exports = {
     {
       n: "DCOUNT",
       t: 17,
-      d: "Descrizione della funzione DCOUNT.",
-      a: "Sintesi della funzione DCOUNT.",
+      d: "Conta i valori numerici selezionati da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Conta i valori di un intervallo simile a una tabella.",
       m: [
         3,
         3
@@ -9956,7 +9956,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DCOUNT.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9964,7 +9964,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DCOUNT.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9972,7 +9972,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DCOUNT.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9983,8 +9983,8 @@ module.exports = {
     {
       n: "DCOUNTA",
       t: 17,
-      d: "Descrizione della funzione DCOUNTA.",
-      a: "Sintesi della funzione DCOUNTA.",
+      d: "Conta i valori, incluso il testo, selezionati da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Conta i valori e il testo di un intervallo simile a una tabella.",
       m: [
         3,
         3
@@ -9992,7 +9992,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DCOUNTA.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10000,7 +10000,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DCOUNTA.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10008,7 +10008,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DCOUNTA.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10019,8 +10019,8 @@ module.exports = {
     {
       n: "DPRODUCT",
       t: 17,
-      d: "Descrizione della funzione DPRODUCT.",
-      a: "Sintesi della funzione DPRODUCT.",
+      d: "Restituisce il prodotto di valori selezionati da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Prodotto di valori di un intervallo simile a una tabella.",
       m: [
         3,
         3
@@ -10028,7 +10028,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DPRODUCT.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10036,7 +10036,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DPRODUCT.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10044,7 +10044,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DPRODUCT.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10055,8 +10055,8 @@ module.exports = {
     {
       n: "DSTDEV",
       t: 17,
-      d: "Descrizione della funzione DSTDEV.",
-      a: "Sintesi della funzione DSTDEV.",
+      d: "Restituisce la deviazione standard di un campione selezionato da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Deviazione standard di un campione di una tabella.",
       m: [
         3,
         3
@@ -10064,7 +10064,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DSTDEV.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10072,7 +10072,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DSTDEV.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10080,7 +10080,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DSTDEV.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10091,8 +10091,8 @@ module.exports = {
     {
       n: "DSTDEVP",
       t: 17,
-      d: "Descrizione della funzione DSTDEVP.",
-      a: "Sintesi della funzione DSTDEVP.",
+      d: "Restituisce la deviazione standard di un'intera popolazione selezionata da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Deviazione standard di un'intera popolazione di una tabella.",
       m: [
         3,
         3
@@ -10100,7 +10100,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DSTDEVP.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10108,7 +10108,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DSTDEVP.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10116,7 +10116,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DSTDEVP.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10127,8 +10127,8 @@ module.exports = {
     {
       n: "DSUM",
       t: 17,
-      d: "Descrizione della funzione DSUM.",
-      a: "Sintesi della funzione DSUM.",
+      d: "Restituisce la somma di valori selezionati da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Somma di valori di un intervallo simile a una tabella.",
       m: [
         3,
         3
@@ -10136,7 +10136,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DSUM.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10144,7 +10144,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DSUM.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10152,7 +10152,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DSUM.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10163,8 +10163,8 @@ module.exports = {
     {
       n: "DVAR",
       t: 17,
-      d: "Descrizione della funzione DVAR.",
-      a: "Sintesi della funzione DVAR.",
+      d: "Restituisce la varianza di un campione selezionato da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Varianza di un campione di un intervallo simile a una tabella.",
       m: [
         3,
         3
@@ -10172,7 +10172,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DVAR.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10180,7 +10180,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DVAR.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10188,7 +10188,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DVAR.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10199,8 +10199,8 @@ module.exports = {
     {
       n: "DVARP",
       t: 17,
-      d: "Descrizione della funzione DVARP.",
-      a: "Sintesi della funzione DVARP.",
+      d: "Restituisce la varianza di un'intera popolazione selezionata da un array o intervallo simile a una tabella di un database, usando una query in stile SQL.",
+      a: "Varianza di una popolazione di un intervallo simile a una tabella.",
       m: [
         3,
         3
@@ -10208,7 +10208,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parametro `database` della funzione DVARP.",
+          detail: "L'array o l'intervallo contenente i dati da considerare, strutturato in modo che la prima riga contenga le etichette per i valori di ciascuna colonna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10216,7 +10216,7 @@ module.exports = {
         },
         {
           name: "campo",
-          detail: "Parametro `campo` della funzione DVARP.",
+          detail: "Indica quale colonna in `database` contiene i valori da estrarre ed elaborare.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10224,7 +10224,7 @@ module.exports = {
         },
         {
           name: "criteri",
-          detail: "Parametro `criteri` della funzione DVARP.",
+          detail: "Un array o intervallo con zero o più criteri in base ai quali filtrare i valori di `database` prima dell'elaborazione.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10235,8 +10235,8 @@ module.exports = {
     {
       n: "AGE_BY_IDCARD",
       t: "3",
-      d: "Descrizione della funzione AGE_BY_IDCARD.",
-      a: "Sintesi della funzione AGE_BY_IDCARD.",
+      d: "Calcola l'età in base al numero della carta d'identità cinese. Supporta 15 o 18 cifre.",
+      a: "Ottiene l'età in base al numero della carta d'identità.",
       m: [
         1,
         2
@@ -10245,7 +10245,7 @@ module.exports = {
         {
           name: "Numero identificativo",
           example: "A1",
-          detail: "Parametro `Numero identificativo` della funzione AGE_BY_IDCARD.",
+          detail: "Numero identificativo a 15 o 18 cifre, o intervallo.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10253,7 +10253,7 @@ module.exports = {
         {
           name: "Scadenza",
           example: "\"2017-10-01\"",
-          detail: "Parametro `Scadenza` della funzione AGE_BY_IDCARD.",
+          detail: "La data di riferimento per il calcolo dell'età, o intervallo. Predefinito è il giorno corrente.",
           require: "o",
           repeat: "n",
           type: "rangedatetime"
@@ -10263,8 +10263,8 @@ module.exports = {
     {
       n: "SEX_BY_IDCARD",
       t: "3",
-      d: "Descrizione della funzione SEX_BY_IDCARD.",
-      a: "Sintesi della funzione SEX_BY_IDCARD.",
+      d: "Calcola il sesso in base al numero della carta d'identità cinese. Supporta 15 o 18 cifre.",
+      a: "Ottiene il sesso in base al numero della carta d'identità.",
       m: [
         1,
         1
@@ -10273,7 +10273,7 @@ module.exports = {
         {
           name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `Numero identificativo` della funzione SEX_BY_IDCARD.",
+          detail: "Numero identificativo a 15 o 18 cifre, o intervallo.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10283,8 +10283,8 @@ module.exports = {
     {
       n: "BIRTHDAY_BY_IDCARD",
       t: "3",
-      d: "Descrizione della funzione BIRTHDAY_BY_IDCARD.",
-      a: "Sintesi della funzione BIRTHDAY_BY_IDCARD.",
+      d: "Calcola la data di nascita in base al numero della carta d'identità cinese. Supporta 15 o 18 cifre.",
+      a: "Ottiene la data di nascita in base al numero della carta d'identità.",
       m: [
         1,
         2
@@ -10293,7 +10293,7 @@ module.exports = {
         {
           name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `Numero identificativo` della funzione BIRTHDAY_BY_IDCARD.",
+          detail: "Numero identificativo a 15 o 18 cifre, o intervallo.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10301,7 +10301,7 @@ module.exports = {
         {
           name: "Formato data di nascita",
           example: "0",
-          detail: "Parametro `Formato data di nascita` della funzione BIRTHDAY_BY_IDCARD.",
+          detail: "Tipo di data, predefinito: 0:[1900/01/01], 1:[1900-01-01], 2:[1 gennaio 1900].",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10311,8 +10311,8 @@ module.exports = {
     {
       n: "PROVINCE_BY_IDCARD",
       t: "3",
-      d: "Descrizione della funzione PROVINCE_BY_IDCARD.",
-      a: "Sintesi della funzione PROVINCE_BY_IDCARD.",
+      d: "Calcola la provincia di nascita in base al numero della carta d'identità cinese. Supporta 15 o 18 cifre.",
+      a: "Ottiene la provincia di nascita in base al numero della carta d'identità.",
       m: [
         1,
         1
@@ -10321,7 +10321,7 @@ module.exports = {
         {
           name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `Numero identificativo` della funzione PROVINCE_BY_IDCARD.",
+          detail: "Numero identificativo a 15 o 18 cifre, o intervallo.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10331,8 +10331,8 @@ module.exports = {
     {
       n: "CITY_BY_IDCARD",
       t: "3",
-      d: "Descrizione della funzione CITY_BY_IDCARD.",
-      a: "Sintesi della funzione CITY_BY_IDCARD.",
+      d: "Calcola la città di nascita in base al numero della carta d'identità cinese. Supporta 15 o 18 cifre.",
+      a: "Ottiene la città di nascita in base al numero della carta d'identità.",
       m: [
         1,
         1
@@ -10341,7 +10341,7 @@ module.exports = {
         {
           name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `Numero identificativo` della funzione CITY_BY_IDCARD.",
+          detail: "Numero identificativo a 15 o 18 cifre, o intervallo.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10351,8 +10351,8 @@ module.exports = {
     {
       n: "STAR_BY_IDCARD",
       t: "3",
-      d: "Descrizione della funzione STAR_BY_IDCARD.",
-      a: "Sintesi della funzione STAR_BY_IDCARD.",
+      d: "Calcola il segno zodiacale in base al numero della carta d'identità cinese. Supporta 15 o 18 cifre.",
+      a: "Ottiene il segno zodiacale in base al numero della carta d'identità.",
       m: [
         1,
         1
@@ -10361,7 +10361,7 @@ module.exports = {
         {
           name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `Numero identificativo` della funzione STAR_BY_IDCARD.",
+          detail: "Numero identificativo a 15 o 18 cifre, o intervallo.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10371,8 +10371,8 @@ module.exports = {
     {
       n: "ANIMAL_BY_IDCARD",
       t: "3",
-      d: "Descrizione della funzione ANIMAL_BY_IDCARD.",
-      a: "Sintesi della funzione ANIMAL_BY_IDCARD.",
+      d: "Calcola il segno zodiacale cinese (Topo, Bue, Tigre, Coniglio...) in base al numero della carta d'identità cinese. Supporta 15 o 18 cifre.",
+      a: "Ottiene il segno zodiacale cinese in base al numero della carta d'identità.",
       m: [
         1,
         1
@@ -10381,7 +10381,7 @@ module.exports = {
         {
           name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `Numero identificativo` della funzione ANIMAL_BY_IDCARD.",
+          detail: "Numero identificativo a 15 o 18 cifre, o intervallo.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10391,8 +10391,8 @@ module.exports = {
     {
       n: "ISIDCARD",
       t: "3",
-      d: "Descrizione della funzione ISIDCARD.",
-      a: "Sintesi della funzione ISIDCARD.",
+      d: "Verifica se il formato del numero della carta d'identità è corretto. Supporta 15 o 18 cifre.",
+      a: "Verifica la correttezza del formato del numero della carta d'identità.",
       m: [
         1,
         1
@@ -10401,7 +10401,7 @@ module.exports = {
         {
           name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `Numero identificativo` della funzione ISIDCARD.",
+          detail: "Numero identificativo a 15 o 18 cifre, o intervallo.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10411,8 +10411,8 @@ module.exports = {
     {
       n: "DM_TEXT_CUTWORD",
       t: "4",
-      d: "Descrizione della funzione DM_TEXT_CUTWORD.",
-      a: "Sintesi della funzione DM_TEXT_CUTWORD.",
+      d: "Segmentazione del testo. Suddivide una serie di parole in una serie di singole parole.",
+      a: "Segmentazione del testo cinese.",
       m: [
         1,
         2
@@ -10421,7 +10421,7 @@ module.exports = {
         {
           name: "Testo",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parametro `Testo` della funzione DM_TEXT_CUTWORD.",
+          detail: "Qualsiasi testo che richieda la segmentazione delle parole.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10429,7 +10429,7 @@ module.exports = {
         {
           name: "Modalità di segmentazione parole",
           example: "0",
-          detail: "Parametro `Modalità di segmentazione parole` della funzione DM_TEXT_CUTWORD.",
+          detail: "Predefinito è 0 [modalità precisione], 1 [modalità completa], 2 [modalità motore di ricerca].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10439,8 +10439,8 @@ module.exports = {
     {
       n: "DM_TEXT_TFIDF",
       t: "4",
-      d: "Descrizione della funzione DM_TEXT_TFIDF.",
-      a: "Sintesi della funzione DM_TEXT_TFIDF.",
+      d: "Usa l'algoritmo TF-IDF per l'estrazione di parole chiave. Rileva le parole chiave da una serie di testo.",
+      a: "Rilevamento di parole chiave TF-IDF.",
       m: [
         1,
         3
@@ -10449,7 +10449,7 @@ module.exports = {
         {
           name: "Testo",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parametro `Testo` della funzione DM_TEXT_TFIDF.",
+          detail: "Qualsiasi testo che richieda la segmentazione delle parole.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10457,7 +10457,7 @@ module.exports = {
         {
           name: "Numero di parole chiave",
           example: "20",
-          detail: "Parametro `Numero di parole chiave` della funzione DM_TEXT_TFIDF.",
+          detail: "Il numero di parole chiave restituite dall'algoritmo, predefinito 20.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10465,7 +10465,7 @@ module.exports = {
         {
           name: "Corpus",
           example: "1",
-          detail: "Parametro `Corpus` della funzione DM_TEXT_TFIDF.",
+          detail: "Seleziona un corpus in un ambito specifico, predefinito 0 [generale], 1 [finanziario], 2 [medico].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10475,8 +10475,8 @@ module.exports = {
     {
       n: "DM_TEXT_TEXTRANK",
       t: "4",
-      d: "Descrizione della funzione DM_TEXT_TEXTRANK.",
-      a: "Sintesi della funzione DM_TEXT_TEXTRANK.",
+      d: "Usa l'algoritmo TextRank per l'estrazione di parole chiave. Rileva le parole chiave da una serie di testo.",
+      a: "Rilevamento di parole chiave TextRank.",
       m: [
         1,
         3
@@ -10485,7 +10485,7 @@ module.exports = {
         {
           name: "Testo",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parametro `Testo` della funzione DM_TEXT_TEXTRANK.",
+          detail: "Qualsiasi testo che richieda la segmentazione delle parole.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10493,7 +10493,7 @@ module.exports = {
         {
           name: "Numero di parole chiave",
           example: "20",
-          detail: "Parametro `Numero di parole chiave` della funzione DM_TEXT_TEXTRANK.",
+          detail: "Il numero di parole chiave restituite dall'algoritmo, predefinito 20.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10501,7 +10501,7 @@ module.exports = {
         {
           name: "Corpus",
           example: "1",
-          detail: "Parametro `Corpus` della funzione DM_TEXT_TEXTRANK.",
+          detail: "Seleziona un corpus in un ambito specifico, predefinito 0 [generale], 1 [finanziario], 2 [medico].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10511,8 +10511,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_CLOSE",
       t: "5",
-      d: "Descrizione della funzione DATA_CN_STOCK_CLOSE.",
-      a: "Sintesi della funzione DATA_CN_STOCK_CLOSE.",
+      d: "Restituisce il prezzo di chiusura corrispondente delle azioni A in base al codice azionario e alla data.",
+      a: "Restituisce il prezzo di chiusura di un'azione.",
       m: [
         1,
         3
@@ -10521,7 +10521,7 @@ module.exports = {
         {
           name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_CLOSE.",
+          detail: "Codice azionario a 6 cifre, obbligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10529,7 +10529,7 @@ module.exports = {
         {
           name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Data` della funzione DATA_CN_STOCK_CLOSE.",
+          detail: "Il giorno di negoziazione dell'azione, predefinito è l'ultimo giorno di negoziazione.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10537,7 +10537,7 @@ module.exports = {
         {
           name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_CLOSE.",
+          detail: "Seleziona il tipo di rettifica del prezzo dell'azione, predefinito 0 [rettifica anteriore], 1 [prezzo originale], 2 [rettifica posteriore].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10547,8 +10547,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_OPEN",
       t: "5",
-      d: "Descrizione della funzione DATA_CN_STOCK_OPEN.",
-      a: "Sintesi della funzione DATA_CN_STOCK_OPEN.",
+      d: "Restituisce il prezzo di apertura dell'azione in base al codice azionario e alla data.",
+      a: "Restituisce il prezzo di apertura delle azioni A.",
       m: [
         1,
         3
@@ -10557,7 +10557,7 @@ module.exports = {
         {
           name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_OPEN.",
+          detail: "Codice azionario a 6 cifre, obbligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10565,7 +10565,7 @@ module.exports = {
         {
           name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Data` della funzione DATA_CN_STOCK_OPEN.",
+          detail: "Il giorno di negoziazione dell'azione, predefinito è l'ultimo giorno di negoziazione.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10573,7 +10573,7 @@ module.exports = {
         {
           name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_OPEN.",
+          detail: "Seleziona il tipo di rettifica del prezzo dell'azione, predefinito 0 [rettifica anteriore], 1 [prezzo originale], 2 [rettifica posteriore].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10583,8 +10583,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_MAX",
       t: "5",
-      d: "Descrizione della funzione DATA_CN_STOCK_MAX.",
-      a: "Sintesi della funzione DATA_CN_STOCK_MAX.",
+      d: "Restituisce il prezzo più alto dell'azione in base al codice azionario e alla data.",
+      a: "Restituisce il prezzo più alto di un'azione.",
       m: [
         1,
         3
@@ -10593,7 +10593,7 @@ module.exports = {
         {
           name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_MAX.",
+          detail: "Codice azionario a 6 cifre, obbligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10601,7 +10601,7 @@ module.exports = {
         {
           name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Data` della funzione DATA_CN_STOCK_MAX.",
+          detail: "Il giorno di negoziazione dell'azione, predefinito è l'ultimo giorno di negoziazione.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10609,7 +10609,7 @@ module.exports = {
         {
           name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_MAX.",
+          detail: "Seleziona il tipo di rettifica del prezzo dell'azione, predefinito 0 [rettifica anteriore], 1 [prezzo originale], 2 [rettifica posteriore].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10619,8 +10619,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_MIN",
       t: "5",
-      d: "Descrizione della funzione DATA_CN_STOCK_MIN.",
-      a: "Sintesi della funzione DATA_CN_STOCK_MIN.",
+      d: "Restituisce il prezzo più basso dell'azione in base al codice azionario e alla data.",
+      a: "Restituisce il prezzo più basso di un'azione.",
       m: [
         1,
         3
@@ -10629,7 +10629,7 @@ module.exports = {
         {
           name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_MIN.",
+          detail: "Codice azionario a 6 cifre, obbligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10637,7 +10637,7 @@ module.exports = {
         {
           name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Data` della funzione DATA_CN_STOCK_MIN.",
+          detail: "Il giorno di negoziazione dell'azione, predefinito è l'ultimo giorno di negoziazione.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10645,7 +10645,7 @@ module.exports = {
         {
           name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_MIN.",
+          detail: "Seleziona il tipo di rettifica del prezzo dell'azione, predefinito 0 [rettifica anteriore], 1 [prezzo originale], 2 [rettifica posteriore].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10655,8 +10655,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_VOLUMN",
       t: "5",
-      d: "Descrizione della funzione DATA_CN_STOCK_VOLUMN.",
-      a: "Sintesi della funzione DATA_CN_STOCK_VOLUMN.",
+      d: "Restituisce il volume di scambi corrispondente delle azioni A in base al codice azionario e alla data.",
+      a: "Restituisce il volume di scambi corrispondente delle azioni A.",
       m: [
         1,
         3
@@ -10665,7 +10665,7 @@ module.exports = {
         {
           name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_VOLUMN.",
+          detail: "Codice azionario a 6 cifre, obbligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10673,7 +10673,7 @@ module.exports = {
         {
           name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Data` della funzione DATA_CN_STOCK_VOLUMN.",
+          detail: "Il giorno di negoziazione dell'azione, predefinito è l'ultimo giorno di negoziazione.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10681,7 +10681,7 @@ module.exports = {
         {
           name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_VOLUMN.",
+          detail: "Seleziona il tipo di rettifica del prezzo dell'azione, predefinito 0 [rettifica anteriore], 1 [prezzo originale], 2 [rettifica posteriore].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10691,8 +10691,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_AMOUNT",
       t: "5",
-      d: "Descrizione della funzione DATA_CN_STOCK_AMOUNT.",
-      a: "Sintesi della funzione DATA_CN_STOCK_AMOUNT.",
+      d: "Restituisce il fatturato di scambio corrispondente delle azioni A in base al codice azionario e alla data.",
+      a: "Restituisce il fatturato di scambio corrispondente delle azioni A.",
       m: [
         1,
         3
@@ -10701,7 +10701,7 @@ module.exports = {
         {
           name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_AMOUNT.",
+          detail: "Codice azionario a 6 cifre, obbligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10709,7 +10709,7 @@ module.exports = {
         {
           name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Data` della funzione DATA_CN_STOCK_AMOUNT.",
+          detail: "Il giorno di negoziazione dell'azione, predefinito è l'ultimo giorno di negoziazione.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10717,7 +10717,7 @@ module.exports = {
         {
           name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_AMOUNT.",
+          detail: "Seleziona il tipo di rettifica del prezzo dell'azione, predefinito 0 [rettifica anteriore], 1 [prezzo originale], 2 [rettifica posteriore].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10727,8 +10727,8 @@ module.exports = {
     {
       n: "ISDATE",
       t: "6",
-      d: "Descrizione della funzione ISDATE.",
-      a: "Sintesi della funzione ISDATE.",
+      d: "Restituisce se un valore è una data.",
+      a: "Se un valore è una data.",
       m: [
         1,
         1
@@ -10737,7 +10737,7 @@ module.exports = {
         {
           name: "valore",
           example: "\"1990-01-01\"",
-          detail: "Parametro `valore` della funzione ISDATE.",
+          detail: "Il valore da verificare come data.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10747,8 +10747,8 @@ module.exports = {
     {
       n: "LINESPLINES",
       t: "3",
-      d: "Descrizione della funzione LINESPLINES.",
-      a: "Sintesi della funzione LINESPLINES.",
+      d: "Genera sparkline incorporate nella cella per rappresentare la tendenza continua dei dati.",
+      a: "Genera un grafico sparkline a linee.",
       m: [
         1,
         8
@@ -10757,7 +10757,7 @@ module.exports = {
         {
           name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Intervallo` della funzione LINESPLINES.",
+          detail: "Intervallo. I valori possono essere calcolati in modo efficace, ad es. A1:A20, {1,2,3,4,5} ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10765,7 +10765,7 @@ module.exports = {
         {
           name: "Colore della linea",
           example: "#2ec7c9",
-          detail: "Parametro `Colore della linea` della funzione LINESPLINES.",
+          detail: "Il colore della linea del grafico a linee può essere l'intervallo A1, un valore di indice della tavolozza dei colori o un valore di colore specifico. Impostare su 0 o falso per non visualizzarlo. Supporta regx, rgb, rgba ecc. Predefinito #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10773,7 +10773,7 @@ module.exports = {
         {
           name: "Spessore linea",
           example: "1",
-          detail: "Parametro `Spessore linea` della funzione LINESPLINES.",
+          detail: "Spessore della linea del grafico a linee, predefinito 1px.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10781,7 +10781,7 @@ module.exports = {
         {
           name: "Linea ausiliaria",
           example: "avg",
-          detail: "Parametro `Linea ausiliaria` della funzione LINESPLINES.",
+          detail: "Una linea orizzontale che può essere minimo, massimo, media, mediana, intervallo o un valore personalizzato, predefinito 0 nessuna.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10789,7 +10789,7 @@ module.exports = {
         {
           name: "Colore della linea ausiliaria",
           example: "#000",
-          detail: "Parametro `Colore della linea ausiliaria` della funzione LINESPLINES.",
+          detail: "Impostazione del colore della linea ausiliaria, stessa configurazione del colore della linea, predefinito #000.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10797,7 +10797,7 @@ module.exports = {
         {
           name: "Indicatore massimo",
           example: "#fc5c5c",
-          detail: "Parametro `Indicatore massimo` della funzione LINESPLINES.",
+          detail: "Contrassegna il valore massimo del grafico a linee, stessa configurazione del colore della linea, predefinito 0 non visualizzato.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10805,7 +10805,7 @@ module.exports = {
         {
           name: "Indicatore minimo",
           example: "#fc5c5c",
-          detail: "Parametro `Indicatore minimo` della funzione LINESPLINES.",
+          detail: "Contrassegna il valore minimo del grafico a linee, stessa configurazione del colore della linea, predefinito 0 non visualizzato.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10813,7 +10813,7 @@ module.exports = {
         {
           name: "Dimensione indicatore",
           example: "1.5",
-          detail: "Parametro `Dimensione indicatore` della funzione LINESPLINES.",
+          detail: "Impostazione della dimensione dell'indicatore massimo e minimo, predefinito 1,5.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10823,8 +10823,8 @@ module.exports = {
     {
       n: "AREASPLINES",
       t: "3",
-      d: "Descrizione della funzione AREASPLINES.",
-      a: "Sintesi della funzione AREASPLINES.",
+      d: "Genera sparkline incorporate in un grafico ad area della cella, generalmente usate per rappresentare la tendenza cumulativa continua del valore dei dati.",
+      a: "Genera un grafico sparkline ad area.",
       m: [
         1,
         5
@@ -10833,7 +10833,7 @@ module.exports = {
         {
           name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Intervallo` della funzione AREASPLINES.",
+          detail: "Intervallo. I valori possono essere calcolati in modo efficace, ad es. A1:A20, {1,2,3,4,5} ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10841,7 +10841,7 @@ module.exports = {
         {
           name: "Colore della linea",
           example: "#2ec7c9",
-          detail: "Parametro `Colore della linea` della funzione AREASPLINES.",
+          detail: "Il colore della linea del grafico a linee può essere l'intervallo A1, un valore di indice della tavolozza dei colori o un valore di colore specifico. Impostare su 0 o falso per non visualizzarlo. Supporta regx, rgb, rgba ecc. Predefinito #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10849,7 +10849,7 @@ module.exports = {
         {
           name: "Colore di riempimento",
           example: "#CCF3F4",
-          detail: "Parametro `Colore di riempimento` della funzione AREASPLINES.",
+          detail: "Forma un grafico ad area, stessa configurazione del colore della linea, predefinito 0 non visualizzato.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10857,7 +10857,7 @@ module.exports = {
         {
           name: "Spessore linea",
           example: "1",
-          detail: "Parametro `Spessore linea` della funzione AREASPLINES.",
+          detail: "Spessore della linea del grafico a linee, predefinito 1px.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10865,7 +10865,7 @@ module.exports = {
         {
           name: "Linea ausiliaria",
           example: "avg",
-          detail: "Parametro `Linea ausiliaria` della funzione AREASPLINES.",
+          detail: "Una linea orizzontale che può essere minimo, massimo, media, mediana, intervallo o un valore personalizzato, predefinito 0 nessuna.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10873,7 +10873,7 @@ module.exports = {
         {
           name: "Colore della linea ausiliaria",
           example: "#000",
-          detail: "Parametro `Colore della linea ausiliaria` della funzione AREASPLINES.",
+          detail: "Impostazione del colore della linea ausiliaria, stessa configurazione del colore della linea, predefinito #000.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10883,8 +10883,8 @@ module.exports = {
     {
       n: "COLUMNSPLINES",
       t: "3",
-      d: "Descrizione della funzione COLUMNSPLINES.",
-      a: "Sintesi della funzione COLUMNSPLINES.",
+      d: "Genera sparkline incorporate in un istogramma verticale di celle, generalmente usate per rappresentare la grandezza di dati discreti.",
+      a: "Genera un istogramma sparkline verticale.",
       m: [
         1,
         6
@@ -10893,7 +10893,7 @@ module.exports = {
         {
           name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Intervallo` della funzione COLUMNSPLINES.",
+          detail: "Intervallo. I valori possono essere calcolati in modo efficace, ad es. A1:A20, {1,2,3,4,5} ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10901,7 +10901,7 @@ module.exports = {
         {
           name: "Intervallo barre",
           example: "1",
-          detail: "Parametro `Intervallo barre` della funzione COLUMNSPLINES.",
+          detail: "La distanza tra le barre, predefinito 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10909,7 +10909,7 @@ module.exports = {
         {
           name: "Colore della barra",
           example: "#fc5c5c",
-          detail: "Parametro `Colore della barra` della funzione COLUMNSPLINES.",
+          detail: "Il colore della linea del grafico a linee può essere l'intervallo A1, un valore di indice della tavolozza dei colori o un valore di colore specifico. Impostare su 0 o falso per non visualizzarlo. Supporta regx, rgb, rgba ecc. Predefinito #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10917,7 +10917,7 @@ module.exports = {
         {
           name: "Colore barre negative",
           example: "#97b552",
-          detail: "Parametro `Colore barre negative` della funzione COLUMNSPLINES.",
+          detail: "Impostazione del colore per le barre negative, rappresenta il colore dei valori negativi, stessa configurazione del colore della barra, predefinito #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10925,7 +10925,7 @@ module.exports = {
         {
           name: "Massimo",
           example: "100",
-          detail: "Parametro `Massimo` della funzione COLUMNSPLINES.",
+          detail: "Il valore massimo dell'istogramma, serve per standardizzare la lunghezza dell'istogramma, predefinito calcolo automatico falso, auto, nullo.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10933,7 +10933,7 @@ module.exports = {
         {
           name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Tavolozza colori` della funzione COLUMNSPLINES.",
+          detail: "La tavolozza dei colori può impostare individualmente il colore di ogni barra, è possibile impostare più valori, e sono supportati due formati: 1 colore come #000, che significa che il colore della prima barra è nero; 2 intervallo di valori: colore, ad es. -2:#000 significa che la barra con valore -2 è nera, 0:5:#000 significa che la barra con valore da 0 a 5 è nera, predefinito vuoto.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -10943,8 +10943,8 @@ module.exports = {
     {
       n: "STACKCOLUMNSPLINES",
       t: "3",
-      d: "Descrizione della funzione STACKCOLUMNSPLINES.",
-      a: "Sintesi della funzione STACKCOLUMNSPLINES.",
+      d: "Genera un istogramma verticale cumulativo incorporato in una cella come sparkline, generalmente usato per rappresentare la grandezza numerica di più dimensioni di dati discreti.",
+      a: "Genera un istogramma sparkline verticale cumulativo.",
       m: [
         1,
         5
@@ -10953,7 +10953,7 @@ module.exports = {
         {
           name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Intervallo` della funzione STACKCOLUMNSPLINES.",
+          detail: "Intervallo. I valori possono essere calcolati in modo efficace, ad es. A1:A20, {1,2,3,4,5} ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10961,7 +10961,7 @@ module.exports = {
         {
           name: "Impila per colonna",
           example: "1",
-          detail: "Parametro `Impila per colonna` della funzione STACKCOLUMNSPLINES.",
+          detail: "Se è necessario impilare per riga, impostare su falso o 0, predefinito 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10969,7 +10969,7 @@ module.exports = {
         {
           name: "Intervallo barre",
           example: "1",
-          detail: "Parametro `Intervallo barre` della funzione STACKCOLUMNSPLINES.",
+          detail: "La distanza tra le barre, predefinito 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10977,7 +10977,7 @@ module.exports = {
         {
           name: "Massimo",
           example: "100",
-          detail: "Parametro `Massimo` della funzione STACKCOLUMNSPLINES.",
+          detail: "Il valore massimo della barra cumulativa, serve per regolare la lunghezza della barra, predefinito calcolo automatico falso, auto, nullo.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10985,7 +10985,7 @@ module.exports = {
         {
           name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Tavolozza colori` della funzione STACKCOLUMNSPLINES.",
+          detail: "La tavolozza dei colori può impostare individualmente il colore della barra di ciascuna dimensione, che può essere impostato come intervallo A1:A10 ecc. Predefinito #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -10995,8 +10995,8 @@ module.exports = {
     {
       n: "BARSPLINES",
       t: "3",
-      d: "Descrizione della funzione BARSPLINES.",
-      a: "Sintesi della funzione BARSPLINES.",
+      d: "Genera sparkline incorporate nella cella, generalmente usate per rappresentare la grandezza di dati discreti.",
+      a: "Genera un grafico sparkline a barre orizzontali.",
       m: [
         1,
         6
@@ -11005,7 +11005,7 @@ module.exports = {
         {
           name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Intervallo` della funzione BARSPLINES.",
+          detail: "Intervallo. I valori possono essere calcolati in modo efficace, ad es. A1:A20, {1,2,3,4,5} ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11013,7 +11013,7 @@ module.exports = {
         {
           name: "Intervallo barre",
           example: "1",
-          detail: "Parametro `Intervallo barre` della funzione BARSPLINES.",
+          detail: "La distanza tra le barre, predefinito 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11021,7 +11021,7 @@ module.exports = {
         {
           name: "Colore della barra",
           example: "#fc5c5c",
-          detail: "Parametro `Colore della barra` della funzione BARSPLINES.",
+          detail: "Il colore della linea del grafico a linee può essere l'intervallo A1, un valore di indice della tavolozza dei colori o un valore di colore specifico. Impostare su 0 o falso per non visualizzarlo. Supporta regx, rgb, rgba ecc. Predefinito #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11029,7 +11029,7 @@ module.exports = {
         {
           name: "Colore barre negative",
           example: "#97b552",
-          detail: "Parametro `Colore barre negative` della funzione BARSPLINES.",
+          detail: "Impostazione del colore per le barre negative, rappresenta il colore dei valori negativi, stessa configurazione del colore della barra, predefinito #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11037,7 +11037,7 @@ module.exports = {
         {
           name: "Massimo",
           example: "100",
-          detail: "Parametro `Massimo` della funzione BARSPLINES.",
+          detail: "Il valore massimo dell'istogramma, serve per standardizzare la lunghezza dell'istogramma, predefinito calcolo automatico falso, auto, nullo.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11045,7 +11045,7 @@ module.exports = {
         {
           name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Tavolozza colori` della funzione BARSPLINES.",
+          detail: "La tavolozza dei colori può impostare individualmente il colore di ogni barra, è possibile impostare più valori, e sono supportati due formati: 1 colore come #000, che significa che il colore della prima barra è nero; 2 intervallo di valori: colore, ad es. -2:#000 significa che la barra con valore -2 è nera, 0:5:#000 significa che la barra con valore da 0 a 5 è nera, predefinito vuoto.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11055,8 +11055,8 @@ module.exports = {
     {
       n: "STACKBARSPLINES",
       t: "3",
-      d: "Descrizione della funzione STACKBARSPLINES.",
-      a: "Sintesi della funzione STACKBARSPLINES.",
+      d: "Genera un grafico a barre orizzontali cumulativo incorporato in una cella come sparkline, generalmente usato per rappresentare la grandezza numerica di più dimensioni di dati discreti.",
+      a: "Genera un grafico sparkline a barre orizzontali cumulativo.",
       m: [
         1,
         5
@@ -11065,7 +11065,7 @@ module.exports = {
         {
           name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Intervallo` della funzione STACKBARSPLINES.",
+          detail: "Intervallo. I valori possono essere calcolati in modo efficace, ad es. A1:A20, {1,2,3,4,5} ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11073,7 +11073,7 @@ module.exports = {
         {
           name: "Impila per colonna",
           example: "1",
-          detail: "Parametro `Impila per colonna` della funzione STACKBARSPLINES.",
+          detail: "Se è necessario impilare per riga, impostare su falso o 0, predefinito 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11081,7 +11081,7 @@ module.exports = {
         {
           name: "Intervallo barre",
           example: "1",
-          detail: "Parametro `Intervallo barre` della funzione STACKBARSPLINES.",
+          detail: "La distanza tra le barre, predefinito 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11089,7 +11089,7 @@ module.exports = {
         {
           name: "Massimo",
           example: "100",
-          detail: "Parametro `Massimo` della funzione STACKBARSPLINES.",
+          detail: "Il valore massimo della barra cumulativa, serve per regolare la lunghezza della barra, predefinito calcolo automatico falso, auto, nullo.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11097,7 +11097,7 @@ module.exports = {
         {
           name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Tavolozza colori` della funzione STACKBARSPLINES.",
+          detail: "La tavolozza dei colori può impostare individualmente il colore della barra di ciascuna dimensione, che può essere impostato come intervallo A1:A10 ecc. Predefinito #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11107,8 +11107,8 @@ module.exports = {
     {
       n: "DISCRETESPLINES",
       t: "3",
-      d: "Descrizione della funzione DISCRETESPLINES.",
-      a: "Sintesi della funzione DISCRETESPLINES.",
+      d: "Genera sparkline incorporate nella cella, generalmente usate per rappresentare la tendenza di dati discreti.",
+      a: "Genera un grafico sparkline discreto.",
       m: [
         1,
         4
@@ -11117,7 +11117,7 @@ module.exports = {
         {
           name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Intervallo` della funzione DISCRETESPLINES.",
+          detail: "Intervallo. I valori possono essere calcolati in modo efficace, ad es. A1:A20, {1,2,3,4,5} ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11125,7 +11125,7 @@ module.exports = {
         {
           name: "Soglia di segmentazione",
           example: "1",
-          detail: "Parametro `Soglia di segmentazione` della funzione DISCRETESPLINES.",
+          detail: "Distinzione di colore delle colonne del grafico discreto, ad es.: se il valore è 0, il blu è maggiore di 0, il rosso è minore di 0, predefinito 0.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11133,7 +11133,7 @@ module.exports = {
         {
           name: "Colore sopra soglia",
           example: "#2ec7c9",
-          detail: "Parametro `Colore sopra soglia` della funzione DISCRETESPLINES.",
+          detail: "Il colore della linea del grafico a linee può essere l'intervallo A1, un valore di indice della tavolozza dei colori o un valore di colore specifico. Impostare su 0 o falso per non visualizzarlo. Supporta regx, rgb, rgba ecc. Predefinito #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11141,7 +11141,7 @@ module.exports = {
         {
           name: "Colore sotto soglia",
           example: "#fc5c5c",
-          detail: "Parametro `Colore sotto soglia` della funzione DISCRETESPLINES.",
+          detail: "Impostazione del colore della barra sotto la soglia, stessa impostazione del colore sopra la soglia, predefinito #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11151,8 +11151,8 @@ module.exports = {
     {
       n: "TRISTATESPLINES",
       t: "3",
-      d: "Descrizione della funzione TRISTATESPLINES.",
-      a: "Sintesi della funzione TRISTATESPLINES.",
+      d: "Genera un grafico a tre stati incorporato nella cella come sparkline, generalmente usato per rappresentare la tendenza di tre situazioni come vincita, sconfitta o pareggio.",
+      a: "Genera un grafico sparkline a tre stati.",
       m: [
         1,
         6
@@ -11161,7 +11161,7 @@ module.exports = {
         {
           name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Intervallo` della funzione TRISTATESPLINES.",
+          detail: "Intervallo. I valori possono essere calcolati in modo efficace, ad es. A1:A20, {1,2,3,4,5} ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11169,7 +11169,7 @@ module.exports = {
         {
           name: "Intervallo barre",
           example: "1",
-          detail: "Parametro `Intervallo barre` della funzione TRISTATESPLINES.",
+          detail: "La distanza tra le barre, predefinito 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11177,7 +11177,7 @@ module.exports = {
         {
           name: "Colore della barra",
           example: "#fc5c5c",
-          detail: "Parametro `Colore della barra` della funzione TRISTATESPLINES.",
+          detail: "Il colore della linea del grafico a linee può essere l'intervallo A1, un valore di indice della tavolozza dei colori o un valore di colore specifico. Impostare su 0 o falso per non visualizzarlo. Supporta regx, rgb, rgba ecc. Predefinito #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11185,7 +11185,7 @@ module.exports = {
         {
           name: "Colore barre negative",
           example: "#97b552",
-          detail: "Parametro `Colore barre negative` della funzione TRISTATESPLINES.",
+          detail: "Impostazione del colore per le barre negative, rappresenta il colore dei valori negativi, stessa configurazione del colore della barra, predefinito #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11193,7 +11193,7 @@ module.exports = {
         {
           name: "Colore barre valore zero",
           example: "#999",
-          detail: "Parametro `Colore barre valore zero` della funzione TRISTATESPLINES.",
+          detail: "Impostazione del colore per le barre con valore zero, rappresenta il colore del valore 0, stessa configurazione del colore della barra, predefinito #999.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11201,7 +11201,7 @@ module.exports = {
         {
           name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Tavolozza colori` della funzione TRISTATESPLINES.",
+          detail: "La tavolozza dei colori può impostare individualmente il colore di ogni barra, è possibile impostare più valori, e sono supportati due formati: 1 colore come #000, che significa che il colore della prima barra è nero; 2 intervallo di valori: colore, ad es. -2:#000 significa che la barra con valore -2 è nera, 0:5:#000 significa che la barra con valore da 0 a 5 è nera, predefinito vuoto.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11211,8 +11211,8 @@ module.exports = {
     {
       n: "PIESPLINES",
       t: "3",
-      d: "Descrizione della funzione PIESPLINES.",
-      a: "Sintesi della funzione PIESPLINES.",
+      d: "Genera un grafico a torta sparkline incorporato nella cella, generalmente usato per rappresentare la proporzione dei dati.",
+      a: "Genera un grafico sparkline a torta.",
       m: [
         1,
         5
@@ -11221,7 +11221,7 @@ module.exports = {
         {
           name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Intervallo` della funzione PIESPLINES.",
+          detail: "Intervallo. I valori possono essere calcolati in modo efficace, ad es. A1:A20, {1,2,3,4,5} ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11229,7 +11229,7 @@ module.exports = {
         {
           name: "Angolo di rotazione",
           example: "0",
-          detail: "Parametro `Angolo di rotazione` della funzione PIESPLINES.",
+          detail: "L'angolo di rotazione del grafico a torta, predefinito 0.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11237,7 +11237,7 @@ module.exports = {
         {
           name: "bordo",
           example: "0",
-          detail: "Parametro `bordo` della funzione PIESPLINES.",
+          detail: "Dimensione del bordo del grafico a torta, predefinito nessuno 0.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11245,7 +11245,7 @@ module.exports = {
         {
           name: "Colore del bordo",
           example: "#000",
-          detail: "Parametro `Colore del bordo` della funzione PIESPLINES.",
+          detail: "Il colore del bordo del grafico a torta, predefinito #000.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11253,7 +11253,7 @@ module.exports = {
         {
           name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Tavolozza colori` della funzione PIESPLINES.",
+          detail: "Il colore dello spicchio può essere impostato nella tavolozza, che può essere impostato come intervallo A1:A10 ecc. Predefinito #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11263,8 +11263,8 @@ module.exports = {
     {
       n: "BOXSPLINES",
       t: "3",
-      d: "Descrizione della funzione BOXSPLINES.",
-      a: "Sintesi della funzione BOXSPLINES.",
+      d: "Genera un box plot incorporato in una cella come sparkline, generalmente usato per rappresentare la distribuzione statistica dell'insieme di dati.",
+      a: "Genera un box plot sparkline.",
       m: [
         1,
         4
@@ -11273,7 +11273,7 @@ module.exports = {
         {
           name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Intervallo` della funzione BOXSPLINES.",
+          detail: "Intervallo. I valori possono essere calcolati in modo efficace, ad es. A1:A20, {1,2,3,4,5} ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11281,7 +11281,7 @@ module.exports = {
         {
           name: "Coefficiente valori anomali",
           example: "1.5",
-          detail: "Parametro `Coefficiente valori anomali` della funzione BOXSPLINES.",
+          detail: "L'intervallo di soglia per i valori anomali, se è 0 o falso non viene visualizzato, predefinito 1,5 volte.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11289,7 +11289,7 @@ module.exports = {
         {
           name: "Valore obiettivo",
           example: "10",
-          detail: "Parametro `Valore obiettivo` della funzione BOXSPLINES.",
+          detail: "Impostazione del valore obiettivo nel box plot, predefinito falso e non visualizzato.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11297,7 +11297,7 @@ module.exports = {
         {
           name: "Dimensione punti",
           example: "1.5",
-          detail: "Parametro `Dimensione punti` della funzione BOXSPLINES.",
+          detail: "Il raggio del punto obiettivo e del valore anomalo è impostato, predefinito 1,5.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11307,8 +11307,8 @@ module.exports = {
     {
       n: "BULLETSPLINES",
       t: "3",
-      d: "Descrizione della funzione BULLETSPLINES.",
-      a: "Sintesi della funzione BULLETSPLINES.",
+      d: "Genera sparkline incorporate nella cella, generalmente usate per rappresentare il tasso di completamento dell'attività.",
+      a: "Genera un grafico sparkline a indicatori.",
       m: [
         2,
         3
@@ -11317,7 +11317,7 @@ module.exports = {
         {
           name: "Obiettivo",
           example: "10",
-          detail: "Parametro `Obiettivo` della funzione BULLETSPLINES.",
+          detail: "Il valore numerico può essere calcolato in modo efficace per il valore obiettivo raggiunto, ad es. A1, 100 ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11325,7 +11325,7 @@ module.exports = {
         {
           name: "raggiunto",
           example: "8",
-          detail: "Parametro `raggiunto` della funzione BULLETSPLINES.",
+          detail: "Solo quando il valore è completo il valore può essere calcolato in modo efficace, ad es. A1, 100 ecc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11333,7 +11333,7 @@ module.exports = {
         {
           name: "Valore di confronto",
           example: "12",
-          detail: "Parametro `Valore di confronto` della funzione BULLETSPLINES.",
+          detail: "Valori di confronto, come eccedenza, minimo e limite inferiore per i premi, possono essere calcolati in modo efficace, ad es. A1, 100 ecc. È possibile impostare fino a 9 valori di confronto.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11343,8 +11343,8 @@ module.exports = {
     {
       n: "COMPOSESPLINES",
       t: "3",
-      d: "Descrizione della funzione COMPOSESPLINES.",
-      a: "Sintesi della funzione COMPOSESPLINES.",
+      d: "Supporta più tipi di immagine nella stessa cella, dove ogni parametro rappresenta un grafico sparkline.",
+      a: "Riunisce grafici sparkline in una cella.",
       m: [
         1,
         1
@@ -11353,7 +11353,7 @@ module.exports = {
         {
           name: "configurazione",
           example: "PIESPLINES(A1:A20)",
-          detail: "Parametro `configurazione` della funzione COMPOSESPLINES.",
+          detail: "Impostazioni del grafico sparkline, come A1:A20, un grafico a torta completo, impostazioni del grafico a linee ecc.",
           require: "m",
           repeat: "y",
           type: "rangeall"
@@ -11363,8 +11363,8 @@ module.exports = {
     {
       n: "SORT",
       t: "14",
-      d: "Descrizione della funzione SORT.",
-      a: "Sintesi della funzione SORT.",
+      d: "Ordina le righe di un array o intervallo specificato in base ai valori di una o più colonne.",
+      a: "Ordina le righe di un intervallo in base a una colonna specificata.",
       m: [
         1,
         4
@@ -11372,7 +11372,7 @@ module.exports = {
       p: [
         {
           name: "intervallo",
-          detail: "Parametro `intervallo` della funzione SORT.",
+          detail: "I dati da ordinare.",
           example: "A2:A17",
           require: "m",
           repeat: "n",
@@ -11380,7 +11380,7 @@ module.exports = {
         },
         {
           name: "colonna_ordinamento",
-          detail: "Parametro `colonna_ordinamento` della funzione SORT.",
+          detail: "L'indice della colonna in `intervallo` o un intervallo esterno a `intervallo` contenente i valori in base ai quali ordinare.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11388,7 +11388,7 @@ module.exports = {
         },
         {
           name: "è_crescente",
-          detail: "Parametro `è_crescente` della funzione SORT.",
+          detail: "`VERO` o `FALSO`, che indica se `colonna_ordinamento` deve essere ordinata in modo crescente. `FALSO` ordina in modo decrescente.",
           example: "-1",
           require: "o",
           repeat: "n",
@@ -11396,7 +11396,7 @@ module.exports = {
         },
         {
           name: "colonna_ordinamento2",
-          detail: "Parametro `colonna_ordinamento2` della funzione SORT.",
+          detail: "Colonne aggiuntive.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -11407,8 +11407,8 @@ module.exports = {
     {
       n: "FILTER",
       t: "14",
-      d: "Descrizione della funzione FILTER.",
-      a: "Sintesi della funzione FILTER.",
+      d: "Restituisce una versione filtrata dell'intervallo di origine, restituendo solo le righe o le colonne che soddisfano le condizioni specificate.",
+      a: "Filtra un intervallo in base alle condizioni specificate.",
       m: [
         2,
         3
@@ -11416,7 +11416,7 @@ module.exports = {
       p: [
         {
           name: "intervallo",
-          detail: "Parametro `intervallo` della funzione FILTER.",
+          detail: "I dati da filtrare.",
           example: "A5:D20",
           require: "m",
           repeat: "n",
@@ -11424,7 +11424,7 @@ module.exports = {
         },
         {
           name: "condizione1",
-          detail: "Parametro `condizione1` della funzione FILTER.",
+          detail: "Una colonna o riga di valori vero o falso corrispondenti alla prima colonna o riga di `intervallo`, oppure una formula array che restituisce vero o falso.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -11432,7 +11432,7 @@ module.exports = {
         },
         {
           name: "condizione2",
-          detail: "Parametro `condizione2` della funzione FILTER.",
+          detail: "Righe o colonne aggiuntive con valori booleani `VERO` o `FALSO` che indicano se la riga o colonna corrispondente in `intervallo` deve superare il `FILTER`. Può anche contenere espressioni di formula array che restituiscono tali righe o colonne. Tutte le condizioni devono essere dello stesso tipo (riga o colonna). Non è consentito mescolare condizioni per riga e per colonna.",
           example: "\"\"",
           require: "o",
           repeat: "n",
@@ -11443,8 +11443,8 @@ module.exports = {
     {
       n: "UNIQUE",
       t: "14",
-      d: "Descrizione della funzione UNIQUE.",
-      a: "Sintesi della funzione UNIQUE.",
+      d: "Restituisce le righe univoche nell'intervallo di origine specificato, scartando i duplicati. Le righe vengono restituite nell'ordine in cui appaiono per la prima volta nell'intervallo di origine.",
+      a: "Righe univoche nell'intervallo di origine specificato.",
       m: [
         1,
         3
@@ -11452,7 +11452,7 @@ module.exports = {
       p: [
         {
           name: "intervallo",
-          detail: "Parametro `intervallo` della funzione UNIQUE.",
+          detail: "I dati da filtrare per voci univoche.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
@@ -11460,7 +11460,7 @@ module.exports = {
         },
         {
           name: "per_colonna",
-          detail: "Parametro `per_colonna` della funzione UNIQUE.",
+          detail: "[Opzione] - Valore logico che indica come confrontare; per riga = FALSE() od omesso; per colonna = TRUE().",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -11468,7 +11468,7 @@ module.exports = {
         },
         {
           name: "una_sola_volta",
-          detail: "Parametro `una_sola_volta` della funzione UNIQUE.",
+          detail: "[Opzione] - Valore logico; nel valore univoco viene restituita solo un'occorrenza = TRUE(); tutti i valori univoci sono inclusi = FALSE() od omesso.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -11479,8 +11479,8 @@ module.exports = {
     {
       n: "RANDARRAY",
       t: "14",
-      d: "Descrizione della funzione RANDARRAY.",
-      a: "Sintesi della funzione RANDARRAY.",
+      d: "Restituisce una griglia di numeri casuali tra 0 (incluso) e 1 (escluso). Le dimensioni della griglia corrispondono agli argomenti specificati per righe e colonne. Se non vengono specificate né righe né colonne, la griglia è 1 x 1.",
+      a: "Restituisce una griglia di numeri casuali.",
       m: [
         0,
         2
@@ -11488,7 +11488,7 @@ module.exports = {
       p: [
         {
           name: "righe",
-          detail: "Parametro `righe` della funzione RANDARRAY.",
+          detail: "Il numero di righe da riempire con un numero casuale.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11496,7 +11496,7 @@ module.exports = {
         },
         {
           name: "colonne",
-          detail: "Parametro `colonne` della funzione RANDARRAY.",
+          detail: "Il numero di colonne da riempire con un numero casuale.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11507,8 +11507,8 @@ module.exports = {
     {
       n: "SEQUENCE",
       t: "14",
-      d: "Descrizione della funzione SEQUENCE.",
-      a: "Sintesi della funzione SEQUENCE.",
+      d: "Restituisce una griglia di numeri sequenziali, a partire da un valore iniziale specificato e aumentando di un incremento specificato. Per impostazione predefinita, la sequenza inizia da 1 e aumenta di 1.",
+      a: "Restituisce una griglia di numeri sequenziali.",
       m: [
         1,
         4
@@ -11516,7 +11516,7 @@ module.exports = {
       p: [
         {
           name: "righe",
-          detail: "Parametro `righe` della funzione SEQUENCE.",
+          detail: "Il numero di righe nella griglia risultante della funzione.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -11524,7 +11524,7 @@ module.exports = {
         },
         {
           name: "colonne",
-          detail: "Parametro `colonne` della funzione SEQUENCE.",
+          detail: "Il numero di colonne nella griglia risultante della funzione. Se omesso, la griglia risultante avrà 1 colonna.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11532,7 +11532,7 @@ module.exports = {
         },
         {
           name: "inizio",
-          detail: "Parametro `inizio` della funzione SEQUENCE.",
+          detail: "Il numero da cui deve iniziare la sequenza. Se omesso, la sequenza inizia da 1.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11540,7 +11540,7 @@ module.exports = {
         },
         {
           name: "passo",
-          detail: "Parametro `passo` della funzione SEQUENCE.",
+          detail: "L'importo di cui differisce ogni valore della sequenza. Se omesso, ogni valore differisce di 1.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11551,8 +11551,8 @@ module.exports = {
     {
       n: "EVALUATE",
       t: "3",
-      d: "Descrizione della funzione EVALUATE.",
-      a: "Sintesi della funzione EVALUATE.",
+      d: "Valuta una formula o un'espressione espressa a parole e restituisce il risultato.",
+      a: "Valuta in base a una formula o espressione testuale.",
       m: [
         1,
         1
@@ -11561,7 +11561,7 @@ module.exports = {
         {
           name: "espressione",
           example: "\"A1+5*2^2\"",
-          detail: "Parametro `espressione` della funzione EVALUATE.",
+          detail: "Formula o espressione.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11571,8 +11571,8 @@ module.exports = {
     {
       n: "REMOTE",
       t: "5",
-      d: "Descrizione della funzione REMOTE.",
-      a: "Sintesi della funzione REMOTE.",
+      d: "Richiama una funzione su un server remoto.",
+      a: "Richiama una funzione su un server/API back-end remoto.",
       m: [
         1,
         1
@@ -11581,7 +11581,7 @@ module.exports = {
         {
           name: "espressione_remota",
           example: "SUM(A1:A10000000)",
-          detail: "Parametro `espressione_remota` della funzione REMOTE.",
+          detail: "Formula.",
           require: "m",
           repeat: "n",
           type: "string"
