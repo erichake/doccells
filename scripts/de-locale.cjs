@@ -10,8 +10,8 @@ module.exports = {
     {
       n: "SUMIF",
       t: 0,
-      d: "Beschreibung der Funktion SUMIF.",
-      a: "Kurzbeschreibung der Funktion SUMIF.",
+      d: "Gibt eine bedingte Summe über einen Bereich zurück.",
+      a: "Eine bedingte Summe über einen Bereich.",
       m: [
         2,
         3
@@ -19,7 +19,7 @@ module.exports = {
       p: [
         {
           name: "bereich",
-          detail: "Parameter `bereich` der Funktion SUMIF.",
+          detail: "Der Bereich, der gegen `kriterium` geprüft wird.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -27,7 +27,7 @@ module.exports = {
         },
         {
           name: "kriterium",
-          detail: "Parameter `kriterium` der Funktion SUMIF.",
+          detail: "Das Muster oder der Test, der auf `bereich` angewendet wird.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -35,7 +35,7 @@ module.exports = {
         },
         {
           name: "summenbereich",
-          detail: "Parameter `summenbereich` der Funktion SUMIF.",
+          detail: "Der zu summierende Bereich, falls abweichend von `bereich`.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -46,8 +46,8 @@ module.exports = {
     {
       n: "TAN",
       t: 0,
-      d: "Beschreibung der Funktion TAN.",
-      a: "Kurzbeschreibung der Funktion TAN.",
+      d: "Gibt den Tangens eines im Bogenmaß angegebenen Winkels zurück.",
+      a: "Tangens eines im Bogenmaß angegebenen Winkels.",
       m: [
         1,
         1
@@ -55,7 +55,7 @@ module.exports = {
       p: [
         {
           name: "winkel",
-          detail: "Parameter `winkel` der Funktion TAN.",
+          detail: "Der Winkel, dessen Tangens berechnet werden soll, im Bogenmaß.",
           example: "45*PI()/180",
           require: "m",
           repeat: "n",
@@ -66,8 +66,8 @@ module.exports = {
     {
       n: "TANH",
       t: 0,
-      d: "Beschreibung der Funktion TANH.",
-      a: "Kurzbeschreibung der Funktion TANH.",
+      d: "Gibt den hyperbolischen Tangens einer beliebigen reellen Zahl zurück.",
+      a: "Hyperbolischer Tangens einer beliebigen reellen Zahl.",
       m: [
         1,
         1
@@ -75,7 +75,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion TANH.",
+          detail: "Ein beliebiger reeller Wert, dessen hyperbolischer Tangens berechnet werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -86,8 +86,8 @@ module.exports = {
     {
       n: "CEILING",
       t: 0,
-      d: "Beschreibung der Funktion CEILING.",
-      a: "Kurzbeschreibung der Funktion CEILING.",
+      d: "Rundet eine Zahl auf das nächste ganzzahlige Vielfache des angegebenen `faktor` auf.",
+      a: "Rundet eine Zahl auf das nächste Vielfache eines Faktors auf.",
       m: [
         2,
         2
@@ -95,7 +95,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion CEILING.",
+          detail: "Der Wert, der auf das nächste ganzzahlige Vielfache von `faktor` aufgerundet werden soll.",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -103,7 +103,7 @@ module.exports = {
         },
         {
           name: "faktor",
-          detail: "Parameter `faktor` der Funktion CEILING.",
+          detail: "Die Zahl, auf deren Vielfache `wert` gerundet wird.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -114,8 +114,8 @@ module.exports = {
     {
       n: "ATAN",
       t: 0,
-      d: "Beschreibung der Funktion ATAN.",
-      a: "Kurzbeschreibung der Funktion ATAN.",
+      d: "Gibt den Arkustangens eines Werts im Bogenmaß zurück.",
+      a: "Arkustangens eines Werts im Bogenmaß.",
       m: [
         1,
         1
@@ -123,7 +123,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ATAN.",
+          detail: "Der Wert, für den der Arkustangens berechnet werden soll.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -134,8 +134,8 @@ module.exports = {
     {
       n: "ASINH",
       t: 0,
-      d: "Beschreibung der Funktion ASINH.",
-      a: "Kurzbeschreibung der Funktion ASINH.",
+      d: "Gibt den Areasinus hyperbolicus einer Zahl zurück.",
+      a: "Areasinus hyperbolicus einer Zahl.",
       m: [
         1,
         1
@@ -143,7 +143,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ASINH.",
+          detail: "Der Wert, für den der Areasinus hyperbolicus berechnet werden soll.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -154,8 +154,8 @@ module.exports = {
     {
       n: "ABS",
       t: 0,
-      d: "Beschreibung der Funktion ABS.",
-      a: "Kurzbeschreibung der Funktion ABS.",
+      d: "Gibt den Absolutwert einer Zahl zurück.",
+      a: "Absolutwert einer Zahl.",
       m: [
         1,
         1
@@ -163,7 +163,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ABS.",
+          detail: "Die Zahl, deren Absolutwert zurückgegeben werden soll.",
           example: "-2",
           require: "m",
           repeat: "n",
@@ -174,8 +174,8 @@ module.exports = {
     {
       n: "ACOS",
       t: 0,
-      d: "Beschreibung der Funktion ACOS.",
-      a: "Kurzbeschreibung der Funktion ACOS.",
+      d: "Gibt den Arkuskosinus eines Werts im Bogenmaß zurück.",
+      a: "Arkuskosinus eines Werts im Bogenmaß.",
       m: [
         1,
         1
@@ -183,7 +183,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ACOS.",
+          detail: "Der Wert, für den der Arkuskosinus berechnet werden soll. Muss zwischen `-1` und `1` liegen (einschließlich).",
           example: "0",
           require: "m",
           repeat: "n",
@@ -194,8 +194,8 @@ module.exports = {
     {
       n: "ACOSH",
       t: 0,
-      d: "Beschreibung der Funktion ACOSH.",
-      a: "Kurzbeschreibung der Funktion ACOSH.",
+      d: "Gibt den Areakosinus hyperbolicus einer Zahl zurück.",
+      a: "Areakosinus hyperbolicus einer Zahl.",
       m: [
         1,
         1
@@ -203,7 +203,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ACOSH.",
+          detail: "Der Wert, für den der Areakosinus hyperbolicus berechnet werden soll. Muss größer oder gleich `1` sein.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -214,8 +214,8 @@ module.exports = {
     {
       n: "MULTINOMIAL",
       t: 0,
-      d: "Beschreibung der Funktion MULTINOMIAL.",
-      a: "Kurzbeschreibung der Funktion MULTINOMIAL.",
+      d: "Gibt die Fakultät der Summe der Werte geteilt durch das Produkt der Fakultäten der einzelnen Werte zurück.",
+      a: "Multinomialverteilungsfunktion.",
       m: [
         1,
         255
@@ -223,7 +223,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion MULTINOMIAL.",
+          detail: "Der erste Wert oder Bereich, der berücksichtigt werden soll.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -231,7 +231,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion MULTINOMIAL.",
+          detail: "Weitere Werte oder Bereiche, die berücksichtigt werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -242,8 +242,8 @@ module.exports = {
     {
       n: "ATANH",
       t: 0,
-      d: "Beschreibung der Funktion ATANH.",
-      a: "Kurzbeschreibung der Funktion ATANH.",
+      d: "Gibt den Areatangens hyperbolicus einer Zahl zurück.",
+      a: "Areatangens hyperbolicus einer Zahl.",
       m: [
         1,
         1
@@ -251,7 +251,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ATANH.",
+          detail: "Der Wert, für den der Areatangens hyperbolicus berechnet werden soll. Muss zwischen -1 und 1 liegen (ausschließlich).",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -262,8 +262,8 @@ module.exports = {
     {
       n: "ATAN2",
       t: 0,
-      d: "Beschreibung der Funktion ATAN2.",
-      a: "Kurzbeschreibung der Funktion ATAN2.",
+      d: "Gibt den Winkel zwischen der x-Achse und einer Strecke vom Ursprung (0,0) zum angegebenen Koordinatenpaar (`x`,`y`) im Bogenmaß zurück.",
+      a: "Arkustangens eines Werts.",
       m: [
         2,
         2
@@ -271,7 +271,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion ATAN2.",
+          detail: "Die x-Koordinate des Endpunkts der Strecke, für die der Winkel zur x-Achse berechnet werden soll.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -279,7 +279,7 @@ module.exports = {
         },
         {
           name: "y",
-          detail: "Parameter `y` der Funktion ATAN2.",
+          detail: "Die y-Koordinate des Endpunkts der Strecke, für die der Winkel zur x-Achse berechnet werden soll.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -290,8 +290,8 @@ module.exports = {
     {
       n: "COUNTBLANK",
       t: 1,
-      d: "Beschreibung der Funktion COUNTBLANK.",
-      a: "Kurzbeschreibung der Funktion COUNTBLANK.",
+      d: "Gibt die Anzahl der leeren Werte in einer Liste von Werten und Bereichen zurück.",
+      a: "Anzahl der leeren Werte.",
       m: [
         1,
         1
@@ -299,7 +299,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion COUNTBLANK.",
+          detail: "Der erste Wert oder Bereich, in dem die Anzahl der leeren Zellen gezählt werden soll.",
           example: "A2:C100",
           require: "m",
           repeat: "n",
@@ -310,8 +310,8 @@ module.exports = {
     {
       n: "COSH",
       t: 0,
-      d: "Beschreibung der Funktion COSH.",
-      a: "Kurzbeschreibung der Funktion COSH.",
+      d: "Gibt den hyperbolischen Kosinus einer beliebigen reellen Zahl zurück.",
+      a: "Hyperbolischer Kosinus einer beliebigen reellen Zahl.",
       m: [
         1,
         1
@@ -319,7 +319,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion COSH.",
+          detail: "Ein beliebiger reeller Wert, dessen hyperbolischer Kosinus berechnet werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -330,8 +330,8 @@ module.exports = {
     {
       n: "INT",
       t: 0,
-      d: "Beschreibung der Funktion INT.",
-      a: "Kurzbeschreibung der Funktion INT.",
+      d: "Rundet eine Zahl auf die nächste ganze Zahl ab, die kleiner oder gleich ist.",
+      a: "Rundet eine Zahl auf die nächste ganze Zahl ab.",
       m: [
         1,
         1
@@ -339,7 +339,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion INT.",
+          detail: "Der Wert, der auf die nächste ganze Zahl abgerundet werden soll.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -350,8 +350,8 @@ module.exports = {
     {
       n: "ISEVEN",
       t: 0,
-      d: "Beschreibung der Funktion ISEVEN.",
-      a: "Kurzbeschreibung der Funktion ISEVEN.",
+      d: "Prüft, ob der angegebene Wert gerade ist.",
+      a: "Ob der angegebene Wert gerade ist.",
       m: [
         1,
         1
@@ -359,7 +359,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ISEVEN.",
+          detail: "Der Wert, der als gerade überprüft werden soll.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -370,8 +370,8 @@ module.exports = {
     {
       n: "ISODD",
       t: 0,
-      d: "Beschreibung der Funktion ISODD.",
-      a: "Kurzbeschreibung der Funktion ISODD.",
+      d: "Prüft, ob der angegebene Wert ungerade ist.",
+      a: "Ob der angegebene Wert ungerade ist.",
       m: [
         1,
         1
@@ -379,7 +379,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ISODD.",
+          detail: "Der Wert, der als ungerade überprüft werden soll.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -390,8 +390,8 @@ module.exports = {
     {
       n: "LCM",
       t: 0,
-      d: "Beschreibung der Funktion LCM.",
-      a: "Kurzbeschreibung der Funktion LCM.",
+      d: "Gibt das kleinste gemeinsame Vielfache einer oder mehrerer ganzer Zahlen zurück.",
+      a: "Kleinstes gemeinsames Vielfaches einer oder mehrerer ganzer Zahlen.",
       m: [
         1,
         255
@@ -399,7 +399,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion LCM.",
+          detail: "Der erste Wert oder Bereich, dessen Faktoren zur Berechnung des kleinsten gemeinsamen Vielfachen berücksichtigt werden sollen.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -407,7 +407,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion LCM.",
+          detail: "Weitere Werte oder Bereiche, deren Faktoren zur Berechnung des kleinsten gemeinsamen Vielfachen berücksichtigt werden sollen.",
           example: "3",
           require: "o",
           repeat: "y",
@@ -418,8 +418,8 @@ module.exports = {
     {
       n: "LN",
       t: 0,
-      d: "Beschreibung der Funktion LN.",
-      a: "Kurzbeschreibung der Funktion LN.",
+      d: "Gibt den Logarithmus einer Zahl zur Basis e (Eulersche Zahl) zurück.",
+      a: "Logarithmus einer Zahl zur Basis e (Eulersche Zahl).",
       m: [
         1,
         1
@@ -427,7 +427,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion LN.",
+          detail: "Der Wert, für den der Logarithmus zur Basis e berechnet werden soll.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -438,8 +438,8 @@ module.exports = {
     {
       n: "LOG",
       t: 0,
-      d: "Beschreibung der Funktion LOG.",
-      a: "Kurzbeschreibung der Funktion LOG.",
+      d: "Gibt den Logarithmus einer Zahl zu einer bestimmten Basis zurück.",
+      a: "Logarithmus einer Zahl zu einer bestimmten Basis.",
       m: [
         1,
         2
@@ -447,7 +447,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion LOG.",
+          detail: "Der Wert, für den der Logarithmus berechnet werden soll.",
           example: "128",
           require: "m",
           repeat: "n",
@@ -455,7 +455,7 @@ module.exports = {
         },
         {
           name: "basis",
-          detail: "Parameter `basis` der Funktion LOG.",
+          detail: "Die Basis, die für die Berechnung des Logarithmus verwendet werden soll.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -466,8 +466,8 @@ module.exports = {
     {
       n: "LOG10",
       t: 0,
-      d: "Beschreibung der Funktion LOG10.",
-      a: "Kurzbeschreibung der Funktion LOG10.",
+      d: "Gibt den Logarithmus einer Zahl zur Basis 10 zurück.",
+      a: "Logarithmus einer Zahl zur Basis 10.",
       m: [
         1,
         1
@@ -475,7 +475,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion LOG10.",
+          detail: "Der Wert, für den der Logarithmus zur Basis 10 berechnet werden soll.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -486,8 +486,8 @@ module.exports = {
     {
       n: "MOD",
       t: 0,
-      d: "Beschreibung der Funktion MOD.",
-      a: "Kurzbeschreibung der Funktion MOD.",
+      d: "Gibt das Ergebnis des Modulo-Operators zurück, den Rest einer Divisionsoperation.",
+      a: "Modulo-Operator (Rest).",
       m: [
         2,
         2
@@ -495,7 +495,7 @@ module.exports = {
       p: [
         {
           name: "dividend",
-          detail: "Parameter `dividend` der Funktion MOD.",
+          detail: "Die Zahl, die geteilt werden soll, um den Rest zu ermitteln.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -503,7 +503,7 @@ module.exports = {
         },
         {
           name: "divisor",
-          detail: "Parameter `divisor` der Funktion MOD.",
+          detail: "Die Zahl, durch die geteilt werden soll.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -514,8 +514,8 @@ module.exports = {
     {
       n: "MROUND",
       t: 0,
-      d: "Beschreibung der Funktion MROUND.",
-      a: "Kurzbeschreibung der Funktion MROUND.",
+      d: "Rundet eine Zahl auf das nächste ganzzahlige Vielfache einer anderen Zahl.",
+      a: "Rundet eine Zahl auf das nächste ganzzahlige Vielfache.",
       m: [
         2,
         2
@@ -523,7 +523,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion MROUND.",
+          detail: "Die Zahl, die auf das nächste ganzzahlige Vielfache einer anderen Zahl gerundet werden soll.",
           example: "21",
           require: "m",
           repeat: "n",
@@ -531,7 +531,7 @@ module.exports = {
         },
         {
           name: "faktor",
-          detail: "Parameter `faktor` der Funktion MROUND.",
+          detail: "Die Zahl, auf deren Vielfache `wert` gerundet wird.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -542,8 +542,8 @@ module.exports = {
     {
       n: "ODD",
       t: 0,
-      d: "Beschreibung der Funktion ODD.",
-      a: "Kurzbeschreibung der Funktion ODD.",
+      d: "Rundet eine Zahl auf die nächste ungerade ganze Zahl auf.",
+      a: "Rundet eine Zahl auf die nächste ungerade ganze Zahl auf.",
       m: [
         1,
         1
@@ -551,7 +551,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ODD.",
+          detail: "Der Wert, der auf die nächstgrößere ungerade Zahl gerundet werden soll.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -562,8 +562,8 @@ module.exports = {
     {
       n: "SUMSQ",
       t: 0,
-      d: "Beschreibung der Funktion SUMSQ.",
-      a: "Kurzbeschreibung der Funktion SUMSQ.",
+      d: "Gibt die Summe der Quadrate einer Reihe von Zahlen und/oder Zellen zurück.",
+      a: "Summe der Quadrate.",
       m: [
         1,
         255
@@ -571,7 +571,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion SUMSQ.",
+          detail: "Die erste Zahl oder der erste Bereich, deren Quadrate addiert werden sollen.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -579,7 +579,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion SUMSQ.",
+          detail: "Weitere Zahlen oder Bereiche, deren Quadrate zum Quadrat/den Quadraten von `wert1` addiert werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -590,8 +590,8 @@ module.exports = {
     {
       n: "COMBIN",
       t: 0,
-      d: "Beschreibung der Funktion COMBIN.",
-      a: "Kurzbeschreibung der Funktion COMBIN.",
+      d: "Gibt die Anzahl der Möglichkeiten zurück, eine bestimmte Anzahl von Objekten aus einer Gruppe von Objekten einer bestimmten Größe auszuwählen.",
+      a: "Anzahl der Kombinationen aus einer Menge von Objekten.",
       m: [
         2,
         2
@@ -599,7 +599,7 @@ module.exports = {
       p: [
         {
           name: "n",
-          detail: "Parameter `n` der Funktion COMBIN.",
+          detail: "Die Größe der Objektgruppe, aus der ausgewählt werden soll.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -607,7 +607,7 @@ module.exports = {
         },
         {
           name: "k",
-          detail: "Parameter `k` der Funktion COMBIN.",
+          detail: "Die Anzahl der auszuwählenden Objekte.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -618,8 +618,8 @@ module.exports = {
     {
       n: "SUM",
       t: 0,
-      d: "Beschreibung der Funktion SUM.",
-      a: "Kurzbeschreibung der Funktion SUM.",
+      d: "Gibt die Summe einer Reihe von Zahlen und/oder Zellen zurück.",
+      a: "Summe einer Reihe von Zahlen und/oder Zellen.",
       m: [
         1,
         255
@@ -627,7 +627,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion SUM.",
+          detail: "Die erste Zahl oder der erste Bereich, die/der addiert werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -635,7 +635,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion SUM.",
+          detail: "Weitere Zahlen oder Bereiche, die zu `wert1` addiert werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -646,8 +646,8 @@ module.exports = {
     {
       n: "SUBTOTAL",
       t: 0,
-      d: "Beschreibung der Funktion SUBTOTAL.",
-      a: "Kurzbeschreibung der Funktion SUBTOTAL.",
+      d: "Gibt eine Teilsumme für einen vertikalen Zellbereich mithilfe einer angegebenen Aggregationsfunktion zurück.",
+      a: "Teilsumme für einen Bereich mit einer bestimmten Funktion.",
       m: [
         2,
         256
@@ -655,7 +655,7 @@ module.exports = {
       p: [
         {
           name: "funktionscode",
-          detail: "Parameter `funktionscode` der Funktion SUBTOTAL.",
+          detail: "Die Funktion, die bei der Teilsummen-Aggregation verwendet werden soll.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -663,7 +663,7 @@ module.exports = {
         },
         {
           name: "bereich1",
-          detail: "Parameter `bereich1` der Funktion SUBTOTAL.",
+          detail: "Der erste Bereich, für den eine Teilsumme berechnet werden soll.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -671,7 +671,7 @@ module.exports = {
         },
         {
           name: "bereich2",
-          detail: "Parameter `bereich2` der Funktion SUBTOTAL.",
+          detail: "Weitere Bereiche, für die Teilsummen berechnet werden sollen.",
           example: "B2:B8",
           require: "o",
           repeat: "y",
@@ -682,8 +682,8 @@ module.exports = {
     {
       n: "ASIN",
       t: 0,
-      d: "Beschreibung der Funktion ASIN.",
-      a: "Kurzbeschreibung der Funktion ASIN.",
+      d: "Gibt den Arkussinus eines Werts im Bogenmaß zurück.",
+      a: "Arkussinus eines Werts im Bogenmaß.",
       m: [
         1,
         1
@@ -691,7 +691,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ASIN.",
+          detail: "Der Wert, für den der Arkussinus berechnet werden soll. Muss zwischen `-1` und `1` liegen (einschließlich).",
           example: "0",
           require: "m",
           repeat: "n",
@@ -702,8 +702,8 @@ module.exports = {
     {
       n: "COUNTIF",
       t: 1,
-      d: "Beschreibung der Funktion COUNTIF.",
-      a: "Kurzbeschreibung der Funktion COUNTIF.",
+      d: "Gibt eine bedingte Anzahl über einen Bereich zurück.",
+      a: "Eine bedingte Anzahl über einen Bereich.",
       m: [
         2,
         2
@@ -711,7 +711,7 @@ module.exports = {
       p: [
         {
           name: "bereich",
-          detail: "Parameter `bereich` der Funktion COUNTIF.",
+          detail: "Der Bereich, der gegen `kriterium` geprüft wird.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -719,7 +719,7 @@ module.exports = {
         },
         {
           name: "kriterium",
-          detail: "Parameter `kriterium` der Funktion COUNTIF.",
+          detail: "Das Muster oder der Test, der auf `bereich` angewendet wird.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -730,8 +730,8 @@ module.exports = {
     {
       n: "RADIANS",
       t: 0,
-      d: "Beschreibung der Funktion RADIANS.",
-      a: "Kurzbeschreibung der Funktion RADIANS.",
+      d: "Wandelt einen Winkelwert von Grad in Bogenmaß um.",
+      a: "Wandelt einen Winkelwert von Grad in Bogenmaß um.",
       m: [
         1,
         1
@@ -739,7 +739,7 @@ module.exports = {
       p: [
         {
           name: "winkel",
-          detail: "Parameter `winkel` der Funktion RADIANS.",
+          detail: "Der Winkel, der von Grad in Bogenmaß umgewandelt werden soll.",
           example: "180",
           require: "m",
           repeat: "n",
@@ -750,8 +750,8 @@ module.exports = {
     {
       n: "RAND",
       t: 0,
-      d: "Beschreibung der Funktion RAND.",
-      a: "Kurzbeschreibung der Funktion RAND.",
+      d: "Gibt eine Zufallszahl zwischen 0 (einschließlich) und 1 (ausschließlich) zurück.",
+      a: "Eine Zufallszahl zwischen 0 (einschließlich) und 1 (ausschließlich).",
       m: [
         0,
         0
@@ -761,8 +761,8 @@ module.exports = {
     {
       n: "COUNTUNIQUE",
       t: 0,
-      d: "Beschreibung der Funktion COUNTUNIQUE.",
-      a: "Kurzbeschreibung der Funktion COUNTUNIQUE.",
+      d: "Zählt die Anzahl eindeutiger Werte in einer Liste angegebener Werte und Bereiche.",
+      a: "Zählt die Anzahl eindeutiger Werte in einem Bereich.",
       m: [
         1,
         255
@@ -770,7 +770,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion COUNTUNIQUE.",
+          detail: "Der erste Wert oder Bereich, der auf Eindeutigkeit geprüft werden soll.",
           example: "A1:C100",
           require: "m",
           repeat: "n",
@@ -778,7 +778,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion COUNTUNIQUE.",
+          detail: "Weitere Werte oder Bereiche, die auf Eindeutigkeit geprüft werden sollen.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -789,8 +789,8 @@ module.exports = {
     {
       n: "DEGREES",
       t: 0,
-      d: "Beschreibung der Funktion DEGREES.",
-      a: "Kurzbeschreibung der Funktion DEGREES.",
+      d: "Wandelt einen Winkelwert von Bogenmaß in Grad um.",
+      a: "Wandelt einen Winkelwert von Bogenmaß in Grad um.",
       m: [
         1,
         1
@@ -798,7 +798,7 @@ module.exports = {
       p: [
         {
           name: "winkel",
-          detail: "Parameter `winkel` der Funktion DEGREES.",
+          detail: "Der Winkel, der von Bogenmaß in Grad umgewandelt werden soll.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -809,8 +809,8 @@ module.exports = {
     {
       n: "ERFC",
       t: 9,
-      d: "Beschreibung der Funktion ERFC.",
-      a: "Kurzbeschreibung der Funktion ERFC.",
+      d: "Gibt die komplementäre Gauß'sche Fehlerfunktion eines Werts zurück.",
+      a: "Komplementäre Gauß'sche Fehlerfunktion eines Werts.",
       m: [
         1,
         1
@@ -818,7 +818,7 @@ module.exports = {
       p: [
         {
           name: "z",
-          detail: "Parameter `z` der Funktion ERFC.",
+          detail: "Die Zahl, für die die komplementäre Gauß'sche Fehlerfunktion berechnet werden soll.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -829,8 +829,8 @@ module.exports = {
     {
       n: "EVEN",
       t: 0,
-      d: "Beschreibung der Funktion EVEN.",
-      a: "Kurzbeschreibung der Funktion EVEN.",
+      d: "Rundet eine Zahl auf die nächste gerade ganze Zahl auf.",
+      a: "Rundet eine Zahl auf die nächste gerade ganze Zahl auf.",
       m: [
         1,
         1
@@ -838,7 +838,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion EVEN.",
+          detail: "Der Wert, der auf die nächstgrößere gerade Zahl gerundet werden soll.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -849,8 +849,8 @@ module.exports = {
     {
       n: "EXP",
       t: 0,
-      d: "Beschreibung der Funktion EXP.",
-      a: "Kurzbeschreibung der Funktion EXP.",
+      d: "Gibt die Eulersche Zahl e (~2,718) potenziert mit einem Exponenten zurück.",
+      a: "Die Eulersche Zahl e (~2,718), potenziert mit einem Exponenten.",
       m: [
         1,
         1
@@ -858,7 +858,7 @@ module.exports = {
       p: [
         {
           name: "exponent",
-          detail: "Parameter `exponent` der Funktion EXP.",
+          detail: "Der Exponent, mit dem e potenziert werden soll.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -869,8 +869,8 @@ module.exports = {
     {
       n: "FACT",
       t: 0,
-      d: "Beschreibung der Funktion FACT.",
-      a: "Kurzbeschreibung der Funktion FACT.",
+      d: "Gibt die Fakultät einer Zahl zurück.",
+      a: "Fakultät einer Zahl.",
       m: [
         1,
         1
@@ -878,7 +878,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion FACT.",
+          detail: "Die Zahl oder der Verweis auf eine Zahl, deren Fakultät berechnet und zurückgegeben werden soll.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -889,8 +889,8 @@ module.exports = {
     {
       n: "FACTDOUBLE",
       t: 0,
-      d: "Beschreibung der Funktion FACTDOUBLE.",
-      a: "Kurzbeschreibung der Funktion FACTDOUBLE.",
+      d: "Gibt die \"doppelte Fakultät\" einer Zahl zurück.",
+      a: "\"Doppelte Fakultät\" einer Zahl.",
       m: [
         1,
         1
@@ -898,7 +898,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion FACTDOUBLE.",
+          detail: "Die Zahl oder der Verweis auf eine Zahl, deren doppelte Fakultät berechnet und zurückgegeben werden soll.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -909,8 +909,8 @@ module.exports = {
     {
       n: "PI",
       t: 0,
-      d: "Beschreibung der Funktion PI.",
-      a: "Kurzbeschreibung der Funktion PI.",
+      d: "Gibt den Wert von Pi mit 14 Dezimalstellen zurück.",
+      a: "Die Zahl Pi.",
       m: [
         0,
         0
@@ -920,8 +920,8 @@ module.exports = {
     {
       n: "FLOOR",
       t: 0,
-      d: "Beschreibung der Funktion FLOOR.",
-      a: "Kurzbeschreibung der Funktion FLOOR.",
+      d: "Rundet eine Zahl auf das nächste ganzzahlige Vielfache des angegebenen `faktor` ab.",
+      a: "Rundet eine Zahl auf das nächste Vielfache eines Faktors ab.",
       m: [
         2,
         2
@@ -929,7 +929,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion FLOOR.",
+          detail: "Der Wert, der auf das nächste ganzzahlige Vielfache von `faktor` abgerundet werden soll.",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -937,7 +937,7 @@ module.exports = {
         },
         {
           name: "faktor",
-          detail: "Parameter `faktor` der Funktion FLOOR.",
+          detail: "Die Zahl, auf deren Vielfache `wert` gerundet wird.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -948,8 +948,8 @@ module.exports = {
     {
       n: "GCD",
       t: 0,
-      d: "Beschreibung der Funktion GCD.",
-      a: "Kurzbeschreibung der Funktion GCD.",
+      d: "Gibt den größten gemeinsamen Teiler einer oder mehrerer ganzer Zahlen zurück.",
+      a: "Größter gemeinsamer Teiler einer oder mehrerer ganzer Zahlen.",
       m: [
         1,
         255
@@ -957,7 +957,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion GCD.",
+          detail: "Der erste Wert oder Bereich, dessen Faktoren zur Berechnung des größten gemeinsamen Teilers berücksichtigt werden sollen.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -965,7 +965,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion GCD.",
+          detail: "Weitere Werte oder Bereiche, deren Faktoren zur Berechnung des größten gemeinsamen Teilers berücksichtigt werden sollen.",
           example: "96",
           require: "o",
           repeat: "y",
@@ -976,8 +976,8 @@ module.exports = {
     {
       n: "RANDBETWEEN",
       t: 0,
-      d: "Beschreibung der Funktion RANDBETWEEN.",
-      a: "Kurzbeschreibung der Funktion RANDBETWEEN.",
+      d: "Gibt eine gleichmäßig verteilte Zufallszahl zwischen zwei Werten zurück (einschließlich).",
+      a: "Zufällige ganze Zahl zwischen zwei Werten (einschließlich).",
       m: [
         2,
         2
@@ -985,7 +985,7 @@ module.exports = {
       p: [
         {
           name: "untergrenze",
-          detail: "Parameter `untergrenze` der Funktion RANDBETWEEN.",
+          detail: "Die Untergrenze des Zufallsbereichs.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -993,7 +993,7 @@ module.exports = {
         },
         {
           name: "obergrenze",
-          detail: "Parameter `obergrenze` der Funktion RANDBETWEEN.",
+          detail: "Die Obergrenze des Zufallsbereichs.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -1004,8 +1004,8 @@ module.exports = {
     {
       n: "ROUND",
       t: 0,
-      d: "Beschreibung der Funktion ROUND.",
-      a: "Kurzbeschreibung der Funktion ROUND.",
+      d: "Rundet eine Zahl nach den Standardregeln auf eine bestimmte Anzahl von Dezimalstellen.",
+      a: "Rundet eine Zahl nach den Standardregeln.",
       m: [
         2,
         2
@@ -1013,7 +1013,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ROUND.",
+          detail: "Der Wert, der auf `stellen` Dezimalstellen gerundet werden soll.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1021,7 +1021,7 @@ module.exports = {
         },
         {
           name: "dezimalstellen",
-          detail: "Parameter `dezimalstellen` der Funktion ROUND.",
+          detail: "Die Anzahl der Dezimalstellen, auf die gerundet werden soll.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1032,8 +1032,8 @@ module.exports = {
     {
       n: "ROUNDDOWN",
       t: 0,
-      d: "Beschreibung der Funktion ROUNDDOWN.",
-      a: "Kurzbeschreibung der Funktion ROUNDDOWN.",
+      d: "Rundet eine Zahl auf eine bestimmte Anzahl von Dezimalstellen und dabei immer zur nächsten gültigen Stufe ab.",
+      a: "Rundet eine Zahl ab.",
       m: [
         2,
         2
@@ -1041,7 +1041,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ROUNDDOWN.",
+          detail: "Der Wert, der auf `stellen` Dezimalstellen gerundet werden soll, dabei immer abgerundet.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1049,7 +1049,7 @@ module.exports = {
         },
         {
           name: "dezimalstellen",
-          detail: "Parameter `dezimalstellen` der Funktion ROUNDDOWN.",
+          detail: "Die Anzahl der Dezimalstellen, auf die gerundet werden soll.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1060,8 +1060,8 @@ module.exports = {
     {
       n: "ROUNDUP",
       t: 0,
-      d: "Beschreibung der Funktion ROUNDUP.",
-      a: "Kurzbeschreibung der Funktion ROUNDUP.",
+      d: "Rundet eine Zahl auf eine bestimmte Anzahl von Dezimalstellen und dabei immer zur nächsten gültigen Stufe auf.",
+      a: "Rundet eine Zahl auf.",
       m: [
         2,
         2
@@ -1069,7 +1069,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion ROUNDUP.",
+          detail: "Der Wert, der auf `stellen` Dezimalstellen gerundet werden soll, dabei immer aufgerundet.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1077,7 +1077,7 @@ module.exports = {
         },
         {
           name: "dezimalstellen",
-          detail: "Parameter `dezimalstellen` der Funktion ROUNDUP.",
+          detail: "Die Anzahl der Dezimalstellen, auf die gerundet werden soll.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1088,8 +1088,8 @@ module.exports = {
     {
       n: "SERIESSUM",
       t: 0,
-      d: "Beschreibung der Funktion SERIESSUM.",
-      a: "Kurzbeschreibung der Funktion SERIESSUM.",
+      d: "Gibt bei den Parametern `x`, `n`, `m` und `a` die Potenzreihensumme a1*x^n + a2*x^(n+m) + a3*x^(n+2m) + ... + ai*x^(n+(i-1)m) zurück.",
+      a: "Summe einer Potenzreihe.",
       m: [
         4,
         4
@@ -1097,7 +1097,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion SERIESSUM.",
+          detail: "Die Eingabe für die Potenzreihe. Variiert je nach Art der Näherung; kann ein Winkel, ein Exponent oder ein anderer Wert sein.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1105,7 +1105,7 @@ module.exports = {
         },
         {
           name: "n",
-          detail: "Parameter `n` der Funktion SERIESSUM.",
+          detail: "Die anfängliche Potenz, mit der `x` in der Potenzreihe potenziert wird.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -1113,7 +1113,7 @@ module.exports = {
         },
         {
           name: "m",
-          detail: "Parameter `m` der Funktion SERIESSUM.",
+          detail: "Der additive Zuwachs, um den `x` erhöht wird.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1121,7 +1121,7 @@ module.exports = {
         },
         {
           name: "a",
-          detail: "Parameter `a` der Funktion SERIESSUM.",
+          detail: "Das Array oder der Bereich mit den Koeffizienten der Potenzreihe.",
           example: "{FACT(0)",
           require: "m",
           repeat: "n",
@@ -1132,8 +1132,8 @@ module.exports = {
     {
       n: "SIGN",
       t: 0,
-      d: "Beschreibung der Funktion SIGN.",
-      a: "Kurzbeschreibung der Funktion SIGN.",
+      d: "Gibt bei einer Eingabezahl `-1` zurück, wenn sie negativ ist, `1`, wenn sie positiv ist, und `0`, wenn sie null ist.",
+      a: "Vorzeichen einer angegebenen Zahl (+/-/0).",
       m: [
         1,
         1
@@ -1141,7 +1141,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion SIGN.",
+          detail: "Der Wert, dessen Vorzeichen ausgewertet werden soll.",
           example: "-42",
           require: "m",
           repeat: "n",
@@ -1152,8 +1152,8 @@ module.exports = {
     {
       n: "SIN",
       t: 0,
-      d: "Beschreibung der Funktion SIN.",
-      a: "Kurzbeschreibung der Funktion SIN.",
+      d: "Gibt den Sinus eines im Bogenmaß angegebenen Winkels zurück.",
+      a: "Sinus eines im Bogenmaß angegebenen Winkels.",
       m: [
         1,
         1
@@ -1161,7 +1161,7 @@ module.exports = {
       p: [
         {
           name: "winkel",
-          detail: "Parameter `winkel` der Funktion SIN.",
+          detail: "Der Winkel, dessen Sinus berechnet werden soll, im Bogenmaß.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1172,8 +1172,8 @@ module.exports = {
     {
       n: "SINH",
       t: 0,
-      d: "Beschreibung der Funktion SINH.",
-      a: "Kurzbeschreibung der Funktion SINH.",
+      d: "Gibt den hyperbolischen Sinus einer beliebigen reellen Zahl zurück.",
+      a: "Hyperbolischer Sinus einer beliebigen reellen Zahl.",
       m: [
         1,
         1
@@ -1181,7 +1181,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion SINH.",
+          detail: "Ein beliebiger reeller Wert, dessen hyperbolischer Sinus berechnet werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1192,8 +1192,8 @@ module.exports = {
     {
       n: "SQRT",
       t: 0,
-      d: "Beschreibung der Funktion SQRT.",
-      a: "Kurzbeschreibung der Funktion SQRT.",
+      d: "Gibt die positive Quadratwurzel einer positiven Zahl zurück.",
+      a: "Positive Quadratwurzel einer positiven Zahl.",
       m: [
         1,
         1
@@ -1201,7 +1201,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion SQRT.",
+          detail: "Die Zahl, für die die positive Quadratwurzel berechnet werden soll.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1212,8 +1212,8 @@ module.exports = {
     {
       n: "SQRTPI",
       t: 0,
-      d: "Beschreibung der Funktion SQRTPI.",
-      a: "Kurzbeschreibung der Funktion SQRTPI.",
+      d: "Gibt die positive Quadratwurzel des Produkts aus Pi und der angegebenen positiven Zahl zurück.",
+      a: "Quadratwurzel des Produkts aus Pi und einer Zahl.",
       m: [
         1,
         1
@@ -1221,7 +1221,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion SQRTPI.",
+          detail: "Die Zahl, die mit Pi multipliziert wird, wonach die Quadratwurzel des Produkts zurückgegeben wird.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1232,8 +1232,8 @@ module.exports = {
     {
       n: "GAMMALN",
       t: 1,
-      d: "Beschreibung der Funktion GAMMALN.",
-      a: "Kurzbeschreibung der Funktion GAMMALN.",
+      d: "Gibt den Logarithmus einer angegebenen Gammafunktion zur Basis e (Eulersche Zahl) zurück.",
+      a: "Logarithmus der Gammafunktion.",
       m: [
         1,
         1
@@ -1241,7 +1241,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion GAMMALN.",
+          detail: "Die Eingabe für die Gammafunktion. Der natürliche Logarithmus von Gamma(`wert`) wird zurückgegeben.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1252,8 +1252,8 @@ module.exports = {
     {
       n: "COS",
       t: 0,
-      d: "Beschreibung der Funktion COS.",
-      a: "Kurzbeschreibung der Funktion COS.",
+      d: "Gibt den Kosinus eines im Bogenmaß angegebenen Winkels zurück.",
+      a: "Kosinus eines im Bogenmaß angegebenen Winkels.",
       m: [
         1,
         1
@@ -1261,7 +1261,7 @@ module.exports = {
       p: [
         {
           name: "winkel",
-          detail: "Parameter `winkel` der Funktion COS.",
+          detail: "Der Winkel, dessen Kosinus berechnet werden soll, im Bogenmaß.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1272,8 +1272,8 @@ module.exports = {
     {
       n: "TRUNC",
       t: 0,
-      d: "Beschreibung der Funktion TRUNC.",
-      a: "Kurzbeschreibung der Funktion TRUNC.",
+      d: "Kürzt eine Zahl auf eine bestimmte Anzahl signifikanter Stellen, indem weniger signifikante Stellen weggelassen werden.",
+      a: "Kürzt eine Zahl.",
       m: [
         1,
         2
@@ -1281,7 +1281,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion TRUNC.",
+          detail: "Der Wert, der gekürzt werden soll.",
           example: "3.141592654",
           require: "m",
           repeat: "n",
@@ -1289,7 +1289,7 @@ module.exports = {
         },
         {
           name: "dezimalstellen",
-          detail: "Parameter `dezimalstellen` der Funktion TRUNC.",
+          detail: "Die Anzahl der signifikanten Stellen rechts vom Dezimalpunkt, die beibehalten werden sollen.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -1300,8 +1300,8 @@ module.exports = {
     {
       n: "QUOTIENT",
       t: 0,
-      d: "Beschreibung der Funktion QUOTIENT.",
-      a: "Kurzbeschreibung der Funktion QUOTIENT.",
+      d: "Gibt eine Zahl geteilt durch eine andere zurück.",
+      a: "Eine Zahl geteilt durch eine andere.",
       m: [
         2,
         2
@@ -1309,7 +1309,7 @@ module.exports = {
       p: [
         {
           name: "dividend",
-          detail: "Parameter `dividend` der Funktion QUOTIENT.",
+          detail: "Die Zahl, die geteilt werden soll.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1317,7 +1317,7 @@ module.exports = {
         },
         {
           name: "divisor",
-          detail: "Parameter `divisor` der Funktion QUOTIENT.",
+          detail: "Die Zahl, durch die geteilt werden soll.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1328,8 +1328,8 @@ module.exports = {
     {
       n: "POWER",
       t: 0,
-      d: "Beschreibung der Funktion POWER.",
-      a: "Kurzbeschreibung der Funktion POWER.",
+      d: "Gibt eine mit einem Exponenten potenzierte Zahl zurück.",
+      a: "Eine mit einem Exponenten potenzierte Zahl.",
       m: [
         2,
         2
@@ -1337,7 +1337,7 @@ module.exports = {
       p: [
         {
           name: "basis",
-          detail: "Parameter `basis` der Funktion POWER.",
+          detail: "Die Zahl, die mit `exponent` potenziert werden soll.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1345,7 +1345,7 @@ module.exports = {
         },
         {
           name: "exponent",
-          detail: "Parameter `exponent` der Funktion POWER.",
+          detail: "Der Exponent, mit dem `basis` potenziert werden soll.",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -1356,8 +1356,8 @@ module.exports = {
     {
       n: "SUMIFS",
       t: 0,
-      d: "Beschreibung der Funktion SUMIFS.",
-      a: "Kurzbeschreibung der Funktion SUMIFS.",
+      d: "Gibt die Summe eines Bereichs abhängig von mehreren Kriterien zurück.",
+      a: "Summiert einen Bereich abhängig von mehreren Kriterien.",
       m: [
         3,
         257
@@ -1365,7 +1365,7 @@ module.exports = {
       p: [
         {
           name: "summenbereich",
-          detail: "Parameter `summenbereich` der Funktion SUMIFS.",
+          detail: "Der zu summierende Bereich.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -1373,7 +1373,7 @@ module.exports = {
         },
         {
           name: "kriterienbereich1",
-          detail: "Parameter `kriterienbereich1` der Funktion SUMIFS.",
+          detail: "Der Bereich, der gegen kriterium1 geprüft wird.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
@@ -1381,7 +1381,7 @@ module.exports = {
         },
         {
           name: "kriterium1",
-          detail: "Parameter `kriterium1` der Funktion SUMIFS.",
+          detail: "Das Muster oder der Test, der auf kriterienbereich1 angewendet wird.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -1389,7 +1389,7 @@ module.exports = {
         },
         {
           name: "kriterienbereich2",
-          detail: "Parameter `kriterienbereich2` der Funktion SUMIFS.",
+          detail: "Weitere zu prüfende Bereiche.",
           example: " C1:C10",
           require: "o",
           repeat: "y",
@@ -1400,8 +1400,8 @@ module.exports = {
     {
       n: "COUNTIFS",
       t: 1,
-      d: "Beschreibung der Funktion COUNTIFS.",
-      a: "Kurzbeschreibung der Funktion COUNTIFS.",
+      d: "Gibt die Anzahl eines Bereichs abhängig von mehreren Kriterien zurück.",
+      a: "Zählt Werte abhängig von mehreren Kriterien.",
       m: [
         2,
         256
@@ -1409,7 +1409,7 @@ module.exports = {
       p: [
         {
           name: "kriterienbereich1",
-          detail: "Parameter `kriterienbereich1` der Funktion COUNTIFS.",
+          detail: "Der Bereich, der gegen `kriterium1` geprüft wird.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -1417,7 +1417,7 @@ module.exports = {
         },
         {
           name: "kriterium1",
-          detail: "Parameter `kriterium1` der Funktion COUNTIFS.",
+          detail: "Das Muster oder der Test, der auf `kriterienbereich1` angewendet wird.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -1425,7 +1425,7 @@ module.exports = {
         },
         {
           name: "kriterienbereich2",
-          detail: "Parameter `kriterienbereich2` der Funktion COUNTIFS.",
+          detail: "Weitere zu prüfende Bereiche.",
           example: " B1:B10",
           require: "o",
           repeat: "y",
@@ -1436,8 +1436,8 @@ module.exports = {
     {
       n: "PRODUCT",
       t: 0,
-      d: "Beschreibung der Funktion PRODUCT.",
-      a: "Kurzbeschreibung der Funktion PRODUCT.",
+      d: "Gibt das Ergebnis der Multiplikation einer Reihe von Zahlen zurück.",
+      a: "Ergebnis der Multiplikation einer Reihe von Zahlen.",
       m: [
         1,
         255
@@ -1445,7 +1445,7 @@ module.exports = {
       p: [
         {
           name: "faktor1",
-          detail: "Parameter `faktor1` der Funktion PRODUCT.",
+          detail: "Die erste Zahl oder der erste Bereich, die/der für das Produkt berechnet werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1453,7 +1453,7 @@ module.exports = {
         },
         {
           name: "faktor2",
-          detail: "Parameter `faktor2` der Funktion PRODUCT.",
+          detail: "Weitere Zahlen oder Bereiche, die für das Produkt berechnet werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1464,8 +1464,8 @@ module.exports = {
     {
       n: "HARMEAN",
       t: 1,
-      d: "Beschreibung der Funktion HARMEAN.",
-      a: "Kurzbeschreibung der Funktion HARMEAN.",
+      d: "Berechnet den harmonischen Mittelwert eines Datensatzes.",
+      a: "Der harmonische Mittelwert eines Datensatzes.",
       m: [
         1,
         255
@@ -1473,7 +1473,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion HARMEAN.",
+          detail: "Der erste Wert oder Bereich der Grundgesamtheit.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1481,7 +1481,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion HARMEAN.",
+          detail: "Weitere Werte oder Bereiche, die in die Grundgesamtheit einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1492,8 +1492,8 @@ module.exports = {
     {
       n: "HYPGEOMDIST",
       t: 1,
-      d: "Beschreibung der Funktion HYPGEOMDIST.",
-      a: "Kurzbeschreibung der Funktion HYPGEOMDIST.",
+      d: "Berechnet die Wahrscheinlichkeit, bei einer bestimmten Anzahl von Versuchen eine bestimmte Anzahl von Erfolgen zu ziehen, gegeben eine Grundgesamtheit einer bestimmten Größe mit einer bestimmten Anzahl von Erfolgen, ohne Zurücklegen.",
+      a: "Wahrscheinlichkeit der hypergeometrischen Verteilung.",
       m: [
         5,
         5
@@ -1501,7 +1501,7 @@ module.exports = {
       p: [
         {
           name: "anzahl_erfolge",
-          detail: "Parameter `anzahl_erfolge` der Funktion HYPGEOMDIST.",
+          detail: "Die gewünschte Anzahl von Erfolgen.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1509,7 +1509,7 @@ module.exports = {
         },
         {
           name: "anzahl_ziehungen",
-          detail: "Parameter `anzahl_ziehungen` der Funktion HYPGEOMDIST.",
+          detail: "Die Anzahl der zulässigen Ziehungen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -1517,7 +1517,7 @@ module.exports = {
         },
         {
           name: "erfolge_in_population",
-          detail: "Parameter `erfolge_in_population` der Funktion HYPGEOMDIST.",
+          detail: "Die Gesamtzahl der Erfolge in der Grundgesamtheit.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -1525,7 +1525,7 @@ module.exports = {
         },
         {
           name: "populationsgröße",
-          detail: "Parameter `populationsgröße` der Funktion HYPGEOMDIST.",
+          detail: "Die Gesamtgröße der Grundgesamtheit.",
           example: "40",
           require: "m",
           repeat: "n",
@@ -1533,7 +1533,7 @@ module.exports = {
         },
         {
           name: "kumuliert",
-          detail: "Parameter `kumuliert` der Funktion HYPGEOMDIST.",
+          detail: "Bestimmt die Form der Funktion. \n\nWenn cumulative TRUE() ist, gibt HYPGEOM.DIST die kumulative Verteilungsfunktion zurück;\n\nwenn FALSE(), gibt sie die Wahrscheinlichkeitsdichtefunktion zurück.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -1544,8 +1544,8 @@ module.exports = {
     {
       n: "INTERCEPT",
       t: 1,
-      d: "Beschreibung der Funktion INTERCEPT.",
-      a: "Kurzbeschreibung der Funktion INTERCEPT.",
+      d: "Berechnet den y-Wert, an dem die aus der linearen Regression eines Datensatzes resultierende Gerade die y-Achse (x=0) schneidet.",
+      a: "y-Achsenabschnitt einer durch lineare Regression ermittelten Geraden.",
       m: [
         2,
         2
@@ -1553,7 +1553,7 @@ module.exports = {
       p: [
         {
           name: "daten_y",
-          detail: "Parameter `daten_y` der Funktion INTERCEPT.",
+          detail: "Der Bereich, der das Array oder die Matrix der abhängigen Daten darstellt.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1561,7 +1561,7 @@ module.exports = {
         },
         {
           name: "daten_x",
-          detail: "Parameter `daten_x` der Funktion INTERCEPT.",
+          detail: "Der Bereich, der das Array oder die Matrix der unabhängigen Daten darstellt.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1572,8 +1572,8 @@ module.exports = {
     {
       n: "KURT",
       t: 1,
-      d: "Beschreibung der Funktion KURT.",
-      a: "Kurzbeschreibung der Funktion KURT.",
+      d: "Berechnet die Kurtosis (Wölbung) eines Datensatzes, die die Form und insbesondere die \"Spitzigkeit\" dieses Datensatzes beschreibt.",
+      a: "Kurtosis (Wölbung) eines Datensatzes.",
       m: [
         1,
         255
@@ -1581,7 +1581,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion KURT.",
+          detail: "Der erste Wert oder Bereich des Datensatzes.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1589,7 +1589,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion KURT.",
+          detail: "Weitere Werte oder Bereiche, die in den Datensatz einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1600,8 +1600,8 @@ module.exports = {
     {
       n: "LARGE",
       t: 1,
-      d: "Beschreibung der Funktion LARGE.",
-      a: "Kurzbeschreibung der Funktion LARGE.",
+      d: "Gibt das n-te größte Element eines Datensatzes zurück, wobei n benutzerdefiniert ist.",
+      a: "n-tes größtes Element eines Datensatzes.",
       m: [
         2,
         2
@@ -1609,7 +1609,7 @@ module.exports = {
       p: [
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion LARGE.",
+          detail: "Array oder Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -1617,7 +1617,7 @@ module.exports = {
         },
         {
           name: "n",
-          detail: "Parameter `n` der Funktion LARGE.",
+          detail: "Die Rangfolge des zurückzugebenden Elements, von größtem zu kleinstem.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1628,8 +1628,8 @@ module.exports = {
     {
       n: "STDEVA",
       t: 1,
-      d: "Beschreibung der Funktion STDEVA.",
-      a: "Kurzbeschreibung der Funktion STDEVA.",
+      d: "Berechnet die Standardabweichung auf Basis einer Stichprobe, wobei Text auf den Wert `0` gesetzt wird.",
+      a: "Standardabweichung einer Stichprobe (Text als 0).",
       m: [
         1,
         255
@@ -1637,7 +1637,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion STDEVA.",
+          detail: "Der erste Wert oder Bereich der Stichprobe.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1645,7 +1645,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion STDEVA.",
+          detail: "Weitere Werte oder Bereiche, die in die Stichprobe einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1656,8 +1656,8 @@ module.exports = {
     {
       n: "STDEVP",
       t: 1,
-      d: "Beschreibung der Funktion STDEVP.",
-      a: "Kurzbeschreibung der Funktion STDEVP.",
+      d: "Berechnet die Standardabweichung auf Basis einer gesamten Grundgesamtheit.",
+      a: "Standardabweichung einer gesamten Grundgesamtheit.",
       m: [
         1,
         255
@@ -1665,7 +1665,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion STDEVP.",
+          detail: "Der erste Wert oder Bereich der Grundgesamtheit.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1673,7 +1673,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion STDEVP.",
+          detail: "Weitere Werte oder Bereiche, die in die Grundgesamtheit einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1684,8 +1684,8 @@ module.exports = {
     {
       n: "GEOMEAN",
       t: 1,
-      d: "Beschreibung der Funktion GEOMEAN.",
-      a: "Kurzbeschreibung der Funktion GEOMEAN.",
+      d: "Berechnet das geometrische Mittel eines Datensatzes.",
+      a: "Das geometrische Mittel eines Datensatzes.",
       m: [
         1,
         255
@@ -1693,7 +1693,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion GEOMEAN.",
+          detail: "Der erste Wert oder Bereich der Grundgesamtheit.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1701,7 +1701,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion GEOMEAN.",
+          detail: "Weitere Werte oder Bereiche, die in die Grundgesamtheit einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1712,8 +1712,8 @@ module.exports = {
     {
       n: "RANK_EQ",
       t: 1,
-      d: "Beschreibung der Funktion RANK_EQ.",
-      a: "Kurzbeschreibung der Funktion RANK_EQ.",
+      d: "Gibt den Rang eines angegebenen Werts in einem Datensatz zurück. Gibt es mehr als einen Eintrag desselben Werts, wird der höchste Rang der Einträge zurückgegeben.",
+      a: "Höchster Rang eines angegebenen Werts in einem Datensatz.",
       m: [
         2,
         3
@@ -1721,7 +1721,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion RANK_EQ.",
+          detail: "Der Wert, dessen Rang bestimmt werden soll.",
           example: "A10",
           require: "m",
           repeat: "n",
@@ -1729,7 +1729,7 @@ module.exports = {
         },
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion RANK_EQ.",
+          detail: "Das Array oder der Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1737,7 +1737,7 @@ module.exports = {
         },
         {
           name: "ist_aufsteigend",
-          detail: "Parameter `ist_aufsteigend` der Funktion RANK_EQ.",
+          detail: "Ob die Werte in `daten` in absteigender oder aufsteigender Reihenfolge betrachtet werden sollen. Falls weggelassen, ist der Standardwert absteigend (FALSE).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1748,8 +1748,8 @@ module.exports = {
     {
       n: "RANK_AVG",
       t: 1,
-      d: "Beschreibung der Funktion RANK_AVG.",
-      a: "Kurzbeschreibung der Funktion RANK_AVG.",
+      d: "Gibt den Rang eines angegebenen Werts in einem Datensatz zurück. Gibt es mehr als einen Eintrag desselben Werts, wird der durchschnittliche Rang der Einträge zurückgegeben.",
+      a: "Durchschnittlicher Rang eines angegebenen Werts in einem Datensatz.",
       m: [
         2,
         3
@@ -1757,7 +1757,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion RANK_AVG.",
+          detail: "Der Wert, dessen Rang bestimmt werden soll.",
           example: "A10",
           require: "m",
           repeat: "n",
@@ -1765,7 +1765,7 @@ module.exports = {
         },
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion RANK_AVG.",
+          detail: "Das Array oder der Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1773,7 +1773,7 @@ module.exports = {
         },
         {
           name: "ist_aufsteigend",
-          detail: "Parameter `ist_aufsteigend` der Funktion RANK_AVG.",
+          detail: "Ob die Werte in `daten` in absteigender oder aufsteigender Reihenfolge betrachtet werden sollen. Falls weggelassen, ist der Standardwert absteigend (FALSE).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1784,8 +1784,8 @@ module.exports = {
     {
       n: "PERCENTRANK_EXC",
       t: 1,
-      d: "Beschreibung der Funktion PERCENTRANK_EXC.",
-      a: "Kurzbeschreibung der Funktion PERCENTRANK_EXC.",
+      d: "Gibt den prozentualen Rang (Perzentil) von 0 bis 1 (ausschließlich) eines angegebenen Werts in einem Datensatz zurück.",
+      a: "Prozentualer Rang (Perzentil) von 0 bis 1 (ausschließlich).",
       m: [
         2,
         3
@@ -1793,7 +1793,7 @@ module.exports = {
       p: [
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion PERCENTRANK_EXC.",
+          detail: "Das Array oder der Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1801,7 +1801,7 @@ module.exports = {
         },
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion PERCENTRANK_EXC.",
+          detail: "Der Wert, dessen prozentualer Rang bestimmt werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1809,7 +1809,7 @@ module.exports = {
         },
         {
           name: "signifikante_stellen",
-          detail: "Parameter `signifikante_stellen` der Funktion PERCENTRANK_EXC.",
+          detail: "Die Anzahl der signifikanten Stellen, die für die Berechnung verwendet werden sollen. Standard ist 3.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1820,8 +1820,8 @@ module.exports = {
     {
       n: "PERCENTRANK_INC",
       t: 1,
-      d: "Beschreibung der Funktion PERCENTRANK_INC.",
-      a: "Kurzbeschreibung der Funktion PERCENTRANK_INC.",
+      d: "Gibt den prozentualen Rang (Perzentil) von 0 bis 1 (einschließlich) eines angegebenen Werts in einem Datensatz zurück.",
+      a: "Prozentualer Rang (Perzentil) von 0 bis 1 (einschließlich).",
       m: [
         2,
         3
@@ -1829,7 +1829,7 @@ module.exports = {
       p: [
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion PERCENTRANK_INC.",
+          detail: "Das Array oder der Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1837,7 +1837,7 @@ module.exports = {
         },
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion PERCENTRANK_INC.",
+          detail: "Der Wert, dessen prozentualer Rang bestimmt werden soll.",
           example: " A2",
           require: "m",
           repeat: "n",
@@ -1845,7 +1845,7 @@ module.exports = {
         },
         {
           name: "signifikante_stellen",
-          detail: "Parameter `signifikante_stellen` der Funktion PERCENTRANK_INC.",
+          detail: "Die Anzahl der signifikanten Stellen, die für die Berechnung verwendet werden sollen. Standard ist 3.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1856,8 +1856,8 @@ module.exports = {
     {
       n: "FORECAST",
       t: 1,
-      d: "Beschreibung der Funktion FORECAST.",
-      a: "Kurzbeschreibung der Funktion FORECAST.",
+      d: "Berechnet den erwarteten y-Wert für ein angegebenes x auf Basis einer linearen Regression eines Datensatzes.",
+      a: "Erwarteter y-Wert basierend auf linearer Regression.",
       m: [
         3,
         3
@@ -1865,7 +1865,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion FORECAST.",
+          detail: "Der Wert auf der x-Achse, für den eine Prognose erstellt werden soll.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -1873,7 +1873,7 @@ module.exports = {
         },
         {
           name: "daten_y",
-          detail: "Parameter `daten_y` der Funktion FORECAST.",
+          detail: "Der Bereich, der das Array oder die Matrix der abhängigen Daten darstellt.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1881,7 +1881,7 @@ module.exports = {
         },
         {
           name: "daten_x",
-          detail: "Parameter `daten_x` der Funktion FORECAST.",
+          detail: "Der Bereich, der das Array oder die Matrix der unabhängigen Daten darstellt.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1892,8 +1892,8 @@ module.exports = {
     {
       n: "FISHERINV",
       t: 1,
-      d: "Beschreibung der Funktion FISHERINV.",
-      a: "Kurzbeschreibung der Funktion FISHERINV.",
+      d: "Gibt die inverse Fisher-Transformation eines angegebenen Werts zurück.",
+      a: "Inverse Fisher-Transformation eines angegebenen Werts.",
       m: [
         1,
         1
@@ -1901,7 +1901,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion FISHERINV.",
+          detail: "Der Wert, für den die inverse Fisher-Transformation berechnet werden soll.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1912,8 +1912,8 @@ module.exports = {
     {
       n: "FISHER",
       t: 1,
-      d: "Beschreibung der Funktion FISHER.",
-      a: "Kurzbeschreibung der Funktion FISHER.",
+      d: "Gibt die Fisher-Transformation eines angegebenen Werts zurück.",
+      a: "Fisher-Transformation eines angegebenen Werts.",
       m: [
         1,
         1
@@ -1921,7 +1921,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion FISHER.",
+          detail: "Der Wert, für den die Fisher-Transformation berechnet werden soll.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1932,8 +1932,8 @@ module.exports = {
     {
       n: "MODE_SNGL",
       t: 1,
-      d: "Beschreibung der Funktion MODE_SNGL.",
-      a: "Kurzbeschreibung der Funktion MODE_SNGL.",
+      d: "Gibt den am häufigsten vorkommenden Wert in einem Datensatz zurück.",
+      a: "Am häufigsten vorkommender Wert in einem Datensatz.",
       m: [
         1,
         255
@@ -1941,7 +1941,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion MODE_SNGL.",
+          detail: "Der erste Wert oder Bereich, der bei der Berechnung des Modus berücksichtigt werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1949,7 +1949,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion MODE_SNGL.",
+          detail: "Weitere Werte oder Bereiche, die bei der Berechnung des Modus berücksichtigt werden sollen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1960,8 +1960,8 @@ module.exports = {
     {
       n: "WEIBULL_DIST",
       t: 1,
-      d: "Beschreibung der Funktion WEIBULL_DIST.",
-      a: "Kurzbeschreibung der Funktion WEIBULL_DIST.",
+      d: "Gibt den Wert der Weibull-Verteilungsfunktion (oder der kumulativen Weibull-Verteilungsfunktion) für eine angegebene Form und Skalierung zurück.",
+      a: "Weibull-Verteilungsfunktion.",
       m: [
         4,
         4
@@ -1969,7 +1969,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion WEIBULL_DIST.",
+          detail: "Die Eingabe für die Weibull-Verteilungsfunktion.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -1977,7 +1977,7 @@ module.exports = {
         },
         {
           name: "form",
-          detail: "Parameter `form` der Funktion WEIBULL_DIST.",
+          detail: "Der Formparameter der Weibull-Verteilungsfunktion.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1985,7 +1985,7 @@ module.exports = {
         },
         {
           name: "skalierung",
-          detail: "Parameter `skalierung` der Funktion WEIBULL_DIST.",
+          detail: "Der Skalierungsparameter der Weibull-Verteilungsfunktion.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -1993,7 +1993,7 @@ module.exports = {
         },
         {
           name: "kumuliert",
-          detail: "Parameter `kumuliert` der Funktion WEIBULL_DIST.",
+          detail: "Ob die kumulative Verteilungsfunktion verwendet werden soll.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -2004,8 +2004,8 @@ module.exports = {
     {
       n: "COUNT",
       t: 1,
-      d: "Beschreibung der Funktion COUNT.",
-      a: "Kurzbeschreibung der Funktion COUNT.",
+      d: "Gibt die Anzahl der numerischen Werte in einem Datensatz zurück.",
+      a: "Die Anzahl der numerischen Werte in einem Datensatz.",
       m: [
         1,
         255
@@ -2013,7 +2013,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion COUNT.",
+          detail: "Der erste Wert oder Bereich, der bei der Zählung berücksichtigt werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2021,7 +2021,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion COUNT.",
+          detail: "Weitere Werte oder Bereiche, die bei der Zählung berücksichtigt werden sollen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2032,8 +2032,8 @@ module.exports = {
     {
       n: "COUNTA",
       t: 1,
-      d: "Beschreibung der Funktion COUNTA.",
-      a: "Kurzbeschreibung der Funktion COUNTA.",
+      d: "Gibt die Anzahl der Werte in einem Datensatz zurück.",
+      a: "Die Anzahl der Werte in einem Datensatz.",
       m: [
         1,
         255
@@ -2041,7 +2041,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion COUNTA.",
+          detail: "Der erste Wert oder Bereich, der bei der Zählung berücksichtigt werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2049,7 +2049,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion COUNTA.",
+          detail: "Weitere Werte oder Bereiche, die bei der Zählung berücksichtigt werden sollen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2060,8 +2060,8 @@ module.exports = {
     {
       n: "AVEDEV",
       t: 1,
-      d: "Beschreibung der Funktion AVEDEV.",
-      a: "Kurzbeschreibung der Funktion AVEDEV.",
+      d: "Berechnet den Durchschnitt der absoluten Abweichungen der Daten vom Mittelwert eines Datensatzes.",
+      a: "Durchschnittliche absolute Abweichung vom Mittelwert.",
       m: [
         1,
         255
@@ -2069,7 +2069,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion AVEDEV.",
+          detail: "Der erste Wert oder Bereich der Stichprobe.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2077,7 +2077,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion AVEDEV.",
+          detail: "Weitere Werte oder Bereiche, die in die Stichprobe einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2088,8 +2088,8 @@ module.exports = {
     {
       n: "AVERAGE",
       t: 1,
-      d: "Beschreibung der Funktion AVERAGE.",
-      a: "Kurzbeschreibung der Funktion AVERAGE.",
+      d: "Gibt den numerischen Durchschnittswert in einem Datensatz zurück, wobei Text ignoriert wird.",
+      a: "Numerischer Durchschnittswert in einem Datensatz, wobei Text ignoriert wird.",
       m: [
         1,
         255
@@ -2097,7 +2097,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion AVERAGE.",
+          detail: "Der erste Wert oder Bereich, der bei der Berechnung des Durchschnittswerts berücksichtigt werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2105,7 +2105,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion AVERAGE.",
+          detail: "Weitere Werte oder Bereiche, die bei der Berechnung des Durchschnittswerts berücksichtigt werden sollen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2116,8 +2116,8 @@ module.exports = {
     {
       n: "AVERAGEA",
       t: 1,
-      d: "Beschreibung der Funktion AVERAGEA.",
-      a: "Kurzbeschreibung der Funktion AVERAGEA.",
+      d: "Gibt den numerischen Durchschnittswert in einem Datensatz zurück.",
+      a: "Numerischer Durchschnittswert in einem Datensatz.",
       m: [
         1,
         255
@@ -2125,7 +2125,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion AVERAGEA.",
+          detail: "Der erste Wert oder Bereich, der bei der Berechnung des Durchschnittswerts berücksichtigt werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2133,7 +2133,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion AVERAGEA.",
+          detail: "Weitere Werte oder Bereiche, die bei der Berechnung des Durchschnittswerts berücksichtigt werden sollen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2144,8 +2144,8 @@ module.exports = {
     {
       n: "BINOM_DIST",
       t: 1,
-      d: "Beschreibung der Funktion BINOM_DIST.",
-      a: "Kurzbeschreibung der Funktion BINOM_DIST.",
+      d: "Berechnet die Wahrscheinlichkeit, bei einer bestimmten Anzahl von Versuchen eine bestimmte Anzahl (oder eine Höchstzahl) von Erfolgen zu ziehen, gegeben eine Grundgesamtheit einer bestimmten Größe mit einer bestimmten Anzahl von Erfolgen, mit Zurücklegen.",
+      a: "Wahrscheinlichkeit der Binomialverteilung.",
       m: [
         4,
         4
@@ -2153,7 +2153,7 @@ module.exports = {
       p: [
         {
           name: "anzahl_erfolge",
-          detail: "Parameter `anzahl_erfolge` der Funktion BINOM_DIST.",
+          detail: "Die Anzahl der Erfolge, für die die Wahrscheinlichkeit bei `anzahl_versuche` Versuchen berechnet werden soll.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2161,7 +2161,7 @@ module.exports = {
         },
         {
           name: "anzahl_versuche",
-          detail: "Parameter `anzahl_versuche` der Funktion BINOM_DIST.",
+          detail: "Die Anzahl der unabhängigen Versuche.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -2169,7 +2169,7 @@ module.exports = {
         },
         {
           name: "erfolgswahrscheinlichkeit",
-          detail: "Parameter `erfolgswahrscheinlichkeit` der Funktion BINOM_DIST.",
+          detail: "Die Erfolgswahrscheinlichkeit bei einem einzelnen Versuch.",
           example: "0.005",
           require: "m",
           repeat: "n",
@@ -2177,7 +2177,7 @@ module.exports = {
         },
         {
           name: "kumuliert",
-          detail: "Parameter `kumuliert` der Funktion BINOM_DIST.",
+          detail: "Ob die kumulative Binomialverteilung verwendet werden soll.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2188,8 +2188,8 @@ module.exports = {
     {
       n: "BINOM_INV",
       t: 1,
-      d: "Beschreibung der Funktion BINOM_INV.",
-      a: "Kurzbeschreibung der Funktion BINOM_INV.",
+      d: "Berechnet den kleinsten Wert, für den die kumulative Binomialverteilung größer oder gleich einem angegebenen Kriterium ist.",
+      a: "Inverse kumulative Binomialverteilungsfunktion.",
       m: [
         3,
         3
@@ -2197,7 +2197,7 @@ module.exports = {
       p: [
         {
           name: "anzahl_versuche",
-          detail: "Parameter `anzahl_versuche` der Funktion BINOM_INV.",
+          detail: "Die Anzahl der unabhängigen Versuche.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -2205,7 +2205,7 @@ module.exports = {
         },
         {
           name: "erfolgswahrscheinlichkeit",
-          detail: "Parameter `erfolgswahrscheinlichkeit` der Funktion BINOM_INV.",
+          detail: "Die Erfolgswahrscheinlichkeit bei einem einzelnen Versuch.",
           example: "0.005",
           require: "m",
           repeat: "n",
@@ -2213,7 +2213,7 @@ module.exports = {
         },
         {
           name: "zielwahrscheinlichkeit",
-          detail: "Parameter `zielwahrscheinlichkeit` der Funktion BINOM_INV.",
+          detail: "Die gewünschte Schwellenwahrscheinlichkeit.",
           example: "0.8",
           require: "m",
           repeat: "n",
@@ -2224,8 +2224,8 @@ module.exports = {
     {
       n: "CONFIDENCE_NORM",
       t: 1,
-      d: "Beschreibung der Funktion CONFIDENCE_NORM.",
-      a: "Kurzbeschreibung der Funktion CONFIDENCE_NORM.",
+      d: "Berechnet die Breite der Hälfte des Konfidenzintervalls für eine Normalverteilung.",
+      a: "Konfidenzintervall für eine Normalverteilung.",
       m: [
         3,
         3
@@ -2233,7 +2233,7 @@ module.exports = {
       p: [
         {
           name: "alpha",
-          detail: "Parameter `alpha` der Funktion CONFIDENCE_NORM.",
+          detail: "Eins minus dem gewünschten Konfidenzniveau. Z. B. `0,1` für eine Konfidenz von `0,9` bzw. 90 %.",
           example: "0.05",
           require: "m",
           repeat: "n",
@@ -2241,7 +2241,7 @@ module.exports = {
         },
         {
           name: "standardabweichung",
-          detail: "Parameter `standardabweichung` der Funktion CONFIDENCE_NORM.",
+          detail: "Die Standardabweichung der Grundgesamtheit.",
           example: "1.6",
           require: "m",
           repeat: "n",
@@ -2249,7 +2249,7 @@ module.exports = {
         },
         {
           name: "populationsgröße",
-          detail: "Parameter `populationsgröße` der Funktion CONFIDENCE_NORM.",
+          detail: "Die Größe der Grundgesamtheit.",
           example: "250",
           require: "m",
           repeat: "n",
@@ -2260,8 +2260,8 @@ module.exports = {
     {
       n: "CORREL",
       t: 1,
-      d: "Beschreibung der Funktion CORREL.",
-      a: "Kurzbeschreibung der Funktion CORREL.",
+      d: "Berechnet r, den Pearson-Produkt-Moment-Korrelationskoeffizienten eines Datensatzes.",
+      a: "Pearson-Produkt-Moment-Korrelationskoeffizient.",
       m: [
         2,
         2
@@ -2269,7 +2269,7 @@ module.exports = {
       p: [
         {
           name: "daten_y",
-          detail: "Parameter `daten_y` der Funktion CORREL.",
+          detail: "Der Bereich, der das Array oder die Matrix der abhängigen Daten darstellt.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2277,7 +2277,7 @@ module.exports = {
         },
         {
           name: "daten_x",
-          detail: "Parameter `daten_x` der Funktion CORREL.",
+          detail: "Der Bereich, der das Array oder die Matrix der unabhängigen Daten darstellt.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2288,8 +2288,8 @@ module.exports = {
     {
       n: "COVARIANCE_P",
       t: 1,
-      d: "Beschreibung der Funktion COVARIANCE_P.",
-      a: "Kurzbeschreibung der Funktion COVARIANCE_P.",
+      d: "Berechnet die Kovarianz eines Datensatzes.",
+      a: "Die Kovarianz eines Datensatzes.",
       m: [
         2,
         2
@@ -2297,7 +2297,7 @@ module.exports = {
       p: [
         {
           name: "daten_y",
-          detail: "Parameter `daten_y` der Funktion COVARIANCE_P.",
+          detail: "Der Bereich, der das Array oder die Matrix der abhängigen Daten darstellt.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2305,7 +2305,7 @@ module.exports = {
         },
         {
           name: "daten_x",
-          detail: "Parameter `daten_x` der Funktion COVARIANCE_P.",
+          detail: "Der Bereich, der das Array oder die Matrix der unabhängigen Daten darstellt.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2316,8 +2316,8 @@ module.exports = {
     {
       n: "COVARIANCE_S",
       t: 1,
-      d: "Beschreibung der Funktion COVARIANCE_S.",
-      a: "Kurzbeschreibung der Funktion COVARIANCE_S.",
+      d: "Berechnet die Stichprobenkovarianz eines Datensatzes.",
+      a: "Die Stichprobenkovarianz eines Datensatzes.",
       m: [
         2,
         2
@@ -2325,7 +2325,7 @@ module.exports = {
       p: [
         {
           name: "daten_y",
-          detail: "Parameter `daten_y` der Funktion COVARIANCE_S.",
+          detail: "Der Bereich, der das Array oder die Matrix der abhängigen Daten darstellt.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2333,7 +2333,7 @@ module.exports = {
         },
         {
           name: "daten_x",
-          detail: "Parameter `daten_x` der Funktion COVARIANCE_S.",
+          detail: "Der Bereich, der das Array oder die Matrix der unabhängigen Daten darstellt.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2344,8 +2344,8 @@ module.exports = {
     {
       n: "DEVSQ",
       t: 1,
-      d: "Beschreibung der Funktion DEVSQ.",
-      a: "Kurzbeschreibung der Funktion DEVSQ.",
+      d: "Berechnet die Summe der quadrierten Abweichungen auf Basis einer Stichprobe.",
+      a: "Die Summe der quadrierten Abweichungen auf Basis einer Stichprobe.",
       m: [
         1,
         255
@@ -2353,7 +2353,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion DEVSQ.",
+          detail: "Der erste Wert oder Bereich der Stichprobe.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2361,7 +2361,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion DEVSQ.",
+          detail: "Weitere Werte oder Bereiche, die in die Stichprobe einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2372,8 +2372,8 @@ module.exports = {
     {
       n: "EXPON_DIST",
       t: 1,
-      d: "Beschreibung der Funktion EXPON_DIST.",
-      a: "Kurzbeschreibung der Funktion EXPON_DIST.",
+      d: "Gibt den Wert der Exponentialverteilungsfunktion mit einem angegebenen Lambda bei einem angegebenen Wert zurück.",
+      a: "Exponentialverteilungsfunktion.",
       m: [
         3,
         3
@@ -2381,7 +2381,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion EXPON_DIST.",
+          detail: "Die Eingabe für die Exponentialverteilungsfunktion.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2389,7 +2389,7 @@ module.exports = {
         },
         {
           name: "lambda",
-          detail: "Parameter `lambda` der Funktion EXPON_DIST.",
+          detail: "Der Lambda-Wert, der die Exponentialverteilungsfunktion angibt.",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -2397,7 +2397,7 @@ module.exports = {
         },
         {
           name: "kumuliert",
-          detail: "Parameter `kumuliert` der Funktion EXPON_DIST.",
+          detail: "Ob die kumulative Exponentialverteilung verwendet werden soll.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2408,8 +2408,8 @@ module.exports = {
     {
       n: "AVERAGEIF",
       t: 1,
-      d: "Beschreibung der Funktion AVERAGEIF.",
-      a: "Kurzbeschreibung der Funktion AVERAGEIF.",
+      d: "Gibt den Durchschnitt eines Bereichs abhängig von einem Kriterium zurück.",
+      a: "Durchschnitt von Werten abhängig von einem Kriterium.",
       m: [
         2,
         3
@@ -2417,7 +2417,7 @@ module.exports = {
       p: [
         {
           name: "kriterienbereich",
-          detail: "Parameter `kriterienbereich` der Funktion AVERAGEIF.",
+          detail: "Der Bereich, der gegen `kriterium` geprüft wird.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -2425,7 +2425,7 @@ module.exports = {
         },
         {
           name: "kriterium",
-          detail: "Parameter `kriterium` der Funktion AVERAGEIF.",
+          detail: "Das Muster oder der Test, der auf `kriterienbereich` angewendet wird.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -2433,7 +2433,7 @@ module.exports = {
         },
         {
           name: "mittelwertbereich",
-          detail: "Parameter `mittelwertbereich` der Funktion AVERAGEIF.",
+          detail: "Der Bereich, aus dem der Durchschnitt berechnet wird. Falls nicht angegeben, wird stattdessen `kriterienbereich` für den Durchschnitt verwendet.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -2444,8 +2444,8 @@ module.exports = {
     {
       n: "AVERAGEIFS",
       t: 1,
-      d: "Beschreibung der Funktion AVERAGEIFS.",
-      a: "Kurzbeschreibung der Funktion AVERAGEIFS.",
+      d: "Gibt den Durchschnitt eines Bereichs abhängig von mehreren Kriterien zurück.",
+      a: "Durchschnitt von Werten abhängig von mehreren Kriterien.",
       m: [
         2,
         255
@@ -2453,7 +2453,7 @@ module.exports = {
       p: [
         {
           name: "mittelwertbereich",
-          detail: "Parameter `mittelwertbereich` der Funktion AVERAGEIFS.",
+          detail: "Der Bereich, aus dem der Durchschnitt berechnet wird.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -2461,7 +2461,7 @@ module.exports = {
         },
         {
           name: "kriterienbereich1",
-          detail: "Parameter `kriterienbereich1` der Funktion AVERAGEIFS.",
+          detail: "Der Bereich, der gegen `kriterium1` geprüft wird.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
@@ -2469,7 +2469,7 @@ module.exports = {
         },
         {
           name: "kriterium1",
-          detail: "Parameter `kriterium1` der Funktion AVERAGEIFS.",
+          detail: "Das Muster oder der Test, der auf `kriterienbereich1` angewendet wird.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -2477,7 +2477,7 @@ module.exports = {
         },
         {
           name: "kriterienbereich2",
-          detail: "Parameter `kriterienbereich2` der Funktion AVERAGEIFS.",
+          detail: "Weitere zu prüfende Bereiche.",
           example: " C1:C10",
           require: "m",
           repeat: "n",
@@ -2488,8 +2488,8 @@ module.exports = {
     {
       n: "PERMUT",
       t: 1,
-      d: "Beschreibung der Funktion PERMUT.",
-      a: "Kurzbeschreibung der Funktion PERMUT.",
+      d: "Gibt die Anzahl der Möglichkeiten zurück, eine bestimmte Anzahl von Objekten aus einer Gruppe von Objekten einer bestimmten Größe unter Berücksichtigung der Reihenfolge auszuwählen.",
+      a: "Anzahl der Permutationen aus einer Anzahl von Objekten.",
       m: [
         2,
         2
@@ -2497,7 +2497,7 @@ module.exports = {
       p: [
         {
           name: "n",
-          detail: "Parameter `n` der Funktion PERMUT.",
+          detail: "Die Größe der Objektgruppe, aus der ausgewählt werden soll.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2505,7 +2505,7 @@ module.exports = {
         },
         {
           name: "k",
-          detail: "Parameter `k` der Funktion PERMUT.",
+          detail: "Die Anzahl der auszuwählenden Objekte.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2516,8 +2516,8 @@ module.exports = {
     {
       n: "TRIMMEAN",
       t: 1,
-      d: "Beschreibung der Funktion TRIMMEAN.",
-      a: "Kurzbeschreibung der Funktion TRIMMEAN.",
+      d: "Berechnet den Mittelwert eines Datensatzes unter Ausschluss eines bestimmten Anteils der Daten an den oberen und unteren Enden des Datensatzes.",
+      a: "Mittelwert eines Datensatzes unter Ausschluss der Extremwerte.",
       m: [
         2,
         2
@@ -2525,7 +2525,7 @@ module.exports = {
       p: [
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion TRIMMEAN.",
+          detail: "Array oder Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2533,7 +2533,7 @@ module.exports = {
         },
         {
           name: "ausgeschlossener_anteil",
-          detail: "Parameter `ausgeschlossener_anteil` der Funktion TRIMMEAN.",
+          detail: "Der Anteil des Datensatzes, der von den Extremwerten des Datensatzes ausgeschlossen werden soll.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2544,8 +2544,8 @@ module.exports = {
     {
       n: "PERCENTILE_EXC",
       t: 1,
-      d: "Beschreibung der Funktion PERCENTILE_EXC.",
-      a: "Kurzbeschreibung der Funktion PERCENTILE_EXC.",
+      d: "Gibt den Wert bei einem gegebenen Perzentil eines Datensatzes zurück, ausgenommen 0 und 1.",
+      a: "Wert bei einem gegebenen Perzentil eines Datensatzes, ausgenommen 0 und 1.",
       m: [
         2,
         2
@@ -2553,7 +2553,7 @@ module.exports = {
       p: [
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion PERCENTILE_EXC.",
+          detail: "Das Array oder der Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2561,7 +2561,7 @@ module.exports = {
         },
         {
           name: "perzentil",
-          detail: "Parameter `perzentil` der Funktion PERCENTILE_EXC.",
+          detail: "Das Perzentil, ausgenommen 0 und 1, dessen Wert innerhalb von 'daten' berechnet und zurückgegeben wird.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2572,8 +2572,8 @@ module.exports = {
     {
       n: "PERCENTILE_INC",
       t: 1,
-      d: "Beschreibung der Funktion PERCENTILE_INC.",
-      a: "Kurzbeschreibung der Funktion PERCENTILE_INC.",
+      d: "Gibt den Wert bei einem gegebenen Perzentil eines Datensatzes zurück.",
+      a: "Wert bei einem gegebenen Perzentil eines Datensatzes.",
       m: [
         2,
         2
@@ -2581,7 +2581,7 @@ module.exports = {
       p: [
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion PERCENTILE_INC.",
+          detail: "Das Array oder der Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2589,7 +2589,7 @@ module.exports = {
         },
         {
           name: "perzentil",
-          detail: "Parameter `perzentil` der Funktion PERCENTILE_INC.",
+          detail: "Das Perzentil, dessen Wert innerhalb von `daten` berechnet und zurückgegeben wird.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2600,8 +2600,8 @@ module.exports = {
     {
       n: "PEARSON",
       t: 1,
-      d: "Beschreibung der Funktion PEARSON.",
-      a: "Kurzbeschreibung der Funktion PEARSON.",
+      d: "Berechnet r, den Pearson-Produkt-Moment-Korrelationskoeffizienten eines Datensatzes.",
+      a: "Pearson-Produkt-Moment-Korrelationskoeffizient.",
       m: [
         2,
         2
@@ -2609,7 +2609,7 @@ module.exports = {
       p: [
         {
           name: "daten_y",
-          detail: "Parameter `daten_y` der Funktion PEARSON.",
+          detail: "Der Bereich, der das Array oder die Matrix der abhängigen Daten darstellt.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2617,7 +2617,7 @@ module.exports = {
         },
         {
           name: "daten_x",
-          detail: "Parameter `daten_x` der Funktion PEARSON.",
+          detail: "Der Bereich, der das Array oder die Matrix der unabhängigen Daten darstellt.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2628,8 +2628,8 @@ module.exports = {
     {
       n: "NORM_S_INV",
       t: 1,
-      d: "Beschreibung der Funktion NORM_S_INV.",
-      a: "Kurzbeschreibung der Funktion NORM_S_INV.",
+      d: "Gibt den Wert der inversen Standardnormalverteilungsfunktion für einen angegebenen Wert zurück.",
+      a: "Inverse Standardnormalverteilungsfunktion.",
       m: [
         1,
         1
@@ -2637,7 +2637,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion NORM_S_INV.",
+          detail: "Die Eingabe für die inverse Standardnormalverteilungsfunktion.",
           example: "0.75",
           require: "m",
           repeat: "n",
@@ -2648,8 +2648,8 @@ module.exports = {
     {
       n: "NORM_S_DIST",
       t: 1,
-      d: "Beschreibung der Funktion NORM_S_DIST.",
-      a: "Kurzbeschreibung der Funktion NORM_S_DIST.",
+      d: "Gibt den Wert der kumulativen Standardnormalverteilungsfunktion für einen angegebenen Wert zurück.",
+      a: "Kumulative Standardnormalverteilungsfunktion.",
       m: [
         2,
         2
@@ -2657,7 +2657,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion NORM_S_DIST.",
+          detail: "Die Eingabe für die kumulative Standardnormalverteilungsfunktion.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -2665,7 +2665,7 @@ module.exports = {
         },
         {
           name: "kumuliert",
-          detail: "Parameter `kumuliert` der Funktion NORM_S_DIST.",
+          detail: "Bestimmt die Form der Funktion. \n\nWenn TRUE(), gibt sie die kumulative Verteilungsfunktion zurück;\n\nwenn FALSE(), gibt sie die Wahrscheinlichkeitsdichtefunktion zurück.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2676,8 +2676,8 @@ module.exports = {
     {
       n: "NORM_INV",
       t: 1,
-      d: "Beschreibung der Funktion NORM_INV.",
-      a: "Kurzbeschreibung der Funktion NORM_INV.",
+      d: "Gibt den Wert der inversen Normalverteilungsfunktion für einen angegebenen Wert, Mittelwert und Standardabweichung zurück.",
+      a: "Inverse Normalverteilungsfunktion.",
       m: [
         3,
         3
@@ -2685,7 +2685,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion NORM_INV.",
+          detail: "Die Eingabe für die inverse Normalverteilungsfunktion.",
           example: "0.75",
           require: "m",
           repeat: "n",
@@ -2693,7 +2693,7 @@ module.exports = {
         },
         {
           name: "mittelwert",
-          detail: "Parameter `mittelwert` der Funktion NORM_INV.",
+          detail: "Der Mittelwert (mu) der Normalverteilungsfunktion.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2701,7 +2701,7 @@ module.exports = {
         },
         {
           name: "standardabweichung",
-          detail: "Parameter `standardabweichung` der Funktion NORM_INV.",
+          detail: "Die Standardabweichung (sigma) der Normalverteilungsfunktion.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2712,8 +2712,8 @@ module.exports = {
     {
       n: "NORM_DIST",
       t: 1,
-      d: "Beschreibung der Funktion NORM_DIST.",
-      a: "Kurzbeschreibung der Funktion NORM_DIST.",
+      d: "Gibt den Wert der Normalverteilungsfunktion (oder der kumulativen Normalverteilungsfunktion) für einen angegebenen Wert, Mittelwert und Standardabweichung zurück.",
+      a: "Normalverteilungsfunktion.",
       m: [
         4,
         4
@@ -2721,7 +2721,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion NORM_DIST.",
+          detail: "Die Eingabe für die Normalverteilungsfunktion.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -2729,7 +2729,7 @@ module.exports = {
         },
         {
           name: "mittelwert",
-          detail: "Parameter `mittelwert` der Funktion NORM_DIST.",
+          detail: "Der Mittelwert (mu) der Normalverteilungsfunktion.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2737,7 +2737,7 @@ module.exports = {
         },
         {
           name: "standardabweichung",
-          detail: "Parameter `standardabweichung` der Funktion NORM_DIST.",
+          detail: "Die Standardabweichung (sigma) der Normalverteilungsfunktion.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2745,7 +2745,7 @@ module.exports = {
         },
         {
           name: "kumuliert",
-          detail: "Parameter `kumuliert` der Funktion NORM_DIST.",
+          detail: "Ob die kumulative Normalverteilungsfunktion anstelle der Verteilungsfunktion verwendet werden soll.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2756,8 +2756,8 @@ module.exports = {
     {
       n: "NEGBINOM_DIST",
       t: 1,
-      d: "Beschreibung der Funktion NEGBINOM_DIST.",
-      a: "Kurzbeschreibung der Funktion NEGBINOM_DIST.",
+      d: "Berechnet die Wahrscheinlichkeit, bei einer gegebenen Erfolgswahrscheinlichkeit in unabhängigen Versuchen eine bestimmte Anzahl von Misserfolgen vor einer bestimmten Anzahl von Erfolgen zu ziehen.",
+      a: "Wahrscheinlichkeit der negativen Binomialverteilung.",
       m: [
         4,
         4
@@ -2765,7 +2765,7 @@ module.exports = {
       p: [
         {
           name: "anzahl_fehlschläge",
-          detail: "Parameter `anzahl_fehlschläge` der Funktion NEGBINOM_DIST.",
+          detail: "Die Anzahl der zu modellierenden Misserfolge.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2773,7 +2773,7 @@ module.exports = {
         },
         {
           name: "anzahl_erfolge",
-          detail: "Parameter `anzahl_erfolge` der Funktion NEGBINOM_DIST.",
+          detail: "Die Anzahl der zu modellierenden Erfolge.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2781,7 +2781,7 @@ module.exports = {
         },
         {
           name: "erfolgswahrscheinlichkeit",
-          detail: "Parameter `erfolgswahrscheinlichkeit` der Funktion NEGBINOM_DIST.",
+          detail: "Die Erfolgswahrscheinlichkeit bei einem einzelnen Versuch.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2789,7 +2789,7 @@ module.exports = {
         },
         {
           name: "kumuliert",
-          detail: "Parameter `kumuliert` der Funktion NEGBINOM_DIST.",
+          detail: "Bestimmt die Form der Funktion. \n\nWenn TRUE(), gibt sie die kumulative Verteilungsfunktion zurück;\n\nwenn FALSE(), gibt sie die Wahrscheinlichkeitsdichtefunktion zurück.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2800,8 +2800,8 @@ module.exports = {
     {
       n: "MINA",
       t: 1,
-      d: "Beschreibung der Funktion MINA.",
-      a: "Kurzbeschreibung der Funktion MINA.",
+      d: "Gibt den kleinsten numerischen Wert in einem Datensatz zurück.",
+      a: "Kleinster numerischer Wert in einem Datensatz.",
       m: [
         1,
         255
@@ -2809,7 +2809,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion MINA.",
+          detail: "Der erste Wert oder Bereich, der bei der Berechnung des Minimalwerts berücksichtigt werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2817,7 +2817,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion MINA.",
+          detail: "Weitere Werte oder Bereiche, die bei der Berechnung des Minimalwerts berücksichtigt werden sollen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2828,8 +2828,8 @@ module.exports = {
     {
       n: "MIN",
       t: 1,
-      d: "Beschreibung der Funktion MIN.",
-      a: "Kurzbeschreibung der Funktion MIN.",
+      d: "Gibt den kleinsten Wert in einem numerischen Datensatz zurück.",
+      a: "Kleinster Wert in einem numerischen Datensatz.",
       m: [
         1,
         255
@@ -2837,7 +2837,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion MIN.",
+          detail: "Der erste Wert oder Bereich, der bei der Berechnung des Minimalwerts berücksichtigt werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2845,7 +2845,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion MIN.",
+          detail: "Weitere Werte oder Bereiche, die bei der Berechnung des Minimalwerts berücksichtigt werden sollen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2856,8 +2856,8 @@ module.exports = {
     {
       n: "MEDIAN",
       t: 1,
-      d: "Beschreibung der Funktion MEDIAN.",
-      a: "Kurzbeschreibung der Funktion MEDIAN.",
+      d: "Gibt den Medianwert in einem numerischen Datensatz zurück.",
+      a: "Medianwert in einem numerischen Datensatz.",
       m: [
         1,
         255
@@ -2865,7 +2865,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion MEDIAN.",
+          detail: "Der erste Wert oder Bereich, der bei der Berechnung des Medianwerts berücksichtigt werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2873,7 +2873,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion MEDIAN.",
+          detail: "Weitere Werte oder Bereiche, die bei der Berechnung des Medianwerts berücksichtigt werden sollen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2884,8 +2884,8 @@ module.exports = {
     {
       n: "MAXA",
       t: 1,
-      d: "Beschreibung der Funktion MAXA.",
-      a: "Kurzbeschreibung der Funktion MAXA.",
+      d: "Gibt den größten numerischen Wert in einem Datensatz zurück.",
+      a: "Größter numerischer Wert in einem Datensatz.",
       m: [
         1,
         255
@@ -2893,7 +2893,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion MAXA.",
+          detail: "Der erste Wert oder Bereich, der bei der Berechnung des Maximalwerts berücksichtigt werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2901,7 +2901,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion MAXA.",
+          detail: "Weitere Werte oder Bereiche, die bei der Berechnung des Maximalwerts berücksichtigt werden sollen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2912,8 +2912,8 @@ module.exports = {
     {
       n: "MAX",
       t: 1,
-      d: "Beschreibung der Funktion MAX.",
-      a: "Kurzbeschreibung der Funktion MAX.",
+      d: "Gibt den größten Wert in einem numerischen Datensatz zurück.",
+      a: "Größter Wert in einem numerischen Datensatz.",
       m: [
         1,
         255
@@ -2921,7 +2921,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion MAX.",
+          detail: "Der erste Wert oder Bereich, der bei der Berechnung des Maximalwerts berücksichtigt werden soll.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2929,7 +2929,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion MAX.",
+          detail: "Weitere Werte oder Bereiche, die bei der Berechnung des Maximalwerts berücksichtigt werden sollen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2940,8 +2940,8 @@ module.exports = {
     {
       n: "LOGNORM_INV",
       t: 1,
-      d: "Beschreibung der Funktion LOGNORM_INV.",
-      a: "Kurzbeschreibung der Funktion LOGNORM_INV.",
+      d: "Gibt den Wert der inversen kumulativen Lognormalverteilung mit angegebenem Mittelwert und angegebener Standardabweichung bei einem angegebenen Wert zurück.",
+      a: "Inverse kumulative Lognormalverteilungsfunktion.",
       m: [
         3,
         3
@@ -2949,7 +2949,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion LOGNORM_INV.",
+          detail: "Die Eingabe für die inverse kumulative Lognormalverteilungsfunktion.",
           example: "0.4",
           require: "m",
           repeat: "n",
@@ -2957,7 +2957,7 @@ module.exports = {
         },
         {
           name: "mittelwert",
-          detail: "Parameter `mittelwert` der Funktion LOGNORM_INV.",
+          detail: "Der Mittelwert (mu) der inversen kumulativen Lognormalverteilungsfunktion.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2965,7 +2965,7 @@ module.exports = {
         },
         {
           name: "standardabweichung",
-          detail: "Parameter `standardabweichung` der Funktion LOGNORM_INV.",
+          detail: "Die Standardabweichung (sigma) der inversen kumulativen Lognormalverteilungsfunktion.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -2976,8 +2976,8 @@ module.exports = {
     {
       n: "LOGNORM_DIST",
       t: 1,
-      d: "Beschreibung der Funktion LOGNORM_DIST.",
-      a: "Kurzbeschreibung der Funktion LOGNORM_DIST.",
+      d: "Gibt den Wert der kumulativen Lognormalverteilung mit angegebenem Mittelwert und angegebener Standardabweichung bei einem angegebenen Wert zurück.",
+      a: "Wahrscheinlichkeit der kumulativen Lognormalverteilung.",
       m: [
         4,
         4
@@ -2985,7 +2985,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion LOGNORM_DIST.",
+          detail: "Die Eingabe für die kumulative Lognormalverteilungsfunktion.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2993,7 +2993,7 @@ module.exports = {
         },
         {
           name: "mittelwert",
-          detail: "Parameter `mittelwert` der Funktion LOGNORM_DIST.",
+          detail: "Der Mittelwert (mu) der kumulativen Lognormalverteilungsfunktion.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -3001,7 +3001,7 @@ module.exports = {
         },
         {
           name: "standardabweichung",
-          detail: "Parameter `standardabweichung` der Funktion LOGNORM_DIST.",
+          detail: "Die Standardabweichung (sigma) der kumulativen Lognormalverteilungsfunktion.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3009,7 +3009,7 @@ module.exports = {
         },
         {
           name: "kumuliert",
-          detail: "Parameter `kumuliert` der Funktion LOGNORM_DIST.",
+          detail: "Bestimmt die Form der Funktion. \n\nWenn TRUE(), gibt sie die kumulative Verteilungsfunktion zurück;\n\nwenn FALSE(), gibt sie die Wahrscheinlichkeitsdichtefunktion zurück.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3020,8 +3020,8 @@ module.exports = {
     {
       n: "Z_TEST",
       t: 1,
-      d: "Beschreibung der Funktion Z_TEST.",
-      a: "Kurzbeschreibung der Funktion Z_TEST.",
+      d: "Gibt den einseitigen p-Wert eines Z-Tests mit Standardverteilung zurück.",
+      a: "Einseitiger p-Wert eines Z-Tests.",
       m: [
         2,
         3
@@ -3029,7 +3029,7 @@ module.exports = {
       p: [
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion Z_TEST.",
+          detail: "Das Array oder der Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3037,7 +3037,7 @@ module.exports = {
         },
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion Z_TEST.",
+          detail: "Die Testgröße, die im Z-Test verwendet werden soll.",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -3045,7 +3045,7 @@ module.exports = {
         },
         {
           name: "standardabweichung",
-          detail: "Parameter `standardabweichung` der Funktion Z_TEST.",
+          detail: "Die für den Z-Test anzunehmende Standardabweichung. Wird sie nicht angegeben, wird die Standardabweichung der Daten verwendet.",
           example: "3",
           require: "o",
           repeat: "n",
@@ -3056,8 +3056,8 @@ module.exports = {
     {
       n: "PROB",
       t: 1,
-      d: "Beschreibung der Funktion PROB.",
-      a: "Kurzbeschreibung der Funktion PROB.",
+      d: "Berechnet bei einer Menge von Werten und zugehörigen Wahrscheinlichkeiten die Wahrscheinlichkeit, dass ein zufällig ausgewählter Wert zwischen zwei Grenzen liegt.",
+      a: "Wahrscheinlichkeit, dass Werte in einem Bereich liegen.",
       m: [
         3,
         4
@@ -3065,7 +3065,7 @@ module.exports = {
       p: [
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion PROB.",
+          detail: "Array oder Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A3:A6",
           require: "m",
           repeat: "n",
@@ -3073,7 +3073,7 @@ module.exports = {
         },
         {
           name: "wahrscheinlichkeiten",
-          detail: "Parameter `wahrscheinlichkeiten` der Funktion PROB.",
+          detail: "Array oder Bereich mit Wahrscheinlichkeiten, die `daten` entsprechen.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3081,7 +3081,7 @@ module.exports = {
         },
         {
           name: "untergrenze",
-          detail: "Parameter `untergrenze` der Funktion PROB.",
+          detail: "Die Untergrenze des Wertebereichs, für den die Wahrscheinlichkeit berechnet werden soll.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3089,7 +3089,7 @@ module.exports = {
         },
         {
           name: "obergrenze",
-          detail: "Parameter `obergrenze` der Funktion PROB.",
+          detail: "Die Obergrenze des Wertebereichs, für den die Wahrscheinlichkeit berechnet werden soll.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -3100,8 +3100,8 @@ module.exports = {
     {
       n: "QUARTILE_EXC",
       t: 1,
-      d: "Beschreibung der Funktion QUARTILE_EXC.",
-      a: "Kurzbeschreibung der Funktion QUARTILE_EXC.",
+      d: "Gibt einen Wert zurück, der einem angegebenen Quartil eines Datensatzes am nächsten liegt, ausgenommen 0 und 4.",
+      a: "Wert, der einem bestimmten Quartil eines Datensatzes am nächsten liegt, ausgenommen 0 und 4.",
       m: [
         2,
         2
@@ -3109,7 +3109,7 @@ module.exports = {
       p: [
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion QUARTILE_EXC.",
+          detail: "Das Array oder der Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3117,7 +3117,7 @@ module.exports = {
         },
         {
           name: "quartilnummer",
-          detail: "Parameter `quartilnummer` der Funktion QUARTILE_EXC.",
+          detail: "Welches Quartil zurückgegeben werden soll.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3128,8 +3128,8 @@ module.exports = {
     {
       n: "QUARTILE_INC",
       t: 1,
-      d: "Beschreibung der Funktion QUARTILE_INC.",
-      a: "Kurzbeschreibung der Funktion QUARTILE_INC.",
+      d: "Gibt einen Wert zurück, der einem angegebenen Quartil eines Datensatzes am nächsten liegt.",
+      a: "Wert, der einem bestimmten Quartil eines Datensatzes am nächsten liegt.",
       m: [
         2,
         2
@@ -3137,7 +3137,7 @@ module.exports = {
       p: [
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion QUARTILE_INC.",
+          detail: "Das Array oder der Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3145,7 +3145,7 @@ module.exports = {
         },
         {
           name: "quartilnummer",
-          detail: "Parameter `quartilnummer` der Funktion QUARTILE_INC.",
+          detail: "Welcher Quartilwert zurückgegeben werden soll.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3156,8 +3156,8 @@ module.exports = {
     {
       n: "POISSON_DIST",
       t: 1,
-      d: "Beschreibung der Funktion POISSON_DIST.",
-      a: "Kurzbeschreibung der Funktion POISSON_DIST.",
+      d: "Gibt den Wert der Poisson-Verteilungsfunktion (oder der kumulativen Poisson-Verteilungsfunktion) für einen angegebenen Wert und Mittelwert zurück.",
+      a: "Poisson-Verteilungsfunktion.",
       m: [
         3,
         3
@@ -3165,7 +3165,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion POISSON_DIST.",
+          detail: "Die Eingabe für die Poisson-Verteilungsfunktion.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3173,7 +3173,7 @@ module.exports = {
         },
         {
           name: "mittelwert",
-          detail: "Parameter `mittelwert` der Funktion POISSON_DIST.",
+          detail: "Der Mittelwert (mu) der Poisson-Verteilungsfunktion.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3181,7 +3181,7 @@ module.exports = {
         },
         {
           name: "kumuliert",
-          detail: "Parameter `kumuliert` der Funktion POISSON_DIST.",
+          detail: "Ob die kumulative Poisson-Verteilungsfunktion anstelle der Verteilungsfunktion verwendet werden soll.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3192,8 +3192,8 @@ module.exports = {
     {
       n: "RSQ",
       t: 1,
-      d: "Beschreibung der Funktion RSQ.",
-      a: "Kurzbeschreibung der Funktion RSQ.",
+      d: "Berechnet das Quadrat von r, dem Pearson-Produkt-Moment-Korrelationskoeffizienten eines Datensatzes.",
+      a: "Quadrat des Korrelationskoeffizienten.",
       m: [
         2,
         2
@@ -3201,7 +3201,7 @@ module.exports = {
       p: [
         {
           name: "daten_y",
-          detail: "Parameter `daten_y` der Funktion RSQ.",
+          detail: "Der Bereich, der das Array oder die Matrix der abhängigen Daten darstellt.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3209,7 +3209,7 @@ module.exports = {
         },
         {
           name: "daten_x",
-          detail: "Parameter `daten_x` der Funktion RSQ.",
+          detail: "Der Bereich, der das Array oder die Matrix der unabhängigen Daten darstellt.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3220,8 +3220,8 @@ module.exports = {
     {
       n: "T_DIST",
       t: 1,
-      d: "Beschreibung der Funktion T_DIST.",
-      a: "Kurzbeschreibung der Funktion T_DIST.",
+      d: "Berechnet die linksseitige Wahrscheinlichkeit für eine Student'sche t-Verteilung bei einer gegebenen Eingabe (x).",
+      a: "Linksseitige Student'sche t-Verteilung.",
       m: [
         3,
         3
@@ -3229,7 +3229,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion T_DIST.",
+          detail: "Die Eingabe für die t-Verteilungsfunktion.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3237,7 +3237,7 @@ module.exports = {
         },
         {
           name: "freiheitsgrade",
-          detail: "Parameter `freiheitsgrade` der Funktion T_DIST.",
+          detail: "Die Anzahl der Freiheitsgrade.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3245,7 +3245,7 @@ module.exports = {
         },
         {
           name: "kumuliert",
-          detail: "Parameter `kumuliert` der Funktion T_DIST.",
+          detail: "Wenn cumulative TRUE ist, gibt T.DIST die kumulative Verteilungsfunktion zurück; wenn FALSE, gibt sie die Wahrscheinlichkeitsdichtefunktion zurück.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3256,8 +3256,8 @@ module.exports = {
     {
       n: "T_DIST_2T",
       t: 1,
-      d: "Beschreibung der Funktion T_DIST_2T.",
-      a: "Kurzbeschreibung der Funktion T_DIST_2T.",
+      d: "Berechnet die Wahrscheinlichkeit für eine zweiseitige Student'sche t-Verteilung bei einer gegebenen Eingabe (x).",
+      a: "Zweiseitige Student'sche t-Verteilung.",
       m: [
         2,
         2
@@ -3265,7 +3265,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion T_DIST_2T.",
+          detail: "Die Eingabe für die t-Verteilungsfunktion.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3273,7 +3273,7 @@ module.exports = {
         },
         {
           name: "freiheitsgrade",
-          detail: "Parameter `freiheitsgrade` der Funktion T_DIST_2T.",
+          detail: "Die Anzahl der Freiheitsgrade.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3284,8 +3284,8 @@ module.exports = {
     {
       n: "T_DIST_RT",
       t: 1,
-      d: "Beschreibung der Funktion T_DIST_RT.",
-      a: "Kurzbeschreibung der Funktion T_DIST_RT.",
+      d: "Berechnet die rechtsseitige Wahrscheinlichkeit für eine Student'sche t-Verteilung bei einer gegebenen Eingabe (x).",
+      a: "Rechtsseitige Student'sche t-Verteilung.",
       m: [
         2,
         2
@@ -3293,7 +3293,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion T_DIST_RT.",
+          detail: "Die Eingabe für die t-Verteilungsfunktion.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3301,7 +3301,7 @@ module.exports = {
         },
         {
           name: "freiheitsgrade",
-          detail: "Parameter `freiheitsgrade` der Funktion T_DIST_RT.",
+          detail: "Die Anzahl der Freiheitsgrade.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3312,8 +3312,8 @@ module.exports = {
     {
       n: "T_INV",
       t: 1,
-      d: "Beschreibung der Funktion T_INV.",
-      a: "Kurzbeschreibung der Funktion T_INV.",
+      d: "Berechnet den negativen Kehrwert der einseitigen TDIST-Funktion.",
+      a: "T.INV",
       m: [
         2,
         2
@@ -3321,7 +3321,7 @@ module.exports = {
       p: [
         {
           name: "wahrscheinlichkeit",
-          detail: "Parameter `wahrscheinlichkeit` der Funktion T_INV.",
+          detail: "Die Wahrscheinlichkeit, die der zweiseitigen t-Verteilung zugeordnet ist.",
           example: "0.35",
           require: "m",
           repeat: "n",
@@ -3329,7 +3329,7 @@ module.exports = {
         },
         {
           name: "freiheitsgrade",
-          detail: "Parameter `freiheitsgrade` der Funktion T_INV.",
+          detail: "Die Anzahl der Freiheitsgrade.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3340,8 +3340,8 @@ module.exports = {
     {
       n: "T_INV_2T",
       t: 1,
-      d: "Beschreibung der Funktion T_INV_2T.",
-      a: "Kurzbeschreibung der Funktion T_INV_2T.",
+      d: "Berechnet den Kehrwert der zweiseitigen TDIST-Funktion.",
+      a: "T.INV.2T",
       m: [
         2,
         2
@@ -3349,7 +3349,7 @@ module.exports = {
       p: [
         {
           name: "wahrscheinlichkeit",
-          detail: "Parameter `wahrscheinlichkeit` der Funktion T_INV_2T.",
+          detail: "Die Wahrscheinlichkeit, die der zweiseitigen t-Verteilung zugeordnet ist.",
           example: "0.35",
           require: "m",
           repeat: "n",
@@ -3357,7 +3357,7 @@ module.exports = {
         },
         {
           name: "freiheitsgrade",
-          detail: "Parameter `freiheitsgrade` der Funktion T_INV_2T.",
+          detail: "Die Anzahl der Freiheitsgrade.",
           example: "1",
           require: "m",
           repeat: "n",
