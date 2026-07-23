@@ -7650,8 +7650,8 @@ module.exports = {
     {
       n: "NOT",
       t: 10,
-      d: "Beschrijving van de functie NOT.",
-      a: "Samenvatting van de functie NOT.",
+      d: "Retourneert het tegenovergestelde van een logische waarde - `NOT(WAAR)` retourneert `ONWAAR`; `NOT(ONWAAR)` retourneert `WAAR`.",
+      a: "Retourneert het tegenovergestelde van de opgegeven logische waarde.",
       m: [
         1,
         1
@@ -7659,7 +7659,7 @@ module.exports = {
       p: [
         {
           name: "logische_expressie",
-          detail: "Parameter `logische_expressie` van de functie NOT.",
+          detail: "Een expressie of een verwijzing naar een cel met een expressie die een logische waarde vertegenwoordigt.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7670,8 +7670,8 @@ module.exports = {
     {
       n: "TRUE",
       t: 10,
-      d: "Beschrijving van de functie TRUE.",
-      a: "Samenvatting van de functie TRUE.",
+      d: "Retourneert de logische waarde `WAAR`.",
+      a: "Logische waarde `waar`.",
       m: [
         0,
         0
@@ -7681,8 +7681,8 @@ module.exports = {
     {
       n: "FALSE",
       t: 10,
-      d: "Beschrijving van de functie FALSE.",
-      a: "Samenvatting van de functie FALSE.",
+      d: "Retourneert de logische waarde `ONWAAR`.",
+      a: "Logische waarde `onwaar`.",
       m: [
         0,
         0
@@ -7692,8 +7692,8 @@ module.exports = {
     {
       n: "AND",
       t: 10,
-      d: "Beschrijving van de functie AND.",
-      a: "Samenvatting van de functie AND.",
+      d: "Retourneert waar als alle opgegeven argumenten logisch waar zijn, en onwaar als een van de opgegeven argumenten logisch onwaar is.",
+      a: "Logische `en`-operator.",
       m: [
         1,
         255
@@ -7701,7 +7701,7 @@ module.exports = {
       p: [
         {
           name: "logische_expressie1",
-          detail: "Parameter `logische_expressie1` van de functie AND.",
+          detail: "Een expressie of een verwijzing naar een cel met een expressie die een logische waarde vertegenwoordigt, d.w.z. `WAAR` of `ONWAAR`, of een expressie die kan worden omgezet in een logische waarde.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7709,7 +7709,7 @@ module.exports = {
         },
         {
           name: "logische_expressie2",
-          detail: "Parameter `logische_expressie2` van de functie AND.",
+          detail: "Meer expressies die logische waarden vertegenwoordigen.",
           example: "A3 = \"bar\"",
           require: "o",
           repeat: "y",
@@ -7720,8 +7720,8 @@ module.exports = {
     {
       n: "IFERROR",
       t: 10,
-      d: "Beschrijving van de functie IFERROR.",
-      a: "Samenvatting van de functie IFERROR.",
+      d: "Retourneert het eerste argument als het geen foutwaarde is, anders wordt het tweede argument geretourneerd indien aanwezig, of leeg als het tweede argument ontbreekt.",
+      a: "Waarde als het geen fout is, anders het 2e argument.",
       m: [
         2,
         2
@@ -7729,7 +7729,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie IFERROR.",
+          detail: "De waarde om te retourneren als `waarde` zelf geen fout is.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -7737,7 +7737,7 @@ module.exports = {
         },
         {
           name: "waarde_als_fout",
-          detail: "Parameter `waarde_als_fout` van de functie IFERROR.",
+          detail: "De waarde die de functie retourneert als `waarde` een fout is.",
           example: "\"Error in cell A1\"",
           require: "m",
           repeat: "n",
@@ -7748,8 +7748,8 @@ module.exports = {
     {
       n: "IF",
       t: 10,
-      d: "Beschrijving van de functie IF.",
-      a: "Samenvatting van de functie IF.",
+      d: "Retourneert de ene waarde als een logische expressie `WAAR` is en een andere als deze `ONWAAR` is.",
+      a: "Retourneert een waarde afhankelijk van een logische expressie.",
       m: [
         2,
         3
@@ -7757,7 +7757,7 @@ module.exports = {
       p: [
         {
           name: "logische_expressie",
-          detail: "Parameter `logische_expressie` van de functie IF.",
+          detail: "Een expressie of een verwijzing naar een cel met een expressie die een logische waarde vertegenwoordigt, d.w.z. `WAAR` of `ONWAAR`.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7765,7 +7765,7 @@ module.exports = {
         },
         {
           name: "waarde_als_waar",
-          detail: "Parameter `waarde_als_waar` van de functie IF.",
+          detail: "De waarde die de functie retourneert als `logische_expressie` `WAAR` is.",
           example: "\"A2 is foo\"",
           require: "m",
           repeat: "n",
@@ -7773,7 +7773,7 @@ module.exports = {
         },
         {
           name: "waarde_als_onwaar",
-          detail: "Parameter `waarde_als_onwaar` van de functie IF.",
+          detail: "De waarde die de functie retourneert als `logische_expressie` `ONWAAR` is.",
           example: "\"A2 was false\"",
           require: "o",
           repeat: "n",
@@ -7784,8 +7784,8 @@ module.exports = {
     {
       n: "OR",
       t: 10,
-      d: "Beschrijving van de functie OR.",
-      a: "Samenvatting van de functie OR.",
+      d: "Retourneert waar als een van de opgegeven argumenten logisch waar is, en onwaar als alle opgegeven argumenten logisch onwaar zijn.",
+      a: "Logische `of`-operator.",
       m: [
         1,
         255
@@ -7793,7 +7793,7 @@ module.exports = {
       p: [
         {
           name: "logische_expressie1",
-          detail: "Parameter `logische_expressie1` van de functie OR.",
+          detail: "Een expressie of een verwijzing naar een cel met een expressie die een logische waarde vertegenwoordigt, d.w.z. `WAAR` of `ONWAAR`, of een expressie die kan worden omgezet in een logische waarde.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7801,7 +7801,7 @@ module.exports = {
         },
         {
           name: "logische_expressie2",
-          detail: "Parameter `logische_expressie2` van de functie OR.",
+          detail: "Meer expressies die worden geëvalueerd tot logische waarden.",
           example: " A3 = \"bar\"",
           require: "m",
           repeat: "n",
@@ -7812,8 +7812,8 @@ module.exports = {
     {
       n: "NE",
       t: 11,
-      d: "Beschrijving van de functie NE.",
-      a: "Samenvatting van de functie NE.",
+      d: "Retourneert `WAAR` als twee opgegeven waarden niet gelijk zijn en `ONWAAR` anders. Equivalent aan de operator `!=`.",
+      a: "Ongelijk aan.",
       m: [
         2,
         2
@@ -7821,7 +7821,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie NE.",
+          detail: "De eerste waarde.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7829,7 +7829,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie NE.",
+          detail: "De waarde om te toetsen op ongelijkheid ten opzichte van `waarde1`.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7840,8 +7840,8 @@ module.exports = {
     {
       n: "EQ",
       t: 11,
-      d: "Beschrijving van de functie EQ.",
-      a: "Samenvatting van de functie EQ.",
+      d: "Retourneert `WAAR` als twee opgegeven waarden gelijk zijn en `ONWAAR` anders. Equivalent aan de operator `==`.",
+      a: "Gelijk aan.",
       m: [
         2,
         2
@@ -7849,7 +7849,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie EQ.",
+          detail: "De eerste waarde.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7857,7 +7857,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie EQ.",
+          detail: "De waarde om te toetsen op gelijkheid ten opzichte van `waarde1`.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7868,8 +7868,8 @@ module.exports = {
     {
       n: "GT",
       t: 11,
-      d: "Beschrijving van de functie GT.",
-      a: "Samenvatting van de functie GT.",
+      d: "Retourneert `WAAR` als het eerste argument strikt groter is dan het tweede, en `ONWAAR` anders. Equivalent aan de operator `>`.",
+      a: "Strikt groter dan.",
       m: [
         2,
         2
@@ -7877,7 +7877,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie GT.",
+          detail: "De waarde om te toetsen als groter dan `waarde2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7885,7 +7885,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie GT.",
+          detail: "De tweede waarde.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7896,8 +7896,8 @@ module.exports = {
     {
       n: "GTE",
       t: 11,
-      d: "Beschrijving van de functie GTE.",
-      a: "Samenvatting van de functie GTE.",
+      d: "Retourneert `WAAR` als het eerste argument groter dan of gelijk is aan het tweede, en `ONWAAR` anders. Equivalent aan de operator `>=`.",
+      a: "Groter dan of gelijk aan.",
       m: [
         2,
         2
@@ -7905,7 +7905,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie GTE.",
+          detail: "De waarde om te toetsen als groter dan of gelijk aan `waarde2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7913,7 +7913,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie GTE.",
+          detail: "De tweede waarde.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7924,8 +7924,8 @@ module.exports = {
     {
       n: "LT",
       t: 11,
-      d: "Beschrijving van de functie LT.",
-      a: "Samenvatting van de functie LT.",
+      d: "Retourneert `WAAR` als het eerste argument strikt kleiner is dan het tweede, en `ONWAAR` anders. Equivalent aan de operator `<`.",
+      a: "Kleiner dan.",
       m: [
         2,
         2
@@ -7933,7 +7933,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie LT.",
+          detail: "De waarde om te toetsen als kleiner dan `waarde2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7941,7 +7941,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie LT.",
+          detail: "De tweede waarde.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7952,8 +7952,8 @@ module.exports = {
     {
       n: "LTE",
       t: 11,
-      d: "Beschrijving van de functie LTE.",
-      a: "Samenvatting van de functie LTE.",
+      d: "Retourneert `WAAR` als het eerste argument kleiner dan of gelijk is aan het tweede, en `ONWAAR` anders. Equivalent aan de operator `<=`.",
+      a: "Kleiner dan of gelijk aan.",
       m: [
         2,
         2
@@ -7961,7 +7961,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie LTE.",
+          detail: "De waarde om te toetsen als kleiner dan of gelijk aan `waarde2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7969,7 +7969,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie LTE.",
+          detail: "De tweede waarde.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7980,8 +7980,8 @@ module.exports = {
     {
       n: "ADD",
       t: 11,
-      d: "Beschrijving van de functie ADD.",
-      a: "Samenvatting van de functie ADD.",
+      d: "Retourneert de som van twee getallen. Equivalent aan de operator `+`.",
+      a: "Som van twee getallen",
       m: [
         2,
         2
@@ -7989,7 +7989,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie ADD.",
+          detail: "De eerste term.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7997,7 +7997,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie ADD.",
+          detail: "De tweede term.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8008,8 +8008,8 @@ module.exports = {
     {
       n: "MINUS",
       t: 11,
-      d: "Beschrijving van de functie MINUS.",
-      a: "Samenvatting van de functie MINUS.",
+      d: "Retourneert het verschil van twee getallen. Equivalent aan de operator `-`.",
+      a: "Verschil van twee getallen",
       m: [
         2,
         2
@@ -8017,7 +8017,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie MINUS.",
+          detail: "Het aftrektal, of het getal waarvan wordt afgetrokken.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8025,7 +8025,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie MINUS.",
+          detail: "De aftrekker, of het getal dat wordt afgetrokken van `waarde1`.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8036,8 +8036,8 @@ module.exports = {
     {
       n: "MULTIPLY",
       t: 11,
-      d: "Beschrijving van de functie MULTIPLY.",
-      a: "Samenvatting van de functie MULTIPLY.",
+      d: "Retourneert het product van twee getallen. Equivalent aan de operator `*`.",
+      a: "Product van twee getallen",
       m: [
         2,
         2
@@ -8045,7 +8045,7 @@ module.exports = {
       p: [
         {
           name: "factor1",
-          detail: "Parameter `factor1` van de functie MULTIPLY.",
+          detail: "De eerste vermenigvuldiger.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8053,7 +8053,7 @@ module.exports = {
         },
         {
           name: "factor2",
-          detail: "Parameter `factor2` van de functie MULTIPLY.",
+          detail: "De tweede vermenigvuldiger.",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -8064,8 +8064,8 @@ module.exports = {
     {
       n: "DIVIDE",
       t: 11,
-      d: "Beschrijving van de functie DIVIDE.",
-      a: "Samenvatting van de functie DIVIDE.",
+      d: "Retourneert het ene getal gedeeld door het andere. Equivalent aan de operator `/`.",
+      a: "Het ene getal gedeeld door het andere",
       m: [
         2,
         2
@@ -8073,7 +8073,7 @@ module.exports = {
       p: [
         {
           name: "deeltal",
-          detail: "Parameter `deeltal` van de functie DIVIDE.",
+          detail: "Het getal dat moet worden gedeeld.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8081,7 +8081,7 @@ module.exports = {
         },
         {
           name: "deler",
-          detail: "Parameter `deler` van de functie DIVIDE.",
+          detail: "Het getal waardoor moet worden gedeeld.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8092,8 +8092,8 @@ module.exports = {
     {
       n: "CONCAT",
       t: 11,
-      d: "Beschrijving van de functie CONCAT.",
-      a: "Samenvatting van de functie CONCAT.",
+      d: "Retourneert de samenvoeging van twee waarden. Equivalent aan de operator `&`.",
+      a: "Samenvoeging van twee waarden",
       m: [
         2,
         2
@@ -8101,7 +8101,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie CONCAT.",
+          detail: "De waarde waaraan `waarde2` wordt toegevoegd.",
           example: "\"de\"",
           require: "m",
           repeat: "n",
@@ -8109,7 +8109,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie CONCAT.",
+          detail: "De waarde die aan `waarde1` wordt toegevoegd.",
           example: "\"mystify\"",
           require: "m",
           repeat: "n",
@@ -8120,8 +8120,8 @@ module.exports = {
     {
       n: "UNARY_PERCENT",
       t: 11,
-      d: "Beschrijving van de functie UNARY_PERCENT.",
-      a: "Samenvatting van de functie UNARY_PERCENT.",
+      d: "Retourneert een waarde die wordt geïnterpreteerd als een percentage; dat wil zeggen, `UNARY_PERCENT(100)` is gelijk aan `1`.",
+      a: "Waarde geïnterpreteerd als een percentage.",
       m: [
         1,
         1
@@ -8129,7 +8129,7 @@ module.exports = {
       p: [
         {
           name: "percentage",
-          detail: "Parameter `percentage` van de functie UNARY_PERCENT.",
+          detail: "De waarde die als percentage moet worden geïnterpreteerd.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8140,8 +8140,8 @@ module.exports = {
     {
       n: "CONCATENATE",
       t: 12,
-      d: "Beschrijving van de functie CONCATENATE.",
-      a: "Samenvatting van de functie CONCATENATE.",
+      d: "Voegt tekenreeksen aan elkaar toe.",
+      a: "Voegt tekenreeksen aan elkaar toe.",
       m: [
         1,
         255
@@ -8149,7 +8149,7 @@ module.exports = {
       p: [
         {
           name: "tekenreeks1",
-          detail: "Parameter `tekenreeks1` van de functie CONCATENATE.",
+          detail: "De begintekenreeks.",
           example: "\"Super\"",
           require: "m",
           repeat: "n",
@@ -8157,7 +8157,7 @@ module.exports = {
         },
         {
           name: "tekenreeks2",
-          detail: "Parameter `tekenreeks2` van de functie CONCATENATE.",
+          detail: "Meer tekenreeksen om achtereenvolgens toe te voegen.",
           example: "\"calla\"",
           require: "o",
           repeat: "y",
@@ -8168,8 +8168,8 @@ module.exports = {
     {
       n: "CODE",
       t: 12,
-      d: "Beschrijving van de functie CODE.",
-      a: "Samenvatting van de functie CODE.",
+      d: "Retourneert de numerieke Unicode-waarde van het eerste teken in de opgegeven tekenreeks.",
+      a: "Numerieke unicode-waarde van een teken.",
       m: [
         1,
         1
@@ -8177,7 +8177,7 @@ module.exports = {
       p: [
         {
           name: "tekenreeks",
-          detail: "Parameter `tekenreeks` van de functie CODE.",
+          detail: "De tekenreeks waarvan de Unicode-waarde van het eerste teken wordt geretourneerd.",
           example: "\"a\"",
           require: "m",
           repeat: "n",
@@ -8188,8 +8188,8 @@ module.exports = {
     {
       n: "CHAR",
       t: 12,
-      d: "Beschrijving van de functie CHAR.",
-      a: "Samenvatting van de functie CHAR.",
+      d: "Converteert een getal naar een teken volgens de huidige Unicode-tabel.",
+      a: "Haalt het teken op dat is gekoppeld aan een getal.",
       m: [
         1,
         1
@@ -8197,7 +8197,7 @@ module.exports = {
       p: [
         {
           name: "tabelnummer",
-          detail: "Parameter `tabelnummer` van de functie CHAR.",
+          detail: "Het nummer van het teken dat moet worden opgezocht in de huidige Unicode-tabel, in decimaal formaat.",
           example: "97",
           require: "m",
           repeat: "n",
@@ -8208,8 +8208,8 @@ module.exports = {
     {
       n: "ARABIC",
       t: 12,
-      d: "Beschrijving van de functie ARABIC.",
-      a: "Samenvatting van de functie ARABIC.",
+      d: "Berekent de waarde van een Romeins cijfer.",
+      a: "Berekent de waarde van een romeins cijfer.",
       m: [
         1,
         1
@@ -8217,7 +8217,7 @@ module.exports = {
       p: [
         {
           name: "romeins_cijfer",
-          detail: "Parameter `romeins_cijfer` van de functie ARABIC.",
+          detail: "Het te formatteren Romeinse cijfer, waarvan de waarde tussen 1 en 3999 moet liggen, inclusief.",
           example: "\"XIV\"",
           require: "m",
           repeat: "n",
@@ -8228,8 +8228,8 @@ module.exports = {
     {
       n: "ROMAN",
       t: 12,
-      d: "Beschrijving van de functie ROMAN.",
-      a: "Samenvatting van de functie ROMAN.",
+      d: "Formatteert een getal in Romeinse cijfers.",
+      a: "Formatteert een getal in Romeinse cijfers.",
       m: [
         1,
         1
@@ -8237,7 +8237,7 @@ module.exports = {
       p: [
         {
           name: "getal",
-          detail: "Parameter `getal` van de functie ROMAN.",
+          detail: "Het te formatteren getal, tussen 1 en 3999, inclusief.",
           example: "499",
           require: "m",
           repeat: "n",
@@ -8248,8 +8248,8 @@ module.exports = {
     {
       n: "REGEXEXTRACT",
       t: 12,
-      d: "Beschrijving van de functie REGEXEXTRACT.",
-      a: "Samenvatting van de functie REGEXEXTRACT.",
+      d: "Extraheert overeenkomende substrings volgens een reguliere expressie.",
+      a: "Extraheert overeenkomende substrings met een reguliere expressie.",
       m: [
         2,
         2
@@ -8257,7 +8257,7 @@ module.exports = {
       p: [
         {
           name: "tekst",
-          detail: "Parameter `tekst` van de functie REGEXEXTRACT.",
+          detail: "De invoertekst.",
           example: "\"Needle in a haystack\"",
           require: "m",
           repeat: "n",
@@ -8265,7 +8265,7 @@ module.exports = {
         },
         {
           name: "reguliere_expressie",
-          detail: "Parameter `reguliere_expressie` van de functie REGEXEXTRACT.",
+          detail: "Het eerste deel van `tekst` dat overeenkomt met deze expressie wordt geretourneerd.",
           example: "\".e{2}dle\"",
           require: "m",
           repeat: "n",
@@ -8276,8 +8276,8 @@ module.exports = {
     {
       n: "REGEXMATCH",
       t: 12,
-      d: "Beschrijving van de functie REGEXMATCH.",
-      a: "Samenvatting van de functie REGEXMATCH.",
+      d: "Of een stuk tekst overeenkomt met een reguliere expressie.",
+      a: "Of een stuk tekst overeenkomt met een reguliere expressie.",
       m: [
         2,
         2
@@ -8285,7 +8285,7 @@ module.exports = {
       p: [
         {
           name: "tekst",
-          detail: "Parameter `tekst` van de functie REGEXMATCH.",
+          detail: "De tekst die wordt getoetst aan de reguliere expressie.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8293,7 +8293,7 @@ module.exports = {
         },
         {
           name: "reguliere_expressie",
-          detail: "Parameter `reguliere_expressie` van de functie REGEXMATCH.",
+          detail: "De reguliere expressie waaraan de tekst wordt getoetst.",
           example: "\"S.r\"",
           require: "m",
           repeat: "n",
@@ -8304,8 +8304,8 @@ module.exports = {
     {
       n: "REGEXREPLACE",
       t: 12,
-      d: "Beschrijving van de functie REGEXREPLACE.",
-      a: "Samenvatting van de functie REGEXREPLACE.",
+      d: "Vervangt een deel van een tekenreeks door een andere tekenreeks met behulp van reguliere expressies.",
+      a: "Vervangt tekst met reguliere expressies.",
       m: [
         3,
         3
@@ -8313,7 +8313,7 @@ module.exports = {
       p: [
         {
           name: "tekst",
-          detail: "Parameter `tekst` van de functie REGEXREPLACE.",
+          detail: "De tekst, waarvan een deel wordt vervangen.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8321,7 +8321,7 @@ module.exports = {
         },
         {
           name: "reguliere_expressie",
-          detail: "Parameter `reguliere_expressie` van de functie REGEXREPLACE.",
+          detail: "De reguliere expressie. Alle overeenkomende exemplaren in `tekst` worden vervangen.",
           example: "\"S.*d\"",
           require: "m",
           repeat: "n",
@@ -8329,7 +8329,7 @@ module.exports = {
         },
         {
           name: "vervanging",
-          detail: "Parameter `vervanging` van de functie REGEXREPLACE.",
+          detail: "De tekst die in de oorspronkelijke tekst wordt ingevoegd.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8340,8 +8340,8 @@ module.exports = {
     {
       n: "T",
       t: 12,
-      d: "Beschrijving van de functie T.",
-      a: "Samenvatting van de functie T.",
+      d: "Retourneert tekenreeksargumenten als tekst, of de lege tekenreeks als de waarde geen tekst is.",
+      a: "Tekenreeksargumenten als tekst.",
       m: [
         1,
         1
@@ -8349,7 +8349,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie T.",
+          detail: "Het argument dat naar tekst moet worden geconverteerd.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8360,8 +8360,8 @@ module.exports = {
     {
       n: "FIXED",
       t: 12,
-      d: "Beschrijving van de functie FIXED.",
-      a: "Samenvatting van de functie FIXED.",
+      d: "Formatteert een getal met een vast aantal decimalen.",
+      a: "Formatteert een getal met een vast aantal decimalen.",
       m: [
         1,
         3
@@ -8369,7 +8369,7 @@ module.exports = {
       p: [
         {
           name: "getal",
-          detail: "Parameter `getal` van de functie FIXED.",
+          detail: "Het te formatteren getal.",
           example: "3.141592653",
           require: "m",
           repeat: "n",
@@ -8377,7 +8377,7 @@ module.exports = {
         },
         {
           name: "aantal_decimalen",
-          detail: "Parameter `aantal_decimalen` van de functie FIXED.",
+          detail: "Het aantal in het resultaat weer te geven decimalen.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8385,7 +8385,7 @@ module.exports = {
         },
         {
           name: "scheidingsteken_onderdrukken",
-          detail: "Parameter `scheidingsteken_onderdrukken` van de functie FIXED.",
+          detail: "Of het duizendtalscheidingsteken dat in sommige landinstellingen wordt gebruikt, moet worden onderdrukt (bijv. `1.000` wordt `1000`). Scheidingstekens zijn aanwezig als deze waarde 0 is of wordt weggelaten, en afwezig anders.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -8396,8 +8396,8 @@ module.exports = {
     {
       n: "FIND",
       t: 12,
-      d: "Beschrijving van de functie FIND.",
-      a: "Samenvatting van de functie FIND.",
+      d: "Retourneert de positie waarop een tekenreeks voor het eerst wordt gevonden in tekst, waarbij hoofdlettergebruik van belang is. Retourneert `#WAARDE!` als de tekenreeks niet wordt gevonden.",
+      a: "Eerste positie van een tekenreeks gevonden in tekst, hoofdlettergevoelig.",
       m: [
         2,
         3
@@ -8405,7 +8405,7 @@ module.exports = {
       p: [
         {
           name: "te_zoeken_tekst",
-          detail: "Parameter `te_zoeken_tekst` van de functie FIND.",
+          detail: "De tekenreeks om naar te zoeken binnen `te_doorzoeken_tekst`.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
@@ -8413,7 +8413,7 @@ module.exports = {
         },
         {
           name: "te_doorzoeken_tekst",
-          detail: "Parameter `te_doorzoeken_tekst` van de functie FIND.",
+          detail: "De tekst waarin naar het eerste voorkomen van `zoeken_naar` wordt gezocht.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8421,7 +8421,7 @@ module.exports = {
         },
         {
           name: "beginnend_bij",
-          detail: "Parameter `beginnend_bij` van de functie FIND.",
+          detail: "Het teken binnen `te_doorzoeken_tekst` waarbij de zoekopdracht moet beginnen.",
           example: "14",
           require: "o",
           repeat: "n",
@@ -8432,8 +8432,8 @@ module.exports = {
     {
       n: "FINDB",
       t: 12,
-      d: "Beschrijving van de functie FINDB.",
-      a: "Samenvatting van de functie FINDB.",
+      d: "Retourneert de positie waarop een tekenreeks voor het eerst wordt gevonden in tekst, waarbij elk dubbel teken als 2 wordt geteld.",
+      a: "Positie waarop een tekenreeks voor het eerst wordt gevonden in tekst (binair).",
       m: [
         2,
         3
@@ -8441,7 +8441,7 @@ module.exports = {
       p: [
         {
           name: "te_zoeken_tekst",
-          detail: "Parameter `te_zoeken_tekst` van de functie FINDB.",
+          detail: "De tekenreeks om naar te zoeken binnen `te_doorzoeken_tekst`.",
           example: "\"new\"",
           require: "m",
           repeat: "n",
@@ -8449,7 +8449,7 @@ module.exports = {
         },
         {
           name: "te_doorzoeken_tekst",
-          detail: "Parameter `te_doorzoeken_tekst` van de functie FINDB.",
+          detail: "De tekst waarin naar het eerste voorkomen van `zoeken_naar` wordt gezocht.",
           example: "\"new year\"",
           require: "m",
           repeat: "n",
@@ -8457,7 +8457,7 @@ module.exports = {
         },
         {
           name: "beginnend_bij",
-          detail: "Parameter `beginnend_bij` van de functie FINDB.",
+          detail: "Het teken binnen `te_doorzoeken_tekst` waarbij de zoekopdracht moet beginnen.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8468,8 +8468,8 @@ module.exports = {
     {
       n: "JOIN",
       t: 12,
-      d: "Beschrijving van de functie JOIN.",
-      a: "Samenvatting van de functie JOIN.",
+      d: "Voegt de elementen van een of meer eendimensionale arrays samen met behulp van een opgegeven scheidingsteken.",
+      a: "Voegt elementen van arrays samen met een scheidingsteken.",
       m: [
         2,
         255
@@ -8477,7 +8477,7 @@ module.exports = {
       p: [
         {
           name: "scheidingsteken",
-          detail: "Parameter `scheidingsteken` van de functie JOIN.",
+          detail: "Het teken of de tekenreeks om tussen elke samengevoegde waarde te plaatsen.",
           example: "\" and-a \"",
           require: "m",
           repeat: "n",
@@ -8485,7 +8485,7 @@ module.exports = {
         },
         {
           name: "waarde_of_matrix1",
-          detail: "Parameter `waarde_of_matrix1` van de functie JOIN.",
+          detail: "De waarde of waarden die moeten worden toegevoegd met `scheidingsteken`.",
           example: "{1",
           require: "m",
           repeat: "n",
@@ -8493,7 +8493,7 @@ module.exports = {
         },
         {
           name: "waarde_of_matrix2",
-          detail: "Parameter `waarde_of_matrix2` van de functie JOIN.",
+          detail: "Meer waarden om toe te voegen met `scheidingsteken`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -8504,8 +8504,8 @@ module.exports = {
     {
       n: "LEFT",
       t: 12,
-      d: "Beschrijving van de functie LEFT.",
-      a: "Samenvatting van de functie LEFT.",
+      d: "Retourneert een substring vanaf het begin van een opgegeven tekenreeks.",
+      a: "Substring vanaf het begin van een opgegeven tekenreeks.",
       m: [
         1,
         2
@@ -8513,7 +8513,7 @@ module.exports = {
       p: [
         {
           name: "tekenreeks",
-          detail: "Parameter `tekenreeks` van de functie LEFT.",
+          detail: "De tekenreeks waaruit het linkerdeel wordt geretourneerd.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8521,7 +8521,7 @@ module.exports = {
         },
         {
           name: "aantal_tekens",
-          detail: "Parameter `aantal_tekens` van de functie LEFT.",
+          detail: "Het aantal tekens dat vanaf de linkerkant van `tekenreeks` moet worden geretourneerd.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8532,8 +8532,8 @@ module.exports = {
     {
       n: "RIGHT",
       t: 12,
-      d: "Beschrijving van de functie RIGHT.",
-      a: "Samenvatting van de functie RIGHT.",
+      d: "Retourneert een substring vanaf het einde van een opgegeven tekenreeks.",
+      a: "Een substring vanaf het einde van een opgegeven tekenreeks.",
       m: [
         1,
         2
@@ -8541,7 +8541,7 @@ module.exports = {
       p: [
         {
           name: "tekenreeks",
-          detail: "Parameter `tekenreeks` van de functie RIGHT.",
+          detail: "De tekenreeks waaruit het rechterdeel wordt geretourneerd.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8549,7 +8549,7 @@ module.exports = {
         },
         {
           name: "aantal_tekens",
-          detail: "Parameter `aantal_tekens` van de functie RIGHT.",
+          detail: "Het aantal tekens dat vanaf de rechterkant van `tekenreeks` moet worden geretourneerd.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8560,8 +8560,8 @@ module.exports = {
     {
       n: "MID",
       t: 12,
-      d: "Beschrijving van de functie MID.",
-      a: "Samenvatting van de functie MID.",
+      d: "Retourneert een segment van een tekenreeks.",
+      a: "Een segment van een tekenreeks.",
       m: [
         3,
         3
@@ -8569,7 +8569,7 @@ module.exports = {
       p: [
         {
           name: "tekenreeks",
-          detail: "Parameter `tekenreeks` van de functie MID.",
+          detail: "De tekenreeks waaruit een segment moet worden geëxtraheerd.",
           example: "\"get this\"",
           require: "m",
           repeat: "n",
@@ -8577,7 +8577,7 @@ module.exports = {
         },
         {
           name: "beginnend_bij",
-          detail: "Parameter `beginnend_bij` van de functie MID.",
+          detail: "De index vanaf links van `tekenreeks` waarvandaan de extractie moet beginnen. Het eerste teken in `tekenreeks` heeft index 1.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -8585,7 +8585,7 @@ module.exports = {
         },
         {
           name: "extractielengte",
-          detail: "Parameter `extractielengte` van de functie MID.",
+          detail: "De lengte van het te extraheren segment.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8596,8 +8596,8 @@ module.exports = {
     {
       n: "LEN",
       t: 12,
-      d: "Beschrijving van de functie LEN.",
-      a: "Samenvatting van de functie LEN.",
+      d: "Retourneert de lengte van een tekenreeks.",
+      a: "Lengte van een tekenreeks.",
       m: [
         1,
         1
@@ -8605,7 +8605,7 @@ module.exports = {
       p: [
         {
           name: "tekst",
-          detail: "Parameter `tekst` van de functie LEN.",
+          detail: "De tekenreeks waarvan de lengte wordt geretourneerd.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8616,8 +8616,8 @@ module.exports = {
     {
       n: "LENB",
       t: 12,
-      d: "Beschrijving van de functie LENB.",
-      a: "Samenvatting van de functie LENB.",
+      d: "Retourneert de lengte van een tekenreeks in bytes.",
+      a: "Lengte van een tekenreeks in bytes.",
       m: [
         1,
         1
@@ -8625,7 +8625,7 @@ module.exports = {
       p: [
         {
           name: "tekst",
-          detail: "Parameter `tekst` van de functie LENB.",
+          detail: "De tekenreeks waarvan de lengte wordt geretourneerd.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8636,8 +8636,8 @@ module.exports = {
     {
       n: "LOWER",
       t: 12,
-      d: "Beschrijving van de functie LOWER.",
-      a: "Samenvatting van de functie LOWER.",
+      d: "Converteert een opgegeven tekenreeks naar kleine letters.",
+      a: "Converteert een opgegeven tekenreeks naar kleine letters.",
       m: [
         1,
         1
@@ -8645,7 +8645,7 @@ module.exports = {
       p: [
         {
           name: "tekst",
-          detail: "Parameter `tekst` van de functie LOWER.",
+          detail: "De tekenreeks die naar kleine letters moet worden geconverteerd.",
           example: "\"LOREM IPSUM\"",
           require: "m",
           repeat: "n",
@@ -8656,8 +8656,8 @@ module.exports = {
     {
       n: "UPPER",
       t: 12,
-      d: "Beschrijving van de functie UPPER.",
-      a: "Samenvatting van de functie UPPER.",
+      d: "Converteert een opgegeven tekenreeks naar hoofdletters.",
+      a: "Converteert een opgegeven tekenreeks naar hoofdletters.",
       m: [
         1,
         1
@@ -8665,7 +8665,7 @@ module.exports = {
       p: [
         {
           name: "tekst",
-          detail: "Parameter `tekst` van de functie UPPER.",
+          detail: "De tekenreeks die naar hoofdletters moet worden geconverteerd.",
           example: "\"lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8676,8 +8676,8 @@ module.exports = {
     {
       n: "EXACT",
       t: 12,
-      d: "Beschrijving van de functie EXACT.",
-      a: "Samenvatting van de functie EXACT.",
+      d: "Test of twee tekenreeksen identiek zijn.",
+      a: "Test of twee tekenreeksen identiek zijn.",
       m: [
         2,
         2
@@ -8685,7 +8685,7 @@ module.exports = {
       p: [
         {
           name: "tekenreeks1",
-          detail: "Parameter `tekenreeks1` van de functie EXACT.",
+          detail: "De eerste te vergelijken tekenreeks.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -8693,7 +8693,7 @@ module.exports = {
         },
         {
           name: "tekenreeks2",
-          detail: "Parameter `tekenreeks2` van de functie EXACT.",
+          detail: "De tweede te vergelijken tekenreeks.",
           example: "A2",
           require: "m",
           repeat: "n",
