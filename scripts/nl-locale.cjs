@@ -10,8 +10,8 @@ module.exports = {
     {
       n: "SUMIF",
       t: 0,
-      d: "Beschrijving van de functie SUMIF.",
-      a: "Samenvatting van de functie SUMIF.",
+      d: "Retourneert een voorwaardelijke som over een bereik.",
+      a: "Een voorwaardelijke som over een bereik.",
       m: [
         2,
         3
@@ -19,7 +19,7 @@ module.exports = {
       p: [
         {
           name: "bereik",
-          detail: "Parameter `bereik` van de functie SUMIF.",
+          detail: "Het bereik dat wordt getoetst aan `criterium`.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -27,7 +27,7 @@ module.exports = {
         },
         {
           name: "criterium",
-          detail: "Parameter `criterium` van de functie SUMIF.",
+          detail: "Het patroon of de test die op `bereik` wordt toegepast.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -35,7 +35,7 @@ module.exports = {
         },
         {
           name: "sombereik",
-          detail: "Parameter `sombereik` van de functie SUMIF.",
+          detail: "Het bereik dat moet worden opgeteld, indien anders dan `bereik`.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -46,8 +46,8 @@ module.exports = {
     {
       n: "TAN",
       t: 0,
-      d: "Beschrijving van de functie TAN.",
-      a: "Samenvatting van de functie TAN.",
+      d: "Retourneert de tangens van een hoek in radialen.",
+      a: "Tangens van een hoek in radialen.",
       m: [
         1,
         1
@@ -55,7 +55,7 @@ module.exports = {
       p: [
         {
           name: "hoek",
-          detail: "Parameter `hoek` van de functie TAN.",
+          detail: "De hoek waarvan de tangens moet worden bepaald, in radialen.",
           example: "45*PI()/180",
           require: "m",
           repeat: "n",
@@ -66,8 +66,8 @@ module.exports = {
     {
       n: "TANH",
       t: 0,
-      d: "Beschrijving van de functie TANH.",
-      a: "Samenvatting van de functie TANH.",
+      d: "Retourneert de hyperbolische tangens van een willekeurig reëel getal.",
+      a: "Hyperbolische tangens van een willekeurig reëel getal.",
       m: [
         1,
         1
@@ -75,7 +75,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie TANH.",
+          detail: "Elke reële waarde waarvan de hyperbolische tangens moet worden berekend.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -86,8 +86,8 @@ module.exports = {
     {
       n: "CEILING",
       t: 0,
-      d: "Beschrijving van de functie CEILING.",
-      a: "Samenvatting van de functie CEILING.",
+      d: "Rondt een getal naar boven af op het dichtstbijzijnde gehele veelvoud van de opgegeven significantie `factor`.",
+      a: "Rondt een getal naar boven af op het dichtstbijzijnde veelvoud van een factor.",
       m: [
         2,
         2
@@ -95,7 +95,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie CEILING.",
+          detail: "De waarde die naar boven moet worden afgerond op het dichtstbijzijnde gehele veelvoud van `factor`.",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -103,7 +103,7 @@ module.exports = {
         },
         {
           name: "factor",
-          detail: "Parameter `factor` van de functie CEILING.",
+          detail: "Het getal waarvan de veelvouden worden gebruikt om `waarde` op af te ronden.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -114,8 +114,8 @@ module.exports = {
     {
       n: "ATAN",
       t: 0,
-      d: "Beschrijving van de functie ATAN.",
-      a: "Samenvatting van de functie ATAN.",
+      d: "Retourneert de boogtangens van een waarde, in radialen.",
+      a: "Boogtangens van een waarde, in radialen.",
       m: [
         1,
         1
@@ -123,7 +123,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ATAN.",
+          detail: "De waarde waarvan de boogtangens moet worden berekend.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -134,8 +134,8 @@ module.exports = {
     {
       n: "ASINH",
       t: 0,
-      d: "Beschrijving van de functie ASINH.",
-      a: "Samenvatting van de functie ASINH.",
+      d: "Retourneert de inverse hyperbolische sinus van een getal.",
+      a: "Inverse hyperbolische sinus van een getal.",
       m: [
         1,
         1
@@ -143,7 +143,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ASINH.",
+          detail: "De waarde waarvan de inverse hyperbolische sinus moet worden berekend.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -154,8 +154,8 @@ module.exports = {
     {
       n: "ABS",
       t: 0,
-      d: "Beschrijving van de functie ABS.",
-      a: "Samenvatting van de functie ABS.",
+      d: "Retourneert de absolute waarde van een getal.",
+      a: "Absolute waarde van een getal.",
       m: [
         1,
         1
@@ -163,7 +163,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ABS.",
+          detail: "Het getal waarvan de absolute waarde moet worden geretourneerd.",
           example: "-2",
           require: "m",
           repeat: "n",
@@ -174,8 +174,8 @@ module.exports = {
     {
       n: "ACOS",
       t: 0,
-      d: "Beschrijving van de functie ACOS.",
-      a: "Samenvatting van de functie ACOS.",
+      d: "Retourneert de boogcosinus van een waarde, in radialen.",
+      a: "Boogcosinus van een waarde, in radialen.",
       m: [
         1,
         1
@@ -183,7 +183,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ACOS.",
+          detail: "De waarde waarvan de boogcosinus moet worden berekend. Moet tussen `-1` en `1` liggen, inclusief.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -194,8 +194,8 @@ module.exports = {
     {
       n: "ACOSH",
       t: 0,
-      d: "Beschrijving van de functie ACOSH.",
-      a: "Samenvatting van de functie ACOSH.",
+      d: "Retourneert de inverse hyperbolische cosinus van een getal.",
+      a: "Inverse hyperbolische cosinus van een getal.",
       m: [
         1,
         1
@@ -203,7 +203,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ACOSH.",
+          detail: "De waarde waarvan de inverse hyperbolische cosinus moet worden berekend. Moet groter dan of gelijk aan `1` zijn.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -214,8 +214,8 @@ module.exports = {
     {
       n: "MULTINOMIAL",
       t: 0,
-      d: "Beschrijving van de functie MULTINOMIAL.",
-      a: "Samenvatting van de functie MULTINOMIAL.",
+      d: "Retourneert de faculteit van de som van waarden gedeeld door het product van de faculteiten van de waarden.",
+      a: "Multinomiale verdelingsfunctie.",
       m: [
         1,
         255
@@ -223,7 +223,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie MULTINOMIAL.",
+          detail: "De eerste waarde of het eerste bereik om in aanmerking te nemen.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -231,7 +231,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie MULTINOMIAL.",
+          detail: "Extra waarden of bereiken om in aanmerking te nemen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -242,8 +242,8 @@ module.exports = {
     {
       n: "ATANH",
       t: 0,
-      d: "Beschrijving van de functie ATANH.",
-      a: "Samenvatting van de functie ATANH.",
+      d: "Retourneert de inverse hyperbolische tangens van een getal.",
+      a: "Inverse hyperbolische tangens van een getal.",
       m: [
         1,
         1
@@ -251,7 +251,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ATANH.",
+          detail: "De waarde waarvan de inverse hyperbolische tangens moet worden berekend. Moet tussen -1 en 1 liggen, exclusief.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -262,8 +262,8 @@ module.exports = {
     {
       n: "ATAN2",
       t: 0,
-      d: "Beschrijving van de functie ATAN2.",
-      a: "Samenvatting van de functie ATAN2.",
+      d: "Retourneert de hoek tussen de x-as en een lijnstuk vanaf de oorsprong (0,0) naar het opgegeven coördinatenpaar (`x`,`y`), in radialen.",
+      a: "Boogtangens van een waarde.",
       m: [
         2,
         2
@@ -271,7 +271,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` van de functie ATAN2.",
+          detail: "De x-coördinaat van het eindpunt van het lijnstuk waarvoor de hoek ten opzichte van de x-as moet worden berekend.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -279,7 +279,7 @@ module.exports = {
         },
         {
           name: "y",
-          detail: "Parameter `y` van de functie ATAN2.",
+          detail: "De y-coördinaat van het eindpunt van het lijnstuk waarvoor de hoek ten opzichte van de x-as moet worden berekend.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -290,8 +290,8 @@ module.exports = {
     {
       n: "COUNTBLANK",
       t: 1,
-      d: "Beschrijving van de functie COUNTBLANK.",
-      a: "Samenvatting van de functie COUNTBLANK.",
+      d: "Retourneert het aantal lege waarden in een lijst met waarden en bereiken.",
+      a: "Aantal lege waarden.",
       m: [
         1,
         1
@@ -299,7 +299,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie COUNTBLANK.",
+          detail: "De eerste waarde of het eerste bereik waarin het aantal lege cellen moet worden geteld.",
           example: "A2:C100",
           require: "m",
           repeat: "n",
@@ -310,8 +310,8 @@ module.exports = {
     {
       n: "COSH",
       t: 0,
-      d: "Beschrijving van de functie COSH.",
-      a: "Samenvatting van de functie COSH.",
+      d: "Retourneert de hyperbolische cosinus van een willekeurig reëel getal.",
+      a: "Hyperbolische cosinus van een willekeurig reëel getal.",
       m: [
         1,
         1
@@ -319,7 +319,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie COSH.",
+          detail: "Elke reële waarde waarvan de hyperbolische cosinus moet worden berekend.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -330,8 +330,8 @@ module.exports = {
     {
       n: "INT",
       t: 0,
-      d: "Beschrijving van de functie INT.",
-      a: "Samenvatting van de functie INT.",
+      d: "Rondt een getal naar beneden af op het dichtstbijzijnde gehele getal dat er kleiner dan of gelijk aan is.",
+      a: "Rondt een getal naar beneden af op het dichtstbijzijnde gehele getal.",
       m: [
         1,
         1
@@ -339,7 +339,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie INT.",
+          detail: "De waarde die naar beneden moet worden afgerond op het dichtstbijzijnde gehele getal.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -350,8 +350,8 @@ module.exports = {
     {
       n: "ISEVEN",
       t: 0,
-      d: "Beschrijving van de functie ISEVEN.",
-      a: "Samenvatting van de functie ISEVEN.",
+      d: "Controleert of de opgegeven waarde even is.",
+      a: "Of de opgegeven waarde even is.",
       m: [
         1,
         1
@@ -359,7 +359,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ISEVEN.",
+          detail: "De te controleren waarde als even.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -370,8 +370,8 @@ module.exports = {
     {
       n: "ISODD",
       t: 0,
-      d: "Beschrijving van de functie ISODD.",
-      a: "Samenvatting van de functie ISODD.",
+      d: "Controleert of de opgegeven waarde oneven is.",
+      a: "Of de opgegeven waarde oneven is.",
       m: [
         1,
         1
@@ -379,7 +379,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ISODD.",
+          detail: "De te controleren waarde als oneven.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -390,8 +390,8 @@ module.exports = {
     {
       n: "LCM",
       t: 0,
-      d: "Beschrijving van de functie LCM.",
-      a: "Samenvatting van de functie LCM.",
+      d: "Retourneert het kleinste gemene veelvoud van een of meer gehele getallen.",
+      a: "Kleinste gemene veelvoud van een of meer gehele getallen.",
       m: [
         1,
         255
@@ -399,7 +399,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie LCM.",
+          detail: "De eerste waarde of het eerste bereik waarvan de factoren in aanmerking worden genomen bij het berekenen van het kleinste gemene veelvoud.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -407,7 +407,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie LCM.",
+          detail: "Extra waarden of bereiken waarvan de factoren in aanmerking worden genomen om het kleinste gemene veelvoud te vinden.",
           example: "3",
           require: "o",
           repeat: "y",
@@ -418,8 +418,8 @@ module.exports = {
     {
       n: "LN",
       t: 0,
-      d: "Beschrijving van de functie LN.",
-      a: "Samenvatting van de functie LN.",
+      d: "Retourneert de logaritme van een getal, met grondtal e (het getal van Euler).",
+      a: "De logaritme van een getal, met grondtal e (het getal van euler).",
       m: [
         1,
         1
@@ -427,7 +427,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie LN.",
+          detail: "De waarde waarvan de logaritme met grondtal e moet worden berekend.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -438,8 +438,8 @@ module.exports = {
     {
       n: "LOG",
       t: 0,
-      d: "Beschrijving van de functie LOG.",
-      a: "Samenvatting van de functie LOG.",
+      d: "Retourneert de logaritme van een getal met betrekking tot een grondtal.",
+      a: "De logaritme van een getal met betrekking tot een grondtal.",
       m: [
         1,
         2
@@ -447,7 +447,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie LOG.",
+          detail: "De waarde waarvan de logaritme moet worden berekend.",
           example: "128",
           require: "m",
           repeat: "n",
@@ -455,7 +455,7 @@ module.exports = {
         },
         {
           name: "grondtal",
-          detail: "Parameter `grondtal` van de functie LOG.",
+          detail: "Het grondtal dat wordt gebruikt voor de berekening van de logaritme.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -466,8 +466,8 @@ module.exports = {
     {
       n: "LOG10",
       t: 0,
-      d: "Beschrijving van de functie LOG10.",
-      a: "Samenvatting van de functie LOG10.",
+      d: "Retourneert de logaritme van een getal, met grondtal 10.",
+      a: "De logaritme van een getal, met grondtal 10.",
       m: [
         1,
         1
@@ -475,7 +475,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie LOG10.",
+          detail: "De waarde waarvan de logaritme met grondtal 10 moet worden berekend.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -486,8 +486,8 @@ module.exports = {
     {
       n: "MOD",
       t: 0,
-      d: "Beschrijving van de functie MOD.",
-      a: "Samenvatting van de functie MOD.",
+      d: "Retourneert het resultaat van de modulo-operator, de rest na een deling.",
+      a: "Modulo (rest) operator.",
       m: [
         2,
         2
@@ -495,7 +495,7 @@ module.exports = {
       p: [
         {
           name: "deeltal",
-          detail: "Parameter `deeltal` van de functie MOD.",
+          detail: "Het getal dat moet worden gedeeld om de rest te bepalen.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -503,7 +503,7 @@ module.exports = {
         },
         {
           name: "deler",
-          detail: "Parameter `deler` van de functie MOD.",
+          detail: "Het getal waardoor moet worden gedeeld.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -514,8 +514,8 @@ module.exports = {
     {
       n: "MROUND",
       t: 0,
-      d: "Beschrijving van de functie MROUND.",
-      a: "Samenvatting van de functie MROUND.",
+      d: "Rondt een getal af op het dichtstbijzijnde gehele veelvoud van een ander getal.",
+      a: "Rondt een getal af op het dichtstbijzijnde gehele veelvoud.",
       m: [
         2,
         2
@@ -523,7 +523,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie MROUND.",
+          detail: "Het getal dat moet worden afgerond op het dichtstbijzijnde gehele veelvoud van een ander getal.",
           example: "21",
           require: "m",
           repeat: "n",
@@ -531,7 +531,7 @@ module.exports = {
         },
         {
           name: "factor",
-          detail: "Parameter `factor` van de functie MROUND.",
+          detail: "Het getal waarvan de veelvouden worden gebruikt om `waarde` op af te ronden.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -542,8 +542,8 @@ module.exports = {
     {
       n: "ODD",
       t: 0,
-      d: "Beschrijving van de functie ODD.",
-      a: "Samenvatting van de functie ODD.",
+      d: "Rondt een getal naar boven af op het dichtstbijzijnde oneven gehele getal.",
+      a: "Rondt een getal naar boven af op het dichtstbijzijnde oneven gehele getal.",
       m: [
         1,
         1
@@ -551,7 +551,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ODD.",
+          detail: "De waarde die moet worden afgerond op het eerstvolgende, hogere oneven getal.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -562,8 +562,8 @@ module.exports = {
     {
       n: "SUMSQ",
       t: 0,
-      d: "Beschrijving van de functie SUMSQ.",
-      a: "Samenvatting van de functie SUMSQ.",
+      d: "Retourneert de som van de kwadraten van een reeks getallen en/of cellen.",
+      a: "Som van kwadraten.",
       m: [
         1,
         255
@@ -571,7 +571,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie SUMSQ.",
+          detail: "Het eerste getal of bereik waarvan de kwadraten bij elkaar moeten worden opgeteld.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -579,7 +579,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie SUMSQ.",
+          detail: "Extra getallen of bereiken waarvan de kwadraten moeten worden opgeteld bij de kwadraten van `waarde1`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -590,8 +590,8 @@ module.exports = {
     {
       n: "COMBIN",
       t: 0,
-      d: "Beschrijving van de functie COMBIN.",
-      a: "Samenvatting van de functie COMBIN.",
+      d: "Retourneert het aantal manieren om een bepaald aantal objecten te kiezen uit een groep objecten van een bepaalde grootte.",
+      a: "Aantal combinaties uit een reeks objecten.",
       m: [
         2,
         2
@@ -599,7 +599,7 @@ module.exports = {
       p: [
         {
           name: "n",
-          detail: "Parameter `n` van de functie COMBIN.",
+          detail: "De grootte van de groep objecten om uit te kiezen.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -607,7 +607,7 @@ module.exports = {
         },
         {
           name: "k",
-          detail: "Parameter `k` van de functie COMBIN.",
+          detail: "Het aantal te kiezen objecten.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -618,8 +618,8 @@ module.exports = {
     {
       n: "SUM",
       t: 0,
-      d: "Beschrijving van de functie SUM.",
-      a: "Samenvatting van de functie SUM.",
+      d: "Retourneert de som van een reeks getallen en/of cellen.",
+      a: "Som van een reeks getallen en/of cellen.",
       m: [
         1,
         255
@@ -627,7 +627,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie SUM.",
+          detail: "Het eerste getal of bereik dat bij elkaar moet worden opgeteld.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -635,7 +635,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie SUM.",
+          detail: "Extra getallen of bereiken die moeten worden opgeteld bij `waarde1`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -646,8 +646,8 @@ module.exports = {
     {
       n: "SUBTOTAL",
       t: 0,
-      d: "Beschrijving van de functie SUBTOTAL.",
-      a: "Samenvatting van de functie SUBTOTAL.",
+      d: "Retourneert een subtotaal voor een verticaal celbereik met behulp van een opgegeven aggregatiefunctie.",
+      a: "Subtotaal voor een bereik met een specifieke functie.",
       m: [
         2,
         256
@@ -655,7 +655,7 @@ module.exports = {
       p: [
         {
           name: "functiecode",
-          detail: "Parameter `functiecode` van de functie SUBTOTAL.",
+          detail: "De functie die moet worden gebruikt voor de subtotaalaggregatie.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -663,7 +663,7 @@ module.exports = {
         },
         {
           name: "bereik1",
-          detail: "Parameter `bereik1` van de functie SUBTOTAL.",
+          detail: "Het eerste bereik waarvoor een subtotaal moet worden berekend.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -671,7 +671,7 @@ module.exports = {
         },
         {
           name: "bereik2",
-          detail: "Parameter `bereik2` van de functie SUBTOTAL.",
+          detail: "Extra bereiken waarvoor subtotalen moeten worden berekend.",
           example: "B2:B8",
           require: "o",
           repeat: "y",
@@ -682,8 +682,8 @@ module.exports = {
     {
       n: "ASIN",
       t: 0,
-      d: "Beschrijving van de functie ASIN.",
-      a: "Samenvatting van de functie ASIN.",
+      d: "Retourneert de boogsinus van een waarde, in radialen.",
+      a: "Boogsinus van een waarde, in radialen.",
       m: [
         1,
         1
@@ -691,7 +691,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ASIN.",
+          detail: "De waarde waarvan de boogsinus moet worden berekend. Moet tussen `-1` en `1` liggen, inclusief.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -702,8 +702,8 @@ module.exports = {
     {
       n: "COUNTIF",
       t: 1,
-      d: "Beschrijving van de functie COUNTIF.",
-      a: "Samenvatting van de functie COUNTIF.",
+      d: "Retourneert een voorwaardelijk aantal over een bereik.",
+      a: "Een voorwaardelijk aantal over een bereik.",
       m: [
         2,
         2
@@ -711,7 +711,7 @@ module.exports = {
       p: [
         {
           name: "bereik",
-          detail: "Parameter `bereik` van de functie COUNTIF.",
+          detail: "Het bereik dat wordt getoetst aan `criterium`.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -719,7 +719,7 @@ module.exports = {
         },
         {
           name: "criterium",
-          detail: "Parameter `criterium` van de functie COUNTIF.",
+          detail: "Het patroon of de test die op `bereik` wordt toegepast.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -730,8 +730,8 @@ module.exports = {
     {
       n: "RADIANS",
       t: 0,
-      d: "Beschrijving van de functie RADIANS.",
-      a: "Samenvatting van de functie RADIANS.",
+      d: "Converteert een hoekwaarde in graden naar radialen.",
+      a: "Converteert een hoekwaarde in graden naar radialen.",
       m: [
         1,
         1
@@ -739,7 +739,7 @@ module.exports = {
       p: [
         {
           name: "hoek",
-          detail: "Parameter `hoek` van de functie RADIANS.",
+          detail: "De hoek die van graden naar radialen moet worden geconverteerd.",
           example: "180",
           require: "m",
           repeat: "n",
@@ -750,8 +750,8 @@ module.exports = {
     {
       n: "RAND",
       t: 0,
-      d: "Beschrijving van de functie RAND.",
-      a: "Samenvatting van de functie RAND.",
+      d: "Retourneert een willekeurig getal tussen 0 (inclusief) en 1 (exclusief).",
+      a: "Een willekeurig getal tussen 0 inclusief en 1 exclusief.",
       m: [
         0,
         0
@@ -761,8 +761,8 @@ module.exports = {
     {
       n: "COUNTUNIQUE",
       t: 0,
-      d: "Beschrijving van de functie COUNTUNIQUE.",
-      a: "Samenvatting van de functie COUNTUNIQUE.",
+      d: "Telt het aantal unieke waarden in een lijst met opgegeven waarden en bereiken.",
+      a: "Telt het aantal unieke waarden in een bereik.",
       m: [
         1,
         255
@@ -770,7 +770,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie COUNTUNIQUE.",
+          detail: "De eerste waarde of het eerste bereik om in aanmerking te nemen voor uniciteit.",
           example: "A1:C100",
           require: "m",
           repeat: "n",
@@ -778,7 +778,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie COUNTUNIQUE.",
+          detail: "Extra waarden of bereiken om in aanmerking te nemen voor uniciteit.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -789,8 +789,8 @@ module.exports = {
     {
       n: "DEGREES",
       t: 0,
-      d: "Beschrijving van de functie DEGREES.",
-      a: "Samenvatting van de functie DEGREES.",
+      d: "Converteert een hoekwaarde in radialen naar graden.",
+      a: "Converteert een hoekwaarde in radialen naar graden.",
       m: [
         1,
         1
@@ -798,7 +798,7 @@ module.exports = {
       p: [
         {
           name: "hoek",
-          detail: "Parameter `hoek` van de functie DEGREES.",
+          detail: "De hoek die van radialen naar graden moet worden geconverteerd.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -809,8 +809,8 @@ module.exports = {
     {
       n: "ERFC",
       t: 9,
-      d: "Beschrijving van de functie ERFC.",
-      a: "Samenvatting van de functie ERFC.",
+      d: "Retourneert de complementaire Gauss-foutfunctie van een waarde.",
+      a: "Complementaire gauss-foutfunctie van een waarde.",
       m: [
         1,
         1
@@ -818,7 +818,7 @@ module.exports = {
       p: [
         {
           name: "z",
-          detail: "Parameter `z` van de functie ERFC.",
+          detail: "Het getal waarvoor de complementaire Gauss-foutfunctie moet worden berekend.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -829,8 +829,8 @@ module.exports = {
     {
       n: "EVEN",
       t: 0,
-      d: "Beschrijving van de functie EVEN.",
-      a: "Samenvatting van de functie EVEN.",
+      d: "Rondt een getal naar boven af op het dichtstbijzijnde even gehele getal.",
+      a: "Rondt een getal naar boven af op het dichtstbijzijnde even gehele getal.",
       m: [
         1,
         1
@@ -838,7 +838,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie EVEN.",
+          detail: "De waarde die moet worden afgerond op het eerstvolgende, hogere even getal.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -849,8 +849,8 @@ module.exports = {
     {
       n: "EXP",
       t: 0,
-      d: "Beschrijving van de functie EXP.",
-      a: "Samenvatting van de functie EXP.",
+      d: "Retourneert het getal van Euler, e (~2,718), verheven tot een macht.",
+      a: "Het getal van euler, e (~2,718), verheven tot een macht.",
       m: [
         1,
         1
@@ -858,7 +858,7 @@ module.exports = {
       p: [
         {
           name: "exponent",
-          detail: "Parameter `exponent` van de functie EXP.",
+          detail: "De exponent waartoe e moet worden verheven.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -869,8 +869,8 @@ module.exports = {
     {
       n: "FACT",
       t: 0,
-      d: "Beschrijving van de functie FACT.",
-      a: "Samenvatting van de functie FACT.",
+      d: "Retourneert de faculteit van een getal.",
+      a: "Faculteit van een getal.",
       m: [
         1,
         1
@@ -878,7 +878,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie FACT.",
+          detail: "Het getal of de verwijzing naar een getal waarvan de faculteit wordt berekend en geretourneerd.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -889,8 +889,8 @@ module.exports = {
     {
       n: "FACTDOUBLE",
       t: 0,
-      d: "Beschrijving van de functie FACTDOUBLE.",
-      a: "Samenvatting van de functie FACTDOUBLE.",
+      d: "Retourneert de \"dubbele faculteit\" van een getal.",
+      a: "\"Dubbele faculteit\" van een getal.",
       m: [
         1,
         1
@@ -898,7 +898,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie FACTDOUBLE.",
+          detail: "Het getal of de verwijzing naar een getal waarvan de dubbele faculteit wordt berekend en geretourneerd.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -909,8 +909,8 @@ module.exports = {
     {
       n: "PI",
       t: 0,
-      d: "Beschrijving van de functie PI.",
-      a: "Samenvatting van de functie PI.",
+      d: "Retourneert de waarde van Pi met 14 decimalen.",
+      a: "Het getal pi.",
       m: [
         0,
         0
@@ -920,8 +920,8 @@ module.exports = {
     {
       n: "FLOOR",
       t: 0,
-      d: "Beschrijving van de functie FLOOR.",
-      a: "Samenvatting van de functie FLOOR.",
+      d: "Rondt een getal naar beneden af op het dichtstbijzijnde gehele veelvoud van de opgegeven significantie `factor`.",
+      a: "Rondt een getal naar beneden af op het dichtstbijzijnde veelvoud van een factor.",
       m: [
         2,
         2
@@ -929,7 +929,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie FLOOR.",
+          detail: "De waarde die naar beneden moet worden afgerond op het dichtstbijzijnde gehele veelvoud van `factor`.",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -937,7 +937,7 @@ module.exports = {
         },
         {
           name: "factor",
-          detail: "Parameter `factor` van de functie FLOOR.",
+          detail: "Het getal waarvan de veelvouden worden gebruikt om `waarde` op af te ronden.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -948,8 +948,8 @@ module.exports = {
     {
       n: "GCD",
       t: 0,
-      d: "Beschrijving van de functie GCD.",
-      a: "Samenvatting van de functie GCD.",
+      d: "Retourneert de grootste gemene deler van een of meer gehele getallen.",
+      a: "Grootste gemene deler van een of meer gehele getallen.",
       m: [
         1,
         255
@@ -957,7 +957,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie GCD.",
+          detail: "De eerste waarde of het eerste bereik waarvan de factoren in aanmerking worden genomen bij het berekenen van de grootste gemene deler.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -965,7 +965,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie GCD.",
+          detail: "Extra waarden of bereiken waarvan de factoren in aanmerking worden genomen om de grootste gemene deler te vinden.",
           example: "96",
           require: "o",
           repeat: "y",
@@ -976,8 +976,8 @@ module.exports = {
     {
       n: "RANDBETWEEN",
       t: 0,
-      d: "Beschrijving van de functie RANDBETWEEN.",
-      a: "Samenvatting van de functie RANDBETWEEN.",
+      d: "Retourneert een uniform willekeurig geheel getal tussen twee waarden, inclusief.",
+      a: "Willekeurig geheel getal tussen twee waarden, inclusief.",
       m: [
         2,
         2
@@ -985,7 +985,7 @@ module.exports = {
       p: [
         {
           name: "ondergrens",
-          detail: "Parameter `ondergrens` van de functie RANDBETWEEN.",
+          detail: "De ondergrens van het willekeurige bereik.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -993,7 +993,7 @@ module.exports = {
         },
         {
           name: "bovengrens",
-          detail: "Parameter `bovengrens` van de functie RANDBETWEEN.",
+          detail: "De bovengrens van het willekeurige bereik.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -1004,8 +1004,8 @@ module.exports = {
     {
       n: "ROUND",
       t: 0,
-      d: "Beschrijving van de functie ROUND.",
-      a: "Samenvatting van de functie ROUND.",
+      d: "Rondt een getal af op een bepaald aantal decimalen volgens de standaardregels.",
+      a: "Rondt een getal af volgens de standaardregels.",
       m: [
         2,
         2
@@ -1013,7 +1013,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ROUND.",
+          detail: "De waarde die moet worden afgerond op `posities` aantal posities.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1021,7 +1021,7 @@ module.exports = {
         },
         {
           name: "decimalen",
-          detail: "Parameter `decimalen` van de functie ROUND.",
+          detail: "Het aantal decimalen waarop moet worden afgerond.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1032,8 +1032,8 @@ module.exports = {
     {
       n: "ROUNDDOWN",
       t: 0,
-      d: "Beschrijving van de functie ROUNDDOWN.",
-      a: "Samenvatting van de functie ROUNDDOWN.",
+      d: "Rondt een getal af op een bepaald aantal decimalen, altijd naar beneden afgerond op de eerstvolgende geldige stap.",
+      a: "Rondt een getal naar beneden af.",
       m: [
         2,
         2
@@ -1041,7 +1041,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ROUNDDOWN.",
+          detail: "De waarde die moet worden afgerond op `posities` aantal posities, altijd naar beneden.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1049,7 +1049,7 @@ module.exports = {
         },
         {
           name: "decimalen",
-          detail: "Parameter `decimalen` van de functie ROUNDDOWN.",
+          detail: "Het aantal decimalen waarop moet worden afgerond.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1060,8 +1060,8 @@ module.exports = {
     {
       n: "ROUNDUP",
       t: 0,
-      d: "Beschrijving van de functie ROUNDUP.",
-      a: "Samenvatting van de functie ROUNDUP.",
+      d: "Rondt een getal af op een bepaald aantal decimalen, altijd naar boven afgerond op de eerstvolgende geldige stap.",
+      a: "Rondt een getal naar boven af.",
       m: [
         2,
         2
@@ -1069,7 +1069,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie ROUNDUP.",
+          detail: "De waarde die moet worden afgerond op `posities` aantal posities, altijd naar boven.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1077,7 +1077,7 @@ module.exports = {
         },
         {
           name: "decimalen",
-          detail: "Parameter `decimalen` van de functie ROUNDUP.",
+          detail: "Het aantal decimalen waarop moet worden afgerond.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1088,8 +1088,8 @@ module.exports = {
     {
       n: "SERIESSUM",
       t: 0,
-      d: "Beschrijving van de functie SERIESSUM.",
-      a: "Samenvatting van de functie SERIESSUM.",
+      d: "Gegeven de parameters `x`, `n`, `m` en `a`, retourneert de som van de machtreeks a1*x^n + a2*x^(n+m) + ... + ai*x^(n+(i-1)*m).",
+      a: "Som van een machtreeks.",
       m: [
         4,
         4
@@ -1097,7 +1097,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` van de functie SERIESSUM.",
+          detail: "De invoer voor de machtreeks. Varieert afhankelijk van het type benadering, kan een hoek, exponent of andere waarde zijn.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1105,7 +1105,7 @@ module.exports = {
         },
         {
           name: "n",
-          detail: "Parameter `n` van de functie SERIESSUM.",
+          detail: "De beginmacht waartoe `x` in de machtreeks moet worden verheven.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -1113,7 +1113,7 @@ module.exports = {
         },
         {
           name: "m",
-          detail: "Parameter `m` van de functie SERIESSUM.",
+          detail: "De additieve stap waarmee `x` wordt verhoogd.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1121,7 +1121,7 @@ module.exports = {
         },
         {
           name: "a",
-          detail: "Parameter `a` van de functie SERIESSUM.",
+          detail: "Het array of bereik met de coëfficiënten van de machtreeks.",
           example: "{FACT(0)",
           require: "m",
           repeat: "n",
@@ -1132,8 +1132,8 @@ module.exports = {
     {
       n: "SIGN",
       t: 0,
-      d: "Beschrijving van de functie SIGN.",
-      a: "Samenvatting van de functie SIGN.",
+      d: "Retourneert, gegeven een ingevoerd getal, `-1` als het negatief is, `1` als het positief is en `0` als het nul is.",
+      a: "Teken van een opgegeven getal (+/-/0).",
       m: [
         1,
         1
@@ -1141,7 +1141,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie SIGN.",
+          detail: "De waarde waarvan het teken wordt geëvalueerd.",
           example: "-42",
           require: "m",
           repeat: "n",
@@ -1152,8 +1152,8 @@ module.exports = {
     {
       n: "SIN",
       t: 0,
-      d: "Beschrijving van de functie SIN.",
-      a: "Samenvatting van de functie SIN.",
+      d: "Retourneert de sinus van een hoek in radialen.",
+      a: "Sinus van een hoek in radialen.",
       m: [
         1,
         1
@@ -1161,7 +1161,7 @@ module.exports = {
       p: [
         {
           name: "hoek",
-          detail: "Parameter `hoek` van de functie SIN.",
+          detail: "De hoek waarvan de sinus moet worden bepaald, in radialen.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1172,8 +1172,8 @@ module.exports = {
     {
       n: "SINH",
       t: 0,
-      d: "Beschrijving van de functie SINH.",
-      a: "Samenvatting van de functie SINH.",
+      d: "Retourneert de hyperbolische sinus van een willekeurig reëel getal.",
+      a: "Hyperbolische sinus van een willekeurig reëel getal.",
       m: [
         1,
         1
@@ -1181,7 +1181,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie SINH.",
+          detail: "Elke reële waarde waarvan de hyperbolische sinus moet worden berekend.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1192,8 +1192,8 @@ module.exports = {
     {
       n: "SQRT",
       t: 0,
-      d: "Beschrijving van de functie SQRT.",
-      a: "Samenvatting van de functie SQRT.",
+      d: "Retourneert de positieve vierkantswortel van een positief getal.",
+      a: "Positieve vierkantswortel van een positief getal.",
       m: [
         1,
         1
@@ -1201,7 +1201,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie SQRT.",
+          detail: "Het getal waarvan de positieve vierkantswortel moet worden berekend.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1212,8 +1212,8 @@ module.exports = {
     {
       n: "SQRTPI",
       t: 0,
-      d: "Beschrijving van de functie SQRTPI.",
-      a: "Samenvatting van de functie SQRTPI.",
+      d: "Retourneert de positieve vierkantswortel van het product van Pi en het opgegeven positieve getal.",
+      a: "Vierkantswortel van het product van pi en een getal.",
       m: [
         1,
         1
@@ -1221,7 +1221,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie SQRTPI.",
+          detail: "Het getal dat wordt vermenigvuldigd met Pi, waarna de vierkantswortel van het product wordt geretourneerd.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1232,8 +1232,8 @@ module.exports = {
     {
       n: "GAMMALN",
       t: 1,
-      d: "Beschrijving van de functie GAMMALN.",
-      a: "Samenvatting van de functie GAMMALN.",
+      d: "Retourneert de logaritme van een opgegeven Gammafunctie, met grondtal e (het getal van Euler).",
+      a: "Logaritme van gammafunctie.",
       m: [
         1,
         1
@@ -1241,7 +1241,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie GAMMALN.",
+          detail: "De invoer voor de Gammafunctie. De natuurlijke logaritme van Gamma(`waarde`) wordt geretourneerd.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1252,8 +1252,8 @@ module.exports = {
     {
       n: "COS",
       t: 0,
-      d: "Beschrijving van de functie COS.",
-      a: "Samenvatting van de functie COS.",
+      d: "Retourneert de cosinus van een hoek in radialen.",
+      a: "Cosinus van een hoek in radialen.",
       m: [
         1,
         1
@@ -1261,7 +1261,7 @@ module.exports = {
       p: [
         {
           name: "hoek",
-          detail: "Parameter `hoek` van de functie COS.",
+          detail: "De hoek waarvan de cosinus moet worden bepaald, in radialen.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1272,8 +1272,8 @@ module.exports = {
     {
       n: "TRUNC",
       t: 0,
-      d: "Beschrijving van de functie TRUNC.",
-      a: "Samenvatting van de functie TRUNC.",
+      d: "Kapt een getal af op een bepaald aantal significante cijfers door minder significante cijfers weg te laten.",
+      a: "Kapt een getal af.",
       m: [
         1,
         2
@@ -1281,7 +1281,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie TRUNC.",
+          detail: "De waarde die moet worden afgekapt.",
           example: "3.141592654",
           require: "m",
           repeat: "n",
@@ -1289,7 +1289,7 @@ module.exports = {
         },
         {
           name: "decimalen",
-          detail: "Parameter `decimalen` van de functie TRUNC.",
+          detail: "Het aantal significante cijfers rechts van de komma dat moet worden behouden.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -1300,8 +1300,8 @@ module.exports = {
     {
       n: "QUOTIENT",
       t: 0,
-      d: "Beschrijving van de functie QUOTIENT.",
-      a: "Samenvatting van de functie QUOTIENT.",
+      d: "Retourneert het ene getal gedeeld door het andere.",
+      a: "Het ene getal gedeeld door het andere.",
       m: [
         2,
         2
@@ -1309,7 +1309,7 @@ module.exports = {
       p: [
         {
           name: "deeltal",
-          detail: "Parameter `deeltal` van de functie QUOTIENT.",
+          detail: "Het getal dat moet worden gedeeld.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1317,7 +1317,7 @@ module.exports = {
         },
         {
           name: "deler",
-          detail: "Parameter `deler` van de functie QUOTIENT.",
+          detail: "Het getal waardoor moet worden gedeeld.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1328,8 +1328,8 @@ module.exports = {
     {
       n: "POWER",
       t: 0,
-      d: "Beschrijving van de functie POWER.",
-      a: "Samenvatting van de functie POWER.",
+      d: "Retourneert een getal verheven tot een macht.",
+      a: "Een getal verheven tot een macht.",
       m: [
         2,
         2
@@ -1337,7 +1337,7 @@ module.exports = {
       p: [
         {
           name: "grondtal",
-          detail: "Parameter `grondtal` van de functie POWER.",
+          detail: "Het getal dat moet worden verheven tot de macht `exponent`.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1345,7 +1345,7 @@ module.exports = {
         },
         {
           name: "exponent",
-          detail: "Parameter `exponent` van de functie POWER.",
+          detail: "De exponent waartoe `grondtal` moet worden verheven.",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -1356,8 +1356,8 @@ module.exports = {
     {
       n: "SUMIFS",
       t: 0,
-      d: "Beschrijving van de functie SUMIFS.",
-      a: "Samenvatting van de functie SUMIFS.",
+      d: "Retourneert de som van een bereik afhankelijk van meerdere criteria.",
+      a: "Telt een bereik op afhankelijk van meerdere criteria.",
       m: [
         3,
         257
@@ -1365,7 +1365,7 @@ module.exports = {
       p: [
         {
           name: "sombereik",
-          detail: "Parameter `sombereik` van de functie SUMIFS.",
+          detail: "Het bereik dat moet worden opgeteld.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -1373,7 +1373,7 @@ module.exports = {
         },
         {
           name: "criteriumbereik1",
-          detail: "Parameter `criteriumbereik1` van de functie SUMIFS.",
+          detail: "Het bereik dat wordt getoetst aan criterium1.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
@@ -1381,7 +1381,7 @@ module.exports = {
         },
         {
           name: "criterium1",
-          detail: "Parameter `criterium1` van de functie SUMIFS.",
+          detail: "Het patroon of de test die wordt toegepast op criteriumbereik1.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -1389,7 +1389,7 @@ module.exports = {
         },
         {
           name: "criteriumbereik2",
-          detail: "Parameter `criteriumbereik2` van de functie SUMIFS.",
+          detail: "Extra bereiken om te controleren.",
           example: " C1:C10",
           require: "o",
           repeat: "y",
@@ -1400,8 +1400,8 @@ module.exports = {
     {
       n: "COUNTIFS",
       t: 1,
-      d: "Beschrijving van de functie COUNTIFS.",
-      a: "Samenvatting van de functie COUNTIFS.",
+      d: "Retourneert het aantal van een bereik afhankelijk van meerdere criteria.",
+      a: "Telt waarden afhankelijk van meerdere criteria.",
       m: [
         2,
         256
@@ -1409,7 +1409,7 @@ module.exports = {
       p: [
         {
           name: "criteriumbereik1",
-          detail: "Parameter `criteriumbereik1` van de functie COUNTIFS.",
+          detail: "Het bereik dat wordt getoetst aan `criterium1`.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -1417,7 +1417,7 @@ module.exports = {
         },
         {
           name: "criterium1",
-          detail: "Parameter `criterium1` van de functie COUNTIFS.",
+          detail: "Het patroon of de test die wordt toegepast op `criteriumbereik1`.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -1425,7 +1425,7 @@ module.exports = {
         },
         {
           name: "criteriumbereik2",
-          detail: "Parameter `criteriumbereik2` van de functie COUNTIFS.",
+          detail: "Extra bereiken om te controleren.",
           example: " B1:B10",
           require: "o",
           repeat: "y",
@@ -1436,8 +1436,8 @@ module.exports = {
     {
       n: "PRODUCT",
       t: 0,
-      d: "Beschrijving van de functie PRODUCT.",
-      a: "Samenvatting van de functie PRODUCT.",
+      d: "Retourneert het resultaat van het met elkaar vermenigvuldigen van een reeks getallen.",
+      a: "Resultaat van het met elkaar vermenigvuldigen van een reeks getallen.",
       m: [
         1,
         255
@@ -1445,7 +1445,7 @@ module.exports = {
       p: [
         {
           name: "factor1",
-          detail: "Parameter `factor1` van de functie PRODUCT.",
+          detail: "Het eerste getal of bereik dat moet worden berekend voor het product.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1453,7 +1453,7 @@ module.exports = {
         },
         {
           name: "factor2",
-          detail: "Parameter `factor2` van de functie PRODUCT.",
+          detail: "Meer getallen of bereiken die moeten worden berekend voor het product.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1464,8 +1464,8 @@ module.exports = {
     {
       n: "HARMEAN",
       t: 1,
-      d: "Beschrijving van de functie HARMEAN.",
-      a: "Samenvatting van de functie HARMEAN.",
+      d: "Berekent het harmonisch gemiddelde van een gegevensset.",
+      a: "Het harmonisch gemiddelde van een gegevensset.",
       m: [
         1,
         255
@@ -1473,7 +1473,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie HARMEAN.",
+          detail: "De eerste waarde of het eerste bereik van de populatie.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1481,7 +1481,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie HARMEAN.",
+          detail: "Extra waarden of bereiken om op te nemen in de populatie.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1492,8 +1492,8 @@ module.exports = {
     {
       n: "HYPGEOMDIST",
       t: 1,
-      d: "Beschrijving van de functie HYPGEOMDIST.",
-      a: "Samenvatting van de functie HYPGEOMDIST.",
+      d: "Berekent de kans op het trekken van een bepaald aantal successen in een bepaald aantal pogingen, gegeven een populatie van een bepaalde grootte met een bepaald aantal successen, zonder terugleggen van de trekkingen.",
+      a: "Hypergeometrische verdelingskans.",
       m: [
         5,
         5
@@ -1501,7 +1501,7 @@ module.exports = {
       p: [
         {
           name: "aantal_successen",
-          detail: "Parameter `aantal_successen` van de functie HYPGEOMDIST.",
+          detail: "Het gewenste aantal successen.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1509,7 +1509,7 @@ module.exports = {
         },
         {
           name: "aantal_trekkingen",
-          detail: "Parameter `aantal_trekkingen` van de functie HYPGEOMDIST.",
+          detail: "Het toegestane aantal trekkingen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -1517,7 +1517,7 @@ module.exports = {
         },
         {
           name: "successen_in_populatie",
-          detail: "Parameter `successen_in_populatie` van de functie HYPGEOMDIST.",
+          detail: "Het totale aantal successen in de populatie.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -1525,7 +1525,7 @@ module.exports = {
         },
         {
           name: "populatiegrootte",
-          detail: "Parameter `populatiegrootte` van de functie HYPGEOMDIST.",
+          detail: "De totale omvang van de populatie.",
           example: "40",
           require: "m",
           repeat: "n",
@@ -1533,7 +1533,7 @@ module.exports = {
         },
         {
           name: "cumulatief",
-          detail: "Parameter `cumulatief` van de functie HYPGEOMDIST.",
+          detail: "Bepaalt de logische waarde van de vorm van de functie. \n\nAls cumulatief WAAR() is, retourneert HYPGEOM.DIST de cumulatieve verdelingsfunctie;\n\nals het ONWAAR() is, retourneert het de kansdichtheidsfunctie.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -1544,8 +1544,8 @@ module.exports = {
     {
       n: "INTERCEPT",
       t: 1,
-      d: "Beschrijving van de functie INTERCEPT.",
-      a: "Samenvatting van de functie INTERCEPT.",
+      d: "Berekent de y-waarde waarop de lijn die het resultaat is van lineaire regressie van een gegevensset de y-as snijdt (x=0).",
+      a: "Snijpunt met de y-as van een lijn afgeleid via lineaire regressie.",
       m: [
         2,
         2
@@ -1553,7 +1553,7 @@ module.exports = {
       p: [
         {
           name: "gegevens_y",
-          detail: "Parameter `gegevens_y` van de functie INTERCEPT.",
+          detail: "Het bereik dat het array of de matrix van afhankelijke gegevens vertegenwoordigt.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1561,7 +1561,7 @@ module.exports = {
         },
         {
           name: "gegevens_x",
-          detail: "Parameter `gegevens_x` van de functie INTERCEPT.",
+          detail: "Het bereik dat het array of de matrix van onafhankelijke gegevens vertegenwoordigt.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1572,8 +1572,8 @@ module.exports = {
     {
       n: "KURT",
       t: 1,
-      d: "Beschrijving van de functie KURT.",
-      a: "Samenvatting van de functie KURT.",
+      d: "Berekent de kurtosis van een gegevensset, die de vorm beschrijft en met name de \"piekvorm\" van die gegevensset.",
+      a: "Kurtosis van een gegevensset.",
       m: [
         1,
         255
@@ -1581,7 +1581,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie KURT.",
+          detail: "De eerste waarde of het eerste bereik van de gegevensset.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1589,7 +1589,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie KURT.",
+          detail: "Extra waarden of bereiken om op te nemen in de gegevensset.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1600,8 +1600,8 @@ module.exports = {
     {
       n: "LARGE",
       t: 1,
-      d: "Beschrijving van de functie LARGE.",
-      a: "Samenvatting van de functie LARGE.",
+      d: "Retourneert het n-de grootste element uit een gegevensset, waarbij n door de gebruiker wordt bepaald.",
+      a: "N-de grootste element uit een gegevensset.",
       m: [
         2,
         2
@@ -1609,7 +1609,7 @@ module.exports = {
       p: [
         {
           name: "gegevens",
-          detail: "Parameter `gegevens` van de functie LARGE.",
+          detail: "Array of bereik dat de te overwegen gegevensset bevat.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -1617,7 +1617,7 @@ module.exports = {
         },
         {
           name: "n",
-          detail: "Parameter `n` van de functie LARGE.",
+          detail: "De rangorde, van groot naar klein, van het te retourneren element.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1628,8 +1628,8 @@ module.exports = {
     {
       n: "STDEVA",
       t: 1,
-      d: "Beschrijving van de functie STDEVA.",
-      a: "Samenvatting van de functie STDEVA.",
+      d: "Berekent de standaarddeviatie op basis van een steekproef, waarbij tekst wordt ingesteld op de waarde `0`.",
+      a: "Standaarddeviatie van steekproef (tekst als 0).",
       m: [
         1,
         255
@@ -1637,7 +1637,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie STDEVA.",
+          detail: "De eerste waarde of het eerste bereik van de steekproef.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1645,7 +1645,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie STDEVA.",
+          detail: "Extra waarden of bereiken om op te nemen in de steekproef.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1656,8 +1656,8 @@ module.exports = {
     {
       n: "STDEVP",
       t: 1,
-      d: "Beschrijving van de functie STDEVP.",
-      a: "Samenvatting van de functie STDEVP.",
+      d: "Berekent de standaarddeviatie op basis van een volledige populatie.",
+      a: "Standaarddeviatie van een volledige populatie.",
       m: [
         1,
         255
@@ -1665,7 +1665,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie STDEVP.",
+          detail: "De eerste waarde of het eerste bereik van de populatie.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1673,7 +1673,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie STDEVP.",
+          detail: "Extra waarden of bereiken om op te nemen in de populatie.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1684,8 +1684,8 @@ module.exports = {
     {
       n: "GEOMEAN",
       t: 1,
-      d: "Beschrijving van de functie GEOMEAN.",
-      a: "Samenvatting van de functie GEOMEAN.",
+      d: "Berekent het meetkundig gemiddelde van een gegevensset.",
+      a: "Het meetkundig gemiddelde van een gegevensset.",
       m: [
         1,
         255
@@ -1693,7 +1693,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie GEOMEAN.",
+          detail: "De eerste waarde of het eerste bereik van de populatie.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1701,7 +1701,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie GEOMEAN.",
+          detail: "Extra waarden of bereiken om op te nemen in de populatie.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1712,8 +1712,8 @@ module.exports = {
     {
       n: "RANK_EQ",
       t: 1,
-      d: "Beschrijving van de functie RANK_EQ.",
-      a: "Samenvatting van de functie RANK_EQ.",
+      d: "Retourneert de rangorde van een opgegeven waarde in een gegevensset. Als er meer dan één item met dezelfde waarde in de gegevensset voorkomt, wordt de hoogste rangorde van de items geretourneerd.",
+      a: "Hoogste rangorde van een opgegeven waarde in een gegevensset.",
       m: [
         2,
         3
@@ -1721,7 +1721,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie RANK_EQ.",
+          detail: "De waarde waarvan de rangorde wordt bepaald.",
           example: "A10",
           require: "m",
           repeat: "n",
@@ -1729,7 +1729,7 @@ module.exports = {
         },
         {
           name: "gegevens",
-          detail: "Parameter `gegevens` van de functie RANK_EQ.",
+          detail: "Het array of bereik met de te overwegen gegevensset.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1737,7 +1737,7 @@ module.exports = {
         },
         {
           name: "is_oplopend",
-          detail: "Parameter `is_oplopend` van de functie RANK_EQ.",
+          detail: "Of de waarden in `gegevens` in aflopende of oplopende volgorde moeten worden beschouwd. Indien weggelaten, is de standaardwaarde aflopend (ONWAAR).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1748,8 +1748,8 @@ module.exports = {
     {
       n: "RANK_AVG",
       t: 1,
-      d: "Beschrijving van de functie RANK_AVG.",
-      a: "Samenvatting van de functie RANK_AVG.",
+      d: "Retourneert de rangorde van een opgegeven waarde in een gegevensset. Als er meer dan één item met dezelfde waarde in de gegevensset voorkomt, wordt de gemiddelde rangorde van de items geretourneerd.",
+      a: "Gemiddelde rangorde van een opgegeven waarde in een gegevensset.",
       m: [
         2,
         3
@@ -1757,7 +1757,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie RANK_AVG.",
+          detail: "De waarde waarvan de rangorde wordt bepaald.",
           example: "A10",
           require: "m",
           repeat: "n",
@@ -1765,7 +1765,7 @@ module.exports = {
         },
         {
           name: "gegevens",
-          detail: "Parameter `gegevens` van de functie RANK_AVG.",
+          detail: "Het array of bereik met de te overwegen gegevensset.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1773,7 +1773,7 @@ module.exports = {
         },
         {
           name: "is_oplopend",
-          detail: "Parameter `is_oplopend` van de functie RANK_AVG.",
+          detail: "Of de waarden in `gegevens` in aflopende of oplopende volgorde moeten worden beschouwd. Indien weggelaten, is de standaardwaarde aflopend (ONWAAR).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1784,8 +1784,8 @@ module.exports = {
     {
       n: "PERCENTRANK_EXC",
       t: 1,
-      d: "Beschrijving van de functie PERCENTRANK_EXC.",
-      a: "Samenvatting van de functie PERCENTRANK_EXC.",
+      d: "Retourneert de percentagerangorde (percentiel) van 0 tot 1 exclusief van een opgegeven waarde in een gegevensset.",
+      a: "Percentagerangorde (percentiel) van 0 tot 1 exclusief.",
       m: [
         2,
         3
@@ -1793,7 +1793,7 @@ module.exports = {
       p: [
         {
           name: "gegevens",
-          detail: "Parameter `gegevens` van de functie PERCENTRANK_EXC.",
+          detail: "Het array of bereik met de te overwegen gegevensset.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1801,7 +1801,7 @@ module.exports = {
         },
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie PERCENTRANK_EXC.",
+          detail: "De waarde waarvan de percentagerangorde wordt bepaald.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1809,7 +1809,7 @@ module.exports = {
         },
         {
           name: "significante_cijfers",
-          detail: "Parameter `significante_cijfers` van de functie PERCENTRANK_EXC.",
+          detail: "Het aantal significante cijfers dat wordt gebruikt in de berekening. Standaard is 3.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1820,8 +1820,8 @@ module.exports = {
     {
       n: "PERCENTRANK_INC",
       t: 1,
-      d: "Beschrijving van de functie PERCENTRANK_INC.",
-      a: "Samenvatting van de functie PERCENTRANK_INC.",
+      d: "Retourneert de percentagerangorde (percentiel) van 0 tot 1 inclusief van een opgegeven waarde in een gegevensset.",
+      a: "Percentagerangorde (percentiel) van 0 tot 1 inclusief.",
       m: [
         2,
         3
@@ -1829,7 +1829,7 @@ module.exports = {
       p: [
         {
           name: "gegevens",
-          detail: "Parameter `gegevens` van de functie PERCENTRANK_INC.",
+          detail: "Het array of bereik met de te overwegen gegevensset.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1837,7 +1837,7 @@ module.exports = {
         },
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie PERCENTRANK_INC.",
+          detail: "De waarde waarvan de percentagerangorde wordt bepaald.",
           example: " A2",
           require: "m",
           repeat: "n",
@@ -1845,7 +1845,7 @@ module.exports = {
         },
         {
           name: "significante_cijfers",
-          detail: "Parameter `significante_cijfers` van de functie PERCENTRANK_INC.",
+          detail: "Het aantal significante cijfers dat wordt gebruikt in de berekening. Standaard is 3.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1856,8 +1856,8 @@ module.exports = {
     {
       n: "FORECAST",
       t: 1,
-      d: "Beschrijving van de functie FORECAST.",
-      a: "Samenvatting van de functie FORECAST.",
+      d: "Berekent de verwachte y-waarde voor een opgegeven x op basis van een lineaire regressie van een gegevensset.",
+      a: "Verwachte y-waarde op basis van lineaire regressie.",
       m: [
         3,
         3
@@ -1865,7 +1865,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` van de functie FORECAST.",
+          detail: "De waarde op de x-as die moet worden voorspeld.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -1873,7 +1873,7 @@ module.exports = {
         },
         {
           name: "gegevens_y",
-          detail: "Parameter `gegevens_y` van de functie FORECAST.",
+          detail: "Het bereik dat het array of de matrix van afhankelijke gegevens vertegenwoordigt.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1881,7 +1881,7 @@ module.exports = {
         },
         {
           name: "gegevens_x",
-          detail: "Parameter `gegevens_x` van de functie FORECAST.",
+          detail: "Het bereik dat het array of de matrix van onafhankelijke gegevens vertegenwoordigt.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1892,8 +1892,8 @@ module.exports = {
     {
       n: "FISHERINV",
       t: 1,
-      d: "Beschrijving van de functie FISHERINV.",
-      a: "Samenvatting van de functie FISHERINV.",
+      d: "Retourneert de inverse Fisher-transformatie van een opgegeven waarde.",
+      a: "Inverse fisher-transformatie van een opgegeven waarde.",
       m: [
         1,
         1
@@ -1901,7 +1901,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie FISHERINV.",
+          detail: "De waarde waarvoor de inverse Fisher-transformatie moet worden berekend.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1912,8 +1912,8 @@ module.exports = {
     {
       n: "FISHER",
       t: 1,
-      d: "Beschrijving van de functie FISHER.",
-      a: "Samenvatting van de functie FISHER.",
+      d: "Retourneert de Fisher-transformatie van een opgegeven waarde.",
+      a: "Fisher-transformatie van een opgegeven waarde.",
       m: [
         1,
         1
@@ -1921,7 +1921,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie FISHER.",
+          detail: "De waarde waarvoor de Fisher-transformatie moet worden berekend.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1932,8 +1932,8 @@ module.exports = {
     {
       n: "MODE_SNGL",
       t: 1,
-      d: "Beschrijving van de functie MODE_SNGL.",
-      a: "Samenvatting van de functie MODE_SNGL.",
+      d: "Retourneert de meest voorkomende waarde in een gegevensset.",
+      a: "Meest voorkomende waarde in een gegevensset.",
       m: [
         1,
         255
@@ -1941,7 +1941,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie MODE_SNGL.",
+          detail: "De eerste waarde of het eerste bereik om in aanmerking te nemen bij het berekenen van de modus.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1949,7 +1949,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie MODE_SNGL.",
+          detail: "Extra waarden of bereiken om in aanmerking te nemen bij het berekenen van de modus.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1960,8 +1960,8 @@ module.exports = {
     {
       n: "WEIBULL_DIST",
       t: 1,
-      d: "Beschrijving van de functie WEIBULL_DIST.",
-      a: "Samenvatting van de functie WEIBULL_DIST.",
+      d: "Retourneert de waarde van de Weibull-verdelingsfunctie (of cumulatieve Weibull-verdelingsfunctie) voor een opgegeven vorm en schaal.",
+      a: "Weibull-verdelingsfunctie.",
       m: [
         4,
         4
@@ -1969,7 +1969,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` van de functie WEIBULL_DIST.",
+          detail: "De invoer voor de Weibull-verdelingsfunctie.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -1977,7 +1977,7 @@ module.exports = {
         },
         {
           name: "vorm",
-          detail: "Parameter `vorm` van de functie WEIBULL_DIST.",
+          detail: "De vormparameter van de Weibull-verdelingsfunctie.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1985,7 +1985,7 @@ module.exports = {
         },
         {
           name: "schaal",
-          detail: "Parameter `schaal` van de functie WEIBULL_DIST.",
+          detail: "De schaalparameter van de Weibull-verdelingsfunctie.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -1993,7 +1993,7 @@ module.exports = {
         },
         {
           name: "cumulatief",
-          detail: "Parameter `cumulatief` van de functie WEIBULL_DIST.",
+          detail: "Of de cumulatieve verdelingsfunctie moet worden gebruikt.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -2004,8 +2004,8 @@ module.exports = {
     {
       n: "COUNT",
       t: 1,
-      d: "Beschrijving van de functie COUNT.",
-      a: "Samenvatting van de functie COUNT.",
+      d: "Retourneert het aantal numerieke waarden in een gegevensset.",
+      a: "Het aantal numerieke waarden in een gegevensset.",
       m: [
         1,
         255
@@ -2013,7 +2013,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie COUNT.",
+          detail: "De eerste waarde of het eerste bereik om in aanmerking te nemen bij het tellen.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2021,7 +2021,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie COUNT.",
+          detail: "Extra waarden of bereiken om in aanmerking te nemen bij het tellen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2032,8 +2032,8 @@ module.exports = {
     {
       n: "COUNTA",
       t: 1,
-      d: "Beschrijving van de functie COUNTA.",
-      a: "Samenvatting van de functie COUNTA.",
+      d: "Retourneert het aantal waarden in een gegevensset.",
+      a: "Het aantal waarden in een gegevensset.",
       m: [
         1,
         255
@@ -2041,7 +2041,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie COUNTA.",
+          detail: "De eerste waarde of het eerste bereik om in aanmerking te nemen bij het tellen.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2049,7 +2049,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie COUNTA.",
+          detail: "Extra waarden of bereiken om in aanmerking te nemen bij het tellen.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2060,8 +2060,8 @@ module.exports = {
     {
       n: "AVEDEV",
       t: 1,
-      d: "Beschrijving van de functie AVEDEV.",
-      a: "Samenvatting van de functie AVEDEV.",
+      d: "Berekent het gemiddelde van de absolute afwijkingen van gegevens ten opzichte van het gemiddelde van een gegevensset.",
+      a: "Gemiddelde afwijkingsgrootte ten opzichte van het gemiddelde.",
       m: [
         1,
         255
@@ -2069,7 +2069,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie AVEDEV.",
+          detail: "De eerste waarde of het eerste bereik van de steekproef.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2077,7 +2077,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie AVEDEV.",
+          detail: "Extra waarden of bereiken om op te nemen in de steekproef.",
           example: "2",
           require: "o",
           repeat: "y",
