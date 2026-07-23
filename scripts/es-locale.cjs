@@ -1,4 +1,35 @@
-module.exports = {
+module.exports = {  "insertLink": {
+    "linkText": "Texto para mostrar",
+    "linkType": "Tipo de enlace",
+    "linkAddress": "Dirección del enlace",
+    "linkSheet": "Hoja de cálculo",
+    "linkCell": "Rango de celdas",
+    "linkTooltip": "Información sobre herramientas",
+    "selectCellRange": "Seleccionar rango de celdas",
+    "cellRangePlaceholder": "Seleccione celdas con el cursor o escríbalas directamente",
+    "placeholder1": "Introduzca la dirección del enlace web",
+    "placeholder2": "Introduzca la celda a la que hacer referencia, por ejemplo A1",
+    "placeholder3": "Introduzca el texto de la información sobre herramientas",
+    "tooltipInfo1": "Introduzca un enlace válido",
+    "invalidCellRangeTip": "Introduzca un rango de celdas correcto, por ejemplo Hoja1!A1:C8",
+    "openLink": "Abrir enlace",
+    "goTo": "Ir a ${linkAddress}"
+  },
+  "linkTypeList": [
+    {
+      "text": "Páginas web",
+      "value": "webpage"
+    },
+    {
+      "text": "Rango de celdas",
+      "value": "cellrange"
+    },
+    {
+      "text": "Hoja",
+      "value": "sheet"
+    }
+  ],
+
   generalDialog: {
     partiallyError: "No se puede realizar esta operación en celdas parcialmente unidas",
     readOnlyError: "No se puede realizar esto en modo de solo lectura",
@@ -11569,7 +11600,24 @@ module.exports = {
       ]
     }
   ],
-  toolbar: {
+  toolbar: {  "clear-format": "Borrar formato",
+  "format-painter": "Copiar formato",
+  "currency-format": "Formato de moneda",
+  "percentage-format": "Formato de porcentaje",
+  "number-decrease": "Reducir decimales",
+  "number-increase": "Aumentar decimales",
+  "border-all": "Todos los bordes",
+  "merge-all": "Combinar todas las celdas",
+  "strike-through": "Tachado (Alt+Shift+5)",
+  "align-left": "Alineado a la izquierda",
+  "align-center": "Centrado horizontal",
+  "align-right": "Alineado a la derecha",
+  "align-top": "Alineado arriba",
+  "align-mid": "Centrado vertical",
+  "align-bottom": "Alineado abajo",
+  "sortAndFilter": "Ordenar y filtrar",
+  "insertLink": "Insertar enlace",
+
     toolbar: "Barra de herramientas",
     undo: "Deshacer",
     redo: "Rehacer",
@@ -11667,7 +11715,11 @@ module.exports = {
     tipSelectRange: "Selecciona el rango que quieres copiar",
     tipNotMulti: "No se puede realizar esta operación en un rango de selección múltiple"
   },
-  format: {
+  format: {  "tipDecimalPlaces": "¡Los decimales deben estar entre 0 y 9!",
+  "select": "Seleccionar",
+  "format": "formato",
+  "currency": "moneda",
+
     moreCurrency: "Más formatos de moneda",
     moreDateTime: "Más formatos de fecha y hora",
     moreNumber: "Más formatos de número",
@@ -12044,7 +12096,9 @@ module.exports = {
     "comic sans ms": 11,
     "segoe ui": 12
   },
-  border: {
+  border: {  "borderDefault": "Predeterminado",
+  "borderStyle": "Estilo de borde",
+
     borderTop: "borderTop",
     borderBottom: "borderBottom",
     borderLeft: "borderLeft",
@@ -12259,7 +12313,26 @@ module.exports = {
     rightclickTip: "Haz clic con el botón derecho en la imagen y selecciona \"copiar\"",
     successTip: "Con éxito (si falla el pegado, haz clic con el botón derecho en la imagen para \"copiar imagen\")"
   },
-  splitText: {
+  splitText: {  "splitSymbols": [
+    {
+      "name": "Tabulación",
+      "value": "Tab"
+    },
+    {
+      "name": "punto y coma",
+      "value": "semicolon"
+    },
+    {
+      "name": "coma",
+      "value": "comma"
+    },
+    {
+      "name": "espacio",
+      "value": "space"
+    }
+  ],
+  "tipNoSelect": "No puede separar una celda sin seleccionarla",
+
     splitDelimiters: "Delimitadores",
     splitOther: "Otros",
     splitContinueSymbol: "Los separadores consecutivos se tratan como uno solo",
@@ -12663,7 +12736,8 @@ module.exports = {
     allowOptionText: "Opción",
     selectCategory: "O selecciona una categoría"
   },
-  drag: {
+  drag: {  "affectPivot": "Este cambio no se puede realizar en la celda seleccionada porque afectaría a la tabla dinámica.",
+
     noMerge: "No se puede realizar esta operación en celdas combinadas",
     afectarPivot: "¡Este cambio no se puede realizar en la celda seleccionada porque afectará a la tabla dinámica!",
     noMulti: "No se puede realizar esta operación en varias áreas de selección, selecciona una sola área",

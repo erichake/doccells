@@ -12680,7 +12680,16 @@ module.exports = {
     "Tahoma",
     "Verdana"
   ],
-  fontjson: {
+  fontjson: {  "helvetica": 4,
+  "trebuchet ms": 5,
+  "georgia": 6,
+  "garamond": 7,
+  "courier new": 8,
+  "lucida console": 9,
+  "impact": 10,
+  "comic sans ms": 11,
+  "segoe ui": 12,
+
     arial: 0,
     "times new roman": 1,
     tahoma: 2,

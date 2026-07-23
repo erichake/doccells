@@ -14536,7 +14536,16 @@ module.exports = {
     "Tahoma",
     "Verdana"
   ],
-  fontjson: {
+  fontjson: {  "helvetica": 4,
+  "trebuchet ms": 5,
+  "georgia": 6,
+  "garamond": 7,
+  "courier new": 8,
+  "lucida console": 9,
+  "impact": 10,
+  "comic sans ms": 11,
+  "segoe ui": 12,
+
     arial: 0,
     "times new roman": 1,
     tahoma: 2,
@@ -15367,7 +15376,73 @@ module.exports = {
     contact: "Произошла ошибка связи с сервером, обновите страницу и попробуйте снова, если не помогает, свяжитесь с администратором!",
     support: "Текущий браузер не поддерживает WebSocket"
   },
-  custom: {
+  custom: {  "conditionalFormatting": {
+    "toolbar": "Условное форматирование",
+    "title": "Условное форматирование",
+    "activeSheet": "Активный лист",
+    "appliedRules": "Применённые правила",
+    "noRules": "Для этого листа нет правил.",
+    "editRule": "Изменить правило",
+    "newRule": "Новое правило",
+    "applyTo": "Применить к",
+    "condition": "Условие",
+    "compareTo": "Сравнить с",
+    "minValue": "Минимальное значение",
+    "maxValue": "Максимальное значение",
+    "cell": "Ячейка",
+    "sameRowColumn": "Столбец той же строки",
+    "text": "Текст",
+    "value": "Значение",
+    "textColor": "Текст",
+    "backgroundColor": "Заливка",
+    "style": "Стиль",
+    "preview": "Предпросмотр ячейки",
+    "close": "Закрыть",
+    "reset": "Новое",
+    "save": "Сохранить",
+    "add": "Добавить",
+    "edit": "Изменить",
+    "delete": "Удалить",
+    "none": "Нет",
+    "sample": "Aa",
+    "textPlaceholder": "опоздание",
+    "conditions": {
+      "lessThan": "меньше, чем",
+      "greaterThan": "больше, чем",
+      "equal": "равно",
+      "notEqual": "не равно",
+      "between": "между",
+      "textContains": "содержит текст"
+    },
+    "compareTypes": {
+      "value": "фиксированному значению",
+      "cell": "фиксированной ячейке",
+      "sameRowColumn": "столбцу той же строки"
+    },
+    "descriptions": {
+      "cell": "ячейка",
+      "between": "ячейка между {value1} и {value2}",
+      "textContains": "текст содержит «{value}»",
+      "sameRowColumn": "столбец {reference} той же строки",
+      "fixedCell": "ячейка {reference}",
+      "comparison": "ячейка {operator} {target}"
+    },
+    "errors": {
+      "range": "Диапазон должен выглядеть как A2:A100.",
+      "between": "Введите два значения для условия «между».",
+      "text": "Введите текст для поиска.",
+      "compareCell": "Ячейка сравнения должна выглядеть как B1.",
+      "compareColumn": "Столбец сравнения должен выглядеть как B.",
+      "compareValue": "Введите значение для сравнения.",
+      "style": "Выберите хотя бы один цвет или стиль."
+    },
+    "styleLabels": {
+      "bold": "Жирный",
+      "italic": "Курсив",
+      "underline": "Подчёркнутый"
+    }
+  },
+
     lockCells: "Заблокировать ячейки",
     unlockCells: "Разблокировать ячейки",
     toggleSheetProtection: "Защитить/снять защиту книги",

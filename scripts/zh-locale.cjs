@@ -11569,7 +11569,8 @@ module.exports = {
       ]
     }
   ],
-  toolbar: {
+  toolbar: {  "paintFormat": "格式刷",
+
     toolbar: "工具栏",
     undo: "撤销",
     redo: "重做",
@@ -13475,7 +13476,8 @@ module.exports = {
     borderTile: "图片边框颜色选择",
     borderCur: "当前颜色"
   },
-  protection: {
+  protection: {  "enterHintTitle": "禁止编辑时显示的提示（选填）",
+
     protectiontTitle: "保护工作表",
     enterPassword: "请输入密码（可留空）",
     enterHint: "您试图更改的单元格或图表位于受保护的工作表中。若要更改，请取消工作表保护。您可能需要输入密码",

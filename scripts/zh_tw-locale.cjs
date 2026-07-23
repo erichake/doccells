@@ -1,4 +1,18 @@
-module.exports = {
+module.exports = {  "linkTypeList": [
+    {
+      "text": "網頁",
+      "value": "webpage"
+    },
+    {
+      "text": "儲存格範圍",
+      "value": "cellrange"
+    },
+    {
+      "text": "工作表",
+      "value": "sheet"
+    }
+  ],
+
   generalDialog: {
     partiallyError: "無法對部分合併儲存格執行此操作",
     readOnlyError: "無法對只讀模式執行此操作",
@@ -11569,7 +11583,23 @@ module.exports = {
       ]
     }
   ],
-  toolbar: {
+  toolbar: {  "clear-format": "清除格式",
+  "format-painter": "格式刷",
+  "currency-format": "貨幣格式",
+  "percentage-format": "百分比格式",
+  "number-decrease": "減少小數位數",
+  "number-increase": "增加小數位數",
+  "border-all": "所有框線",
+  "merge-all": "合併所有儲存格",
+  "strike-through": "刪除線 (Alt+Shift+5)",
+  "align-left": "靠左對齊",
+  "align-center": "水平置中",
+  "align-right": "靠右對齊",
+  "align-top": "靠上對齊",
+  "align-mid": "垂直置中",
+  "align-bottom": "靠下對齊",
+  "sortAndFilter": "排序和篩選",
+
     toolbar: "工具栏",
     undo: "撤銷",
     redo: "重做",
@@ -11668,7 +11698,11 @@ module.exports = {
     tipSelectRange: "請選擇需要複製格式的區域",
     tipNotMulti: "無法對多重選擇區域執行此操作"
   },
-  format: {
+  format: {  "tipDecimalPlaces": "小數位數必須介於 0 到 9 之間！",
+  "select": "選擇",
+  "format": "格式",
+  "currency": "貨幣",
+
     moreCurrency: "更多貨幣格式",
     moreDateTime: "更多日期與時間格式",
     moreNumber: "更多數位格式",
@@ -12088,7 +12122,9 @@ module.exports = {
     "comic sans ms": 20,
     "segoe ui": 21
   },
-  border: {
+  border: {  "borderDefault": "預設",
+  "borderStyle": "框線樣式",
+
     borderTop: "上框線",
     borderBottom: "下框線",
     borderLeft: "左框線",
@@ -12608,7 +12644,12 @@ module.exports = {
     fiveQuadrantDiagram: "五象限圖",
     fiveBoxes: "5個框"
   },
-  insertLink: {
+  insertLink: {  "selectCellRange": "選擇儲存格範圍",
+  "cellRangePlaceholder": "使用游標選擇儲存格或直接輸入",
+  "invalidCellRangeTip": "請輸入正確的儲存格範圍，例如 工作表1!A1:C8",
+  "openLink": "開啟連結",
+  "goTo": "前往 ${linkAddress}",
+
     linkText: "文字",
     linkType: "連結類型",
     external: "外部連結",
@@ -12819,7 +12860,8 @@ module.exports = {
     borderTile: "圖片邊框顏色選擇",
     borderCur: "當前顏色"
   },
-  protection: {
+  protection: {  "enterHintTitle": "禁止編輯時顯示的提示（選填）",
+
     protectiontTitle: "保護工作表",
     enterPassword: "請輸入密碼（可留空）",
     enterHint: "您試圖更改的儲存格或圖表位於受保護的工作表中。若要更改,請取消工作表保護。您可能需要輸入密碼",
