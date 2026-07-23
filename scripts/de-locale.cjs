@@ -6170,8 +6170,8 @@ module.exports = {
     {
       n: "MIRR",
       t: 8,
-      d: "Beschreibung der Funktion MIRR.",
-      a: "Kurzbeschreibung der Funktion MIRR.",
+      d: "Berechnet den modifizierten internen Zinsfuß einer Anlage auf Basis einer Reihe periodischer Zahlungsströme und der Differenz zwischen dem für die Finanzierung gezahlten Zinssatz und der auf reinvestierte Erträge erzielten Rendite.",
+      a: "Modifizierter interner Zinsfuß.",
       m: [
         3,
         3
@@ -6179,7 +6179,7 @@ module.exports = {
       p: [
         {
           name: "zahlungsstrombeträge",
-          detail: "Parameter `zahlungsstrombeträge` der Funktion MIRR.",
+          detail: "Ein Array oder Bereich mit den Einnahmen oder Zahlungen, die der Anlage zugeordnet sind.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
@@ -6187,7 +6187,7 @@ module.exports = {
         },
         {
           name: "finanzierungssatz",
-          detail: "Parameter `finanzierungssatz` der Funktion MIRR.",
+          detail: "Der für investierte Mittel gezahlte Zinssatz.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6195,7 +6195,7 @@ module.exports = {
         },
         {
           name: "reinvestitionsrendite",
-          detail: "Parameter `reinvestitionsrendite` der Funktion MIRR.",
+          detail: "Die (in Prozent) erzielte Rendite bei der Reinvestition der aus der Anlage erhaltenen Erträge.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6206,8 +6206,8 @@ module.exports = {
     {
       n: "IRR",
       t: 8,
-      d: "Beschreibung der Funktion IRR.",
-      a: "Kurzbeschreibung der Funktion IRR.",
+      d: "Berechnet den internen Zinsfuß einer Anlage auf Basis einer Reihe periodischer Zahlungsströme.",
+      a: "Interner Zinsfuß bei periodischen Zahlungsströmen.",
       m: [
         1,
         2
@@ -6215,7 +6215,7 @@ module.exports = {
       p: [
         {
           name: "zahlungsstrombeträge",
-          detail: "Parameter `zahlungsstrombeträge` der Funktion IRR.",
+          detail: "Ein Array oder Bereich mit den Einnahmen oder Zahlungen, die der Anlage zugeordnet sind.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
@@ -6223,7 +6223,7 @@ module.exports = {
         },
         {
           name: "zinsschätzung",
-          detail: "Parameter `zinsschätzung` der Funktion IRR.",
+          detail: "Eine Schätzung, wie hoch der interne Zinsfuß sein wird.",
           example: "200",
           require: "o",
           repeat: "n",
@@ -6234,8 +6234,8 @@ module.exports = {
     {
       n: "NPV",
       t: 8,
-      d: "Beschreibung der Funktion NPV.",
-      a: "Kurzbeschreibung der Funktion NPV.",
+      d: "Berechnet den Kapitalwert einer Anlage auf Basis einer Reihe periodischer Zahlungsströme und eines Diskontsatzes.",
+      a: "Der Kapitalwert einer Anlage auf Basis einer Reihe periodischer Zahlungsströme und eines Diskontsatzes.",
       m: [
         2,
         255
@@ -6243,7 +6243,7 @@ module.exports = {
       p: [
         {
           name: "diskontsatz",
-          detail: "Parameter `diskontsatz` der Funktion NPV.",
+          detail: "Der Diskontsatz der Anlage über eine Periode.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6251,7 +6251,7 @@ module.exports = {
         },
         {
           name: "zahlungsstrom1",
-          detail: "Parameter `zahlungsstrom1` der Funktion NPV.",
+          detail: "Der erste zukünftige Zahlungsstrom.",
           example: "200",
           require: "m",
           repeat: "n",
@@ -6259,7 +6259,7 @@ module.exports = {
         },
         {
           name: "zahlungsstrom2",
-          detail: "Parameter `zahlungsstrom2` der Funktion NPV.",
+          detail: "Weitere zukünftige Zahlungsströme.",
           example: "250",
           require: "o",
           repeat: "y",
@@ -6270,8 +6270,8 @@ module.exports = {
     {
       n: "XNPV",
       t: 8,
-      d: "Beschreibung der Funktion XNPV.",
-      a: "Kurzbeschreibung der Funktion XNPV.",
+      d: "Berechnet den Kapitalwert einer Anlage auf Basis einer angegebenen Reihe potenziell unregelmäßig verteilter Zahlungsströme und eines Diskontsatzes.",
+      a: "Kapitalwert bei unregelmäßigen Zahlungsströmen.",
       m: [
         3,
         3
@@ -6279,7 +6279,7 @@ module.exports = {
       p: [
         {
           name: "diskontsatz",
-          detail: "Parameter `diskontsatz` der Funktion XNPV.",
+          detail: "Der Diskontsatz der Anlage über eine Periode.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -6287,7 +6287,7 @@ module.exports = {
         },
         {
           name: "zahlungsstrombeträge",
-          detail: "Parameter `zahlungsstrombeträge` der Funktion XNPV.",
+          detail: "Ein Bereich von Zellen mit den Einnahmen oder Zahlungen, die der Anlage zugeordnet sind.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
@@ -6295,7 +6295,7 @@ module.exports = {
         },
         {
           name: "zahlungsstromdaten",
-          detail: "Parameter `zahlungsstromdaten` der Funktion XNPV.",
+          detail: "Ein Bereich von Zellen mit Daten, die den Zahlungsströmen in `zahlungsstrombeträge` entsprechen.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6306,8 +6306,8 @@ module.exports = {
     {
       n: "CUMIPMT",
       t: 8,
-      d: "Beschreibung der Funktion CUMIPMT.",
-      a: "Kurzbeschreibung der Funktion CUMIPMT.",
+      d: "Berechnet die kumulierten Zinsen über einen Bereich von Zahlungsperioden für eine Anlage auf Basis konstanter periodischer Zahlungen und eines konstanten Zinssatzes.",
+      a: "Kumulierte Zinsen über einen Satz von Perioden.",
       m: [
         6,
         6
@@ -6315,7 +6315,7 @@ module.exports = {
       p: [
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion CUMIPMT.",
+          detail: "Der Zinssatz.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6323,7 +6323,7 @@ module.exports = {
         },
         {
           name: "anzahl_perioden",
-          detail: "Parameter `anzahl_perioden` der Funktion CUMIPMT.",
+          detail: "Die Anzahl der zu leistenden Zahlungen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6331,7 +6331,7 @@ module.exports = {
         },
         {
           name: "barwert",
-          detail: "Parameter `barwert` der Funktion CUMIPMT.",
+          detail: "Der aktuelle Wert der Rente.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6339,7 +6339,7 @@ module.exports = {
         },
         {
           name: "erste_periode",
-          detail: "Parameter `erste_periode` der Funktion CUMIPMT.",
+          detail: "Die Nummer der Zahlungsperiode, mit der die kumulierte Berechnung beginnen soll.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6347,7 +6347,7 @@ module.exports = {
         },
         {
           name: "letzte_periode",
-          detail: "Parameter `letzte_periode` der Funktion CUMIPMT.",
+          detail: "Die Nummer der Zahlungsperiode, mit der die kumulierte Berechnung enden soll.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -6355,7 +6355,7 @@ module.exports = {
         },
         {
           name: "ende_oder_anfang",
-          detail: "Parameter `ende_oder_anfang` der Funktion CUMIPMT.",
+          detail: "Ob Zahlungen am Ende (`0`) oder am Anfang (`1`) jeder Periode fällig sind.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6366,8 +6366,8 @@ module.exports = {
     {
       n: "PMT",
       t: 8,
-      d: "Beschreibung der Funktion PMT.",
-      a: "Kurzbeschreibung der Funktion PMT.",
+      d: "Berechnet die periodische Zahlung für eine Rentenanlage auf Basis konstanter periodischer Zahlungen und eines konstanten Zinssatzes.",
+      a: "Periodische Zahlung für eine Rentenanlage.",
       m: [
         3,
         5
@@ -6375,7 +6375,7 @@ module.exports = {
       p: [
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion PMT.",
+          detail: "Der Zinssatz.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -6383,7 +6383,7 @@ module.exports = {
         },
         {
           name: "anzahl_perioden",
-          detail: "Parameter `anzahl_perioden` der Funktion PMT.",
+          detail: "Die Anzahl der zu leistenden Zahlungen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6391,7 +6391,7 @@ module.exports = {
         },
         {
           name: "barwert",
-          detail: "Parameter `barwert` der Funktion PMT.",
+          detail: "Der aktuelle Wert der Rente.",
           example: " 100000",
           require: "m",
           repeat: "n",
@@ -6399,7 +6399,7 @@ module.exports = {
         },
         {
           name: "zukunftswert",
-          detail: "Parameter `zukunftswert` der Funktion PMT.",
+          detail: "Der nach der letzten Zahlung verbleibende zukünftige Wert.",
           example: "D2",
           require: "m",
           repeat: "n",
@@ -6407,7 +6407,7 @@ module.exports = {
         },
         {
           name: "ende_oder_anfang",
-          detail: "Parameter `ende_oder_anfang` der Funktion PMT.",
+          detail: "Ob Zahlungen am Ende (`0`) oder am Anfang (`1`) jeder Periode fällig sind.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6418,8 +6418,8 @@ module.exports = {
     {
       n: "IPMT",
       t: 8,
-      d: "Beschreibung der Funktion IPMT.",
-      a: "Kurzbeschreibung der Funktion IPMT.",
+      d: "Berechnet die Zinszahlung für eine Anlage auf Basis konstanter periodischer Zahlungen und eines konstanten Zinssatzes.",
+      a: "Zinszahlung für eine Anlage.",
       m: [
         4,
         6
@@ -6427,7 +6427,7 @@ module.exports = {
       p: [
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion IPMT.",
+          detail: "Der Zinssatz.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6435,7 +6435,7 @@ module.exports = {
         },
         {
           name: "periode",
-          detail: "Parameter `periode` der Funktion IPMT.",
+          detail: "Die Tilgungsperiode, ausgedrückt als Anzahl der Perioden.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6443,7 +6443,7 @@ module.exports = {
         },
         {
           name: "anzahl_perioden",
-          detail: "Parameter `anzahl_perioden` der Funktion IPMT.",
+          detail: "Die Anzahl der zu leistenden Zahlungen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6451,7 +6451,7 @@ module.exports = {
         },
         {
           name: "barwert",
-          detail: "Parameter `barwert` der Funktion IPMT.",
+          detail: "Der aktuelle Wert der Rente.",
           example: "80000",
           require: "m",
           repeat: "n",
@@ -6459,7 +6459,7 @@ module.exports = {
         },
         {
           name: "zukunftswert",
-          detail: "Parameter `zukunftswert` der Funktion IPMT.",
+          detail: "Der nach der letzten Zahlung verbleibende zukünftige Wert.",
           example: "E2",
           require: "m",
           repeat: "n",
@@ -6467,7 +6467,7 @@ module.exports = {
         },
         {
           name: "ende_oder_anfang",
-          detail: "Parameter `ende_oder_anfang` der Funktion IPMT.",
+          detail: "Ob Zahlungen am Ende (`0`) oder am Anfang (`1`) jeder Periode fällig sind.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6478,8 +6478,8 @@ module.exports = {
     {
       n: "PPMT",
       t: 8,
-      d: "Beschreibung der Funktion PPMT.",
-      a: "Kurzbeschreibung der Funktion PPMT.",
+      d: "Berechnet die Tilgungszahlung für eine Anlage auf Basis konstanter periodischer Zahlungen und eines konstanten Zinssatzes.",
+      a: "Tilgungszahlung für eine Anlage.",
       m: [
         4,
         6
@@ -6487,7 +6487,7 @@ module.exports = {
       p: [
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion PPMT.",
+          detail: "Der Zinssatz.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6495,7 +6495,7 @@ module.exports = {
         },
         {
           name: "periode",
-          detail: "Parameter `periode` der Funktion PPMT.",
+          detail: "Die Tilgungsperiode, ausgedrückt als Anzahl der Perioden.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6503,7 +6503,7 @@ module.exports = {
         },
         {
           name: "anzahl_perioden",
-          detail: "Parameter `anzahl_perioden` der Funktion PPMT.",
+          detail: "Die Anzahl der zu leistenden Zahlungen.",
           example: "3*12",
           require: "m",
           repeat: "n",
@@ -6511,7 +6511,7 @@ module.exports = {
         },
         {
           name: "barwert",
-          detail: "Parameter `barwert` der Funktion PPMT.",
+          detail: "Der aktuelle Wert der Rente.",
           example: "100000",
           require: "m",
           repeat: "n",
@@ -6519,7 +6519,7 @@ module.exports = {
         },
         {
           name: "zukunftswert",
-          detail: "Parameter `zukunftswert` der Funktion PPMT.",
+          detail: "Der nach der letzten Zahlung verbleibende zukünftige Wert.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6527,7 +6527,7 @@ module.exports = {
         },
         {
           name: "ende_oder_anfang",
-          detail: "Parameter `ende_oder_anfang` der Funktion PPMT.",
+          detail: "Ob Zahlungen am Ende (`0`) oder am Anfang (`1`) jeder Periode fällig sind.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6538,8 +6538,8 @@ module.exports = {
     {
       n: "INTRATE",
       t: 8,
-      d: "Beschreibung der Funktion INTRATE.",
-      a: "Kurzbeschreibung der Funktion INTRATE.",
+      d: "Berechnet den effektiven Zinssatz, der entsteht, wenn eine Anlage zu einem Kurs gekauft und zu einem anderen verkauft wird, ohne dass die Anlage selbst Zinsen oder Dividenden erzeugt.",
+      a: "Berechnet den effektiven Zinssatz.",
       m: [
         4,
         5
@@ -6547,7 +6547,7 @@ module.exports = {
       p: [
         {
           name: "kaufdatum",
-          detail: "Parameter `kaufdatum` der Funktion INTRATE.",
+          detail: "Das Kaufdatum der Anlage.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6555,7 +6555,7 @@ module.exports = {
         },
         {
           name: "verkaufsdatum",
-          detail: "Parameter `verkaufsdatum` der Funktion INTRATE.",
+          detail: "Das Verkaufsdatum der Anlage.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6563,7 +6563,7 @@ module.exports = {
         },
         {
           name: "kaufpreis",
-          detail: "Parameter `kaufpreis` der Funktion INTRATE.",
+          detail: "Der Kurs, zu dem die Anlage gekauft wurde.",
           example: "100000",
           require: "m",
           repeat: "n",
@@ -6571,7 +6571,7 @@ module.exports = {
         },
         {
           name: "verkaufspreis",
-          detail: "Parameter `verkaufspreis` der Funktion INTRATE.",
+          detail: "Der Kurs, zu dem die Anlage verkauft wurde.",
           example: "101200",
           require: "m",
           repeat: "n",
@@ -6579,7 +6579,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion INTRATE.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6590,8 +6590,8 @@ module.exports = {
     {
       n: "PRICE",
       t: 8,
-      d: "Beschreibung der Funktion PRICE.",
-      a: "Kurzbeschreibung der Funktion PRICE.",
+      d: "Berechnet den Kurs eines Wertpapiers mit periodischer Zinszahlung, wie z. B. einer US-Staatsanleihe, basierend auf der erwarteten Rendite.",
+      a: "Kurs eines Wertpapiers mit periodischer Zinszahlung.",
       m: [
         6,
         7
@@ -6599,7 +6599,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion PRICE.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6607,7 +6607,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion PRICE.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6615,7 +6615,7 @@ module.exports = {
         },
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion PRICE.",
+          detail: "Der annualisierte Zinssatz.",
           example: "0.057",
           require: "m",
           repeat: "n",
@@ -6623,7 +6623,7 @@ module.exports = {
         },
         {
           name: "rendite",
-          detail: "Parameter `rendite` der Funktion PRICE.",
+          detail: "Die erwartete jährliche Rendite des Wertpapiers.",
           example: "0.065",
           require: "m",
           repeat: "n",
@@ -6631,7 +6631,7 @@ module.exports = {
         },
         {
           name: "rückzahlungswert",
-          detail: "Parameter `rückzahlungswert` der Funktion PRICE.",
+          detail: "Der Rückzahlungsbetrag je 100 Nennwert.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6639,7 +6639,7 @@ module.exports = {
         },
         {
           name: "häufigkeit",
-          detail: "Parameter `häufigkeit` der Funktion PRICE.",
+          detail: "Die Anzahl der Zins- oder Kuponzahlungen pro Jahr (1, 2 oder 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6647,7 +6647,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion PRICE.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6658,8 +6658,8 @@ module.exports = {
     {
       n: "PRICEDISC",
       t: 8,
-      d: "Beschreibung der Funktion PRICEDISC.",
-      a: "Kurzbeschreibung der Funktion PRICEDISC.",
+      d: "Berechnet den Kurs eines Diskontpapiers (ohne Zinszahlung) basierend auf der erwarteten Rendite.",
+      a: "Kurs eines Diskontpapiers.",
       m: [
         4,
         5
@@ -6667,7 +6667,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion PRICEDISC.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6675,7 +6675,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion PRICEDISC.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6683,7 +6683,7 @@ module.exports = {
         },
         {
           name: "diskontsatz",
-          detail: "Parameter `diskontsatz` der Funktion PRICEDISC.",
+          detail: "Der Diskontsatz des Wertpapiers zum Zeitpunkt des Kaufs.",
           example: "0.0525",
           require: "m",
           repeat: "n",
@@ -6691,7 +6691,7 @@ module.exports = {
         },
         {
           name: "rückzahlungswert",
-          detail: "Parameter `rückzahlungswert` der Funktion PRICEDISC.",
+          detail: "Der Rückzahlungsbetrag je 100 Nennwert.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6699,7 +6699,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion PRICEDISC.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6710,8 +6710,8 @@ module.exports = {
     {
       n: "PRICEMAT",
       t: 8,
-      d: "Beschreibung der Funktion PRICEMAT.",
-      a: "Kurzbeschreibung der Funktion PRICEMAT.",
+      d: "Berechnet den Kurs eines Wertpapiers, das Zinsen bei Fälligkeit zahlt, basierend auf der erwarteten Rendite.",
+      a: "Kurs eines bei Fälligkeit zinszahlenden Wertpapiers.",
       m: [
         5,
         6
@@ -6719,7 +6719,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion PRICEMAT.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6727,7 +6727,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion PRICEMAT.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6735,7 +6735,7 @@ module.exports = {
         },
         {
           name: "ausgabedatum",
-          detail: "Parameter `ausgabedatum` der Funktion PRICEMAT.",
+          detail: "Das Datum, an dem das Wertpapier ursprünglich ausgegeben wurde.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6743,7 +6743,7 @@ module.exports = {
         },
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion PRICEMAT.",
+          detail: "Der annualisierte Zinssatz.",
           example: "0.061",
           require: "m",
           repeat: "n",
@@ -6751,7 +6751,7 @@ module.exports = {
         },
         {
           name: "rendite",
-          detail: "Parameter `rendite` der Funktion PRICEMAT.",
+          detail: "Die erwartete jährliche Rendite des Wertpapiers.",
           example: "0.061",
           require: "m",
           repeat: "n",
@@ -6759,7 +6759,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion PRICEMAT.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6770,8 +6770,8 @@ module.exports = {
     {
       n: "RECEIVED",
       t: 8,
-      d: "Beschreibung der Funktion RECEIVED.",
-      a: "Kurzbeschreibung der Funktion RECEIVED.",
+      d: "Berechnet den bei Fälligkeit erhaltenen Betrag für eine Anlage in festverzinslichen Wertpapieren, die zu einem bestimmten Datum gekauft wurden.",
+      a: "Bei Fälligkeit erhaltener Betrag für ein Wertpapier.",
       m: [
         4,
         5
@@ -6779,7 +6779,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion RECEIVED.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6787,7 +6787,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion RECEIVED.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6795,7 +6795,7 @@ module.exports = {
         },
         {
           name: "investition",
-          detail: "Parameter `investition` der Funktion RECEIVED.",
+          detail: "Der investierte Betrag (unabhängig vom Nennwert der einzelnen Wertpapiere).",
           example: "10000000",
           require: "m",
           repeat: "n",
@@ -6803,7 +6803,7 @@ module.exports = {
         },
         {
           name: "diskontsatz",
-          detail: "Parameter `diskontsatz` der Funktion RECEIVED.",
+          detail: "Der Diskontsatz des Wertpapiers, in das investiert wird.",
           example: "0.0575",
           require: "m",
           repeat: "n",
@@ -6811,7 +6811,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion RECEIVED.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6822,8 +6822,8 @@ module.exports = {
     {
       n: "DISC",
       t: 8,
-      d: "Beschreibung der Funktion DISC.",
-      a: "Kurzbeschreibung der Funktion DISC.",
+      d: "Berechnet den Diskontsatz eines Wertpapiers basierend auf dem Kurs.",
+      a: "Der Diskontsatz eines Wertpapiers basierend auf dem Kurs.",
       m: [
         4,
         5
@@ -6831,7 +6831,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion DISC.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6839,7 +6839,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion DISC.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6847,7 +6847,7 @@ module.exports = {
         },
         {
           name: "preis",
-          detail: "Parameter `preis` der Funktion DISC.",
+          detail: "Der Kurs, zu dem das Wertpapier je 100 Nennwert gekauft wird.",
           example: "97.975",
           require: "m",
           repeat: "n",
@@ -6855,7 +6855,7 @@ module.exports = {
         },
         {
           name: "rückzahlungswert",
-          detail: "Parameter `rückzahlungswert` der Funktion DISC.",
+          detail: "Der Rückzahlungsbetrag je 100 Nennwert.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6863,7 +6863,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion DISC.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6874,8 +6874,8 @@ module.exports = {
     {
       n: "NPER",
       t: 8,
-      d: "Beschreibung der Funktion NPER.",
-      a: "Kurzbeschreibung der Funktion NPER.",
+      d: "Berechnet die Anzahl der Zahlungsperioden für eine Anlage auf Basis konstanter periodischer Zahlungen und eines konstanten Zinssatzes.",
+      a: "Anzahl der Zahlungsperioden für eine Anlage.",
       m: [
         3,
         5
@@ -6883,7 +6883,7 @@ module.exports = {
       p: [
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion NPER.",
+          detail: "Der Zinssatz.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6891,7 +6891,7 @@ module.exports = {
         },
         {
           name: "zahlungsbetrag",
-          detail: "Parameter `zahlungsbetrag` der Funktion NPER.",
+          detail: "Der Betrag jeder geleisteten Zahlung.",
           example: "500",
           require: "m",
           repeat: "n",
@@ -6899,7 +6899,7 @@ module.exports = {
         },
         {
           name: "barwert",
-          detail: "Parameter `barwert` der Funktion NPER.",
+          detail: "Der aktuelle Wert der Rente.",
           example: "40000",
           require: "m",
           repeat: "n",
@@ -6907,7 +6907,7 @@ module.exports = {
         },
         {
           name: "zukunftswert",
-          detail: "Parameter `zukunftswert` der Funktion NPER.",
+          detail: "Der nach der letzten Zahlung verbleibende zukünftige Wert.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6915,7 +6915,7 @@ module.exports = {
         },
         {
           name: "ende_oder_anfang",
-          detail: "Parameter `ende_oder_anfang` der Funktion NPER.",
+          detail: "Ob Zahlungen am Ende (`0`) oder am Anfang (`1`) jeder Periode fällig sind.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6926,8 +6926,8 @@ module.exports = {
     {
       n: "SLN",
       t: 8,
-      d: "Beschreibung der Funktion SLN.",
-      a: "Kurzbeschreibung der Funktion SLN.",
+      d: "Berechnet die Abschreibung eines Vermögenswerts für eine Periode nach der linearen Methode.",
+      a: "Abschreibung eines Vermögenswerts nach der linearen Methode.",
       m: [
         3,
         3
@@ -6935,7 +6935,7 @@ module.exports = {
       p: [
         {
           name: "anschaffungskosten",
-          detail: "Parameter `anschaffungskosten` der Funktion SLN.",
+          detail: "Die Anschaffungskosten des Vermögenswerts.",
           example: "300000",
           require: "m",
           repeat: "n",
@@ -6943,7 +6943,7 @@ module.exports = {
         },
         {
           name: "restwert",
-          detail: "Parameter `restwert` der Funktion SLN.",
+          detail: "Der Restwert des Vermögenswerts am Ende der Abschreibung.",
           example: "75000",
           require: "m",
           repeat: "n",
@@ -6951,7 +6951,7 @@ module.exports = {
         },
         {
           name: "nutzungsdauer",
-          detail: "Parameter `nutzungsdauer` der Funktion SLN.",
+          detail: "Die Anzahl der Perioden, über die der Vermögenswert abgeschrieben wird.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -6962,8 +6962,8 @@ module.exports = {
     {
       n: "DURATION",
       t: 8,
-      d: "Beschreibung der Funktion DURATION.",
-      a: "Kurzbeschreibung der Funktion DURATION.",
+      d: "Berechnet die Anzahl der Zinsperioden, die erforderlich sind, damit eine Anlage mit einem angegebenen Barwert bei einem gegebenen Zinssatz einen Zielwert erreicht.",
+      a: "Anzahl der Perioden, bis eine Anlage einen Wert erreicht.",
       m: [
         5,
         6
@@ -6971,7 +6971,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion DURATION.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6979,7 +6979,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion DURATION.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6987,7 +6987,7 @@ module.exports = {
         },
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion DURATION.",
+          detail: "Der annualisierte Zinssatz.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -6995,7 +6995,7 @@ module.exports = {
         },
         {
           name: "rendite",
-          detail: "Parameter `rendite` der Funktion DURATION.",
+          detail: "Die erwartete jährliche Rendite des Wertpapiers.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -7003,7 +7003,7 @@ module.exports = {
         },
         {
           name: "häufigkeit",
-          detail: "Parameter `häufigkeit` der Funktion DURATION.",
+          detail: "Die Anzahl der Zins- oder Kuponzahlungen pro Jahr (1, 2 oder 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -7011,7 +7011,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion DURATION.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7022,8 +7022,8 @@ module.exports = {
     {
       n: "MDURATION",
       t: 8,
-      d: "Beschreibung der Funktion MDURATION.",
-      a: "Kurzbeschreibung der Funktion MDURATION.",
+      d: "Berechnet die modifizierte Macaulay-Duration eines Wertpapiers mit periodischer Zinszahlung, wie z. B. einer US-Staatsanleihe, basierend auf der erwarteten Rendite.",
+      a: "Modifizierte Macaulay-Duration.",
       m: [
         5,
         6
@@ -7031,7 +7031,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion MDURATION.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -7039,7 +7039,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion MDURATION.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -7047,7 +7047,7 @@ module.exports = {
         },
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion MDURATION.",
+          detail: "Der annualisierte Zinssatz.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -7055,7 +7055,7 @@ module.exports = {
         },
         {
           name: "rendite",
-          detail: "Parameter `rendite` der Funktion MDURATION.",
+          detail: "Die erwartete jährliche Rendite des Wertpapiers.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -7063,7 +7063,7 @@ module.exports = {
         },
         {
           name: "häufigkeit",
-          detail: "Parameter `häufigkeit` der Funktion MDURATION.",
+          detail: "Die Anzahl der Zins- oder Kuponzahlungen pro Jahr (1, 2 oder 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -7071,7 +7071,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion MDURATION.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7082,8 +7082,8 @@ module.exports = {
     {
       n: "BIN2DEC",
       t: 9,
-      d: "Beschreibung der Funktion BIN2DEC.",
-      a: "Kurzbeschreibung der Funktion BIN2DEC.",
+      d: "Wandelt eine vorzeichenbehaftete Binärzahl in das Dezimalformat um.",
+      a: "Wandelt eine vorzeichenbehaftete Binärzahl in das Dezimalformat um.",
       m: [
         1,
         1
@@ -7091,7 +7091,7 @@ module.exports = {
       p: [
         {
           name: "vorzeichenbehaftete_binärzahl",
-          detail: "Parameter `vorzeichenbehaftete_binärzahl` der Funktion BIN2DEC.",
+          detail: "Der als Zeichenfolge angegebene vorzeichenbehaftete 10-Bit-Binärwert, der in eine Dezimalzahl umgewandelt werden soll.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7102,8 +7102,8 @@ module.exports = {
     {
       n: "BIN2HEX",
       t: 9,
-      d: "Beschreibung der Funktion BIN2HEX.",
-      a: "Kurzbeschreibung der Funktion BIN2HEX.",
+      d: "Wandelt eine vorzeichenbehaftete Binärzahl in das vorzeichenbehaftete Hexadezimalformat um.",
+      a: "Wandelt eine Binärzahl in eine Hexadezimalzahl um.",
       m: [
         1,
         2
@@ -7111,7 +7111,7 @@ module.exports = {
       p: [
         {
           name: "vorzeichenbehaftete_binärzahl",
-          detail: "Parameter `vorzeichenbehaftete_binärzahl` der Funktion BIN2HEX.",
+          detail: "Der als Zeichenfolge angegebene vorzeichenbehaftete 10-Bit-Binärwert, der in eine vorzeichenbehaftete Hexadezimalzahl umgewandelt werden soll.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7119,7 +7119,7 @@ module.exports = {
         },
         {
           name: "signifikante_stellen",
-          detail: "Parameter `signifikante_stellen` der Funktion BIN2HEX.",
+          detail: "Die Anzahl der im Ergebnis sicherzustellenden signifikanten Stellen.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7130,8 +7130,8 @@ module.exports = {
     {
       n: "BIN2OCT",
       t: 9,
-      d: "Beschreibung der Funktion BIN2OCT.",
-      a: "Kurzbeschreibung der Funktion BIN2OCT.",
+      d: "Wandelt eine vorzeichenbehaftete Binärzahl in das vorzeichenbehaftete Oktalformat um.",
+      a: "Wandelt eine Binärzahl in eine Oktalzahl um.",
       m: [
         1,
         2
@@ -7139,7 +7139,7 @@ module.exports = {
       p: [
         {
           name: "vorzeichenbehaftete_binärzahl",
-          detail: "Parameter `vorzeichenbehaftete_binärzahl` der Funktion BIN2OCT.",
+          detail: "Der als Zeichenfolge angegebene vorzeichenbehaftete 10-Bit-Binärwert, der in eine vorzeichenbehaftete Oktalzahl umgewandelt werden soll.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7147,7 +7147,7 @@ module.exports = {
         },
         {
           name: "signifikante_stellen",
-          detail: "Parameter `signifikante_stellen` der Funktion BIN2OCT.",
+          detail: "Die Anzahl der im Ergebnis sicherzustellenden signifikanten Stellen.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7158,8 +7158,8 @@ module.exports = {
     {
       n: "DEC2BIN",
       t: 9,
-      d: "Beschreibung der Funktion DEC2BIN.",
-      a: "Kurzbeschreibung der Funktion DEC2BIN.",
+      d: "Wandelt eine Dezimalzahl in das vorzeichenbehaftete Binärformat um.",
+      a: "Wandelt eine Dezimalzahl in das vorzeichenbehaftete Binärformat um.",
       m: [
         1,
         2
@@ -7167,7 +7167,7 @@ module.exports = {
       p: [
         {
           name: "dezimalzahl",
-          detail: "Parameter `dezimalzahl` der Funktion DEC2BIN.",
+          detail: "Der als Zeichenfolge angegebene Dezimalwert, der in eine vorzeichenbehaftete Binärzahl umgewandelt werden soll.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7175,7 +7175,7 @@ module.exports = {
         },
         {
           name: "signifikante_stellen",
-          detail: "Parameter `signifikante_stellen` der Funktion DEC2BIN.",
+          detail: "Die Anzahl der im Ergebnis sicherzustellenden signifikanten Stellen.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7186,8 +7186,8 @@ module.exports = {
     {
       n: "DEC2HEX",
       t: 9,
-      d: "Beschreibung der Funktion DEC2HEX.",
-      a: "Kurzbeschreibung der Funktion DEC2HEX.",
+      d: "Wandelt eine Dezimalzahl in das vorzeichenbehaftete Hexadezimalformat um.",
+      a: "Wandelt eine Dezimalzahl in eine Hexadezimalzahl um.",
       m: [
         1,
         2
@@ -7195,7 +7195,7 @@ module.exports = {
       p: [
         {
           name: "dezimalzahl",
-          detail: "Parameter `dezimalzahl` der Funktion DEC2HEX.",
+          detail: "Der als Zeichenfolge angegebene Dezimalwert, der in eine vorzeichenbehaftete Hexadezimalzahl umgewandelt werden soll.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7203,7 +7203,7 @@ module.exports = {
         },
         {
           name: "signifikante_stellen",
-          detail: "Parameter `signifikante_stellen` der Funktion DEC2HEX.",
+          detail: "Die Anzahl der im Ergebnis sicherzustellenden signifikanten Stellen.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7214,8 +7214,8 @@ module.exports = {
     {
       n: "DEC2OCT",
       t: 9,
-      d: "Beschreibung der Funktion DEC2OCT.",
-      a: "Kurzbeschreibung der Funktion DEC2OCT.",
+      d: "Wandelt eine Dezimalzahl in das vorzeichenbehaftete Oktalformat um.",
+      a: "Wandelt eine Dezimalzahl in das vorzeichenbehaftete Oktalformat um.",
       m: [
         1,
         2
@@ -7223,7 +7223,7 @@ module.exports = {
       p: [
         {
           name: "dezimalzahl",
-          detail: "Parameter `dezimalzahl` der Funktion DEC2OCT.",
+          detail: "Der als Zeichenfolge angegebene Dezimalwert, der in eine vorzeichenbehaftete Oktalzahl umgewandelt werden soll.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7231,7 +7231,7 @@ module.exports = {
         },
         {
           name: "signifikante_stellen",
-          detail: "Parameter `signifikante_stellen` der Funktion DEC2OCT.",
+          detail: "Die Anzahl der im Ergebnis sicherzustellenden signifikanten Stellen.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7242,8 +7242,8 @@ module.exports = {
     {
       n: "HEX2BIN",
       t: 9,
-      d: "Beschreibung der Funktion HEX2BIN.",
-      a: "Kurzbeschreibung der Funktion HEX2BIN.",
+      d: "Wandelt eine vorzeichenbehaftete Hexadezimalzahl in das vorzeichenbehaftete Binärformat um.",
+      a: "Wandelt eine Hexadezimalzahl in eine Binärzahl um.",
       m: [
         1,
         2
@@ -7251,7 +7251,7 @@ module.exports = {
       p: [
         {
           name: "vorzeichenbehaftete_hexadezimalzahl",
-          detail: "Parameter `vorzeichenbehaftete_hexadezimalzahl` der Funktion HEX2BIN.",
+          detail: "Der als Zeichenfolge angegebene vorzeichenbehaftete 40-Bit-Hexadezimalwert, der in eine vorzeichenbehaftete Binärzahl umgewandelt werden soll.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7259,7 +7259,7 @@ module.exports = {
         },
         {
           name: "signifikante_stellen",
-          detail: "Parameter `signifikante_stellen` der Funktion HEX2BIN.",
+          detail: "Die Anzahl der im Ergebnis sicherzustellenden signifikanten Stellen.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7270,8 +7270,8 @@ module.exports = {
     {
       n: "HEX2DEC",
       t: 9,
-      d: "Beschreibung der Funktion HEX2DEC.",
-      a: "Kurzbeschreibung der Funktion HEX2DEC.",
+      d: "Wandelt eine vorzeichenbehaftete Hexadezimalzahl in das Dezimalformat um.",
+      a: "Wandelt eine Hexadezimalzahl in eine Dezimalzahl um.",
       m: [
         1,
         1
@@ -7279,7 +7279,7 @@ module.exports = {
       p: [
         {
           name: "vorzeichenbehaftete_hexadezimalzahl",
-          detail: "Parameter `vorzeichenbehaftete_hexadezimalzahl` der Funktion HEX2DEC.",
+          detail: "Der als Zeichenfolge angegebene vorzeichenbehaftete 40-Bit-Hexadezimalwert, der in eine Dezimalzahl umgewandelt werden soll.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7290,8 +7290,8 @@ module.exports = {
     {
       n: "HEX2OCT",
       t: 9,
-      d: "Beschreibung der Funktion HEX2OCT.",
-      a: "Kurzbeschreibung der Funktion HEX2OCT.",
+      d: "Wandelt eine vorzeichenbehaftete Hexadezimalzahl in das vorzeichenbehaftete Oktalformat um.",
+      a: "Wandelt eine Hexadezimalzahl in eine Oktalzahl um.",
       m: [
         1,
         2
@@ -7299,7 +7299,7 @@ module.exports = {
       p: [
         {
           name: "vorzeichenbehaftete_hexadezimalzahl",
-          detail: "Parameter `vorzeichenbehaftete_hexadezimalzahl` der Funktion HEX2OCT.",
+          detail: "Der als Zeichenfolge angegebene vorzeichenbehaftete 40-Bit-Hexadezimalwert, der in eine vorzeichenbehaftete Oktalzahl umgewandelt werden soll.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7307,7 +7307,7 @@ module.exports = {
         },
         {
           name: "signifikante_stellen",
-          detail: "Parameter `signifikante_stellen` der Funktion HEX2OCT.",
+          detail: "Die Anzahl der im Ergebnis sicherzustellenden signifikanten Stellen.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7318,8 +7318,8 @@ module.exports = {
     {
       n: "OCT2BIN",
       t: 9,
-      d: "Beschreibung der Funktion OCT2BIN.",
-      a: "Kurzbeschreibung der Funktion OCT2BIN.",
+      d: "Wandelt eine vorzeichenbehaftete Oktalzahl in das vorzeichenbehaftete Binärformat um.",
+      a: "Wandelt eine Oktalzahl in eine Binärzahl um.",
       m: [
         1,
         2
@@ -7327,7 +7327,7 @@ module.exports = {
       p: [
         {
           name: "vorzeichenbehaftete_oktalzahl",
-          detail: "Parameter `vorzeichenbehaftete_oktalzahl` der Funktion OCT2BIN.",
+          detail: "Der als Zeichenfolge angegebene vorzeichenbehaftete 30-Bit-Oktalwert, der in eine vorzeichenbehaftete Binärzahl umgewandelt werden soll.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7335,7 +7335,7 @@ module.exports = {
         },
         {
           name: "signifikante_stellen",
-          detail: "Parameter `signifikante_stellen` der Funktion OCT2BIN.",
+          detail: "Die Anzahl der im Ergebnis sicherzustellenden signifikanten Stellen.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7346,8 +7346,8 @@ module.exports = {
     {
       n: "OCT2DEC",
       t: 9,
-      d: "Beschreibung der Funktion OCT2DEC.",
-      a: "Kurzbeschreibung der Funktion OCT2DEC.",
+      d: "Wandelt eine vorzeichenbehaftete Oktalzahl in das Dezimalformat um.",
+      a: "Wandelt eine vorzeichenbehaftete Oktalzahl in das Dezimalformat um.",
       m: [
         1,
         1
@@ -7355,7 +7355,7 @@ module.exports = {
       p: [
         {
           name: "vorzeichenbehaftete_oktalzahl",
-          detail: "Parameter `vorzeichenbehaftete_oktalzahl` der Funktion OCT2DEC.",
+          detail: "Der als Zeichenfolge angegebene vorzeichenbehaftete 30-Bit-Oktalwert, der in eine Dezimalzahl umgewandelt werden soll.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7366,8 +7366,8 @@ module.exports = {
     {
       n: "OCT2HEX",
       t: 9,
-      d: "Beschreibung der Funktion OCT2HEX.",
-      a: "Kurzbeschreibung der Funktion OCT2HEX.",
+      d: "Wandelt eine vorzeichenbehaftete Oktalzahl in das vorzeichenbehaftete Hexadezimalformat um.",
+      a: "Wandelt eine Oktalzahl in eine Hexadezimalzahl um.",
       m: [
         1,
         2
@@ -7375,7 +7375,7 @@ module.exports = {
       p: [
         {
           name: "vorzeichenbehaftete_oktalzahl",
-          detail: "Parameter `vorzeichenbehaftete_oktalzahl` der Funktion OCT2HEX.",
+          detail: "Der als Zeichenfolge angegebene vorzeichenbehaftete 30-Bit-Oktalwert, der in eine vorzeichenbehaftete Hexadezimalzahl umgewandelt werden soll.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7383,7 +7383,7 @@ module.exports = {
         },
         {
           name: "signifikante_stellen",
-          detail: "Parameter `signifikante_stellen` der Funktion OCT2HEX.",
+          detail: "Die Anzahl der im Ergebnis sicherzustellenden signifikanten Stellen.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7394,8 +7394,8 @@ module.exports = {
     {
       n: "COMPLEX",
       t: 9,
-      d: "Beschreibung der Funktion COMPLEX.",
-      a: "Kurzbeschreibung der Funktion COMPLEX.",
+      d: "Erstellt eine komplexe Zahl aus angegebenen Real- und Imaginärkoeffizienten.",
+      a: "Erstellt eine komplexe Zahl.",
       m: [
         2,
         3
@@ -7403,7 +7403,7 @@ module.exports = {
       p: [
         {
           name: "realteil",
-          detail: "Parameter `realteil` der Funktion COMPLEX.",
+          detail: "Der Realkoeffizient.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -7411,7 +7411,7 @@ module.exports = {
         },
         {
           name: "imaginärteil",
-          detail: "Parameter `imaginärteil` der Funktion COMPLEX.",
+          detail: "Der Imaginärkoeffizient.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -7419,7 +7419,7 @@ module.exports = {
         },
         {
           name: "suffix",
-          detail: "Parameter `suffix` der Funktion COMPLEX.",
+          detail: "Das Suffix für den Imaginärkoeffizienten; kann nur 'i' oder 'j' sein. Wird es weggelassen, wird 'i' verwendet.",
           example: "\"j\"",
           require: "o",
           repeat: "n",
@@ -7430,8 +7430,8 @@ module.exports = {
     {
       n: "IMREAL",
       t: 9,
-      d: "Beschreibung der Funktion IMREAL.",
-      a: "Kurzbeschreibung der Funktion IMREAL.",
+      d: "Gibt den Realkoeffizienten einer komplexen Zahl zurück.",
+      a: "Der Realkoeffizient einer komplexen Zahl.",
       m: [
         1,
         1
@@ -7439,7 +7439,7 @@ module.exports = {
       p: [
         {
           name: "komplexe_zahl",
-          detail: "Parameter `komplexe_zahl` der Funktion IMREAL.",
+          detail: "Die komplexe Zahl im Format a+bi oder a+bj.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7450,8 +7450,8 @@ module.exports = {
     {
       n: "IMAGINARY",
       t: 9,
-      d: "Beschreibung der Funktion IMAGINARY.",
-      a: "Kurzbeschreibung der Funktion IMAGINARY.",
+      d: "Gibt den Imaginärkoeffizienten einer komplexen Zahl zurück.",
+      a: "Der Imaginärkoeffizient einer komplexen Zahl.",
       m: [
         1,
         1
@@ -7459,7 +7459,7 @@ module.exports = {
       p: [
         {
           name: "komplexe_zahl",
-          detail: "Parameter `komplexe_zahl` der Funktion IMAGINARY.",
+          detail: "Die komplexe Zahl im Format a+bi oder a+bj.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7470,8 +7470,8 @@ module.exports = {
     {
       n: "IMCONJUGATE",
       t: 9,
-      d: "Beschreibung der Funktion IMCONJUGATE.",
-      a: "Kurzbeschreibung der Funktion IMCONJUGATE.",
+      d: "Gibt die komplex Konjugierte einer Zahl zurück.",
+      a: "Die komplex Konjugierte einer Zahl.",
       m: [
         1,
         1
@@ -7479,7 +7479,7 @@ module.exports = {
       p: [
         {
           name: "zahl",
-          detail: "Parameter `zahl` der Funktion IMCONJUGATE.",
+          detail: "Die komplexe Zahl, für die die Konjugierte berechnet werden soll.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7490,8 +7490,8 @@ module.exports = {
     {
       n: "IMABS",
       t: 9,
-      d: "Beschreibung der Funktion IMABS.",
-      a: "Kurzbeschreibung der Funktion IMABS.",
+      d: "Gibt den Absolutwert (Betrag) einer komplexen Zahl zurück.",
+      a: "Der Absolutwert einer komplexen Zahl.",
       m: [
         1,
         1
@@ -7499,7 +7499,7 @@ module.exports = {
       p: [
         {
           name: "zahl",
-          detail: "Parameter `zahl` der Funktion IMABS.",
+          detail: "Die komplexe Zahl, deren Absolutwert berechnet werden soll.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7510,8 +7510,8 @@ module.exports = {
     {
       n: "DELTA",
       t: 9,
-      d: "Beschreibung der Funktion DELTA.",
-      a: "Kurzbeschreibung der Funktion DELTA.",
+      d: "Vergleicht zwei numerische Werte und gibt 1 zurück, wenn sie gleich sind.",
+      a: "Vergleicht zwei numerische Werte.",
       m: [
         1,
         2
@@ -7519,7 +7519,7 @@ module.exports = {
       p: [
         {
           name: "zahl1",
-          detail: "Parameter `zahl1` der Funktion DELTA.",
+          detail: "Die erste zu vergleichende Zahl.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -7527,7 +7527,7 @@ module.exports = {
         },
         {
           name: "zahl2",
-          detail: "Parameter `zahl2` der Funktion DELTA.",
+          detail: "Die zweite zu vergleichende Zahl.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -7538,8 +7538,8 @@ module.exports = {
     {
       n: "IMSUM",
       t: 9,
-      d: "Beschreibung der Funktion IMSUM.",
-      a: "Kurzbeschreibung der Funktion IMSUM.",
+      d: "Gibt die Summe einer Reihe komplexer Zahlen zurück.",
+      a: "Summe einer Reihe komplexer Zahlen.",
       m: [
         1,
         255
@@ -7547,7 +7547,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion IMSUM.",
+          detail: "Die erste komplexe Zahl oder der erste Bereich, die/der addiert werden soll.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7555,7 +7555,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion IMSUM.",
+          detail: "Weitere komplexe Zahlen oder Bereiche, die zu `wert1` addiert werden sollen.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7566,8 +7566,8 @@ module.exports = {
     {
       n: "IMSUB",
       t: 9,
-      d: "Beschreibung der Funktion IMSUB.",
-      a: "Kurzbeschreibung der Funktion IMSUB.",
+      d: "Gibt die Differenz zwischen zwei komplexen Zahlen zurück.",
+      a: "Die Differenz zwischen zwei komplexen Zahlen.",
       m: [
         2,
         2
@@ -7575,7 +7575,7 @@ module.exports = {
       p: [
         {
           name: "erste_zahl",
-          detail: "Parameter `erste_zahl` der Funktion IMSUB.",
+          detail: "Die komplexe Zahl, von der second_number subtrahiert werden soll.",
           example: "\"6+5i\"",
           require: "m",
           repeat: "n",
@@ -7583,7 +7583,7 @@ module.exports = {
         },
         {
           name: "zweite_zahl",
-          detail: "Parameter `zweite_zahl` der Funktion IMSUB.",
+          detail: "Die komplexe Zahl, die von first_number subtrahiert werden soll.",
           example: "\"2+3i\"",
           require: "m",
           repeat: "n",
@@ -7594,8 +7594,8 @@ module.exports = {
     {
       n: "IMPRODUCT",
       t: 9,
-      d: "Beschreibung der Funktion IMPRODUCT.",
-      a: "Kurzbeschreibung der Funktion IMPRODUCT.",
+      d: "Gibt das Ergebnis der Multiplikation einer Reihe komplexer Zahlen zurück.",
+      a: "Ergebnis der Multiplikation einer Reihe komplexer Zahlen.",
       m: [
         1,
         255
@@ -7603,7 +7603,7 @@ module.exports = {
       p: [
         {
           name: "faktor1",
-          detail: "Parameter `faktor1` der Funktion IMPRODUCT.",
+          detail: "Die erste Zahl oder der erste Bereich, die/der für das Produkt berechnet werden soll.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7611,7 +7611,7 @@ module.exports = {
         },
         {
           name: "faktor2",
-          detail: "Parameter `faktor2` der Funktion IMPRODUCT.",
+          detail: "Weitere komplexe Zahlen oder Bereiche, die für das Produkt berechnet werden sollen.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7622,8 +7622,8 @@ module.exports = {
     {
       n: "IMDIV",
       t: 9,
-      d: "Beschreibung der Funktion IMDIV.",
-      a: "Kurzbeschreibung der Funktion IMDIV.",
+      d: "Gibt eine komplexe Zahl geteilt durch eine andere zurück.",
+      a: "Eine komplexe Zahl geteilt durch eine andere.",
       m: [
         2,
         2
@@ -7631,7 +7631,7 @@ module.exports = {
       p: [
         {
           name: "dividend",
-          detail: "Parameter `dividend` der Funktion IMDIV.",
+          detail: "Die komplexe Zahl, die geteilt werden soll.",
           example: "\"11+16i\"",
           require: "m",
           repeat: "n",
@@ -7639,7 +7639,7 @@ module.exports = {
         },
         {
           name: "divisor",
-          detail: "Parameter `divisor` der Funktion IMDIV.",
+          detail: "Die komplexe Zahl, durch die geteilt werden soll.",
           example: "\"3+2i\"",
           require: "m",
           repeat: "n",
@@ -7650,8 +7650,8 @@ module.exports = {
     {
       n: "NOT",
       t: 10,
-      d: "Beschreibung der Funktion NOT.",
-      a: "Kurzbeschreibung der Funktion NOT.",
+      d: "Gibt das Gegenteil eines logischen Werts zurück - `NOT(TRUE)` gibt `FALSCH` zurück; `NOT(FALSE)` gibt `WAHR` zurück.",
+      a: "Gibt das Gegenteil des angegebenen logischen Werts zurück.",
       m: [
         1,
         1
@@ -7659,7 +7659,7 @@ module.exports = {
       p: [
         {
           name: "wahrheitsausdruck",
-          detail: "Parameter `wahrheitsausdruck` der Funktion NOT.",
+          detail: "Ein Ausdruck oder ein Verweis auf eine Zelle mit einem Ausdruck, der einen logischen Wert darstellt.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7670,8 +7670,8 @@ module.exports = {
     {
       n: "TRUE",
       t: 10,
-      d: "Beschreibung der Funktion TRUE.",
-      a: "Kurzbeschreibung der Funktion TRUE.",
+      d: "Gibt den logischen Wert `WAHR` zurück.",
+      a: "Logischer Wert `wahr`.",
       m: [
         0,
         0
@@ -7681,8 +7681,8 @@ module.exports = {
     {
       n: "FALSE",
       t: 10,
-      d: "Beschreibung der Funktion FALSE.",
-      a: "Kurzbeschreibung der Funktion FALSE.",
+      d: "Gibt den logischen Wert `FALSCH` zurück.",
+      a: "Logischer Wert `falsch`.",
       m: [
         0,
         0
@@ -7692,8 +7692,8 @@ module.exports = {
     {
       n: "AND",
       t: 10,
-      d: "Beschreibung der Funktion AND.",
-      a: "Kurzbeschreibung der Funktion AND.",
+      d: "Gibt wahr zurück, wenn alle angegebenen Argumente logisch wahr sind, und falsch, wenn eines der angegebenen Argumente logisch falsch ist.",
+      a: "Logischer „Und“-Operator.",
       m: [
         1,
         255
@@ -7701,7 +7701,7 @@ module.exports = {
       p: [
         {
           name: "wahrheitsausdruck1",
-          detail: "Parameter `wahrheitsausdruck1` der Funktion AND.",
+          detail: "Ein Ausdruck oder ein Verweis auf eine Zelle mit einem Ausdruck, der einen logischen Wert darstellt, d. h. `WAHR` oder `FALSCH`, oder ein Ausdruck, der in einen logischen Wert umgewandelt werden kann.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7709,7 +7709,7 @@ module.exports = {
         },
         {
           name: "wahrheitsausdruck2",
-          detail: "Parameter `wahrheitsausdruck2` der Funktion AND.",
+          detail: "Weitere Ausdrücke, die logische Werte darstellen.",
           example: "A3 = \"bar\"",
           require: "o",
           repeat: "y",
@@ -7720,8 +7720,8 @@ module.exports = {
     {
       n: "IFERROR",
       t: 10,
-      d: "Beschreibung der Funktion IFERROR.",
-      a: "Kurzbeschreibung der Funktion IFERROR.",
+      d: "Gibt das erste Argument zurück, wenn es kein Fehlerwert ist; andernfalls wird, falls vorhanden, das zweite Argument zurückgegeben oder ein leerer Wert, falls das zweite Argument fehlt.",
+      a: "Wert, falls kein Fehler vorliegt, andernfalls 2. Argument.",
       m: [
         2,
         2
@@ -7729,7 +7729,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion IFERROR.",
+          detail: "Der Wert, der zurückgegeben werden soll, falls `wert` selbst kein Fehler ist.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -7737,7 +7737,7 @@ module.exports = {
         },
         {
           name: "wert_wenn_fehler",
-          detail: "Parameter `wert_wenn_fehler` der Funktion IFERROR.",
+          detail: "Der Wert, den die Funktion zurückgibt, falls `wert` ein Fehler ist.",
           example: "\"Error in cell A1\"",
           require: "m",
           repeat: "n",
@@ -7748,8 +7748,8 @@ module.exports = {
     {
       n: "IF",
       t: 10,
-      d: "Beschreibung der Funktion IF.",
-      a: "Kurzbeschreibung der Funktion IF.",
+      d: "Gibt einen Wert zurück, wenn ein logischer Ausdruck `WAHR` ist, und einen anderen, wenn er `FALSCH` ist.",
+      a: "Gibt einen Wert abhängig von einem logischen Ausdruck zurück.",
       m: [
         2,
         3
@@ -7757,7 +7757,7 @@ module.exports = {
       p: [
         {
           name: "wahrheitsausdruck",
-          detail: "Parameter `wahrheitsausdruck` der Funktion IF.",
+          detail: "Ein Ausdruck oder ein Verweis auf eine Zelle mit einem Ausdruck, der einen logischen Wert darstellt, d. h. `WAHR` oder `FALSCH`.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7765,7 +7765,7 @@ module.exports = {
         },
         {
           name: "wert_wenn_wahr",
-          detail: "Parameter `wert_wenn_wahr` der Funktion IF.",
+          detail: "Der Wert, den die Funktion zurückgibt, wenn `wahrheitsausdruck` `WAHR` ist.",
           example: "\"A2 is foo\"",
           require: "m",
           repeat: "n",
@@ -7773,7 +7773,7 @@ module.exports = {
         },
         {
           name: "wert_wenn_falsch",
-          detail: "Parameter `wert_wenn_falsch` der Funktion IF.",
+          detail: "Der Wert, den die Funktion zurückgibt, wenn `wahrheitsausdruck` `FALSCH` ist.",
           example: "\"A2 was false\"",
           require: "o",
           repeat: "n",
@@ -7784,8 +7784,8 @@ module.exports = {
     {
       n: "OR",
       t: 10,
-      d: "Beschreibung der Funktion OR.",
-      a: "Kurzbeschreibung der Funktion OR.",
+      d: "Gibt wahr zurück, wenn eines der angegebenen Argumente logisch wahr ist, und falsch, wenn alle angegebenen Argumente logisch falsch sind.",
+      a: "Logischer „Oder“-Operator.",
       m: [
         1,
         255
@@ -7793,7 +7793,7 @@ module.exports = {
       p: [
         {
           name: "wahrheitsausdruck1",
-          detail: "Parameter `wahrheitsausdruck1` der Funktion OR.",
+          detail: "Ein Ausdruck oder ein Verweis auf eine Zelle mit einem Ausdruck, der einen logischen Wert darstellt, d. h. `WAHR` oder `FALSCH`, oder ein Ausdruck, der in einen logischen Wert umgewandelt werden kann.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7801,7 +7801,7 @@ module.exports = {
         },
         {
           name: "wahrheitsausdruck2",
-          detail: "Parameter `wahrheitsausdruck2` der Funktion OR.",
+          detail: "Weitere Ausdrücke, die als logische Werte ausgewertet werden.",
           example: " A3 = \"bar\"",
           require: "m",
           repeat: "n",
@@ -7812,8 +7812,8 @@ module.exports = {
     {
       n: "NE",
       t: 11,
-      d: "Beschreibung der Funktion NE.",
-      a: "Kurzbeschreibung der Funktion NE.",
+      d: "Gibt `WAHR` zurück, wenn zwei angegebene Werte nicht gleich sind, und andernfalls `FALSCH`. Entspricht dem Operator `!=`.",
+      a: "Ungleich.",
       m: [
         2,
         2
@@ -7821,7 +7821,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion NE.",
+          detail: "Der erste Wert.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7829,7 +7829,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion NE.",
+          detail: "Der Wert, der auf Ungleichheit mit `wert1` geprüft werden soll.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7840,8 +7840,8 @@ module.exports = {
     {
       n: "EQ",
       t: 11,
-      d: "Beschreibung der Funktion EQ.",
-      a: "Kurzbeschreibung der Funktion EQ.",
+      d: "Gibt `WAHR` zurück, wenn zwei angegebene Werte gleich sind, und andernfalls `FALSCH`. Entspricht dem Operator `==`.",
+      a: "Gleich.",
       m: [
         2,
         2
@@ -7849,7 +7849,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion EQ.",
+          detail: "Der erste Wert.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7857,7 +7857,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion EQ.",
+          detail: "Der Wert, der auf Gleichheit mit `wert1` geprüft werden soll.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7868,8 +7868,8 @@ module.exports = {
     {
       n: "GT",
       t: 11,
-      d: "Beschreibung der Funktion GT.",
-      a: "Kurzbeschreibung der Funktion GT.",
+      d: "Gibt `WAHR` zurück, wenn das erste Argument streng größer als das zweite ist, und andernfalls `FALSCH`. Entspricht dem Operator `>`.",
+      a: "Streng größer als.",
       m: [
         2,
         2
@@ -7877,7 +7877,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion GT.",
+          detail: "Der Wert, der als größer als `wert2` geprüft werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7885,7 +7885,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion GT.",
+          detail: "Der zweite Wert.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7896,8 +7896,8 @@ module.exports = {
     {
       n: "GTE",
       t: 11,
-      d: "Beschreibung der Funktion GTE.",
-      a: "Kurzbeschreibung der Funktion GTE.",
+      d: "Gibt `WAHR` zurück, wenn das erste Argument größer oder gleich dem zweiten ist, und andernfalls `FALSCH`. Entspricht dem Operator `>=`.",
+      a: "Größer oder gleich.",
       m: [
         2,
         2
@@ -7905,7 +7905,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion GTE.",
+          detail: "Der Wert, der als größer oder gleich `wert2` geprüft werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7913,7 +7913,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion GTE.",
+          detail: "Der zweite Wert.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7924,8 +7924,8 @@ module.exports = {
     {
       n: "LT",
       t: 11,
-      d: "Beschreibung der Funktion LT.",
-      a: "Kurzbeschreibung der Funktion LT.",
+      d: "Gibt `WAHR` zurück, wenn das erste Argument streng kleiner als das zweite ist, und andernfalls `FALSCH`. Entspricht dem Operator `<`.",
+      a: "Kleiner als.",
       m: [
         2,
         2
@@ -7933,7 +7933,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion LT.",
+          detail: "Der Wert, der als kleiner als `wert2` geprüft werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7941,7 +7941,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion LT.",
+          detail: "Der zweite Wert.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7952,8 +7952,8 @@ module.exports = {
     {
       n: "LTE",
       t: 11,
-      d: "Beschreibung der Funktion LTE.",
-      a: "Kurzbeschreibung der Funktion LTE.",
+      d: "Gibt `WAHR` zurück, wenn das erste Argument kleiner oder gleich dem zweiten ist, und andernfalls `FALSCH`. Entspricht dem Operator `<=`.",
+      a: "Kleiner oder gleich.",
       m: [
         2,
         2
@@ -7961,7 +7961,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion LTE.",
+          detail: "Der Wert, der als kleiner oder gleich `wert2` geprüft werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7969,7 +7969,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion LTE.",
+          detail: "Der zweite Wert.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7980,8 +7980,8 @@ module.exports = {
     {
       n: "ADD",
       t: 11,
-      d: "Beschreibung der Funktion ADD.",
-      a: "Kurzbeschreibung der Funktion ADD.",
+      d: "Gibt die Summe zweier Zahlen zurück. Entspricht dem Operator `+`.",
+      a: "Summe zweier Zahlen.",
       m: [
         2,
         2
@@ -7989,7 +7989,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion ADD.",
+          detail: "Der erste Summand.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7997,7 +7997,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion ADD.",
+          detail: "Der zweite Summand.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8008,8 +8008,8 @@ module.exports = {
     {
       n: "MINUS",
       t: 11,
-      d: "Beschreibung der Funktion MINUS.",
-      a: "Kurzbeschreibung der Funktion MINUS.",
+      d: "Gibt die Differenz zweier Zahlen zurück. Entspricht dem Operator `-`.",
+      a: "Differenz zweier Zahlen.",
       m: [
         2,
         2
@@ -8017,7 +8017,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion MINUS.",
+          detail: "Der Minuend, also die Zahl, von der subtrahiert wird.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8025,7 +8025,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion MINUS.",
+          detail: "Der Subtrahend, also die Zahl, die von `wert1` subtrahiert wird.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8036,8 +8036,8 @@ module.exports = {
     {
       n: "MULTIPLY",
       t: 11,
-      d: "Beschreibung der Funktion MULTIPLY.",
-      a: "Kurzbeschreibung der Funktion MULTIPLY.",
+      d: "Gibt das Produkt zweier Zahlen zurück. Entspricht dem Operator `*`.",
+      a: "Produkt zweier Zahlen.",
       m: [
         2,
         2
@@ -8045,7 +8045,7 @@ module.exports = {
       p: [
         {
           name: "faktor1",
-          detail: "Parameter `faktor1` der Funktion MULTIPLY.",
+          detail: "Der erste Faktor.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8053,7 +8053,7 @@ module.exports = {
         },
         {
           name: "faktor2",
-          detail: "Parameter `faktor2` der Funktion MULTIPLY.",
+          detail: "Der zweite Faktor.",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -8064,8 +8064,8 @@ module.exports = {
     {
       n: "DIVIDE",
       t: 11,
-      d: "Beschreibung der Funktion DIVIDE.",
-      a: "Kurzbeschreibung der Funktion DIVIDE.",
+      d: "Gibt eine Zahl geteilt durch eine andere zurück. Entspricht dem Operator `/`.",
+      a: "Eine Zahl geteilt durch eine andere.",
       m: [
         2,
         2
@@ -8073,7 +8073,7 @@ module.exports = {
       p: [
         {
           name: "dividend",
-          detail: "Parameter `dividend` der Funktion DIVIDE.",
+          detail: "Die Zahl, die geteilt werden soll.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8081,7 +8081,7 @@ module.exports = {
         },
         {
           name: "divisor",
-          detail: "Parameter `divisor` der Funktion DIVIDE.",
+          detail: "Die Zahl, durch die geteilt werden soll.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8092,8 +8092,8 @@ module.exports = {
     {
       n: "CONCAT",
       t: 11,
-      d: "Beschreibung der Funktion CONCAT.",
-      a: "Kurzbeschreibung der Funktion CONCAT.",
+      d: "Gibt die Verkettung zweier Werte zurück. Entspricht dem Operator `&`.",
+      a: "Verkettung zweier Werte.",
       m: [
         2,
         2
@@ -8101,7 +8101,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion CONCAT.",
+          detail: "Der Wert, an den `wert2` angehängt wird.",
           example: "\"de\"",
           require: "m",
           repeat: "n",
@@ -8109,7 +8109,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion CONCAT.",
+          detail: "Der Wert, der an `wert1` angehängt werden soll.",
           example: "\"mystify\"",
           require: "m",
           repeat: "n",
@@ -8120,8 +8120,8 @@ module.exports = {
     {
       n: "UNARY_PERCENT",
       t: 11,
-      d: "Beschreibung der Funktion UNARY_PERCENT.",
-      a: "Kurzbeschreibung der Funktion UNARY_PERCENT.",
+      d: "Gibt einen als Prozentsatz interpretierten Wert zurück; d. h. `UNARY_PERCENT(100)` entspricht `1`.",
+      a: "Als Prozentsatz interpretierter Wert.",
       m: [
         1,
         1
@@ -8129,7 +8129,7 @@ module.exports = {
       p: [
         {
           name: "prozentsatz",
-          detail: "Parameter `prozentsatz` der Funktion UNARY_PERCENT.",
+          detail: "Der als Prozentsatz zu interpretierende Wert.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8140,8 +8140,8 @@ module.exports = {
     {
       n: "CONCATENATE",
       t: 12,
-      d: "Beschreibung der Funktion CONCATENATE.",
-      a: "Kurzbeschreibung der Funktion CONCATENATE.",
+      d: "Hängt Zeichenfolgen aneinander an.",
+      a: "Hängt Zeichenfolgen aneinander an.",
       m: [
         1,
         255
@@ -8149,7 +8149,7 @@ module.exports = {
       p: [
         {
           name: "zeichenfolge1",
-          detail: "Parameter `zeichenfolge1` der Funktion CONCATENATE.",
+          detail: "Die anfängliche Zeichenfolge.",
           example: "\"Super\"",
           require: "m",
           repeat: "n",
@@ -8157,7 +8157,7 @@ module.exports = {
         },
         {
           name: "zeichenfolge2",
-          detail: "Parameter `zeichenfolge2` der Funktion CONCATENATE.",
+          detail: "Weitere Zeichenfolgen, die der Reihe nach angehängt werden.",
           example: "\"calla\"",
           require: "o",
           repeat: "y",
@@ -8168,8 +8168,8 @@ module.exports = {
     {
       n: "CODE",
       t: 12,
-      d: "Beschreibung der Funktion CODE.",
-      a: "Kurzbeschreibung der Funktion CODE.",
+      d: "Gibt den numerischen Unicode-Wert des ersten Zeichens der angegebenen Zeichenfolge zurück.",
+      a: "Numerischer Unicode-Wert eines Zeichens.",
       m: [
         1,
         1
@@ -8177,7 +8177,7 @@ module.exports = {
       p: [
         {
           name: "zeichenfolge",
-          detail: "Parameter `zeichenfolge` der Funktion CODE.",
+          detail: "Die Zeichenfolge, deren erstes Zeichen für den zurückzugebenden Unicode-Wert verwendet wird.",
           example: "\"a\"",
           require: "m",
           repeat: "n",
@@ -8188,8 +8188,8 @@ module.exports = {
     {
       n: "CHAR",
       t: 12,
-      d: "Beschreibung der Funktion CHAR.",
-      a: "Kurzbeschreibung der Funktion CHAR.",
+      d: "Wandelt eine Zahl gemäß der aktuellen Unicode-Tabelle in ein Zeichen um.",
+      a: "Ruft das einer Zahl zugeordnete Zeichen ab.",
       m: [
         1,
         1
@@ -8197,7 +8197,7 @@ module.exports = {
       p: [
         {
           name: "tabellennummer",
-          detail: "Parameter `tabellennummer` der Funktion CHAR.",
+          detail: "Die Nummer des Zeichens, das im Dezimalformat in der aktuellen Unicode-Tabelle nachgeschlagen werden soll.",
           example: "97",
           require: "m",
           repeat: "n",
@@ -8208,8 +8208,8 @@ module.exports = {
     {
       n: "ARABIC",
       t: 12,
-      d: "Beschreibung der Funktion ARABIC.",
-      a: "Kurzbeschreibung der Funktion ARABIC.",
+      d: "Berechnet den Wert einer römischen Zahl.",
+      a: "Berechnet den Wert einer römischen Zahl.",
       m: [
         1,
         1
@@ -8217,7 +8217,7 @@ module.exports = {
       p: [
         {
           name: "römische_zahl",
-          detail: "Parameter `römische_zahl` der Funktion ARABIC.",
+          detail: "Die umzuwandelnde römische Zahl, deren Wert zwischen 1 und 3999 (einschließlich) liegen muss.",
           example: "\"XIV\"",
           require: "m",
           repeat: "n",
@@ -8228,8 +8228,8 @@ module.exports = {
     {
       n: "ROMAN",
       t: 12,
-      d: "Beschreibung der Funktion ROMAN.",
-      a: "Kurzbeschreibung der Funktion ROMAN.",
+      d: "Formatiert eine Zahl als römische Zahl.",
+      a: "Formatiert eine Zahl als römische Zahl.",
       m: [
         1,
         1
@@ -8237,7 +8237,7 @@ module.exports = {
       p: [
         {
           name: "zahl",
-          detail: "Parameter `zahl` der Funktion ROMAN.",
+          detail: "Die zu formatierende Zahl, zwischen 1 und 3999 (einschließlich).",
           example: "499",
           require: "m",
           repeat: "n",
@@ -8248,8 +8248,8 @@ module.exports = {
     {
       n: "REGEXEXTRACT",
       t: 12,
-      d: "Beschreibung der Funktion REGEXEXTRACT.",
-      a: "Kurzbeschreibung der Funktion REGEXEXTRACT.",
+      d: "Extrahiert übereinstimmende Teilzeichenfolgen gemäß einem regulären Ausdruck.",
+      a: "Extrahiert übereinstimmende Teilzeichenfolgen mit regulärem Ausdruck.",
       m: [
         2,
         2
@@ -8257,7 +8257,7 @@ module.exports = {
       p: [
         {
           name: "text",
-          detail: "Parameter `text` der Funktion REGEXEXTRACT.",
+          detail: "Der eingegebene Text.",
           example: "\"Needle in a haystack\"",
           require: "m",
           repeat: "n",
@@ -8265,7 +8265,7 @@ module.exports = {
         },
         {
           name: "regulärer_ausdruck",
-          detail: "Parameter `regulärer_ausdruck` der Funktion REGEXEXTRACT.",
+          detail: "Der erste Teil von `text`, der mit diesem Ausdruck übereinstimmt, wird zurückgegeben.",
           example: "\".e{2}dle\"",
           require: "m",
           repeat: "n",
@@ -8276,8 +8276,8 @@ module.exports = {
     {
       n: "REGEXMATCH",
       t: 12,
-      d: "Beschreibung der Funktion REGEXMATCH.",
-      a: "Kurzbeschreibung der Funktion REGEXMATCH.",
+      d: "Gibt an, ob ein Textstück mit einem regulären Ausdruck übereinstimmt.",
+      a: "Ob ein Textstück mit einem regulären Ausdruck übereinstimmt.",
       m: [
         2,
         2
@@ -8285,7 +8285,7 @@ module.exports = {
       p: [
         {
           name: "text",
-          detail: "Parameter `text` der Funktion REGEXMATCH.",
+          detail: "Der Text, der gegen den regulären Ausdruck geprüft werden soll.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8293,7 +8293,7 @@ module.exports = {
         },
         {
           name: "regulärer_ausdruck",
-          detail: "Parameter `regulärer_ausdruck` der Funktion REGEXMATCH.",
+          detail: "Der reguläre Ausdruck, gegen den der Text geprüft werden soll.",
           example: "\"S.r\"",
           require: "m",
           repeat: "n",
@@ -8304,8 +8304,8 @@ module.exports = {
     {
       n: "REGEXREPLACE",
       t: 12,
-      d: "Beschreibung der Funktion REGEXREPLACE.",
-      a: "Kurzbeschreibung der Funktion REGEXREPLACE.",
+      d: "Ersetzt einen Teil einer Textzeichenfolge durch eine andere Textzeichenfolge mithilfe regulärer Ausdrücke.",
+      a: "Ersetzt Text mithilfe regulärer Ausdrücke.",
       m: [
         3,
         3
@@ -8313,7 +8313,7 @@ module.exports = {
       p: [
         {
           name: "text",
-          detail: "Parameter `text` der Funktion REGEXREPLACE.",
+          detail: "Der Text, von dem ein Teil ersetzt wird.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8321,7 +8321,7 @@ module.exports = {
         },
         {
           name: "regulärer_ausdruck",
-          detail: "Parameter `regulärer_ausdruck` der Funktion REGEXREPLACE.",
+          detail: "Der reguläre Ausdruck. Alle übereinstimmenden Vorkommen in `text` werden ersetzt.",
           example: "\"S.*d\"",
           require: "m",
           repeat: "n",
@@ -8329,7 +8329,7 @@ module.exports = {
         },
         {
           name: "ersatztext",
-          detail: "Parameter `ersatztext` der Funktion REGEXREPLACE.",
+          detail: "Der Text, der in den ursprünglichen Text eingefügt wird.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8340,8 +8340,8 @@ module.exports = {
     {
       n: "T",
       t: 12,
-      d: "Beschreibung der Funktion T.",
-      a: "Kurzbeschreibung der Funktion T.",
+      d: "Gibt Zeichenfolgenargumente als Text zurück, oder eine leere Zeichenfolge, wenn der Wert kein Text ist.",
+      a: "Zeichenfolgenargumente als Text.",
       m: [
         1,
         1
@@ -8349,7 +8349,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion T.",
+          detail: "Das in Text umzuwandelnde Argument.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8360,8 +8360,8 @@ module.exports = {
     {
       n: "FIXED",
       t: 12,
-      d: "Beschreibung der Funktion FIXED.",
-      a: "Kurzbeschreibung der Funktion FIXED.",
+      d: "Formatiert eine Zahl mit einer festen Anzahl von Dezimalstellen.",
+      a: "Formatiert eine Zahl mit einer festen Anzahl von Dezimalstellen.",
       m: [
         1,
         3
@@ -8369,7 +8369,7 @@ module.exports = {
       p: [
         {
           name: "zahl",
-          detail: "Parameter `zahl` der Funktion FIXED.",
+          detail: "Die zu formatierende Zahl.",
           example: "3.141592653",
           require: "m",
           repeat: "n",
@@ -8377,7 +8377,7 @@ module.exports = {
         },
         {
           name: "anzahl_dezimalstellen",
-          detail: "Parameter `anzahl_dezimalstellen` der Funktion FIXED.",
+          detail: "Die Anzahl der im Ergebnis anzuzeigenden Dezimalstellen.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8385,7 +8385,7 @@ module.exports = {
         },
         {
           name: "trennzeichen_unterdrücken",
-          detail: "Parameter `trennzeichen_unterdrücken` der Funktion FIXED.",
+          detail: "Ob das in einigen Gebietsschemas verwendete Tausendertrennzeichen unterdrückt werden soll (z. B. wird aus `1.000` `1000`). Trennzeichen sind vorhanden, wenn dieser Wert 0 ist oder weggelassen wird, und andernfalls nicht vorhanden.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -8396,8 +8396,8 @@ module.exports = {
     {
       n: "FIND",
       t: 12,
-      d: "Beschreibung der Funktion FIND.",
-      a: "Kurzbeschreibung der Funktion FIND.",
+      d: "Gibt die Position zurück, an der eine Zeichenfolge zum ersten Mal in einem Text gefunden wird, wobei die Groß-/Kleinschreibung der Buchstaben berücksichtigt wird. Gibt `#VALUE!` zurück, wenn die Zeichenfolge nicht gefunden wird.",
+      a: "Erste Position einer im Text gefundenen Zeichenfolge, unter Berücksichtigung der Groß-/Kleinschreibung.",
       m: [
         2,
         3
@@ -8405,7 +8405,7 @@ module.exports = {
       p: [
         {
           name: "suchtext",
-          detail: "Parameter `suchtext` der Funktion FIND.",
+          detail: "Die Zeichenfolge, nach der innerhalb von `text_zu_durchsuchen` gesucht werden soll.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
@@ -8413,7 +8413,7 @@ module.exports = {
         },
         {
           name: "text_zu_durchsuchen",
-          detail: "Parameter `text_zu_durchsuchen` der Funktion FIND.",
+          detail: "Der Text, in dem nach dem ersten Vorkommen von `suchtext` gesucht werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8421,7 +8421,7 @@ module.exports = {
         },
         {
           name: "ab_position",
-          detail: "Parameter `ab_position` der Funktion FIND.",
+          detail: "Das Zeichen in `text_zu_durchsuchen`, bei dem die Suche beginnen soll.",
           example: "14",
           require: "o",
           repeat: "n",
@@ -8432,8 +8432,8 @@ module.exports = {
     {
       n: "FINDB",
       t: 12,
-      d: "Beschreibung der Funktion FINDB.",
-      a: "Kurzbeschreibung der Funktion FINDB.",
+      d: "Gibt die Position zurück, an der eine Zeichenfolge zum ersten Mal in einem Text gefunden wird, wobei jedes Doppelbyte-Zeichen als 2 gezählt wird.",
+      a: "Position, an der eine Zeichenfolge zum ersten Mal in einem Text gefunden wird (binär).",
       m: [
         2,
         3
@@ -8441,7 +8441,7 @@ module.exports = {
       p: [
         {
           name: "suchtext",
-          detail: "Parameter `suchtext` der Funktion FINDB.",
+          detail: "Die Zeichenfolge, nach der innerhalb von `text_zu_durchsuchen` gesucht werden soll.",
           example: "\"new\"",
           require: "m",
           repeat: "n",
@@ -8449,7 +8449,7 @@ module.exports = {
         },
         {
           name: "text_zu_durchsuchen",
-          detail: "Parameter `text_zu_durchsuchen` der Funktion FINDB.",
+          detail: "Der Text, in dem nach dem ersten Vorkommen von `suchtext` gesucht werden soll.",
           example: "\"new year\"",
           require: "m",
           repeat: "n",
@@ -8457,7 +8457,7 @@ module.exports = {
         },
         {
           name: "ab_position",
-          detail: "Parameter `ab_position` der Funktion FINDB.",
+          detail: "Das Zeichen in `text_zu_durchsuchen`, bei dem die Suche beginnen soll.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8468,8 +8468,8 @@ module.exports = {
     {
       n: "JOIN",
       t: 12,
-      d: "Beschreibung der Funktion JOIN.",
-      a: "Kurzbeschreibung der Funktion JOIN.",
+      d: "Verkettet die Elemente eines oder mehrerer eindimensionaler Arrays unter Verwendung eines angegebenen Trennzeichens.",
+      a: "Verkettet Array-Elemente mit einem Trennzeichen.",
       m: [
         2,
         255
@@ -8477,7 +8477,7 @@ module.exports = {
       p: [
         {
           name: "trennzeichen",
-          detail: "Parameter `trennzeichen` der Funktion JOIN.",
+          detail: "Das Zeichen oder die Zeichenfolge, die zwischen jedem verketteten Wert platziert werden soll.",
           example: "\" and-a \"",
           require: "m",
           repeat: "n",
@@ -8485,7 +8485,7 @@ module.exports = {
         },
         {
           name: "wert_oder_matrix1",
-          detail: "Parameter `wert_oder_matrix1` der Funktion JOIN.",
+          detail: "Der oder die Werte, die mit `trennzeichen` angehängt werden sollen.",
           example: "{1",
           require: "m",
           repeat: "n",
@@ -8493,7 +8493,7 @@ module.exports = {
         },
         {
           name: "wert_oder_matrix2",
-          detail: "Parameter `wert_oder_matrix2` der Funktion JOIN.",
+          detail: "Weitere Werte, die mit `trennzeichen` angehängt werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -8504,8 +8504,8 @@ module.exports = {
     {
       n: "LEFT",
       t: 12,
-      d: "Beschreibung der Funktion LEFT.",
-      a: "Kurzbeschreibung der Funktion LEFT.",
+      d: "Gibt eine Teilzeichenfolge vom Anfang einer angegebenen Zeichenfolge zurück.",
+      a: "Teilzeichenfolge vom Anfang einer angegebenen Zeichenfolge.",
       m: [
         1,
         2
@@ -8513,7 +8513,7 @@ module.exports = {
       p: [
         {
           name: "zeichenfolge",
-          detail: "Parameter `zeichenfolge` der Funktion LEFT.",
+          detail: "Die Zeichenfolge, von der der linke Teil zurückgegeben werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8521,7 +8521,7 @@ module.exports = {
         },
         {
           name: "anzahl_zeichen",
-          detail: "Parameter `anzahl_zeichen` der Funktion LEFT.",
+          detail: "Die Anzahl der von der linken Seite von `zeichenfolge` zurückzugebenden Zeichen.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8532,8 +8532,8 @@ module.exports = {
     {
       n: "RIGHT",
       t: 12,
-      d: "Beschreibung der Funktion RIGHT.",
-      a: "Kurzbeschreibung der Funktion RIGHT.",
+      d: "Gibt eine Teilzeichenfolge vom Ende einer angegebenen Zeichenfolge zurück.",
+      a: "Eine Teilzeichenfolge vom Ende einer angegebenen Zeichenfolge.",
       m: [
         1,
         2
@@ -8541,7 +8541,7 @@ module.exports = {
       p: [
         {
           name: "zeichenfolge",
-          detail: "Parameter `zeichenfolge` der Funktion RIGHT.",
+          detail: "Die Zeichenfolge, von der der rechte Teil zurückgegeben werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8549,7 +8549,7 @@ module.exports = {
         },
         {
           name: "anzahl_zeichen",
-          detail: "Parameter `anzahl_zeichen` der Funktion RIGHT.",
+          detail: "Die Anzahl der von der rechten Seite von `zeichenfolge` zurückzugebenden Zeichen.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8560,8 +8560,8 @@ module.exports = {
     {
       n: "MID",
       t: 12,
-      d: "Beschreibung der Funktion MID.",
-      a: "Kurzbeschreibung der Funktion MID.",
+      d: "Gibt einen Abschnitt einer Zeichenfolge zurück.",
+      a: "Ein Abschnitt einer Zeichenfolge.",
       m: [
         3,
         3
@@ -8569,7 +8569,7 @@ module.exports = {
       p: [
         {
           name: "zeichenfolge",
-          detail: "Parameter `zeichenfolge` der Funktion MID.",
+          detail: "Die Zeichenfolge, aus der ein Abschnitt extrahiert werden soll.",
           example: "\"get this\"",
           require: "m",
           repeat: "n",
@@ -8577,7 +8577,7 @@ module.exports = {
         },
         {
           name: "ab_position",
-          detail: "Parameter `ab_position` der Funktion MID.",
+          detail: "Der Index von links in `zeichenfolge`, ab dem mit der Extraktion begonnen werden soll. Das erste Zeichen in `zeichenfolge` hat den Index 1.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -8585,7 +8585,7 @@ module.exports = {
         },
         {
           name: "extraktionslänge",
-          detail: "Parameter `extraktionslänge` der Funktion MID.",
+          detail: "Die Länge des zu extrahierenden Abschnitts.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8596,8 +8596,8 @@ module.exports = {
     {
       n: "LEN",
       t: 12,
-      d: "Beschreibung der Funktion LEN.",
-      a: "Kurzbeschreibung der Funktion LEN.",
+      d: "Gibt die Länge einer Zeichenfolge zurück.",
+      a: "Länge einer Zeichenfolge.",
       m: [
         1,
         1
@@ -8605,7 +8605,7 @@ module.exports = {
       p: [
         {
           name: "text",
-          detail: "Parameter `text` der Funktion LEN.",
+          detail: "Die Zeichenfolge, deren Länge zurückgegeben werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8616,8 +8616,8 @@ module.exports = {
     {
       n: "LENB",
       t: 12,
-      d: "Beschreibung der Funktion LENB.",
-      a: "Kurzbeschreibung der Funktion LENB.",
+      d: "Gibt die Länge einer Zeichenfolge in Bytes zurück.",
+      a: "Länge einer Zeichenfolge in Bytes.",
       m: [
         1,
         1
@@ -8625,7 +8625,7 @@ module.exports = {
       p: [
         {
           name: "text",
-          detail: "Parameter `text` der Funktion LENB.",
+          detail: "Die Zeichenfolge, deren Länge zurückgegeben werden soll.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8636,8 +8636,8 @@ module.exports = {
     {
       n: "LOWER",
       t: 12,
-      d: "Beschreibung der Funktion LOWER.",
-      a: "Kurzbeschreibung der Funktion LOWER.",
+      d: "Wandelt eine angegebene Zeichenfolge in Kleinbuchstaben um.",
+      a: "Wandelt eine angegebene Zeichenfolge in Kleinbuchstaben um.",
       m: [
         1,
         1
@@ -8645,7 +8645,7 @@ module.exports = {
       p: [
         {
           name: "text",
-          detail: "Parameter `text` der Funktion LOWER.",
+          detail: "Die in Kleinbuchstaben umzuwandelnde Zeichenfolge.",
           example: "\"LOREM IPSUM\"",
           require: "m",
           repeat: "n",
@@ -8656,8 +8656,8 @@ module.exports = {
     {
       n: "UPPER",
       t: 12,
-      d: "Beschreibung der Funktion UPPER.",
-      a: "Kurzbeschreibung der Funktion UPPER.",
+      d: "Wandelt eine angegebene Zeichenfolge in Großbuchstaben um.",
+      a: "Wandelt eine angegebene Zeichenfolge in Großbuchstaben um.",
       m: [
         1,
         1
@@ -8665,7 +8665,7 @@ module.exports = {
       p: [
         {
           name: "text",
-          detail: "Parameter `text` der Funktion UPPER.",
+          detail: "Die in Großbuchstaben umzuwandelnde Zeichenfolge.",
           example: "\"lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8676,8 +8676,8 @@ module.exports = {
     {
       n: "EXACT",
       t: 12,
-      d: "Beschreibung der Funktion EXACT.",
-      a: "Kurzbeschreibung der Funktion EXACT.",
+      d: "Prüft, ob zwei Zeichenfolgen identisch sind.",
+      a: "Prüft, ob zwei Zeichenfolgen identisch sind.",
       m: [
         2,
         2
@@ -8685,7 +8685,7 @@ module.exports = {
       p: [
         {
           name: "zeichenfolge1",
-          detail: "Parameter `zeichenfolge1` der Funktion EXACT.",
+          detail: "Die erste zu vergleichende Zeichenfolge.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -8693,7 +8693,7 @@ module.exports = {
         },
         {
           name: "zeichenfolge2",
-          detail: "Parameter `zeichenfolge2` der Funktion EXACT.",
+          detail: "Die zweite zu vergleichende Zeichenfolge.",
           example: "A2",
           require: "m",
           repeat: "n",
