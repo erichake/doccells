@@ -296,6 +296,19 @@ const NEW5 = `  str += 1;
   return null;
 }`;
 
+// patch-fortune-formula-names.cjs runs later in postinstall and marks formulas
+// produced by functionCopy() as already canonical. Accept those post-formula
+// variants as valid output too, so this script remains idempotent when the
+// complete postinstall chain is run again.
+const NEW4_AFTER_FORMULA_PATCH = NEW4.replace(
+  "execfunction(ctx, _func4, _actualRow4, _vc4, undefined, undefined, true)",
+  "__doccellsExecCanonicalFormula(ctx, _func4, _actualRow4, _vc4, undefined, undefined, true)",
+);
+const NEW5_AFTER_FORMULA_PATCH = NEW5.replace(
+  "execfunction(ctx, _func5, _actualRow5, _vc5, undefined, undefined, true)",
+  "__doccellsExecCanonicalFormula(ctx, _func5, _actualRow5, _vc5, undefined, undefined, true)",
+);
+
 // Patch 6: generated sheet names use the active locale prefix.
 // Upstream always returns "SheetN"; this uses sheetconfig.text so French creates
 // Feuille2 while still counting existing SheetN names from older workbooks.
@@ -505,8 +518,20 @@ const PATCH_GROUPS = [
   { name: "single-cell header fix",    variants: [{ old: OLD1, new: NEW1 }] },
   { name: "multi-column header fix",   variants: [{ old: OLD2, new: NEW2 }, { old: OLD2_CJS, new: NEW2_CJS }] },
   { name: "filter values blank label fix", variants: [{ old: OLD3, new: NEW3 }] },
-  { name: "sort respects active filter", variants: [{ old: OLD4, new: NEW4 }] },
-  { name: "filter-dropdown sort respects active filter", variants: [{ old: OLD5, new: NEW5 }] },
+  {
+    name: "sort respects active filter",
+    variants: [
+      { old: OLD4, new: NEW4 },
+      { old: NEW4_AFTER_FORMULA_PATCH, new: NEW4_AFTER_FORMULA_PATCH },
+    ],
+  },
+  {
+    name: "filter-dropdown sort respects active filter",
+    variants: [
+      { old: OLD5, new: NEW5 },
+      { old: NEW5_AFTER_FORMULA_PATCH, new: NEW5_AFTER_FORMULA_PATCH },
+    ],
+  },
   { name: "localized generated sheet names", variants: [{ old: OLD6, new: NEW6 }] },
   { name: "clear content keeps cell protection", variants: [{ old: OLD7, new: NEW7 }] },
   { name: "Excel-compatible date formulas", variants: [{ old: OLD8_ESM, new: NEW8_ESM }, { old: OLD8_CJS, new: NEW8_CJS }] },
