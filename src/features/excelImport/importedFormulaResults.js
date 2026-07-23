@@ -126,8 +126,20 @@ export const applyImportedFormulaResults = (sheets) => {
 
   sheets.forEach((sheet, sheetIndex) => {
     (sheet?.celldata || []).forEach((cell) => {
-      if (cell?.v?.f && (cell.v.v == null || shouldRecalculateFormula(cell.v))) {
+      const cellValue = cell?.v;
+      if (!cellValue?.f) return;
+
+      if (cellValue.v == null || shouldRecalculateFormula(cellValue)) {
         calculateCellFormula(sheetIndex, cell);
+      }
+
+      // Excel may provide a valid cached result (`v`) without the display
+      // value (`m`) expected by FortuneSheet's internal copy/paste check.
+      // Without `m`, copying an untouched imported formula falls back to a
+      // plain-text paste and loses the formula. Editing the cell once happens
+      // to create `m`, which is why the same copy then works.
+      if (cellValue.m == null && cellValue.v != null) {
+        cellValue.m = getFormulaDisplayValue(cellValue.v, cellValue);
       }
     });
   });
