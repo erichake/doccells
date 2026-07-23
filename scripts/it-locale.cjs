@@ -13534,7 +13534,7 @@ module.exports = {
     max: "Massimo",
     min: "Minimo",
     ifGenerate: "Inserisci funzione",
-    find: "Learn more",
+    find: "Tutte le formule",
     tipNotBelongToIf: "Questa funzione non appartiene a questa categoria",
     tipSelectCell: "Seleziona una cella o un intervallo",
     ifGenCompareValueTitle: "Comparison value",

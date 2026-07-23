@@ -15161,7 +15161,7 @@ module.exports = {
     max: "Максимум",
     min: "Минимум",
     ifGenerate: "Генератор формулы IF",
-    find: "Узнать больше",
+    find: "Все формулы",
     tipNotBelongToIf: "Эта функция ячейки не относится к формуле IF!",
     tipSelectCell: "Пожалуйста, выберите ячейку для вставки функции",
     ifGenCompareValueTitle: "Значение для сравнения",

@@ -13305,7 +13305,7 @@ module.exports = {
     max: "अधिकतम",
     min: "न्यूनतम",
     ifGenerate: "If सूत्र जेनरेटर",
-    find: "और जानें",
+    find: "सभी सूत्र",
     tipNotBelongToIf: "यह सेल फंक्शन If सूत्र से संबंधित नहीं है!",
     tipSelectCell: "कृपया फंक्शन डालने के लिए सेल का चयन करें",
     ifGenCompareValueTitle: "तुलना मूल्य",

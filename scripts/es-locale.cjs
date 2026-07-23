@@ -12675,7 +12675,7 @@ module.exports = {  "insertLink": {
     max: "Máx",
     min: "Mín",
     ifGenerate: "Generador de fórmula SI",
-    find: "Aprender más",
+    find: "Todas las fórmulas",
     tipNotBelongToIf: "¡Esta función de celda no pertenece a la fórmula SI!",
     tipSelectCell: "Selecciona la celda para insertar la función",
     ifGenCompareValueTitle: "Valor de comparación",

@@ -13381,7 +13381,7 @@ module.exports = {
     pleaseInput: "Παρακαλώ εισαγάγετε",
     rule: "Κανόνας"
   },
-  formula: {  "find": "Μάθετε περισσότερα",
+  formula: {  "find": "Όλοι οι τύποι",
   "ifGenCompareValueTitle": "Τιμή σύγκρισης",
   "ifGenSelectCellTitle": "Κάντε κλικ για να επιλέξετε κελί",
   "ifGenRangeTitle": "Εύρος",

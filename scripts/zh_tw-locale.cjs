@@ -12722,7 +12722,7 @@ module.exports = {  "linkTypeList": [
     max: "最大值",
     min: "最小值",
     ifGenerate: "if公式生成器",
-    find: "更多函數",
+    find: "所有公式",
     tipNotBelongToIf: "該儲存格函數不屬於if公式!",
     tipSelectCell: "請選擇儲存格插入函數",
     ifGenCompareValueTitle: "比较值",

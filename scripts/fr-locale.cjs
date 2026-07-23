@@ -13235,7 +13235,7 @@ module.exports = {
     max: "Max",
     min: "Min",
     ifGenerate: "Générateur de formules SI",
-    find: "En savoir plus",
+    find: "Toutes les formules",
     tipNotBelongToIf: "Cette fonction ne fait pas partie de la formule SI !",
     tipSelectCell: "Veuillez sélectionner la cellule où insérer la fonction",
     ifGenCompareValueTitle: "Valeur de comparaison",

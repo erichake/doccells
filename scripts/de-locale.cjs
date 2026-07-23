@@ -13450,7 +13450,7 @@ module.exports = {
     pleaseInput: "Bitte eingeben",
     rule: "Regel"
   },
-  formula: {  "find": "Mehr erfahren",
+  formula: {  "find": "Alle Formeln",
   "ifGenCompareValueTitle": "Vergleichswert",
   "ifGenSelectCellTitle": "Klicken, um eine Zelle auszuwählen",
   "ifGenRangeTitle": "Bereich",

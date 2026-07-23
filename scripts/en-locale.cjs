@@ -13314,7 +13314,7 @@ module.exports = {
     max: "Max",
     min: "Min",
     ifGenerate: "If formula generator",
-    find: "Learn more",
+    find: "All formulas",
     tipNotBelongToIf: "This cell function does not belong to the if formula!",
     tipSelectCell: "Please select the cell to insert the function",
     ifGenCompareValueTitle: "Comparison value",

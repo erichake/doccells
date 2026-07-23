@@ -13534,7 +13534,7 @@ module.exports = {
     max: "Maximum",
     min: "Minimum",
     ifGenerate: "Functie invoegen",
-    find: "Learn more",
+    find: "Alle formules",
     tipNotBelongToIf: "Deze functie hoort niet bij deze categorie",
     tipSelectCell: "Selecteer een cel of bereik",
     ifGenCompareValueTitle: "Comparison value",

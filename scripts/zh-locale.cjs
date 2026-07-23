@@ -13338,7 +13338,7 @@ module.exports = {
     max: "最大值",
     min: "最小值",
     ifGenerate: "if公式生成器",
-    find: "更多函数",
+    find: "所有公式",
     tipNotBelongToIf: "该单元格函数不属于if公式！",
     tipSelectCell: "请选择单元格插入函数",
     ifGenCompareValueTitle: "比较值",
