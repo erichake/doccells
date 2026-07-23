@@ -4603,8 +4603,8 @@ module.exports = {
     {
       n: "WEEKDAY",
       t: 6,
-      d: "Descrição da função WEEKDAY.",
-      a: "Resumo da função WEEKDAY.",
+      d: "Retorna um número representando o dia da semana da data fornecida.",
+      a: "Dia da semana da data fornecida (como número).",
       m: [
         1,
         2
@@ -4612,7 +4612,7 @@ module.exports = {
       p: [
         {
           name: "data",
-          detail: "Parâmetro `data` da função WEEKDAY.",
+          detail: "A data para a qual determinar o dia da semana. Deve ser uma referência a uma célula contendo uma data, uma função retornando um tipo de data, ou um número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4620,7 +4620,7 @@ module.exports = {
         },
         {
           name: "tipo",
-          detail: "Parâmetro `tipo` da função WEEKDAY.",
+          detail: "Um número indicando qual sistema de numeração usar para representar os dias da semana. Por padrão, a contagem começa com domingo = 1.",
           example: "7",
           require: "o",
           repeat: "n",
@@ -4631,8 +4631,8 @@ module.exports = {
     {
       n: "DAY",
       t: 6,
-      d: "Descrição da função DAY.",
-      a: "Resumo da função DAY.",
+      d: "Retorna o dia do mês em que uma data específica cai, em formato numérico.",
+      a: "Dia do mês em que uma data específica cai.",
       m: [
         1,
         1
@@ -4640,7 +4640,7 @@ module.exports = {
       p: [
         {
           name: "data",
-          detail: "Parâmetro `data` da função DAY.",
+          detail: "A data da qual extrair o dia.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4651,8 +4651,8 @@ module.exports = {
     {
       n: "DAYS",
       t: 6,
-      d: "Descrição da função DAYS.",
-      a: "Resumo da função DAYS.",
+      d: "Retorna o número de dias entre duas datas.",
+      a: "Número de dias entre duas datas.",
       m: [
         2,
         2
@@ -4660,7 +4660,7 @@ module.exports = {
       p: [
         {
           name: "data_final",
-          detail: "Parâmetro `data_final` da função DAYS.",
+          detail: "O fim do intervalo de datas.",
           example: "2011-3-15",
           require: "m",
           repeat: "n",
@@ -4668,7 +4668,7 @@ module.exports = {
         },
         {
           name: "data_início",
-          detail: "Parâmetro `data_início` da função DAYS.",
+          detail: "O início do intervalo de datas.",
           example: "2011-2-1",
           require: "m",
           repeat: "n",
@@ -4679,8 +4679,8 @@ module.exports = {
     {
       n: "DAYS360",
       t: 6,
-      d: "Descrição da função DAYS360.",
-      a: "Resumo da função DAYS360.",
+      d: "Retorna a diferença entre dois dias com base no ano de 360 dias usado em alguns cálculos de juros financeiros.",
+      a: "Dias entre duas datas em um ano de 360 dias.",
       m: [
         2,
         3
@@ -4688,7 +4688,7 @@ module.exports = {
       p: [
         {
           name: "data_início",
-          detail: "Parâmetro `data_início` da função DAYS360.",
+          detail: "A data inicial a considerar no cálculo. Deve ser uma referência a uma célula contendo uma data, uma função retornando um tipo de data, ou um número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4696,7 +4696,7 @@ module.exports = {
         },
         {
           name: "data_final",
-          detail: "Parâmetro `data_final` da função DAYS360.",
+          detail: "A data final a considerar no cálculo. Deve ser uma referência a uma célula contendo uma data, uma função retornando um tipo de data, ou um número.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4704,7 +4704,7 @@ module.exports = {
         },
         {
           name: "método",
-          detail: "Parâmetro `método` da função DAYS360.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -4715,8 +4715,8 @@ module.exports = {
     {
       n: "DATE",
       t: 6,
-      d: "Descrição da função DATE.",
-      a: "Resumo da função DATE.",
+      d: "Converte um ano, mês e dia fornecidos em uma data.",
+      a: "Converte ano/mês/dia em uma data.",
       m: [
         3,
         3
@@ -4724,7 +4724,7 @@ module.exports = {
       p: [
         {
           name: "ano",
-          detail: "Parâmetro `ano` da função DATE.",
+          detail: "O componente de ano da data.",
           example: "1969",
           require: "m",
           repeat: "n",
@@ -4732,7 +4732,7 @@ module.exports = {
         },
         {
           name: "mês",
-          detail: "Parâmetro `mês` da função DATE.",
+          detail: "O componente de mês da data.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4740,7 +4740,7 @@ module.exports = {
         },
         {
           name: "dia",
-          detail: "Parâmetro `dia` da função DATE.",
+          detail: "O componente de dia da data.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -4751,8 +4751,8 @@ module.exports = {
     {
       n: "DATEVALUE",
       t: 6,
-      d: "Descrição da função DATEVALUE.",
-      a: "Resumo da função DATEVALUE.",
+      d: "Converte uma string de data fornecida em um formato conhecido em um valor de data.",
+      a: "Converte uma string de data em um valor de data.",
       m: [
         1,
         1
@@ -4760,7 +4760,7 @@ module.exports = {
       p: [
         {
           name: "texto_data",
-          detail: "Parâmetro `texto_data` da função DATEVALUE.",
+          detail: "A string representando a data.",
           example: "\"1969-7-20\"",
           require: "m",
           repeat: "n",
@@ -4771,8 +4771,8 @@ module.exports = {
     {
       n: "DATEDIF",
       t: 6,
-      d: "Descrição da função DATEDIF.",
-      a: "Resumo da função DATEDIF.",
+      d: "Calcula o número de dias, meses ou anos entre duas datas.",
+      a: "Diferença de datas.",
       m: [
         3,
         3
@@ -4780,7 +4780,7 @@ module.exports = {
       p: [
         {
           name: "data_início",
-          detail: "Parâmetro `data_início` da função DATEDIF.",
+          detail: "A data inicial a considerar no cálculo. Deve ser uma referência a uma célula contendo uma data, uma função retornando um tipo de data, ou um número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4788,7 +4788,7 @@ module.exports = {
         },
         {
           name: "data_final",
-          detail: "Parâmetro `data_final` da função DATEDIF.",
+          detail: "A data final a considerar no cálculo. Deve ser uma referência a uma célula contendo uma data, uma função retornando um tipo de data, ou um número.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4796,7 +4796,7 @@ module.exports = {
         },
         {
           name: "unidade",
-          detail: "Parâmetro `unidade` da função DATEDIF.",
+          detail: "Uma abreviação de string para unidade de tempo. Por exemplo, \"M\" para mês. Os valores aceitos são \"Y\",\"M\",\"D\",\"MD\",\"YM\",\"YD\".",
           example: "16)",
           require: "m",
           repeat: "n",
@@ -4807,8 +4807,8 @@ module.exports = {
     {
       n: "WORKDAY",
       t: 6,
-      d: "Descrição da função WORKDAY.",
-      a: "Resumo da função WORKDAY.",
+      d: "Calcula a data após um número de dias úteis a partir de uma data inicial especificada.",
+      a: "Número de dias úteis a partir da data inicial.",
       m: [
         2,
         3
@@ -4816,7 +4816,7 @@ module.exports = {
       p: [
         {
           name: "data_início",
-          detail: "Parâmetro `data_início` da função WORKDAY.",
+          detail: "A data a partir da qual começar a contagem.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4824,7 +4824,7 @@ module.exports = {
         },
         {
           name: "número_dias",
-          detail: "Parâmetro `número_dias` da função WORKDAY.",
+          detail: "O número de dias úteis a avançar a partir de `data_inicial`. Se negativo, conta para trás.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4832,7 +4832,7 @@ module.exports = {
         },
         {
           name: "feriados",
-          detail: "Parâmetro `feriados` da função WORKDAY.",
+          detail: "Um intervalo ou constante de matriz contendo as datas a considerar como feriados.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4843,8 +4843,8 @@ module.exports = {
     {
       n: "WORKDAY_INTL",
       t: 6,
-      d: "Descrição da função WORKDAY_INTL.",
-      a: "Resumo da função WORKDAY_INTL.",
+      d: "Calcula a data após um número especificado de dias úteis, excluindo dias de fim de semana e feriados especificados.",
+      a: "Data após um número de dias úteis (especificando fins de semana).",
       m: [
         2,
         4
@@ -4852,7 +4852,7 @@ module.exports = {
       p: [
         {
           name: "data_início",
-          detail: "Parâmetro `data_início` da função WORKDAY_INTL.",
+          detail: "A data a partir da qual começar a contagem.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4860,7 +4860,7 @@ module.exports = {
         },
         {
           name: "número_dias",
-          detail: "Parâmetro `número_dias` da função WORKDAY_INTL.",
+          detail: "O número de dias úteis a avançar a partir de `data_inicial`. Se negativo, conta para trás.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4868,7 +4868,7 @@ module.exports = {
         },
         {
           name: "fim_de_semana",
-          detail: "Parâmetro `fim_de_semana` da função WORKDAY_INTL.",
+          detail: "Um número ou string representando quais dias da semana são considerados fim de semana.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4876,7 +4876,7 @@ module.exports = {
         },
         {
           name: "feriados",
-          detail: "Parâmetro `feriados` da função WORKDAY_INTL.",
+          detail: "Um intervalo ou constante de matriz contendo as datas a considerar como feriados.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4887,8 +4887,8 @@ module.exports = {
     {
       n: "YEAR",
       t: 6,
-      d: "Descrição da função YEAR.",
-      a: "Resumo da função YEAR.",
+      d: "Retorna o ano especificado por uma data fornecida.",
+      a: "Ano especificado por uma data fornecida.",
       m: [
         1,
         1
@@ -4896,7 +4896,7 @@ module.exports = {
       p: [
         {
           name: "data",
-          detail: "Parâmetro `data` da função YEAR.",
+          detail: "A data da qual extrair o ano.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4907,8 +4907,8 @@ module.exports = {
     {
       n: "YEARFRAC",
       t: 6,
-      d: "Descrição da função YEARFRAC.",
-      a: "Resumo da função YEARFRAC.",
+      d: "Retorna o número de anos, incluindo frações de anos, entre duas datas usando uma convenção de contagem de dias especificada.",
+      a: "Número exato de anos entre duas datas.",
       m: [
         2,
         3
@@ -4916,7 +4916,7 @@ module.exports = {
       p: [
         {
           name: "data_início",
-          detail: "Parâmetro `data_início` da função YEARFRAC.",
+          detail: "A data inicial a considerar no cálculo. Deve ser uma referência a uma célula contendo uma data, uma função retornando um tipo de data, ou um número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4924,7 +4924,7 @@ module.exports = {
         },
         {
           name: "data_final",
-          detail: "Parâmetro `data_final` da função YEARFRAC.",
+          detail: "A data final a considerar no cálculo. Deve ser uma referência a uma célula contendo uma data, uma função retornando um tipo de data, ou um número.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4932,7 +4932,7 @@ module.exports = {
         },
         {
           name: "convenção_contagem_dias",
-          detail: "Parâmetro `convenção_contagem_dias` da função YEARFRAC.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4943,8 +4943,8 @@ module.exports = {
     {
       n: "TODAY",
       t: 6,
-      d: "Descrição da função TODAY.",
-      a: "Resumo da função TODAY.",
+      d: "Retorna a data atual como um valor de data.",
+      a: "Data atual como um valor de data.",
       m: [
         0,
         0
@@ -4954,8 +4954,8 @@ module.exports = {
     {
       n: "MONTH",
       t: 6,
-      d: "Descrição da função MONTH.",
-      a: "Resumo da função MONTH.",
+      d: "Retorna o mês do ano em que uma data específica cai, em formato numérico.",
+      a: "Mês do ano em que uma data específica cai.",
       m: [
         1,
         1
@@ -4963,7 +4963,7 @@ module.exports = {
       p: [
         {
           name: "data",
-          detail: "Parâmetro `data` da função MONTH.",
+          detail: "A data da qual extrair o mês.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4974,8 +4974,8 @@ module.exports = {
     {
       n: "EFFECT",
       t: 8,
-      d: "Descrição da função EFFECT.",
-      a: "Resumo da função EFFECT.",
+      d: "Calcula a taxa de juros efetiva anual dadas a taxa nominal e o número de períodos de capitalização por ano.",
+      a: "Taxa de juros efetiva anual.",
       m: [
         2,
         2
@@ -4983,7 +4983,7 @@ module.exports = {
       p: [
         {
           name: "taxa_nominal",
-          detail: "Parâmetro `taxa_nominal` da função EFFECT.",
+          detail: "A taxa de juros nominal por ano.",
           example: "0.99",
           require: "m",
           repeat: "n",
@@ -4991,7 +4991,7 @@ module.exports = {
         },
         {
           name: "períodos_por_ano",
-          detail: "Parâmetro `períodos_por_ano` da função EFFECT.",
+          detail: "O número de períodos de capitalização por ano.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5002,8 +5002,8 @@ module.exports = {
     {
       n: "DOLLAR",
       t: 12,
-      d: "Descrição da função DOLLAR.",
-      a: "Resumo da função DOLLAR.",
+      d: "Formata um número na moeda específica da localidade da sua planilha.",
+      a: "Formata um número como moeda específica da localidade da sua planilha.",
       m: [
         1,
         2
@@ -5011,7 +5011,7 @@ module.exports = {
       p: [
         {
           name: "número",
-          detail: "Parâmetro `número` da função DOLLAR.",
+          detail: "O valor a formatar.",
           example: "1.2351",
           require: "m",
           repeat: "n",
@@ -5019,7 +5019,7 @@ module.exports = {
         },
         {
           name: "número_casas_decimais",
-          detail: "Parâmetro `número_casas_decimais` da função DOLLAR.",
+          detail: "O número de casas decimais a exibir.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -5030,8 +5030,8 @@ module.exports = {
     {
       n: "DOLLARDE",
       t: 8,
-      d: "Descrição da função DOLLARDE.",
-      a: "Resumo da função DOLLARDE.",
+      d: "Converte uma cotação de preço fornecida como fração decimal em um valor decimal.",
+      a: "Converte uma fração decimal em um valor decimal.",
       m: [
         2,
         2
@@ -5039,7 +5039,7 @@ module.exports = {
       p: [
         {
           name: "preço_fracionário",
-          detail: "Parâmetro `preço_fracionário` da função DOLLARDE.",
+          detail: "A cotação de preço fornecida usando convenções decimais fracionárias.",
           example: "100.10",
           require: "m",
           repeat: "n",
@@ -5047,7 +5047,7 @@ module.exports = {
         },
         {
           name: "unidade",
-          detail: "Parâmetro `unidade` da função DOLLARDE.",
+          detail: "As unidades da fração, ex. `8` para oitavos ou `32` para trinta e dois avos.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5058,8 +5058,8 @@ module.exports = {
     {
       n: "DOLLARFR",
       t: 8,
-      d: "Descrição da função DOLLARFR.",
-      a: "Resumo da função DOLLARFR.",
+      d: "Converte uma cotação de preço fornecida como valor decimal em uma fração decimal.",
+      a: "Converte um valor decimal em uma fração decimal.",
       m: [
         2,
         2
@@ -5067,7 +5067,7 @@ module.exports = {
       p: [
         {
           name: "preço_decimal",
-          detail: "Parâmetro `preço_decimal` da função DOLLARFR.",
+          detail: "A cotação de preço fornecida como valor decimal.",
           example: "100.125",
           require: "m",
           repeat: "n",
@@ -5075,7 +5075,7 @@ module.exports = {
         },
         {
           name: "unidade",
-          detail: "Parâmetro `unidade` da função DOLLARFR.",
+          detail: "As unidades da fração desejada, ex. `8` para oitavos ou `32` para trinta e dois avos.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5086,8 +5086,8 @@ module.exports = {
     {
       n: "DB",
       t: 8,
-      d: "Descrição da função DB.",
-      a: "Resumo da função DB.",
+      d: "Calcula a depreciação de um ativo para um período especificado usando o método do saldo decrescente aritmético.",
+      a: "Depreciação via método do saldo decrescente.",
       m: [
         4,
         5
@@ -5095,7 +5095,7 @@ module.exports = {
       p: [
         {
           name: "custo",
-          detail: "Parâmetro `custo` da função DB.",
+          detail: "O custo inicial do ativo.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5103,7 +5103,7 @@ module.exports = {
         },
         {
           name: "valor_residual",
-          detail: "Parâmetro `valor_residual` da função DB.",
+          detail: "O valor do ativo ao final da depreciação.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5111,7 +5111,7 @@ module.exports = {
         },
         {
           name: "vida_útil",
-          detail: "Parâmetro `vida_útil` da função DB.",
+          detail: "O número de períodos ao longo dos quais o ativo é depreciado.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5119,7 +5119,7 @@ module.exports = {
         },
         {
           name: "período",
-          detail: "Parâmetro `período` da função DB.",
+          detail: "O período único dentro de `vida_útil` para o qual calcular a depreciação.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5127,7 +5127,7 @@ module.exports = {
         },
         {
           name: "mês",
-          detail: "Parâmetro `mês` da função DB.",
+          detail: "O número de meses no primeiro ano de depreciação.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5138,8 +5138,8 @@ module.exports = {
     {
       n: "DDB",
       t: 8,
-      d: "Descrição da função DDB.",
-      a: "Resumo da função DDB.",
+      d: "Calcula a depreciação de um ativo para um período especificado usando o método do saldo duplamente decrescente.",
+      a: "Depreciação via método do saldo duplamente decrescente.",
       m: [
         4,
         5
@@ -5147,7 +5147,7 @@ module.exports = {
       p: [
         {
           name: "custo",
-          detail: "Parâmetro `custo` da função DDB.",
+          detail: "O custo inicial do ativo.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5155,7 +5155,7 @@ module.exports = {
         },
         {
           name: "valor_residual",
-          detail: "Parâmetro `valor_residual` da função DDB.",
+          detail: "O valor do ativo ao final da depreciação.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5163,7 +5163,7 @@ module.exports = {
         },
         {
           name: "vida_útil",
-          detail: "Parâmetro `vida_útil` da função DDB.",
+          detail: "O número de períodos ao longo dos quais o ativo é depreciado.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5171,7 +5171,7 @@ module.exports = {
         },
         {
           name: "período",
-          detail: "Parâmetro `período` da função DDB.",
+          detail: "O período único dentro de `vida_útil` para o qual calcular a depreciação.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5179,7 +5179,7 @@ module.exports = {
         },
         {
           name: "fator",
-          detail: "Parâmetro `fator` da função DDB.",
+          detail: "O fator pelo qual a depreciação diminui.",
           example: "2.25",
           require: "m",
           repeat: "n",
@@ -5190,8 +5190,8 @@ module.exports = {
     {
       n: "RATE",
       t: 8,
-      d: "Descrição da função RATE.",
-      a: "Resumo da função RATE.",
+      d: "Calcula a taxa de juros de um investimento de anuidade com base em pagamentos periódicos de valor constante e a suposição de uma taxa de juros constante.",
+      a: "Taxa de juros de um investimento de anuidade.",
       m: [
         3,
         6
@@ -5199,7 +5199,7 @@ module.exports = {
       p: [
         {
           name: "número_períodos",
-          detail: "Parâmetro `número_períodos` da função RATE.",
+          detail: "O número de pagamentos a serem feitos.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5207,7 +5207,7 @@ module.exports = {
         },
         {
           name: "pagamento_por_período",
-          detail: "Parâmetro `pagamento_por_período` da função RATE.",
+          detail: "O valor por período a ser pago.",
           example: "-100",
           require: "m",
           repeat: "n",
@@ -5215,7 +5215,7 @@ module.exports = {
         },
         {
           name: "valor_presente",
-          detail: "Parâmetro `valor_presente` da função RATE.",
+          detail: "O valor atual da anuidade.",
           example: "400",
           require: "m",
           repeat: "n",
@@ -5223,7 +5223,7 @@ module.exports = {
         },
         {
           name: "valor_futuro",
-          detail: "Parâmetro `valor_futuro` da função RATE.",
+          detail: "O valor futuro restante após o último pagamento ter sido feito.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5231,7 +5231,7 @@ module.exports = {
         },
         {
           name: "fim_ou_início",
-          detail: "Parâmetro `fim_ou_início` da função RATE.",
+          detail: "Se os pagamentos são devidos no final (`0`) ou no início (`1`) de cada período.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5239,7 +5239,7 @@ module.exports = {
         },
         {
           name: "estimativa_taxa",
-          detail: "Parâmetro `estimativa_taxa` da função RATE.",
+          detail: "Uma estimativa de qual será a taxa de juros.",
           example: "0.1",
           require: "o",
           repeat: "n",
@@ -5250,8 +5250,8 @@ module.exports = {
     {
       n: "CUMPRINC",
       t: 8,
-      d: "Descrição da função CUMPRINC.",
-      a: "Resumo da função CUMPRINC.",
+      d: "Calcula o principal cumulativo pago em um intervalo de períodos de pagamento para um investimento com base em pagamentos periódicos de valor constante e uma taxa de juros constante.",
+      a: "Principal cumulativo pago em um conjunto de períodos.",
       m: [
         6,
         6
@@ -5259,7 +5259,7 @@ module.exports = {
       p: [
         {
           name: "taxa",
-          detail: "Parâmetro `taxa` da função CUMPRINC.",
+          detail: "A taxa de juros.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -5267,7 +5267,7 @@ module.exports = {
         },
         {
           name: "número_períodos",
-          detail: "Parâmetro `número_períodos` da função CUMPRINC.",
+          detail: "O número de pagamentos a serem feitos.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5275,7 +5275,7 @@ module.exports = {
         },
         {
           name: "valor_presente",
-          detail: "Parâmetro `valor_presente` da função CUMPRINC.",
+          detail: "O valor atual da anuidade.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5283,7 +5283,7 @@ module.exports = {
         },
         {
           name: "primeiro_período",
-          detail: "Parâmetro `primeiro_período` da função CUMPRINC.",
+          detail: "O número do período de pagamento para iniciar o cálculo cumulativo.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5291,7 +5291,7 @@ module.exports = {
         },
         {
           name: "último_período",
-          detail: "Parâmetro `último_período` da função CUMPRINC.",
+          detail: "O número do período de pagamento para terminar o cálculo cumulativo.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -5299,7 +5299,7 @@ module.exports = {
         },
         {
           name: "fim_ou_início",
-          detail: "Parâmetro `fim_ou_início` da função CUMPRINC.",
+          detail: "Se os pagamentos são devidos no final (`0`) ou no início (`1`) de cada período.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -5310,8 +5310,8 @@ module.exports = {
     {
       n: "COUPNUM",
       t: 8,
-      d: "Descrição da função COUPNUM.",
-      a: "Resumo da função COUPNUM.",
+      d: "Calcula o número de cupons, ou pagamentos de juros, entre a data de liquidação e a data de vencimento do investimento.",
+      a: "Número de cupons entre liquidação e vencimento.",
       m: [
         3,
         4
@@ -5319,7 +5319,7 @@ module.exports = {
       p: [
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função COUPNUM.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5327,7 +5327,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função COUPNUM.",
+          detail: "A data de vencimento ou término do título, quando pode ser resgatado pelo valor de face, ou nominal.",
           example: "02",
           require: "m",
           repeat: "n",
@@ -5335,7 +5335,7 @@ module.exports = {
         },
         {
           name: "frequência",
-          detail: "Parâmetro `frequência` da função COUPNUM.",
+          detail: "O número de pagamentos de juros ou cupons por ano (1, 2 ou 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5343,7 +5343,7 @@ module.exports = {
         },
         {
           name: "convenção_contagem_dias",
-          detail: "Parâmetro `convenção_contagem_dias` da função COUPNUM.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5354,8 +5354,8 @@ module.exports = {
     {
       n: "SYD",
       t: 8,
-      d: "Descrição da função SYD.",
-      a: "Resumo da função SYD.",
+      d: "Calcula a depreciação de um ativo para um período especificado usando o método da soma dos dígitos dos anos.",
+      a: "Depreciação via método da soma dos dígitos dos anos.",
       m: [
         4,
         4
@@ -5363,7 +5363,7 @@ module.exports = {
       p: [
         {
           name: "custo",
-          detail: "Parâmetro `custo` da função SYD.",
+          detail: "O custo inicial do ativo.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5371,7 +5371,7 @@ module.exports = {
         },
         {
           name: "valor_residual",
-          detail: "Parâmetro `valor_residual` da função SYD.",
+          detail: "O valor do ativo ao final da depreciação.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5379,7 +5379,7 @@ module.exports = {
         },
         {
           name: "vida_útil",
-          detail: "Parâmetro `vida_útil` da função SYD.",
+          detail: "O número de períodos ao longo dos quais o ativo é depreciado.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5387,7 +5387,7 @@ module.exports = {
         },
         {
           name: "período",
-          detail: "Parâmetro `período` da função SYD.",
+          detail: "O período único dentro de `vida_útil` para o qual calcular a depreciação.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5398,8 +5398,8 @@ module.exports = {
     {
       n: "TBILLEQ",
       t: 8,
-      d: "Descrição da função TBILLEQ.",
-      a: "Resumo da função TBILLEQ.",
+      d: "Calcula a taxa de retorno anualizada equivalente de uma Letra do Tesouro dos EUA com base na taxa de desconto.",
+      a: "Taxa de retorno equivalente para uma letra do tesouro.",
       m: [
         3,
         3
@@ -5407,7 +5407,7 @@ module.exports = {
       p: [
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função TBILLEQ.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5415,7 +5415,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função TBILLEQ.",
+          detail: "A data de vencimento ou término do título, quando pode ser resgatado pelo valor de face, ou nominal.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5423,7 +5423,7 @@ module.exports = {
         },
         {
           name: "taxa_desconto",
-          detail: "Parâmetro `taxa_desconto` da função TBILLEQ.",
+          detail: "A taxa de desconto da letra no momento da compra.",
           example: "2)",
           require: "m",
           repeat: "n",
@@ -5434,8 +5434,8 @@ module.exports = {
     {
       n: "TBILLYIELD",
       t: 8,
-      d: "Descrição da função TBILLYIELD.",
-      a: "Resumo da função TBILLYIELD.",
+      d: "Calcula o rendimento de uma Letra do Tesouro dos EUA com base no preço.",
+      a: "O rendimento de uma letra do tesouro dos EUA com base no preço.",
       m: [
         3,
         3
@@ -5443,7 +5443,7 @@ module.exports = {
       p: [
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função TBILLYIELD.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5451,7 +5451,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função TBILLYIELD.",
+          detail: "A data de vencimento ou término do título, quando pode ser resgatado pelo valor de face, ou nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5459,7 +5459,7 @@ module.exports = {
         },
         {
           name: "preço",
-          detail: "Parâmetro `preço` da função TBILLYIELD.",
+          detail: "O preço pelo qual o título é comprado por 100 do valor de face.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -5470,8 +5470,8 @@ module.exports = {
     {
       n: "TBILLPRICE",
       t: 8,
-      d: "Descrição da função TBILLPRICE.",
-      a: "Resumo da função TBILLPRICE.",
+      d: "Calcula o preço de uma Letra do Tesouro dos EUA com base na taxa de desconto.",
+      a: "Preço de uma letra do tesouro dos EUA.",
       m: [
         3,
         3
@@ -5479,7 +5479,7 @@ module.exports = {
       p: [
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função TBILLPRICE.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5487,7 +5487,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função TBILLPRICE.",
+          detail: "A data de vencimento ou término do título, quando pode ser resgatado pelo valor de face, ou nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5495,7 +5495,7 @@ module.exports = {
         },
         {
           name: "taxa_desconto",
-          detail: "Parâmetro `taxa_desconto` da função TBILLPRICE.",
+          detail: "A taxa de desconto da letra no momento da compra.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -5506,8 +5506,8 @@ module.exports = {
     {
       n: "PV",
       t: 8,
-      d: "Descrição da função PV.",
-      a: "Resumo da função PV.",
+      d: "Calcula o valor presente de um investimento de anuidade com base em pagamentos periódicos de valor constante e uma taxa de juros constante.",
+      a: "Valor presente de um investimento de anuidade.",
       m: [
         3,
         5
@@ -5515,7 +5515,7 @@ module.exports = {
       p: [
         {
           name: "taxa",
-          detail: "Parâmetro `taxa` da função PV.",
+          detail: "A taxa de juros.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5523,7 +5523,7 @@ module.exports = {
         },
         {
           name: "número_períodos",
-          detail: "Parâmetro `número_períodos` da função PV.",
+          detail: "O número de pagamentos a serem feitos.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5531,7 +5531,7 @@ module.exports = {
         },
         {
           name: "valor_pagamento",
-          detail: "Parâmetro `valor_pagamento` da função PV.",
+          detail: "O valor por período a ser pago.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5539,7 +5539,7 @@ module.exports = {
         },
         {
           name: "valor_futuro",
-          detail: "Parâmetro `valor_futuro` da função PV.",
+          detail: "O valor futuro restante após o último pagamento ter sido feito.",
           example: "D2",
           require: "o",
           repeat: "n",
@@ -5547,7 +5547,7 @@ module.exports = {
         },
         {
           name: "fim_ou_início",
-          detail: "Parâmetro `fim_ou_início` da função PV.",
+          detail: "Se os pagamentos são devidos no final (`0`) ou no início (`1`) de cada período.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -5558,8 +5558,8 @@ module.exports = {
     {
       n: "ACCRINT",
       t: 8,
-      d: "Descrição da função ACCRINT.",
-      a: "Resumo da função ACCRINT.",
+      d: "Calcula os juros acumulados de um título com pagamentos periódicos.",
+      a: "Juros acumulados de título com pagamentos periódicos.",
       m: [
         6,
         8
@@ -5567,7 +5567,7 @@ module.exports = {
       p: [
         {
           name: "data_emissão",
-          detail: "Parâmetro `data_emissão` da função ACCRINT.",
+          detail: "A data em que o título foi originalmente emitido.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5575,7 +5575,7 @@ module.exports = {
         },
         {
           name: "primeiro_pagamento",
-          detail: "Parâmetro `primeiro_pagamento` da função ACCRINT.",
+          detail: "A primeira data em que os juros serão pagos.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5583,7 +5583,7 @@ module.exports = {
         },
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função ACCRINT.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5591,7 +5591,7 @@ module.exports = {
         },
         {
           name: "taxa",
-          detail: "Parâmetro `taxa` da função ACCRINT.",
+          detail: "A taxa de juros anualizada.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5599,7 +5599,7 @@ module.exports = {
         },
         {
           name: "valor_resgate",
-          detail: "Parâmetro `valor_resgate` da função ACCRINT.",
+          detail: "O valor de resgate por 100 do valor de face, ou nominal.",
           example: "10000",
           require: "m",
           repeat: "n",
@@ -5607,7 +5607,7 @@ module.exports = {
         },
         {
           name: "frequência",
-          detail: "Parâmetro `frequência` da função ACCRINT.",
+          detail: "O número de pagamentos de juros ou cupons por ano (1, 2 ou 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5615,7 +5615,7 @@ module.exports = {
         },
         {
           name: "convenção_contagem_dias",
-          detail: "Parâmetro `convenção_contagem_dias` da função ACCRINT.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5623,7 +5623,7 @@ module.exports = {
         },
         {
           name: "método_cálculo",
-          detail: "Parâmetro `método_cálculo` da função ACCRINT.",
+          detail: "[Opcional - padrão VERDADEIRO()] - Um valor lógico que especifica o método usado para calcular o total de juros acumulados quando a data de liquidação é posterior à primeira data de acumulação de juros. \n\nSe o valor for VERDADEIRO, o total de juros acumulados desde a data de emissão até a data de liquidação é retornado. \n\nSe o valor for FALSO, retorna os juros acumulados desde a primeira data de acumulação de juros até a data de liquidação.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -5634,8 +5634,8 @@ module.exports = {
     {
       n: "ACCRINTM",
       t: 8,
-      d: "Descrição da função ACCRINTM.",
-      a: "Resumo da função ACCRINTM.",
+      d: "Calcula os juros acumulados de um título que paga juros no vencimento.",
+      a: "Juros acumulados de título pagando no vencimento.",
       m: [
         4,
         5
@@ -5643,7 +5643,7 @@ module.exports = {
       p: [
         {
           name: "data_emissão",
-          detail: "Parâmetro `data_emissão` da função ACCRINTM.",
+          detail: "A data em que o título foi originalmente emitido.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -5651,7 +5651,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função ACCRINTM.",
+          detail: "A data de vencimento do título.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -5659,7 +5659,7 @@ module.exports = {
         },
         {
           name: "taxa",
-          detail: "Parâmetro `taxa` da função ACCRINTM.",
+          detail: "A taxa de juros anualizada.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5667,7 +5667,7 @@ module.exports = {
         },
         {
           name: "valor_resgate",
-          detail: "Parâmetro `valor_resgate` da função ACCRINTM.",
+          detail: "O valor de resgate por 100 do valor de face, ou nominal.",
           example: "1000",
           require: "m",
           repeat: "n",
@@ -5675,7 +5675,7 @@ module.exports = {
         },
         {
           name: "convenção_contagem_dias",
-          detail: "Parâmetro `convenção_contagem_dias` da função ACCRINTM.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5686,8 +5686,8 @@ module.exports = {
     {
       n: "COUPDAYBS",
       t: 8,
-      d: "Descrição da função COUPDAYBS.",
-      a: "Resumo da função COUPDAYBS.",
+      d: "Calcula o número de dias desde o primeiro cupom, ou pagamento de juros, até a liquidação.",
+      a: "Número de dias do primeiro cupom até a liquidação.",
       m: [
         3,
         4
@@ -5695,7 +5695,7 @@ module.exports = {
       p: [
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função COUPDAYBS.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5703,7 +5703,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função COUPDAYBS.",
+          detail: "A data de vencimento ou término do título, quando pode ser resgatado pelo valor de face, ou nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5711,7 +5711,7 @@ module.exports = {
         },
         {
           name: "frequência",
-          detail: "Parâmetro `frequência` da função COUPDAYBS.",
+          detail: "O número de pagamentos de juros ou cupons por ano (1, 2 ou 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5719,7 +5719,7 @@ module.exports = {
         },
         {
           name: "convenção_contagem_dias",
-          detail: "Parâmetro `convenção_contagem_dias` da função COUPDAYBS.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5730,8 +5730,8 @@ module.exports = {
     {
       n: "COUPDAYS",
       t: 8,
-      d: "Descrição da função COUPDAYS.",
-      a: "Resumo da função COUPDAYS.",
+      d: "Calcula o número de dias no período do cupom, ou pagamento de juros, que contém a data de liquidação especificada.",
+      a: "Dias no período do cupom que contém a data de liquidação.",
       m: [
         3,
         4
@@ -5739,7 +5739,7 @@ module.exports = {
       p: [
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função COUPDAYS.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5747,7 +5747,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função COUPDAYS.",
+          detail: "A data de vencimento ou término do título, quando pode ser resgatado pelo valor de face, ou nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5755,7 +5755,7 @@ module.exports = {
         },
         {
           name: "frequência",
-          detail: "Parâmetro `frequência` da função COUPDAYS.",
+          detail: "O número de pagamentos de juros ou cupons por ano (1, 2 ou 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5763,7 +5763,7 @@ module.exports = {
         },
         {
           name: "convenção_contagem_dias",
-          detail: "Parâmetro `convenção_contagem_dias` da função COUPDAYS.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5774,8 +5774,8 @@ module.exports = {
     {
       n: "COUPDAYSNC",
       t: 8,
-      d: "Descrição da função COUPDAYSNC.",
-      a: "Resumo da função COUPDAYSNC.",
+      d: "Calcula o número de dias desde a data de liquidação até o próximo cupom, ou pagamento de juros.",
+      a: "Dias da liquidação até o próximo cupom.",
       m: [
         3,
         4
@@ -5783,7 +5783,7 @@ module.exports = {
       p: [
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função COUPDAYSNC.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5791,7 +5791,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função COUPDAYSNC.",
+          detail: "A data de vencimento ou término do título, quando pode ser resgatado pelo valor de face, ou nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5799,7 +5799,7 @@ module.exports = {
         },
         {
           name: "frequência",
-          detail: "Parâmetro `frequência` da função COUPDAYSNC.",
+          detail: "O número de pagamentos de juros ou cupons por ano (1, 2 ou 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5807,7 +5807,7 @@ module.exports = {
         },
         {
           name: "convenção_contagem_dias",
-          detail: "Parâmetro `convenção_contagem_dias` da função COUPDAYSNC.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5818,8 +5818,8 @@ module.exports = {
     {
       n: "COUPNCD",
       t: 8,
-      d: "Descrição da função COUPNCD.",
-      a: "Resumo da função COUPNCD.",
+      d: "Calcula a próxima data de cupom, ou pagamento de juros, após a data de liquidação.",
+      a: "Próxima data de cupom após a data de liquidação.",
       m: [
         3,
         4
@@ -5827,7 +5827,7 @@ module.exports = {
       p: [
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função COUPNCD.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5835,7 +5835,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função COUPNCD.",
+          detail: "A data de vencimento ou término do título, quando pode ser resgatado pelo valor de face, ou nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5843,7 +5843,7 @@ module.exports = {
         },
         {
           name: "frequência",
-          detail: "Parâmetro `frequência` da função COUPNCD.",
+          detail: "O número de pagamentos de juros ou cupons por ano (1, 2 ou 4).",
           example: "01)",
           require: "m",
           repeat: "n",
@@ -5851,7 +5851,7 @@ module.exports = {
         },
         {
           name: "convenção_contagem_dias",
-          detail: "Parâmetro `convenção_contagem_dias` da função COUPNCD.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5862,8 +5862,8 @@ module.exports = {
     {
       n: "COUPPCD",
       t: 8,
-      d: "Descrição da função COUPPCD.",
-      a: "Resumo da função COUPPCD.",
+      d: "Calcula a última data de cupom, ou pagamento de juros, antes da data de liquidação.",
+      a: "Última data de cupom antes da data de liquidação.",
       m: [
         3,
         4
@@ -5871,7 +5871,7 @@ module.exports = {
       p: [
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função COUPPCD.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5879,7 +5879,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função COUPPCD.",
+          detail: "A data de vencimento ou término do título, quando pode ser resgatado pelo valor de face, ou nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5887,7 +5887,7 @@ module.exports = {
         },
         {
           name: "frequência",
-          detail: "Parâmetro `frequência` da função COUPPCD.",
+          detail: "O número de pagamentos de juros ou cupons por ano (1, 2 ou 4).",
           example: "01)",
           require: "m",
           repeat: "n",
@@ -5895,7 +5895,7 @@ module.exports = {
         },
         {
           name: "convenção_contagem_dias",
-          detail: "Parâmetro `convenção_contagem_dias` da função COUPPCD.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5906,8 +5906,8 @@ module.exports = {
     {
       n: "FV",
       t: 8,
-      d: "Descrição da função FV.",
-      a: "Resumo da função FV.",
+      d: "Calcula o valor futuro de um investimento de anuidade com base em pagamentos periódicos de valor constante e uma taxa de juros constante.",
+      a: "Valor futuro de um investimento de anuidade.",
       m: [
         3,
         5
@@ -5915,7 +5915,7 @@ module.exports = {
       p: [
         {
           name: "taxa",
-          detail: "Parâmetro `taxa` da função FV.",
+          detail: "A taxa de juros.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -5923,7 +5923,7 @@ module.exports = {
         },
         {
           name: "número_períodos",
-          detail: "Parâmetro `número_períodos` da função FV.",
+          detail: "O número de pagamentos a serem feitos.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5931,7 +5931,7 @@ module.exports = {
         },
         {
           name: "valor_pagamento",
-          detail: "Parâmetro `valor_pagamento` da função FV.",
+          detail: "O valor por período a ser pago.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5939,7 +5939,7 @@ module.exports = {
         },
         {
           name: "valor_presente",
-          detail: "Parâmetro `valor_presente` da função FV.",
+          detail: "O valor atual da anuidade.",
           example: "400",
           require: "m",
           repeat: "n",
@@ -5947,7 +5947,7 @@ module.exports = {
         },
         {
           name: "fim_ou_início",
-          detail: "Parâmetro `fim_ou_início` da função FV.",
+          detail: "Se os pagamentos são devidos no final (`0`) ou no início (`1`) de cada período.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5958,8 +5958,8 @@ module.exports = {
     {
       n: "FVSCHEDULE",
       t: 8,
-      d: "Descrição da função FVSCHEDULE.",
-      a: "Resumo da função FVSCHEDULE.",
+      d: "Calcula o valor futuro de um principal com base em uma série especificada de taxas de juros potencialmente variáveis.",
+      a: "Valor futuro do principal a partir de uma série de taxas.",
       m: [
         2,
         2
@@ -5967,7 +5967,7 @@ module.exports = {
       p: [
         {
           name: "capital",
-          detail: "Parâmetro `capital` da função FVSCHEDULE.",
+          detail: "O montante do capital inicial ou valor sobre o qual capitalizar.",
           example: "10000",
           require: "m",
           repeat: "n",
@@ -5975,7 +5975,7 @@ module.exports = {
         },
         {
           name: "cronograma_taxas",
-          detail: "Parâmetro `cronograma_taxas` da função FVSCHEDULE.",
+          detail: "Uma série de taxas de juros a capitalizar sobre o `principal`.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -5986,8 +5986,8 @@ module.exports = {
     {
       n: "YIELD",
       t: 8,
-      d: "Descrição da função YIELD.",
-      a: "Resumo da função YIELD.",
+      d: "Calcula o rendimento anual de um título que paga juros periódicos, como um Título do Tesouro dos EUA, com base no preço.",
+      a: "Rendimento anual de um título que paga juros periódicos.",
       m: [
         6,
         7
@@ -5995,7 +5995,7 @@ module.exports = {
       p: [
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função YIELD.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6003,7 +6003,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função YIELD.",
+          detail: "A data de vencimento ou término do título, quando pode ser resgatado pelo valor de face, ou nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6011,7 +6011,7 @@ module.exports = {
         },
         {
           name: "taxa",
-          detail: "Parâmetro `taxa` da função YIELD.",
+          detail: "A taxa de juros anualizada.",
           example: "0.057",
           require: "m",
           repeat: "n",
@@ -6019,7 +6019,7 @@ module.exports = {
         },
         {
           name: "preço",
-          detail: "Parâmetro `preço` da função YIELD.",
+          detail: "O preço pelo qual o título é comprado por 100 do valor de face.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -6027,7 +6027,7 @@ module.exports = {
         },
         {
           name: "valor_resgate",
-          detail: "Parâmetro `valor_resgate` da função YIELD.",
+          detail: "O valor de resgate por 100 do valor de face, ou nominal.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6035,7 +6035,7 @@ module.exports = {
         },
         {
           name: "frequência",
-          detail: "Parâmetro `frequência` da função YIELD.",
+          detail: "O número de pagamentos de juros ou cupons por ano (1, 2 ou 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6043,7 +6043,7 @@ module.exports = {
         },
         {
           name: "convenção_contagem_dias",
-          detail: "Parâmetro `convenção_contagem_dias` da função YIELD.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6054,8 +6054,8 @@ module.exports = {
     {
       n: "YIELDDISC",
       t: 8,
-      d: "Descrição da função YIELDDISC.",
-      a: "Resumo da função YIELDDISC.",
+      d: "Calcula o rendimento anual de um título de desconto (sem juros), com base no preço.",
+      a: "Rendimento anual de um título de desconto.",
       m: [
         4,
         5
@@ -6063,7 +6063,7 @@ module.exports = {
       p: [
         {
           name: "data_liquidação",
-          detail: "Parâmetro `data_liquidação` da função YIELDDISC.",
+          detail: "A data de liquidação do título, a data após a emissão em que o título é entregue ao comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6071,7 +6071,7 @@ module.exports = {
         },
         {
           name: "vencimento",
-          detail: "Parâmetro `vencimento` da função YIELDDISC.",
+          detail: "A data de vencimento ou término do título, quando pode ser resgatado pelo valor de face, ou nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6079,7 +6079,7 @@ module.exports = {
         },
         {
           name: "preço",
-          detail: "Parâmetro `preço` da função YIELDDISC.",
+          detail: "O preço pelo qual o título é comprado por 100 do valor de face.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -6087,7 +6087,7 @@ module.exports = {
         },
         {
           name: "valor_resgate",
-          detail: "Parâmetro `valor_resgate` da função YIELDDISC.",
+          detail: "O valor de resgate por 100 do valor de face, ou nominal.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6095,7 +6095,7 @@ module.exports = {
         },
         {
           name: "convenção_contagem_dias",
-          detail: "Parâmetro `convenção_contagem_dias` da função YIELDDISC.",
+          detail: "Um indicador de qual método de contagem de dias usar.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6106,8 +6106,8 @@ module.exports = {
     {
       n: "NOMINAL",
       t: 8,
-      d: "Descrição da função NOMINAL.",
-      a: "Resumo da função NOMINAL.",
+      d: "Calcula a taxa de juros nominal anual dadas a taxa efetiva e o número de períodos de capitalização por ano.",
+      a: "Taxa de juros nominal anual.",
       m: [
         2,
         2
@@ -6115,7 +6115,7 @@ module.exports = {
       p: [
         {
           name: "taxa_efetiva",
-          detail: "Parâmetro `taxa_efetiva` da função NOMINAL.",
+          detail: "A taxa de juros efetiva por ano.",
           example: "0.85",
           require: "m",
           repeat: "n",
@@ -6123,7 +6123,7 @@ module.exports = {
         },
         {
           name: "períodos_por_ano",
-          detail: "Parâmetro `períodos_por_ano` da função NOMINAL.",
+          detail: "O número de períodos de capitalização por ano.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6134,8 +6134,8 @@ module.exports = {
     {
       n: "XIRR",
       t: 8,
-      d: "Descrição da função XIRR.",
-      a: "Resumo da função XIRR.",
+      d: "Calcula a taxa interna de retorno de um investimento com base em uma série especificada de fluxos de caixa potencialmente espaçados de forma irregular.",
+      a: "Taxa interna de retorno dados fluxos de caixa não periódicos.",
       m: [
         2,
         3
@@ -6143,7 +6143,7 @@ module.exports = {
       p: [
         {
           name: "valores_fluxo_caixa",
-          detail: "Parâmetro `valores_fluxo_caixa` da função XIRR.",
+          detail: "Uma matriz ou intervalo contendo a receita ou pagamentos associados ao investimento.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
@@ -6151,7 +6151,7 @@ module.exports = {
         },
         {
           name: "datas_fluxo_caixa",
-          detail: "Parâmetro `datas_fluxo_caixa` da função XIRR.",
+          detail: "Uma matriz ou intervalo com datas correspondentes aos fluxos de caixa em `valores_fluxo_caixa`.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6159,7 +6159,7 @@ module.exports = {
         },
         {
           name: "estimativa_taxa",
-          detail: "Parâmetro `estimativa_taxa` da função XIRR.",
+          detail: "Uma estimativa de qual será a taxa interna de retorno.",
           example: "250",
           require: "o",
           repeat: "n",
