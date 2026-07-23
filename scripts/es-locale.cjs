@@ -41,8 +41,8 @@ module.exports = {  "insertLink": {
     {
       n: "SUMIF",
       t: 0,
-      d: "Returns a conditional sum across a range.",
-      a: "A conditional sum across a range.",
+      d: "Devuelve una suma condicional en un rango.",
+      a: "Una suma condicional en un rango.",
       m: [
         2,
         3
@@ -50,7 +50,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango",
-          detail: "The range which is tested against `criterion`.",
+          detail: "El rango que se comprueba con respecto a `criterio`.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -58,7 +58,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterio",
-          detail: "The pattern or test to apply to `range`.",
+          detail: "El patrón o prueba que se aplica a `rango`.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -66,7 +66,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango_suma",
-          detail: "The range to be summed, if different from `range`.",
+          detail: "El rango que se sumará, si es distinto de `rango`.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -77,8 +77,8 @@ module.exports = {  "insertLink": {
     {
       n: "TAN",
       t: 0,
-      d: "Returns the tangent of an angle provided in radians.",
-      a: "Tangent of an angle provided in radians.",
+      d: "Devuelve la tangente de un ángulo proporcionado en radianes.",
+      a: "Tangente de un ángulo en radianes.",
       m: [
         1,
         1
@@ -86,7 +86,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "ángulo",
-          detail: "The angle to find the tangent of, in radians.",
+          detail: "El ángulo cuya tangente se desea calcular, en radianes.",
           example: "45*PI()/180",
           require: "m",
           repeat: "n",
@@ -97,8 +97,8 @@ module.exports = {  "insertLink": {
     {
       n: "TANH",
       t: 0,
-      d: "Returns the hyperbolic tangent of any real number.",
-      a: "Hyperbolic tangent of any real number.",
+      d: "Devuelve la tangente hiperbólica de cualquier número real.",
+      a: "Tangente hiperbólica de cualquier número real.",
       m: [
         1,
         1
@@ -106,7 +106,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "Any real value to calculate the hyperbolic tangent of.",
+          detail: "Cualquier valor real cuya tangente hiperbólica se desea calcular.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -117,8 +117,8 @@ module.exports = {  "insertLink": {
     {
       n: "CEILING",
       t: 0,
-      d: "Rounds a number up to the nearest integer multiple of specified significance `factor`.",
-      a: "Rounds number up to nearest multiple of a factor.",
+      d: "Redondea un número hacia arriba al múltiplo entero más cercano del `factor` de significación especificado.",
+      a: "Redondea un número hacia arriba al múltiplo más cercano de un factor.",
       m: [
         2,
         2
@@ -126,7 +126,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to round up to the nearest integer multiple of `factor`.",
+          detail: "El valor que se redondeará hacia arriba al múltiplo entero más cercano de `factor`.",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -134,7 +134,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "factor",
-          detail: "The number to whose multiples `value` will be rounded.",
+          detail: "El número a cuyos múltiplos se redondeará `valor`.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -145,8 +145,8 @@ module.exports = {  "insertLink": {
     {
       n: "ATAN",
       t: 0,
-      d: "Returns the inverse tangent of a value, in radians.",
-      a: "Inverse tangent of a value, in radians.",
+      d: "Devuelve el arcotangente de un valor, en radianes.",
+      a: "Arcotangente de un valor, en radianes.",
       m: [
         1,
         1
@@ -154,7 +154,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value for which to calculate the inverse tangent.",
+          detail: "El valor para el que se calculará el arcotangente.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -165,8 +165,8 @@ module.exports = {  "insertLink": {
     {
       n: "ASINH",
       t: 0,
-      d: "Returns the inverse hyperbolic sine of a number.",
-      a: "Inverse hyperbolic sine of a number.",
+      d: "Devuelve el seno hiperbólico inverso de un número.",
+      a: "Seno hiperbólico inverso de un número.",
       m: [
         1,
         1
@@ -174,7 +174,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value for which to calculate the inverse hyperbolic sine.",
+          detail: "El valor para el que se calculará el seno hiperbólico inverso.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -185,8 +185,8 @@ module.exports = {  "insertLink": {
     {
       n: "ABS",
       t: 0,
-      d: "Returns the absolute value of a number.",
-      a: "Absolute value of a number.",
+      d: "Devuelve el valor absoluto de un número.",
+      a: "Valor absoluto de un número.",
       m: [
         1,
         1
@@ -194,7 +194,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The number of which to return the absolute value.",
+          detail: "El número cuyo valor absoluto se devolverá.",
           example: "-2",
           require: "m",
           repeat: "n",
@@ -205,8 +205,8 @@ module.exports = {  "insertLink": {
     {
       n: "ACOS",
       t: 0,
-      d: "Returns the inverse cosine of a value, in radians.",
-      a: "Inverse cosine of a value, in radians.",
+      d: "Devuelve el arcocoseno de un valor, en radianes.",
+      a: "Arcocoseno de un valor, en radianes.",
       m: [
         1,
         1
@@ -214,7 +214,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value for which to calculate the inverse cosine. Must be between `-1` and `1`, inclusive.",
+          detail: "El valor para el que se calculará el arcocoseno. Debe estar entre `-1` y `1`, ambos inclusive.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -225,8 +225,8 @@ module.exports = {  "insertLink": {
     {
       n: "ACOSH",
       t: 0,
-      d: "Returns the inverse hyperbolic cosine of a number.",
-      a: "Inverse hyperbolic cosine of a number.",
+      d: "Devuelve el coseno hiperbólico inverso de un número.",
+      a: "Coseno hiperbólico inverso de un número.",
       m: [
         1,
         1
@@ -234,7 +234,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value for which to calculate the inverse hyperbolic cosine. Must be greater than or equal to `1`.",
+          detail: "El valor para el que se calculará el coseno hiperbólico inverso. Debe ser mayor o igual que `1`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -245,8 +245,8 @@ module.exports = {  "insertLink": {
     {
       n: "MULTINOMIAL",
       t: 0,
-      d: "Returns the factorial of the sum of values divided by the product of the values' factorials.",
-      a: "Multinomial distribution function.",
+      d: "Devuelve el factorial de la suma de los valores dividido entre el producto de los factoriales de dichos valores.",
+      a: "Función de distribución multinomial.",
       m: [
         1,
         255
@@ -254,7 +254,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider.",
+          detail: "El primer valor o rango que se tendrá en cuenta.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -262,7 +262,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -273,8 +273,8 @@ module.exports = {  "insertLink": {
     {
       n: "ATANH",
       t: 0,
-      d: "Returns the inverse hyperbolic tangent of a number.",
-      a: "Inverse hyperbolic tangent of a number.",
+      d: "Devuelve la tangente hiperbólica inversa de un número.",
+      a: "Tangente hiperbólica inversa de un número.",
       m: [
         1,
         1
@@ -282,7 +282,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value for which to calculate the inverse hyperbolic tangent. Must be between -1 and 1, exclusive.",
+          detail: "El valor para el que se calculará la tangente hiperbólica inversa. Debe estar entre -1 y 1, sin incluirlos.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -293,8 +293,8 @@ module.exports = {  "insertLink": {
     {
       n: "ATAN2",
       t: 0,
-      d: "Returns the angle between the x-axis and a line segment from the origin (0,0) to specified coordinate pair (`x`,`y`), in radians.",
-      a: "Arctangent of a value.",
+      d: "Devuelve el ángulo entre el eje X y un segmento de recta desde el origen (0,0) hasta el par de coordenadas especificado (`x`,`y`), en radianes.",
+      a: "Arcotangente de un valor.",
       m: [
         2,
         2
@@ -302,7 +302,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The x coordinate of the endpoint of the line segment for which to calculate the angle from the x-axis.",
+          detail: "La coordenada X del extremo del segmento de recta para el que se calculará el ángulo respecto al eje X.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -310,7 +310,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "y",
-          detail: "The y coordinate of the endpoint of the line segment for which to calculate the angle from the x-axis.",
+          detail: "La coordenada Y del extremo del segmento de recta para el que se calculará el ángulo respecto al eje X.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -321,8 +321,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUNTBLANK",
       t: 1,
-      d: "Returns the number of empty values in a list of values and ranges.",
-      a: "Number of empty values.",
+      d: "Devuelve el número de valores vacíos en una lista de valores y rangos.",
+      a: "Número de valores vacíos.",
       m: [
         1,
         1
@@ -330,7 +330,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range in which to count the number of blanks.",
+          detail: "El primer valor o rango en el que se contará el número de celdas en blanco.",
           example: "A2:C100",
           require: "m",
           repeat: "n",
@@ -341,8 +341,8 @@ module.exports = {  "insertLink": {
     {
       n: "COSH",
       t: 0,
-      d: "Returns the hyperbolic cosine of any real number.",
-      a: "Hyperbolic cosine of any real number.",
+      d: "Devuelve el coseno hiperbólico de cualquier número real.",
+      a: "Coseno hiperbólico de cualquier número real.",
       m: [
         1,
         1
@@ -350,7 +350,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "Any real value to calculate the hyperbolic cosine of.",
+          detail: "Cualquier valor real cuyo coseno hiperbólico se desea calcular.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -361,8 +361,8 @@ module.exports = {  "insertLink": {
     {
       n: "INT",
       t: 0,
-      d: "Rounds a number down to the nearest integer that is less than or equal to it.",
-      a: "Rounds number down to nearest integer.",
+      d: "Redondea un número hacia abajo al entero más cercano que sea menor o igual que él.",
+      a: "Redondea un número hacia abajo al entero más cercano.",
       m: [
         1,
         1
@@ -370,7 +370,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to round down to the nearest integer.",
+          detail: "El valor que se redondeará hacia abajo al entero más cercano.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -381,8 +381,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISEVEN",
       t: 0,
-      d: "Checks whether the provided value is even.",
-      a: "Whether the provided value is even.",
+      d: "Comprueba si el valor proporcionado es par.",
+      a: "Indica si el valor proporcionado es par.",
       m: [
         1,
         1
@@ -390,7 +390,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to be verified as even.",
+          detail: "El valor que se comprobará como par.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -401,8 +401,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISODD",
       t: 0,
-      d: "Checks whether the provided value is odd.",
-      a: "Whether the provided value is odd.",
+      d: "Comprueba si el valor proporcionado es impar.",
+      a: "Indica si el valor proporcionado es impar.",
       m: [
         1,
         1
@@ -410,7 +410,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to be verified as odd.",
+          detail: "El valor que se comprobará como impar.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -421,8 +421,8 @@ module.exports = {  "insertLink": {
     {
       n: "LCM",
       t: 0,
-      d: "Returns the least common multiple of one or more integers.",
-      a: "Least common multiple of one or more integers.",
+      d: "Devuelve el mínimo común múltiplo de uno o varios números enteros.",
+      a: "Mínimo común múltiplo de uno o varios números enteros.",
       m: [
         1,
         255
@@ -430,7 +430,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range whose factors to consider in a calculation to find the least common multiple.",
+          detail: "El primer valor o rango cuyos factores se tendrán en cuenta para calcular el mínimo común múltiplo.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -438,7 +438,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges whose factors to consider to find the least common multiple.",
+          detail: "Valores o rangos adicionales cuyos factores se tendrán en cuenta para calcular el mínimo común múltiplo.",
           example: "3",
           require: "o",
           repeat: "y",
@@ -449,8 +449,8 @@ module.exports = {  "insertLink": {
     {
       n: "LN",
       t: 0,
-      d: "Returns the logarithm of a number, base e (Euler's number).",
-      a: "The logarithm of a number, base e (euler's number).",
+      d: "Devuelve el logaritmo de un número en base e (el número de Euler).",
+      a: "Logaritmo de un número en base e (el número de Euler).",
       m: [
         1,
         1
@@ -458,7 +458,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value for which to calculate the logarithm, base e.",
+          detail: "El valor para el que se calculará el logaritmo en base e.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -469,8 +469,8 @@ module.exports = {  "insertLink": {
     {
       n: "LOG",
       t: 0,
-      d: "Returns the logarithm of a number with respect to a base.",
-      a: "The logarithm of a number with respect to a base.",
+      d: "Devuelve el logaritmo de un número respecto a una base.",
+      a: "Logaritmo de un número respecto a una base.",
       m: [
         1,
         2
@@ -478,7 +478,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value for which to calculate the logarithm.",
+          detail: "El valor para el que se calculará el logaritmo.",
           example: "128",
           require: "m",
           repeat: "n",
@@ -486,7 +486,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "base",
-          detail: "The base to use for calculation of the logarithm.",
+          detail: "La base que se usará para calcular el logaritmo.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -497,8 +497,8 @@ module.exports = {  "insertLink": {
     {
       n: "LOG10",
       t: 0,
-      d: "Returns the logarithm of a number, base 10.",
-      a: "The logarithm of a number, base 10.",
+      d: "Devuelve el logaritmo de un número en base 10.",
+      a: "Logaritmo de un número en base 10.",
       m: [
         1,
         1
@@ -506,7 +506,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value for which to calculate the logarithm, base 10.",
+          detail: "El valor para el que se calculará el logaritmo en base 10.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -517,8 +517,8 @@ module.exports = {  "insertLink": {
     {
       n: "MOD",
       t: 0,
-      d: "Returns the result of the modulo operator, the remainder after a division operation.",
-      a: "Modulo (remainder) operator.",
+      d: "Devuelve el resultado del operador módulo, el resto tras una operación de división.",
+      a: "Operador módulo (resto).",
       m: [
         2,
         2
@@ -526,7 +526,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "dividendo",
-          detail: "The number to be divided to find the remainder.",
+          detail: "El número que se dividirá para hallar el resto.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -534,7 +534,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "divisor",
-          detail: "The number to divide by.",
+          detail: "El número por el que se dividirá.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -545,8 +545,8 @@ module.exports = {  "insertLink": {
     {
       n: "MROUND",
       t: 0,
-      d: "Rounds one number to the nearest integer multiple of another.",
-      a: "Rounds a number to the nearest integer multiple.",
+      d: "Redondea un número al múltiplo entero más cercano de otro.",
+      a: "Redondea un número al múltiplo entero más cercano.",
       m: [
         2,
         2
@@ -554,7 +554,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The number to round to the nearest integer multiple of another.",
+          detail: "El número que se redondeará al múltiplo entero más cercano de otro.",
           example: "21",
           require: "m",
           repeat: "n",
@@ -562,7 +562,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "factor",
-          detail: "The number to whose multiples `value` will be rounded.",
+          detail: "El número a cuyos múltiplos se redondeará `valor`.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -573,8 +573,8 @@ module.exports = {  "insertLink": {
     {
       n: "ODD",
       t: 0,
-      d: "Rounds a number up to the nearest odd integer.",
-      a: "Rounds a number up to the nearest odd integer.",
+      d: "Redondea un número hacia arriba al entero impar más cercano.",
+      a: "Redondea un número hacia arriba al entero impar más cercano.",
       m: [
         1,
         1
@@ -582,7 +582,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to round to the next greatest odd number.",
+          detail: "El valor que se redondeará al siguiente número impar mayor.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -593,8 +593,8 @@ module.exports = {  "insertLink": {
     {
       n: "SUMSQ",
       t: 0,
-      d: "Returns the sum of the squares of a series of numbers and/or cells.",
-      a: "Sum of squares.",
+      d: "Devuelve la suma de los cuadrados de una serie de números o celdas.",
+      a: "Suma de cuadrados.",
       m: [
         1,
         255
@@ -602,7 +602,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first number or range whose squares to add together.",
+          detail: "El primer número o rango cuyos cuadrados se sumarán.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -610,7 +610,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional numbers or ranges whose squares to add to the square(s) of `value1`.",
+          detail: "Números o rangos adicionales cuyos cuadrados se sumarán al de `valor1`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -621,8 +621,8 @@ module.exports = {  "insertLink": {
     {
       n: "COMBIN",
       t: 0,
-      d: "Returns the number of ways to choose some number of objects from a pool of a given size of objects.",
-      a: "Number of combinations from a set of objects.",
+      d: "Devuelve el número de formas de elegir cierto número de objetos de un conjunto de un tamaño dado.",
+      a: "Número de combinaciones de un conjunto de objetos.",
       m: [
         2,
         2
@@ -630,7 +630,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "n",
-          detail: "The size of the pool of objects to choose from.",
+          detail: "El tamaño del conjunto de objetos del que se elegirá.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -638,7 +638,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "k",
-          detail: "The number of objects to choose.",
+          detail: "El número de objetos que se elegirán.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -649,8 +649,8 @@ module.exports = {  "insertLink": {
     {
       n: "SUM",
       t: 0,
-      d: "Returns the sum of a series of numbers and/or cells.",
-      a: "Sum of a series of numbers and/or cells.",
+      d: "Devuelve la suma de una serie de números o celdas.",
+      a: "Suma de una serie de números o celdas.",
       m: [
         1,
         255
@@ -658,7 +658,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first number or range to add together.",
+          detail: "El primer número o rango que se sumará.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -666,7 +666,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional numbers or ranges to add to `value1`.",
+          detail: "Números o rangos adicionales que se sumarán a `valor1`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -677,8 +677,8 @@ module.exports = {  "insertLink": {
     {
       n: "SUBTOTAL",
       t: 0,
-      d: "Returns a subtotal for a vertical range of cells using a specified aggregation function.",
-      a: "Subtotal for a range using a specific function.",
+      d: "Devuelve un subtotal para un rango vertical de celdas mediante una función de agregación especificada.",
+      a: "Subtotal de un rango usando una función específica.",
       m: [
         2,
         256
@@ -686,7 +686,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "código_función",
-          detail: "The function to use in subtotal aggregation.",
+          detail: "La función que se usará en la agregación del subtotal.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -694,7 +694,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango1",
-          detail: "The first range over which to calculate a subtotal.",
+          detail: "El primer rango para el que se calculará un subtotal.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -702,7 +702,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango2",
-          detail: "Additional ranges over which to calculate subtotals.",
+          detail: "Rangos adicionales para los que se calcularán subtotales.",
           example: "B2:B8",
           require: "o",
           repeat: "y",
@@ -713,8 +713,8 @@ module.exports = {  "insertLink": {
     {
       n: "ASIN",
       t: 0,
-      d: "Returns the inverse sine of a value, in radians.",
-      a: "Inverse sine of a value, in radians.",
+      d: "Devuelve el arcoseno de un valor, en radianes.",
+      a: "Arcoseno de un valor, en radianes.",
       m: [
         1,
         1
@@ -722,7 +722,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value for which to calculate the inverse sine. Must be between `-1` and `1`, inclusive.",
+          detail: "El valor para el que se calculará el arcoseno. Debe estar entre `-1` y `1`, ambos inclusive.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -733,8 +733,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUNTIF",
       t: 1,
-      d: "Returns a conditional count across a range.",
-      a: "A conditional count across a range.",
+      d: "Devuelve un recuento condicional en un rango.",
+      a: "Un recuento condicional en un rango.",
       m: [
         2,
         2
@@ -742,7 +742,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango",
-          detail: "The range that is tested against `criterion`.",
+          detail: "El rango que se comprueba con respecto a `criterio`.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -750,7 +750,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterio",
-          detail: "The pattern or test to apply to `range`.",
+          detail: "El patrón o prueba que se aplica a `rango`.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -761,8 +761,8 @@ module.exports = {  "insertLink": {
     {
       n: "RADIANS",
       t: 0,
-      d: "Converts an angle value in degrees to radians.",
-      a: "Converts an angle value in degrees to radians.",
+      d: "Convierte un valor de ángulo en grados a radianes.",
+      a: "Convierte un valor de ángulo en grados a radianes.",
       m: [
         1,
         1
@@ -770,7 +770,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "ángulo",
-          detail: "The angle to convert from degrees to radians.",
+          detail: "El ángulo que se convertirá de grados a radianes.",
           example: "180",
           require: "m",
           repeat: "n",
@@ -781,8 +781,8 @@ module.exports = {  "insertLink": {
     {
       n: "RAND",
       t: 0,
-      d: "Returns a random number between 0 inclusive and 1 exclusive.",
-      a: "A random number between 0 inclusive and 1 exclusive.",
+      d: "Devuelve un número aleatorio entre 0 (inclusive) y 1 (exclusive).",
+      a: "Un número aleatorio entre 0 inclusive y 1 exclusive.",
       m: [
         0,
         0
@@ -792,8 +792,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUNTUNIQUE",
       t: 0,
-      d: "Counts the number of unique values in a list of specified values and ranges.",
-      a: "Counts number of unique values in a range.",
+      d: "Cuenta el número de valores únicos en una lista de valores y rangos especificados.",
+      a: "Cuenta el número de valores únicos en un rango.",
       m: [
         1,
         255
@@ -801,7 +801,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider for uniqueness.",
+          detail: "El primer valor o rango que se tendrá en cuenta para la unicidad.",
           example: "A1:C100",
           require: "m",
           repeat: "n",
@@ -809,7 +809,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider for uniqueness.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta para la unicidad.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -820,8 +820,8 @@ module.exports = {  "insertLink": {
     {
       n: "DEGREES",
       t: 0,
-      d: "Converts an angle value in radians to degrees.",
-      a: "Converts an angle value in radians to degrees.",
+      d: "Convierte un valor de ángulo en radianes a grados.",
+      a: "Convierte un valor de ángulo en radianes a grados.",
       m: [
         1,
         1
@@ -829,7 +829,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "ángulo",
-          detail: "The angle to convert from radians to degrees.",
+          detail: "El ángulo que se convertirá de radianes a grados.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -840,8 +840,8 @@ module.exports = {  "insertLink": {
     {
       n: "ERFC",
       t: 9,
-      d: "Returns the complementary Gauss error function of a value.",
-      a: "Complementary gauss error function of a value.",
+      d: "Devuelve la función de error de Gauss complementaria de un valor.",
+      a: "Función de error de Gauss complementaria de un valor.",
       m: [
         1,
         1
@@ -849,7 +849,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "z",
-          detail: "The number for which to calculate the complementary Gauss error function.",
+          detail: "El número para el que se calculará la función de error de Gauss complementaria.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -860,8 +860,8 @@ module.exports = {  "insertLink": {
     {
       n: "EVEN",
       t: 0,
-      d: "Rounds a number up to the nearest even integer.",
-      a: "Rounds a number up to the nearest even integer.",
+      d: "Redondea un número hacia arriba al entero par más cercano.",
+      a: "Redondea un número hacia arriba al entero par más cercano.",
       m: [
         1,
         1
@@ -869,7 +869,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to round to the next greatest even number.",
+          detail: "El valor que se redondeará al siguiente número par mayor.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -880,8 +880,8 @@ module.exports = {  "insertLink": {
     {
       n: "EXP",
       t: 0,
-      d: "Returns Euler's number, e (~2.718) raised to a power.",
-      a: "Euler's number, e (~2.718) raised to a power.",
+      d: "Devuelve el número de Euler, e (~2,718), elevado a una potencia.",
+      a: "El número de Euler, e (~2,718), elevado a una potencia.",
       m: [
         1,
         1
@@ -889,7 +889,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "exponente",
-          detail: "The exponent to raise e to.",
+          detail: "El exponente al que se elevará e.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -900,8 +900,8 @@ module.exports = {  "insertLink": {
     {
       n: "FACT",
       t: 0,
-      d: "Returns the factorial of a number.",
-      a: "Factorial of a number.",
+      d: "Devuelve el factorial de un número.",
+      a: "Factorial de un número.",
       m: [
         1,
         1
@@ -909,7 +909,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The number or reference to a number whose factorial will be calculated and returned.",
+          detail: "El número, o referencia a un número, cuyo factorial se calculará y devolverá.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -920,8 +920,8 @@ module.exports = {  "insertLink": {
     {
       n: "FACTDOUBLE",
       t: 0,
-      d: "Returns the \"double factorial\" of a number.",
-      a: "\"double factorial\" of a number.",
+      d: "Devuelve el \"factorial doble\" de un número.",
+      a: "\"Factorial doble\" de un número.",
       m: [
         1,
         1
@@ -929,7 +929,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The number or reference to a number whose double factorial will be calculated and returned.",
+          detail: "El número, o referencia a un número, cuyo factorial doble se calculará y devolverá.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -940,8 +940,8 @@ module.exports = {  "insertLink": {
     {
       n: "PI",
       t: 0,
-      d: "Returns the value of Pi to 14 decimal places.",
-      a: "The number pi.",
+      d: "Devuelve el valor de Pi con 14 decimales.",
+      a: "El número pi.",
       m: [
         0,
         0
@@ -951,8 +951,8 @@ module.exports = {  "insertLink": {
     {
       n: "FLOOR",
       t: 0,
-      d: "Rounds a number down to the nearest integer multiple of specified significance `factor`.",
-      a: "Rounds number down to nearest multiple of a factor.",
+      d: "Redondea un número hacia abajo al múltiplo entero más cercano del `factor` de significación especificado.",
+      a: "Redondea un número hacia abajo al múltiplo más cercano de un factor.",
       m: [
         2,
         2
@@ -960,7 +960,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to round down to the nearest integer multiple of `factor`.",
+          detail: "El valor que se redondeará hacia abajo al múltiplo entero más cercano de `factor`.",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -968,7 +968,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "factor",
-          detail: "The number to whose multiples `value` will be rounded.",
+          detail: "El número a cuyos múltiplos se redondeará `valor`.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -979,8 +979,8 @@ module.exports = {  "insertLink": {
     {
       n: "GCD",
       t: 0,
-      d: "Returns the greatest common divisor of one or more integers.",
-      a: "Greatest common divisor of one or more integers.",
+      d: "Devuelve el máximo común divisor de uno o varios números enteros.",
+      a: "Máximo común divisor de uno o varios números enteros.",
       m: [
         1,
         255
@@ -988,7 +988,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range whose factors to consider in a calculation to find the greatest common divisor.",
+          detail: "El primer valor o rango cuyos factores se tendrán en cuenta para calcular el máximo común divisor.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
@@ -996,7 +996,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges whose factors to consider to find the greatest common divisor.",
+          detail: "Valores o rangos adicionales cuyos factores se tendrán en cuenta para calcular el máximo común divisor.",
           example: "96",
           require: "o",
           repeat: "y",
@@ -1007,8 +1007,8 @@ module.exports = {  "insertLink": {
     {
       n: "RANDBETWEEN",
       t: 0,
-      d: "Returns a uniformly random integer between two values, inclusive.",
-      a: "Random integer between two values, inclusive.",
+      d: "Devuelve un entero aleatorio uniforme entre dos valores, ambos inclusive.",
+      a: "Entero aleatorio entre dos valores, ambos inclusive.",
       m: [
         2,
         2
@@ -1016,7 +1016,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "límite_inferior",
-          detail: "The low end of the random range.",
+          detail: "El extremo inferior del rango aleatorio.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1024,7 +1024,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "límite_superior",
-          detail: "The high end of the random range.",
+          detail: "El extremo superior del rango aleatorio.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -1035,8 +1035,8 @@ module.exports = {  "insertLink": {
     {
       n: "ROUND",
       t: 0,
-      d: "Rounds a number to a certain number of decimal places according to standard rules.",
-      a: "Rounds a number according to standard rules.",
+      d: "Redondea un número a un número determinado de decimales según las reglas estándar.",
+      a: "Redondea un número según las reglas estándar.",
       m: [
         2,
         2
@@ -1044,7 +1044,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to round to `places` number of places.",
+          detail: "El valor que se redondeará a `posiciones` decimales.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1052,7 +1052,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "decimales",
-          detail: "The number of decimal places to which to round.",
+          detail: "El número de decimales al que se redondeará.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1063,8 +1063,8 @@ module.exports = {  "insertLink": {
     {
       n: "ROUNDDOWN",
       t: 0,
-      d: "Rounds a number to a certain number of decimal places, always rounding down to the next valid increment.",
-      a: "Rounds down a number.",
+      d: "Redondea un número a un número determinado de decimales, redondeando siempre hacia abajo al siguiente incremento válido.",
+      a: "Redondea un número hacia abajo.",
       m: [
         2,
         2
@@ -1072,7 +1072,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to round to `places` number of places, always rounding down.",
+          detail: "El valor que se redondeará a `posiciones` decimales, siempre hacia abajo.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1080,7 +1080,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "decimales",
-          detail: "The number of decimal places to which to round.",
+          detail: "El número de decimales al que se redondeará.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1091,8 +1091,8 @@ module.exports = {  "insertLink": {
     {
       n: "ROUNDUP",
       t: 0,
-      d: "Rounds a number to a certain number of decimal places, always rounding up to the next valid increment.",
-      a: "Rounds up a number.",
+      d: "Redondea un número a un número determinado de decimales, redondeando siempre hacia arriba al siguiente incremento válido.",
+      a: "Redondea un número hacia arriba.",
       m: [
         2,
         2
@@ -1100,7 +1100,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to round to `places` number of places, always rounding up.",
+          detail: "El valor que se redondeará a `posiciones` decimales, siempre hacia arriba.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -1108,7 +1108,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "decimales",
-          detail: "The number of decimal places to which to round.",
+          detail: "El número de decimales al que se redondeará.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1119,8 +1119,8 @@ module.exports = {  "insertLink": {
     {
       n: "SERIESSUM",
       t: 0,
-      d: "Given parameters `x`, `n`, `m`, and `a`, returns the power series sum a",
-      a: "Sum of a power series.",
+      d: "Dados los parámetros `x`, `n`, `m` y `a`, devuelve la suma de la serie de potencias a1*x^n + a2*x^(n+m) + a3*x^(n+2m) + ... + ai*x^(n+(i-1)m).",
+      a: "Suma de una serie de potencias.",
       m: [
         4,
         4
@@ -1128,7 +1128,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the power series. Varies depending on the type of approximation, may be angle, exponent, or some other value.",
+          detail: "La entrada de la serie de potencias. Varía según el tipo de aproximación; puede ser un ángulo, un exponente u otro valor.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1136,7 +1136,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "n",
-          detail: "The initial power to which to raise `x` in the power series.",
+          detail: "La potencia inicial a la que se elevará `x` en la serie de potencias.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -1144,7 +1144,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "m",
-          detail: "The additive increment by which to increase `x`.",
+          detail: "El incremento aditivo con el que aumentará `x`.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1152,7 +1152,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "a",
-          detail: "The array or range containing the coefficients of the power series.",
+          detail: "La matriz o rango que contiene los coeficientes de la serie de potencias.",
           example: "{FACT(0)",
           require: "m",
           repeat: "n",
@@ -1163,8 +1163,8 @@ module.exports = {  "insertLink": {
     {
       n: "SIGN",
       t: 0,
-      d: "Given an input number, returns `-1` if it is negative, `1` if positive, and `0` if it is zero.",
-      a: "Sign of a provided number (+/-/0).",
+      d: "Dado un número, devuelve `-1` si es negativo, `1` si es positivo y `0` si es cero.",
+      a: "Signo de un número (+/-/0).",
       m: [
         1,
         1
@@ -1172,7 +1172,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value whose sign will be evaluated.",
+          detail: "El valor cuyo signo se evaluará.",
           example: "-42",
           require: "m",
           repeat: "n",
@@ -1183,8 +1183,8 @@ module.exports = {  "insertLink": {
     {
       n: "SIN",
       t: 0,
-      d: "Returns the sine of an angle provided in radians.",
-      a: "Sine of an angle provided in radians.",
+      d: "Devuelve el seno de un ángulo proporcionado en radianes.",
+      a: "Seno de un ángulo en radianes.",
       m: [
         1,
         1
@@ -1192,7 +1192,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "ángulo",
-          detail: "The angle to find the sine of, in radians.",
+          detail: "El ángulo cuyo seno se desea calcular, en radianes.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1203,8 +1203,8 @@ module.exports = {  "insertLink": {
     {
       n: "SINH",
       t: 0,
-      d: "Returns the hyperbolic sine of any real number.",
-      a: "Hyperbolic sine of any real number.",
+      d: "Devuelve el seno hiperbólico de cualquier número real.",
+      a: "Seno hiperbólico de cualquier número real.",
       m: [
         1,
         1
@@ -1212,7 +1212,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "Any real value to calculate the hyperbolic sine of.",
+          detail: "Cualquier valor real cuyo seno hiperbólico se desea calcular.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1223,8 +1223,8 @@ module.exports = {  "insertLink": {
     {
       n: "SQRT",
       t: 0,
-      d: "Returns the positive square root of a positive number.",
-      a: "Positive square root of a positive number.",
+      d: "Devuelve la raíz cuadrada positiva de un número positivo.",
+      a: "Raíz cuadrada positiva de un número positivo.",
       m: [
         1,
         1
@@ -1232,7 +1232,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The number for which to calculate the positive square root.",
+          detail: "El número para el que se calculará la raíz cuadrada positiva.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1243,8 +1243,8 @@ module.exports = {  "insertLink": {
     {
       n: "SQRTPI",
       t: 0,
-      d: "Returns the positive square root of the product of Pi and the given positive number.",
-      a: "Square root of the product of pi and number.",
+      d: "Devuelve la raíz cuadrada positiva del producto de Pi por el número positivo dado.",
+      a: "Raíz cuadrada del producto de pi por un número.",
       m: [
         1,
         1
@@ -1252,7 +1252,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The number which will be multiplied by Pi and have the product's square root returned",
+          detail: "El número que se multiplicará por Pi, devolviendo la raíz cuadrada del producto.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1263,8 +1263,8 @@ module.exports = {  "insertLink": {
     {
       n: "GAMMALN",
       t: 1,
-      d: "Returns the logarithm of a specified Gamma function, base e (Euler's number).",
-      a: "Logarithm of gamma function.",
+      d: "Devuelve el logaritmo, en base e (el número de Euler), de una función Gamma especificada.",
+      a: "Logaritmo de la función gamma.",
       m: [
         1,
         1
@@ -1272,7 +1272,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The input to the Gamma function. The natural logarithm of Gamma(`value`) will be returned.",
+          detail: "La entrada de la función Gamma. Se devolverá el logaritmo natural de Gamma(`valor`).",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1283,8 +1283,8 @@ module.exports = {  "insertLink": {
     {
       n: "COS",
       t: 0,
-      d: "Returns the cosine of an angle provided in radians.",
-      a: "Cosine of an angle provided in radians.",
+      d: "Devuelve el coseno de un ángulo proporcionado en radianes.",
+      a: "Coseno de un ángulo en radianes.",
       m: [
         1,
         1
@@ -1292,7 +1292,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "ángulo",
-          detail: "The angle to find the cosine of, in radians.",
+          detail: "El ángulo cuyo coseno se desea calcular, en radianes.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1303,8 +1303,8 @@ module.exports = {  "insertLink": {
     {
       n: "TRUNC",
       t: 0,
-      d: "Truncates a number to a certain number of significant digits by omitting less significant digits.",
-      a: "Truncates a number.",
+      d: "Trunca un número a un número determinado de cifras significativas, omitiendo las cifras menos significativas.",
+      a: "Trunca un número.",
       m: [
         1,
         2
@@ -1312,7 +1312,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to be truncated.",
+          detail: "El valor que se truncará.",
           example: "3.141592654",
           require: "m",
           repeat: "n",
@@ -1320,7 +1320,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "decimales",
-          detail: "The number of significant digits to the right of the decimal point to retain.",
+          detail: "El número de cifras significativas a la derecha del punto decimal que se conservarán.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -1331,8 +1331,8 @@ module.exports = {  "insertLink": {
     {
       n: "QUOTIENT",
       t: 0,
-      d: "Returns one number divided by another.",
-      a: "One number divided by another.",
+      d: "Devuelve un número dividido entre otro.",
+      a: "Un número dividido entre otro.",
       m: [
         2,
         2
@@ -1340,7 +1340,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "dividendo",
-          detail: "The number to be divided.",
+          detail: "El número que se dividirá.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1348,7 +1348,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "divisor",
-          detail: "The number to divide by.",
+          detail: "El número por el que se dividirá.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1359,8 +1359,8 @@ module.exports = {  "insertLink": {
     {
       n: "POWER",
       t: 0,
-      d: "Returns a number raised to a power.",
-      a: "A number raised to a power.",
+      d: "Devuelve un número elevado a una potencia.",
+      a: "Un número elevado a una potencia.",
       m: [
         2,
         2
@@ -1368,7 +1368,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base",
-          detail: "The number to raise to the `exponent` power.",
+          detail: "El número que se elevará a la potencia `exponente`.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1376,7 +1376,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "exponente",
-          detail: "The exponent to raise `base` to.",
+          detail: "El exponente al que se elevará `base`.",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -1387,8 +1387,8 @@ module.exports = {  "insertLink": {
     {
       n: "SUMIFS",
       t: 0,
-      d: "Returns the sum of a range depending on multiple criteria.",
-      a: "Sums a range depending on multiple criteria.",
+      d: "Devuelve la suma de un rango en función de varios criterios.",
+      a: "Suma un rango en función de varios criterios.",
       m: [
         3,
         257
@@ -1396,7 +1396,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango_suma",
-          detail: "The range to sum.",
+          detail: "El rango que se sumará.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -1404,7 +1404,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango_criterios1",
-          detail: "The range to check against criterion1.",
+          detail: "El rango que se comprobará con respecto a criterio1.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
@@ -1412,7 +1412,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterio1",
-          detail: "The pattern or test to apply to criteria_range1.",
+          detail: "El patrón o prueba que se aplica a rango_criterios1.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -1420,7 +1420,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango_criterios2",
-          detail: "Additional ranges to check.",
+          detail: "Rangos adicionales que se comprobarán.",
           example: " C1:C10",
           require: "o",
           repeat: "y",
@@ -1431,8 +1431,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUNTIFS",
       t: 1,
-      d: "Returns the count of a range depending on multiple criteria.",
-      a: "Count values depending on multiple criteria.",
+      d: "Devuelve el recuento de un rango en función de varios criterios.",
+      a: "Cuenta valores en función de varios criterios.",
       m: [
         2,
         256
@@ -1440,7 +1440,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango_criterios1",
-          detail: "The range to check against `criterion1`.",
+          detail: "El rango que se comprobará con respecto a `criterio1`.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -1448,7 +1448,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterio1",
-          detail: "The pattern or test to apply to `criteria_range1`.",
+          detail: "El patrón o prueba que se aplica a `rango_criterios1`.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -1456,7 +1456,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango_criterios2",
-          detail: "Additional ranges to check.",
+          detail: "Rangos adicionales que se comprobarán.",
           example: " B1:B10",
           require: "o",
           repeat: "y",
@@ -1467,8 +1467,8 @@ module.exports = {  "insertLink": {
     {
       n: "PRODUCT",
       t: 0,
-      d: "Returns the result of multiplying a series of numbers together.",
-      a: "Result of multiplying a series of numbers together.",
+      d: "Devuelve el resultado de multiplicar entre sí una serie de números.",
+      a: "Resultado de multiplicar entre sí una serie de números.",
       m: [
         1,
         255
@@ -1476,7 +1476,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "factor1",
-          detail: "The first number or range to calculate for the product.",
+          detail: "El primer número o rango que se usará para calcular el producto.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1484,7 +1484,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "factor2",
-          detail: "More numbers or ranges to calculate for the product.",
+          detail: "Más números o rangos que se usarán para calcular el producto.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1495,8 +1495,8 @@ module.exports = {  "insertLink": {
     {
       n: "HARMEAN",
       t: 1,
-      d: "Calculates the harmonic mean of a dataset.",
-      a: "The harmonic mean of a dataset.",
+      d: "Calcula la media armónica de un conjunto de datos.",
+      a: "La media armónica de un conjunto de datos.",
       m: [
         1,
         255
@@ -1504,7 +1504,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the population.",
+          detail: "El primer valor o rango de la población.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1512,7 +1512,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the population.",
+          detail: "Valores o rangos adicionales que se incluirán en la población.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1523,8 +1523,8 @@ module.exports = {  "insertLink": {
     {
       n: "HYPGEOMDIST",
       t: 1,
-      d: "Calculates the probability of drawing a certain number of successes in a certain number of tries given a population of a certain size containing a certain number of successes, without replacement of draws.",
-      a: "Hypergeometric distribution probability.",
+      d: "Calcula la probabilidad de obtener un determinado número de éxitos en un determinado número de intentos, dada una población de un tamaño determinado que contiene un determinado número de éxitos, sin reposición de las extracciones.",
+      a: "Probabilidad de la distribución hipergeométrica.",
       m: [
         5,
         5
@@ -1532,7 +1532,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_éxitos",
-          detail: "The desired number of successes.",
+          detail: "El número deseado de éxitos.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1540,7 +1540,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_extracciones",
-          detail: "The number of permitted draws.",
+          detail: "El número de extracciones permitidas.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -1548,7 +1548,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "éxitos_en_población",
-          detail: "The total number of successes in the population.",
+          detail: "El número total de éxitos en la población.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -1556,7 +1556,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tamaño_población",
-          detail: "The total size of the population",
+          detail: "El tamaño total de la población.",
           example: "40",
           require: "m",
           repeat: "n",
@@ -1564,7 +1564,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "acumulado",
-          detail: "Determine the logical value of the function form. \n\nIf cumulative is TRUE(), HYPGEOM.DIST returns the cumulative distribution function;\n\nif FALSE(), it returns the probability density function.",
+          detail: "Determina la forma de la función. \n\nSi cumulative es TRUE(), HYPGEOM.DIST devuelve la función de distribución acumulada;\n\nsi es FALSE(), devuelve la función de densidad de probabilidad.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -1575,8 +1575,8 @@ module.exports = {  "insertLink": {
     {
       n: "INTERCEPT",
       t: 1,
-      d: "Calculates the y-value at which the line resulting from linear regression of a dataset will intersect the y-axis (x=0).",
-      a: "Y-intercept of line derived via linear regression.",
+      d: "Calcula el valor de y en el que la recta resultante de la regresión lineal de un conjunto de datos cruzará el eje y (x=0).",
+      a: "Ordenada en el origen de una recta obtenida mediante regresión lineal.",
       m: [
         2,
         2
@@ -1584,7 +1584,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "El rango que representa la matriz o el vector de datos dependientes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1592,7 +1592,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "El rango que representa la matriz o el vector de datos independientes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1603,8 +1603,8 @@ module.exports = {  "insertLink": {
     {
       n: "KURT",
       t: 1,
-      d: "Calculates the kurtosis of a dataset, which describes the shape, and in particular the \"peakedness\" of that dataset.",
-      a: "Kurtosis of a dataset.",
+      d: "Calcula la curtosis de un conjunto de datos, que describe la forma, y en particular el \"apuntamiento\", de dicho conjunto.",
+      a: "Curtosis de un conjunto de datos.",
       m: [
         1,
         255
@@ -1612,7 +1612,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the dataset.",
+          detail: "El primer valor o rango del conjunto de datos.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1620,7 +1620,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the dataset.",
+          detail: "Valores o rangos adicionales que se incluirán en el conjunto de datos.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1631,8 +1631,8 @@ module.exports = {  "insertLink": {
     {
       n: "LARGE",
       t: 1,
-      d: "Returns the nth largest element from a data set, where n is user-defined.",
-      a: "Nth largest element from a data set.",
+      d: "Devuelve el enésimo elemento más grande de un conjunto de datos, donde n lo define el usuario.",
+      a: "Enésimo elemento más grande de un conjunto de datos.",
       m: [
         2,
         2
@@ -1640,7 +1640,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "Array or range containing the dataset to consider.",
+          detail: "Matriz o rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -1648,7 +1648,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "n",
-          detail: "The rank from largest to smallest of the element to return.",
+          detail: "La posición, de mayor a menor, del elemento que se devolverá.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1659,8 +1659,8 @@ module.exports = {  "insertLink": {
     {
       n: "STDEVA",
       t: 1,
-      d: "Calculates the standard deviation based on a sample, setting text to the value `0`.",
-      a: "Standard deviation of sample (text as 0).",
+      d: "Calcula la desviación estándar a partir de una muestra, asignando al texto el valor `0`.",
+      a: "Desviación estándar de una muestra (texto como 0).",
       m: [
         1,
         255
@@ -1668,7 +1668,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the sample.",
+          detail: "El primer valor o rango de la muestra.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1676,7 +1676,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail: "Valores o rangos adicionales que se incluirán en la muestra.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1687,8 +1687,8 @@ module.exports = {  "insertLink": {
     {
       n: "STDEVP",
       t: 1,
-      d: "Calculates the standard deviation based on an entire population.",
-      a: "Standard deviation of an entire population.",
+      d: "Calcula la desviación estándar a partir de una población completa.",
+      a: "Desviación estándar de una población completa.",
       m: [
         1,
         255
@@ -1696,7 +1696,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the population.",
+          detail: "El primer valor o rango de la población.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1704,7 +1704,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the population.",
+          detail: "Valores o rangos adicionales que se incluirán en la población.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1715,8 +1715,8 @@ module.exports = {  "insertLink": {
     {
       n: "GEOMEAN",
       t: 1,
-      d: "Calculates the geometric mean of a dataset.",
-      a: "The geometric mean of a dataset.",
+      d: "Calcula la media geométrica de un conjunto de datos.",
+      a: "La media geométrica de un conjunto de datos.",
       m: [
         1,
         255
@@ -1724,7 +1724,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the population.",
+          detail: "El primer valor o rango de la población.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1732,7 +1732,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the population.",
+          detail: "Valores o rangos adicionales que se incluirán en la población.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1743,8 +1743,8 @@ module.exports = {  "insertLink": {
     {
       n: "RANK_EQ",
       t: 1,
-      d: "Returns the rank of a specified value in a dataset. If there is more than one entry of the same value in the dataset, the top rank of the entries will be returned.",
-      a: "Top rank of a specified value in a dataset.",
+      d: "Devuelve la posición de un valor especificado en un conjunto de datos. Si hay más de una entrada con el mismo valor, se devolverá la posición más alta entre esas entradas.",
+      a: "Posición más alta de un valor especificado en un conjunto de datos.",
       m: [
         2,
         3
@@ -1752,7 +1752,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value whose rank will be determined.",
+          detail: "El valor cuya posición se determinará.",
           example: "A10",
           require: "m",
           repeat: "n",
@@ -1760,7 +1760,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "La matriz o el rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1768,7 +1768,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "es_ascendente",
-          detail: "Whether to consider the values in `data` in descending or ascending order. If omitted, the default is descending (FALSE).",
+          detail: "Si se deben considerar los valores de `datos` en orden descendente o ascendente. Si se omite, el valor predeterminado es descendente (FALSE).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1779,8 +1779,8 @@ module.exports = {  "insertLink": {
     {
       n: "RANK_AVG",
       t: 1,
-      d: "Returns the rank of a specified value in a dataset. If there is more than one entry of the same value in the dataset, the average rank of the entries will be returned.",
-      a: "Average rank of a specified value in a dataset.",
+      d: "Devuelve la posición de un valor especificado en un conjunto de datos. Si hay más de una entrada con el mismo valor, se devolverá la posición promedio entre esas entradas.",
+      a: "Posición promedio de un valor especificado en un conjunto de datos.",
       m: [
         2,
         3
@@ -1788,7 +1788,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value whose rank will be determined.",
+          detail: "El valor cuya posición se determinará.",
           example: "A10",
           require: "m",
           repeat: "n",
@@ -1796,7 +1796,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "La matriz o el rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1804,7 +1804,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "es_ascendente",
-          detail: "Whether to consider the values in `data` in descending or ascending order. If omitted, the default is descending (FALSE).",
+          detail: "Si se deben considerar los valores de `datos` en orden descendente o ascendente. Si se omite, el valor predeterminado es descendente (FALSE).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1815,8 +1815,8 @@ module.exports = {  "insertLink": {
     {
       n: "PERCENTRANK_EXC",
       t: 1,
-      d: "Returns the percentage rank (percentile) from 0 to 1 exclusive of a specified value in a dataset.",
-      a: "Percentage rank (percentile) from 0 to 1 exclusive.",
+      d: "Devuelve la posición porcentual (percentil), de 0 a 1 exclusive, de un valor especificado en un conjunto de datos.",
+      a: "Posición porcentual (percentil) de 0 a 1 exclusive.",
       m: [
         2,
         3
@@ -1824,7 +1824,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "La matriz o el rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1832,7 +1832,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor",
-          detail: "The value whose percentage rank will be determined.",
+          detail: "El valor cuya posición porcentual se determinará.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1840,7 +1840,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cifras_significativas",
-          detail: "The number of significant figures to use in the calculation. Default is 3.",
+          detail: "El número de cifras significativas que se usarán en el cálculo. El valor predeterminado es 3.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1851,8 +1851,8 @@ module.exports = {  "insertLink": {
     {
       n: "PERCENTRANK_INC",
       t: 1,
-      d: "Returns the percentage rank (percentile) from 0 to 1 inclusive of a specified value in a dataset.",
-      a: "Percentage rank (percentile) from 0 to 1 inclusive.",
+      d: "Devuelve la posición porcentual (percentil), de 0 a 1 inclusive, de un valor especificado en un conjunto de datos.",
+      a: "Posición porcentual (percentil) de 0 a 1 inclusive.",
       m: [
         2,
         3
@@ -1860,7 +1860,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "La matriz o el rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -1868,7 +1868,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor",
-          detail: "The value whose percentage rank will be determined.",
+          detail: "El valor cuya posición porcentual se determinará.",
           example: " A2",
           require: "m",
           repeat: "n",
@@ -1876,7 +1876,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cifras_significativas",
-          detail: "The number of significant figures to use in the calculation. Default is 3.",
+          detail: "El número de cifras significativas que se usarán en el cálculo. El valor predeterminado es 3.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1887,8 +1887,8 @@ module.exports = {  "insertLink": {
     {
       n: "FORECAST",
       t: 1,
-      d: "Calculates the expected y-value for a specified x based on a linear regression of a dataset.",
-      a: "Expected y-value based of linear regression.",
+      d: "Calcula el valor y esperado para un valor x especificado, basándose en la regresión lineal de un conjunto de datos.",
+      a: "Valor y esperado basado en una regresión lineal.",
       m: [
         3,
         3
@@ -1896,7 +1896,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The value on the x-axis to forecast.",
+          detail: "El valor del eje x que se pronosticará.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -1904,7 +1904,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "El rango que representa la matriz o el vector de datos dependientes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1912,7 +1912,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "El rango que representa la matriz o el vector de datos independientes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1923,8 +1923,8 @@ module.exports = {  "insertLink": {
     {
       n: "FISHERINV",
       t: 1,
-      d: "Returns the inverse Fisher transformation of a specified value.",
-      a: "Inverse fisher transformation of a specified value.",
+      d: "Devuelve la transformación de Fisher inversa de un valor especificado.",
+      a: "Transformación de Fisher inversa de un valor especificado.",
       m: [
         1,
         1
@@ -1932,7 +1932,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value for which to calculate the inverse Fisher transformation.",
+          detail: "El valor para el que se calculará la transformación de Fisher inversa.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1943,8 +1943,8 @@ module.exports = {  "insertLink": {
     {
       n: "FISHER",
       t: 1,
-      d: "Returns the Fisher transformation of a specified value.",
-      a: "Fisher transformation of a specified value.",
+      d: "Devuelve la transformación de Fisher de un valor especificado.",
+      a: "Transformación de Fisher de un valor especificado.",
       m: [
         1,
         1
@@ -1952,7 +1952,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value for which to calculate the Fisher transformation.",
+          detail: "El valor para el que se calculará la transformación de Fisher.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1963,8 +1963,8 @@ module.exports = {  "insertLink": {
     {
       n: "MODE_SNGL",
       t: 1,
-      d: "Returns the most commonly occurring value in a dataset.",
-      a: "Most commonly occurring value in a dataset.",
+      d: "Devuelve el valor que aparece con más frecuencia en un conjunto de datos.",
+      a: "Valor más frecuente en un conjunto de datos.",
       m: [
         1,
         255
@@ -1972,7 +1972,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider when calculating mode.",
+          detail: "El primer valor o rango que se tendrá en cuenta al calcular la moda.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -1980,7 +1980,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider when calculating mode.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta al calcular la moda.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1991,8 +1991,8 @@ module.exports = {  "insertLink": {
     {
       n: "WEIBULL_DIST",
       t: 1,
-      d: "Returns the value of the Weibull distribution function (or Weibull cumulative distribution function) for a specified shape and scale.",
-      a: "Weibull distribution function.",
+      d: "Devuelve el valor de la función de distribución de Weibull (o de la función de distribución acumulada de Weibull) para una forma y una escala especificadas.",
+      a: "Función de distribución de Weibull.",
       m: [
         4,
         4
@@ -2000,7 +2000,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the Weibull distribution function.",
+          detail: "La entrada de la función de distribución de Weibull.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -2008,7 +2008,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "forma",
-          detail: "The shape parameter of the Weibull distribution function.",
+          detail: "El parámetro de forma de la función de distribución de Weibull.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2016,7 +2016,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "escala",
-          detail: "The scale parameter of the Weibull distribution function.",
+          detail: "El parámetro de escala de la función de distribución de Weibull.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -2024,7 +2024,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "acumulado",
-          detail: "Whether to use the cumulative distribution function.",
+          detail: "Si se debe usar la función de distribución acumulada.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -2035,8 +2035,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUNT",
       t: 1,
-      d: "Returns the number of numeric values in a dataset.",
-      a: "The number of numeric values in dataset.",
+      d: "Devuelve el número de valores numéricos en un conjunto de datos.",
+      a: "El número de valores numéricos en un conjunto de datos.",
       m: [
         1,
         255
@@ -2044,7 +2044,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider when counting.",
+          detail: "El primer valor o rango que se tendrá en cuenta al contar.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2052,7 +2052,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider when counting.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta al contar.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2063,8 +2063,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUNTA",
       t: 1,
-      d: "Returns the number of values in a dataset.",
-      a: "The number of values in a dataset.",
+      d: "Devuelve el número de valores en un conjunto de datos.",
+      a: "El número de valores en un conjunto de datos.",
       m: [
         1,
         255
@@ -2072,7 +2072,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider when counting.",
+          detail: "El primer valor o rango que se tendrá en cuenta al contar.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2080,7 +2080,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider when counting.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta al contar.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2091,8 +2091,8 @@ module.exports = {  "insertLink": {
     {
       n: "AVEDEV",
       t: 1,
-      d: "Calculates the average of the magnitudes of deviations of data from a dataset's mean.",
-      a: "Average magnitude of deviations from mean.",
+      d: "Calcula el promedio de las magnitudes de las desviaciones de los datos respecto a la media de un conjunto de datos.",
+      a: "Magnitud promedio de las desviaciones respecto a la media.",
       m: [
         1,
         255
@@ -2100,7 +2100,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the sample.",
+          detail: "El primer valor o rango de la muestra.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2108,7 +2108,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail: "Valores o rangos adicionales que se incluirán en la muestra.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2119,8 +2119,8 @@ module.exports = {  "insertLink": {
     {
       n: "AVERAGE",
       t: 1,
-      d: "Returns the numerical average value in a dataset, ignoring text.",
-      a: "Numerical average value in a dataset, ignoring text.",
+      d: "Devuelve el promedio numérico de un conjunto de datos, ignorando el texto.",
+      a: "Promedio numérico de un conjunto de datos, ignorando el texto.",
       m: [
         1,
         255
@@ -2128,7 +2128,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider when calculating the average value.",
+          detail: "El primer valor o rango que se tendrá en cuenta al calcular el promedio.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2136,7 +2136,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider when calculating the average value.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta al calcular el promedio.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2147,8 +2147,8 @@ module.exports = {  "insertLink": {
     {
       n: "AVERAGEA",
       t: 1,
-      d: "Returns the numerical average value in a dataset.",
-      a: "Numerical average value in a dataset.",
+      d: "Devuelve el promedio numérico de un conjunto de datos.",
+      a: "Promedio numérico de un conjunto de datos.",
       m: [
         1,
         255
@@ -2156,7 +2156,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider when calculating the average value.",
+          detail: "El primer valor o rango que se tendrá en cuenta al calcular el promedio.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2164,7 +2164,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider when calculating the average value.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta al calcular el promedio.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2175,8 +2175,8 @@ module.exports = {  "insertLink": {
     {
       n: "BINOM_DIST",
       t: 1,
-      d: "Calculates the probability of drawing a certain number of successes (or a maximum number of successes) in a certain number of tries given a population of a certain size containing a certain number of successes, with replacement of draws.",
-      a: "Binomial distribution probability.",
+      d: "Calcula la probabilidad de obtener un determinado número de éxitos (o un número máximo de éxitos) en un determinado número de intentos, dada una población de un tamaño determinado que contiene un determinado número de éxitos, con reposición de las extracciones.",
+      a: "Probabilidad de la distribución binomial.",
       m: [
         4,
         4
@@ -2184,7 +2184,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_éxitos",
-          detail: "The number of successes for which to calculate the probability in `num_trials` trials.",
+          detail: "El número de éxitos para el que se calculará la probabilidad en `número_de_pruebas` pruebas.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2192,7 +2192,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_pruebas",
-          detail: "The number of independent trials.",
+          detail: "El número de pruebas independientes.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -2200,7 +2200,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "probabilidad_éxito",
-          detail: "The probability of success in any given trial.",
+          detail: "La probabilidad de éxito en una prueba cualquiera.",
           example: "0.005",
           require: "m",
           repeat: "n",
@@ -2208,7 +2208,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "acumulado",
-          detail: "Whether to use the binomial cumulative distribution.",
+          detail: "Si se debe usar la distribución binomial acumulada.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2219,8 +2219,8 @@ module.exports = {  "insertLink": {
     {
       n: "BINOM_INV",
       t: 1,
-      d: "Calculates the smallest value for which the cumulative binomial distribution is greater than or equal to a specified criteria.",
-      a: "Inverse cumulative binomial distribution function.",
+      d: "Calcula el valor más pequeño para el cual la distribución binomial acumulada es mayor o igual que un criterio especificado.",
+      a: "Función de distribución binomial acumulada inversa.",
       m: [
         3,
         3
@@ -2228,7 +2228,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_pruebas",
-          detail: "The number of independent trials.",
+          detail: "El número de pruebas independientes.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -2236,7 +2236,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "probabilidad_éxito",
-          detail: "The probability of success in any given trial.",
+          detail: "La probabilidad de éxito en una prueba cualquiera.",
           example: "0.005",
           require: "m",
           repeat: "n",
@@ -2244,7 +2244,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "probabilidad_objetivo",
-          detail: "The desired threshold probability.",
+          detail: "El umbral de probabilidad deseado.",
           example: "0.8",
           require: "m",
           repeat: "n",
@@ -2255,8 +2255,8 @@ module.exports = {  "insertLink": {
     {
       n: "CONFIDENCE_NORM",
       t: 1,
-      d: "Calculates the width of half the confidence interval for a normal distribution.",
-      a: "Confidence interval for a normal distribution.",
+      d: "Calcula el ancho de la mitad del intervalo de confianza para una distribución normal.",
+      a: "Intervalo de confianza para una distribución normal.",
       m: [
         3,
         3
@@ -2264,7 +2264,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "alfa",
-          detail: "One minus the desired confidence level. E.g. `0.1` for `0.9`, or 90%, confidence.",
+          detail: "Uno menos el nivel de confianza deseado. Por ejemplo, `0,1` para una confianza del `0,9`, o del 90 %.",
           example: "0.05",
           require: "m",
           repeat: "n",
@@ -2272,7 +2272,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "desviación_estándar",
-          detail: "The standard deviation of the population.",
+          detail: "La desviación estándar de la población.",
           example: "1.6",
           require: "m",
           repeat: "n",
@@ -2280,7 +2280,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tamaño_población",
-          detail: "The size of the population.",
+          detail: "El tamaño de la población.",
           example: "250",
           require: "m",
           repeat: "n",
@@ -2291,8 +2291,8 @@ module.exports = {  "insertLink": {
     {
       n: "CORREL",
       t: 1,
-      d: "Calculates r, the Pearson product-moment correlation coefficient of a dataset.",
-      a: "Pearson Product-Moment Correlation Coefficient.",
+      d: "Calcula r, el coeficiente de correlación de Pearson (momento-producto) de un conjunto de datos.",
+      a: "Coeficiente de correlación de Pearson.",
       m: [
         2,
         2
@@ -2300,7 +2300,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "El rango que representa la matriz o el vector de datos dependientes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2308,7 +2308,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "El rango que representa la matriz o el vector de datos independientes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2319,8 +2319,8 @@ module.exports = {  "insertLink": {
     {
       n: "COVARIANCE_P",
       t: 1,
-      d: "Calculates the covariance of a dataset.",
-      a: "The covariance of a dataset.",
+      d: "Calcula la covarianza de un conjunto de datos.",
+      a: "La covarianza de un conjunto de datos.",
       m: [
         2,
         2
@@ -2328,7 +2328,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "El rango que representa la matriz o el vector de datos dependientes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2336,7 +2336,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "El rango que representa la matriz o el vector de datos independientes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2347,8 +2347,8 @@ module.exports = {  "insertLink": {
     {
       n: "COVARIANCE_S",
       t: 1,
-      d: "Calculates the sample covariance of a dataset.",
-      a: "The sample covariance of a dataset.",
+      d: "Calcula la covarianza muestral de un conjunto de datos.",
+      a: "La covarianza muestral de un conjunto de datos.",
       m: [
         2,
         2
@@ -2356,7 +2356,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "El rango que representa la matriz o el vector de datos dependientes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2364,7 +2364,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "El rango que representa la matriz o el vector de datos independientes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2375,8 +2375,8 @@ module.exports = {  "insertLink": {
     {
       n: "DEVSQ",
       t: 1,
-      d: "Calculates the sum of squares of deviations based on a sample.",
-      a: "The sum of squares of deviations based on a sample.",
+      d: "Calcula la suma de los cuadrados de las desviaciones a partir de una muestra.",
+      a: "La suma de los cuadrados de las desviaciones a partir de una muestra.",
       m: [
         1,
         255
@@ -2384,7 +2384,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the sample.",
+          detail: "El primer valor o rango de la muestra.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2392,7 +2392,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail: "Valores o rangos adicionales que se incluirán en la muestra.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2403,8 +2403,8 @@ module.exports = {  "insertLink": {
     {
       n: "EXPON_DIST",
       t: 1,
-      d: "Returns the value of the exponential distribution function with a specified lambda at a specified value.",
-      a: "Exponential distribution function.",
+      d: "Devuelve el valor de la función de distribución exponencial con un lambda especificado en un valor dado.",
+      a: "Función de distribución exponencial.",
       m: [
         3,
         3
@@ -2412,7 +2412,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the exponential distribution function.",
+          detail: "La entrada de la función de distribución exponencial.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2420,7 +2420,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "lambda",
-          detail: "The lambda to specify the exponential distribution function.",
+          detail: "El lambda que especifica la función de distribución exponencial.",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -2428,7 +2428,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "acumulado",
-          detail: "Whether to use the exponential cumulative distribution.",
+          detail: "Si se debe usar la distribución acumulada exponencial.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2439,8 +2439,8 @@ module.exports = {  "insertLink": {
     {
       n: "AVERAGEIF",
       t: 1,
-      d: "Returns the average of a range depending on criteria.",
-      a: "Average of values depending on criteria.",
+      d: "Devuelve el promedio de un rango en función de un criterio.",
+      a: "Promedio de valores en función de un criterio.",
       m: [
         2,
         3
@@ -2448,7 +2448,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango_criterios",
-          detail: "The range to check against `criterion`.",
+          detail: "El rango que se comprobará con respecto a `criterio`.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -2456,7 +2456,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterio",
-          detail: "The pattern or test to apply to `criteria_range`.",
+          detail: "El patrón o prueba que se aplica a `rango_criterios`.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -2464,7 +2464,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango_promedio",
-          detail: "The range to average. If not included, `criteria_range` is used for the average instead.",
+          detail: "El rango del que se calculará el promedio. Si no se incluye, se usará `rango_criterios` para el promedio.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -2475,8 +2475,8 @@ module.exports = {  "insertLink": {
     {
       n: "AVERAGEIFS",
       t: 1,
-      d: "Returns the average of a range depending on multiple criteria.",
-      a: "Average of values depending on multiple criteria.",
+      d: "Devuelve el promedio de un rango en función de varios criterios.",
+      a: "Promedio de valores en función de varios criterios.",
       m: [
         2,
         255
@@ -2484,7 +2484,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango_promedio",
-          detail: "The range to average.",
+          detail: "El rango del que se calculará el promedio.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -2492,7 +2492,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango_criterios1",
-          detail: "The range to check against `criterion1`.",
+          detail: "El rango que se comprobará con respecto a `criterio1`.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
@@ -2500,7 +2500,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterio1",
-          detail: "The pattern or test to apply to `criteria_range1`.",
+          detail: "El patrón o prueba que se aplica a `rango_criterios1`.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -2508,7 +2508,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango_criterios2",
-          detail: "Additional ranges to check.",
+          detail: "Rangos adicionales que se comprobarán.",
           example: " C1:C10",
           require: "m",
           repeat: "n",
@@ -2519,8 +2519,8 @@ module.exports = {  "insertLink": {
     {
       n: "PERMUT",
       t: 1,
-      d: "Returns the number of ways to choose some number of objects from a pool of a given size of objects, considering order.",
-      a: "Number of permutations from a number of objects.",
+      d: "Devuelve el número de formas de elegir cierto número de objetos de un conjunto de un tamaño dado, teniendo en cuenta el orden.",
+      a: "Número de permutaciones a partir de un número de objetos.",
       m: [
         2,
         2
@@ -2528,7 +2528,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "n",
-          detail: "The size of the pool of objects to choose from.",
+          detail: "El tamaño del conjunto de objetos del que se elegirá.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2536,7 +2536,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "k",
-          detail: "The number of objects to choose.",
+          detail: "El número de objetos que se elegirán.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2547,8 +2547,8 @@ module.exports = {  "insertLink": {
     {
       n: "TRIMMEAN",
       t: 1,
-      d: "Calculates the mean of a dataset excluding some proportion of data from the high and low ends of the dataset.",
-      a: "Mean of a dataset excluding high/low ends.",
+      d: "Calcula la media de un conjunto de datos excluyendo cierta proporción de datos de los extremos superior e inferior del conjunto.",
+      a: "Media de un conjunto de datos excluyendo los extremos.",
       m: [
         2,
         2
@@ -2556,7 +2556,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "Array or range containing the dataset to consider.",
+          detail: "Matriz o rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2564,7 +2564,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "proporción_excluida",
-          detail: "The proportion of the dataset to exclude, from the extremities of the set.",
+          detail: "La proporción del conjunto de datos que se excluirá, a partir de los extremos del conjunto.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2575,8 +2575,8 @@ module.exports = {  "insertLink": {
     {
       n: "PERCENTILE_EXC",
       t: 1,
-      d: "Returns the value at a given percentile of a dataset exclusive of 0 and 1.",
-      a: "Value at a given percentile of a dataset exclusive of 0 and 1.",
+      d: "Devuelve el valor correspondiente a un percentil determinado de un conjunto de datos, excluyendo 0 y 1.",
+      a: "Valor correspondiente a un percentil de un conjunto de datos, excluyendo 0 y 1.",
       m: [
         2,
         2
@@ -2584,7 +2584,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "La matriz o el rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2592,7 +2592,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "percentil",
-          detail: "The percentile, exclusive of 0 and 1, whose value within 'data' will be calculated and returned.",
+          detail: "El percentil, excluyendo 0 y 1, cuyo valor dentro de \"datos\" se calculará y devolverá.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2603,8 +2603,8 @@ module.exports = {  "insertLink": {
     {
       n: "PERCENTILE_INC",
       t: 1,
-      d: "Returns the value at a given percentile of a dataset.",
-      a: "Value at a given percentile of a dataset.",
+      d: "Devuelve el valor correspondiente a un percentil determinado de un conjunto de datos.",
+      a: "Valor correspondiente a un percentil de un conjunto de datos.",
       m: [
         2,
         2
@@ -2612,7 +2612,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "La matriz o el rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2620,7 +2620,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "percentil",
-          detail: "The percentile whose value within `data` will be calculated and returned.`",
+          detail: "El percentil cuyo valor dentro de `datos` se calculará y devolverá.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2631,8 +2631,8 @@ module.exports = {  "insertLink": {
     {
       n: "PEARSON",
       t: 1,
-      d: "Calculates r, the Pearson product-moment correlation coefficient of a dataset.",
-      a: "Pearson Product-Moment Correlation Coefficient.",
+      d: "Calcula r, el coeficiente de correlación de Pearson (momento-producto) de un conjunto de datos.",
+      a: "Coeficiente de correlación de Pearson.",
       m: [
         2,
         2
@@ -2640,7 +2640,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "El rango que representa la matriz o el vector de datos dependientes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2648,7 +2648,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "El rango que representa la matriz o el vector de datos independientes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2659,8 +2659,8 @@ module.exports = {  "insertLink": {
     {
       n: "NORM_S_INV",
       t: 1,
-      d: "Returns the value of the inverse standard normal distribution function for a specified value.",
-      a: "Inverse standard normal distribution function.",
+      d: "Devuelve el valor de la función de distribución normal estándar inversa para un valor especificado.",
+      a: "Función de distribución normal estándar inversa.",
       m: [
         1,
         1
@@ -2668,7 +2668,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the inverse standard normal distribution function.",
+          detail: "La entrada de la función de distribución normal estándar inversa.",
           example: "0.75",
           require: "m",
           repeat: "n",
@@ -2679,8 +2679,8 @@ module.exports = {  "insertLink": {
     {
       n: "NORM_S_DIST",
       t: 1,
-      d: "Returns the value of the standard normal cumulative distribution function for a specified value.",
-      a: "Standard normal cumulative distribution function.",
+      d: "Devuelve el valor de la función de distribución acumulada normal estándar para un valor especificado.",
+      a: "Función de distribución acumulada normal estándar.",
       m: [
         2,
         2
@@ -2688,7 +2688,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the standard normal cumulative distribution function.",
+          detail: "La entrada de la función de distribución acumulada normal estándar.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -2696,7 +2696,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "acumulado",
-          detail: "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
+          detail: "Determina la forma de la función. \n\nSi es TRUE(), devuelve la función de distribución acumulada;\n\nsi es FALSE(), devuelve la función de densidad de probabilidad.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2707,8 +2707,8 @@ module.exports = {  "insertLink": {
     {
       n: "NORM_INV",
       t: 1,
-      d: "Returns the value of the inverse normal distribution function for a specified value, mean, and standard deviation.",
-      a: "Inverse normal distribution function.",
+      d: "Devuelve el valor de la función de distribución normal inversa para un valor, una media y una desviación estándar especificados.",
+      a: "Función de distribución normal inversa.",
       m: [
         3,
         3
@@ -2716,7 +2716,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the inverse normal distribution function.",
+          detail: "La entrada de la función de distribución normal inversa.",
           example: "0.75",
           require: "m",
           repeat: "n",
@@ -2724,7 +2724,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "media",
-          detail: "The mean (mu) of the normal distribution function.",
+          detail: "La media (mu) de la función de distribución normal.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2732,7 +2732,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "desviación_estándar",
-          detail: "The standard deviation (sigma) of the normal distribution function.",
+          detail: "La desviación estándar (sigma) de la función de distribución normal.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2743,8 +2743,8 @@ module.exports = {  "insertLink": {
     {
       n: "NORM_DIST",
       t: 1,
-      d: "Returns the value of the normal distribution function (or normal cumulative distribution function) for a specified value, mean, and standard deviation.",
-      a: "Normal distribution function.",
+      d: "Devuelve el valor de la función de distribución normal (o de la función de distribución acumulada normal) para un valor, una media y una desviación estándar especificados.",
+      a: "Función de distribución normal.",
       m: [
         4,
         4
@@ -2752,7 +2752,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the normal distribution function.",
+          detail: "La entrada de la función de distribución normal.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -2760,7 +2760,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "media",
-          detail: "The mean (mu) of the normal distribution function.",
+          detail: "La media (mu) de la función de distribución normal.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2768,7 +2768,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "desviación_estándar",
-          detail: "The standard deviation (sigma) of the normal distribution function.",
+          detail: "La desviación estándar (sigma) de la función de distribución normal.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2776,7 +2776,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "acumulado",
-          detail: "Whether to use the normal cumulative distribution function rather than the distribution function.",
+          detail: "Si se debe usar la función de distribución acumulada normal en lugar de la función de distribución.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2787,8 +2787,8 @@ module.exports = {  "insertLink": {
     {
       n: "NEGBINOM_DIST",
       t: 1,
-      d: "Calculates the probability of drawing a certain number of failures before a certain number of successes given a probability of success in independent trials.",
-      a: "Negative binomial distribution probability.",
+      d: "Calcula la probabilidad de obtener un determinado número de fracasos antes de un determinado número de éxitos, dada una probabilidad de éxito en pruebas independientes.",
+      a: "Probabilidad de la distribución binomial negativa.",
       m: [
         4,
         4
@@ -2796,7 +2796,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_fracasos",
-          detail: "The number of failures to model.",
+          detail: "El número de fracasos que se modelará.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2804,7 +2804,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_éxitos",
-          detail: "The number of successes to model.",
+          detail: "El número de éxitos que se modelará.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2812,7 +2812,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "probabilidad_éxito",
-          detail: "The probability of success in any given trial.",
+          detail: "La probabilidad de éxito en una prueba cualquiera.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2820,7 +2820,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "acumulado",
-          detail: "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
+          detail: "Determina la forma de la función. \n\nSi es TRUE(), devuelve la función de distribución acumulada;\n\nsi es FALSE(), devuelve la función de densidad de probabilidad.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2831,8 +2831,8 @@ module.exports = {  "insertLink": {
     {
       n: "MINA",
       t: 1,
-      d: "Returns the minimum numeric value in a dataset.",
-      a: "Minimum numeric value in a dataset.",
+      d: "Devuelve el valor numérico mínimo de un conjunto de datos.",
+      a: "Valor numérico mínimo de un conjunto de datos.",
       m: [
         1,
         255
@@ -2840,7 +2840,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider when calculating the minimum value.",
+          detail: "El primer valor o rango que se tendrá en cuenta al calcular el valor mínimo.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2848,7 +2848,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider when calculating the minimum value.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta al calcular el valor mínimo.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2859,8 +2859,8 @@ module.exports = {  "insertLink": {
     {
       n: "MIN",
       t: 1,
-      d: "Returns the minimum value in a numeric dataset.",
-      a: "Minimum value in a numeric dataset.",
+      d: "Devuelve el valor mínimo de un conjunto de datos numérico.",
+      a: "Valor mínimo de un conjunto de datos numérico.",
       m: [
         1,
         255
@@ -2868,7 +2868,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider when calculating the minimum value.",
+          detail: "El primer valor o rango que se tendrá en cuenta al calcular el valor mínimo.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2876,7 +2876,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider when calculating the minimum value.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta al calcular el valor mínimo.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2887,8 +2887,8 @@ module.exports = {  "insertLink": {
     {
       n: "MEDIAN",
       t: 1,
-      d: "Returns the median value in a numeric dataset.",
-      a: "Median value in a numeric dataset.",
+      d: "Devuelve el valor mediano de un conjunto de datos numérico.",
+      a: "Valor mediano de un conjunto de datos numérico.",
       m: [
         1,
         255
@@ -2896,7 +2896,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider when calculating the median value.",
+          detail: "El primer valor o rango que se tendrá en cuenta al calcular la mediana.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2904,7 +2904,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider when calculating the median value.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta al calcular la mediana.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2915,8 +2915,8 @@ module.exports = {  "insertLink": {
     {
       n: "MAXA",
       t: 1,
-      d: "Returns the maximum numeric value in a dataset.",
-      a: "Maximum numeric value in a dataset.",
+      d: "Devuelve el valor numérico máximo de un conjunto de datos.",
+      a: "Valor numérico máximo de un conjunto de datos.",
       m: [
         1,
         255
@@ -2924,7 +2924,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider when calculating the maximum value.",
+          detail: "El primer valor o rango que se tendrá en cuenta al calcular el valor máximo.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2932,7 +2932,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider when calculating the maximum value.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta al calcular el valor máximo.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2943,8 +2943,8 @@ module.exports = {  "insertLink": {
     {
       n: "MAX",
       t: 1,
-      d: "Returns the maximum value in a numeric dataset.",
-      a: "Maximum value in a numeric dataset.",
+      d: "Devuelve el valor máximo de un conjunto de datos numérico.",
+      a: "Valor máximo de un conjunto de datos numérico.",
       m: [
         1,
         255
@@ -2952,7 +2952,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range to consider when calculating the maximum value.",
+          detail: "El primer valor o rango que se tendrá en cuenta al calcular el valor máximo.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2960,7 +2960,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to consider when calculating the maximum value.",
+          detail: "Valores o rangos adicionales que se tendrán en cuenta al calcular el valor máximo.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2971,8 +2971,8 @@ module.exports = {  "insertLink": {
     {
       n: "LOGNORM_INV",
       t: 1,
-      d: "Returns the value of the inverse log-normal cumulative distribution with given mean and standard deviation at a specified value.",
-      a: "Inverse log-normal cumulative distribution function.",
+      d: "Devuelve el valor de la distribución acumulada log-normal inversa con la media y la desviación estándar dadas, para un valor especificado.",
+      a: "Función de distribución acumulada log-normal inversa.",
       m: [
         3,
         3
@@ -2980,7 +2980,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the inverse log-normal cumulative distribution function.",
+          detail: "La entrada de la función de distribución acumulada log-normal inversa.",
           example: "0.4",
           require: "m",
           repeat: "n",
@@ -2988,7 +2988,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "media",
-          detail: "The mean (mu) of the inverse log-normal cumulative distribution function.",
+          detail: "La media (mu) de la función de distribución acumulada log-normal inversa.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2996,7 +2996,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "desviación_estándar",
-          detail: "The standard deviation (sigma) of the inverse log-normal cumulative distribution function.",
+          detail: "La desviación estándar (sigma) de la función de distribución acumulada log-normal inversa.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3007,8 +3007,8 @@ module.exports = {  "insertLink": {
     {
       n: "LOGNORM_DIST",
       t: 1,
-      d: "Returns the value of the log-normal cumulative distribution with given mean and standard deviation at a specified value.",
-      a: "Log-normal cumulative distribution probability.",
+      d: "Devuelve el valor de la distribución acumulada log-normal con la media y la desviación estándar dadas, para un valor especificado.",
+      a: "Probabilidad de la distribución acumulada log-normal.",
       m: [
         4,
         4
@@ -3016,7 +3016,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the log-normal cumulative distribution function.",
+          detail: "La entrada de la función de distribución acumulada log-normal.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -3024,7 +3024,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "media",
-          detail: "The mean (mu) of the log-normal cumulative distribution function.",
+          detail: "La media (mu) de la función de distribución acumulada log-normal.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -3032,7 +3032,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "desviación_estándar",
-          detail: "The standard deviation (sigma) of the log-normal cumulative distribution function.",
+          detail: "La desviación estándar (sigma) de la función de distribución acumulada log-normal.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3040,7 +3040,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "acumulado",
-          detail: "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
+          detail: "Determina la forma de la función. \n\nSi es TRUE(), devuelve la función de distribución acumulada;\n\nsi es FALSE(), devuelve la función de densidad de probabilidad.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3051,8 +3051,8 @@ module.exports = {  "insertLink": {
     {
       n: "Z_TEST",
       t: 1,
-      d: "Returns the one-tailed p-value of a Z-test with standard distribution.",
-      a: "One-tailed p-value of a z-test.",
+      d: "Devuelve el valor p de una cola de una prueba Z con distribución estándar.",
+      a: "Valor p de una cola de una prueba Z.",
       m: [
         2,
         3
@@ -3060,7 +3060,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "La matriz o el rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3068,7 +3068,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor",
-          detail: "The test statistic to use in the Z-test.",
+          detail: "El estadístico de prueba que se usará en la prueba Z.",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -3076,7 +3076,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "desviación_estándar",
-          detail: "The standard deviation to assume for the Z-test. If this is not provided, the standard deviation of the data will be used.",
+          detail: "La desviación estándar que se asumirá para la prueba Z. Si no se proporciona, se usará la desviación estándar de los datos.",
           example: "3",
           require: "o",
           repeat: "n",
@@ -3087,8 +3087,8 @@ module.exports = {  "insertLink": {
     {
       n: "PROB",
       t: 1,
-      d: "Given a set of values and corresponding probabilities, calculates the probability that a value chosen at random falls between two limits.",
-      a: "Probability values lie in a range.",
+      d: "Dado un conjunto de valores y sus probabilidades correspondientes, calcula la probabilidad de que un valor elegido al azar se encuentre entre dos límites.",
+      a: "Probabilidad de que los valores estén en un rango.",
       m: [
         3,
         4
@@ -3096,7 +3096,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "Array or range containing the dataset to consider.",
+          detail: "Matriz o rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A3:A6",
           require: "m",
           repeat: "n",
@@ -3104,7 +3104,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "probabilidades",
-          detail: "Array or range containing probabilities corresponding to `data`.",
+          detail: "Matriz o rango que contiene las probabilidades correspondientes a `datos`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3112,7 +3112,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "límite_inferior",
-          detail: "The lower bound on the value range for which to calculate the probability.",
+          detail: "El límite inferior del rango de valores para el que se calculará la probabilidad.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3120,7 +3120,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "límite_superior",
-          detail: "The upper bound on the value range for which to calculate the probability.",
+          detail: "El límite superior del rango de valores para el que se calculará la probabilidad.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -3131,8 +3131,8 @@ module.exports = {  "insertLink": {
     {
       n: "QUARTILE_EXC",
       t: 1,
-      d: "Returns a value nearest to a specified quartile of a dataset exclusive of 0 and 4.",
-      a: "Value nearest to a specific quartile of a dataset exclusive of 0 and 4.",
+      d: "Devuelve el valor más cercano a un cuartil especificado de un conjunto de datos, excluyendo 0 y 4.",
+      a: "Valor más cercano a un cuartil de un conjunto de datos, excluyendo 0 y 4.",
       m: [
         2,
         2
@@ -3140,7 +3140,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "La matriz o el rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3148,7 +3148,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_cuartil",
-          detail: "Which quartile to return.",
+          detail: "Qué cuartil se devolverá.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3159,8 +3159,8 @@ module.exports = {  "insertLink": {
     {
       n: "QUARTILE_INC",
       t: 1,
-      d: "Returns a value nearest to a specified quartile of a dataset.",
-      a: "Value nearest to a specific quartile of a dataset.",
+      d: "Devuelve el valor más cercano a un cuartil especificado de un conjunto de datos.",
+      a: "Valor más cercano a un cuartil de un conjunto de datos.",
       m: [
         2,
         2
@@ -3168,7 +3168,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "La matriz o el rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3176,7 +3176,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_cuartil",
-          detail: "Which quartile value to return.",
+          detail: "Qué valor de cuartil se devolverá.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3187,8 +3187,8 @@ module.exports = {  "insertLink": {
     {
       n: "POISSON_DIST",
       t: 1,
-      d: "Returns the value of the Poisson distribution function (or Poisson cumulative distribution function) for a specified value and mean.",
-      a: "Poisson distribution function.",
+      d: "Devuelve el valor de la función de distribución de Poisson (o de la función de distribución acumulada de Poisson) para un valor y una media especificados.",
+      a: "Función de distribución de Poisson.",
       m: [
         3,
         3
@@ -3196,7 +3196,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the Poisson distribution function.",
+          detail: "La entrada de la función de distribución de Poisson.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3204,7 +3204,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "media",
-          detail: "The mean (mu) of the Poisson distribution function.",
+          detail: "La media (mu) de la función de distribución de Poisson.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3212,7 +3212,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "acumulado",
-          detail: "Whether to use the Poisson cumulative distribution function rather than the distribution function.",
+          detail: "Si se debe usar la función de distribución acumulada de Poisson en lugar de la función de distribución.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3223,8 +3223,8 @@ module.exports = {  "insertLink": {
     {
       n: "RSQ",
       t: 1,
-      d: "Calculates the square of r, the Pearson product-moment correlation coefficient of a dataset.",
-      a: "Square of the correlation coefficient.",
+      d: "Calcula el cuadrado de r, el coeficiente de correlación de Pearson (momento-producto) de un conjunto de datos.",
+      a: "Cuadrado del coeficiente de correlación.",
       m: [
         2,
         2
@@ -3232,7 +3232,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "El rango que representa la matriz o el vector de datos dependientes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3240,7 +3240,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "El rango que representa la matriz o el vector de datos independientes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3251,8 +3251,8 @@ module.exports = {  "insertLink": {
     {
       n: "T_DIST",
       t: 1,
-      d: "Calculates the left tail probability for a Student's t-distribution with a given input (x).",
-      a: "The left-tailed Student's t-distribution",
+      d: "Calcula la probabilidad de cola izquierda para una distribución t de Student con una entrada (x) dada.",
+      a: "Distribución t de Student de cola izquierda.",
       m: [
         3,
         3
@@ -3260,7 +3260,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the t-distribution function.",
+          detail: "La entrada de la función de distribución t.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3268,7 +3268,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "grados_libertad",
-          detail: "The number of degrees of freedom.",
+          detail: "El número de grados de libertad.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3276,7 +3276,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "acumulado",
-          detail: "If cumulative is TRUE, T.DIST returns the cumulative distribution function; if FALSE, it returns the probability density function.",
+          detail: "Si cumulative es TRUE, T.DIST devuelve la función de distribución acumulada; si es FALSE, devuelve la función de densidad de probabilidad.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3287,8 +3287,8 @@ module.exports = {  "insertLink": {
     {
       n: "T_DIST_2T",
       t: 1,
-      d: "Calculates the probability for two tailed Student's t-distribution with a given input (x).",
-      a: "The two tailed Student's t-distribution",
+      d: "Calcula la probabilidad de dos colas para una distribución t de Student con una entrada (x) dada.",
+      a: "Distribución t de Student de dos colas.",
       m: [
         2,
         2
@@ -3296,7 +3296,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the t-distribution function.",
+          detail: "La entrada de la función de distribución t.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3304,7 +3304,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "grados_libertad",
-          detail: "The number of degrees of freedom.",
+          detail: "El número de grados de libertad.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3315,8 +3315,8 @@ module.exports = {  "insertLink": {
     {
       n: "T_DIST_RT",
       t: 1,
-      d: "Calculates the right tail probability for a Student's t-distribution with a given input (x).",
-      a: "The right-tailed Student's t-distribution",
+      d: "Calcula la probabilidad de cola derecha para una distribución t de Student con una entrada (x) dada.",
+      a: "Distribución t de Student de cola derecha.",
       m: [
         2,
         2
@@ -3324,7 +3324,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the t-distribution function.",
+          detail: "La entrada de la función de distribución t.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3332,7 +3332,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "grados_libertad",
-          detail: "The number of degrees of freedom.",
+          detail: "El número de grados de libertad.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3343,7 +3343,7 @@ module.exports = {  "insertLink": {
     {
       n: "T_INV",
       t: 1,
-      d: "Calculates the negative inverse of the one-tailed TDIST function.",
+      d: "Calcula el inverso negativo de la función TDIST de una cola.",
       a: "T.INV",
       m: [
         2,
@@ -3352,7 +3352,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "probabilidad",
-          detail: "The probability associated with the two-tailed t-distribution.",
+          detail: "La probabilidad asociada a la distribución t de dos colas.",
           example: "0.35",
           require: "m",
           repeat: "n",
@@ -3360,7 +3360,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "grados_libertad",
-          detail: "The number of degrees of freedom.",
+          detail: "El número de grados de libertad.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3371,7 +3371,7 @@ module.exports = {  "insertLink": {
     {
       n: "T_INV_2T",
       t: 1,
-      d: "Calculates the inverse of the two-tailed TDIST function.",
+      d: "Calcula el inverso de la función TDIST de dos colas.",
       a: "T.INV.2T",
       m: [
         2,
@@ -3380,7 +3380,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "probabilidad",
-          detail: "The probability associated with the two-tailed t-distribution.",
+          detail: "La probabilidad asociada a la distribución t de dos colas.",
           example: "0.35",
           require: "m",
           repeat: "n",
@@ -3388,7 +3388,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "grados_libertad",
-          detail: "The number of degrees of freedom.",
+          detail: "El número de grados de libertad.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3399,8 +3399,8 @@ module.exports = {  "insertLink": {
     {
       n: "T_TEST",
       t: 1,
-      d: "t-test. Returns the probability associated with Student's t-test. Determines whether two samples are likely to have come from the same two underlying populations that have the same mean.",
-      a: "Returns the probability associated with t-test.",
+      d: "Prueba t. Devuelve la probabilidad asociada a la prueba t de Student. Determina si dos muestras probablemente procedan de las mismas dos poblaciones subyacentes que tienen la misma media.",
+      a: "Devuelve la probabilidad asociada a la prueba t.",
       m: [
         4,
         4
@@ -3408,7 +3408,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango1",
-          detail: "The first sample of data or group of cells to consider for the t-test.",
+          detail: "La primera muestra de datos o grupo de celdas que se tendrá en cuenta para la prueba t.",
           example: "A1:A4",
           require: "m",
           repeat: "n",
@@ -3416,7 +3416,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango2",
-          detail: "The second sample of data or group of cells to consider for the t-test.",
+          detail: "La segunda muestra de datos o grupo de celdas que se tendrá en cuenta para la prueba t.",
           example: "B1:B4",
           require: "m",
           repeat: "n",
@@ -3424,7 +3424,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "colas",
-          detail: "Specifies the number of distribution tails.",
+          detail: "Especifica el número de colas de la distribución.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3432,7 +3432,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tipo",
-          detail: "Specifies the type of t-test.",
+          detail: "Especifica el tipo de prueba t.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3443,8 +3443,8 @@ module.exports = {  "insertLink": {
     {
       n: "F_DIST",
       t: 1,
-      d: "Calculates the left-tailed F probability distribution (degree of diversity) for two data sets with given input x. Alternately called Fisher-Snedecor distribution or Snedecor's F distribution.",
-      a: "F probability distribution (left-tailed).",
+      d: "Calcula la distribución de probabilidad F de cola izquierda (grado de diversidad) para dos conjuntos de datos con una entrada x dada. También se conoce como distribución de Fisher-Snedecor o distribución F de Snedecor.",
+      a: "Distribución de probabilidad F (cola izquierda).",
       m: [
         4,
         4
@@ -3452,7 +3452,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the F probability distribution function. The value at which to evaluate the function.",
+          detail: "La entrada de la función de distribución de probabilidad F. El valor en el que se evaluará la función.",
           example: "15.35",
           require: "m",
           repeat: "n",
@@ -3460,7 +3460,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "grados_libertad1",
-          detail: "The numerator of the number of degrees of freedom.",
+          detail: "El numerador del número de grados de libertad.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -3468,7 +3468,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "grados_libertad2",
-          detail: "The denominator of the number of degrees of freedom.",
+          detail: "El denominador del número de grados de libertad.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3476,7 +3476,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "acumulado",
-          detail: "Logical value that determines the form of the function.",
+          detail: "Valor lógico que determina la forma de la función.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3487,8 +3487,8 @@ module.exports = {  "insertLink": {
     {
       n: "F_DIST_RT",
       t: 1,
-      d: "Calculates the right-tailed F probability distribution (degree of diversity) for two data sets with given input x. Alternately called Fisher-Snedecor distribution or Snedecor's F distribution.",
-      a: "F probability distribution.",
+      d: "Calcula la distribución de probabilidad F de cola derecha (grado de diversidad) para dos conjuntos de datos con una entrada x dada. También se conoce como distribución de Fisher-Snedecor o distribución F de Snedecor.",
+      a: "Distribución de probabilidad F.",
       m: [
         3,
         3
@@ -3496,7 +3496,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "x",
-          detail: "The input to the F probability distribution function. The value at which to evaluate the function.",
+          detail: "La entrada de la función de distribución de probabilidad F. El valor en el que se evaluará la función.",
           example: "15.35",
           require: "m",
           repeat: "n",
@@ -3504,7 +3504,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "grados_libertad1",
-          detail: "The numerator of the number of degrees of freedom.",
+          detail: "El numerador del número de grados de libertad.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -3512,7 +3512,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "grados_libertad2",
-          detail: "The denominator of the number of degrees of freedom.",
+          detail: "El denominador del número de grados de libertad.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3523,8 +3523,8 @@ module.exports = {  "insertLink": {
     {
       n: "VAR_P",
       t: 1,
-      d: "Calculates the variance based on an entire population.",
-      a: "Variance of entire population.",
+      d: "Calcula la varianza a partir de una población completa.",
+      a: "Varianza de una población completa.",
       m: [
         1,
         255
@@ -3532,7 +3532,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the population.",
+          detail: "El primer valor o rango de la población.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3540,7 +3540,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the population.",
+          detail: "Valores o rangos adicionales que se incluirán en la población.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3551,8 +3551,8 @@ module.exports = {  "insertLink": {
     {
       n: "VAR_S",
       t: 1,
-      d: "Calculates the variance based on a sample.",
-      a: "Variance.",
+      d: "Calcula la varianza a partir de una muestra.",
+      a: "Varianza.",
       m: [
         1,
         255
@@ -3560,7 +3560,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the sample.",
+          detail: "El primer valor o rango de la muestra.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3568,7 +3568,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail: "Valores o rangos adicionales que se incluirán en la muestra.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3579,8 +3579,8 @@ module.exports = {  "insertLink": {
     {
       n: "VARA",
       t: 1,
-      d: "Calculates the variance based on a sample, setting text to the value `0`.",
-      a: "Variance of sample (text as 0).",
+      d: "Calcula la varianza a partir de una muestra, asignando al texto el valor `0`.",
+      a: "Varianza de una muestra (texto como 0).",
       m: [
         1,
         255
@@ -3588,7 +3588,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the sample.",
+          detail: "El primer valor o rango de la muestra.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3596,7 +3596,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the sample.",
+          detail: "Valores o rangos adicionales que se incluirán en la muestra.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3607,8 +3607,8 @@ module.exports = {  "insertLink": {
     {
       n: "VARPA",
       t: 1,
-      d: "Calculates the variance based on an entire population, setting text to the value `0`.",
-      a: "Variance of entire population (text as 0).",
+      d: "Calcula la varianza a partir de una población completa, asignando al texto el valor `0`.",
+      a: "Varianza de una población completa (texto como 0).",
       m: [
         1,
         255
@@ -3616,7 +3616,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the population.",
+          detail: "El primer valor o rango de la población.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3624,7 +3624,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the population.",
+          detail: "Valores o rangos adicionales que se incluirán en la población.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3635,8 +3635,8 @@ module.exports = {  "insertLink": {
     {
       n: "STEYX",
       t: 1,
-      d: "Calculates the standard error of the predicted y-value for each x in the regression of a dataset.",
-      a: "Standard error of predicted y-values in regression.",
+      d: "Calcula el error estándar del valor y previsto para cada x en la regresión de un conjunto de datos.",
+      a: "Error estándar de los valores y previstos en una regresión.",
       m: [
         2,
         2
@@ -3644,7 +3644,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "El rango que representa la matriz o el vector de datos dependientes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3652,7 +3652,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "El rango que representa la matriz o el vector de datos independientes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3663,8 +3663,8 @@ module.exports = {  "insertLink": {
     {
       n: "STANDARDIZE",
       t: 1,
-      d: "Calculates the normalized equivalent of a random variable given mean and standard deviation of the distribution.",
-      a: "Normalized equivalent of a random variable.",
+      d: "Calcula el equivalente normalizado de una variable aleatoria, dadas la media y la desviación estándar de la distribución.",
+      a: "Equivalente normalizado de una variable aleatoria.",
       m: [
         3,
         3
@@ -3672,7 +3672,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value of the random variable to normalize.",
+          detail: "El valor de la variable aleatoria que se normalizará.",
           example: "96",
           require: "m",
           repeat: "n",
@@ -3680,7 +3680,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "media",
-          detail: "The mean of the distribution.",
+          detail: "La media de la distribución.",
           example: "80",
           require: "m",
           repeat: "n",
@@ -3688,7 +3688,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "desviación_estándar",
-          detail: "The standard deviation of the distribution.",
+          detail: "La desviación estándar de la distribución.",
           example: "6.7",
           require: "m",
           repeat: "n",
@@ -3699,8 +3699,8 @@ module.exports = {  "insertLink": {
     {
       n: "SMALL",
       t: 1,
-      d: "Returns the nth smallest element from a data set, where n is user-defined.",
-      a: "Nth smallest element in a data set.",
+      d: "Devuelve el enésimo elemento más pequeño de un conjunto de datos, donde n lo define el usuario.",
+      a: "Enésimo elemento más pequeño de un conjunto de datos.",
       m: [
         2,
         2
@@ -3708,7 +3708,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "The array or range containing the dataset to consider.",
+          detail: "La matriz o el rango que contiene el conjunto de datos que se tendrá en cuenta.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -3716,7 +3716,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "n",
-          detail: "The rank from smallest to largest of the element to return.",
+          detail: "La posición, de menor a mayor, del elemento que se devolverá.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -3727,8 +3727,8 @@ module.exports = {  "insertLink": {
     {
       n: "SLOPE",
       t: 1,
-      d: "Calculates the slope of the line resulting from linear regression of a dataset.",
-      a: "Slope of line from linear regression of data.",
+      d: "Calcula la pendiente de la recta resultante de la regresión lineal de un conjunto de datos.",
+      a: "Pendiente de la recta de regresión lineal de los datos.",
       m: [
         2,
         2
@@ -3736,7 +3736,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y",
-          detail: "The range representing the array or matrix of dependent data.",
+          detail: "El rango que representa la matriz o el vector de datos dependientes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3744,7 +3744,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x",
-          detail: "The range representing the array or matrix of independent data.",
+          detail: "El rango que representa la matriz o el vector de datos independientes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3755,8 +3755,8 @@ module.exports = {  "insertLink": {
     {
       n: "SKEW",
       t: 1,
-      d: "Calculates the skewness of a dataset, which describes the symmetry of that dataset about the mean.",
-      a: "Skewness of a dataset.",
+      d: "Calcula la asimetría de un conjunto de datos, que describe la simetría de dicho conjunto respecto a la media.",
+      a: "Asimetría de un conjunto de datos.",
       m: [
         1,
         255
@@ -3764,7 +3764,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the dataset.",
+          detail: "El primer valor o rango del conjunto de datos.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3772,7 +3772,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the dataset.",
+          detail: "Valores o rangos adicionales que se incluirán en el conjunto de datos.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3783,8 +3783,8 @@ module.exports = {  "insertLink": {
     {
       n: "SKEW_P",
       t: 1,
-      d: "Calculates the skewness of a dataset, which describes the symmetry of that dataset about the mean. This assumes the dataset is for the population.",
-      a: "Skewness of a population's dataset.",
+      d: "Calcula la asimetría de un conjunto de datos, que describe la simetría de dicho conjunto respecto a la media. Se asume que el conjunto de datos corresponde a la población.",
+      a: "Asimetría del conjunto de datos de una población.",
       m: [
         1,
         255
@@ -3792,7 +3792,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value or range of the dataset.",
+          detail: "El primer valor o rango del conjunto de datos.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3800,7 +3800,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional values or ranges to include in the dataset.",
+          detail: "Valores o rangos adicionales que se incluirán en el conjunto de datos.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3811,8 +3811,8 @@ module.exports = {  "insertLink": {
     {
       n: "VLOOKUP",
       t: 2,
-      d: "Vertical lookup. Searches down the first column of a range for a key and returns the value of a specified cell in the row found.",
-      a: "Vertical lookup.",
+      d: "Búsqueda vertical. Busca en la primera columna de un rango una clave y devuelve el valor de una celda especificada en la fila encontrada.",
+      a: "Búsqueda vertical.",
       m: [
         3,
         4
@@ -3820,7 +3820,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "clave_búsqueda",
-          detail: "The value to search for. For example, `42`, `\"Cats\"`, or `I24`.",
+          detail: "El valor que se buscará. Por ejemplo, `42`, `\"Gatos\"` o `I24`.",
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3828,7 +3828,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango",
-          detail: "The range to consider for the search. The first column in the range is searched for the key specified in `search_key`.",
+          detail: "El rango que se tendrá en cuenta para la búsqueda. Se buscará en la primera columna del rango la clave especificada en `clave_de_búsqueda`.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
@@ -3836,7 +3836,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "índice",
-          detail: "The column index of the value to be returned, where the first column in `range` is numbered 1.",
+          detail: "El índice de columna del valor que se devolverá; la primera columna de `rango` se numera como 1.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3844,7 +3844,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "está_ordenado",
-          detail: "Indicates whether the column to be searched (the first column of the specified range) is sorted, in which case the closest match for `search_key` will be returned.",
+          detail: "Indica si la columna en la que se busca (la primera columna del rango especificado) está ordenada, en cuyo caso se devolverá la coincidencia más aproximada de `clave_de_búsqueda`.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3855,8 +3855,8 @@ module.exports = {  "insertLink": {
     {
       n: "HLOOKUP",
       t: 2,
-      d: "Horizontal lookup. Searches across the first row of a range for a key and returns the value of a specified cell in the column found.",
-      a: "Horizontal lookup",
+      d: "Búsqueda horizontal. Busca en la primera fila de un rango una clave y devuelve el valor de una celda especificada en la columna encontrada.",
+      a: "Búsqueda horizontal.",
       m: [
         3,
         4
@@ -3864,7 +3864,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "clave_búsqueda",
-          detail: "The value to search for. For example, `42`, `\"Cats\"`, or `I24`.",
+          detail: "El valor que se buscará. Por ejemplo, `42`, `\"Gatos\"` o `I24`.",
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3872,7 +3872,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango",
-          detail: "The range to consider for the search. The first row in the range is searched for the key specified in `search_key`.",
+          detail: "El rango que se tendrá en cuenta para la búsqueda. Se buscará en la primera fila del rango la clave especificada en `clave_de_búsqueda`.",
           example: "A2:Z6",
           require: "m",
           repeat: "n",
@@ -3880,7 +3880,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "índice",
-          detail: "The row index of the value to be returned, where the first row in `range` is numbered 1.",
+          detail: "El índice de fila del valor que se devolverá; la primera fila de `rango` se numera como 1.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3888,7 +3888,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "está_ordenado",
-          detail: "Indicates whether the row to be searched (the first row of the specified range) is sorted.",
+          detail: "Indica si la fila en la que se busca (la primera fila del rango especificado) está ordenada.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3899,8 +3899,8 @@ module.exports = {  "insertLink": {
     {
       n: "LOOKUP",
       t: 2,
-      d: "Looks through a sorted row or column for a key and returns the value of the cell in a result range located in the same position as the search row or column.",
-      a: "Look up a value.",
+      d: "Recorre una fila o columna ordenada en busca de una clave y devuelve el valor de la celda de un rango de resultados situada en la misma posición que la fila o columna de búsqueda.",
+      a: "Busca un valor.",
       m: [
         2,
         3
@@ -3908,7 +3908,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "clave_búsqueda",
-          detail: "The value to search for in the row or column. For example, `42`, `\"Cats\"`, or `I24`.",
+          detail: "El valor que se buscará en la fila o columna. Por ejemplo, `42`, `\"Gatos\"` o `I24`.",
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3916,7 +3916,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango_búsqueda|matriz_resultado_búsqueda",
-          detail: "One method of using this function is to provide a single sorted row or column `search_range` to look through for the `search_key` with a second argument `result_range`. The other way is to combine these two arguments into one `search_result_array` where the first row or column is searched and a value is returned from the last row or column in the array. If `search_key` is not found, a non-exact match may be returned.",
+          detail: "Una forma de usar esta función consiste en proporcionar una única fila o columna ordenada `rango_de_búsqueda` en la que buscar `clave_de_búsqueda`, junto con un segundo argumento `rango_resultado`. La otra forma consiste en combinar estos dos argumentos en uno solo, `tabla_resultado_búsqueda`, en el que se busca en la primera fila o columna y se devuelve un valor de la última fila o columna de la matriz. Si no se encuentra `clave_de_búsqueda`, puede devolverse una coincidencia no exacta.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -3924,7 +3924,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango_resultado",
-          detail: "The range from which to return a result. The value returned corresponds to the location where `search_key` is found in `search_range`. This range must be only a single row or column and should not be used if using the `search_result_array` method.",
+          detail: "El rango del que se devolverá un resultado. El valor devuelto corresponde a la ubicación en la que se encuentra `clave_de_búsqueda` dentro de `rango_de_búsqueda`. Este rango debe ser una única fila o columna y no debe usarse si se emplea el método `tabla_resultado_búsqueda`.",
           example: "B1:B100",
           require: "o",
           repeat: "n",
@@ -3935,8 +3935,8 @@ module.exports = {  "insertLink": {
     {
       n: "ADDRESS",
       t: 2,
-      d: "Returns a cell reference as a string.",
-      a: "Cell reference as a string.",
+      d: "Devuelve una referencia de celda en forma de texto.",
+      a: "Referencia de celda en forma de texto.",
       m: [
         2,
         5
@@ -3944,7 +3944,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fila",
-          detail: "The row number of the cell reference",
+          detail: "El número de fila de la referencia de celda.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3952,7 +3952,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "columna",
-          detail: "The column number (not name) of the cell reference. `A` is column number `1`.",
+          detail: "El número de columna (no el nombre) de la referencia de celda. `A` es la columna número `1`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3960,7 +3960,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "modo_relativo_absoluto",
-          detail: "An indicator of whether the reference is row/column absolute. `1` is row and column absolute (e.g. $A$1), `2` is row absolute and column relative (e.g. A$1), `3` is row relative and column absolute (e.g. $A1), and `4` is row and column relative (e.g. A1).",
+          detail: "Un indicador de si la referencia es absoluta en fila/columna. `1` es fila y columna absolutas (p. ej. $A$1), `2` es fila absoluta y columna relativa (p. ej. A$1), `3` es fila relativa y columna absoluta (p. ej. $A1), y `4` es fila y columna relativas (p. ej. A1).",
           example: "4",
           require: "o",
           repeat: "n",
@@ -3968,7 +3968,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "usar_notación_a1",
-          detail: "A boolean indicating whether to use `A1` style notation (TRUE) or `R1C1` style notation (FALSE).",
+          detail: "Un valor booleano que indica si se usará la notación de estilo `A1` (TRUE) o la notación de estilo `R1C1` (FALSE).",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3976,7 +3976,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "hoja",
-          detail: "Text indicating the name of the sheet into which the address points.",
+          detail: "Texto que indica el nombre de la hoja a la que apunta la dirección.",
           example: "\"Sheet2\"",
           require: "o",
           repeat: "n",
@@ -3987,8 +3987,8 @@ module.exports = {  "insertLink": {
     {
       n: "INDIRECT",
       t: 2,
-      d: "Returns a cell reference specified by a string.",
-      a: "A cell reference specified by a string.",
+      d: "Devuelve una referencia de celda especificada mediante una cadena de texto.",
+      a: "Una referencia de celda especificada mediante una cadena de texto.",
       m: [
         1,
         2
@@ -3996,7 +3996,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "referencia_celda_como_cadena",
-          detail: "A cell reference, written as a string with surrounding quotation marks.",
+          detail: "Una referencia de celda, escrita como una cadena entre comillas.",
           example: "\"Sheet2!\"&B10",
           require: "m",
           repeat: "n",
@@ -4004,7 +4004,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "es_notación_a1",
-          detail: "Indicates if the cell reference is in A1 notation (TRUE) or R1C1 notation (FALSE).",
+          detail: "Indica si la referencia de celda está en notación A1 (TRUE) o en notación R1C1 (FALSE).",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -4015,8 +4015,8 @@ module.exports = {  "insertLink": {
     {
       n: "ROW",
       t: 2,
-      d: "Returns the row number of a specified cell.",
-      a: "Row number of a specified cell.",
+      d: "Devuelve el número de fila de una celda especificada.",
+      a: "Número de fila de una celda especificada.",
       m: [
         0,
         1
@@ -4024,7 +4024,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "referencia_celda",
-          detail: "The cell whose row number will be returned.",
+          detail: "La celda cuyo número de fila se devolverá.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4035,8 +4035,8 @@ module.exports = {  "insertLink": {
     {
       n: "ROWS",
       t: 2,
-      d: "Returns the number of rows in a specified array or range.",
-      a: "Number of rows in a specified array or range.",
+      d: "Devuelve el número de filas de una matriz o rango especificado.",
+      a: "Número de filas de una matriz o rango especificado.",
       m: [
         1,
         1
@@ -4044,7 +4044,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango",
-          detail: "The range whose row count will be returned.",
+          detail: "El rango cuyo número de filas se devolverá.",
           example: "A9:A62",
           require: "m",
           repeat: "n",
@@ -4055,8 +4055,8 @@ module.exports = {  "insertLink": {
     {
       n: "COLUMN",
       t: 2,
-      d: "Returns the column number of a specified cell, with `A=1`.",
-      a: "Column number of a specified cell.",
+      d: "Devuelve el número de columna de una celda especificada, donde `A=1`.",
+      a: "Número de columna de una celda especificada.",
       m: [
         0,
         1
@@ -4064,7 +4064,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "referencia_celda",
-          detail: "The cell whose column number will be returned. Column `A` corresponds to `1`.",
+          detail: "La celda cuyo número de columna se devolverá. La columna `A` corresponde a `1`.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4075,8 +4075,8 @@ module.exports = {  "insertLink": {
     {
       n: "COLUMNS",
       t: 2,
-      d: "Returns the number of columns in a specified array or range.",
-      a: "Number of columns in a specified array or range.",
+      d: "Devuelve el número de columnas de una matriz o rango especificado.",
+      a: "Número de columnas de una matriz o rango especificado.",
       m: [
         1,
         1
@@ -4084,7 +4084,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango",
-          detail: "The range whose column count will be returned.",
+          detail: "El rango cuyo número de columnas se devolverá.",
           example: "A9:W62",
           require: "m",
           repeat: "n",
@@ -4095,8 +4095,8 @@ module.exports = {  "insertLink": {
     {
       n: "OFFSET",
       t: 2,
-      d: "Returns a range reference shifted a specified number of rows and columns from a starting cell reference.",
-      a: "A range reference offset relative to a cell.",
+      d: "Devuelve una referencia de rango desplazada un número especificado de filas y columnas desde una referencia de celda inicial.",
+      a: "Una referencia de rango desplazada respecto a una celda.",
       m: [
         3,
         5
@@ -4104,7 +4104,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "referencia_celda",
-          detail: "The starting point from which to count the offset rows and columns.",
+          detail: "El punto de partida desde el que se contarán las filas y columnas de desplazamiento.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -4112,7 +4112,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "filas_desplazamiento",
-          detail: "The number of rows to offset by.",
+          detail: "El número de filas que se desplazará.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -4120,7 +4120,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "columnas_desplazamiento",
-          detail: "The number of columns to offset by.",
+          detail: "El número de columnas que se desplazará.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -4128,7 +4128,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "altura",
-          detail: "The height of the range to return starting at the offset target.",
+          detail: "La altura del rango que se devolverá, comenzando en el destino del desplazamiento.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -4136,7 +4136,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "ancho",
-          detail: "The width of the range to return starting at the offset target.",
+          detail: "El ancho del rango que se devolverá, comenzando en el destino del desplazamiento.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -4147,8 +4147,8 @@ module.exports = {  "insertLink": {
     {
       n: "MATCH",
       t: 2,
-      d: "Returns the relative position of an item in a range that matches a specified value.",
-      a: "Position of item in range that matches value.",
+      d: "Devuelve la posición relativa de un elemento en un rango que coincide con un valor especificado.",
+      a: "Posición de un elemento en un rango que coincide con un valor.",
       m: [
         2,
         3
@@ -4156,7 +4156,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "clave_búsqueda",
-          detail: "The value to search for. For example, `42`, `\"Cats\"`, or `I24`.",
+          detail: "El valor que se buscará. Por ejemplo, `42`, `\"Gatos\"` o `I24`.",
           example: "\"Sunday\"",
           require: "m",
           repeat: "n",
@@ -4164,7 +4164,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rango",
-          detail: "The one-dimensional array to be searched.",
+          detail: "La matriz unidimensional en la que se buscará.",
           example: "A2:A9",
           require: "m",
           repeat: "n",
@@ -4172,7 +4172,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tipo_búsqueda",
-          detail: "The search method. `1` (default) finds the largest value less than or equal to `search_key` when `range` is sorted in ascending order. `0` finds the exact value when `range` is unsorted. `-1` finds the smallest value greater than or equal to `search_key` when `range` is sorted in descending order.",
+          detail: "El método de búsqueda. `1` (predeterminado) encuentra el valor mayor menor o igual que `clave_de_búsqueda` cuando `rango` está ordenado de forma ascendente. `0` encuentra el valor exacto cuando `rango` no está ordenado. `-1` encuentra el valor menor mayor o igual que `clave_de_búsqueda` cuando `rango` está ordenado de forma descendente.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -4183,8 +4183,8 @@ module.exports = {  "insertLink": {
     {
       n: "INDEX",
       t: 2,
-      d: "Returns the content of a cell, specified by row and column offset.",
-      a: "Content of cell specified by row and column offset.",
+      d: "Devuelve el contenido de una celda, especificada mediante un desplazamiento de fila y columna.",
+      a: "Contenido de una celda especificada mediante un desplazamiento de fila y columna.",
       m: [
         2,
         3
@@ -4192,7 +4192,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "referencia",
-          detail: "The array of cells to be offset into.",
+          detail: "La matriz de celdas en la que se realizará el desplazamiento.",
           example: "A1:C20",
           require: "m",
           repeat: "n",
@@ -4200,7 +4200,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fila",
-          detail: "The number of offset rows.",
+          detail: "El número de filas de desplazamiento.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -4208,7 +4208,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "columna",
-          detail: "The number of offset columns.",
+          detail: "El número de columnas de desplazamiento.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -4219,8 +4219,8 @@ module.exports = {  "insertLink": {
     {
       n: "GETPIVOTDATA",
       t: 2,
-      d: "Extracts an aggregated value from a pivot table that corresponds to the specified row and column headings.",
-      a: "Extracts an aggregated value from a pivot table that corresponds to the specified row and column headings.",
+      d: "Extrae un valor agregado de una tabla dinámica que corresponde a los encabezados de fila y columna especificados.",
+      a: "Extrae un valor agregado de una tabla dinámica que corresponde a los encabezados de fila y columna especificados.",
       m: [
         2,
         254
@@ -4228,7 +4228,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "nombre_valor",
-          detail: "The name of the value in the pivot table for which you want to get data.",
+          detail: "El nombre del valor de la tabla dinámica del que se desean obtener datos.",
           example: "\"SUM of number of units\"",
           require: "m",
           repeat: "n",
@@ -4236,7 +4236,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "celda_tabla_dinámica",
-          detail: "Any reference to a cell in the desired pivot table (top corner recommended).",
+          detail: "Cualquier referencia a una celda de la tabla dinámica deseada (se recomienda la esquina superior).",
           example: "'Pivot table'!A1",
           require: "m",
           repeat: "n",
@@ -4244,7 +4244,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "columna_original",
-          detail: "The name of the column in the original data set (not the pivot table).",
+          detail: "El nombre de la columna en el conjunto de datos original (no en la tabla dinámica).",
           example: "\"division\"",
           require: "o",
           repeat: "y",
@@ -4252,7 +4252,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "elemento_tabla_dinámica",
-          detail: "The name of the row or column shown in the pivot table corresponding to *original_column* that you want to retrieve.",
+          detail: "El nombre de la fila o columna mostrada en la tabla dinámica correspondiente a *columna_original* que se desea recuperar.",
           example: "\"east\"",
           require: "o",
           repeat: "y",
@@ -4263,8 +4263,8 @@ module.exports = {  "insertLink": {
     {
       n: "CHOOSE",
       t: 2,
-      d: "Returns an element from a list of choices based on index.",
-      a: "An element from a list of choices based on index.",
+      d: "Devuelve un elemento de una lista de opciones según un índice.",
+      a: "Un elemento de una lista de opciones según un índice.",
       m: [
         2,
         255
@@ -4272,7 +4272,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "índice",
-          detail: "Which choice (of the up to 30 provided) to return.",
+          detail: "Qué opción (de hasta 30 proporcionadas) se devolverá.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -4280,7 +4280,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "opción1",
-          detail: "A potential value to return. Required. May be a reference to a cell or an individual value.",
+          detail: "Un valor potencial que se devolverá. Obligatorio. Puede ser una referencia a una celda o un valor individual.",
           example: "\"A\"",
           require: "m",
           repeat: "n",
@@ -4288,7 +4288,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "opción2",
-          detail: "Additional values among which to choose.",
+          detail: "Valores adicionales entre los que elegir.",
           example: "\"B\"",
           require: "o",
           repeat: "y",
@@ -4299,12 +4299,12 @@ module.exports = {  "insertLink": {
     {
       n: "HYPERLINK",
       t: 2,
-      d: "Creates a hyperlink inside a cell.",
-      a: "Creates a hyperlink inside a cell.",
+      d: "Crea un hipervínculo dentro de una celda.",
+      a: "Crea un hipervínculo dentro de una celda.",
       p: [
         {
           name: "url",
-          detail: "The full URL of the link location enclosed in quotation marks, or a reference to a cell containing such a URL.",
+          detail: "La URL completa de la ubicación del enlace, entre comillas, o una referencia a una celda que contenga dicha URL.",
           example: "\"http://www.luckysheet.com/\"",
           require: "m",
           repeat: "n",
@@ -4312,7 +4312,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "etiqueta_enlace",
-          detail: "The text to display in the cell as the link, enclosed in quotation marks, or a reference to a cell containing such a label.",
+          detail: "El texto que se mostrará en la celda como enlace, entre comillas, o una referencia a una celda que contenga dicha etiqueta.",
           example: "\"luckysheet\"",
           require: "m",
           repeat: "n",
@@ -4323,8 +4323,8 @@ module.exports = {  "insertLink": {
     {
       n: "TIME",
       t: 6,
-      d: "Converts a provided hour, minute, and second into a time.",
-      a: "Converts hour/minute/second into a time.",
+      d: "Convierte una hora, un minuto y un segundo proporcionados en una hora.",
+      a: "Convierte hora/minuto/segundo en una hora.",
       m: [
         3,
         3
@@ -4332,7 +4332,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "hora",
-          detail: "The hour component of the time.",
+          detail: "El componente de hora.",
           example: "11",
           require: "m",
           repeat: "n",
@@ -4340,7 +4340,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "minuto",
-          detail: "The minute component of the time.",
+          detail: "El componente de minuto.",
           example: "40",
           require: "m",
           repeat: "n",
@@ -4348,7 +4348,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "segundo",
-          detail: "The second component of the time.",
+          detail: "El componente de segundo.",
           example: "59",
           require: "m",
           repeat: "n",
@@ -4359,8 +4359,8 @@ module.exports = {  "insertLink": {
     {
       n: "TIMEVALUE",
       t: 6,
-      d: "Returns the fraction of a 24-hour day the time represents.",
-      a: "Converts a time string into its serial number representation.",
+      d: "Devuelve la fracción de un día de 24 horas que representa la hora indicada.",
+      a: "Convierte una cadena de hora en su representación numérica de serie.",
       m: [
         1,
         1
@@ -4368,7 +4368,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "cadena_hora",
-          detail: "The string that holds the time representation.",
+          detail: "La cadena que contiene la representación de la hora.",
           example: "\"2:15 PM\"",
           require: "m",
           repeat: "n",
@@ -4379,8 +4379,8 @@ module.exports = {  "insertLink": {
     {
       n: "EOMONTH",
       t: 6,
-      d: "Returns a date on the last day of a month that falls a specified number of months before or after another date.",
-      a: "Last day of a month before or after a date.",
+      d: "Devuelve una fecha correspondiente al último día de un mes que cae un número especificado de meses antes o después de otra fecha.",
+      a: "Último día de un mes antes o después de una fecha.",
       m: [
         2,
         2
@@ -4388,7 +4388,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_inicio",
-          detail: "The date from which to calculate the result.",
+          detail: "La fecha a partir de la cual se calculará el resultado.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4396,7 +4396,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_de_meses",
-          detail: "The number of months before (negative) or after (positive) 'start_date' to consider.",
+          detail: "El número de meses antes (negativo) o después (positivo) de 'fecha_inicio' que se tendrá en cuenta.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4407,8 +4407,8 @@ module.exports = {  "insertLink": {
     {
       n: "EDATE",
       t: 6,
-      d: "Returns a date a specified number of months before or after another date.",
-      a: "Date a number of months before/after another date.",
+      d: "Devuelve una fecha situada un número especificado de meses antes o después de otra fecha.",
+      a: "Fecha situada cierto número de meses antes/después de otra fecha.",
       m: [
         2,
         2
@@ -4416,7 +4416,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_inicio",
-          detail: "The date from which to calculate the result.",
+          detail: "La fecha a partir de la cual se calculará el resultado.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4424,7 +4424,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_de_meses",
-          detail: "The number of months before (negative) or after (positive) 'start_date' to calculate.",
+          detail: "El número de meses antes (negativo) o después (positivo) de 'fecha_inicio' que se calculará.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4435,8 +4435,8 @@ module.exports = {  "insertLink": {
     {
       n: "SECOND",
       t: 6,
-      d: "Returns the second component of a specific time, in numeric format.",
-      a: "Second component of a specific time.",
+      d: "Devuelve el componente de segundos de una hora determinada, en formato numérico.",
+      a: "Componente de segundos de una hora determinada.",
       m: [
         1,
         1
@@ -4444,7 +4444,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "hora",
-          detail: "The time from which to calculate the second component",
+          detail: "La hora a partir de la cual se calculará el componente de segundos.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4455,8 +4455,8 @@ module.exports = {  "insertLink": {
     {
       n: "MINUTE",
       t: 6,
-      d: "Returns the minute component of a specific time, in numeric format.",
-      a: "Minute component of a specific time.",
+      d: "Devuelve el componente de minutos de una hora determinada, en formato numérico.",
+      a: "Componente de minutos de una hora determinada.",
       m: [
         1,
         1
@@ -4464,7 +4464,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "hora",
-          detail: "The time from which to calculate the minute component.",
+          detail: "La hora a partir de la cual se calculará el componente de minutos.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4475,8 +4475,8 @@ module.exports = {  "insertLink": {
     {
       n: "HOUR",
       t: 6,
-      d: "Returns the hour component of a specific time, in numeric format.",
-      a: "Hour component of a specific time.",
+      d: "Devuelve el componente de horas de una hora determinada, en formato numérico.",
+      a: "Componente de horas de una hora determinada.",
       m: [
         1,
         1
@@ -4484,7 +4484,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "hora",
-          detail: "The time from which to calculate the hour component.",
+          detail: "La hora a partir de la cual se calculará el componente de horas.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4495,8 +4495,8 @@ module.exports = {  "insertLink": {
     {
       n: "NOW",
       t: 6,
-      d: "Returns the current date and time as a date value.",
-      a: "Current date and time as a date value.",
+      d: "Devuelve la fecha y hora actuales como un valor de fecha.",
+      a: "Fecha y hora actuales como valor de fecha.",
       m: [
         0,
         0
@@ -4506,8 +4506,8 @@ module.exports = {  "insertLink": {
     {
       n: "NETWORKDAYS",
       t: 6,
-      d: "Returns the number of net working days between two provided days.",
-      a: "Net working days between two provided days.",
+      d: "Devuelve el número de días laborables netos entre dos días proporcionados.",
+      a: "Días laborables netos entre dos días proporcionados.",
       m: [
         2,
         3
@@ -4515,7 +4515,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_inicio",
-          detail: "The start date of the period from which to calculate the number of net working days.",
+          detail: "La fecha de inicio del período para el que se calculará el número de días laborables netos.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4523,7 +4523,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fecha_fin",
-          detail: "The end date of the period from which to calculate the number of net working days.",
+          detail: "La fecha de fin del período para el que se calculará el número de días laborables netos.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4531,7 +4531,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "días_festivos",
-          detail: "A range or array constant containing the date serial numbers to consider holidays.",
+          detail: "Un rango o matriz constante que contiene los números de serie de fecha que se considerarán festivos.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4542,8 +4542,8 @@ module.exports = {  "insertLink": {
     {
       n: "NETWORKDAYS_INTL",
       t: 6,
-      d: "Returns the number of net working days between two provided days excluding specified weekend days and holidays.",
-      a: "Net working days between two dates (specifying weekends).",
+      d: "Devuelve el número de días laborables netos entre dos días proporcionados, excluyendo los días de fin de semana y festivos especificados.",
+      a: "Días laborables netos entre dos fechas (especificando fines de semana).",
       m: [
         2,
         4
@@ -4551,7 +4551,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_inicio",
-          detail: "The start date of the period from which to calculate the number of net working days.",
+          detail: "La fecha de inicio del período para el que se calculará el número de días laborables netos.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4559,7 +4559,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fecha_fin",
-          detail: "The end date of the period from which to calculate the number of net working days.",
+          detail: "La fecha de fin del período para el que se calculará el número de días laborables netos.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4567,7 +4567,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fin_de_semana",
-          detail: "A number or string representing which days of the week are considered weekends.",
+          detail: "Un número o cadena que representa qué días de la semana se consideran fin de semana.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4575,7 +4575,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "días_festivos",
-          detail: "A range or array constant containing the dates to consider as holidays.",
+          detail: "Un rango o matriz constante que contiene las fechas que se considerarán festivos.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4586,8 +4586,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISOWEEKNUM",
       t: 6,
-      d: "Returns a number representing the ISO week of the year where the provided date falls.",
-      a: "ISO week number of the year.",
+      d: "Devuelve un número que representa la semana ISO del año en la que cae la fecha proporcionada.",
+      a: "Número de semana ISO del año.",
       m: [
         1,
         1
@@ -4595,7 +4595,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha",
-          detail: "The date for which to determine the ISO week number. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+          detail: "La fecha para la que se determinará el número de semana ISO. Debe ser una referencia a una celda que contenga una fecha, una función que devuelva un tipo de fecha, o un número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4606,8 +4606,8 @@ module.exports = {  "insertLink": {
     {
       n: "WEEKNUM",
       t: 6,
-      d: "Returns a number representing the week of the year where the provided date falls.",
-      a: "Week number of the year.",
+      d: "Devuelve un número que representa la semana del año en la que cae la fecha proporcionada.",
+      a: "Número de semana del año.",
       m: [
         1,
         2
@@ -4615,7 +4615,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha",
-          detail: "The date for which to determine the week number. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+          detail: "La fecha para la que se determinará el número de semana. Debe ser una referencia a una celda que contenga una fecha, una función que devuelva un tipo de fecha, o un número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4623,7 +4623,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tipo",
-          detail: "A number representing the day that a week starts on. Sunday = 1.",
+          detail: "Un número que representa el día en el que comienza la semana. Domingo = 1.",
           example: "7",
           require: "o",
           repeat: "n",
