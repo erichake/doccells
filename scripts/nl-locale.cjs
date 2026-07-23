@@ -9743,8 +9743,8 @@ module.exports = {
     {
       n: "TO_TEXT",
       t: 16,
-      d: "Beschrijving van de functie TO_TEXT.",
-      a: "Samenvatting van de functie TO_TEXT.",
+      d: "Converteert een opgegeven numerieke waarde naar een tekstwaarde.",
+      a: "Converteert een opgegeven numerieke waarde naar een tekstwaarde.",
       m: [
         1,
         1
@@ -9752,7 +9752,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie TO_TEXT.",
+          detail: "Het argument of de verwijzing naar een cel die naar tekst moet worden geconverteerd.",
           example: "24",
           require: "m",
           repeat: "n",
@@ -9763,8 +9763,8 @@ module.exports = {
     {
       n: "TO_DOLLARS",
       t: 16,
-      d: "Beschrijving van de functie TO_DOLLARS.",
-      a: "Samenvatting van de functie TO_DOLLARS.",
+      d: "Converteert een opgegeven getal naar een dollarwaarde.",
+      a: "Converteert een opgegeven getal naar een dollarwaarde.",
       m: [
         1,
         1
@@ -9772,7 +9772,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie TO_DOLLARS.",
+          detail: "Het argument of de verwijzing naar een cel die naar een dollarwaarde moet worden geconverteerd.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9783,8 +9783,8 @@ module.exports = {
     {
       n: "TO_PERCENT",
       t: 16,
-      d: "Beschrijving van de functie TO_PERCENT.",
-      a: "Samenvatting van de functie TO_PERCENT.",
+      d: "Converteert een opgegeven getal naar een percentage.",
+      a: "Converteert een opgegeven getal naar een percentage.",
       m: [
         1,
         1
@@ -9792,7 +9792,7 @@ module.exports = {
       p: [
         {
           name: "waarde",
-          detail: "Parameter `waarde` van de functie TO_PERCENT.",
+          detail: "Het argument of de verwijzing naar een cel die naar een percentage moet worden geconverteerd.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9803,8 +9803,8 @@ module.exports = {
     {
       n: "DGET",
       t: 17,
-      d: "Beschrijving van de functie DGET.",
-      a: "Samenvatting van de functie DGET.",
+      d: "Retourneert een enkele waarde uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Enkele waarde uit een tabelachtig bereik.",
       m: [
         3,
         3
@@ -9812,7 +9812,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DGET.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9820,7 +9820,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DGET.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9828,7 +9828,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DGET.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9839,8 +9839,8 @@ module.exports = {
     {
       n: "DMAX",
       t: 17,
-      d: "Beschrijving van de functie DMAX.",
-      a: "Samenvatting van de functie DMAX.",
+      d: "Retourneert de grootste waarde die is geselecteerd uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Maximum van waarden uit een tabelachtig bereik.",
       m: [
         3,
         3
@@ -9848,7 +9848,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DMAX.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9856,7 +9856,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DMAX.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9864,7 +9864,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DMAX.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9875,8 +9875,8 @@ module.exports = {
     {
       n: "DMIN",
       t: 17,
-      d: "Beschrijving van de functie DMIN.",
-      a: "Samenvatting van de functie DMIN.",
+      d: "Retourneert de kleinste waarde die is geselecteerd uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Minimum van waarden uit een tabelachtig bereik.",
       m: [
         3,
         3
@@ -9884,7 +9884,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DMIN.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9892,7 +9892,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DMIN.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9900,7 +9900,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DMIN.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9911,8 +9911,8 @@ module.exports = {
     {
       n: "DAVERAGE",
       t: 17,
-      d: "Beschrijving van de functie DAVERAGE.",
-      a: "Samenvatting van de functie DAVERAGE.",
+      d: "Retourneert het gemiddelde van een reeks waarden die zijn geselecteerd uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Gemiddelde van een reeks waarden uit een tabelachtig bereik.",
       m: [
         3,
         3
@@ -9920,7 +9920,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DAVERAGE.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9928,7 +9928,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DAVERAGE.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9936,7 +9936,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DAVERAGE.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9947,8 +9947,8 @@ module.exports = {
     {
       n: "DCOUNT",
       t: 17,
-      d: "Beschrijving van de functie DCOUNT.",
-      a: "Samenvatting van de functie DCOUNT.",
+      d: "Telt numerieke waarden die zijn geselecteerd uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Telt waarden uit een tabelachtig bereik.",
       m: [
         3,
         3
@@ -9956,7 +9956,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DCOUNT.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9964,7 +9964,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DCOUNT.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9972,7 +9972,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DCOUNT.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9983,8 +9983,8 @@ module.exports = {
     {
       n: "DCOUNTA",
       t: 17,
-      d: "Beschrijving van de functie DCOUNTA.",
-      a: "Samenvatting van de functie DCOUNTA.",
+      d: "Telt waarden, inclusief tekst, die zijn geselecteerd uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Telt waarden en tekst uit een tabelachtig bereik.",
       m: [
         3,
         3
@@ -9992,7 +9992,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DCOUNTA.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10000,7 +10000,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DCOUNTA.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10008,7 +10008,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DCOUNTA.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10019,8 +10019,8 @@ module.exports = {
     {
       n: "DPRODUCT",
       t: 17,
-      d: "Beschrijving van de functie DPRODUCT.",
-      a: "Samenvatting van de functie DPRODUCT.",
+      d: "Retourneert het product van waarden die zijn geselecteerd uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Product van waarden uit een tabelachtig bereik.",
       m: [
         3,
         3
@@ -10028,7 +10028,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DPRODUCT.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10036,7 +10036,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DPRODUCT.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10044,7 +10044,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DPRODUCT.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10055,8 +10055,8 @@ module.exports = {
     {
       n: "DSTDEV",
       t: 17,
-      d: "Beschrijving van de functie DSTDEV.",
-      a: "Samenvatting van de functie DSTDEV.",
+      d: "Retourneert de standaarddeviatie van een steekproef die is geselecteerd uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Standaarddeviatie van een steekproef uit een tabel.",
       m: [
         3,
         3
@@ -10064,7 +10064,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DSTDEV.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10072,7 +10072,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DSTDEV.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10080,7 +10080,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DSTDEV.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10091,8 +10091,8 @@ module.exports = {
     {
       n: "DSTDEVP",
       t: 17,
-      d: "Beschrijving van de functie DSTDEVP.",
-      a: "Samenvatting van de functie DSTDEVP.",
+      d: "Retourneert de standaarddeviatie van een volledige populatie die is geselecteerd uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Standaarddeviatie van een volledige populatie uit een tabel.",
       m: [
         3,
         3
@@ -10100,7 +10100,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DSTDEVP.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10108,7 +10108,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DSTDEVP.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10116,7 +10116,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DSTDEVP.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10127,8 +10127,8 @@ module.exports = {
     {
       n: "DSUM",
       t: 17,
-      d: "Beschrijving van de functie DSUM.",
-      a: "Samenvatting van de functie DSUM.",
+      d: "Retourneert de som van waarden die zijn geselecteerd uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Som van waarden uit een tabelachtig bereik.",
       m: [
         3,
         3
@@ -10136,7 +10136,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DSUM.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10144,7 +10144,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DSUM.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10152,7 +10152,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DSUM.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10163,8 +10163,8 @@ module.exports = {
     {
       n: "DVAR",
       t: 17,
-      d: "Beschrijving van de functie DVAR.",
-      a: "Samenvatting van de functie DVAR.",
+      d: "Retourneert de variantie van een steekproef die is geselecteerd uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Variantie van een steekproef uit een tabelachtig bereik.",
       m: [
         3,
         3
@@ -10172,7 +10172,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DVAR.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10180,7 +10180,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DVAR.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10188,7 +10188,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DVAR.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10199,8 +10199,8 @@ module.exports = {
     {
       n: "DVARP",
       t: 17,
-      d: "Beschrijving van de functie DVARP.",
-      a: "Samenvatting van de functie DVARP.",
+      d: "Retourneert de variantie van een volledige populatie die is geselecteerd uit een tabelachtige array of bereik van een database, met behulp van een SQL-achtige query.",
+      a: "Variantie van een populatie uit een tabelachtig bereik.",
       m: [
         3,
         3
@@ -10208,7 +10208,7 @@ module.exports = {
       p: [
         {
           name: "database",
-          detail: "Parameter `database` van de functie DVARP.",
+          detail: "Het array of bereik met de te overwegen gegevens, zo gestructureerd dat de eerste rij de labels bevat voor de waarden van elke kolom.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10216,7 +10216,7 @@ module.exports = {
         },
         {
           name: "veld",
-          detail: "Parameter `veld` van de functie DVARP.",
+          detail: "Geeft aan welke kolom in `database` de waarden bevat die moeten worden geëxtraheerd en verwerkt.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10224,7 +10224,7 @@ module.exports = {
         },
         {
           name: "criteria",
-          detail: "Parameter `criteria` van de functie DVARP.",
+          detail: "Een array of bereik met nul of meer criteria waarmee de waarden van `database` vóór verwerking worden gefilterd.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10235,8 +10235,8 @@ module.exports = {
     {
       n: "AGE_BY_IDCARD",
       t: "3",
-      d: "Beschrijving van de functie AGE_BY_IDCARD.",
-      a: "Samenvatting van de functie AGE_BY_IDCARD.",
+      d: "Berekent de leeftijd op basis van het Chinese identiteitskaartnummer. Ondersteunt 15 of 18 cijfers.",
+      a: "Haalt de leeftijd op op basis van het identiteitskaartnummer.",
       m: [
         1,
         2
@@ -10245,7 +10245,7 @@ module.exports = {
         {
           name: "Identificatienummer",
           example: "A1",
-          detail: "Parameter `Identificatienummer` van de functie AGE_BY_IDCARD.",
+          detail: "15- of 18-cijferig identificatienummer of bereik.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10253,7 +10253,7 @@ module.exports = {
         {
           name: "Uiterste datum",
           example: "\"2017-10-01\"",
-          detail: "Parameter `Uiterste datum` van de functie AGE_BY_IDCARD.",
+          detail: "De peildatum voor de leeftijdsberekening, of bereik. Standaard is de huidige dag.",
           require: "o",
           repeat: "n",
           type: "rangedatetime"
@@ -10263,8 +10263,8 @@ module.exports = {
     {
       n: "SEX_BY_IDCARD",
       t: "3",
-      d: "Beschrijving van de functie SEX_BY_IDCARD.",
-      a: "Samenvatting van de functie SEX_BY_IDCARD.",
+      d: "Berekent het geslacht op basis van het Chinese identiteitskaartnummer. Ondersteunt 15 of 18 cijfers.",
+      a: "Haalt het geslacht op op basis van het identiteitskaartnummer.",
       m: [
         1,
         1
@@ -10273,7 +10273,7 @@ module.exports = {
         {
           name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `Identificatienummer` van de functie SEX_BY_IDCARD.",
+          detail: "15- of 18-cijferig identificatienummer of bereik.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10283,8 +10283,8 @@ module.exports = {
     {
       n: "BIRTHDAY_BY_IDCARD",
       t: "3",
-      d: "Beschrijving van de functie BIRTHDAY_BY_IDCARD.",
-      a: "Samenvatting van de functie BIRTHDAY_BY_IDCARD.",
+      d: "Berekent de geboortedatum op basis van het Chinese identiteitskaartnummer. Ondersteunt 15 of 18 cijfers.",
+      a: "Haalt de geboortedatum op op basis van het identiteitskaartnummer.",
       m: [
         1,
         2
@@ -10293,7 +10293,7 @@ module.exports = {
         {
           name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `Identificatienummer` van de functie BIRTHDAY_BY_IDCARD.",
+          detail: "15- of 18-cijferig identificatienummer of bereik.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10301,7 +10301,7 @@ module.exports = {
         {
           name: "Geboortedatumnotatie",
           example: "0",
-          detail: "Parameter `Geboortedatumnotatie` van de functie BIRTHDAY_BY_IDCARD.",
+          detail: "Datumtype, standaard: 0:[1900/01/01], 1:[1900-01-01], 2:[1 januari 1900].",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10311,8 +10311,8 @@ module.exports = {
     {
       n: "PROVINCE_BY_IDCARD",
       t: "3",
-      d: "Beschrijving van de functie PROVINCE_BY_IDCARD.",
-      a: "Samenvatting van de functie PROVINCE_BY_IDCARD.",
+      d: "Berekent de geboorteprovincie op basis van het Chinese identiteitskaartnummer. Ondersteunt 15 of 18 cijfers.",
+      a: "Haalt de geboorteprovincie op op basis van het identiteitskaartnummer.",
       m: [
         1,
         1
@@ -10321,7 +10321,7 @@ module.exports = {
         {
           name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `Identificatienummer` van de functie PROVINCE_BY_IDCARD.",
+          detail: "15- of 18-cijferig identificatienummer of bereik.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10331,8 +10331,8 @@ module.exports = {
     {
       n: "CITY_BY_IDCARD",
       t: "3",
-      d: "Beschrijving van de functie CITY_BY_IDCARD.",
-      a: "Samenvatting van de functie CITY_BY_IDCARD.",
+      d: "Berekent de geboortestad op basis van het Chinese identiteitskaartnummer. Ondersteunt 15 of 18 cijfers.",
+      a: "Haalt de geboortestad op op basis van het identiteitskaartnummer.",
       m: [
         1,
         1
@@ -10341,7 +10341,7 @@ module.exports = {
         {
           name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `Identificatienummer` van de functie CITY_BY_IDCARD.",
+          detail: "15- of 18-cijferig identificatienummer of bereik.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10351,8 +10351,8 @@ module.exports = {
     {
       n: "STAR_BY_IDCARD",
       t: "3",
-      d: "Beschrijving van de functie STAR_BY_IDCARD.",
-      a: "Samenvatting van de functie STAR_BY_IDCARD.",
+      d: "Berekent het sterrenbeeld op basis van het Chinese identiteitskaartnummer. Ondersteunt 15 of 18 cijfers.",
+      a: "Haalt het sterrenbeeld op op basis van het identiteitskaartnummer.",
       m: [
         1,
         1
@@ -10361,7 +10361,7 @@ module.exports = {
         {
           name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `Identificatienummer` van de functie STAR_BY_IDCARD.",
+          detail: "15- of 18-cijferig identificatienummer of bereik.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10371,8 +10371,8 @@ module.exports = {
     {
       n: "ANIMAL_BY_IDCARD",
       t: "3",
-      d: "Beschrijving van de functie ANIMAL_BY_IDCARD.",
-      a: "Samenvatting van de functie ANIMAL_BY_IDCARD.",
+      d: "Berekent het Chinese dierenriemteken (Rat, Os, Tijger, Konijn...) op basis van het Chinese identiteitskaartnummer. Ondersteunt 15 of 18 cijfers.",
+      a: "Haalt het Chinese dierenriemteken op op basis van het identiteitskaartnummer.",
       m: [
         1,
         1
@@ -10381,7 +10381,7 @@ module.exports = {
         {
           name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `Identificatienummer` van de functie ANIMAL_BY_IDCARD.",
+          detail: "15- of 18-cijferig identificatienummer of bereik.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10391,8 +10391,8 @@ module.exports = {
     {
       n: "ISIDCARD",
       t: "3",
-      d: "Beschrijving van de functie ISIDCARD.",
-      a: "Samenvatting van de functie ISIDCARD.",
+      d: "Controleert of het formaat van het identiteitskaartnummer correct is. Ondersteunt 15 of 18 cijfers.",
+      a: "Controleert de juistheid van het formaat van het identiteitskaartnummer.",
       m: [
         1,
         1
@@ -10401,7 +10401,7 @@ module.exports = {
         {
           name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `Identificatienummer` van de functie ISIDCARD.",
+          detail: "15- of 18-cijferig identificatienummer of bereik.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10411,8 +10411,8 @@ module.exports = {
     {
       n: "DM_TEXT_CUTWORD",
       t: "4",
-      d: "Beschrijving van de functie DM_TEXT_CUTWORD.",
-      a: "Samenvatting van de functie DM_TEXT_CUTWORD.",
+      d: "Tekstsegmentatie. Splitst een reeks woorden op in een reeks afzonderlijke woorden.",
+      a: "Chinese tekstsegmentatie.",
       m: [
         1,
         2
@@ -10421,7 +10421,7 @@ module.exports = {
         {
           name: "Tekst",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parameter `Tekst` van de functie DM_TEXT_CUTWORD.",
+          detail: "Willekeurige tekst waarvoor woordsegmentatie vereist is.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10429,7 +10429,7 @@ module.exports = {
         {
           name: "Woordsegmentatiemodus",
           example: "0",
-          detail: "Parameter `Woordsegmentatiemodus` van de functie DM_TEXT_CUTWORD.",
+          detail: "Standaard is 0 [precisiemodus], 1 [volledige modus], 2 [zoekmachinemodus].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10439,8 +10439,8 @@ module.exports = {
     {
       n: "DM_TEXT_TFIDF",
       t: "4",
-      d: "Beschrijving van de functie DM_TEXT_TFIDF.",
-      a: "Samenvatting van de functie DM_TEXT_TFIDF.",
+      d: "Gebruikt het TF-IDF-algoritme voor het extraheren van trefwoorden. Detecteert trefwoorden uit een reeks tekst.",
+      a: "TF-IDF-trefwoorddetectie.",
       m: [
         1,
         3
@@ -10449,7 +10449,7 @@ module.exports = {
         {
           name: "Tekst",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parameter `Tekst` van de functie DM_TEXT_TFIDF.",
+          detail: "Willekeurige tekst waarvoor woordsegmentatie vereist is.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10457,7 +10457,7 @@ module.exports = {
         {
           name: "Aantal trefwoorden",
           example: "20",
-          detail: "Parameter `Aantal trefwoorden` van de functie DM_TEXT_TFIDF.",
+          detail: "Het aantal trefwoorden dat door het algoritme wordt geretourneerd, standaard 20.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10465,7 +10465,7 @@ module.exports = {
         {
           name: "Corpus",
           example: "1",
-          detail: "Parameter `Corpus` van de functie DM_TEXT_TFIDF.",
+          detail: "Selecteert een corpus binnen een specifiek domein, standaard 0 [algemeen], 1 [financieel], 2 [medisch].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10475,8 +10475,8 @@ module.exports = {
     {
       n: "DM_TEXT_TEXTRANK",
       t: "4",
-      d: "Beschrijving van de functie DM_TEXT_TEXTRANK.",
-      a: "Samenvatting van de functie DM_TEXT_TEXTRANK.",
+      d: "Gebruikt het TextRank-algoritme voor het extraheren van trefwoorden. Detecteert trefwoorden uit een reeks tekst.",
+      a: "TextRank-trefwoorddetectie.",
       m: [
         1,
         3
@@ -10485,7 +10485,7 @@ module.exports = {
         {
           name: "Tekst",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parameter `Tekst` van de functie DM_TEXT_TEXTRANK.",
+          detail: "Willekeurige tekst waarvoor woordsegmentatie vereist is.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10493,7 +10493,7 @@ module.exports = {
         {
           name: "Aantal trefwoorden",
           example: "20",
-          detail: "Parameter `Aantal trefwoorden` van de functie DM_TEXT_TEXTRANK.",
+          detail: "Het aantal trefwoorden dat door het algoritme wordt geretourneerd, standaard 20.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10501,7 +10501,7 @@ module.exports = {
         {
           name: "Corpus",
           example: "1",
-          detail: "Parameter `Corpus` van de functie DM_TEXT_TEXTRANK.",
+          detail: "Selecteert een corpus binnen een specifiek domein, standaard 0 [algemeen], 1 [financieel], 2 [medisch].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10511,8 +10511,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_CLOSE",
       t: "5",
-      d: "Beschrijving van de functie DATA_CN_STOCK_CLOSE.",
-      a: "Samenvatting van de functie DATA_CN_STOCK_CLOSE.",
+      d: "Retourneert de bijbehorende slotkoers van A-aandelen op basis van de aandelencode en datum.",
+      a: "Retourneert de slotkoers van een aandeel.",
       m: [
         1,
         3
@@ -10521,7 +10521,7 @@ module.exports = {
         {
           name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_CLOSE.",
+          detail: "6-cijferige aandelencode, verplicht.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10529,7 +10529,7 @@ module.exports = {
         {
           name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_CLOSE.",
+          detail: "De handelsdag van het aandeel, standaard is de laatste handelsdag.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10537,7 +10537,7 @@ module.exports = {
         {
           name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_CLOSE.",
+          detail: "Selecteert het type koersaanpassing van het aandeel, standaard 0 [voorwaartse aanpassing], 1 [oorspronkelijke koers], 2 [achterwaartse aanpassing].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10547,8 +10547,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_OPEN",
       t: "5",
-      d: "Beschrijving van de functie DATA_CN_STOCK_OPEN.",
-      a: "Samenvatting van de functie DATA_CN_STOCK_OPEN.",
+      d: "Retourneert de openingskoers van het aandeel op basis van de aandelencode en datum.",
+      a: "Retourneert de openingskoers van A-aandelen.",
       m: [
         1,
         3
@@ -10557,7 +10557,7 @@ module.exports = {
         {
           name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_OPEN.",
+          detail: "6-cijferige aandelencode, verplicht.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10565,7 +10565,7 @@ module.exports = {
         {
           name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_OPEN.",
+          detail: "De handelsdag van het aandeel, standaard is de laatste handelsdag.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10573,7 +10573,7 @@ module.exports = {
         {
           name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_OPEN.",
+          detail: "Selecteert het type koersaanpassing van het aandeel, standaard 0 [voorwaartse aanpassing], 1 [oorspronkelijke koers], 2 [achterwaartse aanpassing].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10583,8 +10583,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_MAX",
       t: "5",
-      d: "Beschrijving van de functie DATA_CN_STOCK_MAX.",
-      a: "Samenvatting van de functie DATA_CN_STOCK_MAX.",
+      d: "Retourneert de hoogste koers van het aandeel op basis van de aandelencode en datum.",
+      a: "Retourneert de hoogste koers van een aandeel.",
       m: [
         1,
         3
@@ -10593,7 +10593,7 @@ module.exports = {
         {
           name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_MAX.",
+          detail: "6-cijferige aandelencode, verplicht.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10601,7 +10601,7 @@ module.exports = {
         {
           name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_MAX.",
+          detail: "De handelsdag van het aandeel, standaard is de laatste handelsdag.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10609,7 +10609,7 @@ module.exports = {
         {
           name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_MAX.",
+          detail: "Selecteert het type koersaanpassing van het aandeel, standaard 0 [voorwaartse aanpassing], 1 [oorspronkelijke koers], 2 [achterwaartse aanpassing].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10619,8 +10619,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_MIN",
       t: "5",
-      d: "Beschrijving van de functie DATA_CN_STOCK_MIN.",
-      a: "Samenvatting van de functie DATA_CN_STOCK_MIN.",
+      d: "Retourneert de laagste koers van het aandeel op basis van de aandelencode en datum.",
+      a: "Retourneert de laagste koers van een aandeel.",
       m: [
         1,
         3
@@ -10629,7 +10629,7 @@ module.exports = {
         {
           name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_MIN.",
+          detail: "6-cijferige aandelencode, verplicht.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10637,7 +10637,7 @@ module.exports = {
         {
           name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_MIN.",
+          detail: "De handelsdag van het aandeel, standaard is de laatste handelsdag.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10645,7 +10645,7 @@ module.exports = {
         {
           name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_MIN.",
+          detail: "Selecteert het type koersaanpassing van het aandeel, standaard 0 [voorwaartse aanpassing], 1 [oorspronkelijke koers], 2 [achterwaartse aanpassing].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10655,8 +10655,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_VOLUMN",
       t: "5",
-      d: "Beschrijving van de functie DATA_CN_STOCK_VOLUMN.",
-      a: "Samenvatting van de functie DATA_CN_STOCK_VOLUMN.",
+      d: "Retourneert het bijbehorende handelsvolume van A-aandelen op basis van de aandelencode en datum.",
+      a: "Retourneert het bijbehorende handelsvolume van A-aandelen.",
       m: [
         1,
         3
@@ -10665,7 +10665,7 @@ module.exports = {
         {
           name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_VOLUMN.",
+          detail: "6-cijferige aandelencode, verplicht.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10673,7 +10673,7 @@ module.exports = {
         {
           name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_VOLUMN.",
+          detail: "De handelsdag van het aandeel, standaard is de laatste handelsdag.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10681,7 +10681,7 @@ module.exports = {
         {
           name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_VOLUMN.",
+          detail: "Selecteert het type koersaanpassing van het aandeel, standaard 0 [voorwaartse aanpassing], 1 [oorspronkelijke koers], 2 [achterwaartse aanpassing].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10691,8 +10691,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_AMOUNT",
       t: "5",
-      d: "Beschrijving van de functie DATA_CN_STOCK_AMOUNT.",
-      a: "Samenvatting van de functie DATA_CN_STOCK_AMOUNT.",
+      d: "Retourneert de bijbehorende handelsomzet van A-aandelen op basis van de aandelencode en datum.",
+      a: "Retourneert de bijbehorende handelsomzet van A-aandelen.",
       m: [
         1,
         3
@@ -10701,7 +10701,7 @@ module.exports = {
         {
           name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_AMOUNT.",
+          detail: "6-cijferige aandelencode, verplicht.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10709,7 +10709,7 @@ module.exports = {
         {
           name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_AMOUNT.",
+          detail: "De handelsdag van het aandeel, standaard is de laatste handelsdag.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10717,7 +10717,7 @@ module.exports = {
         {
           name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_AMOUNT.",
+          detail: "Selecteert het type koersaanpassing van het aandeel, standaard 0 [voorwaartse aanpassing], 1 [oorspronkelijke koers], 2 [achterwaartse aanpassing].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10727,8 +10727,8 @@ module.exports = {
     {
       n: "ISDATE",
       t: "6",
-      d: "Beschrijving van de functie ISDATE.",
-      a: "Samenvatting van de functie ISDATE.",
+      d: "Retourneert of een waarde een datum is.",
+      a: "Of een waarde een datum is.",
       m: [
         1,
         1
@@ -10737,7 +10737,7 @@ module.exports = {
         {
           name: "waarde",
           example: "\"1990-01-01\"",
-          detail: "Parameter `waarde` van de functie ISDATE.",
+          detail: "De te controleren waarde als datum.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10747,8 +10747,8 @@ module.exports = {
     {
       n: "LINESPLINES",
       t: "3",
-      d: "Beschrijving van de functie LINESPLINES.",
-      a: "Samenvatting van de functie LINESPLINES.",
+      d: "Genereert in de cel ingesloten sparklines om de continue trend van de gegevens weer te geven.",
+      a: "Genereert een sparkline-lijngrafiek.",
       m: [
         1,
         8
@@ -10757,7 +10757,7 @@ module.exports = {
         {
           name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Bereik` van de functie LINESPLINES.",
+          detail: "Bereik. Waarden kunnen effectief worden berekend, bijv. A1:A20, {1,2,3,4,5} enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10765,7 +10765,7 @@ module.exports = {
         {
           name: "Lijnkleur",
           example: "#2ec7c9",
-          detail: "Parameter `Lijnkleur` van de functie LINESPLINES.",
+          detail: "De lijnkleur van de lijngrafiek kan het bereik A1, een kleurenpaletindexwaarde of een specifieke kleurwaarde zijn. Stel in op 0 of onwaar om deze niet weer te geven. Ondersteunt regx, rgb, rgba enz. Standaard #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10773,7 +10773,7 @@ module.exports = {
         {
           name: "Lijndikte",
           example: "1",
-          detail: "Parameter `Lijndikte` van de functie LINESPLINES.",
+          detail: "Lijndikte van de lijngrafiek, standaard 1px.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10781,7 +10781,7 @@ module.exports = {
         {
           name: "Hulplijn",
           example: "avg",
-          detail: "Parameter `Hulplijn` van de functie LINESPLINES.",
+          detail: "Een horizontale lijn, die minimum, maximum, gemiddelde, mediaan, bereik of een aangepaste waarde kan zijn, standaard 0 geen.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10789,7 +10789,7 @@ module.exports = {
         {
           name: "Kleur van de hulplijn",
           example: "#000",
-          detail: "Parameter `Kleur van de hulplijn` van de functie LINESPLINES.",
+          detail: "Kleurinstelling van de hulplijn, dezelfde configuratie als de lijnkleur, standaard #000.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10797,7 +10797,7 @@ module.exports = {
         {
           name: "Maximummarkering",
           example: "#fc5c5c",
-          detail: "Parameter `Maximummarkering` van de functie LINESPLINES.",
+          detail: "Markeert de maximumwaarde van de lijngrafiek, dezelfde lijnkleurconfiguratie, standaard 0 niet weergegeven.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10805,7 +10805,7 @@ module.exports = {
         {
           name: "Minimummarkering",
           example: "#fc5c5c",
-          detail: "Parameter `Minimummarkering` van de functie LINESPLINES.",
+          detail: "Markeert de minimumwaarde van de lijngrafiek, dezelfde lijnkleurconfiguratie, standaard 0 niet weergegeven.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10813,7 +10813,7 @@ module.exports = {
         {
           name: "Markeringsgrootte",
           example: "1.5",
-          detail: "Parameter `Markeringsgrootte` van de functie LINESPLINES.",
+          detail: "Instelling van de maximum- en minimummarkeringsgrootte, standaard 1,5.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10823,8 +10823,8 @@ module.exports = {
     {
       n: "AREASPLINES",
       t: "3",
-      d: "Beschrijving van de functie AREASPLINES.",
-      a: "Samenvatting van de functie AREASPLINES.",
+      d: "Genereert in een vlakdiagram van de cel ingesloten sparklines, over het algemeen gebruikt om de continue cumulatieve waardetrend van de gegevens weer te geven.",
+      a: "Genereert een sparkline-vlakdiagram.",
       m: [
         1,
         5
@@ -10833,7 +10833,7 @@ module.exports = {
         {
           name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Bereik` van de functie AREASPLINES.",
+          detail: "Bereik. Waarden kunnen effectief worden berekend, bijv. A1:A20, {1,2,3,4,5} enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10841,7 +10841,7 @@ module.exports = {
         {
           name: "Lijnkleur",
           example: "#2ec7c9",
-          detail: "Parameter `Lijnkleur` van de functie AREASPLINES.",
+          detail: "De lijnkleur van de lijngrafiek kan het bereik A1, een kleurenpaletindexwaarde of een specifieke kleurwaarde zijn. Stel in op 0 of onwaar om deze niet weer te geven. Ondersteunt regx, rgb, rgba enz. Standaard #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10849,7 +10849,7 @@ module.exports = {
         {
           name: "Vulkleur",
           example: "#CCF3F4",
-          detail: "Parameter `Vulkleur` van de functie AREASPLINES.",
+          detail: "Vormt een vlakdiagram, dezelfde lijnkleurconfiguratie, standaard 0 niet weergegeven.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10857,7 +10857,7 @@ module.exports = {
         {
           name: "Lijndikte",
           example: "1",
-          detail: "Parameter `Lijndikte` van de functie AREASPLINES.",
+          detail: "Lijndikte van de lijngrafiek, standaard 1px.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10865,7 +10865,7 @@ module.exports = {
         {
           name: "Hulplijn",
           example: "avg",
-          detail: "Parameter `Hulplijn` van de functie AREASPLINES.",
+          detail: "Een horizontale lijn, die minimum, maximum, gemiddelde, mediaan, bereik of een aangepaste waarde kan zijn, standaard 0 geen.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10873,7 +10873,7 @@ module.exports = {
         {
           name: "Kleur van de hulplijn",
           example: "#000",
-          detail: "Parameter `Kleur van de hulplijn` van de functie AREASPLINES.",
+          detail: "Kleurinstelling van de hulplijn, dezelfde configuratie als de lijnkleur, standaard #000.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10883,8 +10883,8 @@ module.exports = {
     {
       n: "COLUMNSPLINES",
       t: "3",
-      d: "Beschrijving van de functie COLUMNSPLINES.",
-      a: "Samenvatting van de functie COLUMNSPLINES.",
+      d: "Genereert in een verticaal histogram van cellen ingesloten sparklines, over het algemeen gebruikt om de omvang van discrete gegevens weer te geven.",
+      a: "Genereert een verticaal sparkline-histogram.",
       m: [
         1,
         6
@@ -10893,7 +10893,7 @@ module.exports = {
         {
           name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Bereik` van de functie COLUMNSPLINES.",
+          detail: "Bereik. Waarden kunnen effectief worden berekend, bijv. A1:A20, {1,2,3,4,5} enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10901,7 +10901,7 @@ module.exports = {
         {
           name: "Balkinterval",
           example: "1",
-          detail: "Parameter `Balkinterval` van de functie COLUMNSPLINES.",
+          detail: "De afstand tussen de balken, standaard 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10909,7 +10909,7 @@ module.exports = {
         {
           name: "Kleur van de balk",
           example: "#fc5c5c",
-          detail: "Parameter `Kleur van de balk` van de functie COLUMNSPLINES.",
+          detail: "De lijnkleur van de lijngrafiek kan het bereik A1, een kleurenpaletindexwaarde of een specifieke kleurwaarde zijn. Stel in op 0 of onwaar om deze niet weer te geven. Ondersteunt regx, rgb, rgba enz. Standaard #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10917,7 +10917,7 @@ module.exports = {
         {
           name: "Kleur negatieve balken",
           example: "#97b552",
-          detail: "Parameter `Kleur negatieve balken` van de functie COLUMNSPLINES.",
+          detail: "Kleurinstelling voor negatieve balken, vertegenwoordigt de kleur van negatieve waarden, dezelfde balkkleurconfiguratie, standaard #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10925,7 +10925,7 @@ module.exports = {
         {
           name: "Maximum",
           example: "100",
-          detail: "Parameter `Maximum` van de functie COLUMNSPLINES.",
+          detail: "De maximumwaarde van het balkdiagram, dient om de lengte van het balkdiagram te standaardiseren, standaard automatische berekening onwaar, auto, null.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10933,7 +10933,7 @@ module.exports = {
         {
           name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Kleurenpalet` van de functie COLUMNSPLINES.",
+          detail: "Het kleurenpalet kan de kleur van elke balk afzonderlijk instellen, er kunnen meerdere instellingen worden opgegeven, en twee formaten worden ondersteund: 1 kleur zoals #000, wat betekent dat de kleur van de eerste balk zwart is; 2 waardenbereik: kleur, bijv. -2:#000 betekent dat de balk met waarde -2 zwart is, 0:5:#000 betekent dat de balk met een waarde van 0-5 zwart is, standaard leeg.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -10943,8 +10943,8 @@ module.exports = {
     {
       n: "STACKCOLUMNSPLINES",
       t: "3",
-      d: "Beschrijving van de functie STACKCOLUMNSPLINES.",
-      a: "Samenvatting van de functie STACKCOLUMNSPLINES.",
+      d: "Genereert een in een cel ingesloten cumulatief verticaal histogram als sparkline, over het algemeen gebruikt om de numerieke omvang van meerdere dimensies van discrete gegevens weer te geven.",
+      a: "Genereert een cumulatief verticaal sparkline-histogram.",
       m: [
         1,
         5
@@ -10953,7 +10953,7 @@ module.exports = {
         {
           name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Bereik` van de functie STACKCOLUMNSPLINES.",
+          detail: "Bereik. Waarden kunnen effectief worden berekend, bijv. A1:A20, {1,2,3,4,5} enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10961,7 +10961,7 @@ module.exports = {
         {
           name: "Stapelen per kolom",
           example: "1",
-          detail: "Parameter `Stapelen per kolom` van de functie STACKCOLUMNSPLINES.",
+          detail: "Als u per rij moet stapelen, stelt u dit in op onwaar of 0, standaard 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10969,7 +10969,7 @@ module.exports = {
         {
           name: "Balkinterval",
           example: "1",
-          detail: "Parameter `Balkinterval` van de functie STACKCOLUMNSPLINES.",
+          detail: "De afstand tussen de balken, standaard 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10977,7 +10977,7 @@ module.exports = {
         {
           name: "Maximum",
           example: "100",
-          detail: "Parameter `Maximum` van de functie STACKCOLUMNSPLINES.",
+          detail: "De maximumwaarde van de cumulatieve balk, dient om de lengte van de balk te reguleren, standaard automatische berekening onwaar, auto, null.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10985,7 +10985,7 @@ module.exports = {
         {
           name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Kleurenpalet` van de functie STACKCOLUMNSPLINES.",
+          detail: "Het kleurenpalet kan de balkkleur van elke dimensie afzonderlijk instellen, wat kan worden ingesteld als een bereik A1:A10 enz. Standaard #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -10995,8 +10995,8 @@ module.exports = {
     {
       n: "BARSPLINES",
       t: "3",
-      d: "Beschrijving van de functie BARSPLINES.",
-      a: "Samenvatting van de functie BARSPLINES.",
+      d: "Genereert in de cel ingesloten sparklines, over het algemeen gebruikt om de omvang van discrete gegevens weer te geven.",
+      a: "Genereert een horizontale sparkline-balkgrafiek.",
       m: [
         1,
         6
@@ -11005,7 +11005,7 @@ module.exports = {
         {
           name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Bereik` van de functie BARSPLINES.",
+          detail: "Bereik. Waarden kunnen effectief worden berekend, bijv. A1:A20, {1,2,3,4,5} enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11013,7 +11013,7 @@ module.exports = {
         {
           name: "Balkinterval",
           example: "1",
-          detail: "Parameter `Balkinterval` van de functie BARSPLINES.",
+          detail: "De afstand tussen de balken, standaard 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11021,7 +11021,7 @@ module.exports = {
         {
           name: "Kleur van de balk",
           example: "#fc5c5c",
-          detail: "Parameter `Kleur van de balk` van de functie BARSPLINES.",
+          detail: "De lijnkleur van de lijngrafiek kan het bereik A1, een kleurenpaletindexwaarde of een specifieke kleurwaarde zijn. Stel in op 0 of onwaar om deze niet weer te geven. Ondersteunt regx, rgb, rgba enz. Standaard #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11029,7 +11029,7 @@ module.exports = {
         {
           name: "Kleur negatieve balken",
           example: "#97b552",
-          detail: "Parameter `Kleur negatieve balken` van de functie BARSPLINES.",
+          detail: "Kleurinstelling voor negatieve balken, vertegenwoordigt de kleur van negatieve waarden, dezelfde balkkleurconfiguratie, standaard #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11037,7 +11037,7 @@ module.exports = {
         {
           name: "Maximum",
           example: "100",
-          detail: "Parameter `Maximum` van de functie BARSPLINES.",
+          detail: "De maximumwaarde van het balkdiagram, dient om de lengte van het balkdiagram te standaardiseren, standaard automatische berekening onwaar, auto, null.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11045,7 +11045,7 @@ module.exports = {
         {
           name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Kleurenpalet` van de functie BARSPLINES.",
+          detail: "Het kleurenpalet kan de kleur van elke balk afzonderlijk instellen, er kunnen meerdere instellingen worden opgegeven, en twee formaten worden ondersteund: 1 kleur zoals #000, wat betekent dat de kleur van de eerste balk zwart is; 2 waardenbereik: kleur, bijv. -2:#000 betekent dat de balk met waarde -2 zwart is, 0:5:#000 betekent dat de balk met een waarde van 0-5 zwart is, standaard leeg.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11055,8 +11055,8 @@ module.exports = {
     {
       n: "STACKBARSPLINES",
       t: "3",
-      d: "Beschrijving van de functie STACKBARSPLINES.",
-      a: "Samenvatting van de functie STACKBARSPLINES.",
+      d: "Genereert een in een cel ingesloten cumulatief horizontaal balkdiagram als sparkline, over het algemeen gebruikt om de numerieke omvang van meerdere dimensies van discrete gegevens weer te geven.",
+      a: "Genereert een cumulatieve horizontale sparkline-balkgrafiek.",
       m: [
         1,
         5
@@ -11065,7 +11065,7 @@ module.exports = {
         {
           name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Bereik` van de functie STACKBARSPLINES.",
+          detail: "Bereik. Waarden kunnen effectief worden berekend, bijv. A1:A20, {1,2,3,4,5} enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11073,7 +11073,7 @@ module.exports = {
         {
           name: "Stapelen per kolom",
           example: "1",
-          detail: "Parameter `Stapelen per kolom` van de functie STACKBARSPLINES.",
+          detail: "Als u per rij moet stapelen, stelt u dit in op onwaar of 0, standaard 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11081,7 +11081,7 @@ module.exports = {
         {
           name: "Balkinterval",
           example: "1",
-          detail: "Parameter `Balkinterval` van de functie STACKBARSPLINES.",
+          detail: "De afstand tussen de balken, standaard 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11089,7 +11089,7 @@ module.exports = {
         {
           name: "Maximum",
           example: "100",
-          detail: "Parameter `Maximum` van de functie STACKBARSPLINES.",
+          detail: "De maximumwaarde van de cumulatieve balk, dient om de lengte van de balk te reguleren, standaard automatische berekening onwaar, auto, null.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11097,7 +11097,7 @@ module.exports = {
         {
           name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Kleurenpalet` van de functie STACKBARSPLINES.",
+          detail: "Het kleurenpalet kan de balkkleur van elke dimensie afzonderlijk instellen, wat kan worden ingesteld als een bereik A1:A10 enz. Standaard #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11107,8 +11107,8 @@ module.exports = {
     {
       n: "DISCRETESPLINES",
       t: "3",
-      d: "Beschrijving van de functie DISCRETESPLINES.",
-      a: "Samenvatting van de functie DISCRETESPLINES.",
+      d: "Genereert in de cel ingesloten sparklines, over het algemeen gebruikt om de trend van discrete gegevens weer te geven.",
+      a: "Genereert een discrete sparkline-grafiek.",
       m: [
         1,
         4
@@ -11117,7 +11117,7 @@ module.exports = {
         {
           name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Bereik` van de functie DISCRETESPLINES.",
+          detail: "Bereik. Waarden kunnen effectief worden berekend, bijv. A1:A20, {1,2,3,4,5} enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11125,7 +11125,7 @@ module.exports = {
         {
           name: "Segmentatiedrempel",
           example: "1",
-          detail: "Parameter `Segmentatiedrempel` van de functie DISCRETESPLINES.",
+          detail: "Kleuronderscheid van de kolommen van het discrete diagram, bijv.: als de waarde 0 is, is blauw groter dan 0, rood kleiner dan 0, standaard 0.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11133,7 +11133,7 @@ module.exports = {
         {
           name: "Kleur boven drempel",
           example: "#2ec7c9",
-          detail: "Parameter `Kleur boven drempel` van de functie DISCRETESPLINES.",
+          detail: "De lijnkleur van de lijngrafiek kan het bereik A1, een kleurenpaletindexwaarde of een specifieke kleurwaarde zijn. Stel in op 0 of onwaar om deze niet weer te geven. Ondersteunt regx, rgb, rgba enz. Standaard #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11141,7 +11141,7 @@ module.exports = {
         {
           name: "Kleur onder drempel",
           example: "#fc5c5c",
-          detail: "Parameter `Kleur onder drempel` van de functie DISCRETESPLINES.",
+          detail: "Kleurinstelling van de balk onder de drempelwaarde, dezelfde instelling als de kleur boven de drempelwaarde, standaard #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11151,8 +11151,8 @@ module.exports = {
     {
       n: "TRISTATESPLINES",
       t: "3",
-      d: "Beschrijving van de functie TRISTATESPLINES.",
-      a: "Samenvatting van de functie TRISTATESPLINES.",
+      d: "Genereert een in de cel ingesloten drietoestandsdiagram als sparkline, over het algemeen gebruikt om de trend van drie situaties zoals winnen, verliezen of gelijkspel weer te geven.",
+      a: "Genereert een sparkline-drietoestandsdiagram.",
       m: [
         1,
         6
@@ -11161,7 +11161,7 @@ module.exports = {
         {
           name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Bereik` van de functie TRISTATESPLINES.",
+          detail: "Bereik. Waarden kunnen effectief worden berekend, bijv. A1:A20, {1,2,3,4,5} enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11169,7 +11169,7 @@ module.exports = {
         {
           name: "Balkinterval",
           example: "1",
-          detail: "Parameter `Balkinterval` van de functie TRISTATESPLINES.",
+          detail: "De afstand tussen de balken, standaard 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11177,7 +11177,7 @@ module.exports = {
         {
           name: "Kleur van de balk",
           example: "#fc5c5c",
-          detail: "Parameter `Kleur van de balk` van de functie TRISTATESPLINES.",
+          detail: "De lijnkleur van de lijngrafiek kan het bereik A1, een kleurenpaletindexwaarde of een specifieke kleurwaarde zijn. Stel in op 0 of onwaar om deze niet weer te geven. Ondersteunt regx, rgb, rgba enz. Standaard #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11185,7 +11185,7 @@ module.exports = {
         {
           name: "Kleur negatieve balken",
           example: "#97b552",
-          detail: "Parameter `Kleur negatieve balken` van de functie TRISTATESPLINES.",
+          detail: "Kleurinstelling voor negatieve balken, vertegenwoordigt de kleur van negatieve waarden, dezelfde balkkleurconfiguratie, standaard #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11193,7 +11193,7 @@ module.exports = {
         {
           name: "Kleur nulwaardebalken",
           example: "#999",
-          detail: "Parameter `Kleur nulwaardebalken` van de functie TRISTATESPLINES.",
+          detail: "Kleurinstelling voor balken met nulwaarde, vertegenwoordigt de kleur van de waarde 0, dezelfde balkkleurconfiguratie, standaard #999.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11201,7 +11201,7 @@ module.exports = {
         {
           name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Kleurenpalet` van de functie TRISTATESPLINES.",
+          detail: "Het kleurenpalet kan de kleur van elke balk afzonderlijk instellen, er kunnen meerdere instellingen worden opgegeven, en twee formaten worden ondersteund: 1 kleur zoals #000, wat betekent dat de kleur van de eerste balk zwart is; 2 waardenbereik: kleur, bijv. -2:#000 betekent dat de balk met waarde -2 zwart is, 0:5:#000 betekent dat de balk met een waarde van 0-5 zwart is, standaard leeg.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11211,8 +11211,8 @@ module.exports = {
     {
       n: "PIESPLINES",
       t: "3",
-      d: "Beschrijving van de functie PIESPLINES.",
-      a: "Samenvatting van de functie PIESPLINES.",
+      d: "Genereert een in de cel ingesloten sparkline-cirkeldiagram, over het algemeen gebruikt om de verhouding van de gegevens weer te geven.",
+      a: "Genereert een sparkline-cirkeldiagram.",
       m: [
         1,
         5
@@ -11221,7 +11221,7 @@ module.exports = {
         {
           name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Bereik` van de functie PIESPLINES.",
+          detail: "Bereik. Waarden kunnen effectief worden berekend, bijv. A1:A20, {1,2,3,4,5} enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11229,7 +11229,7 @@ module.exports = {
         {
           name: "Rotatiehoek",
           example: "0",
-          detail: "Parameter `Rotatiehoek` van de functie PIESPLINES.",
+          detail: "De draaihoek van het cirkeldiagram, standaard 0.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11237,7 +11237,7 @@ module.exports = {
         {
           name: "rand",
           example: "0",
-          detail: "Parameter `rand` van de functie PIESPLINES.",
+          detail: "Randgrootte van het cirkeldiagram, standaard geen 0.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11245,7 +11245,7 @@ module.exports = {
         {
           name: "Randkleur",
           example: "#000",
-          detail: "Parameter `Randkleur` van de functie PIESPLINES.",
+          detail: "De randkleur van het cirkeldiagram, standaard #000.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11253,7 +11253,7 @@ module.exports = {
         {
           name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Kleurenpalet` van de functie PIESPLINES.",
+          detail: "De kleur van het segment kan worden ingesteld in het palet, wat kan worden ingesteld als een bereik A1:A10 enz. Standaard #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11263,8 +11263,8 @@ module.exports = {
     {
       n: "BOXSPLINES",
       t: "3",
-      d: "Beschrijving van de functie BOXSPLINES.",
-      a: "Samenvatting van de functie BOXSPLINES.",
+      d: "Genereert een in een boxplot van de cel ingesloten sparkline, over het algemeen gebruikt om de statistische verdeling van de gegevensset weer te geven.",
+      a: "Genereert een sparkline-boxplot.",
       m: [
         1,
         4
@@ -11273,7 +11273,7 @@ module.exports = {
         {
           name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Bereik` van de functie BOXSPLINES.",
+          detail: "Bereik. Waarden kunnen effectief worden berekend, bijv. A1:A20, {1,2,3,4,5} enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11281,7 +11281,7 @@ module.exports = {
         {
           name: "Uitschieterverhouding",
           example: "1.5",
-          detail: "Parameter `Uitschieterverhouding` van de functie BOXSPLINES.",
+          detail: "Het drempelbereik voor uitschieters, indien 0 of onwaar wordt het niet weergegeven, standaard 1,5 maal.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11289,7 +11289,7 @@ module.exports = {
         {
           name: "Doelwaarde",
           example: "10",
-          detail: "Parameter `Doelwaarde` van de functie BOXSPLINES.",
+          detail: "Instelling van de streefwaarde in de boxplot, standaard onwaar en niet weergegeven.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11297,7 +11297,7 @@ module.exports = {
         {
           name: "Puntgrootte",
           example: "1.5",
-          detail: "Parameter `Puntgrootte` van de functie BOXSPLINES.",
+          detail: "De straal van het doelpunt en de uitschieter is ingesteld, standaard 1,5.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11307,8 +11307,8 @@ module.exports = {
     {
       n: "BULLETSPLINES",
       t: "3",
-      d: "Beschrijving van de functie BULLETSPLINES.",
-      a: "Samenvatting van de functie BULLETSPLINES.",
+      d: "Genereert in de cel ingesloten sparklines, over het algemeen gebruikt om het percentage van de taakvoltooiing weer te geven.",
+      a: "Genereert een sparkline-KPI-diagram.",
       m: [
         2,
         3
@@ -11317,7 +11317,7 @@ module.exports = {
         {
           name: "Doel",
           example: "10",
-          detail: "Parameter `Doel` van de functie BULLETSPLINES.",
+          detail: "De numerieke waarde kan effectief worden berekend voor de bereikte streefwaarde, bijv. A1, 100 enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11325,7 +11325,7 @@ module.exports = {
         {
           name: "bereikt",
           example: "8",
-          detail: "Parameter `bereikt` van de functie BULLETSPLINES.",
+          detail: "Alleen wanneer de waarde volledig is, kan de waarde effectief worden berekend, bijv. A1, 100 enz.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11333,7 +11333,7 @@ module.exports = {
         {
           name: "Vergelijkingswaarde",
           example: "12",
-          detail: "Parameter `Vergelijkingswaarde` van de functie BULLETSPLINES.",
+          detail: "Vergelijkingswaarden, zoals overschot, minimum en ondergrens voor bonussen, kunnen effectief worden berekend, bijv. A1, 100 enz. U kunt maximaal 9 vergelijkingswaarden instellen.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11343,8 +11343,8 @@ module.exports = {
     {
       n: "COMPOSESPLINES",
       t: "3",
-      d: "Beschrijving van de functie COMPOSESPLINES.",
-      a: "Samenvatting van de functie COMPOSESPLINES.",
+      d: "Ondersteunt meerdere afbeeldingstypen in dezelfde cel, waarbij elke parameter een sparkline-diagram vertegenwoordigt.",
+      a: "Combineert sparkline-diagrammen in een cel.",
       m: [
         1,
         1
@@ -11353,7 +11353,7 @@ module.exports = {
         {
           name: "configuratie",
           example: "PIESPLINES(A1:A20)",
-          detail: "Parameter `configuratie` van de functie COMPOSESPLINES.",
+          detail: "Sparkline-diagraminstellingen, zoals A1:A20, een volledig cirkeldiagram, lijngrafiekinstellingen enz.",
           require: "m",
           repeat: "y",
           type: "rangeall"
@@ -11363,8 +11363,8 @@ module.exports = {
     {
       n: "SORT",
       t: "14",
-      d: "Beschrijving van de functie SORT.",
-      a: "Samenvatting van de functie SORT.",
+      d: "Sorteert de rijen van een opgegeven array of bereik op basis van de waarden van een of meer kolommen.",
+      a: "Sorteert rijen van een bereik op basis van een opgegeven kolom.",
       m: [
         1,
         4
@@ -11372,7 +11372,7 @@ module.exports = {
       p: [
         {
           name: "bereik",
-          detail: "Parameter `bereik` van de functie SORT.",
+          detail: "De te sorteren gegevens.",
           example: "A2:A17",
           require: "m",
           repeat: "n",
@@ -11380,7 +11380,7 @@ module.exports = {
         },
         {
           name: "sorteerkolom",
-          detail: "Parameter `sorteerkolom` van de functie SORT.",
+          detail: "De index van de kolom in `bereik` of een bereik buiten `bereik` met de waarden waarop moet worden gesorteerd.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11388,7 +11388,7 @@ module.exports = {
         },
         {
           name: "is_oplopend",
-          detail: "Parameter `is_oplopend` van de functie SORT.",
+          detail: "`WAAR` of `ONWAAR`, wat aangeeft of `sorteerkolom` oplopend moet worden gesorteerd. `ONWAAR` sorteert aflopend.",
           example: "-1",
           require: "o",
           repeat: "n",
@@ -11396,7 +11396,7 @@ module.exports = {
         },
         {
           name: "sorteerkolom2",
-          detail: "Parameter `sorteerkolom2` van de functie SORT.",
+          detail: "Meer kolommen.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -11407,8 +11407,8 @@ module.exports = {
     {
       n: "FILTER",
       t: "14",
-      d: "Beschrijving van de functie FILTER.",
-      a: "Samenvatting van de functie FILTER.",
+      d: "Retourneert een gefilterde versie van het bronbereik, waarbij alleen rijen of kolommen worden geretourneerd die aan de opgegeven voorwaarden voldoen.",
+      a: "Filtert een bereik op basis van opgegeven voorwaarden.",
       m: [
         2,
         3
@@ -11416,7 +11416,7 @@ module.exports = {
       p: [
         {
           name: "bereik",
-          detail: "Parameter `bereik` van de functie FILTER.",
+          detail: "De te filteren gegevens.",
           example: "A5:D20",
           require: "m",
           repeat: "n",
@@ -11424,7 +11424,7 @@ module.exports = {
         },
         {
           name: "voorwaarde1",
-          detail: "Parameter `voorwaarde1` van de functie FILTER.",
+          detail: "Een kolom of rij met waar- of onwaarwaarden die overeenkomen met de eerste kolom of rij van `bereik`, of een matrixformule die wordt geëvalueerd tot waar of onwaar.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -11432,7 +11432,7 @@ module.exports = {
         },
         {
           name: "voorwaarde2",
-          detail: "Parameter `voorwaarde2` van de functie FILTER.",
+          detail: "Meer rijen of kolommen met booleaanse waarden `WAAR` of `ONWAAR`, die aangeven of de overeenkomstige rij of kolom in `bereik` de `FILTER` moet passeren. Kan ook matrixformule-uitdrukkingen bevatten die worden geëvalueerd tot zulke rijen of kolommen. Alle voorwaarden moeten van hetzelfde type zijn (rij of kolom). Het mengen van rij- en kolomvoorwaarden is niet toegestaan.",
           example: "\"\"",
           require: "o",
           repeat: "n",
@@ -11443,8 +11443,8 @@ module.exports = {
     {
       n: "UNIQUE",
       t: "14",
-      d: "Beschrijving van de functie UNIQUE.",
-      a: "Samenvatting van de functie UNIQUE.",
+      d: "Retourneert unieke rijen in het opgegeven bronbereik, waarbij duplicaten worden verwijderd. Rijen worden geretourneerd in de volgorde waarin ze voor het eerst voorkomen in het bronbereik.",
+      a: "Unieke rijen in het opgegeven bronbereik.",
       m: [
         1,
         3
@@ -11452,7 +11452,7 @@ module.exports = {
       p: [
         {
           name: "bereik",
-          detail: "Parameter `bereik` van de functie UNIQUE.",
+          detail: "De te filteren gegevens op unieke items.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
@@ -11460,7 +11460,7 @@ module.exports = {
         },
         {
           name: "per_kolom",
-          detail: "Parameter `per_kolom` van de functie UNIQUE.",
+          detail: "[Optie] - Logische waarde die aangeeft hoe te vergelijken; per rij = FALSE() of weggelaten; per kolom = TRUE().",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -11468,7 +11468,7 @@ module.exports = {
         },
         {
           name: "slechts_eenmaal",
-          detail: "Parameter `slechts_eenmaal` van de functie UNIQUE.",
+          detail: "[Optie] - Logische waarde; in de unieke waarde wordt slechts één voorkomen geretourneerd = TRUE(); alle unieke waarden worden opgenomen = FALSE() of weggelaten.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -11479,8 +11479,8 @@ module.exports = {
     {
       n: "RANDARRAY",
       t: "14",
-      d: "Beschrijving van de functie RANDARRAY.",
-      a: "Samenvatting van de functie RANDARRAY.",
+      d: "Retourneert een raster van willekeurige getallen tussen 0 (inclusief) en 1 (exclusief). De rastergrootte komt overeen met de opgegeven argumenten voor rijen en kolommen. Als noch rijen noch kolommen zijn opgegeven, is het raster 1 x 1.",
+      a: "Retourneert een raster van willekeurige getallen.",
       m: [
         0,
         2
@@ -11488,7 +11488,7 @@ module.exports = {
       p: [
         {
           name: "rijen",
-          detail: "Parameter `rijen` van de functie RANDARRAY.",
+          detail: "Het aantal rijen dat met een willekeurig getal moet worden gevuld.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11496,7 +11496,7 @@ module.exports = {
         },
         {
           name: "kolommen",
-          detail: "Parameter `kolommen` van de functie RANDARRAY.",
+          detail: "Het aantal kolommen dat met een willekeurig getal moet worden gevuld.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11507,8 +11507,8 @@ module.exports = {
     {
       n: "SEQUENCE",
       t: "14",
-      d: "Beschrijving van de functie SEQUENCE.",
-      a: "Samenvatting van de functie SEQUENCE.",
+      d: "Retourneert een raster van opeenvolgende getallen, beginnend bij een opgegeven startwaarde en oplopend met een opgegeven stapgrootte. Standaard begint de reeks bij 1 en loopt op met 1.",
+      a: "Retourneert een raster van opeenvolgende getallen.",
       m: [
         1,
         4
@@ -11516,7 +11516,7 @@ module.exports = {
       p: [
         {
           name: "rijen",
-          detail: "Parameter `rijen` van de functie SEQUENCE.",
+          detail: "Het aantal rijen in het resulterende raster van de functie.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -11524,7 +11524,7 @@ module.exports = {
         },
         {
           name: "kolommen",
-          detail: "Parameter `kolommen` van de functie SEQUENCE.",
+          detail: "Het aantal kolommen in het resulterende raster van de functie. Indien weggelaten, heeft het resulterende raster 1 kolom.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11532,7 +11532,7 @@ module.exports = {
         },
         {
           name: "start",
-          detail: "Parameter `start` van de functie SEQUENCE.",
+          detail: "Het getal waarbij de reeks moet beginnen. Indien weggelaten, begint de reeks bij 1.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11540,7 +11540,7 @@ module.exports = {
         },
         {
           name: "stap",
-          detail: "Parameter `stap` van de functie SEQUENCE.",
+          detail: "Het bedrag waarmee elke waarde van de reeks verschilt. Indien weggelaten, verschilt elke waarde met 1.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11551,8 +11551,8 @@ module.exports = {
     {
       n: "EVALUATE",
       t: "3",
-      d: "Beschrijving van de functie EVALUATE.",
-      a: "Samenvatting van de functie EVALUATE.",
+      d: "Evalueert een in woorden uitgedrukte formule of expressie en retourneert het resultaat.",
+      a: "Evalueert volgens een letterlijke formule of expressie.",
       m: [
         1,
         1
@@ -11561,7 +11561,7 @@ module.exports = {
         {
           name: "expressie",
           example: "\"A1+5*2^2\"",
-          detail: "Parameter `expressie` van de functie EVALUATE.",
+          detail: "Formule of expressie.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11571,8 +11571,8 @@ module.exports = {
     {
       n: "REMOTE",
       t: "5",
-      d: "Beschrijving van de functie REMOTE.",
-      a: "Samenvatting van de functie REMOTE.",
+      d: "Roept een functie aan op een externe server.",
+      a: "Roept een functie aan op een externe back-endserver/API.",
       m: [
         1,
         1
@@ -11581,7 +11581,7 @@ module.exports = {
         {
           name: "externe_expressie",
           example: "SUM(A1:A10000000)",
-          detail: "Parameter `externe_expressie` van de functie REMOTE.",
+          detail: "Formule.",
           require: "m",
           repeat: "n",
           type: "string"
