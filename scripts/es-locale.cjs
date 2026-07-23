@@ -7681,8 +7681,8 @@ module.exports = {  "insertLink": {
     {
       n: "NOT",
       t: 10,
-      d: "Returns the opposite of a logical value - `NOT(TRUE)` returns `FALSE`; `NOT(FALSE)` returns `TRUE`.",
-      a: "Returns opposite of provided logical value.",
+      d: "Devuelve lo contrario de un valor lógico: `NOT(TRUE)` devuelve `FALSO`; `NOT(FALSE)` devuelve `VERDADERO`.",
+      a: "Devuelve lo contrario del valor lógico proporcionado.",
       m: [
         1,
         1
@@ -7690,7 +7690,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "expresión_lógica",
-          detail: "An expression or reference to a cell holding an expression that represents some logical value.",
+          detail: "Una expresión o referencia a una celda que contenga una expresión que represente un valor lógico.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7701,8 +7701,8 @@ module.exports = {  "insertLink": {
     {
       n: "TRUE",
       t: 10,
-      d: "Returns the logical value `TRUE`.",
-      a: "Logical value `true`.",
+      d: "Devuelve el valor lógico `VERDADERO`.",
+      a: "Valor lógico `verdadero`.",
       m: [
         0,
         0
@@ -7712,8 +7712,8 @@ module.exports = {  "insertLink": {
     {
       n: "FALSE",
       t: 10,
-      d: "Returns the logical value `FALSE`.",
-      a: "Logical value `false`.",
+      d: "Devuelve el valor lógico `FALSO`.",
+      a: "Valor lógico `falso`.",
       m: [
         0,
         0
@@ -7723,8 +7723,8 @@ module.exports = {  "insertLink": {
     {
       n: "AND",
       t: 10,
-      d: "Returns true if all of the provided arguments are logically true, and false if any of the provided arguments are logically false.",
-      a: "Logical `and` operator.",
+      d: "Devuelve verdadero si todos los argumentos proporcionados son lógicamente verdaderos, y falso si alguno de los argumentos proporcionados es lógicamente falso.",
+      a: "Operador lógico «y».",
       m: [
         1,
         255
@@ -7732,7 +7732,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "expresión_lógica1",
-          detail: "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`, or an expression that can be coerced to a logical value.",
+          detail: "Una expresión o referencia a una celda que contenga una expresión que represente un valor lógico, es decir, `VERDADERO` o `FALSO`, o una expresión que pueda convertirse en un valor lógico.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7740,7 +7740,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "expresión_lógica2",
-          detail: "More expressions that represent logical values.",
+          detail: "Más expresiones que representan valores lógicos.",
           example: "A3 = \"bar\"",
           require: "o",
           repeat: "y",
@@ -7751,8 +7751,8 @@ module.exports = {  "insertLink": {
     {
       n: "IFERROR",
       t: 10,
-      d: "Returns the first argument if it is not an error value, otherwise returns the second argument if present, or a blank if the second argument is absent.",
-      a: "Value if it is not an error, otherwise 2nd argument.",
+      d: "Devuelve el primer argumento si no es un valor de error; en caso contrario, devuelve el segundo argumento si está presente, o un valor en blanco si el segundo argumento está ausente.",
+      a: "Valor si no es un error; en caso contrario, el segundo argumento.",
       m: [
         2,
         2
@@ -7760,7 +7760,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to return if `value` itself is not an error.",
+          detail: "El valor que se devolverá si `valor` no es un error.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -7768,7 +7768,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_si_error",
-          detail: "The value the function returns if `value` is an error.",
+          detail: "El valor que devuelve la función si `valor` es un error.",
           example: "\"Error in cell A1\"",
           require: "m",
           repeat: "n",
@@ -7779,8 +7779,8 @@ module.exports = {  "insertLink": {
     {
       n: "IF",
       t: 10,
-      d: "Returns one value if a logical expression is `TRUE` and another if it is `FALSE`.",
-      a: "Returns value depending on logical expression.",
+      d: "Devuelve un valor si una expresión lógica es `VERDADERO` y otro si es `FALSO`.",
+      a: "Devuelve un valor en función de una expresión lógica.",
       m: [
         2,
         3
@@ -7788,7 +7788,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "expresión_lógica",
-          detail: "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`.",
+          detail: "Una expresión o referencia a una celda que contenga una expresión que represente un valor lógico, es decir, `VERDADERO` o `FALSO`.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7796,7 +7796,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_si_verdadero",
-          detail: "The value the function returns if `logical_expression` is `TRUE`.",
+          detail: "El valor que devuelve la función si `expresión_lógica` es `VERDADERO`.",
           example: "\"A2 is foo\"",
           require: "m",
           repeat: "n",
@@ -7804,7 +7804,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_si_falso",
-          detail: "The value the function returns if `logical_expression` is `FALSE`.",
+          detail: "El valor que devuelve la función si `expresión_lógica` es `FALSO`.",
           example: "\"A2 was false\"",
           require: "o",
           repeat: "n",
@@ -7815,8 +7815,8 @@ module.exports = {  "insertLink": {
     {
       n: "OR",
       t: 10,
-      d: "Returns true if any of the provided arguments are logically true, and false if all of the provided arguments are logically false.",
-      a: "Logical `or` operator.",
+      d: "Devuelve verdadero si alguno de los argumentos proporcionados es lógicamente verdadero, y falso si todos los argumentos proporcionados son lógicamente falsos.",
+      a: "Operador lógico «o».",
       m: [
         1,
         255
@@ -7824,7 +7824,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "expresión_lógica1",
-          detail: "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`, or an expression that can be coerced to a logical value.",
+          detail: "Una expresión o referencia a una celda que contenga una expresión que represente un valor lógico, es decir, `VERDADERO` o `FALSO`, o una expresión que pueda convertirse en un valor lógico.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7832,7 +7832,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "expresión_lógica2",
-          detail: "More expressions that evaluate to logical values.",
+          detail: "Más expresiones que se evalúan como valores lógicos.",
           example: " A3 = \"bar\"",
           require: "m",
           repeat: "n",
@@ -7843,8 +7843,8 @@ module.exports = {  "insertLink": {
     {
       n: "NE",
       t: 11,
-      d: "Returns `TRUE` if two specified values are not equal and `FALSE` otherwise. Equivalent to the `!=` operator.",
-      a: "Not equal.",
+      d: "Devuelve `VERDADERO` si dos valores especificados no son iguales, y `FALSO` en caso contrario. Equivale al operador `!=`.",
+      a: "Distinto de.",
       m: [
         2,
         2
@@ -7852,7 +7852,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value.",
+          detail: "El primer valor.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7860,7 +7860,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "The value to test against `value1` for inequality.",
+          detail: "El valor que se comparará con `valor1` para comprobar la desigualdad.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7871,8 +7871,8 @@ module.exports = {  "insertLink": {
     {
       n: "EQ",
       t: 11,
-      d: "Returns `TRUE` if two specified values are equal and `FALSE` otherwise. Equivalent to the `==` operator.",
-      a: "Equal.",
+      d: "Devuelve `VERDADERO` si dos valores especificados son iguales, y `FALSO` en caso contrario. Equivale al operador `==`.",
+      a: "Igual a.",
       m: [
         2,
         2
@@ -7880,7 +7880,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first value.",
+          detail: "El primer valor.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7888,7 +7888,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "The value to test against `value1` for equality.",
+          detail: "El valor que se comparará con `valor1` para comprobar la igualdad.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7899,8 +7899,8 @@ module.exports = {  "insertLink": {
     {
       n: "GT",
       t: 11,
-      d: "Returns `TRUE` if the first argument is strictly greater than the second, and `FALSE` otherwise. Equivalent to the `>` operator.",
-      a: "Strictly greater than.",
+      d: "Devuelve `VERDADERO` si el primer argumento es estrictamente mayor que el segundo, y `FALSO` en caso contrario. Equivale al operador `>`.",
+      a: "Estrictamente mayor que.",
       m: [
         2,
         2
@@ -7908,7 +7908,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The value to test as being greater than `value2`.",
+          detail: "El valor que se comprobará si es mayor que `valor2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7916,7 +7916,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "The second value.",
+          detail: "El segundo valor.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7927,8 +7927,8 @@ module.exports = {  "insertLink": {
     {
       n: "GTE",
       t: 11,
-      d: "Returns `TRUE` if the first argument is greater than or equal to the second, and `FALSE` otherwise. Equivalent to the `>=` operator.",
-      a: "Greater than or equal to.",
+      d: "Devuelve `VERDADERO` si el primer argumento es mayor o igual que el segundo, y `FALSO` en caso contrario. Equivale al operador `>=`.",
+      a: "Mayor o igual que.",
       m: [
         2,
         2
@@ -7936,7 +7936,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The value to test as being greater than or equal to `value2`.",
+          detail: "El valor que se comprobará si es mayor o igual que `valor2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7944,7 +7944,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "The second value.",
+          detail: "El segundo valor.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7955,8 +7955,8 @@ module.exports = {  "insertLink": {
     {
       n: "LT",
       t: 11,
-      d: "Returns `TRUE` if the first argument is strictly less than the second, and `FALSE` otherwise. Equivalent to the `<` operator.",
-      a: "Less than.",
+      d: "Devuelve `VERDADERO` si el primer argumento es estrictamente menor que el segundo, y `FALSO` en caso contrario. Equivale al operador `<`.",
+      a: "Menor que.",
       m: [
         2,
         2
@@ -7964,7 +7964,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The value to test as being less than `value2`.",
+          detail: "El valor que se comprobará si es menor que `valor2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7972,7 +7972,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "The second value.",
+          detail: "El segundo valor.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7983,8 +7983,8 @@ module.exports = {  "insertLink": {
     {
       n: "LTE",
       t: 11,
-      d: "Returns `TRUE` if the first argument is less than or equal to the second, and `FALSE` otherwise. Equivalent to the `<=` operator.",
-      a: "Less than or equal to.",
+      d: "Devuelve `VERDADERO` si el primer argumento es menor o igual que el segundo, y `FALSO` en caso contrario. Equivale al operador `<=`.",
+      a: "Menor o igual que.",
       m: [
         2,
         2
@@ -7992,7 +7992,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The value to test as being less than or equal to `value2`.",
+          detail: "El valor que se comprobará si es menor o igual que `valor2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8000,7 +8000,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "The second value.",
+          detail: "El segundo valor.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8011,8 +8011,8 @@ module.exports = {  "insertLink": {
     {
       n: "ADD",
       t: 11,
-      d: "Returns the sum of two numbers. Equivalent to the `+` operator.",
-      a: "Sum of two numbers",
+      d: "Devuelve la suma de dos números. Equivale al operador `+`.",
+      a: "Suma de dos números.",
       m: [
         2,
         2
@@ -8020,7 +8020,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first addend.",
+          detail: "El primer sumando.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8028,7 +8028,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "The second addend.",
+          detail: "El segundo sumando.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8039,8 +8039,8 @@ module.exports = {  "insertLink": {
     {
       n: "MINUS",
       t: 11,
-      d: "Returns the difference of two numbers. Equivalent to the `-` operator.",
-      a: "Difference of two numbers",
+      d: "Devuelve la diferencia entre dos números. Equivale al operador `-`.",
+      a: "Diferencia entre dos números.",
       m: [
         2,
         2
@@ -8048,7 +8048,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The minuend, or number to be subtracted from.",
+          detail: "El minuendo, o número del que se restará.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8056,7 +8056,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "The subtrahend, or number to subtract from `value1`.",
+          detail: "El sustraendo, o número que se restará de `valor1`.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8067,8 +8067,8 @@ module.exports = {  "insertLink": {
     {
       n: "MULTIPLY",
       t: 11,
-      d: "Returns the product of two numbers. Equivalent to the `*` operator.",
-      a: "Product of two numbers",
+      d: "Devuelve el producto de dos números. Equivale al operador `*`.",
+      a: "Producto de dos números.",
       m: [
         2,
         2
@@ -8076,7 +8076,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "factor1",
-          detail: "The first multiplicand.",
+          detail: "El primer factor.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8084,7 +8084,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "factor2",
-          detail: "The second multiplicand.",
+          detail: "El segundo factor.",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -8095,8 +8095,8 @@ module.exports = {  "insertLink": {
     {
       n: "DIVIDE",
       t: 11,
-      d: "Returns one number divided by another. Equivalent to the `/` operator.",
-      a: "One number divided by another",
+      d: "Devuelve un número dividido entre otro. Equivale al operador `/`.",
+      a: "Un número dividido entre otro.",
       m: [
         2,
         2
@@ -8104,7 +8104,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "dividendo",
-          detail: "The number to be divided.",
+          detail: "El número que se dividirá.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8112,7 +8112,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "divisor",
-          detail: "The number to divide by.",
+          detail: "El número por el que se dividirá.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8123,8 +8123,8 @@ module.exports = {  "insertLink": {
     {
       n: "CONCAT",
       t: 11,
-      d: "Returns the concatenation of two values. Equivalent to the `&` operator.",
-      a: "Concatenation of two values",
+      d: "Devuelve la concatenación de dos valores. Equivale al operador `&`.",
+      a: "Concatenación de dos valores.",
       m: [
         2,
         2
@@ -8132,7 +8132,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The value to which `value2` will be appended.",
+          detail: "El valor al que se añadirá `valor2`.",
           example: "\"de\"",
           require: "m",
           repeat: "n",
@@ -8140,7 +8140,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "The value to append to `value1`.",
+          detail: "El valor que se añadirá a `valor1`.",
           example: "\"mystify\"",
           require: "m",
           repeat: "n",
@@ -8151,8 +8151,8 @@ module.exports = {  "insertLink": {
     {
       n: "UNARY_PERCENT",
       t: 11,
-      d: "Returns a value interpreted as a percentage; that is, `UNARY_PERCENT(100)` equals `1`.",
-      a: "Value interpreted as a percentage.",
+      d: "Devuelve un valor interpretado como porcentaje; es decir, `UNARY_PERCENT(100)` es igual a `1`.",
+      a: "Valor interpretado como porcentaje.",
       m: [
         1,
         1
@@ -8160,7 +8160,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "porcentaje",
-          detail: "The value to interpret as a percentage.",
+          detail: "El valor que se interpretará como porcentaje.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8171,8 +8171,8 @@ module.exports = {  "insertLink": {
     {
       n: "CONCATENATE",
       t: 12,
-      d: "Appends strings to one another.",
-      a: "Appends strings to one another.",
+      d: "Une varias cadenas de texto entre sí.",
+      a: "Une varias cadenas de texto entre sí.",
       m: [
         1,
         255
@@ -8180,7 +8180,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "cadena1",
-          detail: "The initial string.",
+          detail: "La cadena inicial.",
           example: "\"Super\"",
           require: "m",
           repeat: "n",
@@ -8188,7 +8188,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cadena2",
-          detail: "More strings to append in sequence.",
+          detail: "Más cadenas que se añadirán en orden.",
           example: "\"calla\"",
           require: "o",
           repeat: "y",
@@ -8199,8 +8199,8 @@ module.exports = {  "insertLink": {
     {
       n: "CODE",
       t: 12,
-      d: "Returns the numeric Unicode map value of the first character in the string provided.",
-      a: "Numeric unicode map value of character.",
+      d: "Devuelve el valor numérico Unicode del primer carácter de la cadena proporcionada.",
+      a: "Valor numérico Unicode de un carácter.",
       m: [
         1,
         1
@@ -8208,7 +8208,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "cadena",
-          detail: "The string whose first character's Unicode map value will be returned.",
+          detail: "La cadena cuyo primer carácter se usará para devolver su valor Unicode.",
           example: "\"a\"",
           require: "m",
           repeat: "n",
@@ -8219,8 +8219,8 @@ module.exports = {  "insertLink": {
     {
       n: "CHAR",
       t: 12,
-      d: "Convert a number into a character according to the current Unicode table.",
-      a: "Gets character associated with number.",
+      d: "Convierte un número en un carácter según la tabla Unicode actual.",
+      a: "Obtiene el carácter asociado a un número.",
       m: [
         1,
         1
@@ -8228,7 +8228,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_tabla",
-          detail: "The number of the character to look up from the current Unicode table in decimal format.",
+          detail: "El número del carácter que se buscará en la tabla Unicode actual, en formato decimal.",
           example: "97",
           require: "m",
           repeat: "n",
@@ -8239,8 +8239,8 @@ module.exports = {  "insertLink": {
     {
       n: "ARABIC",
       t: 12,
-      d: "Computes the value of a Roman numeral.",
-      a: "Computes the value of a roman numeral.",
+      d: "Calcula el valor de un número romano.",
+      a: "Calcula el valor de un número romano.",
       m: [
         1,
         1
@@ -8248,7 +8248,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_romano",
-          detail: "The Roman numeral to format, whose value must be between 1 and 3999, inclusive.",
+          detail: "El número romano que se convertirá, cuyo valor debe estar entre 1 y 3999, ambos inclusive.",
           example: "\"XIV\"",
           require: "m",
           repeat: "n",
@@ -8259,8 +8259,8 @@ module.exports = {  "insertLink": {
     {
       n: "ROMAN",
       t: 12,
-      d: "Formats a number in Roman numerals.",
-      a: "Formats a number in Roman numerals.",
+      d: "Da formato a un número en números romanos.",
+      a: "Da formato a un número en números romanos.",
       m: [
         1,
         1
@@ -8268,7 +8268,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número",
-          detail: "The number to format, between 1 and 3999, inclusive.",
+          detail: "El número al que se dará formato, entre 1 y 3999, ambos inclusive.",
           example: "499",
           require: "m",
           repeat: "n",
@@ -8279,8 +8279,8 @@ module.exports = {  "insertLink": {
     {
       n: "REGEXEXTRACT",
       t: 12,
-      d: "Extracts matching substrings according to a regular expression.",
-      a: "Extracts matching substrings with regular expression.",
+      d: "Extrae subcadenas que coincidan con una expresión regular.",
+      a: "Extrae subcadenas que coinciden con una expresión regular.",
       m: [
         2,
         2
@@ -8288,7 +8288,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto",
-          detail: "The input text.",
+          detail: "El texto de entrada.",
           example: "\"Needle in a haystack\"",
           require: "m",
           repeat: "n",
@@ -8296,7 +8296,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "expresión_regular",
-          detail: "The first part of `text` that matches this expression will be returned.",
+          detail: "La primera parte de `texto` que coincida con esta expresión se devolverá.",
           example: "\".e{2}dle\"",
           require: "m",
           repeat: "n",
@@ -8307,8 +8307,8 @@ module.exports = {  "insertLink": {
     {
       n: "REGEXMATCH",
       t: 12,
-      d: "Whether a piece of text matches a regular expression.",
-      a: "Whether a piece of text matches regular expression.",
+      d: "Indica si un fragmento de texto coincide con una expresión regular.",
+      a: "Indica si un fragmento de texto coincide con una expresión regular.",
       m: [
         2,
         2
@@ -8316,7 +8316,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto",
-          detail: "The text to be tested against the regular expression.",
+          detail: "El texto que se comparará con la expresión regular.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8324,7 +8324,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "expresión_regular",
-          detail: "The regular expression to test the text against.",
+          detail: "La expresión regular con la que se comparará el texto.",
           example: "\"S.r\"",
           require: "m",
           repeat: "n",
@@ -8335,8 +8335,8 @@ module.exports = {  "insertLink": {
     {
       n: "REGEXREPLACE",
       t: 12,
-      d: "Replaces part of a text string with a different text string using regular expressions.",
-      a: "Replaces text with regular expressions.",
+      d: "Reemplaza parte de una cadena de texto por otra cadena de texto usando expresiones regulares.",
+      a: "Reemplaza texto mediante expresiones regulares.",
       m: [
         3,
         3
@@ -8344,7 +8344,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto",
-          detail: "The text, a part of which will be replaced.",
+          detail: "El texto, una parte del cual se reemplazará.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8352,7 +8352,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "expresión_regular",
-          detail: "The regular expression.  All matching instances in `text` will be replaced.",
+          detail: "La expresión regular. Se reemplazarán todas las instancias coincidentes en `texto`.",
           example: "\"S.*d\"",
           require: "m",
           repeat: "n",
@@ -8360,7 +8360,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "reemplazo",
-          detail: "The text which will be inserted into the original text.",
+          detail: "El texto que se insertará en el texto original.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8371,8 +8371,8 @@ module.exports = {  "insertLink": {
     {
       n: "T",
       t: 12,
-      d: "Returns string arguments as text, or the empty string if the value is not text.",
-      a: "String arguments as text.",
+      d: "Devuelve los argumentos de cadena como texto, o una cadena vacía si el valor no es texto.",
+      a: "Argumentos de cadena como texto.",
       m: [
         1,
         1
@@ -8380,7 +8380,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The argument to be converted to text.",
+          detail: "El argumento que se convertirá a texto.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8391,8 +8391,8 @@ module.exports = {  "insertLink": {
     {
       n: "FIXED",
       t: 12,
-      d: "Formats a number with a fixed number of decimal places.",
-      a: "Formats number with fixed number of decimal places.",
+      d: "Da formato a un número con un número fijo de decimales.",
+      a: "Da formato a un número con un número fijo de decimales.",
       m: [
         1,
         3
@@ -8400,7 +8400,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número",
-          detail: "The number to format.",
+          detail: "El número al que se dará formato.",
           example: "3.141592653",
           require: "m",
           repeat: "n",
@@ -8408,7 +8408,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_decimales",
-          detail: "The number of decimal places to display in the result.",
+          detail: "El número de decimales que se mostrarán en el resultado.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8416,7 +8416,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "suprimir_separador",
-          detail: "Whether or not to suppress the thousands separator used in some locales (e.g. `1,000` becomes `1000`). Separators will be present if this value is 0 or omitted, and absent otherwise.",
+          detail: "Si se debe suprimir o no el separador de miles usado en algunas configuraciones regionales (por ejemplo, `1.000` pasa a ser `1000`). Los separadores estarán presentes si este valor es 0 o se omite, y ausentes en caso contrario.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -8427,8 +8427,8 @@ module.exports = {  "insertLink": {
     {
       n: "FIND",
       t: 12,
-      d: "Returns the position at which a string is first found within text where the capitalization of letters matters. Returns `#VALUE!` if the string is not found.",
-      a: "First position of string found in text, case-sensitive.",
+      d: "Devuelve la posición en la que se encuentra por primera vez una cadena dentro de un texto, teniendo en cuenta las mayúsculas y minúsculas. Devuelve `#VALUE!` si no se encuentra la cadena.",
+      a: "Primera posición de una cadena encontrada en un texto, distinguiendo mayúsculas y minúsculas.",
       m: [
         2,
         3
@@ -8436,7 +8436,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "buscar",
-          detail: "The string to look for within `text_to_search`.",
+          detail: "La cadena que se buscará dentro de `texto_a_buscar`.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
@@ -8444,7 +8444,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "texto_a_buscar",
-          detail: "The text to search for the first occurrence of `search_for`.",
+          detail: "El texto en el que se buscará la primera aparición de `buscar`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8452,7 +8452,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "a_partir_de",
-          detail: "The character within `text_to_search` at which to start the search.",
+          detail: "El carácter de `texto_a_buscar` a partir del cual comenzará la búsqueda.",
           example: "14",
           require: "o",
           repeat: "n",
@@ -8463,8 +8463,8 @@ module.exports = {  "insertLink": {
     {
       n: "FINDB",
       t: 12,
-      d: "Returns the position at which a string is first found within text counting each double-character as 2.",
-      a: "Position at which a string is first found within text (binary).",
+      d: "Devuelve la posición en la que se encuentra por primera vez una cadena dentro de un texto, contando cada carácter de doble byte como 2.",
+      a: "Posición en la que se encuentra por primera vez una cadena dentro de un texto (binario).",
       m: [
         2,
         3
@@ -8472,7 +8472,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "buscar",
-          detail: "The string to look for within `text_to_search`.",
+          detail: "La cadena que se buscará dentro de `texto_a_buscar`.",
           example: "\"new\"",
           require: "m",
           repeat: "n",
@@ -8480,7 +8480,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "texto_a_buscar",
-          detail: "The text to search for the first occurrence of `search_for`.",
+          detail: "El texto en el que se buscará la primera aparición de `buscar`.",
           example: "\"new year\"",
           require: "m",
           repeat: "n",
@@ -8488,7 +8488,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "a_partir_de",
-          detail: "The character within `text_to_search` at which to start the search.",
+          detail: "El carácter de `texto_a_buscar` a partir del cual comenzará la búsqueda.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8499,8 +8499,8 @@ module.exports = {  "insertLink": {
     {
       n: "JOIN",
       t: 12,
-      d: "Concatenates the elements of one or more one-dimensional arrays using a specified delimiter.",
-      a: "Concatenates elements of arrays with delimiter.",
+      d: "Concatena los elementos de una o varias matrices unidimensionales usando un delimitador especificado.",
+      a: "Concatena elementos de matrices con un delimitador.",
       m: [
         2,
         255
@@ -8508,7 +8508,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "delimitador",
-          detail: "The character or string to place between each concatenated value.",
+          detail: "El carácter o cadena que se colocará entre cada valor concatenado.",
           example: "\" and-a \"",
           require: "m",
           repeat: "n",
@@ -8516,7 +8516,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_o_matriz1",
-          detail: "The value or values to be appended using `delimiter`.",
+          detail: "El valor o los valores que se añadirán usando `delimitador`.",
           example: "{1",
           require: "m",
           repeat: "n",
@@ -8524,7 +8524,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_o_matriz2",
-          detail: "More values to be appended using `delimiter`.",
+          detail: "Más valores que se añadirán usando `delimitador`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -8535,8 +8535,8 @@ module.exports = {  "insertLink": {
     {
       n: "LEFT",
       t: 12,
-      d: "Returns a substring from the beginning of a specified string.",
-      a: "Substring from beginning of specified string.",
+      d: "Devuelve una subcadena a partir del comienzo de una cadena especificada.",
+      a: "Subcadena a partir del comienzo de una cadena especificada.",
       m: [
         1,
         2
@@ -8544,7 +8544,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "cadena",
-          detail: "The string from which the left portion will be returned.",
+          detail: "La cadena de la que se devolverá la parte izquierda.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8552,7 +8552,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_caracteres",
-          detail: "The number of characters to return from the left side of `string`.",
+          detail: "El número de caracteres que se devolverán desde el lado izquierdo de `cadena`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8563,8 +8563,8 @@ module.exports = {  "insertLink": {
     {
       n: "RIGHT",
       t: 12,
-      d: "Returns a substring from the end of a specified string.",
-      a: "A substring from the end of a specified string.",
+      d: "Devuelve una subcadena a partir del final de una cadena especificada.",
+      a: "Subcadena a partir del final de una cadena especificada.",
       m: [
         1,
         2
@@ -8572,7 +8572,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "cadena",
-          detail: "The string from which the right portion will be returned.",
+          detail: "La cadena de la que se devolverá la parte derecha.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8580,7 +8580,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_caracteres",
-          detail: "The number of characters to return from the right side of `string`.",
+          detail: "El número de caracteres que se devolverán desde el lado derecho de `cadena`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8591,8 +8591,8 @@ module.exports = {  "insertLink": {
     {
       n: "MID",
       t: 12,
-      d: "Returns a segment of a string.",
-      a: "A segment of a string.",
+      d: "Devuelve un segmento de una cadena.",
+      a: "Un segmento de una cadena.",
       m: [
         3,
         3
@@ -8600,7 +8600,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "cadena",
-          detail: "The string to extract a segment from.",
+          detail: "La cadena de la que se extraerá un segmento.",
           example: "\"get this\"",
           require: "m",
           repeat: "n",
@@ -8608,7 +8608,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "a_partir_de",
-          detail: "The index from the left of `string` from which to begin extracting. The first character in `string` has the index 1.",
+          detail: "El índice, desde la izquierda de `cadena`, a partir del cual se comenzará a extraer. El primer carácter de `cadena` tiene el índice 1.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -8616,7 +8616,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "longitud_extracción",
-          detail: "The length of the segment to extract.",
+          detail: "La longitud del segmento que se extraerá.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8627,8 +8627,8 @@ module.exports = {  "insertLink": {
     {
       n: "LEN",
       t: 12,
-      d: "Returns the length of a string.",
-      a: "Length of a string.",
+      d: "Devuelve la longitud de una cadena.",
+      a: "Longitud de una cadena.",
       m: [
         1,
         1
@@ -8636,7 +8636,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto",
-          detail: "The string whose length will be returned.",
+          detail: "La cadena cuya longitud se devolverá.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8647,8 +8647,8 @@ module.exports = {  "insertLink": {
     {
       n: "LENB",
       t: 12,
-      d: "Returns the length of a string in bytes.",
-      a: "Length of a string in bytes.",
+      d: "Devuelve la longitud de una cadena en bytes.",
+      a: "Longitud de una cadena en bytes.",
       m: [
         1,
         1
@@ -8656,7 +8656,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto",
-          detail: "The string whose length will be returned.",
+          detail: "La cadena cuya longitud se devolverá.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8667,8 +8667,8 @@ module.exports = {  "insertLink": {
     {
       n: "LOWER",
       t: 12,
-      d: "Converts a specified string to lowercase.",
-      a: "Converts a specified string to lowercase.",
+      d: "Convierte una cadena especificada a minúsculas.",
+      a: "Convierte una cadena especificada a minúsculas.",
       m: [
         1,
         1
@@ -8676,7 +8676,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto",
-          detail: "The string to convert to lowercase.",
+          detail: "La cadena que se convertirá a minúsculas.",
           example: "\"LOREM IPSUM\"",
           require: "m",
           repeat: "n",
@@ -8687,8 +8687,8 @@ module.exports = {  "insertLink": {
     {
       n: "UPPER",
       t: 12,
-      d: "Converts a specified string to uppercase.",
-      a: "Converts a specified string to uppercase.",
+      d: "Convierte una cadena especificada a mayúsculas.",
+      a: "Convierte una cadena especificada a mayúsculas.",
       m: [
         1,
         1
@@ -8696,7 +8696,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto",
-          detail: "The string to convert to uppercase.",
+          detail: "La cadena que se convertirá a mayúsculas.",
           example: "\"lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8707,8 +8707,8 @@ module.exports = {  "insertLink": {
     {
       n: "EXACT",
       t: 12,
-      d: "Tests whether two strings are identical.",
-      a: "Tests whether two strings are identical.",
+      d: "Comprueba si dos cadenas son idénticas.",
+      a: "Comprueba si dos cadenas son idénticas.",
       m: [
         2,
         2
@@ -8716,7 +8716,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "cadena1",
-          detail: "The first string to compare",
+          detail: "La primera cadena que se comparará.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -8724,7 +8724,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cadena2",
-          detail: "The second string to compare",
+          detail: "La segunda cadena que se comparará.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8735,8 +8735,8 @@ module.exports = {  "insertLink": {
     {
       n: "REPLACE",
       t: 12,
-      d: "Replaces part of a text string with a different text string.",
-      a: "Replaces part of a text string with different text.",
+      d: "Reemplaza parte de una cadena de texto por otra cadena de texto distinta.",
+      a: "Reemplaza parte de una cadena de texto por otro texto.",
       m: [
         4,
         4
@@ -8744,7 +8744,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto",
-          detail: "The text, a part of which will be replaced.",
+          detail: "El texto, una parte del cual se reemplazará.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8752,7 +8752,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "posición",
-          detail: "The position where the replacement will begin (starting from 1).",
+          detail: "La posición en la que comenzará el reemplazo (empezando por 1).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -8760,7 +8760,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "longitud",
-          detail: "The number of characters in the text to be replaced.",
+          detail: "El número de caracteres del texto que se reemplazarán.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -8768,7 +8768,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "nuevo_texto",
-          detail: "The text which will be inserted into the original text.",
+          detail: "El texto que se insertará en el texto original.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8779,8 +8779,8 @@ module.exports = {  "insertLink": {
     {
       n: "REPT",
       t: 12,
-      d: "Returns specified text repeated a number of times.",
-      a: "Specified text repeated a number of times.",
+      d: "Devuelve un texto especificado repetido un número de veces.",
+      a: "Texto especificado repetido un número de veces.",
       m: [
         2,
         2
@@ -8788,7 +8788,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto_a_repetir",
-          detail: "The character or string to repeat.",
+          detail: "El carácter o cadena que se repetirá.",
           example: "\"ha\"",
           require: "m",
           repeat: "n",
@@ -8796,7 +8796,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_repeticiones",
-          detail: "The number of times `text_to_repeat` should appear in the value returned.",
+          detail: "El número de veces que `texto_a_repetir` debe aparecer en el valor devuelto.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8807,8 +8807,8 @@ module.exports = {  "insertLink": {
     {
       n: "SEARCH",
       t: 12,
-      d: "Returns the position at which a string is first found within text and ignores capitalization of letters. Returns `#VALUE!` if the string is not found.",
-      a: "First position of string found in text, ignoring case.",
+      d: "Devuelve la posición en la que se encuentra por primera vez una cadena dentro de un texto, sin tener en cuenta las mayúsculas y minúsculas. Devuelve `#VALUE!` si no se encuentra la cadena.",
+      a: "Primera posición de una cadena encontrada en un texto, sin distinguir mayúsculas y minúsculas.",
       m: [
         2,
         3
@@ -8816,7 +8816,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "buscar",
-          detail: "The string to look for within `text_to_search`.",
+          detail: "La cadena que se buscará dentro de `texto_a_buscar`.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
@@ -8824,7 +8824,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "texto_a_buscar",
-          detail: "The text to search for the first occurrence of `search_for`.",
+          detail: "El texto en el que se buscará la primera aparición de `buscar`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8832,7 +8832,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "a_partir_de",
-          detail: "The character within `text_to_search` at which to start the search.",
+          detail: "El carácter de `texto_a_buscar` a partir del cual comenzará la búsqueda.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -8843,8 +8843,8 @@ module.exports = {  "insertLink": {
     {
       n: "SUBSTITUTE",
       t: 12,
-      d: "Replaces existing text with new text in a string.",
-      a: "Replaces existing text with new text in a string.",
+      d: "Reemplaza texto existente por texto nuevo en una cadena.",
+      a: "Reemplaza texto existente por texto nuevo en una cadena.",
       m: [
         3,
         4
@@ -8852,7 +8852,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto_a_buscar",
-          detail: "The text within which to search and replace.",
+          detail: "El texto en el que se buscará y reemplazará.",
           example: "\"search for it\"",
           require: "m",
           repeat: "n",
@@ -8860,7 +8860,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "buscar",
-          detail: "The string to search for within `text_to_search`.",
+          detail: "La cadena que se buscará dentro de `texto_a_buscar`.",
           example: "\"search for\"",
           require: "m",
           repeat: "n",
@@ -8868,7 +8868,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "reemplazar_con",
-          detail: "The string that will replace `search_for`.",
+          detail: "La cadena que reemplazará a `buscar`.",
           example: "\"Google\"",
           require: "m",
           repeat: "n",
@@ -8876,7 +8876,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_aparición",
-          detail: "The instance of `search_for` within `text_to_search` to replace with `replace_with`. By default, all occurrences of `search_for` are replaced; however, if `occurrence_number` is specified, only the indicated instance of `search_for` is replaced.",
+          detail: "La instancia de `buscar` dentro de `texto_a_buscar` que se reemplazará por `reemplazar_con`. De forma predeterminada, se reemplazan todas las apariciones de `buscar`; sin embargo, si se especifica `número_de_aparición`, solo se reemplaza la instancia indicada de `buscar`.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -8887,8 +8887,8 @@ module.exports = {  "insertLink": {
     {
       n: "CLEAN",
       t: 12,
-      d: "Returns the text with the non-printable ASCII characters removed.",
-      a: "Removes non-printable characters from a piece of text.",
+      d: "Devuelve el texto sin los caracteres ASCII no imprimibles.",
+      a: "Elimina los caracteres no imprimibles de un texto.",
       m: [
         1,
         1
@@ -8896,7 +8896,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto",
-          detail: "The text whose non-printable characters are to be removed.",
+          detail: "El texto cuyos caracteres no imprimibles se eliminarán.",
           example: "\"AF\"&CHAR(31)",
           require: "m",
           repeat: "n",
@@ -8907,8 +8907,8 @@ module.exports = {  "insertLink": {
     {
       n: "TEXT",
       t: 12,
-      d: "Converts a number into text according to a specified format.",
-      a: "Formats a number into text.",
+      d: "Convierte un número en texto según un formato especificado.",
+      a: "Da formato a un número convirtiéndolo en texto.",
       m: [
         2,
         2
@@ -8916,7 +8916,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número",
-          detail: "The number, date, or time to format.",
+          detail: "El número, fecha u hora al que se dará formato.",
           example: "1.23",
           require: "m",
           repeat: "n",
@@ -8924,7 +8924,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "formato",
-          detail: "The pattern by which to format the number, enclosed in quotation marks.",
+          detail: "El patrón según el cual se dará formato al número, entre comillas.",
           example: "\"$0.00\"",
           require: "m",
           repeat: "n",
@@ -8935,8 +8935,8 @@ module.exports = {  "insertLink": {
     {
       n: "TRIM",
       t: 12,
-      d: "Removes leading, trailing, and repeated spaces in text.",
-      a: "Removes space characters.",
+      d: "Elimina los espacios al principio, al final y repetidos en un texto.",
+      a: "Elimina caracteres de espacio.",
       m: [
         1,
         1
@@ -8944,7 +8944,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto",
-          detail: "The text or reference to a cell containing text to be trimmed.",
+          detail: "El texto, o referencia a una celda que contenga texto, que se recortará.",
           example: "\" lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8955,8 +8955,8 @@ module.exports = {  "insertLink": {
     {
       n: "VALUE",
       t: 12,
-      d: "Converts a string in any of the date, time or number formats that Google Sheets understands into a number.",
-      a: "Converts a date/time/number string into a number.",
+      d: "Convierte en número una cadena expresada en cualquiera de los formatos de fecha, hora o número que Hojas de cálculo de Google reconoce.",
+      a: "Convierte una cadena de fecha/hora/número en un número.",
       m: [
         1,
         1
@@ -8964,7 +8964,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto",
-          detail: "The string containing the value to be converted.",
+          detail: "La cadena que contiene el valor que se convertirá.",
           example: "\"123\"",
           require: "m",
           repeat: "n",
@@ -8975,8 +8975,8 @@ module.exports = {  "insertLink": {
     {
       n: "PROPER",
       t: 12,
-      d: "Capitalizes each word in a specified string.",
-      a: "Capitalizes each word in a specified string.",
+      d: "Pone en mayúscula la primera letra de cada palabra de una cadena especificada.",
+      a: "Pone en mayúscula la primera letra de cada palabra de una cadena especificada.",
       m: [
         1,
         1
@@ -8984,7 +8984,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "texto_a_capitalizar",
-          detail: "The text which will be returned with the first letter of each word in uppercase and all other letters in lowercase.",
+          detail: "El texto que se devolverá con la primera letra de cada palabra en mayúscula y el resto de letras en minúscula.",
           example: "\"united states\"",
           require: "m",
           repeat: "n",
@@ -8995,8 +8995,8 @@ module.exports = {  "insertLink": {
     {
       n: "CONVERT",
       t: 13,
-      d: "Converts a numeric value to a different unit of measure.",
-      a: "Unit conversion for numbers.",
+      d: "Convierte un valor numérico a una unidad de medida distinta.",
+      a: "Conversión de unidades para números.",
       m: [
         3,
         3
@@ -9004,7 +9004,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The numeric value in `start_unit` to convert to `end_unit`.",
+          detail: "El valor numérico en `unidad_inicio` que se convertirá a `unidad_fin`.",
           example: "5.1",
           require: "m",
           repeat: "n",
@@ -9012,7 +9012,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "unidad_inicio",
-          detail: "The starting unit, the unit currently assigned to `value`.",
+          detail: "La unidad de origen, la unidad actualmente asignada a `valor`.",
           example: "\"g\"",
           require: "m",
           repeat: "n",
@@ -9020,7 +9020,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "unidad_fin",
-          detail: "The unit of measure into which to convert the argument, `value`.",
+          detail: "La unidad de medida a la que se convertirá el argumento `valor`.",
           example: "\"kg\"",
           require: "m",
           repeat: "n",
@@ -9031,8 +9031,8 @@ module.exports = {  "insertLink": {
     {
       n: "SUMX2MY2",
       t: 14,
-      d: "Calculates the sum of the differences of the squares of values in two arrays.",
-      a: "Sum of the differences of squares.",
+      d: "Calcula la suma de las diferencias de los cuadrados de los valores de dos matrices.",
+      a: "Suma de las diferencias de cuadrados.",
       m: [
         2,
         2
@@ -9040,7 +9040,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "matriz_x",
-          detail: "The array or range of values whose squares will be reduced by the squares of corresponding entries in `array_y` and added together.",
+          detail: "La matriz o rango de valores cuyos cuadrados se reducirán con los cuadrados de las entradas correspondientes de `matriz_y` y se sumarán.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -9048,7 +9048,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "matriz_y",
-          detail: "The array or range of values whose squares will be subtracted from the squares of corresponding entries in `array_x` and added together.",
+          detail: "La matriz o rango de valores cuyos cuadrados se restarán de los cuadrados de las entradas correspondientes de `matriz_x` y se sumarán.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9059,8 +9059,8 @@ module.exports = {  "insertLink": {
     {
       n: "SUMX2PY2",
       t: 14,
-      d: "Calculates the sum of the sums of the squares of values in two arrays.",
-      a: "Sum of the sums of squares.",
+      d: "Calcula la suma de las sumas de los cuadrados de los valores de dos matrices.",
+      a: "Suma de las sumas de cuadrados.",
       m: [
         2,
         2
@@ -9068,7 +9068,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "matriz_x",
-          detail: "The array or range of values whose squares will be added to the squares of corresponding entries in `array_y` and added together.",
+          detail: "La matriz o rango de valores cuyos cuadrados se sumarán a los cuadrados de las entradas correspondientes de `matriz_y`.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -9076,7 +9076,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "matriz_y",
-          detail: "The array or range of values whose squares will be added to the squares of corresponding entries in `array_x` and added together.",
+          detail: "La matriz o rango de valores cuyos cuadrados se sumarán a los cuadrados de las entradas correspondientes de `matriz_x`.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9087,8 +9087,8 @@ module.exports = {  "insertLink": {
     {
       n: "SUMXMY2",
       t: 14,
-      d: "Calculates the sum of the squares of differences of values in two arrays.",
-      a: "Sum of the squares of differences.",
+      d: "Calcula la suma de los cuadrados de las diferencias de los valores de dos matrices.",
+      a: "Suma de los cuadrados de las diferencias.",
       m: [
         2,
         2
@@ -9096,7 +9096,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "matriz_x",
-          detail: "The array or range of values that will be reduced by corresponding entries in `array_y`, squared, and added together.",
+          detail: "La matriz o rango de valores a los que se restarán las entradas correspondientes de `matriz_y`, se elevará el resultado al cuadrado y se sumará.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -9104,7 +9104,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "matriz_y",
-          detail: "The array or range of values that will be subtracted from corresponding entries in `array_x`, the result squared, and all such results added together.",
+          detail: "La matriz o rango de valores que se restarán de las entradas correspondientes de `matriz_x`, elevando el resultado al cuadrado y sumando todos esos resultados.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9115,8 +9115,8 @@ module.exports = {  "insertLink": {
     {
       n: "TRANSPOSE",
       t: 14,
-      d: "Transposes the rows and columns of an array or range of cells.",
-      a: "Transposes the rows and columns of an array.",
+      d: "Transpone las filas y columnas de una matriz o rango de celdas.",
+      a: "Transpone las filas y columnas de una matriz.",
       m: [
         1,
         1
@@ -9124,7 +9124,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "matriz_o_rango",
-          detail: "The array or range whose rows and columns will be swapped.",
+          detail: "La matriz o rango cuyas filas y columnas se intercambiarán.",
           example: "{1,2}",
           require: "m",
           repeat: "n",
@@ -9135,8 +9135,8 @@ module.exports = {  "insertLink": {
     {
       n: "TREND",
       t: 14,
-      d: "Given partial data about a linear trend, fits an ideal linear trend using the least squares method and/or predicts further values.",
-      a: "Fits points to linear trend derived via least-squares.",
+      d: "Dados datos parciales sobre una tendencia lineal, ajusta una tendencia lineal ideal mediante el método de mínimos cuadrados o predice valores adicionales.",
+      a: "Ajusta puntos a una tendencia lineal obtenida por mínimos cuadrados.",
       m: [
         1,
         4
@@ -9144,7 +9144,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y_conocidos",
-          detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal linear trend.",
+          detail: "La matriz o rango que contiene los valores dependientes (y) ya conocidos, usados para ajustar una tendencia lineal ideal.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9152,7 +9152,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x_conocidos",
-          detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
+          detail: "Los valores de la o las variables independientes correspondientes a `datos_y_conocidos`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9160,7 +9160,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "nuevos_datos_x",
-          detail: "The data points to return the `y` values for on the ideal curve fit.",
+          detail: "Los puntos de datos para los que se devolverán los valores `y` en el ajuste de curva ideal.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9168,7 +9168,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "b",
-          detail: "Given a general linear form of `y = m*x+b` for a curve fit, calculates `b` if `TRUE` or forces `b` to be `0` and only calculates the `m` values if `FALSE`, i.e. forces the curve fit to pass through the origin.",
+          detail: "Dada una forma lineal general `y = m*x+b` para un ajuste de curva, calcula `b` si es `TRUE`, o fuerza `b` a `0` y solo calcula los valores `m` si es `FALSE`, es decir, obliga al ajuste de curva a pasar por el origen.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9179,8 +9179,8 @@ module.exports = {  "insertLink": {
     {
       n: "FREQUENCY",
       t: 14,
-      d: "Calculates the frequency distribution of a one-column array into specified classes.",
-      a: "The frequency distribution of array.",
+      d: "Calcula la distribución de frecuencias de una matriz de una sola columna en clases especificadas.",
+      a: "Distribución de frecuencias de una matriz.",
       m: [
         2,
         2
@@ -9188,7 +9188,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos",
-          detail: "The array or range containing the values to be counted.",
+          detail: "La matriz o rango que contiene los valores que se contarán.",
           example: "A2:A40",
           require: "m",
           repeat: "n",
@@ -9196,7 +9196,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "clases",
-          detail: "The array or range containing the set of classes.",
+          detail: "La matriz o rango que contiene el conjunto de clases.",
           example: "B2:B5",
           require: "m",
           repeat: "n",
@@ -9207,8 +9207,8 @@ module.exports = {  "insertLink": {
     {
       n: "GROWTH",
       t: 14,
-      d: "Given partial data about an exponential growth trend, fits an ideal exponential growth trend and/or predicts further values.",
-      a: "Fits points to exponential growth trend.",
+      d: "Dados datos parciales sobre una tendencia de crecimiento exponencial, ajusta una tendencia de crecimiento exponencial ideal o predice valores adicionales.",
+      a: "Ajusta puntos a una tendencia de crecimiento exponencial.",
       m: [
         1,
         4
@@ -9216,7 +9216,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y_conocidos",
-          detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal exponential growth curve.",
+          detail: "La matriz o rango que contiene los valores dependientes (y) ya conocidos, usados para ajustar una curva de crecimiento exponencial ideal.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9224,7 +9224,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x_conocidos",
-          detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
+          detail: "Los valores de la o las variables independientes correspondientes a `datos_y_conocidos`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9232,7 +9232,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "nuevos_datos_x",
-          detail: "The data points to return the `y` values for on the ideal curve fit.",
+          detail: "Los puntos de datos para los que se devolverán los valores `y` en el ajuste de curva ideal.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9240,7 +9240,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "b",
-          detail: "Given a general exponential form of `y = b*m^x` for a curve fit, calculates `b` if `TRUE` or forces `b` to be `1` and only calculates the `m` values if `FALSE`.",
+          detail: "Dada una forma exponencial general `y = b*m^x` para un ajuste de curva, calcula `b` si es `TRUE`, o fuerza `b` a `1` y solo calcula los valores `m` si es `FALSE`.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9251,8 +9251,8 @@ module.exports = {  "insertLink": {
     {
       n: "LINEST",
       t: 14,
-      d: "Given partial data about a linear trend, calculates various parameters about the ideal linear trend using the least-squares method.",
-      a: "Best-fit linear trend via least-squares.",
+      d: "Dados datos parciales sobre una tendencia lineal, calcula varios parámetros de la tendencia lineal ideal mediante el método de mínimos cuadrados.",
+      a: "Tendencia lineal de mejor ajuste mediante mínimos cuadrados.",
       m: [
         1,
         4
@@ -9260,7 +9260,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y_conocidos",
-          detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal linear trend.",
+          detail: "La matriz o rango que contiene los valores dependientes (y) ya conocidos, usados para ajustar una tendencia lineal ideal.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9268,7 +9268,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x_conocidos",
-          detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
+          detail: "Los valores de la o las variables independientes correspondientes a `datos_y_conocidos`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9276,7 +9276,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "calcular_b",
-          detail: "Given a linear form of `y = m*x+b`, calculates the y-intercept (`b`) if `TRUE`. Otherwise, forces `b` to be `0` and only calculates the `m` values if `FALSE`, i.e. forces the curve fit to pass through the origin.",
+          detail: "Dada una forma lineal `y = m*x+b`, calcula la ordenada en el origen (`b`) si es `TRUE`. En caso contrario, fuerza `b` a `0` y solo calcula los valores `m` si es `FALSE`, es decir, obliga al ajuste de curva a pasar por el origen.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9284,7 +9284,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "detallado",
-          detail: "A flag specifying whether to return additional regression statistics or only the linear coefficients and the y-intercept (default).",
+          detail: "Un indicador que especifica si se devolverán estadísticas de regresión adicionales o solo los coeficientes lineales y la ordenada en el origen (opción predeterminada).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9295,8 +9295,8 @@ module.exports = {  "insertLink": {
     {
       n: "LOGEST",
       t: 14,
-      d: "Given partial data about an exponential growth curve, calculates various parameters about the best fit ideal exponential growth curve.",
-      a: "Best-fit exponential growth curve.",
+      d: "Dados datos parciales sobre una curva de crecimiento exponencial, calcula varios parámetros de la curva de crecimiento exponencial ideal de mejor ajuste.",
+      a: "Curva de crecimiento exponencial de mejor ajuste.",
       m: [
         1,
         4
@@ -9304,7 +9304,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "datos_y_conocidos",
-          detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal exponential growth curve.",
+          detail: "La matriz o rango que contiene los valores dependientes (y) ya conocidos, usados para ajustar una curva de crecimiento exponencial ideal.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9312,7 +9312,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "datos_x_conocidos",
-          detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
+          detail: "Los valores de la o las variables independientes correspondientes a `datos_y_conocidos`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9320,7 +9320,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "b",
-          detail: "Given a general exponential form of `y = b*m^x` for a curve fit, calculates `b` if `TRUE` or forces `b` to be `1` and only calculates the `m` values if `FALSE`.",
+          detail: "Dada una forma exponencial general `y = b*m^x` para un ajuste de curva, calcula `b` si es `TRUE`, o fuerza `b` a `1` y solo calcula los valores `m` si es `FALSE`.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9328,7 +9328,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "detallado",
-          detail: "A flag specifying whether to return additional regression statistics or only the calculated coefficient and exponents.",
+          detail: "Un indicador que especifica si se devolverán estadísticas de regresión adicionales o solo el coeficiente y los exponentes calculados.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9339,8 +9339,8 @@ module.exports = {  "insertLink": {
     {
       n: "MDETERM",
       t: 14,
-      d: "Returns the matrix determinant of a square matrix specified as an array or range.",
-      a: "Matrix determinant of a square matrix.",
+      d: "Devuelve el determinante de una matriz cuadrada especificada como matriz o rango.",
+      a: "Determinante de una matriz cuadrada.",
       m: [
         1,
         1
@@ -9348,7 +9348,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "matriz_cuadrada",
-          detail: "An array or range with an equal number of rows and columns representing a matrix whose determinant will be calculated.",
+          detail: "Una matriz o rango con el mismo número de filas que de columnas que representa una matriz cuyo determinante se calculará.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9359,8 +9359,8 @@ module.exports = {  "insertLink": {
     {
       n: "MINVERSE",
       t: 14,
-      d: "Returns the multiplicative inverse of a square matrix specified as an array or range.",
-      a: "Multiplicative inverse of square matrix.",
+      d: "Devuelve la matriz inversa multiplicativa de una matriz cuadrada especificada como matriz o rango.",
+      a: "Inversa multiplicativa de una matriz cuadrada.",
       m: [
         1,
         1
@@ -9368,7 +9368,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "matriz_cuadrada",
-          detail: "An array or range with an equal number of rows and columns representing a matrix whose multiplicative inverse will be calculated.",
+          detail: "Una matriz o rango con el mismo número de filas que de columnas que representa una matriz cuya inversa multiplicativa se calculará.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9379,8 +9379,8 @@ module.exports = {  "insertLink": {
     {
       n: "MMULT",
       t: 14,
-      d: "Calculates the matrix product of two matrices specified as arrays or ranges.",
-      a: "The matrix product of two matrices.",
+      d: "Calcula el producto matricial de dos matrices especificadas como matrices o rangos.",
+      a: "Producto matricial de dos matrices.",
       m: [
         2,
         2
@@ -9388,7 +9388,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "matriz1",
-          detail: "The first matrix in the matrix multiplication operation, represented as an array or range.",
+          detail: "La primera matriz de la operación de multiplicación de matrices, representada como matriz o rango.",
           example: "A1:B3",
           require: "m",
           repeat: "n",
@@ -9396,7 +9396,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "matriz2",
-          detail: "The second matrix in the matrix multiplication operation, represented as an array or range.",
+          detail: "La segunda matriz de la operación de multiplicación de matrices, representada como matriz o rango.",
           example: "C1:F2",
           require: "m",
           repeat: "n",
@@ -9407,8 +9407,8 @@ module.exports = {  "insertLink": {
     {
       n: "SUMPRODUCT",
       t: 14,
-      d: "Calculates the sum of the products of corresponding entries in two equal-sized arrays or ranges.",
-      a: "Sum of products of elements in two arrays.",
+      d: "Calcula la suma de los productos de las entradas correspondientes en dos matrices o rangos del mismo tamaño.",
+      a: "Suma de los productos de los elementos de dos matrices.",
       m: [
         1,
         255
@@ -9416,7 +9416,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "matriz1",
-          detail: "The first array or range whose entries will be multiplied with corresponding entries in the second such array or range.",
+          detail: "La primera matriz o rango cuyas entradas se multiplicarán por las entradas correspondientes de la segunda matriz o rango.",
           example: "A2:C5",
           require: "m",
           repeat: "n",
@@ -9424,7 +9424,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "matriz2",
-          detail: "The second array or range whose entries will be multiplied with corresponding entries in the first such array or range.",
+          detail: "La segunda matriz o rango cuyas entradas se multiplicarán por las entradas correspondientes de la primera matriz o rango.",
           example: "D2:F5",
           require: "o",
           repeat: "y",
@@ -9435,8 +9435,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISFORMULA",
       t: 15,
-      d: "Checks whether a value is a formula.",
-      a: "Whether a value is a formula.",
+      d: "Comprueba si un valor es una fórmula.",
+      a: "Indica si un valor es una fórmula.",
       m: [
         1,
         1
@@ -9444,7 +9444,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "celda",
-          detail: "The cell to be verified as containing a formula.",
+          detail: "La celda que se comprobará para verificar si contiene una fórmula.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9455,8 +9455,8 @@ module.exports = {  "insertLink": {
     {
       n: "CELL",
       t: 15,
-      d: "Returns the requested information about the specified cell.",
-      a: "Gets information about a cell.",
+      d: "Devuelve la información solicitada sobre la celda especificada.",
+      a: "Obtiene información sobre una celda.",
       m: [
         2,
         2
@@ -9464,7 +9464,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tipo_información",
-          detail: "The type of information requested (see article for available types)",
+          detail: "El tipo de información solicitada (consulta el artículo para ver los tipos disponibles).",
           example: "\"type\"",
           require: "m",
           repeat: "n",
@@ -9472,7 +9472,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "referencia",
-          detail: "The reference to the cell.",
+          detail: "La referencia a la celda.",
           example: "C2",
           require: "m",
           repeat: "n",
@@ -9483,8 +9483,8 @@ module.exports = {  "insertLink": {
     {
       n: "NA",
       t: 15,
-      d: "Returns the \"value not available\" error, `#N/A`.",
-      a: "The `#N/A` error.",
+      d: "Devuelve el error \"valor no disponible\", `#N/A`.",
+      a: "El error `#N/A`.",
       m: [
         0,
         0
@@ -9494,8 +9494,8 @@ module.exports = {  "insertLink": {
     {
       n: "ERROR_TYPE",
       t: 15,
-      d: "Returns a number corresponding to the error value in a different cell.",
-      a: "Error value of cell (as number).",
+      d: "Devuelve un número correspondiente al valor de error de otra celda.",
+      a: "Valor de error de una celda (como número).",
       m: [
         1,
         1
@@ -9503,7 +9503,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "referencia",
-          detail: "The cell to find the error number for although you can also provide the error value directly.",
+          detail: "La celda de la que se obtendrá el número de error, aunque también se puede proporcionar directamente el valor de error.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -9514,8 +9514,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISBLANK",
       t: 15,
-      d: "Checks whether the referenced cell is empty.",
-      a: "Whether the referenced cell is empty.",
+      d: "Comprueba si la celda referenciada está vacía.",
+      a: "Indica si la celda referenciada está vacía.",
       m: [
         1,
         1
@@ -9523,7 +9523,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "Reference to the cell that will be checked for emptiness.",
+          detail: "Referencia a la celda que se comprobará para verificar si está vacía.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9534,8 +9534,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISERR",
       t: 15,
-      d: "Checks whether a value is an error other than `#N/A`.",
-      a: "Whether a value is an error other than `#n/a`.",
+      d: "Comprueba si un valor es un error distinto de `#N/A`.",
+      a: "Indica si un valor es un error distinto de `#N/A`.",
       m: [
         1,
         1
@@ -9543,7 +9543,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to be verified as an error type other than `#N/A`.",
+          detail: "El valor que se comprobará como un tipo de error distinto de `#N/A`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9554,8 +9554,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISERROR",
       t: 15,
-      d: "Checks whether a value is an error.",
-      a: "Whether a value is an error.",
+      d: "Comprueba si un valor es un error.",
+      a: "Indica si un valor es un error.",
       m: [
         1,
         1
@@ -9563,7 +9563,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to be verified as an error type.",
+          detail: "El valor que se comprobará como un tipo de error.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9574,8 +9574,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISLOGICAL",
       t: 15,
-      d: "Checks whether a value is `TRUE` or `FALSE`.",
-      a: "Whether a value is `true` or `false`.",
+      d: "Comprueba si un valor es `VERDADERO` o `FALSO`.",
+      a: "Indica si un valor es `verdadero` o `falso`.",
       m: [
         1,
         1
@@ -9583,7 +9583,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to be verified as a logical `TRUE` or `FALSE`.",
+          detail: "El valor que se comprobará como lógico `VERDADERO` o `FALSO`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9594,8 +9594,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISNA",
       t: 15,
-      d: "Checks whether a value is the error `#N/A`.",
-      a: "Whether a value is the error `#n/a`.",
+      d: "Comprueba si un valor es el error `#N/A`.",
+      a: "Indica si un valor es el error `#N/A`.",
       m: [
         1,
         1
@@ -9603,7 +9603,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to be compared with the error value `#N/A`.",
+          detail: "El valor que se comparará con el valor de error `#N/A`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9614,8 +9614,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISNONTEXT",
       t: 15,
-      d: "Checks whether a value is non-textual.",
-      a: "Whether a value is non-textual.",
+      d: "Comprueba si un valor no es de tipo texto.",
+      a: "Indica si un valor no es de tipo texto.",
       m: [
         1,
         1
@@ -9623,7 +9623,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to be checked.",
+          detail: "El valor que se comprobará.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9634,8 +9634,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISNUMBER",
       t: 15,
-      d: "Checks whether a value is a number.",
-      a: "Whether a value is a number.",
+      d: "Comprueba si un valor es un número.",
+      a: "Indica si un valor es un número.",
       m: [
         1,
         1
@@ -9643,7 +9643,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to be verified as a number.",
+          detail: "El valor que se comprobará como número.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9654,8 +9654,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISREF",
       t: 15,
-      d: "Checks whether a value is a valid cell reference.",
-      a: "Whether a value is a valid cell reference.",
+      d: "Comprueba si un valor es una referencia de celda válida.",
+      a: "Indica si un valor es una referencia de celda válida.",
       m: [
         1,
         1
@@ -9663,7 +9663,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to be verified as a cell reference.",
+          detail: "El valor que se comprobará como referencia de celda.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9674,8 +9674,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISTEXT",
       t: 15,
-      d: "Checks whether a value is text.",
-      a: "Whether a value is text.",
+      d: "Comprueba si un valor es texto.",
+      a: "Indica si un valor es texto.",
       m: [
         1,
         1
@@ -9683,7 +9683,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value to be verified as text.",
+          detail: "El valor que se comprobará como texto.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9694,8 +9694,8 @@ module.exports = {  "insertLink": {
     {
       n: "TYPE",
       t: 15,
-      d: "Returns a number associated with the type of data passed into the function.",
-      a: "Get the type of a value.",
+      d: "Devuelve un número asociado al tipo de datos pasado a la función.",
+      a: "Obtiene el tipo de un valor.",
       m: [
         1,
         1
@@ -9703,7 +9703,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The value whose type is to be determined.",
+          detail: "El valor cuyo tipo se determinará.",
           example: "C4",
           require: "m",
           repeat: "n",
@@ -9714,8 +9714,8 @@ module.exports = {  "insertLink": {
     {
       n: "N",
       t: 15,
-      d: "Returns the argument provided as a number. Text is converted to 0 and errors are returned as-is.",
-      a: "Argument provided as a number.",
+      d: "Devuelve el argumento proporcionado como número. El texto se convierte en 0 y los errores se devuelven tal cual.",
+      a: "Argumento proporcionado como número.",
       m: [
         1,
         1
@@ -9723,7 +9723,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The argument to be converted to a number.",
+          detail: "El argumento que se convertirá en número.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9734,8 +9734,8 @@ module.exports = {  "insertLink": {
     {
       n: "TO_DATE",
       t: 16,
-      d: "Converts a provided number to a date.",
-      a: "Converts a provided number to a date.",
+      d: "Convierte un número proporcionado en una fecha.",
+      a: "Convierte un número proporcionado en una fecha.",
       m: [
         1,
         1
@@ -9743,7 +9743,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The argument or reference to a cell to be converted to a date.",
+          detail: "El argumento, o referencia a una celda, que se convertirá en fecha.",
           example: "25405",
           require: "m",
           repeat: "n",
@@ -9754,8 +9754,8 @@ module.exports = {  "insertLink": {
     {
       n: "TO_PURE_NUMBER",
       t: 16,
-      d: "Converts a provided date/time, percentage, currency or other formatted numeric value to a pure number without formatting.",
-      a: "Converts any numeric value to a pure number.",
+      d: "Convierte una fecha/hora, porcentaje, moneda u otro valor numérico con formato proporcionado en un número puro sin formato.",
+      a: "Convierte cualquier valor numérico en un número puro.",
       m: [
         1,
         1
@@ -9763,7 +9763,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The argument or reference to a cell to be converted to a pure number.",
+          detail: "El argumento, o referencia a una celda, que se convertirá en un número puro.",
           example: "50%",
           require: "m",
           repeat: "n",
@@ -9774,8 +9774,8 @@ module.exports = {  "insertLink": {
     {
       n: "TO_TEXT",
       t: 16,
-      d: "Converts a provided numeric value to a text value.",
-      a: "Converts a provided numeric value to a text value.",
+      d: "Convierte un valor numérico proporcionado en un valor de texto.",
+      a: "Convierte un valor numérico proporcionado en un valor de texto.",
       m: [
         1,
         1
@@ -9783,7 +9783,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The argument or reference to a cell to be converted to text.",
+          detail: "El argumento, o referencia a una celda, que se convertirá en texto.",
           example: "24",
           require: "m",
           repeat: "n",
@@ -9794,8 +9794,8 @@ module.exports = {  "insertLink": {
     {
       n: "TO_DOLLARS",
       t: 16,
-      d: "Converts a provided number to a dollar value.",
-      a: "Converts a provided number to a dollar value.",
+      d: "Convierte un número proporcionado en un valor en dólares.",
+      a: "Convierte un número proporcionado en un valor en dólares.",
       m: [
         1,
         1
@@ -9803,7 +9803,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The argument or reference to a cell to be converted to a dollar value.",
+          detail: "El argumento, o referencia a una celda, que se convertirá en un valor en dólares.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9814,8 +9814,8 @@ module.exports = {  "insertLink": {
     {
       n: "TO_PERCENT",
       t: 16,
-      d: "Converts a provided number to a percentage.",
-      a: "Converts a provided number to a percentage.",
+      d: "Convierte un número proporcionado en un porcentaje.",
+      a: "Convierte un número proporcionado en un porcentaje.",
       m: [
         1,
         1
@@ -9823,7 +9823,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor",
-          detail: "The argument or reference to a cell to be converted to a percentage.",
+          detail: "El argumento, o referencia a una celda, que se convertirá en porcentaje.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9834,8 +9834,8 @@ module.exports = {  "insertLink": {
     {
       n: "DGET",
       t: 17,
-      d: "Returns a single value from a database table-like array or range using a SQL-like query.",
-      a: "Single value from a table-like range.",
+      d: "Devuelve un único valor de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Un único valor de un rango con estructura de tabla.",
       m: [
         3,
         3
@@ -9843,7 +9843,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9851,7 +9851,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9859,7 +9859,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9870,8 +9870,8 @@ module.exports = {  "insertLink": {
     {
       n: "DMAX",
       t: 17,
-      d: "Returns the maximum value selected from a database table-like array or range using a SQL-like query.",
-      a: "Maximum of values from a table-like range.",
+      d: "Devuelve el valor máximo seleccionado de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Máximo de los valores de un rango con estructura de tabla.",
       m: [
         3,
         3
@@ -9879,7 +9879,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9887,7 +9887,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9895,7 +9895,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9906,8 +9906,8 @@ module.exports = {  "insertLink": {
     {
       n: "DMIN",
       t: 17,
-      d: "Returns the minimum value selected from a database table-like array or range using a SQL-like query.",
-      a: "Minimum of values from a table-like range.",
+      d: "Devuelve el valor mínimo seleccionado de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Mínimo de los valores de un rango con estructura de tabla.",
       m: [
         3,
         3
@@ -9915,7 +9915,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9923,7 +9923,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9931,7 +9931,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9942,8 +9942,8 @@ module.exports = {  "insertLink": {
     {
       n: "DAVERAGE",
       t: 17,
-      d: "Returns the average of a set of values selected from a database table-like array or range using a SQL-like query.",
-      a: "Average of a set of values from a table-like range.",
+      d: "Devuelve el promedio de un conjunto de valores seleccionados de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Promedio de un conjunto de valores de un rango con estructura de tabla.",
       m: [
         3,
         3
@@ -9951,7 +9951,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9959,7 +9959,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9967,7 +9967,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9978,8 +9978,8 @@ module.exports = {  "insertLink": {
     {
       n: "DCOUNT",
       t: 17,
-      d: "Counts numeric values selected from a database table-like array or range using a SQL-like query.",
-      a: "Counts values from a table-like range.",
+      d: "Cuenta los valores numéricos seleccionados de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Cuenta los valores de un rango con estructura de tabla.",
       m: [
         3,
         3
@@ -9987,7 +9987,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9995,7 +9995,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10003,7 +10003,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10014,8 +10014,8 @@ module.exports = {  "insertLink": {
     {
       n: "DCOUNTA",
       t: 17,
-      d: "Counts values, including text, selected from a database table-like array or range using a SQL-like query.",
-      a: "Counts values and text from a table-like range.",
+      d: "Cuenta los valores, incluido el texto, seleccionados de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Cuenta valores y texto de un rango con estructura de tabla.",
       m: [
         3,
         3
@@ -10023,7 +10023,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10031,7 +10031,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10039,7 +10039,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10050,8 +10050,8 @@ module.exports = {  "insertLink": {
     {
       n: "DPRODUCT",
       t: 17,
-      d: "Returns the product of values selected from a database table-like array or range using a SQL-like query.",
-      a: "Product of values from a table-like range.",
+      d: "Devuelve el producto de los valores seleccionados de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Producto de los valores de un rango con estructura de tabla.",
       m: [
         3,
         3
@@ -10059,7 +10059,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10067,7 +10067,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10075,7 +10075,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10086,8 +10086,8 @@ module.exports = {  "insertLink": {
     {
       n: "DSTDEV",
       t: 17,
-      d: "Returns the standard deviation of a population sample selected from a database table-like array or range using a SQL-like query.",
-      a: "Standard deviation of population sample from table.",
+      d: "Devuelve la desviación estándar de una muestra de población seleccionada de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Desviación estándar de una muestra de población de una tabla.",
       m: [
         3,
         3
@@ -10095,7 +10095,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10103,7 +10103,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10111,7 +10111,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10122,8 +10122,8 @@ module.exports = {  "insertLink": {
     {
       n: "DSTDEVP",
       t: 17,
-      d: "Returns the standard deviation of an entire population selected from a database table-like array or range using a SQL-like query.",
-      a: "Standard deviation of entire population from table.",
+      d: "Devuelve la desviación estándar de una población completa seleccionada de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Desviación estándar de una población completa de una tabla.",
       m: [
         3,
         3
@@ -10131,7 +10131,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10139,7 +10139,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10147,7 +10147,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10158,8 +10158,8 @@ module.exports = {  "insertLink": {
     {
       n: "DSUM",
       t: 17,
-      d: "Returns the sum of values selected from a database table-like array or range using a SQL-like query.",
-      a: "Sum of values from a table-like range.",
+      d: "Devuelve la suma de los valores seleccionados de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Suma de los valores de un rango con estructura de tabla.",
       m: [
         3,
         3
@@ -10167,7 +10167,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10175,7 +10175,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10183,7 +10183,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10194,8 +10194,8 @@ module.exports = {  "insertLink": {
     {
       n: "DVAR",
       t: 17,
-      d: "Returns the variance of a population sample selected from a database table-like array or range using a SQL-like query.",
-      a: "Variance of population sample from table-like range.",
+      d: "Devuelve la varianza de una muestra de población seleccionada de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Varianza de una muestra de población de un rango con estructura de tabla.",
       m: [
         3,
         3
@@ -10203,7 +10203,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10211,7 +10211,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10219,7 +10219,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10230,8 +10230,8 @@ module.exports = {  "insertLink": {
     {
       n: "DVARP",
       t: 17,
-      d: "Returns the variance of an entire population selected from a database table-like array or range using a SQL-like query.",
-      a: "Variance of a population from a table-like range.",
+      d: "Devuelve la varianza de una población completa seleccionada de una matriz o rango con estructura de base de datos, usando una consulta similar a SQL.",
+      a: "Varianza de una población de un rango con estructura de tabla.",
       m: [
         3,
         3
@@ -10239,7 +10239,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "base_de_datos",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "La matriz o rango que contiene los datos que se tendrán en cuenta, estructurada de tal forma que la primera fila contenga las etiquetas de los valores de cada columna.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10247,7 +10247,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "campo",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "Indica qué columna de `base_de_datos` contiene los valores que se extraerán y sobre los que se operará.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10255,7 +10255,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "criterios",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "Una matriz o rango que contiene cero o más criterios con los que filtrar los valores de `base_de_datos` antes de operar.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10266,8 +10266,8 @@ module.exports = {  "insertLink": {
     {
       n: "AGE_BY_IDCARD",
       t: "3",
-      d: "Calculate the age based on the Chinese ID number. Support 15 or 18",
-      a: "Get age based on ID number.",
+      d: "Calcula la edad a partir del número de identificación chino. Admite 15 o 18 dígitos.",
+      a: "Obtiene la edad a partir del número de identificación.",
       m: [
         1,
         2
@@ -10276,7 +10276,7 @@ module.exports = {  "insertLink": {
         {
           name: "Número de identificación",
           example: "A1",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "Número o rango de identificación de 15 o 18 dígitos.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10284,7 +10284,7 @@ module.exports = {  "insertLink": {
         {
           name: "Fecha límite",
           example: "\"2017-10-01\"",
-          detail: "The deadline or range of age calculation. The default is the current day.",
+          detail: "La fecha límite o rango para el cálculo de la edad. El valor predeterminado es el día actual.",
           require: "o",
           repeat: "n",
           type: "rangedatetime"
@@ -10294,8 +10294,8 @@ module.exports = {  "insertLink": {
     {
       n: "SEX_BY_IDCARD",
       t: "3",
-      d: "Calculate gender based on Chinese ID number. Support 15 or 18",
-      a: "Get gender based on ID number.",
+      d: "Calcula el sexo a partir del número de identificación chino. Admite 15 o 18 dígitos.",
+      a: "Obtiene el sexo a partir del número de identificación.",
       m: [
         1,
         1
@@ -10304,7 +10304,7 @@ module.exports = {  "insertLink": {
         {
           name: "Número de identificación",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "Número o rango de identificación de 15 o 18 dígitos.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10314,8 +10314,8 @@ module.exports = {  "insertLink": {
     {
       n: "BIRTHDAY_BY_IDCARD",
       t: "3",
-      d: "Calculate the birthday based on the Chinese ID number. Support 15 or 18",
-      a: "Get the birthday based on the ID number.",
+      d: "Calcula la fecha de nacimiento a partir del número de identificación chino. Admite 15 o 18 dígitos.",
+      a: "Obtiene la fecha de nacimiento a partir del número de identificación.",
       m: [
         1,
         2
@@ -10324,7 +10324,7 @@ module.exports = {  "insertLink": {
         {
           name: "Número de identificación",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "Número o rango de identificación de 15 o 18 dígitos.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10332,7 +10332,7 @@ module.exports = {  "insertLink": {
         {
           name: "Formato de fecha de nacimiento",
           example: "0",
-          detail: "Date type, default:0:[1900/01/01], 1:[1900-01-01], 2:[1900年1月1日]",
+          detail: "Tipo de fecha; por defecto: 0:[1900/01/01], 1:[1900-01-01], 2:[1 de enero de 1900].",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10342,8 +10342,8 @@ module.exports = {  "insertLink": {
     {
       n: "PROVINCE_BY_IDCARD",
       t: "3",
-      d: "Calculate the province of birthplace based on the Chinese ID number. Support 15 or 18",
-      a: "Get the province of birthplace based on the ID number.",
+      d: "Calcula la provincia de nacimiento a partir del número de identificación chino. Admite 15 o 18 dígitos.",
+      a: "Obtiene la provincia de nacimiento a partir del número de identificación.",
       m: [
         1,
         1
@@ -10352,7 +10352,7 @@ module.exports = {  "insertLink": {
         {
           name: "Número de identificación",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "Número o rango de identificación de 15 o 18 dígitos.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10362,8 +10362,8 @@ module.exports = {  "insertLink": {
     {
       n: "CITY_BY_IDCARD",
       t: "3",
-      d: "Calculate the city of birthplace based on the Chinese ID number. Support 15 or 18",
-      a: "Get the city of birthplace based on the ID number.",
+      d: "Calcula la ciudad de nacimiento a partir del número de identificación chino. Admite 15 o 18 dígitos.",
+      a: "Obtiene la ciudad de nacimiento a partir del número de identificación.",
       m: [
         1,
         1
@@ -10372,7 +10372,7 @@ module.exports = {  "insertLink": {
         {
           name: "Número de identificación",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "Número o rango de identificación de 15 o 18 dígitos.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10382,8 +10382,8 @@ module.exports = {  "insertLink": {
     {
       n: "STAR_BY_IDCARD",
       t: "3",
-      d: "Calculate the constellation based on the Chinese ID number. Support 15 or 18",
-      a: "Get the constellation based on the ID number.",
+      d: "Calcula el signo zodiacal a partir del número de identificación chino. Admite 15 o 18 dígitos.",
+      a: "Obtiene el signo zodiacal a partir del número de identificación.",
       m: [
         1,
         1
@@ -10392,7 +10392,7 @@ module.exports = {  "insertLink": {
         {
           name: "Número de identificación",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "Número o rango de identificación de 15 o 18 dígitos.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10402,8 +10402,8 @@ module.exports = {  "insertLink": {
     {
       n: "ANIMAL_BY_IDCARD",
       t: "3",
-      d: "Calculate the zodiac (rat, ox, tiger, rabbit...) based on the Chinese ID number. Support 15 or 18",
-      a: "Get the zodiac according to the ID number.",
+      d: "Calcula el animal del zodiaco chino (rata, buey, tigre, conejo...) a partir del número de identificación chino. Admite 15 o 18 dígitos.",
+      a: "Obtiene el animal del zodiaco a partir del número de identificación.",
       m: [
         1,
         1
@@ -10412,7 +10412,7 @@ module.exports = {  "insertLink": {
         {
           name: "Número de identificación",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "Número o rango de identificación de 15 o 18 dígitos.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10422,8 +10422,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISIDCARD",
       t: "3",
-      d: "Verify that the format of the ID card is correct. Support 15 or 18",
-      a: "Verify the correctness of the ID card format.",
+      d: "Comprueba que el formato del número de identificación es correcto. Admite 15 o 18 dígitos.",
+      a: "Comprueba la corrección del formato del número de identificación.",
       m: [
         1,
         1
@@ -10432,7 +10432,7 @@ module.exports = {  "insertLink": {
         {
           name: "Número de identificación",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "Número o rango de identificación de 15 o 18 dígitos.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10442,8 +10442,8 @@ module.exports = {  "insertLink": {
     {
       n: "DM_TEXT_CUTWORD",
       t: "4",
-      d: "Text segmentation. Split a series of words into a series of individual words",
-      a: "Chinese text segmentation.",
+      d: "Segmentación de texto. Divide una serie de palabras en una serie de palabras individuales.",
+      a: "Segmentación de texto en chino.",
       m: [
         1,
         2
@@ -10452,7 +10452,7 @@ module.exports = {  "insertLink": {
         {
           name: "Texto",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Any text that needs word segmentation.",
+          detail: "Cualquier texto que requiera segmentación de palabras.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10460,7 +10460,7 @@ module.exports = {  "insertLink": {
         {
           name: "Modo de segmentación de palabras",
           example: "0",
-          detail: "The default is 0[precision mode], 1[full mode], 2[search engine mode].",
+          detail: "El valor predeterminado es 0 [modo de precisión], 1 [modo completo], 2 [modo motor de búsqueda].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10470,8 +10470,8 @@ module.exports = {  "insertLink": {
     {
       n: "DM_TEXT_TFIDF",
       t: "4",
-      d: "Use tf-idf algorithm for keyword extraction. Identify keywords from a series of text",
-      a: "tf-idf keyword recognition.",
+      d: "Usa el algoritmo TF-IDF para la extracción de palabras clave. Identifica palabras clave a partir de un texto.",
+      a: "Reconocimiento de palabras clave mediante TF-IDF.",
       m: [
         1,
         3
@@ -10480,7 +10480,7 @@ module.exports = {  "insertLink": {
         {
           name: "Texto",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Any text that needs word segmentation.",
+          detail: "Cualquier texto que requiera segmentación de palabras.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10488,7 +10488,7 @@ module.exports = {  "insertLink": {
         {
           name: "Número de palabras clave",
           example: "20",
-          detail: "The number of keywords returned by the algorithm, the default is 20",
+          detail: "El número de palabras clave devueltas por el algoritmo; el valor predeterminado es 20.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10496,7 +10496,7 @@ module.exports = {  "insertLink": {
         {
           name: "Corpus",
           example: "1",
-          detail: "Select a corpus in a specific field, the default is 0[General], 1[Finance], 2[Medical]",
+          detail: "Selecciona un corpus de un ámbito específico; el valor predeterminado es 0 [General], 1 [Finanzas], 2 [Medicina].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10506,8 +10506,8 @@ module.exports = {  "insertLink": {
     {
       n: "DM_TEXT_TEXTRANK",
       t: "4",
-      d: "Use TextRank algorithm to extract keywords. Identify keywords from a series of text",
-      a: "TextRank keyword recognition.",
+      d: "Usa el algoritmo TextRank para extraer palabras clave. Identifica palabras clave a partir de un texto.",
+      a: "Reconocimiento de palabras clave mediante TextRank.",
       m: [
         1,
         3
@@ -10516,7 +10516,7 @@ module.exports = {  "insertLink": {
         {
           name: "Texto",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Any text that needs word segmentation.",
+          detail: "Cualquier texto que requiera segmentación de palabras.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10524,7 +10524,7 @@ module.exports = {  "insertLink": {
         {
           name: "Número de palabras clave",
           example: "20",
-          detail: "The number of keywords returned by the algorithm, the default is 20",
+          detail: "El número de palabras clave devueltas por el algoritmo; el valor predeterminado es 20.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10532,7 +10532,7 @@ module.exports = {  "insertLink": {
         {
           name: "Corpus",
           example: "1",
-          detail: "Select a corpus in a specific field, the default is 0[General], 1[Finance], 2[Medical]",
+          detail: "Selecciona un corpus de un ámbito específico; el valor predeterminado es 0 [General], 1 [Finanzas], 2 [Medicina].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10542,8 +10542,8 @@ module.exports = {  "insertLink": {
     {
       n: "DATA_CN_STOCK_CLOSE",
       t: "5",
-      d: "According to the stock code and date, return the corresponding stock closing price of A shares.",
-      a: "Returns the closing price of stock.",
+      d: "Según el código bursátil y la fecha, devuelve el precio de cierre correspondiente de las acciones A.",
+      a: "Devuelve el precio de cierre de una acción.",
       m: [
         1,
         3
@@ -10552,7 +10552,7 @@ module.exports = {  "insertLink": {
         {
           name: "Código bursátil",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "Código bursátil de 6 dígitos, obligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10560,7 +10560,7 @@ module.exports = {  "insertLink": {
         {
           name: "Fecha",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "El día de negociación de la acción; el valor predeterminado es el último día de negociación.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10568,7 +10568,7 @@ module.exports = {  "insertLink": {
         {
           name: "Tipo de restitución de derechos",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "Selecciona el tipo de restitución de derechos de la acción; por defecto 0 [restitución anterior], 1 [precio original], 2 [restitución posterior].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10578,8 +10578,8 @@ module.exports = {  "insertLink": {
     {
       n: "DATA_CN_STOCK_OPEN",
       t: "5",
-      d: "According to the stock code and date, return the opening price of stock.",
-      a: "Return the opening price of a shares.",
+      d: "Según el código bursátil y la fecha, devuelve el precio de apertura de la acción.",
+      a: "Devuelve el precio de apertura de una acción A.",
       m: [
         1,
         3
@@ -10588,7 +10588,7 @@ module.exports = {  "insertLink": {
         {
           name: "Código bursátil",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "Código bursátil de 6 dígitos, obligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10596,7 +10596,7 @@ module.exports = {  "insertLink": {
         {
           name: "Fecha",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "El día de negociación de la acción; el valor predeterminado es el último día de negociación.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10604,7 +10604,7 @@ module.exports = {  "insertLink": {
         {
           name: "Tipo de restitución de derechos",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "Selecciona el tipo de restitución de derechos de la acción; por defecto 0 [restitución anterior], 1 [precio original], 2 [restitución posterior].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10614,8 +10614,8 @@ module.exports = {  "insertLink": {
     {
       n: "DATA_CN_STOCK_MAX",
       t: "5",
-      d: "According to the stock code and date, return the highest price of stock.",
-      a: "Return the highest price of stock.",
+      d: "Según el código bursátil y la fecha, devuelve el precio más alto de la acción.",
+      a: "Devuelve el precio más alto de una acción.",
       m: [
         1,
         3
@@ -10624,7 +10624,7 @@ module.exports = {  "insertLink": {
         {
           name: "Código bursátil",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "Código bursátil de 6 dígitos, obligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10632,7 +10632,7 @@ module.exports = {  "insertLink": {
         {
           name: "Fecha",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "El día de negociación de la acción; el valor predeterminado es el último día de negociación.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10640,7 +10640,7 @@ module.exports = {  "insertLink": {
         {
           name: "Tipo de restitución de derechos",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "Selecciona el tipo de restitución de derechos de la acción; por defecto 0 [restitución anterior], 1 [precio original], 2 [restitución posterior].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10650,8 +10650,8 @@ module.exports = {  "insertLink": {
     {
       n: "DATA_CN_STOCK_MIN",
       t: "5",
-      d: "According to the stock code and date, return the lowest price of stock.",
-      a: "Returns the lowest price of stock.",
+      d: "Según el código bursátil y la fecha, devuelve el precio más bajo de la acción.",
+      a: "Devuelve el precio más bajo de una acción.",
       m: [
         1,
         3
@@ -10660,7 +10660,7 @@ module.exports = {  "insertLink": {
         {
           name: "Código bursátil",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "Código bursátil de 6 dígitos, obligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10668,7 +10668,7 @@ module.exports = {  "insertLink": {
         {
           name: "Fecha",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "El día de negociación de la acción; el valor predeterminado es el último día de negociación.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10676,7 +10676,7 @@ module.exports = {  "insertLink": {
         {
           name: "Tipo de restitución de derechos",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "Selecciona el tipo de restitución de derechos de la acción; por defecto 0 [restitución anterior], 1 [precio original], 2 [restitución posterior].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10686,8 +10686,8 @@ module.exports = {  "insertLink": {
     {
       n: "DATA_CN_STOCK_VOLUMN",
       t: "5",
-      d: "According to the stock code and date, return the corresponding stock trading volume of A shares.",
-      a: "Returns the corresponding stock trading volume of A shares.",
+      d: "Según el código bursátil y la fecha, devuelve el volumen de negociación correspondiente de las acciones A.",
+      a: "Devuelve el volumen de negociación correspondiente de las acciones A.",
       m: [
         1,
         3
@@ -10696,7 +10696,7 @@ module.exports = {  "insertLink": {
         {
           name: "Código bursátil",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "Código bursátil de 6 dígitos, obligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10704,7 +10704,7 @@ module.exports = {  "insertLink": {
         {
           name: "Fecha",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "El día de negociación de la acción; el valor predeterminado es el último día de negociación.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10712,7 +10712,7 @@ module.exports = {  "insertLink": {
         {
           name: "Tipo de restitución de derechos",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "Selecciona el tipo de restitución de derechos de la acción; por defecto 0 [restitución anterior], 1 [precio original], 2 [restitución posterior].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10722,8 +10722,8 @@ module.exports = {  "insertLink": {
     {
       n: "DATA_CN_STOCK_AMOUNT",
       t: "5",
-      d: "According to the stock code and date, return the corresponding stock turnover of A shares.",
-      a: "Returns the corresponding stock turnover of A shares.",
+      d: "Según el código bursátil y la fecha, devuelve el importe negociado correspondiente de las acciones A.",
+      a: "Devuelve el importe negociado correspondiente de las acciones A.",
       m: [
         1,
         3
@@ -10732,7 +10732,7 @@ module.exports = {  "insertLink": {
         {
           name: "Código bursátil",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "Código bursátil de 6 dígitos, obligatorio.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10740,7 +10740,7 @@ module.exports = {  "insertLink": {
         {
           name: "Fecha",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "El día de negociación de la acción; el valor predeterminado es el último día de negociación.",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10748,7 +10748,7 @@ module.exports = {  "insertLink": {
         {
           name: "Tipo de restitución de derechos",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "Selecciona el tipo de restitución de derechos de la acción; por defecto 0 [restitución anterior], 1 [precio original], 2 [restitución posterior].",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10758,8 +10758,8 @@ module.exports = {  "insertLink": {
     {
       n: "ISDATE",
       t: "6",
-      d: "Returns whether a value is a date.",
-      a: "Whether a value is a date.",
+      d: "Comprueba si un valor es una fecha.",
+      a: "Indica si un valor es una fecha.",
       m: [
         1,
         1
@@ -10768,7 +10768,7 @@ module.exports = {  "insertLink": {
         {
           name: "valor",
           example: "\"1990-01-01\"",
-          detail: "The value to be verified as a date.",
+          detail: "El valor que se comprobará como fecha.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10778,8 +10778,8 @@ module.exports = {  "insertLink": {
     {
       n: "LINESPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell to describe the continuous trend of data",
-      a: "Generate sparklines line chart",
+      d: "Genera un minigráfico integrado en la celda para describir la tendencia continua de los datos.",
+      a: "Genera un minigráfico de líneas.",
       m: [
         1,
         8
@@ -10788,7 +10788,7 @@ module.exports = {  "insertLink": {
         {
           name: "Rango",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "Rango. Los valores pueden calcularse de forma efectiva, como A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10796,7 +10796,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de la línea",
           example: "#2ec7c9",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
+          detail: "El color de la línea del gráfico puede ser el rango A1, el valor de índice de la tabla de colores o un valor de color específico. Se establece en 0 o false para no mostrarlo. Admite regx, rgb, rgba, etc. Por defecto #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10804,7 +10804,7 @@ module.exports = {  "insertLink": {
         {
           name: "Grosor de línea",
           example: "1",
-          detail: "Line thickness of the line graph, the default is 1px",
+          detail: "Grosor de la línea del gráfico; por defecto 1px.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10812,7 +10812,7 @@ module.exports = {  "insertLink": {
         {
           name: "Línea auxiliar",
           example: "avg",
-          detail: "A horizontal line, which can be min, max, avg, median, range or custom value, default 0 none",
+          detail: "Una línea horizontal que puede ser mín, máx, promedio, mediana, rango o un valor personalizado; por defecto 0, ninguna.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10820,7 +10820,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de la línea auxiliar",
           example: "#000",
-          detail: "Color setting of auxiliary line, same as line color configuration, default #000",
+          detail: "Configuración del color de la línea auxiliar, igual que la configuración del color de línea; por defecto #000.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10828,7 +10828,7 @@ module.exports = {  "insertLink": {
         {
           name: "Marca máxima",
           example: "#fc5c5c",
-          detail: "Identifies the maximum value of the line graph, the same line color configuration, default 0 does not display",
+          detail: "Marca el valor máximo del gráfico de líneas, misma configuración de color de línea; por defecto 0, no se muestra.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10836,7 +10836,7 @@ module.exports = {  "insertLink": {
         {
           name: "Marca mínima",
           example: "#fc5c5c",
-          detail: "Identify the minimum value of the line graph, the same line color configuration, default 0 does not display",
+          detail: "Marca el valor mínimo del gráfico de líneas, misma configuración de color de línea; por defecto 0, no se muestra.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10844,7 +10844,7 @@ module.exports = {  "insertLink": {
         {
           name: "Tamaño de la marca",
           example: "1.5",
-          detail: "The maximum and minimum mark size settings, the default is 1.5",
+          detail: "Configuración del tamaño de las marcas máxima y mínima; por defecto 1,5.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10854,8 +10854,8 @@ module.exports = {  "insertLink": {
     {
       n: "AREASPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell area chart, generally used to describe the continuous cumulative value trend of the data",
-      a: "Generate sparklines area chart",
+      d: "Genera un gráfico de área en miniatura integrado en la celda, generalmente usado para describir la tendencia de valores acumulados continuos de los datos.",
+      a: "Genera un minigráfico de área.",
       m: [
         1,
         5
@@ -10864,7 +10864,7 @@ module.exports = {  "insertLink": {
         {
           name: "Rango",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "Rango. Los valores pueden calcularse de forma efectiva, como A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10872,7 +10872,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de la línea",
           example: "#2ec7c9",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
+          detail: "El color de la línea del gráfico puede ser el rango A1, el valor de índice de la tabla de colores o un valor de color específico. Se establece en 0 o false para no mostrarlo. Admite regx, rgb, rgba, etc. Por defecto #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10880,7 +10880,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de relleno",
           example: "#CCF3F4",
-          detail: "Form an area chart, the same line color configuration, default 0 does not display",
+          detail: "Forma un gráfico de área, misma configuración de color de línea; por defecto 0, no se muestra.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10888,7 +10888,7 @@ module.exports = {  "insertLink": {
         {
           name: "Grosor de línea",
           example: "1",
-          detail: "Line thickness of the line graph, the default is 1px",
+          detail: "Grosor de la línea del gráfico; por defecto 1px.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10896,7 +10896,7 @@ module.exports = {  "insertLink": {
         {
           name: "Línea auxiliar",
           example: "avg",
-          detail: "A horizontal line, which can be min, max, avg, median, range or custom value, default 0 none",
+          detail: "Una línea horizontal que puede ser mín, máx, promedio, mediana, rango o un valor personalizado; por defecto 0, ninguna.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10904,7 +10904,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de la línea auxiliar",
           example: "#000",
-          detail: "Color setting of auxiliary line, same as line color configuration, default #000",
+          detail: "Configuración del color de la línea auxiliar, igual que la configuración del color de línea; por defecto #000.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10914,8 +10914,8 @@ module.exports = {  "insertLink": {
     {
       n: "COLUMNSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the vertical histogram of cells, generally used to describe the size of discrete data",
-      a: "Generate sparklines vertical histogram",
+      d: "Genera un histograma vertical en miniatura integrado en la celda, generalmente usado para describir la magnitud de datos discretos.",
+      a: "Genera un histograma vertical en miniatura.",
       m: [
         1,
         6
@@ -10924,7 +10924,7 @@ module.exports = {  "insertLink": {
         {
           name: "Rango",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "Rango. Los valores pueden calcularse de forma efectiva, como A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10932,7 +10932,7 @@ module.exports = {  "insertLink": {
         {
           name: "Intervalo de barras",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "La distancia entre barras; por defecto 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10940,7 +10940,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de la barra",
           example: "#fc5c5c",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
+          detail: "El color de la línea del gráfico puede ser el rango A1, el valor de índice de la tabla de colores o un valor de color específico. Se establece en 0 o false para no mostrarlo. Admite regx, rgb, rgba, etc. Por defecto #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10948,7 +10948,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de barras negativas",
           example: "#97b552",
-          detail: "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
+          detail: "Configuración del color de las barras negativas, representando el color de los valores negativos, igual que la configuración de color de barra; por defecto #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10956,7 +10956,7 @@ module.exports = {  "insertLink": {
         {
           name: "Máximo",
           example: "100",
-          detail: "The maximum value of the bar chart, used to standardize the length of the bar chart, the default is to automatically calculate false, auto, null",
+          detail: "El valor máximo del gráfico de barras, usado para estandarizar la longitud del gráfico de barras; por defecto se calcula automáticamente (false, auto, null).",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10964,7 +10964,7 @@ module.exports = {  "insertLink": {
         {
           name: "Paleta de colores",
           example: "#97b552",
-          detail: "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
+          detail: "La paleta de colores permite establecer el color de cada barra individualmente; se admiten varias configuraciones y dos formatos: 1 color, como #000, que indica que la primera barra es negra; 2 rango de valores: color, como -2:#000 indica que la barra con valor -2 es negra, 0:5:#000 indica que las barras con valores entre 0 y 5 son negras; por defecto vacío.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -10974,8 +10974,8 @@ module.exports = {  "insertLink": {
     {
       n: "STACKCOLUMNSPLINES",
       t: "3",
-      d: "Generate sparklines, a cumulative vertical histogram embedded in a cell, generally used to describe the numerical size of multiple dimensions of discrete data",
-      a: "Generate sparklines cumulative vertical histogram",
+      d: "Genera un histograma vertical acumulado en miniatura integrado en la celda, generalmente usado para describir la magnitud de varias dimensiones de datos discretos.",
+      a: "Genera un histograma vertical acumulado en miniatura.",
       m: [
         1,
         5
@@ -10984,7 +10984,7 @@ module.exports = {  "insertLink": {
         {
           name: "Rango",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "Rango. Los valores pueden calcularse de forma efectiva, como A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10992,7 +10992,7 @@ module.exports = {  "insertLink": {
         {
           name: "Apilar por columna",
           example: "1",
-          detail: "If you need to stack by row, set this item to false or 0, the default is 1",
+          detail: "Si necesitas apilar por fila, establece este valor en false o 0; por defecto 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11000,7 +11000,7 @@ module.exports = {  "insertLink": {
         {
           name: "Intervalo de barras",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "La distancia entre barras; por defecto 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11008,7 +11008,7 @@ module.exports = {  "insertLink": {
         {
           name: "Máximo",
           example: "100",
-          detail: "The maximum value of the cumulative bar, used to regulate the length of the bar, the default is to automatically calculate false, auto, null",
+          detail: "El valor máximo de la barra acumulada, usado para regular la longitud de la barra; por defecto se calcula automáticamente (false, auto, null).",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11016,7 +11016,7 @@ module.exports = {  "insertLink": {
         {
           name: "Paleta de colores",
           example: "#97b552",
-          detail: "The color palette can individually set the bar color of each dimension, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
+          detail: "La paleta de colores permite establecer individualmente el color de barra de cada dimensión; puede establecerse como el rango A1:A10, etc. Por defecto #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11026,8 +11026,8 @@ module.exports = {  "insertLink": {
     {
       n: "BARSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell, generally used to describe the size of discrete data",
-      a: "Generate sparklines horizontal bar graph",
+      d: "Genera un gráfico de barras horizontal en miniatura integrado en la celda, generalmente usado para describir la magnitud de datos discretos.",
+      a: "Genera un gráfico de barras horizontal en miniatura.",
       m: [
         1,
         6
@@ -11036,7 +11036,7 @@ module.exports = {  "insertLink": {
         {
           name: "Rango",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "Rango. Los valores pueden calcularse de forma efectiva, como A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11044,7 +11044,7 @@ module.exports = {  "insertLink": {
         {
           name: "Intervalo de barras",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "La distancia entre barras; por defecto 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11052,7 +11052,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de la barra",
           example: "#fc5c5c",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
+          detail: "El color de la línea del gráfico puede ser el rango A1, el valor de índice de la tabla de colores o un valor de color específico. Se establece en 0 o false para no mostrarlo. Admite regx, rgb, rgba, etc. Por defecto #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11060,7 +11060,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de barras negativas",
           example: "#97b552",
-          detail: "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
+          detail: "Configuración del color de las barras negativas, representando el color de los valores negativos, igual que la configuración de color de barra; por defecto #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11068,7 +11068,7 @@ module.exports = {  "insertLink": {
         {
           name: "Máximo",
           example: "100",
-          detail: "The maximum value of the bar chart, used to standardize the length of the bar chart, the default is to automatically calculate false, auto, null",
+          detail: "El valor máximo del gráfico de barras, usado para estandarizar la longitud del gráfico de barras; por defecto se calcula automáticamente (false, auto, null).",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11076,7 +11076,7 @@ module.exports = {  "insertLink": {
         {
           name: "Paleta de colores",
           example: "#97b552",
-          detail: "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
+          detail: "La paleta de colores permite establecer el color de cada barra individualmente; se admiten varias configuraciones y dos formatos: 1 color, como #000, que indica que la primera barra es negra; 2 rango de valores: color, como -2:#000 indica que la barra con valor -2 es negra, 0:5:#000 indica que las barras con valores entre 0 y 5 son negras; por defecto vacío.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11086,8 +11086,8 @@ module.exports = {  "insertLink": {
     {
       n: "STACKBARSPLINES",
       t: "3",
-      d: "Generate sparklines, a cumulative horizontal bar graph embedded in a cell, which is generally used to describe the numerical size of multiple dimensions of discrete data",
-      a: "Generate sparklines cumulative horizontal bar graph",
+      d: "Genera un gráfico de barras horizontal acumulado en miniatura integrado en la celda, generalmente usado para describir la magnitud de varias dimensiones de datos discretos.",
+      a: "Genera un gráfico de barras horizontal acumulado en miniatura.",
       m: [
         1,
         5
@@ -11096,7 +11096,7 @@ module.exports = {  "insertLink": {
         {
           name: "Rango",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "Rango. Los valores pueden calcularse de forma efectiva, como A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11104,7 +11104,7 @@ module.exports = {  "insertLink": {
         {
           name: "Apilar por columna",
           example: "1",
-          detail: "If you need to stack by row, set this item to false or 0, the default is 1",
+          detail: "Si necesitas apilar por fila, establece este valor en false o 0; por defecto 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11112,7 +11112,7 @@ module.exports = {  "insertLink": {
         {
           name: "Intervalo de barras",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "La distancia entre barras; por defecto 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11120,7 +11120,7 @@ module.exports = {  "insertLink": {
         {
           name: "Máximo",
           example: "100",
-          detail: "The maximum value of the cumulative bar, used to regulate the length of the bar, the default is to automatically calculate false, auto, null",
+          detail: "El valor máximo de la barra acumulada, usado para regular la longitud de la barra; por defecto se calcula automáticamente (false, auto, null).",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11128,7 +11128,7 @@ module.exports = {  "insertLink": {
         {
           name: "Paleta de colores",
           example: "#97b552",
-          detail: "The color palette can individually set the bar color of each dimension, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
+          detail: "La paleta de colores permite establecer individualmente el color de barra de cada dimensión; puede establecerse como el rango A1:A10, etc. Por defecto #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11138,8 +11138,8 @@ module.exports = {  "insertLink": {
     {
       n: "DISCRETESPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell, generally used to describe the trend of discrete data",
-      a: "Generate sparklines discrete graph",
+      d: "Genera un gráfico discreto en miniatura integrado en la celda, generalmente usado para describir la tendencia de datos discretos.",
+      a: "Genera un gráfico discreto en miniatura.",
       m: [
         1,
         4
@@ -11148,7 +11148,7 @@ module.exports = {  "insertLink": {
         {
           name: "Rango",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "Rango. Los valores pueden calcularse de forma efectiva, como A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11156,7 +11156,7 @@ module.exports = {  "insertLink": {
         {
           name: "Umbral de segmentación",
           example: "1",
-          detail: "Discrete graph column color distinction, for example: if the value is 0, blue is greater than 0, red is less than 0, and the default is 0",
+          detail: "Distinción de color de las columnas del gráfico discreto; por ejemplo: si el valor es 0, azul indica mayor que 0, rojo indica menor que 0; por defecto 0.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11164,7 +11164,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color por encima del umbral",
           example: "#2ec7c9",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
+          detail: "El color de la línea del gráfico puede ser el rango A1, el valor de índice de la tabla de colores o un valor de color específico. Se establece en 0 o false para no mostrarlo. Admite regx, rgb, rgba, etc. Por defecto #2ec7c9.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11172,7 +11172,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color por debajo del umbral",
           example: "#fc5c5c",
-          detail: "The color setting of the bar below the threshold, the same as the color above the threshold, default #fc5c5c",
+          detail: "Configuración del color de la barra por debajo del umbral, igual que el color por encima del umbral; por defecto #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11182,8 +11182,8 @@ module.exports = {  "insertLink": {
     {
       n: "TRISTATESPLINES",
       t: "3",
-      d: "Generate sparklines, a three-state graph embedded in the cell, which is generally used to describe the trend of three situations, such as winning, losing, or drawing.",
-      a: "Generate sparklines three-state graph",
+      d: "Genera un gráfico de tres estados en miniatura integrado en la celda, generalmente usado para describir la tendencia de tres situaciones, como ganar, perder o empatar.",
+      a: "Genera un gráfico de tres estados en miniatura.",
       m: [
         1,
         6
@@ -11192,7 +11192,7 @@ module.exports = {  "insertLink": {
         {
           name: "Rango",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "Rango. Los valores pueden calcularse de forma efectiva, como A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11200,7 +11200,7 @@ module.exports = {  "insertLink": {
         {
           name: "Intervalo de barras",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "La distancia entre barras; por defecto 1.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11208,7 +11208,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de la barra",
           example: "#fc5c5c",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
+          detail: "El color de la línea del gráfico puede ser el rango A1, el valor de índice de la tabla de colores o un valor de color específico. Se establece en 0 o false para no mostrarlo. Admite regx, rgb, rgba, etc. Por defecto #fc5c5c.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11216,7 +11216,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de barras negativas",
           example: "#97b552",
-          detail: "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
+          detail: "Configuración del color de las barras negativas, representando el color de los valores negativos, igual que la configuración de color de barra; por defecto #97b552.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11224,7 +11224,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color de barras de valor cero",
           example: "#999",
-          detail: "Zero value bar color setting, representing 0 value color, the same color configuration of the bar, default #999",
+          detail: "Configuración del color de la barra de valor cero, representando el color del valor 0, misma configuración de color de barra; por defecto #999.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11232,7 +11232,7 @@ module.exports = {  "insertLink": {
         {
           name: "Paleta de colores",
           example: "#97b552",
-          detail: "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
+          detail: "La paleta de colores permite establecer el color de cada barra individualmente; se admiten varias configuraciones y dos formatos: 1 color, como #000, que indica que la primera barra es negra; 2 rango de valores: color, como -2:#000 indica que la barra con valor -2 es negra, 0:5:#000 indica que las barras con valores entre 0 y 5 son negras; por defecto vacío.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11242,8 +11242,8 @@ module.exports = {  "insertLink": {
     {
       n: "PIESPLINES",
       t: "3",
-      d: "Generate sparklines pie chart embedded in the cell, generally used to describe the proportion of data",
-      a: "Generate sparklines pie chart",
+      d: "Genera un gráfico circular en miniatura integrado en la celda, generalmente usado para describir la proporción de los datos.",
+      a: "Genera un gráfico circular en miniatura.",
       m: [
         1,
         5
@@ -11252,7 +11252,7 @@ module.exports = {  "insertLink": {
         {
           name: "Rango",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "Rango. Los valores pueden calcularse de forma efectiva, como A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11260,7 +11260,7 @@ module.exports = {  "insertLink": {
         {
           name: "Ángulo de rotación",
           example: "0",
-          detail: "The rotation angle of the pie chart, the default is 0",
+          detail: "El ángulo de rotación del gráfico circular; por defecto 0.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11268,7 +11268,7 @@ module.exports = {  "insertLink": {
         {
           name: "borde",
           example: "0",
-          detail: "Pie chart border size, default is none 0",
+          detail: "Tamaño del borde del gráfico circular; por defecto ninguno (0).",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11276,7 +11276,7 @@ module.exports = {  "insertLink": {
         {
           name: "Color del borde",
           example: "#000",
-          detail: "The border color of the pie chart, the default is #000",
+          detail: "El color del borde del gráfico circular; por defecto #000.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11284,7 +11284,7 @@ module.exports = {  "insertLink": {
         {
           name: "Paleta de colores",
           example: "#97b552",
-          detail: "The color of the slice can be set in the palette, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
+          detail: "El color de cada sector puede establecerse en la paleta; puede definirse como el rango A1:A10, etc. Por defecto #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11294,8 +11294,8 @@ module.exports = {  "insertLink": {
     {
       n: "BOXSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell box plot, generally used to describe the statistical distribution of the data set",
-      a: "Generate sparklines box plot",
+      d: "Genera un diagrama de caja en miniatura integrado en la celda, generalmente usado para describir la distribución estadística del conjunto de datos.",
+      a: "Genera un diagrama de caja en miniatura.",
       m: [
         1,
         4
@@ -11304,7 +11304,7 @@ module.exports = {  "insertLink": {
         {
           name: "Rango",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "Rango. Los valores pueden calcularse de forma efectiva, como A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11312,7 +11312,7 @@ module.exports = {  "insertLink": {
         {
           name: "Coeficiente de valores atípicos",
           example: "1.5",
-          detail: "The threshold range of outliers, if it is 0 or false, it will not be displayed, the default is 1.5 times",
+          detail: "El rango umbral de los valores atípicos; si es 0 o false, no se mostrará; por defecto 1,5 veces.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11320,7 +11320,7 @@ module.exports = {  "insertLink": {
         {
           name: "Valor objetivo",
           example: "10",
-          detail: "The target value setting on the box plot, the default is false and does not display",
+          detail: "Configuración del valor objetivo en el diagrama de caja; por defecto false y no se muestra.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11328,7 +11328,7 @@ module.exports = {  "insertLink": {
         {
           name: "Tamaño de los puntos",
           example: "1.5",
-          detail: "The radius of the target point and outlier is set, the default is 1.5",
+          detail: "Se establece el radio del punto objetivo y de los valores atípicos; por defecto 1,5.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11338,8 +11338,8 @@ module.exports = {  "insertLink": {
     {
       n: "BULLETSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell, generally used to describe the task achievement rate",
-      a: "Generating sparklines bullets",
+      d: "Genera un gráfico de indicador en miniatura integrado en la celda, generalmente usado para describir la tasa de cumplimiento de una tarea.",
+      a: "Genera un gráfico de indicador en miniatura.",
       m: [
         2,
         3
@@ -11348,7 +11348,7 @@ module.exports = {  "insertLink": {
         {
           name: "Objetivo",
           example: "10",
-          detail: "The numerical value can be calculated effectively for the achieved target value, such as A1, 100, etc.",
+          detail: "El valor numérico puede calcularse de forma efectiva para el valor objetivo alcanzado, como A1, 100, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11356,7 +11356,7 @@ module.exports = {  "insertLink": {
         {
           name: "logrado",
           example: "8",
-          detail: "Only when the value is completed can the value be calculated effectively, such as A1, 100, etc.",
+          detail: "El valor solo puede calcularse de forma efectiva cuando se ha completado, como A1, 100, etc.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11364,7 +11364,7 @@ module.exports = {  "insertLink": {
         {
           name: "Valor de comparación",
           example: "12",
-          detail: "Comparative values, such as excess, minimum, and bottom line for awards, can be effectively calculated, such as A1, 100, etc. You can set up to 9 comparison values",
+          detail: "Valores de comparación, como el excedente, el mínimo y el límite inferior para premios, pueden calcularse de forma efectiva, como A1, 100, etc. Se pueden establecer hasta 9 valores de comparación.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11374,8 +11374,8 @@ module.exports = {  "insertLink": {
     {
       n: "COMPOSESPLINES",
       t: "3",
-      d: "Support multiple types of pictures in the same cell, each parameter represents a sparklines diagram",
-      a: "Combine sparklines graphs into one cell",
+      d: "Admite varios tipos de imágenes en la misma celda; cada parámetro representa un minigráfico.",
+      a: "Combina minigráficos en una sola celda.",
       m: [
         1,
         1
@@ -11384,7 +11384,7 @@ module.exports = {  "insertLink": {
         {
           name: "configuración",
           example: "PIESPLINES(A1:A20)",
-          detail: "Sparklines chart settings, such as A1:A20, a completed pie chart, line chart settings, etc.",
+          detail: "Configuración del gráfico de minigráficos, como A1:A20, un gráfico circular completo, configuración de gráfico de líneas, etc.",
           require: "m",
           repeat: "y",
           type: "rangeall"
@@ -11394,8 +11394,8 @@ module.exports = {  "insertLink": {
     {
       n: "SORT",
       t: "14",
-      d: "Sorts the rows of a given array or range by the values in one or more columns.",
-      a: "Sorts rows of range by specified column.",
+      d: "Ordena las filas de una matriz o rango dado según los valores de una o más columnas.",
+      a: "Ordena las filas de un rango según la columna especificada.",
       m: [
         1,
         4
@@ -11403,7 +11403,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango",
-          detail: "The data to be sorted.",
+          detail: "Los datos que se ordenarán.",
           example: "A2:A17",
           require: "m",
           repeat: "n",
@@ -11411,7 +11411,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "columna_orden",
-          detail: "The index of the column in `range` or a range outside of `range` containing the values by which to sort.",
+          detail: "El índice de la columna en `rango`, o un rango fuera de `rango` que contiene los valores según los que se ordenará.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11419,7 +11419,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "es_ascendente",
-          detail: "`TRUE` or `FALSE` indicating whether to sort `sort_column` in ascending order. `FALSE` sorts in descending order.",
+          detail: "`TRUE` o `FALSE` que indica si `columna_tri` se ordenará en orden ascendente. `FALSE` ordena en orden descendente.",
           example: "-1",
           require: "o",
           repeat: "n",
@@ -11427,7 +11427,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "columna_orden2",
-          detail: "Additional columns.",
+          detail: "Columnas adicionales.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -11438,8 +11438,8 @@ module.exports = {  "insertLink": {
     {
       n: "FILTER",
       t: "14",
-      d: "Returns a filtered version of the source range, returning only rows or columns which meet the specified conditions.",
-      a: "Filters a range based off provided conditions.",
+      d: "Devuelve una versión filtrada del rango de origen, mostrando solo las filas o columnas que cumplen las condiciones especificadas.",
+      a: "Filtra un rango según las condiciones proporcionadas.",
       m: [
         2,
         3
@@ -11447,7 +11447,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango",
-          detail: "The data to be filtered.",
+          detail: "Los datos que se filtrarán.",
           example: "A5:D20",
           require: "m",
           repeat: "n",
@@ -11455,7 +11455,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "condición1",
-          detail: "A column or row containing true or false values corresponding to the first column or row of `range`, or an array formula evaluating to true or false.",
+          detail: "Una columna o fila que contiene valores verdadero o falso correspondientes a la primera columna o fila de `rango`, o una fórmula matricial que se evalúa como verdadero o falso.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -11463,7 +11463,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "condición2",
-          detail: "Additional rows or columns containing boolean values `TRUE` or `FALSE` indicating whether the corresponding row or column in `range` should pass through `FILTER`. Can also contain array formula expressions which evaluate to such rows or columns. All conditions must be of the same type (row or column). Mixing row conditions and column conditions is not permitted.",
+          detail: "Filas o columnas adicionales que contienen valores booleanos `TRUE` o `FALSE`, indicando si la fila o columna correspondiente de `rango` debe pasar el filtro. También pueden contener expresiones de fórmula matricial que se evalúen como dichas filas o columnas. Todas las condiciones deben ser del mismo tipo (fila o columna). No se permite mezclar condiciones de fila y de columna.",
           example: "\"\"",
           require: "o",
           repeat: "n",
@@ -11474,8 +11474,8 @@ module.exports = {  "insertLink": {
     {
       n: "UNIQUE",
       t: "14",
-      d: "Returns unique rows in the provided source range, discarding duplicates. Rows are returned in the order in which they first appear in the source range.",
-      a: "Unique rows in the provided source range.",
+      d: "Devuelve las filas únicas del rango de origen proporcionado, descartando los duplicados. Las filas se devuelven en el orden en que aparecen por primera vez en el rango de origen.",
+      a: "Filas únicas del rango de origen proporcionado.",
       m: [
         1,
         3
@@ -11483,7 +11483,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "rango",
-          detail: "The data to filter by unique entries.",
+          detail: "[Opcional] - Los datos que se filtrarán por entradas únicas.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
@@ -11491,7 +11491,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "por_columna",
-          detail: "[Option] - Logical value, indicating how to compare; by row = FALSE() or omitted; by column = TRUE().",
+          detail: "[Opcional] - Valor lógico que indica cómo comparar; por fila = FALSE() u omitido; por columna = TRUE().",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -11499,7 +11499,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "una_sola_vez",
-          detail: "[Option] - Logical value, only one occurrence in the unique value is returned = TRUE(); including all unique values = FALSE() or omitted.",
+          detail: "[Opcional] - Valor lógico; solo se devuelve una aparición del valor único = TRUE(); se incluyen todos los valores únicos = FALSE() u omitido.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -11510,8 +11510,8 @@ module.exports = {  "insertLink": {
     {
       n: "RANDARRAY",
       t: "14",
-      d: "Returns a grid of random numbers between 0 inclusive and 1 exclusive. The grid size will match the provided rows and columns arguments. If neither rows nor columns are provided, then the grid will be size 1 x 1.",
-      a: "Returns a grid of random numbers.",
+      d: "Devuelve una cuadrícula de números aleatorios entre 0 (inclusive) y 1 (exclusive). El tamaño de la cuadrícula coincidirá con los argumentos de filas y columnas proporcionados. Si no se proporcionan ni filas ni columnas, la cuadrícula será de tamaño 1x1.",
+      a: "Devuelve una cuadrícula de números aleatorios.",
       m: [
         0,
         2
@@ -11519,7 +11519,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "filas",
-          detail: "The number of rows to populate with a random number.",
+          detail: "El número de filas que se rellenarán con un número aleatorio.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11527,7 +11527,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "columnas",
-          detail: "The number of columns to populate with a random number.",
+          detail: "El número de columnas que se rellenarán con un número aleatorio.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11538,8 +11538,8 @@ module.exports = {  "insertLink": {
     {
       n: "SEQUENCE",
       t: "14",
-      d: "Returns a grid of sequential numbers starting at a specified start value and  increasing by a specified step size. By default, the sequence starts at and  increases by 1.",
-      a: "Returns a grid of sequential numbers.",
+      d: "Devuelve una cuadrícula de números secuenciales que comienza en un valor de inicio especificado y aumenta según un tamaño de paso especificado. De forma predeterminada, la secuencia comienza en 1 y aumenta de 1 en 1.",
+      a: "Devuelve una cuadrícula de números secuenciales.",
       m: [
         1,
         4
@@ -11547,7 +11547,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "filas",
-          detail: "The number of rows in the function's resulting grid.",
+          detail: "El número de filas en la cuadrícula resultante de la función.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -11555,7 +11555,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "columnas",
-          detail: "The number of columns in the function's resulting grid. If omitted, the result grid will have 1 column.",
+          detail: "El número de columnas en la cuadrícula resultante de la función. Si se omite, la cuadrícula resultante tendrá 1 columna.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11563,7 +11563,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "inicio",
-          detail: "The number, at which to start the sequence. If omitted, the sequence will start at 1.",
+          detail: "El número en el que comenzará la secuencia. Si se omite, la secuencia comenzará en 1.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11571,7 +11571,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "paso",
-          detail: "The amount each value in the sequence will differ by. If omitted, each value will differ by 1.",
+          detail: "La cantidad en la que se diferenciará cada valor de la secuencia. Si se omite, cada valor se diferenciará en 1.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11582,8 +11582,8 @@ module.exports = {  "insertLink": {
     {
       n: "EVALUATE",
       t: "3",
-      d: "Evaluate a formula or expression expressed in words and return the result",
-      a: "Evaluate according to literal formula or expression.",
+      d: "Evalúa una fórmula o expresión escrita en palabras y devuelve el resultado.",
+      a: "Evalúa según una fórmula o expresión literal.",
       m: [
         1,
         1
@@ -11592,7 +11592,7 @@ module.exports = {  "insertLink": {
         {
           name: "expresión",
           example: "\"A1+5*2^2\"",
-          detail: "Formula or expression",
+          detail: "Fórmula o expresión.",
           require: "m",
           repeat: "n",
           type: "rangeall"
