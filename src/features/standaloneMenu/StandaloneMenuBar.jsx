@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import SplashLogo from "../../shared/SplashLogo.js";
-import woodyGuthriePhoto from "../../assets/woody.png";
 import { exportToExcel } from "../../utils/exportToExcel.js";
-import { LICENSE_QUOTE } from "./standaloneMenuTexts.js";
 import { stripConditionalFormattingMarkers } from "../conditionalFormatting/conditionalFormattingUtils.js";
 import { areGridLinesHidden, isWorkbookProtected } from "../workbook/workbookUtils.js";
 import {
@@ -120,7 +118,6 @@ export const StandaloneMenuBar = ({
   const [isStandalone, setIsStandalone] = useState(isTopWindow);
   const [openMenu, setOpenMenu] = useState(null);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
-  const [isLicenseOpen, setIsLicenseOpen] = useState(false);
   const [menuState, setMenuState] = useState({});
   const menuRef = useRef(null);
   const freezeRangeRef = useRef({ row: 0, column: 0 });
@@ -164,22 +161,17 @@ export const StandaloneMenuBar = ({
   }, [refreshMenuState]);
 
   useEffect(() => {
-    if (!isAboutOpen && !isLicenseOpen) return undefined;
+    if (!isAboutOpen) return undefined;
 
     const closeOnEscape = (event) => {
-      if (event.key !== "Escape") return;
-      if (isLicenseOpen) {
-        setIsLicenseOpen(false);
-      } else {
-        setIsAboutOpen(false);
-      }
+      if (event.key === "Escape") setIsAboutOpen(false);
     };
 
     document.addEventListener("keydown", closeOnEscape);
     return () => {
       document.removeEventListener("keydown", closeOnEscape);
     };
-  }, [isAboutOpen, isLicenseOpen]);
+  }, [isAboutOpen]);
 
   const exportWorkbook = useCallback(() => {
     const sheets = sheetDataRef.current;
@@ -563,49 +555,14 @@ export const StandaloneMenuBar = ({
               tagline={texts.items.splashTagline}
               version={`version ${buildVersion}`}
             />
-            <button
-              type="button"
-              className="dc-about-license-link"
-              onClick={() => setIsLicenseOpen(true)}
-            >
-              {texts.items.licenseGithub}
-            </button>
-          </div>
-        </div>
-      ) : null}
-
-      {isLicenseOpen ? (
-        <div
-          className="dc-license-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-label={texts.items.licenseGithub}
-          onMouseDown={() => setIsLicenseOpen(false)}
-        >
-          <div
-            className="dc-license-card"
-            onMouseDown={(event) => event.stopPropagation()}
-          >
-            <p className="dc-license-notice">{texts.items.licenseNotice}</p>
             <a
-              className="dc-license-github-btn"
+              className="dc-about-license-link"
               href="https://github.com/erichake/doccells"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {texts.items.goToGithub}
+              {texts.items.licenseGithub}
             </a>
-            <div className="dc-license-quote">
-              <img
-                className="dc-license-quote-photo"
-                src={woodyGuthriePhoto}
-                alt={LICENSE_QUOTE.author}
-              />
-              <blockquote className="dc-license-quote-text">
-                <p>{LICENSE_QUOTE.text}</p>
-                <cite>{LICENSE_QUOTE.author}</cite>
-              </blockquote>
-            </div>
           </div>
         </div>
       ) : null}

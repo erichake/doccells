@@ -214,8 +214,6 @@ body.dc-suppress-toolbar-combo-popup .fortune-toolbar-combo-popup {
 }
 
 .dc-about-license-link {
-  /* TODO: re-enable once the app is more mature */
-  display: none;
   position: absolute;
   right: 14px;
   bottom: 10px;
@@ -231,90 +229,6 @@ body.dc-suppress-toolbar-combo-popup .fortune-toolbar-combo-popup {
 
 .dc-about-license-link:hover {
   color: #60a5fa;
-}
-
-.dc-license-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 10001;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(15, 23, 42, 0.35);
-  cursor: default;
-}
-
-.dc-license-card {
-  width: 500px;
-  max-width: 90vw;
-  max-height: 80vh;
-  overflow-y: auto;
-  padding: 24px 28px;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  font-family: Inter, Roboto, Arial, Helvetica, sans-serif;
-  color: #1e293b;
-}
-
-.dc-license-notice {
-  margin: 0 0 18px;
-  font-size: 14px;
-  line-height: 1.5;
-  text-align: justify;
-}
-
-.dc-license-github-btn {
-  display: block;
-  width: fit-content;
-  margin: 0 auto 24px;
-  padding: 10px 20px;
-  background: #60a5fa;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 6px;
-  text-align: center;
-}
-
-.dc-license-github-btn:hover {
-  background: #3b82f6;
-}
-
-.dc-license-quote {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding-top: 18px;
-  border-top: 1px solid #e2e8f0;
-}
-
-.dc-license-quote-photo {
-  flex: 0 0 auto;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.dc-license-quote-text {
-  margin: 0;
-  font-size: 12px;
-  font-style: italic;
-  line-height: 1.5;
-  color: #475569;
-  text-align: justify;
-}
-
-.dc-license-quote-text p {
-  margin: 0 0 6px;
-}
-
-.dc-license-quote-text cite {
-  font-style: normal;
-  font-weight: 600;
-  text-decoration: underline;
 }
 
 @media (max-width: 720px) {
