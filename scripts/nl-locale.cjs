@@ -6170,8 +6170,8 @@ module.exports = {
     {
       n: "MIRR",
       t: 8,
-      d: "Beschrijving van de functie MIRR.",
-      a: "Samenvatting van de functie MIRR.",
+      d: "Berekent het aangepaste interne rendement van een investering op basis van een reeks periodieke kasstromen en het verschil tussen het rentepercentage dat is betaald op financiering en het rendement dat is ontvangen op herbelegd inkomen.",
+      a: "Aangepast intern rendement.",
       m: [
         3,
         3
@@ -6179,7 +6179,7 @@ module.exports = {
       p: [
         {
           name: "kasstroombedragen",
-          detail: "Parameter `kasstroombedragen` van de functie MIRR.",
+          detail: "Een array of bereik met de inkomsten of betalingen die verbonden zijn met de investering.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
@@ -6187,7 +6187,7 @@ module.exports = {
         },
         {
           name: "financieringsrente",
-          detail: "Parameter `financieringsrente` van de functie MIRR.",
+          detail: "Het rentepercentage dat is betaald op geïnvesteerde middelen.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6195,7 +6195,7 @@ module.exports = {
         },
         {
           name: "herinvesteringsrendement",
-          detail: "Parameter `herinvesteringsrendement` van de functie MIRR.",
+          detail: "Het rendement (als percentage) verdiend op herbelegging van inkomsten uit de investering.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6206,8 +6206,8 @@ module.exports = {
     {
       n: "IRR",
       t: 8,
-      d: "Beschrijving van de functie IRR.",
-      a: "Samenvatting van de functie IRR.",
+      d: "Berekent het interne rendement van een investering op basis van een reeks periodieke kasstromen.",
+      a: "Intern rendement gegeven periodieke kasstromen.",
       m: [
         1,
         2
@@ -6215,7 +6215,7 @@ module.exports = {
       p: [
         {
           name: "kasstroombedragen",
-          detail: "Parameter `kasstroombedragen` van de functie IRR.",
+          detail: "Een array of bereik met de inkomsten of betalingen die verbonden zijn met de investering.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
@@ -6223,7 +6223,7 @@ module.exports = {
         },
         {
           name: "renteschatting",
-          detail: "Parameter `renteschatting` van de functie IRR.",
+          detail: "Een schatting van wat het interne rendement zal zijn.",
           example: "200",
           require: "o",
           repeat: "n",
@@ -6234,8 +6234,8 @@ module.exports = {
     {
       n: "NPV",
       t: 8,
-      d: "Beschrijving van de functie NPV.",
-      a: "Samenvatting van de functie NPV.",
+      d: "Berekent de netto contante waarde van een investering op basis van een reeks periodieke kasstromen en een disconteringspercentage.",
+      a: "De netto contante waarde van een investering op basis van een reeks periodieke kasstromen en een disconteringspercentage.",
       m: [
         2,
         255
@@ -6243,7 +6243,7 @@ module.exports = {
       p: [
         {
           name: "discontovoet",
-          detail: "Parameter `discontovoet` van de functie NPV.",
+          detail: "Het disconteringspercentage van de investering over één periode.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6251,7 +6251,7 @@ module.exports = {
         },
         {
           name: "kasstroom1",
-          detail: "Parameter `kasstroom1` van de functie NPV.",
+          detail: "De eerste toekomstige kasstroom.",
           example: "200",
           require: "m",
           repeat: "n",
@@ -6259,7 +6259,7 @@ module.exports = {
         },
         {
           name: "kasstroom2",
-          detail: "Parameter `kasstroom2` van de functie NPV.",
+          detail: "Extra toekomstige kasstromen.",
           example: "250",
           require: "o",
           repeat: "y",
@@ -6270,8 +6270,8 @@ module.exports = {
     {
       n: "XNPV",
       t: 8,
-      d: "Beschrijving van de functie XNPV.",
-      a: "Samenvatting van de functie XNPV.",
+      d: "Berekent de netto contante waarde van een investering op basis van een opgegeven reeks mogelijk onregelmatig gespreide kasstromen en een disconteringspercentage.",
+      a: "Netto contante waarde gegeven niet-periodieke kasstromen.",
       m: [
         3,
         3
@@ -6279,7 +6279,7 @@ module.exports = {
       p: [
         {
           name: "discontovoet",
-          detail: "Parameter `discontovoet` van de functie XNPV.",
+          detail: "Het disconteringspercentage van de investering over één periode.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -6287,7 +6287,7 @@ module.exports = {
         },
         {
           name: "kasstroombedragen",
-          detail: "Parameter `kasstroombedragen` van de functie XNPV.",
+          detail: "Een celbereik met de inkomsten of betalingen die verbonden zijn met de investering.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
@@ -6295,7 +6295,7 @@ module.exports = {
         },
         {
           name: "kasstroomdatums",
-          detail: "Parameter `kasstroomdatums` van de functie XNPV.",
+          detail: "Een celbereik met datums die overeenkomen met de kasstromen in `kasstroombedragen`.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6306,8 +6306,8 @@ module.exports = {
     {
       n: "CUMIPMT",
       t: 8,
-      d: "Beschrijving van de functie CUMIPMT.",
-      a: "Samenvatting van de functie CUMIPMT.",
+      d: "Berekent de cumulatieve rente over een reeks betalingsperiodes voor een investering op basis van periodieke betalingen van een constant bedrag en een constant rentepercentage.",
+      a: "Cumulatieve rente betaald over een reeks periodes.",
       m: [
         6,
         6
@@ -6315,7 +6315,7 @@ module.exports = {
       p: [
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie CUMIPMT.",
+          detail: "Het rentepercentage.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6323,7 +6323,7 @@ module.exports = {
         },
         {
           name: "aantal_periodes",
-          detail: "Parameter `aantal_periodes` van de functie CUMIPMT.",
+          detail: "Het aantal te verrichten betalingen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6331,7 +6331,7 @@ module.exports = {
         },
         {
           name: "huidige_waarde",
-          detail: "Parameter `huidige_waarde` van de functie CUMIPMT.",
+          detail: "De huidige waarde van de lijfrente.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6339,7 +6339,7 @@ module.exports = {
         },
         {
           name: "eerste_periode",
-          detail: "Parameter `eerste_periode` van de functie CUMIPMT.",
+          detail: "Het nummer van de betalingsperiode waarmee de cumulatieve berekening begint.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6347,7 +6347,7 @@ module.exports = {
         },
         {
           name: "laatste_periode",
-          detail: "Parameter `laatste_periode` van de functie CUMIPMT.",
+          detail: "Het nummer van de betalingsperiode waarmee de cumulatieve berekening eindigt.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -6355,7 +6355,7 @@ module.exports = {
         },
         {
           name: "einde_of_begin",
-          detail: "Parameter `einde_of_begin` van de functie CUMIPMT.",
+          detail: "Of betalingen verschuldigd zijn aan het einde (`0`) of het begin (`1`) van elke periode.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6366,8 +6366,8 @@ module.exports = {
     {
       n: "PMT",
       t: 8,
-      d: "Beschrijving van de functie PMT.",
-      a: "Samenvatting van de functie PMT.",
+      d: "Berekent de periodieke betaling voor een lijfrente-investering op basis van periodieke betalingen van een constant bedrag en een constant rentepercentage.",
+      a: "Periodieke betaling voor een lijfrente-investering.",
       m: [
         3,
         5
@@ -6375,7 +6375,7 @@ module.exports = {
       p: [
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie PMT.",
+          detail: "Het rentepercentage.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -6383,7 +6383,7 @@ module.exports = {
         },
         {
           name: "aantal_periodes",
-          detail: "Parameter `aantal_periodes` van de functie PMT.",
+          detail: "Het aantal te verrichten betalingen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6391,7 +6391,7 @@ module.exports = {
         },
         {
           name: "huidige_waarde",
-          detail: "Parameter `huidige_waarde` van de functie PMT.",
+          detail: "De huidige waarde van de lijfrente.",
           example: " 100000",
           require: "m",
           repeat: "n",
@@ -6399,7 +6399,7 @@ module.exports = {
         },
         {
           name: "toekomstige_waarde",
-          detail: "Parameter `toekomstige_waarde` van de functie PMT.",
+          detail: "De toekomstige waarde die overblijft nadat de laatste betaling is verricht.",
           example: "D2",
           require: "m",
           repeat: "n",
@@ -6407,7 +6407,7 @@ module.exports = {
         },
         {
           name: "einde_of_begin",
-          detail: "Parameter `einde_of_begin` van de functie PMT.",
+          detail: "Of betalingen verschuldigd zijn aan het einde (`0`) of het begin (`1`) van elke periode.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6418,8 +6418,8 @@ module.exports = {
     {
       n: "IPMT",
       t: 8,
-      d: "Beschrijving van de functie IPMT.",
-      a: "Samenvatting van de functie IPMT.",
+      d: "Berekent de rentebetaling voor een investering op basis van periodieke betalingen van een constant bedrag en een constant rentepercentage.",
+      a: "Rentebetaling voor een investering.",
       m: [
         4,
         6
@@ -6427,7 +6427,7 @@ module.exports = {
       p: [
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie IPMT.",
+          detail: "Het rentepercentage.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6435,7 +6435,7 @@ module.exports = {
         },
         {
           name: "periode",
-          detail: "Parameter `periode` van de functie IPMT.",
+          detail: "De afschrijvingsperiode, in termen van aantal periodes.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6443,7 +6443,7 @@ module.exports = {
         },
         {
           name: "aantal_periodes",
-          detail: "Parameter `aantal_periodes` van de functie IPMT.",
+          detail: "Het aantal te verrichten betalingen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6451,7 +6451,7 @@ module.exports = {
         },
         {
           name: "huidige_waarde",
-          detail: "Parameter `huidige_waarde` van de functie IPMT.",
+          detail: "De huidige waarde van de lijfrente.",
           example: "80000",
           require: "m",
           repeat: "n",
@@ -6459,7 +6459,7 @@ module.exports = {
         },
         {
           name: "toekomstige_waarde",
-          detail: "Parameter `toekomstige_waarde` van de functie IPMT.",
+          detail: "De toekomstige waarde die overblijft nadat de laatste betaling is verricht.",
           example: "E2",
           require: "m",
           repeat: "n",
@@ -6467,7 +6467,7 @@ module.exports = {
         },
         {
           name: "einde_of_begin",
-          detail: "Parameter `einde_of_begin` van de functie IPMT.",
+          detail: "Of betalingen verschuldigd zijn aan het einde (`0`) of het begin (`1`) van elke periode.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6478,8 +6478,8 @@ module.exports = {
     {
       n: "PPMT",
       t: 8,
-      d: "Beschrijving van de functie PPMT.",
-      a: "Samenvatting van de functie PPMT.",
+      d: "Berekent de aflossing op de hoofdsom van een investering op basis van periodieke betalingen van een constant bedrag en een constant rentepercentage.",
+      a: "Aflossing op de hoofdsom van een investering.",
       m: [
         4,
         6
@@ -6487,7 +6487,7 @@ module.exports = {
       p: [
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie PPMT.",
+          detail: "Het rentepercentage.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6495,7 +6495,7 @@ module.exports = {
         },
         {
           name: "periode",
-          detail: "Parameter `periode` van de functie PPMT.",
+          detail: "De afschrijvingsperiode, in termen van aantal periodes.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6503,7 +6503,7 @@ module.exports = {
         },
         {
           name: "aantal_periodes",
-          detail: "Parameter `aantal_periodes` van de functie PPMT.",
+          detail: "Het aantal te verrichten betalingen.",
           example: "3*12",
           require: "m",
           repeat: "n",
@@ -6511,7 +6511,7 @@ module.exports = {
         },
         {
           name: "huidige_waarde",
-          detail: "Parameter `huidige_waarde` van de functie PPMT.",
+          detail: "De huidige waarde van de lijfrente.",
           example: "100000",
           require: "m",
           repeat: "n",
@@ -6519,7 +6519,7 @@ module.exports = {
         },
         {
           name: "toekomstige_waarde",
-          detail: "Parameter `toekomstige_waarde` van de functie PPMT.",
+          detail: "De toekomstige waarde die overblijft nadat de laatste betaling is verricht.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6527,7 +6527,7 @@ module.exports = {
         },
         {
           name: "einde_of_begin",
-          detail: "Parameter `einde_of_begin` van de functie PPMT.",
+          detail: "Of betalingen verschuldigd zijn aan het einde (`0`) of het begin (`1`) van elke periode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6538,8 +6538,8 @@ module.exports = {
     {
       n: "INTRATE",
       t: 8,
-      d: "Beschrijving van de functie INTRATE.",
-      a: "Samenvatting van de functie INTRATE.",
+      d: "Berekent het effectieve rentepercentage dat wordt gegenereerd wanneer een investering tegen de ene prijs wordt gekocht en tegen een andere wordt verkocht, zonder dat de investering zelf rente of dividend oplevert.",
+      a: "Berekent het effectieve rentepercentage.",
       m: [
         4,
         5
@@ -6547,7 +6547,7 @@ module.exports = {
       p: [
         {
           name: "aankoopdatum",
-          detail: "Parameter `aankoopdatum` van de functie INTRATE.",
+          detail: "De aankoopdatum van de investering.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6555,7 +6555,7 @@ module.exports = {
         },
         {
           name: "verkoopdatum",
-          detail: "Parameter `verkoopdatum` van de functie INTRATE.",
+          detail: "De verkoopdatum van de investering.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6563,7 +6563,7 @@ module.exports = {
         },
         {
           name: "aankoopprijs",
-          detail: "Parameter `aankoopprijs` van de functie INTRATE.",
+          detail: "De prijs waartegen de investering werd gekocht.",
           example: "100000",
           require: "m",
           repeat: "n",
@@ -6571,7 +6571,7 @@ module.exports = {
         },
         {
           name: "verkoopprijs",
-          detail: "Parameter `verkoopprijs` van de functie INTRATE.",
+          detail: "De prijs waartegen de investering werd verkocht.",
           example: "101200",
           require: "m",
           repeat: "n",
@@ -6579,7 +6579,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie INTRATE.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6590,8 +6590,8 @@ module.exports = {
     {
       n: "PRICE",
       t: 8,
-      d: "Beschrijving van de functie PRICE.",
-      a: "Samenvatting van de functie PRICE.",
+      d: "Berekent de prijs van een effect dat periodieke rente betaalt, zoals een Amerikaanse staatsobligatie, op basis van het verwachte rendement.",
+      a: "Prijs van een effect dat periodieke rente betaalt.",
       m: [
         6,
         7
@@ -6599,7 +6599,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie PRICE.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6607,7 +6607,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie PRICE.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6615,7 +6615,7 @@ module.exports = {
         },
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie PRICE.",
+          detail: "Het geannualiseerde rentepercentage.",
           example: "0.057",
           require: "m",
           repeat: "n",
@@ -6623,7 +6623,7 @@ module.exports = {
         },
         {
           name: "rendement",
-          detail: "Parameter `rendement` van de functie PRICE.",
+          detail: "Het verwachte jaarlijkse rendement van het effect.",
           example: "0.065",
           require: "m",
           repeat: "n",
@@ -6631,7 +6631,7 @@ module.exports = {
         },
         {
           name: "aflossingswaarde",
-          detail: "Parameter `aflossingswaarde` van de functie PRICE.",
+          detail: "Het aflossingsbedrag per 100 nominale waarde.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6639,7 +6639,7 @@ module.exports = {
         },
         {
           name: "frequentie",
-          detail: "Parameter `frequentie` van de functie PRICE.",
+          detail: "Het aantal rente- of couponbetalingen per jaar (1, 2 of 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6647,7 +6647,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie PRICE.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6658,8 +6658,8 @@ module.exports = {
     {
       n: "PRICEDISC",
       t: 8,
-      d: "Beschrijving van de functie PRICEDISC.",
-      a: "Samenvatting van de functie PRICEDISC.",
+      d: "Berekent de prijs van een discontowaardepapier (zonder rente), op basis van het verwachte rendement.",
+      a: "Prijs van een discontowaardepapier.",
       m: [
         4,
         5
@@ -6667,7 +6667,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie PRICEDISC.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6675,7 +6675,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie PRICEDISC.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6683,7 +6683,7 @@ module.exports = {
         },
         {
           name: "discontovoet",
-          detail: "Parameter `discontovoet` van de functie PRICEDISC.",
+          detail: "Het disconteringspercentage van het effect op het moment van aankoop.",
           example: "0.0525",
           require: "m",
           repeat: "n",
@@ -6691,7 +6691,7 @@ module.exports = {
         },
         {
           name: "aflossingswaarde",
-          detail: "Parameter `aflossingswaarde` van de functie PRICEDISC.",
+          detail: "Het aflossingsbedrag per 100 nominale waarde.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6699,7 +6699,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie PRICEDISC.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6710,8 +6710,8 @@ module.exports = {
     {
       n: "PRICEMAT",
       t: 8,
-      d: "Beschrijving van de functie PRICEMAT.",
-      a: "Samenvatting van de functie PRICEMAT.",
+      d: "Berekent de prijs van een effect dat rente betaalt bij vervaldatum, op basis van het verwachte rendement.",
+      a: "Prijs van een effect dat rente betaalt bij vervaldatum.",
       m: [
         5,
         6
@@ -6719,7 +6719,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie PRICEMAT.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6727,7 +6727,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie PRICEMAT.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6735,7 +6735,7 @@ module.exports = {
         },
         {
           name: "uitgiftedatum",
-          detail: "Parameter `uitgiftedatum` van de functie PRICEMAT.",
+          detail: "De datum waarop het effect oorspronkelijk werd uitgegeven.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6743,7 +6743,7 @@ module.exports = {
         },
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie PRICEMAT.",
+          detail: "Het geannualiseerde rentepercentage.",
           example: "0.061",
           require: "m",
           repeat: "n",
@@ -6751,7 +6751,7 @@ module.exports = {
         },
         {
           name: "rendement",
-          detail: "Parameter `rendement` van de functie PRICEMAT.",
+          detail: "Het verwachte jaarlijkse rendement van het effect.",
           example: "0.061",
           require: "m",
           repeat: "n",
@@ -6759,7 +6759,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie PRICEMAT.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6770,8 +6770,8 @@ module.exports = {
     {
       n: "RECEIVED",
       t: 8,
-      d: "Beschrijving van de functie RECEIVED.",
-      a: "Samenvatting van de functie RECEIVED.",
+      d: "Berekent het bedrag dat bij vervaldatum wordt ontvangen voor een investering in vastrentende effecten die op een bepaalde datum zijn gekocht.",
+      a: "Bedrag ontvangen bij vervaldatum voor een effect.",
       m: [
         4,
         5
@@ -6779,7 +6779,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie RECEIVED.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6787,7 +6787,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie RECEIVED.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6795,7 +6795,7 @@ module.exports = {
         },
         {
           name: "investering",
-          detail: "Parameter `investering` van de functie RECEIVED.",
+          detail: "Het geïnvesteerde bedrag (ongeacht de nominale waarde van elk effect).",
           example: "10000000",
           require: "m",
           repeat: "n",
@@ -6803,7 +6803,7 @@ module.exports = {
         },
         {
           name: "discontovoet",
-          detail: "Parameter `discontovoet` van de functie RECEIVED.",
+          detail: "Het disconteringspercentage van het effect waarin wordt geïnvesteerd.",
           example: "0.0575",
           require: "m",
           repeat: "n",
@@ -6811,7 +6811,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie RECEIVED.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6822,8 +6822,8 @@ module.exports = {
     {
       n: "DISC",
       t: 8,
-      d: "Beschrijving van de functie DISC.",
-      a: "Samenvatting van de functie DISC.",
+      d: "Berekent het disconteringspercentage van een effect op basis van de prijs.",
+      a: "Het disconteringspercentage van een effect op basis van de prijs.",
       m: [
         4,
         5
@@ -6831,7 +6831,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie DISC.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6839,7 +6839,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie DISC.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6847,7 +6847,7 @@ module.exports = {
         },
         {
           name: "prijs",
-          detail: "Parameter `prijs` van de functie DISC.",
+          detail: "De prijs waartegen het effect wordt gekocht per 100 nominale waarde.",
           example: "97.975",
           require: "m",
           repeat: "n",
@@ -6855,7 +6855,7 @@ module.exports = {
         },
         {
           name: "aflossingswaarde",
-          detail: "Parameter `aflossingswaarde` van de functie DISC.",
+          detail: "Het aflossingsbedrag per 100 nominale waarde.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6863,7 +6863,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie DISC.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6874,8 +6874,8 @@ module.exports = {
     {
       n: "NPER",
       t: 8,
-      d: "Beschrijving van de functie NPER.",
-      a: "Samenvatting van de functie NPER.",
+      d: "Berekent het aantal betalingsperiodes voor een investering op basis van periodieke betalingen van een constant bedrag en een constant rentepercentage.",
+      a: "Aantal betalingsperiodes voor een investering.",
       m: [
         3,
         5
@@ -6883,7 +6883,7 @@ module.exports = {
       p: [
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie NPER.",
+          detail: "Het rentepercentage.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6891,7 +6891,7 @@ module.exports = {
         },
         {
           name: "betalingsbedrag",
-          detail: "Parameter `betalingsbedrag` van de functie NPER.",
+          detail: "Het bedrag van elke verrichte betaling.",
           example: "500",
           require: "m",
           repeat: "n",
@@ -6899,7 +6899,7 @@ module.exports = {
         },
         {
           name: "huidige_waarde",
-          detail: "Parameter `huidige_waarde` van de functie NPER.",
+          detail: "De huidige waarde van de lijfrente.",
           example: "40000",
           require: "m",
           repeat: "n",
@@ -6907,7 +6907,7 @@ module.exports = {
         },
         {
           name: "toekomstige_waarde",
-          detail: "Parameter `toekomstige_waarde` van de functie NPER.",
+          detail: "De toekomstige waarde die overblijft nadat de laatste betaling is verricht.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6915,7 +6915,7 @@ module.exports = {
         },
         {
           name: "einde_of_begin",
-          detail: "Parameter `einde_of_begin` van de functie NPER.",
+          detail: "Of betalingen verschuldigd zijn aan het einde (`0`) of het begin (`1`) van elke periode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6926,8 +6926,8 @@ module.exports = {
     {
       n: "SLN",
       t: 8,
-      d: "Beschrijving van de functie SLN.",
-      a: "Samenvatting van de functie SLN.",
+      d: "Berekent de afschrijving van een actief voor één periode met behulp van de lineaire afschrijvingsmethode.",
+      a: "Afschrijving van een actief met de lineaire afschrijvingsmethode.",
       m: [
         3,
         3
@@ -6935,7 +6935,7 @@ module.exports = {
       p: [
         {
           name: "kostprijs",
-          detail: "Parameter `kostprijs` van de functie SLN.",
+          detail: "De initiële kosten van het actief.",
           example: "300000",
           require: "m",
           repeat: "n",
@@ -6943,7 +6943,7 @@ module.exports = {
         },
         {
           name: "restwaarde",
-          detail: "Parameter `restwaarde` van de functie SLN.",
+          detail: "De waarde van het actief aan het einde van de afschrijving.",
           example: "75000",
           require: "m",
           repeat: "n",
@@ -6951,7 +6951,7 @@ module.exports = {
         },
         {
           name: "levensduur",
-          detail: "Parameter `levensduur` van de functie SLN.",
+          detail: "Het aantal periodes waarover het actief wordt afgeschreven.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -6962,8 +6962,8 @@ module.exports = {
     {
       n: "DURATION",
       t: 8,
-      d: "Beschrijving van de functie DURATION.",
-      a: "Samenvatting van de functie DURATION.",
+      d: "Berekent het aantal samengestelde periodes dat nodig is voor een investering met een opgegeven huidige waarde die tegen een gegeven percentage in waarde stijgt, om een streefwaarde te bereiken.",
+      a: "Aantal periodes voordat een investering een waarde bereikt.",
       m: [
         5,
         6
@@ -6971,7 +6971,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie DURATION.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6979,7 +6979,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie DURATION.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6987,7 +6987,7 @@ module.exports = {
         },
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie DURATION.",
+          detail: "Het geannualiseerde rentepercentage.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -6995,7 +6995,7 @@ module.exports = {
         },
         {
           name: "rendement",
-          detail: "Parameter `rendement` van de functie DURATION.",
+          detail: "Het verwachte jaarlijkse rendement van het effect.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -7003,7 +7003,7 @@ module.exports = {
         },
         {
           name: "frequentie",
-          detail: "Parameter `frequentie` van de functie DURATION.",
+          detail: "Het aantal rente- of couponbetalingen per jaar (1, 2 of 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -7011,7 +7011,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie DURATION.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7022,8 +7022,8 @@ module.exports = {
     {
       n: "MDURATION",
       t: 8,
-      d: "Beschrijving van de functie MDURATION.",
-      a: "Samenvatting van de functie MDURATION.",
+      d: "Berekent de aangepaste Macaulay-looptijd van een effect dat periodieke rente betaalt, zoals een Amerikaanse staatsobligatie, op basis van het verwachte rendement.",
+      a: "Aangepaste Macaulay-looptijd.",
       m: [
         5,
         6
@@ -7031,7 +7031,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie MDURATION.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -7039,7 +7039,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie MDURATION.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -7047,7 +7047,7 @@ module.exports = {
         },
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie MDURATION.",
+          detail: "Het geannualiseerde rentepercentage.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -7055,7 +7055,7 @@ module.exports = {
         },
         {
           name: "rendement",
-          detail: "Parameter `rendement` van de functie MDURATION.",
+          detail: "Het verwachte jaarlijkse rendement van het effect.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -7063,7 +7063,7 @@ module.exports = {
         },
         {
           name: "frequentie",
-          detail: "Parameter `frequentie` van de functie MDURATION.",
+          detail: "Het aantal rente- of couponbetalingen per jaar (1, 2 of 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -7071,7 +7071,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie MDURATION.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7082,8 +7082,8 @@ module.exports = {
     {
       n: "BIN2DEC",
       t: 9,
-      d: "Beschrijving van de functie BIN2DEC.",
-      a: "Samenvatting van de functie BIN2DEC.",
+      d: "Converteert een binair getal met teken naar decimaal formaat.",
+      a: "Converteert een binair getal met teken naar decimaal formaat.",
       m: [
         1,
         1
@@ -7091,7 +7091,7 @@ module.exports = {
       p: [
         {
           name: "ondertekend_binair_getal",
-          detail: "Parameter `ondertekend_binair_getal` van de functie BIN2DEC.",
+          detail: "De binaire waarde met teken van 10 bits die naar decimaal moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7102,8 +7102,8 @@ module.exports = {
     {
       n: "BIN2HEX",
       t: 9,
-      d: "Beschrijving van de functie BIN2HEX.",
-      a: "Samenvatting van de functie BIN2HEX.",
+      d: "Converteert een binair getal met teken naar hexadecimaal formaat met teken.",
+      a: "Converteert een binair getal naar hexadecimaal.",
       m: [
         1,
         2
@@ -7111,7 +7111,7 @@ module.exports = {
       p: [
         {
           name: "ondertekend_binair_getal",
-          detail: "Parameter `ondertekend_binair_getal` van de functie BIN2HEX.",
+          detail: "De binaire waarde met teken van 10 bits die naar hexadecimaal met teken moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7119,7 +7119,7 @@ module.exports = {
         },
         {
           name: "significante_cijfers",
-          detail: "Parameter `significante_cijfers` van de functie BIN2HEX.",
+          detail: "Het aantal significante cijfers dat in het resultaat moet worden gegarandeerd.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7130,8 +7130,8 @@ module.exports = {
     {
       n: "BIN2OCT",
       t: 9,
-      d: "Beschrijving van de functie BIN2OCT.",
-      a: "Samenvatting van de functie BIN2OCT.",
+      d: "Converteert een binair getal met teken naar octaal formaat met teken.",
+      a: "Converteert een binair getal naar octaal.",
       m: [
         1,
         2
@@ -7139,7 +7139,7 @@ module.exports = {
       p: [
         {
           name: "ondertekend_binair_getal",
-          detail: "Parameter `ondertekend_binair_getal` van de functie BIN2OCT.",
+          detail: "De binaire waarde met teken van 10 bits die naar octaal met teken moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7147,7 +7147,7 @@ module.exports = {
         },
         {
           name: "significante_cijfers",
-          detail: "Parameter `significante_cijfers` van de functie BIN2OCT.",
+          detail: "Het aantal significante cijfers dat in het resultaat moet worden gegarandeerd.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7158,8 +7158,8 @@ module.exports = {
     {
       n: "DEC2BIN",
       t: 9,
-      d: "Beschrijving van de functie DEC2BIN.",
-      a: "Samenvatting van de functie DEC2BIN.",
+      d: "Converteert een decimaal getal naar binair formaat met teken.",
+      a: "Converteert een decimaal getal naar binair formaat met teken.",
       m: [
         1,
         2
@@ -7167,7 +7167,7 @@ module.exports = {
       p: [
         {
           name: "decimaal_getal",
-          detail: "Parameter `decimaal_getal` van de functie DEC2BIN.",
+          detail: "De decimale waarde die naar binair met teken moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7175,7 +7175,7 @@ module.exports = {
         },
         {
           name: "significante_cijfers",
-          detail: "Parameter `significante_cijfers` van de functie DEC2BIN.",
+          detail: "Het aantal significante cijfers dat in het resultaat moet worden gegarandeerd.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7186,8 +7186,8 @@ module.exports = {
     {
       n: "DEC2HEX",
       t: 9,
-      d: "Beschrijving van de functie DEC2HEX.",
-      a: "Samenvatting van de functie DEC2HEX.",
+      d: "Converteert een decimaal getal naar hexadecimaal formaat met teken.",
+      a: "Converteert een decimaal getal naar hexadecimaal.",
       m: [
         1,
         2
@@ -7195,7 +7195,7 @@ module.exports = {
       p: [
         {
           name: "decimaal_getal",
-          detail: "Parameter `decimaal_getal` van de functie DEC2HEX.",
+          detail: "De decimale waarde die naar hexadecimaal met teken moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7203,7 +7203,7 @@ module.exports = {
         },
         {
           name: "significante_cijfers",
-          detail: "Parameter `significante_cijfers` van de functie DEC2HEX.",
+          detail: "Het aantal significante cijfers dat in het resultaat moet worden gegarandeerd.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7214,8 +7214,8 @@ module.exports = {
     {
       n: "DEC2OCT",
       t: 9,
-      d: "Beschrijving van de functie DEC2OCT.",
-      a: "Samenvatting van de functie DEC2OCT.",
+      d: "Converteert een decimaal getal naar octaal formaat met teken.",
+      a: "Converteert een decimaal getal naar octaal formaat met teken.",
       m: [
         1,
         2
@@ -7223,7 +7223,7 @@ module.exports = {
       p: [
         {
           name: "decimaal_getal",
-          detail: "Parameter `decimaal_getal` van de functie DEC2OCT.",
+          detail: "De decimale waarde die naar octaal met teken moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7231,7 +7231,7 @@ module.exports = {
         },
         {
           name: "significante_cijfers",
-          detail: "Parameter `significante_cijfers` van de functie DEC2OCT.",
+          detail: "Het aantal significante cijfers dat in het resultaat moet worden gegarandeerd.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7242,8 +7242,8 @@ module.exports = {
     {
       n: "HEX2BIN",
       t: 9,
-      d: "Beschrijving van de functie HEX2BIN.",
-      a: "Samenvatting van de functie HEX2BIN.",
+      d: "Converteert een hexadecimaal getal met teken naar binair formaat met teken.",
+      a: "Converteert een hexadecimaal getal naar binair.",
       m: [
         1,
         2
@@ -7251,7 +7251,7 @@ module.exports = {
       p: [
         {
           name: "ondertekend_hexadecimaal_getal",
-          detail: "Parameter `ondertekend_hexadecimaal_getal` van de functie HEX2BIN.",
+          detail: "De hexadecimale waarde met teken van 40 bits die naar binair met teken moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7259,7 +7259,7 @@ module.exports = {
         },
         {
           name: "significante_cijfers",
-          detail: "Parameter `significante_cijfers` van de functie HEX2BIN.",
+          detail: "Het aantal significante cijfers dat in het resultaat moet worden gegarandeerd.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7270,8 +7270,8 @@ module.exports = {
     {
       n: "HEX2DEC",
       t: 9,
-      d: "Beschrijving van de functie HEX2DEC.",
-      a: "Samenvatting van de functie HEX2DEC.",
+      d: "Converteert een hexadecimaal getal met teken naar decimaal formaat.",
+      a: "Converteert een hexadecimaal getal naar decimaal.",
       m: [
         1,
         1
@@ -7279,7 +7279,7 @@ module.exports = {
       p: [
         {
           name: "ondertekend_hexadecimaal_getal",
-          detail: "Parameter `ondertekend_hexadecimaal_getal` van de functie HEX2DEC.",
+          detail: "De hexadecimale waarde met teken van 40 bits die naar decimaal moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7290,8 +7290,8 @@ module.exports = {
     {
       n: "HEX2OCT",
       t: 9,
-      d: "Beschrijving van de functie HEX2OCT.",
-      a: "Samenvatting van de functie HEX2OCT.",
+      d: "Converteert een hexadecimaal getal met teken naar octaal formaat met teken.",
+      a: "Converteert een hexadecimaal getal naar octaal.",
       m: [
         1,
         2
@@ -7299,7 +7299,7 @@ module.exports = {
       p: [
         {
           name: "ondertekend_hexadecimaal_getal",
-          detail: "Parameter `ondertekend_hexadecimaal_getal` van de functie HEX2OCT.",
+          detail: "De hexadecimale waarde met teken van 40 bits die naar octaal met teken moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7307,7 +7307,7 @@ module.exports = {
         },
         {
           name: "significante_cijfers",
-          detail: "Parameter `significante_cijfers` van de functie HEX2OCT.",
+          detail: "Het aantal significante cijfers dat in het resultaat moet worden gegarandeerd.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7318,8 +7318,8 @@ module.exports = {
     {
       n: "OCT2BIN",
       t: 9,
-      d: "Beschrijving van de functie OCT2BIN.",
-      a: "Samenvatting van de functie OCT2BIN.",
+      d: "Converteert een octaal getal met teken naar binair formaat met teken.",
+      a: "Converteert een octaal getal naar binair.",
       m: [
         1,
         2
@@ -7327,7 +7327,7 @@ module.exports = {
       p: [
         {
           name: "ondertekend_octaal_getal",
-          detail: "Parameter `ondertekend_octaal_getal` van de functie OCT2BIN.",
+          detail: "De octale waarde met teken van 30 bits die naar binair met teken moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7335,7 +7335,7 @@ module.exports = {
         },
         {
           name: "significante_cijfers",
-          detail: "Parameter `significante_cijfers` van de functie OCT2BIN.",
+          detail: "Het aantal significante cijfers dat in het resultaat moet worden gegarandeerd.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7346,8 +7346,8 @@ module.exports = {
     {
       n: "OCT2DEC",
       t: 9,
-      d: "Beschrijving van de functie OCT2DEC.",
-      a: "Samenvatting van de functie OCT2DEC.",
+      d: "Converteert een octaal getal met teken naar decimaal formaat.",
+      a: "Converteert een octaal getal met teken naar decimaal formaat.",
       m: [
         1,
         1
@@ -7355,7 +7355,7 @@ module.exports = {
       p: [
         {
           name: "ondertekend_octaal_getal",
-          detail: "Parameter `ondertekend_octaal_getal` van de functie OCT2DEC.",
+          detail: "De octale waarde met teken van 30 bits die naar decimaal moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7366,8 +7366,8 @@ module.exports = {
     {
       n: "OCT2HEX",
       t: 9,
-      d: "Beschrijving van de functie OCT2HEX.",
-      a: "Samenvatting van de functie OCT2HEX.",
+      d: "Converteert een octaal getal met teken naar hexadecimaal formaat met teken.",
+      a: "Converteert een octaal getal naar hexadecimaal.",
       m: [
         1,
         2
@@ -7375,7 +7375,7 @@ module.exports = {
       p: [
         {
           name: "ondertekend_octaal_getal",
-          detail: "Parameter `ondertekend_octaal_getal` van de functie OCT2HEX.",
+          detail: "De octale waarde met teken van 30 bits die naar hexadecimaal met teken moet worden geconverteerd, opgegeven als een tekenreeks.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7383,7 +7383,7 @@ module.exports = {
         },
         {
           name: "significante_cijfers",
-          detail: "Parameter `significante_cijfers` van de functie OCT2HEX.",
+          detail: "Het aantal significante cijfers dat in het resultaat moet worden gegarandeerd.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7394,8 +7394,8 @@ module.exports = {
     {
       n: "COMPLEX",
       t: 9,
-      d: "Beschrijving van de functie COMPLEX.",
-      a: "Samenvatting van de functie COMPLEX.",
+      d: "Maakt een complex getal gegeven reële en imaginaire coëfficiënten.",
+      a: "Maakt een complex getal.",
       m: [
         2,
         3
@@ -7403,7 +7403,7 @@ module.exports = {
       p: [
         {
           name: "reëel_deel",
-          detail: "Parameter `reëel_deel` van de functie COMPLEX.",
+          detail: "De reële coëfficiënt.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -7411,7 +7411,7 @@ module.exports = {
         },
         {
           name: "imaginair_deel",
-          detail: "Parameter `imaginair_deel` van de functie COMPLEX.",
+          detail: "De imaginaire coëfficiënt.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -7419,7 +7419,7 @@ module.exports = {
         },
         {
           name: "achtervoegsel",
-          detail: "Parameter `achtervoegsel` van de functie COMPLEX.",
+          detail: "Het achtervoegsel voor de imaginaire coëfficiënt, kan alleen 'i' of 'j' zijn. Indien weggelaten, wordt 'i' gebruikt.",
           example: "\"j\"",
           require: "o",
           repeat: "n",
@@ -7430,8 +7430,8 @@ module.exports = {
     {
       n: "IMREAL",
       t: 9,
-      d: "Beschrijving van de functie IMREAL.",
-      a: "Samenvatting van de functie IMREAL.",
+      d: "Retourneert de reële coëfficiënt van een complex getal.",
+      a: "De reële coëfficiënt van een complex getal.",
       m: [
         1,
         1
@@ -7439,7 +7439,7 @@ module.exports = {
       p: [
         {
           name: "complex_getal",
-          detail: "Parameter `complex_getal` van de functie IMREAL.",
+          detail: "Het complexe getal, in de indeling a+bi of a+bj.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7450,8 +7450,8 @@ module.exports = {
     {
       n: "IMAGINARY",
       t: 9,
-      d: "Beschrijving van de functie IMAGINARY.",
-      a: "Samenvatting van de functie IMAGINARY.",
+      d: "Retourneert de imaginaire coëfficiënt van een complex getal.",
+      a: "De imaginaire coëfficiënt van een complex getal.",
       m: [
         1,
         1
@@ -7459,7 +7459,7 @@ module.exports = {
       p: [
         {
           name: "complex_getal",
-          detail: "Parameter `complex_getal` van de functie IMAGINARY.",
+          detail: "Het complexe getal, in de indeling a+bi of a+bj.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7470,8 +7470,8 @@ module.exports = {
     {
       n: "IMCONJUGATE",
       t: 9,
-      d: "Beschrijving van de functie IMCONJUGATE.",
-      a: "Samenvatting van de functie IMCONJUGATE.",
+      d: "Retourneert de complexe geconjugeerde van een getal.",
+      a: "De complexe geconjugeerde van een getal.",
       m: [
         1,
         1
@@ -7479,7 +7479,7 @@ module.exports = {
       p: [
         {
           name: "getal",
-          detail: "Parameter `getal` van de functie IMCONJUGATE.",
+          detail: "Het complexe getal waarvoor de geconjugeerde moet worden berekend.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7490,8 +7490,8 @@ module.exports = {
     {
       n: "IMABS",
       t: 9,
-      d: "Beschrijving van de functie IMABS.",
-      a: "Samenvatting van de functie IMABS.",
+      d: "Retourneert de absolute waarde (of modulus) van een complex getal.",
+      a: "De absolute waarde van een complex getal.",
       m: [
         1,
         1
@@ -7499,7 +7499,7 @@ module.exports = {
       p: [
         {
           name: "getal",
-          detail: "Parameter `getal` van de functie IMABS.",
+          detail: "Het complexe getal waarvan de absolute waarde moet worden berekend.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7510,8 +7510,8 @@ module.exports = {
     {
       n: "DELTA",
       t: 9,
-      d: "Beschrijving van de functie DELTA.",
-      a: "Samenvatting van de functie DELTA.",
+      d: "Vergelijkt twee numerieke waarden en retourneert 1 als ze gelijk zijn.",
+      a: "Vergelijkt twee numerieke waarden.",
       m: [
         1,
         2
@@ -7519,7 +7519,7 @@ module.exports = {
       p: [
         {
           name: "getal1",
-          detail: "Parameter `getal1` van de functie DELTA.",
+          detail: "Het eerste te vergelijken getal.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -7527,7 +7527,7 @@ module.exports = {
         },
         {
           name: "getal2",
-          detail: "Parameter `getal2` van de functie DELTA.",
+          detail: "Het tweede te vergelijken getal.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -7538,8 +7538,8 @@ module.exports = {
     {
       n: "IMSUM",
       t: 9,
-      d: "Beschrijving van de functie IMSUM.",
-      a: "Samenvatting van de functie IMSUM.",
+      d: "Retourneert de som van een reeks complexe getallen.",
+      a: "Som van een reeks complexe getallen.",
       m: [
         1,
         255
@@ -7547,7 +7547,7 @@ module.exports = {
       p: [
         {
           name: "waarde1",
-          detail: "Parameter `waarde1` van de functie IMSUM.",
+          detail: "Het eerste complexe getal of bereik dat bij elkaar moet worden opgeteld.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7555,7 +7555,7 @@ module.exports = {
         },
         {
           name: "waarde2",
-          detail: "Parameter `waarde2` van de functie IMSUM.",
+          detail: "Extra complexe getallen of bereiken die moeten worden opgeteld bij `waarde1`.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7566,8 +7566,8 @@ module.exports = {
     {
       n: "IMSUB",
       t: 9,
-      d: "Beschrijving van de functie IMSUB.",
-      a: "Samenvatting van de functie IMSUB.",
+      d: "Retourneert het verschil tussen twee complexe getallen.",
+      a: "Het verschil tussen twee complexe getallen.",
       m: [
         2,
         2
@@ -7575,7 +7575,7 @@ module.exports = {
       p: [
         {
           name: "eerste_getal",
-          detail: "Parameter `eerste_getal` van de functie IMSUB.",
+          detail: "Het complexe getal waarvan tweede_getal moet worden afgetrokken.",
           example: "\"6+5i\"",
           require: "m",
           repeat: "n",
@@ -7583,7 +7583,7 @@ module.exports = {
         },
         {
           name: "tweede_getal",
-          detail: "Parameter `tweede_getal` van de functie IMSUB.",
+          detail: "Het complexe getal dat moet worden afgetrokken van eerste_getal.",
           example: "\"2+3i\"",
           require: "m",
           repeat: "n",
@@ -7594,8 +7594,8 @@ module.exports = {
     {
       n: "IMPRODUCT",
       t: 9,
-      d: "Beschrijving van de functie IMPRODUCT.",
-      a: "Samenvatting van de functie IMPRODUCT.",
+      d: "Retourneert het resultaat van het met elkaar vermenigvuldigen van een reeks complexe getallen.",
+      a: "Resultaat van het met elkaar vermenigvuldigen van een reeks complexe getallen.",
       m: [
         1,
         255
@@ -7603,7 +7603,7 @@ module.exports = {
       p: [
         {
           name: "factor1",
-          detail: "Parameter `factor1` van de functie IMPRODUCT.",
+          detail: "Het eerste getal of bereik dat moet worden berekend voor het product.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7611,7 +7611,7 @@ module.exports = {
         },
         {
           name: "factor2",
-          detail: "Parameter `factor2` van de functie IMPRODUCT.",
+          detail: "Extra complexe getallen of bereiken die moeten worden berekend voor het product.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7622,8 +7622,8 @@ module.exports = {
     {
       n: "IMDIV",
       t: 9,
-      d: "Beschrijving van de functie IMDIV.",
-      a: "Samenvatting van de functie IMDIV.",
+      d: "Retourneert het ene complexe getal gedeeld door het andere.",
+      a: "Het ene complexe getal gedeeld door het andere.",
       m: [
         2,
         2
@@ -7631,7 +7631,7 @@ module.exports = {
       p: [
         {
           name: "deeltal",
-          detail: "Parameter `deeltal` van de functie IMDIV.",
+          detail: "Het complexe getal dat moet worden gedeeld.",
           example: "\"11+16i\"",
           require: "m",
           repeat: "n",
@@ -7639,7 +7639,7 @@ module.exports = {
         },
         {
           name: "deler",
-          detail: "Parameter `deler` van de functie IMDIV.",
+          detail: "Het complexe getal waardoor moet worden gedeeld.",
           example: "\"3+2i\"",
           require: "m",
           repeat: "n",
