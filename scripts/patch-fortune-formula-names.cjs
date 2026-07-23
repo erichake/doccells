@@ -38,6 +38,11 @@
  *   5. searchFunction()           -- matches the autocomplete dropdown query
  *                                    against function names; extended to
  *                                    also match (and display) locale names.
+ *   6. functionCopy() consumers   -- formulas produced by fill, copy/paste,
+ *                                    and sort already use canonical commas.
+ *                                    They must bypass input localization or a
+ *                                    separator between numeric arguments can
+ *                                    be mistaken for a decimal comma.
  *
  * All five are safe to run unconditionally, including on already-canonical
  * strings or non-target locales: each translation helper is a no-op when it
@@ -211,8 +216,11 @@ function __doccellsDelocalizeFormulaOutput(str) {
   if (!fnNames && !isDecimalComma) return str;
   return __doccellsRewriteFormula(str, fnNames, isDecimalComma, ",", ";", ".", ",", true);
 }
-function execfunction(ctx, txt, r, c, id, calcChainSet, isrefresh, notInsertFunc) {
-  if (typeof txt === "string" && txt.charAt(0) === "=") {
+function __doccellsExecCanonicalFormula(ctx, txt, r, c, id, calcChainSet, isrefresh, notInsertFunc) {
+  return execfunction(ctx, txt, r, c, id, calcChainSet, isrefresh, notInsertFunc, true);
+}
+function execfunction(ctx, txt, r, c, id, calcChainSet, isrefresh, notInsertFunc, __doccellsCanonicalFormula) {
+  if (!__doccellsCanonicalFormula && typeof txt === "string" && txt.charAt(0) === "=") {
     var __doccellsCanonicalTxt = __doccellsLocalizeFormulaInput(txt);
     if (__doccellsCanonicalTxt !== txt) txt = __doccellsCanonicalTxt;
   }
@@ -423,7 +431,34 @@ const HANDLESUM_NEW = `function handleSum(ctx, cellInput, fxInput, cache) {
 }`;
 
 // ---------------------------------------------------------------------------
-// Patch 9 (@fortune-sheet/react bundles): the toolbar's Σ dropdown menu shows
+// Patch 9: every formula returned by functionCopy() starts from cell.f, which
+// is already canonical. Mark those evaluation calls accordingly so a formula
+// such as "=IF(B3>100,0,1)" is not reinterpreted as "=IF(B3>100.0.1)" in a
+// decimal-comma locale. This covers fill-handle drag, copy/paste, and sort.
+// ---------------------------------------------------------------------------
+
+const CANONICAL_FORMULA_CALLS = [
+  ["execfunction(ctx, func, _r16, _c16)", "__doccellsExecCanonicalFormula(ctx, func, _r16, _c16)"],
+  ["execfunction(ctx, func, r, c, undefined, undefined, true)", "__doccellsExecCanonicalFormula(ctx, func, r, c, undefined, undefined, true)"],
+  ["execfunction(ctx, _func4, _actualRow4, _vc4, undefined, undefined, true)", "__doccellsExecCanonicalFormula(ctx, _func4, _actualRow4, _vc4, undefined, undefined, true)"],
+  ["execfunction(ctx, f, j, i)", "__doccellsExecCanonicalFormula(ctx, f, j, i)"],
+  ["execfunction(ctx, _f, _j, i)", "__doccellsExecCanonicalFormula(ctx, _f, _j, i)"],
+  ["execfunction(ctx, _f2, _i21, _j2)", "__doccellsExecCanonicalFormula(ctx, _f2, _i21, _j2)"],
+  ["execfunction(ctx, _f3, _i21, _j3)", "__doccellsExecCanonicalFormula(ctx, _f3, _i21, _j3)"],
+  ["execfunction(ctx, _func5, _actualRow5, _vc5, undefined, undefined, true)", "__doccellsExecCanonicalFormula(ctx, _func5, _actualRow5, _vc5, undefined, undefined, true)"],
+  ["execfunction(ctx, func, h, c, undefined, undefined, true)", "__doccellsExecCanonicalFormula(ctx, func, h, c, undefined, undefined, true)"],
+];
+
+const CANONICAL_HELPER_UPGRADE_OLD = `function execfunction(ctx, txt, r, c, id, calcChainSet, isrefresh, notInsertFunc) {
+  if (typeof txt === "string" && txt.charAt(0) === "=") {`;
+const CANONICAL_HELPER_UPGRADE_NEW = `function __doccellsExecCanonicalFormula(ctx, txt, r, c, id, calcChainSet, isrefresh, notInsertFunc) {
+  return execfunction(ctx, txt, r, c, id, calcChainSet, isrefresh, notInsertFunc, true);
+}
+function execfunction(ctx, txt, r, c, id, calcChainSet, isrefresh, notInsertFunc, __doccellsCanonicalFormula) {
+  if (!__doccellsCanonicalFormula && typeof txt === "string" && txt.charAt(0) === "=") {`;
+
+// ---------------------------------------------------------------------------
+// Patch 10 (@fortune-sheet/react bundles): the toolbar's Σ dropdown menu shows
 // each quick function with the translated label on the left (already correct,
 // from the locale files) but a hardcoded English name ("SUM", "AVERAGE", ...)
 // as the grey subtext on the right, AND that same hardcoded value is what
@@ -471,7 +506,7 @@ const QUICKFORMULA_ITEMDATA_NEW = `      var __doccellsQuickFormulaNames = (func
       }];`;
 
 // ---------------------------------------------------------------------------
-// Patch 10 (@fortune-sheet/react bundles): the argument-hint tooltip
+// Patch 11 (@fortune-sheet/react bundles): the argument-hint tooltip
 // (FormulaHint) joins parameter names and examples with a hardcoded ", " in
 // both its signature line ("SI(logical_expression, value_if_true, ...)") and
 // its example line -- contradicting the ";" the user actually has to type in
@@ -503,8 +538,40 @@ for (const { file: bundle, lodash: L } of BUNDLES) {
   let src = fs.readFileSync(file, "utf8");
   const alreadyDone = src.includes("__doccellsDelocalizeFormulaOutput");
   if (alreadyDone) {
-    console.log(`patch-fortune-formula-names: ${bundle} already patched`);
-    allPatched++;
+    if (src.includes("__doccellsExecCanonicalFormula")) {
+      console.log(`patch-fortune-formula-names: ${bundle} already patched`);
+      allPatched++;
+      continue;
+    }
+
+    const upgradePatches = [
+      {
+        name: "canonical formula helper",
+        old: CANONICAL_HELPER_UPGRADE_OLD,
+        new: CANONICAL_HELPER_UPGRADE_NEW,
+      },
+      ...CANONICAL_FORMULA_CALLS.map(([old, replacement], index) => ({
+        name: `canonical formula call ${index + 1}`,
+        old,
+        new: replacement,
+      })),
+    ];
+    let upgradeOk = 0;
+    for (const p of upgradePatches) {
+      if (src.includes(p.old)) {
+        src = src.replace(p.old, p.new);
+        upgradeOk++;
+      } else {
+        console.warn(`patch-fortune-formula-names: upgrade pattern not found for "${p.name}" in ${bundle}`);
+      }
+    }
+    if (upgradeOk === upgradePatches.length) {
+      fs.writeFileSync(file, src, "utf8");
+      console.log(`patch-fortune-formula-names: upgraded ${bundle} (${upgradeOk}/${upgradePatches.length})`);
+      allPatched++;
+    } else {
+      console.warn(`patch-fortune-formula-names: only ${upgradeOk}/${upgradePatches.length} upgrade patterns matched in ${bundle}, aborting write for this file`);
+    }
     continue;
   }
 
@@ -519,6 +586,11 @@ for (const { file: bundle, lodash: L } of BUNDLES) {
     { name: "israngeseleciton previous-sibling branch", old: RANGESEL_3_OLD, new: RANGESEL_3_NEW },
     { name: "functionHTML semicolon token", old: FUNCHTML_OLD, new: FUNCHTML_NEW },
     { name: "handleSum locale-aware default", old: HANDLESUM_OLD, new: HANDLESUM_NEW },
+    ...CANONICAL_FORMULA_CALLS.map(([old, replacement], index) => ({
+      name: `canonical formula call ${index + 1}`,
+      old,
+      new: replacement,
+    })),
   ];
 
   let ok = 0;
