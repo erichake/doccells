@@ -18,7 +18,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "plage",
           detail: "La plage qui est testée par rapport au `critère`.",
           example: "A1:A10",
           require: "m",
@@ -26,7 +26,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion",
+          name: "critère",
           detail: "Le modèle ou le test à appliquer à `plage`.",
           example: "\">20\"",
           require: "m",
@@ -34,8 +34,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "sum_range",
-          detail: "La plage à additionner, si elle est différente de `range`.",
+          name: "plage_somme",
+          detail: "La plage à additionner, si elle est différente de `plage`.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -74,7 +74,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Toute valeur réelle pour calculer la tangente hyperbolique.",
           example: "A2",
           require: "m",
@@ -94,7 +94,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à arrondir au multiple entier le plus proche de `facteur`.",
           example: "23.25",
           require: "m",
@@ -102,7 +102,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor",
+          name: "facteur",
           detail: "Le nombre auquel les multiples de la `valeur` seront arrondis.",
           example: "0.1",
           require: "m",
@@ -122,7 +122,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur pour laquelle calculer la tangente inverse.",
           example: "0",
           require: "m",
@@ -142,7 +142,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur pour laquelle calculer le sinus hyperbolique inverse.",
           example: "0.9",
           require: "m",
@@ -162,7 +162,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Le nombre dont renvoyer la valeur absolue.",
           example: "-2",
           require: "m",
@@ -182,7 +182,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur pour laquelle calculer le cosinus inverse. Doit être compris entre ` -1 ` et ` 1 ` inclus.",
           example: "0",
           require: "m",
@@ -202,7 +202,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Valeur pour laquelle calculer le cosinus hyperbolique inverse. Doit être supérieur ou égal à `1`.",
           example: "2",
           require: "m",
@@ -222,7 +222,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage à prendre en compte.",
           example: "1",
           require: "m",
@@ -230,7 +230,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte.",
           example: "2",
           require: "o",
@@ -250,7 +250,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Valeur pour laquelle calculer la tangente hyperbolique inverse. Doit être compris entre -1 et 1, exclusif.",
           example: "0.9",
           require: "m",
@@ -298,7 +298,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage dans laquelle compter le nombre de blancs.",
           example: "A2:C100",
           require: "m",
@@ -318,7 +318,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Toute valeur réelle pour calculer le cosinus hyperbolique.",
           example: "A2",
           require: "m",
@@ -338,7 +338,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à arrondir à l’entier le plus proche.",
           example: "99.44",
           require: "m",
@@ -358,7 +358,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur doit être vérifiée comme étant paire.",
           example: "4",
           require: "m",
@@ -378,7 +378,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à vérifier comme impaire.",
           example: "4",
           require: "m",
@@ -398,7 +398,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage dont les facteurs doivent être pris en compte dans un calcul pour trouver le plus petit commun multiple.",
           example: "A2:A5",
           require: "m",
@@ -406,7 +406,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires dont les facteurs doivent être pris en compte pour trouver le multiple le plus commun.",
           example: "3",
           require: "o",
@@ -426,7 +426,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur pour laquelle calculer le logarithme, base e.",
           example: "100",
           require: "m",
@@ -446,7 +446,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur pour laquelle calculer le logarithme.",
           example: "128",
           require: "m",
@@ -474,7 +474,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur pour laquelle calculer le logarithme, base 10.",
           example: "100",
           require: "m",
@@ -494,7 +494,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "dividende",
           detail: "Le nombre à diviser pour trouver le reste.",
           example: "10",
           require: "m",
@@ -502,7 +502,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "divisor",
+          name: "diviseur",
           detail: "Le nombre par lequel diviser.",
           example: "4",
           require: "m",
@@ -522,7 +522,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Le nombre à arrondir au multiple entier le plus proche d’un autre.",
           example: "21",
           require: "m",
@@ -530,7 +530,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor",
+          name: "facteur",
           detail: "Le nombre auquel les multiples de la `valeur` seront arrondis.",
           example: "14",
           require: "m",
@@ -550,7 +550,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à arrondir au nombre impair supérieur suivant.",
           example: "2",
           require: "m",
@@ -570,7 +570,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Le premier nombre ou plage dont les carrés doivent être additionnés.",
           example: "A2:A100",
           require: "m",
@@ -578,7 +578,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Nombres ou plages supplémentaires dont les carrés doivent être ajoutés au(x) carré(s) de ` valeur1 `.",
           example: "2",
           require: "o",
@@ -626,7 +626,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Le premier nombre ou plage à additionner.",
           example: "A2:A100",
           require: "m",
@@ -634,7 +634,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Nombres ou plages supplémentaires à ajouter à ` valeur1 `.",
           example: "2",
           require: "o",
@@ -654,7 +654,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "function_code",
+          name: "code_fonction",
           detail: "Fonction à utiliser dans l'agrégation de sous-totaux.",
           example: "1",
           require: "m",
@@ -662,7 +662,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "range1",
+          name: "plage1",
           detail: "Première plage sur laquelle calculer un sous-total.",
           example: "A2:A5",
           require: "m",
@@ -670,7 +670,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "range2",
+          name: "plage2",
           detail: "Plages supplémentaires sur lesquelles calculer les sous-totaux.",
           example: "B2:B8",
           require: "o",
@@ -690,7 +690,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur pour laquelle calculer le sinus inverse. Doit être compris entre ` -1 ` et ` 1 ` inclus.",
           example: "0",
           require: "m",
@@ -710,7 +710,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "plage",
           detail: "La plage qui est testée par rapport au `critère`.",
           example: "A1:A10",
           require: "m",
@@ -718,7 +718,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion",
+          name: "critère",
           detail: "Le modèle ou le test à appliquer à `plage`.",
           example: "\">20\"",
           require: "m",
@@ -769,7 +769,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage à prendre en compte pour l'unicité.",
           example: "A1:C100",
           require: "m",
@@ -777,7 +777,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte pour l'unicité.",
           example: "1",
           require: "o",
@@ -837,7 +837,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à arrondir au nombre pair le plus élevé.",
           example: "3",
           require: "m",
@@ -857,7 +857,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "exponent",
+          name: "exposant",
           detail: "L'exposant auquel élever e.",
           example: "2",
           require: "m",
@@ -877,7 +877,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Le nombre ou la référence à un nombre dont la factorielle sera calculée et renvoyée.",
           example: "3",
           require: "m",
@@ -897,7 +897,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Le nombre ou la référence à un nombre dont la factorielle double sera calculée et renvoyée.",
           example: "6",
           require: "m",
@@ -928,7 +928,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à arrondir au multiple entier le plus proche de `facteur`.",
           example: "23.25",
           require: "m",
@@ -936,7 +936,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor",
+          name: "facteur",
           detail: "Le nombre auquel les multiples de la `valeur` seront arrondis.",
           example: "0.1",
           require: "m",
@@ -956,7 +956,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage dont les facteurs doivent être pris en compte dans un calcul pour trouver le plus grand diviseur commun.",
           example: "A2:A5",
           require: "m",
@@ -964,7 +964,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires dont les facteurs doivent être pris en compte pour trouver le plus grand diviseur commun.",
           example: "96",
           require: "o",
@@ -984,7 +984,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "low",
+          name: "bas",
           detail: "L’extrémité inférieure de la plage aléatoire.",
           example: "1",
           require: "m",
@@ -992,7 +992,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "high",
+          name: "haut",
           detail: "Le haut de gamme de la plage aléatoire.",
           example: "10",
           require: "m",
@@ -1012,15 +1012,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "La valeur à arrondir au nombre de places `places`.",
+          name: "valeur",
+          detail: "La valeur à arrondir au nombre de places `décimales`.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "décimales",
           detail: "Le nombre de décimales auxquelles arrondir.",
           example: "1",
           require: "m",
@@ -1040,15 +1040,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "La valeur à arrondir au nombre de places `places`, toujours en arrondissant à l'inférieur.",
+          name: "valeur",
+          detail: "La valeur à arrondir au nombre de places `décimales`, toujours en arrondissant à l'inférieur.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "décimales",
           detail: "Le nombre de décimales auxquelles arrondir.",
           example: "1",
           require: "m",
@@ -1068,15 +1068,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "La valeur à arrondir au nombre de places `places`, toujours en arrondissant au supérieur.",
+          name: "valeur",
+          detail: "La valeur à arrondir au nombre de places `décimales`, toujours en arrondissant au supérieur.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "décimales",
           detail: "Le nombre de décimales auxquelles arrondir.",
           example: "1",
           require: "m",
@@ -1140,7 +1140,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur dont le signe sera évalué.",
           example: "-42",
           require: "m",
@@ -1180,7 +1180,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Toute valeur réelle pour calculer le sinus hyperbolique.",
           example: "A2",
           require: "m",
@@ -1200,7 +1200,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Le nombre pour lequel calculer la racine carrée positive.",
           example: "9",
           require: "m",
@@ -1220,7 +1220,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Le nombre qui sera multiplié par Pi et dont la racine carrée du produit sera renvoyée",
           example: "9",
           require: "m",
@@ -1240,8 +1240,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "L'entrée de la fonction Gamma. Le logarithme népérien de Gamma(`value`) sera renvoyé.",
+          name: "valeur",
+          detail: "L'entrée de la fonction Gamma. Le logarithme népérien de Gamma(`valeur`) sera renvoyé.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1280,7 +1280,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à tronquer.",
           example: "3.141592654",
           require: "m",
@@ -1288,7 +1288,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "décimales",
           detail: "Nombre de chiffres significatifs à droite du point décimal à conserver.",
           example: "2",
           require: "o",
@@ -1308,7 +1308,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "dividende",
           detail: "Le nombre à diviser.",
           example: "4",
           require: "m",
@@ -1316,7 +1316,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "divisor",
+          name: "diviseur",
           detail: "Le nombre par lequel diviser.",
           example: "2",
           require: "m",
@@ -1344,7 +1344,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "exponent",
+          name: "exposant",
           detail: "L'exposant auquel élever la ` base `.",
           example: "0.5",
           require: "m",
@@ -1364,7 +1364,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "sum_range",
+          name: "plage_somme",
           detail: "La plage à additionner.",
           example: "A1:A10",
           require: "m",
@@ -1372,7 +1372,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criteria_range1",
+          name: "plage_critères1",
           detail: "La plage à vérifier par rapport au critère 1.",
           example: " B1:B10",
           require: "m",
@@ -1380,7 +1380,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion1",
+          name: "critère1",
           detail: "Le modèle ou le test à appliquer à la plage_critères1.",
           example: " \">20\"",
           require: "m",
@@ -1388,7 +1388,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
+          name: "plage_critères2",
           detail: "Plages supplémentaires à vérifier.",
           example: " C1:C10",
           require: "o",
@@ -1408,7 +1408,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range1",
+          name: "plage_critères1",
           detail: "La plage à vérifier par rapport à `critère 1`.",
           example: "A1:A10",
           require: "m",
@@ -1416,15 +1416,15 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion1",
-          detail: "Le modèle ou le test à appliquer à `criteria_range1`.",
+          name: "critère1",
+          detail: "Le modèle ou le test à appliquer à `plage_critères1`.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
+          name: "plage_critères2",
           detail: "Plages supplémentaires à vérifier.",
           example: " B1:B10",
           require: "o",
@@ -1444,7 +1444,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
+          name: "facteur1",
           detail: "Premier nombre ou plage à calculer pour le produit.",
           example: "A2:A100",
           require: "m",
@@ -1452,7 +1452,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor2",
+          name: "facteur2",
           detail: "Plus de nombres ou de plages à calculer pour le produit.",
           example: "2",
           require: "o",
@@ -1472,7 +1472,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage de la population.",
           example: "1",
           require: "m",
@@ -1480,7 +1480,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans la population.",
           example: "2",
           require: "o",
@@ -1500,7 +1500,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
+          name: "nombre_réussites",
           detail: "Le nombre de réussites souhaité.",
           example: "4",
           require: "m",
@@ -1508,7 +1508,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "num_draws",
+          name: "nombre_tirages",
           detail: "Le nombre de tirages autorisés.",
           example: "12",
           require: "m",
@@ -1516,7 +1516,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "successes_in_pop",
+          name: "réussites_population",
           detail: "Le nombre total de réussites dans la population.",
           example: "20",
           require: "m",
@@ -1524,7 +1524,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pop_size",
+          name: "taille_population",
           detail: "La taille totale de la population",
           example: "40",
           require: "m",
@@ -1532,7 +1532,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "cumulatif",
           detail: "Déterminez la valeur logique de la forme fonction. Si cumulative est TRUE(), HYPGEOM.DIST renvoie la fonction de distribution cumulative ; si FALSE(), elle renvoie la fonction de densité de probabilité.",
           example: "TRUE()",
           require: "m",
@@ -1552,7 +1552,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "données_y",
           detail: "Plage représentant le tableau ou la matrice de données dépendantes.",
           example: "A2:A100",
           require: "m",
@@ -1560,7 +1560,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "données_x",
           detail: "Plage représentant le tableau ou la matrice de données indépendantes.",
           example: "B2:B100",
           require: "m",
@@ -1580,7 +1580,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur ou plage de l’ensemble de données.",
           example: "1",
           require: "m",
@@ -1588,7 +1588,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans l’ensemble de données.",
           example: "2",
           require: "o",
@@ -1608,7 +1608,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l’ensemble de données à prendre en compte.",
           example: "A2:B100",
           require: "m",
@@ -1636,7 +1636,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur ou plage de l’échantillon.",
           example: "1",
           require: "m",
@@ -1644,7 +1644,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans l’échantillon.",
           example: "2",
           require: "o",
@@ -1664,7 +1664,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage de la population.",
           example: "1",
           require: "m",
@@ -1672,7 +1672,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans la population.",
           example: "2",
           require: "o",
@@ -1692,7 +1692,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage de la population.",
           example: "1",
           require: "m",
@@ -1700,7 +1700,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans la population.",
           example: "2",
           require: "o",
@@ -1720,7 +1720,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur dont le rang sera déterminé.",
           example: "A10",
           require: "m",
@@ -1728,7 +1728,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l'ensemble de données à prendre en compte.",
           example: "A1:A100",
           require: "m",
@@ -1736,8 +1736,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "is_ascending",
-          detail: "S'il faut considérer les valeurs dans ` data ` par ordre décroissant ou croissant. En cas d'omission, la valeur par défaut est décroissante (FALSE).",
+          name: "est_croissant",
+          detail: "S'il faut considérer les valeurs dans ` données ` par ordre décroissant ou croissant. En cas d'omission, la valeur par défaut est décroissante (FALSE).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1756,7 +1756,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur dont le rang sera déterminé.",
           example: "A10",
           require: "m",
@@ -1764,7 +1764,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l'ensemble de données à prendre en compte.",
           example: "A1:A100",
           require: "m",
@@ -1772,8 +1772,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "is_ascending",
-          detail: "S'il faut considérer les valeurs dans ` data ` par ordre décroissant ou croissant. En cas d'omission, la valeur par défaut est décroissante (FALSE).",
+          name: "est_croissant",
+          detail: "S'il faut considérer les valeurs dans ` données ` par ordre décroissant ou croissant. En cas d'omission, la valeur par défaut est décroissante (FALSE).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1792,7 +1792,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l'ensemble de données à prendre en compte.",
           example: "A1:A100",
           require: "m",
@@ -1800,7 +1800,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur dont le rang en pourcentage sera déterminé.",
           example: "A2",
           require: "m",
@@ -1808,7 +1808,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "chiffres_significatifs",
           detail: "Le nombre de chiffres significatifs à utiliser dans le calcul. La valeur par défaut est 3.",
           example: "4",
           require: "o",
@@ -1828,7 +1828,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l'ensemble de données à prendre en compte.",
           example: "A1:A100",
           require: "m",
@@ -1836,7 +1836,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur dont le rang en pourcentage sera déterminé.",
           example: " A2",
           require: "m",
@@ -1844,7 +1844,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "chiffres_significatifs",
           detail: "Le nombre de chiffres significatifs à utiliser dans le calcul. La valeur par défaut est 3.",
           example: "4",
           require: "o",
@@ -1872,7 +1872,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_y",
+          name: "données_y",
           detail: "Plage représentant le tableau ou la matrice de données dépendantes.",
           example: "A2:A100",
           require: "m",
@@ -1880,7 +1880,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "données_x",
           detail: "Plage représentant le tableau ou la matrice de données indépendantes.",
           example: "B2:B100",
           require: "m",
@@ -1900,7 +1900,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Valeur pour laquelle calculer la transformation de Fisher inverse.",
           example: "0.962",
           require: "m",
@@ -1920,7 +1920,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur pour laquelle calculer la transformation de Fisher.",
           example: "0.962",
           require: "m",
@@ -1940,7 +1940,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur ou plage à prendre en compte lors du mode de calcul.",
           example: "A2:A100",
           require: "m",
@@ -1948,7 +1948,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte lors du mode de calcul.",
           example: "B2:B100",
           require: "o",
@@ -1976,7 +1976,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "shape",
+          name: "forme",
           detail: "Le paramètre de forme de la fonction de distribution de Weibull.",
           example: "2",
           require: "m",
@@ -1984,7 +1984,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "scale",
+          name: "échelle",
           detail: "Le paramètre d'échelle de la fonction de distribution de Weibull.",
           example: "3",
           require: "m",
@@ -1992,7 +1992,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "cumulatif",
           detail: "S'il faut utiliser la fonction de distribution cumulative.",
           example: "TRUE()",
           require: "m",
@@ -2012,7 +2012,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur ou plage à prendre en compte lors du comptage.",
           example: "A2:A100",
           require: "m",
@@ -2020,7 +2020,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte lors du comptage.",
           example: "B2:B100",
           require: "o",
@@ -2040,7 +2040,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur ou plage à prendre en compte lors du comptage.",
           example: "A2:A100",
           require: "m",
@@ -2048,7 +2048,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte lors du comptage.",
           example: "B2:B100",
           require: "o",
@@ -2068,7 +2068,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur ou plage de l’échantillon.",
           example: "1",
           require: "m",
@@ -2076,7 +2076,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans l’échantillon.",
           example: "2",
           require: "o",
@@ -2096,7 +2096,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage à prendre en compte lors du calcul de la valeur moyenne.",
           example: "A2:A100",
           require: "m",
@@ -2104,7 +2104,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte lors du calcul de la valeur moyenne.",
           example: "B2:B100",
           require: "o",
@@ -2124,7 +2124,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage à prendre en compte lors du calcul de la valeur moyenne.",
           example: "A2:A100",
           require: "m",
@@ -2132,7 +2132,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte lors du calcul de la valeur moyenne.",
           example: "B2:B100",
           require: "o",
@@ -2152,15 +2152,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
-          detail: "Le nombre de réussites pour lesquelles calculer la probabilité dans les essais `num_trials`.",
+          name: "nombre_réussites",
+          detail: "Le nombre de réussites pour lesquelles calculer la probabilité dans les essais `nombre_essais`.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "num_trials",
+          name: "nombre_essais",
           detail: "Le nombre d'essais indépendants.",
           example: "100",
           require: "m",
@@ -2168,7 +2168,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "prob_success",
+          name: "probabilité_succès",
           detail: "La probabilité de succès dans un essai donné.",
           example: "0.005",
           require: "m",
@@ -2176,7 +2176,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "cumulatif",
           detail: "S'il faut utiliser la distribution cumulée binomiale.",
           example: "FALSE()",
           require: "m",
@@ -2196,7 +2196,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_trials",
+          name: "nombre_essais",
           detail: "Le nombre d'essais indépendants.",
           example: "100",
           require: "m",
@@ -2204,7 +2204,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "prob_success",
+          name: "probabilité_succès",
           detail: "La probabilité de succès dans un essai donné.",
           example: "0.005",
           require: "m",
@@ -2212,7 +2212,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "target_prob",
+          name: "probabilité_cible",
           detail: "La probabilité seuil souhaitée.",
           example: "0.8",
           require: "m",
@@ -2240,7 +2240,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "écart_type",
           detail: "L'écart type de la population.",
           example: "1.6",
           require: "m",
@@ -2248,7 +2248,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pop_size",
+          name: "taille_population",
           detail: "La taille de la population.",
           example: "250",
           require: "m",
@@ -2268,7 +2268,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "données_y",
           detail: "Plage représentant le tableau ou la matrice de données dépendantes.",
           example: "A2:A100",
           require: "m",
@@ -2276,7 +2276,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "données_x",
           detail: "Plage représentant le tableau ou la matrice de données indépendantes.",
           example: "B2:B100",
           require: "m",
@@ -2296,7 +2296,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "données_y",
           detail: "Plage représentant le tableau ou la matrice de données dépendantes.",
           example: "B2:B100",
           require: "m",
@@ -2304,7 +2304,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "données_x",
           detail: "Plage représentant le tableau ou la matrice de données indépendantes.",
           example: "A2:A100",
           require: "m",
@@ -2324,7 +2324,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "données_y",
           detail: "Plage représentant le tableau ou la matrice de données dépendantes.",
           example: "A2:A100",
           require: "m",
@@ -2332,7 +2332,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "données_x",
           detail: "Plage représentant le tableau ou la matrice de données indépendantes.",
           example: "B2:B100",
           require: "m",
@@ -2352,7 +2352,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur ou plage de l’échantillon.",
           example: "1",
           require: "m",
@@ -2360,7 +2360,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans l’échantillon.",
           example: "2",
           require: "o",
@@ -2396,7 +2396,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "cumulatif",
           detail: "S'il faut utiliser la distribution cumulative exponentielle.",
           example: "FALSE()",
           require: "m",
@@ -2416,7 +2416,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range",
+          name: "plage_critères",
           detail: "La plage à vérifier par rapport au `critère`.",
           example: "A1:A10",
           require: "m",
@@ -2424,16 +2424,16 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criterion",
-          detail: "Le modèle ou le test à appliquer à `criteria_range`.",
+          name: "critère",
+          detail: "Le modèle ou le test à appliquer à `plage_critères`.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "average_range",
-          detail: "La plage à la moyenne. S'il n'est pas inclus, ` criteria_range ` est utilisé à la place pour la moyenne.",
+          name: "plage_moyenne",
+          detail: "La plage à la moyenne. S'il n'est pas inclus, ` plage_critères ` est utilisé à la place pour la moyenne.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -2452,7 +2452,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "average_range",
+          name: "plage_moyenne",
           detail: "La plage à la moyenne.",
           example: "A1:A10",
           require: "m",
@@ -2460,7 +2460,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria_range1",
+          name: "plage_critères1",
           detail: "La plage à vérifier par rapport à `critère 1`.",
           example: " B1:B10",
           require: "m",
@@ -2468,15 +2468,15 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criterion1",
-          detail: "Le modèle ou le test à appliquer à `criteria_range1`.",
+          name: "critère1",
+          detail: "Le modèle ou le test à appliquer à `plage_critères1`.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
+          name: "plage_critères2",
           detail: "Plages supplémentaires à vérifier.",
           example: " C1:C10",
           require: "m",
@@ -2524,7 +2524,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l’ensemble de données à prendre en compte.",
           example: "A2:A100",
           require: "m",
@@ -2532,7 +2532,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "exclude_proportion",
+          name: "proportion_exclue",
           detail: "Proportion de l'ensemble de données à exclure, des extrémités de l'ensemble.",
           example: "0.1",
           require: "m",
@@ -2552,7 +2552,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l'ensemble de données à prendre en compte.",
           example: "A2:A100",
           require: "m",
@@ -2560,7 +2560,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "percentile",
+          name: "centile",
           detail: "Le centile, à l'exclusion de 0 et 1, dont la valeur dans `données` sera calculée et renvoyée.",
           example: "0.25",
           require: "m",
@@ -2580,7 +2580,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l'ensemble de données à prendre en compte.",
           example: "A2:A100",
           require: "m",
@@ -2588,8 +2588,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "percentile",
-          detail: "Le percentile dont la valeur dans ` data ` sera calculée et renvoyée.",
+          name: "centile",
+          detail: "Le percentile dont la valeur dans ` données ` sera calculée et renvoyée.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2608,7 +2608,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "données_y",
           detail: "Plage représentant le tableau ou la matrice de données dépendantes.",
           example: "A2:A100",
           require: "m",
@@ -2616,7 +2616,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "données_x",
           detail: "Plage représentant le tableau ou la matrice de données indépendantes.",
           example: "B2:B100",
           require: "m",
@@ -2664,7 +2664,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "cumulatif",
           detail: "Déterminez la valeur logique de la forme fonction. Si TRUE(), il renvoie la fonction de distribution cumulative ; s'il est FALSE(), il renvoie la fonction de densité de probabilité.",
           example: "FALSE()",
           require: "m",
@@ -2692,7 +2692,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "moyenne",
           detail: "La moyenne (mu) de la fonction de distribution normale.",
           example: "1",
           require: "m",
@@ -2700,7 +2700,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "écart_type",
           detail: "L'écart type (sigma) de la fonction de distribution normale.",
           example: "4",
           require: "m",
@@ -2728,7 +2728,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "moyenne",
           detail: "La moyenne (mu) de la fonction de distribution normale.",
           example: "1",
           require: "m",
@@ -2736,7 +2736,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "écart_type",
           detail: "L'écart type (sigma) de la fonction de distribution normale.",
           example: "4",
           require: "m",
@@ -2744,7 +2744,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "cumulatif",
           detail: "S'il faut utiliser la fonction de distribution cumulative normale plutôt que la fonction de distribution.",
           example: "FALSE()",
           require: "m",
@@ -2764,7 +2764,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_failures",
+          name: "nombre_échecs",
           detail: "Le nombre d’échecs de modélisation.",
           example: "4",
           require: "m",
@@ -2772,7 +2772,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "num_successes",
+          name: "nombre_réussites",
           detail: "Le nombre de réussites à modéliser.",
           example: "2",
           require: "m",
@@ -2780,7 +2780,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "prob_success",
+          name: "probabilité_succès",
           detail: "La probabilité de succès dans un essai donné.",
           example: "0.1",
           require: "m",
@@ -2788,7 +2788,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "cumulatif",
           detail: "Déterminez la valeur logique de la forme fonction. Si TRUE(), il renvoie la fonction de distribution cumulative ; s'il est FALSE(), il renvoie la fonction de densité de probabilité.",
           example: "FALSE()",
           require: "m",
@@ -2808,7 +2808,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage à prendre en compte lors du calcul de la valeur minimale.",
           example: "A2:A100",
           require: "m",
@@ -2816,7 +2816,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte lors du calcul de la valeur minimale.",
           example: "B2:B100",
           require: "o",
@@ -2836,7 +2836,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage à prendre en compte lors du calcul de la valeur minimale.",
           example: "A2:A100",
           require: "m",
@@ -2844,7 +2844,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte lors du calcul de la valeur minimale.",
           example: "B2:B100",
           require: "o",
@@ -2864,7 +2864,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage à prendre en compte lors du calcul de la valeur médiane.",
           example: "A2:A100",
           require: "m",
@@ -2872,7 +2872,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte lors du calcul de la valeur médiane.",
           example: "B2:B100",
           require: "o",
@@ -2892,7 +2892,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage à prendre en compte lors du calcul de la valeur maximale.",
           example: "A2:A100",
           require: "m",
@@ -2900,7 +2900,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte lors du calcul de la valeur maximale.",
           example: "B2:B100",
           require: "o",
@@ -2920,7 +2920,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage à prendre en compte lors du calcul de la valeur maximale.",
           example: "A2:A100",
           require: "m",
@@ -2928,7 +2928,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à prendre en compte lors du calcul de la valeur maximale.",
           example: "B2:B100",
           require: "o",
@@ -2956,7 +2956,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "moyenne",
           detail: "La moyenne (mu) de la fonction de distribution cumulative log-normale inverse.",
           example: "4",
           require: "m",
@@ -2964,7 +2964,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "écart_type",
           detail: "L'écart type (sigma) de la fonction de distribution cumulative log-normale inverse.",
           example: "6",
           require: "m",
@@ -2992,7 +2992,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "moyenne",
           detail: "La moyenne (mu) de la fonction de distribution cumulative log-normale.",
           example: "4",
           require: "m",
@@ -3000,7 +3000,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "écart_type",
           detail: "L'écart type (sigma) de la fonction de distribution cumulative log-normale.",
           example: "6",
           require: "m",
@@ -3008,7 +3008,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "cumulatif",
           detail: "Déterminez la valeur logique de la forme fonction. Si TRUE(), il renvoie la fonction de distribution cumulative ; s'il est FALSE(), il renvoie la fonction de densité de probabilité.",
           example: "FALSE()",
           require: "m",
@@ -3028,7 +3028,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l'ensemble de données à prendre en compte.",
           example: "A2:A100",
           require: "m",
@@ -3036,7 +3036,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "value",
+          name: "valeur",
           detail: "La statistique de test à utiliser dans le test Z.",
           example: "B2",
           require: "m",
@@ -3044,7 +3044,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "écart_type",
           detail: "L'écart type à prendre en compte pour le test Z. Si cela n’est pas fourni, l’écart type des données sera utilisé.",
           example: "3",
           require: "o",
@@ -3064,7 +3064,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l’ensemble de données à prendre en compte.",
           example: "A3:A6",
           require: "m",
@@ -3072,7 +3072,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "probabilities",
+          name: "probabilités",
           detail: "Tableau ou plage contenant des probabilités correspondant aux `données`.",
           example: "2",
           require: "m",
@@ -3080,7 +3080,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "low_limit",
+          name: "limite_inférieure",
           detail: "Limite inférieure de la plage de valeurs pour laquelle calculer la probabilité.",
           example: "3",
           require: "m",
@@ -3088,7 +3088,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "high_limit",
+          name: "limite_supérieure",
           detail: "Limite supérieure de la plage de valeurs pour laquelle calculer la probabilité.",
           example: "4",
           require: "o",
@@ -3108,7 +3108,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l'ensemble de données à prendre en compte.",
           example: "A2:A100",
           require: "m",
@@ -3116,7 +3116,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
+          name: "numéro_quartile",
           detail: "Quel quartile retourner.",
           example: "3",
           require: "m",
@@ -3136,7 +3136,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l'ensemble de données à prendre en compte.",
           example: "A2:A100",
           require: "m",
@@ -3144,7 +3144,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
+          name: "numéro_quartile",
           detail: "Quelle valeur de quartile renvoyer.",
           example: "3",
           require: "m",
@@ -3172,7 +3172,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "moyenne",
           detail: "La moyenne (mu) de la fonction de distribution de Poisson.",
           example: "1",
           require: "m",
@@ -3180,7 +3180,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "cumulatif",
           detail: "S'il faut utiliser la fonction de distribution cumulative de Poisson plutôt que la fonction de distribution.",
           example: "FALSE()",
           require: "m",
@@ -3200,7 +3200,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "données_y",
           detail: "Plage représentant le tableau ou la matrice de données dépendantes.",
           example: "A2:A100",
           require: "m",
@@ -3208,7 +3208,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "données_x",
           detail: "Plage représentant le tableau ou la matrice de données indépendantes.",
           example: "B2:B100",
           require: "m",
@@ -3236,7 +3236,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "degrés_liberté",
           detail: "Le nombre de degrés de liberté.",
           example: "30",
           require: "m",
@@ -3244,7 +3244,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "cumulatif",
           detail: "Si cumulative est TRUE, T.DIST renvoie la fonction de distribution cumulative ; si FALSE, il renvoie la fonction de densité de probabilité.",
           example: "TRUE()",
           require: "m",
@@ -3272,7 +3272,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "degrés_liberté",
           detail: "Le nombre de degrés de liberté.",
           example: "30",
           require: "m",
@@ -3300,7 +3300,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "degrés_liberté",
           detail: "Le nombre de degrés de liberté.",
           example: "30",
           require: "m",
@@ -3320,7 +3320,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "probabilité",
           detail: "La probabilité associée à la distribution t bilatérale.",
           example: "0.35",
           require: "m",
@@ -3328,7 +3328,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "degrés_liberté",
           detail: "Le nombre de degrés de liberté.",
           example: "1",
           require: "m",
@@ -3348,7 +3348,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "probabilité",
           detail: "La probabilité associée à la distribution t bilatérale.",
           example: "0.35",
           require: "m",
@@ -3356,7 +3356,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "degrés_liberté",
           detail: "Le nombre de degrés de liberté.",
           example: "1",
           require: "m",
@@ -3376,7 +3376,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range1",
+          name: "plage1",
           detail: "Premier échantillon de données ou groupe de cellules à prendre en compte pour le test t.",
           example: "A1:A4",
           require: "m",
@@ -3384,7 +3384,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "range2",
+          name: "plage2",
           detail: "Deuxième échantillon de données ou groupe de cellules à prendre en compte pour le test t.",
           example: "B1:B4",
           require: "m",
@@ -3392,7 +3392,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "tails",
+          name: "queues",
           detail: "Spécifie le nombre de queues de distribution.",
           example: "2",
           require: "m",
@@ -3428,7 +3428,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
+          name: "degrés_liberté1",
           detail: "Le numérateur du nombre de degrés de liberté.",
           example: "7",
           require: "m",
@@ -3436,7 +3436,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
+          name: "degrés_liberté2",
           detail: "Le dénominateur du nombre de degrés de liberté.",
           example: "6",
           require: "m",
@@ -3444,7 +3444,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "cumulatif",
           detail: "Valeur logique qui détermine la forme de la fonction.",
           example: "TRUE()",
           require: "m",
@@ -3472,7 +3472,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
+          name: "degrés_liberté1",
           detail: "Le numérateur du nombre de degrés de liberté.",
           example: "7",
           require: "m",
@@ -3480,7 +3480,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
+          name: "degrés_liberté2",
           detail: "Le dénominateur du nombre de degrés de liberté.",
           example: "6",
           require: "m",
@@ -3500,7 +3500,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage de la population.",
           example: "1",
           require: "m",
@@ -3508,7 +3508,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans la population.",
           example: "2",
           require: "o",
@@ -3528,7 +3528,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur ou plage de l’échantillon.",
           example: "1",
           require: "m",
@@ -3536,7 +3536,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans l’échantillon.",
           example: "2",
           require: "o",
@@ -3556,7 +3556,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur ou plage de l’échantillon.",
           example: "1",
           require: "m",
@@ -3564,7 +3564,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans l’échantillon.",
           example: "2",
           require: "o",
@@ -3584,7 +3584,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Première valeur ou plage de la population.",
           example: "1",
           require: "m",
@@ -3592,7 +3592,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans la population.",
           example: "2",
           require: "o",
@@ -3612,7 +3612,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "données_y",
           detail: "Plage représentant le tableau ou la matrice de données dépendantes.",
           example: "A2:A100",
           require: "m",
@@ -3620,7 +3620,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "données_x",
           detail: "Plage représentant le tableau ou la matrice de données indépendantes.",
           example: "B2:B100",
           require: "m",
@@ -3640,7 +3640,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur de la variable aléatoire à normaliser.",
           example: "96",
           require: "m",
@@ -3648,7 +3648,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "moyenne",
           detail: "La moyenne de la distribution.",
           example: "80",
           require: "m",
@@ -3656,7 +3656,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "écart_type",
           detail: "L'écart type de la distribution.",
           example: "6.7",
           require: "m",
@@ -3676,7 +3676,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant l'ensemble de données à prendre en compte.",
           example: "A2:B100",
           require: "m",
@@ -3704,7 +3704,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "données_y",
           detail: "Plage représentant le tableau ou la matrice de données dépendantes.",
           example: "A2:A100",
           require: "m",
@@ -3712,7 +3712,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "données_x",
           detail: "Plage représentant le tableau ou la matrice de données indépendantes.",
           example: "B2:B100",
           require: "m",
@@ -3732,7 +3732,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur ou plage de l’ensemble de données.",
           example: "1",
           require: "m",
@@ -3740,7 +3740,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans l’ensemble de données.",
           example: "2",
           require: "o",
@@ -3760,7 +3760,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur ou plage de l’ensemble de données.",
           example: "1",
           require: "m",
@@ -3768,7 +3768,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Valeurs ou plages supplémentaires à inclure dans l’ensemble de données.",
           example: "2",
           require: "o",
@@ -3788,7 +3788,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "clé_recherche",
           detail: "La valeur à rechercher. Par exemple, ` 42 `, ` ` Chats ` ` ou ` I24 `.",
           example: "10003",
           require: "m",
@@ -3796,8 +3796,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "La plage à prendre en compte pour la recherche. La première colonne de la plage est recherchée pour la clé spécifiée dans `search_key`.",
+          name: "plage",
+          detail: "La plage à prendre en compte pour la recherche. La première colonne de la plage est recherchée pour la clé spécifiée dans `clé_recherche`.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
@@ -3812,8 +3812,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
-          detail: "Indique si la colonne à rechercher (la première colonne de la plage spécifiée) est triée, auquel cas la correspondance la plus proche pour `search_key` sera renvoyée.",
+          name: "est_trié",
+          detail: "Indique si la colonne à rechercher (la première colonne de la plage spécifiée) est triée, auquel cas la correspondance la plus proche pour `clé_recherche` sera renvoyée.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3832,7 +3832,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "clé_recherche",
           detail: "La valeur à rechercher. Par exemple, ` 42 `, ` ` Chats ` ` ou ` I24 `.",
           example: "10003",
           require: "m",
@@ -3840,8 +3840,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "La plage à prendre en compte pour la recherche. La première ligne de la plage est recherchée pour la clé spécifiée dans `search_key`.",
+          name: "plage",
+          detail: "La plage à prendre en compte pour la recherche. La première ligne de la plage est recherchée pour la clé spécifiée dans `clé_recherche`.",
           example: "A2:Z6",
           require: "m",
           repeat: "n",
@@ -3856,7 +3856,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
+          name: "est_trié",
           detail: "Indique si la ligne à rechercher (la première ligne de la plage spécifiée) est triée.",
           example: "FALSE()",
           require: "o",
@@ -3876,7 +3876,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "clé_recherche",
           detail: "La valeur à rechercher dans la ligne ou la colonne. Par exemple, ` 42 `, ` ` Chats ` ` ou ` I24 `.",
           example: "10003",
           require: "m",
@@ -3884,16 +3884,16 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "search_range|search_result_array",
-          detail: "Une méthode d'utilisation de cette fonction consiste à fournir une seule ligne ou colonne triée `search_range` pour rechercher la `search_key` avec un deuxième argument `result_range`. L'autre façon consiste à combiner ces deux arguments en un seul ` search_result_array ` où la première ligne ou colonne est recherchée et une valeur est renvoyée à partir de la dernière ligne ou colonne du tableau. Si `search_key` n'est pas trouvé, une correspondance non exacte peut être renvoyée.",
+          name: "plage_recherche|tableau_résultat_recherche",
+          detail: "Une méthode d'utilisation de cette fonction consiste à fournir une seule ligne ou colonne triée `plage_recherche` pour rechercher la `clé_recherche` avec un deuxième argument `plage_résultat`. L'autre façon consiste à combiner ces deux arguments en un seul ` tableau_résultat_recherche ` où la première ligne ou colonne est recherchée et une valeur est renvoyée à partir de la dernière ligne ou colonne du tableau. Si `clé_recherche` n'est pas trouvé, une correspondance non exacte peut être renvoyée.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "result_range",
-          detail: "Plage à partir de laquelle renvoyer un résultat. La valeur renvoyée correspond à l'emplacement où `search_key` se trouve dans `search_range`. Cette plage ne doit comporter qu'une seule ligne ou colonne et ne doit pas être utilisée si vous utilisez la méthode `search_result_array`.",
+          name: "plage_résultat",
+          detail: "Plage à partir de laquelle renvoyer un résultat. La valeur renvoyée correspond à l'emplacement où `clé_recherche` se trouve dans `plage_recherche`. Cette plage ne doit comporter qu'une seule ligne ou colonne et ne doit pas être utilisée si vous utilisez la méthode `tableau_résultat_recherche`.",
           example: "B1:B100",
           require: "o",
           repeat: "n",
@@ -3912,7 +3912,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "row",
+          name: "ligne",
           detail: "Le numéro de ligne de la référence de cellule",
           example: "1",
           require: "m",
@@ -3920,7 +3920,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "column",
+          name: "colonne",
           detail: "Le numéro de colonne (pas le nom) de la référence de cellule. `A` est le numéro de colonne `1`.",
           example: "2",
           require: "m",
@@ -3928,7 +3928,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "absolute_relative_mode",
+          name: "mode_relatif_absolu",
           detail: "Un indicateur indiquant si la référence est absolue en ligne/colonne. `1` est la ligne et la colonne absolues (par exemple $A$1), `2` est la ligne absolue et la colonne relative (par exemple A$1), `3` est la ligne relative et la colonne absolue (par exemple $A1) et `4` est la ligne et la colonne relative (par exemple A1).",
           example: "4",
           require: "o",
@@ -3936,7 +3936,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "use_a1_notation",
+          name: "utiliser_notation_a1",
           detail: "Un booléen indiquant s'il faut utiliser la notation de style ` A1 ` (TRUE) ou la notation de style ` R1C1 ` (FALSE).",
           example: "FALSE()",
           require: "o",
@@ -3944,7 +3944,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "sheet",
+          name: "feuille",
           detail: "Texte indiquant le nom de la feuille vers laquelle pointe l'adresse.",
           example: "\"Sheet2\"",
           require: "o",
@@ -3964,7 +3964,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference_as_string",
+          name: "référence_cellule_sous_forme_chaîne",
           detail: "Une référence de cellule, écrite sous forme de chaîne entourée de guillemets.",
           example: "\"Sheet2!\"&B10",
           require: "m",
@@ -3972,7 +3972,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "is_A1_notation",
+          name: "est_notation_a1",
           detail: "Indique si la référence de cellule est en notation A1 (TRUE) ou R1C1 (FALSE).",
           example: "FALSE()",
           require: "o",
@@ -3992,7 +3992,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "référence_cellule",
           detail: "Cellule dont le numéro de ligne sera renvoyé.",
           example: "A9",
           require: "o",
@@ -4012,7 +4012,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "plage",
           detail: "Plage dont le nombre de lignes sera renvoyé.",
           example: "A9:A62",
           require: "m",
@@ -4032,7 +4032,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "référence_cellule",
           detail: "Cellule dont le numéro de colonne sera renvoyé. La colonne `A` correspond à `1`.",
           example: "A9",
           require: "o",
@@ -4052,7 +4052,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "plage",
           detail: "Plage dont le nombre de colonnes sera renvoyé.",
           example: "A9:W62",
           require: "m",
@@ -4072,7 +4072,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "référence_cellule",
           detail: "Point de départ à partir duquel compter les lignes et colonnes décalées.",
           example: "A2",
           require: "m",
@@ -4080,7 +4080,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "offset_rows",
+          name: "décalage_lignes",
           detail: "Le nombre de lignes à décaler.",
           example: "3",
           require: "m",
@@ -4088,7 +4088,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "offset_columns",
+          name: "décalage_colonnes",
           detail: "Le nombre de colonnes à décaler.",
           example: "4",
           require: "m",
@@ -4096,7 +4096,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "height",
+          name: "hauteur",
           detail: "Hauteur de la plage à renvoyer en commençant à la cible de décalage.",
           example: "2",
           require: "o",
@@ -4104,7 +4104,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "width",
+          name: "largeur",
           detail: "La largeur de la plage à renvoyer en commençant à la cible de décalage.",
           example: "2",
           require: "o",
@@ -4124,7 +4124,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "clé_recherche",
           detail: "La valeur à rechercher. Par exemple, ` 42 `, ` ` Chats ` ` ou ` I24 `.",
           example: "\"Sunday\"",
           require: "m",
@@ -4132,7 +4132,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
+          name: "plage",
           detail: "Le tableau unidimensionnel à rechercher.",
           example: "A2:A9",
           require: "m",
@@ -4140,8 +4140,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "search_type",
-          detail: "La méthode de recherche. `1` (par défaut) trouve la plus grande valeur inférieure ou égale à `search_key` lorsque `range` est triée par ordre croissant. `0` trouve la valeur exacte lorsque `range` n'est pas trié. `-1` trouve la plus petite valeur supérieure ou égale à `search_key` lorsque `range` est trié par ordre décroissant.",
+          name: "type_recherche",
+          detail: "La méthode de recherche. `1` (par défaut) trouve la plus grande valeur inférieure ou égale à `clé_recherche` lorsque `plage` est triée par ordre croissant. `0` trouve la valeur exacte lorsque `plage` n'est pas trié. `-1` trouve la plus petite valeur supérieure ou égale à `clé_recherche` lorsque `plage` est trié par ordre décroissant.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -4160,7 +4160,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
+          name: "référence",
           detail: "Tableau de cellules dans lequel le décalage est effectué.",
           example: "A1:C20",
           require: "m",
@@ -4168,7 +4168,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "row",
+          name: "ligne",
           detail: "Le nombre de lignes décalées.",
           example: "5",
           require: "m",
@@ -4176,7 +4176,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "column",
+          name: "colonne",
           detail: "Le nombre de colonnes décalées.",
           example: "1",
           require: "m",
@@ -4196,15 +4196,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "value_name",
+          name: "nom_valeur",
           detail: "Le nom de la valeur du tableau croisé dynamique pour laquelle vous souhaitez obtenir des données.",
-          example: "\"SUM of number of units\"",
+          example: "\"SOMME du nombre d'unités\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "any_pivot_table_cell",
+          name: "cellule_tableau_croisé",
           detail: "Toute référence à une cellule du tableau croisé dynamique souhaité (coin supérieur recommandé).",
           example: "'Pivot table'!A1",
           require: "m",
@@ -4212,7 +4212,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "original_column",
+          name: "colonne_origine",
           detail: "Le nom de la colonne dans l'ensemble de données d'origine (pas le tableau croisé dynamique).",
           example: "\"division\"",
           require: "o",
@@ -4220,7 +4220,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "pivot_item",
+          name: "élément_tcd",
           detail: "Le nom de la ligne ou de la colonne affichée dans le tableau croisé dynamique correspondant à *original_column* que vous souhaitez récupérer.",
           example: "\"east\"",
           require: "o",
@@ -4248,7 +4248,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "choice1",
+          name: "choix1",
           detail: "Une valeur potentielle à restituer. Requis. Peut être une référence à une cellule ou à une valeur individuelle.",
           example: "\"A\"",
           require: "m",
@@ -4256,7 +4256,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "choice2",
+          name: "choix2",
           detail: "Valeurs supplémentaires parmi lesquelles choisir.",
           example: "\"B\"",
           require: "o",
@@ -4280,7 +4280,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "link_label",
+          name: "étiquette_lien",
           detail: "Le texte à afficher dans la cellule sous forme de lien, entre guillemets, ou une référence à une cellule contenant une telle étiquette.",
           example: "\"luckysheet\"",
           require: "m",
@@ -4300,7 +4300,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "hour",
+          name: "heure",
           detail: "La composante horaire du temps.",
           example: "11",
           require: "m",
@@ -4316,7 +4316,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "second",
+          name: "seconde",
           detail: "La deuxième composante du temps.",
           example: "59",
           require: "m",
@@ -4336,9 +4336,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "time_string",
+          name: "chaîne_heure",
           detail: "La chaîne qui contient la représentation temporelle.",
-          example: "\"2:15 PM\"",
+          example: "\"14:15:00\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -4356,7 +4356,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "date_début",
           detail: "La date à partir de laquelle calculer le résultat.",
           example: "DATE(1969",
           require: "m",
@@ -4364,7 +4364,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "months",
+          name: "nombre_de_mois",
           detail: "Le nombre de mois avant (négatif) ou après (positif) 'start_date' à prendre en compte.",
           example: "7",
           require: "m",
@@ -4384,7 +4384,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "date_début",
           detail: "La date à partir de laquelle calculer le résultat.",
           example: "DATE(1969",
           require: "m",
@@ -4392,7 +4392,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "months",
+          name: "nombre_de_mois",
           detail: "Le nombre de mois avant (négatif) ou après (positif) 'start_date' à calculer.",
           example: "7",
           require: "m",
@@ -4412,7 +4412,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "heure",
           detail: "Le moment à partir duquel calculer la deuxième composante",
           example: "TIME(11",
           require: "m",
@@ -4432,7 +4432,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "heure",
           detail: "Heure à partir de laquelle calculer la composante minute.",
           example: "TIME(11",
           require: "m",
@@ -4452,7 +4452,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "heure",
           detail: "Heure à partir de laquelle calculer la composante horaire.",
           example: "TIME(11",
           require: "m",
@@ -4483,7 +4483,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "date_début",
           detail: "Date de début de la période à partir de laquelle calculer le nombre de jours ouvrés nets.",
           example: "DATE(1969",
           require: "m",
@@ -4491,7 +4491,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "date_fin",
           detail: "Date de fin de période à partir de laquelle calculer le nombre de jours ouvrés nets.",
           example: "7",
           require: "m",
@@ -4499,7 +4499,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "jours_fériés",
           detail: "Constante de plage ou de tableau contenant les numéros de série de date à prendre en compte les jours fériés.",
           example: "16)",
           require: "o",
@@ -4519,7 +4519,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "date_début",
           detail: "Date de début de la période à partir de laquelle calculer le nombre de jours ouvrés nets.",
           example: "DATE(1969",
           require: "m",
@@ -4527,7 +4527,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "date_fin",
           detail: "Date de fin de période à partir de laquelle calculer le nombre de jours ouvrés nets.",
           example: "7",
           require: "m",
@@ -4535,7 +4535,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "weekend",
+          name: "week_end",
           detail: "Un nombre ou une chaîne représentant les jours de la semaine qui sont considérés comme des week-ends.",
           example: "16)",
           require: "o",
@@ -4543,7 +4543,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "jours_fériés",
           detail: "Constante de plage ou de tableau contenant les dates à considérer comme jours fériés.",
           example: "DATE(1969",
           require: "o",
@@ -4659,7 +4659,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "end_date",
+          name: "date_fin",
           detail: "La fin de la plage de dates.",
           example: "2011-3-15",
           require: "m",
@@ -4667,7 +4667,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "start_date",
+          name: "date_début",
           detail: "Le début de la plage de dates.",
           example: "2011-2-1",
           require: "m",
@@ -4687,7 +4687,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "date_début",
           detail: "La date de début à prendre en compte dans le calcul. Doit être une référence à une cellule contenant une date, une fonction renvoyant un type de date ou un nombre.",
           example: "DATE(1969",
           require: "m",
@@ -4695,7 +4695,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "date_fin",
           detail: "La date de fin à prendre en compte dans le calcul. Doit être une référence à une cellule contenant une date, une fonction renvoyant un type de date ou un nombre.",
           example: "7",
           require: "m",
@@ -4703,7 +4703,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "method",
+          name: "méthode",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "FALSE()",
           require: "o",
@@ -4723,7 +4723,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "year",
+          name: "année",
           detail: "Composant année de la date.",
           example: "1969",
           require: "m",
@@ -4731,7 +4731,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "month",
+          name: "mois",
           detail: "Le composant mois de la date.",
           example: "7",
           require: "m",
@@ -4739,7 +4739,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day",
+          name: "jour",
           detail: "Composant jour de la date.",
           example: "20",
           require: "m",
@@ -4759,7 +4759,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date_string",
+          name: "chaîne_date",
           detail: "La chaîne représentant la date.",
           example: "\"1969-7-20\"",
           require: "m",
@@ -4779,7 +4779,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "date_début",
           detail: "La date de début à prendre en compte dans le calcul. Doit être une référence à une cellule contenant une date, une fonction renvoyant un type de date ou un nombre.",
           example: "DATE(1969",
           require: "m",
@@ -4787,7 +4787,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "date_fin",
           detail: "La date de fin à prendre en compte dans le calcul. Doit être une référence à une cellule contenant une date, une fonction renvoyant un type de date ou un nombre.",
           example: "7",
           require: "m",
@@ -4795,7 +4795,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "unit",
+          name: "unité",
           detail: "Abréviation de chaîne pour unité de temps. Par exemple, ` M ` pour mois. Les valeurs acceptées sont `Y`, `M`, `D`, `MD`, `YM`, `YD`.",
           example: "16)",
           require: "m",
@@ -4815,7 +4815,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "date_début",
           detail: "La date à partir de laquelle commencer à compter.",
           example: "DATE(1969",
           require: "m",
@@ -4823,15 +4823,15 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "num_days",
-          detail: "Le nombre de jours ouvrables à avancer à partir de `start_date`. Si négatif, compte à rebours.",
+          name: "nombre_jours",
+          detail: "Le nombre de jours ouvrables à avancer à partir de `date_début`. Si négatif, compte à rebours.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "holidays",
+          name: "jours_fériés",
           detail: "Constante de plage ou de tableau contenant les dates à prendre en compte les jours fériés.",
           example: "16)",
           require: "o",
@@ -4851,7 +4851,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "date_début",
           detail: "La date à partir de laquelle commencer à compter.",
           example: "DATE(1969",
           require: "m",
@@ -4859,15 +4859,15 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "num_days",
-          detail: "Le nombre de jours ouvrables à avancer à partir de `start_date`. Si négatif, compte à rebours.",
+          name: "nombre_jours",
+          detail: "Le nombre de jours ouvrables à avancer à partir de `date_début`. Si négatif, compte à rebours.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "weekend",
+          name: "week_end",
           detail: "Un nombre ou une chaîne représentant les jours de la semaine qui sont considérés comme des week-ends.",
           example: "16)",
           require: "o",
@@ -4875,7 +4875,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "jours_fériés",
           detail: "Constante de plage ou de tableau contenant les dates à prendre en compte les jours fériés.",
           example: "DATE(1969",
           require: "o",
@@ -4915,7 +4915,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "date_début",
           detail: "La date de début à prendre en compte dans le calcul. Doit être une référence à une cellule contenant une date, une fonction renvoyant un type de date ou un nombre.",
           example: "DATE(1969",
           require: "m",
@@ -4923,7 +4923,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "date_fin",
           detail: "La date de fin à prendre en compte dans le calcul. Doit être une référence à une cellule contenant une date, une fonction renvoyant un type de date ou un nombre.",
           example: "7",
           require: "m",
@@ -4931,7 +4931,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "16)",
           require: "o",
@@ -4982,7 +4982,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "nominal_rate",
+          name: "taux_nominal",
           detail: "Le taux d'intérêt nominal par an.",
           example: "0.99",
           require: "m",
@@ -4990,7 +4990,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
+          name: "périodes_par_an",
           detail: "Le nombre de périodes de composition par an.",
           example: "12",
           require: "m",
@@ -5010,7 +5010,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "nombre",
           detail: "La valeur à formater.",
           example: "1.2351",
           require: "m",
@@ -5018,7 +5018,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
+          name: "nombre_décimales",
           detail: "Le nombre de décimales à afficher.",
           example: "4",
           require: "m",
@@ -5038,7 +5038,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "fractional_price",
+          name: "prix_fractionnaire",
           detail: "Le devis donné en utilisant des conventions décimales fractionnaires.",
           example: "100.10",
           require: "m",
@@ -5046,7 +5046,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "unit",
+          name: "unité",
           detail: "Les unités de la fraction, par ex. ` 8 ` pour 1/8ème ou ` 32 ` pour 1/32ème.",
           example: "32",
           require: "m",
@@ -5066,7 +5066,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_price",
+          name: "prix_décimal",
           detail: "L'offre de prix donnée sous forme de valeur décimale.",
           example: "100.125",
           require: "m",
@@ -5074,7 +5074,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "unit",
+          name: "unité",
           detail: "Les unités de la fraction souhaitée, par ex. ` 8 ` pour 1/8ème ou ` 32 ` pour 1/32ème.",
           example: "32",
           require: "m",
@@ -5094,7 +5094,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "coût",
           detail: "Le coût initial de l'actif.",
           example: "100",
           require: "m",
@@ -5102,7 +5102,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "valeur_résiduelle",
           detail: "La valeur du bien à la fin de l'amortissement.",
           example: "50",
           require: "m",
@@ -5110,7 +5110,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "durée_vie",
           detail: "Le nombre de périodes sur lesquelles l'actif est amorti.",
           example: "10",
           require: "m",
@@ -5118,7 +5118,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "période",
           detail: "La seule période de la `vie` pour laquelle calculer l'amortissement.",
           example: "2",
           require: "m",
@@ -5126,7 +5126,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "month",
+          name: "mois",
           detail: "Le nombre de mois au cours de la première année d'amortissement.",
           example: "10",
           require: "m",
@@ -5146,7 +5146,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "coût",
           detail: "Le coût initial de l'actif.",
           example: "100",
           require: "m",
@@ -5154,7 +5154,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "valeur_résiduelle",
           detail: "La valeur du bien à la fin de l'amortissement.",
           example: "50",
           require: "m",
@@ -5162,7 +5162,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "durée_vie",
           detail: "Le nombre de périodes sur lesquelles l'actif est amorti.",
           example: "10",
           require: "m",
@@ -5170,7 +5170,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "période",
           detail: "La seule période de la `vie` pour laquelle calculer l'amortissement.",
           example: "2",
           require: "m",
@@ -5178,7 +5178,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor",
+          name: "facteur",
           detail: "Le facteur par lequel la dépréciation diminue.",
           example: "2.25",
           require: "m",
@@ -5198,7 +5198,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number_of_periods",
+          name: "nombre_périodes",
           detail: "Le nombre de paiements à effectuer.",
           example: "12",
           require: "m",
@@ -5206,7 +5206,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_per_period",
+          name: "paiement_par_période",
           detail: "Le montant par période à payer.",
           example: "-100",
           require: "m",
@@ -5214,7 +5214,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "valeur_actuelle",
           detail: "La valeur actuelle de la rente.",
           example: "400",
           require: "m",
@@ -5222,7 +5222,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "valeur_future",
           detail: "La valeur future restant après le paiement final.",
           example: "0",
           require: "o",
@@ -5230,7 +5230,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "fin_ou_début",
           detail: "Si les paiements sont dus à la fin (`0`) ou au début (`1`) de chaque période.",
           example: "0",
           require: "o",
@@ -5238,7 +5238,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "rate_guess",
+          name: "estimation_taux",
           detail: "Une estimation du taux d’intérêt.",
           example: "0.1",
           require: "o",
@@ -5258,7 +5258,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d'intérêt.",
           example: "0.12",
           require: "m",
@@ -5266,7 +5266,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "nombre_périodes",
           detail: "Le nombre de paiements à effectuer.",
           example: "12",
           require: "m",
@@ -5274,7 +5274,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "valeur_actuelle",
           detail: "La valeur actuelle de la rente.",
           example: "100",
           require: "m",
@@ -5282,7 +5282,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "first_period",
+          name: "première_période",
           detail: "Le numéro de la période de paiement pour commencer le calcul cumulé.",
           example: "1",
           require: "m",
@@ -5290,7 +5290,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "last_period",
+          name: "dernière_période",
           detail: "Le numéro de la période de paiement pour terminer le calcul cumulé.",
           example: "5",
           require: "m",
@@ -5298,7 +5298,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "fin_ou_début",
           detail: "Si les paiements sont dus à la fin (`0`) ou au début (`1`) de chaque période.",
           example: "0",
           require: "m",
@@ -5318,7 +5318,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -5326,7 +5326,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "02",
           require: "m",
@@ -5334,7 +5334,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "fréquence",
           detail: "Le nombre de paiements d’intérêts ou de coupons par an (1, 2 ou 4).",
           example: "1",
           require: "m",
@@ -5342,7 +5342,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "o",
@@ -5362,7 +5362,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "coût",
           detail: "Le coût initial de l'actif.",
           example: "100",
           require: "m",
@@ -5370,7 +5370,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "valeur_résiduelle",
           detail: "La valeur du bien à la fin de l'amortissement.",
           example: "50",
           require: "m",
@@ -5378,7 +5378,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "durée_vie",
           detail: "Le nombre de périodes sur lesquelles l'actif est amorti.",
           example: "10",
           require: "m",
@@ -5386,7 +5386,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "période",
           detail: "La seule période de la `vie` pour laquelle calculer l'amortissement.",
           example: "2",
           require: "m",
@@ -5406,7 +5406,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -5414,7 +5414,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "1",
           require: "m",
@@ -5422,7 +5422,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "taux_escompte",
           detail: "Le taux d'escompte de la facture au moment de l'achat.",
           example: "2)",
           require: "m",
@@ -5442,7 +5442,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -5450,7 +5450,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -5458,7 +5458,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "price",
+          name: "prix",
           detail: "Le prix auquel le titre est acheté pour 100 de sa valeur nominale.",
           example: "95",
           require: "m",
@@ -5478,7 +5478,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -5486,7 +5486,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -5494,7 +5494,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "taux_escompte",
           detail: "Le taux d'escompte de la facture au moment de l'achat.",
           example: "0.09",
           require: "m",
@@ -5514,7 +5514,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d'intérêt.",
           example: "2",
           require: "m",
@@ -5522,7 +5522,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "nombre_périodes",
           detail: "Le nombre de paiements à effectuer.",
           example: "12",
           require: "m",
@@ -5530,7 +5530,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
+          name: "montant_paiement",
           detail: "Le montant par période à payer.",
           example: "100",
           require: "m",
@@ -5538,7 +5538,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "valeur_future",
           detail: "La valeur future restant après le paiement final.",
           example: "D2",
           require: "o",
@@ -5546,7 +5546,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "fin_ou_début",
           detail: "Si les paiements sont dus à la fin (`0`) ou au début (`1`) de chaque période.",
           example: "1",
           require: "o",
@@ -5566,7 +5566,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
+          name: "date_émission",
           detail: "La date à laquelle le titre a été initialement émis.",
           example: "DATE(2010",
           require: "m",
@@ -5574,7 +5574,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "first_payment",
+          name: "premier_paiement",
           detail: "Les intérêts de première date seront payés.",
           example: "DATE(2010",
           require: "m",
@@ -5582,7 +5582,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -5590,7 +5590,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d’intérêt annualisé.",
           example: "0.1",
           require: "m",
@@ -5598,7 +5598,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "valeur_remboursement",
           detail: "Le montant du rachat par 100 de valeur nominale, ou pair.",
           example: "10000",
           require: "m",
@@ -5606,7 +5606,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "fréquence",
           detail: "Le nombre de paiements d’intérêts ou de coupons par an (1, 2 ou 4).",
           example: "1",
           require: "m",
@@ -5614,7 +5614,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "o",
@@ -5622,7 +5622,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "calc_method",
+          name: "méthode_calcul",
           detail: "[Facultatif par défaut : TRUE()] - Une valeur logique qui spécifie la méthode utilisée pour calculer le total des intérêts courus lorsque la date de règlement est postérieure à la première date d'accumulation des intérêts. Si la valeur est VRAI, le total des intérêts courus depuis la date d'émission jusqu'à la date de règlement est renvoyé. Si la valeur est FAUX, renvoyez les intérêts courus depuis la première date d’accumulation des intérêts jusqu’à la date de règlement.",
           example: "TRUE()",
           require: "o",
@@ -5642,7 +5642,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
+          name: "date_émission",
           detail: "La date à laquelle le titre a été initialement émis.",
           example: "DATE(1969",
           require: "m",
@@ -5650,7 +5650,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "La date d'échéance du titre.",
           example: "DATE(1969",
           require: "m",
@@ -5658,7 +5658,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d’intérêt annualisé.",
           example: "0.1",
           require: "m",
@@ -5666,7 +5666,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "valeur_remboursement",
           detail: "Le montant du rachat par 100 de valeur nominale, ou pair.",
           example: "1000",
           require: "m",
@@ -5674,7 +5674,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "12",
           require: "m",
@@ -5694,7 +5694,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -5702,7 +5702,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -5710,7 +5710,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "fréquence",
           detail: "Le nombre de paiements d’intérêts ou de coupons par an (1, 2 ou 4).",
           example: "1",
           require: "m",
@@ -5718,7 +5718,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "o",
@@ -5738,7 +5738,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -5746,7 +5746,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -5754,7 +5754,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "fréquence",
           detail: "Le nombre de paiements d’intérêts ou de coupons par an (1, 2 ou 4).",
           example: "1",
           require: "m",
@@ -5762,7 +5762,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "o",
@@ -5782,7 +5782,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -5790,7 +5790,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -5798,7 +5798,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "fréquence",
           detail: "Le nombre de paiements d’intérêts ou de coupons par an (1, 2 ou 4).",
           example: "1",
           require: "m",
@@ -5806,7 +5806,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "o",
@@ -5826,7 +5826,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -5834,7 +5834,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -5842,7 +5842,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "fréquence",
           detail: "Le nombre de paiements d’intérêts ou de coupons par an (1, 2 ou 4).",
           example: "01)",
           require: "m",
@@ -5850,7 +5850,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "DATE(2019",
           require: "o",
@@ -5870,7 +5870,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -5878,7 +5878,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -5886,7 +5886,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "fréquence",
           detail: "Le nombre de paiements d’intérêts ou de coupons par an (1, 2 ou 4).",
           example: "01)",
           require: "m",
@@ -5894,7 +5894,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "DATE(2019",
           require: "o",
@@ -5914,7 +5914,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d'intérêt.",
           example: "0.12",
           require: "m",
@@ -5922,7 +5922,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "nombre_périodes",
           detail: "Le nombre de paiements à effectuer.",
           example: "12",
           require: "m",
@@ -5930,7 +5930,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
+          name: "montant_paiement",
           detail: "Le montant par période à payer.",
           example: "100",
           require: "m",
@@ -5938,7 +5938,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "valeur_actuelle",
           detail: "La valeur actuelle de la rente.",
           example: "400",
           require: "m",
@@ -5946,7 +5946,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "fin_ou_début",
           detail: "Si les paiements sont dus à la fin (`0`) ou au début (`1`) de chaque période.",
           example: "1",
           require: "m",
@@ -5966,7 +5966,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "principal",
+          name: "capital",
           detail: "Le montant du capital initial ou de la valeur sur laquelle composer.",
           example: "10000",
           require: "m",
@@ -5974,8 +5974,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "rate_schedule",
-          detail: "Une série de taux d'intérêt à composer par rapport au `principal`.",
+          name: "barème_taux",
+          detail: "Une série de taux d'intérêt à composer par rapport au `capital`.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -5994,7 +5994,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -6002,7 +6002,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -6010,7 +6010,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d’intérêt annualisé.",
           example: "0.057",
           require: "m",
@@ -6018,7 +6018,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "price",
+          name: "prix",
           detail: "Le prix auquel le titre est acheté pour 100 de sa valeur nominale.",
           example: "95",
           require: "m",
@@ -6026,7 +6026,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "valeur_remboursement",
           detail: "Le montant du rachat par 100 de valeur nominale, ou pair.",
           example: "100",
           require: "m",
@@ -6034,7 +6034,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "fréquence",
           detail: "Le nombre de paiements d’intérêts ou de coupons par an (1, 2 ou 4).",
           example: "1",
           require: "m",
@@ -6042,7 +6042,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "m",
@@ -6062,7 +6062,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -6070,7 +6070,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -6078,7 +6078,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "price",
+          name: "prix",
           detail: "Le prix auquel le titre est acheté pour 100 de sa valeur nominale.",
           example: "95",
           require: "m",
@@ -6086,7 +6086,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "valeur_remboursement",
           detail: "Le montant du rachat par 100 de valeur nominale, ou pair.",
           example: "100",
           require: "m",
@@ -6094,7 +6094,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "m",
@@ -6114,7 +6114,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "effective_rate",
+          name: "taux_effectif",
           detail: "Le taux d’intérêt effectif par an.",
           example: "0.85",
           require: "m",
@@ -6122,7 +6122,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
+          name: "périodes_par_an",
           detail: "Le nombre de périodes de composition par an.",
           example: "12",
           require: "m",
@@ -6142,7 +6142,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
+          name: "montants_flux_trésorerie",
           detail: "Tableau ou plage contenant les revenus ou les paiements associés à l'investissement.",
           example: "B2:B25",
           require: "m",
@@ -6150,15 +6150,15 @@ module.exports = {
           type: "range"
         },
         {
-          name: "cashflow_dates",
-          detail: "Un tableau ou une plage avec des dates correspondant aux flux de trésorerie dans `cashflow_amounts`.",
+          name: "dates_flux_trésorerie",
+          detail: "Un tableau ou une plage avec des dates correspondant aux flux de trésorerie dans `montants_flux_trésorerie`.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "rate_guess",
+          name: "estimation_taux",
           detail: "Une estimation du taux de rendement interne.",
           example: "250",
           require: "o",
@@ -6178,7 +6178,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
+          name: "montants_flux_trésorerie",
           detail: "Tableau ou plage contenant les revenus ou les paiements associés à l'investissement.",
           example: "A2:A25",
           require: "m",
@@ -6186,7 +6186,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "financing_rate",
+          name: "taux_financement",
           detail: "Le taux d'intérêt payé sur les fonds investis.",
           example: "0.1",
           require: "m",
@@ -6194,7 +6194,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "reinvestment_return_rate",
+          name: "taux_rendement_réinvestissement",
           detail: "Le rendement (en pourcentage) obtenu sur le réinvestissement des revenus reçus de l'investissement.",
           example: "0.12",
           require: "m",
@@ -6214,7 +6214,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
+          name: "montants_flux_trésorerie",
           detail: "Tableau ou plage contenant les revenus ou les paiements associés à l'investissement.",
           example: "A2:A25",
           require: "m",
@@ -6222,7 +6222,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "rate_guess",
+          name: "estimation_taux",
           detail: "Une estimation du taux de rendement interne.",
           example: "200",
           require: "o",
@@ -6242,7 +6242,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
+          name: "taux_escompte",
           detail: "Le taux d'actualisation de l'investissement sur une période.",
           example: "0.1",
           require: "m",
@@ -6250,7 +6250,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cashflow1",
+          name: "flux_trésorerie1",
           detail: "Le premier flux de trésorerie futur.",
           example: "200",
           require: "m",
@@ -6258,7 +6258,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "cashflow2",
+          name: "flux_trésorerie2",
           detail: "Flux de trésorerie futurs supplémentaires.",
           example: "250",
           require: "o",
@@ -6278,7 +6278,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
+          name: "taux_escompte",
           detail: "Le taux d'actualisation de l'investissement sur une période.",
           example: "A2",
           require: "m",
@@ -6286,7 +6286,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cashflow_amounts",
+          name: "montants_flux_trésorerie",
           detail: "Plage de cellules contenant les revenus ou les paiements associés à l'investissement.",
           example: "B2:B25",
           require: "m",
@@ -6294,8 +6294,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "cashflow_dates",
-          detail: "Une plage de cellules avec des dates correspondant aux flux de trésorerie dans `cashflow_amounts`.",
+          name: "dates_flux_trésorerie",
+          detail: "Une plage de cellules avec des dates correspondant aux flux de trésorerie dans `montants_flux_trésorerie`.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6314,7 +6314,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d'intérêt.",
           example: "0.12",
           require: "m",
@@ -6322,7 +6322,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "nombre_périodes",
           detail: "Le nombre de paiements à effectuer.",
           example: "12",
           require: "m",
@@ -6330,7 +6330,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "valeur_actuelle",
           detail: "La valeur actuelle de la rente.",
           example: "100",
           require: "m",
@@ -6338,7 +6338,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "first_period",
+          name: "première_période",
           detail: "Le numéro de la période de paiement pour commencer le calcul cumulé.",
           example: "1",
           require: "m",
@@ -6346,7 +6346,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "last_period",
+          name: "dernière_période",
           detail: "Le numéro de la période de paiement pour terminer le calcul cumulé.",
           example: "5",
           require: "m",
@@ -6354,7 +6354,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "fin_ou_début",
           detail: "Si les paiements sont dus à la fin (`0`) ou au début (`1`) de chaque période.",
           example: "0",
           require: "m",
@@ -6374,7 +6374,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d'intérêt.",
           example: "0.08",
           require: "m",
@@ -6382,7 +6382,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "nombre_périodes",
           detail: "Le nombre de paiements à effectuer.",
           example: "12",
           require: "m",
@@ -6390,7 +6390,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "valeur_actuelle",
           detail: "La valeur actuelle de la rente.",
           example: " 100000",
           require: "m",
@@ -6398,7 +6398,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "valeur_future",
           detail: "La valeur future restant après le paiement final.",
           example: "D2",
           require: "m",
@@ -6406,7 +6406,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "fin_ou_début",
           detail: "Si les paiements sont dus à la fin (`0`) ou au début (`1`) de chaque période.",
           example: "1",
           require: "m",
@@ -6426,7 +6426,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d'intérêt.",
           example: "0.1",
           require: "m",
@@ -6434,7 +6434,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "période",
           detail: "La durée d'amortissement, en nombre de périodes.",
           example: "1",
           require: "m",
@@ -6442,7 +6442,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "nombre_périodes",
           detail: "Le nombre de paiements à effectuer.",
           example: "12",
           require: "m",
@@ -6450,7 +6450,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "valeur_actuelle",
           detail: "La valeur actuelle de la rente.",
           example: "80000",
           require: "m",
@@ -6458,7 +6458,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "valeur_future",
           detail: "La valeur future restant après le paiement final.",
           example: "E2",
           require: "m",
@@ -6466,7 +6466,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "fin_ou_début",
           detail: "Si les paiements sont dus à la fin (`0`) ou au début (`1`) de chaque période.",
           example: "1",
           require: "m",
@@ -6486,7 +6486,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d'intérêt.",
           example: "0.1",
           require: "m",
@@ -6494,7 +6494,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "période",
           detail: "La durée d'amortissement, en nombre de périodes.",
           example: "1",
           require: "m",
@@ -6502,7 +6502,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "nombre_périodes",
           detail: "Le nombre de paiements à effectuer.",
           example: "3*12",
           require: "m",
@@ -6510,7 +6510,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "valeur_actuelle",
           detail: "La valeur actuelle de la rente.",
           example: "100000",
           require: "m",
@@ -6518,7 +6518,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "valeur_future",
           detail: "La valeur future restant après le paiement final.",
           example: "0",
           require: "o",
@@ -6526,7 +6526,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "fin_ou_début",
           detail: "Si les paiements sont dus à la fin (`0`) ou au début (`1`) de chaque période.",
           example: "0",
           require: "o",
@@ -6546,7 +6546,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "buy_date",
+          name: "date_achat",
           detail: "La date d'achat de l'investissement.",
           example: "DATE(2010",
           require: "m",
@@ -6554,7 +6554,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "sell_date",
+          name: "date_vente",
           detail: "La date de vente de l'investissement.",
           example: "DATE(2010",
           require: "m",
@@ -6562,7 +6562,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "buy_price",
+          name: "prix_achat",
           detail: "Le prix auquel l'investissement a été acheté.",
           example: "100000",
           require: "m",
@@ -6570,7 +6570,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "sell_price",
+          name: "prix_vente",
           detail: "Le prix auquel l'investissement a été vendu.",
           example: "101200",
           require: "m",
@@ -6578,7 +6578,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "12",
           require: "m",
@@ -6598,7 +6598,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -6606,7 +6606,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -6614,7 +6614,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d’intérêt annualisé.",
           example: "0.057",
           require: "m",
@@ -6622,7 +6622,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "rendement",
           detail: "Le rendement annuel attendu du titre.",
           example: "0.065",
           require: "m",
@@ -6630,7 +6630,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "valeur_remboursement",
           detail: "Le montant du rachat par 100 de valeur nominale, ou pair.",
           example: "100",
           require: "m",
@@ -6638,7 +6638,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "fréquence",
           detail: "Le nombre de paiements d’intérêts ou de coupons par an (1, 2 ou 4).",
           example: "1",
           require: "m",
@@ -6646,7 +6646,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "o",
@@ -6666,7 +6666,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -6674,7 +6674,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -6682,7 +6682,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "taux_escompte",
           detail: "Le taux d'actualisation du titre au moment de l'achat.",
           example: "0.0525",
           require: "m",
@@ -6690,7 +6690,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "valeur_remboursement",
           detail: "Le montant du rachat par 100 de valeur nominale, ou pair.",
           example: "100",
           require: "m",
@@ -6698,7 +6698,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "o",
@@ -6718,7 +6718,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -6726,7 +6726,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -6734,7 +6734,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "issue",
+          name: "date_émission",
           detail: "La date à laquelle le titre a été initialement émis.",
           example: "DATE(2010",
           require: "m",
@@ -6742,7 +6742,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d’intérêt annualisé.",
           example: "0.061",
           require: "m",
@@ -6750,7 +6750,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "rendement",
           detail: "Le rendement annuel attendu du titre.",
           example: "0.061",
           require: "m",
@@ -6758,7 +6758,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "o",
@@ -6778,7 +6778,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -6786,7 +6786,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -6794,7 +6794,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "investment",
+          name: "investissement",
           detail: "Le montant investi (indépendamment de la valeur nominale de chaque titre).",
           example: "10000000",
           require: "m",
@@ -6802,7 +6802,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "discount",
+          name: "taux_escompte",
           detail: "Le taux d'actualisation du titre dans lequel vous investissez.",
           example: "0.0575",
           require: "m",
@@ -6810,7 +6810,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "12",
           require: "o",
@@ -6830,7 +6830,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -6838,7 +6838,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -6846,7 +6846,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "price",
+          name: "prix",
           detail: "Le prix auquel le titre est acheté pour 100 de sa valeur nominale.",
           example: "97.975",
           require: "m",
@@ -6854,7 +6854,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "valeur_remboursement",
           detail: "Le montant du rachat par 100 de valeur nominale, ou pair.",
           example: "100",
           require: "m",
@@ -6862,7 +6862,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "12",
           require: "o",
@@ -6882,7 +6882,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d'intérêt.",
           example: "0.12",
           require: "m",
@@ -6890,7 +6890,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
+          name: "montant_paiement",
           detail: "Le montant de chaque paiement effectué.",
           example: "500",
           require: "m",
@@ -6898,7 +6898,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "valeur_actuelle",
           detail: "La valeur actuelle de la rente.",
           example: "40000",
           require: "m",
@@ -6906,7 +6906,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "valeur_future",
           detail: "La valeur future restant après le paiement final.",
           example: "0",
           require: "o",
@@ -6914,7 +6914,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "fin_ou_début",
           detail: "Si les paiements sont dus à la fin (`0`) ou au début (`1`) de chaque période.",
           example: "0",
           require: "o",
@@ -6934,7 +6934,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "coût",
           detail: "Le coût initial de l'actif.",
           example: "300000",
           require: "m",
@@ -6942,7 +6942,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "valeur_résiduelle",
           detail: "La valeur du bien à la fin de l'amortissement.",
           example: "75000",
           require: "m",
@@ -6950,7 +6950,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "durée_vie",
           detail: "Le nombre de périodes sur lesquelles l'actif est amorti.",
           example: "10",
           require: "m",
@@ -6970,7 +6970,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -6978,7 +6978,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -6986,7 +6986,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d’intérêt annualisé.",
           example: "0.08",
           require: "m",
@@ -6994,7 +6994,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "rendement",
           detail: "Le rendement annuel attendu du titre.",
           example: "0.09",
           require: "m",
@@ -7002,7 +7002,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "fréquence",
           detail: "Le nombre de paiements d’intérêts ou de coupons par an (1, 2 ou 4).",
           example: "1",
           require: "m",
@@ -7010,7 +7010,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "o",
@@ -7030,7 +7030,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "règlement",
           detail: "La date de règlement du titre, la date après émission à laquelle le titre est livré à l'acheteur.",
           example: "DATE(2010",
           require: "m",
@@ -7038,7 +7038,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "échéance",
           detail: "L'échéance ou la date de fin du titre, à laquelle il peut être racheté à sa valeur nominale ou à sa valeur nominale.",
           example: "DATE(2010",
           require: "m",
@@ -7046,7 +7046,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "taux",
           detail: "Le taux d’intérêt annualisé.",
           example: "0.08",
           require: "m",
@@ -7054,7 +7054,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "rendement",
           detail: "Le rendement annuel attendu du titre.",
           example: "0.09",
           require: "m",
@@ -7062,7 +7062,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "fréquence",
           detail: "Le nombre de paiements d’intérêts ou de coupons par an (1, 2 ou 4).",
           example: "1",
           require: "m",
@@ -7070,7 +7070,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "convention_décompte_jours",
           detail: "Un indicateur de la méthode de décompte des jours à utiliser.",
           example: "0",
           require: "o",
@@ -7090,7 +7090,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
+          name: "nombre_binaire_signé",
           detail: "Valeur binaire signée de 10 bits à convertir en décimal, fournie sous forme de chaîne.",
           example: "101",
           require: "m",
@@ -7110,7 +7110,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
+          name: "nombre_binaire_signé",
           detail: "Valeur binaire signée de 10 bits à convertir en valeur hexadémique signée, fournie sous forme de chaîne.",
           example: "101",
           require: "m",
@@ -7118,7 +7118,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "chiffres_significatifs",
           detail: "Le nombre de chiffres significatifs à garantir dans le résultat.",
           example: "8",
           require: "o",
@@ -7138,7 +7138,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
+          name: "nombre_binaire_signé",
           detail: "Valeur binaire signée de 10 bits à convertir en octal signé, fournie sous forme de chaîne.",
           example: "101",
           require: "m",
@@ -7146,7 +7146,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "chiffres_significatifs",
           detail: "Le nombre de chiffres significatifs à garantir dans le résultat.",
           example: "8",
           require: "o",
@@ -7166,7 +7166,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
+          name: "nombre_décimal",
           detail: "La valeur décimale à convertir en binaire signé, fournie sous forme de chaîne.",
           example: "100",
           require: "m",
@@ -7174,7 +7174,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "chiffres_significatifs",
           detail: "Le nombre de chiffres significatifs à garantir dans le résultat.",
           example: "8",
           require: "o",
@@ -7194,7 +7194,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
+          name: "nombre_décimal",
           detail: "La valeur décimale à convertir en hexadécimal signé, fournie sous forme de chaîne.",
           example: "100",
           require: "m",
@@ -7202,7 +7202,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "chiffres_significatifs",
           detail: "Le nombre de chiffres significatifs à garantir dans le résultat.",
           example: "8",
           require: "o",
@@ -7222,7 +7222,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
+          name: "nombre_décimal",
           detail: "La valeur décimale à convertir en octal signé, fournie sous forme de chaîne.",
           example: "100",
           require: "m",
@@ -7230,7 +7230,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "chiffres_significatifs",
           detail: "Le nombre de chiffres significatifs à garantir dans le résultat.",
           example: "8",
           require: "o",
@@ -7250,7 +7250,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
+          name: "nombre_hexadécimal_signé",
           detail: "Valeur hexadécimale signée de 40 bits à convertir en binaire signé, fournie sous forme de chaîne.",
           example: "\"f3\"",
           require: "m",
@@ -7258,7 +7258,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "chiffres_significatifs",
           detail: "Le nombre de chiffres significatifs à garantir dans le résultat.",
           example: "8",
           require: "o",
@@ -7278,7 +7278,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
+          name: "nombre_hexadécimal_signé",
           detail: "Valeur hexadécimale signée de 40 bits à convertir en décimale, fournie sous forme de chaîne.",
           example: "\"f3\"",
           require: "m",
@@ -7298,7 +7298,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
+          name: "nombre_hexadécimal_signé",
           detail: "Valeur hexadécimale signée de 40 bits à convertir en octal signé, fournie sous forme de chaîne.",
           example: "\"f3\"",
           require: "m",
@@ -7306,7 +7306,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "chiffres_significatifs",
           detail: "Le nombre de chiffres significatifs à garantir dans le résultat.",
           example: "8",
           require: "o",
@@ -7326,7 +7326,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
+          name: "nombre_octal_signé",
           detail: "Valeur octale signée de 30 bits à convertir en binaire signé, fournie sous forme de chaîne.",
           example: "37",
           require: "m",
@@ -7334,7 +7334,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "chiffres_significatifs",
           detail: "Le nombre de chiffres significatifs à garantir dans le résultat.",
           example: "8",
           require: "o",
@@ -7354,7 +7354,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
+          name: "nombre_octal_signé",
           detail: "Valeur octale signée de 30 bits à convertir en décimale, fournie sous forme de chaîne.",
           example: "37",
           require: "m",
@@ -7374,7 +7374,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
+          name: "nombre_octal_signé",
           detail: "Valeur octale signée de 30 bits à convertir en hexadécimal signé, fournie sous forme de chaîne.",
           example: "37",
           require: "m",
@@ -7382,7 +7382,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "chiffres_significatifs",
           detail: "Le nombre de chiffres significatifs à garantir dans le résultat.",
           example: "8",
           require: "o",
@@ -7402,7 +7402,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "real_part",
+          name: "partie_réelle",
           detail: "Le vrai coefficient.",
           example: "3",
           require: "m",
@@ -7410,7 +7410,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "imaginary_part",
+          name: "partie_imaginaire",
           detail: "Le coefficient imaginaire.",
           example: "4",
           require: "m",
@@ -7418,7 +7418,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "suffix",
+          name: "suffixe",
           detail: "Le suffixe du coefficient imaginaire ne peut être que ` i ` ou ` j `. En cas d'omission, `i` sera utilisé.",
           example: "\"j\"",
           require: "o",
@@ -7438,7 +7438,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
+          name: "nombre_complexe",
           detail: "Le nombre complexe, au format a+bi ou a+bj.",
           example: "\"4+5i\"",
           require: "m",
@@ -7458,7 +7458,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
+          name: "nombre_complexe",
           detail: "Le nombre complexe, au format a+bi ou a+bj.",
           example: "\"4+5i\"",
           require: "m",
@@ -7478,7 +7478,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "nombre",
           detail: "Le nombre complexe pour lequel calculer le conjugué.",
           example: "\"3+4i\"",
           require: "m",
@@ -7498,7 +7498,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "nombre",
           detail: "Le nombre complexe dont on calcule la valeur absolue.",
           example: "\"3+4i\"",
           require: "m",
@@ -7518,7 +7518,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number1",
+          name: "nombre1",
           detail: "Le premier numéro à comparer.",
           example: "2",
           require: "m",
@@ -7526,7 +7526,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number2",
+          name: "nombre2",
           detail: "Le deuxième numéro à comparer.",
           example: "1",
           require: "o",
@@ -7546,7 +7546,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Le premier nombre ou plage complexe à additionner.",
           example: "\"3+4i\"",
           require: "m",
@@ -7554,7 +7554,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Nombres ou plages complexes supplémentaires à ajouter à ` valeur1 `.",
           example: "\"5-3i\"",
           require: "o",
@@ -7574,7 +7574,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "first_number",
+          name: "premier_nombre",
           detail: "Le nombre complexe duquel soustraire second_number.",
           example: "\"6+5i\"",
           require: "m",
@@ -7582,7 +7582,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "second_number",
+          name: "deuxième_nombre",
           detail: "Le nombre complexe à soustraire de first_number.",
           example: "\"2+3i\"",
           require: "m",
@@ -7602,7 +7602,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
+          name: "facteur1",
           detail: "Premier nombre ou plage à calculer pour le produit.",
           example: "\"3+4i\"",
           require: "m",
@@ -7610,7 +7610,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "factor2",
+          name: "facteur2",
           detail: "Nombres complexes ou plages supplémentaires à calculer pour le produit.",
           example: "\"5-3i\"",
           require: "o",
@@ -7630,7 +7630,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "dividende",
           detail: "Le nombre complexe à diviser.",
           example: "\"11+16i\"",
           require: "m",
@@ -7638,7 +7638,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "divisor",
+          name: "diviseur",
           detail: "Le nombre complexe par lequel diviser.",
           example: "\"3+2i\"",
           require: "m",
@@ -7650,7 +7650,7 @@ module.exports = {
     {
       n: "NOT",
       t: 10,
-      d: "Renvoie l'opposé d'une valeur logique - `NOT(TRUE)` renvoie `FALSE`; `NOT(FALSE)` renvoie `TRUE`.",
+      d: "Renvoie l'opposé d'une valeur logique - `NOT(TRUE)` renvoie `FAUX`; `NOT(FALSE)` renvoie `VRAI`.",
       a: "Renvoie l'opposé de la valeur logique fournie.",
       m: [
         1,
@@ -7658,7 +7658,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
+          name: "expression_logique",
           detail: "Une expression ou une référence à une cellule contenant une expression qui représente une valeur logique.",
           example: "A2",
           require: "m",
@@ -7670,7 +7670,7 @@ module.exports = {
     {
       n: "TRUE",
       t: 10,
-      d: "Renvoie la valeur logique `TRUE`.",
+      d: "Renvoie la valeur logique `VRAI`.",
       a: "Valeur logique`vrai`.",
       m: [
         0,
@@ -7681,7 +7681,7 @@ module.exports = {
     {
       n: "FALSE",
       t: 10,
-      d: "Renvoie la valeur logique ` FALSE `.",
+      d: "Renvoie la valeur logique ` FAUX `.",
       a: "Valeur logique` faux `.",
       m: [
         0,
@@ -7700,7 +7700,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
+          name: "expression_logique1",
           detail: "Une expression ou une référence à une cellule contenant une expression qui représente une valeur logique, c'est-à-dire `VRAI` ou `FAUX`, ou une expression qui peut être contrainte à une valeur logique.",
           example: "A2 = \"foo\"",
           require: "m",
@@ -7708,7 +7708,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
+          name: "expression_logique2",
           detail: "Plus d'expressions qui représentent des valeurs logiques.",
           example: "A3 = \"bar\"",
           require: "o",
@@ -7728,7 +7728,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à renvoyer si la `valeur` elle-même n'est pas une erreur.",
           example: "A1",
           require: "m",
@@ -7736,9 +7736,9 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_if_error",
+          name: "valeur_si_erreur",
           detail: "La valeur que la fonction renvoie si ` valeur ` est une erreur.",
-          example: "\"Error in cell A1\"",
+          example: "\"Erreur dans la cellule A1\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -7748,7 +7748,7 @@ module.exports = {
     {
       n: "IF",
       t: 10,
-      d: "Renvoie une valeur si une expression logique est `TRUE` et une autre si elle est `FALSE`.",
+      d: "Renvoie une valeur si une expression logique est `VRAI` et une autre si elle est `FAUX`.",
       a: "Renvoie la valeur en fonction de l'expression logique.",
       m: [
         2,
@@ -7756,7 +7756,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
+          name: "expression_logique",
           detail: "Une expression ou une référence à une cellule contenant une expression qui représente une valeur logique, c'est-à-dire `VRAI` ou `FAUX`.",
           example: "A2 = \"foo\"",
           require: "m",
@@ -7764,17 +7764,17 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_if_true",
+          name: "valeur_si_vrai",
           detail: "La valeur que la fonction renvoie si ` expression_logique ` est ` VRAI `.",
-          example: "\"A2 is foo\"",
+          example: "\"A2 est foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_false",
-          detail: "La valeur que la fonction renvoie si ` expression_logique ` est ` FALSE `.",
-          example: "\"A2 was false\"",
+          name: "valeur_si_faux",
+          detail: "La valeur que la fonction renvoie si ` expression_logique ` est ` FAUX `.",
+          example: "\"A2 est faux\"",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -7792,7 +7792,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
+          name: "expression_logique1",
           detail: "Une expression ou une référence à une cellule contenant une expression qui représente une valeur logique, c'est-à-dire `VRAI` ou `FAUX`, ou une expression qui peut être contrainte à une valeur logique.",
           example: "A2 = \"foo\"",
           require: "m",
@@ -7800,7 +7800,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
+          name: "expression_logique2",
           detail: "Plus d'expressions qui évaluent des valeurs logiques.",
           example: " A3 = \"bar\"",
           require: "m",
@@ -7812,7 +7812,7 @@ module.exports = {
     {
       n: "NE",
       t: 11,
-      d: "Renvoie `TRUE` si deux valeurs spécifiées ne sont pas égales et `FALSE` sinon. Équivalent à l'opérateur `!=`.",
+      d: "Renvoie `VRAI` si deux valeurs spécifiées ne sont pas égales et `FAUX` sinon. Équivalent à l'opérateur `!=`.",
       a: "Pas égal.",
       m: [
         2,
@@ -7820,7 +7820,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur.",
           example: "A2",
           require: "m",
@@ -7828,8 +7828,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "La valeur à tester par rapport à `value1` pour l'inégalité.",
+          name: "valeur2",
+          detail: "La valeur à tester par rapport à `valeur1` pour l'inégalité.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7840,7 +7840,7 @@ module.exports = {
     {
       n: "EQ",
       t: 11,
-      d: "Renvoie `TRUE` si deux valeurs spécifiées sont égales et `FALSE` sinon. Équivalent à l'opérateur `==`.",
+      d: "Renvoie `VRAI` si deux valeurs spécifiées sont égales et `FAUX` sinon. Équivalent à l'opérateur `==`.",
       a: "Égal.",
       m: [
         2,
@@ -7848,7 +7848,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La première valeur.",
           example: "A2",
           require: "m",
@@ -7856,7 +7856,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "La valeur à tester par rapport à ` valeur1 ` pour l'égalité.",
           example: "A3",
           require: "m",
@@ -7868,7 +7868,7 @@ module.exports = {
     {
       n: "GT",
       t: 11,
-      d: "Renvoie `TRUE` si le premier argument est strictement supérieur au second, et `FALSE` sinon. Équivalent à l'opérateur `>`.",
+      d: "Renvoie `VRAI` si le premier argument est strictement supérieur au second, et `FAUX` sinon. Équivalent à l'opérateur `>`.",
       a: "Strictement supérieur à.",
       m: [
         2,
@@ -7876,7 +7876,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La valeur à tester comme étant supérieure à ` valeur2 `.",
           example: "A2",
           require: "m",
@@ -7884,7 +7884,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "La deuxième valeur.",
           example: "A3",
           require: "m",
@@ -7896,7 +7896,7 @@ module.exports = {
     {
       n: "GTE",
       t: 11,
-      d: "Renvoie `TRUE` si le premier argument est supérieur ou égal au second, et `FALSE` sinon. Équivalent à l'opérateur `>=`.",
+      d: "Renvoie `VRAI` si le premier argument est supérieur ou égal au second, et `FAUX` sinon. Équivalent à l'opérateur `>=`.",
       a: "Supérieur ou égal à.",
       m: [
         2,
@@ -7904,7 +7904,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La valeur à tester comme étant supérieure ou égale à ` valeur2 `.",
           example: "A2",
           require: "m",
@@ -7912,7 +7912,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "La deuxième valeur.",
           example: "A3",
           require: "m",
@@ -7924,7 +7924,7 @@ module.exports = {
     {
       n: "LT",
       t: 11,
-      d: "Renvoie `TRUE` si le premier argument est strictement inférieur au second, et `FALSE` sinon. Équivalent à l'opérateur `<`.",
+      d: "Renvoie `VRAI` si le premier argument est strictement inférieur au second, et `FAUX` sinon. Équivalent à l'opérateur `<`.",
       a: "Moins que.",
       m: [
         2,
@@ -7932,7 +7932,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La valeur à tester comme étant inférieure à ` valeur2 `.",
           example: "A2",
           require: "m",
@@ -7940,7 +7940,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "La deuxième valeur.",
           example: "A3",
           require: "m",
@@ -7952,7 +7952,7 @@ module.exports = {
     {
       n: "LTE",
       t: 11,
-      d: "Renvoie `TRUE` si le premier argument est inférieur ou égal au second, et `FALSE` sinon. Équivalent à l'opérateur `<=`.",
+      d: "Renvoie `VRAI` si le premier argument est inférieur ou égal au second, et `FAUX` sinon. Équivalent à l'opérateur `<=`.",
       a: "Inférieur ou égal à.",
       m: [
         2,
@@ -7960,7 +7960,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "La valeur à tester comme étant inférieure ou égale à ` valeur2 `.",
           example: "A2",
           require: "m",
@@ -7968,7 +7968,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "La deuxième valeur.",
           example: "A3",
           require: "m",
@@ -7988,7 +7988,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Le premier ajout.",
           example: "A2",
           require: "m",
@@ -7996,7 +7996,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Le deuxième ajout.",
           example: "A3",
           require: "m",
@@ -8016,7 +8016,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "valeur1",
           detail: "Le menuend, ou le nombre à soustraire.",
           example: "A2",
           require: "m",
@@ -8024,7 +8024,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "Le soustrahend, ou le nombre à soustraire de ` valeur1 `.",
           example: "A3",
           require: "m",
@@ -8044,7 +8044,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
+          name: "facteur1",
           detail: "Le premier multiplicande.",
           example: "A2",
           require: "m",
@@ -8052,7 +8052,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor2",
+          name: "facteur2",
           detail: "Le deuxième multiplicande.",
           example: "B2",
           require: "m",
@@ -8072,7 +8072,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "dividende",
           detail: "Le nombre à diviser.",
           example: "4",
           require: "m",
@@ -8080,7 +8080,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "divisor",
+          name: "diviseur",
           detail: "Le nombre par lequel diviser.",
           example: "2",
           require: "m",
@@ -8100,15 +8100,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "La valeur à laquelle `value2` sera ajouté.",
+          name: "valeur1",
+          detail: "La valeur à laquelle `valeur2` sera ajouté.",
           example: "\"de\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "valeur2",
           detail: "La valeur à ajouter à ` valeur1 `.",
           example: "\"mystify\"",
           require: "m",
@@ -8128,7 +8128,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "percentage",
+          name: "pourcentage",
           detail: "La valeur à interpréter sous forme de pourcentage.",
           example: "A2",
           require: "m",
@@ -8148,7 +8148,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
+          name: "chaîne1",
           detail: "La chaîne initiale.",
           example: "\"Super\"",
           require: "m",
@@ -8156,7 +8156,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "string2",
+          name: "chaîne2",
           detail: "Plus de chaînes à ajouter dans l'ordre.",
           example: "\"calla\"",
           require: "o",
@@ -8176,7 +8176,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "chaîne",
           detail: "Chaîne dont la valeur de mappage Unicode du premier caractère sera renvoyée.",
           example: "\"a\"",
           require: "m",
@@ -8196,7 +8196,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "table_number",
+          name: "numéro_table",
           detail: "Numéro du caractère à rechercher dans la table Unicode actuelle au format décimal.",
           example: "97",
           require: "m",
@@ -8216,7 +8216,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "roman_numeral",
+          name: "chiffre_romain",
           detail: "Le chiffre romain à formater, dont la valeur doit être comprise entre 1 et 3999 inclus.",
           example: "\"XIV\"",
           require: "m",
@@ -8236,7 +8236,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "nombre",
           detail: "Le nombre à formater, entre 1 et 3999 inclus.",
           example: "499",
           require: "m",
@@ -8256,15 +8256,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "texte",
           detail: "Le texte saisi.",
-          example: "\"Needle in a haystack\"",
+          example: "\"Une aiguille dans une botte de foin\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "regular_expression",
+          name: "expression_régulière",
           detail: "La première partie du ` texte ` qui correspond à cette expression sera renvoyée.",
           example: "\".e{2}dle\"",
           require: "m",
@@ -8284,7 +8284,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "texte",
           detail: "Le texte à tester par rapport à l'expression régulière.",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -8292,7 +8292,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "regular_expression",
+          name: "expression_régulière",
           detail: "L'expression régulière avec laquelle tester le texte.",
           example: "\"S.r\"",
           require: "m",
@@ -8312,7 +8312,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "texte",
           detail: "Le texte dont une partie sera remplacée.",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -8320,15 +8320,15 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "L'expression régulière.  Toutes les instances correspondantes dans `text` seront remplacées.",
+          name: "expression_régulière",
+          detail: "L'expression régulière.  Toutes les instances correspondantes dans `texte` seront remplacées.",
           example: "\"S.*d\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "replacement",
+          name: "remplacement",
           detail: "Le texte qui sera inséré dans le texte original.",
           example: "\"Bed\"",
           require: "m",
@@ -8348,7 +8348,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "L'argument à convertir en texte.",
           example: "A2",
           require: "m",
@@ -8368,7 +8368,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "nombre",
           detail: "Le numéro à formater.",
           example: "3.141592653",
           require: "m",
@@ -8376,7 +8376,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
+          name: "nombre_décimales",
           detail: "Le nombre de décimales à afficher dans le résultat.",
           example: "2",
           require: "o",
@@ -8384,7 +8384,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "suppress_separator",
+          name: "supprimer_séparateur",
           detail: "S'il faut ou non supprimer le séparateur de milliers utilisé dans certains paramètres régionaux (par exemple, ` 1 000 ` devient ` 1 000 `). Les séparateurs seront présents si cette valeur est 0 ou omise, et absents sinon.",
           example: "FALSE()",
           require: "o",
@@ -8404,24 +8404,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "La chaîne à rechercher dans `text_to_search`.",
+          name: "à_rechercher",
+          detail: "La chaîne à rechercher dans `texte_à_rechercher`.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Le texte pour rechercher la première occurrence de `search_for`.",
+          name: "texte_à_rechercher",
+          detail: "Le texte pour rechercher la première occurrence de `à_rechercher`.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Le caractère dans `text_to_search` à partir duquel démarrer la recherche.",
+          name: "à_partir_de",
+          detail: "Le caractère dans `texte_à_rechercher` à partir duquel démarrer la recherche.",
           example: "14",
           require: "o",
           repeat: "n",
@@ -8440,24 +8440,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "La chaîne à rechercher dans `text_to_search`.",
+          name: "à_rechercher",
+          detail: "La chaîne à rechercher dans `texte_à_rechercher`.",
           example: "\"new\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Le texte pour rechercher la première occurrence de `search_for`.",
-          example: "\"new year\"",
+          name: "texte_à_rechercher",
+          detail: "Le texte pour rechercher la première occurrence de `à_rechercher`.",
+          example: "\"nouvel an\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Le caractère dans `text_to_search` à partir duquel démarrer la recherche.",
+          name: "à_partir_de",
+          detail: "Le caractère dans `texte_à_rechercher` à partir duquel démarrer la recherche.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8476,7 +8476,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "delimiter",
+          name: "délimiteur",
           detail: "Caractère ou chaîne à placer entre chaque valeur concaténée.",
           example: "\" and-a \"",
           require: "m",
@@ -8484,7 +8484,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_or_array1",
+          name: "valeur_ou_tableau1",
           detail: "La ou les valeurs à ajouter à l'aide du ` délimiteur `.",
           example: "{1",
           require: "m",
@@ -8492,7 +8492,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_or_array2",
+          name: "valeur_ou_tableau2",
           detail: "Plus de valeurs à ajouter à l'aide du ` délimiteur `.",
           example: "2",
           require: "o",
@@ -8512,7 +8512,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "chaîne",
           detail: "Chaîne à partir de laquelle la partie gauche sera renvoyée.",
           example: "A2",
           require: "m",
@@ -8520,8 +8520,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
-          detail: "Le nombre de caractères à renvoyer depuis le côté gauche de `string`.",
+          name: "nombre_caractères",
+          detail: "Le nombre de caractères à renvoyer depuis le côté gauche de `chaîne`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8540,7 +8540,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "chaîne",
           detail: "La chaîne à partir de laquelle la partie droite sera renvoyée.",
           example: "A2",
           require: "m",
@@ -8548,8 +8548,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
-          detail: "Le nombre de caractères à renvoyer depuis le côté droit de `string`.",
+          name: "nombre_caractères",
+          detail: "Le nombre de caractères à renvoyer depuis le côté droit de `chaîne`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8568,23 +8568,23 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "chaîne",
           detail: "Chaîne à partir de laquelle extraire un segment.",
-          example: "\"get this\"",
+          example: "\"récupère ceci\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "L'index à gauche de la ` chaîne ` à partir duquel commencer l'extraction. Le premier caractère de `string` a l'index 1.",
+          name: "à_partir_de",
+          detail: "L'index à gauche de la ` chaîne ` à partir duquel commencer l'extraction. Le premier caractère de `chaîne` a l'index 1.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "extract_length",
+          name: "longueur_extraction",
           detail: "La longueur du segment à extraire.",
           example: "4",
           require: "m",
@@ -8604,7 +8604,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "texte",
           detail: "La chaîne dont la longueur sera renvoyée.",
           example: "A2",
           require: "m",
@@ -8624,7 +8624,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "texte",
           detail: "La chaîne dont la longueur sera renvoyée.",
           example: "A2",
           require: "m",
@@ -8644,7 +8644,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "texte",
           detail: "La chaîne à convertir en minuscules.",
           example: "\"LOREM IPSUM\"",
           require: "m",
@@ -8664,7 +8664,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "texte",
           detail: "La chaîne à convertir en majuscule.",
           example: "\"lorem ipsum\"",
           require: "m",
@@ -8684,7 +8684,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
+          name: "chaîne1",
           detail: "La première chaîne à comparer",
           example: "A1",
           require: "m",
@@ -8692,7 +8692,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "string2",
+          name: "chaîne2",
           detail: "La deuxième chaîne à comparer",
           example: "A2",
           require: "m",
@@ -8712,7 +8712,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "texte",
           detail: "Le texte dont une partie sera remplacée.",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -8728,7 +8728,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "length",
+          name: "longueur",
           detail: "Le nombre de caractères dans le texte à remplacer.",
           example: "6",
           require: "m",
@@ -8736,7 +8736,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "new_text",
+          name: "nouveau_texte",
           detail: "Le texte qui sera inséré dans le texte original.",
           example: "\"Bed\"",
           require: "m",
@@ -8756,7 +8756,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_repeat",
+          name: "texte_à_répéter",
           detail: "Le caractère ou la chaîne à répéter.",
           example: "\"ha\"",
           require: "m",
@@ -8764,8 +8764,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "number_of_repetitions",
-          detail: "Le nombre de fois que ` text_to_repeat ` doit apparaître dans la valeur renvoyée.",
+          name: "nombre_répétitions",
+          detail: "Le nombre de fois que ` texte_à_répéter ` doit apparaître dans la valeur renvoyée.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8784,24 +8784,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "La chaîne à rechercher dans `text_to_search`.",
+          name: "à_rechercher",
+          detail: "La chaîne à rechercher dans `texte_à_rechercher`.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Le texte pour rechercher la première occurrence de `search_for`.",
+          name: "texte_à_rechercher",
+          detail: "Le texte pour rechercher la première occurrence de `à_rechercher`.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Le caractère dans `text_to_search` à partir duquel démarrer la recherche.",
+          name: "à_partir_de",
+          detail: "Le caractère dans `texte_à_rechercher` à partir duquel démarrer la recherche.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -8820,32 +8820,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_search",
+          name: "texte_à_rechercher",
           detail: "Le texte dans lequel rechercher et remplacer.",
-          example: "\"search for it\"",
+          example: "\"cherche ça\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "search_for",
-          detail: "La chaîne à rechercher dans `text_to_search`.",
-          example: "\"search for\"",
+          name: "à_rechercher",
+          detail: "La chaîne à rechercher dans `texte_à_rechercher`.",
+          example: "\"cherche\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "replace_with",
-          detail: "La chaîne qui remplacera `search_for`.",
+          name: "remplacer_par",
+          detail: "La chaîne qui remplacera `à_rechercher`.",
           example: "\"Google\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "occurrence_number",
-          detail: "L'instance de `search_for` dans `text_to_search` à remplacer par `replace_with`. Par défaut, toutes les occurrences de ` search_for ` sont remplacées ; cependant, si `occurrence_number` est spécifié, seule l'instance indiquée de `search_for` est remplacée.",
+          name: "numéro_occurrence",
+          detail: "L'instance de `à_rechercher` dans `texte_à_rechercher` à remplacer par `remplacer_par`. Par défaut, toutes les occurrences de ` à_rechercher ` sont remplacées ; cependant, si `numéro_occurrence` est spécifié, seule l'instance indiquée de `à_rechercher` est remplacée.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -8864,7 +8864,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "texte",
           detail: "Le texte dont les caractères non imprimables doivent être supprimés.",
           example: "\"AF\"&CHAR(31)",
           require: "m",
@@ -8884,7 +8884,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "nombre",
           detail: "Le nombre, la date ou l'heure à formater.",
           example: "1.23",
           require: "m",
@@ -8912,7 +8912,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "texte",
           detail: "Le texte ou la référence à une cellule contenant du texte à découper.",
           example: "\" lorem ipsum\"",
           require: "m",
@@ -8932,7 +8932,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "texte",
           detail: "Chaîne contenant la valeur à convertir.",
           example: "\"123\"",
           require: "m",
@@ -8952,9 +8952,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_capitalize",
+          name: "texte_à_capitaliser",
           detail: "Le texte qui sera renvoyé avec la première lettre de chaque mot en majuscule et toutes les autres lettres en minuscules.",
-          example: "\"united states\"",
+          example: "\"états unis\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -8972,15 +8972,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "La valeur numérique dans `start_unit` à convertir en `end_unit`.",
+          name: "valeur",
+          detail: "La valeur numérique dans `unité_début` à convertir en `unité_fin`.",
           example: "5.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "start_unit",
+          name: "unité_début",
           detail: "L'unité de départ, l'unité actuellement affectée à la `valeur`.",
           example: "\"g\"",
           require: "m",
@@ -8988,7 +8988,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_unit",
+          name: "unité_fin",
           detail: "L'unité de mesure dans laquelle convertir l'argument, `valeur`.",
           example: "\"kg\"",
           require: "m",
@@ -9008,16 +9008,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Le tableau ou la plage de valeurs dont les carrés seront réduits par les carrés des entrées correspondantes dans `array_y` et additionnés.",
+          name: "tableau_x",
+          detail: "Le tableau ou la plage de valeurs dont les carrés seront réduits par les carrés des entrées correspondantes dans `tableau_y` et additionnés.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Le tableau ou la plage de valeurs dont les carrés seront soustraits des carrés des entrées correspondantes dans `array_x` et additionnés.",
+          name: "tableau_y",
+          detail: "Le tableau ou la plage de valeurs dont les carrés seront soustraits des carrés des entrées correspondantes dans `tableau_x` et additionnés.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9036,16 +9036,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Le tableau ou la plage de valeurs dont les carrés seront ajoutés aux carrés des entrées correspondantes dans `array_y` et additionnés ensemble.",
+          name: "tableau_x",
+          detail: "Le tableau ou la plage de valeurs dont les carrés seront ajoutés aux carrés des entrées correspondantes dans `tableau_y` et additionnés ensemble.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Le tableau ou la plage de valeurs dont les carrés seront ajoutés aux carrés des entrées correspondantes dans `array_x` et additionnés ensemble.",
+          name: "tableau_y",
+          detail: "Le tableau ou la plage de valeurs dont les carrés seront ajoutés aux carrés des entrées correspondantes dans `tableau_x` et additionnés ensemble.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9064,16 +9064,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Le tableau ou la plage de valeurs qui sera réduit par les entrées correspondantes dans `array_y`, mis au carré et additionné.",
+          name: "tableau_x",
+          detail: "Le tableau ou la plage de valeurs qui sera réduit par les entrées correspondantes dans `tableau_y`, mis au carré et additionné.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Le tableau ou la plage de valeurs qui seront soustraites des entrées correspondantes dans `array_x`, le résultat au carré et tous ces résultats additionnés.",
+          name: "tableau_y",
+          detail: "Le tableau ou la plage de valeurs qui seront soustraites des entrées correspondantes dans `tableau_x`, le résultat au carré et tous ces résultats additionnés.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9092,7 +9092,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_or_range",
+          name: "tableau_ou_plage",
           detail: "Le tableau ou la plage dont les lignes et les colonnes seront permutées.",
           example: "{1,2}",
           require: "m",
@@ -9112,7 +9112,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "données_y_connues",
           detail: "Tableau ou plage contenant des valeurs dépendantes (y) déjà connues, utilisé pour ajuster une courbe à une tendance linéaire idéale.",
           example: "B2:B10",
           require: "m",
@@ -9120,15 +9120,15 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Les valeurs de la ou des variables indépendantes correspondant à `known_data_y`.",
+          name: "données_x_connues",
+          detail: "Les valeurs de la ou des variables indépendantes correspondant à `données_y_connues`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
+          name: "nouvelles_données_x",
           detail: "Les points de données pour lesquels renvoyer les valeurs ` y ` correspondent à l'ajustement idéal de la courbe.",
           example: "A11:A13",
           require: "o",
@@ -9137,7 +9137,7 @@ module.exports = {
         },
         {
           name: "b",
-          detail: "Étant donné une forme linéaire générale de ` y = m*x+b ` pour un ajustement de courbe, calcule ` b ` si ` VRAI ` ou force ` b ` à être ` 0 ` et calcule uniquement les valeurs ` m ` si ` FALSE `, c'est-à-dire force l'ajustement de courbe à passer par l'origine.",
+          detail: "Étant donné une forme linéaire générale de ` y = m*x+b ` pour un ajustement de courbe, calcule ` b ` si ` VRAI ` ou force ` b ` à être ` 0 ` et calcule uniquement les valeurs ` m ` si ` FAUX `, c'est-à-dire force l'ajustement de courbe à passer par l'origine.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9156,7 +9156,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "données",
           detail: "Tableau ou plage contenant les valeurs à compter.",
           example: "A2:A40",
           require: "m",
@@ -9184,7 +9184,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "données_y_connues",
           detail: "Tableau ou plage contenant des valeurs dépendantes (y) déjà connues, utilisé pour ajuster une courbe de croissance exponentielle idéale.",
           example: "B2:B10",
           require: "m",
@@ -9192,15 +9192,15 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Les valeurs de la ou des variables indépendantes correspondant à `known_data_y`.",
+          name: "données_x_connues",
+          detail: "Les valeurs de la ou des variables indépendantes correspondant à `données_y_connues`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
+          name: "nouvelles_données_x",
           detail: "Les points de données pour lesquels renvoyer les valeurs ` y ` correspondent à l'ajustement idéal de la courbe.",
           example: "A11:A13",
           require: "o",
@@ -9228,7 +9228,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "données_y_connues",
           detail: "Tableau ou plage contenant des valeurs dépendantes (y) déjà connues, utilisé pour ajuster une courbe à une tendance linéaire idéale.",
           example: "B2:B10",
           require: "m",
@@ -9236,23 +9236,23 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Les valeurs de la ou des variables indépendantes correspondant à `known_data_y`.",
+          name: "données_x_connues",
+          detail: "Les valeurs de la ou des variables indépendantes correspondant à `données_y_connues`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "calculate_b",
-          detail: "Étant donné une forme linéaire de `y = m*x+b`, calcule l'ordonnée à l'origine (`b`) si `TRUE`. Sinon, force ` b ` à être ` 0 ` et calcule les valeurs ` m ` uniquement si ` FALSE `, c'est-à-dire force l'ajustement de la courbe à passer par l'origine.",
+          name: "calculer_b",
+          detail: "Étant donné une forme linéaire de `y = m*x+b`, calcule l'ordonnée à l'origine (`b`) si `VRAI`. Sinon, force ` b ` à être ` 0 ` et calcule les valeurs ` m ` uniquement si ` FAUX `, c'est-à-dire force l'ajustement de la courbe à passer par l'origine.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "verbose",
+          name: "détaillé",
           detail: "Un indicateur spécifiant s'il faut renvoyer des statistiques de régression supplémentaires ou uniquement les coefficients linéaires et l'ordonnée à l'origine (par défaut).",
           example: "TRUE()",
           require: "o",
@@ -9272,7 +9272,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "données_y_connues",
           detail: "Tableau ou plage contenant des valeurs dépendantes (y) déjà connues, utilisé pour ajuster une courbe de croissance exponentielle idéale.",
           example: "B2:B10",
           require: "m",
@@ -9280,8 +9280,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Les valeurs de la ou des variables indépendantes correspondant à `known_data_y`.",
+          name: "données_x_connues",
+          detail: "Les valeurs de la ou des variables indépendantes correspondant à `données_y_connues`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9296,7 +9296,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "verbose",
+          name: "détaillé",
           detail: "Un indicateur spécifiant s'il faut renvoyer des statistiques de régression supplémentaires ou uniquement le coefficient et les exposants calculés.",
           example: "TRUE()",
           require: "o",
@@ -9316,7 +9316,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
+          name: "matrice_carrée",
           detail: "Un tableau ou une plage avec un nombre égal de lignes et de colonnes représentant une matrice dont le déterminant sera calculé.",
           example: "A1:D4",
           require: "m",
@@ -9336,7 +9336,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
+          name: "matrice_carrée",
           detail: "Un tableau ou une plage avec un nombre égal de lignes et de colonnes représentant une matrice dont l'inverse multiplicatif sera calculé.",
           example: "A1:D4",
           require: "m",
@@ -9356,7 +9356,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "matrix1",
+          name: "matrice1",
           detail: "Première matrice de l'opération de multiplication matricielle, représentée sous forme de tableau ou de plage.",
           example: "A1:B3",
           require: "m",
@@ -9364,7 +9364,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "matrix2",
+          name: "matrice2",
           detail: "Deuxième matrice de l'opération de multiplication matricielle, représentée sous forme de tableau ou de plage.",
           example: "C1:F2",
           require: "m",
@@ -9384,7 +9384,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array1",
+          name: "tableau1",
           detail: "Le premier tableau ou plage dont les entrées seront multipliées par les entrées correspondantes dans le deuxième tableau ou plage de ce type.",
           example: "A2:C5",
           require: "m",
@@ -9392,7 +9392,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array2",
+          name: "tableau2",
           detail: "Deuxième tableau ou plage dont les entrées seront multipliées par les entrées correspondantes dans le premier tableau ou plage de ce type.",
           example: "D2:F5",
           require: "o",
@@ -9412,7 +9412,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell",
+          name: "cellule",
           detail: "Cellule à vérifier comme contenant une formule.",
           example: "A2",
           require: "m",
@@ -9432,7 +9432,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "info_type",
+          name: "type_info",
           detail: "Le type d’informations demandées (voir l’article pour les types disponibles)",
           example: "\"type\"",
           require: "m",
@@ -9440,7 +9440,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "reference",
+          name: "référence",
           detail: "La référence à la cellule.",
           example: "C2",
           require: "m",
@@ -9471,7 +9471,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
+          name: "référence",
           detail: "La cellule pour laquelle trouver le numéro d’erreur, bien que vous puissiez également fournir directement la valeur de l’erreur.",
           example: "A3",
           require: "m",
@@ -9491,7 +9491,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "Référence à la cellule dont le vide sera vérifié.",
           example: "A2",
           require: "m",
@@ -9511,7 +9511,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à vérifier comme un type d'erreur autre que `#N/A`.",
           example: "A2",
           require: "m",
@@ -9531,7 +9531,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à vérifier en tant que type d'erreur.",
           example: "A2",
           require: "m",
@@ -9551,7 +9551,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à vérifier comme étant un ` VRAI ` ou un ` FAUX ` logique.",
           example: "A2",
           require: "m",
@@ -9571,7 +9571,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à comparer avec la valeur d'erreur `#N/A`.",
           example: "A2",
           require: "m",
@@ -9591,7 +9591,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à vérifier.",
           example: "A2",
           require: "m",
@@ -9611,7 +9611,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à vérifier sous forme de nombre.",
           example: "A2",
           require: "m",
@@ -9631,7 +9631,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à vérifier comme référence de cellule.",
           example: "A2",
           require: "m",
@@ -9651,7 +9651,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur à vérifier sous forme de texte.",
           example: "A2",
           require: "m",
@@ -9671,7 +9671,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "La valeur dont le type doit être déterminé.",
           example: "C4",
           require: "m",
@@ -9691,7 +9691,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "L'argument à convertir en nombre.",
           example: "A2",
           require: "m",
@@ -9711,7 +9711,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "L'argument ou la référence à une cellule à convertir en date.",
           example: "25405",
           require: "m",
@@ -9731,7 +9731,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "L'argument ou la référence à une cellule à convertir en nombre pur.",
           example: "50%",
           require: "m",
@@ -9751,7 +9751,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "L'argument ou la référence à une cellule à convertir en texte.",
           example: "24",
           require: "m",
@@ -9771,7 +9771,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "L'argument ou la référence à une cellule à convertir en valeur monétaire.",
           example: "A2",
           require: "m",
@@ -9791,7 +9791,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           detail: "L'argument ou la référence à une cellule à convertir en pourcentage.",
           example: "A2",
           require: "m",
@@ -9811,7 +9811,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -9819,7 +9819,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -9827,7 +9827,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -9847,7 +9847,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -9855,7 +9855,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -9863,7 +9863,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -9883,7 +9883,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -9891,7 +9891,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -9899,7 +9899,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -9919,7 +9919,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -9927,7 +9927,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -9935,7 +9935,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -9955,7 +9955,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -9963,7 +9963,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -9971,7 +9971,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -9991,7 +9991,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -9999,7 +9999,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -10007,7 +10007,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -10027,7 +10027,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -10035,7 +10035,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -10043,7 +10043,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -10063,7 +10063,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -10071,7 +10071,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -10079,7 +10079,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -10099,7 +10099,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -10107,7 +10107,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -10115,7 +10115,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -10135,7 +10135,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -10143,7 +10143,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -10151,7 +10151,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -10171,7 +10171,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -10179,7 +10179,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -10187,7 +10187,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -10207,7 +10207,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "base_de_données",
           detail: "Tableau ou plage contenant les données à prendre en compte, structuré de telle manière que la première ligne contient les étiquettes des valeurs de chaque colonne.",
           example: "A2:F20",
           require: "m",
@@ -10215,7 +10215,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "champ",
           detail: "Indique quelle colonne de la ` base de données ` contient les valeurs à extraire et sur lesquelles opérer.",
           example: "G2",
           require: "m",
@@ -10223,7 +10223,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "critères",
           detail: "Un tableau ou une plage contenant zéro ou plusieurs critères pour filtrer les valeurs de la ` base de données ` avant de fonctionner.",
           example: "A22:D23",
           require: "m",
@@ -10243,7 +10243,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numéro d'identification",
           example: "A1",
           detail: "Numéro ou plage d'identification à 15 ou 18 chiffres.",
           require: "m",
@@ -10251,7 +10251,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Deadline",
+          name: "Date limite",
           example: "\"2017-10-01\"",
           detail: "La date limite ou la tranche d’âge pour le calcul. La valeur par défaut est le jour en cours.",
           require: "o",
@@ -10271,7 +10271,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numéro d'identification",
           example: "\"31033519900101XXXX\"",
           detail: "Numéro ou plage d'identification à 15 ou 18 chiffres.",
           require: "m",
@@ -10291,7 +10291,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numéro d'identification",
           example: "\"31033519900101XXXX\"",
           detail: "Numéro ou plage d'identification à 15 ou 18 chiffres.",
           require: "m",
@@ -10299,7 +10299,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Birthday format",
+          name: "Format de date de naissance",
           example: "0",
           detail: "Type de date, par défaut :0 :[1900/01/01], 1 :[1900-01-01], 2 :[1er janvier 1900]",
           require: "o",
@@ -10319,7 +10319,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numéro d'identification",
           example: "\"31033519900101XXXX\"",
           detail: "Numéro ou plage d'identification à 15 ou 18 chiffres.",
           require: "m",
@@ -10339,7 +10339,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numéro d'identification",
           example: "\"31033519900101XXXX\"",
           detail: "Numéro ou plage d'identification à 15 ou 18 chiffres.",
           require: "m",
@@ -10359,7 +10359,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numéro d'identification",
           example: "\"31033519900101XXXX\"",
           detail: "Numéro ou plage d'identification à 15 ou 18 chiffres.",
           require: "m",
@@ -10379,7 +10379,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numéro d'identification",
           example: "\"31033519900101XXXX\"",
           detail: "Numéro ou plage d'identification à 15 ou 18 chiffres.",
           require: "m",
@@ -10399,7 +10399,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numéro d'identification",
           example: "\"31033519900101XXXX\"",
           detail: "Numéro ou plage d'identification à 15 ou 18 chiffres.",
           require: "m",
@@ -10419,15 +10419,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
-          example: "\"I came to Beijing Tsinghua University\"",
+          name: "Texte",
+          example: "\"Je suis allé à l'université Tsinghua de Pékin\"",
           detail: "Tout texte nécessitant une segmentation de mots.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Word segmentation mode",
+          name: "Mode de segmentation des mots",
           example: "0",
           detail: "La valeur par défaut est 0[mode précision], 1[mode complet], 2[mode moteur de recherche].",
           require: "o",
@@ -10447,15 +10447,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
-          example: "\"I came to Beijing Tsinghua University\"",
+          name: "Texte",
+          example: "\"Je suis allé à l'université Tsinghua de Pékin\"",
           detail: "Tout texte nécessitant une segmentation de mots.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "Nombre de mots-clés",
           example: "20",
           detail: "Le nombre de mots-clés renvoyés par l'algorithme, la valeur par défaut est 20",
           require: "o",
@@ -10483,15 +10483,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
-          example: "\"I came to Beijing Tsinghua University\"",
+          name: "Texte",
+          example: "\"Je suis allé à l'université Tsinghua de Pékin\"",
           detail: "Tout texte nécessitant une segmentation de mots.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "Nombre de mots-clés",
           example: "20",
           detail: "Le nombre de mots-clés renvoyés par l'algorithme, la valeur par défaut est 20",
           require: "o",
@@ -10519,7 +10519,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Code boursier",
           example: "\"000001\"",
           detail: "Code de stock à 6 chiffres, requis.",
           require: "m",
@@ -10535,7 +10535,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type de restauration ex-droit",
           example: "0",
           detail: "Sélectionnez le type de restauration ex-droit du stock, par défaut 0 [ancienne réversion], 1 [prix d'origine], 2 [post réversion]",
           require: "o",
@@ -10555,7 +10555,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Code boursier",
           example: "\"000001\"",
           detail: "Code de stock à 6 chiffres, requis.",
           require: "m",
@@ -10571,7 +10571,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type de restauration ex-droit",
           example: "0",
           detail: "Sélectionnez le type de restauration ex-droit du stock, par défaut 0 [ancienne réversion], 1 [prix d'origine], 2 [post réversion]",
           require: "o",
@@ -10591,7 +10591,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Code boursier",
           example: "\"000001\"",
           detail: "Code de stock à 6 chiffres, requis.",
           require: "m",
@@ -10607,7 +10607,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type de restauration ex-droit",
           example: "0",
           detail: "Sélectionnez le type de restauration ex-droit du stock, par défaut 0 [ancienne réversion], 1 [prix d'origine], 2 [post réversion]",
           require: "o",
@@ -10627,7 +10627,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Code boursier",
           example: "\"000001\"",
           detail: "Code de stock à 6 chiffres, requis.",
           require: "m",
@@ -10643,7 +10643,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type de restauration ex-droit",
           example: "0",
           detail: "Sélectionnez le type de restauration ex-droit du stock, par défaut 0 [ancienne réversion], 1 [prix d'origine], 2 [post réversion]",
           require: "o",
@@ -10663,7 +10663,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Code boursier",
           example: "\"000001\"",
           detail: "Code de stock à 6 chiffres, requis.",
           require: "m",
@@ -10679,7 +10679,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type de restauration ex-droit",
           example: "0",
           detail: "Sélectionnez le type de restauration ex-droit du stock, par défaut 0 [ancienne réversion], 1 [prix d'origine], 2 [post réversion]",
           require: "o",
@@ -10699,7 +10699,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Code boursier",
           example: "\"000001\"",
           detail: "Code de stock à 6 chiffres, requis.",
           require: "m",
@@ -10715,7 +10715,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type de restauration ex-droit",
           example: "0",
           detail: "Sélectionnez le type de restauration ex-droit du stock, par défaut 0 [ancienne réversion], 1 [prix d'origine], 2 [post réversion]",
           require: "o",
@@ -10735,7 +10735,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valeur",
           example: "\"1990-01-01\"",
           detail: "La valeur à vérifier sous forme de date.",
           require: "m",
@@ -10755,7 +10755,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Plage",
           example: "A1:A20",
           detail: "Plage ， Les valeurs peuvent être calculées efficacement, telles que A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -10763,7 +10763,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Line color",
+          name: "Couleur de la ligne",
           example: "#2ec7c9",
           detail: "La couleur de la ligne du graphique linéaire peut être la plage A1, la valeur d'index de la table des couleurs ou une valeur de couleur spécifique. Réglez-le sur 0 ou false pour ne pas l'afficher. Il prend en charge regx, rgb, rgba, etc. Par défaut #2ec7c9",
           require: "o",
@@ -10771,7 +10771,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Line thickness",
+          name: "Épaisseur de ligne",
           example: "1",
           detail: "Épaisseur de ligne du graphique linéaire, la valeur par défaut est 1px",
           require: "o",
@@ -10779,7 +10779,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Auxiliary line",
+          name: "Ligne auxiliaire",
           example: "avg",
           detail: "Une ligne horizontale, qui peut être min, max, moy, médiane, plage ou valeur personnalisée, par défaut 0 aucun",
           require: "o",
@@ -10787,7 +10787,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Auxiliary line color",
+          name: "Couleur de la ligne auxiliaire",
           example: "#000",
           detail: "Paramètre de couleur de la ligne auxiliaire, identique à la configuration de la couleur de la ligne, par défaut #000",
           require: "o",
@@ -10795,7 +10795,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Maximum mark",
+          name: "Repère maximum",
           example: "#fc5c5c",
           detail: "Identifie la valeur maximale du graphique linéaire, la même configuration de couleur de ligne, la valeur par défaut 0 ne s'affiche pas",
           require: "o",
@@ -10803,7 +10803,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Minimum mark",
+          name: "Repère minimum",
           example: "#fc5c5c",
           detail: "Identifiez la valeur minimale du graphique linéaire, la même configuration de couleur de ligne, la valeur par défaut 0 ne s'affiche pas",
           require: "o",
@@ -10811,7 +10811,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Mark size",
+          name: "Taille du repère",
           example: "1.5",
           detail: "Les paramètres de taille de marque maximale et minimale, la valeur par défaut est 1,5",
           require: "o",
@@ -10831,7 +10831,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Plage",
           example: "A1:A20",
           detail: "Plage ， Les valeurs peuvent être calculées efficacement, telles que A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -10839,7 +10839,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Line color",
+          name: "Couleur de la ligne",
           example: "#2ec7c9",
           detail: "La couleur de la ligne du graphique linéaire peut être la plage A1, la valeur d'index de la table des couleurs ou une valeur de couleur spécifique. Réglez-le sur 0 ou false pour ne pas l'afficher. Il prend en charge regx, rgb, rgba, etc. Par défaut #2ec7c9",
           require: "o",
@@ -10847,7 +10847,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Fill color",
+          name: "Couleur de remplissage",
           example: "#CCF3F4",
           detail: "Formez un graphique en aires, la même configuration de couleur de ligne, la valeur par défaut 0 ne s'affiche pas",
           require: "o",
@@ -10855,7 +10855,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Line thickness",
+          name: "Épaisseur de ligne",
           example: "1",
           detail: "Épaisseur de ligne du graphique linéaire, la valeur par défaut est 1px",
           require: "o",
@@ -10863,7 +10863,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Auxiliary line",
+          name: "Ligne auxiliaire",
           example: "avg",
           detail: "Une ligne horizontale, qui peut être min, max, moy, médiane, plage ou valeur personnalisée, par défaut 0 aucun",
           require: "o",
@@ -10871,7 +10871,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Auxiliary line color",
+          name: "Couleur de la ligne auxiliaire",
           example: "#000",
           detail: "Paramètre de couleur de la ligne auxiliaire, identique à la configuration de la couleur de la ligne, par défaut #000",
           require: "o",
@@ -10891,7 +10891,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Plage",
           example: "A1:A20",
           detail: "Plage ， Les valeurs peuvent être calculées efficacement, telles que A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -10899,7 +10899,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Intervalle des barres",
           example: "1",
           detail: "La distance entre les barres, la valeur par défaut est 1",
           require: "o",
@@ -10907,7 +10907,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Couleur de la barre",
           example: "#fc5c5c",
           detail: "La couleur de la ligne du graphique linéaire peut être la plage A1, la valeur d'index de la table des couleurs ou une valeur de couleur spécifique. Réglez-le sur 0 ou false pour ne pas l'afficher. Il prend en charge regx, rgb, rgba, etc. Par défaut #fc5c5c",
           require: "o",
@@ -10915,7 +10915,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Couleur des barres négatives",
           example: "#97b552",
           detail: "Paramètre de couleur de la barre négative, représentant la couleur de la valeur négative, identique à la configuration de la couleur de la barre, par défaut #97b552",
           require: "o",
@@ -10923,7 +10923,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Maximum",
           example: "100",
           detail: "La valeur maximale du graphique à barres, utilisée pour standardiser la longueur du graphique à barres, la valeur par défaut est de calculer automatiquement false, auto, null",
           require: "o",
@@ -10931,7 +10931,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Palette de couleurs",
           example: "#97b552",
           detail: "La palette de couleurs peut définir la couleur de chaque barre individuellement, plusieurs paramètres peuvent être définis et deux formats sont pris en charge : 1 couleur telle que #000, ce qui signifie que la couleur de la première barre est noire ; 2 plages de valeurs : la couleur, telle que -2 :# 000 indique que la barre avec une valeur de -2 est noire, 0:5 :#000 indique que la barre avec une valeur de 0 à 5 est noire et la valeur par défaut est vide",
           require: "o",
@@ -10951,7 +10951,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Plage",
           example: "A1:A20",
           detail: "Plage ， Les valeurs peuvent être calculées efficacement, telles que A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -10959,7 +10959,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Stack by column",
+          name: "Empiler par colonne",
           example: "1",
           detail: "Si vous devez empiler par ligne, définissez cet élément sur false ou 0, la valeur par défaut est 1",
           require: "o",
@@ -10967,7 +10967,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Intervalle des barres",
           example: "1",
           detail: "La distance entre les barres, la valeur par défaut est 1",
           require: "o",
@@ -10975,7 +10975,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Maximum",
           example: "100",
           detail: "La valeur maximale de la barre cumulée, utilisée pour réguler la longueur de la barre, la valeur par défaut est de calculer automatiquement false, auto, null",
           require: "o",
@@ -10983,7 +10983,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Palette de couleurs",
           example: "#97b552",
           detail: "La palette de couleurs peut définir individuellement la couleur de la barre de chaque dimension, qui peut être définie sur la plage A1:A10, etc. La valeur par défaut est #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
@@ -11003,7 +11003,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Plage",
           example: "A1:A20",
           detail: "Plage ， Les valeurs peuvent être calculées efficacement, telles que A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11011,7 +11011,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Intervalle des barres",
           example: "1",
           detail: "La distance entre les barres, la valeur par défaut est 1",
           require: "o",
@@ -11019,7 +11019,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Couleur de la barre",
           example: "#fc5c5c",
           detail: "La couleur de la ligne du graphique linéaire peut être la plage A1, la valeur d'index de la table des couleurs ou une valeur de couleur spécifique. Réglez-le sur 0 ou false pour ne pas l'afficher. Il prend en charge regx, rgb, rgba, etc. Par défaut #fc5c5c",
           require: "o",
@@ -11027,7 +11027,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Couleur des barres négatives",
           example: "#97b552",
           detail: "Paramètre de couleur de la barre négative, représentant la couleur de la valeur négative, identique à la configuration de la couleur de la barre, par défaut #97b552",
           require: "o",
@@ -11035,7 +11035,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Maximum",
           example: "100",
           detail: "La valeur maximale du graphique à barres, utilisée pour standardiser la longueur du graphique à barres, la valeur par défaut est de calculer automatiquement false, auto, null",
           require: "o",
@@ -11043,7 +11043,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Palette de couleurs",
           example: "#97b552",
           detail: "La palette de couleurs peut définir la couleur de chaque barre individuellement, plusieurs paramètres peuvent être définis et deux formats sont pris en charge : 1 couleur telle que #000, ce qui signifie que la couleur de la première barre est noire ; 2 plages de valeurs : la couleur, telle que -2 :# 000 indique que la barre avec une valeur de -2 est noire, 0:5 :#000 indique que la barre avec une valeur de 0 à 5 est noire et la valeur par défaut est vide",
           require: "o",
@@ -11063,7 +11063,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Plage",
           example: "A1:A20",
           detail: "Plage ， Les valeurs peuvent être calculées efficacement, telles que A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11071,7 +11071,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Stack by column",
+          name: "Empiler par colonne",
           example: "1",
           detail: "Si vous devez empiler par ligne, définissez cet élément sur false ou 0, la valeur par défaut est 1",
           require: "o",
@@ -11079,7 +11079,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Intervalle des barres",
           example: "1",
           detail: "La distance entre les barres, la valeur par défaut est 1",
           require: "o",
@@ -11087,7 +11087,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Maximum",
           example: "100",
           detail: "La valeur maximale de la barre cumulée, utilisée pour réguler la longueur de la barre, la valeur par défaut est de calculer automatiquement false, auto, null",
           require: "o",
@@ -11095,7 +11095,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Palette de couleurs",
           example: "#97b552",
           detail: "La palette de couleurs peut définir individuellement la couleur de la barre de chaque dimension, qui peut être définie sur la plage A1:A10, etc. La valeur par défaut est #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
@@ -11115,7 +11115,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Plage",
           example: "A1:A20",
           detail: "Plage ， Les valeurs peuvent être calculées efficacement, telles que A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11123,7 +11123,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Segmentation threshold",
+          name: "Seuil de segmentation",
           example: "1",
           detail: "Distinction des couleurs des colonnes de graphiques discrets, par exemple : si la valeur est 0, le bleu est supérieur à 0, le rouge est inférieur à 0 et la valeur par défaut est 0.",
           require: "o",
@@ -11131,7 +11131,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Above threshold color",
+          name: "Couleur au-dessus du seuil",
           example: "#2ec7c9",
           detail: "La couleur de la ligne du graphique linéaire peut être la plage A1, la valeur d'index de la table des couleurs ou une valeur de couleur spécifique. Réglez-le sur 0 ou false pour ne pas l'afficher. Il prend en charge regx, rgb, rgba, etc. Par défaut #2ec7c9",
           require: "o",
@@ -11139,7 +11139,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Below threshold color",
+          name: "Couleur en dessous du seuil",
           example: "#fc5c5c",
           detail: "Le réglage de la couleur de la barre en dessous du seuil, identique à la couleur au dessus du seuil, par défaut #fc5c5c",
           require: "o",
@@ -11159,7 +11159,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Plage",
           example: "A1:A20",
           detail: "Plage ， Les valeurs peuvent être calculées efficacement, telles que A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11167,7 +11167,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Intervalle des barres",
           example: "1",
           detail: "La distance entre les barres, la valeur par défaut est 1",
           require: "o",
@@ -11175,7 +11175,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Couleur de la barre",
           example: "#fc5c5c",
           detail: "La couleur de la ligne du graphique linéaire peut être la plage A1, la valeur d'index de la table des couleurs ou une valeur de couleur spécifique. Réglez-le sur 0 ou false pour ne pas l'afficher. Il prend en charge regx, rgb, rgba, etc. Par défaut #fc5c5c",
           require: "o",
@@ -11183,7 +11183,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Couleur des barres négatives",
           example: "#97b552",
           detail: "Paramètre de couleur de la barre négative, représentant la couleur de la valeur négative, identique à la configuration de la couleur de la barre, par défaut #97b552",
           require: "o",
@@ -11191,7 +11191,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Zero value bar color",
+          name: "Couleur des barres de valeur zéro",
           example: "#999",
           detail: "Paramètre de couleur de la barre de valeur zéro, représentant une couleur de valeur 0, la même configuration de couleur de la barre, par défaut #999",
           require: "o",
@@ -11199,7 +11199,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Palette de couleurs",
           example: "#97b552",
           detail: "La palette de couleurs peut définir la couleur de chaque barre individuellement, plusieurs paramètres peuvent être définis et deux formats sont pris en charge : 1 couleur telle que #000, ce qui signifie que la couleur de la première barre est noire ; 2 plages de valeurs : la couleur, telle que -2 :# 000 indique que la barre avec une valeur de -2 est noire, 0:5 :#000 indique que la barre avec une valeur de 0 à 5 est noire et la valeur par défaut est vide",
           require: "o",
@@ -11219,7 +11219,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Plage",
           example: "A1:A20",
           detail: "Plage ， Les valeurs peuvent être calculées efficacement, telles que A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11227,7 +11227,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Rotation angle",
+          name: "Angle de rotation",
           example: "0",
           detail: "L'angle de rotation du graphique à secteurs, la valeur par défaut est 0",
           require: "o",
@@ -11235,7 +11235,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "border",
+          name: "bordure",
           example: "0",
           detail: "Taille de la bordure du graphique à secteurs, la valeur par défaut est aucune 0",
           require: "o",
@@ -11243,7 +11243,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Border color",
+          name: "Couleur de la bordure",
           example: "#000",
           detail: "La couleur de la bordure du graphique à secteurs, la valeur par défaut est #000",
           require: "o",
@@ -11251,7 +11251,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Palette de couleurs",
           example: "#97b552",
           detail: "La couleur de la tranche peut être définie dans la palette, qui peut être définie sur la plage A1:A10, etc. La valeur par défaut est #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
@@ -11271,7 +11271,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Plage",
           example: "A1:A20",
           detail: "Plage ， Les valeurs peuvent être calculées efficacement, telles que A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11279,7 +11279,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Outlier ratio",
+          name: "Coefficient des valeurs aberrantes",
           example: "1.5",
           detail: "La plage de seuil des valeurs aberrantes, si elle est 0 ou fausse, elle ne sera pas affichée, la valeur par défaut est 1,5 fois",
           require: "o",
@@ -11287,7 +11287,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Target value",
+          name: "Valeur cible",
           example: "10",
           detail: "Le paramètre de valeur cible sur la boîte à moustaches, la valeur par défaut est false et ne s'affiche pas",
           require: "o",
@@ -11295,7 +11295,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Point size",
+          name: "Taille des points",
           example: "1.5",
           detail: "Le rayon du point cible et de la valeur aberrante est défini, la valeur par défaut est 1,5",
           require: "o",
@@ -11315,7 +11315,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Target",
+          name: "Cible",
           example: "10",
           detail: "La valeur numérique peut être calculée efficacement pour la valeur cible atteinte, telle que A1, 100, etc.",
           require: "m",
@@ -11323,7 +11323,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "achieved",
+          name: "atteint",
           example: "8",
           detail: "Ce n'est que lorsque la valeur est complétée que la valeur peut être calculée efficacement, comme A1, 100, etc.",
           require: "m",
@@ -11331,7 +11331,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Contrast",
+          name: "Valeur de comparaison",
           example: "12",
           detail: "Les valeurs comparatives, telles que l'excédent, le minimum et le résultat net des récompenses, peuvent être calculées efficacement, telles que A1, 100, etc. Vous pouvez définir jusqu'à 9 valeurs de comparaison",
           require: "o",
@@ -11351,7 +11351,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "config",
+          name: "configuration",
           example: "PIESPLINES(A1:A20)",
           detail: "Paramètres du graphique Sparklines, tels que A1: A20, un diagramme circulaire terminé, les paramètres du graphique linéaire, etc.",
           require: "m",
@@ -11371,7 +11371,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "plage",
           detail: "Les données à trier.",
           example: "A2:A17",
           require: "m",
@@ -11379,23 +11379,23 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "sort_column",
-          detail: "L'index de la colonne dans `range` ou une plage en dehors de `range` contenant les valeurs selon lesquelles trier.",
+          name: "colonne_tri",
+          detail: "L'index de la colonne dans `plage` ou une plage en dehors de `plage` contenant les valeurs selon lesquelles trier.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_ascending",
-          detail: "`TRUE` ou `FALSE` indiquant s'il faut trier `sort_column` par ordre croissant. `FALSE` trie par ordre décroissant.",
+          name: "est_croissant",
+          detail: "`VRAI` ou `FAUX` indiquant s'il faut trier `colonne_tri` par ordre croissant. `FAUX` trie par ordre décroissant.",
           example: "-1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "sort_column2",
+          name: "colonne_tri2",
           detail: "Colonnes supplémentaires.",
           example: "TRUE()",
           require: "o",
@@ -11415,7 +11415,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "plage",
           detail: "Les données à filtrer.",
           example: "A5:D20",
           require: "m",
@@ -11432,7 +11432,7 @@ module.exports = {
         },
         {
           name: "condition2",
-          detail: "Lignes ou colonnes supplémentaires contenant des valeurs booléennes ` TRUE ` ou ` FALSE ` indiquant si la ligne ou la colonne correspondante dans ` range ` doit passer par ` FILTER `. Peut également contenir des expressions de formule matricielle qui correspondent à de telles lignes ou colonnes. Toutes les conditions doivent être du même type (ligne ou colonne). Il est interdit de mélanger des conditions de ligne et des conditions de colonne.",
+          detail: "Lignes ou colonnes supplémentaires contenant des valeurs booléennes ` VRAI ` ou ` FAUX ` indiquant si la ligne ou la colonne correspondante dans ` plage ` doit passer par ` FILTER `. Peut également contenir des expressions de formule matricielle qui correspondent à de telles lignes ou colonnes. Toutes les conditions doivent être du même type (ligne ou colonne). Il est interdit de mélanger des conditions de ligne et des conditions de colonne.",
           example: "\"\"",
           require: "o",
           repeat: "n",
@@ -11451,7 +11451,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "plage",
           detail: "Les données à filtrer par entrées uniques.",
           example: "A2:B26",
           require: "m",
@@ -11459,7 +11459,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "by_col",
+          name: "par_colonne",
           detail: "[Option] - Valeur logique, indiquant comment comparer ; by row = FALSE() ou omis ; par colonne = VRAI().",
           example: "TRUE()",
           require: "o",
@@ -11467,7 +11467,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "occurs_once",
+          name: "une_seule_fois",
           detail: "[Option] - Valeur logique, une seule occurrence dans la valeur unique est renvoyée = TRUE(); incluant toutes les valeurs uniques = FALSE() ou omis.",
           example: "FALSE()",
           require: "o",
@@ -11487,7 +11487,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
+          name: "lignes",
           detail: "Le nombre de lignes à remplir avec un nombre aléatoire.",
           example: "1",
           require: "o",
@@ -11495,7 +11495,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "columns",
+          name: "colonnes",
           detail: "Le nombre de colonnes à remplir avec un nombre aléatoire.",
           example: "1",
           require: "o",
@@ -11515,7 +11515,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
+          name: "lignes",
           detail: "Le nombre de lignes dans la grille résultante de la fonction.",
           example: "1",
           require: "m",
@@ -11523,7 +11523,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "columns",
+          name: "colonnes",
           detail: "Le nombre de colonnes dans la grille résultante de la fonction. En cas d'omission, la grille de résultats aura 1 colonne.",
           example: "1",
           require: "o",
@@ -11531,7 +11531,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "start",
+          name: "début",
           detail: "Le numéro auquel démarrer la séquence. En cas d'omission, la séquence commencera à 1.",
           example: "1",
           require: "o",
@@ -11539,7 +11539,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "step",
+          name: "pas",
           detail: "Le montant de chaque valeur de la séquence différera. En cas d'omission, chaque valeur différera de 1.",
           example: "1",
           require: "o",
@@ -11579,7 +11579,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "remote_expression",
+          name: "expression_distante",
           example: "SUM(A1:A10000000)",
           detail: "Formule",
           require: "m",

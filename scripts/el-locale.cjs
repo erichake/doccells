@@ -18,24 +18,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Παράμετρος `range` της συνάρτησης SUMIF.",
+          name: "εύρος",
+          detail: "Παράμετρος `εύρος` της συνάρτησης SUMIF.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion",
-          detail: "Παράμετρος `criterion` της συνάρτησης SUMIF.",
+          name: "κριτήριο",
+          detail: "Παράμετρος `κριτήριο` της συνάρτησης SUMIF.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "sum_range",
-          detail: "Παράμετρος `sum_range` της συνάρτησης SUMIF.",
+          name: "εύρος_άθροισης",
+          detail: "Παράμετρος `εύρος_άθροισης` της συνάρτησης SUMIF.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -54,8 +54,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Παράμετρος `angle` της συνάρτησης TAN.",
+          name: "γωνία",
+          detail: "Παράμετρος `γωνία` της συνάρτησης TAN.",
           example: "45*PI()/180",
           require: "m",
           repeat: "n",
@@ -74,8 +74,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης TANH.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης TANH.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -94,16 +94,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης CEILING.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης CEILING.",
           example: "23.25",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor",
-          detail: "Παράμετρος `factor` της συνάρτησης CEILING.",
+          name: "συντελεστής",
+          detail: "Παράμετρος `συντελεστής` της συνάρτησης CEILING.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -122,8 +122,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ATAN.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ATAN.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -142,8 +142,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ASINH.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ASINH.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -162,8 +162,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ABS.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ABS.",
           example: "-2",
           require: "m",
           repeat: "n",
@@ -182,8 +182,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ACOS.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ACOS.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -202,8 +202,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ACOSH.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ACOSH.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -222,16 +222,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης MULTINOMIAL.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης MULTINOMIAL.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης MULTINOMIAL.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης MULTINOMIAL.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -250,8 +250,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ATANH.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ATANH.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -298,8 +298,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης COUNTBLANK.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης COUNTBLANK.",
           example: "A2:C100",
           require: "m",
           repeat: "n",
@@ -318,8 +318,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης COSH.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης COSH.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -338,8 +338,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης INT.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης INT.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -358,8 +358,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ISEVEN.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISEVEN.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -378,8 +378,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ISODD.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISODD.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -398,16 +398,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης LCM.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης LCM.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης LCM.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης LCM.",
           example: "3",
           require: "o",
           repeat: "y",
@@ -426,8 +426,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης LN.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης LN.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -446,16 +446,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης LOG.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης LOG.",
           example: "128",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "base",
-          detail: "Παράμετρος `base` της συνάρτησης LOG.",
+          name: "βάση",
+          detail: "Παράμετρος `βάση` της συνάρτησης LOG.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -474,8 +474,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης LOG10.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης LOG10.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -494,16 +494,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Παράμετρος `dividend` της συνάρτησης MOD.",
+          name: "διαιρετέος",
+          detail: "Παράμετρος `διαιρετέος` της συνάρτησης MOD.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "divisor",
-          detail: "Παράμετρος `divisor` της συνάρτησης MOD.",
+          name: "διαιρέτης",
+          detail: "Παράμετρος `διαιρέτης` της συνάρτησης MOD.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -522,16 +522,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης MROUND.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης MROUND.",
           example: "21",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor",
-          detail: "Παράμετρος `factor` της συνάρτησης MROUND.",
+          name: "συντελεστής",
+          detail: "Παράμετρος `συντελεστής` της συνάρτησης MROUND.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -550,8 +550,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ODD.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ODD.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -570,16 +570,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης SUMSQ.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης SUMSQ.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης SUMSQ.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης SUMSQ.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -626,16 +626,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης SUM.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης SUM.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης SUM.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης SUM.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -654,24 +654,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "function_code",
-          detail: "Παράμετρος `function_code` της συνάρτησης SUBTOTAL.",
+          name: "κωδικός_συνάρτησης",
+          detail: "Παράμετρος `κωδικός_συνάρτησης` της συνάρτησης SUBTOTAL.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "range1",
-          detail: "Παράμετρος `range1` της συνάρτησης SUBTOTAL.",
+          name: "εύρος1",
+          detail: "Παράμετρος `εύρος1` της συνάρτησης SUBTOTAL.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "range2",
-          detail: "Παράμετρος `range2` της συνάρτησης SUBTOTAL.",
+          name: "εύρος2",
+          detail: "Παράμετρος `εύρος2` της συνάρτησης SUBTOTAL.",
           example: "B2:B8",
           require: "o",
           repeat: "y",
@@ -690,8 +690,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ASIN.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ASIN.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -710,16 +710,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Παράμετρος `range` της συνάρτησης COUNTIF.",
+          name: "εύρος",
+          detail: "Παράμετρος `εύρος` της συνάρτησης COUNTIF.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion",
-          detail: "Παράμετρος `criterion` της συνάρτησης COUNTIF.",
+          name: "κριτήριο",
+          detail: "Παράμετρος `κριτήριο` της συνάρτησης COUNTIF.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -738,8 +738,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Παράμετρος `angle` της συνάρτησης RADIANS.",
+          name: "γωνία",
+          detail: "Παράμετρος `γωνία` της συνάρτησης RADIANS.",
           example: "180",
           require: "m",
           repeat: "n",
@@ -769,16 +769,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης COUNTUNIQUE.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης COUNTUNIQUE.",
           example: "A1:C100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης COUNTUNIQUE.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης COUNTUNIQUE.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -797,8 +797,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Παράμετρος `angle` της συνάρτησης DEGREES.",
+          name: "γωνία",
+          detail: "Παράμετρος `γωνία` της συνάρτησης DEGREES.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -837,8 +837,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης EVEN.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης EVEN.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -857,8 +857,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "exponent",
-          detail: "Παράμετρος `exponent` της συνάρτησης EXP.",
+          name: "εκθέτης",
+          detail: "Παράμετρος `εκθέτης` της συνάρτησης EXP.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -877,8 +877,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης FACT.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης FACT.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -897,8 +897,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης FACTDOUBLE.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης FACTDOUBLE.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -928,16 +928,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης FLOOR.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης FLOOR.",
           example: "23.25",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor",
-          detail: "Παράμετρος `factor` της συνάρτησης FLOOR.",
+          name: "συντελεστής",
+          detail: "Παράμετρος `συντελεστής` της συνάρτησης FLOOR.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -956,16 +956,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης GCD.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης GCD.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης GCD.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης GCD.",
           example: "96",
           require: "o",
           repeat: "y",
@@ -984,16 +984,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "low",
-          detail: "Παράμετρος `low` της συνάρτησης RANDBETWEEN.",
+          name: "κάτω_όριο",
+          detail: "Παράμετρος `κάτω_όριο` της συνάρτησης RANDBETWEEN.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "high",
-          detail: "Παράμετρος `high` της συνάρτησης RANDBETWEEN.",
+          name: "άνω_όριο",
+          detail: "Παράμετρος `άνω_όριο` της συνάρτησης RANDBETWEEN.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -1012,16 +1012,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ROUND.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ROUND.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Παράμετρος `places` της συνάρτησης ROUND.",
+          name: "δεκαδικά_ψηφία",
+          detail: "Παράμετρος `δεκαδικά_ψηφία` της συνάρτησης ROUND.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1040,16 +1040,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ROUNDDOWN.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ROUNDDOWN.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Παράμετρος `places` της συνάρτησης ROUNDDOWN.",
+          name: "δεκαδικά_ψηφία",
+          detail: "Παράμετρος `δεκαδικά_ψηφία` της συνάρτησης ROUNDDOWN.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1068,16 +1068,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ROUNDUP.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ROUNDUP.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Παράμετρος `places` της συνάρτησης ROUNDUP.",
+          name: "δεκαδικά_ψηφία",
+          detail: "Παράμετρος `δεκαδικά_ψηφία` της συνάρτησης ROUNDUP.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1140,8 +1140,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης SIGN.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης SIGN.",
           example: "-42",
           require: "m",
           repeat: "n",
@@ -1160,8 +1160,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Παράμετρος `angle` της συνάρτησης SIN.",
+          name: "γωνία",
+          detail: "Παράμετρος `γωνία` της συνάρτησης SIN.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1180,8 +1180,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης SINH.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης SINH.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1200,8 +1200,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης SQRT.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης SQRT.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1220,8 +1220,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης SQRTPI.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης SQRTPI.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1240,8 +1240,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης GAMMALN.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης GAMMALN.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1260,8 +1260,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Παράμετρος `angle` της συνάρτησης COS.",
+          name: "γωνία",
+          detail: "Παράμετρος `γωνία` της συνάρτησης COS.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1280,16 +1280,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης TRUNC.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης TRUNC.",
           example: "3.141592654",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Παράμετρος `places` της συνάρτησης TRUNC.",
+          name: "δεκαδικά_ψηφία",
+          detail: "Παράμετρος `δεκαδικά_ψηφία` της συνάρτησης TRUNC.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -1308,16 +1308,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Παράμετρος `dividend` της συνάρτησης QUOTIENT.",
+          name: "διαιρετέος",
+          detail: "Παράμετρος `διαιρετέος` της συνάρτησης QUOTIENT.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "divisor",
-          detail: "Παράμετρος `divisor` της συνάρτησης QUOTIENT.",
+          name: "διαιρέτης",
+          detail: "Παράμετρος `διαιρέτης` της συνάρτησης QUOTIENT.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1336,16 +1336,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "base",
-          detail: "Παράμετρος `base` της συνάρτησης POWER.",
+          name: "βάση",
+          detail: "Παράμετρος `βάση` της συνάρτησης POWER.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "exponent",
-          detail: "Παράμετρος `exponent` της συνάρτησης POWER.",
+          name: "εκθέτης",
+          detail: "Παράμετρος `εκθέτης` της συνάρτησης POWER.",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -1364,32 +1364,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "sum_range",
-          detail: "Παράμετρος `sum_range` της συνάρτησης SUMIFS.",
+          name: "εύρος_άθροισης",
+          detail: "Παράμετρος `εύρος_άθροισης` της συνάρτησης SUMIFS.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criteria_range1",
-          detail: "Παράμετρος `criteria_range1` της συνάρτησης SUMIFS.",
+          name: "εύρος_κριτηρίων1",
+          detail: "Παράμετρος `εύρος_κριτηρίων1` της συνάρτησης SUMIFS.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion1",
-          detail: "Παράμετρος `criterion1` της συνάρτησης SUMIFS.",
+          name: "κριτήριο1",
+          detail: "Παράμετρος `κριτήριο1` της συνάρτησης SUMIFS.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
-          detail: "Παράμετρος `criteria_range2` της συνάρτησης SUMIFS.",
+          name: "εύρος_κριτηρίων2",
+          detail: "Παράμετρος `εύρος_κριτηρίων2` της συνάρτησης SUMIFS.",
           example: " C1:C10",
           require: "o",
           repeat: "y",
@@ -1408,24 +1408,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range1",
-          detail: "Παράμετρος `criteria_range1` της συνάρτησης COUNTIFS.",
+          name: "εύρος_κριτηρίων1",
+          detail: "Παράμετρος `εύρος_κριτηρίων1` της συνάρτησης COUNTIFS.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion1",
-          detail: "Παράμετρος `criterion1` της συνάρτησης COUNTIFS.",
+          name: "κριτήριο1",
+          detail: "Παράμετρος `κριτήριο1` της συνάρτησης COUNTIFS.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
-          detail: "Παράμετρος `criteria_range2` της συνάρτησης COUNTIFS.",
+          name: "εύρος_κριτηρίων2",
+          detail: "Παράμετρος `εύρος_κριτηρίων2` της συνάρτησης COUNTIFS.",
           example: " B1:B10",
           require: "o",
           repeat: "y",
@@ -1444,16 +1444,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
-          detail: "Παράμετρος `factor1` της συνάρτησης PRODUCT.",
+          name: "συντελεστής1",
+          detail: "Παράμετρος `συντελεστής1` της συνάρτησης PRODUCT.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor2",
-          detail: "Παράμετρος `factor2` της συνάρτησης PRODUCT.",
+          name: "συντελεστής2",
+          detail: "Παράμετρος `συντελεστής2` της συνάρτησης PRODUCT.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1472,16 +1472,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης HARMEAN.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης HARMEAN.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης HARMEAN.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης HARMEAN.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1500,40 +1500,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
-          detail: "Παράμετρος `num_successes` της συνάρτησης HYPGEOMDIST.",
+          name: "αριθμός_επιτυχιών",
+          detail: "Παράμετρος `αριθμός_επιτυχιών` της συνάρτησης HYPGEOMDIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "num_draws",
-          detail: "Παράμετρος `num_draws` της συνάρτησης HYPGEOMDIST.",
+          name: "αριθμός_δοκιμών",
+          detail: "Παράμετρος `αριθμός_δοκιμών` της συνάρτησης HYPGEOMDIST.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "successes_in_pop",
-          detail: "Παράμετρος `successes_in_pop` της συνάρτησης HYPGEOMDIST.",
+          name: "επιτυχίες_στον_πληθυσμό",
+          detail: "Παράμετρος `επιτυχίες_στον_πληθυσμό` της συνάρτησης HYPGEOMDIST.",
           example: "20",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "pop_size",
-          detail: "Παράμετρος `pop_size` της συνάρτησης HYPGEOMDIST.",
+          name: "μέγεθος_πληθυσμού",
+          detail: "Παράμετρος `μέγεθος_πληθυσμού` της συνάρτησης HYPGEOMDIST.",
           example: "40",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Παράμετρος `cumulative` της συνάρτησης HYPGEOMDIST.",
+          name: "αθροιστικό",
+          detail: "Παράμετρος `αθροιστικό` της συνάρτησης HYPGEOMDIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -1552,16 +1552,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Παράμετρος `data_y` της συνάρτησης INTERCEPT.",
+          name: "δεδομένα_y",
+          detail: "Παράμετρος `δεδομένα_y` της συνάρτησης INTERCEPT.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Παράμετρος `data_x` της συνάρτησης INTERCEPT.",
+          name: "δεδομένα_x",
+          detail: "Παράμετρος `δεδομένα_x` της συνάρτησης INTERCEPT.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1580,16 +1580,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης KURT.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης KURT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης KURT.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης KURT.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1608,8 +1608,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης LARGE.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης LARGE.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -1636,16 +1636,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης STDEVA.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης STDEVA.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης STDEVA.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης STDEVA.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1664,16 +1664,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης STDEVP.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης STDEVP.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης STDEVP.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης STDEVP.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1692,16 +1692,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης GEOMEAN.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης GEOMEAN.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης GEOMEAN.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης GEOMEAN.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1720,24 +1720,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης RANK_EQ.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης RANK_EQ.",
           example: "A10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης RANK_EQ.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης RANK_EQ.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "is_ascending",
-          detail: "Παράμετρος `is_ascending` της συνάρτησης RANK_EQ.",
+          name: "είναι_αύξουσα",
+          detail: "Παράμετρος `είναι_αύξουσα` της συνάρτησης RANK_EQ.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1756,24 +1756,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης RANK_AVG.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης RANK_AVG.",
           example: "A10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης RANK_AVG.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης RANK_AVG.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "is_ascending",
-          detail: "Παράμετρος `is_ascending` της συνάρτησης RANK_AVG.",
+          name: "είναι_αύξουσα",
+          detail: "Παράμετρος `είναι_αύξουσα` της συνάρτησης RANK_AVG.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1792,24 +1792,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης PERCENTRANK_EXC.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης PERCENTRANK_EXC.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης PERCENTRANK_EXC.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης PERCENTRANK_EXC.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Παράμετρος `significant_digits` της συνάρτησης PERCENTRANK_EXC.",
+          name: "σημαντικά_ψηφία",
+          detail: "Παράμετρος `σημαντικά_ψηφία` της συνάρτησης PERCENTRANK_EXC.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1828,24 +1828,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης PERCENTRANK_INC.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης PERCENTRANK_INC.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης PERCENTRANK_INC.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης PERCENTRANK_INC.",
           example: " A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Παράμετρος `significant_digits` της συνάρτησης PERCENTRANK_INC.",
+          name: "σημαντικά_ψηφία",
+          detail: "Παράμετρος `σημαντικά_ψηφία` της συνάρτησης PERCENTRANK_INC.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1872,16 +1872,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_y",
-          detail: "Παράμετρος `data_y` της συνάρτησης FORECAST.",
+          name: "δεδομένα_y",
+          detail: "Παράμετρος `δεδομένα_y` της συνάρτησης FORECAST.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Παράμετρος `data_x` της συνάρτησης FORECAST.",
+          name: "δεδομένα_x",
+          detail: "Παράμετρος `δεδομένα_x` της συνάρτησης FORECAST.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1900,8 +1900,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης FISHERINV.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης FISHERINV.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1920,8 +1920,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης FISHER.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης FISHER.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1940,16 +1940,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης MODE_SNGL.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης MODE_SNGL.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης MODE_SNGL.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης MODE_SNGL.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1976,24 +1976,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "shape",
-          detail: "Παράμετρος `shape` της συνάρτησης WEIBULL_DIST.",
+          name: "σχήμα",
+          detail: "Παράμετρος `σχήμα` της συνάρτησης WEIBULL_DIST.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "scale",
-          detail: "Παράμετρος `scale` της συνάρτησης WEIBULL_DIST.",
+          name: "κλίμακα",
+          detail: "Παράμετρος `κλίμακα` της συνάρτησης WEIBULL_DIST.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Παράμετρος `cumulative` της συνάρτησης WEIBULL_DIST.",
+          name: "αθροιστικό",
+          detail: "Παράμετρος `αθροιστικό` της συνάρτησης WEIBULL_DIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -2012,16 +2012,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης COUNT.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης COUNT.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης COUNT.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης COUNT.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2040,16 +2040,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης COUNTA.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης COUNTA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης COUNTA.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης COUNTA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2068,16 +2068,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης AVEDEV.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης AVEDEV.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης AVEDEV.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης AVEDEV.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2096,16 +2096,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης AVERAGE.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης AVERAGE.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης AVERAGE.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης AVERAGE.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2124,16 +2124,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης AVERAGEA.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης AVERAGEA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης AVERAGEA.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης AVERAGEA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2152,32 +2152,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
-          detail: "Παράμετρος `num_successes` της συνάρτησης BINOM_DIST.",
+          name: "αριθμός_επιτυχιών",
+          detail: "Παράμετρος `αριθμός_επιτυχιών` της συνάρτησης BINOM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "num_trials",
-          detail: "Παράμετρος `num_trials` της συνάρτησης BINOM_DIST.",
+          name: "αριθμός_δοκιμών",
+          detail: "Παράμετρος `αριθμός_δοκιμών` της συνάρτησης BINOM_DIST.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "prob_success",
-          detail: "Παράμετρος `prob_success` της συνάρτησης BINOM_DIST.",
+          name: "πιθανότητα_επιτυχίας",
+          detail: "Παράμετρος `πιθανότητα_επιτυχίας` της συνάρτησης BINOM_DIST.",
           example: "0.005",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Παράμετρος `cumulative` της συνάρτησης BINOM_DIST.",
+          name: "αθροιστικό",
+          detail: "Παράμετρος `αθροιστικό` της συνάρτησης BINOM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2196,24 +2196,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_trials",
-          detail: "Παράμετρος `num_trials` της συνάρτησης BINOM_INV.",
+          name: "αριθμός_δοκιμών",
+          detail: "Παράμετρος `αριθμός_δοκιμών` της συνάρτησης BINOM_INV.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "prob_success",
-          detail: "Παράμετρος `prob_success` της συνάρτησης BINOM_INV.",
+          name: "πιθανότητα_επιτυχίας",
+          detail: "Παράμετρος `πιθανότητα_επιτυχίας` της συνάρτησης BINOM_INV.",
           example: "0.005",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "target_prob",
-          detail: "Παράμετρος `target_prob` της συνάρτησης BINOM_INV.",
+          name: "πιθανότητα_στόχου",
+          detail: "Παράμετρος `πιθανότητα_στόχου` της συνάρτησης BINOM_INV.",
           example: "0.8",
           require: "m",
           repeat: "n",
@@ -2232,24 +2232,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "alpha",
-          detail: "Παράμετρος `alpha` της συνάρτησης CONFIDENCE_NORM.",
+          name: "άλφα",
+          detail: "Παράμετρος `άλφα` της συνάρτησης CONFIDENCE_NORM.",
           example: "0.05",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Παράμετρος `standard_deviation` της συνάρτησης CONFIDENCE_NORM.",
+          name: "τυπική_απόκλιση",
+          detail: "Παράμετρος `τυπική_απόκλιση` της συνάρτησης CONFIDENCE_NORM.",
           example: "1.6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "pop_size",
-          detail: "Παράμετρος `pop_size` της συνάρτησης CONFIDENCE_NORM.",
+          name: "μέγεθος_πληθυσμού",
+          detail: "Παράμετρος `μέγεθος_πληθυσμού` της συνάρτησης CONFIDENCE_NORM.",
           example: "250",
           require: "m",
           repeat: "n",
@@ -2268,16 +2268,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Παράμετρος `data_y` της συνάρτησης CORREL.",
+          name: "δεδομένα_y",
+          detail: "Παράμετρος `δεδομένα_y` της συνάρτησης CORREL.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Παράμετρος `data_x` της συνάρτησης CORREL.",
+          name: "δεδομένα_x",
+          detail: "Παράμετρος `δεδομένα_x` της συνάρτησης CORREL.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2296,16 +2296,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Παράμετρος `data_y` της συνάρτησης COVARIANCE_P.",
+          name: "δεδομένα_y",
+          detail: "Παράμετρος `δεδομένα_y` της συνάρτησης COVARIANCE_P.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Παράμετρος `data_x` της συνάρτησης COVARIANCE_P.",
+          name: "δεδομένα_x",
+          detail: "Παράμετρος `δεδομένα_x` της συνάρτησης COVARIANCE_P.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2324,16 +2324,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Παράμετρος `data_y` της συνάρτησης COVARIANCE_S.",
+          name: "δεδομένα_y",
+          detail: "Παράμετρος `δεδομένα_y` της συνάρτησης COVARIANCE_S.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Παράμετρος `data_x` της συνάρτησης COVARIANCE_S.",
+          name: "δεδομένα_x",
+          detail: "Παράμετρος `δεδομένα_x` της συνάρτησης COVARIANCE_S.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2352,16 +2352,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης DEVSQ.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης DEVSQ.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης DEVSQ.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης DEVSQ.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2388,16 +2388,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "lambda",
-          detail: "Παράμετρος `lambda` της συνάρτησης EXPON_DIST.",
+          name: "λάμδα",
+          detail: "Παράμετρος `λάμδα` της συνάρτησης EXPON_DIST.",
           example: "0.5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Παράμετρος `cumulative` της συνάρτησης EXPON_DIST.",
+          name: "αθροιστικό",
+          detail: "Παράμετρος `αθροιστικό` της συνάρτησης EXPON_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2416,24 +2416,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range",
-          detail: "Παράμετρος `criteria_range` της συνάρτησης AVERAGEIF.",
+          name: "εύρος_κριτηρίων",
+          detail: "Παράμετρος `εύρος_κριτηρίων` της συνάρτησης AVERAGEIF.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criterion",
-          detail: "Παράμετρος `criterion` της συνάρτησης AVERAGEIF.",
+          name: "κριτήριο",
+          detail: "Παράμετρος `κριτήριο` της συνάρτησης AVERAGEIF.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "average_range",
-          detail: "Παράμετρος `average_range` της συνάρτησης AVERAGEIF.",
+          name: "εύρος_μέσου_όρου",
+          detail: "Παράμετρος `εύρος_μέσου_όρου` της συνάρτησης AVERAGEIF.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -2452,32 +2452,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "average_range",
-          detail: "Παράμετρος `average_range` της συνάρτησης AVERAGEIFS.",
+          name: "εύρος_μέσου_όρου",
+          detail: "Παράμετρος `εύρος_μέσου_όρου` της συνάρτησης AVERAGEIFS.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range1",
-          detail: "Παράμετρος `criteria_range1` της συνάρτησης AVERAGEIFS.",
+          name: "εύρος_κριτηρίων1",
+          detail: "Παράμετρος `εύρος_κριτηρίων1` της συνάρτησης AVERAGEIFS.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criterion1",
-          detail: "Παράμετρος `criterion1` της συνάρτησης AVERAGEIFS.",
+          name: "κριτήριο1",
+          detail: "Παράμετρος `κριτήριο1` της συνάρτησης AVERAGEIFS.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
-          detail: "Παράμετρος `criteria_range2` της συνάρτησης AVERAGEIFS.",
+          name: "εύρος_κριτηρίων2",
+          detail: "Παράμετρος `εύρος_κριτηρίων2` της συνάρτησης AVERAGEIFS.",
           example: " C1:C10",
           require: "m",
           repeat: "n",
@@ -2524,16 +2524,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης TRIMMEAN.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης TRIMMEAN.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "exclude_proportion",
-          detail: "Παράμετρος `exclude_proportion` της συνάρτησης TRIMMEAN.",
+          name: "αποκλειόμενη_αναλογία",
+          detail: "Παράμετρος `αποκλειόμενη_αναλογία` της συνάρτησης TRIMMEAN.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2552,16 +2552,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης PERCENTILE_EXC.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης PERCENTILE_EXC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "percentile",
-          detail: "Παράμετρος `percentile` της συνάρτησης PERCENTILE_EXC.",
+          name: "εκατοστημόριο",
+          detail: "Παράμετρος `εκατοστημόριο` της συνάρτησης PERCENTILE_EXC.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2580,16 +2580,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης PERCENTILE_INC.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης PERCENTILE_INC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "percentile",
-          detail: "Παράμετρος `percentile` της συνάρτησης PERCENTILE_INC.",
+          name: "εκατοστημόριο",
+          detail: "Παράμετρος `εκατοστημόριο` της συνάρτησης PERCENTILE_INC.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2608,16 +2608,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Παράμετρος `data_y` της συνάρτησης PEARSON.",
+          name: "δεδομένα_y",
+          detail: "Παράμετρος `δεδομένα_y` της συνάρτησης PEARSON.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Παράμετρος `data_x` της συνάρτησης PEARSON.",
+          name: "δεδομένα_x",
+          detail: "Παράμετρος `δεδομένα_x` της συνάρτησης PEARSON.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2664,8 +2664,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Παράμετρος `cumulative` της συνάρτησης NORM_S_DIST.",
+          name: "αθροιστικό",
+          detail: "Παράμετρος `αθροιστικό` της συνάρτησης NORM_S_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2692,16 +2692,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Παράμετρος `mean` της συνάρτησης NORM_INV.",
+          name: "μέση_τιμή",
+          detail: "Παράμετρος `μέση_τιμή` της συνάρτησης NORM_INV.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Παράμετρος `standard_deviation` της συνάρτησης NORM_INV.",
+          name: "τυπική_απόκλιση",
+          detail: "Παράμετρος `τυπική_απόκλιση` της συνάρτησης NORM_INV.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2728,24 +2728,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Παράμετρος `mean` της συνάρτησης NORM_DIST.",
+          name: "μέση_τιμή",
+          detail: "Παράμετρος `μέση_τιμή` της συνάρτησης NORM_DIST.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Παράμετρος `standard_deviation` της συνάρτησης NORM_DIST.",
+          name: "τυπική_απόκλιση",
+          detail: "Παράμετρος `τυπική_απόκλιση` της συνάρτησης NORM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Παράμετρος `cumulative` της συνάρτησης NORM_DIST.",
+          name: "αθροιστικό",
+          detail: "Παράμετρος `αθροιστικό` της συνάρτησης NORM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2764,32 +2764,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_failures",
-          detail: "Παράμετρος `num_failures` της συνάρτησης NEGBINOM_DIST.",
+          name: "αριθμός_αποτυχιών",
+          detail: "Παράμετρος `αριθμός_αποτυχιών` της συνάρτησης NEGBINOM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "num_successes",
-          detail: "Παράμετρος `num_successes` της συνάρτησης NEGBINOM_DIST.",
+          name: "αριθμός_επιτυχιών",
+          detail: "Παράμετρος `αριθμός_επιτυχιών` της συνάρτησης NEGBINOM_DIST.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "prob_success",
-          detail: "Παράμετρος `prob_success` της συνάρτησης NEGBINOM_DIST.",
+          name: "πιθανότητα_επιτυχίας",
+          detail: "Παράμετρος `πιθανότητα_επιτυχίας` της συνάρτησης NEGBINOM_DIST.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Παράμετρος `cumulative` της συνάρτησης NEGBINOM_DIST.",
+          name: "αθροιστικό",
+          detail: "Παράμετρος `αθροιστικό` της συνάρτησης NEGBINOM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2808,16 +2808,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης MINA.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης MINA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης MINA.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης MINA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2836,16 +2836,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης MIN.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης MIN.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης MIN.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης MIN.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2864,16 +2864,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης MEDIAN.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης MEDIAN.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης MEDIAN.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης MEDIAN.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2892,16 +2892,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης MAXA.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης MAXA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης MAXA.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης MAXA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2920,16 +2920,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης MAX.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης MAX.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης MAX.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης MAX.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2956,16 +2956,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Παράμετρος `mean` της συνάρτησης LOGNORM_INV.",
+          name: "μέση_τιμή",
+          detail: "Παράμετρος `μέση_τιμή` της συνάρτησης LOGNORM_INV.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Παράμετρος `standard_deviation` της συνάρτησης LOGNORM_INV.",
+          name: "τυπική_απόκλιση",
+          detail: "Παράμετρος `τυπική_απόκλιση` της συνάρτησης LOGNORM_INV.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -2992,24 +2992,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Παράμετρος `mean` της συνάρτησης LOGNORM_DIST.",
+          name: "μέση_τιμή",
+          detail: "Παράμετρος `μέση_τιμή` της συνάρτησης LOGNORM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Παράμετρος `standard_deviation` της συνάρτησης LOGNORM_DIST.",
+          name: "τυπική_απόκλιση",
+          detail: "Παράμετρος `τυπική_απόκλιση` της συνάρτησης LOGNORM_DIST.",
           example: "6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Παράμετρος `cumulative` της συνάρτησης LOGNORM_DIST.",
+          name: "αθροιστικό",
+          detail: "Παράμετρος `αθροιστικό` της συνάρτησης LOGNORM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3028,24 +3028,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης Z_TEST.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης Z_TEST.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης Z_TEST.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης Z_TEST.",
           example: "B2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Παράμετρος `standard_deviation` της συνάρτησης Z_TEST.",
+          name: "τυπική_απόκλιση",
+          detail: "Παράμετρος `τυπική_απόκλιση` της συνάρτησης Z_TEST.",
           example: "3",
           require: "o",
           repeat: "n",
@@ -3064,32 +3064,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης PROB.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης PROB.",
           example: "A3:A6",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "probabilities",
-          detail: "Παράμετρος `probabilities` της συνάρτησης PROB.",
+          name: "πιθανότητες",
+          detail: "Παράμετρος `πιθανότητες` της συνάρτησης PROB.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "low_limit",
-          detail: "Παράμετρος `low_limit` της συνάρτησης PROB.",
+          name: "κάτω_όριο",
+          detail: "Παράμετρος `κάτω_όριο` της συνάρτησης PROB.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "high_limit",
-          detail: "Παράμετρος `high_limit` της συνάρτησης PROB.",
+          name: "άνω_όριο",
+          detail: "Παράμετρος `άνω_όριο` της συνάρτησης PROB.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -3108,16 +3108,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης QUARTILE_EXC.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης QUARTILE_EXC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
-          detail: "Παράμετρος `quartile_number` της συνάρτησης QUARTILE_EXC.",
+          name: "αριθμός_τεταρτημορίου",
+          detail: "Παράμετρος `αριθμός_τεταρτημορίου` της συνάρτησης QUARTILE_EXC.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3136,16 +3136,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης QUARTILE_INC.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης QUARTILE_INC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
-          detail: "Παράμετρος `quartile_number` της συνάρτησης QUARTILE_INC.",
+          name: "αριθμός_τεταρτημορίου",
+          detail: "Παράμετρος `αριθμός_τεταρτημορίου` της συνάρτησης QUARTILE_INC.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3172,16 +3172,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Παράμετρος `mean` της συνάρτησης POISSON_DIST.",
+          name: "μέση_τιμή",
+          detail: "Παράμετρος `μέση_τιμή` της συνάρτησης POISSON_DIST.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Παράμετρος `cumulative` της συνάρτησης POISSON_DIST.",
+          name: "αθροιστικό",
+          detail: "Παράμετρος `αθροιστικό` της συνάρτησης POISSON_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3200,16 +3200,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Παράμετρος `data_y` της συνάρτησης RSQ.",
+          name: "δεδομένα_y",
+          detail: "Παράμετρος `δεδομένα_y` της συνάρτησης RSQ.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Παράμετρος `data_x` της συνάρτησης RSQ.",
+          name: "δεδομένα_x",
+          detail: "Παράμετρος `δεδομένα_x` της συνάρτησης RSQ.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3236,16 +3236,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Παράμετρος `degrees_freedom` της συνάρτησης T_DIST.",
+          name: "βαθμοί_ελευθερίας",
+          detail: "Παράμετρος `βαθμοί_ελευθερίας` της συνάρτησης T_DIST.",
           example: "30",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Παράμετρος `cumulative` της συνάρτησης T_DIST.",
+          name: "αθροιστικό",
+          detail: "Παράμετρος `αθροιστικό` της συνάρτησης T_DIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3272,8 +3272,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Παράμετρος `degrees_freedom` της συνάρτησης T_DIST_2T.",
+          name: "βαθμοί_ελευθερίας",
+          detail: "Παράμετρος `βαθμοί_ελευθερίας` της συνάρτησης T_DIST_2T.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3300,8 +3300,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Παράμετρος `degrees_freedom` της συνάρτησης T_DIST_RT.",
+          name: "βαθμοί_ελευθερίας",
+          detail: "Παράμετρος `βαθμοί_ελευθερίας` της συνάρτησης T_DIST_RT.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3320,16 +3320,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
-          detail: "Παράμετρος `probability` της συνάρτησης T_INV.",
+          name: "πιθανότητα",
+          detail: "Παράμετρος `πιθανότητα` της συνάρτησης T_INV.",
           example: "0.35",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Παράμετρος `degrees_freedom` της συνάρτησης T_INV.",
+          name: "βαθμοί_ελευθερίας",
+          detail: "Παράμετρος `βαθμοί_ελευθερίας` της συνάρτησης T_INV.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3348,16 +3348,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
-          detail: "Παράμετρος `probability` της συνάρτησης T_INV_2T.",
+          name: "πιθανότητα",
+          detail: "Παράμετρος `πιθανότητα` της συνάρτησης T_INV_2T.",
           example: "0.35",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Παράμετρος `degrees_freedom` της συνάρτησης T_INV_2T.",
+          name: "βαθμοί_ελευθερίας",
+          detail: "Παράμετρος `βαθμοί_ελευθερίας` της συνάρτησης T_INV_2T.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3376,32 +3376,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "range1",
-          detail: "Παράμετρος `range1` της συνάρτησης T_TEST.",
+          name: "εύρος1",
+          detail: "Παράμετρος `εύρος1` της συνάρτησης T_TEST.",
           example: "A1:A4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "range2",
-          detail: "Παράμετρος `range2` της συνάρτησης T_TEST.",
+          name: "εύρος2",
+          detail: "Παράμετρος `εύρος2` της συνάρτησης T_TEST.",
           example: "B1:B4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "tails",
-          detail: "Παράμετρος `tails` της συνάρτησης T_TEST.",
+          name: "ουρές",
+          detail: "Παράμετρος `ουρές` της συνάρτησης T_TEST.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "type",
-          detail: "Παράμετρος `type` της συνάρτησης T_TEST.",
+          name: "τύπος",
+          detail: "Παράμετρος `τύπος` της συνάρτησης T_TEST.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3428,24 +3428,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
-          detail: "Παράμετρος `degrees_freedom1` της συνάρτησης F_DIST.",
+          name: "βαθμοί_ελευθερίας1",
+          detail: "Παράμετρος `βαθμοί_ελευθερίας1` της συνάρτησης F_DIST.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
-          detail: "Παράμετρος `degrees_freedom2` της συνάρτησης F_DIST.",
+          name: "βαθμοί_ελευθερίας2",
+          detail: "Παράμετρος `βαθμοί_ελευθερίας2` της συνάρτησης F_DIST.",
           example: "6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Παράμετρος `cumulative` της συνάρτησης F_DIST.",
+          name: "αθροιστικό",
+          detail: "Παράμετρος `αθροιστικό` της συνάρτησης F_DIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3472,16 +3472,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
-          detail: "Παράμετρος `degrees_freedom1` της συνάρτησης F_DIST_RT.",
+          name: "βαθμοί_ελευθερίας1",
+          detail: "Παράμετρος `βαθμοί_ελευθερίας1` της συνάρτησης F_DIST_RT.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
-          detail: "Παράμετρος `degrees_freedom2` της συνάρτησης F_DIST_RT.",
+          name: "βαθμοί_ελευθερίας2",
+          detail: "Παράμετρος `βαθμοί_ελευθερίας2` της συνάρτησης F_DIST_RT.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3500,16 +3500,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης VAR_P.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης VAR_P.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης VAR_P.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης VAR_P.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3528,16 +3528,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης VAR_S.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης VAR_S.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης VAR_S.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης VAR_S.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3556,16 +3556,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης VARA.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης VARA.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης VARA.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης VARA.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3584,16 +3584,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης VARPA.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης VARPA.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης VARPA.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης VARPA.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3612,16 +3612,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Παράμετρος `data_y` της συνάρτησης STEYX.",
+          name: "δεδομένα_y",
+          detail: "Παράμετρος `δεδομένα_y` της συνάρτησης STEYX.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Παράμετρος `data_x` της συνάρτησης STEYX.",
+          name: "δεδομένα_x",
+          detail: "Παράμετρος `δεδομένα_x` της συνάρτησης STEYX.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3640,24 +3640,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης STANDARDIZE.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης STANDARDIZE.",
           example: "96",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Παράμετρος `mean` της συνάρτησης STANDARDIZE.",
+          name: "μέση_τιμή",
+          detail: "Παράμετρος `μέση_τιμή` της συνάρτησης STANDARDIZE.",
           example: "80",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Παράμετρος `standard_deviation` της συνάρτησης STANDARDIZE.",
+          name: "τυπική_απόκλιση",
+          detail: "Παράμετρος `τυπική_απόκλιση` της συνάρτησης STANDARDIZE.",
           example: "6.7",
           require: "m",
           repeat: "n",
@@ -3676,8 +3676,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης SMALL.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης SMALL.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -3704,16 +3704,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Παράμετρος `data_y` της συνάρτησης SLOPE.",
+          name: "δεδομένα_y",
+          detail: "Παράμετρος `δεδομένα_y` της συνάρτησης SLOPE.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Παράμετρος `data_x` της συνάρτησης SLOPE.",
+          name: "δεδομένα_x",
+          detail: "Παράμετρος `δεδομένα_x` της συνάρτησης SLOPE.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3732,16 +3732,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης SKEW.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης SKEW.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης SKEW.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης SKEW.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3760,16 +3760,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης SKEW_P.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης SKEW_P.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης SKEW_P.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης SKEW_P.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3788,32 +3788,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Παράμετρος `search_key` της συνάρτησης VLOOKUP.",
+          name: "κλειδί_αναζήτησης",
+          detail: "Παράμετρος `κλειδί_αναζήτησης` της συνάρτησης VLOOKUP.",
           example: "10003",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Παράμετρος `range` της συνάρτησης VLOOKUP.",
+          name: "εύρος",
+          detail: "Παράμετρος `εύρος` της συνάρτησης VLOOKUP.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "index",
-          detail: "Παράμετρος `index` της συνάρτησης VLOOKUP.",
+          name: "δείκτης",
+          detail: "Παράμετρος `δείκτης` της συνάρτησης VLOOKUP.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
-          detail: "Παράμετρος `is_sorted` της συνάρτησης VLOOKUP.",
+          name: "είναι_ταξινομημένο",
+          detail: "Παράμετρος `είναι_ταξινομημένο` της συνάρτησης VLOOKUP.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3832,32 +3832,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Παράμετρος `search_key` της συνάρτησης HLOOKUP.",
+          name: "κλειδί_αναζήτησης",
+          detail: "Παράμετρος `κλειδί_αναζήτησης` της συνάρτησης HLOOKUP.",
           example: "10003",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Παράμετρος `range` της συνάρτησης HLOOKUP.",
+          name: "εύρος",
+          detail: "Παράμετρος `εύρος` της συνάρτησης HLOOKUP.",
           example: "A2:Z6",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "index",
-          detail: "Παράμετρος `index` της συνάρτησης HLOOKUP.",
+          name: "δείκτης",
+          detail: "Παράμετρος `δείκτης` της συνάρτησης HLOOKUP.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
-          detail: "Παράμετρος `is_sorted` της συνάρτησης HLOOKUP.",
+          name: "είναι_ταξινομημένο",
+          detail: "Παράμετρος `είναι_ταξινομημένο` της συνάρτησης HLOOKUP.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3876,15 +3876,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Παράμετρος `search_key` της συνάρτησης LOOKUP.",
+          name: "κλειδί_αναζήτησης",
+          detail: "Παράμετρος `κλειδί_αναζήτησης` της συνάρτησης LOOKUP.",
           example: "10003",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "search_range|search_result_array",
+          name: "εύρος_αναζήτησης|πίνακας_αποτελέσματος_αναζήτησης",
           detail: "Παράμετρος `search_range|search_result_array` της συνάρτησης LOOKUP.",
           example: "A1:A100",
           require: "m",
@@ -3892,8 +3892,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "result_range",
-          detail: "Παράμετρος `result_range` της συνάρτησης LOOKUP.",
+          name: "εύρος_αποτελέσματος",
+          detail: "Παράμετρος `εύρος_αποτελέσματος` της συνάρτησης LOOKUP.",
           example: "B1:B100",
           require: "o",
           repeat: "n",
@@ -3912,40 +3912,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "row",
-          detail: "Παράμετρος `row` της συνάρτησης ADDRESS.",
+          name: "γραμμή",
+          detail: "Παράμετρος `γραμμή` της συνάρτησης ADDRESS.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "column",
-          detail: "Παράμετρος `column` της συνάρτησης ADDRESS.",
+          name: "στήλη",
+          detail: "Παράμετρος `στήλη` της συνάρτησης ADDRESS.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "absolute_relative_mode",
-          detail: "Παράμετρος `absolute_relative_mode` της συνάρτησης ADDRESS.",
+          name: "λειτουργία_απόλυτης_σχετικής",
+          detail: "Παράμετρος `λειτουργία_απόλυτης_σχετικής` της συνάρτησης ADDRESS.",
           example: "4",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "use_a1_notation",
-          detail: "Παράμετρος `use_a1_notation` της συνάρτησης ADDRESS.",
+          name: "χρήση_σημειογραφίας_a1",
+          detail: "Παράμετρος `χρήση_σημειογραφίας_a1` της συνάρτησης ADDRESS.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "sheet",
-          detail: "Παράμετρος `sheet` της συνάρτησης ADDRESS.",
+          name: "φύλλο",
+          detail: "Παράμετρος `φύλλο` της συνάρτησης ADDRESS.",
           example: "\"Sheet2\"",
           require: "o",
           repeat: "n",
@@ -3964,16 +3964,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference_as_string",
-          detail: "Παράμετρος `cell_reference_as_string` της συνάρτησης INDIRECT.",
+          name: "αναφορά_κελιού_ως_συμβολοσειρά",
+          detail: "Παράμετρος `αναφορά_κελιού_ως_συμβολοσειρά` της συνάρτησης INDIRECT.",
           example: "\"Sheet2!\"&B10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "is_A1_notation",
-          detail: "Παράμετρος `is_A1_notation` της συνάρτησης INDIRECT.",
+          name: "είναι_σημειογραφία_a1",
+          detail: "Παράμετρος `είναι_σημειογραφία_a1` της συνάρτησης INDIRECT.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3992,8 +3992,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
-          detail: "Παράμετρος `cell_reference` της συνάρτησης ROW.",
+          name: "αναφορά_κελιού",
+          detail: "Παράμετρος `αναφορά_κελιού` της συνάρτησης ROW.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4012,8 +4012,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Παράμετρος `range` της συνάρτησης ROWS.",
+          name: "εύρος",
+          detail: "Παράμετρος `εύρος` της συνάρτησης ROWS.",
           example: "A9:A62",
           require: "m",
           repeat: "n",
@@ -4032,8 +4032,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
-          detail: "Παράμετρος `cell_reference` της συνάρτησης COLUMN.",
+          name: "αναφορά_κελιού",
+          detail: "Παράμετρος `αναφορά_κελιού` της συνάρτησης COLUMN.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4052,8 +4052,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Παράμετρος `range` της συνάρτησης COLUMNS.",
+          name: "εύρος",
+          detail: "Παράμετρος `εύρος` της συνάρτησης COLUMNS.",
           example: "A9:W62",
           require: "m",
           repeat: "n",
@@ -4072,40 +4072,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
-          detail: "Παράμετρος `cell_reference` της συνάρτησης OFFSET.",
+          name: "αναφορά_κελιού",
+          detail: "Παράμετρος `αναφορά_κελιού` της συνάρτησης OFFSET.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "offset_rows",
-          detail: "Παράμετρος `offset_rows` της συνάρτησης OFFSET.",
+          name: "μετατόπιση_γραμμών",
+          detail: "Παράμετρος `μετατόπιση_γραμμών` της συνάρτησης OFFSET.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "offset_columns",
-          detail: "Παράμετρος `offset_columns` της συνάρτησης OFFSET.",
+          name: "μετατόπιση_στηλών",
+          detail: "Παράμετρος `μετατόπιση_στηλών` της συνάρτησης OFFSET.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "height",
-          detail: "Παράμετρος `height` της συνάρτησης OFFSET.",
+          name: "ύψος",
+          detail: "Παράμετρος `ύψος` της συνάρτησης OFFSET.",
           example: "2",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "width",
-          detail: "Παράμετρος `width` της συνάρτησης OFFSET.",
+          name: "πλάτος",
+          detail: "Παράμετρος `πλάτος` της συνάρτησης OFFSET.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -4124,24 +4124,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Παράμετρος `search_key` της συνάρτησης MATCH.",
+          name: "κλειδί_αναζήτησης",
+          detail: "Παράμετρος `κλειδί_αναζήτησης` της συνάρτησης MATCH.",
           example: "\"Sunday\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Παράμετρος `range` της συνάρτησης MATCH.",
+          name: "εύρος",
+          detail: "Παράμετρος `εύρος` της συνάρτησης MATCH.",
           example: "A2:A9",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "search_type",
-          detail: "Παράμετρος `search_type` της συνάρτησης MATCH.",
+          name: "τύπος_αναζήτησης",
+          detail: "Παράμετρος `τύπος_αναζήτησης` της συνάρτησης MATCH.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -4160,24 +4160,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
-          detail: "Παράμετρος `reference` της συνάρτησης INDEX.",
+          name: "αναφορά",
+          detail: "Παράμετρος `αναφορά` της συνάρτησης INDEX.",
           example: "A1:C20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "row",
-          detail: "Παράμετρος `row` της συνάρτησης INDEX.",
+          name: "γραμμή",
+          detail: "Παράμετρος `γραμμή` της συνάρτησης INDEX.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "column",
-          detail: "Παράμετρος `column` της συνάρτησης INDEX.",
+          name: "στήλη",
+          detail: "Παράμετρος `στήλη` της συνάρτησης INDEX.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -4196,32 +4196,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "value_name",
-          detail: "Παράμετρος `value_name` της συνάρτησης GETPIVOTDATA.",
+          name: "όνομα_τιμής",
+          detail: "Παράμετρος `όνομα_τιμής` της συνάρτησης GETPIVOTDATA.",
           example: "\"SUM of number of units\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "any_pivot_table_cell",
-          detail: "Παράμετρος `any_pivot_table_cell` της συνάρτησης GETPIVOTDATA.",
+          name: "κελί_συγκεντρωτικού_πίνακα",
+          detail: "Παράμετρος `κελί_συγκεντρωτικού_πίνακα` της συνάρτησης GETPIVOTDATA.",
           example: "'Pivot table'!A1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "original_column",
-          detail: "Παράμετρος `original_column` της συνάρτησης GETPIVOTDATA.",
+          name: "αρχική_στήλη",
+          detail: "Παράμετρος `αρχική_στήλη` της συνάρτησης GETPIVOTDATA.",
           example: "\"division\"",
           require: "o",
           repeat: "y",
           type: "rangeall"
         },
         {
-          name: "pivot_item",
-          detail: "Παράμετρος `pivot_item` της συνάρτησης GETPIVOTDATA.",
+          name: "στοιχείο_συγκεντρωτικού_πίνακα",
+          detail: "Παράμετρος `στοιχείο_συγκεντρωτικού_πίνακα` της συνάρτησης GETPIVOTDATA.",
           example: "\"east\"",
           require: "o",
           repeat: "y",
@@ -4240,24 +4240,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "index",
-          detail: "Παράμετρος `index` της συνάρτησης CHOOSE.",
+          name: "δείκτης",
+          detail: "Παράμετρος `δείκτης` της συνάρτησης CHOOSE.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "choice1",
-          detail: "Παράμετρος `choice1` της συνάρτησης CHOOSE.",
+          name: "επιλογή1",
+          detail: "Παράμετρος `επιλογή1` της συνάρτησης CHOOSE.",
           example: "\"A\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "choice2",
-          detail: "Παράμετρος `choice2` της συνάρτησης CHOOSE.",
+          name: "επιλογή2",
+          detail: "Παράμετρος `επιλογή2` της συνάρτησης CHOOSE.",
           example: "\"B\"",
           require: "o",
           repeat: "y",
@@ -4280,8 +4280,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "link_label",
-          detail: "Παράμετρος `link_label` της συνάρτησης HYPERLINK.",
+          name: "ετικέτα_συνδέσμου",
+          detail: "Παράμετρος `ετικέτα_συνδέσμου` της συνάρτησης HYPERLINK.",
           example: "\"luckysheet\"",
           require: "m",
           repeat: "n",
@@ -4300,24 +4300,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "hour",
-          detail: "Παράμετρος `hour` της συνάρτησης TIME.",
+          name: "ώρα",
+          detail: "Παράμετρος `ώρα` της συνάρτησης TIME.",
           example: "11",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "minute",
-          detail: "Παράμετρος `minute` της συνάρτησης TIME.",
+          name: "λεπτό",
+          detail: "Παράμετρος `λεπτό` της συνάρτησης TIME.",
           example: "40",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "second",
-          detail: "Παράμετρος `second` της συνάρτησης TIME.",
+          name: "δευτερόλεπτο",
+          detail: "Παράμετρος `δευτερόλεπτο` της συνάρτησης TIME.",
           example: "59",
           require: "m",
           repeat: "n",
@@ -4336,8 +4336,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time_string",
-          detail: "Παράμετρος `time_string` της συνάρτησης TIMEVALUE.",
+          name: "συμβολοσειρά_ώρας",
+          detail: "Παράμετρος `συμβολοσειρά_ώρας` της συνάρτησης TIMEVALUE.",
           example: "\"2:15 PM\"",
           require: "m",
           repeat: "n",
@@ -4356,16 +4356,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Παράμετρος `start_date` της συνάρτησης EOMONTH.",
+          name: "ημερομηνία_έναρξης",
+          detail: "Παράμετρος `ημερομηνία_έναρξης` της συνάρτησης EOMONTH.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "months",
-          detail: "Παράμετρος `months` της συνάρτησης EOMONTH.",
+          name: "αριθμός_μηνών",
+          detail: "Παράμετρος `αριθμός_μηνών` της συνάρτησης EOMONTH.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4384,16 +4384,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Παράμετρος `start_date` της συνάρτησης EDATE.",
+          name: "ημερομηνία_έναρξης",
+          detail: "Παράμετρος `ημερομηνία_έναρξης` της συνάρτησης EDATE.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "months",
-          detail: "Παράμετρος `months` της συνάρτησης EDATE.",
+          name: "αριθμός_μηνών",
+          detail: "Παράμετρος `αριθμός_μηνών` της συνάρτησης EDATE.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4412,8 +4412,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
-          detail: "Παράμετρος `time` της συνάρτησης SECOND.",
+          name: "ώρα",
+          detail: "Παράμετρος `ώρα` της συνάρτησης SECOND.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4432,8 +4432,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
-          detail: "Παράμετρος `time` της συνάρτησης MINUTE.",
+          name: "ώρα",
+          detail: "Παράμετρος `ώρα` της συνάρτησης MINUTE.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4452,8 +4452,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
-          detail: "Παράμετρος `time` της συνάρτησης HOUR.",
+          name: "ώρα",
+          detail: "Παράμετρος `ώρα` της συνάρτησης HOUR.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4483,24 +4483,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Παράμετρος `start_date` της συνάρτησης NETWORKDAYS.",
+          name: "ημερομηνία_έναρξης",
+          detail: "Παράμετρος `ημερομηνία_έναρξης` της συνάρτησης NETWORKDAYS.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Παράμετρος `end_date` της συνάρτησης NETWORKDAYS.",
+          name: "ημερομηνία_λήξης",
+          detail: "Παράμετρος `ημερομηνία_λήξης` της συνάρτησης NETWORKDAYS.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "holidays",
-          detail: "Παράμετρος `holidays` της συνάρτησης NETWORKDAYS.",
+          name: "αργίες",
+          detail: "Παράμετρος `αργίες` της συνάρτησης NETWORKDAYS.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4519,32 +4519,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Παράμετρος `start_date` της συνάρτησης NETWORKDAYS_INTL.",
+          name: "ημερομηνία_έναρξης",
+          detail: "Παράμετρος `ημερομηνία_έναρξης` της συνάρτησης NETWORKDAYS_INTL.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Παράμετρος `end_date` της συνάρτησης NETWORKDAYS_INTL.",
+          name: "ημερομηνία_λήξης",
+          detail: "Παράμετρος `ημερομηνία_λήξης` της συνάρτησης NETWORKDAYS_INTL.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "weekend",
-          detail: "Παράμετρος `weekend` της συνάρτησης NETWORKDAYS_INTL.",
+          name: "σαββατοκύριακο",
+          detail: "Παράμετρος `σαββατοκύριακο` της συνάρτησης NETWORKDAYS_INTL.",
           example: "16)",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "holidays",
-          detail: "Παράμετρος `holidays` της συνάρτησης NETWORKDAYS_INTL.",
+          name: "αργίες",
+          detail: "Παράμετρος `αργίες` της συνάρτησης NETWORKDAYS_INTL.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4563,8 +4563,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Παράμετρος `date` της συνάρτησης ISOWEEKNUM.",
+          name: "ημερομηνία",
+          detail: "Παράμετρος `ημερομηνία` της συνάρτησης ISOWEEKNUM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4583,16 +4583,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Παράμετρος `date` της συνάρτησης WEEKNUM.",
+          name: "ημερομηνία",
+          detail: "Παράμετρος `ημερομηνία` της συνάρτησης WEEKNUM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "type",
-          detail: "Παράμετρος `type` της συνάρτησης WEEKNUM.",
+          name: "τύπος",
+          detail: "Παράμετρος `τύπος` της συνάρτησης WEEKNUM.",
           example: "7",
           require: "o",
           repeat: "n",
@@ -4611,16 +4611,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Παράμετρος `date` της συνάρτησης WEEKDAY.",
+          name: "ημερομηνία",
+          detail: "Παράμετρος `ημερομηνία` της συνάρτησης WEEKDAY.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "type",
-          detail: "Παράμετρος `type` της συνάρτησης WEEKDAY.",
+          name: "τύπος",
+          detail: "Παράμετρος `τύπος` της συνάρτησης WEEKDAY.",
           example: "7",
           require: "o",
           repeat: "n",
@@ -4639,8 +4639,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Παράμετρος `date` της συνάρτησης DAY.",
+          name: "ημερομηνία",
+          detail: "Παράμετρος `ημερομηνία` της συνάρτησης DAY.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4659,16 +4659,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "end_date",
-          detail: "Παράμετρος `end_date` της συνάρτησης DAYS.",
+          name: "ημερομηνία_λήξης",
+          detail: "Παράμετρος `ημερομηνία_λήξης` της συνάρτησης DAYS.",
           example: "2011-3-15",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "start_date",
-          detail: "Παράμετρος `start_date` της συνάρτησης DAYS.",
+          name: "ημερομηνία_έναρξης",
+          detail: "Παράμετρος `ημερομηνία_έναρξης` της συνάρτησης DAYS.",
           example: "2011-2-1",
           require: "m",
           repeat: "n",
@@ -4687,24 +4687,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Παράμετρος `start_date` της συνάρτησης DAYS360.",
+          name: "ημερομηνία_έναρξης",
+          detail: "Παράμετρος `ημερομηνία_έναρξης` της συνάρτησης DAYS360.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Παράμετρος `end_date` της συνάρτησης DAYS360.",
+          name: "ημερομηνία_λήξης",
+          detail: "Παράμετρος `ημερομηνία_λήξης` της συνάρτησης DAYS360.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "method",
-          detail: "Παράμετρος `method` της συνάρτησης DAYS360.",
+          name: "μέθοδος",
+          detail: "Παράμετρος `μέθοδος` της συνάρτησης DAYS360.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -4723,24 +4723,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "year",
-          detail: "Παράμετρος `year` της συνάρτησης DATE.",
+          name: "έτος",
+          detail: "Παράμετρος `έτος` της συνάρτησης DATE.",
           example: "1969",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "month",
-          detail: "Παράμετρος `month` της συνάρτησης DATE.",
+          name: "μήνας",
+          detail: "Παράμετρος `μήνας` της συνάρτησης DATE.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day",
-          detail: "Παράμετρος `day` της συνάρτησης DATE.",
+          name: "ημέρα",
+          detail: "Παράμετρος `ημέρα` της συνάρτησης DATE.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -4759,8 +4759,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date_string",
-          detail: "Παράμετρος `date_string` της συνάρτησης DATEVALUE.",
+          name: "συμβολοσειρά_ημερομηνίας",
+          detail: "Παράμετρος `συμβολοσειρά_ημερομηνίας` της συνάρτησης DATEVALUE.",
           example: "\"1969-7-20\"",
           require: "m",
           repeat: "n",
@@ -4779,24 +4779,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Παράμετρος `start_date` της συνάρτησης DATEDIF.",
+          name: "ημερομηνία_έναρξης",
+          detail: "Παράμετρος `ημερομηνία_έναρξης` της συνάρτησης DATEDIF.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Παράμετρος `end_date` της συνάρτησης DATEDIF.",
+          name: "ημερομηνία_λήξης",
+          detail: "Παράμετρος `ημερομηνία_λήξης` της συνάρτησης DATEDIF.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "unit",
-          detail: "Παράμετρος `unit` της συνάρτησης DATEDIF.",
+          name: "μονάδα",
+          detail: "Παράμετρος `μονάδα` της συνάρτησης DATEDIF.",
           example: "16)",
           require: "m",
           repeat: "n",
@@ -4815,24 +4815,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Παράμετρος `start_date` της συνάρτησης WORKDAY.",
+          name: "ημερομηνία_έναρξης",
+          detail: "Παράμετρος `ημερομηνία_έναρξης` της συνάρτησης WORKDAY.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "num_days",
-          detail: "Παράμετρος `num_days` της συνάρτησης WORKDAY.",
+          name: "αριθμός_ημερών",
+          detail: "Παράμετρος `αριθμός_ημερών` της συνάρτησης WORKDAY.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "holidays",
-          detail: "Παράμετρος `holidays` της συνάρτησης WORKDAY.",
+          name: "αργίες",
+          detail: "Παράμετρος `αργίες` της συνάρτησης WORKDAY.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4851,32 +4851,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Παράμετρος `start_date` της συνάρτησης WORKDAY_INTL.",
+          name: "ημερομηνία_έναρξης",
+          detail: "Παράμετρος `ημερομηνία_έναρξης` της συνάρτησης WORKDAY_INTL.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "num_days",
-          detail: "Παράμετρος `num_days` της συνάρτησης WORKDAY_INTL.",
+          name: "αριθμός_ημερών",
+          detail: "Παράμετρος `αριθμός_ημερών` της συνάρτησης WORKDAY_INTL.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "weekend",
-          detail: "Παράμετρος `weekend` της συνάρτησης WORKDAY_INTL.",
+          name: "σαββατοκύριακο",
+          detail: "Παράμετρος `σαββατοκύριακο` της συνάρτησης WORKDAY_INTL.",
           example: "16)",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "holidays",
-          detail: "Παράμετρος `holidays` της συνάρτησης WORKDAY_INTL.",
+          name: "αργίες",
+          detail: "Παράμετρος `αργίες` της συνάρτησης WORKDAY_INTL.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4895,8 +4895,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Παράμετρος `date` της συνάρτησης YEAR.",
+          name: "ημερομηνία",
+          detail: "Παράμετρος `ημερομηνία` της συνάρτησης YEAR.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4915,24 +4915,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Παράμετρος `start_date` της συνάρτησης YEARFRAC.",
+          name: "ημερομηνία_έναρξης",
+          detail: "Παράμετρος `ημερομηνία_έναρξης` της συνάρτησης YEARFRAC.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Παράμετρος `end_date` της συνάρτησης YEARFRAC.",
+          name: "ημερομηνία_λήξης",
+          detail: "Παράμετρος `ημερομηνία_λήξης` της συνάρτησης YEARFRAC.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης YEARFRAC.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης YEARFRAC.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4962,8 +4962,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Παράμετρος `date` της συνάρτησης MONTH.",
+          name: "ημερομηνία",
+          detail: "Παράμετρος `ημερομηνία` της συνάρτησης MONTH.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4982,16 +4982,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "nominal_rate",
-          detail: "Παράμετρος `nominal_rate` της συνάρτησης EFFECT.",
+          name: "ονομαστικό_επιτόκιο",
+          detail: "Παράμετρος `ονομαστικό_επιτόκιο` της συνάρτησης EFFECT.",
           example: "0.99",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
-          detail: "Παράμετρος `periods_per_year` της συνάρτησης EFFECT.",
+          name: "περίοδοι_ανά_έτος",
+          detail: "Παράμετρος `περίοδοι_ανά_έτος` της συνάρτησης EFFECT.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5010,16 +5010,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Παράμετρος `number` της συνάρτησης DOLLAR.",
+          name: "αριθμός",
+          detail: "Παράμετρος `αριθμός` της συνάρτησης DOLLAR.",
           example: "1.2351",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
-          detail: "Παράμετρος `number_of_places` της συνάρτησης DOLLAR.",
+          name: "αριθμός_δεκαδικών",
+          detail: "Παράμετρος `αριθμός_δεκαδικών` της συνάρτησης DOLLAR.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -5038,16 +5038,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "fractional_price",
-          detail: "Παράμετρος `fractional_price` της συνάρτησης DOLLARDE.",
+          name: "κλασματική_τιμή",
+          detail: "Παράμετρος `κλασματική_τιμή` της συνάρτησης DOLLARDE.",
           example: "100.10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "unit",
-          detail: "Παράμετρος `unit` της συνάρτησης DOLLARDE.",
+          name: "μονάδα",
+          detail: "Παράμετρος `μονάδα` της συνάρτησης DOLLARDE.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5066,16 +5066,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_price",
-          detail: "Παράμετρος `decimal_price` της συνάρτησης DOLLARFR.",
+          name: "δεκαδική_τιμή",
+          detail: "Παράμετρος `δεκαδική_τιμή` της συνάρτησης DOLLARFR.",
           example: "100.125",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "unit",
-          detail: "Παράμετρος `unit` της συνάρτησης DOLLARFR.",
+          name: "μονάδα",
+          detail: "Παράμετρος `μονάδα` της συνάρτησης DOLLARFR.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5094,40 +5094,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Παράμετρος `cost` της συνάρτησης DB.",
+          name: "κόστος",
+          detail: "Παράμετρος `κόστος` της συνάρτησης DB.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Παράμετρος `salvage` της συνάρτησης DB.",
+          name: "υπολειμματική_αξία",
+          detail: "Παράμετρος `υπολειμματική_αξία` της συνάρτησης DB.",
           example: "50",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Παράμετρος `life` της συνάρτησης DB.",
+          name: "διάρκεια_ζωής",
+          detail: "Παράμετρος `διάρκεια_ζωής` της συνάρτησης DB.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Παράμετρος `period` της συνάρτησης DB.",
+          name: "περίοδος",
+          detail: "Παράμετρος `περίοδος` της συνάρτησης DB.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "month",
-          detail: "Παράμετρος `month` της συνάρτησης DB.",
+          name: "μήνας",
+          detail: "Παράμετρος `μήνας` της συνάρτησης DB.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5146,40 +5146,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Παράμετρος `cost` της συνάρτησης DDB.",
+          name: "κόστος",
+          detail: "Παράμετρος `κόστος` της συνάρτησης DDB.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Παράμετρος `salvage` της συνάρτησης DDB.",
+          name: "υπολειμματική_αξία",
+          detail: "Παράμετρος `υπολειμματική_αξία` της συνάρτησης DDB.",
           example: "50",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Παράμετρος `life` της συνάρτησης DDB.",
+          name: "διάρκεια_ζωής",
+          detail: "Παράμετρος `διάρκεια_ζωής` της συνάρτησης DDB.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Παράμετρος `period` της συνάρτησης DDB.",
+          name: "περίοδος",
+          detail: "Παράμετρος `περίοδος` της συνάρτησης DDB.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor",
-          detail: "Παράμετρος `factor` της συνάρτησης DDB.",
+          name: "συντελεστής",
+          detail: "Παράμετρος `συντελεστής` της συνάρτησης DDB.",
           example: "2.25",
           require: "m",
           repeat: "n",
@@ -5198,48 +5198,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "number_of_periods",
-          detail: "Παράμετρος `number_of_periods` της συνάρτησης RATE.",
+          name: "αριθμός_περιόδων",
+          detail: "Παράμετρος `αριθμός_περιόδων` της συνάρτησης RATE.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_per_period",
-          detail: "Παράμετρος `payment_per_period` της συνάρτησης RATE.",
+          name: "πληρωμή_ανά_περίοδο",
+          detail: "Παράμετρος `πληρωμή_ανά_περίοδο` της συνάρτησης RATE.",
           example: "-100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Παράμετρος `present_value` της συνάρτησης RATE.",
+          name: "παρούσα_αξία",
+          detail: "Παράμετρος `παρούσα_αξία` της συνάρτησης RATE.",
           example: "400",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Παράμετρος `future_value` της συνάρτησης RATE.",
+          name: "μελλοντική_αξία",
+          detail: "Παράμετρος `μελλοντική_αξία` της συνάρτησης RATE.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Παράμετρος `end_or_beginning` της συνάρτησης RATE.",
+          name: "τέλος_ή_αρχή",
+          detail: "Παράμετρος `τέλος_ή_αρχή` της συνάρτησης RATE.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "rate_guess",
-          detail: "Παράμετρος `rate_guess` της συνάρτησης RATE.",
+          name: "εκτίμηση_επιτοκίου",
+          detail: "Παράμετρος `εκτίμηση_επιτοκίου` της συνάρτησης RATE.",
           example: "0.1",
           require: "o",
           repeat: "n",
@@ -5258,48 +5258,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης CUMPRINC.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης CUMPRINC.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Παράμετρος `number_of_periods` της συνάρτησης CUMPRINC.",
+          name: "αριθμός_περιόδων",
+          detail: "Παράμετρος `αριθμός_περιόδων` της συνάρτησης CUMPRINC.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Παράμετρος `present_value` της συνάρτησης CUMPRINC.",
+          name: "παρούσα_αξία",
+          detail: "Παράμετρος `παρούσα_αξία` της συνάρτησης CUMPRINC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "first_period",
-          detail: "Παράμετρος `first_period` της συνάρτησης CUMPRINC.",
+          name: "πρώτη_περίοδος",
+          detail: "Παράμετρος `πρώτη_περίοδος` της συνάρτησης CUMPRINC.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "last_period",
-          detail: "Παράμετρος `last_period` της συνάρτησης CUMPRINC.",
+          name: "τελευταία_περίοδος",
+          detail: "Παράμετρος `τελευταία_περίοδος` της συνάρτησης CUMPRINC.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Παράμετρος `end_or_beginning` της συνάρτησης CUMPRINC.",
+          name: "τέλος_ή_αρχή",
+          detail: "Παράμετρος `τέλος_ή_αρχή` της συνάρτησης CUMPRINC.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -5318,32 +5318,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης COUPNUM.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης COUPNUM.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης COUPNUM.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης COUPNUM.",
           example: "02",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Παράμετρος `frequency` της συνάρτησης COUPNUM.",
+          name: "συχνότητα",
+          detail: "Παράμετρος `συχνότητα` της συνάρτησης COUPNUM.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης COUPNUM.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης COUPNUM.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5362,32 +5362,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Παράμετρος `cost` της συνάρτησης SYD.",
+          name: "κόστος",
+          detail: "Παράμετρος `κόστος` της συνάρτησης SYD.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Παράμετρος `salvage` της συνάρτησης SYD.",
+          name: "υπολειμματική_αξία",
+          detail: "Παράμετρος `υπολειμματική_αξία` της συνάρτησης SYD.",
           example: "50",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Παράμετρος `life` της συνάρτησης SYD.",
+          name: "διάρκεια_ζωής",
+          detail: "Παράμετρος `διάρκεια_ζωής` της συνάρτησης SYD.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Παράμετρος `period` της συνάρτησης SYD.",
+          name: "περίοδος",
+          detail: "Παράμετρος `περίοδος` της συνάρτησης SYD.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5406,24 +5406,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης TBILLEQ.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης TBILLEQ.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης TBILLEQ.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης TBILLEQ.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "discount",
-          detail: "Παράμετρος `discount` της συνάρτησης TBILLEQ.",
+          name: "προεξοφλητικό_επιτόκιο",
+          detail: "Παράμετρος `προεξοφλητικό_επιτόκιο` της συνάρτησης TBILLEQ.",
           example: "2)",
           require: "m",
           repeat: "n",
@@ -5442,24 +5442,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης TBILLYIELD.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης TBILLYIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης TBILLYIELD.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης TBILLYIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "price",
-          detail: "Παράμετρος `price` της συνάρτησης TBILLYIELD.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης TBILLYIELD.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -5478,24 +5478,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης TBILLPRICE.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης TBILLPRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης TBILLPRICE.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης TBILLPRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "discount",
-          detail: "Παράμετρος `discount` της συνάρτησης TBILLPRICE.",
+          name: "προεξοφλητικό_επιτόκιο",
+          detail: "Παράμετρος `προεξοφλητικό_επιτόκιο` της συνάρτησης TBILLPRICE.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -5514,40 +5514,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης PV.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης PV.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Παράμετρος `number_of_periods` της συνάρτησης PV.",
+          name: "αριθμός_περιόδων",
+          detail: "Παράμετρος `αριθμός_περιόδων` της συνάρτησης PV.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
-          detail: "Παράμετρος `payment_amount` της συνάρτησης PV.",
+          name: "ποσό_πληρωμής",
+          detail: "Παράμετρος `ποσό_πληρωμής` της συνάρτησης PV.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Παράμετρος `future_value` της συνάρτησης PV.",
+          name: "μελλοντική_αξία",
+          detail: "Παράμετρος `μελλοντική_αξία` της συνάρτησης PV.",
           example: "D2",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Παράμετρος `end_or_beginning` της συνάρτησης PV.",
+          name: "τέλος_ή_αρχή",
+          detail: "Παράμετρος `τέλος_ή_αρχή` της συνάρτησης PV.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -5566,64 +5566,64 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
-          detail: "Παράμετρος `issue` της συνάρτησης ACCRINT.",
+          name: "ημερομηνία_έκδοσης",
+          detail: "Παράμετρος `ημερομηνία_έκδοσης` της συνάρτησης ACCRINT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "first_payment",
-          detail: "Παράμετρος `first_payment` της συνάρτησης ACCRINT.",
+          name: "πρώτη_πληρωμή",
+          detail: "Παράμετρος `πρώτη_πληρωμή` της συνάρτησης ACCRINT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης ACCRINT.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης ACCRINT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης ACCRINT.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης ACCRINT.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Παράμετρος `redemption` της συνάρτησης ACCRINT.",
+          name: "αξία_εξόφλησης",
+          detail: "Παράμετρος `αξία_εξόφλησης` της συνάρτησης ACCRINT.",
           example: "10000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Παράμετρος `frequency` της συνάρτησης ACCRINT.",
+          name: "συχνότητα",
+          detail: "Παράμετρος `συχνότητα` της συνάρτησης ACCRINT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης ACCRINT.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης ACCRINT.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "calc_method",
-          detail: "Παράμετρος `calc_method` της συνάρτησης ACCRINT.",
+          name: "μέθοδος_υπολογισμού",
+          detail: "Παράμετρος `μέθοδος_υπολογισμού` της συνάρτησης ACCRINT.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -5642,40 +5642,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
-          detail: "Παράμετρος `issue` της συνάρτησης ACCRINTM.",
+          name: "ημερομηνία_έκδοσης",
+          detail: "Παράμετρος `ημερομηνία_έκδοσης` της συνάρτησης ACCRINTM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης ACCRINTM.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης ACCRINTM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης ACCRINTM.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης ACCRINTM.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Παράμετρος `redemption` της συνάρτησης ACCRINTM.",
+          name: "αξία_εξόφλησης",
+          detail: "Παράμετρος `αξία_εξόφλησης` της συνάρτησης ACCRINTM.",
           example: "1000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης ACCRINTM.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης ACCRINTM.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5694,32 +5694,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης COUPDAYBS.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης COUPDAYBS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης COUPDAYBS.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης COUPDAYBS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Παράμετρος `frequency` της συνάρτησης COUPDAYBS.",
+          name: "συχνότητα",
+          detail: "Παράμετρος `συχνότητα` της συνάρτησης COUPDAYBS.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης COUPDAYBS.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης COUPDAYBS.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5738,32 +5738,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης COUPDAYS.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης COUPDAYS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης COUPDAYS.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης COUPDAYS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Παράμετρος `frequency` της συνάρτησης COUPDAYS.",
+          name: "συχνότητα",
+          detail: "Παράμετρος `συχνότητα` της συνάρτησης COUPDAYS.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης COUPDAYS.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης COUPDAYS.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5782,32 +5782,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης COUPDAYSNC.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης COUPDAYSNC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης COUPDAYSNC.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης COUPDAYSNC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Παράμετρος `frequency` της συνάρτησης COUPDAYSNC.",
+          name: "συχνότητα",
+          detail: "Παράμετρος `συχνότητα` της συνάρτησης COUPDAYSNC.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης COUPDAYSNC.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης COUPDAYSNC.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5826,32 +5826,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης COUPNCD.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης COUPNCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης COUPNCD.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης COUPNCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Παράμετρος `frequency` της συνάρτησης COUPNCD.",
+          name: "συχνότητα",
+          detail: "Παράμετρος `συχνότητα` της συνάρτησης COUPNCD.",
           example: "01)",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης COUPNCD.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης COUPNCD.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5870,32 +5870,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης COUPPCD.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης COUPPCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης COUPPCD.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης COUPPCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Παράμετρος `frequency` της συνάρτησης COUPPCD.",
+          name: "συχνότητα",
+          detail: "Παράμετρος `συχνότητα` της συνάρτησης COUPPCD.",
           example: "01)",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης COUPPCD.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης COUPPCD.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5914,40 +5914,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης FV.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης FV.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Παράμετρος `number_of_periods` της συνάρτησης FV.",
+          name: "αριθμός_περιόδων",
+          detail: "Παράμετρος `αριθμός_περιόδων` της συνάρτησης FV.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
-          detail: "Παράμετρος `payment_amount` της συνάρτησης FV.",
+          name: "ποσό_πληρωμής",
+          detail: "Παράμετρος `ποσό_πληρωμής` της συνάρτησης FV.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Παράμετρος `present_value` της συνάρτησης FV.",
+          name: "παρούσα_αξία",
+          detail: "Παράμετρος `παρούσα_αξία` της συνάρτησης FV.",
           example: "400",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Παράμετρος `end_or_beginning` της συνάρτησης FV.",
+          name: "τέλος_ή_αρχή",
+          detail: "Παράμετρος `τέλος_ή_αρχή` της συνάρτησης FV.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5966,16 +5966,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "principal",
-          detail: "Παράμετρος `principal` της συνάρτησης FVSCHEDULE.",
+          name: "κεφάλαιο",
+          detail: "Παράμετρος `κεφάλαιο` της συνάρτησης FVSCHEDULE.",
           example: "10000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "rate_schedule",
-          detail: "Παράμετρος `rate_schedule` της συνάρτησης FVSCHEDULE.",
+          name: "πίνακας_επιτοκίων",
+          detail: "Παράμετρος `πίνακας_επιτοκίων` της συνάρτησης FVSCHEDULE.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -5994,56 +5994,56 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης YIELD.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης YIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης YIELD.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης YIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης YIELD.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης YIELD.",
           example: "0.057",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "price",
-          detail: "Παράμετρος `price` της συνάρτησης YIELD.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης YIELD.",
           example: "95",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Παράμετρος `redemption` της συνάρτησης YIELD.",
+          name: "αξία_εξόφλησης",
+          detail: "Παράμετρος `αξία_εξόφλησης` της συνάρτησης YIELD.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Παράμετρος `frequency` της συνάρτησης YIELD.",
+          name: "συχνότητα",
+          detail: "Παράμετρος `συχνότητα` της συνάρτησης YIELD.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης YIELD.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης YIELD.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6062,40 +6062,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης YIELDDISC.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης YIELDDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης YIELDDISC.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης YIELDDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "price",
-          detail: "Παράμετρος `price` της συνάρτησης YIELDDISC.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης YIELDDISC.",
           example: "95",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Παράμετρος `redemption` της συνάρτησης YIELDDISC.",
+          name: "αξία_εξόφλησης",
+          detail: "Παράμετρος `αξία_εξόφλησης` της συνάρτησης YIELDDISC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης YIELDDISC.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης YIELDDISC.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6114,16 +6114,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "effective_rate",
-          detail: "Παράμετρος `effective_rate` της συνάρτησης NOMINAL.",
+          name: "πραγματικό_επιτόκιο",
+          detail: "Παράμετρος `πραγματικό_επιτόκιο` της συνάρτησης NOMINAL.",
           example: "0.85",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
-          detail: "Παράμετρος `periods_per_year` της συνάρτησης NOMINAL.",
+          name: "περίοδοι_ανά_έτος",
+          detail: "Παράμετρος `περίοδοι_ανά_έτος` της συνάρτησης NOMINAL.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6142,24 +6142,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
-          detail: "Παράμετρος `cashflow_amounts` της συνάρτησης XIRR.",
+          name: "ποσά_ταμειακών_ροών",
+          detail: "Παράμετρος `ποσά_ταμειακών_ροών` της συνάρτησης XIRR.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "cashflow_dates",
-          detail: "Παράμετρος `cashflow_dates` της συνάρτησης XIRR.",
+          name: "ημερομηνίες_ταμειακών_ροών",
+          detail: "Παράμετρος `ημερομηνίες_ταμειακών_ροών` της συνάρτησης XIRR.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "rate_guess",
-          detail: "Παράμετρος `rate_guess` της συνάρτησης XIRR.",
+          name: "εκτίμηση_επιτοκίου",
+          detail: "Παράμετρος `εκτίμηση_επιτοκίου` της συνάρτησης XIRR.",
           example: "250",
           require: "o",
           repeat: "n",
@@ -6178,24 +6178,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
-          detail: "Παράμετρος `cashflow_amounts` της συνάρτησης MIRR.",
+          name: "ποσά_ταμειακών_ροών",
+          detail: "Παράμετρος `ποσά_ταμειακών_ροών` της συνάρτησης MIRR.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "financing_rate",
-          detail: "Παράμετρος `financing_rate` της συνάρτησης MIRR.",
+          name: "επιτόκιο_χρηματοδότησης",
+          detail: "Παράμετρος `επιτόκιο_χρηματοδότησης` της συνάρτησης MIRR.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "reinvestment_return_rate",
-          detail: "Παράμετρος `reinvestment_return_rate` της συνάρτησης MIRR.",
+          name: "απόδοση_επανεπένδυσης",
+          detail: "Παράμετρος `απόδοση_επανεπένδυσης` της συνάρτησης MIRR.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6214,16 +6214,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
-          detail: "Παράμετρος `cashflow_amounts` της συνάρτησης IRR.",
+          name: "ποσά_ταμειακών_ροών",
+          detail: "Παράμετρος `ποσά_ταμειακών_ροών` της συνάρτησης IRR.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "rate_guess",
-          detail: "Παράμετρος `rate_guess` της συνάρτησης IRR.",
+          name: "εκτίμηση_επιτοκίου",
+          detail: "Παράμετρος `εκτίμηση_επιτοκίου` της συνάρτησης IRR.",
           example: "200",
           require: "o",
           repeat: "n",
@@ -6242,24 +6242,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
-          detail: "Παράμετρος `discount` της συνάρτησης NPV.",
+          name: "προεξοφλητικό_επιτόκιο",
+          detail: "Παράμετρος `προεξοφλητικό_επιτόκιο` της συνάρτησης NPV.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cashflow1",
-          detail: "Παράμετρος `cashflow1` της συνάρτησης NPV.",
+          name: "ταμειακή_ροή1",
+          detail: "Παράμετρος `ταμειακή_ροή1` της συνάρτησης NPV.",
           example: "200",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "cashflow2",
-          detail: "Παράμετρος `cashflow2` της συνάρτησης NPV.",
+          name: "ταμειακή_ροή2",
+          detail: "Παράμετρος `ταμειακή_ροή2` της συνάρτησης NPV.",
           example: "250",
           require: "o",
           repeat: "y",
@@ -6278,24 +6278,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
-          detail: "Παράμετρος `discount` της συνάρτησης XNPV.",
+          name: "προεξοφλητικό_επιτόκιο",
+          detail: "Παράμετρος `προεξοφλητικό_επιτόκιο` της συνάρτησης XNPV.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cashflow_amounts",
-          detail: "Παράμετρος `cashflow_amounts` της συνάρτησης XNPV.",
+          name: "ποσά_ταμειακών_ροών",
+          detail: "Παράμετρος `ποσά_ταμειακών_ροών` της συνάρτησης XNPV.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "cashflow_dates",
-          detail: "Παράμετρος `cashflow_dates` της συνάρτησης XNPV.",
+          name: "ημερομηνίες_ταμειακών_ροών",
+          detail: "Παράμετρος `ημερομηνίες_ταμειακών_ροών` της συνάρτησης XNPV.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6314,48 +6314,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης CUMIPMT.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης CUMIPMT.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Παράμετρος `number_of_periods` της συνάρτησης CUMIPMT.",
+          name: "αριθμός_περιόδων",
+          detail: "Παράμετρος `αριθμός_περιόδων` της συνάρτησης CUMIPMT.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Παράμετρος `present_value` της συνάρτησης CUMIPMT.",
+          name: "παρούσα_αξία",
+          detail: "Παράμετρος `παρούσα_αξία` της συνάρτησης CUMIPMT.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "first_period",
-          detail: "Παράμετρος `first_period` της συνάρτησης CUMIPMT.",
+          name: "πρώτη_περίοδος",
+          detail: "Παράμετρος `πρώτη_περίοδος` της συνάρτησης CUMIPMT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "last_period",
-          detail: "Παράμετρος `last_period` της συνάρτησης CUMIPMT.",
+          name: "τελευταία_περίοδος",
+          detail: "Παράμετρος `τελευταία_περίοδος` της συνάρτησης CUMIPMT.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Παράμετρος `end_or_beginning` της συνάρτησης CUMIPMT.",
+          name: "τέλος_ή_αρχή",
+          detail: "Παράμετρος `τέλος_ή_αρχή` της συνάρτησης CUMIPMT.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6374,40 +6374,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης PMT.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης PMT.",
           example: "0.08",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Παράμετρος `number_of_periods` της συνάρτησης PMT.",
+          name: "αριθμός_περιόδων",
+          detail: "Παράμετρος `αριθμός_περιόδων` της συνάρτησης PMT.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Παράμετρος `present_value` της συνάρτησης PMT.",
+          name: "παρούσα_αξία",
+          detail: "Παράμετρος `παρούσα_αξία` της συνάρτησης PMT.",
           example: " 100000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Παράμετρος `future_value` της συνάρτησης PMT.",
+          name: "μελλοντική_αξία",
+          detail: "Παράμετρος `μελλοντική_αξία` της συνάρτησης PMT.",
           example: "D2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Παράμετρος `end_or_beginning` της συνάρτησης PMT.",
+          name: "τέλος_ή_αρχή",
+          detail: "Παράμετρος `τέλος_ή_αρχή` της συνάρτησης PMT.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6426,48 +6426,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης IPMT.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης IPMT.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Παράμετρος `period` της συνάρτησης IPMT.",
+          name: "περίοδος",
+          detail: "Παράμετρος `περίοδος` της συνάρτησης IPMT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Παράμετρος `number_of_periods` της συνάρτησης IPMT.",
+          name: "αριθμός_περιόδων",
+          detail: "Παράμετρος `αριθμός_περιόδων` της συνάρτησης IPMT.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Παράμετρος `present_value` της συνάρτησης IPMT.",
+          name: "παρούσα_αξία",
+          detail: "Παράμετρος `παρούσα_αξία` της συνάρτησης IPMT.",
           example: "80000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Παράμετρος `future_value` της συνάρτησης IPMT.",
+          name: "μελλοντική_αξία",
+          detail: "Παράμετρος `μελλοντική_αξία` της συνάρτησης IPMT.",
           example: "E2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Παράμετρος `end_or_beginning` της συνάρτησης IPMT.",
+          name: "τέλος_ή_αρχή",
+          detail: "Παράμετρος `τέλος_ή_αρχή` της συνάρτησης IPMT.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6486,48 +6486,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης PPMT.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης PPMT.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Παράμετρος `period` της συνάρτησης PPMT.",
+          name: "περίοδος",
+          detail: "Παράμετρος `περίοδος` της συνάρτησης PPMT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Παράμετρος `number_of_periods` της συνάρτησης PPMT.",
+          name: "αριθμός_περιόδων",
+          detail: "Παράμετρος `αριθμός_περιόδων` της συνάρτησης PPMT.",
           example: "3*12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Παράμετρος `present_value` της συνάρτησης PPMT.",
+          name: "παρούσα_αξία",
+          detail: "Παράμετρος `παρούσα_αξία` της συνάρτησης PPMT.",
           example: "100000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Παράμετρος `future_value` της συνάρτησης PPMT.",
+          name: "μελλοντική_αξία",
+          detail: "Παράμετρος `μελλοντική_αξία` της συνάρτησης PPMT.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Παράμετρος `end_or_beginning` της συνάρτησης PPMT.",
+          name: "τέλος_ή_αρχή",
+          detail: "Παράμετρος `τέλος_ή_αρχή` της συνάρτησης PPMT.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6546,40 +6546,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "buy_date",
-          detail: "Παράμετρος `buy_date` της συνάρτησης INTRATE.",
+          name: "ημερομηνία_αγοράς",
+          detail: "Παράμετρος `ημερομηνία_αγοράς` της συνάρτησης INTRATE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "sell_date",
-          detail: "Παράμετρος `sell_date` της συνάρτησης INTRATE.",
+          name: "ημερομηνία_πώλησης",
+          detail: "Παράμετρος `ημερομηνία_πώλησης` της συνάρτησης INTRATE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "buy_price",
-          detail: "Παράμετρος `buy_price` της συνάρτησης INTRATE.",
+          name: "τιμή_αγοράς",
+          detail: "Παράμετρος `τιμή_αγοράς` της συνάρτησης INTRATE.",
           example: "100000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "sell_price",
-          detail: "Παράμετρος `sell_price` της συνάρτησης INTRATE.",
+          name: "τιμή_πώλησης",
+          detail: "Παράμετρος `τιμή_πώλησης` της συνάρτησης INTRATE.",
           example: "101200",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης INTRATE.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης INTRATE.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6598,56 +6598,56 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης PRICE.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης PRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης PRICE.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης PRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης PRICE.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης PRICE.",
           example: "0.057",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Παράμετρος `yield` της συνάρτησης PRICE.",
+          name: "απόδοση",
+          detail: "Παράμετρος `απόδοση` της συνάρτησης PRICE.",
           example: "0.065",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Παράμετρος `redemption` της συνάρτησης PRICE.",
+          name: "αξία_εξόφλησης",
+          detail: "Παράμετρος `αξία_εξόφλησης` της συνάρτησης PRICE.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Παράμετρος `frequency` της συνάρτησης PRICE.",
+          name: "συχνότητα",
+          detail: "Παράμετρος `συχνότητα` της συνάρτησης PRICE.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης PRICE.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης PRICE.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6666,40 +6666,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης PRICEDISC.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης PRICEDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης PRICEDISC.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης PRICEDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "discount",
-          detail: "Παράμετρος `discount` της συνάρτησης PRICEDISC.",
+          name: "προεξοφλητικό_επιτόκιο",
+          detail: "Παράμετρος `προεξοφλητικό_επιτόκιο` της συνάρτησης PRICEDISC.",
           example: "0.0525",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Παράμετρος `redemption` της συνάρτησης PRICEDISC.",
+          name: "αξία_εξόφλησης",
+          detail: "Παράμετρος `αξία_εξόφλησης` της συνάρτησης PRICEDISC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης PRICEDISC.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης PRICEDISC.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6718,48 +6718,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης PRICEMAT.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης PRICEMAT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης PRICEMAT.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης PRICEMAT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "issue",
-          detail: "Παράμετρος `issue` της συνάρτησης PRICEMAT.",
+          name: "ημερομηνία_έκδοσης",
+          detail: "Παράμετρος `ημερομηνία_έκδοσης` της συνάρτησης PRICEMAT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης PRICEMAT.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης PRICEMAT.",
           example: "0.061",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Παράμετρος `yield` της συνάρτησης PRICEMAT.",
+          name: "απόδοση",
+          detail: "Παράμετρος `απόδοση` της συνάρτησης PRICEMAT.",
           example: "0.061",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης PRICEMAT.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης PRICEMAT.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6778,40 +6778,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης RECEIVED.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης RECEIVED.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης RECEIVED.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης RECEIVED.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "investment",
-          detail: "Παράμετρος `investment` της συνάρτησης RECEIVED.",
+          name: "επένδυση",
+          detail: "Παράμετρος `επένδυση` της συνάρτησης RECEIVED.",
           example: "10000000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "discount",
-          detail: "Παράμετρος `discount` της συνάρτησης RECEIVED.",
+          name: "προεξοφλητικό_επιτόκιο",
+          detail: "Παράμετρος `προεξοφλητικό_επιτόκιο` της συνάρτησης RECEIVED.",
           example: "0.0575",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης RECEIVED.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης RECEIVED.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6830,40 +6830,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης DISC.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης DISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης DISC.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης DISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "price",
-          detail: "Παράμετρος `price` της συνάρτησης DISC.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης DISC.",
           example: "97.975",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Παράμετρος `redemption` της συνάρτησης DISC.",
+          name: "αξία_εξόφλησης",
+          detail: "Παράμετρος `αξία_εξόφλησης` της συνάρτησης DISC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης DISC.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης DISC.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6882,40 +6882,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης NPER.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης NPER.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
-          detail: "Παράμετρος `payment_amount` της συνάρτησης NPER.",
+          name: "ποσό_πληρωμής",
+          detail: "Παράμετρος `ποσό_πληρωμής` της συνάρτησης NPER.",
           example: "500",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Παράμετρος `present_value` της συνάρτησης NPER.",
+          name: "παρούσα_αξία",
+          detail: "Παράμετρος `παρούσα_αξία` της συνάρτησης NPER.",
           example: "40000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Παράμετρος `future_value` της συνάρτησης NPER.",
+          name: "μελλοντική_αξία",
+          detail: "Παράμετρος `μελλοντική_αξία` της συνάρτησης NPER.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Παράμετρος `end_or_beginning` της συνάρτησης NPER.",
+          name: "τέλος_ή_αρχή",
+          detail: "Παράμετρος `τέλος_ή_αρχή` της συνάρτησης NPER.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6934,24 +6934,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Παράμετρος `cost` της συνάρτησης SLN.",
+          name: "κόστος",
+          detail: "Παράμετρος `κόστος` της συνάρτησης SLN.",
           example: "300000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Παράμετρος `salvage` της συνάρτησης SLN.",
+          name: "υπολειμματική_αξία",
+          detail: "Παράμετρος `υπολειμματική_αξία` της συνάρτησης SLN.",
           example: "75000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Παράμετρος `life` της συνάρτησης SLN.",
+          name: "διάρκεια_ζωής",
+          detail: "Παράμετρος `διάρκεια_ζωής` της συνάρτησης SLN.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -6970,48 +6970,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης DURATION.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης DURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης DURATION.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης DURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης DURATION.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης DURATION.",
           example: "0.08",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Παράμετρος `yield` της συνάρτησης DURATION.",
+          name: "απόδοση",
+          detail: "Παράμετρος `απόδοση` της συνάρτησης DURATION.",
           example: "0.09",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Παράμετρος `frequency` της συνάρτησης DURATION.",
+          name: "συχνότητα",
+          detail: "Παράμετρος `συχνότητα` της συνάρτησης DURATION.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης DURATION.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης DURATION.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7030,48 +7030,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Παράμετρος `settlement` της συνάρτησης MDURATION.",
+          name: "ημερομηνία_διακανονισμού",
+          detail: "Παράμετρος `ημερομηνία_διακανονισμού` της συνάρτησης MDURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Παράμετρος `maturity` της συνάρτησης MDURATION.",
+          name: "λήξη",
+          detail: "Παράμετρος `λήξη` της συνάρτησης MDURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Παράμετρος `rate` της συνάρτησης MDURATION.",
+          name: "επιτόκιο",
+          detail: "Παράμετρος `επιτόκιο` της συνάρτησης MDURATION.",
           example: "0.08",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Παράμετρος `yield` της συνάρτησης MDURATION.",
+          name: "απόδοση",
+          detail: "Παράμετρος `απόδοση` της συνάρτησης MDURATION.",
           example: "0.09",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Παράμετρος `frequency` της συνάρτησης MDURATION.",
+          name: "συχνότητα",
+          detail: "Παράμετρος `συχνότητα` της συνάρτησης MDURATION.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Παράμετρος `day_count_convention` της συνάρτησης MDURATION.",
+          name: "σύμβαση_καταμέτρησης_ημερών",
+          detail: "Παράμετρος `σύμβαση_καταμέτρησης_ημερών` της συνάρτησης MDURATION.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7090,8 +7090,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
-          detail: "Παράμετρος `signed_binary_number` της συνάρτησης BIN2DEC.",
+          name: "προσημασμένος_δυαδικός_αριθμός",
+          detail: "Παράμετρος `προσημασμένος_δυαδικός_αριθμός` της συνάρτησης BIN2DEC.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7110,16 +7110,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
-          detail: "Παράμετρος `signed_binary_number` της συνάρτησης BIN2HEX.",
+          name: "προσημασμένος_δυαδικός_αριθμός",
+          detail: "Παράμετρος `προσημασμένος_δυαδικός_αριθμός` της συνάρτησης BIN2HEX.",
           example: "101",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Παράμετρος `significant_digits` της συνάρτησης BIN2HEX.",
+          name: "σημαντικά_ψηφία",
+          detail: "Παράμετρος `σημαντικά_ψηφία` της συνάρτησης BIN2HEX.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7138,16 +7138,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
-          detail: "Παράμετρος `signed_binary_number` της συνάρτησης BIN2OCT.",
+          name: "προσημασμένος_δυαδικός_αριθμός",
+          detail: "Παράμετρος `προσημασμένος_δυαδικός_αριθμός` της συνάρτησης BIN2OCT.",
           example: "101",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Παράμετρος `significant_digits` της συνάρτησης BIN2OCT.",
+          name: "σημαντικά_ψηφία",
+          detail: "Παράμετρος `σημαντικά_ψηφία` της συνάρτησης BIN2OCT.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7166,16 +7166,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
-          detail: "Παράμετρος `decimal_number` της συνάρτησης DEC2BIN.",
+          name: "δεκαδικός_αριθμός",
+          detail: "Παράμετρος `δεκαδικός_αριθμός` της συνάρτησης DEC2BIN.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Παράμετρος `significant_digits` της συνάρτησης DEC2BIN.",
+          name: "σημαντικά_ψηφία",
+          detail: "Παράμετρος `σημαντικά_ψηφία` της συνάρτησης DEC2BIN.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7194,16 +7194,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
-          detail: "Παράμετρος `decimal_number` της συνάρτησης DEC2HEX.",
+          name: "δεκαδικός_αριθμός",
+          detail: "Παράμετρος `δεκαδικός_αριθμός` της συνάρτησης DEC2HEX.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Παράμετρος `significant_digits` της συνάρτησης DEC2HEX.",
+          name: "σημαντικά_ψηφία",
+          detail: "Παράμετρος `σημαντικά_ψηφία` της συνάρτησης DEC2HEX.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7222,16 +7222,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
-          detail: "Παράμετρος `decimal_number` της συνάρτησης DEC2OCT.",
+          name: "δεκαδικός_αριθμός",
+          detail: "Παράμετρος `δεκαδικός_αριθμός` της συνάρτησης DEC2OCT.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Παράμετρος `significant_digits` της συνάρτησης DEC2OCT.",
+          name: "σημαντικά_ψηφία",
+          detail: "Παράμετρος `σημαντικά_ψηφία` της συνάρτησης DEC2OCT.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7250,16 +7250,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
-          detail: "Παράμετρος `signed_hexadecimal_number` της συνάρτησης HEX2BIN.",
+          name: "προσημασμένος_δεκαεξαδικός_αριθμός",
+          detail: "Παράμετρος `προσημασμένος_δεκαεξαδικός_αριθμός` της συνάρτησης HEX2BIN.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Παράμετρος `significant_digits` της συνάρτησης HEX2BIN.",
+          name: "σημαντικά_ψηφία",
+          detail: "Παράμετρος `σημαντικά_ψηφία` της συνάρτησης HEX2BIN.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7278,8 +7278,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
-          detail: "Παράμετρος `signed_hexadecimal_number` της συνάρτησης HEX2DEC.",
+          name: "προσημασμένος_δεκαεξαδικός_αριθμός",
+          detail: "Παράμετρος `προσημασμένος_δεκαεξαδικός_αριθμός` της συνάρτησης HEX2DEC.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7298,16 +7298,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
-          detail: "Παράμετρος `signed_hexadecimal_number` της συνάρτησης HEX2OCT.",
+          name: "προσημασμένος_δεκαεξαδικός_αριθμός",
+          detail: "Παράμετρος `προσημασμένος_δεκαεξαδικός_αριθμός` της συνάρτησης HEX2OCT.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Παράμετρος `significant_digits` της συνάρτησης HEX2OCT.",
+          name: "σημαντικά_ψηφία",
+          detail: "Παράμετρος `σημαντικά_ψηφία` της συνάρτησης HEX2OCT.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7326,16 +7326,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
-          detail: "Παράμετρος `signed_octal_number` της συνάρτησης OCT2BIN.",
+          name: "προσημασμένος_οκταδικός_αριθμός",
+          detail: "Παράμετρος `προσημασμένος_οκταδικός_αριθμός` της συνάρτησης OCT2BIN.",
           example: "37",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Παράμετρος `significant_digits` της συνάρτησης OCT2BIN.",
+          name: "σημαντικά_ψηφία",
+          detail: "Παράμετρος `σημαντικά_ψηφία` της συνάρτησης OCT2BIN.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7354,8 +7354,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
-          detail: "Παράμετρος `signed_octal_number` της συνάρτησης OCT2DEC.",
+          name: "προσημασμένος_οκταδικός_αριθμός",
+          detail: "Παράμετρος `προσημασμένος_οκταδικός_αριθμός` της συνάρτησης OCT2DEC.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7374,16 +7374,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
-          detail: "Παράμετρος `signed_octal_number` της συνάρτησης OCT2HEX.",
+          name: "προσημασμένος_οκταδικός_αριθμός",
+          detail: "Παράμετρος `προσημασμένος_οκταδικός_αριθμός` της συνάρτησης OCT2HEX.",
           example: "37",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Παράμετρος `significant_digits` της συνάρτησης OCT2HEX.",
+          name: "σημαντικά_ψηφία",
+          detail: "Παράμετρος `σημαντικά_ψηφία` της συνάρτησης OCT2HEX.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7402,24 +7402,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "real_part",
-          detail: "Παράμετρος `real_part` της συνάρτησης COMPLEX.",
+          name: "πραγματικό_μέρος",
+          detail: "Παράμετρος `πραγματικό_μέρος` της συνάρτησης COMPLEX.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "imaginary_part",
-          detail: "Παράμετρος `imaginary_part` της συνάρτησης COMPLEX.",
+          name: "φανταστικό_μέρος",
+          detail: "Παράμετρος `φανταστικό_μέρος` της συνάρτησης COMPLEX.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "suffix",
-          detail: "Παράμετρος `suffix` της συνάρτησης COMPLEX.",
+          name: "επίθημα",
+          detail: "Παράμετρος `επίθημα` της συνάρτησης COMPLEX.",
           example: "\"j\"",
           require: "o",
           repeat: "n",
@@ -7438,8 +7438,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
-          detail: "Παράμετρος `complex_number` της συνάρτησης IMREAL.",
+          name: "μιγαδικός_αριθμός",
+          detail: "Παράμετρος `μιγαδικός_αριθμός` της συνάρτησης IMREAL.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7458,8 +7458,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
-          detail: "Παράμετρος `complex_number` της συνάρτησης IMAGINARY.",
+          name: "μιγαδικός_αριθμός",
+          detail: "Παράμετρος `μιγαδικός_αριθμός` της συνάρτησης IMAGINARY.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7478,8 +7478,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Παράμετρος `number` της συνάρτησης IMCONJUGATE.",
+          name: "αριθμός",
+          detail: "Παράμετρος `αριθμός` της συνάρτησης IMCONJUGATE.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7498,8 +7498,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Παράμετρος `number` της συνάρτησης IMABS.",
+          name: "αριθμός",
+          detail: "Παράμετρος `αριθμός` της συνάρτησης IMABS.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7518,16 +7518,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "number1",
-          detail: "Παράμετρος `number1` της συνάρτησης DELTA.",
+          name: "αριθμός1",
+          detail: "Παράμετρος `αριθμός1` της συνάρτησης DELTA.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number2",
-          detail: "Παράμετρος `number2` της συνάρτησης DELTA.",
+          name: "αριθμός2",
+          detail: "Παράμετρος `αριθμός2` της συνάρτησης DELTA.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -7546,16 +7546,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης IMSUM.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης IMSUM.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης IMSUM.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης IMSUM.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7574,16 +7574,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "first_number",
-          detail: "Παράμετρος `first_number` της συνάρτησης IMSUB.",
+          name: "πρώτος_αριθμός",
+          detail: "Παράμετρος `πρώτος_αριθμός` της συνάρτησης IMSUB.",
           example: "\"6+5i\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "second_number",
-          detail: "Παράμετρος `second_number` της συνάρτησης IMSUB.",
+          name: "δεύτερος_αριθμός",
+          detail: "Παράμετρος `δεύτερος_αριθμός` της συνάρτησης IMSUB.",
           example: "\"2+3i\"",
           require: "m",
           repeat: "n",
@@ -7602,16 +7602,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
-          detail: "Παράμετρος `factor1` της συνάρτησης IMPRODUCT.",
+          name: "συντελεστής1",
+          detail: "Παράμετρος `συντελεστής1` της συνάρτησης IMPRODUCT.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "factor2",
-          detail: "Παράμετρος `factor2` της συνάρτησης IMPRODUCT.",
+          name: "συντελεστής2",
+          detail: "Παράμετρος `συντελεστής2` της συνάρτησης IMPRODUCT.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7630,16 +7630,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Παράμετρος `dividend` της συνάρτησης IMDIV.",
+          name: "διαιρετέος",
+          detail: "Παράμετρος `διαιρετέος` της συνάρτησης IMDIV.",
           example: "\"11+16i\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "divisor",
-          detail: "Παράμετρος `divisor` της συνάρτησης IMDIV.",
+          name: "διαιρέτης",
+          detail: "Παράμετρος `διαιρέτης` της συνάρτησης IMDIV.",
           example: "\"3+2i\"",
           require: "m",
           repeat: "n",
@@ -7658,8 +7658,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
-          detail: "Παράμετρος `logical_expression` της συνάρτησης NOT.",
+          name: "λογική_έκφραση",
+          detail: "Παράμετρος `λογική_έκφραση` της συνάρτησης NOT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7700,16 +7700,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
-          detail: "Παράμετρος `logical_expression1` της συνάρτησης AND.",
+          name: "λογική_έκφραση1",
+          detail: "Παράμετρος `λογική_έκφραση1` της συνάρτησης AND.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
-          detail: "Παράμετρος `logical_expression2` της συνάρτησης AND.",
+          name: "λογική_έκφραση2",
+          detail: "Παράμετρος `λογική_έκφραση2` της συνάρτησης AND.",
           example: "A3 = \"bar\"",
           require: "o",
           repeat: "y",
@@ -7728,16 +7728,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης IFERROR.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης IFERROR.",
           example: "A1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_error",
-          detail: "Παράμετρος `value_if_error` της συνάρτησης IFERROR.",
+          name: "τιμή_αν_σφάλμα",
+          detail: "Παράμετρος `τιμή_αν_σφάλμα` της συνάρτησης IFERROR.",
           example: "\"Error in cell A1\"",
           require: "m",
           repeat: "n",
@@ -7756,24 +7756,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
-          detail: "Παράμετρος `logical_expression` της συνάρτησης IF.",
+          name: "λογική_έκφραση",
+          detail: "Παράμετρος `λογική_έκφραση` της συνάρτησης IF.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_true",
-          detail: "Παράμετρος `value_if_true` της συνάρτησης IF.",
+          name: "τιμή_αν_αληθής",
+          detail: "Παράμετρος `τιμή_αν_αληθής` της συνάρτησης IF.",
           example: "\"A2 is foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_false",
-          detail: "Παράμετρος `value_if_false` της συνάρτησης IF.",
+          name: "τιμή_αν_ψευδής",
+          detail: "Παράμετρος `τιμή_αν_ψευδής` της συνάρτησης IF.",
           example: "\"A2 was false\"",
           require: "o",
           repeat: "n",
@@ -7792,16 +7792,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
-          detail: "Παράμετρος `logical_expression1` της συνάρτησης OR.",
+          name: "λογική_έκφραση1",
+          detail: "Παράμετρος `λογική_έκφραση1` της συνάρτησης OR.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
-          detail: "Παράμετρος `logical_expression2` της συνάρτησης OR.",
+          name: "λογική_έκφραση2",
+          detail: "Παράμετρος `λογική_έκφραση2` της συνάρτησης OR.",
           example: " A3 = \"bar\"",
           require: "m",
           repeat: "n",
@@ -7820,16 +7820,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης NE.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης NE.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης NE.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης NE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7848,16 +7848,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης EQ.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης EQ.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης EQ.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης EQ.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7876,16 +7876,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης GT.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης GT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης GT.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης GT.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7904,16 +7904,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης GTE.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης GTE.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης GTE.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης GTE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7932,16 +7932,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης LT.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης LT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης LT.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης LT.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7960,16 +7960,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης LTE.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης LTE.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης LTE.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης LTE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7988,16 +7988,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης ADD.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης ADD.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης ADD.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης ADD.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8016,16 +8016,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης MINUS.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης MINUS.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης MINUS.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης MINUS.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8044,16 +8044,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
-          detail: "Παράμετρος `factor1` της συνάρτησης MULTIPLY.",
+          name: "συντελεστής1",
+          detail: "Παράμετρος `συντελεστής1` της συνάρτησης MULTIPLY.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor2",
-          detail: "Παράμετρος `factor2` της συνάρτησης MULTIPLY.",
+          name: "συντελεστής2",
+          detail: "Παράμετρος `συντελεστής2` της συνάρτησης MULTIPLY.",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -8072,16 +8072,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Παράμετρος `dividend` της συνάρτησης DIVIDE.",
+          name: "διαιρετέος",
+          detail: "Παράμετρος `διαιρετέος` της συνάρτησης DIVIDE.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "divisor",
-          detail: "Παράμετρος `divisor` της συνάρτησης DIVIDE.",
+          name: "διαιρέτης",
+          detail: "Παράμετρος `διαιρέτης` της συνάρτησης DIVIDE.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8100,16 +8100,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Παράμετρος `value1` της συνάρτησης CONCAT.",
+          name: "τιμή1",
+          detail: "Παράμετρος `τιμή1` της συνάρτησης CONCAT.",
           example: "\"de\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Παράμετρος `value2` της συνάρτησης CONCAT.",
+          name: "τιμή2",
+          detail: "Παράμετρος `τιμή2` της συνάρτησης CONCAT.",
           example: "\"mystify\"",
           require: "m",
           repeat: "n",
@@ -8128,8 +8128,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "percentage",
-          detail: "Παράμετρος `percentage` της συνάρτησης UNARY_PERCENT.",
+          name: "ποσοστό",
+          detail: "Παράμετρος `ποσοστό` της συνάρτησης UNARY_PERCENT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8148,16 +8148,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
-          detail: "Παράμετρος `string1` της συνάρτησης CONCATENATE.",
+          name: "συμβολοσειρά1",
+          detail: "Παράμετρος `συμβολοσειρά1` της συνάρτησης CONCATENATE.",
           example: "\"Super\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "string2",
-          detail: "Παράμετρος `string2` της συνάρτησης CONCATENATE.",
+          name: "συμβολοσειρά2",
+          detail: "Παράμετρος `συμβολοσειρά2` της συνάρτησης CONCATENATE.",
           example: "\"calla\"",
           require: "o",
           repeat: "y",
@@ -8176,8 +8176,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Παράμετρος `string` της συνάρτησης CODE.",
+          name: "συμβολοσειρά",
+          detail: "Παράμετρος `συμβολοσειρά` της συνάρτησης CODE.",
           example: "\"a\"",
           require: "m",
           repeat: "n",
@@ -8196,8 +8196,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "table_number",
-          detail: "Παράμετρος `table_number` της συνάρτησης CHAR.",
+          name: "αριθμός_πίνακα",
+          detail: "Παράμετρος `αριθμός_πίνακα` της συνάρτησης CHAR.",
           example: "97",
           require: "m",
           repeat: "n",
@@ -8216,8 +8216,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "roman_numeral",
-          detail: "Παράμετρος `roman_numeral` της συνάρτησης ARABIC.",
+          name: "λατινικός_αριθμός",
+          detail: "Παράμετρος `λατινικός_αριθμός` της συνάρτησης ARABIC.",
           example: "\"XIV\"",
           require: "m",
           repeat: "n",
@@ -8236,8 +8236,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Παράμετρος `number` της συνάρτησης ROMAN.",
+          name: "αριθμός",
+          detail: "Παράμετρος `αριθμός` της συνάρτησης ROMAN.",
           example: "499",
           require: "m",
           repeat: "n",
@@ -8256,16 +8256,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Παράμετρος `text` της συνάρτησης REGEXEXTRACT.",
+          name: "κείμενο",
+          detail: "Παράμετρος `κείμενο` της συνάρτησης REGEXEXTRACT.",
           example: "\"Needle in a haystack\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "Παράμετρος `regular_expression` της συνάρτησης REGEXEXTRACT.",
+          name: "κανονική_έκφραση",
+          detail: "Παράμετρος `κανονική_έκφραση` της συνάρτησης REGEXEXTRACT.",
           example: "\".e{2}dle\"",
           require: "m",
           repeat: "n",
@@ -8284,16 +8284,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Παράμετρος `text` της συνάρτησης REGEXMATCH.",
+          name: "κείμενο",
+          detail: "Παράμετρος `κείμενο` της συνάρτησης REGEXMATCH.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "Παράμετρος `regular_expression` της συνάρτησης REGEXMATCH.",
+          name: "κανονική_έκφραση",
+          detail: "Παράμετρος `κανονική_έκφραση` της συνάρτησης REGEXMATCH.",
           example: "\"S.r\"",
           require: "m",
           repeat: "n",
@@ -8312,24 +8312,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Παράμετρος `text` της συνάρτησης REGEXREPLACE.",
+          name: "κείμενο",
+          detail: "Παράμετρος `κείμενο` της συνάρτησης REGEXREPLACE.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "Παράμετρος `regular_expression` της συνάρτησης REGEXREPLACE.",
+          name: "κανονική_έκφραση",
+          detail: "Παράμετρος `κανονική_έκφραση` της συνάρτησης REGEXREPLACE.",
           example: "\"S.*d\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "replacement",
-          detail: "Παράμετρος `replacement` της συνάρτησης REGEXREPLACE.",
+          name: "αντικατάσταση",
+          detail: "Παράμετρος `αντικατάσταση` της συνάρτησης REGEXREPLACE.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8348,8 +8348,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης T.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης T.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8368,24 +8368,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Παράμετρος `number` της συνάρτησης FIXED.",
+          name: "αριθμός",
+          detail: "Παράμετρος `αριθμός` της συνάρτησης FIXED.",
           example: "3.141592653",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
-          detail: "Παράμετρος `number_of_places` της συνάρτησης FIXED.",
+          name: "αριθμός_δεκαδικών",
+          detail: "Παράμετρος `αριθμός_δεκαδικών` της συνάρτησης FIXED.",
           example: "2",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "suppress_separator",
-          detail: "Παράμετρος `suppress_separator` της συνάρτησης FIXED.",
+          name: "καταστολή_διαχωριστικού",
+          detail: "Παράμετρος `καταστολή_διαχωριστικού` της συνάρτησης FIXED.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -8404,24 +8404,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Παράμετρος `search_for` της συνάρτησης FIND.",
+          name: "αναζητούμενο",
+          detail: "Παράμετρος `αναζητούμενο` της συνάρτησης FIND.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Παράμετρος `text_to_search` της συνάρτησης FIND.",
+          name: "κείμενο_προς_αναζήτηση",
+          detail: "Παράμετρος `κείμενο_προς_αναζήτηση` της συνάρτησης FIND.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Παράμετρος `starting_at` της συνάρτησης FIND.",
+          name: "ξεκινώντας_από",
+          detail: "Παράμετρος `ξεκινώντας_από` της συνάρτησης FIND.",
           example: "14",
           require: "o",
           repeat: "n",
@@ -8440,24 +8440,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Παράμετρος `search_for` της συνάρτησης FINDB.",
+          name: "αναζητούμενο",
+          detail: "Παράμετρος `αναζητούμενο` της συνάρτησης FINDB.",
           example: "\"new\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Παράμετρος `text_to_search` της συνάρτησης FINDB.",
+          name: "κείμενο_προς_αναζήτηση",
+          detail: "Παράμετρος `κείμενο_προς_αναζήτηση` της συνάρτησης FINDB.",
           example: "\"new year\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Παράμετρος `starting_at` της συνάρτησης FINDB.",
+          name: "ξεκινώντας_από",
+          detail: "Παράμετρος `ξεκινώντας_από` της συνάρτησης FINDB.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8476,24 +8476,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "delimiter",
-          detail: "Παράμετρος `delimiter` της συνάρτησης JOIN.",
+          name: "οριοθέτης",
+          detail: "Παράμετρος `οριοθέτης` της συνάρτησης JOIN.",
           example: "\" and-a \"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_or_array1",
-          detail: "Παράμετρος `value_or_array1` της συνάρτησης JOIN.",
+          name: "τιμή_ή_πίνακας1",
+          detail: "Παράμετρος `τιμή_ή_πίνακας1` της συνάρτησης JOIN.",
           example: "{1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_or_array2",
-          detail: "Παράμετρος `value_or_array2` της συνάρτησης JOIN.",
+          name: "τιμή_ή_πίνακας2",
+          detail: "Παράμετρος `τιμή_ή_πίνακας2` της συνάρτησης JOIN.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -8512,16 +8512,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Παράμετρος `string` της συνάρτησης LEFT.",
+          name: "συμβολοσειρά",
+          detail: "Παράμετρος `συμβολοσειρά` της συνάρτησης LEFT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
-          detail: "Παράμετρος `number_of_characters` της συνάρτησης LEFT.",
+          name: "αριθμός_χαρακτήρων",
+          detail: "Παράμετρος `αριθμός_χαρακτήρων` της συνάρτησης LEFT.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8540,16 +8540,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Παράμετρος `string` της συνάρτησης RIGHT.",
+          name: "συμβολοσειρά",
+          detail: "Παράμετρος `συμβολοσειρά` της συνάρτησης RIGHT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
-          detail: "Παράμετρος `number_of_characters` της συνάρτησης RIGHT.",
+          name: "αριθμός_χαρακτήρων",
+          detail: "Παράμετρος `αριθμός_χαρακτήρων` της συνάρτησης RIGHT.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8568,24 +8568,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Παράμετρος `string` της συνάρτησης MID.",
+          name: "συμβολοσειρά",
+          detail: "Παράμετρος `συμβολοσειρά` της συνάρτησης MID.",
           example: "\"get this\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Παράμετρος `starting_at` της συνάρτησης MID.",
+          name: "ξεκινώντας_από",
+          detail: "Παράμετρος `ξεκινώντας_από` της συνάρτησης MID.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "extract_length",
-          detail: "Παράμετρος `extract_length` της συνάρτησης MID.",
+          name: "μήκος_εξαγωγής",
+          detail: "Παράμετρος `μήκος_εξαγωγής` της συνάρτησης MID.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8604,8 +8604,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Παράμετρος `text` της συνάρτησης LEN.",
+          name: "κείμενο",
+          detail: "Παράμετρος `κείμενο` της συνάρτησης LEN.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8624,8 +8624,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Παράμετρος `text` της συνάρτησης LENB.",
+          name: "κείμενο",
+          detail: "Παράμετρος `κείμενο` της συνάρτησης LENB.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8644,8 +8644,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Παράμετρος `text` της συνάρτησης LOWER.",
+          name: "κείμενο",
+          detail: "Παράμετρος `κείμενο` της συνάρτησης LOWER.",
           example: "\"LOREM IPSUM\"",
           require: "m",
           repeat: "n",
@@ -8664,8 +8664,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Παράμετρος `text` της συνάρτησης UPPER.",
+          name: "κείμενο",
+          detail: "Παράμετρος `κείμενο` της συνάρτησης UPPER.",
           example: "\"lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8684,16 +8684,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
-          detail: "Παράμετρος `string1` της συνάρτησης EXACT.",
+          name: "συμβολοσειρά1",
+          detail: "Παράμετρος `συμβολοσειρά1` της συνάρτησης EXACT.",
           example: "A1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "string2",
-          detail: "Παράμετρος `string2` της συνάρτησης EXACT.",
+          name: "συμβολοσειρά2",
+          detail: "Παράμετρος `συμβολοσειρά2` της συνάρτησης EXACT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8712,32 +8712,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Παράμετρος `text` της συνάρτησης REPLACE.",
+          name: "κείμενο",
+          detail: "Παράμετρος `κείμενο` της συνάρτησης REPLACE.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "position",
-          detail: "Παράμετρος `position` της συνάρτησης REPLACE.",
+          name: "θέση",
+          detail: "Παράμετρος `θέση` της συνάρτησης REPLACE.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "length",
-          detail: "Παράμετρος `length` της συνάρτησης REPLACE.",
+          name: "μήκος",
+          detail: "Παράμετρος `μήκος` της συνάρτησης REPLACE.",
           example: "6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_text",
-          detail: "Παράμετρος `new_text` της συνάρτησης REPLACE.",
+          name: "νέο_κείμενο",
+          detail: "Παράμετρος `νέο_κείμενο` της συνάρτησης REPLACE.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8756,16 +8756,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_repeat",
-          detail: "Παράμετρος `text_to_repeat` της συνάρτησης REPT.",
+          name: "κείμενο_προς_επανάληψη",
+          detail: "Παράμετρος `κείμενο_προς_επανάληψη` της συνάρτησης REPT.",
           example: "\"ha\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "number_of_repetitions",
-          detail: "Παράμετρος `number_of_repetitions` της συνάρτησης REPT.",
+          name: "αριθμός_επαναλήψεων",
+          detail: "Παράμετρος `αριθμός_επαναλήψεων` της συνάρτησης REPT.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8784,24 +8784,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Παράμετρος `search_for` της συνάρτησης SEARCH.",
+          name: "αναζητούμενο",
+          detail: "Παράμετρος `αναζητούμενο` της συνάρτησης SEARCH.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Παράμετρος `text_to_search` της συνάρτησης SEARCH.",
+          name: "κείμενο_προς_αναζήτηση",
+          detail: "Παράμετρος `κείμενο_προς_αναζήτηση` της συνάρτησης SEARCH.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Παράμετρος `starting_at` της συνάρτησης SEARCH.",
+          name: "ξεκινώντας_από",
+          detail: "Παράμετρος `ξεκινώντας_από` της συνάρτησης SEARCH.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -8820,32 +8820,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_search",
-          detail: "Παράμετρος `text_to_search` της συνάρτησης SUBSTITUTE.",
+          name: "κείμενο_προς_αναζήτηση",
+          detail: "Παράμετρος `κείμενο_προς_αναζήτηση` της συνάρτησης SUBSTITUTE.",
           example: "\"search for it\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "search_for",
-          detail: "Παράμετρος `search_for` της συνάρτησης SUBSTITUTE.",
+          name: "αναζητούμενο",
+          detail: "Παράμετρος `αναζητούμενο` της συνάρτησης SUBSTITUTE.",
           example: "\"search for\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "replace_with",
-          detail: "Παράμετρος `replace_with` της συνάρτησης SUBSTITUTE.",
+          name: "αντικατάσταση_με",
+          detail: "Παράμετρος `αντικατάσταση_με` της συνάρτησης SUBSTITUTE.",
           example: "\"Google\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "occurrence_number",
-          detail: "Παράμετρος `occurrence_number` της συνάρτησης SUBSTITUTE.",
+          name: "αριθμός_εμφάνισης",
+          detail: "Παράμετρος `αριθμός_εμφάνισης` της συνάρτησης SUBSTITUTE.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -8864,8 +8864,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Παράμετρος `text` της συνάρτησης CLEAN.",
+          name: "κείμενο",
+          detail: "Παράμετρος `κείμενο` της συνάρτησης CLEAN.",
           example: "\"AF\"&CHAR(31)",
           require: "m",
           repeat: "n",
@@ -8884,16 +8884,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Παράμετρος `number` της συνάρτησης TEXT.",
+          name: "αριθμός",
+          detail: "Παράμετρος `αριθμός` της συνάρτησης TEXT.",
           example: "1.23",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "format",
-          detail: "Παράμετρος `format` της συνάρτησης TEXT.",
+          name: "μορφή",
+          detail: "Παράμετρος `μορφή` της συνάρτησης TEXT.",
           example: "\"$0.00\"",
           require: "m",
           repeat: "n",
@@ -8912,8 +8912,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Παράμετρος `text` της συνάρτησης TRIM.",
+          name: "κείμενο",
+          detail: "Παράμετρος `κείμενο` της συνάρτησης TRIM.",
           example: "\" lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8932,8 +8932,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Παράμετρος `text` της συνάρτησης VALUE.",
+          name: "κείμενο",
+          detail: "Παράμετρος `κείμενο` της συνάρτησης VALUE.",
           example: "\"123\"",
           require: "m",
           repeat: "n",
@@ -8952,8 +8952,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_capitalize",
-          detail: "Παράμετρος `text_to_capitalize` της συνάρτησης PROPER.",
+          name: "κείμενο_προς_κεφαλαιοποίηση",
+          detail: "Παράμετρος `κείμενο_προς_κεφαλαιοποίηση` της συνάρτησης PROPER.",
           example: "\"united states\"",
           require: "m",
           repeat: "n",
@@ -8972,24 +8972,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης CONVERT.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης CONVERT.",
           example: "5.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "start_unit",
-          detail: "Παράμετρος `start_unit` της συνάρτησης CONVERT.",
+          name: "αρχική_μονάδα",
+          detail: "Παράμετρος `αρχική_μονάδα` της συνάρτησης CONVERT.",
           example: "\"g\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_unit",
-          detail: "Παράμετρος `end_unit` της συνάρτησης CONVERT.",
+          name: "τελική_μονάδα",
+          detail: "Παράμετρος `τελική_μονάδα` της συνάρτησης CONVERT.",
           example: "\"kg\"",
           require: "m",
           repeat: "n",
@@ -9008,16 +9008,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Παράμετρος `array_x` της συνάρτησης SUMX2MY2.",
+          name: "πίνακας_x",
+          detail: "Παράμετρος `πίνακας_x` της συνάρτησης SUMX2MY2.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Παράμετρος `array_y` της συνάρτησης SUMX2MY2.",
+          name: "πίνακας_y",
+          detail: "Παράμετρος `πίνακας_y` της συνάρτησης SUMX2MY2.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9036,16 +9036,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Παράμετρος `array_x` της συνάρτησης SUMX2PY2.",
+          name: "πίνακας_x",
+          detail: "Παράμετρος `πίνακας_x` της συνάρτησης SUMX2PY2.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Παράμετρος `array_y` της συνάρτησης SUMX2PY2.",
+          name: "πίνακας_y",
+          detail: "Παράμετρος `πίνακας_y` της συνάρτησης SUMX2PY2.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9064,16 +9064,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Παράμετρος `array_x` της συνάρτησης SUMXMY2.",
+          name: "πίνακας_x",
+          detail: "Παράμετρος `πίνακας_x` της συνάρτησης SUMXMY2.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Παράμετρος `array_y` της συνάρτησης SUMXMY2.",
+          name: "πίνακας_y",
+          detail: "Παράμετρος `πίνακας_y` της συνάρτησης SUMXMY2.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9092,8 +9092,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_or_range",
-          detail: "Παράμετρος `array_or_range` της συνάρτησης TRANSPOSE.",
+          name: "πίνακας_ή_εύρος",
+          detail: "Παράμετρος `πίνακας_ή_εύρος` της συνάρτησης TRANSPOSE.",
           example: "{1,2}",
           require: "m",
           repeat: "n",
@@ -9112,24 +9112,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Παράμετρος `known_data_y` της συνάρτησης TREND.",
+          name: "γνωστά_δεδομένα_y",
+          detail: "Παράμετρος `γνωστά_δεδομένα_y` της συνάρτησης TREND.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Παράμετρος `known_data_x` της συνάρτησης TREND.",
+          name: "γνωστά_δεδομένα_x",
+          detail: "Παράμετρος `γνωστά_δεδομένα_x` της συνάρτησης TREND.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
-          detail: "Παράμετρος `new_data_x` της συνάρτησης TREND.",
+          name: "νέα_δεδομένα_x",
+          detail: "Παράμετρος `νέα_δεδομένα_x` της συνάρτησης TREND.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9156,16 +9156,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Παράμετρος `data` της συνάρτησης FREQUENCY.",
+          name: "δεδομένα",
+          detail: "Παράμετρος `δεδομένα` της συνάρτησης FREQUENCY.",
           example: "A2:A40",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "classes",
-          detail: "Παράμετρος `classes` της συνάρτησης FREQUENCY.",
+          name: "κλάσεις",
+          detail: "Παράμετρος `κλάσεις` της συνάρτησης FREQUENCY.",
           example: "B2:B5",
           require: "m",
           repeat: "n",
@@ -9184,24 +9184,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Παράμετρος `known_data_y` της συνάρτησης GROWTH.",
+          name: "γνωστά_δεδομένα_y",
+          detail: "Παράμετρος `γνωστά_δεδομένα_y` της συνάρτησης GROWTH.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Παράμετρος `known_data_x` της συνάρτησης GROWTH.",
+          name: "γνωστά_δεδομένα_x",
+          detail: "Παράμετρος `γνωστά_δεδομένα_x` της συνάρτησης GROWTH.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
-          detail: "Παράμετρος `new_data_x` της συνάρτησης GROWTH.",
+          name: "νέα_δεδομένα_x",
+          detail: "Παράμετρος `νέα_δεδομένα_x` της συνάρτησης GROWTH.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9228,32 +9228,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Παράμετρος `known_data_y` της συνάρτησης LINEST.",
+          name: "γνωστά_δεδομένα_y",
+          detail: "Παράμετρος `γνωστά_δεδομένα_y` της συνάρτησης LINEST.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Παράμετρος `known_data_x` της συνάρτησης LINEST.",
+          name: "γνωστά_δεδομένα_x",
+          detail: "Παράμετρος `γνωστά_δεδομένα_x` της συνάρτησης LINEST.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "calculate_b",
-          detail: "Παράμετρος `calculate_b` της συνάρτησης LINEST.",
+          name: "υπολογισμός_b",
+          detail: "Παράμετρος `υπολογισμός_b` της συνάρτησης LINEST.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "verbose",
-          detail: "Παράμετρος `verbose` της συνάρτησης LINEST.",
+          name: "αναλυτικό",
+          detail: "Παράμετρος `αναλυτικό` της συνάρτησης LINEST.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9272,16 +9272,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Παράμετρος `known_data_y` της συνάρτησης LOGEST.",
+          name: "γνωστά_δεδομένα_y",
+          detail: "Παράμετρος `γνωστά_δεδομένα_y` της συνάρτησης LOGEST.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Παράμετρος `known_data_x` της συνάρτησης LOGEST.",
+          name: "γνωστά_δεδομένα_x",
+          detail: "Παράμετρος `γνωστά_δεδομένα_x` της συνάρτησης LOGEST.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9296,8 +9296,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "verbose",
-          detail: "Παράμετρος `verbose` της συνάρτησης LOGEST.",
+          name: "αναλυτικό",
+          detail: "Παράμετρος `αναλυτικό` της συνάρτησης LOGEST.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9316,8 +9316,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
-          detail: "Παράμετρος `square_matrix` της συνάρτησης MDETERM.",
+          name: "τετράγωνος_πίνακας",
+          detail: "Παράμετρος `τετράγωνος_πίνακας` της συνάρτησης MDETERM.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9336,8 +9336,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
-          detail: "Παράμετρος `square_matrix` της συνάρτησης MINVERSE.",
+          name: "τετράγωνος_πίνακας",
+          detail: "Παράμετρος `τετράγωνος_πίνακας` της συνάρτησης MINVERSE.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9356,16 +9356,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "matrix1",
-          detail: "Παράμετρος `matrix1` της συνάρτησης MMULT.",
+          name: "πίνακας1",
+          detail: "Παράμετρος `πίνακας1` της συνάρτησης MMULT.",
           example: "A1:B3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "matrix2",
-          detail: "Παράμετρος `matrix2` της συνάρτησης MMULT.",
+          name: "πίνακας2",
+          detail: "Παράμετρος `πίνακας2` της συνάρτησης MMULT.",
           example: "C1:F2",
           require: "m",
           repeat: "n",
@@ -9384,16 +9384,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array1",
-          detail: "Παράμετρος `array1` της συνάρτησης SUMPRODUCT.",
+          name: "πίνακας1",
+          detail: "Παράμετρος `πίνακας1` της συνάρτησης SUMPRODUCT.",
           example: "A2:C5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array2",
-          detail: "Παράμετρος `array2` της συνάρτησης SUMPRODUCT.",
+          name: "πίνακας2",
+          detail: "Παράμετρος `πίνακας2` της συνάρτησης SUMPRODUCT.",
           example: "D2:F5",
           require: "o",
           repeat: "y",
@@ -9412,8 +9412,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell",
-          detail: "Παράμετρος `cell` της συνάρτησης ISFORMULA.",
+          name: "κελί",
+          detail: "Παράμετρος `κελί` της συνάρτησης ISFORMULA.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9432,16 +9432,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "info_type",
-          detail: "Παράμετρος `info_type` της συνάρτησης CELL.",
+          name: "τύπος_πληροφορίας",
+          detail: "Παράμετρος `τύπος_πληροφορίας` της συνάρτησης CELL.",
           example: "\"type\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "reference",
-          detail: "Παράμετρος `reference` της συνάρτησης CELL.",
+          name: "αναφορά",
+          detail: "Παράμετρος `αναφορά` της συνάρτησης CELL.",
           example: "C2",
           require: "m",
           repeat: "n",
@@ -9471,8 +9471,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
-          detail: "Παράμετρος `reference` της συνάρτησης ERROR_TYPE.",
+          name: "αναφορά",
+          detail: "Παράμετρος `αναφορά` της συνάρτησης ERROR_TYPE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -9491,8 +9491,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ISBLANK.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISBLANK.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9511,8 +9511,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ISERR.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISERR.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9531,8 +9531,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ISERROR.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISERROR.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9551,8 +9551,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ISLOGICAL.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISLOGICAL.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9571,8 +9571,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ISNA.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISNA.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9591,8 +9591,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ISNONTEXT.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISNONTEXT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9611,8 +9611,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ISNUMBER.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISNUMBER.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9631,8 +9631,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ISREF.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISREF.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9651,8 +9651,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης ISTEXT.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISTEXT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9671,8 +9671,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης TYPE.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης TYPE.",
           example: "C4",
           require: "m",
           repeat: "n",
@@ -9691,8 +9691,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης N.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης N.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9711,8 +9711,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης TO_DATE.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης TO_DATE.",
           example: "25405",
           require: "m",
           repeat: "n",
@@ -9731,8 +9731,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης TO_PURE_NUMBER.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης TO_PURE_NUMBER.",
           example: "50%",
           require: "m",
           repeat: "n",
@@ -9751,8 +9751,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης TO_TEXT.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης TO_TEXT.",
           example: "24",
           require: "m",
           repeat: "n",
@@ -9771,8 +9771,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης TO_DOLLARS.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης TO_DOLLARS.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9791,8 +9791,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Παράμετρος `value` της συνάρτησης TO_PERCENT.",
+          name: "τιμή",
+          detail: "Παράμετρος `τιμή` της συνάρτησης TO_PERCENT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9811,24 +9811,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DGET.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DGET.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DGET.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DGET.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DGET.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DGET.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9847,24 +9847,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DMAX.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DMAX.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DMAX.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DMAX.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DMAX.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DMAX.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9883,24 +9883,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DMIN.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DMIN.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DMIN.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DMIN.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DMIN.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DMIN.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9919,24 +9919,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DAVERAGE.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DAVERAGE.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DAVERAGE.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DAVERAGE.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DAVERAGE.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DAVERAGE.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9955,24 +9955,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DCOUNT.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DCOUNT.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DCOUNT.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DCOUNT.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DCOUNT.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DCOUNT.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9991,24 +9991,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DCOUNTA.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DCOUNTA.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DCOUNTA.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DCOUNTA.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DCOUNTA.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DCOUNTA.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10027,24 +10027,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DPRODUCT.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DPRODUCT.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DPRODUCT.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DPRODUCT.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DPRODUCT.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DPRODUCT.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10063,24 +10063,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DSTDEV.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DSTDEV.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DSTDEV.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DSTDEV.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DSTDEV.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DSTDEV.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10099,24 +10099,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DSTDEVP.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DSTDEVP.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DSTDEVP.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DSTDEVP.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DSTDEVP.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DSTDEVP.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10135,24 +10135,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DSUM.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DSUM.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DSUM.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DSUM.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DSUM.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DSUM.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10171,24 +10171,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DVAR.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DVAR.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DVAR.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DVAR.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DVAR.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DVAR.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10207,24 +10207,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
-          detail: "Παράμετρος `database` της συνάρτησης DVARP.",
+          name: "βάση_δεδομένων",
+          detail: "Παράμετρος `βάση_δεδομένων` της συνάρτησης DVARP.",
           example: "A2:F20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "field",
-          detail: "Παράμετρος `field` της συνάρτησης DVARP.",
+          name: "πεδίο",
+          detail: "Παράμετρος `πεδίο` της συνάρτησης DVARP.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Παράμετρος `criteria` της συνάρτησης DVARP.",
+          name: "κριτήρια",
+          detail: "Παράμετρος `κριτήρια` της συνάρτησης DVARP.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10243,17 +10243,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Αριθμός ταυτότητας",
           example: "A1",
-          detail: "Παράμετρος `ID number` της συνάρτησης AGE_BY_IDCARD.",
+          detail: "Παράμετρος `Αριθμός ταυτότητας` της συνάρτησης AGE_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Deadline",
+          name: "Προθεσμία",
           example: "\"2017-10-01\"",
-          detail: "Παράμετρος `Deadline` της συνάρτησης AGE_BY_IDCARD.",
+          detail: "Παράμετρος `Προθεσμία` της συνάρτησης AGE_BY_IDCARD.",
           require: "o",
           repeat: "n",
           type: "rangedatetime"
@@ -10271,9 +10271,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Αριθμός ταυτότητας",
           example: "\"31033519900101XXXX\"",
-          detail: "Παράμετρος `ID number` της συνάρτησης SEX_BY_IDCARD.",
+          detail: "Παράμετρος `Αριθμός ταυτότητας` της συνάρτησης SEX_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10291,17 +10291,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Αριθμός ταυτότητας",
           example: "\"31033519900101XXXX\"",
-          detail: "Παράμετρος `ID number` της συνάρτησης BIRTHDAY_BY_IDCARD.",
+          detail: "Παράμετρος `Αριθμός ταυτότητας` της συνάρτησης BIRTHDAY_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Birthday format",
+          name: "Μορφή ημερομηνίας γέννησης",
           example: "0",
-          detail: "Παράμετρος `Birthday format` της συνάρτησης BIRTHDAY_BY_IDCARD.",
+          detail: "Παράμετρος `Μορφή ημερομηνίας γέννησης` της συνάρτησης BIRTHDAY_BY_IDCARD.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10319,9 +10319,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Αριθμός ταυτότητας",
           example: "\"31033519900101XXXX\"",
-          detail: "Παράμετρος `ID number` της συνάρτησης PROVINCE_BY_IDCARD.",
+          detail: "Παράμετρος `Αριθμός ταυτότητας` της συνάρτησης PROVINCE_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10339,9 +10339,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Αριθμός ταυτότητας",
           example: "\"31033519900101XXXX\"",
-          detail: "Παράμετρος `ID number` της συνάρτησης CITY_BY_IDCARD.",
+          detail: "Παράμετρος `Αριθμός ταυτότητας` της συνάρτησης CITY_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10359,9 +10359,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Αριθμός ταυτότητας",
           example: "\"31033519900101XXXX\"",
-          detail: "Παράμετρος `ID number` της συνάρτησης STAR_BY_IDCARD.",
+          detail: "Παράμετρος `Αριθμός ταυτότητας` της συνάρτησης STAR_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10379,9 +10379,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Αριθμός ταυτότητας",
           example: "\"31033519900101XXXX\"",
-          detail: "Παράμετρος `ID number` της συνάρτησης ANIMAL_BY_IDCARD.",
+          detail: "Παράμετρος `Αριθμός ταυτότητας` της συνάρτησης ANIMAL_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10399,9 +10399,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Αριθμός ταυτότητας",
           example: "\"31033519900101XXXX\"",
-          detail: "Παράμετρος `ID number` της συνάρτησης ISIDCARD.",
+          detail: "Παράμετρος `Αριθμός ταυτότητας` της συνάρτησης ISIDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10419,17 +10419,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Κείμενο",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Παράμετρος `Text` της συνάρτησης DM_TEXT_CUTWORD.",
+          detail: "Παράμετρος `Κείμενο` της συνάρτησης DM_TEXT_CUTWORD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Word segmentation mode",
+          name: "Λειτουργία κατάτμησης λέξεων",
           example: "0",
-          detail: "Παράμετρος `Word segmentation mode` της συνάρτησης DM_TEXT_CUTWORD.",
+          detail: "Παράμετρος `Λειτουργία κατάτμησης λέξεων` της συνάρτησης DM_TEXT_CUTWORD.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10447,25 +10447,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Κείμενο",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Παράμετρος `Text` της συνάρτησης DM_TEXT_TFIDF.",
+          detail: "Παράμετρος `Κείμενο` της συνάρτησης DM_TEXT_TFIDF.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "Αριθμός λέξεων-κλειδιών",
           example: "20",
-          detail: "Παράμετρος `Number of keywords` της συνάρτησης DM_TEXT_TFIDF.",
+          detail: "Παράμετρος `Αριθμός λέξεων-κλειδιών` της συνάρτησης DM_TEXT_TFIDF.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "Corpus",
+          name: "Σώμα κειμένων",
           example: "1",
-          detail: "Παράμετρος `Corpus` της συνάρτησης DM_TEXT_TFIDF.",
+          detail: "Παράμετρος `Σώμα κειμένων` της συνάρτησης DM_TEXT_TFIDF.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10483,25 +10483,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Κείμενο",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Παράμετρος `Text` της συνάρτησης DM_TEXT_TEXTRANK.",
+          detail: "Παράμετρος `Κείμενο` της συνάρτησης DM_TEXT_TEXTRANK.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "Αριθμός λέξεων-κλειδιών",
           example: "20",
-          detail: "Παράμετρος `Number of keywords` της συνάρτησης DM_TEXT_TEXTRANK.",
+          detail: "Παράμετρος `Αριθμός λέξεων-κλειδιών` της συνάρτησης DM_TEXT_TEXTRANK.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "Corpus",
+          name: "Σώμα κειμένων",
           example: "1",
-          detail: "Παράμετρος `Corpus` της συνάρτησης DM_TEXT_TEXTRANK.",
+          detail: "Παράμετρος `Σώμα κειμένων` της συνάρτησης DM_TEXT_TEXTRANK.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10519,25 +10519,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Κωδικός μετοχής",
           example: "\"000001\"",
-          detail: "Παράμετρος `Stock code` της συνάρτησης DATA_CN_STOCK_CLOSE.",
+          detail: "Παράμετρος `Κωδικός μετοχής` της συνάρτησης DATA_CN_STOCK_CLOSE.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Ημερομηνία",
           example: "2015-01-08",
-          detail: "Παράμετρος `Date` της συνάρτησης DATA_CN_STOCK_CLOSE.",
+          detail: "Παράμετρος `Ημερομηνία` της συνάρτησης DATA_CN_STOCK_CLOSE.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Τύπος αναπροσαρμογής μετοχής",
           example: "0",
-          detail: "Παράμετρος `Reversion and exclusion` της συνάρτησης DATA_CN_STOCK_CLOSE.",
+          detail: "Παράμετρος `Τύπος αναπροσαρμογής μετοχής` της συνάρτησης DATA_CN_STOCK_CLOSE.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10555,25 +10555,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Κωδικός μετοχής",
           example: "\"000001\"",
-          detail: "Παράμετρος `Stock code` της συνάρτησης DATA_CN_STOCK_OPEN.",
+          detail: "Παράμετρος `Κωδικός μετοχής` της συνάρτησης DATA_CN_STOCK_OPEN.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Ημερομηνία",
           example: "2015-01-08",
-          detail: "Παράμετρος `Date` της συνάρτησης DATA_CN_STOCK_OPEN.",
+          detail: "Παράμετρος `Ημερομηνία` της συνάρτησης DATA_CN_STOCK_OPEN.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Τύπος αναπροσαρμογής μετοχής",
           example: "0",
-          detail: "Παράμετρος `Reversion and exclusion` της συνάρτησης DATA_CN_STOCK_OPEN.",
+          detail: "Παράμετρος `Τύπος αναπροσαρμογής μετοχής` της συνάρτησης DATA_CN_STOCK_OPEN.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10591,25 +10591,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Κωδικός μετοχής",
           example: "\"000001\"",
-          detail: "Παράμετρος `Stock code` της συνάρτησης DATA_CN_STOCK_MAX.",
+          detail: "Παράμετρος `Κωδικός μετοχής` της συνάρτησης DATA_CN_STOCK_MAX.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Ημερομηνία",
           example: "2015-01-08",
-          detail: "Παράμετρος `Date` της συνάρτησης DATA_CN_STOCK_MAX.",
+          detail: "Παράμετρος `Ημερομηνία` της συνάρτησης DATA_CN_STOCK_MAX.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Τύπος αναπροσαρμογής μετοχής",
           example: "0",
-          detail: "Παράμετρος `Reversion and exclusion` της συνάρτησης DATA_CN_STOCK_MAX.",
+          detail: "Παράμετρος `Τύπος αναπροσαρμογής μετοχής` της συνάρτησης DATA_CN_STOCK_MAX.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10627,25 +10627,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Κωδικός μετοχής",
           example: "\"000001\"",
-          detail: "Παράμετρος `Stock code` της συνάρτησης DATA_CN_STOCK_MIN.",
+          detail: "Παράμετρος `Κωδικός μετοχής` της συνάρτησης DATA_CN_STOCK_MIN.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Ημερομηνία",
           example: "2015-01-08",
-          detail: "Παράμετρος `Date` της συνάρτησης DATA_CN_STOCK_MIN.",
+          detail: "Παράμετρος `Ημερομηνία` της συνάρτησης DATA_CN_STOCK_MIN.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Τύπος αναπροσαρμογής μετοχής",
           example: "0",
-          detail: "Παράμετρος `Reversion and exclusion` της συνάρτησης DATA_CN_STOCK_MIN.",
+          detail: "Παράμετρος `Τύπος αναπροσαρμογής μετοχής` της συνάρτησης DATA_CN_STOCK_MIN.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10663,25 +10663,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Κωδικός μετοχής",
           example: "\"000001\"",
-          detail: "Παράμετρος `Stock code` της συνάρτησης DATA_CN_STOCK_VOLUMN.",
+          detail: "Παράμετρος `Κωδικός μετοχής` της συνάρτησης DATA_CN_STOCK_VOLUMN.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Ημερομηνία",
           example: "2015-01-08",
-          detail: "Παράμετρος `Date` της συνάρτησης DATA_CN_STOCK_VOLUMN.",
+          detail: "Παράμετρος `Ημερομηνία` της συνάρτησης DATA_CN_STOCK_VOLUMN.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Τύπος αναπροσαρμογής μετοχής",
           example: "0",
-          detail: "Παράμετρος `Reversion and exclusion` της συνάρτησης DATA_CN_STOCK_VOLUMN.",
+          detail: "Παράμετρος `Τύπος αναπροσαρμογής μετοχής` της συνάρτησης DATA_CN_STOCK_VOLUMN.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10699,25 +10699,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Κωδικός μετοχής",
           example: "\"000001\"",
-          detail: "Παράμετρος `Stock code` της συνάρτησης DATA_CN_STOCK_AMOUNT.",
+          detail: "Παράμετρος `Κωδικός μετοχής` της συνάρτησης DATA_CN_STOCK_AMOUNT.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Ημερομηνία",
           example: "2015-01-08",
-          detail: "Παράμετρος `Date` της συνάρτησης DATA_CN_STOCK_AMOUNT.",
+          detail: "Παράμετρος `Ημερομηνία` της συνάρτησης DATA_CN_STOCK_AMOUNT.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Τύπος αναπροσαρμογής μετοχής",
           example: "0",
-          detail: "Παράμετρος `Reversion and exclusion` της συνάρτησης DATA_CN_STOCK_AMOUNT.",
+          detail: "Παράμετρος `Τύπος αναπροσαρμογής μετοχής` της συνάρτησης DATA_CN_STOCK_AMOUNT.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10735,9 +10735,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "τιμή",
           example: "\"1990-01-01\"",
-          detail: "Παράμετρος `value` της συνάρτησης ISDATE.",
+          detail: "Παράμετρος `τιμή` της συνάρτησης ISDATE.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10755,65 +10755,65 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Εύρος",
           example: "A1:A20",
-          detail: "Παράμετρος `Range` της συνάρτησης LINESPLINES.",
+          detail: "Παράμετρος `Εύρος` της συνάρτησης LINESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line color",
+          name: "Χρώμα γραμμής",
           example: "#2ec7c9",
-          detail: "Παράμετρος `Line color` της συνάρτησης LINESPLINES.",
+          detail: "Παράμετρος `Χρώμα γραμμής` της συνάρτησης LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line thickness",
+          name: "Πάχος γραμμής",
           example: "1",
-          detail: "Παράμετρος `Line thickness` της συνάρτησης LINESPLINES.",
+          detail: "Παράμετρος `Πάχος γραμμής` της συνάρτησης LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line",
+          name: "Βοηθητική γραμμή",
           example: "avg",
-          detail: "Παράμετρος `Auxiliary line` της συνάρτησης LINESPLINES.",
+          detail: "Παράμετρος `Βοηθητική γραμμή` της συνάρτησης LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line color",
+          name: "Χρώμα βοηθητικής γραμμής",
           example: "#000",
-          detail: "Παράμετρος `Auxiliary line color` της συνάρτησης LINESPLINES.",
+          detail: "Παράμετρος `Χρώμα βοηθητικής γραμμής` της συνάρτησης LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Maximum mark",
+          name: "Μέγιστος δείκτης",
           example: "#fc5c5c",
-          detail: "Παράμετρος `Maximum mark` της συνάρτησης LINESPLINES.",
+          detail: "Παράμετρος `Μέγιστος δείκτης` της συνάρτησης LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Minimum mark",
+          name: "Ελάχιστος δείκτης",
           example: "#fc5c5c",
-          detail: "Παράμετρος `Minimum mark` της συνάρτησης LINESPLINES.",
+          detail: "Παράμετρος `Ελάχιστος δείκτης` της συνάρτησης LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Mark size",
+          name: "Μέγεθος δείκτη",
           example: "1.5",
-          detail: "Παράμετρος `Mark size` της συνάρτησης LINESPLINES.",
+          detail: "Παράμετρος `Μέγεθος δείκτη` της συνάρτησης LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10831,49 +10831,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Εύρος",
           example: "A1:A20",
-          detail: "Παράμετρος `Range` της συνάρτησης AREASPLINES.",
+          detail: "Παράμετρος `Εύρος` της συνάρτησης AREASPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line color",
+          name: "Χρώμα γραμμής",
           example: "#2ec7c9",
-          detail: "Παράμετρος `Line color` της συνάρτησης AREASPLINES.",
+          detail: "Παράμετρος `Χρώμα γραμμής` της συνάρτησης AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Fill color",
+          name: "Χρώμα γεμίσματος",
           example: "#CCF3F4",
-          detail: "Παράμετρος `Fill color` της συνάρτησης AREASPLINES.",
+          detail: "Παράμετρος `Χρώμα γεμίσματος` της συνάρτησης AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line thickness",
+          name: "Πάχος γραμμής",
           example: "1",
-          detail: "Παράμετρος `Line thickness` της συνάρτησης AREASPLINES.",
+          detail: "Παράμετρος `Πάχος γραμμής` της συνάρτησης AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line",
+          name: "Βοηθητική γραμμή",
           example: "avg",
-          detail: "Παράμετρος `Auxiliary line` της συνάρτησης AREASPLINES.",
+          detail: "Παράμετρος `Βοηθητική γραμμή` της συνάρτησης AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line color",
+          name: "Χρώμα βοηθητικής γραμμής",
           example: "#000",
-          detail: "Παράμετρος `Auxiliary line color` της συνάρτησης AREASPLINES.",
+          detail: "Παράμετρος `Χρώμα βοηθητικής γραμμής` της συνάρτησης AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10891,49 +10891,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Εύρος",
           example: "A1:A20",
-          detail: "Παράμετρος `Range` της συνάρτησης COLUMNSPLINES.",
+          detail: "Παράμετρος `Εύρος` της συνάρτησης COLUMNSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Διάστημα ράβδων",
           example: "1",
-          detail: "Παράμετρος `Bar interval` της συνάρτησης COLUMNSPLINES.",
+          detail: "Παράμετρος `Διάστημα ράβδων` της συνάρτησης COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Χρώμα ράβδου",
           example: "#fc5c5c",
-          detail: "Παράμετρος `Bar color` της συνάρτησης COLUMNSPLINES.",
+          detail: "Παράμετρος `Χρώμα ράβδου` της συνάρτησης COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Χρώμα αρνητικών ράβδων",
           example: "#97b552",
-          detail: "Παράμετρος `Negative bar color` της συνάρτησης COLUMNSPLINES.",
+          detail: "Παράμετρος `Χρώμα αρνητικών ράβδων` της συνάρτησης COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Μέγιστο",
           example: "100",
-          detail: "Παράμετρος `Max` της συνάρτησης COLUMNSPLINES.",
+          detail: "Παράμετρος `Μέγιστο` της συνάρτησης COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Παλέτα χρωμάτων",
           example: "#97b552",
-          detail: "Παράμετρος `Color palette` της συνάρτησης COLUMNSPLINES.",
+          detail: "Παράμετρος `Παλέτα χρωμάτων` της συνάρτησης COLUMNSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -10951,41 +10951,41 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Εύρος",
           example: "A1:A20",
-          detail: "Παράμετρος `Range` της συνάρτησης STACKCOLUMNSPLINES.",
+          detail: "Παράμετρος `Εύρος` της συνάρτησης STACKCOLUMNSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Stack by column",
+          name: "Στοίβαξη ανά στήλη",
           example: "1",
-          detail: "Παράμετρος `Stack by column` της συνάρτησης STACKCOLUMNSPLINES.",
+          detail: "Παράμετρος `Στοίβαξη ανά στήλη` της συνάρτησης STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Διάστημα ράβδων",
           example: "1",
-          detail: "Παράμετρος `Bar interval` της συνάρτησης STACKCOLUMNSPLINES.",
+          detail: "Παράμετρος `Διάστημα ράβδων` της συνάρτησης STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Μέγιστο",
           example: "100",
-          detail: "Παράμετρος `Max` της συνάρτησης STACKCOLUMNSPLINES.",
+          detail: "Παράμετρος `Μέγιστο` της συνάρτησης STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Παλέτα χρωμάτων",
           example: "#97b552",
-          detail: "Παράμετρος `Color palette` της συνάρτησης STACKCOLUMNSPLINES.",
+          detail: "Παράμετρος `Παλέτα χρωμάτων` της συνάρτησης STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11003,49 +11003,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Εύρος",
           example: "A1:A20",
-          detail: "Παράμετρος `Range` της συνάρτησης BARSPLINES.",
+          detail: "Παράμετρος `Εύρος` της συνάρτησης BARSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Διάστημα ράβδων",
           example: "1",
-          detail: "Παράμετρος `Bar interval` της συνάρτησης BARSPLINES.",
+          detail: "Παράμετρος `Διάστημα ράβδων` της συνάρτησης BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Χρώμα ράβδου",
           example: "#fc5c5c",
-          detail: "Παράμετρος `Bar color` της συνάρτησης BARSPLINES.",
+          detail: "Παράμετρος `Χρώμα ράβδου` της συνάρτησης BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Χρώμα αρνητικών ράβδων",
           example: "#97b552",
-          detail: "Παράμετρος `Negative bar color` της συνάρτησης BARSPLINES.",
+          detail: "Παράμετρος `Χρώμα αρνητικών ράβδων` της συνάρτησης BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Μέγιστο",
           example: "100",
-          detail: "Παράμετρος `Max` της συνάρτησης BARSPLINES.",
+          detail: "Παράμετρος `Μέγιστο` της συνάρτησης BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Παλέτα χρωμάτων",
           example: "#97b552",
-          detail: "Παράμετρος `Color palette` της συνάρτησης BARSPLINES.",
+          detail: "Παράμετρος `Παλέτα χρωμάτων` της συνάρτησης BARSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11063,41 +11063,41 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Εύρος",
           example: "A1:A20",
-          detail: "Παράμετρος `Range` της συνάρτησης STACKBARSPLINES.",
+          detail: "Παράμετρος `Εύρος` της συνάρτησης STACKBARSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Stack by column",
+          name: "Στοίβαξη ανά στήλη",
           example: "1",
-          detail: "Παράμετρος `Stack by column` της συνάρτησης STACKBARSPLINES.",
+          detail: "Παράμετρος `Στοίβαξη ανά στήλη` της συνάρτησης STACKBARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Διάστημα ράβδων",
           example: "1",
-          detail: "Παράμετρος `Bar interval` της συνάρτησης STACKBARSPLINES.",
+          detail: "Παράμετρος `Διάστημα ράβδων` της συνάρτησης STACKBARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Μέγιστο",
           example: "100",
-          detail: "Παράμετρος `Max` της συνάρτησης STACKBARSPLINES.",
+          detail: "Παράμετρος `Μέγιστο` της συνάρτησης STACKBARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Παλέτα χρωμάτων",
           example: "#97b552",
-          detail: "Παράμετρος `Color palette` της συνάρτησης STACKBARSPLINES.",
+          detail: "Παράμετρος `Παλέτα χρωμάτων` της συνάρτησης STACKBARSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11115,33 +11115,33 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Εύρος",
           example: "A1:A20",
-          detail: "Παράμετρος `Range` της συνάρτησης DISCRETESPLINES.",
+          detail: "Παράμετρος `Εύρος` της συνάρτησης DISCRETESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Segmentation threshold",
+          name: "Όριο κατάτμησης",
           example: "1",
-          detail: "Παράμετρος `Segmentation threshold` της συνάρτησης DISCRETESPLINES.",
+          detail: "Παράμετρος `Όριο κατάτμησης` της συνάρτησης DISCRETESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Above threshold color",
+          name: "Χρώμα πάνω από το όριο",
           example: "#2ec7c9",
-          detail: "Παράμετρος `Above threshold color` της συνάρτησης DISCRETESPLINES.",
+          detail: "Παράμετρος `Χρώμα πάνω από το όριο` της συνάρτησης DISCRETESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Below threshold color",
+          name: "Χρώμα κάτω από το όριο",
           example: "#fc5c5c",
-          detail: "Παράμετρος `Below threshold color` της συνάρτησης DISCRETESPLINES.",
+          detail: "Παράμετρος `Χρώμα κάτω από το όριο` της συνάρτησης DISCRETESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11159,49 +11159,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Εύρος",
           example: "A1:A20",
-          detail: "Παράμετρος `Range` της συνάρτησης TRISTATESPLINES.",
+          detail: "Παράμετρος `Εύρος` της συνάρτησης TRISTATESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Διάστημα ράβδων",
           example: "1",
-          detail: "Παράμετρος `Bar interval` της συνάρτησης TRISTATESPLINES.",
+          detail: "Παράμετρος `Διάστημα ράβδων` της συνάρτησης TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Χρώμα ράβδου",
           example: "#fc5c5c",
-          detail: "Παράμετρος `Bar color` της συνάρτησης TRISTATESPLINES.",
+          detail: "Παράμετρος `Χρώμα ράβδου` της συνάρτησης TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Χρώμα αρνητικών ράβδων",
           example: "#97b552",
-          detail: "Παράμετρος `Negative bar color` της συνάρτησης TRISTATESPLINES.",
+          detail: "Παράμετρος `Χρώμα αρνητικών ράβδων` της συνάρτησης TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Zero value bar color",
+          name: "Χρώμα ράβδων μηδενικής τιμής",
           example: "#999",
-          detail: "Παράμετρος `Zero value bar color` της συνάρτησης TRISTATESPLINES.",
+          detail: "Παράμετρος `Χρώμα ράβδων μηδενικής τιμής` της συνάρτησης TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Παλέτα χρωμάτων",
           example: "#97b552",
-          detail: "Παράμετρος `Color palette` της συνάρτησης TRISTATESPLINES.",
+          detail: "Παράμετρος `Παλέτα χρωμάτων` της συνάρτησης TRISTATESPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11219,41 +11219,41 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Εύρος",
           example: "A1:A20",
-          detail: "Παράμετρος `Range` της συνάρτησης PIESPLINES.",
+          detail: "Παράμετρος `Εύρος` της συνάρτησης PIESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Rotation angle",
+          name: "Γωνία περιστροφής",
           example: "0",
-          detail: "Παράμετρος `Rotation angle` της συνάρτησης PIESPLINES.",
+          detail: "Παράμετρος `Γωνία περιστροφής` της συνάρτησης PIESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "border",
+          name: "περίγραμμα",
           example: "0",
-          detail: "Παράμετρος `border` της συνάρτησης PIESPLINES.",
+          detail: "Παράμετρος `περίγραμμα` της συνάρτησης PIESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Border color",
+          name: "Χρώμα περιγράμματος",
           example: "#000",
-          detail: "Παράμετρος `Border color` της συνάρτησης PIESPLINES.",
+          detail: "Παράμετρος `Χρώμα περιγράμματος` της συνάρτησης PIESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Παλέτα χρωμάτων",
           example: "#97b552",
-          detail: "Παράμετρος `Color palette` της συνάρτησης PIESPLINES.",
+          detail: "Παράμετρος `Παλέτα χρωμάτων` της συνάρτησης PIESPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11271,33 +11271,33 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Εύρος",
           example: "A1:A20",
-          detail: "Παράμετρος `Range` της συνάρτησης BOXSPLINES.",
+          detail: "Παράμετρος `Εύρος` της συνάρτησης BOXSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Outlier ratio",
+          name: "Λόγος ακραίων τιμών",
           example: "1.5",
-          detail: "Παράμετρος `Outlier ratio` της συνάρτησης BOXSPLINES.",
+          detail: "Παράμετρος `Λόγος ακραίων τιμών` της συνάρτησης BOXSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Target value",
+          name: "Τιμή στόχου",
           example: "10",
-          detail: "Παράμετρος `Target value` της συνάρτησης BOXSPLINES.",
+          detail: "Παράμετρος `Τιμή στόχου` της συνάρτησης BOXSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Point size",
+          name: "Μέγεθος σημείων",
           example: "1.5",
-          detail: "Παράμετρος `Point size` της συνάρτησης BOXSPLINES.",
+          detail: "Παράμετρος `Μέγεθος σημείων` της συνάρτησης BOXSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11315,25 +11315,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Target",
+          name: "Στόχος",
           example: "10",
-          detail: "Παράμετρος `Target` της συνάρτησης BULLETSPLINES.",
+          detail: "Παράμετρος `Στόχος` της συνάρτησης BULLETSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "achieved",
+          name: "επιτεύχθηκε",
           example: "8",
-          detail: "Παράμετρος `achieved` της συνάρτησης BULLETSPLINES.",
+          detail: "Παράμετρος `επιτεύχθηκε` της συνάρτησης BULLETSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Contrast",
+          name: "Τιμή σύγκρισης",
           example: "12",
-          detail: "Παράμετρος `Contrast` της συνάρτησης BULLETSPLINES.",
+          detail: "Παράμετρος `Τιμή σύγκρισης` της συνάρτησης BULLETSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11351,9 +11351,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "config",
+          name: "διαμόρφωση",
           example: "PIESPLINES(A1:A20)",
-          detail: "Παράμετρος `config` της συνάρτησης COMPOSESPLINES.",
+          detail: "Παράμετρος `διαμόρφωση` της συνάρτησης COMPOSESPLINES.",
           require: "m",
           repeat: "y",
           type: "rangeall"
@@ -11371,32 +11371,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Παράμετρος `range` της συνάρτησης SORT.",
+          name: "εύρος",
+          detail: "Παράμετρος `εύρος` της συνάρτησης SORT.",
           example: "A2:A17",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "sort_column",
-          detail: "Παράμετρος `sort_column` της συνάρτησης SORT.",
+          name: "στήλη_ταξινόμησης",
+          detail: "Παράμετρος `στήλη_ταξινόμησης` της συνάρτησης SORT.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_ascending",
-          detail: "Παράμετρος `is_ascending` της συνάρτησης SORT.",
+          name: "είναι_αύξουσα",
+          detail: "Παράμετρος `είναι_αύξουσα` της συνάρτησης SORT.",
           example: "-1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "sort_column2",
-          detail: "Παράμετρος `sort_column2` της συνάρτησης SORT.",
+          name: "στήλη_ταξινόμησης2",
+          detail: "Παράμετρος `στήλη_ταξινόμησης2` της συνάρτησης SORT.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -11415,24 +11415,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Παράμετρος `range` της συνάρτησης FILTER.",
+          name: "εύρος",
+          detail: "Παράμετρος `εύρος` της συνάρτησης FILTER.",
           example: "A5:D20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "condition1",
-          detail: "Παράμετρος `condition1` της συνάρτησης FILTER.",
+          name: "συνθήκη1",
+          detail: "Παράμετρος `συνθήκη1` της συνάρτησης FILTER.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "condition2",
-          detail: "Παράμετρος `condition2` της συνάρτησης FILTER.",
+          name: "συνθήκη2",
+          detail: "Παράμετρος `συνθήκη2` της συνάρτησης FILTER.",
           example: "\"\"",
           require: "o",
           repeat: "n",
@@ -11451,24 +11451,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Παράμετρος `range` της συνάρτησης UNIQUE.",
+          name: "εύρος",
+          detail: "Παράμετρος `εύρος` της συνάρτησης UNIQUE.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "by_col",
-          detail: "Παράμετρος `by_col` της συνάρτησης UNIQUE.",
+          name: "ανά_στήλη",
+          detail: "Παράμετρος `ανά_στήλη` της συνάρτησης UNIQUE.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "occurs_once",
-          detail: "Παράμετρος `occurs_once` της συνάρτησης UNIQUE.",
+          name: "μία_φορά",
+          detail: "Παράμετρος `μία_φορά` της συνάρτησης UNIQUE.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -11487,16 +11487,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
-          detail: "Παράμετρος `rows` της συνάρτησης RANDARRAY.",
+          name: "γραμμές",
+          detail: "Παράμετρος `γραμμές` της συνάρτησης RANDARRAY.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "columns",
-          detail: "Παράμετρος `columns` της συνάρτησης RANDARRAY.",
+          name: "στήλες",
+          detail: "Παράμετρος `στήλες` της συνάρτησης RANDARRAY.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11515,32 +11515,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
-          detail: "Παράμετρος `rows` της συνάρτησης SEQUENCE.",
+          name: "γραμμές",
+          detail: "Παράμετρος `γραμμές` της συνάρτησης SEQUENCE.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "columns",
-          detail: "Παράμετρος `columns` της συνάρτησης SEQUENCE.",
+          name: "στήλες",
+          detail: "Παράμετρος `στήλες` της συνάρτησης SEQUENCE.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "start",
-          detail: "Παράμετρος `start` της συνάρτησης SEQUENCE.",
+          name: "αρχή",
+          detail: "Παράμετρος `αρχή` της συνάρτησης SEQUENCE.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "step",
-          detail: "Παράμετρος `step` της συνάρτησης SEQUENCE.",
+          name: "βήμα",
+          detail: "Παράμετρος `βήμα` της συνάρτησης SEQUENCE.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11559,9 +11559,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "expression",
+          name: "έκφραση",
           example: "\"A1+5*2^2\"",
-          detail: "Παράμετρος `expression` της συνάρτησης EVALUATE.",
+          detail: "Παράμετρος `έκφραση` της συνάρτησης EVALUATE.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11579,9 +11579,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "remote_expression",
+          name: "απομακρυσμένη_έκφραση",
           example: "SUM(A1:A10000000)",
-          detail: "Παράμετρος `remote_expression` της συνάρτησης REMOTE.",
+          detail: "Παράμετρος `απομακρυσμένη_έκφραση` της συνάρτησης REMOTE.",
           require: "m",
           repeat: "n",
           type: "string"
@@ -13105,7 +13105,20 @@ module.exports = {
     Statistical: "Στατιστική",
     Text: "Κείμενο",
     dataMining: "Εξόρυξη δεδομένων",
-    selectFunction: "Επιλογή συνάρτησης"
+    selectFunctionTitle: "Επιλογή συνάρτησης",
+    calculationResult: "Αποτέλεσμα",
+    tipSuccessText: "Επιτυχία",
+    tipParamErrorText: "Σφάλμα τύπου παραμέτρου",
+    helpClose: "Κλείσιμο",
+    helpCollapse: "Σύμπτυξη",
+    helpExample: "Παράδειγμα",
+    helpAbstract: "Περίληψη",
+    execfunctionError: "Σφάλμα στον τύπο",
+    execfunctionSelfError: "Ο τύπος δεν μπορεί να αναφέρεται στο δικό του κελί",
+    execfunctionSelfErrorResult: "Ο τύπος δεν μπορεί να αναφέρεται στο δικό του κελί, κάτι που θα οδηγούσε σε ανακριβή αποτελέσματα υπολογισμού",
+    allowRepeatText: "Επαναλαμβανόμενο",
+    allowOptionText: "Προαιρετικό",
+    selectCategory: "Ή επιλέξτε μια κατηγορία"
   },
   drag: {
     noMerge: "Αυτή η ενέργεια δεν μπορεί να εκτελεστεί σε συγχωνευμένα κελιά",

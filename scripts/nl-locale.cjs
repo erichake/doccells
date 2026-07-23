@@ -18,24 +18,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parameter `range` van de functie SUMIF.",
+          name: "bereik",
+          detail: "Parameter `bereik` van de functie SUMIF.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion",
-          detail: "Parameter `criterion` van de functie SUMIF.",
+          name: "criterium",
+          detail: "Parameter `criterium` van de functie SUMIF.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "sum_range",
-          detail: "Parameter `sum_range` van de functie SUMIF.",
+          name: "sombereik",
+          detail: "Parameter `sombereik` van de functie SUMIF.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -54,8 +54,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Parameter `angle` van de functie TAN.",
+          name: "hoek",
+          detail: "Parameter `hoek` van de functie TAN.",
           example: "45*PI()/180",
           require: "m",
           repeat: "n",
@@ -74,8 +74,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie TANH.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie TANH.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -94,8 +94,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie CEILING.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie CEILING.",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -122,8 +122,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ATAN.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ATAN.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -142,8 +142,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ASINH.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ASINH.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -162,8 +162,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ABS.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ABS.",
           example: "-2",
           require: "m",
           repeat: "n",
@@ -182,8 +182,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ACOS.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ACOS.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -202,8 +202,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ACOSH.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ACOSH.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -222,16 +222,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie MULTINOMIAL.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie MULTINOMIAL.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie MULTINOMIAL.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie MULTINOMIAL.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -250,8 +250,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ATANH.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ATANH.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -298,8 +298,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie COUNTBLANK.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie COUNTBLANK.",
           example: "A2:C100",
           require: "m",
           repeat: "n",
@@ -318,8 +318,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie COSH.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie COSH.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -338,8 +338,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie INT.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie INT.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -358,8 +358,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ISEVEN.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ISEVEN.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -378,8 +378,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ISODD.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ISODD.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -398,16 +398,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie LCM.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie LCM.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie LCM.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie LCM.",
           example: "3",
           require: "o",
           repeat: "y",
@@ -426,8 +426,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie LN.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie LN.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -446,16 +446,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie LOG.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie LOG.",
           example: "128",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "base",
-          detail: "Parameter `base` van de functie LOG.",
+          name: "grondtal",
+          detail: "Parameter `grondtal` van de functie LOG.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -474,8 +474,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie LOG10.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie LOG10.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -494,16 +494,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Parameter `dividend` van de functie MOD.",
+          name: "deeltal",
+          detail: "Parameter `deeltal` van de functie MOD.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "divisor",
-          detail: "Parameter `divisor` van de functie MOD.",
+          name: "deler",
+          detail: "Parameter `deler` van de functie MOD.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -522,8 +522,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie MROUND.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie MROUND.",
           example: "21",
           require: "m",
           repeat: "n",
@@ -550,8 +550,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ODD.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ODD.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -570,16 +570,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie SUMSQ.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie SUMSQ.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie SUMSQ.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie SUMSQ.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -626,16 +626,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie SUM.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie SUM.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie SUM.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie SUM.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -654,24 +654,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "function_code",
-          detail: "Parameter `function_code` van de functie SUBTOTAL.",
+          name: "functiecode",
+          detail: "Parameter `functiecode` van de functie SUBTOTAL.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "range1",
-          detail: "Parameter `range1` van de functie SUBTOTAL.",
+          name: "bereik1",
+          detail: "Parameter `bereik1` van de functie SUBTOTAL.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "range2",
-          detail: "Parameter `range2` van de functie SUBTOTAL.",
+          name: "bereik2",
+          detail: "Parameter `bereik2` van de functie SUBTOTAL.",
           example: "B2:B8",
           require: "o",
           repeat: "y",
@@ -690,8 +690,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ASIN.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ASIN.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -710,16 +710,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parameter `range` van de functie COUNTIF.",
+          name: "bereik",
+          detail: "Parameter `bereik` van de functie COUNTIF.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion",
-          detail: "Parameter `criterion` van de functie COUNTIF.",
+          name: "criterium",
+          detail: "Parameter `criterium` van de functie COUNTIF.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -738,8 +738,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Parameter `angle` van de functie RADIANS.",
+          name: "hoek",
+          detail: "Parameter `hoek` van de functie RADIANS.",
           example: "180",
           require: "m",
           repeat: "n",
@@ -769,16 +769,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie COUNTUNIQUE.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie COUNTUNIQUE.",
           example: "A1:C100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie COUNTUNIQUE.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie COUNTUNIQUE.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -797,8 +797,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Parameter `angle` van de functie DEGREES.",
+          name: "hoek",
+          detail: "Parameter `hoek` van de functie DEGREES.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -837,8 +837,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie EVEN.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie EVEN.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -877,8 +877,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie FACT.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie FACT.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -897,8 +897,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie FACTDOUBLE.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie FACTDOUBLE.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -928,8 +928,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie FLOOR.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie FLOOR.",
           example: "23.25",
           require: "m",
           repeat: "n",
@@ -956,16 +956,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie GCD.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie GCD.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie GCD.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie GCD.",
           example: "96",
           require: "o",
           repeat: "y",
@@ -984,16 +984,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "low",
-          detail: "Parameter `low` van de functie RANDBETWEEN.",
+          name: "ondergrens",
+          detail: "Parameter `ondergrens` van de functie RANDBETWEEN.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "high",
-          detail: "Parameter `high` van de functie RANDBETWEEN.",
+          name: "bovengrens",
+          detail: "Parameter `bovengrens` van de functie RANDBETWEEN.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -1012,16 +1012,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ROUND.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ROUND.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Parameter `places` van de functie ROUND.",
+          name: "decimalen",
+          detail: "Parameter `decimalen` van de functie ROUND.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1040,16 +1040,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ROUNDDOWN.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ROUNDDOWN.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Parameter `places` van de functie ROUNDDOWN.",
+          name: "decimalen",
+          detail: "Parameter `decimalen` van de functie ROUNDDOWN.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1068,16 +1068,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ROUNDUP.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ROUNDUP.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Parameter `places` van de functie ROUNDUP.",
+          name: "decimalen",
+          detail: "Parameter `decimalen` van de functie ROUNDUP.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1140,8 +1140,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie SIGN.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie SIGN.",
           example: "-42",
           require: "m",
           repeat: "n",
@@ -1160,8 +1160,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Parameter `angle` van de functie SIN.",
+          name: "hoek",
+          detail: "Parameter `hoek` van de functie SIN.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1180,8 +1180,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie SINH.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie SINH.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1200,8 +1200,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie SQRT.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie SQRT.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1220,8 +1220,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie SQRTPI.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie SQRTPI.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1240,8 +1240,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie GAMMALN.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie GAMMALN.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1260,8 +1260,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Parameter `angle` van de functie COS.",
+          name: "hoek",
+          detail: "Parameter `hoek` van de functie COS.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1280,16 +1280,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie TRUNC.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie TRUNC.",
           example: "3.141592654",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Parameter `places` van de functie TRUNC.",
+          name: "decimalen",
+          detail: "Parameter `decimalen` van de functie TRUNC.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -1308,16 +1308,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Parameter `dividend` van de functie QUOTIENT.",
+          name: "deeltal",
+          detail: "Parameter `deeltal` van de functie QUOTIENT.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "divisor",
-          detail: "Parameter `divisor` van de functie QUOTIENT.",
+          name: "deler",
+          detail: "Parameter `deler` van de functie QUOTIENT.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1336,8 +1336,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "base",
-          detail: "Parameter `base` van de functie POWER.",
+          name: "grondtal",
+          detail: "Parameter `grondtal` van de functie POWER.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1364,32 +1364,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "sum_range",
-          detail: "Parameter `sum_range` van de functie SUMIFS.",
+          name: "sombereik",
+          detail: "Parameter `sombereik` van de functie SUMIFS.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criteria_range1",
-          detail: "Parameter `criteria_range1` van de functie SUMIFS.",
+          name: "criteriumbereik1",
+          detail: "Parameter `criteriumbereik1` van de functie SUMIFS.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion1",
-          detail: "Parameter `criterion1` van de functie SUMIFS.",
+          name: "criterium1",
+          detail: "Parameter `criterium1` van de functie SUMIFS.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
-          detail: "Parameter `criteria_range2` van de functie SUMIFS.",
+          name: "criteriumbereik2",
+          detail: "Parameter `criteriumbereik2` van de functie SUMIFS.",
           example: " C1:C10",
           require: "o",
           repeat: "y",
@@ -1408,24 +1408,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range1",
-          detail: "Parameter `criteria_range1` van de functie COUNTIFS.",
+          name: "criteriumbereik1",
+          detail: "Parameter `criteriumbereik1` van de functie COUNTIFS.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion1",
-          detail: "Parameter `criterion1` van de functie COUNTIFS.",
+          name: "criterium1",
+          detail: "Parameter `criterium1` van de functie COUNTIFS.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
-          detail: "Parameter `criteria_range2` van de functie COUNTIFS.",
+          name: "criteriumbereik2",
+          detail: "Parameter `criteriumbereik2` van de functie COUNTIFS.",
           example: " B1:B10",
           require: "o",
           repeat: "y",
@@ -1472,16 +1472,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie HARMEAN.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie HARMEAN.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie HARMEAN.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie HARMEAN.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1500,40 +1500,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
-          detail: "Parameter `num_successes` van de functie HYPGEOMDIST.",
+          name: "aantal_successen",
+          detail: "Parameter `aantal_successen` van de functie HYPGEOMDIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "num_draws",
-          detail: "Parameter `num_draws` van de functie HYPGEOMDIST.",
+          name: "aantal_trekkingen",
+          detail: "Parameter `aantal_trekkingen` van de functie HYPGEOMDIST.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "successes_in_pop",
-          detail: "Parameter `successes_in_pop` van de functie HYPGEOMDIST.",
+          name: "successen_in_populatie",
+          detail: "Parameter `successen_in_populatie` van de functie HYPGEOMDIST.",
           example: "20",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "pop_size",
-          detail: "Parameter `pop_size` van de functie HYPGEOMDIST.",
+          name: "populatiegrootte",
+          detail: "Parameter `populatiegrootte` van de functie HYPGEOMDIST.",
           example: "40",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parameter `cumulative` van de functie HYPGEOMDIST.",
+          name: "cumulatief",
+          detail: "Parameter `cumulatief` van de functie HYPGEOMDIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -1552,16 +1552,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parameter `data_y` van de functie INTERCEPT.",
+          name: "gegevens_y",
+          detail: "Parameter `gegevens_y` van de functie INTERCEPT.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parameter `data_x` van de functie INTERCEPT.",
+          name: "gegevens_x",
+          detail: "Parameter `gegevens_x` van de functie INTERCEPT.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1580,16 +1580,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie KURT.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie KURT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie KURT.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie KURT.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1608,8 +1608,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie LARGE.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie LARGE.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -1636,16 +1636,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie STDEVA.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie STDEVA.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie STDEVA.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie STDEVA.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1664,16 +1664,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie STDEVP.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie STDEVP.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie STDEVP.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie STDEVP.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1692,16 +1692,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie GEOMEAN.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie GEOMEAN.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie GEOMEAN.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie GEOMEAN.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1720,24 +1720,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie RANK_EQ.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie RANK_EQ.",
           example: "A10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data",
-          detail: "Parameter `data` van de functie RANK_EQ.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie RANK_EQ.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "is_ascending",
-          detail: "Parameter `is_ascending` van de functie RANK_EQ.",
+          name: "is_oplopend",
+          detail: "Parameter `is_oplopend` van de functie RANK_EQ.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1756,24 +1756,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie RANK_AVG.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie RANK_AVG.",
           example: "A10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data",
-          detail: "Parameter `data` van de functie RANK_AVG.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie RANK_AVG.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "is_ascending",
-          detail: "Parameter `is_ascending` van de functie RANK_AVG.",
+          name: "is_oplopend",
+          detail: "Parameter `is_oplopend` van de functie RANK_AVG.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1792,24 +1792,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie PERCENTRANK_EXC.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie PERCENTRANK_EXC.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value",
-          detail: "Parameter `value` van de functie PERCENTRANK_EXC.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie PERCENTRANK_EXC.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Parameter `significant_digits` van de functie PERCENTRANK_EXC.",
+          name: "significante_cijfers",
+          detail: "Parameter `significante_cijfers` van de functie PERCENTRANK_EXC.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1828,24 +1828,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie PERCENTRANK_INC.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie PERCENTRANK_INC.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value",
-          detail: "Parameter `value` van de functie PERCENTRANK_INC.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie PERCENTRANK_INC.",
           example: " A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Parameter `significant_digits` van de functie PERCENTRANK_INC.",
+          name: "significante_cijfers",
+          detail: "Parameter `significante_cijfers` van de functie PERCENTRANK_INC.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1872,16 +1872,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_y",
-          detail: "Parameter `data_y` van de functie FORECAST.",
+          name: "gegevens_y",
+          detail: "Parameter `gegevens_y` van de functie FORECAST.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parameter `data_x` van de functie FORECAST.",
+          name: "gegevens_x",
+          detail: "Parameter `gegevens_x` van de functie FORECAST.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1900,8 +1900,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie FISHERINV.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie FISHERINV.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1920,8 +1920,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie FISHER.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie FISHER.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1940,16 +1940,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie MODE_SNGL.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie MODE_SNGL.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie MODE_SNGL.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie MODE_SNGL.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1976,24 +1976,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "shape",
-          detail: "Parameter `shape` van de functie WEIBULL_DIST.",
+          name: "vorm",
+          detail: "Parameter `vorm` van de functie WEIBULL_DIST.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "scale",
-          detail: "Parameter `scale` van de functie WEIBULL_DIST.",
+          name: "schaal",
+          detail: "Parameter `schaal` van de functie WEIBULL_DIST.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parameter `cumulative` van de functie WEIBULL_DIST.",
+          name: "cumulatief",
+          detail: "Parameter `cumulatief` van de functie WEIBULL_DIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -2012,16 +2012,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie COUNT.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie COUNT.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie COUNT.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie COUNT.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2040,16 +2040,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie COUNTA.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie COUNTA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie COUNTA.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie COUNTA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2068,16 +2068,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie AVEDEV.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie AVEDEV.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie AVEDEV.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie AVEDEV.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2096,16 +2096,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie AVERAGE.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie AVERAGE.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie AVERAGE.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie AVERAGE.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2124,16 +2124,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie AVERAGEA.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie AVERAGEA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie AVERAGEA.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie AVERAGEA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2152,32 +2152,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
-          detail: "Parameter `num_successes` van de functie BINOM_DIST.",
+          name: "aantal_successen",
+          detail: "Parameter `aantal_successen` van de functie BINOM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "num_trials",
-          detail: "Parameter `num_trials` van de functie BINOM_DIST.",
+          name: "aantal_pogingen",
+          detail: "Parameter `aantal_pogingen` van de functie BINOM_DIST.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "prob_success",
-          detail: "Parameter `prob_success` van de functie BINOM_DIST.",
+          name: "kans_op_succes",
+          detail: "Parameter `kans_op_succes` van de functie BINOM_DIST.",
           example: "0.005",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parameter `cumulative` van de functie BINOM_DIST.",
+          name: "cumulatief",
+          detail: "Parameter `cumulatief` van de functie BINOM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2196,24 +2196,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_trials",
-          detail: "Parameter `num_trials` van de functie BINOM_INV.",
+          name: "aantal_pogingen",
+          detail: "Parameter `aantal_pogingen` van de functie BINOM_INV.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "prob_success",
-          detail: "Parameter `prob_success` van de functie BINOM_INV.",
+          name: "kans_op_succes",
+          detail: "Parameter `kans_op_succes` van de functie BINOM_INV.",
           example: "0.005",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "target_prob",
-          detail: "Parameter `target_prob` van de functie BINOM_INV.",
+          name: "doelkans",
+          detail: "Parameter `doelkans` van de functie BINOM_INV.",
           example: "0.8",
           require: "m",
           repeat: "n",
@@ -2232,24 +2232,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "alpha",
-          detail: "Parameter `alpha` van de functie CONFIDENCE_NORM.",
+          name: "alfa",
+          detail: "Parameter `alfa` van de functie CONFIDENCE_NORM.",
           example: "0.05",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parameter `standard_deviation` van de functie CONFIDENCE_NORM.",
+          name: "standaarddeviatie",
+          detail: "Parameter `standaarddeviatie` van de functie CONFIDENCE_NORM.",
           example: "1.6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "pop_size",
-          detail: "Parameter `pop_size` van de functie CONFIDENCE_NORM.",
+          name: "populatiegrootte",
+          detail: "Parameter `populatiegrootte` van de functie CONFIDENCE_NORM.",
           example: "250",
           require: "m",
           repeat: "n",
@@ -2268,16 +2268,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parameter `data_y` van de functie CORREL.",
+          name: "gegevens_y",
+          detail: "Parameter `gegevens_y` van de functie CORREL.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parameter `data_x` van de functie CORREL.",
+          name: "gegevens_x",
+          detail: "Parameter `gegevens_x` van de functie CORREL.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2296,16 +2296,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parameter `data_y` van de functie COVARIANCE_P.",
+          name: "gegevens_y",
+          detail: "Parameter `gegevens_y` van de functie COVARIANCE_P.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parameter `data_x` van de functie COVARIANCE_P.",
+          name: "gegevens_x",
+          detail: "Parameter `gegevens_x` van de functie COVARIANCE_P.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2324,16 +2324,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parameter `data_y` van de functie COVARIANCE_S.",
+          name: "gegevens_y",
+          detail: "Parameter `gegevens_y` van de functie COVARIANCE_S.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parameter `data_x` van de functie COVARIANCE_S.",
+          name: "gegevens_x",
+          detail: "Parameter `gegevens_x` van de functie COVARIANCE_S.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2352,16 +2352,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie DEVSQ.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie DEVSQ.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie DEVSQ.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie DEVSQ.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2396,8 +2396,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parameter `cumulative` van de functie EXPON_DIST.",
+          name: "cumulatief",
+          detail: "Parameter `cumulatief` van de functie EXPON_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2416,24 +2416,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range",
-          detail: "Parameter `criteria_range` van de functie AVERAGEIF.",
+          name: "criteriumbereik",
+          detail: "Parameter `criteriumbereik` van de functie AVERAGEIF.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criterion",
-          detail: "Parameter `criterion` van de functie AVERAGEIF.",
+          name: "criterium",
+          detail: "Parameter `criterium` van de functie AVERAGEIF.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "average_range",
-          detail: "Parameter `average_range` van de functie AVERAGEIF.",
+          name: "gemiddeldebereik",
+          detail: "Parameter `gemiddeldebereik` van de functie AVERAGEIF.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -2452,32 +2452,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "average_range",
-          detail: "Parameter `average_range` van de functie AVERAGEIFS.",
+          name: "gemiddeldebereik",
+          detail: "Parameter `gemiddeldebereik` van de functie AVERAGEIFS.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range1",
-          detail: "Parameter `criteria_range1` van de functie AVERAGEIFS.",
+          name: "criteriumbereik1",
+          detail: "Parameter `criteriumbereik1` van de functie AVERAGEIFS.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criterion1",
-          detail: "Parameter `criterion1` van de functie AVERAGEIFS.",
+          name: "criterium1",
+          detail: "Parameter `criterium1` van de functie AVERAGEIFS.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
-          detail: "Parameter `criteria_range2` van de functie AVERAGEIFS.",
+          name: "criteriumbereik2",
+          detail: "Parameter `criteriumbereik2` van de functie AVERAGEIFS.",
           example: " C1:C10",
           require: "m",
           repeat: "n",
@@ -2524,16 +2524,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie TRIMMEAN.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie TRIMMEAN.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "exclude_proportion",
-          detail: "Parameter `exclude_proportion` van de functie TRIMMEAN.",
+          name: "uitgesloten_deel",
+          detail: "Parameter `uitgesloten_deel` van de functie TRIMMEAN.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2552,16 +2552,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie PERCENTILE_EXC.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie PERCENTILE_EXC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "percentile",
-          detail: "Parameter `percentile` van de functie PERCENTILE_EXC.",
+          name: "percentiel",
+          detail: "Parameter `percentiel` van de functie PERCENTILE_EXC.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2580,16 +2580,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie PERCENTILE_INC.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie PERCENTILE_INC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "percentile",
-          detail: "Parameter `percentile` van de functie PERCENTILE_INC.",
+          name: "percentiel",
+          detail: "Parameter `percentiel` van de functie PERCENTILE_INC.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2608,16 +2608,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parameter `data_y` van de functie PEARSON.",
+          name: "gegevens_y",
+          detail: "Parameter `gegevens_y` van de functie PEARSON.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parameter `data_x` van de functie PEARSON.",
+          name: "gegevens_x",
+          detail: "Parameter `gegevens_x` van de functie PEARSON.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2664,8 +2664,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parameter `cumulative` van de functie NORM_S_DIST.",
+          name: "cumulatief",
+          detail: "Parameter `cumulatief` van de functie NORM_S_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2692,16 +2692,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parameter `mean` van de functie NORM_INV.",
+          name: "gemiddelde",
+          detail: "Parameter `gemiddelde` van de functie NORM_INV.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parameter `standard_deviation` van de functie NORM_INV.",
+          name: "standaarddeviatie",
+          detail: "Parameter `standaarddeviatie` van de functie NORM_INV.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2728,24 +2728,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parameter `mean` van de functie NORM_DIST.",
+          name: "gemiddelde",
+          detail: "Parameter `gemiddelde` van de functie NORM_DIST.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parameter `standard_deviation` van de functie NORM_DIST.",
+          name: "standaarddeviatie",
+          detail: "Parameter `standaarddeviatie` van de functie NORM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parameter `cumulative` van de functie NORM_DIST.",
+          name: "cumulatief",
+          detail: "Parameter `cumulatief` van de functie NORM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2764,32 +2764,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_failures",
-          detail: "Parameter `num_failures` van de functie NEGBINOM_DIST.",
+          name: "aantal_mislukkingen",
+          detail: "Parameter `aantal_mislukkingen` van de functie NEGBINOM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "num_successes",
-          detail: "Parameter `num_successes` van de functie NEGBINOM_DIST.",
+          name: "aantal_successen",
+          detail: "Parameter `aantal_successen` van de functie NEGBINOM_DIST.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "prob_success",
-          detail: "Parameter `prob_success` van de functie NEGBINOM_DIST.",
+          name: "kans_op_succes",
+          detail: "Parameter `kans_op_succes` van de functie NEGBINOM_DIST.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parameter `cumulative` van de functie NEGBINOM_DIST.",
+          name: "cumulatief",
+          detail: "Parameter `cumulatief` van de functie NEGBINOM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2808,16 +2808,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie MINA.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie MINA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie MINA.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie MINA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2836,16 +2836,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie MIN.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie MIN.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie MIN.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie MIN.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2864,16 +2864,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie MEDIAN.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie MEDIAN.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie MEDIAN.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie MEDIAN.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2892,16 +2892,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie MAXA.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie MAXA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie MAXA.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie MAXA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2920,16 +2920,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie MAX.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie MAX.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie MAX.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie MAX.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2956,16 +2956,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parameter `mean` van de functie LOGNORM_INV.",
+          name: "gemiddelde",
+          detail: "Parameter `gemiddelde` van de functie LOGNORM_INV.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parameter `standard_deviation` van de functie LOGNORM_INV.",
+          name: "standaarddeviatie",
+          detail: "Parameter `standaarddeviatie` van de functie LOGNORM_INV.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -2992,24 +2992,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parameter `mean` van de functie LOGNORM_DIST.",
+          name: "gemiddelde",
+          detail: "Parameter `gemiddelde` van de functie LOGNORM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parameter `standard_deviation` van de functie LOGNORM_DIST.",
+          name: "standaarddeviatie",
+          detail: "Parameter `standaarddeviatie` van de functie LOGNORM_DIST.",
           example: "6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parameter `cumulative` van de functie LOGNORM_DIST.",
+          name: "cumulatief",
+          detail: "Parameter `cumulatief` van de functie LOGNORM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3028,24 +3028,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie Z_TEST.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie Z_TEST.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "value",
-          detail: "Parameter `value` van de functie Z_TEST.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie Z_TEST.",
           example: "B2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parameter `standard_deviation` van de functie Z_TEST.",
+          name: "standaarddeviatie",
+          detail: "Parameter `standaarddeviatie` van de functie Z_TEST.",
           example: "3",
           require: "o",
           repeat: "n",
@@ -3064,32 +3064,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie PROB.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie PROB.",
           example: "A3:A6",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "probabilities",
-          detail: "Parameter `probabilities` van de functie PROB.",
+          name: "kansen",
+          detail: "Parameter `kansen` van de functie PROB.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "low_limit",
-          detail: "Parameter `low_limit` van de functie PROB.",
+          name: "ondergrens",
+          detail: "Parameter `ondergrens` van de functie PROB.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "high_limit",
-          detail: "Parameter `high_limit` van de functie PROB.",
+          name: "bovengrens",
+          detail: "Parameter `bovengrens` van de functie PROB.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -3108,16 +3108,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie QUARTILE_EXC.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie QUARTILE_EXC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
-          detail: "Parameter `quartile_number` van de functie QUARTILE_EXC.",
+          name: "kwartielnummer",
+          detail: "Parameter `kwartielnummer` van de functie QUARTILE_EXC.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3136,16 +3136,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie QUARTILE_INC.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie QUARTILE_INC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
-          detail: "Parameter `quartile_number` van de functie QUARTILE_INC.",
+          name: "kwartielnummer",
+          detail: "Parameter `kwartielnummer` van de functie QUARTILE_INC.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3172,16 +3172,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parameter `mean` van de functie POISSON_DIST.",
+          name: "gemiddelde",
+          detail: "Parameter `gemiddelde` van de functie POISSON_DIST.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parameter `cumulative` van de functie POISSON_DIST.",
+          name: "cumulatief",
+          detail: "Parameter `cumulatief` van de functie POISSON_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3200,16 +3200,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parameter `data_y` van de functie RSQ.",
+          name: "gegevens_y",
+          detail: "Parameter `gegevens_y` van de functie RSQ.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parameter `data_x` van de functie RSQ.",
+          name: "gegevens_x",
+          detail: "Parameter `gegevens_x` van de functie RSQ.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3236,16 +3236,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Parameter `degrees_freedom` van de functie T_DIST.",
+          name: "vrijheidsgraden",
+          detail: "Parameter `vrijheidsgraden` van de functie T_DIST.",
           example: "30",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parameter `cumulative` van de functie T_DIST.",
+          name: "cumulatief",
+          detail: "Parameter `cumulatief` van de functie T_DIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3272,8 +3272,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Parameter `degrees_freedom` van de functie T_DIST_2T.",
+          name: "vrijheidsgraden",
+          detail: "Parameter `vrijheidsgraden` van de functie T_DIST_2T.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3300,8 +3300,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Parameter `degrees_freedom` van de functie T_DIST_RT.",
+          name: "vrijheidsgraden",
+          detail: "Parameter `vrijheidsgraden` van de functie T_DIST_RT.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3320,16 +3320,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
-          detail: "Parameter `probability` van de functie T_INV.",
+          name: "kans",
+          detail: "Parameter `kans` van de functie T_INV.",
           example: "0.35",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Parameter `degrees_freedom` van de functie T_INV.",
+          name: "vrijheidsgraden",
+          detail: "Parameter `vrijheidsgraden` van de functie T_INV.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3348,16 +3348,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
-          detail: "Parameter `probability` van de functie T_INV_2T.",
+          name: "kans",
+          detail: "Parameter `kans` van de functie T_INV_2T.",
           example: "0.35",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Parameter `degrees_freedom` van de functie T_INV_2T.",
+          name: "vrijheidsgraden",
+          detail: "Parameter `vrijheidsgraden` van de functie T_INV_2T.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3376,24 +3376,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "range1",
-          detail: "Parameter `range1` van de functie T_TEST.",
+          name: "bereik1",
+          detail: "Parameter `bereik1` van de functie T_TEST.",
           example: "A1:A4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "range2",
-          detail: "Parameter `range2` van de functie T_TEST.",
+          name: "bereik2",
+          detail: "Parameter `bereik2` van de functie T_TEST.",
           example: "B1:B4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "tails",
-          detail: "Parameter `tails` van de functie T_TEST.",
+          name: "staarten",
+          detail: "Parameter `staarten` van de functie T_TEST.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3428,24 +3428,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
-          detail: "Parameter `degrees_freedom1` van de functie F_DIST.",
+          name: "vrijheidsgraden1",
+          detail: "Parameter `vrijheidsgraden1` van de functie F_DIST.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
-          detail: "Parameter `degrees_freedom2` van de functie F_DIST.",
+          name: "vrijheidsgraden2",
+          detail: "Parameter `vrijheidsgraden2` van de functie F_DIST.",
           example: "6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parameter `cumulative` van de functie F_DIST.",
+          name: "cumulatief",
+          detail: "Parameter `cumulatief` van de functie F_DIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3472,16 +3472,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
-          detail: "Parameter `degrees_freedom1` van de functie F_DIST_RT.",
+          name: "vrijheidsgraden1",
+          detail: "Parameter `vrijheidsgraden1` van de functie F_DIST_RT.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
-          detail: "Parameter `degrees_freedom2` van de functie F_DIST_RT.",
+          name: "vrijheidsgraden2",
+          detail: "Parameter `vrijheidsgraden2` van de functie F_DIST_RT.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3500,16 +3500,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie VAR_P.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie VAR_P.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie VAR_P.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie VAR_P.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3528,16 +3528,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie VAR_S.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie VAR_S.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie VAR_S.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie VAR_S.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3556,16 +3556,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie VARA.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie VARA.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie VARA.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie VARA.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3584,16 +3584,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie VARPA.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie VARPA.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie VARPA.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie VARPA.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3612,16 +3612,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parameter `data_y` van de functie STEYX.",
+          name: "gegevens_y",
+          detail: "Parameter `gegevens_y` van de functie STEYX.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parameter `data_x` van de functie STEYX.",
+          name: "gegevens_x",
+          detail: "Parameter `gegevens_x` van de functie STEYX.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3640,24 +3640,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie STANDARDIZE.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie STANDARDIZE.",
           example: "96",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parameter `mean` van de functie STANDARDIZE.",
+          name: "gemiddelde",
+          detail: "Parameter `gemiddelde` van de functie STANDARDIZE.",
           example: "80",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parameter `standard_deviation` van de functie STANDARDIZE.",
+          name: "standaarddeviatie",
+          detail: "Parameter `standaarddeviatie` van de functie STANDARDIZE.",
           example: "6.7",
           require: "m",
           repeat: "n",
@@ -3676,8 +3676,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie SMALL.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie SMALL.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -3704,16 +3704,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parameter `data_y` van de functie SLOPE.",
+          name: "gegevens_y",
+          detail: "Parameter `gegevens_y` van de functie SLOPE.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parameter `data_x` van de functie SLOPE.",
+          name: "gegevens_x",
+          detail: "Parameter `gegevens_x` van de functie SLOPE.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3732,16 +3732,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie SKEW.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie SKEW.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie SKEW.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie SKEW.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3760,16 +3760,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie SKEW_P.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie SKEW_P.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie SKEW_P.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie SKEW_P.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3788,16 +3788,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Parameter `search_key` van de functie VLOOKUP.",
+          name: "zoeksleutel",
+          detail: "Parameter `zoeksleutel` van de functie VLOOKUP.",
           example: "10003",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Parameter `range` van de functie VLOOKUP.",
+          name: "bereik",
+          detail: "Parameter `bereik` van de functie VLOOKUP.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
@@ -3812,8 +3812,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
-          detail: "Parameter `is_sorted` van de functie VLOOKUP.",
+          name: "is_gesorteerd",
+          detail: "Parameter `is_gesorteerd` van de functie VLOOKUP.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3832,16 +3832,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Parameter `search_key` van de functie HLOOKUP.",
+          name: "zoeksleutel",
+          detail: "Parameter `zoeksleutel` van de functie HLOOKUP.",
           example: "10003",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Parameter `range` van de functie HLOOKUP.",
+          name: "bereik",
+          detail: "Parameter `bereik` van de functie HLOOKUP.",
           example: "A2:Z6",
           require: "m",
           repeat: "n",
@@ -3856,8 +3856,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
-          detail: "Parameter `is_sorted` van de functie HLOOKUP.",
+          name: "is_gesorteerd",
+          detail: "Parameter `is_gesorteerd` van de functie HLOOKUP.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3876,15 +3876,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Parameter `search_key` van de functie LOOKUP.",
+          name: "zoeksleutel",
+          detail: "Parameter `zoeksleutel` van de functie LOOKUP.",
           example: "10003",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "search_range|search_result_array",
+          name: "zoekbereik|resultaatmatrix",
           detail: "Parameter `search_range|search_result_array` van de functie LOOKUP.",
           example: "A1:A100",
           require: "m",
@@ -3892,8 +3892,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "result_range",
-          detail: "Parameter `result_range` van de functie LOOKUP.",
+          name: "resultaatbereik",
+          detail: "Parameter `resultaatbereik` van de functie LOOKUP.",
           example: "B1:B100",
           require: "o",
           repeat: "n",
@@ -3912,40 +3912,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "row",
-          detail: "Parameter `row` van de functie ADDRESS.",
+          name: "rij",
+          detail: "Parameter `rij` van de functie ADDRESS.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "column",
-          detail: "Parameter `column` van de functie ADDRESS.",
+          name: "kolom",
+          detail: "Parameter `kolom` van de functie ADDRESS.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "absolute_relative_mode",
-          detail: "Parameter `absolute_relative_mode` van de functie ADDRESS.",
+          name: "modus_absoluut_relatief",
+          detail: "Parameter `modus_absoluut_relatief` van de functie ADDRESS.",
           example: "4",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "use_a1_notation",
-          detail: "Parameter `use_a1_notation` van de functie ADDRESS.",
+          name: "a1_notatie_gebruiken",
+          detail: "Parameter `a1_notatie_gebruiken` van de functie ADDRESS.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "sheet",
-          detail: "Parameter `sheet` van de functie ADDRESS.",
+          name: "blad",
+          detail: "Parameter `blad` van de functie ADDRESS.",
           example: "\"Sheet2\"",
           require: "o",
           repeat: "n",
@@ -3964,16 +3964,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference_as_string",
-          detail: "Parameter `cell_reference_as_string` van de functie INDIRECT.",
+          name: "celverwijzing_als_tekenreeks",
+          detail: "Parameter `celverwijzing_als_tekenreeks` van de functie INDIRECT.",
           example: "\"Sheet2!\"&B10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "is_A1_notation",
-          detail: "Parameter `is_A1_notation` van de functie INDIRECT.",
+          name: "is_a1_notatie",
+          detail: "Parameter `is_a1_notatie` van de functie INDIRECT.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3992,8 +3992,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
-          detail: "Parameter `cell_reference` van de functie ROW.",
+          name: "celverwijzing",
+          detail: "Parameter `celverwijzing` van de functie ROW.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4012,8 +4012,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parameter `range` van de functie ROWS.",
+          name: "bereik",
+          detail: "Parameter `bereik` van de functie ROWS.",
           example: "A9:A62",
           require: "m",
           repeat: "n",
@@ -4032,8 +4032,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
-          detail: "Parameter `cell_reference` van de functie COLUMN.",
+          name: "celverwijzing",
+          detail: "Parameter `celverwijzing` van de functie COLUMN.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4052,8 +4052,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parameter `range` van de functie COLUMNS.",
+          name: "bereik",
+          detail: "Parameter `bereik` van de functie COLUMNS.",
           example: "A9:W62",
           require: "m",
           repeat: "n",
@@ -4072,40 +4072,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
-          detail: "Parameter `cell_reference` van de functie OFFSET.",
+          name: "celverwijzing",
+          detail: "Parameter `celverwijzing` van de functie OFFSET.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "offset_rows",
-          detail: "Parameter `offset_rows` van de functie OFFSET.",
+          name: "rijen_verschuiven",
+          detail: "Parameter `rijen_verschuiven` van de functie OFFSET.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "offset_columns",
-          detail: "Parameter `offset_columns` van de functie OFFSET.",
+          name: "kolommen_verschuiven",
+          detail: "Parameter `kolommen_verschuiven` van de functie OFFSET.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "height",
-          detail: "Parameter `height` van de functie OFFSET.",
+          name: "hoogte",
+          detail: "Parameter `hoogte` van de functie OFFSET.",
           example: "2",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "width",
-          detail: "Parameter `width` van de functie OFFSET.",
+          name: "breedte",
+          detail: "Parameter `breedte` van de functie OFFSET.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -4124,24 +4124,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Parameter `search_key` van de functie MATCH.",
+          name: "zoeksleutel",
+          detail: "Parameter `zoeksleutel` van de functie MATCH.",
           example: "\"Sunday\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Parameter `range` van de functie MATCH.",
+          name: "bereik",
+          detail: "Parameter `bereik` van de functie MATCH.",
           example: "A2:A9",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "search_type",
-          detail: "Parameter `search_type` van de functie MATCH.",
+          name: "zoektype",
+          detail: "Parameter `zoektype` van de functie MATCH.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -4160,24 +4160,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
-          detail: "Parameter `reference` van de functie INDEX.",
+          name: "verwijzing",
+          detail: "Parameter `verwijzing` van de functie INDEX.",
           example: "A1:C20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "row",
-          detail: "Parameter `row` van de functie INDEX.",
+          name: "rij",
+          detail: "Parameter `rij` van de functie INDEX.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "column",
-          detail: "Parameter `column` van de functie INDEX.",
+          name: "kolom",
+          detail: "Parameter `kolom` van de functie INDEX.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -4196,32 +4196,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "value_name",
-          detail: "Parameter `value_name` van de functie GETPIVOTDATA.",
+          name: "waardenaam",
+          detail: "Parameter `waardenaam` van de functie GETPIVOTDATA.",
           example: "\"SUM of number of units\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "any_pivot_table_cell",
-          detail: "Parameter `any_pivot_table_cell` van de functie GETPIVOTDATA.",
+          name: "cel_draaitabel",
+          detail: "Parameter `cel_draaitabel` van de functie GETPIVOTDATA.",
           example: "'Pivot table'!A1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "original_column",
-          detail: "Parameter `original_column` van de functie GETPIVOTDATA.",
+          name: "oorspronkelijke_kolom",
+          detail: "Parameter `oorspronkelijke_kolom` van de functie GETPIVOTDATA.",
           example: "\"division\"",
           require: "o",
           repeat: "y",
           type: "rangeall"
         },
         {
-          name: "pivot_item",
-          detail: "Parameter `pivot_item` van de functie GETPIVOTDATA.",
+          name: "item_draaitabel",
+          detail: "Parameter `item_draaitabel` van de functie GETPIVOTDATA.",
           example: "\"east\"",
           require: "o",
           repeat: "y",
@@ -4248,16 +4248,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "choice1",
-          detail: "Parameter `choice1` van de functie CHOOSE.",
+          name: "keuze1",
+          detail: "Parameter `keuze1` van de functie CHOOSE.",
           example: "\"A\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "choice2",
-          detail: "Parameter `choice2` van de functie CHOOSE.",
+          name: "keuze2",
+          detail: "Parameter `keuze2` van de functie CHOOSE.",
           example: "\"B\"",
           require: "o",
           repeat: "y",
@@ -4280,8 +4280,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "link_label",
-          detail: "Parameter `link_label` van de functie HYPERLINK.",
+          name: "linktekst",
+          detail: "Parameter `linktekst` van de functie HYPERLINK.",
           example: "\"luckysheet\"",
           require: "m",
           repeat: "n",
@@ -4300,24 +4300,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "hour",
-          detail: "Parameter `hour` van de functie TIME.",
+          name: "uur",
+          detail: "Parameter `uur` van de functie TIME.",
           example: "11",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "minute",
-          detail: "Parameter `minute` van de functie TIME.",
+          name: "minuut",
+          detail: "Parameter `minuut` van de functie TIME.",
           example: "40",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "second",
-          detail: "Parameter `second` van de functie TIME.",
+          name: "seconde",
+          detail: "Parameter `seconde` van de functie TIME.",
           example: "59",
           require: "m",
           repeat: "n",
@@ -4336,8 +4336,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time_string",
-          detail: "Parameter `time_string` van de functie TIMEVALUE.",
+          name: "tijdtekenreeks",
+          detail: "Parameter `tijdtekenreeks` van de functie TIMEVALUE.",
           example: "\"2:15 PM\"",
           require: "m",
           repeat: "n",
@@ -4356,16 +4356,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parameter `start_date` van de functie EOMONTH.",
+          name: "startdatum",
+          detail: "Parameter `startdatum` van de functie EOMONTH.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "months",
-          detail: "Parameter `months` van de functie EOMONTH.",
+          name: "aantal_maanden",
+          detail: "Parameter `aantal_maanden` van de functie EOMONTH.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4384,16 +4384,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parameter `start_date` van de functie EDATE.",
+          name: "startdatum",
+          detail: "Parameter `startdatum` van de functie EDATE.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "months",
-          detail: "Parameter `months` van de functie EDATE.",
+          name: "aantal_maanden",
+          detail: "Parameter `aantal_maanden` van de functie EDATE.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4412,8 +4412,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
-          detail: "Parameter `time` van de functie SECOND.",
+          name: "tijd",
+          detail: "Parameter `tijd` van de functie SECOND.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4432,8 +4432,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
-          detail: "Parameter `time` van de functie MINUTE.",
+          name: "tijd",
+          detail: "Parameter `tijd` van de functie MINUTE.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4452,8 +4452,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
-          detail: "Parameter `time` van de functie HOUR.",
+          name: "tijd",
+          detail: "Parameter `tijd` van de functie HOUR.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4483,24 +4483,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parameter `start_date` van de functie NETWORKDAYS.",
+          name: "startdatum",
+          detail: "Parameter `startdatum` van de functie NETWORKDAYS.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Parameter `end_date` van de functie NETWORKDAYS.",
+          name: "einddatum",
+          detail: "Parameter `einddatum` van de functie NETWORKDAYS.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "holidays",
-          detail: "Parameter `holidays` van de functie NETWORKDAYS.",
+          name: "feestdagen",
+          detail: "Parameter `feestdagen` van de functie NETWORKDAYS.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4519,16 +4519,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parameter `start_date` van de functie NETWORKDAYS_INTL.",
+          name: "startdatum",
+          detail: "Parameter `startdatum` van de functie NETWORKDAYS_INTL.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Parameter `end_date` van de functie NETWORKDAYS_INTL.",
+          name: "einddatum",
+          detail: "Parameter `einddatum` van de functie NETWORKDAYS_INTL.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4543,8 +4543,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
-          detail: "Parameter `holidays` van de functie NETWORKDAYS_INTL.",
+          name: "feestdagen",
+          detail: "Parameter `feestdagen` van de functie NETWORKDAYS_INTL.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4563,8 +4563,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parameter `date` van de functie ISOWEEKNUM.",
+          name: "datum",
+          detail: "Parameter `datum` van de functie ISOWEEKNUM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4583,8 +4583,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parameter `date` van de functie WEEKNUM.",
+          name: "datum",
+          detail: "Parameter `datum` van de functie WEEKNUM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4611,8 +4611,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parameter `date` van de functie WEEKDAY.",
+          name: "datum",
+          detail: "Parameter `datum` van de functie WEEKDAY.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4639,8 +4639,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parameter `date` van de functie DAY.",
+          name: "datum",
+          detail: "Parameter `datum` van de functie DAY.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4659,16 +4659,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "end_date",
-          detail: "Parameter `end_date` van de functie DAYS.",
+          name: "einddatum",
+          detail: "Parameter `einddatum` van de functie DAYS.",
           example: "2011-3-15",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "start_date",
-          detail: "Parameter `start_date` van de functie DAYS.",
+          name: "startdatum",
+          detail: "Parameter `startdatum` van de functie DAYS.",
           example: "2011-2-1",
           require: "m",
           repeat: "n",
@@ -4687,24 +4687,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parameter `start_date` van de functie DAYS360.",
+          name: "startdatum",
+          detail: "Parameter `startdatum` van de functie DAYS360.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Parameter `end_date` van de functie DAYS360.",
+          name: "einddatum",
+          detail: "Parameter `einddatum` van de functie DAYS360.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "method",
-          detail: "Parameter `method` van de functie DAYS360.",
+          name: "methode",
+          detail: "Parameter `methode` van de functie DAYS360.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -4723,24 +4723,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "year",
-          detail: "Parameter `year` van de functie DATE.",
+          name: "jaar",
+          detail: "Parameter `jaar` van de functie DATE.",
           example: "1969",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "month",
-          detail: "Parameter `month` van de functie DATE.",
+          name: "maand",
+          detail: "Parameter `maand` van de functie DATE.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day",
-          detail: "Parameter `day` van de functie DATE.",
+          name: "dag",
+          detail: "Parameter `dag` van de functie DATE.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -4759,8 +4759,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date_string",
-          detail: "Parameter `date_string` van de functie DATEVALUE.",
+          name: "datumtekenreeks",
+          detail: "Parameter `datumtekenreeks` van de functie DATEVALUE.",
           example: "\"1969-7-20\"",
           require: "m",
           repeat: "n",
@@ -4779,24 +4779,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parameter `start_date` van de functie DATEDIF.",
+          name: "startdatum",
+          detail: "Parameter `startdatum` van de functie DATEDIF.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Parameter `end_date` van de functie DATEDIF.",
+          name: "einddatum",
+          detail: "Parameter `einddatum` van de functie DATEDIF.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "unit",
-          detail: "Parameter `unit` van de functie DATEDIF.",
+          name: "eenheid",
+          detail: "Parameter `eenheid` van de functie DATEDIF.",
           example: "16)",
           require: "m",
           repeat: "n",
@@ -4815,24 +4815,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parameter `start_date` van de functie WORKDAY.",
+          name: "startdatum",
+          detail: "Parameter `startdatum` van de functie WORKDAY.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "num_days",
-          detail: "Parameter `num_days` van de functie WORKDAY.",
+          name: "aantal_dagen",
+          detail: "Parameter `aantal_dagen` van de functie WORKDAY.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "holidays",
-          detail: "Parameter `holidays` van de functie WORKDAY.",
+          name: "feestdagen",
+          detail: "Parameter `feestdagen` van de functie WORKDAY.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4851,16 +4851,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parameter `start_date` van de functie WORKDAY_INTL.",
+          name: "startdatum",
+          detail: "Parameter `startdatum` van de functie WORKDAY_INTL.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "num_days",
-          detail: "Parameter `num_days` van de functie WORKDAY_INTL.",
+          name: "aantal_dagen",
+          detail: "Parameter `aantal_dagen` van de functie WORKDAY_INTL.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4875,8 +4875,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
-          detail: "Parameter `holidays` van de functie WORKDAY_INTL.",
+          name: "feestdagen",
+          detail: "Parameter `feestdagen` van de functie WORKDAY_INTL.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4895,8 +4895,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parameter `date` van de functie YEAR.",
+          name: "datum",
+          detail: "Parameter `datum` van de functie YEAR.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4915,24 +4915,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parameter `start_date` van de functie YEARFRAC.",
+          name: "startdatum",
+          detail: "Parameter `startdatum` van de functie YEARFRAC.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Parameter `end_date` van de functie YEARFRAC.",
+          name: "einddatum",
+          detail: "Parameter `einddatum` van de functie YEARFRAC.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie YEARFRAC.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie YEARFRAC.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4962,8 +4962,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parameter `date` van de functie MONTH.",
+          name: "datum",
+          detail: "Parameter `datum` van de functie MONTH.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4982,16 +4982,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "nominal_rate",
-          detail: "Parameter `nominal_rate` van de functie EFFECT.",
+          name: "nominale_rente",
+          detail: "Parameter `nominale_rente` van de functie EFFECT.",
           example: "0.99",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
-          detail: "Parameter `periods_per_year` van de functie EFFECT.",
+          name: "periodes_per_jaar",
+          detail: "Parameter `periodes_per_jaar` van de functie EFFECT.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5010,16 +5010,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parameter `number` van de functie DOLLAR.",
+          name: "getal",
+          detail: "Parameter `getal` van de functie DOLLAR.",
           example: "1.2351",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
-          detail: "Parameter `number_of_places` van de functie DOLLAR.",
+          name: "aantal_decimalen",
+          detail: "Parameter `aantal_decimalen` van de functie DOLLAR.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -5038,16 +5038,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "fractional_price",
-          detail: "Parameter `fractional_price` van de functie DOLLARDE.",
+          name: "gebroken_prijs",
+          detail: "Parameter `gebroken_prijs` van de functie DOLLARDE.",
           example: "100.10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "unit",
-          detail: "Parameter `unit` van de functie DOLLARDE.",
+          name: "eenheid",
+          detail: "Parameter `eenheid` van de functie DOLLARDE.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5066,16 +5066,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_price",
-          detail: "Parameter `decimal_price` van de functie DOLLARFR.",
+          name: "decimale_prijs",
+          detail: "Parameter `decimale_prijs` van de functie DOLLARFR.",
           example: "100.125",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "unit",
-          detail: "Parameter `unit` van de functie DOLLARFR.",
+          name: "eenheid",
+          detail: "Parameter `eenheid` van de functie DOLLARFR.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5094,40 +5094,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Parameter `cost` van de functie DB.",
+          name: "kostprijs",
+          detail: "Parameter `kostprijs` van de functie DB.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Parameter `salvage` van de functie DB.",
+          name: "restwaarde",
+          detail: "Parameter `restwaarde` van de functie DB.",
           example: "50",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Parameter `life` van de functie DB.",
+          name: "levensduur",
+          detail: "Parameter `levensduur` van de functie DB.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Parameter `period` van de functie DB.",
+          name: "periode",
+          detail: "Parameter `periode` van de functie DB.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "month",
-          detail: "Parameter `month` van de functie DB.",
+          name: "maand",
+          detail: "Parameter `maand` van de functie DB.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5146,32 +5146,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Parameter `cost` van de functie DDB.",
+          name: "kostprijs",
+          detail: "Parameter `kostprijs` van de functie DDB.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Parameter `salvage` van de functie DDB.",
+          name: "restwaarde",
+          detail: "Parameter `restwaarde` van de functie DDB.",
           example: "50",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Parameter `life` van de functie DDB.",
+          name: "levensduur",
+          detail: "Parameter `levensduur` van de functie DDB.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Parameter `period` van de functie DDB.",
+          name: "periode",
+          detail: "Parameter `periode` van de functie DDB.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5198,48 +5198,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "number_of_periods",
-          detail: "Parameter `number_of_periods` van de functie RATE.",
+          name: "aantal_periodes",
+          detail: "Parameter `aantal_periodes` van de functie RATE.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_per_period",
-          detail: "Parameter `payment_per_period` van de functie RATE.",
+          name: "betaling_per_periode",
+          detail: "Parameter `betaling_per_periode` van de functie RATE.",
           example: "-100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parameter `present_value` van de functie RATE.",
+          name: "huidige_waarde",
+          detail: "Parameter `huidige_waarde` van de functie RATE.",
           example: "400",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parameter `future_value` van de functie RATE.",
+          name: "toekomstige_waarde",
+          detail: "Parameter `toekomstige_waarde` van de functie RATE.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parameter `end_or_beginning` van de functie RATE.",
+          name: "einde_of_begin",
+          detail: "Parameter `einde_of_begin` van de functie RATE.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "rate_guess",
-          detail: "Parameter `rate_guess` van de functie RATE.",
+          name: "renteschatting",
+          detail: "Parameter `renteschatting` van de functie RATE.",
           example: "0.1",
           require: "o",
           repeat: "n",
@@ -5258,48 +5258,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie CUMPRINC.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie CUMPRINC.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parameter `number_of_periods` van de functie CUMPRINC.",
+          name: "aantal_periodes",
+          detail: "Parameter `aantal_periodes` van de functie CUMPRINC.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parameter `present_value` van de functie CUMPRINC.",
+          name: "huidige_waarde",
+          detail: "Parameter `huidige_waarde` van de functie CUMPRINC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "first_period",
-          detail: "Parameter `first_period` van de functie CUMPRINC.",
+          name: "eerste_periode",
+          detail: "Parameter `eerste_periode` van de functie CUMPRINC.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "last_period",
-          detail: "Parameter `last_period` van de functie CUMPRINC.",
+          name: "laatste_periode",
+          detail: "Parameter `laatste_periode` van de functie CUMPRINC.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parameter `end_or_beginning` van de functie CUMPRINC.",
+          name: "einde_of_begin",
+          detail: "Parameter `einde_of_begin` van de functie CUMPRINC.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -5318,32 +5318,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie COUPNUM.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie COUPNUM.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie COUPNUM.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie COUPNUM.",
           example: "02",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parameter `frequency` van de functie COUPNUM.",
+          name: "frequentie",
+          detail: "Parameter `frequentie` van de functie COUPNUM.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie COUPNUM.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie COUPNUM.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5362,32 +5362,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Parameter `cost` van de functie SYD.",
+          name: "kostprijs",
+          detail: "Parameter `kostprijs` van de functie SYD.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Parameter `salvage` van de functie SYD.",
+          name: "restwaarde",
+          detail: "Parameter `restwaarde` van de functie SYD.",
           example: "50",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Parameter `life` van de functie SYD.",
+          name: "levensduur",
+          detail: "Parameter `levensduur` van de functie SYD.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Parameter `period` van de functie SYD.",
+          name: "periode",
+          detail: "Parameter `periode` van de functie SYD.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5406,24 +5406,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie TBILLEQ.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie TBILLEQ.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie TBILLEQ.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie TBILLEQ.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "discount",
-          detail: "Parameter `discount` van de functie TBILLEQ.",
+          name: "discontovoet",
+          detail: "Parameter `discontovoet` van de functie TBILLEQ.",
           example: "2)",
           require: "m",
           repeat: "n",
@@ -5442,24 +5442,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie TBILLYIELD.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie TBILLYIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie TBILLYIELD.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie TBILLYIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "price",
-          detail: "Parameter `price` van de functie TBILLYIELD.",
+          name: "prijs",
+          detail: "Parameter `prijs` van de functie TBILLYIELD.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -5478,24 +5478,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie TBILLPRICE.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie TBILLPRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie TBILLPRICE.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie TBILLPRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "discount",
-          detail: "Parameter `discount` van de functie TBILLPRICE.",
+          name: "discontovoet",
+          detail: "Parameter `discontovoet` van de functie TBILLPRICE.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -5514,40 +5514,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie PV.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie PV.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parameter `number_of_periods` van de functie PV.",
+          name: "aantal_periodes",
+          detail: "Parameter `aantal_periodes` van de functie PV.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
-          detail: "Parameter `payment_amount` van de functie PV.",
+          name: "betalingsbedrag",
+          detail: "Parameter `betalingsbedrag` van de functie PV.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parameter `future_value` van de functie PV.",
+          name: "toekomstige_waarde",
+          detail: "Parameter `toekomstige_waarde` van de functie PV.",
           example: "D2",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parameter `end_or_beginning` van de functie PV.",
+          name: "einde_of_begin",
+          detail: "Parameter `einde_of_begin` van de functie PV.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -5566,64 +5566,64 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
-          detail: "Parameter `issue` van de functie ACCRINT.",
+          name: "uitgiftedatum",
+          detail: "Parameter `uitgiftedatum` van de functie ACCRINT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "first_payment",
-          detail: "Parameter `first_payment` van de functie ACCRINT.",
+          name: "eerste_betaling",
+          detail: "Parameter `eerste_betaling` van de functie ACCRINT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie ACCRINT.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie ACCRINT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie ACCRINT.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie ACCRINT.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parameter `redemption` van de functie ACCRINT.",
+          name: "aflossingswaarde",
+          detail: "Parameter `aflossingswaarde` van de functie ACCRINT.",
           example: "10000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Parameter `frequency` van de functie ACCRINT.",
+          name: "frequentie",
+          detail: "Parameter `frequentie` van de functie ACCRINT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie ACCRINT.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie ACCRINT.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "calc_method",
-          detail: "Parameter `calc_method` van de functie ACCRINT.",
+          name: "berekeningsmethode",
+          detail: "Parameter `berekeningsmethode` van de functie ACCRINT.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -5642,40 +5642,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
-          detail: "Parameter `issue` van de functie ACCRINTM.",
+          name: "uitgiftedatum",
+          detail: "Parameter `uitgiftedatum` van de functie ACCRINTM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie ACCRINTM.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie ACCRINTM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie ACCRINTM.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie ACCRINTM.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parameter `redemption` van de functie ACCRINTM.",
+          name: "aflossingswaarde",
+          detail: "Parameter `aflossingswaarde` van de functie ACCRINTM.",
           example: "1000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie ACCRINTM.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie ACCRINTM.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5694,32 +5694,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie COUPDAYBS.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie COUPDAYBS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie COUPDAYBS.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie COUPDAYBS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parameter `frequency` van de functie COUPDAYBS.",
+          name: "frequentie",
+          detail: "Parameter `frequentie` van de functie COUPDAYBS.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie COUPDAYBS.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie COUPDAYBS.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5738,32 +5738,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie COUPDAYS.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie COUPDAYS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie COUPDAYS.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie COUPDAYS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parameter `frequency` van de functie COUPDAYS.",
+          name: "frequentie",
+          detail: "Parameter `frequentie` van de functie COUPDAYS.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie COUPDAYS.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie COUPDAYS.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5782,32 +5782,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie COUPDAYSNC.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie COUPDAYSNC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie COUPDAYSNC.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie COUPDAYSNC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parameter `frequency` van de functie COUPDAYSNC.",
+          name: "frequentie",
+          detail: "Parameter `frequentie` van de functie COUPDAYSNC.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie COUPDAYSNC.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie COUPDAYSNC.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5826,32 +5826,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie COUPNCD.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie COUPNCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie COUPNCD.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie COUPNCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parameter `frequency` van de functie COUPNCD.",
+          name: "frequentie",
+          detail: "Parameter `frequentie` van de functie COUPNCD.",
           example: "01)",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie COUPNCD.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie COUPNCD.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5870,32 +5870,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie COUPPCD.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie COUPPCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie COUPPCD.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie COUPPCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parameter `frequency` van de functie COUPPCD.",
+          name: "frequentie",
+          detail: "Parameter `frequentie` van de functie COUPPCD.",
           example: "01)",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie COUPPCD.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie COUPPCD.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5914,40 +5914,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie FV.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie FV.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parameter `number_of_periods` van de functie FV.",
+          name: "aantal_periodes",
+          detail: "Parameter `aantal_periodes` van de functie FV.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
-          detail: "Parameter `payment_amount` van de functie FV.",
+          name: "betalingsbedrag",
+          detail: "Parameter `betalingsbedrag` van de functie FV.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parameter `present_value` van de functie FV.",
+          name: "huidige_waarde",
+          detail: "Parameter `huidige_waarde` van de functie FV.",
           example: "400",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parameter `end_or_beginning` van de functie FV.",
+          name: "einde_of_begin",
+          detail: "Parameter `einde_of_begin` van de functie FV.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5966,16 +5966,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "principal",
-          detail: "Parameter `principal` van de functie FVSCHEDULE.",
+          name: "hoofdsom",
+          detail: "Parameter `hoofdsom` van de functie FVSCHEDULE.",
           example: "10000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "rate_schedule",
-          detail: "Parameter `rate_schedule` van de functie FVSCHEDULE.",
+          name: "rentetabel",
+          detail: "Parameter `rentetabel` van de functie FVSCHEDULE.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -5994,56 +5994,56 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie YIELD.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie YIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie YIELD.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie YIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie YIELD.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie YIELD.",
           example: "0.057",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "price",
-          detail: "Parameter `price` van de functie YIELD.",
+          name: "prijs",
+          detail: "Parameter `prijs` van de functie YIELD.",
           example: "95",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parameter `redemption` van de functie YIELD.",
+          name: "aflossingswaarde",
+          detail: "Parameter `aflossingswaarde` van de functie YIELD.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Parameter `frequency` van de functie YIELD.",
+          name: "frequentie",
+          detail: "Parameter `frequentie` van de functie YIELD.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie YIELD.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie YIELD.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6062,40 +6062,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie YIELDDISC.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie YIELDDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie YIELDDISC.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie YIELDDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "price",
-          detail: "Parameter `price` van de functie YIELDDISC.",
+          name: "prijs",
+          detail: "Parameter `prijs` van de functie YIELDDISC.",
           example: "95",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parameter `redemption` van de functie YIELDDISC.",
+          name: "aflossingswaarde",
+          detail: "Parameter `aflossingswaarde` van de functie YIELDDISC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie YIELDDISC.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie YIELDDISC.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6114,16 +6114,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "effective_rate",
-          detail: "Parameter `effective_rate` van de functie NOMINAL.",
+          name: "effectieve_rente",
+          detail: "Parameter `effectieve_rente` van de functie NOMINAL.",
           example: "0.85",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
-          detail: "Parameter `periods_per_year` van de functie NOMINAL.",
+          name: "periodes_per_jaar",
+          detail: "Parameter `periodes_per_jaar` van de functie NOMINAL.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6142,24 +6142,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
-          detail: "Parameter `cashflow_amounts` van de functie XIRR.",
+          name: "kasstroombedragen",
+          detail: "Parameter `kasstroombedragen` van de functie XIRR.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "cashflow_dates",
-          detail: "Parameter `cashflow_dates` van de functie XIRR.",
+          name: "kasstroomdatums",
+          detail: "Parameter `kasstroomdatums` van de functie XIRR.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "rate_guess",
-          detail: "Parameter `rate_guess` van de functie XIRR.",
+          name: "renteschatting",
+          detail: "Parameter `renteschatting` van de functie XIRR.",
           example: "250",
           require: "o",
           repeat: "n",
@@ -6178,24 +6178,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
-          detail: "Parameter `cashflow_amounts` van de functie MIRR.",
+          name: "kasstroombedragen",
+          detail: "Parameter `kasstroombedragen` van de functie MIRR.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "financing_rate",
-          detail: "Parameter `financing_rate` van de functie MIRR.",
+          name: "financieringsrente",
+          detail: "Parameter `financieringsrente` van de functie MIRR.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "reinvestment_return_rate",
-          detail: "Parameter `reinvestment_return_rate` van de functie MIRR.",
+          name: "herinvesteringsrendement",
+          detail: "Parameter `herinvesteringsrendement` van de functie MIRR.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6214,16 +6214,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
-          detail: "Parameter `cashflow_amounts` van de functie IRR.",
+          name: "kasstroombedragen",
+          detail: "Parameter `kasstroombedragen` van de functie IRR.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "rate_guess",
-          detail: "Parameter `rate_guess` van de functie IRR.",
+          name: "renteschatting",
+          detail: "Parameter `renteschatting` van de functie IRR.",
           example: "200",
           require: "o",
           repeat: "n",
@@ -6242,24 +6242,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
-          detail: "Parameter `discount` van de functie NPV.",
+          name: "discontovoet",
+          detail: "Parameter `discontovoet` van de functie NPV.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cashflow1",
-          detail: "Parameter `cashflow1` van de functie NPV.",
+          name: "kasstroom1",
+          detail: "Parameter `kasstroom1` van de functie NPV.",
           example: "200",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "cashflow2",
-          detail: "Parameter `cashflow2` van de functie NPV.",
+          name: "kasstroom2",
+          detail: "Parameter `kasstroom2` van de functie NPV.",
           example: "250",
           require: "o",
           repeat: "y",
@@ -6278,24 +6278,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
-          detail: "Parameter `discount` van de functie XNPV.",
+          name: "discontovoet",
+          detail: "Parameter `discontovoet` van de functie XNPV.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cashflow_amounts",
-          detail: "Parameter `cashflow_amounts` van de functie XNPV.",
+          name: "kasstroombedragen",
+          detail: "Parameter `kasstroombedragen` van de functie XNPV.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "cashflow_dates",
-          detail: "Parameter `cashflow_dates` van de functie XNPV.",
+          name: "kasstroomdatums",
+          detail: "Parameter `kasstroomdatums` van de functie XNPV.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6314,48 +6314,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie CUMIPMT.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie CUMIPMT.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parameter `number_of_periods` van de functie CUMIPMT.",
+          name: "aantal_periodes",
+          detail: "Parameter `aantal_periodes` van de functie CUMIPMT.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parameter `present_value` van de functie CUMIPMT.",
+          name: "huidige_waarde",
+          detail: "Parameter `huidige_waarde` van de functie CUMIPMT.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "first_period",
-          detail: "Parameter `first_period` van de functie CUMIPMT.",
+          name: "eerste_periode",
+          detail: "Parameter `eerste_periode` van de functie CUMIPMT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "last_period",
-          detail: "Parameter `last_period` van de functie CUMIPMT.",
+          name: "laatste_periode",
+          detail: "Parameter `laatste_periode` van de functie CUMIPMT.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parameter `end_or_beginning` van de functie CUMIPMT.",
+          name: "einde_of_begin",
+          detail: "Parameter `einde_of_begin` van de functie CUMIPMT.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6374,40 +6374,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie PMT.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie PMT.",
           example: "0.08",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parameter `number_of_periods` van de functie PMT.",
+          name: "aantal_periodes",
+          detail: "Parameter `aantal_periodes` van de functie PMT.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parameter `present_value` van de functie PMT.",
+          name: "huidige_waarde",
+          detail: "Parameter `huidige_waarde` van de functie PMT.",
           example: " 100000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parameter `future_value` van de functie PMT.",
+          name: "toekomstige_waarde",
+          detail: "Parameter `toekomstige_waarde` van de functie PMT.",
           example: "D2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parameter `end_or_beginning` van de functie PMT.",
+          name: "einde_of_begin",
+          detail: "Parameter `einde_of_begin` van de functie PMT.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6426,48 +6426,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie IPMT.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie IPMT.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Parameter `period` van de functie IPMT.",
+          name: "periode",
+          detail: "Parameter `periode` van de functie IPMT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parameter `number_of_periods` van de functie IPMT.",
+          name: "aantal_periodes",
+          detail: "Parameter `aantal_periodes` van de functie IPMT.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parameter `present_value` van de functie IPMT.",
+          name: "huidige_waarde",
+          detail: "Parameter `huidige_waarde` van de functie IPMT.",
           example: "80000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parameter `future_value` van de functie IPMT.",
+          name: "toekomstige_waarde",
+          detail: "Parameter `toekomstige_waarde` van de functie IPMT.",
           example: "E2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parameter `end_or_beginning` van de functie IPMT.",
+          name: "einde_of_begin",
+          detail: "Parameter `einde_of_begin` van de functie IPMT.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6486,48 +6486,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie PPMT.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie PPMT.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Parameter `period` van de functie PPMT.",
+          name: "periode",
+          detail: "Parameter `periode` van de functie PPMT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parameter `number_of_periods` van de functie PPMT.",
+          name: "aantal_periodes",
+          detail: "Parameter `aantal_periodes` van de functie PPMT.",
           example: "3*12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parameter `present_value` van de functie PPMT.",
+          name: "huidige_waarde",
+          detail: "Parameter `huidige_waarde` van de functie PPMT.",
           example: "100000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parameter `future_value` van de functie PPMT.",
+          name: "toekomstige_waarde",
+          detail: "Parameter `toekomstige_waarde` van de functie PPMT.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parameter `end_or_beginning` van de functie PPMT.",
+          name: "einde_of_begin",
+          detail: "Parameter `einde_of_begin` van de functie PPMT.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6546,40 +6546,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "buy_date",
-          detail: "Parameter `buy_date` van de functie INTRATE.",
+          name: "aankoopdatum",
+          detail: "Parameter `aankoopdatum` van de functie INTRATE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "sell_date",
-          detail: "Parameter `sell_date` van de functie INTRATE.",
+          name: "verkoopdatum",
+          detail: "Parameter `verkoopdatum` van de functie INTRATE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "buy_price",
-          detail: "Parameter `buy_price` van de functie INTRATE.",
+          name: "aankoopprijs",
+          detail: "Parameter `aankoopprijs` van de functie INTRATE.",
           example: "100000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "sell_price",
-          detail: "Parameter `sell_price` van de functie INTRATE.",
+          name: "verkoopprijs",
+          detail: "Parameter `verkoopprijs` van de functie INTRATE.",
           example: "101200",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie INTRATE.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie INTRATE.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6598,56 +6598,56 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie PRICE.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie PRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie PRICE.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie PRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie PRICE.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie PRICE.",
           example: "0.057",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Parameter `yield` van de functie PRICE.",
+          name: "rendement",
+          detail: "Parameter `rendement` van de functie PRICE.",
           example: "0.065",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parameter `redemption` van de functie PRICE.",
+          name: "aflossingswaarde",
+          detail: "Parameter `aflossingswaarde` van de functie PRICE.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Parameter `frequency` van de functie PRICE.",
+          name: "frequentie",
+          detail: "Parameter `frequentie` van de functie PRICE.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie PRICE.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie PRICE.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6666,40 +6666,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie PRICEDISC.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie PRICEDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie PRICEDISC.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie PRICEDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "discount",
-          detail: "Parameter `discount` van de functie PRICEDISC.",
+          name: "discontovoet",
+          detail: "Parameter `discontovoet` van de functie PRICEDISC.",
           example: "0.0525",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parameter `redemption` van de functie PRICEDISC.",
+          name: "aflossingswaarde",
+          detail: "Parameter `aflossingswaarde` van de functie PRICEDISC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie PRICEDISC.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie PRICEDISC.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6718,48 +6718,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie PRICEMAT.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie PRICEMAT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie PRICEMAT.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie PRICEMAT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "issue",
-          detail: "Parameter `issue` van de functie PRICEMAT.",
+          name: "uitgiftedatum",
+          detail: "Parameter `uitgiftedatum` van de functie PRICEMAT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie PRICEMAT.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie PRICEMAT.",
           example: "0.061",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Parameter `yield` van de functie PRICEMAT.",
+          name: "rendement",
+          detail: "Parameter `rendement` van de functie PRICEMAT.",
           example: "0.061",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie PRICEMAT.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie PRICEMAT.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6778,40 +6778,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie RECEIVED.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie RECEIVED.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie RECEIVED.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie RECEIVED.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "investment",
-          detail: "Parameter `investment` van de functie RECEIVED.",
+          name: "investering",
+          detail: "Parameter `investering` van de functie RECEIVED.",
           example: "10000000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "discount",
-          detail: "Parameter `discount` van de functie RECEIVED.",
+          name: "discontovoet",
+          detail: "Parameter `discontovoet` van de functie RECEIVED.",
           example: "0.0575",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie RECEIVED.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie RECEIVED.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6830,40 +6830,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie DISC.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie DISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie DISC.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie DISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "price",
-          detail: "Parameter `price` van de functie DISC.",
+          name: "prijs",
+          detail: "Parameter `prijs` van de functie DISC.",
           example: "97.975",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parameter `redemption` van de functie DISC.",
+          name: "aflossingswaarde",
+          detail: "Parameter `aflossingswaarde` van de functie DISC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie DISC.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie DISC.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6882,40 +6882,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie NPER.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie NPER.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
-          detail: "Parameter `payment_amount` van de functie NPER.",
+          name: "betalingsbedrag",
+          detail: "Parameter `betalingsbedrag` van de functie NPER.",
           example: "500",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parameter `present_value` van de functie NPER.",
+          name: "huidige_waarde",
+          detail: "Parameter `huidige_waarde` van de functie NPER.",
           example: "40000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parameter `future_value` van de functie NPER.",
+          name: "toekomstige_waarde",
+          detail: "Parameter `toekomstige_waarde` van de functie NPER.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parameter `end_or_beginning` van de functie NPER.",
+          name: "einde_of_begin",
+          detail: "Parameter `einde_of_begin` van de functie NPER.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6934,24 +6934,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Parameter `cost` van de functie SLN.",
+          name: "kostprijs",
+          detail: "Parameter `kostprijs` van de functie SLN.",
           example: "300000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Parameter `salvage` van de functie SLN.",
+          name: "restwaarde",
+          detail: "Parameter `restwaarde` van de functie SLN.",
           example: "75000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Parameter `life` van de functie SLN.",
+          name: "levensduur",
+          detail: "Parameter `levensduur` van de functie SLN.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -6970,48 +6970,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie DURATION.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie DURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie DURATION.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie DURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie DURATION.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie DURATION.",
           example: "0.08",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Parameter `yield` van de functie DURATION.",
+          name: "rendement",
+          detail: "Parameter `rendement` van de functie DURATION.",
           example: "0.09",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Parameter `frequency` van de functie DURATION.",
+          name: "frequentie",
+          detail: "Parameter `frequentie` van de functie DURATION.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie DURATION.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie DURATION.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7030,48 +7030,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parameter `settlement` van de functie MDURATION.",
+          name: "stortingsdatum",
+          detail: "Parameter `stortingsdatum` van de functie MDURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parameter `maturity` van de functie MDURATION.",
+          name: "vervaldatum",
+          detail: "Parameter `vervaldatum` van de functie MDURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parameter `rate` van de functie MDURATION.",
+          name: "rentevoet",
+          detail: "Parameter `rentevoet` van de functie MDURATION.",
           example: "0.08",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Parameter `yield` van de functie MDURATION.",
+          name: "rendement",
+          detail: "Parameter `rendement` van de functie MDURATION.",
           example: "0.09",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Parameter `frequency` van de functie MDURATION.",
+          name: "frequentie",
+          detail: "Parameter `frequentie` van de functie MDURATION.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parameter `day_count_convention` van de functie MDURATION.",
+          name: "dagentelconventie",
+          detail: "Parameter `dagentelconventie` van de functie MDURATION.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7090,8 +7090,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
-          detail: "Parameter `signed_binary_number` van de functie BIN2DEC.",
+          name: "ondertekend_binair_getal",
+          detail: "Parameter `ondertekend_binair_getal` van de functie BIN2DEC.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7110,16 +7110,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
-          detail: "Parameter `signed_binary_number` van de functie BIN2HEX.",
+          name: "ondertekend_binair_getal",
+          detail: "Parameter `ondertekend_binair_getal` van de functie BIN2HEX.",
           example: "101",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parameter `significant_digits` van de functie BIN2HEX.",
+          name: "significante_cijfers",
+          detail: "Parameter `significante_cijfers` van de functie BIN2HEX.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7138,16 +7138,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
-          detail: "Parameter `signed_binary_number` van de functie BIN2OCT.",
+          name: "ondertekend_binair_getal",
+          detail: "Parameter `ondertekend_binair_getal` van de functie BIN2OCT.",
           example: "101",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parameter `significant_digits` van de functie BIN2OCT.",
+          name: "significante_cijfers",
+          detail: "Parameter `significante_cijfers` van de functie BIN2OCT.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7166,16 +7166,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
-          detail: "Parameter `decimal_number` van de functie DEC2BIN.",
+          name: "decimaal_getal",
+          detail: "Parameter `decimaal_getal` van de functie DEC2BIN.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Parameter `significant_digits` van de functie DEC2BIN.",
+          name: "significante_cijfers",
+          detail: "Parameter `significante_cijfers` van de functie DEC2BIN.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7194,16 +7194,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
-          detail: "Parameter `decimal_number` van de functie DEC2HEX.",
+          name: "decimaal_getal",
+          detail: "Parameter `decimaal_getal` van de functie DEC2HEX.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Parameter `significant_digits` van de functie DEC2HEX.",
+          name: "significante_cijfers",
+          detail: "Parameter `significante_cijfers` van de functie DEC2HEX.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7222,16 +7222,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
-          detail: "Parameter `decimal_number` van de functie DEC2OCT.",
+          name: "decimaal_getal",
+          detail: "Parameter `decimaal_getal` van de functie DEC2OCT.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Parameter `significant_digits` van de functie DEC2OCT.",
+          name: "significante_cijfers",
+          detail: "Parameter `significante_cijfers` van de functie DEC2OCT.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7250,16 +7250,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
-          detail: "Parameter `signed_hexadecimal_number` van de functie HEX2BIN.",
+          name: "ondertekend_hexadecimaal_getal",
+          detail: "Parameter `ondertekend_hexadecimaal_getal` van de functie HEX2BIN.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parameter `significant_digits` van de functie HEX2BIN.",
+          name: "significante_cijfers",
+          detail: "Parameter `significante_cijfers` van de functie HEX2BIN.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7278,8 +7278,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
-          detail: "Parameter `signed_hexadecimal_number` van de functie HEX2DEC.",
+          name: "ondertekend_hexadecimaal_getal",
+          detail: "Parameter `ondertekend_hexadecimaal_getal` van de functie HEX2DEC.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7298,16 +7298,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
-          detail: "Parameter `signed_hexadecimal_number` van de functie HEX2OCT.",
+          name: "ondertekend_hexadecimaal_getal",
+          detail: "Parameter `ondertekend_hexadecimaal_getal` van de functie HEX2OCT.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parameter `significant_digits` van de functie HEX2OCT.",
+          name: "significante_cijfers",
+          detail: "Parameter `significante_cijfers` van de functie HEX2OCT.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7326,16 +7326,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
-          detail: "Parameter `signed_octal_number` van de functie OCT2BIN.",
+          name: "ondertekend_octaal_getal",
+          detail: "Parameter `ondertekend_octaal_getal` van de functie OCT2BIN.",
           example: "37",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parameter `significant_digits` van de functie OCT2BIN.",
+          name: "significante_cijfers",
+          detail: "Parameter `significante_cijfers` van de functie OCT2BIN.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7354,8 +7354,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
-          detail: "Parameter `signed_octal_number` van de functie OCT2DEC.",
+          name: "ondertekend_octaal_getal",
+          detail: "Parameter `ondertekend_octaal_getal` van de functie OCT2DEC.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7374,16 +7374,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
-          detail: "Parameter `signed_octal_number` van de functie OCT2HEX.",
+          name: "ondertekend_octaal_getal",
+          detail: "Parameter `ondertekend_octaal_getal` van de functie OCT2HEX.",
           example: "37",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parameter `significant_digits` van de functie OCT2HEX.",
+          name: "significante_cijfers",
+          detail: "Parameter `significante_cijfers` van de functie OCT2HEX.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7402,24 +7402,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "real_part",
-          detail: "Parameter `real_part` van de functie COMPLEX.",
+          name: "reëel_deel",
+          detail: "Parameter `reëel_deel` van de functie COMPLEX.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "imaginary_part",
-          detail: "Parameter `imaginary_part` van de functie COMPLEX.",
+          name: "imaginair_deel",
+          detail: "Parameter `imaginair_deel` van de functie COMPLEX.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "suffix",
-          detail: "Parameter `suffix` van de functie COMPLEX.",
+          name: "achtervoegsel",
+          detail: "Parameter `achtervoegsel` van de functie COMPLEX.",
           example: "\"j\"",
           require: "o",
           repeat: "n",
@@ -7438,8 +7438,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
-          detail: "Parameter `complex_number` van de functie IMREAL.",
+          name: "complex_getal",
+          detail: "Parameter `complex_getal` van de functie IMREAL.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7458,8 +7458,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
-          detail: "Parameter `complex_number` van de functie IMAGINARY.",
+          name: "complex_getal",
+          detail: "Parameter `complex_getal` van de functie IMAGINARY.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7478,8 +7478,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parameter `number` van de functie IMCONJUGATE.",
+          name: "getal",
+          detail: "Parameter `getal` van de functie IMCONJUGATE.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7498,8 +7498,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parameter `number` van de functie IMABS.",
+          name: "getal",
+          detail: "Parameter `getal` van de functie IMABS.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7518,16 +7518,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "number1",
-          detail: "Parameter `number1` van de functie DELTA.",
+          name: "getal1",
+          detail: "Parameter `getal1` van de functie DELTA.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number2",
-          detail: "Parameter `number2` van de functie DELTA.",
+          name: "getal2",
+          detail: "Parameter `getal2` van de functie DELTA.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -7546,16 +7546,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie IMSUM.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie IMSUM.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie IMSUM.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie IMSUM.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7574,16 +7574,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "first_number",
-          detail: "Parameter `first_number` van de functie IMSUB.",
+          name: "eerste_getal",
+          detail: "Parameter `eerste_getal` van de functie IMSUB.",
           example: "\"6+5i\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "second_number",
-          detail: "Parameter `second_number` van de functie IMSUB.",
+          name: "tweede_getal",
+          detail: "Parameter `tweede_getal` van de functie IMSUB.",
           example: "\"2+3i\"",
           require: "m",
           repeat: "n",
@@ -7630,16 +7630,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Parameter `dividend` van de functie IMDIV.",
+          name: "deeltal",
+          detail: "Parameter `deeltal` van de functie IMDIV.",
           example: "\"11+16i\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "divisor",
-          detail: "Parameter `divisor` van de functie IMDIV.",
+          name: "deler",
+          detail: "Parameter `deler` van de functie IMDIV.",
           example: "\"3+2i\"",
           require: "m",
           repeat: "n",
@@ -7658,8 +7658,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
-          detail: "Parameter `logical_expression` van de functie NOT.",
+          name: "logische_expressie",
+          detail: "Parameter `logische_expressie` van de functie NOT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7700,16 +7700,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
-          detail: "Parameter `logical_expression1` van de functie AND.",
+          name: "logische_expressie1",
+          detail: "Parameter `logische_expressie1` van de functie AND.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
-          detail: "Parameter `logical_expression2` van de functie AND.",
+          name: "logische_expressie2",
+          detail: "Parameter `logische_expressie2` van de functie AND.",
           example: "A3 = \"bar\"",
           require: "o",
           repeat: "y",
@@ -7728,16 +7728,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie IFERROR.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie IFERROR.",
           example: "A1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_error",
-          detail: "Parameter `value_if_error` van de functie IFERROR.",
+          name: "waarde_als_fout",
+          detail: "Parameter `waarde_als_fout` van de functie IFERROR.",
           example: "\"Error in cell A1\"",
           require: "m",
           repeat: "n",
@@ -7756,24 +7756,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
-          detail: "Parameter `logical_expression` van de functie IF.",
+          name: "logische_expressie",
+          detail: "Parameter `logische_expressie` van de functie IF.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_true",
-          detail: "Parameter `value_if_true` van de functie IF.",
+          name: "waarde_als_waar",
+          detail: "Parameter `waarde_als_waar` van de functie IF.",
           example: "\"A2 is foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_false",
-          detail: "Parameter `value_if_false` van de functie IF.",
+          name: "waarde_als_onwaar",
+          detail: "Parameter `waarde_als_onwaar` van de functie IF.",
           example: "\"A2 was false\"",
           require: "o",
           repeat: "n",
@@ -7792,16 +7792,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
-          detail: "Parameter `logical_expression1` van de functie OR.",
+          name: "logische_expressie1",
+          detail: "Parameter `logische_expressie1` van de functie OR.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
-          detail: "Parameter `logical_expression2` van de functie OR.",
+          name: "logische_expressie2",
+          detail: "Parameter `logische_expressie2` van de functie OR.",
           example: " A3 = \"bar\"",
           require: "m",
           repeat: "n",
@@ -7820,16 +7820,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie NE.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie NE.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie NE.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie NE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7848,16 +7848,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie EQ.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie EQ.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie EQ.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie EQ.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7876,16 +7876,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie GT.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie GT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie GT.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie GT.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7904,16 +7904,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie GTE.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie GTE.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie GTE.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie GTE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7932,16 +7932,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie LT.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie LT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie LT.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie LT.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7960,16 +7960,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie LTE.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie LTE.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie LTE.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie LTE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7988,16 +7988,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie ADD.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie ADD.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie ADD.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie ADD.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8016,16 +8016,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie MINUS.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie MINUS.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie MINUS.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie MINUS.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8072,16 +8072,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Parameter `dividend` van de functie DIVIDE.",
+          name: "deeltal",
+          detail: "Parameter `deeltal` van de functie DIVIDE.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "divisor",
-          detail: "Parameter `divisor` van de functie DIVIDE.",
+          name: "deler",
+          detail: "Parameter `deler` van de functie DIVIDE.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8100,16 +8100,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parameter `value1` van de functie CONCAT.",
+          name: "waarde1",
+          detail: "Parameter `waarde1` van de functie CONCAT.",
           example: "\"de\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parameter `value2` van de functie CONCAT.",
+          name: "waarde2",
+          detail: "Parameter `waarde2` van de functie CONCAT.",
           example: "\"mystify\"",
           require: "m",
           repeat: "n",
@@ -8148,16 +8148,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
-          detail: "Parameter `string1` van de functie CONCATENATE.",
+          name: "tekenreeks1",
+          detail: "Parameter `tekenreeks1` van de functie CONCATENATE.",
           example: "\"Super\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "string2",
-          detail: "Parameter `string2` van de functie CONCATENATE.",
+          name: "tekenreeks2",
+          detail: "Parameter `tekenreeks2` van de functie CONCATENATE.",
           example: "\"calla\"",
           require: "o",
           repeat: "y",
@@ -8176,8 +8176,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Parameter `string` van de functie CODE.",
+          name: "tekenreeks",
+          detail: "Parameter `tekenreeks` van de functie CODE.",
           example: "\"a\"",
           require: "m",
           repeat: "n",
@@ -8196,8 +8196,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "table_number",
-          detail: "Parameter `table_number` van de functie CHAR.",
+          name: "tabelnummer",
+          detail: "Parameter `tabelnummer` van de functie CHAR.",
           example: "97",
           require: "m",
           repeat: "n",
@@ -8216,8 +8216,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "roman_numeral",
-          detail: "Parameter `roman_numeral` van de functie ARABIC.",
+          name: "romeins_cijfer",
+          detail: "Parameter `romeins_cijfer` van de functie ARABIC.",
           example: "\"XIV\"",
           require: "m",
           repeat: "n",
@@ -8236,8 +8236,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parameter `number` van de functie ROMAN.",
+          name: "getal",
+          detail: "Parameter `getal` van de functie ROMAN.",
           example: "499",
           require: "m",
           repeat: "n",
@@ -8256,16 +8256,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parameter `text` van de functie REGEXEXTRACT.",
+          name: "tekst",
+          detail: "Parameter `tekst` van de functie REGEXEXTRACT.",
           example: "\"Needle in a haystack\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "Parameter `regular_expression` van de functie REGEXEXTRACT.",
+          name: "reguliere_expressie",
+          detail: "Parameter `reguliere_expressie` van de functie REGEXEXTRACT.",
           example: "\".e{2}dle\"",
           require: "m",
           repeat: "n",
@@ -8284,16 +8284,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parameter `text` van de functie REGEXMATCH.",
+          name: "tekst",
+          detail: "Parameter `tekst` van de functie REGEXMATCH.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "Parameter `regular_expression` van de functie REGEXMATCH.",
+          name: "reguliere_expressie",
+          detail: "Parameter `reguliere_expressie` van de functie REGEXMATCH.",
           example: "\"S.r\"",
           require: "m",
           repeat: "n",
@@ -8312,24 +8312,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parameter `text` van de functie REGEXREPLACE.",
+          name: "tekst",
+          detail: "Parameter `tekst` van de functie REGEXREPLACE.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "Parameter `regular_expression` van de functie REGEXREPLACE.",
+          name: "reguliere_expressie",
+          detail: "Parameter `reguliere_expressie` van de functie REGEXREPLACE.",
           example: "\"S.*d\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "replacement",
-          detail: "Parameter `replacement` van de functie REGEXREPLACE.",
+          name: "vervanging",
+          detail: "Parameter `vervanging` van de functie REGEXREPLACE.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8348,8 +8348,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie T.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie T.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8368,24 +8368,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parameter `number` van de functie FIXED.",
+          name: "getal",
+          detail: "Parameter `getal` van de functie FIXED.",
           example: "3.141592653",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
-          detail: "Parameter `number_of_places` van de functie FIXED.",
+          name: "aantal_decimalen",
+          detail: "Parameter `aantal_decimalen` van de functie FIXED.",
           example: "2",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "suppress_separator",
-          detail: "Parameter `suppress_separator` van de functie FIXED.",
+          name: "scheidingsteken_onderdrukken",
+          detail: "Parameter `scheidingsteken_onderdrukken` van de functie FIXED.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -8404,24 +8404,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Parameter `search_for` van de functie FIND.",
+          name: "te_zoeken_tekst",
+          detail: "Parameter `te_zoeken_tekst` van de functie FIND.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Parameter `text_to_search` van de functie FIND.",
+          name: "te_doorzoeken_tekst",
+          detail: "Parameter `te_doorzoeken_tekst` van de functie FIND.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Parameter `starting_at` van de functie FIND.",
+          name: "beginnend_bij",
+          detail: "Parameter `beginnend_bij` van de functie FIND.",
           example: "14",
           require: "o",
           repeat: "n",
@@ -8440,24 +8440,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Parameter `search_for` van de functie FINDB.",
+          name: "te_zoeken_tekst",
+          detail: "Parameter `te_zoeken_tekst` van de functie FINDB.",
           example: "\"new\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Parameter `text_to_search` van de functie FINDB.",
+          name: "te_doorzoeken_tekst",
+          detail: "Parameter `te_doorzoeken_tekst` van de functie FINDB.",
           example: "\"new year\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Parameter `starting_at` van de functie FINDB.",
+          name: "beginnend_bij",
+          detail: "Parameter `beginnend_bij` van de functie FINDB.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8476,24 +8476,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "delimiter",
-          detail: "Parameter `delimiter` van de functie JOIN.",
+          name: "scheidingsteken",
+          detail: "Parameter `scheidingsteken` van de functie JOIN.",
           example: "\" and-a \"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_or_array1",
-          detail: "Parameter `value_or_array1` van de functie JOIN.",
+          name: "waarde_of_matrix1",
+          detail: "Parameter `waarde_of_matrix1` van de functie JOIN.",
           example: "{1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_or_array2",
-          detail: "Parameter `value_or_array2` van de functie JOIN.",
+          name: "waarde_of_matrix2",
+          detail: "Parameter `waarde_of_matrix2` van de functie JOIN.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -8512,16 +8512,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Parameter `string` van de functie LEFT.",
+          name: "tekenreeks",
+          detail: "Parameter `tekenreeks` van de functie LEFT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
-          detail: "Parameter `number_of_characters` van de functie LEFT.",
+          name: "aantal_tekens",
+          detail: "Parameter `aantal_tekens` van de functie LEFT.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8540,16 +8540,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Parameter `string` van de functie RIGHT.",
+          name: "tekenreeks",
+          detail: "Parameter `tekenreeks` van de functie RIGHT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
-          detail: "Parameter `number_of_characters` van de functie RIGHT.",
+          name: "aantal_tekens",
+          detail: "Parameter `aantal_tekens` van de functie RIGHT.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8568,24 +8568,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Parameter `string` van de functie MID.",
+          name: "tekenreeks",
+          detail: "Parameter `tekenreeks` van de functie MID.",
           example: "\"get this\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Parameter `starting_at` van de functie MID.",
+          name: "beginnend_bij",
+          detail: "Parameter `beginnend_bij` van de functie MID.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "extract_length",
-          detail: "Parameter `extract_length` van de functie MID.",
+          name: "extractielengte",
+          detail: "Parameter `extractielengte` van de functie MID.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8604,8 +8604,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parameter `text` van de functie LEN.",
+          name: "tekst",
+          detail: "Parameter `tekst` van de functie LEN.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8624,8 +8624,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parameter `text` van de functie LENB.",
+          name: "tekst",
+          detail: "Parameter `tekst` van de functie LENB.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8644,8 +8644,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parameter `text` van de functie LOWER.",
+          name: "tekst",
+          detail: "Parameter `tekst` van de functie LOWER.",
           example: "\"LOREM IPSUM\"",
           require: "m",
           repeat: "n",
@@ -8664,8 +8664,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parameter `text` van de functie UPPER.",
+          name: "tekst",
+          detail: "Parameter `tekst` van de functie UPPER.",
           example: "\"lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8684,16 +8684,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
-          detail: "Parameter `string1` van de functie EXACT.",
+          name: "tekenreeks1",
+          detail: "Parameter `tekenreeks1` van de functie EXACT.",
           example: "A1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "string2",
-          detail: "Parameter `string2` van de functie EXACT.",
+          name: "tekenreeks2",
+          detail: "Parameter `tekenreeks2` van de functie EXACT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8712,32 +8712,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parameter `text` van de functie REPLACE.",
+          name: "tekst",
+          detail: "Parameter `tekst` van de functie REPLACE.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "position",
-          detail: "Parameter `position` van de functie REPLACE.",
+          name: "positie",
+          detail: "Parameter `positie` van de functie REPLACE.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "length",
-          detail: "Parameter `length` van de functie REPLACE.",
+          name: "lengte",
+          detail: "Parameter `lengte` van de functie REPLACE.",
           example: "6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_text",
-          detail: "Parameter `new_text` van de functie REPLACE.",
+          name: "nieuwe_tekst",
+          detail: "Parameter `nieuwe_tekst` van de functie REPLACE.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8756,16 +8756,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_repeat",
-          detail: "Parameter `text_to_repeat` van de functie REPT.",
+          name: "te_herhalen_tekst",
+          detail: "Parameter `te_herhalen_tekst` van de functie REPT.",
           example: "\"ha\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "number_of_repetitions",
-          detail: "Parameter `number_of_repetitions` van de functie REPT.",
+          name: "aantal_herhalingen",
+          detail: "Parameter `aantal_herhalingen` van de functie REPT.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8784,24 +8784,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Parameter `search_for` van de functie SEARCH.",
+          name: "te_zoeken_tekst",
+          detail: "Parameter `te_zoeken_tekst` van de functie SEARCH.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Parameter `text_to_search` van de functie SEARCH.",
+          name: "te_doorzoeken_tekst",
+          detail: "Parameter `te_doorzoeken_tekst` van de functie SEARCH.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Parameter `starting_at` van de functie SEARCH.",
+          name: "beginnend_bij",
+          detail: "Parameter `beginnend_bij` van de functie SEARCH.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -8820,32 +8820,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_search",
-          detail: "Parameter `text_to_search` van de functie SUBSTITUTE.",
+          name: "te_doorzoeken_tekst",
+          detail: "Parameter `te_doorzoeken_tekst` van de functie SUBSTITUTE.",
           example: "\"search for it\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "search_for",
-          detail: "Parameter `search_for` van de functie SUBSTITUTE.",
+          name: "te_zoeken_tekst",
+          detail: "Parameter `te_zoeken_tekst` van de functie SUBSTITUTE.",
           example: "\"search for\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "replace_with",
-          detail: "Parameter `replace_with` van de functie SUBSTITUTE.",
+          name: "vervangen_door",
+          detail: "Parameter `vervangen_door` van de functie SUBSTITUTE.",
           example: "\"Google\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "occurrence_number",
-          detail: "Parameter `occurrence_number` van de functie SUBSTITUTE.",
+          name: "voorkomen_nummer",
+          detail: "Parameter `voorkomen_nummer` van de functie SUBSTITUTE.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -8864,8 +8864,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parameter `text` van de functie CLEAN.",
+          name: "tekst",
+          detail: "Parameter `tekst` van de functie CLEAN.",
           example: "\"AF\"&CHAR(31)",
           require: "m",
           repeat: "n",
@@ -8884,16 +8884,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parameter `number` van de functie TEXT.",
+          name: "getal",
+          detail: "Parameter `getal` van de functie TEXT.",
           example: "1.23",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "format",
-          detail: "Parameter `format` van de functie TEXT.",
+          name: "notatie",
+          detail: "Parameter `notatie` van de functie TEXT.",
           example: "\"$0.00\"",
           require: "m",
           repeat: "n",
@@ -8912,8 +8912,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parameter `text` van de functie TRIM.",
+          name: "tekst",
+          detail: "Parameter `tekst` van de functie TRIM.",
           example: "\" lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8932,8 +8932,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parameter `text` van de functie VALUE.",
+          name: "tekst",
+          detail: "Parameter `tekst` van de functie VALUE.",
           example: "\"123\"",
           require: "m",
           repeat: "n",
@@ -8952,8 +8952,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_capitalize",
-          detail: "Parameter `text_to_capitalize` van de functie PROPER.",
+          name: "te_kapitaliseren_tekst",
+          detail: "Parameter `te_kapitaliseren_tekst` van de functie PROPER.",
           example: "\"united states\"",
           require: "m",
           repeat: "n",
@@ -8972,24 +8972,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie CONVERT.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie CONVERT.",
           example: "5.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "start_unit",
-          detail: "Parameter `start_unit` van de functie CONVERT.",
+          name: "starteenheid",
+          detail: "Parameter `starteenheid` van de functie CONVERT.",
           example: "\"g\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_unit",
-          detail: "Parameter `end_unit` van de functie CONVERT.",
+          name: "doeleenheid",
+          detail: "Parameter `doeleenheid` van de functie CONVERT.",
           example: "\"kg\"",
           require: "m",
           repeat: "n",
@@ -9008,16 +9008,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Parameter `array_x` van de functie SUMX2MY2.",
+          name: "matrix_x",
+          detail: "Parameter `matrix_x` van de functie SUMX2MY2.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Parameter `array_y` van de functie SUMX2MY2.",
+          name: "matrix_y",
+          detail: "Parameter `matrix_y` van de functie SUMX2MY2.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9036,16 +9036,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Parameter `array_x` van de functie SUMX2PY2.",
+          name: "matrix_x",
+          detail: "Parameter `matrix_x` van de functie SUMX2PY2.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Parameter `array_y` van de functie SUMX2PY2.",
+          name: "matrix_y",
+          detail: "Parameter `matrix_y` van de functie SUMX2PY2.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9064,16 +9064,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Parameter `array_x` van de functie SUMXMY2.",
+          name: "matrix_x",
+          detail: "Parameter `matrix_x` van de functie SUMXMY2.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Parameter `array_y` van de functie SUMXMY2.",
+          name: "matrix_y",
+          detail: "Parameter `matrix_y` van de functie SUMXMY2.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9092,8 +9092,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_or_range",
-          detail: "Parameter `array_or_range` van de functie TRANSPOSE.",
+          name: "matrix_of_bereik",
+          detail: "Parameter `matrix_of_bereik` van de functie TRANSPOSE.",
           example: "{1,2}",
           require: "m",
           repeat: "n",
@@ -9112,24 +9112,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Parameter `known_data_y` van de functie TREND.",
+          name: "bekende_gegevens_y",
+          detail: "Parameter `bekende_gegevens_y` van de functie TREND.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Parameter `known_data_x` van de functie TREND.",
+          name: "bekende_gegevens_x",
+          detail: "Parameter `bekende_gegevens_x` van de functie TREND.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
-          detail: "Parameter `new_data_x` van de functie TREND.",
+          name: "nieuwe_gegevens_x",
+          detail: "Parameter `nieuwe_gegevens_x` van de functie TREND.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9156,16 +9156,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parameter `data` van de functie FREQUENCY.",
+          name: "gegevens",
+          detail: "Parameter `gegevens` van de functie FREQUENCY.",
           example: "A2:A40",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "classes",
-          detail: "Parameter `classes` van de functie FREQUENCY.",
+          name: "klassen",
+          detail: "Parameter `klassen` van de functie FREQUENCY.",
           example: "B2:B5",
           require: "m",
           repeat: "n",
@@ -9184,24 +9184,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Parameter `known_data_y` van de functie GROWTH.",
+          name: "bekende_gegevens_y",
+          detail: "Parameter `bekende_gegevens_y` van de functie GROWTH.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Parameter `known_data_x` van de functie GROWTH.",
+          name: "bekende_gegevens_x",
+          detail: "Parameter `bekende_gegevens_x` van de functie GROWTH.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
-          detail: "Parameter `new_data_x` van de functie GROWTH.",
+          name: "nieuwe_gegevens_x",
+          detail: "Parameter `nieuwe_gegevens_x` van de functie GROWTH.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9228,32 +9228,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Parameter `known_data_y` van de functie LINEST.",
+          name: "bekende_gegevens_y",
+          detail: "Parameter `bekende_gegevens_y` van de functie LINEST.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Parameter `known_data_x` van de functie LINEST.",
+          name: "bekende_gegevens_x",
+          detail: "Parameter `bekende_gegevens_x` van de functie LINEST.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "calculate_b",
-          detail: "Parameter `calculate_b` van de functie LINEST.",
+          name: "b_berekenen",
+          detail: "Parameter `b_berekenen` van de functie LINEST.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "verbose",
-          detail: "Parameter `verbose` van de functie LINEST.",
+          name: "uitgebreid",
+          detail: "Parameter `uitgebreid` van de functie LINEST.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9272,16 +9272,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Parameter `known_data_y` van de functie LOGEST.",
+          name: "bekende_gegevens_y",
+          detail: "Parameter `bekende_gegevens_y` van de functie LOGEST.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Parameter `known_data_x` van de functie LOGEST.",
+          name: "bekende_gegevens_x",
+          detail: "Parameter `bekende_gegevens_x` van de functie LOGEST.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9296,8 +9296,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "verbose",
-          detail: "Parameter `verbose` van de functie LOGEST.",
+          name: "uitgebreid",
+          detail: "Parameter `uitgebreid` van de functie LOGEST.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9316,8 +9316,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
-          detail: "Parameter `square_matrix` van de functie MDETERM.",
+          name: "vierkante_matrix",
+          detail: "Parameter `vierkante_matrix` van de functie MDETERM.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9336,8 +9336,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
-          detail: "Parameter `square_matrix` van de functie MINVERSE.",
+          name: "vierkante_matrix",
+          detail: "Parameter `vierkante_matrix` van de functie MINVERSE.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9384,16 +9384,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array1",
-          detail: "Parameter `array1` van de functie SUMPRODUCT.",
+          name: "matrix1",
+          detail: "Parameter `matrix1` van de functie SUMPRODUCT.",
           example: "A2:C5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array2",
-          detail: "Parameter `array2` van de functie SUMPRODUCT.",
+          name: "matrix2",
+          detail: "Parameter `matrix2` van de functie SUMPRODUCT.",
           example: "D2:F5",
           require: "o",
           repeat: "y",
@@ -9412,8 +9412,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell",
-          detail: "Parameter `cell` van de functie ISFORMULA.",
+          name: "cel",
+          detail: "Parameter `cel` van de functie ISFORMULA.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9432,16 +9432,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "info_type",
-          detail: "Parameter `info_type` van de functie CELL.",
+          name: "infotype",
+          detail: "Parameter `infotype` van de functie CELL.",
           example: "\"type\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "reference",
-          detail: "Parameter `reference` van de functie CELL.",
+          name: "verwijzing",
+          detail: "Parameter `verwijzing` van de functie CELL.",
           example: "C2",
           require: "m",
           repeat: "n",
@@ -9471,8 +9471,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
-          detail: "Parameter `reference` van de functie ERROR_TYPE.",
+          name: "verwijzing",
+          detail: "Parameter `verwijzing` van de functie ERROR_TYPE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -9491,8 +9491,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ISBLANK.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ISBLANK.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9511,8 +9511,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ISERR.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ISERR.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9531,8 +9531,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ISERROR.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ISERROR.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9551,8 +9551,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ISLOGICAL.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ISLOGICAL.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9571,8 +9571,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ISNA.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ISNA.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9591,8 +9591,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ISNONTEXT.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ISNONTEXT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9611,8 +9611,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ISNUMBER.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ISNUMBER.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9631,8 +9631,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ISREF.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ISREF.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9651,8 +9651,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie ISTEXT.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie ISTEXT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9671,8 +9671,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie TYPE.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie TYPE.",
           example: "C4",
           require: "m",
           repeat: "n",
@@ -9691,8 +9691,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie N.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie N.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9711,8 +9711,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie TO_DATE.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie TO_DATE.",
           example: "25405",
           require: "m",
           repeat: "n",
@@ -9731,8 +9731,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie TO_PURE_NUMBER.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie TO_PURE_NUMBER.",
           example: "50%",
           require: "m",
           repeat: "n",
@@ -9751,8 +9751,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie TO_TEXT.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie TO_TEXT.",
           example: "24",
           require: "m",
           repeat: "n",
@@ -9771,8 +9771,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie TO_DOLLARS.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie TO_DOLLARS.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9791,8 +9791,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parameter `value` van de functie TO_PERCENT.",
+          name: "waarde",
+          detail: "Parameter `waarde` van de functie TO_PERCENT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9819,8 +9819,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DGET.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DGET.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9855,8 +9855,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DMAX.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DMAX.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9891,8 +9891,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DMIN.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DMIN.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9927,8 +9927,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DAVERAGE.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DAVERAGE.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9963,8 +9963,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DCOUNT.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DCOUNT.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9999,8 +9999,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DCOUNTA.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DCOUNTA.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10035,8 +10035,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DPRODUCT.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DPRODUCT.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10071,8 +10071,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DSTDEV.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DSTDEV.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10107,8 +10107,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DSTDEVP.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DSTDEVP.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10143,8 +10143,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DSUM.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DSUM.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10179,8 +10179,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DVAR.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DVAR.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10215,8 +10215,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parameter `field` van de functie DVARP.",
+          name: "veld",
+          detail: "Parameter `veld` van de functie DVARP.",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10243,17 +10243,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Identificatienummer",
           example: "A1",
-          detail: "Parameter `ID number` van de functie AGE_BY_IDCARD.",
+          detail: "Parameter `Identificatienummer` van de functie AGE_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Deadline",
+          name: "Uiterste datum",
           example: "\"2017-10-01\"",
-          detail: "Parameter `Deadline` van de functie AGE_BY_IDCARD.",
+          detail: "Parameter `Uiterste datum` van de functie AGE_BY_IDCARD.",
           require: "o",
           repeat: "n",
           type: "rangedatetime"
@@ -10271,9 +10271,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `ID number` van de functie SEX_BY_IDCARD.",
+          detail: "Parameter `Identificatienummer` van de functie SEX_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10291,17 +10291,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `ID number` van de functie BIRTHDAY_BY_IDCARD.",
+          detail: "Parameter `Identificatienummer` van de functie BIRTHDAY_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Birthday format",
+          name: "Geboortedatumnotatie",
           example: "0",
-          detail: "Parameter `Birthday format` van de functie BIRTHDAY_BY_IDCARD.",
+          detail: "Parameter `Geboortedatumnotatie` van de functie BIRTHDAY_BY_IDCARD.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10319,9 +10319,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `ID number` van de functie PROVINCE_BY_IDCARD.",
+          detail: "Parameter `Identificatienummer` van de functie PROVINCE_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10339,9 +10339,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `ID number` van de functie CITY_BY_IDCARD.",
+          detail: "Parameter `Identificatienummer` van de functie CITY_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10359,9 +10359,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `ID number` van de functie STAR_BY_IDCARD.",
+          detail: "Parameter `Identificatienummer` van de functie STAR_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10379,9 +10379,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `ID number` van de functie ANIMAL_BY_IDCARD.",
+          detail: "Parameter `Identificatienummer` van de functie ANIMAL_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10399,9 +10399,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Identificatienummer",
           example: "\"31033519900101XXXX\"",
-          detail: "Parameter `ID number` van de functie ISIDCARD.",
+          detail: "Parameter `Identificatienummer` van de functie ISIDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10419,17 +10419,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Tekst",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parameter `Text` van de functie DM_TEXT_CUTWORD.",
+          detail: "Parameter `Tekst` van de functie DM_TEXT_CUTWORD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Word segmentation mode",
+          name: "Woordsegmentatiemodus",
           example: "0",
-          detail: "Parameter `Word segmentation mode` van de functie DM_TEXT_CUTWORD.",
+          detail: "Parameter `Woordsegmentatiemodus` van de functie DM_TEXT_CUTWORD.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10447,17 +10447,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Tekst",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parameter `Text` van de functie DM_TEXT_TFIDF.",
+          detail: "Parameter `Tekst` van de functie DM_TEXT_TFIDF.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "Aantal trefwoorden",
           example: "20",
-          detail: "Parameter `Number of keywords` van de functie DM_TEXT_TFIDF.",
+          detail: "Parameter `Aantal trefwoorden` van de functie DM_TEXT_TFIDF.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10483,17 +10483,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Tekst",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parameter `Text` van de functie DM_TEXT_TEXTRANK.",
+          detail: "Parameter `Tekst` van de functie DM_TEXT_TEXTRANK.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "Aantal trefwoorden",
           example: "20",
-          detail: "Parameter `Number of keywords` van de functie DM_TEXT_TEXTRANK.",
+          detail: "Parameter `Aantal trefwoorden` van de functie DM_TEXT_TEXTRANK.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10519,25 +10519,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Stock code` van de functie DATA_CN_STOCK_CLOSE.",
+          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_CLOSE.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Date` van de functie DATA_CN_STOCK_CLOSE.",
+          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_CLOSE.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Reversion and exclusion` van de functie DATA_CN_STOCK_CLOSE.",
+          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_CLOSE.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10555,25 +10555,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Stock code` van de functie DATA_CN_STOCK_OPEN.",
+          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_OPEN.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Date` van de functie DATA_CN_STOCK_OPEN.",
+          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_OPEN.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Reversion and exclusion` van de functie DATA_CN_STOCK_OPEN.",
+          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_OPEN.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10591,25 +10591,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Stock code` van de functie DATA_CN_STOCK_MAX.",
+          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_MAX.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Date` van de functie DATA_CN_STOCK_MAX.",
+          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_MAX.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Reversion and exclusion` van de functie DATA_CN_STOCK_MAX.",
+          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_MAX.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10627,25 +10627,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Stock code` van de functie DATA_CN_STOCK_MIN.",
+          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_MIN.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Date` van de functie DATA_CN_STOCK_MIN.",
+          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_MIN.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Reversion and exclusion` van de functie DATA_CN_STOCK_MIN.",
+          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_MIN.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10663,25 +10663,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Stock code` van de functie DATA_CN_STOCK_VOLUMN.",
+          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_VOLUMN.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Date` van de functie DATA_CN_STOCK_VOLUMN.",
+          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_VOLUMN.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Reversion and exclusion` van de functie DATA_CN_STOCK_VOLUMN.",
+          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_VOLUMN.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10699,25 +10699,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Aandelencode",
           example: "\"000001\"",
-          detail: "Parameter `Stock code` van de functie DATA_CN_STOCK_AMOUNT.",
+          detail: "Parameter `Aandelencode` van de functie DATA_CN_STOCK_AMOUNT.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Datum",
           example: "2015-01-08",
-          detail: "Parameter `Date` van de functie DATA_CN_STOCK_AMOUNT.",
+          detail: "Parameter `Datum` van de functie DATA_CN_STOCK_AMOUNT.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Type koersherstelling",
           example: "0",
-          detail: "Parameter `Reversion and exclusion` van de functie DATA_CN_STOCK_AMOUNT.",
+          detail: "Parameter `Type koersherstelling` van de functie DATA_CN_STOCK_AMOUNT.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10735,9 +10735,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "waarde",
           example: "\"1990-01-01\"",
-          detail: "Parameter `value` van de functie ISDATE.",
+          detail: "Parameter `waarde` van de functie ISDATE.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10755,65 +10755,65 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Range` van de functie LINESPLINES.",
+          detail: "Parameter `Bereik` van de functie LINESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line color",
+          name: "Lijnkleur",
           example: "#2ec7c9",
-          detail: "Parameter `Line color` van de functie LINESPLINES.",
+          detail: "Parameter `Lijnkleur` van de functie LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line thickness",
+          name: "Lijndikte",
           example: "1",
-          detail: "Parameter `Line thickness` van de functie LINESPLINES.",
+          detail: "Parameter `Lijndikte` van de functie LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line",
+          name: "Hulplijn",
           example: "avg",
-          detail: "Parameter `Auxiliary line` van de functie LINESPLINES.",
+          detail: "Parameter `Hulplijn` van de functie LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line color",
+          name: "Kleur van de hulplijn",
           example: "#000",
-          detail: "Parameter `Auxiliary line color` van de functie LINESPLINES.",
+          detail: "Parameter `Kleur van de hulplijn` van de functie LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Maximum mark",
+          name: "Maximummarkering",
           example: "#fc5c5c",
-          detail: "Parameter `Maximum mark` van de functie LINESPLINES.",
+          detail: "Parameter `Maximummarkering` van de functie LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Minimum mark",
+          name: "Minimummarkering",
           example: "#fc5c5c",
-          detail: "Parameter `Minimum mark` van de functie LINESPLINES.",
+          detail: "Parameter `Minimummarkering` van de functie LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Mark size",
+          name: "Markeringsgrootte",
           example: "1.5",
-          detail: "Parameter `Mark size` van de functie LINESPLINES.",
+          detail: "Parameter `Markeringsgrootte` van de functie LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10831,49 +10831,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Range` van de functie AREASPLINES.",
+          detail: "Parameter `Bereik` van de functie AREASPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line color",
+          name: "Lijnkleur",
           example: "#2ec7c9",
-          detail: "Parameter `Line color` van de functie AREASPLINES.",
+          detail: "Parameter `Lijnkleur` van de functie AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Fill color",
+          name: "Vulkleur",
           example: "#CCF3F4",
-          detail: "Parameter `Fill color` van de functie AREASPLINES.",
+          detail: "Parameter `Vulkleur` van de functie AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line thickness",
+          name: "Lijndikte",
           example: "1",
-          detail: "Parameter `Line thickness` van de functie AREASPLINES.",
+          detail: "Parameter `Lijndikte` van de functie AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line",
+          name: "Hulplijn",
           example: "avg",
-          detail: "Parameter `Auxiliary line` van de functie AREASPLINES.",
+          detail: "Parameter `Hulplijn` van de functie AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line color",
+          name: "Kleur van de hulplijn",
           example: "#000",
-          detail: "Parameter `Auxiliary line color` van de functie AREASPLINES.",
+          detail: "Parameter `Kleur van de hulplijn` van de functie AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10891,49 +10891,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Range` van de functie COLUMNSPLINES.",
+          detail: "Parameter `Bereik` van de functie COLUMNSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Balkinterval",
           example: "1",
-          detail: "Parameter `Bar interval` van de functie COLUMNSPLINES.",
+          detail: "Parameter `Balkinterval` van de functie COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Kleur van de balk",
           example: "#fc5c5c",
-          detail: "Parameter `Bar color` van de functie COLUMNSPLINES.",
+          detail: "Parameter `Kleur van de balk` van de functie COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Kleur negatieve balken",
           example: "#97b552",
-          detail: "Parameter `Negative bar color` van de functie COLUMNSPLINES.",
+          detail: "Parameter `Kleur negatieve balken` van de functie COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Maximum",
           example: "100",
-          detail: "Parameter `Max` van de functie COLUMNSPLINES.",
+          detail: "Parameter `Maximum` van de functie COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Color palette` van de functie COLUMNSPLINES.",
+          detail: "Parameter `Kleurenpalet` van de functie COLUMNSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -10951,41 +10951,41 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Range` van de functie STACKCOLUMNSPLINES.",
+          detail: "Parameter `Bereik` van de functie STACKCOLUMNSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Stack by column",
+          name: "Stapelen per kolom",
           example: "1",
-          detail: "Parameter `Stack by column` van de functie STACKCOLUMNSPLINES.",
+          detail: "Parameter `Stapelen per kolom` van de functie STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Balkinterval",
           example: "1",
-          detail: "Parameter `Bar interval` van de functie STACKCOLUMNSPLINES.",
+          detail: "Parameter `Balkinterval` van de functie STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Maximum",
           example: "100",
-          detail: "Parameter `Max` van de functie STACKCOLUMNSPLINES.",
+          detail: "Parameter `Maximum` van de functie STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Color palette` van de functie STACKCOLUMNSPLINES.",
+          detail: "Parameter `Kleurenpalet` van de functie STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11003,49 +11003,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Range` van de functie BARSPLINES.",
+          detail: "Parameter `Bereik` van de functie BARSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Balkinterval",
           example: "1",
-          detail: "Parameter `Bar interval` van de functie BARSPLINES.",
+          detail: "Parameter `Balkinterval` van de functie BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Kleur van de balk",
           example: "#fc5c5c",
-          detail: "Parameter `Bar color` van de functie BARSPLINES.",
+          detail: "Parameter `Kleur van de balk` van de functie BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Kleur negatieve balken",
           example: "#97b552",
-          detail: "Parameter `Negative bar color` van de functie BARSPLINES.",
+          detail: "Parameter `Kleur negatieve balken` van de functie BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Maximum",
           example: "100",
-          detail: "Parameter `Max` van de functie BARSPLINES.",
+          detail: "Parameter `Maximum` van de functie BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Color palette` van de functie BARSPLINES.",
+          detail: "Parameter `Kleurenpalet` van de functie BARSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11063,41 +11063,41 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Range` van de functie STACKBARSPLINES.",
+          detail: "Parameter `Bereik` van de functie STACKBARSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Stack by column",
+          name: "Stapelen per kolom",
           example: "1",
-          detail: "Parameter `Stack by column` van de functie STACKBARSPLINES.",
+          detail: "Parameter `Stapelen per kolom` van de functie STACKBARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Balkinterval",
           example: "1",
-          detail: "Parameter `Bar interval` van de functie STACKBARSPLINES.",
+          detail: "Parameter `Balkinterval` van de functie STACKBARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Maximum",
           example: "100",
-          detail: "Parameter `Max` van de functie STACKBARSPLINES.",
+          detail: "Parameter `Maximum` van de functie STACKBARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Color palette` van de functie STACKBARSPLINES.",
+          detail: "Parameter `Kleurenpalet` van de functie STACKBARSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11115,33 +11115,33 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Range` van de functie DISCRETESPLINES.",
+          detail: "Parameter `Bereik` van de functie DISCRETESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Segmentation threshold",
+          name: "Segmentatiedrempel",
           example: "1",
-          detail: "Parameter `Segmentation threshold` van de functie DISCRETESPLINES.",
+          detail: "Parameter `Segmentatiedrempel` van de functie DISCRETESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Above threshold color",
+          name: "Kleur boven drempel",
           example: "#2ec7c9",
-          detail: "Parameter `Above threshold color` van de functie DISCRETESPLINES.",
+          detail: "Parameter `Kleur boven drempel` van de functie DISCRETESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Below threshold color",
+          name: "Kleur onder drempel",
           example: "#fc5c5c",
-          detail: "Parameter `Below threshold color` van de functie DISCRETESPLINES.",
+          detail: "Parameter `Kleur onder drempel` van de functie DISCRETESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11159,49 +11159,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Range` van de functie TRISTATESPLINES.",
+          detail: "Parameter `Bereik` van de functie TRISTATESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Balkinterval",
           example: "1",
-          detail: "Parameter `Bar interval` van de functie TRISTATESPLINES.",
+          detail: "Parameter `Balkinterval` van de functie TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Kleur van de balk",
           example: "#fc5c5c",
-          detail: "Parameter `Bar color` van de functie TRISTATESPLINES.",
+          detail: "Parameter `Kleur van de balk` van de functie TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Kleur negatieve balken",
           example: "#97b552",
-          detail: "Parameter `Negative bar color` van de functie TRISTATESPLINES.",
+          detail: "Parameter `Kleur negatieve balken` van de functie TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Zero value bar color",
+          name: "Kleur nulwaardebalken",
           example: "#999",
-          detail: "Parameter `Zero value bar color` van de functie TRISTATESPLINES.",
+          detail: "Parameter `Kleur nulwaardebalken` van de functie TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Color palette` van de functie TRISTATESPLINES.",
+          detail: "Parameter `Kleurenpalet` van de functie TRISTATESPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11219,41 +11219,41 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Range` van de functie PIESPLINES.",
+          detail: "Parameter `Bereik` van de functie PIESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Rotation angle",
+          name: "Rotatiehoek",
           example: "0",
-          detail: "Parameter `Rotation angle` van de functie PIESPLINES.",
+          detail: "Parameter `Rotatiehoek` van de functie PIESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "border",
+          name: "rand",
           example: "0",
-          detail: "Parameter `border` van de functie PIESPLINES.",
+          detail: "Parameter `rand` van de functie PIESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Border color",
+          name: "Randkleur",
           example: "#000",
-          detail: "Parameter `Border color` van de functie PIESPLINES.",
+          detail: "Parameter `Randkleur` van de functie PIESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Kleurenpalet",
           example: "#97b552",
-          detail: "Parameter `Color palette` van de functie PIESPLINES.",
+          detail: "Parameter `Kleurenpalet` van de functie PIESPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11271,33 +11271,33 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Bereik",
           example: "A1:A20",
-          detail: "Parameter `Range` van de functie BOXSPLINES.",
+          detail: "Parameter `Bereik` van de functie BOXSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Outlier ratio",
+          name: "Uitschieterverhouding",
           example: "1.5",
-          detail: "Parameter `Outlier ratio` van de functie BOXSPLINES.",
+          detail: "Parameter `Uitschieterverhouding` van de functie BOXSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Target value",
+          name: "Doelwaarde",
           example: "10",
-          detail: "Parameter `Target value` van de functie BOXSPLINES.",
+          detail: "Parameter `Doelwaarde` van de functie BOXSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Point size",
+          name: "Puntgrootte",
           example: "1.5",
-          detail: "Parameter `Point size` van de functie BOXSPLINES.",
+          detail: "Parameter `Puntgrootte` van de functie BOXSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11315,25 +11315,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Target",
+          name: "Doel",
           example: "10",
-          detail: "Parameter `Target` van de functie BULLETSPLINES.",
+          detail: "Parameter `Doel` van de functie BULLETSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "achieved",
+          name: "bereikt",
           example: "8",
-          detail: "Parameter `achieved` van de functie BULLETSPLINES.",
+          detail: "Parameter `bereikt` van de functie BULLETSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Contrast",
+          name: "Vergelijkingswaarde",
           example: "12",
-          detail: "Parameter `Contrast` van de functie BULLETSPLINES.",
+          detail: "Parameter `Vergelijkingswaarde` van de functie BULLETSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11351,9 +11351,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "config",
+          name: "configuratie",
           example: "PIESPLINES(A1:A20)",
-          detail: "Parameter `config` van de functie COMPOSESPLINES.",
+          detail: "Parameter `configuratie` van de functie COMPOSESPLINES.",
           require: "m",
           repeat: "y",
           type: "rangeall"
@@ -11371,32 +11371,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parameter `range` van de functie SORT.",
+          name: "bereik",
+          detail: "Parameter `bereik` van de functie SORT.",
           example: "A2:A17",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "sort_column",
-          detail: "Parameter `sort_column` van de functie SORT.",
+          name: "sorteerkolom",
+          detail: "Parameter `sorteerkolom` van de functie SORT.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_ascending",
-          detail: "Parameter `is_ascending` van de functie SORT.",
+          name: "is_oplopend",
+          detail: "Parameter `is_oplopend` van de functie SORT.",
           example: "-1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "sort_column2",
-          detail: "Parameter `sort_column2` van de functie SORT.",
+          name: "sorteerkolom2",
+          detail: "Parameter `sorteerkolom2` van de functie SORT.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -11415,24 +11415,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parameter `range` van de functie FILTER.",
+          name: "bereik",
+          detail: "Parameter `bereik` van de functie FILTER.",
           example: "A5:D20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "condition1",
-          detail: "Parameter `condition1` van de functie FILTER.",
+          name: "voorwaarde1",
+          detail: "Parameter `voorwaarde1` van de functie FILTER.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "condition2",
-          detail: "Parameter `condition2` van de functie FILTER.",
+          name: "voorwaarde2",
+          detail: "Parameter `voorwaarde2` van de functie FILTER.",
           example: "\"\"",
           require: "o",
           repeat: "n",
@@ -11451,24 +11451,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parameter `range` van de functie UNIQUE.",
+          name: "bereik",
+          detail: "Parameter `bereik` van de functie UNIQUE.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "by_col",
-          detail: "Parameter `by_col` van de functie UNIQUE.",
+          name: "per_kolom",
+          detail: "Parameter `per_kolom` van de functie UNIQUE.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "occurs_once",
-          detail: "Parameter `occurs_once` van de functie UNIQUE.",
+          name: "slechts_eenmaal",
+          detail: "Parameter `slechts_eenmaal` van de functie UNIQUE.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -11487,16 +11487,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
-          detail: "Parameter `rows` van de functie RANDARRAY.",
+          name: "rijen",
+          detail: "Parameter `rijen` van de functie RANDARRAY.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "columns",
-          detail: "Parameter `columns` van de functie RANDARRAY.",
+          name: "kolommen",
+          detail: "Parameter `kolommen` van de functie RANDARRAY.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11515,16 +11515,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
-          detail: "Parameter `rows` van de functie SEQUENCE.",
+          name: "rijen",
+          detail: "Parameter `rijen` van de functie SEQUENCE.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "columns",
-          detail: "Parameter `columns` van de functie SEQUENCE.",
+          name: "kolommen",
+          detail: "Parameter `kolommen` van de functie SEQUENCE.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11539,8 +11539,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "step",
-          detail: "Parameter `step` van de functie SEQUENCE.",
+          name: "stap",
+          detail: "Parameter `stap` van de functie SEQUENCE.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11559,9 +11559,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "expression",
+          name: "expressie",
           example: "\"A1+5*2^2\"",
-          detail: "Parameter `expression` van de functie EVALUATE.",
+          detail: "Parameter `expressie` van de functie EVALUATE.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11579,9 +11579,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "remote_expression",
+          name: "externe_expressie",
           example: "SUM(A1:A10000000)",
-          detail: "Parameter `remote_expression` van de functie REMOTE.",
+          detail: "Parameter `externe_expressie` van de functie REMOTE.",
           require: "m",
           repeat: "n",
           type: "string"

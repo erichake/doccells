@@ -50,7 +50,10 @@
  * hardcoded English function name flowing into the same insertion path as
  * everything above): handleSum() in @fortune-sheet/core (clicking the
  * toolbar's Σ icon directly), and the quick-formula dropdown's item data in
- * @fortune-sheet/react (clicking "Somme" etc. from that menu).
+ * @fortune-sheet/react (clicking "Somme" etc. from that menu). Plus the
+ * argument-hint tooltip's FormulaHint component in @fortune-sheet/react,
+ * which joined parameter names/examples with a hardcoded ", " even in
+ * locales where the user must type ";".
  *
  * Deliberately NOT covered here: the standalone "Insert Function" browsing
  * dialog in @fortune-sheet/react (a separate, independent name-matcher from
@@ -468,6 +471,27 @@ const QUICKFORMULA_ITEMDATA_NEW = `      var __doccellsQuickFormulaNames = (func
       }];`;
 
 // ---------------------------------------------------------------------------
+// Patch 10 (@fortune-sheet/react bundles): the argument-hint tooltip
+// (FormulaHint) joins parameter names and examples with a hardcoded ", " in
+// both its signature line ("SI(logical_expression, value_if_true, ...)") and
+// its example line -- contradicting the ";" the user actually has to type in
+// decimal-comma locales. Swap in "; " for those locales.
+// ---------------------------------------------------------------------------
+
+const HINT_SEP_HELPER_OLD = `var FormulaHint = function FormulaHint(props) {`;
+const HINT_SEP_HELPER_NEW = `var __doccellsHintArgSep = ${DECIMAL_COMMA_LOCALES_JSON}.indexOf((((typeof navigator !== "undefined" && navigator.language) || "en").split("-")[0])) > -1 ? "; " : ", ";
+var FormulaHint = function FormulaHint(props) {`;
+
+const HINT_SEP_REPEAT_OLD = `      name += ", ...";`;
+const HINT_SEP_REPEAT_NEW = `      name += __doccellsHintArgSep + "...";`;
+
+const HINT_SEP_NAME_OLD = `    }, name, i !== fn.p.length - 1 && ", ");`;
+const HINT_SEP_NAME_NEW = `    }, name, i !== fn.p.length - 1 && __doccellsHintArgSep);`;
+
+const HINT_SEP_EXAMPLE_OLD = `    }, param.example, i !== fn.p.length - 1 && ", ");`;
+const HINT_SEP_EXAMPLE_NEW = `    }, param.example, i !== fn.p.length - 1 && __doccellsHintArgSep);`;
+
+// ---------------------------------------------------------------------------
 
 let allPatched = 0;
 for (const { file: bundle, lodash: L } of BUNDLES) {
@@ -523,18 +547,39 @@ for (const bundle of ["index.js", "index.esm.js"]) {
     continue;
   }
   let src = fs.readFileSync(file, "utf8");
-  if (src.includes("__doccellsQuickFormulaNames")) {
-    console.log(`patch-fortune-formula-names: react ${bundle} already patched`);
-    allPatched++;
-    continue;
+
+  const reactPatches = [
+    { name: "quick-formula itemData", old: QUICKFORMULA_ITEMDATA_OLD, new: QUICKFORMULA_ITEMDATA_NEW },
+    { name: "FormulaHint separator helper", old: HINT_SEP_HELPER_OLD, new: HINT_SEP_HELPER_NEW },
+    { name: "FormulaHint repeat separator", old: HINT_SEP_REPEAT_OLD, new: HINT_SEP_REPEAT_NEW },
+    { name: "FormulaHint signature separator", old: HINT_SEP_NAME_OLD, new: HINT_SEP_NAME_NEW },
+    { name: "FormulaHint example separator", old: HINT_SEP_EXAMPLE_OLD, new: HINT_SEP_EXAMPLE_NEW },
+  ];
+
+  let ok = 0;
+  let changed = false;
+  for (const p of reactPatches) {
+    if (src.includes(p.new)) {
+      ok++;
+    } else if (src.includes(p.old)) {
+      src = src.replace(p.old, p.new);
+      changed = true;
+      ok++;
+    } else {
+      console.warn(`patch-fortune-formula-names: pattern not found for "${p.name}" in react ${bundle}`);
+    }
   }
-  if (src.includes(QUICKFORMULA_ITEMDATA_OLD)) {
-    src = src.replace(QUICKFORMULA_ITEMDATA_OLD, QUICKFORMULA_ITEMDATA_NEW);
-    fs.writeFileSync(file, src, "utf8");
-    console.log(`patch-fortune-formula-names: patched react ${bundle}`);
+
+  if (ok === reactPatches.length) {
+    if (changed) {
+      fs.writeFileSync(file, src, "utf8");
+      console.log(`patch-fortune-formula-names: patched react ${bundle} (${ok}/${reactPatches.length})`);
+    } else {
+      console.log(`patch-fortune-formula-names: react ${bundle} already patched`);
+    }
     allPatched++;
   } else {
-    console.warn(`patch-fortune-formula-names: pattern not found for "quick-formula itemData" in react ${bundle}`);
+    console.warn(`patch-fortune-formula-names: only ${ok}/${reactPatches.length} patterns matched in react ${bundle}, aborting write for this file`);
   }
 }
 

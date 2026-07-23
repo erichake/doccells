@@ -18,24 +18,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parametro `range` della funzione SUMIF.",
+          name: "intervallo",
+          detail: "Parametro `intervallo` della funzione SUMIF.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion",
-          detail: "Parametro `criterion` della funzione SUMIF.",
+          name: "criterio",
+          detail: "Parametro `criterio` della funzione SUMIF.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "sum_range",
-          detail: "Parametro `sum_range` della funzione SUMIF.",
+          name: "intervallo_somma",
+          detail: "Parametro `intervallo_somma` della funzione SUMIF.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -54,8 +54,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Parametro `angle` della funzione TAN.",
+          name: "angolo",
+          detail: "Parametro `angolo` della funzione TAN.",
           example: "45*PI()/180",
           require: "m",
           repeat: "n",
@@ -74,8 +74,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione TANH.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione TANH.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -94,16 +94,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione CEILING.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione CEILING.",
           example: "23.25",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor",
-          detail: "Parametro `factor` della funzione CEILING.",
+          name: "fattore",
+          detail: "Parametro `fattore` della funzione CEILING.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -122,8 +122,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ATAN.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ATAN.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -142,8 +142,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ASINH.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ASINH.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -162,8 +162,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ABS.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ABS.",
           example: "-2",
           require: "m",
           repeat: "n",
@@ -182,8 +182,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ACOS.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ACOS.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -202,8 +202,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ACOSH.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ACOSH.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -222,16 +222,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione MULTINOMIAL.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione MULTINOMIAL.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione MULTINOMIAL.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione MULTINOMIAL.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -250,8 +250,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ATANH.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ATANH.",
           example: "0.9",
           require: "m",
           repeat: "n",
@@ -298,8 +298,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione COUNTBLANK.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione COUNTBLANK.",
           example: "A2:C100",
           require: "m",
           repeat: "n",
@@ -318,8 +318,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione COSH.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione COSH.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -338,8 +338,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione INT.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione INT.",
           example: "99.44",
           require: "m",
           repeat: "n",
@@ -358,8 +358,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ISEVEN.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ISEVEN.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -378,8 +378,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ISODD.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ISODD.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -398,16 +398,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione LCM.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione LCM.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione LCM.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione LCM.",
           example: "3",
           require: "o",
           repeat: "y",
@@ -426,8 +426,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione LN.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione LN.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -446,8 +446,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione LOG.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione LOG.",
           example: "128",
           require: "m",
           repeat: "n",
@@ -474,8 +474,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione LOG10.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione LOG10.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -494,16 +494,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Parametro `dividend` della funzione MOD.",
+          name: "dividendo",
+          detail: "Parametro `dividendo` della funzione MOD.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "divisor",
-          detail: "Parametro `divisor` della funzione MOD.",
+          name: "divisore",
+          detail: "Parametro `divisore` della funzione MOD.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -522,16 +522,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione MROUND.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione MROUND.",
           example: "21",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor",
-          detail: "Parametro `factor` della funzione MROUND.",
+          name: "fattore",
+          detail: "Parametro `fattore` della funzione MROUND.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -550,8 +550,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ODD.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ODD.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -570,16 +570,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione SUMSQ.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione SUMSQ.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione SUMSQ.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione SUMSQ.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -626,16 +626,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione SUM.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione SUM.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione SUM.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione SUM.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -654,24 +654,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "function_code",
-          detail: "Parametro `function_code` della funzione SUBTOTAL.",
+          name: "codice_funzione",
+          detail: "Parametro `codice_funzione` della funzione SUBTOTAL.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "range1",
-          detail: "Parametro `range1` della funzione SUBTOTAL.",
+          name: "intervallo1",
+          detail: "Parametro `intervallo1` della funzione SUBTOTAL.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "range2",
-          detail: "Parametro `range2` della funzione SUBTOTAL.",
+          name: "intervallo2",
+          detail: "Parametro `intervallo2` della funzione SUBTOTAL.",
           example: "B2:B8",
           require: "o",
           repeat: "y",
@@ -690,8 +690,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ASIN.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ASIN.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -710,16 +710,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parametro `range` della funzione COUNTIF.",
+          name: "intervallo",
+          detail: "Parametro `intervallo` della funzione COUNTIF.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion",
-          detail: "Parametro `criterion` della funzione COUNTIF.",
+          name: "criterio",
+          detail: "Parametro `criterio` della funzione COUNTIF.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -738,8 +738,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Parametro `angle` della funzione RADIANS.",
+          name: "angolo",
+          detail: "Parametro `angolo` della funzione RADIANS.",
           example: "180",
           require: "m",
           repeat: "n",
@@ -769,16 +769,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione COUNTUNIQUE.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione COUNTUNIQUE.",
           example: "A1:C100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione COUNTUNIQUE.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione COUNTUNIQUE.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -797,8 +797,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Parametro `angle` della funzione DEGREES.",
+          name: "angolo",
+          detail: "Parametro `angolo` della funzione DEGREES.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -837,8 +837,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione EVEN.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione EVEN.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -857,8 +857,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "exponent",
-          detail: "Parametro `exponent` della funzione EXP.",
+          name: "esponente",
+          detail: "Parametro `esponente` della funzione EXP.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -877,8 +877,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione FACT.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione FACT.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -897,8 +897,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione FACTDOUBLE.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione FACTDOUBLE.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -928,16 +928,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione FLOOR.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione FLOOR.",
           example: "23.25",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor",
-          detail: "Parametro `factor` della funzione FLOOR.",
+          name: "fattore",
+          detail: "Parametro `fattore` della funzione FLOOR.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -956,16 +956,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione GCD.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione GCD.",
           example: "A2:A5",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione GCD.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione GCD.",
           example: "96",
           require: "o",
           repeat: "y",
@@ -984,16 +984,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "low",
-          detail: "Parametro `low` della funzione RANDBETWEEN.",
+          name: "limite_inferiore",
+          detail: "Parametro `limite_inferiore` della funzione RANDBETWEEN.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "high",
-          detail: "Parametro `high` della funzione RANDBETWEEN.",
+          name: "limite_superiore",
+          detail: "Parametro `limite_superiore` della funzione RANDBETWEEN.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -1012,16 +1012,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ROUND.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ROUND.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Parametro `places` della funzione ROUND.",
+          name: "decimali",
+          detail: "Parametro `decimali` della funzione ROUND.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1040,16 +1040,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ROUNDDOWN.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ROUNDDOWN.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Parametro `places` della funzione ROUNDDOWN.",
+          name: "decimali",
+          detail: "Parametro `decimali` della funzione ROUNDDOWN.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1068,16 +1068,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ROUNDUP.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ROUNDUP.",
           example: "99.44",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Parametro `places` della funzione ROUNDUP.",
+          name: "decimali",
+          detail: "Parametro `decimali` della funzione ROUNDUP.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -1140,8 +1140,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione SIGN.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione SIGN.",
           example: "-42",
           require: "m",
           repeat: "n",
@@ -1160,8 +1160,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Parametro `angle` della funzione SIN.",
+          name: "angolo",
+          detail: "Parametro `angolo` della funzione SIN.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1180,8 +1180,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione SINH.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione SINH.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -1200,8 +1200,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione SQRT.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione SQRT.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1220,8 +1220,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione SQRTPI.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione SQRTPI.",
           example: "9",
           require: "m",
           repeat: "n",
@@ -1240,8 +1240,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione GAMMALN.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione GAMMALN.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1260,8 +1260,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
-          detail: "Parametro `angle` della funzione COS.",
+          name: "angolo",
+          detail: "Parametro `angolo` della funzione COS.",
           example: "PI()",
           require: "m",
           repeat: "n",
@@ -1280,16 +1280,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione TRUNC.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione TRUNC.",
           example: "3.141592654",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "places",
-          detail: "Parametro `places` della funzione TRUNC.",
+          name: "decimali",
+          detail: "Parametro `decimali` della funzione TRUNC.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -1308,16 +1308,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Parametro `dividend` della funzione QUOTIENT.",
+          name: "dividendo",
+          detail: "Parametro `dividendo` della funzione QUOTIENT.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "divisor",
-          detail: "Parametro `divisor` della funzione QUOTIENT.",
+          name: "divisore",
+          detail: "Parametro `divisore` della funzione QUOTIENT.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -1344,8 +1344,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "exponent",
-          detail: "Parametro `exponent` della funzione POWER.",
+          name: "esponente",
+          detail: "Parametro `esponente` della funzione POWER.",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -1364,32 +1364,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "sum_range",
-          detail: "Parametro `sum_range` della funzione SUMIFS.",
+          name: "intervallo_somma",
+          detail: "Parametro `intervallo_somma` della funzione SUMIFS.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criteria_range1",
-          detail: "Parametro `criteria_range1` della funzione SUMIFS.",
+          name: "intervallo_criteri1",
+          detail: "Parametro `intervallo_criteri1` della funzione SUMIFS.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion1",
-          detail: "Parametro `criterion1` della funzione SUMIFS.",
+          name: "criterio1",
+          detail: "Parametro `criterio1` della funzione SUMIFS.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
-          detail: "Parametro `criteria_range2` della funzione SUMIFS.",
+          name: "intervallo_criteri2",
+          detail: "Parametro `intervallo_criteri2` della funzione SUMIFS.",
           example: " C1:C10",
           require: "o",
           repeat: "y",
@@ -1408,24 +1408,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range1",
-          detail: "Parametro `criteria_range1` della funzione COUNTIFS.",
+          name: "intervallo_criteri1",
+          detail: "Parametro `intervallo_criteri1` della funzione COUNTIFS.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "criterion1",
-          detail: "Parametro `criterion1` della funzione COUNTIFS.",
+          name: "criterio1",
+          detail: "Parametro `criterio1` della funzione COUNTIFS.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
-          detail: "Parametro `criteria_range2` della funzione COUNTIFS.",
+          name: "intervallo_criteri2",
+          detail: "Parametro `intervallo_criteri2` della funzione COUNTIFS.",
           example: " B1:B10",
           require: "o",
           repeat: "y",
@@ -1444,16 +1444,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
-          detail: "Parametro `factor1` della funzione PRODUCT.",
+          name: "fattore1",
+          detail: "Parametro `fattore1` della funzione PRODUCT.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor2",
-          detail: "Parametro `factor2` della funzione PRODUCT.",
+          name: "fattore2",
+          detail: "Parametro `fattore2` della funzione PRODUCT.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1472,16 +1472,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione HARMEAN.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione HARMEAN.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione HARMEAN.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione HARMEAN.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1500,40 +1500,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
-          detail: "Parametro `num_successes` della funzione HYPGEOMDIST.",
+          name: "numero_successi",
+          detail: "Parametro `numero_successi` della funzione HYPGEOMDIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "num_draws",
-          detail: "Parametro `num_draws` della funzione HYPGEOMDIST.",
+          name: "numero_estrazioni",
+          detail: "Parametro `numero_estrazioni` della funzione HYPGEOMDIST.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "successes_in_pop",
-          detail: "Parametro `successes_in_pop` della funzione HYPGEOMDIST.",
+          name: "successi_nella_popolazione",
+          detail: "Parametro `successi_nella_popolazione` della funzione HYPGEOMDIST.",
           example: "20",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "pop_size",
-          detail: "Parametro `pop_size` della funzione HYPGEOMDIST.",
+          name: "dimensione_popolazione",
+          detail: "Parametro `dimensione_popolazione` della funzione HYPGEOMDIST.",
           example: "40",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parametro `cumulative` della funzione HYPGEOMDIST.",
+          name: "cumulativo",
+          detail: "Parametro `cumulativo` della funzione HYPGEOMDIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -1552,16 +1552,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parametro `data_y` della funzione INTERCEPT.",
+          name: "dati_y",
+          detail: "Parametro `dati_y` della funzione INTERCEPT.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parametro `data_x` della funzione INTERCEPT.",
+          name: "dati_x",
+          detail: "Parametro `dati_x` della funzione INTERCEPT.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1580,16 +1580,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione KURT.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione KURT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione KURT.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione KURT.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1608,8 +1608,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione LARGE.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione LARGE.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -1636,16 +1636,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione STDEVA.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione STDEVA.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione STDEVA.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione STDEVA.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1664,16 +1664,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione STDEVP.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione STDEVP.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione STDEVP.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione STDEVP.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1692,16 +1692,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione GEOMEAN.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione GEOMEAN.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione GEOMEAN.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione GEOMEAN.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -1720,24 +1720,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione RANK_EQ.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione RANK_EQ.",
           example: "A10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data",
-          detail: "Parametro `data` della funzione RANK_EQ.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione RANK_EQ.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "is_ascending",
-          detail: "Parametro `is_ascending` della funzione RANK_EQ.",
+          name: "è_crescente",
+          detail: "Parametro `è_crescente` della funzione RANK_EQ.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1756,24 +1756,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione RANK_AVG.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione RANK_AVG.",
           example: "A10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data",
-          detail: "Parametro `data` della funzione RANK_AVG.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione RANK_AVG.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "is_ascending",
-          detail: "Parametro `is_ascending` della funzione RANK_AVG.",
+          name: "è_crescente",
+          detail: "Parametro `è_crescente` della funzione RANK_AVG.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1792,24 +1792,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione PERCENTRANK_EXC.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione PERCENTRANK_EXC.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value",
-          detail: "Parametro `value` della funzione PERCENTRANK_EXC.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione PERCENTRANK_EXC.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Parametro `significant_digits` della funzione PERCENTRANK_EXC.",
+          name: "cifre_significative",
+          detail: "Parametro `cifre_significative` della funzione PERCENTRANK_EXC.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1828,24 +1828,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione PERCENTRANK_INC.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione PERCENTRANK_INC.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value",
-          detail: "Parametro `value` della funzione PERCENTRANK_INC.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione PERCENTRANK_INC.",
           example: " A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Parametro `significant_digits` della funzione PERCENTRANK_INC.",
+          name: "cifre_significative",
+          detail: "Parametro `cifre_significative` della funzione PERCENTRANK_INC.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -1872,16 +1872,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_y",
-          detail: "Parametro `data_y` della funzione FORECAST.",
+          name: "dati_y",
+          detail: "Parametro `dati_y` della funzione FORECAST.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parametro `data_x` della funzione FORECAST.",
+          name: "dati_x",
+          detail: "Parametro `dati_x` della funzione FORECAST.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -1900,8 +1900,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione FISHERINV.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione FISHERINV.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1920,8 +1920,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione FISHER.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione FISHER.",
           example: "0.962",
           require: "m",
           repeat: "n",
@@ -1940,16 +1940,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione MODE_SNGL.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione MODE_SNGL.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione MODE_SNGL.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione MODE_SNGL.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -1976,24 +1976,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "shape",
-          detail: "Parametro `shape` della funzione WEIBULL_DIST.",
+          name: "forma",
+          detail: "Parametro `forma` della funzione WEIBULL_DIST.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "scale",
-          detail: "Parametro `scale` della funzione WEIBULL_DIST.",
+          name: "scala",
+          detail: "Parametro `scala` della funzione WEIBULL_DIST.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parametro `cumulative` della funzione WEIBULL_DIST.",
+          name: "cumulativo",
+          detail: "Parametro `cumulativo` della funzione WEIBULL_DIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -2012,16 +2012,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione COUNT.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione COUNT.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione COUNT.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione COUNT.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2040,16 +2040,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione COUNTA.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione COUNTA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione COUNTA.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione COUNTA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2068,16 +2068,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione AVEDEV.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione AVEDEV.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione AVEDEV.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione AVEDEV.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2096,16 +2096,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione AVERAGE.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione AVERAGE.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione AVERAGE.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione AVERAGE.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2124,16 +2124,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione AVERAGEA.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione AVERAGEA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione AVERAGEA.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione AVERAGEA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2152,32 +2152,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
-          detail: "Parametro `num_successes` della funzione BINOM_DIST.",
+          name: "numero_successi",
+          detail: "Parametro `numero_successi` della funzione BINOM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "num_trials",
-          detail: "Parametro `num_trials` della funzione BINOM_DIST.",
+          name: "numero_prove",
+          detail: "Parametro `numero_prove` della funzione BINOM_DIST.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "prob_success",
-          detail: "Parametro `prob_success` della funzione BINOM_DIST.",
+          name: "probabilità_successo",
+          detail: "Parametro `probabilità_successo` della funzione BINOM_DIST.",
           example: "0.005",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parametro `cumulative` della funzione BINOM_DIST.",
+          name: "cumulativo",
+          detail: "Parametro `cumulativo` della funzione BINOM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2196,24 +2196,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_trials",
-          detail: "Parametro `num_trials` della funzione BINOM_INV.",
+          name: "numero_prove",
+          detail: "Parametro `numero_prove` della funzione BINOM_INV.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "prob_success",
-          detail: "Parametro `prob_success` della funzione BINOM_INV.",
+          name: "probabilità_successo",
+          detail: "Parametro `probabilità_successo` della funzione BINOM_INV.",
           example: "0.005",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "target_prob",
-          detail: "Parametro `target_prob` della funzione BINOM_INV.",
+          name: "probabilità_obiettivo",
+          detail: "Parametro `probabilità_obiettivo` della funzione BINOM_INV.",
           example: "0.8",
           require: "m",
           repeat: "n",
@@ -2232,24 +2232,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "alpha",
-          detail: "Parametro `alpha` della funzione CONFIDENCE_NORM.",
+          name: "alfa",
+          detail: "Parametro `alfa` della funzione CONFIDENCE_NORM.",
           example: "0.05",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parametro `standard_deviation` della funzione CONFIDENCE_NORM.",
+          name: "deviazione_standard",
+          detail: "Parametro `deviazione_standard` della funzione CONFIDENCE_NORM.",
           example: "1.6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "pop_size",
-          detail: "Parametro `pop_size` della funzione CONFIDENCE_NORM.",
+          name: "dimensione_popolazione",
+          detail: "Parametro `dimensione_popolazione` della funzione CONFIDENCE_NORM.",
           example: "250",
           require: "m",
           repeat: "n",
@@ -2268,16 +2268,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parametro `data_y` della funzione CORREL.",
+          name: "dati_y",
+          detail: "Parametro `dati_y` della funzione CORREL.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parametro `data_x` della funzione CORREL.",
+          name: "dati_x",
+          detail: "Parametro `dati_x` della funzione CORREL.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2296,16 +2296,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parametro `data_y` della funzione COVARIANCE_P.",
+          name: "dati_y",
+          detail: "Parametro `dati_y` della funzione COVARIANCE_P.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parametro `data_x` della funzione COVARIANCE_P.",
+          name: "dati_x",
+          detail: "Parametro `dati_x` della funzione COVARIANCE_P.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2324,16 +2324,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parametro `data_y` della funzione COVARIANCE_S.",
+          name: "dati_y",
+          detail: "Parametro `dati_y` della funzione COVARIANCE_S.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parametro `data_x` della funzione COVARIANCE_S.",
+          name: "dati_x",
+          detail: "Parametro `dati_x` della funzione COVARIANCE_S.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2352,16 +2352,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione DEVSQ.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione DEVSQ.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione DEVSQ.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione DEVSQ.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2396,8 +2396,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parametro `cumulative` della funzione EXPON_DIST.",
+          name: "cumulativo",
+          detail: "Parametro `cumulativo` della funzione EXPON_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2416,24 +2416,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range",
-          detail: "Parametro `criteria_range` della funzione AVERAGEIF.",
+          name: "intervallo_criteri",
+          detail: "Parametro `intervallo_criteri` della funzione AVERAGEIF.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criterion",
-          detail: "Parametro `criterion` della funzione AVERAGEIF.",
+          name: "criterio",
+          detail: "Parametro `criterio` della funzione AVERAGEIF.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "average_range",
-          detail: "Parametro `average_range` della funzione AVERAGEIF.",
+          name: "intervallo_media",
+          detail: "Parametro `intervallo_media` della funzione AVERAGEIF.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -2452,32 +2452,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "average_range",
-          detail: "Parametro `average_range` della funzione AVERAGEIFS.",
+          name: "intervallo_media",
+          detail: "Parametro `intervallo_media` della funzione AVERAGEIFS.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range1",
-          detail: "Parametro `criteria_range1` della funzione AVERAGEIFS.",
+          name: "intervallo_criteri1",
+          detail: "Parametro `intervallo_criteri1` della funzione AVERAGEIFS.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criterion1",
-          detail: "Parametro `criterion1` della funzione AVERAGEIFS.",
+          name: "criterio1",
+          detail: "Parametro `criterio1` della funzione AVERAGEIFS.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
-          detail: "Parametro `criteria_range2` della funzione AVERAGEIFS.",
+          name: "intervallo_criteri2",
+          detail: "Parametro `intervallo_criteri2` della funzione AVERAGEIFS.",
           example: " C1:C10",
           require: "m",
           repeat: "n",
@@ -2524,16 +2524,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione TRIMMEAN.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione TRIMMEAN.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "exclude_proportion",
-          detail: "Parametro `exclude_proportion` della funzione TRIMMEAN.",
+          name: "proporzione_esclusa",
+          detail: "Parametro `proporzione_esclusa` della funzione TRIMMEAN.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2552,8 +2552,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione PERCENTILE_EXC.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione PERCENTILE_EXC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2580,8 +2580,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione PERCENTILE_INC.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione PERCENTILE_INC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2608,16 +2608,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parametro `data_y` della funzione PEARSON.",
+          name: "dati_y",
+          detail: "Parametro `dati_y` della funzione PEARSON.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parametro `data_x` della funzione PEARSON.",
+          name: "dati_x",
+          detail: "Parametro `dati_x` della funzione PEARSON.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2664,8 +2664,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parametro `cumulative` della funzione NORM_S_DIST.",
+          name: "cumulativo",
+          detail: "Parametro `cumulativo` della funzione NORM_S_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2692,16 +2692,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parametro `mean` della funzione NORM_INV.",
+          name: "media",
+          detail: "Parametro `media` della funzione NORM_INV.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parametro `standard_deviation` della funzione NORM_INV.",
+          name: "deviazione_standard",
+          detail: "Parametro `deviazione_standard` della funzione NORM_INV.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2728,24 +2728,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parametro `mean` della funzione NORM_DIST.",
+          name: "media",
+          detail: "Parametro `media` della funzione NORM_DIST.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parametro `standard_deviation` della funzione NORM_DIST.",
+          name: "deviazione_standard",
+          detail: "Parametro `deviazione_standard` della funzione NORM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parametro `cumulative` della funzione NORM_DIST.",
+          name: "cumulativo",
+          detail: "Parametro `cumulativo` della funzione NORM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2764,32 +2764,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_failures",
-          detail: "Parametro `num_failures` della funzione NEGBINOM_DIST.",
+          name: "numero_insuccessi",
+          detail: "Parametro `numero_insuccessi` della funzione NEGBINOM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "num_successes",
-          detail: "Parametro `num_successes` della funzione NEGBINOM_DIST.",
+          name: "numero_successi",
+          detail: "Parametro `numero_successi` della funzione NEGBINOM_DIST.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "prob_success",
-          detail: "Parametro `prob_success` della funzione NEGBINOM_DIST.",
+          name: "probabilità_successo",
+          detail: "Parametro `probabilità_successo` della funzione NEGBINOM_DIST.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parametro `cumulative` della funzione NEGBINOM_DIST.",
+          name: "cumulativo",
+          detail: "Parametro `cumulativo` della funzione NEGBINOM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2808,16 +2808,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione MINA.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione MINA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione MINA.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione MINA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2836,16 +2836,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione MIN.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione MIN.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione MIN.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione MIN.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2864,16 +2864,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione MEDIAN.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione MEDIAN.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione MEDIAN.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione MEDIAN.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2892,16 +2892,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione MAXA.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione MAXA.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione MAXA.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione MAXA.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2920,16 +2920,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione MAX.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione MAX.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione MAX.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione MAX.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2956,16 +2956,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parametro `mean` della funzione LOGNORM_INV.",
+          name: "media",
+          detail: "Parametro `media` della funzione LOGNORM_INV.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parametro `standard_deviation` della funzione LOGNORM_INV.",
+          name: "deviazione_standard",
+          detail: "Parametro `deviazione_standard` della funzione LOGNORM_INV.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -2992,24 +2992,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parametro `mean` della funzione LOGNORM_DIST.",
+          name: "media",
+          detail: "Parametro `media` della funzione LOGNORM_DIST.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parametro `standard_deviation` della funzione LOGNORM_DIST.",
+          name: "deviazione_standard",
+          detail: "Parametro `deviazione_standard` della funzione LOGNORM_DIST.",
           example: "6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parametro `cumulative` della funzione LOGNORM_DIST.",
+          name: "cumulativo",
+          detail: "Parametro `cumulativo` della funzione LOGNORM_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3028,24 +3028,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione Z_TEST.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione Z_TEST.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "value",
-          detail: "Parametro `value` della funzione Z_TEST.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione Z_TEST.",
           example: "B2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parametro `standard_deviation` della funzione Z_TEST.",
+          name: "deviazione_standard",
+          detail: "Parametro `deviazione_standard` della funzione Z_TEST.",
           example: "3",
           require: "o",
           repeat: "n",
@@ -3064,32 +3064,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione PROB.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione PROB.",
           example: "A3:A6",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "probabilities",
-          detail: "Parametro `probabilities` della funzione PROB.",
+          name: "probabilità",
+          detail: "Parametro `probabilità` della funzione PROB.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "low_limit",
-          detail: "Parametro `low_limit` della funzione PROB.",
+          name: "limite_inferiore",
+          detail: "Parametro `limite_inferiore` della funzione PROB.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "high_limit",
-          detail: "Parametro `high_limit` della funzione PROB.",
+          name: "limite_superiore",
+          detail: "Parametro `limite_superiore` della funzione PROB.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -3108,16 +3108,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione QUARTILE_EXC.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione QUARTILE_EXC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
-          detail: "Parametro `quartile_number` della funzione QUARTILE_EXC.",
+          name: "numero_quartile",
+          detail: "Parametro `numero_quartile` della funzione QUARTILE_EXC.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3136,16 +3136,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione QUARTILE_INC.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione QUARTILE_INC.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
-          detail: "Parametro `quartile_number` della funzione QUARTILE_INC.",
+          name: "numero_quartile",
+          detail: "Parametro `numero_quartile` della funzione QUARTILE_INC.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3172,16 +3172,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parametro `mean` della funzione POISSON_DIST.",
+          name: "media",
+          detail: "Parametro `media` della funzione POISSON_DIST.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parametro `cumulative` della funzione POISSON_DIST.",
+          name: "cumulativo",
+          detail: "Parametro `cumulativo` della funzione POISSON_DIST.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3200,16 +3200,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parametro `data_y` della funzione RSQ.",
+          name: "dati_y",
+          detail: "Parametro `dati_y` della funzione RSQ.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parametro `data_x` della funzione RSQ.",
+          name: "dati_x",
+          detail: "Parametro `dati_x` della funzione RSQ.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3236,16 +3236,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Parametro `degrees_freedom` della funzione T_DIST.",
+          name: "gradi_libertà",
+          detail: "Parametro `gradi_libertà` della funzione T_DIST.",
           example: "30",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parametro `cumulative` della funzione T_DIST.",
+          name: "cumulativo",
+          detail: "Parametro `cumulativo` della funzione T_DIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3272,8 +3272,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Parametro `degrees_freedom` della funzione T_DIST_2T.",
+          name: "gradi_libertà",
+          detail: "Parametro `gradi_libertà` della funzione T_DIST_2T.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3300,8 +3300,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Parametro `degrees_freedom` della funzione T_DIST_RT.",
+          name: "gradi_libertà",
+          detail: "Parametro `gradi_libertà` della funzione T_DIST_RT.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3320,16 +3320,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
-          detail: "Parametro `probability` della funzione T_INV.",
+          name: "probabilità",
+          detail: "Parametro `probabilità` della funzione T_INV.",
           example: "0.35",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Parametro `degrees_freedom` della funzione T_INV.",
+          name: "gradi_libertà",
+          detail: "Parametro `gradi_libertà` della funzione T_INV.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3348,16 +3348,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
-          detail: "Parametro `probability` della funzione T_INV_2T.",
+          name: "probabilità",
+          detail: "Parametro `probabilità` della funzione T_INV_2T.",
           example: "0.35",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
-          detail: "Parametro `degrees_freedom` della funzione T_INV_2T.",
+          name: "gradi_libertà",
+          detail: "Parametro `gradi_libertà` della funzione T_INV_2T.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3376,32 +3376,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "range1",
-          detail: "Parametro `range1` della funzione T_TEST.",
+          name: "intervallo1",
+          detail: "Parametro `intervallo1` della funzione T_TEST.",
           example: "A1:A4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "range2",
-          detail: "Parametro `range2` della funzione T_TEST.",
+          name: "intervallo2",
+          detail: "Parametro `intervallo2` della funzione T_TEST.",
           example: "B1:B4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "tails",
-          detail: "Parametro `tails` della funzione T_TEST.",
+          name: "code",
+          detail: "Parametro `code` della funzione T_TEST.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "type",
-          detail: "Parametro `type` della funzione T_TEST.",
+          name: "tipo",
+          detail: "Parametro `tipo` della funzione T_TEST.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3428,24 +3428,24 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
-          detail: "Parametro `degrees_freedom1` della funzione F_DIST.",
+          name: "gradi_libertà1",
+          detail: "Parametro `gradi_libertà1` della funzione F_DIST.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
-          detail: "Parametro `degrees_freedom2` della funzione F_DIST.",
+          name: "gradi_libertà2",
+          detail: "Parametro `gradi_libertà2` della funzione F_DIST.",
           example: "6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cumulative",
-          detail: "Parametro `cumulative` della funzione F_DIST.",
+          name: "cumulativo",
+          detail: "Parametro `cumulativo` della funzione F_DIST.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3472,16 +3472,16 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
-          detail: "Parametro `degrees_freedom1` della funzione F_DIST_RT.",
+          name: "gradi_libertà1",
+          detail: "Parametro `gradi_libertà1` della funzione F_DIST_RT.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
-          detail: "Parametro `degrees_freedom2` della funzione F_DIST_RT.",
+          name: "gradi_libertà2",
+          detail: "Parametro `gradi_libertà2` della funzione F_DIST_RT.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3500,16 +3500,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione VAR_P.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione VAR_P.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione VAR_P.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione VAR_P.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3528,16 +3528,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione VAR_S.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione VAR_S.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione VAR_S.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione VAR_S.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3556,16 +3556,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione VARA.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione VARA.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione VARA.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione VARA.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3584,16 +3584,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione VARPA.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione VARPA.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione VARPA.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione VARPA.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3612,16 +3612,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parametro `data_y` della funzione STEYX.",
+          name: "dati_y",
+          detail: "Parametro `dati_y` della funzione STEYX.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parametro `data_x` della funzione STEYX.",
+          name: "dati_x",
+          detail: "Parametro `dati_x` della funzione STEYX.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3640,24 +3640,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione STANDARDIZE.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione STANDARDIZE.",
           example: "96",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "mean",
-          detail: "Parametro `mean` della funzione STANDARDIZE.",
+          name: "media",
+          detail: "Parametro `media` della funzione STANDARDIZE.",
           example: "80",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
-          detail: "Parametro `standard_deviation` della funzione STANDARDIZE.",
+          name: "deviazione_standard",
+          detail: "Parametro `deviazione_standard` della funzione STANDARDIZE.",
           example: "6.7",
           require: "m",
           repeat: "n",
@@ -3676,8 +3676,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione SMALL.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione SMALL.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -3704,16 +3704,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
-          detail: "Parametro `data_y` della funzione SLOPE.",
+          name: "dati_y",
+          detail: "Parametro `dati_y` della funzione SLOPE.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "data_x",
-          detail: "Parametro `data_x` della funzione SLOPE.",
+          name: "dati_x",
+          detail: "Parametro `dati_x` della funzione SLOPE.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3732,16 +3732,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione SKEW.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione SKEW.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione SKEW.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione SKEW.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3760,16 +3760,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione SKEW_P.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione SKEW_P.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione SKEW_P.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione SKEW_P.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3788,32 +3788,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Parametro `search_key` della funzione VLOOKUP.",
+          name: "chiave_ricerca",
+          detail: "Parametro `chiave_ricerca` della funzione VLOOKUP.",
           example: "10003",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Parametro `range` della funzione VLOOKUP.",
+          name: "intervallo",
+          detail: "Parametro `intervallo` della funzione VLOOKUP.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "index",
-          detail: "Parametro `index` della funzione VLOOKUP.",
+          name: "indice",
+          detail: "Parametro `indice` della funzione VLOOKUP.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
-          detail: "Parametro `is_sorted` della funzione VLOOKUP.",
+          name: "è_ordinato",
+          detail: "Parametro `è_ordinato` della funzione VLOOKUP.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3832,32 +3832,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Parametro `search_key` della funzione HLOOKUP.",
+          name: "chiave_ricerca",
+          detail: "Parametro `chiave_ricerca` della funzione HLOOKUP.",
           example: "10003",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Parametro `range` della funzione HLOOKUP.",
+          name: "intervallo",
+          detail: "Parametro `intervallo` della funzione HLOOKUP.",
           example: "A2:Z6",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "index",
-          detail: "Parametro `index` della funzione HLOOKUP.",
+          name: "indice",
+          detail: "Parametro `indice` della funzione HLOOKUP.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
-          detail: "Parametro `is_sorted` della funzione HLOOKUP.",
+          name: "è_ordinato",
+          detail: "Parametro `è_ordinato` della funzione HLOOKUP.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3876,15 +3876,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Parametro `search_key` della funzione LOOKUP.",
+          name: "chiave_ricerca",
+          detail: "Parametro `chiave_ricerca` della funzione LOOKUP.",
           example: "10003",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "search_range|search_result_array",
+          name: "intervallo_ricerca|matrice_risultato_ricerca",
           detail: "Parametro `search_range|search_result_array` della funzione LOOKUP.",
           example: "A1:A100",
           require: "m",
@@ -3892,8 +3892,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "result_range",
-          detail: "Parametro `result_range` della funzione LOOKUP.",
+          name: "intervallo_risultato",
+          detail: "Parametro `intervallo_risultato` della funzione LOOKUP.",
           example: "B1:B100",
           require: "o",
           repeat: "n",
@@ -3912,40 +3912,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "row",
-          detail: "Parametro `row` della funzione ADDRESS.",
+          name: "riga",
+          detail: "Parametro `riga` della funzione ADDRESS.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "column",
-          detail: "Parametro `column` della funzione ADDRESS.",
+          name: "colonna",
+          detail: "Parametro `colonna` della funzione ADDRESS.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "absolute_relative_mode",
-          detail: "Parametro `absolute_relative_mode` della funzione ADDRESS.",
+          name: "modo_relativo_assoluto",
+          detail: "Parametro `modo_relativo_assoluto` della funzione ADDRESS.",
           example: "4",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "use_a1_notation",
-          detail: "Parametro `use_a1_notation` della funzione ADDRESS.",
+          name: "usare_notazione_a1",
+          detail: "Parametro `usare_notazione_a1` della funzione ADDRESS.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "sheet",
-          detail: "Parametro `sheet` della funzione ADDRESS.",
+          name: "foglio",
+          detail: "Parametro `foglio` della funzione ADDRESS.",
           example: "\"Sheet2\"",
           require: "o",
           repeat: "n",
@@ -3964,16 +3964,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference_as_string",
-          detail: "Parametro `cell_reference_as_string` della funzione INDIRECT.",
+          name: "riferimento_cella_come_stringa",
+          detail: "Parametro `riferimento_cella_come_stringa` della funzione INDIRECT.",
           example: "\"Sheet2!\"&B10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "is_A1_notation",
-          detail: "Parametro `is_A1_notation` della funzione INDIRECT.",
+          name: "è_notazione_a1",
+          detail: "Parametro `è_notazione_a1` della funzione INDIRECT.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3992,8 +3992,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
-          detail: "Parametro `cell_reference` della funzione ROW.",
+          name: "riferimento_cella",
+          detail: "Parametro `riferimento_cella` della funzione ROW.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4012,8 +4012,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parametro `range` della funzione ROWS.",
+          name: "intervallo",
+          detail: "Parametro `intervallo` della funzione ROWS.",
           example: "A9:A62",
           require: "m",
           repeat: "n",
@@ -4032,8 +4032,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
-          detail: "Parametro `cell_reference` della funzione COLUMN.",
+          name: "riferimento_cella",
+          detail: "Parametro `riferimento_cella` della funzione COLUMN.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4052,8 +4052,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parametro `range` della funzione COLUMNS.",
+          name: "intervallo",
+          detail: "Parametro `intervallo` della funzione COLUMNS.",
           example: "A9:W62",
           require: "m",
           repeat: "n",
@@ -4072,40 +4072,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
-          detail: "Parametro `cell_reference` della funzione OFFSET.",
+          name: "riferimento_cella",
+          detail: "Parametro `riferimento_cella` della funzione OFFSET.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "offset_rows",
-          detail: "Parametro `offset_rows` della funzione OFFSET.",
+          name: "righe_spostamento",
+          detail: "Parametro `righe_spostamento` della funzione OFFSET.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "offset_columns",
-          detail: "Parametro `offset_columns` della funzione OFFSET.",
+          name: "colonne_spostamento",
+          detail: "Parametro `colonne_spostamento` della funzione OFFSET.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "height",
-          detail: "Parametro `height` della funzione OFFSET.",
+          name: "altezza",
+          detail: "Parametro `altezza` della funzione OFFSET.",
           example: "2",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "width",
-          detail: "Parametro `width` della funzione OFFSET.",
+          name: "larghezza",
+          detail: "Parametro `larghezza` della funzione OFFSET.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -4124,24 +4124,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
-          detail: "Parametro `search_key` della funzione MATCH.",
+          name: "chiave_ricerca",
+          detail: "Parametro `chiave_ricerca` della funzione MATCH.",
           example: "\"Sunday\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Parametro `range` della funzione MATCH.",
+          name: "intervallo",
+          detail: "Parametro `intervallo` della funzione MATCH.",
           example: "A2:A9",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "search_type",
-          detail: "Parametro `search_type` della funzione MATCH.",
+          name: "tipo_ricerca",
+          detail: "Parametro `tipo_ricerca` della funzione MATCH.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -4160,24 +4160,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
-          detail: "Parametro `reference` della funzione INDEX.",
+          name: "riferimento",
+          detail: "Parametro `riferimento` della funzione INDEX.",
           example: "A1:C20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "row",
-          detail: "Parametro `row` della funzione INDEX.",
+          name: "riga",
+          detail: "Parametro `riga` della funzione INDEX.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "column",
-          detail: "Parametro `column` della funzione INDEX.",
+          name: "colonna",
+          detail: "Parametro `colonna` della funzione INDEX.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -4196,32 +4196,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "value_name",
-          detail: "Parametro `value_name` della funzione GETPIVOTDATA.",
+          name: "nome_valore",
+          detail: "Parametro `nome_valore` della funzione GETPIVOTDATA.",
           example: "\"SUM of number of units\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "any_pivot_table_cell",
-          detail: "Parametro `any_pivot_table_cell` della funzione GETPIVOTDATA.",
+          name: "cella_tabella_pivot",
+          detail: "Parametro `cella_tabella_pivot` della funzione GETPIVOTDATA.",
           example: "'Pivot table'!A1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "original_column",
-          detail: "Parametro `original_column` della funzione GETPIVOTDATA.",
+          name: "colonna_originale",
+          detail: "Parametro `colonna_originale` della funzione GETPIVOTDATA.",
           example: "\"division\"",
           require: "o",
           repeat: "y",
           type: "rangeall"
         },
         {
-          name: "pivot_item",
-          detail: "Parametro `pivot_item` della funzione GETPIVOTDATA.",
+          name: "elemento_tabella_pivot",
+          detail: "Parametro `elemento_tabella_pivot` della funzione GETPIVOTDATA.",
           example: "\"east\"",
           require: "o",
           repeat: "y",
@@ -4240,24 +4240,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "index",
-          detail: "Parametro `index` della funzione CHOOSE.",
+          name: "indice",
+          detail: "Parametro `indice` della funzione CHOOSE.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "choice1",
-          detail: "Parametro `choice1` della funzione CHOOSE.",
+          name: "scelta1",
+          detail: "Parametro `scelta1` della funzione CHOOSE.",
           example: "\"A\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "choice2",
-          detail: "Parametro `choice2` della funzione CHOOSE.",
+          name: "scelta2",
+          detail: "Parametro `scelta2` della funzione CHOOSE.",
           example: "\"B\"",
           require: "o",
           repeat: "y",
@@ -4280,8 +4280,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "link_label",
-          detail: "Parametro `link_label` della funzione HYPERLINK.",
+          name: "etichetta_link",
+          detail: "Parametro `etichetta_link` della funzione HYPERLINK.",
           example: "\"luckysheet\"",
           require: "m",
           repeat: "n",
@@ -4300,24 +4300,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "hour",
-          detail: "Parametro `hour` della funzione TIME.",
+          name: "ora",
+          detail: "Parametro `ora` della funzione TIME.",
           example: "11",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "minute",
-          detail: "Parametro `minute` della funzione TIME.",
+          name: "minuto",
+          detail: "Parametro `minuto` della funzione TIME.",
           example: "40",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "second",
-          detail: "Parametro `second` della funzione TIME.",
+          name: "secondo",
+          detail: "Parametro `secondo` della funzione TIME.",
           example: "59",
           require: "m",
           repeat: "n",
@@ -4336,8 +4336,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time_string",
-          detail: "Parametro `time_string` della funzione TIMEVALUE.",
+          name: "stringa_ora",
+          detail: "Parametro `stringa_ora` della funzione TIMEVALUE.",
           example: "\"2:15 PM\"",
           require: "m",
           repeat: "n",
@@ -4356,16 +4356,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parametro `start_date` della funzione EOMONTH.",
+          name: "data_inizio",
+          detail: "Parametro `data_inizio` della funzione EOMONTH.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "months",
-          detail: "Parametro `months` della funzione EOMONTH.",
+          name: "numero_mesi",
+          detail: "Parametro `numero_mesi` della funzione EOMONTH.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4384,16 +4384,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parametro `start_date` della funzione EDATE.",
+          name: "data_inizio",
+          detail: "Parametro `data_inizio` della funzione EDATE.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "months",
-          detail: "Parametro `months` della funzione EDATE.",
+          name: "numero_mesi",
+          detail: "Parametro `numero_mesi` della funzione EDATE.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4412,8 +4412,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
-          detail: "Parametro `time` della funzione SECOND.",
+          name: "ora",
+          detail: "Parametro `ora` della funzione SECOND.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4432,8 +4432,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
-          detail: "Parametro `time` della funzione MINUTE.",
+          name: "ora",
+          detail: "Parametro `ora` della funzione MINUTE.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4452,8 +4452,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
-          detail: "Parametro `time` della funzione HOUR.",
+          name: "ora",
+          detail: "Parametro `ora` della funzione HOUR.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4483,24 +4483,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parametro `start_date` della funzione NETWORKDAYS.",
+          name: "data_inizio",
+          detail: "Parametro `data_inizio` della funzione NETWORKDAYS.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Parametro `end_date` della funzione NETWORKDAYS.",
+          name: "data_fine",
+          detail: "Parametro `data_fine` della funzione NETWORKDAYS.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "holidays",
-          detail: "Parametro `holidays` della funzione NETWORKDAYS.",
+          name: "giorni_festivi",
+          detail: "Parametro `giorni_festivi` della funzione NETWORKDAYS.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4519,32 +4519,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parametro `start_date` della funzione NETWORKDAYS_INTL.",
+          name: "data_inizio",
+          detail: "Parametro `data_inizio` della funzione NETWORKDAYS_INTL.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Parametro `end_date` della funzione NETWORKDAYS_INTL.",
+          name: "data_fine",
+          detail: "Parametro `data_fine` della funzione NETWORKDAYS_INTL.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "weekend",
-          detail: "Parametro `weekend` della funzione NETWORKDAYS_INTL.",
+          name: "fine_settimana",
+          detail: "Parametro `fine_settimana` della funzione NETWORKDAYS_INTL.",
           example: "16)",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "holidays",
-          detail: "Parametro `holidays` della funzione NETWORKDAYS_INTL.",
+          name: "giorni_festivi",
+          detail: "Parametro `giorni_festivi` della funzione NETWORKDAYS_INTL.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4563,8 +4563,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parametro `date` della funzione ISOWEEKNUM.",
+          name: "data",
+          detail: "Parametro `data` della funzione ISOWEEKNUM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4583,16 +4583,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parametro `date` della funzione WEEKNUM.",
+          name: "data",
+          detail: "Parametro `data` della funzione WEEKNUM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "type",
-          detail: "Parametro `type` della funzione WEEKNUM.",
+          name: "tipo",
+          detail: "Parametro `tipo` della funzione WEEKNUM.",
           example: "7",
           require: "o",
           repeat: "n",
@@ -4611,16 +4611,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parametro `date` della funzione WEEKDAY.",
+          name: "data",
+          detail: "Parametro `data` della funzione WEEKDAY.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "type",
-          detail: "Parametro `type` della funzione WEEKDAY.",
+          name: "tipo",
+          detail: "Parametro `tipo` della funzione WEEKDAY.",
           example: "7",
           require: "o",
           repeat: "n",
@@ -4639,8 +4639,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parametro `date` della funzione DAY.",
+          name: "data",
+          detail: "Parametro `data` della funzione DAY.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4659,16 +4659,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "end_date",
-          detail: "Parametro `end_date` della funzione DAYS.",
+          name: "data_fine",
+          detail: "Parametro `data_fine` della funzione DAYS.",
           example: "2011-3-15",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "start_date",
-          detail: "Parametro `start_date` della funzione DAYS.",
+          name: "data_inizio",
+          detail: "Parametro `data_inizio` della funzione DAYS.",
           example: "2011-2-1",
           require: "m",
           repeat: "n",
@@ -4687,24 +4687,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parametro `start_date` della funzione DAYS360.",
+          name: "data_inizio",
+          detail: "Parametro `data_inizio` della funzione DAYS360.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Parametro `end_date` della funzione DAYS360.",
+          name: "data_fine",
+          detail: "Parametro `data_fine` della funzione DAYS360.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "method",
-          detail: "Parametro `method` della funzione DAYS360.",
+          name: "metodo",
+          detail: "Parametro `metodo` della funzione DAYS360.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -4723,24 +4723,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "year",
-          detail: "Parametro `year` della funzione DATE.",
+          name: "anno",
+          detail: "Parametro `anno` della funzione DATE.",
           example: "1969",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "month",
-          detail: "Parametro `month` della funzione DATE.",
+          name: "mese",
+          detail: "Parametro `mese` della funzione DATE.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day",
-          detail: "Parametro `day` della funzione DATE.",
+          name: "giorno",
+          detail: "Parametro `giorno` della funzione DATE.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -4759,8 +4759,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date_string",
-          detail: "Parametro `date_string` della funzione DATEVALUE.",
+          name: "stringa_data",
+          detail: "Parametro `stringa_data` della funzione DATEVALUE.",
           example: "\"1969-7-20\"",
           require: "m",
           repeat: "n",
@@ -4779,24 +4779,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parametro `start_date` della funzione DATEDIF.",
+          name: "data_inizio",
+          detail: "Parametro `data_inizio` della funzione DATEDIF.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Parametro `end_date` della funzione DATEDIF.",
+          name: "data_fine",
+          detail: "Parametro `data_fine` della funzione DATEDIF.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "unit",
-          detail: "Parametro `unit` della funzione DATEDIF.",
+          name: "unità",
+          detail: "Parametro `unità` della funzione DATEDIF.",
           example: "16)",
           require: "m",
           repeat: "n",
@@ -4815,24 +4815,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parametro `start_date` della funzione WORKDAY.",
+          name: "data_inizio",
+          detail: "Parametro `data_inizio` della funzione WORKDAY.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "num_days",
-          detail: "Parametro `num_days` della funzione WORKDAY.",
+          name: "numero_giorni",
+          detail: "Parametro `numero_giorni` della funzione WORKDAY.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "holidays",
-          detail: "Parametro `holidays` della funzione WORKDAY.",
+          name: "giorni_festivi",
+          detail: "Parametro `giorni_festivi` della funzione WORKDAY.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4851,32 +4851,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parametro `start_date` della funzione WORKDAY_INTL.",
+          name: "data_inizio",
+          detail: "Parametro `data_inizio` della funzione WORKDAY_INTL.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "num_days",
-          detail: "Parametro `num_days` della funzione WORKDAY_INTL.",
+          name: "numero_giorni",
+          detail: "Parametro `numero_giorni` della funzione WORKDAY_INTL.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "weekend",
-          detail: "Parametro `weekend` della funzione WORKDAY_INTL.",
+          name: "fine_settimana",
+          detail: "Parametro `fine_settimana` della funzione WORKDAY_INTL.",
           example: "16)",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "holidays",
-          detail: "Parametro `holidays` della funzione WORKDAY_INTL.",
+          name: "giorni_festivi",
+          detail: "Parametro `giorni_festivi` della funzione WORKDAY_INTL.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4895,8 +4895,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parametro `date` della funzione YEAR.",
+          name: "data",
+          detail: "Parametro `data` della funzione YEAR.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4915,24 +4915,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
-          detail: "Parametro `start_date` della funzione YEARFRAC.",
+          name: "data_inizio",
+          detail: "Parametro `data_inizio` della funzione YEARFRAC.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_date",
-          detail: "Parametro `end_date` della funzione YEARFRAC.",
+          name: "data_fine",
+          detail: "Parametro `data_fine` della funzione YEARFRAC.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione YEARFRAC.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione YEARFRAC.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4962,8 +4962,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
-          detail: "Parametro `date` della funzione MONTH.",
+          name: "data",
+          detail: "Parametro `data` della funzione MONTH.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4982,16 +4982,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "nominal_rate",
-          detail: "Parametro `nominal_rate` della funzione EFFECT.",
+          name: "tasso_nominale",
+          detail: "Parametro `tasso_nominale` della funzione EFFECT.",
           example: "0.99",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
-          detail: "Parametro `periods_per_year` della funzione EFFECT.",
+          name: "periodi_per_anno",
+          detail: "Parametro `periodi_per_anno` della funzione EFFECT.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5010,16 +5010,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parametro `number` della funzione DOLLAR.",
+          name: "numero",
+          detail: "Parametro `numero` della funzione DOLLAR.",
           example: "1.2351",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
-          detail: "Parametro `number_of_places` della funzione DOLLAR.",
+          name: "numero_decimali",
+          detail: "Parametro `numero_decimali` della funzione DOLLAR.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -5038,16 +5038,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "fractional_price",
-          detail: "Parametro `fractional_price` della funzione DOLLARDE.",
+          name: "prezzo_frazionario",
+          detail: "Parametro `prezzo_frazionario` della funzione DOLLARDE.",
           example: "100.10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "unit",
-          detail: "Parametro `unit` della funzione DOLLARDE.",
+          name: "unità",
+          detail: "Parametro `unità` della funzione DOLLARDE.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5066,16 +5066,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_price",
-          detail: "Parametro `decimal_price` della funzione DOLLARFR.",
+          name: "prezzo_decimale",
+          detail: "Parametro `prezzo_decimale` della funzione DOLLARFR.",
           example: "100.125",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "unit",
-          detail: "Parametro `unit` della funzione DOLLARFR.",
+          name: "unità",
+          detail: "Parametro `unità` della funzione DOLLARFR.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5094,40 +5094,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Parametro `cost` della funzione DB.",
+          name: "costo",
+          detail: "Parametro `costo` della funzione DB.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Parametro `salvage` della funzione DB.",
+          name: "valore_residuo",
+          detail: "Parametro `valore_residuo` della funzione DB.",
           example: "50",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Parametro `life` della funzione DB.",
+          name: "vita_utile",
+          detail: "Parametro `vita_utile` della funzione DB.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Parametro `period` della funzione DB.",
+          name: "periodo",
+          detail: "Parametro `periodo` della funzione DB.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "month",
-          detail: "Parametro `month` della funzione DB.",
+          name: "mese",
+          detail: "Parametro `mese` della funzione DB.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5146,40 +5146,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Parametro `cost` della funzione DDB.",
+          name: "costo",
+          detail: "Parametro `costo` della funzione DDB.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Parametro `salvage` della funzione DDB.",
+          name: "valore_residuo",
+          detail: "Parametro `valore_residuo` della funzione DDB.",
           example: "50",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Parametro `life` della funzione DDB.",
+          name: "vita_utile",
+          detail: "Parametro `vita_utile` della funzione DDB.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Parametro `period` della funzione DDB.",
+          name: "periodo",
+          detail: "Parametro `periodo` della funzione DDB.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor",
-          detail: "Parametro `factor` della funzione DDB.",
+          name: "fattore",
+          detail: "Parametro `fattore` della funzione DDB.",
           example: "2.25",
           require: "m",
           repeat: "n",
@@ -5198,48 +5198,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "number_of_periods",
-          detail: "Parametro `number_of_periods` della funzione RATE.",
+          name: "numero_periodi",
+          detail: "Parametro `numero_periodi` della funzione RATE.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_per_period",
-          detail: "Parametro `payment_per_period` della funzione RATE.",
+          name: "pagamento_per_periodo",
+          detail: "Parametro `pagamento_per_periodo` della funzione RATE.",
           example: "-100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parametro `present_value` della funzione RATE.",
+          name: "valore_attuale",
+          detail: "Parametro `valore_attuale` della funzione RATE.",
           example: "400",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parametro `future_value` della funzione RATE.",
+          name: "valore_futuro",
+          detail: "Parametro `valore_futuro` della funzione RATE.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parametro `end_or_beginning` della funzione RATE.",
+          name: "fine_o_inizio",
+          detail: "Parametro `fine_o_inizio` della funzione RATE.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "rate_guess",
-          detail: "Parametro `rate_guess` della funzione RATE.",
+          name: "stima_tasso",
+          detail: "Parametro `stima_tasso` della funzione RATE.",
           example: "0.1",
           require: "o",
           repeat: "n",
@@ -5258,48 +5258,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione CUMPRINC.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione CUMPRINC.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parametro `number_of_periods` della funzione CUMPRINC.",
+          name: "numero_periodi",
+          detail: "Parametro `numero_periodi` della funzione CUMPRINC.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parametro `present_value` della funzione CUMPRINC.",
+          name: "valore_attuale",
+          detail: "Parametro `valore_attuale` della funzione CUMPRINC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "first_period",
-          detail: "Parametro `first_period` della funzione CUMPRINC.",
+          name: "primo_periodo",
+          detail: "Parametro `primo_periodo` della funzione CUMPRINC.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "last_period",
-          detail: "Parametro `last_period` della funzione CUMPRINC.",
+          name: "ultimo_periodo",
+          detail: "Parametro `ultimo_periodo` della funzione CUMPRINC.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parametro `end_or_beginning` della funzione CUMPRINC.",
+          name: "fine_o_inizio",
+          detail: "Parametro `fine_o_inizio` della funzione CUMPRINC.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -5318,32 +5318,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione COUPNUM.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione COUPNUM.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione COUPNUM.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione COUPNUM.",
           example: "02",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parametro `frequency` della funzione COUPNUM.",
+          name: "frequenza",
+          detail: "Parametro `frequenza` della funzione COUPNUM.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione COUPNUM.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione COUPNUM.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5362,32 +5362,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Parametro `cost` della funzione SYD.",
+          name: "costo",
+          detail: "Parametro `costo` della funzione SYD.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Parametro `salvage` della funzione SYD.",
+          name: "valore_residuo",
+          detail: "Parametro `valore_residuo` della funzione SYD.",
           example: "50",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Parametro `life` della funzione SYD.",
+          name: "vita_utile",
+          detail: "Parametro `vita_utile` della funzione SYD.",
           example: "10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Parametro `period` della funzione SYD.",
+          name: "periodo",
+          detail: "Parametro `periodo` della funzione SYD.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5406,24 +5406,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione TBILLEQ.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione TBILLEQ.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione TBILLEQ.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione TBILLEQ.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "discount",
-          detail: "Parametro `discount` della funzione TBILLEQ.",
+          name: "tasso_sconto",
+          detail: "Parametro `tasso_sconto` della funzione TBILLEQ.",
           example: "2)",
           require: "m",
           repeat: "n",
@@ -5442,24 +5442,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione TBILLYIELD.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione TBILLYIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione TBILLYIELD.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione TBILLYIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "price",
-          detail: "Parametro `price` della funzione TBILLYIELD.",
+          name: "prezzo",
+          detail: "Parametro `prezzo` della funzione TBILLYIELD.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -5478,24 +5478,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione TBILLPRICE.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione TBILLPRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione TBILLPRICE.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione TBILLPRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "discount",
-          detail: "Parametro `discount` della funzione TBILLPRICE.",
+          name: "tasso_sconto",
+          detail: "Parametro `tasso_sconto` della funzione TBILLPRICE.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -5514,40 +5514,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione PV.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione PV.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parametro `number_of_periods` della funzione PV.",
+          name: "numero_periodi",
+          detail: "Parametro `numero_periodi` della funzione PV.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
-          detail: "Parametro `payment_amount` della funzione PV.",
+          name: "importo_pagamento",
+          detail: "Parametro `importo_pagamento` della funzione PV.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parametro `future_value` della funzione PV.",
+          name: "valore_futuro",
+          detail: "Parametro `valore_futuro` della funzione PV.",
           example: "D2",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parametro `end_or_beginning` della funzione PV.",
+          name: "fine_o_inizio",
+          detail: "Parametro `fine_o_inizio` della funzione PV.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -5566,64 +5566,64 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
-          detail: "Parametro `issue` della funzione ACCRINT.",
+          name: "data_emissione",
+          detail: "Parametro `data_emissione` della funzione ACCRINT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "first_payment",
-          detail: "Parametro `first_payment` della funzione ACCRINT.",
+          name: "primo_pagamento",
+          detail: "Parametro `primo_pagamento` della funzione ACCRINT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione ACCRINT.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione ACCRINT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione ACCRINT.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione ACCRINT.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parametro `redemption` della funzione ACCRINT.",
+          name: "valore_rimborso",
+          detail: "Parametro `valore_rimborso` della funzione ACCRINT.",
           example: "10000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Parametro `frequency` della funzione ACCRINT.",
+          name: "frequenza",
+          detail: "Parametro `frequenza` della funzione ACCRINT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione ACCRINT.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione ACCRINT.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "calc_method",
-          detail: "Parametro `calc_method` della funzione ACCRINT.",
+          name: "metodo_calcolo",
+          detail: "Parametro `metodo_calcolo` della funzione ACCRINT.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -5642,40 +5642,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
-          detail: "Parametro `issue` della funzione ACCRINTM.",
+          name: "data_emissione",
+          detail: "Parametro `data_emissione` della funzione ACCRINTM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione ACCRINTM.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione ACCRINTM.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione ACCRINTM.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione ACCRINTM.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parametro `redemption` della funzione ACCRINTM.",
+          name: "valore_rimborso",
+          detail: "Parametro `valore_rimborso` della funzione ACCRINTM.",
           example: "1000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione ACCRINTM.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione ACCRINTM.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5694,32 +5694,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione COUPDAYBS.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione COUPDAYBS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione COUPDAYBS.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione COUPDAYBS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parametro `frequency` della funzione COUPDAYBS.",
+          name: "frequenza",
+          detail: "Parametro `frequenza` della funzione COUPDAYBS.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione COUPDAYBS.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione COUPDAYBS.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5738,32 +5738,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione COUPDAYS.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione COUPDAYS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione COUPDAYS.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione COUPDAYS.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parametro `frequency` della funzione COUPDAYS.",
+          name: "frequenza",
+          detail: "Parametro `frequenza` della funzione COUPDAYS.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione COUPDAYS.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione COUPDAYS.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5782,32 +5782,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione COUPDAYSNC.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione COUPDAYSNC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione COUPDAYSNC.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione COUPDAYSNC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parametro `frequency` della funzione COUPDAYSNC.",
+          name: "frequenza",
+          detail: "Parametro `frequenza` della funzione COUPDAYSNC.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione COUPDAYSNC.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione COUPDAYSNC.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5826,32 +5826,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione COUPNCD.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione COUPNCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione COUPNCD.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione COUPNCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parametro `frequency` della funzione COUPNCD.",
+          name: "frequenza",
+          detail: "Parametro `frequenza` della funzione COUPNCD.",
           example: "01)",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione COUPNCD.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione COUPNCD.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5870,32 +5870,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione COUPPCD.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione COUPPCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione COUPPCD.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione COUPPCD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "frequency",
-          detail: "Parametro `frequency` della funzione COUPPCD.",
+          name: "frequenza",
+          detail: "Parametro `frequenza` della funzione COUPPCD.",
           example: "01)",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione COUPPCD.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione COUPPCD.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5914,40 +5914,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione FV.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione FV.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parametro `number_of_periods` della funzione FV.",
+          name: "numero_periodi",
+          detail: "Parametro `numero_periodi` della funzione FV.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
-          detail: "Parametro `payment_amount` della funzione FV.",
+          name: "importo_pagamento",
+          detail: "Parametro `importo_pagamento` della funzione FV.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parametro `present_value` della funzione FV.",
+          name: "valore_attuale",
+          detail: "Parametro `valore_attuale` della funzione FV.",
           example: "400",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parametro `end_or_beginning` della funzione FV.",
+          name: "fine_o_inizio",
+          detail: "Parametro `fine_o_inizio` della funzione FV.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5966,16 +5966,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "principal",
-          detail: "Parametro `principal` della funzione FVSCHEDULE.",
+          name: "capitale",
+          detail: "Parametro `capitale` della funzione FVSCHEDULE.",
           example: "10000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "rate_schedule",
-          detail: "Parametro `rate_schedule` della funzione FVSCHEDULE.",
+          name: "piano_tassi",
+          detail: "Parametro `piano_tassi` della funzione FVSCHEDULE.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -5994,56 +5994,56 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione YIELD.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione YIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione YIELD.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione YIELD.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione YIELD.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione YIELD.",
           example: "0.057",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "price",
-          detail: "Parametro `price` della funzione YIELD.",
+          name: "prezzo",
+          detail: "Parametro `prezzo` della funzione YIELD.",
           example: "95",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parametro `redemption` della funzione YIELD.",
+          name: "valore_rimborso",
+          detail: "Parametro `valore_rimborso` della funzione YIELD.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Parametro `frequency` della funzione YIELD.",
+          name: "frequenza",
+          detail: "Parametro `frequenza` della funzione YIELD.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione YIELD.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione YIELD.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6062,40 +6062,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione YIELDDISC.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione YIELDDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione YIELDDISC.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione YIELDDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "price",
-          detail: "Parametro `price` della funzione YIELDDISC.",
+          name: "prezzo",
+          detail: "Parametro `prezzo` della funzione YIELDDISC.",
           example: "95",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parametro `redemption` della funzione YIELDDISC.",
+          name: "valore_rimborso",
+          detail: "Parametro `valore_rimborso` della funzione YIELDDISC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione YIELDDISC.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione YIELDDISC.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6114,16 +6114,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "effective_rate",
-          detail: "Parametro `effective_rate` della funzione NOMINAL.",
+          name: "tasso_effettivo",
+          detail: "Parametro `tasso_effettivo` della funzione NOMINAL.",
           example: "0.85",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
-          detail: "Parametro `periods_per_year` della funzione NOMINAL.",
+          name: "periodi_per_anno",
+          detail: "Parametro `periodi_per_anno` della funzione NOMINAL.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6142,24 +6142,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
-          detail: "Parametro `cashflow_amounts` della funzione XIRR.",
+          name: "importi_flusso_cassa",
+          detail: "Parametro `importi_flusso_cassa` della funzione XIRR.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "cashflow_dates",
-          detail: "Parametro `cashflow_dates` della funzione XIRR.",
+          name: "date_flusso_cassa",
+          detail: "Parametro `date_flusso_cassa` della funzione XIRR.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "rate_guess",
-          detail: "Parametro `rate_guess` della funzione XIRR.",
+          name: "stima_tasso",
+          detail: "Parametro `stima_tasso` della funzione XIRR.",
           example: "250",
           require: "o",
           repeat: "n",
@@ -6178,24 +6178,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
-          detail: "Parametro `cashflow_amounts` della funzione MIRR.",
+          name: "importi_flusso_cassa",
+          detail: "Parametro `importi_flusso_cassa` della funzione MIRR.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "financing_rate",
-          detail: "Parametro `financing_rate` della funzione MIRR.",
+          name: "tasso_finanziamento",
+          detail: "Parametro `tasso_finanziamento` della funzione MIRR.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "reinvestment_return_rate",
-          detail: "Parametro `reinvestment_return_rate` della funzione MIRR.",
+          name: "tasso_rendimento_reinvestimento",
+          detail: "Parametro `tasso_rendimento_reinvestimento` della funzione MIRR.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6214,16 +6214,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
-          detail: "Parametro `cashflow_amounts` della funzione IRR.",
+          name: "importi_flusso_cassa",
+          detail: "Parametro `importi_flusso_cassa` della funzione IRR.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "rate_guess",
-          detail: "Parametro `rate_guess` della funzione IRR.",
+          name: "stima_tasso",
+          detail: "Parametro `stima_tasso` della funzione IRR.",
           example: "200",
           require: "o",
           repeat: "n",
@@ -6242,24 +6242,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
-          detail: "Parametro `discount` della funzione NPV.",
+          name: "tasso_sconto",
+          detail: "Parametro `tasso_sconto` della funzione NPV.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cashflow1",
-          detail: "Parametro `cashflow1` della funzione NPV.",
+          name: "flusso_cassa1",
+          detail: "Parametro `flusso_cassa1` della funzione NPV.",
           example: "200",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "cashflow2",
-          detail: "Parametro `cashflow2` della funzione NPV.",
+          name: "flusso_cassa2",
+          detail: "Parametro `flusso_cassa2` della funzione NPV.",
           example: "250",
           require: "o",
           repeat: "y",
@@ -6278,24 +6278,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
-          detail: "Parametro `discount` della funzione XNPV.",
+          name: "tasso_sconto",
+          detail: "Parametro `tasso_sconto` della funzione XNPV.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "cashflow_amounts",
-          detail: "Parametro `cashflow_amounts` della funzione XNPV.",
+          name: "importi_flusso_cassa",
+          detail: "Parametro `importi_flusso_cassa` della funzione XNPV.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "cashflow_dates",
-          detail: "Parametro `cashflow_dates` della funzione XNPV.",
+          name: "date_flusso_cassa",
+          detail: "Parametro `date_flusso_cassa` della funzione XNPV.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6314,48 +6314,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione CUMIPMT.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione CUMIPMT.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parametro `number_of_periods` della funzione CUMIPMT.",
+          name: "numero_periodi",
+          detail: "Parametro `numero_periodi` della funzione CUMIPMT.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parametro `present_value` della funzione CUMIPMT.",
+          name: "valore_attuale",
+          detail: "Parametro `valore_attuale` della funzione CUMIPMT.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "first_period",
-          detail: "Parametro `first_period` della funzione CUMIPMT.",
+          name: "primo_periodo",
+          detail: "Parametro `primo_periodo` della funzione CUMIPMT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "last_period",
-          detail: "Parametro `last_period` della funzione CUMIPMT.",
+          name: "ultimo_periodo",
+          detail: "Parametro `ultimo_periodo` della funzione CUMIPMT.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parametro `end_or_beginning` della funzione CUMIPMT.",
+          name: "fine_o_inizio",
+          detail: "Parametro `fine_o_inizio` della funzione CUMIPMT.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6374,40 +6374,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione PMT.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione PMT.",
           example: "0.08",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parametro `number_of_periods` della funzione PMT.",
+          name: "numero_periodi",
+          detail: "Parametro `numero_periodi` della funzione PMT.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parametro `present_value` della funzione PMT.",
+          name: "valore_attuale",
+          detail: "Parametro `valore_attuale` della funzione PMT.",
           example: " 100000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parametro `future_value` della funzione PMT.",
+          name: "valore_futuro",
+          detail: "Parametro `valore_futuro` della funzione PMT.",
           example: "D2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parametro `end_or_beginning` della funzione PMT.",
+          name: "fine_o_inizio",
+          detail: "Parametro `fine_o_inizio` della funzione PMT.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6426,48 +6426,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione IPMT.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione IPMT.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Parametro `period` della funzione IPMT.",
+          name: "periodo",
+          detail: "Parametro `periodo` della funzione IPMT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parametro `number_of_periods` della funzione IPMT.",
+          name: "numero_periodi",
+          detail: "Parametro `numero_periodi` della funzione IPMT.",
           example: "12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parametro `present_value` della funzione IPMT.",
+          name: "valore_attuale",
+          detail: "Parametro `valore_attuale` della funzione IPMT.",
           example: "80000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parametro `future_value` della funzione IPMT.",
+          name: "valore_futuro",
+          detail: "Parametro `valore_futuro` della funzione IPMT.",
           example: "E2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parametro `end_or_beginning` della funzione IPMT.",
+          name: "fine_o_inizio",
+          detail: "Parametro `fine_o_inizio` della funzione IPMT.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6486,48 +6486,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione PPMT.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione PPMT.",
           example: "0.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Parametro `period` della funzione PPMT.",
+          name: "periodo",
+          detail: "Parametro `periodo` della funzione PPMT.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
-          detail: "Parametro `number_of_periods` della funzione PPMT.",
+          name: "numero_periodi",
+          detail: "Parametro `numero_periodi` della funzione PPMT.",
           example: "3*12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parametro `present_value` della funzione PPMT.",
+          name: "valore_attuale",
+          detail: "Parametro `valore_attuale` della funzione PPMT.",
           example: "100000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parametro `future_value` della funzione PPMT.",
+          name: "valore_futuro",
+          detail: "Parametro `valore_futuro` della funzione PPMT.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parametro `end_or_beginning` della funzione PPMT.",
+          name: "fine_o_inizio",
+          detail: "Parametro `fine_o_inizio` della funzione PPMT.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6546,40 +6546,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "buy_date",
-          detail: "Parametro `buy_date` della funzione INTRATE.",
+          name: "data_acquisto",
+          detail: "Parametro `data_acquisto` della funzione INTRATE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "sell_date",
-          detail: "Parametro `sell_date` della funzione INTRATE.",
+          name: "data_vendita",
+          detail: "Parametro `data_vendita` della funzione INTRATE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "buy_price",
-          detail: "Parametro `buy_price` della funzione INTRATE.",
+          name: "prezzo_acquisto",
+          detail: "Parametro `prezzo_acquisto` della funzione INTRATE.",
           example: "100000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "sell_price",
-          detail: "Parametro `sell_price` della funzione INTRATE.",
+          name: "prezzo_vendita",
+          detail: "Parametro `prezzo_vendita` della funzione INTRATE.",
           example: "101200",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione INTRATE.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione INTRATE.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6598,56 +6598,56 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione PRICE.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione PRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione PRICE.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione PRICE.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione PRICE.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione PRICE.",
           example: "0.057",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Parametro `yield` della funzione PRICE.",
+          name: "rendimento",
+          detail: "Parametro `rendimento` della funzione PRICE.",
           example: "0.065",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parametro `redemption` della funzione PRICE.",
+          name: "valore_rimborso",
+          detail: "Parametro `valore_rimborso` della funzione PRICE.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Parametro `frequency` della funzione PRICE.",
+          name: "frequenza",
+          detail: "Parametro `frequenza` della funzione PRICE.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione PRICE.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione PRICE.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6666,40 +6666,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione PRICEDISC.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione PRICEDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione PRICEDISC.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione PRICEDISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "discount",
-          detail: "Parametro `discount` della funzione PRICEDISC.",
+          name: "tasso_sconto",
+          detail: "Parametro `tasso_sconto` della funzione PRICEDISC.",
           example: "0.0525",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parametro `redemption` della funzione PRICEDISC.",
+          name: "valore_rimborso",
+          detail: "Parametro `valore_rimborso` della funzione PRICEDISC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione PRICEDISC.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione PRICEDISC.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6718,48 +6718,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione PRICEMAT.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione PRICEMAT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione PRICEMAT.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione PRICEMAT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "issue",
-          detail: "Parametro `issue` della funzione PRICEMAT.",
+          name: "data_emissione",
+          detail: "Parametro `data_emissione` della funzione PRICEMAT.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione PRICEMAT.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione PRICEMAT.",
           example: "0.061",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Parametro `yield` della funzione PRICEMAT.",
+          name: "rendimento",
+          detail: "Parametro `rendimento` della funzione PRICEMAT.",
           example: "0.061",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione PRICEMAT.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione PRICEMAT.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6778,40 +6778,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione RECEIVED.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione RECEIVED.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione RECEIVED.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione RECEIVED.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "investment",
-          detail: "Parametro `investment` della funzione RECEIVED.",
+          name: "investimento",
+          detail: "Parametro `investimento` della funzione RECEIVED.",
           example: "10000000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "discount",
-          detail: "Parametro `discount` della funzione RECEIVED.",
+          name: "tasso_sconto",
+          detail: "Parametro `tasso_sconto` della funzione RECEIVED.",
           example: "0.0575",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione RECEIVED.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione RECEIVED.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6830,40 +6830,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione DISC.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione DISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione DISC.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione DISC.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "price",
-          detail: "Parametro `price` della funzione DISC.",
+          name: "prezzo",
+          detail: "Parametro `prezzo` della funzione DISC.",
           example: "97.975",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "redemption",
-          detail: "Parametro `redemption` della funzione DISC.",
+          name: "valore_rimborso",
+          detail: "Parametro `valore_rimborso` della funzione DISC.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione DISC.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione DISC.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6882,40 +6882,40 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione NPER.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione NPER.",
           example: "0.12",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
-          detail: "Parametro `payment_amount` della funzione NPER.",
+          name: "importo_pagamento",
+          detail: "Parametro `importo_pagamento` della funzione NPER.",
           example: "500",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "present_value",
-          detail: "Parametro `present_value` della funzione NPER.",
+          name: "valore_attuale",
+          detail: "Parametro `valore_attuale` della funzione NPER.",
           example: "40000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "future_value",
-          detail: "Parametro `future_value` della funzione NPER.",
+          name: "valore_futuro",
+          detail: "Parametro `valore_futuro` della funzione NPER.",
           example: "0",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
-          detail: "Parametro `end_or_beginning` della funzione NPER.",
+          name: "fine_o_inizio",
+          detail: "Parametro `fine_o_inizio` della funzione NPER.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6934,24 +6934,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
-          detail: "Parametro `cost` della funzione SLN.",
+          name: "costo",
+          detail: "Parametro `costo` della funzione SLN.",
           example: "300000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "salvage",
-          detail: "Parametro `salvage` della funzione SLN.",
+          name: "valore_residuo",
+          detail: "Parametro `valore_residuo` della funzione SLN.",
           example: "75000",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "life",
-          detail: "Parametro `life` della funzione SLN.",
+          name: "vita_utile",
+          detail: "Parametro `vita_utile` della funzione SLN.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -6970,48 +6970,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione DURATION.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione DURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione DURATION.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione DURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione DURATION.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione DURATION.",
           example: "0.08",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Parametro `yield` della funzione DURATION.",
+          name: "rendimento",
+          detail: "Parametro `rendimento` della funzione DURATION.",
           example: "0.09",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Parametro `frequency` della funzione DURATION.",
+          name: "frequenza",
+          detail: "Parametro `frequenza` della funzione DURATION.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione DURATION.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione DURATION.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7030,48 +7030,48 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
-          detail: "Parametro `settlement` della funzione MDURATION.",
+          name: "data_liquidazione",
+          detail: "Parametro `data_liquidazione` della funzione MDURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "maturity",
-          detail: "Parametro `maturity` della funzione MDURATION.",
+          name: "scadenza",
+          detail: "Parametro `scadenza` della funzione MDURATION.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "rate",
-          detail: "Parametro `rate` della funzione MDURATION.",
+          name: "tasso",
+          detail: "Parametro `tasso` della funzione MDURATION.",
           example: "0.08",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "yield",
-          detail: "Parametro `yield` della funzione MDURATION.",
+          name: "rendimento",
+          detail: "Parametro `rendimento` della funzione MDURATION.",
           example: "0.09",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "frequency",
-          detail: "Parametro `frequency` della funzione MDURATION.",
+          name: "frequenza",
+          detail: "Parametro `frequenza` della funzione MDURATION.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
-          detail: "Parametro `day_count_convention` della funzione MDURATION.",
+          name: "convenzione_conteggio_giorni",
+          detail: "Parametro `convenzione_conteggio_giorni` della funzione MDURATION.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7090,8 +7090,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
-          detail: "Parametro `signed_binary_number` della funzione BIN2DEC.",
+          name: "numero_binario_con_segno",
+          detail: "Parametro `numero_binario_con_segno` della funzione BIN2DEC.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7110,16 +7110,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
-          detail: "Parametro `signed_binary_number` della funzione BIN2HEX.",
+          name: "numero_binario_con_segno",
+          detail: "Parametro `numero_binario_con_segno` della funzione BIN2HEX.",
           example: "101",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parametro `significant_digits` della funzione BIN2HEX.",
+          name: "cifre_significative",
+          detail: "Parametro `cifre_significative` della funzione BIN2HEX.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7138,16 +7138,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
-          detail: "Parametro `signed_binary_number` della funzione BIN2OCT.",
+          name: "numero_binario_con_segno",
+          detail: "Parametro `numero_binario_con_segno` della funzione BIN2OCT.",
           example: "101",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parametro `significant_digits` della funzione BIN2OCT.",
+          name: "cifre_significative",
+          detail: "Parametro `cifre_significative` della funzione BIN2OCT.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7166,16 +7166,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
-          detail: "Parametro `decimal_number` della funzione DEC2BIN.",
+          name: "numero_decimale",
+          detail: "Parametro `numero_decimale` della funzione DEC2BIN.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Parametro `significant_digits` della funzione DEC2BIN.",
+          name: "cifre_significative",
+          detail: "Parametro `cifre_significative` della funzione DEC2BIN.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7194,16 +7194,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
-          detail: "Parametro `decimal_number` della funzione DEC2HEX.",
+          name: "numero_decimale",
+          detail: "Parametro `numero_decimale` della funzione DEC2HEX.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Parametro `significant_digits` della funzione DEC2HEX.",
+          name: "cifre_significative",
+          detail: "Parametro `cifre_significative` della funzione DEC2HEX.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7222,16 +7222,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
-          detail: "Parametro `decimal_number` della funzione DEC2OCT.",
+          name: "numero_decimale",
+          detail: "Parametro `numero_decimale` della funzione DEC2OCT.",
           example: "100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
-          detail: "Parametro `significant_digits` della funzione DEC2OCT.",
+          name: "cifre_significative",
+          detail: "Parametro `cifre_significative` della funzione DEC2OCT.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7250,16 +7250,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
-          detail: "Parametro `signed_hexadecimal_number` della funzione HEX2BIN.",
+          name: "numero_esadecimale_con_segno",
+          detail: "Parametro `numero_esadecimale_con_segno` della funzione HEX2BIN.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parametro `significant_digits` della funzione HEX2BIN.",
+          name: "cifre_significative",
+          detail: "Parametro `cifre_significative` della funzione HEX2BIN.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7278,8 +7278,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
-          detail: "Parametro `signed_hexadecimal_number` della funzione HEX2DEC.",
+          name: "numero_esadecimale_con_segno",
+          detail: "Parametro `numero_esadecimale_con_segno` della funzione HEX2DEC.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7298,16 +7298,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
-          detail: "Parametro `signed_hexadecimal_number` della funzione HEX2OCT.",
+          name: "numero_esadecimale_con_segno",
+          detail: "Parametro `numero_esadecimale_con_segno` della funzione HEX2OCT.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parametro `significant_digits` della funzione HEX2OCT.",
+          name: "cifre_significative",
+          detail: "Parametro `cifre_significative` della funzione HEX2OCT.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7326,16 +7326,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
-          detail: "Parametro `signed_octal_number` della funzione OCT2BIN.",
+          name: "numero_ottale_con_segno",
+          detail: "Parametro `numero_ottale_con_segno` della funzione OCT2BIN.",
           example: "37",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parametro `significant_digits` della funzione OCT2BIN.",
+          name: "cifre_significative",
+          detail: "Parametro `cifre_significative` della funzione OCT2BIN.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7354,8 +7354,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
-          detail: "Parametro `signed_octal_number` della funzione OCT2DEC.",
+          name: "numero_ottale_con_segno",
+          detail: "Parametro `numero_ottale_con_segno` della funzione OCT2DEC.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7374,16 +7374,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
-          detail: "Parametro `signed_octal_number` della funzione OCT2HEX.",
+          name: "numero_ottale_con_segno",
+          detail: "Parametro `numero_ottale_con_segno` della funzione OCT2HEX.",
           example: "37",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "significant_digits",
-          detail: "Parametro `significant_digits` della funzione OCT2HEX.",
+          name: "cifre_significative",
+          detail: "Parametro `cifre_significative` della funzione OCT2HEX.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7402,24 +7402,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "real_part",
-          detail: "Parametro `real_part` della funzione COMPLEX.",
+          name: "parte_reale",
+          detail: "Parametro `parte_reale` della funzione COMPLEX.",
           example: "3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "imaginary_part",
-          detail: "Parametro `imaginary_part` della funzione COMPLEX.",
+          name: "parte_immaginaria",
+          detail: "Parametro `parte_immaginaria` della funzione COMPLEX.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "suffix",
-          detail: "Parametro `suffix` della funzione COMPLEX.",
+          name: "suffisso",
+          detail: "Parametro `suffisso` della funzione COMPLEX.",
           example: "\"j\"",
           require: "o",
           repeat: "n",
@@ -7438,8 +7438,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
-          detail: "Parametro `complex_number` della funzione IMREAL.",
+          name: "numero_complesso",
+          detail: "Parametro `numero_complesso` della funzione IMREAL.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7458,8 +7458,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
-          detail: "Parametro `complex_number` della funzione IMAGINARY.",
+          name: "numero_complesso",
+          detail: "Parametro `numero_complesso` della funzione IMAGINARY.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7478,8 +7478,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parametro `number` della funzione IMCONJUGATE.",
+          name: "numero",
+          detail: "Parametro `numero` della funzione IMCONJUGATE.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7498,8 +7498,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parametro `number` della funzione IMABS.",
+          name: "numero",
+          detail: "Parametro `numero` della funzione IMABS.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7518,16 +7518,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "number1",
-          detail: "Parametro `number1` della funzione DELTA.",
+          name: "numero1",
+          detail: "Parametro `numero1` della funzione DELTA.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number2",
-          detail: "Parametro `number2` della funzione DELTA.",
+          name: "numero2",
+          detail: "Parametro `numero2` della funzione DELTA.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -7546,16 +7546,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione IMSUM.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione IMSUM.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione IMSUM.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione IMSUM.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7574,16 +7574,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "first_number",
-          detail: "Parametro `first_number` della funzione IMSUB.",
+          name: "primo_numero",
+          detail: "Parametro `primo_numero` della funzione IMSUB.",
           example: "\"6+5i\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "second_number",
-          detail: "Parametro `second_number` della funzione IMSUB.",
+          name: "secondo_numero",
+          detail: "Parametro `secondo_numero` della funzione IMSUB.",
           example: "\"2+3i\"",
           require: "m",
           repeat: "n",
@@ -7602,16 +7602,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
-          detail: "Parametro `factor1` della funzione IMPRODUCT.",
+          name: "fattore1",
+          detail: "Parametro `fattore1` della funzione IMPRODUCT.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "factor2",
-          detail: "Parametro `factor2` della funzione IMPRODUCT.",
+          name: "fattore2",
+          detail: "Parametro `fattore2` della funzione IMPRODUCT.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7630,16 +7630,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Parametro `dividend` della funzione IMDIV.",
+          name: "dividendo",
+          detail: "Parametro `dividendo` della funzione IMDIV.",
           example: "\"11+16i\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "divisor",
-          detail: "Parametro `divisor` della funzione IMDIV.",
+          name: "divisore",
+          detail: "Parametro `divisore` della funzione IMDIV.",
           example: "\"3+2i\"",
           require: "m",
           repeat: "n",
@@ -7658,8 +7658,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
-          detail: "Parametro `logical_expression` della funzione NOT.",
+          name: "espressione_logica",
+          detail: "Parametro `espressione_logica` della funzione NOT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7700,16 +7700,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
-          detail: "Parametro `logical_expression1` della funzione AND.",
+          name: "espressione_logica1",
+          detail: "Parametro `espressione_logica1` della funzione AND.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
-          detail: "Parametro `logical_expression2` della funzione AND.",
+          name: "espressione_logica2",
+          detail: "Parametro `espressione_logica2` della funzione AND.",
           example: "A3 = \"bar\"",
           require: "o",
           repeat: "y",
@@ -7728,16 +7728,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione IFERROR.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione IFERROR.",
           example: "A1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_error",
-          detail: "Parametro `value_if_error` della funzione IFERROR.",
+          name: "valore_se_errore",
+          detail: "Parametro `valore_se_errore` della funzione IFERROR.",
           example: "\"Error in cell A1\"",
           require: "m",
           repeat: "n",
@@ -7756,24 +7756,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
-          detail: "Parametro `logical_expression` della funzione IF.",
+          name: "espressione_logica",
+          detail: "Parametro `espressione_logica` della funzione IF.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_true",
-          detail: "Parametro `value_if_true` della funzione IF.",
+          name: "valore_se_vero",
+          detail: "Parametro `valore_se_vero` della funzione IF.",
           example: "\"A2 is foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_false",
-          detail: "Parametro `value_if_false` della funzione IF.",
+          name: "valore_se_falso",
+          detail: "Parametro `valore_se_falso` della funzione IF.",
           example: "\"A2 was false\"",
           require: "o",
           repeat: "n",
@@ -7792,16 +7792,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
-          detail: "Parametro `logical_expression1` della funzione OR.",
+          name: "espressione_logica1",
+          detail: "Parametro `espressione_logica1` della funzione OR.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
-          detail: "Parametro `logical_expression2` della funzione OR.",
+          name: "espressione_logica2",
+          detail: "Parametro `espressione_logica2` della funzione OR.",
           example: " A3 = \"bar\"",
           require: "m",
           repeat: "n",
@@ -7820,16 +7820,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione NE.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione NE.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione NE.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione NE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7848,16 +7848,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione EQ.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione EQ.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione EQ.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione EQ.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7876,16 +7876,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione GT.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione GT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione GT.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione GT.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7904,16 +7904,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione GTE.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione GTE.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione GTE.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione GTE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7932,16 +7932,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione LT.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione LT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione LT.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione LT.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7960,16 +7960,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione LTE.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione LTE.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione LTE.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione LTE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7988,16 +7988,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione ADD.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione ADD.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione ADD.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione ADD.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8016,16 +8016,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione MINUS.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione MINUS.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione MINUS.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione MINUS.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8044,16 +8044,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
-          detail: "Parametro `factor1` della funzione MULTIPLY.",
+          name: "fattore1",
+          detail: "Parametro `fattore1` della funzione MULTIPLY.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor2",
-          detail: "Parametro `factor2` della funzione MULTIPLY.",
+          name: "fattore2",
+          detail: "Parametro `fattore2` della funzione MULTIPLY.",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -8072,16 +8072,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
-          detail: "Parametro `dividend` della funzione DIVIDE.",
+          name: "dividendo",
+          detail: "Parametro `dividendo` della funzione DIVIDE.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "divisor",
-          detail: "Parametro `divisor` della funzione DIVIDE.",
+          name: "divisore",
+          detail: "Parametro `divisore` della funzione DIVIDE.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8100,16 +8100,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Parametro `value1` della funzione CONCAT.",
+          name: "valore1",
+          detail: "Parametro `valore1` della funzione CONCAT.",
           example: "\"de\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Parametro `value2` della funzione CONCAT.",
+          name: "valore2",
+          detail: "Parametro `valore2` della funzione CONCAT.",
           example: "\"mystify\"",
           require: "m",
           repeat: "n",
@@ -8128,8 +8128,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "percentage",
-          detail: "Parametro `percentage` della funzione UNARY_PERCENT.",
+          name: "percentuale",
+          detail: "Parametro `percentuale` della funzione UNARY_PERCENT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8148,16 +8148,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
-          detail: "Parametro `string1` della funzione CONCATENATE.",
+          name: "stringa1",
+          detail: "Parametro `stringa1` della funzione CONCATENATE.",
           example: "\"Super\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "string2",
-          detail: "Parametro `string2` della funzione CONCATENATE.",
+          name: "stringa2",
+          detail: "Parametro `stringa2` della funzione CONCATENATE.",
           example: "\"calla\"",
           require: "o",
           repeat: "y",
@@ -8176,8 +8176,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Parametro `string` della funzione CODE.",
+          name: "stringa",
+          detail: "Parametro `stringa` della funzione CODE.",
           example: "\"a\"",
           require: "m",
           repeat: "n",
@@ -8196,8 +8196,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "table_number",
-          detail: "Parametro `table_number` della funzione CHAR.",
+          name: "numero_tabella",
+          detail: "Parametro `numero_tabella` della funzione CHAR.",
           example: "97",
           require: "m",
           repeat: "n",
@@ -8216,8 +8216,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "roman_numeral",
-          detail: "Parametro `roman_numeral` della funzione ARABIC.",
+          name: "numero_romano",
+          detail: "Parametro `numero_romano` della funzione ARABIC.",
           example: "\"XIV\"",
           require: "m",
           repeat: "n",
@@ -8236,8 +8236,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parametro `number` della funzione ROMAN.",
+          name: "numero",
+          detail: "Parametro `numero` della funzione ROMAN.",
           example: "499",
           require: "m",
           repeat: "n",
@@ -8256,16 +8256,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parametro `text` della funzione REGEXEXTRACT.",
+          name: "testo",
+          detail: "Parametro `testo` della funzione REGEXEXTRACT.",
           example: "\"Needle in a haystack\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "Parametro `regular_expression` della funzione REGEXEXTRACT.",
+          name: "espressione_regolare",
+          detail: "Parametro `espressione_regolare` della funzione REGEXEXTRACT.",
           example: "\".e{2}dle\"",
           require: "m",
           repeat: "n",
@@ -8284,16 +8284,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parametro `text` della funzione REGEXMATCH.",
+          name: "testo",
+          detail: "Parametro `testo` della funzione REGEXMATCH.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "Parametro `regular_expression` della funzione REGEXMATCH.",
+          name: "espressione_regolare",
+          detail: "Parametro `espressione_regolare` della funzione REGEXMATCH.",
           example: "\"S.r\"",
           require: "m",
           repeat: "n",
@@ -8312,24 +8312,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parametro `text` della funzione REGEXREPLACE.",
+          name: "testo",
+          detail: "Parametro `testo` della funzione REGEXREPLACE.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "Parametro `regular_expression` della funzione REGEXREPLACE.",
+          name: "espressione_regolare",
+          detail: "Parametro `espressione_regolare` della funzione REGEXREPLACE.",
           example: "\"S.*d\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "replacement",
-          detail: "Parametro `replacement` della funzione REGEXREPLACE.",
+          name: "sostituzione",
+          detail: "Parametro `sostituzione` della funzione REGEXREPLACE.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8348,8 +8348,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione T.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione T.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8368,24 +8368,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parametro `number` della funzione FIXED.",
+          name: "numero",
+          detail: "Parametro `numero` della funzione FIXED.",
           example: "3.141592653",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
-          detail: "Parametro `number_of_places` della funzione FIXED.",
+          name: "numero_decimali",
+          detail: "Parametro `numero_decimali` della funzione FIXED.",
           example: "2",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "suppress_separator",
-          detail: "Parametro `suppress_separator` della funzione FIXED.",
+          name: "sopprimere_separatore",
+          detail: "Parametro `sopprimere_separatore` della funzione FIXED.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -8404,24 +8404,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Parametro `search_for` della funzione FIND.",
+          name: "da_cercare",
+          detail: "Parametro `da_cercare` della funzione FIND.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Parametro `text_to_search` della funzione FIND.",
+          name: "testo_da_cercare",
+          detail: "Parametro `testo_da_cercare` della funzione FIND.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Parametro `starting_at` della funzione FIND.",
+          name: "a_partire_da",
+          detail: "Parametro `a_partire_da` della funzione FIND.",
           example: "14",
           require: "o",
           repeat: "n",
@@ -8440,24 +8440,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Parametro `search_for` della funzione FINDB.",
+          name: "da_cercare",
+          detail: "Parametro `da_cercare` della funzione FINDB.",
           example: "\"new\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Parametro `text_to_search` della funzione FINDB.",
+          name: "testo_da_cercare",
+          detail: "Parametro `testo_da_cercare` della funzione FINDB.",
           example: "\"new year\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Parametro `starting_at` della funzione FINDB.",
+          name: "a_partire_da",
+          detail: "Parametro `a_partire_da` della funzione FINDB.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8476,24 +8476,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "delimiter",
-          detail: "Parametro `delimiter` della funzione JOIN.",
+          name: "delimitatore",
+          detail: "Parametro `delimitatore` della funzione JOIN.",
           example: "\" and-a \"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_or_array1",
-          detail: "Parametro `value_or_array1` della funzione JOIN.",
+          name: "valore_o_matrice1",
+          detail: "Parametro `valore_o_matrice1` della funzione JOIN.",
           example: "{1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_or_array2",
-          detail: "Parametro `value_or_array2` della funzione JOIN.",
+          name: "valore_o_matrice2",
+          detail: "Parametro `valore_o_matrice2` della funzione JOIN.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -8512,16 +8512,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Parametro `string` della funzione LEFT.",
+          name: "stringa",
+          detail: "Parametro `stringa` della funzione LEFT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
-          detail: "Parametro `number_of_characters` della funzione LEFT.",
+          name: "numero_caratteri",
+          detail: "Parametro `numero_caratteri` della funzione LEFT.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8540,16 +8540,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Parametro `string` della funzione RIGHT.",
+          name: "stringa",
+          detail: "Parametro `stringa` della funzione RIGHT.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
-          detail: "Parametro `number_of_characters` della funzione RIGHT.",
+          name: "numero_caratteri",
+          detail: "Parametro `numero_caratteri` della funzione RIGHT.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8568,24 +8568,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
-          detail: "Parametro `string` della funzione MID.",
+          name: "stringa",
+          detail: "Parametro `stringa` della funzione MID.",
           example: "\"get this\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Parametro `starting_at` della funzione MID.",
+          name: "a_partire_da",
+          detail: "Parametro `a_partire_da` della funzione MID.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "extract_length",
-          detail: "Parametro `extract_length` della funzione MID.",
+          name: "lunghezza_estrazione",
+          detail: "Parametro `lunghezza_estrazione` della funzione MID.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8604,8 +8604,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parametro `text` della funzione LEN.",
+          name: "testo",
+          detail: "Parametro `testo` della funzione LEN.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8624,8 +8624,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parametro `text` della funzione LENB.",
+          name: "testo",
+          detail: "Parametro `testo` della funzione LENB.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8644,8 +8644,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parametro `text` della funzione LOWER.",
+          name: "testo",
+          detail: "Parametro `testo` della funzione LOWER.",
           example: "\"LOREM IPSUM\"",
           require: "m",
           repeat: "n",
@@ -8664,8 +8664,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parametro `text` della funzione UPPER.",
+          name: "testo",
+          detail: "Parametro `testo` della funzione UPPER.",
           example: "\"lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8684,16 +8684,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
-          detail: "Parametro `string1` della funzione EXACT.",
+          name: "stringa1",
+          detail: "Parametro `stringa1` della funzione EXACT.",
           example: "A1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "string2",
-          detail: "Parametro `string2` della funzione EXACT.",
+          name: "stringa2",
+          detail: "Parametro `stringa2` della funzione EXACT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8712,32 +8712,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parametro `text` della funzione REPLACE.",
+          name: "testo",
+          detail: "Parametro `testo` della funzione REPLACE.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "position",
-          detail: "Parametro `position` della funzione REPLACE.",
+          name: "posizione",
+          detail: "Parametro `posizione` della funzione REPLACE.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "length",
-          detail: "Parametro `length` della funzione REPLACE.",
+          name: "lunghezza",
+          detail: "Parametro `lunghezza` della funzione REPLACE.",
           example: "6",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_text",
-          detail: "Parametro `new_text` della funzione REPLACE.",
+          name: "nuovo_testo",
+          detail: "Parametro `nuovo_testo` della funzione REPLACE.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8756,16 +8756,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_repeat",
-          detail: "Parametro `text_to_repeat` della funzione REPT.",
+          name: "testo_da_ripetere",
+          detail: "Parametro `testo_da_ripetere` della funzione REPT.",
           example: "\"ha\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "number_of_repetitions",
-          detail: "Parametro `number_of_repetitions` della funzione REPT.",
+          name: "numero_ripetizioni",
+          detail: "Parametro `numero_ripetizioni` della funzione REPT.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8784,24 +8784,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Parametro `search_for` della funzione SEARCH.",
+          name: "da_cercare",
+          detail: "Parametro `da_cercare` della funzione SEARCH.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Parametro `text_to_search` della funzione SEARCH.",
+          name: "testo_da_cercare",
+          detail: "Parametro `testo_da_cercare` della funzione SEARCH.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Parametro `starting_at` della funzione SEARCH.",
+          name: "a_partire_da",
+          detail: "Parametro `a_partire_da` della funzione SEARCH.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -8820,32 +8820,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_search",
-          detail: "Parametro `text_to_search` della funzione SUBSTITUTE.",
+          name: "testo_da_cercare",
+          detail: "Parametro `testo_da_cercare` della funzione SUBSTITUTE.",
           example: "\"search for it\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "search_for",
-          detail: "Parametro `search_for` della funzione SUBSTITUTE.",
+          name: "da_cercare",
+          detail: "Parametro `da_cercare` della funzione SUBSTITUTE.",
           example: "\"search for\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "replace_with",
-          detail: "Parametro `replace_with` della funzione SUBSTITUTE.",
+          name: "sostituire_con",
+          detail: "Parametro `sostituire_con` della funzione SUBSTITUTE.",
           example: "\"Google\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "occurrence_number",
-          detail: "Parametro `occurrence_number` della funzione SUBSTITUTE.",
+          name: "numero_occorrenza",
+          detail: "Parametro `numero_occorrenza` della funzione SUBSTITUTE.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -8864,8 +8864,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parametro `text` della funzione CLEAN.",
+          name: "testo",
+          detail: "Parametro `testo` della funzione CLEAN.",
           example: "\"AF\"&CHAR(31)",
           require: "m",
           repeat: "n",
@@ -8884,16 +8884,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
-          detail: "Parametro `number` della funzione TEXT.",
+          name: "numero",
+          detail: "Parametro `numero` della funzione TEXT.",
           example: "1.23",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "format",
-          detail: "Parametro `format` della funzione TEXT.",
+          name: "formato",
+          detail: "Parametro `formato` della funzione TEXT.",
           example: "\"$0.00\"",
           require: "m",
           repeat: "n",
@@ -8912,8 +8912,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parametro `text` della funzione TRIM.",
+          name: "testo",
+          detail: "Parametro `testo` della funzione TRIM.",
           example: "\" lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8932,8 +8932,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
-          detail: "Parametro `text` della funzione VALUE.",
+          name: "testo",
+          detail: "Parametro `testo` della funzione VALUE.",
           example: "\"123\"",
           require: "m",
           repeat: "n",
@@ -8952,8 +8952,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_capitalize",
-          detail: "Parametro `text_to_capitalize` della funzione PROPER.",
+          name: "testo_da_capitalizzare",
+          detail: "Parametro `testo_da_capitalizzare` della funzione PROPER.",
           example: "\"united states\"",
           require: "m",
           repeat: "n",
@@ -8972,24 +8972,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione CONVERT.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione CONVERT.",
           example: "5.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "start_unit",
-          detail: "Parametro `start_unit` della funzione CONVERT.",
+          name: "unità_iniziale",
+          detail: "Parametro `unità_iniziale` della funzione CONVERT.",
           example: "\"g\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_unit",
-          detail: "Parametro `end_unit` della funzione CONVERT.",
+          name: "unità_finale",
+          detail: "Parametro `unità_finale` della funzione CONVERT.",
           example: "\"kg\"",
           require: "m",
           repeat: "n",
@@ -9008,16 +9008,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Parametro `array_x` della funzione SUMX2MY2.",
+          name: "matrice_x",
+          detail: "Parametro `matrice_x` della funzione SUMX2MY2.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Parametro `array_y` della funzione SUMX2MY2.",
+          name: "matrice_y",
+          detail: "Parametro `matrice_y` della funzione SUMX2MY2.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9036,16 +9036,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Parametro `array_x` della funzione SUMX2PY2.",
+          name: "matrice_x",
+          detail: "Parametro `matrice_x` della funzione SUMX2PY2.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Parametro `array_y` della funzione SUMX2PY2.",
+          name: "matrice_y",
+          detail: "Parametro `matrice_y` della funzione SUMX2PY2.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9064,16 +9064,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Parametro `array_x` della funzione SUMXMY2.",
+          name: "matrice_x",
+          detail: "Parametro `matrice_x` della funzione SUMXMY2.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Parametro `array_y` della funzione SUMXMY2.",
+          name: "matrice_y",
+          detail: "Parametro `matrice_y` della funzione SUMXMY2.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9092,8 +9092,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_or_range",
-          detail: "Parametro `array_or_range` della funzione TRANSPOSE.",
+          name: "matrice_o_intervallo",
+          detail: "Parametro `matrice_o_intervallo` della funzione TRANSPOSE.",
           example: "{1,2}",
           require: "m",
           repeat: "n",
@@ -9112,24 +9112,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Parametro `known_data_y` della funzione TREND.",
+          name: "dati_y_noti",
+          detail: "Parametro `dati_y_noti` della funzione TREND.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Parametro `known_data_x` della funzione TREND.",
+          name: "dati_x_noti",
+          detail: "Parametro `dati_x_noti` della funzione TREND.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
-          detail: "Parametro `new_data_x` della funzione TREND.",
+          name: "nuovi_dati_x",
+          detail: "Parametro `nuovi_dati_x` della funzione TREND.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9156,16 +9156,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
-          detail: "Parametro `data` della funzione FREQUENCY.",
+          name: "dati",
+          detail: "Parametro `dati` della funzione FREQUENCY.",
           example: "A2:A40",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "classes",
-          detail: "Parametro `classes` della funzione FREQUENCY.",
+          name: "classi",
+          detail: "Parametro `classi` della funzione FREQUENCY.",
           example: "B2:B5",
           require: "m",
           repeat: "n",
@@ -9184,24 +9184,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Parametro `known_data_y` della funzione GROWTH.",
+          name: "dati_y_noti",
+          detail: "Parametro `dati_y_noti` della funzione GROWTH.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Parametro `known_data_x` della funzione GROWTH.",
+          name: "dati_x_noti",
+          detail: "Parametro `dati_x_noti` della funzione GROWTH.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
-          detail: "Parametro `new_data_x` della funzione GROWTH.",
+          name: "nuovi_dati_x",
+          detail: "Parametro `nuovi_dati_x` della funzione GROWTH.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9228,32 +9228,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Parametro `known_data_y` della funzione LINEST.",
+          name: "dati_y_noti",
+          detail: "Parametro `dati_y_noti` della funzione LINEST.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Parametro `known_data_x` della funzione LINEST.",
+          name: "dati_x_noti",
+          detail: "Parametro `dati_x_noti` della funzione LINEST.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "calculate_b",
-          detail: "Parametro `calculate_b` della funzione LINEST.",
+          name: "calcolare_b",
+          detail: "Parametro `calcolare_b` della funzione LINEST.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "verbose",
-          detail: "Parametro `verbose` della funzione LINEST.",
+          name: "dettagliato",
+          detail: "Parametro `dettagliato` della funzione LINEST.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9272,16 +9272,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
-          detail: "Parametro `known_data_y` della funzione LOGEST.",
+          name: "dati_y_noti",
+          detail: "Parametro `dati_y_noti` della funzione LOGEST.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Parametro `known_data_x` della funzione LOGEST.",
+          name: "dati_x_noti",
+          detail: "Parametro `dati_x_noti` della funzione LOGEST.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9296,8 +9296,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "verbose",
-          detail: "Parametro `verbose` della funzione LOGEST.",
+          name: "dettagliato",
+          detail: "Parametro `dettagliato` della funzione LOGEST.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9316,8 +9316,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
-          detail: "Parametro `square_matrix` della funzione MDETERM.",
+          name: "matrice_quadrata",
+          detail: "Parametro `matrice_quadrata` della funzione MDETERM.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9336,8 +9336,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
-          detail: "Parametro `square_matrix` della funzione MINVERSE.",
+          name: "matrice_quadrata",
+          detail: "Parametro `matrice_quadrata` della funzione MINVERSE.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9356,16 +9356,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "matrix1",
-          detail: "Parametro `matrix1` della funzione MMULT.",
+          name: "matrice1",
+          detail: "Parametro `matrice1` della funzione MMULT.",
           example: "A1:B3",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "matrix2",
-          detail: "Parametro `matrix2` della funzione MMULT.",
+          name: "matrice2",
+          detail: "Parametro `matrice2` della funzione MMULT.",
           example: "C1:F2",
           require: "m",
           repeat: "n",
@@ -9384,16 +9384,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array1",
-          detail: "Parametro `array1` della funzione SUMPRODUCT.",
+          name: "matrice1",
+          detail: "Parametro `matrice1` della funzione SUMPRODUCT.",
           example: "A2:C5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array2",
-          detail: "Parametro `array2` della funzione SUMPRODUCT.",
+          name: "matrice2",
+          detail: "Parametro `matrice2` della funzione SUMPRODUCT.",
           example: "D2:F5",
           require: "o",
           repeat: "y",
@@ -9412,8 +9412,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell",
-          detail: "Parametro `cell` della funzione ISFORMULA.",
+          name: "cella",
+          detail: "Parametro `cella` della funzione ISFORMULA.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9432,16 +9432,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "info_type",
-          detail: "Parametro `info_type` della funzione CELL.",
+          name: "tipo_informazione",
+          detail: "Parametro `tipo_informazione` della funzione CELL.",
           example: "\"type\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "reference",
-          detail: "Parametro `reference` della funzione CELL.",
+          name: "riferimento",
+          detail: "Parametro `riferimento` della funzione CELL.",
           example: "C2",
           require: "m",
           repeat: "n",
@@ -9471,8 +9471,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
-          detail: "Parametro `reference` della funzione ERROR_TYPE.",
+          name: "riferimento",
+          detail: "Parametro `riferimento` della funzione ERROR_TYPE.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -9491,8 +9491,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ISBLANK.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ISBLANK.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9511,8 +9511,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ISERR.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ISERR.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9531,8 +9531,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ISERROR.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ISERROR.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9551,8 +9551,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ISLOGICAL.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ISLOGICAL.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9571,8 +9571,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ISNA.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ISNA.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9591,8 +9591,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ISNONTEXT.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ISNONTEXT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9611,8 +9611,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ISNUMBER.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ISNUMBER.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9631,8 +9631,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ISREF.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ISREF.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9651,8 +9651,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione ISTEXT.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione ISTEXT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9671,8 +9671,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione TYPE.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione TYPE.",
           example: "C4",
           require: "m",
           repeat: "n",
@@ -9691,8 +9691,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione N.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione N.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9711,8 +9711,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione TO_DATE.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione TO_DATE.",
           example: "25405",
           require: "m",
           repeat: "n",
@@ -9731,8 +9731,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione TO_PURE_NUMBER.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione TO_PURE_NUMBER.",
           example: "50%",
           require: "m",
           repeat: "n",
@@ -9751,8 +9751,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione TO_TEXT.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione TO_TEXT.",
           example: "24",
           require: "m",
           repeat: "n",
@@ -9771,8 +9771,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione TO_DOLLARS.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione TO_DOLLARS.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9791,8 +9791,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Parametro `value` della funzione TO_PERCENT.",
+          name: "valore",
+          detail: "Parametro `valore` della funzione TO_PERCENT.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9819,16 +9819,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DGET.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DGET.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DGET.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DGET.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9855,16 +9855,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DMAX.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DMAX.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DMAX.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DMAX.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9891,16 +9891,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DMIN.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DMIN.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DMIN.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DMIN.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9927,16 +9927,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DAVERAGE.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DAVERAGE.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DAVERAGE.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DAVERAGE.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9963,16 +9963,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DCOUNT.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DCOUNT.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DCOUNT.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DCOUNT.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9999,16 +9999,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DCOUNTA.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DCOUNTA.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DCOUNTA.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DCOUNTA.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10035,16 +10035,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DPRODUCT.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DPRODUCT.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DPRODUCT.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DPRODUCT.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10071,16 +10071,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DSTDEV.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DSTDEV.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DSTDEV.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DSTDEV.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10107,16 +10107,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DSTDEVP.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DSTDEVP.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DSTDEVP.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DSTDEVP.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10143,16 +10143,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DSUM.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DSUM.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DSUM.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DSUM.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10179,16 +10179,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DVAR.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DVAR.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DVAR.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DVAR.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10215,16 +10215,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Parametro `field` della funzione DVARP.",
+          name: "campo",
+          detail: "Parametro `campo` della funzione DVARP.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Parametro `criteria` della funzione DVARP.",
+          name: "criteri",
+          detail: "Parametro `criteri` della funzione DVARP.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10243,17 +10243,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numero identificativo",
           example: "A1",
-          detail: "Parametro `ID number` della funzione AGE_BY_IDCARD.",
+          detail: "Parametro `Numero identificativo` della funzione AGE_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Deadline",
+          name: "Scadenza",
           example: "\"2017-10-01\"",
-          detail: "Parametro `Deadline` della funzione AGE_BY_IDCARD.",
+          detail: "Parametro `Scadenza` della funzione AGE_BY_IDCARD.",
           require: "o",
           repeat: "n",
           type: "rangedatetime"
@@ -10271,9 +10271,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `ID number` della funzione SEX_BY_IDCARD.",
+          detail: "Parametro `Numero identificativo` della funzione SEX_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10291,17 +10291,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `ID number` della funzione BIRTHDAY_BY_IDCARD.",
+          detail: "Parametro `Numero identificativo` della funzione BIRTHDAY_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Birthday format",
+          name: "Formato data di nascita",
           example: "0",
-          detail: "Parametro `Birthday format` della funzione BIRTHDAY_BY_IDCARD.",
+          detail: "Parametro `Formato data di nascita` della funzione BIRTHDAY_BY_IDCARD.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10319,9 +10319,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `ID number` della funzione PROVINCE_BY_IDCARD.",
+          detail: "Parametro `Numero identificativo` della funzione PROVINCE_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10339,9 +10339,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `ID number` della funzione CITY_BY_IDCARD.",
+          detail: "Parametro `Numero identificativo` della funzione CITY_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10359,9 +10359,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `ID number` della funzione STAR_BY_IDCARD.",
+          detail: "Parametro `Numero identificativo` della funzione STAR_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10379,9 +10379,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `ID number` della funzione ANIMAL_BY_IDCARD.",
+          detail: "Parametro `Numero identificativo` della funzione ANIMAL_BY_IDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10399,9 +10399,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Numero identificativo",
           example: "\"31033519900101XXXX\"",
-          detail: "Parametro `ID number` della funzione ISIDCARD.",
+          detail: "Parametro `Numero identificativo` della funzione ISIDCARD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10419,17 +10419,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Testo",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parametro `Text` della funzione DM_TEXT_CUTWORD.",
+          detail: "Parametro `Testo` della funzione DM_TEXT_CUTWORD.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Word segmentation mode",
+          name: "Modalità di segmentazione parole",
           example: "0",
-          detail: "Parametro `Word segmentation mode` della funzione DM_TEXT_CUTWORD.",
+          detail: "Parametro `Modalità di segmentazione parole` della funzione DM_TEXT_CUTWORD.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10447,17 +10447,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Testo",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parametro `Text` della funzione DM_TEXT_TFIDF.",
+          detail: "Parametro `Testo` della funzione DM_TEXT_TFIDF.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "Numero di parole chiave",
           example: "20",
-          detail: "Parametro `Number of keywords` della funzione DM_TEXT_TFIDF.",
+          detail: "Parametro `Numero di parole chiave` della funzione DM_TEXT_TFIDF.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10483,17 +10483,17 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Testo",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Parametro `Text` della funzione DM_TEXT_TEXTRANK.",
+          detail: "Parametro `Testo` della funzione DM_TEXT_TEXTRANK.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "Numero di parole chiave",
           example: "20",
-          detail: "Parametro `Number of keywords` della funzione DM_TEXT_TEXTRANK.",
+          detail: "Parametro `Numero di parole chiave` della funzione DM_TEXT_TEXTRANK.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10519,25 +10519,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Stock code` della funzione DATA_CN_STOCK_CLOSE.",
+          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_CLOSE.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Date` della funzione DATA_CN_STOCK_CLOSE.",
+          detail: "Parametro `Data` della funzione DATA_CN_STOCK_CLOSE.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Reversion and exclusion` della funzione DATA_CN_STOCK_CLOSE.",
+          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_CLOSE.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10555,25 +10555,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Stock code` della funzione DATA_CN_STOCK_OPEN.",
+          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_OPEN.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Date` della funzione DATA_CN_STOCK_OPEN.",
+          detail: "Parametro `Data` della funzione DATA_CN_STOCK_OPEN.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Reversion and exclusion` della funzione DATA_CN_STOCK_OPEN.",
+          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_OPEN.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10591,25 +10591,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Stock code` della funzione DATA_CN_STOCK_MAX.",
+          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_MAX.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Date` della funzione DATA_CN_STOCK_MAX.",
+          detail: "Parametro `Data` della funzione DATA_CN_STOCK_MAX.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Reversion and exclusion` della funzione DATA_CN_STOCK_MAX.",
+          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_MAX.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10627,25 +10627,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Stock code` della funzione DATA_CN_STOCK_MIN.",
+          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_MIN.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Date` della funzione DATA_CN_STOCK_MIN.",
+          detail: "Parametro `Data` della funzione DATA_CN_STOCK_MIN.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Reversion and exclusion` della funzione DATA_CN_STOCK_MIN.",
+          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_MIN.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10663,25 +10663,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Stock code` della funzione DATA_CN_STOCK_VOLUMN.",
+          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_VOLUMN.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Date` della funzione DATA_CN_STOCK_VOLUMN.",
+          detail: "Parametro `Data` della funzione DATA_CN_STOCK_VOLUMN.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Reversion and exclusion` della funzione DATA_CN_STOCK_VOLUMN.",
+          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_VOLUMN.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10699,25 +10699,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Codice azionario",
           example: "\"000001\"",
-          detail: "Parametro `Stock code` della funzione DATA_CN_STOCK_AMOUNT.",
+          detail: "Parametro `Codice azionario` della funzione DATA_CN_STOCK_AMOUNT.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Data",
           example: "2015-01-08",
-          detail: "Parametro `Date` della funzione DATA_CN_STOCK_AMOUNT.",
+          detail: "Parametro `Data` della funzione DATA_CN_STOCK_AMOUNT.",
           require: "o",
           repeat: "n",
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Tipo di rettifica ex diritti",
           example: "0",
-          detail: "Parametro `Reversion and exclusion` della funzione DATA_CN_STOCK_AMOUNT.",
+          detail: "Parametro `Tipo di rettifica ex diritti` della funzione DATA_CN_STOCK_AMOUNT.",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10735,9 +10735,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "valore",
           example: "\"1990-01-01\"",
-          detail: "Parametro `value` della funzione ISDATE.",
+          detail: "Parametro `valore` della funzione ISDATE.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10755,65 +10755,65 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Range` della funzione LINESPLINES.",
+          detail: "Parametro `Intervallo` della funzione LINESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line color",
+          name: "Colore della linea",
           example: "#2ec7c9",
-          detail: "Parametro `Line color` della funzione LINESPLINES.",
+          detail: "Parametro `Colore della linea` della funzione LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line thickness",
+          name: "Spessore linea",
           example: "1",
-          detail: "Parametro `Line thickness` della funzione LINESPLINES.",
+          detail: "Parametro `Spessore linea` della funzione LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line",
+          name: "Linea ausiliaria",
           example: "avg",
-          detail: "Parametro `Auxiliary line` della funzione LINESPLINES.",
+          detail: "Parametro `Linea ausiliaria` della funzione LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line color",
+          name: "Colore della linea ausiliaria",
           example: "#000",
-          detail: "Parametro `Auxiliary line color` della funzione LINESPLINES.",
+          detail: "Parametro `Colore della linea ausiliaria` della funzione LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Maximum mark",
+          name: "Indicatore massimo",
           example: "#fc5c5c",
-          detail: "Parametro `Maximum mark` della funzione LINESPLINES.",
+          detail: "Parametro `Indicatore massimo` della funzione LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Minimum mark",
+          name: "Indicatore minimo",
           example: "#fc5c5c",
-          detail: "Parametro `Minimum mark` della funzione LINESPLINES.",
+          detail: "Parametro `Indicatore minimo` della funzione LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Mark size",
+          name: "Dimensione indicatore",
           example: "1.5",
-          detail: "Parametro `Mark size` della funzione LINESPLINES.",
+          detail: "Parametro `Dimensione indicatore` della funzione LINESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10831,49 +10831,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Range` della funzione AREASPLINES.",
+          detail: "Parametro `Intervallo` della funzione AREASPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line color",
+          name: "Colore della linea",
           example: "#2ec7c9",
-          detail: "Parametro `Line color` della funzione AREASPLINES.",
+          detail: "Parametro `Colore della linea` della funzione AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Fill color",
+          name: "Colore di riempimento",
           example: "#CCF3F4",
-          detail: "Parametro `Fill color` della funzione AREASPLINES.",
+          detail: "Parametro `Colore di riempimento` della funzione AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Line thickness",
+          name: "Spessore linea",
           example: "1",
-          detail: "Parametro `Line thickness` della funzione AREASPLINES.",
+          detail: "Parametro `Spessore linea` della funzione AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line",
+          name: "Linea ausiliaria",
           example: "avg",
-          detail: "Parametro `Auxiliary line` della funzione AREASPLINES.",
+          detail: "Parametro `Linea ausiliaria` della funzione AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Auxiliary line color",
+          name: "Colore della linea ausiliaria",
           example: "#000",
-          detail: "Parametro `Auxiliary line color` della funzione AREASPLINES.",
+          detail: "Parametro `Colore della linea ausiliaria` della funzione AREASPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10891,49 +10891,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Range` della funzione COLUMNSPLINES.",
+          detail: "Parametro `Intervallo` della funzione COLUMNSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Intervallo barre",
           example: "1",
-          detail: "Parametro `Bar interval` della funzione COLUMNSPLINES.",
+          detail: "Parametro `Intervallo barre` della funzione COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Colore della barra",
           example: "#fc5c5c",
-          detail: "Parametro `Bar color` della funzione COLUMNSPLINES.",
+          detail: "Parametro `Colore della barra` della funzione COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Colore barre negative",
           example: "#97b552",
-          detail: "Parametro `Negative bar color` della funzione COLUMNSPLINES.",
+          detail: "Parametro `Colore barre negative` della funzione COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Massimo",
           example: "100",
-          detail: "Parametro `Max` della funzione COLUMNSPLINES.",
+          detail: "Parametro `Massimo` della funzione COLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Color palette` della funzione COLUMNSPLINES.",
+          detail: "Parametro `Tavolozza colori` della funzione COLUMNSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -10951,41 +10951,41 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Range` della funzione STACKCOLUMNSPLINES.",
+          detail: "Parametro `Intervallo` della funzione STACKCOLUMNSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Stack by column",
+          name: "Impila per colonna",
           example: "1",
-          detail: "Parametro `Stack by column` della funzione STACKCOLUMNSPLINES.",
+          detail: "Parametro `Impila per colonna` della funzione STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Intervallo barre",
           example: "1",
-          detail: "Parametro `Bar interval` della funzione STACKCOLUMNSPLINES.",
+          detail: "Parametro `Intervallo barre` della funzione STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Massimo",
           example: "100",
-          detail: "Parametro `Max` della funzione STACKCOLUMNSPLINES.",
+          detail: "Parametro `Massimo` della funzione STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Color palette` della funzione STACKCOLUMNSPLINES.",
+          detail: "Parametro `Tavolozza colori` della funzione STACKCOLUMNSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11003,49 +11003,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Range` della funzione BARSPLINES.",
+          detail: "Parametro `Intervallo` della funzione BARSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Intervallo barre",
           example: "1",
-          detail: "Parametro `Bar interval` della funzione BARSPLINES.",
+          detail: "Parametro `Intervallo barre` della funzione BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Colore della barra",
           example: "#fc5c5c",
-          detail: "Parametro `Bar color` della funzione BARSPLINES.",
+          detail: "Parametro `Colore della barra` della funzione BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Colore barre negative",
           example: "#97b552",
-          detail: "Parametro `Negative bar color` della funzione BARSPLINES.",
+          detail: "Parametro `Colore barre negative` della funzione BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Massimo",
           example: "100",
-          detail: "Parametro `Max` della funzione BARSPLINES.",
+          detail: "Parametro `Massimo` della funzione BARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Color palette` della funzione BARSPLINES.",
+          detail: "Parametro `Tavolozza colori` della funzione BARSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11063,41 +11063,41 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Range` della funzione STACKBARSPLINES.",
+          detail: "Parametro `Intervallo` della funzione STACKBARSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Stack by column",
+          name: "Impila per colonna",
           example: "1",
-          detail: "Parametro `Stack by column` della funzione STACKBARSPLINES.",
+          detail: "Parametro `Impila per colonna` della funzione STACKBARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Intervallo barre",
           example: "1",
-          detail: "Parametro `Bar interval` della funzione STACKBARSPLINES.",
+          detail: "Parametro `Intervallo barre` della funzione STACKBARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "Massimo",
           example: "100",
-          detail: "Parametro `Max` della funzione STACKBARSPLINES.",
+          detail: "Parametro `Massimo` della funzione STACKBARSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Color palette` della funzione STACKBARSPLINES.",
+          detail: "Parametro `Tavolozza colori` della funzione STACKBARSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11115,33 +11115,33 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Range` della funzione DISCRETESPLINES.",
+          detail: "Parametro `Intervallo` della funzione DISCRETESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Segmentation threshold",
+          name: "Soglia di segmentazione",
           example: "1",
-          detail: "Parametro `Segmentation threshold` della funzione DISCRETESPLINES.",
+          detail: "Parametro `Soglia di segmentazione` della funzione DISCRETESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Above threshold color",
+          name: "Colore sopra soglia",
           example: "#2ec7c9",
-          detail: "Parametro `Above threshold color` della funzione DISCRETESPLINES.",
+          detail: "Parametro `Colore sopra soglia` della funzione DISCRETESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Below threshold color",
+          name: "Colore sotto soglia",
           example: "#fc5c5c",
-          detail: "Parametro `Below threshold color` della funzione DISCRETESPLINES.",
+          detail: "Parametro `Colore sotto soglia` della funzione DISCRETESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11159,49 +11159,49 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Range` della funzione TRISTATESPLINES.",
+          detail: "Parametro `Intervallo` della funzione TRISTATESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "Intervallo barre",
           example: "1",
-          detail: "Parametro `Bar interval` della funzione TRISTATESPLINES.",
+          detail: "Parametro `Intervallo barre` della funzione TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "Colore della barra",
           example: "#fc5c5c",
-          detail: "Parametro `Bar color` della funzione TRISTATESPLINES.",
+          detail: "Parametro `Colore della barra` della funzione TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "Colore barre negative",
           example: "#97b552",
-          detail: "Parametro `Negative bar color` della funzione TRISTATESPLINES.",
+          detail: "Parametro `Colore barre negative` della funzione TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Zero value bar color",
+          name: "Colore barre valore zero",
           example: "#999",
-          detail: "Parametro `Zero value bar color` della funzione TRISTATESPLINES.",
+          detail: "Parametro `Colore barre valore zero` della funzione TRISTATESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Color palette` della funzione TRISTATESPLINES.",
+          detail: "Parametro `Tavolozza colori` della funzione TRISTATESPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11219,41 +11219,41 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Range` della funzione PIESPLINES.",
+          detail: "Parametro `Intervallo` della funzione PIESPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Rotation angle",
+          name: "Angolo di rotazione",
           example: "0",
-          detail: "Parametro `Rotation angle` della funzione PIESPLINES.",
+          detail: "Parametro `Angolo di rotazione` della funzione PIESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "border",
+          name: "bordo",
           example: "0",
-          detail: "Parametro `border` della funzione PIESPLINES.",
+          detail: "Parametro `bordo` della funzione PIESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Border color",
+          name: "Colore del bordo",
           example: "#000",
-          detail: "Parametro `Border color` della funzione PIESPLINES.",
+          detail: "Parametro `Colore del bordo` della funzione PIESPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "Tavolozza colori",
           example: "#97b552",
-          detail: "Parametro `Color palette` della funzione PIESPLINES.",
+          detail: "Parametro `Tavolozza colori` della funzione PIESPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11271,33 +11271,33 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "Intervallo",
           example: "A1:A20",
-          detail: "Parametro `Range` della funzione BOXSPLINES.",
+          detail: "Parametro `Intervallo` della funzione BOXSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Outlier ratio",
+          name: "Coefficiente valori anomali",
           example: "1.5",
-          detail: "Parametro `Outlier ratio` della funzione BOXSPLINES.",
+          detail: "Parametro `Coefficiente valori anomali` della funzione BOXSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Target value",
+          name: "Valore obiettivo",
           example: "10",
-          detail: "Parametro `Target value` della funzione BOXSPLINES.",
+          detail: "Parametro `Valore obiettivo` della funzione BOXSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Point size",
+          name: "Dimensione punti",
           example: "1.5",
-          detail: "Parametro `Point size` della funzione BOXSPLINES.",
+          detail: "Parametro `Dimensione punti` della funzione BOXSPLINES.",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11315,25 +11315,25 @@ module.exports = {
       ],
       p: [
         {
-          name: "Target",
+          name: "Obiettivo",
           example: "10",
-          detail: "Parametro `Target` della funzione BULLETSPLINES.",
+          detail: "Parametro `Obiettivo` della funzione BULLETSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "achieved",
+          name: "raggiunto",
           example: "8",
-          detail: "Parametro `achieved` della funzione BULLETSPLINES.",
+          detail: "Parametro `raggiunto` della funzione BULLETSPLINES.",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "Contrast",
+          name: "Valore di confronto",
           example: "12",
-          detail: "Parametro `Contrast` della funzione BULLETSPLINES.",
+          detail: "Parametro `Valore di confronto` della funzione BULLETSPLINES.",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11351,9 +11351,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "config",
+          name: "configurazione",
           example: "PIESPLINES(A1:A20)",
-          detail: "Parametro `config` della funzione COMPOSESPLINES.",
+          detail: "Parametro `configurazione` della funzione COMPOSESPLINES.",
           require: "m",
           repeat: "y",
           type: "rangeall"
@@ -11371,32 +11371,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parametro `range` della funzione SORT.",
+          name: "intervallo",
+          detail: "Parametro `intervallo` della funzione SORT.",
           example: "A2:A17",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "sort_column",
-          detail: "Parametro `sort_column` della funzione SORT.",
+          name: "colonna_ordinamento",
+          detail: "Parametro `colonna_ordinamento` della funzione SORT.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_ascending",
-          detail: "Parametro `is_ascending` della funzione SORT.",
+          name: "è_crescente",
+          detail: "Parametro `è_crescente` della funzione SORT.",
           example: "-1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "sort_column2",
-          detail: "Parametro `sort_column2` della funzione SORT.",
+          name: "colonna_ordinamento2",
+          detail: "Parametro `colonna_ordinamento2` della funzione SORT.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -11415,24 +11415,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parametro `range` della funzione FILTER.",
+          name: "intervallo",
+          detail: "Parametro `intervallo` della funzione FILTER.",
           example: "A5:D20",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "condition1",
-          detail: "Parametro `condition1` della funzione FILTER.",
+          name: "condizione1",
+          detail: "Parametro `condizione1` della funzione FILTER.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "condition2",
-          detail: "Parametro `condition2` della funzione FILTER.",
+          name: "condizione2",
+          detail: "Parametro `condizione2` della funzione FILTER.",
           example: "\"\"",
           require: "o",
           repeat: "n",
@@ -11451,24 +11451,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
-          detail: "Parametro `range` della funzione UNIQUE.",
+          name: "intervallo",
+          detail: "Parametro `intervallo` della funzione UNIQUE.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "by_col",
-          detail: "Parametro `by_col` della funzione UNIQUE.",
+          name: "per_colonna",
+          detail: "Parametro `per_colonna` della funzione UNIQUE.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "occurs_once",
-          detail: "Parametro `occurs_once` della funzione UNIQUE.",
+          name: "una_sola_volta",
+          detail: "Parametro `una_sola_volta` della funzione UNIQUE.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -11487,16 +11487,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
-          detail: "Parametro `rows` della funzione RANDARRAY.",
+          name: "righe",
+          detail: "Parametro `righe` della funzione RANDARRAY.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "columns",
-          detail: "Parametro `columns` della funzione RANDARRAY.",
+          name: "colonne",
+          detail: "Parametro `colonne` della funzione RANDARRAY.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11515,32 +11515,32 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
-          detail: "Parametro `rows` della funzione SEQUENCE.",
+          name: "righe",
+          detail: "Parametro `righe` della funzione SEQUENCE.",
           example: "1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "columns",
-          detail: "Parametro `columns` della funzione SEQUENCE.",
+          name: "colonne",
+          detail: "Parametro `colonne` della funzione SEQUENCE.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "start",
-          detail: "Parametro `start` della funzione SEQUENCE.",
+          name: "inizio",
+          detail: "Parametro `inizio` della funzione SEQUENCE.",
           example: "1",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "step",
-          detail: "Parametro `step` della funzione SEQUENCE.",
+          name: "passo",
+          detail: "Parametro `passo` della funzione SEQUENCE.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11559,9 +11559,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "expression",
+          name: "espressione",
           example: "\"A1+5*2^2\"",
-          detail: "Parametro `expression` della funzione EVALUATE.",
+          detail: "Parametro `espressione` della funzione EVALUATE.",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11579,9 +11579,9 @@ module.exports = {
       ],
       p: [
         {
-          name: "remote_expression",
+          name: "espressione_remota",
           example: "SUM(A1:A10000000)",
-          detail: "Parametro `remote_expression` della funzione REMOTE.",
+          detail: "Parametro `espressione_remota` della funzione REMOTE.",
           require: "m",
           repeat: "n",
           type: "string"

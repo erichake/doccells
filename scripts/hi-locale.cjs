@@ -18,7 +18,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "श्रेणी",
           detail: "The range which is tested against `criterion`.",
           example: "A1:A10",
           require: "m",
@@ -26,7 +26,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion",
+          name: "मानदंड",
           detail: "The pattern or test to apply to `range`.",
           example: "\">20\"",
           require: "m",
@@ -34,7 +34,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "sum_range",
+          name: "योग_श्रेणी",
           detail: "The range to be summed, if different from `range`.",
           example: "B1:B10",
           require: "o",
@@ -54,7 +54,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
+          name: "कोण",
           detail: "The angle to find the tangent of, in radians.",
           example: "45*PI()/180",
           require: "m",
@@ -74,7 +74,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "Any real value to calculate the hyperbolic tangent of.",
           example: "A2",
           require: "m",
@@ -94,7 +94,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to round up to the nearest integer multiple of `factor`.",
           example: "23.25",
           require: "m",
@@ -102,7 +102,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor",
+          name: "गुणक",
           detail: "The number to whose multiples `value` will be rounded.",
           example: "0.1",
           require: "m",
@@ -122,7 +122,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value for which to calculate the inverse tangent.",
           example: "0",
           require: "m",
@@ -142,7 +142,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value for which to calculate the inverse hyperbolic sine.",
           example: "0.9",
           require: "m",
@@ -162,7 +162,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The number of which to return the absolute value.",
           example: "-2",
           require: "m",
@@ -182,7 +182,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value for which to calculate the inverse cosine. Must be between `-1` and `1`, inclusive.",
           example: "0",
           require: "m",
@@ -202,7 +202,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value for which to calculate the inverse hyperbolic cosine. Must be greater than or equal to `1`.",
           example: "2",
           require: "m",
@@ -222,7 +222,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider.",
           example: "1",
           require: "m",
@@ -230,7 +230,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider.",
           example: "2",
           require: "o",
@@ -250,7 +250,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value for which to calculate the inverse hyperbolic tangent. Must be between -1 and 1, exclusive.",
           example: "0.9",
           require: "m",
@@ -298,7 +298,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range in which to count the number of blanks.",
           example: "A2:C100",
           require: "m",
@@ -318,7 +318,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "Any real value to calculate the hyperbolic cosine of.",
           example: "A2",
           require: "m",
@@ -338,7 +338,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to round down to the nearest integer.",
           example: "99.44",
           require: "m",
@@ -358,7 +358,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to be verified as even.",
           example: "4",
           require: "m",
@@ -378,7 +378,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to be verified as odd.",
           example: "4",
           require: "m",
@@ -398,7 +398,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range whose factors to consider in a calculation to find the least common multiple.",
           example: "A2:A5",
           require: "m",
@@ -406,7 +406,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges whose factors to consider to find the least common multiple.",
           example: "3",
           require: "o",
@@ -426,7 +426,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value for which to calculate the logarithm, base e.",
           example: "100",
           require: "m",
@@ -446,7 +446,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value for which to calculate the logarithm.",
           example: "128",
           require: "m",
@@ -454,7 +454,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "base",
+          name: "आधार",
           detail: "The base to use for calculation of the logarithm.",
           example: "2",
           require: "o",
@@ -474,7 +474,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value for which to calculate the logarithm, base 10.",
           example: "100",
           require: "m",
@@ -494,7 +494,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "भाज्य",
           detail: "The number to be divided to find the remainder.",
           example: "10",
           require: "m",
@@ -502,7 +502,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "divisor",
+          name: "भाजक",
           detail: "The number to divide by.",
           example: "4",
           require: "m",
@@ -522,7 +522,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The number to round to the nearest integer multiple of another.",
           example: "21",
           require: "m",
@@ -530,7 +530,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor",
+          name: "गुणक",
           detail: "The number to whose multiples `value` will be rounded.",
           example: "14",
           require: "m",
@@ -550,7 +550,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to round to the next greatest odd number.",
           example: "2",
           require: "m",
@@ -570,7 +570,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first number or range whose squares to add together.",
           example: "A2:A100",
           require: "m",
@@ -578,7 +578,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional numbers or ranges whose squares to add to the square(s) of `value1`.",
           example: "2",
           require: "o",
@@ -626,7 +626,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first number or range to add together.",
           example: "A2:A100",
           require: "m",
@@ -634,7 +634,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional numbers or ranges to add to `value1`.",
           example: "2",
           require: "o",
@@ -654,7 +654,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "function_code",
+          name: "फ़ंक्शन_कोड",
           detail: "The function to use in subtotal aggregation.",
           example: "1",
           require: "m",
@@ -662,7 +662,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "range1",
+          name: "श्रेणी1",
           detail: "The first range over which to calculate a subtotal.",
           example: "A2:A5",
           require: "m",
@@ -670,7 +670,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "range2",
+          name: "श्रेणी2",
           detail: "Additional ranges over which to calculate subtotals.",
           example: "B2:B8",
           require: "o",
@@ -690,7 +690,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value for which to calculate the inverse sine. Must be between `-1` and `1`, inclusive.",
           example: "0",
           require: "m",
@@ -710,7 +710,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "श्रेणी",
           detail: "The range that is tested against `criterion`.",
           example: "A1:A10",
           require: "m",
@@ -718,7 +718,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion",
+          name: "मानदंड",
           detail: "The pattern or test to apply to `range`.",
           example: "\">20\"",
           require: "m",
@@ -738,7 +738,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
+          name: "कोण",
           detail: "The angle to convert from degrees to radians.",
           example: "180",
           require: "m",
@@ -769,7 +769,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider for uniqueness.",
           example: "A1:C100",
           require: "m",
@@ -777,7 +777,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider for uniqueness.",
           example: "1",
           require: "o",
@@ -797,7 +797,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
+          name: "कोण",
           detail: "The angle to convert from radians to degrees.",
           example: "PI()",
           require: "m",
@@ -837,7 +837,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to round to the next greatest even number.",
           example: "3",
           require: "m",
@@ -857,7 +857,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "exponent",
+          name: "घातांक",
           detail: "The exponent to raise e to.",
           example: "2",
           require: "m",
@@ -877,7 +877,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The number or reference to a number whose factorial will be calculated and returned.",
           example: "3",
           require: "m",
@@ -897,7 +897,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The number or reference to a number whose double factorial will be calculated and returned.",
           example: "6",
           require: "m",
@@ -928,7 +928,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to round down to the nearest integer multiple of `factor`.",
           example: "23.25",
           require: "m",
@@ -936,7 +936,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor",
+          name: "गुणक",
           detail: "The number to whose multiples `value` will be rounded.",
           example: "0.1",
           require: "m",
@@ -956,7 +956,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range whose factors to consider in a calculation to find the greatest common divisor.",
           example: "A2:A5",
           require: "m",
@@ -964,7 +964,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges whose factors to consider to find the greatest common divisor.",
           example: "96",
           require: "o",
@@ -984,7 +984,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "low",
+          name: "निचली_सीमा",
           detail: "The low end of the random range.",
           example: "1",
           require: "m",
@@ -992,7 +992,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "high",
+          name: "ऊपरी_सीमा",
           detail: "The high end of the random range.",
           example: "10",
           require: "m",
@@ -1012,7 +1012,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to round to `places` number of places.",
           example: "99.44",
           require: "m",
@@ -1020,7 +1020,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "दशमलव_स्थान",
           detail: "The number of decimal places to which to round.",
           example: "1",
           require: "m",
@@ -1040,7 +1040,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to round to `places` number of places, always rounding down.",
           example: "99.44",
           require: "m",
@@ -1048,7 +1048,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "दशमलव_स्थान",
           detail: "The number of decimal places to which to round.",
           example: "1",
           require: "m",
@@ -1068,7 +1068,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to round to `places` number of places, always rounding up.",
           example: "99.44",
           require: "m",
@@ -1076,7 +1076,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "दशमलव_स्थान",
           detail: "The number of decimal places to which to round.",
           example: "1",
           require: "m",
@@ -1140,7 +1140,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value whose sign will be evaluated.",
           example: "-42",
           require: "m",
@@ -1160,7 +1160,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
+          name: "कोण",
           detail: "The angle to find the sine of, in radians.",
           example: "PI()",
           require: "m",
@@ -1180,7 +1180,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "Any real value to calculate the hyperbolic sine of.",
           example: "A2",
           require: "m",
@@ -1200,7 +1200,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The number for which to calculate the positive square root.",
           example: "9",
           require: "m",
@@ -1220,7 +1220,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The number which will be multiplied by Pi and have the product's square root returned",
           example: "9",
           require: "m",
@@ -1240,7 +1240,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The input to the Gamma function. The natural logarithm of Gamma(`value`) will be returned.",
           example: "4",
           require: "m",
@@ -1260,7 +1260,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
+          name: "कोण",
           detail: "The angle to find the cosine of, in radians.",
           example: "PI()",
           require: "m",
@@ -1280,7 +1280,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to be truncated.",
           example: "3.141592654",
           require: "m",
@@ -1288,7 +1288,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "दशमलव_स्थान",
           detail: "The number of significant digits to the right of the decimal point to retain.",
           example: "2",
           require: "o",
@@ -1308,7 +1308,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "भाज्य",
           detail: "The number to be divided.",
           example: "4",
           require: "m",
@@ -1316,7 +1316,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "divisor",
+          name: "भाजक",
           detail: "The number to divide by.",
           example: "2",
           require: "m",
@@ -1336,7 +1336,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "base",
+          name: "आधार",
           detail: "The number to raise to the `exponent` power.",
           example: "4",
           require: "m",
@@ -1344,7 +1344,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "exponent",
+          name: "घातांक",
           detail: "The exponent to raise `base` to.",
           example: "0.5",
           require: "m",
@@ -1364,7 +1364,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "sum_range",
+          name: "योग_श्रेणी",
           detail: "The range to sum.",
           example: "A1:A10",
           require: "m",
@@ -1372,7 +1372,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criteria_range1",
+          name: "मानदंड_श्रेणी1",
           detail: "The range to check against criterion1.",
           example: " B1:B10",
           require: "m",
@@ -1380,7 +1380,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion1",
+          name: "मानदंड1",
           detail: "The pattern or test to apply to criteria_range1.",
           example: " \">20\"",
           require: "m",
@@ -1388,7 +1388,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
+          name: "मानदंड_श्रेणी2",
           detail: "Additional ranges to check.",
           example: " C1:C10",
           require: "o",
@@ -1408,7 +1408,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range1",
+          name: "मानदंड_श्रेणी1",
           detail: "The range to check against `criterion1`.",
           example: "A1:A10",
           require: "m",
@@ -1416,7 +1416,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion1",
+          name: "मानदंड1",
           detail: "The pattern or test to apply to `criteria_range1`.",
           example: " \">20\"",
           require: "m",
@@ -1424,7 +1424,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
+          name: "मानदंड_श्रेणी2",
           detail: "Additional ranges to check.",
           example: " B1:B10",
           require: "o",
@@ -1444,7 +1444,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
+          name: "गुणक1",
           detail: "The first number or range to calculate for the product.",
           example: "A2:A100",
           require: "m",
@@ -1452,7 +1452,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor2",
+          name: "गुणक2",
           detail: "More numbers or ranges to calculate for the product.",
           example: "2",
           require: "o",
@@ -1472,7 +1472,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the population.",
           example: "1",
           require: "m",
@@ -1480,7 +1480,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the population.",
           example: "2",
           require: "o",
@@ -1500,7 +1500,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
+          name: "सफलताओं_की_संख्या",
           detail: "The desired number of successes.",
           example: "4",
           require: "m",
@@ -1508,7 +1508,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "num_draws",
+          name: "प्रयासों_की_संख्या",
           detail: "The number of permitted draws.",
           example: "12",
           require: "m",
@@ -1516,7 +1516,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "successes_in_pop",
+          name: "जनसंख्या_में_सफलताएं",
           detail: "The total number of successes in the population.",
           example: "20",
           require: "m",
@@ -1524,7 +1524,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pop_size",
+          name: "जनसंख्या_आकार",
           detail: "The total size of the population",
           example: "40",
           require: "m",
@@ -1532,7 +1532,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "संचयी",
           detail: "Determine the logical value of the function form. \n\nIf cumulative is TRUE(), HYPGEOM.DIST returns the cumulative distribution function;\n\nif FALSE(), it returns the probability density function.",
           example: "TRUE()",
           require: "m",
@@ -1552,7 +1552,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "डेटा_y",
           detail: "The range representing the array or matrix of dependent data.",
           example: "A2:A100",
           require: "m",
@@ -1560,7 +1560,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "डेटा_x",
           detail: "The range representing the array or matrix of independent data.",
           example: "B2:B100",
           require: "m",
@@ -1580,7 +1580,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the dataset.",
           example: "1",
           require: "m",
@@ -1588,7 +1588,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the dataset.",
           example: "2",
           require: "o",
@@ -1608,7 +1608,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "Array or range containing the dataset to consider.",
           example: "A2:B100",
           require: "m",
@@ -1636,7 +1636,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the sample.",
           example: "1",
           require: "m",
@@ -1644,7 +1644,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the sample.",
           example: "2",
           require: "o",
@@ -1664,7 +1664,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the population.",
           example: "1",
           require: "m",
@@ -1672,7 +1672,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the population.",
           example: "2",
           require: "o",
@@ -1692,7 +1692,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the population.",
           example: "1",
           require: "m",
@@ -1700,7 +1700,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the population.",
           example: "2",
           require: "o",
@@ -1720,7 +1720,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value whose rank will be determined.",
           example: "A10",
           require: "m",
@@ -1728,7 +1728,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data",
+          name: "डेटा",
           detail: "The array or range containing the dataset to consider.",
           example: "A1:A100",
           require: "m",
@@ -1736,7 +1736,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "is_ascending",
+          name: "क्या_आरोही_है",
           detail: "Whether to consider the values in `data` in descending or ascending order. If omitted, the default is descending (FALSE).",
           example: "TRUE()",
           require: "o",
@@ -1756,7 +1756,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value whose rank will be determined.",
           example: "A10",
           require: "m",
@@ -1764,7 +1764,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data",
+          name: "डेटा",
           detail: "The array or range containing the dataset to consider.",
           example: "A1:A100",
           require: "m",
@@ -1772,7 +1772,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "is_ascending",
+          name: "क्या_आरोही_है",
           detail: "Whether to consider the values in `data` in descending or ascending order. If omitted, the default is descending (FALSE).",
           example: "TRUE()",
           require: "o",
@@ -1792,7 +1792,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "The array or range containing the dataset to consider.",
           example: "A1:A100",
           require: "m",
@@ -1800,7 +1800,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value",
+          name: "मान",
           detail: "The value whose percentage rank will be determined.",
           example: "A2",
           require: "m",
@@ -1808,7 +1808,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "सार्थक_अंक",
           detail: "The number of significant figures to use in the calculation. Default is 3.",
           example: "4",
           require: "o",
@@ -1828,7 +1828,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "The array or range containing the dataset to consider.",
           example: "A1:A100",
           require: "m",
@@ -1836,7 +1836,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value",
+          name: "मान",
           detail: "The value whose percentage rank will be determined.",
           example: " A2",
           require: "m",
@@ -1844,7 +1844,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "सार्थक_अंक",
           detail: "The number of significant figures to use in the calculation. Default is 3.",
           example: "4",
           require: "o",
@@ -1872,7 +1872,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_y",
+          name: "डेटा_y",
           detail: "The range representing the array or matrix of dependent data.",
           example: "A2:A100",
           require: "m",
@@ -1880,7 +1880,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "डेटा_x",
           detail: "The range representing the array or matrix of independent data.",
           example: "B2:B100",
           require: "m",
@@ -1900,7 +1900,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value for which to calculate the inverse Fisher transformation.",
           example: "0.962",
           require: "m",
@@ -1920,7 +1920,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value for which to calculate the Fisher transformation.",
           example: "0.962",
           require: "m",
@@ -1940,7 +1940,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider when calculating mode.",
           example: "A2:A100",
           require: "m",
@@ -1948,7 +1948,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider when calculating mode.",
           example: "B2:B100",
           require: "o",
@@ -1976,7 +1976,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "shape",
+          name: "आकृति",
           detail: "The shape parameter of the Weibull distribution function.",
           example: "2",
           require: "m",
@@ -1984,7 +1984,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "scale",
+          name: "स्केल",
           detail: "The scale parameter of the Weibull distribution function.",
           example: "3",
           require: "m",
@@ -1992,7 +1992,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "संचयी",
           detail: "Whether to use the cumulative distribution function.",
           example: "TRUE()",
           require: "m",
@@ -2012,7 +2012,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider when counting.",
           example: "A2:A100",
           require: "m",
@@ -2020,7 +2020,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider when counting.",
           example: "B2:B100",
           require: "o",
@@ -2040,7 +2040,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider when counting.",
           example: "A2:A100",
           require: "m",
@@ -2048,7 +2048,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider when counting.",
           example: "B2:B100",
           require: "o",
@@ -2068,7 +2068,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the sample.",
           example: "1",
           require: "m",
@@ -2076,7 +2076,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the sample.",
           example: "2",
           require: "o",
@@ -2096,7 +2096,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider when calculating the average value.",
           example: "A2:A100",
           require: "m",
@@ -2104,7 +2104,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider when calculating the average value.",
           example: "B2:B100",
           require: "o",
@@ -2124,7 +2124,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider when calculating the average value.",
           example: "A2:A100",
           require: "m",
@@ -2132,7 +2132,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider when calculating the average value.",
           example: "B2:B100",
           require: "o",
@@ -2152,7 +2152,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
+          name: "सफलताओं_की_संख्या",
           detail: "The number of successes for which to calculate the probability in `num_trials` trials.",
           example: "4",
           require: "m",
@@ -2160,7 +2160,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "num_trials",
+          name: "परीक्षणों_की_संख्या",
           detail: "The number of independent trials.",
           example: "100",
           require: "m",
@@ -2168,7 +2168,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "prob_success",
+          name: "सफलता_की_प्रायिकता",
           detail: "The probability of success in any given trial.",
           example: "0.005",
           require: "m",
@@ -2176,7 +2176,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "संचयी",
           detail: "Whether to use the binomial cumulative distribution.",
           example: "FALSE()",
           require: "m",
@@ -2196,7 +2196,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_trials",
+          name: "परीक्षणों_की_संख्या",
           detail: "The number of independent trials.",
           example: "100",
           require: "m",
@@ -2204,7 +2204,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "prob_success",
+          name: "सफलता_की_प्रायिकता",
           detail: "The probability of success in any given trial.",
           example: "0.005",
           require: "m",
@@ -2212,7 +2212,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "target_prob",
+          name: "लक्ष्य_प्रायिकता",
           detail: "The desired threshold probability.",
           example: "0.8",
           require: "m",
@@ -2232,7 +2232,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "alpha",
+          name: "अल्फा",
           detail: "One minus the desired confidence level. E.g. `0.1` for `0.9`, or 90%, confidence.",
           example: "0.05",
           require: "m",
@@ -2240,7 +2240,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "मानक_विचलन",
           detail: "The standard deviation of the population.",
           example: "1.6",
           require: "m",
@@ -2248,7 +2248,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pop_size",
+          name: "जनसंख्या_आकार",
           detail: "The size of the population.",
           example: "250",
           require: "m",
@@ -2268,7 +2268,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "डेटा_y",
           detail: "The range representing the array or matrix of dependent data.",
           example: "A2:A100",
           require: "m",
@@ -2276,7 +2276,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "डेटा_x",
           detail: "The range representing the array or matrix of independent data.",
           example: "B2:B100",
           require: "m",
@@ -2296,7 +2296,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "डेटा_y",
           detail: "The range representing the array or matrix of dependent data.",
           example: "B2:B100",
           require: "m",
@@ -2304,7 +2304,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "डेटा_x",
           detail: "The range representing the array or matrix of independent data.",
           example: "A2:A100",
           require: "m",
@@ -2324,7 +2324,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "डेटा_y",
           detail: "The range representing the array or matrix of dependent data.",
           example: "A2:A100",
           require: "m",
@@ -2332,7 +2332,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "डेटा_x",
           detail: "The range representing the array or matrix of independent data.",
           example: "B2:B100",
           require: "m",
@@ -2352,7 +2352,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the sample.",
           example: "1",
           require: "m",
@@ -2360,7 +2360,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the sample.",
           example: "2",
           require: "o",
@@ -2388,7 +2388,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "lambda",
+          name: "लैम्ब्डा",
           detail: "The lambda to specify the exponential distribution function.",
           example: "0.5",
           require: "m",
@@ -2396,7 +2396,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "संचयी",
           detail: "Whether to use the exponential cumulative distribution.",
           example: "FALSE()",
           require: "m",
@@ -2416,7 +2416,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range",
+          name: "मानदंड_श्रेणी",
           detail: "The range to check against `criterion`.",
           example: "A1:A10",
           require: "m",
@@ -2424,7 +2424,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criterion",
+          name: "मानदंड",
           detail: "The pattern or test to apply to `criteria_range`.",
           example: "\">20\"",
           require: "m",
@@ -2432,7 +2432,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "average_range",
+          name: "औसत_श्रेणी",
           detail: "The range to average. If not included, `criteria_range` is used for the average instead.",
           example: "B1:B10",
           require: "o",
@@ -2452,7 +2452,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "average_range",
+          name: "औसत_श्रेणी",
           detail: "The range to average.",
           example: "A1:A10",
           require: "m",
@@ -2460,7 +2460,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria_range1",
+          name: "मानदंड_श्रेणी1",
           detail: "The range to check against `criterion1`.",
           example: " B1:B10",
           require: "m",
@@ -2468,7 +2468,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criterion1",
+          name: "मानदंड1",
           detail: "The pattern or test to apply to `criteria_range1`.",
           example: " \">20\"",
           require: "m",
@@ -2476,7 +2476,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
+          name: "मानदंड_श्रेणी2",
           detail: "Additional ranges to check.",
           example: " C1:C10",
           require: "m",
@@ -2524,7 +2524,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "Array or range containing the dataset to consider.",
           example: "A2:A100",
           require: "m",
@@ -2532,7 +2532,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "exclude_proportion",
+          name: "अपवर्जित_अनुपात",
           detail: "The proportion of the dataset to exclude, from the extremities of the set.",
           example: "0.1",
           require: "m",
@@ -2552,7 +2552,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "The array or range containing the dataset to consider.",
           example: "A2:A100",
           require: "m",
@@ -2560,7 +2560,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "percentile",
+          name: "प्रतिशतक",
           detail: "The percentile, exclusive of 0 and 1, whose value within 'data' will be calculated and returned.",
           example: "0.25",
           require: "m",
@@ -2580,7 +2580,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "The array or range containing the dataset to consider.",
           example: "A2:A100",
           require: "m",
@@ -2588,7 +2588,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "percentile",
+          name: "प्रतिशतक",
           detail: "The percentile whose value within `data` will be calculated and returned.`",
           example: "0.25",
           require: "m",
@@ -2608,7 +2608,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "डेटा_y",
           detail: "The range representing the array or matrix of dependent data.",
           example: "A2:A100",
           require: "m",
@@ -2616,7 +2616,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "डेटा_x",
           detail: "The range representing the array or matrix of independent data.",
           example: "B2:B100",
           require: "m",
@@ -2664,7 +2664,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "संचयी",
           detail: "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
           example: "FALSE()",
           require: "m",
@@ -2692,7 +2692,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "माध्य",
           detail: "The mean (mu) of the normal distribution function.",
           example: "1",
           require: "m",
@@ -2700,7 +2700,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "मानक_विचलन",
           detail: "The standard deviation (sigma) of the normal distribution function.",
           example: "4",
           require: "m",
@@ -2728,7 +2728,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "माध्य",
           detail: "The mean (mu) of the normal distribution function.",
           example: "1",
           require: "m",
@@ -2736,7 +2736,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "मानक_विचलन",
           detail: "The standard deviation (sigma) of the normal distribution function.",
           example: "4",
           require: "m",
@@ -2744,7 +2744,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "संचयी",
           detail: "Whether to use the normal cumulative distribution function rather than the distribution function.",
           example: "FALSE()",
           require: "m",
@@ -2764,7 +2764,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_failures",
+          name: "असफलताओं_की_संख्या",
           detail: "The number of failures to model.",
           example: "4",
           require: "m",
@@ -2772,7 +2772,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "num_successes",
+          name: "सफलताओं_की_संख्या",
           detail: "The number of successes to model.",
           example: "2",
           require: "m",
@@ -2780,7 +2780,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "prob_success",
+          name: "सफलता_की_प्रायिकता",
           detail: "The probability of success in any given trial.",
           example: "0.1",
           require: "m",
@@ -2788,7 +2788,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "संचयी",
           detail: "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
           example: "FALSE()",
           require: "m",
@@ -2808,7 +2808,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider when calculating the minimum value.",
           example: "A2:A100",
           require: "m",
@@ -2816,7 +2816,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider when calculating the minimum value.",
           example: "B2:B100",
           require: "o",
@@ -2836,7 +2836,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider when calculating the minimum value.",
           example: "A2:A100",
           require: "m",
@@ -2844,7 +2844,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider when calculating the minimum value.",
           example: "B2:B100",
           require: "o",
@@ -2864,7 +2864,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider when calculating the median value.",
           example: "A2:A100",
           require: "m",
@@ -2872,7 +2872,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider when calculating the median value.",
           example: "B2:B100",
           require: "o",
@@ -2892,7 +2892,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider when calculating the maximum value.",
           example: "A2:A100",
           require: "m",
@@ -2900,7 +2900,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider when calculating the maximum value.",
           example: "B2:B100",
           require: "o",
@@ -2920,7 +2920,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range to consider when calculating the maximum value.",
           example: "A2:A100",
           require: "m",
@@ -2928,7 +2928,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to consider when calculating the maximum value.",
           example: "B2:B100",
           require: "o",
@@ -2956,7 +2956,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "माध्य",
           detail: "The mean (mu) of the inverse log-normal cumulative distribution function.",
           example: "4",
           require: "m",
@@ -2964,7 +2964,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "मानक_विचलन",
           detail: "The standard deviation (sigma) of the inverse log-normal cumulative distribution function.",
           example: "6",
           require: "m",
@@ -2992,7 +2992,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "माध्य",
           detail: "The mean (mu) of the log-normal cumulative distribution function.",
           example: "4",
           require: "m",
@@ -3000,7 +3000,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "मानक_विचलन",
           detail: "The standard deviation (sigma) of the log-normal cumulative distribution function.",
           example: "6",
           require: "m",
@@ -3008,7 +3008,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "संचयी",
           detail: "Determine the logical value of the function form. \n\nIf TRUE(), it returns the cumulative distribution function;\n\nIf it is FALSE(), it returns the probability density function.",
           example: "FALSE()",
           require: "m",
@@ -3028,7 +3028,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "The array or range containing the dataset to consider.",
           example: "A2:A100",
           require: "m",
@@ -3036,7 +3036,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "value",
+          name: "मान",
           detail: "The test statistic to use in the Z-test.",
           example: "B2",
           require: "m",
@@ -3044,7 +3044,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "मानक_विचलन",
           detail: "The standard deviation to assume for the Z-test. If this is not provided, the standard deviation of the data will be used.",
           example: "3",
           require: "o",
@@ -3064,7 +3064,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "Array or range containing the dataset to consider.",
           example: "A3:A6",
           require: "m",
@@ -3072,7 +3072,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "probabilities",
+          name: "प्रायिकताएं",
           detail: "Array or range containing probabilities corresponding to `data`.",
           example: "2",
           require: "m",
@@ -3080,7 +3080,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "low_limit",
+          name: "निचली_सीमा",
           detail: "The lower bound on the value range for which to calculate the probability.",
           example: "3",
           require: "m",
@@ -3088,7 +3088,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "high_limit",
+          name: "ऊपरी_सीमा",
           detail: "The upper bound on the value range for which to calculate the probability.",
           example: "4",
           require: "o",
@@ -3108,7 +3108,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "The array or range containing the dataset to consider.",
           example: "A2:A100",
           require: "m",
@@ -3116,7 +3116,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
+          name: "चतुर्थक_संख्या",
           detail: "Which quartile to return.",
           example: "3",
           require: "m",
@@ -3136,7 +3136,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "The array or range containing the dataset to consider.",
           example: "A2:A100",
           require: "m",
@@ -3144,7 +3144,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
+          name: "चतुर्थक_संख्या",
           detail: "Which quartile value to return.",
           example: "3",
           require: "m",
@@ -3172,7 +3172,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "माध्य",
           detail: "The mean (mu) of the Poisson distribution function.",
           example: "1",
           require: "m",
@@ -3180,7 +3180,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "संचयी",
           detail: "Whether to use the Poisson cumulative distribution function rather than the distribution function.",
           example: "FALSE()",
           require: "m",
@@ -3200,7 +3200,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "डेटा_y",
           detail: "The range representing the array or matrix of dependent data.",
           example: "A2:A100",
           require: "m",
@@ -3208,7 +3208,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "डेटा_x",
           detail: "The range representing the array or matrix of independent data.",
           example: "B2:B100",
           require: "m",
@@ -3236,7 +3236,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "स्वतंत्रता_की_कोटियां",
           detail: "The number of degrees of freedom.",
           example: "30",
           require: "m",
@@ -3244,7 +3244,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "संचयी",
           detail: "If cumulative is TRUE, T.DIST returns the cumulative distribution function; if FALSE, it returns the probability density function.",
           example: "TRUE()",
           require: "m",
@@ -3272,7 +3272,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "स्वतंत्रता_की_कोटियां",
           detail: "The number of degrees of freedom.",
           example: "30",
           require: "m",
@@ -3300,7 +3300,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "स्वतंत्रता_की_कोटियां",
           detail: "The number of degrees of freedom.",
           example: "30",
           require: "m",
@@ -3320,7 +3320,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "प्रायिकता",
           detail: "The probability associated with the two-tailed t-distribution.",
           example: "0.35",
           require: "m",
@@ -3328,7 +3328,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "स्वतंत्रता_की_कोटियां",
           detail: "The number of degrees of freedom.",
           example: "1",
           require: "m",
@@ -3348,7 +3348,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "प्रायिकता",
           detail: "The probability associated with the two-tailed t-distribution.",
           example: "0.35",
           require: "m",
@@ -3356,7 +3356,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "स्वतंत्रता_की_कोटियां",
           detail: "The number of degrees of freedom.",
           example: "1",
           require: "m",
@@ -3376,7 +3376,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range1",
+          name: "श्रेणी1",
           detail: "The first sample of data or group of cells to consider for the t-test.",
           example: "A1:A4",
           require: "m",
@@ -3384,7 +3384,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "range2",
+          name: "श्रेणी2",
           detail: "The second sample of data or group of cells to consider for the t-test.",
           example: "B1:B4",
           require: "m",
@@ -3392,7 +3392,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "tails",
+          name: "पूंछ",
           detail: "Specifies the number of distribution tails.",
           example: "2",
           require: "m",
@@ -3400,7 +3400,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "प्रकार",
           detail: "Specifies the type of t-test.",
           example: "1",
           require: "m",
@@ -3428,7 +3428,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
+          name: "स्वतंत्रता_की_कोटियां1",
           detail: "The numerator of the number of degrees of freedom.",
           example: "7",
           require: "m",
@@ -3436,7 +3436,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
+          name: "स्वतंत्रता_की_कोटियां2",
           detail: "The denominator of the number of degrees of freedom.",
           example: "6",
           require: "m",
@@ -3444,7 +3444,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "संचयी",
           detail: "Logical value that determines the form of the function.",
           example: "TRUE()",
           require: "m",
@@ -3472,7 +3472,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
+          name: "स्वतंत्रता_की_कोटियां1",
           detail: "The numerator of the number of degrees of freedom.",
           example: "7",
           require: "m",
@@ -3480,7 +3480,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
+          name: "स्वतंत्रता_की_कोटियां2",
           detail: "The denominator of the number of degrees of freedom.",
           example: "6",
           require: "m",
@@ -3500,7 +3500,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the population.",
           example: "1",
           require: "m",
@@ -3508,7 +3508,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the population.",
           example: "2",
           require: "o",
@@ -3528,7 +3528,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the sample.",
           example: "1",
           require: "m",
@@ -3536,7 +3536,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the sample.",
           example: "2",
           require: "o",
@@ -3556,7 +3556,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the sample.",
           example: "1",
           require: "m",
@@ -3564,7 +3564,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the sample.",
           example: "2",
           require: "o",
@@ -3584,7 +3584,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the population.",
           example: "1",
           require: "m",
@@ -3592,7 +3592,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the population.",
           example: "2",
           require: "o",
@@ -3612,7 +3612,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "डेटा_y",
           detail: "The range representing the array or matrix of dependent data.",
           example: "A2:A100",
           require: "m",
@@ -3620,7 +3620,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "डेटा_x",
           detail: "The range representing the array or matrix of independent data.",
           example: "B2:B100",
           require: "m",
@@ -3640,7 +3640,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value of the random variable to normalize.",
           example: "96",
           require: "m",
@@ -3648,7 +3648,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "माध्य",
           detail: "The mean of the distribution.",
           example: "80",
           require: "m",
@@ -3656,7 +3656,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "मानक_विचलन",
           detail: "The standard deviation of the distribution.",
           example: "6.7",
           require: "m",
@@ -3676,7 +3676,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "The array or range containing the dataset to consider.",
           example: "A2:B100",
           require: "m",
@@ -3704,7 +3704,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "डेटा_y",
           detail: "The range representing the array or matrix of dependent data.",
           example: "A2:A100",
           require: "m",
@@ -3712,7 +3712,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "डेटा_x",
           detail: "The range representing the array or matrix of independent data.",
           example: "B2:B100",
           require: "m",
@@ -3732,7 +3732,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the dataset.",
           example: "1",
           require: "m",
@@ -3740,7 +3740,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the dataset.",
           example: "2",
           require: "o",
@@ -3760,7 +3760,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value or range of the dataset.",
           example: "1",
           require: "m",
@@ -3768,7 +3768,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional values or ranges to include in the dataset.",
           example: "2",
           require: "o",
@@ -3788,7 +3788,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "खोज_कुंजी",
           detail: "The value to search for. For example, `42`, `\"Cats\"`, or `I24`.",
           example: "10003",
           require: "m",
@@ -3796,7 +3796,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
+          name: "श्रेणी",
           detail: "The range to consider for the search. The first column in the range is searched for the key specified in `search_key`.",
           example: "A2:B26",
           require: "m",
@@ -3804,7 +3804,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "index",
+          name: "इंडेक्स",
           detail: "The column index of the value to be returned, where the first column in `range` is numbered 1.",
           example: "2",
           require: "m",
@@ -3812,7 +3812,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
+          name: "क्या_क्रमबद्ध_है",
           detail: "Indicates whether the column to be searched (the first column of the specified range) is sorted, in which case the closest match for `search_key` will be returned.",
           example: "FALSE()",
           require: "o",
@@ -3832,7 +3832,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "खोज_कुंजी",
           detail: "The value to search for. For example, `42`, `\"Cats\"`, or `I24`.",
           example: "10003",
           require: "m",
@@ -3840,7 +3840,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
+          name: "श्रेणी",
           detail: "The range to consider for the search. The first row in the range is searched for the key specified in `search_key`.",
           example: "A2:Z6",
           require: "m",
@@ -3848,7 +3848,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "index",
+          name: "इंडेक्स",
           detail: "The row index of the value to be returned, where the first row in `range` is numbered 1.",
           example: "2",
           require: "m",
@@ -3856,7 +3856,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
+          name: "क्या_क्रमबद्ध_है",
           detail: "Indicates whether the row to be searched (the first row of the specified range) is sorted.",
           example: "FALSE()",
           require: "o",
@@ -3876,7 +3876,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "खोज_कुंजी",
           detail: "The value to search for in the row or column. For example, `42`, `\"Cats\"`, or `I24`.",
           example: "10003",
           require: "m",
@@ -3884,7 +3884,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "search_range|search_result_array",
+          name: "खोज_श्रेणी|खोज_परिणाम_सरणी",
           detail: "One method of using this function is to provide a single sorted row or column `search_range` to look through for the `search_key` with a second argument `result_range`. The other way is to combine these two arguments into one `search_result_array` where the first row or column is searched and a value is returned from the last row or column in the array. If `search_key` is not found, a non-exact match may be returned.",
           example: "A1:A100",
           require: "m",
@@ -3892,7 +3892,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "result_range",
+          name: "परिणाम_श्रेणी",
           detail: "The range from which to return a result. The value returned corresponds to the location where `search_key` is found in `search_range`. This range must be only a single row or column and should not be used if using the `search_result_array` method.",
           example: "B1:B100",
           require: "o",
@@ -3912,7 +3912,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "row",
+          name: "पंक्ति",
           detail: "The row number of the cell reference",
           example: "1",
           require: "m",
@@ -3920,7 +3920,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "column",
+          name: "स्तंभ",
           detail: "The column number (not name) of the cell reference. `A` is column number `1`.",
           example: "2",
           require: "m",
@@ -3928,7 +3928,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "absolute_relative_mode",
+          name: "निरपेक्ष_सापेक्ष_मोड",
           detail: "An indicator of whether the reference is row/column absolute. `1` is row and column absolute (e.g. $A$1), `2` is row absolute and column relative (e.g. A$1), `3` is row relative and column absolute (e.g. $A1), and `4` is row and column relative (e.g. A1).",
           example: "4",
           require: "o",
@@ -3936,7 +3936,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "use_a1_notation",
+          name: "a1_संकेतन_का_उपयोग_करें",
           detail: "A boolean indicating whether to use `A1` style notation (TRUE) or `R1C1` style notation (FALSE).",
           example: "FALSE()",
           require: "o",
@@ -3944,7 +3944,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "sheet",
+          name: "शीट",
           detail: "Text indicating the name of the sheet into which the address points.",
           example: "\"Sheet2\"",
           require: "o",
@@ -3964,7 +3964,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference_as_string",
+          name: "स्ट्रिंग_के_रूप_में_सेल_संदर्भ",
           detail: "A cell reference, written as a string with surrounding quotation marks.",
           example: "\"Sheet2!\"&B10",
           require: "m",
@@ -3972,7 +3972,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "is_A1_notation",
+          name: "क्या_a1_संकेतन_है",
           detail: "Indicates if the cell reference is in A1 notation (TRUE) or R1C1 notation (FALSE).",
           example: "FALSE()",
           require: "o",
@@ -3992,7 +3992,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "सेल_संदर्भ",
           detail: "The cell whose row number will be returned.",
           example: "A9",
           require: "o",
@@ -4012,7 +4012,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "श्रेणी",
           detail: "The range whose row count will be returned.",
           example: "A9:A62",
           require: "m",
@@ -4032,7 +4032,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "सेल_संदर्भ",
           detail: "The cell whose column number will be returned. Column `A` corresponds to `1`.",
           example: "A9",
           require: "o",
@@ -4052,7 +4052,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "श्रेणी",
           detail: "The range whose column count will be returned.",
           example: "A9:W62",
           require: "m",
@@ -4072,7 +4072,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "सेल_संदर्भ",
           detail: "The starting point from which to count the offset rows and columns.",
           example: "A2",
           require: "m",
@@ -4080,7 +4080,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "offset_rows",
+          name: "पंक्ति_ऑफ़सेट",
           detail: "The number of rows to offset by.",
           example: "3",
           require: "m",
@@ -4088,7 +4088,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "offset_columns",
+          name: "स्तंभ_ऑफ़सेट",
           detail: "The number of columns to offset by.",
           example: "4",
           require: "m",
@@ -4096,7 +4096,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "height",
+          name: "ऊंचाई",
           detail: "The height of the range to return starting at the offset target.",
           example: "2",
           require: "o",
@@ -4104,7 +4104,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "width",
+          name: "चौड़ाई",
           detail: "The width of the range to return starting at the offset target.",
           example: "2",
           require: "o",
@@ -4124,7 +4124,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "खोज_कुंजी",
           detail: "The value to search for. For example, `42`, `\"Cats\"`, or `I24`.",
           example: "\"Sunday\"",
           require: "m",
@@ -4132,7 +4132,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
+          name: "श्रेणी",
           detail: "The one-dimensional array to be searched.",
           example: "A2:A9",
           require: "m",
@@ -4140,7 +4140,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "search_type",
+          name: "खोज_प्रकार",
           detail: "The search method. `1` (default) finds the largest value less than or equal to `search_key` when `range` is sorted in ascending order. `0` finds the exact value when `range` is unsorted. `-1` finds the smallest value greater than or equal to `search_key` when `range` is sorted in descending order.",
           example: "0",
           require: "o",
@@ -4160,7 +4160,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
+          name: "संदर्भ",
           detail: "The array of cells to be offset into.",
           example: "A1:C20",
           require: "m",
@@ -4168,7 +4168,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "row",
+          name: "पंक्ति",
           detail: "The number of offset rows.",
           example: "5",
           require: "m",
@@ -4176,7 +4176,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "column",
+          name: "स्तंभ",
           detail: "The number of offset columns.",
           example: "1",
           require: "m",
@@ -4196,7 +4196,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value_name",
+          name: "मान_नाम",
           detail: "The name of the value in the pivot table for which you want to get data.",
           example: "\"SUM of number of units\"",
           require: "m",
@@ -4204,7 +4204,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "any_pivot_table_cell",
+          name: "पिवट_तालिका_सेल",
           detail: "Any reference to a cell in the desired pivot table (top corner recommended).",
           example: "'Pivot table'!A1",
           require: "m",
@@ -4212,7 +4212,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "original_column",
+          name: "मूल_स्तंभ",
           detail: "The name of the column in the original data set (not the pivot table).",
           example: "\"division\"",
           require: "o",
@@ -4220,7 +4220,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "pivot_item",
+          name: "पिवट_तालिका_आइटम",
           detail: "The name of the row or column shown in the pivot table corresponding to *original_column* that you want to retrieve.",
           example: "\"east\"",
           require: "o",
@@ -4240,7 +4240,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "index",
+          name: "इंडेक्स",
           detail: "Which choice (of the up to 30 provided) to return.",
           example: "2",
           require: "m",
@@ -4248,7 +4248,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "choice1",
+          name: "विकल्प1",
           detail: "A potential value to return. Required. May be a reference to a cell or an individual value.",
           example: "\"A\"",
           require: "m",
@@ -4256,7 +4256,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "choice2",
+          name: "विकल्प2",
           detail: "Additional values among which to choose.",
           example: "\"B\"",
           require: "o",
@@ -4280,7 +4280,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "link_label",
+          name: "लिंक_लेबल",
           detail: "The text to display in the cell as the link, enclosed in quotation marks, or a reference to a cell containing such a label.",
           example: "\"luckysheet\"",
           require: "m",
@@ -4300,7 +4300,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "hour",
+          name: "घंटा",
           detail: "The hour component of the time.",
           example: "11",
           require: "m",
@@ -4308,7 +4308,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "minute",
+          name: "मिनट",
           detail: "The minute component of the time.",
           example: "40",
           require: "m",
@@ -4316,7 +4316,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "second",
+          name: "सेकंड",
           detail: "The second component of the time.",
           example: "59",
           require: "m",
@@ -4336,7 +4336,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time_string",
+          name: "समय_स्ट्रिंग",
           detail: "The string that holds the time representation.",
           example: "\"2:15 PM\"",
           require: "m",
@@ -4356,7 +4356,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "आरंभ_तिथि",
           detail: "The date from which to calculate the result.",
           example: "DATE(1969",
           require: "m",
@@ -4364,7 +4364,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "months",
+          name: "महीनों_की_संख्या",
           detail: "The number of months before (negative) or after (positive) 'start_date' to consider.",
           example: "7",
           require: "m",
@@ -4384,7 +4384,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "आरंभ_तिथि",
           detail: "The date from which to calculate the result.",
           example: "DATE(1969",
           require: "m",
@@ -4392,7 +4392,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "months",
+          name: "महीनों_की_संख्या",
           detail: "The number of months before (negative) or after (positive) 'start_date' to calculate.",
           example: "7",
           require: "m",
@@ -4412,7 +4412,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "समय",
           detail: "The time from which to calculate the second component",
           example: "TIME(11",
           require: "m",
@@ -4432,7 +4432,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "समय",
           detail: "The time from which to calculate the minute component.",
           example: "TIME(11",
           require: "m",
@@ -4452,7 +4452,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "समय",
           detail: "The time from which to calculate the hour component.",
           example: "TIME(11",
           require: "m",
@@ -4483,7 +4483,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "आरंभ_तिथि",
           detail: "The start date of the period from which to calculate the number of net working days.",
           example: "DATE(1969",
           require: "m",
@@ -4491,7 +4491,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "समाप्ति_तिथि",
           detail: "The end date of the period from which to calculate the number of net working days.",
           example: "7",
           require: "m",
@@ -4499,7 +4499,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "छुट्टियां",
           detail: "A range or array constant containing the date serial numbers to consider holidays.",
           example: "16)",
           require: "o",
@@ -4519,7 +4519,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "आरंभ_तिथि",
           detail: "The start date of the period from which to calculate the number of net working days.",
           example: "DATE(1969",
           require: "m",
@@ -4527,7 +4527,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "समाप्ति_तिथि",
           detail: "The end date of the period from which to calculate the number of net working days.",
           example: "7",
           require: "m",
@@ -4535,7 +4535,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "weekend",
+          name: "सप्ताहांत",
           detail: "A number or string representing which days of the week are considered weekends.",
           example: "16)",
           require: "o",
@@ -4543,7 +4543,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "छुट्टियां",
           detail: "A range or array constant containing the dates to consider as holidays.",
           example: "DATE(1969",
           require: "o",
@@ -4563,7 +4563,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "तारीख़",
           detail: "The date for which to determine the ISO week number. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
           example: "DATE(1969",
           require: "m",
@@ -4583,7 +4583,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "तारीख़",
           detail: "The date for which to determine the week number. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
           example: "DATE(1969",
           require: "m",
@@ -4591,7 +4591,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "type",
+          name: "प्रकार",
           detail: "A number representing the day that a week starts on. Sunday = 1.",
           example: "7",
           require: "o",
@@ -4611,7 +4611,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "तारीख़",
           detail: "The date for which to determine the day of the week. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
           example: "DATE(1969",
           require: "m",
@@ -4619,7 +4619,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "type",
+          name: "प्रकार",
           detail: "A number indicating which numbering system to use to represent weekdays. By default, counts starting with Sunday = 1.",
           example: "7",
           require: "o",
@@ -4639,7 +4639,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "तारीख़",
           detail: "The date from which to extract the day.",
           example: "DATE(1969",
           require: "m",
@@ -4659,7 +4659,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "end_date",
+          name: "समाप्ति_तिथि",
           detail: "The end of the date range.",
           example: "2011-3-15",
           require: "m",
@@ -4667,7 +4667,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "start_date",
+          name: "आरंभ_तिथि",
           detail: "The start of the date range.",
           example: "2011-2-1",
           require: "m",
@@ -4687,7 +4687,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "आरंभ_तिथि",
           detail: "The start date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
           example: "DATE(1969",
           require: "m",
@@ -4695,7 +4695,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "समाप्ति_तिथि",
           detail: "The end date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
           example: "7",
           require: "m",
@@ -4703,7 +4703,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "method",
+          name: "विधि",
           detail: "An indicator of what day count method to use.",
           example: "FALSE()",
           require: "o",
@@ -4723,7 +4723,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "year",
+          name: "वर्ष",
           detail: "The year component of the date.",
           example: "1969",
           require: "m",
@@ -4731,7 +4731,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "month",
+          name: "महीना",
           detail: "The month component of the date.",
           example: "7",
           require: "m",
@@ -4739,7 +4739,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day",
+          name: "दिन",
           detail: "The day component of the date.",
           example: "20",
           require: "m",
@@ -4759,7 +4759,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date_string",
+          name: "तिथि_स्ट्रिंग",
           detail: "The string representing the date.",
           example: "\"1969-7-20\"",
           require: "m",
@@ -4779,7 +4779,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "आरंभ_तिथि",
           detail: "The start date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
           example: "DATE(1969",
           require: "m",
@@ -4787,7 +4787,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "समाप्ति_तिथि",
           detail: "The end date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
           example: "7",
           require: "m",
@@ -4795,7 +4795,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "unit",
+          name: "इकाई",
           detail: "A string abbreviation for unit of time. For example, \"M\" for month. Accepted values are \"Y\",\"M\",\"D\",\"MD\",\"YM\",\"YD\".",
           example: "16)",
           require: "m",
@@ -4815,7 +4815,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "आरंभ_तिथि",
           detail: "The date from which to begin counting.",
           example: "DATE(1969",
           require: "m",
@@ -4823,7 +4823,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "num_days",
+          name: "दिनों_की_संख्या",
           detail: "The number of working days to advance from `start_date`. If negative, counts backwards.",
           example: "7",
           require: "m",
@@ -4831,7 +4831,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "holidays",
+          name: "छुट्टियां",
           detail: "A range or array constant containing the dates to consider holidays.",
           example: "16)",
           require: "o",
@@ -4851,7 +4851,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "आरंभ_तिथि",
           detail: "The date from which to begin counting.",
           example: "DATE(1969",
           require: "m",
@@ -4859,7 +4859,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "num_days",
+          name: "दिनों_की_संख्या",
           detail: "The number of working days to advance from `start_date`. If negative, counts backwards.",
           example: "7",
           require: "m",
@@ -4867,7 +4867,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "weekend",
+          name: "सप्ताहांत",
           detail: "A number or string representing which days of the week are considered weekends.",
           example: "16)",
           require: "o",
@@ -4875,7 +4875,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "छुट्टियां",
           detail: "A range or array constant containing the dates to consider holidays.",
           example: "DATE(1969",
           require: "o",
@@ -4895,7 +4895,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "तारीख़",
           detail: "The date from which to extract the year.",
           example: "DATE(1969",
           require: "m",
@@ -4915,7 +4915,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "आरंभ_तिथि",
           detail: "The start date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
           example: "DATE(1969",
           require: "m",
@@ -4923,7 +4923,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "समाप्ति_तिथि",
           detail: "The end date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
           example: "7",
           require: "m",
@@ -4931,7 +4931,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "16)",
           require: "o",
@@ -4962,7 +4962,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "तारीख़",
           detail: "The date from which to extract the month.",
           example: "DATE(1969",
           require: "m",
@@ -4982,7 +4982,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "nominal_rate",
+          name: "नाममात्र_दर",
           detail: "The nominal interest rate per year.",
           example: "0.99",
           require: "m",
@@ -4990,7 +4990,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
+          name: "प्रति_वर्ष_अवधियां",
           detail: "The number of compounding periods per year.",
           example: "12",
           require: "m",
@@ -5010,7 +5010,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "संख्या",
           detail: "The value to be formatted.",
           example: "1.2351",
           require: "m",
@@ -5018,7 +5018,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
+          name: "दशमलव_स्थानों_की_संख्या",
           detail: "The number of decimal places to display.",
           example: "4",
           require: "m",
@@ -5038,7 +5038,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "fractional_price",
+          name: "भिन्नात्मक_मूल्य",
           detail: "The price quotation given using fractional decimal conventions.",
           example: "100.10",
           require: "m",
@@ -5046,7 +5046,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "unit",
+          name: "इकाई",
           detail: "The units of the fraction, e.g. `8` for 1/8ths or `32` for 1/32nds.",
           example: "32",
           require: "m",
@@ -5066,7 +5066,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_price",
+          name: "दशमलव_मूल्य",
           detail: "The price quotation given as a decimal value.",
           example: "100.125",
           require: "m",
@@ -5074,7 +5074,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "unit",
+          name: "इकाई",
           detail: "The units of the desired fraction, e.g. `8` for 1/8ths or `32` for 1/32nds.",
           example: "32",
           require: "m",
@@ -5094,7 +5094,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "लागत",
           detail: "The initial cost of the asset.",
           example: "100",
           require: "m",
@@ -5102,7 +5102,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "अवशिष्ट_मूल्य",
           detail: "The value of the asset at the end of depreciation.",
           example: "50",
           require: "m",
@@ -5110,7 +5110,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "उपयोगी_आयु",
           detail: "The number of periods over which the asset is depreciated.",
           example: "10",
           require: "m",
@@ -5118,7 +5118,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "अवधि",
           detail: "The single period within `life` for which to calculate depreciation.",
           example: "2",
           require: "m",
@@ -5126,7 +5126,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "month",
+          name: "महीना",
           detail: "The number of months in the first year of depreciation.",
           example: "10",
           require: "m",
@@ -5146,7 +5146,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "लागत",
           detail: "The initial cost of the asset.",
           example: "100",
           require: "m",
@@ -5154,7 +5154,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "अवशिष्ट_मूल्य",
           detail: "The value of the asset at the end of depreciation.",
           example: "50",
           require: "m",
@@ -5162,7 +5162,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "उपयोगी_आयु",
           detail: "The number of periods over which the asset is depreciated.",
           example: "10",
           require: "m",
@@ -5170,7 +5170,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "अवधि",
           detail: "The single period within `life` for which to calculate depreciation.",
           example: "2",
           require: "m",
@@ -5178,7 +5178,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor",
+          name: "गुणक",
           detail: "The factor by which depreciation decreases.",
           example: "2.25",
           require: "m",
@@ -5198,7 +5198,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number_of_periods",
+          name: "अवधियों_की_संख्या",
           detail: "The number of payments to be made.",
           example: "12",
           require: "m",
@@ -5206,7 +5206,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_per_period",
+          name: "प्रति_अवधि_भुगतान",
           detail: "The amount per period to be paid.",
           example: "-100",
           require: "m",
@@ -5214,7 +5214,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "वर्तमान_मूल्य",
           detail: "The current value of the annuity.",
           example: "400",
           require: "m",
@@ -5222,7 +5222,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "भविष्य_मूल्य",
           detail: "The future value remaining after the final payment has been made.",
           example: "0",
           require: "o",
@@ -5230,7 +5230,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "अंत_या_आरंभ",
           detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
           example: "0",
           require: "o",
@@ -5238,7 +5238,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "rate_guess",
+          name: "दर_अनुमान",
           detail: "An estimate for what the interest rate will be.",
           example: "0.1",
           require: "o",
@@ -5258,7 +5258,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "दर",
           detail: "The interest rate.",
           example: "0.12",
           require: "m",
@@ -5266,7 +5266,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "अवधियों_की_संख्या",
           detail: "The number of payments to be made.",
           example: "12",
           require: "m",
@@ -5274,7 +5274,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "वर्तमान_मूल्य",
           detail: "The current value of the annuity.",
           example: "100",
           require: "m",
@@ -5282,7 +5282,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "first_period",
+          name: "पहली_अवधि",
           detail: "The number of the payment period to begin the cumulative calculation.",
           example: "1",
           require: "m",
@@ -5290,7 +5290,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "last_period",
+          name: "अंतिम_अवधि",
           detail: "The number of the payment period to end the cumulative calculation.",
           example: "5",
           require: "m",
@@ -5298,7 +5298,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "अंत_या_आरंभ",
           detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
           example: "0",
           require: "m",
@@ -5318,7 +5318,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -5326,7 +5326,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "02",
           require: "m",
@@ -5334,7 +5334,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "आवृत्ति",
           detail: "The number of interest or coupon payments per year (1, 2, or 4).",
           example: "1",
           require: "m",
@@ -5342,7 +5342,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "o",
@@ -5362,7 +5362,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "लागत",
           detail: "The initial cost of the asset.",
           example: "100",
           require: "m",
@@ -5370,7 +5370,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "अवशिष्ट_मूल्य",
           detail: "The value of the asset at the end of depreciation.",
           example: "50",
           require: "m",
@@ -5378,7 +5378,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "उपयोगी_आयु",
           detail: "The number of periods over which the asset is depreciated.",
           example: "10",
           require: "m",
@@ -5386,7 +5386,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "अवधि",
           detail: "The single period within `life` for which to calculate depreciation.",
           example: "2",
           require: "m",
@@ -5406,7 +5406,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -5414,7 +5414,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "1",
           require: "m",
@@ -5422,7 +5422,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "छूट_दर",
           detail: "The discount rate of the bill at time of purchase.",
           example: "2)",
           require: "m",
@@ -5442,7 +5442,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -5450,7 +5450,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -5458,7 +5458,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "price",
+          name: "मूल्य",
           detail: "The price at which the security is bought per 100 face value.",
           example: "95",
           require: "m",
@@ -5478,7 +5478,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -5486,7 +5486,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -5494,7 +5494,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "छूट_दर",
           detail: "The discount rate of the bill at time of purchase.",
           example: "0.09",
           require: "m",
@@ -5514,7 +5514,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "दर",
           detail: "The interest rate.",
           example: "2",
           require: "m",
@@ -5522,7 +5522,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "अवधियों_की_संख्या",
           detail: "The number of payments to be made.",
           example: "12",
           require: "m",
@@ -5530,7 +5530,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
+          name: "भुगतान_राशि",
           detail: "The amount per period to be paid.",
           example: "100",
           require: "m",
@@ -5538,7 +5538,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "भविष्य_मूल्य",
           detail: "The future value remaining after the final payment has been made.",
           example: "D2",
           require: "o",
@@ -5546,7 +5546,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "अंत_या_आरंभ",
           detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
           example: "1",
           require: "o",
@@ -5566,7 +5566,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
+          name: "जारी_करने_की_तिथि",
           detail: "The date the security was initially issued.",
           example: "DATE(2010",
           require: "m",
@@ -5574,7 +5574,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "first_payment",
+          name: "पहला_भुगतान",
           detail: "The first date interest will be paid.",
           example: "DATE(2010",
           require: "m",
@@ -5582,7 +5582,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -5590,7 +5590,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "दर",
           detail: "The annualized rate of interest.",
           example: "0.1",
           require: "m",
@@ -5598,7 +5598,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "मोचन_मूल्य",
           detail: "The redemption amount per 100 face value, or par.",
           example: "10000",
           require: "m",
@@ -5606,7 +5606,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "आवृत्ति",
           detail: "The number of interest or coupon payments per year (1, 2, or 4).",
           example: "1",
           require: "m",
@@ -5614,7 +5614,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "o",
@@ -5622,7 +5622,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "calc_method",
+          name: "गणना_विधि",
           detail: "[Optional-defaults to TRUE()] - A logical value that specifies the method used to calculate the total accrued interest when the settlement date is later than the first interest accrual date. \n\nIf the value is TRUE, the total accrued interest from the issue date to the settlement date is returned. \n\nIf the value is FALSE, return the accrued interest from the first interest accrual date to the settlement date.",
           example: "TRUE()",
           require: "o",
@@ -5642,7 +5642,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
+          name: "जारी_करने_की_तिथि",
           detail: "The date the security was initially issued.",
           example: "DATE(1969",
           require: "m",
@@ -5650,7 +5650,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity date of the security.",
           example: "DATE(1969",
           require: "m",
@@ -5658,7 +5658,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "दर",
           detail: "The annualized rate of interest.",
           example: "0.1",
           require: "m",
@@ -5666,7 +5666,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "मोचन_मूल्य",
           detail: "The redemption amount per 100 face value, or par.",
           example: "1000",
           require: "m",
@@ -5674,7 +5674,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "12",
           require: "m",
@@ -5694,7 +5694,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -5702,7 +5702,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -5710,7 +5710,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "आवृत्ति",
           detail: "The number of interest or coupon payments per year (1, 2, or 4).",
           example: "1",
           require: "m",
@@ -5718,7 +5718,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "o",
@@ -5738,7 +5738,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -5746,7 +5746,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -5754,7 +5754,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "आवृत्ति",
           detail: "The number of interest or coupon payments per year (1, 2, or 4).",
           example: "1",
           require: "m",
@@ -5762,7 +5762,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "o",
@@ -5782,7 +5782,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -5790,7 +5790,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -5798,7 +5798,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "आवृत्ति",
           detail: "The number of interest or coupon payments per year (1, 2, or 4).",
           example: "1",
           require: "m",
@@ -5806,7 +5806,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "o",
@@ -5826,7 +5826,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -5834,7 +5834,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -5842,7 +5842,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "आवृत्ति",
           detail: "The number of interest or coupon payments per year (1, 2, or 4).",
           example: "01)",
           require: "m",
@@ -5850,7 +5850,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "DATE(2019",
           require: "o",
@@ -5870,7 +5870,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -5878,7 +5878,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -5886,7 +5886,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "आवृत्ति",
           detail: "The number of interest or coupon payments per year (1, 2, or 4).",
           example: "01)",
           require: "m",
@@ -5894,7 +5894,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "DATE(2019",
           require: "o",
@@ -5914,7 +5914,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "दर",
           detail: "The interest rate.",
           example: "0.12",
           require: "m",
@@ -5922,7 +5922,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "अवधियों_की_संख्या",
           detail: "The number of payments to be made.",
           example: "12",
           require: "m",
@@ -5930,7 +5930,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
+          name: "भुगतान_राशि",
           detail: "The amount per period to be paid.",
           example: "100",
           require: "m",
@@ -5938,7 +5938,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "वर्तमान_मूल्य",
           detail: "The current value of the annuity.",
           example: "400",
           require: "m",
@@ -5946,7 +5946,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "अंत_या_आरंभ",
           detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
           example: "1",
           require: "m",
@@ -5966,7 +5966,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "principal",
+          name: "मूलधन",
           detail: "The amount of initial capital or value to compound against.",
           example: "10000",
           require: "m",
@@ -5974,7 +5974,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "rate_schedule",
+          name: "दर_अनुसूची",
           detail: "A series of interest rates to compound against the `principal`.",
           example: "A2:A100",
           require: "m",
@@ -5994,7 +5994,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -6002,7 +6002,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -6010,7 +6010,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "दर",
           detail: "The annualized rate of interest.",
           example: "0.057",
           require: "m",
@@ -6018,7 +6018,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "price",
+          name: "मूल्य",
           detail: "The price at which the security is bought per 100 face value.",
           example: "95",
           require: "m",
@@ -6026,7 +6026,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "मोचन_मूल्य",
           detail: "The redemption amount per 100 face value, or par.",
           example: "100",
           require: "m",
@@ -6034,7 +6034,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "आवृत्ति",
           detail: "The number of interest or coupon payments per year (1, 2, or 4).",
           example: "1",
           require: "m",
@@ -6042,7 +6042,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "m",
@@ -6062,7 +6062,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -6070,7 +6070,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -6078,7 +6078,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "price",
+          name: "मूल्य",
           detail: "The price at which the security is bought per 100 face value.",
           example: "95",
           require: "m",
@@ -6086,7 +6086,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "मोचन_मूल्य",
           detail: "The redemption amount per 100 face value, or par.",
           example: "100",
           require: "m",
@@ -6094,7 +6094,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "m",
@@ -6114,7 +6114,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "effective_rate",
+          name: "प्रभावी_दर",
           detail: "The effective interest rate per year.",
           example: "0.85",
           require: "m",
@@ -6122,7 +6122,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
+          name: "प्रति_वर्ष_अवधियां",
           detail: "The number of compounding periods per year.",
           example: "12",
           require: "m",
@@ -6142,7 +6142,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
+          name: "नकदी_प्रवाह_राशियां",
           detail: "An array or range containing the income or payments associated with the investment.",
           example: "B2:B25",
           require: "m",
@@ -6150,7 +6150,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "cashflow_dates",
+          name: "नकदी_प्रवाह_तिथियां",
           detail: "An array or range with dates corresponding to the cash flows in `cashflow_amounts`.",
           example: "C2:C25",
           require: "m",
@@ -6158,7 +6158,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "rate_guess",
+          name: "दर_अनुमान",
           detail: "An estimate for what the internal rate of return will be.",
           example: "250",
           require: "o",
@@ -6178,7 +6178,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
+          name: "नकदी_प्रवाह_राशियां",
           detail: "An array or range containing the income or payments associated with the investment.",
           example: "A2:A25",
           require: "m",
@@ -6186,7 +6186,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "financing_rate",
+          name: "वित्तपोषण_दर",
           detail: "The interest rate paid on funds invested.",
           example: "0.1",
           require: "m",
@@ -6194,7 +6194,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "reinvestment_return_rate",
+          name: "पुनर्निवेश_प्रतिफल_दर",
           detail: "The return (as a percentage) earned on reinvestment of income received from the investment.",
           example: "0.12",
           require: "m",
@@ -6214,7 +6214,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
+          name: "नकदी_प्रवाह_राशियां",
           detail: "An array or range containing the income or payments associated with the investment.",
           example: "A2:A25",
           require: "m",
@@ -6222,7 +6222,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "rate_guess",
+          name: "दर_अनुमान",
           detail: "An estimate for what the internal rate of return will be.",
           example: "200",
           require: "o",
@@ -6242,7 +6242,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
+          name: "छूट_दर",
           detail: "The discount rate of the investment over one period.",
           example: "0.1",
           require: "m",
@@ -6250,7 +6250,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cashflow1",
+          name: "नकदी_प्रवाह1",
           detail: "The first future cash flow.",
           example: "200",
           require: "m",
@@ -6258,7 +6258,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "cashflow2",
+          name: "नकदी_प्रवाह2",
           detail: "Additional future cash flows.",
           example: "250",
           require: "o",
@@ -6278,7 +6278,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
+          name: "छूट_दर",
           detail: "The discount rate of the investment over one period.",
           example: "A2",
           require: "m",
@@ -6286,7 +6286,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cashflow_amounts",
+          name: "नकदी_प्रवाह_राशियां",
           detail: "A range of cells containing the income or payments associated with the investment.",
           example: "B2:B25",
           require: "m",
@@ -6294,7 +6294,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "cashflow_dates",
+          name: "नकदी_प्रवाह_तिथियां",
           detail: "A range of cells with dates corresponding to the cash flows in `cashflow_amounts`.",
           example: "C2:C25",
           require: "m",
@@ -6314,7 +6314,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "दर",
           detail: "The interest rate.",
           example: "0.12",
           require: "m",
@@ -6322,7 +6322,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "अवधियों_की_संख्या",
           detail: "The number of payments to be made.",
           example: "12",
           require: "m",
@@ -6330,7 +6330,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "वर्तमान_मूल्य",
           detail: "The current value of the annuity.",
           example: "100",
           require: "m",
@@ -6338,7 +6338,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "first_period",
+          name: "पहली_अवधि",
           detail: "The number of the payment period to begin the cumulative calculation.",
           example: "1",
           require: "m",
@@ -6346,7 +6346,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "last_period",
+          name: "अंतिम_अवधि",
           detail: "The number of the payment period to end the cumulative calculation.",
           example: "5",
           require: "m",
@@ -6354,7 +6354,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "अंत_या_आरंभ",
           detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
           example: "0",
           require: "m",
@@ -6374,7 +6374,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "दर",
           detail: "The interest rate.",
           example: "0.08",
           require: "m",
@@ -6382,7 +6382,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "अवधियों_की_संख्या",
           detail: "The number of payments to be made.",
           example: "12",
           require: "m",
@@ -6390,7 +6390,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "वर्तमान_मूल्य",
           detail: "The current value of the annuity.",
           example: " 100000",
           require: "m",
@@ -6398,7 +6398,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "भविष्य_मूल्य",
           detail: "The future value remaining after the final payment has been made.",
           example: "D2",
           require: "m",
@@ -6406,7 +6406,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "अंत_या_आरंभ",
           detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
           example: "1",
           require: "m",
@@ -6426,7 +6426,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "दर",
           detail: "The interest rate.",
           example: "0.1",
           require: "m",
@@ -6434,7 +6434,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "अवधि",
           detail: "The amortization period, in terms of number of periods.",
           example: "1",
           require: "m",
@@ -6442,7 +6442,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "अवधियों_की_संख्या",
           detail: "The number of payments to be made.",
           example: "12",
           require: "m",
@@ -6450,7 +6450,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "वर्तमान_मूल्य",
           detail: "The current value of the annuity.",
           example: "80000",
           require: "m",
@@ -6458,7 +6458,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "भविष्य_मूल्य",
           detail: "The future value remaining after the final payment has been made.",
           example: "E2",
           require: "m",
@@ -6466,7 +6466,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "अंत_या_आरंभ",
           detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
           example: "1",
           require: "m",
@@ -6486,7 +6486,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "दर",
           detail: "The interest rate.",
           example: "0.1",
           require: "m",
@@ -6494,7 +6494,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "अवधि",
           detail: "The amortization period, in terms of number of periods.",
           example: "1",
           require: "m",
@@ -6502,7 +6502,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "अवधियों_की_संख्या",
           detail: "The number of payments to be made.",
           example: "3*12",
           require: "m",
@@ -6510,7 +6510,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "वर्तमान_मूल्य",
           detail: "The current value of the annuity.",
           example: "100000",
           require: "m",
@@ -6518,7 +6518,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "भविष्य_मूल्य",
           detail: "The future value remaining after the final payment has been made.",
           example: "0",
           require: "o",
@@ -6526,7 +6526,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "अंत_या_आरंभ",
           detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
           example: "0",
           require: "o",
@@ -6546,7 +6546,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "buy_date",
+          name: "खरीद_तिथि",
           detail: "The date of purchase of the investment.",
           example: "DATE(2010",
           require: "m",
@@ -6554,7 +6554,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "sell_date",
+          name: "बिक्री_तिथि",
           detail: "The date of sale of the investment.",
           example: "DATE(2010",
           require: "m",
@@ -6562,7 +6562,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "buy_price",
+          name: "खरीद_मूल्य",
           detail: "The price at which the investment was purchased.",
           example: "100000",
           require: "m",
@@ -6570,7 +6570,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "sell_price",
+          name: "बिक्री_मूल्य",
           detail: "The price at which the investment was sold.",
           example: "101200",
           require: "m",
@@ -6578,7 +6578,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "12",
           require: "m",
@@ -6598,7 +6598,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -6606,7 +6606,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -6614,7 +6614,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "दर",
           detail: "The annualized rate of interest.",
           example: "0.057",
           require: "m",
@@ -6622,7 +6622,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "प्रतिफल",
           detail: "The expected annual yield of the security.",
           example: "0.065",
           require: "m",
@@ -6630,7 +6630,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "मोचन_मूल्य",
           detail: "The redemption amount per 100 face value, or par.",
           example: "100",
           require: "m",
@@ -6638,7 +6638,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "आवृत्ति",
           detail: "The number of interest or coupon payments per year (1, 2, or 4).",
           example: "1",
           require: "m",
@@ -6646,7 +6646,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "o",
@@ -6666,7 +6666,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -6674,7 +6674,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -6682,7 +6682,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "छूट_दर",
           detail: "The discount rate of the security at time of purchase.",
           example: "0.0525",
           require: "m",
@@ -6690,7 +6690,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "मोचन_मूल्य",
           detail: "The redemption amount per 100 face value, or par.",
           example: "100",
           require: "m",
@@ -6698,7 +6698,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "o",
@@ -6718,7 +6718,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -6726,7 +6726,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -6734,7 +6734,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "issue",
+          name: "जारी_करने_की_तिथि",
           detail: "The date the security was initially issued.",
           example: "DATE(2010",
           require: "m",
@@ -6742,7 +6742,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "दर",
           detail: "The annualized rate of interest.",
           example: "0.061",
           require: "m",
@@ -6750,7 +6750,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "प्रतिफल",
           detail: "The expected annual yield of the security.",
           example: "0.061",
           require: "m",
@@ -6758,7 +6758,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "o",
@@ -6778,7 +6778,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -6786,7 +6786,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -6794,7 +6794,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "investment",
+          name: "निवेश",
           detail: "The amount invested (irrespective of face value of each security).",
           example: "10000000",
           require: "m",
@@ -6802,7 +6802,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "discount",
+          name: "छूट_दर",
           detail: "The discount rate of the security invested in.",
           example: "0.0575",
           require: "m",
@@ -6810,7 +6810,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "12",
           require: "o",
@@ -6830,7 +6830,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -6838,7 +6838,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -6846,7 +6846,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "price",
+          name: "मूल्य",
           detail: "The price at which the security is bought per 100 face value.",
           example: "97.975",
           require: "m",
@@ -6854,7 +6854,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "मोचन_मूल्य",
           detail: "The redemption amount per 100 face value, or par.",
           example: "100",
           require: "m",
@@ -6862,7 +6862,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "12",
           require: "o",
@@ -6882,7 +6882,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "दर",
           detail: "The interest rate.",
           example: "0.12",
           require: "m",
@@ -6890,7 +6890,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
+          name: "भुगतान_राशि",
           detail: "The amount of each payment made.",
           example: "500",
           require: "m",
@@ -6898,7 +6898,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "वर्तमान_मूल्य",
           detail: "The current value of the annuity.",
           example: "40000",
           require: "m",
@@ -6906,7 +6906,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "भविष्य_मूल्य",
           detail: "The future value remaining after the final payment has been made.",
           example: "0",
           require: "o",
@@ -6914,7 +6914,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "अंत_या_आरंभ",
           detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
           example: "0",
           require: "o",
@@ -6934,7 +6934,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "लागत",
           detail: "The initial cost of the asset.",
           example: "300000",
           require: "m",
@@ -6942,7 +6942,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "अवशिष्ट_मूल्य",
           detail: "The value of the asset at the end of depreciation.",
           example: "75000",
           require: "m",
@@ -6950,7 +6950,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "उपयोगी_आयु",
           detail: "The number of periods over which the asset is depreciated.",
           example: "10",
           require: "m",
@@ -6970,7 +6970,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -6978,7 +6978,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -6986,7 +6986,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "दर",
           detail: "The annualized rate of interest.",
           example: "0.08",
           require: "m",
@@ -6994,7 +6994,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "प्रतिफल",
           detail: "The expected annual yield of the security.",
           example: "0.09",
           require: "m",
@@ -7002,7 +7002,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "आवृत्ति",
           detail: "The number of interest or coupon payments per year (1, 2, or 4).",
           example: "1",
           require: "m",
@@ -7010,7 +7010,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "o",
@@ -7030,7 +7030,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "निपटान_तिथि",
           detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
           example: "DATE(2010",
           require: "m",
@@ -7038,7 +7038,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "परिपक्वता",
           detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
           example: "DATE(2010",
           require: "m",
@@ -7046,7 +7046,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "दर",
           detail: "The annualized rate of interest.",
           example: "0.08",
           require: "m",
@@ -7054,7 +7054,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "प्रतिफल",
           detail: "The expected annual yield of the security.",
           example: "0.09",
           require: "m",
@@ -7062,7 +7062,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "आवृत्ति",
           detail: "The number of interest or coupon payments per year (1, 2, or 4).",
           example: "1",
           require: "m",
@@ -7070,7 +7070,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "दिन_गणना_परिपाटी",
           detail: "An indicator of what day count method to use.",
           example: "0",
           require: "o",
@@ -7090,7 +7090,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
+          name: "चिह्नित_द्विआधारी_संख्या",
           detail: "The signed 10-bit binary value to be converted to decimal, provided as a string.",
           example: "101",
           require: "m",
@@ -7110,7 +7110,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
+          name: "चिह्नित_द्विआधारी_संख्या",
           detail: "The signed 10-bit binary value to be converted to signed hexademical, provided as a string.",
           example: "101",
           require: "m",
@@ -7118,7 +7118,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "सार्थक_अंक",
           detail: "The number of significant digits to ensure in the result.",
           example: "8",
           require: "o",
@@ -7138,7 +7138,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
+          name: "चिह्नित_द्विआधारी_संख्या",
           detail: "The signed 10-bit binary value to be converted to signed octal, provided as a string.",
           example: "101",
           require: "m",
@@ -7146,7 +7146,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "सार्थक_अंक",
           detail: "The number of significant digits to ensure in the result.",
           example: "8",
           require: "o",
@@ -7166,7 +7166,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
+          name: "दशमलव_संख्या",
           detail: "The decimal value to be converted to signed binary, provided as a string.",
           example: "100",
           require: "m",
@@ -7174,7 +7174,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "सार्थक_अंक",
           detail: "The number of significant digits to ensure in the result.",
           example: "8",
           require: "o",
@@ -7194,7 +7194,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
+          name: "दशमलव_संख्या",
           detail: "The decimal value to be converted to signed hexadecimal, provided as a string.",
           example: "100",
           require: "m",
@@ -7202,7 +7202,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "सार्थक_अंक",
           detail: "The number of significant digits to ensure in the result.",
           example: "8",
           require: "o",
@@ -7222,7 +7222,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
+          name: "दशमलव_संख्या",
           detail: "The decimal value to be converted to signed octal, provided as a string.",
           example: "100",
           require: "m",
@@ -7230,7 +7230,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "सार्थक_अंक",
           detail: "The number of significant digits to ensure in the result.",
           example: "8",
           require: "o",
@@ -7250,7 +7250,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
+          name: "चिह्नित_हेक्साडेसिमल_संख्या",
           detail: "The signed 40-bit hexadecimal value to be converted to signed binary, provided as a string.",
           example: "\"f3\"",
           require: "m",
@@ -7258,7 +7258,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "सार्थक_अंक",
           detail: "The number of significant digits to ensure in the result.",
           example: "8",
           require: "o",
@@ -7278,7 +7278,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
+          name: "चिह्नित_हेक्साडेसिमल_संख्या",
           detail: "The signed 40-bit hexadecimal value to be converted to decimal, provided as a string.",
           example: "\"f3\"",
           require: "m",
@@ -7298,7 +7298,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
+          name: "चिह्नित_हेक्साडेसिमल_संख्या",
           detail: "The signed 40-bit hexadecimal value to be converted to signed octal, provided as a string.",
           example: "\"f3\"",
           require: "m",
@@ -7306,7 +7306,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "सार्थक_अंक",
           detail: "The number of significant digits to ensure in the result.",
           example: "8",
           require: "o",
@@ -7326,7 +7326,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
+          name: "चिह्नित_अष्टाधारी_संख्या",
           detail: "The signed 30-bit octal value to be converted to signed binary, provided as a string.",
           example: "37",
           require: "m",
@@ -7334,7 +7334,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "सार्थक_अंक",
           detail: "The number of significant digits to ensure in the result.",
           example: "8",
           require: "o",
@@ -7354,7 +7354,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
+          name: "चिह्नित_अष्टाधारी_संख्या",
           detail: "The signed 30-bit octal value to be converted to decimal, provided as a string.",
           example: "37",
           require: "m",
@@ -7374,7 +7374,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
+          name: "चिह्नित_अष्टाधारी_संख्या",
           detail: "The signed 30-bit octal value to be converted to signed hexadecimal, provided as a string.",
           example: "37",
           require: "m",
@@ -7382,7 +7382,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "सार्थक_अंक",
           detail: "The number of significant digits to ensure in the result.",
           example: "8",
           require: "o",
@@ -7402,7 +7402,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "real_part",
+          name: "वास्तविक_भाग",
           detail: "The real coefficient.",
           example: "3",
           require: "m",
@@ -7410,7 +7410,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "imaginary_part",
+          name: "काल्पनिक_भाग",
           detail: "The imaginary coefficient.",
           example: "4",
           require: "m",
@@ -7418,7 +7418,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "suffix",
+          name: "प्रत्यय",
           detail: "The suffix for the imaginary coefficient, can only be 'i' or 'j'. If omitted, 'i' will be used.",
           example: "\"j\"",
           require: "o",
@@ -7438,7 +7438,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
+          name: "सम्मिश्र_संख्या",
           detail: "The complex number, in the a+bi or a+bj format.",
           example: "\"4+5i\"",
           require: "m",
@@ -7458,7 +7458,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
+          name: "सम्मिश्र_संख्या",
           detail: "The complex number, in the a+bi or a+bj format.",
           example: "\"4+5i\"",
           require: "m",
@@ -7478,7 +7478,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "संख्या",
           detail: "The complex number to calculate the conjugate for.",
           example: "\"3+4i\"",
           require: "m",
@@ -7498,7 +7498,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "संख्या",
           detail: "The complex number to calculate the absolute value of.",
           example: "\"3+4i\"",
           require: "m",
@@ -7518,7 +7518,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number1",
+          name: "संख्या1",
           detail: "The first number to compare.",
           example: "2",
           require: "m",
@@ -7526,7 +7526,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number2",
+          name: "संख्या2",
           detail: "The second number to compare.",
           example: "1",
           require: "o",
@@ -7546,7 +7546,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first complex number or range to add together.",
           example: "\"3+4i\"",
           require: "m",
@@ -7554,7 +7554,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "Additional complex numbers or ranges to add to `value1`.",
           example: "\"5-3i\"",
           require: "o",
@@ -7574,7 +7574,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "first_number",
+          name: "पहली_संख्या",
           detail: "The complex number to subtract second_number from.",
           example: "\"6+5i\"",
           require: "m",
@@ -7582,7 +7582,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "second_number",
+          name: "दूसरी_संख्या",
           detail: "The complex number to subtract from first_number.",
           example: "\"2+3i\"",
           require: "m",
@@ -7602,7 +7602,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
+          name: "गुणक1",
           detail: "The first number or range to calculate for the product.",
           example: "\"3+4i\"",
           require: "m",
@@ -7610,7 +7610,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "factor2",
+          name: "गुणक2",
           detail: "Additional complex numbers or ranges to calculate for the product.",
           example: "\"5-3i\"",
           require: "o",
@@ -7630,7 +7630,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "भाज्य",
           detail: "The complex number to be divided.",
           example: "\"11+16i\"",
           require: "m",
@@ -7638,7 +7638,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "divisor",
+          name: "भाजक",
           detail: "The complex number to divide by.",
           example: "\"3+2i\"",
           require: "m",
@@ -7658,7 +7658,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
+          name: "तार्किक_अभिव्यक्ति",
           detail: "An expression or reference to a cell holding an expression that represents some logical value.",
           example: "A2",
           require: "m",
@@ -7700,7 +7700,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
+          name: "तार्किक_अभिव्यक्ति1",
           detail: "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`, or an expression that can be coerced to a logical value.",
           example: "A2 = \"foo\"",
           require: "m",
@@ -7708,7 +7708,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
+          name: "तार्किक_अभिव्यक्ति2",
           detail: "More expressions that represent logical values.",
           example: "A3 = \"bar\"",
           require: "o",
@@ -7728,7 +7728,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to return if `value` itself is not an error.",
           example: "A1",
           require: "m",
@@ -7736,7 +7736,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_if_error",
+          name: "त्रुटि_होने_पर_मान",
           detail: "The value the function returns if `value` is an error.",
           example: "\"Error in cell A1\"",
           require: "m",
@@ -7756,7 +7756,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
+          name: "तार्किक_अभिव्यक्ति",
           detail: "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`.",
           example: "A2 = \"foo\"",
           require: "m",
@@ -7764,7 +7764,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_if_true",
+          name: "सत्य_होने_पर_मान",
           detail: "The value the function returns if `logical_expression` is `TRUE`.",
           example: "\"A2 is foo\"",
           require: "m",
@@ -7772,7 +7772,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_if_false",
+          name: "असत्य_होने_पर_मान",
           detail: "The value the function returns if `logical_expression` is `FALSE`.",
           example: "\"A2 was false\"",
           require: "o",
@@ -7792,7 +7792,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
+          name: "तार्किक_अभिव्यक्ति1",
           detail: "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`, or an expression that can be coerced to a logical value.",
           example: "A2 = \"foo\"",
           require: "m",
@@ -7800,7 +7800,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
+          name: "तार्किक_अभिव्यक्ति2",
           detail: "More expressions that evaluate to logical values.",
           example: " A3 = \"bar\"",
           require: "m",
@@ -7820,7 +7820,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value.",
           example: "A2",
           require: "m",
@@ -7828,7 +7828,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "The value to test against `value1` for inequality.",
           example: "A3",
           require: "m",
@@ -7848,7 +7848,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first value.",
           example: "A2",
           require: "m",
@@ -7856,7 +7856,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "The value to test against `value1` for equality.",
           example: "A3",
           require: "m",
@@ -7876,7 +7876,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The value to test as being greater than `value2`.",
           example: "A2",
           require: "m",
@@ -7884,7 +7884,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "The second value.",
           example: "A3",
           require: "m",
@@ -7904,7 +7904,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The value to test as being greater than or equal to `value2`.",
           example: "A2",
           require: "m",
@@ -7912,7 +7912,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "The second value.",
           example: "A3",
           require: "m",
@@ -7932,7 +7932,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The value to test as being less than `value2`.",
           example: "A2",
           require: "m",
@@ -7940,7 +7940,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "The second value.",
           example: "A3",
           require: "m",
@@ -7960,7 +7960,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The value to test as being less than or equal to `value2`.",
           example: "A2",
           require: "m",
@@ -7968,7 +7968,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "The second value.",
           example: "A3",
           require: "m",
@@ -7988,7 +7988,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The first addend.",
           example: "A2",
           require: "m",
@@ -7996,7 +7996,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "The second addend.",
           example: "A3",
           require: "m",
@@ -8016,7 +8016,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The minuend, or number to be subtracted from.",
           example: "A2",
           require: "m",
@@ -8024,7 +8024,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "The subtrahend, or number to subtract from `value1`.",
           example: "A3",
           require: "m",
@@ -8044,7 +8044,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
+          name: "गुणक1",
           detail: "The first multiplicand.",
           example: "A2",
           require: "m",
@@ -8052,7 +8052,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor2",
+          name: "गुणक2",
           detail: "The second multiplicand.",
           example: "B2",
           require: "m",
@@ -8072,7 +8072,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "भाज्य",
           detail: "The number to be divided.",
           example: "4",
           require: "m",
@@ -8080,7 +8080,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "divisor",
+          name: "भाजक",
           detail: "The number to divide by.",
           example: "2",
           require: "m",
@@ -8100,7 +8100,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "मान1",
           detail: "The value to which `value2` will be appended.",
           example: "\"de\"",
           require: "m",
@@ -8108,7 +8108,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "मान2",
           detail: "The value to append to `value1`.",
           example: "\"mystify\"",
           require: "m",
@@ -8128,7 +8128,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "percentage",
+          name: "प्रतिशत",
           detail: "The value to interpret as a percentage.",
           example: "A2",
           require: "m",
@@ -8148,7 +8148,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
+          name: "स्ट्रिंग1",
           detail: "The initial string.",
           example: "\"Super\"",
           require: "m",
@@ -8156,7 +8156,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "string2",
+          name: "स्ट्रिंग2",
           detail: "More strings to append in sequence.",
           example: "\"calla\"",
           require: "o",
@@ -8176,7 +8176,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "स्ट्रिंग",
           detail: "The string whose first character's Unicode map value will be returned.",
           example: "\"a\"",
           require: "m",
@@ -8196,7 +8196,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "table_number",
+          name: "तालिका_संख्या",
           detail: "The number of the character to look up from the current Unicode table in decimal format.",
           example: "97",
           require: "m",
@@ -8216,7 +8216,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "roman_numeral",
+          name: "रोमन_अंक",
           detail: "The Roman numeral to format, whose value must be between 1 and 3999, inclusive.",
           example: "\"XIV\"",
           require: "m",
@@ -8236,7 +8236,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "संख्या",
           detail: "The number to format, between 1 and 3999, inclusive.",
           example: "499",
           require: "m",
@@ -8256,7 +8256,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "पाठ",
           detail: "The input text.",
           example: "\"Needle in a haystack\"",
           require: "m",
@@ -8264,7 +8264,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "regular_expression",
+          name: "रेगुलर_एक्सप्रेशन",
           detail: "The first part of `text` that matches this expression will be returned.",
           example: "\".e{2}dle\"",
           require: "m",
@@ -8284,7 +8284,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "पाठ",
           detail: "The text to be tested against the regular expression.",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -8292,7 +8292,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "regular_expression",
+          name: "रेगुलर_एक्सप्रेशन",
           detail: "The regular expression to test the text against.",
           example: "\"S.r\"",
           require: "m",
@@ -8312,7 +8312,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "पाठ",
           detail: "The text, a part of which will be replaced.",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -8320,7 +8320,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "regular_expression",
+          name: "रेगुलर_एक्सप्रेशन",
           detail: "The regular expression.  All matching instances in `text` will be replaced.",
           example: "\"S.*d\"",
           require: "m",
@@ -8328,7 +8328,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "replacement",
+          name: "प्रतिस्थापन",
           detail: "The text which will be inserted into the original text.",
           example: "\"Bed\"",
           require: "m",
@@ -8348,7 +8348,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The argument to be converted to text.",
           example: "A2",
           require: "m",
@@ -8368,7 +8368,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "संख्या",
           detail: "The number to format.",
           example: "3.141592653",
           require: "m",
@@ -8376,7 +8376,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
+          name: "दशमलव_स्थानों_की_संख्या",
           detail: "The number of decimal places to display in the result.",
           example: "2",
           require: "o",
@@ -8384,7 +8384,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "suppress_separator",
+          name: "विभाजक_दबाएं",
           detail: "Whether or not to suppress the thousands separator used in some locales (e.g. `1,000` becomes `1000`). Separators will be present if this value is 0 or omitted, and absent otherwise.",
           example: "FALSE()",
           require: "o",
@@ -8404,7 +8404,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
+          name: "खोजा_जाने_वाला_पाठ",
           detail: "The string to look for within `text_to_search`.",
           example: "\"n\"",
           require: "m",
@@ -8412,7 +8412,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "text_to_search",
+          name: "खोजने_का_पाठ",
           detail: "The text to search for the first occurrence of `search_for`.",
           example: "A2",
           require: "m",
@@ -8420,7 +8420,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "starting_at",
+          name: "यहां_से_आरंभ",
           detail: "The character within `text_to_search` at which to start the search.",
           example: "14",
           require: "o",
@@ -8440,7 +8440,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
+          name: "खोजा_जाने_वाला_पाठ",
           detail: "The string to look for within `text_to_search`.",
           example: "\"new\"",
           require: "m",
@@ -8448,7 +8448,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "text_to_search",
+          name: "खोजने_का_पाठ",
           detail: "The text to search for the first occurrence of `search_for`.",
           example: "\"new year\"",
           require: "m",
@@ -8456,7 +8456,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "starting_at",
+          name: "यहां_से_आरंभ",
           detail: "The character within `text_to_search` at which to start the search.",
           example: "2",
           require: "o",
@@ -8476,7 +8476,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "delimiter",
+          name: "सीमांकक",
           detail: "The character or string to place between each concatenated value.",
           example: "\" and-a \"",
           require: "m",
@@ -8484,7 +8484,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_or_array1",
+          name: "मान_या_सरणी1",
           detail: "The value or values to be appended using `delimiter`.",
           example: "{1",
           require: "m",
@@ -8492,7 +8492,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_or_array2",
+          name: "मान_या_सरणी2",
           detail: "More values to be appended using `delimiter`.",
           example: "2",
           require: "o",
@@ -8512,7 +8512,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "स्ट्रिंग",
           detail: "The string from which the left portion will be returned.",
           example: "A2",
           require: "m",
@@ -8520,7 +8520,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
+          name: "वर्णों_की_संख्या",
           detail: "The number of characters to return from the left side of `string`.",
           example: "2",
           require: "m",
@@ -8540,7 +8540,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "स्ट्रिंग",
           detail: "The string from which the right portion will be returned.",
           example: "A2",
           require: "m",
@@ -8548,7 +8548,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
+          name: "वर्णों_की_संख्या",
           detail: "The number of characters to return from the right side of `string`.",
           example: "2",
           require: "m",
@@ -8568,7 +8568,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "स्ट्रिंग",
           detail: "The string to extract a segment from.",
           example: "\"get this\"",
           require: "m",
@@ -8576,7 +8576,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "starting_at",
+          name: "यहां_से_आरंभ",
           detail: "The index from the left of `string` from which to begin extracting. The first character in `string` has the index 1.",
           example: "5",
           require: "m",
@@ -8584,7 +8584,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "extract_length",
+          name: "निष्कर्षण_लंबाई",
           detail: "The length of the segment to extract.",
           example: "4",
           require: "m",
@@ -8604,7 +8604,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "पाठ",
           detail: "The string whose length will be returned.",
           example: "A2",
           require: "m",
@@ -8624,7 +8624,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "पाठ",
           detail: "The string whose length will be returned.",
           example: "A2",
           require: "m",
@@ -8644,7 +8644,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "पाठ",
           detail: "The string to convert to lowercase.",
           example: "\"LOREM IPSUM\"",
           require: "m",
@@ -8664,7 +8664,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "पाठ",
           detail: "The string to convert to uppercase.",
           example: "\"lorem ipsum\"",
           require: "m",
@@ -8684,7 +8684,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
+          name: "स्ट्रिंग1",
           detail: "The first string to compare",
           example: "A1",
           require: "m",
@@ -8692,7 +8692,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "string2",
+          name: "स्ट्रिंग2",
           detail: "The second string to compare",
           example: "A2",
           require: "m",
@@ -8712,7 +8712,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "पाठ",
           detail: "The text, a part of which will be replaced.",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -8720,7 +8720,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "position",
+          name: "स्थिति",
           detail: "The position where the replacement will begin (starting from 1).",
           example: "1",
           require: "m",
@@ -8728,7 +8728,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "length",
+          name: "लंबाई",
           detail: "The number of characters in the text to be replaced.",
           example: "6",
           require: "m",
@@ -8736,7 +8736,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "new_text",
+          name: "नया_पाठ",
           detail: "The text which will be inserted into the original text.",
           example: "\"Bed\"",
           require: "m",
@@ -8756,7 +8756,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_repeat",
+          name: "दोहराने_का_पाठ",
           detail: "The character or string to repeat.",
           example: "\"ha\"",
           require: "m",
@@ -8764,7 +8764,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "number_of_repetitions",
+          name: "पुनरावृत्तियों_की_संख्या",
           detail: "The number of times `text_to_repeat` should appear in the value returned.",
           example: "4",
           require: "m",
@@ -8784,7 +8784,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
+          name: "खोजा_जाने_वाला_पाठ",
           detail: "The string to look for within `text_to_search`.",
           example: "\"n\"",
           require: "m",
@@ -8792,7 +8792,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "text_to_search",
+          name: "खोजने_का_पाठ",
           detail: "The text to search for the first occurrence of `search_for`.",
           example: "A2",
           require: "m",
@@ -8800,7 +8800,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "starting_at",
+          name: "यहां_से_आरंभ",
           detail: "The character within `text_to_search` at which to start the search.",
           example: "14",
           require: "m",
@@ -8820,7 +8820,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_search",
+          name: "खोजने_का_पाठ",
           detail: "The text within which to search and replace.",
           example: "\"search for it\"",
           require: "m",
@@ -8828,7 +8828,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "search_for",
+          name: "खोजा_जाने_वाला_पाठ",
           detail: "The string to search for within `text_to_search`.",
           example: "\"search for\"",
           require: "m",
@@ -8836,7 +8836,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "replace_with",
+          name: "इससे_बदलें",
           detail: "The string that will replace `search_for`.",
           example: "\"Google\"",
           require: "m",
@@ -8844,7 +8844,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "occurrence_number",
+          name: "घटना_संख्या",
           detail: "The instance of `search_for` within `text_to_search` to replace with `replace_with`. By default, all occurrences of `search_for` are replaced; however, if `occurrence_number` is specified, only the indicated instance of `search_for` is replaced.",
           example: "3",
           require: "m",
@@ -8864,7 +8864,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "पाठ",
           detail: "The text whose non-printable characters are to be removed.",
           example: "\"AF\"&CHAR(31)",
           require: "m",
@@ -8884,7 +8884,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "संख्या",
           detail: "The number, date, or time to format.",
           example: "1.23",
           require: "m",
@@ -8892,7 +8892,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "format",
+          name: "प्रारूप",
           detail: "The pattern by which to format the number, enclosed in quotation marks.",
           example: "\"$0.00\"",
           require: "m",
@@ -8912,7 +8912,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "पाठ",
           detail: "The text or reference to a cell containing text to be trimmed.",
           example: "\" lorem ipsum\"",
           require: "m",
@@ -8932,7 +8932,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "पाठ",
           detail: "The string containing the value to be converted.",
           example: "\"123\"",
           require: "m",
@@ -8952,7 +8952,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_capitalize",
+          name: "बड़े_अक्षरों_में_बदलने_का_पाठ",
           detail: "The text which will be returned with the first letter of each word in uppercase and all other letters in lowercase.",
           example: "\"united states\"",
           require: "m",
@@ -8972,7 +8972,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The numeric value in `start_unit` to convert to `end_unit`.",
           example: "5.1",
           require: "m",
@@ -8980,7 +8980,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "start_unit",
+          name: "आरंभिक_इकाई",
           detail: "The starting unit, the unit currently assigned to `value`.",
           example: "\"g\"",
           require: "m",
@@ -8988,7 +8988,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_unit",
+          name: "अंतिम_इकाई",
           detail: "The unit of measure into which to convert the argument, `value`.",
           example: "\"kg\"",
           require: "m",
@@ -9008,7 +9008,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
+          name: "सरणी_x",
           detail: "The array or range of values whose squares will be reduced by the squares of corresponding entries in `array_y` and added together.",
           example: "A2:A100",
           require: "m",
@@ -9016,7 +9016,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array_y",
+          name: "सरणी_y",
           detail: "The array or range of values whose squares will be subtracted from the squares of corresponding entries in `array_x` and added together.",
           example: "B2:B100",
           require: "m",
@@ -9036,7 +9036,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
+          name: "सरणी_x",
           detail: "The array or range of values whose squares will be added to the squares of corresponding entries in `array_y` and added together.",
           example: "A2:A100",
           require: "m",
@@ -9044,7 +9044,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array_y",
+          name: "सरणी_y",
           detail: "The array or range of values whose squares will be added to the squares of corresponding entries in `array_x` and added together.",
           example: "B2:B100",
           require: "m",
@@ -9064,7 +9064,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
+          name: "सरणी_x",
           detail: "The array or range of values that will be reduced by corresponding entries in `array_y`, squared, and added together.",
           example: "A2:A100",
           require: "m",
@@ -9072,7 +9072,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array_y",
+          name: "सरणी_y",
           detail: "The array or range of values that will be subtracted from corresponding entries in `array_x`, the result squared, and all such results added together.",
           example: "B2:B100",
           require: "m",
@@ -9092,7 +9092,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_or_range",
+          name: "सरणी_या_श्रेणी",
           detail: "The array or range whose rows and columns will be swapped.",
           example: "{1,2}",
           require: "m",
@@ -9112,7 +9112,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "ज्ञात_डेटा_y",
           detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal linear trend.",
           example: "B2:B10",
           require: "m",
@@ -9120,7 +9120,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
+          name: "ज्ञात_डेटा_x",
           detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
           example: "A2:A10",
           require: "o",
@@ -9128,7 +9128,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
+          name: "नया_डेटा_x",
           detail: "The data points to return the `y` values for on the ideal curve fit.",
           example: "A11:A13",
           require: "o",
@@ -9156,7 +9156,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "डेटा",
           detail: "The array or range containing the values to be counted.",
           example: "A2:A40",
           require: "m",
@@ -9164,7 +9164,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "classes",
+          name: "वर्ग",
           detail: "The array or range containing the set of classes.",
           example: "B2:B5",
           require: "m",
@@ -9184,7 +9184,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "ज्ञात_डेटा_y",
           detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal exponential growth curve.",
           example: "B2:B10",
           require: "m",
@@ -9192,7 +9192,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
+          name: "ज्ञात_डेटा_x",
           detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
           example: "A2:A10",
           require: "o",
@@ -9200,7 +9200,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
+          name: "नया_डेटा_x",
           detail: "The data points to return the `y` values for on the ideal curve fit.",
           example: "A11:A13",
           require: "o",
@@ -9228,7 +9228,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "ज्ञात_डेटा_y",
           detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal linear trend.",
           example: "B2:B10",
           require: "m",
@@ -9236,7 +9236,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
+          name: "ज्ञात_डेटा_x",
           detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
           example: "A2:A10",
           require: "o",
@@ -9244,7 +9244,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "calculate_b",
+          name: "b_की_गणना_करें",
           detail: "Given a linear form of `y = m*x+b`, calculates the y-intercept (`b`) if `TRUE`. Otherwise, forces `b` to be `0` and only calculates the `m` values if `FALSE`, i.e. forces the curve fit to pass through the origin.",
           example: "TRUE()",
           require: "o",
@@ -9252,7 +9252,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "verbose",
+          name: "विस्तृत",
           detail: "A flag specifying whether to return additional regression statistics or only the linear coefficients and the y-intercept (default).",
           example: "TRUE()",
           require: "o",
@@ -9272,7 +9272,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "ज्ञात_डेटा_y",
           detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal exponential growth curve.",
           example: "B2:B10",
           require: "m",
@@ -9280,7 +9280,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
+          name: "ज्ञात_डेटा_x",
           detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
           example: "A2:A10",
           require: "o",
@@ -9296,7 +9296,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "verbose",
+          name: "विस्तृत",
           detail: "A flag specifying whether to return additional regression statistics or only the calculated coefficient and exponents.",
           example: "TRUE()",
           require: "o",
@@ -9316,7 +9316,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
+          name: "वर्ग_मैट्रिक्स",
           detail: "An array or range with an equal number of rows and columns representing a matrix whose determinant will be calculated.",
           example: "A1:D4",
           require: "m",
@@ -9336,7 +9336,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
+          name: "वर्ग_मैट्रिक्स",
           detail: "An array or range with an equal number of rows and columns representing a matrix whose multiplicative inverse will be calculated.",
           example: "A1:D4",
           require: "m",
@@ -9356,7 +9356,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "matrix1",
+          name: "मैट्रिक्स1",
           detail: "The first matrix in the matrix multiplication operation, represented as an array or range.",
           example: "A1:B3",
           require: "m",
@@ -9364,7 +9364,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "matrix2",
+          name: "मैट्रिक्स2",
           detail: "The second matrix in the matrix multiplication operation, represented as an array or range.",
           example: "C1:F2",
           require: "m",
@@ -9384,7 +9384,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array1",
+          name: "सरणी1",
           detail: "The first array or range whose entries will be multiplied with corresponding entries in the second such array or range.",
           example: "A2:C5",
           require: "m",
@@ -9392,7 +9392,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array2",
+          name: "सरणी2",
           detail: "The second array or range whose entries will be multiplied with corresponding entries in the first such array or range.",
           example: "D2:F5",
           require: "o",
@@ -9412,7 +9412,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell",
+          name: "सेल",
           detail: "The cell to be verified as containing a formula.",
           example: "A2",
           require: "m",
@@ -9432,7 +9432,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "info_type",
+          name: "जानकारी_प्रकार",
           detail: "The type of information requested (see article for available types)",
           example: "\"type\"",
           require: "m",
@@ -9440,7 +9440,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "reference",
+          name: "संदर्भ",
           detail: "The reference to the cell.",
           example: "C2",
           require: "m",
@@ -9471,7 +9471,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
+          name: "संदर्भ",
           detail: "The cell to find the error number for although you can also provide the error value directly.",
           example: "A3",
           require: "m",
@@ -9491,7 +9491,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "Reference to the cell that will be checked for emptiness.",
           example: "A2",
           require: "m",
@@ -9511,7 +9511,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to be verified as an error type other than `#N/A`.",
           example: "A2",
           require: "m",
@@ -9531,7 +9531,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to be verified as an error type.",
           example: "A2",
           require: "m",
@@ -9551,7 +9551,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to be verified as a logical `TRUE` or `FALSE`.",
           example: "A2",
           require: "m",
@@ -9571,7 +9571,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to be compared with the error value `#N/A`.",
           example: "A2",
           require: "m",
@@ -9591,7 +9591,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to be checked.",
           example: "A2",
           require: "m",
@@ -9611,7 +9611,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to be verified as a number.",
           example: "A2",
           require: "m",
@@ -9631,7 +9631,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to be verified as a cell reference.",
           example: "A2",
           require: "m",
@@ -9651,7 +9651,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value to be verified as text.",
           example: "A2",
           require: "m",
@@ -9671,7 +9671,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The value whose type is to be determined.",
           example: "C4",
           require: "m",
@@ -9691,7 +9691,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The argument to be converted to a number.",
           example: "A2",
           require: "m",
@@ -9711,7 +9711,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The argument or reference to a cell to be converted to a date.",
           example: "25405",
           require: "m",
@@ -9731,7 +9731,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The argument or reference to a cell to be converted to a pure number.",
           example: "50%",
           require: "m",
@@ -9751,7 +9751,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The argument or reference to a cell to be converted to text.",
           example: "24",
           require: "m",
@@ -9771,7 +9771,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The argument or reference to a cell to be converted to a dollar value.",
           example: "A2",
           require: "m",
@@ -9791,7 +9791,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           detail: "The argument or reference to a cell to be converted to a percentage.",
           example: "A2",
           require: "m",
@@ -9811,7 +9811,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -9819,7 +9819,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -9827,7 +9827,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -9847,7 +9847,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -9855,7 +9855,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -9863,7 +9863,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -9883,7 +9883,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -9891,7 +9891,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -9899,7 +9899,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -9919,7 +9919,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -9927,7 +9927,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -9935,7 +9935,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -9955,7 +9955,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -9963,7 +9963,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -9971,7 +9971,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -9991,7 +9991,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -9999,7 +9999,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -10007,7 +10007,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -10027,7 +10027,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -10035,7 +10035,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -10043,7 +10043,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -10063,7 +10063,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -10071,7 +10071,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -10079,7 +10079,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -10099,7 +10099,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -10107,7 +10107,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -10115,7 +10115,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -10135,7 +10135,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -10143,7 +10143,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -10151,7 +10151,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -10171,7 +10171,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -10179,7 +10179,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -10187,7 +10187,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -10207,7 +10207,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "डेटाबेस",
           detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
           example: "A2:F20",
           require: "m",
@@ -10215,7 +10215,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "फ़ील्ड",
           detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
           example: "G2",
           require: "m",
@@ -10223,7 +10223,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "मानदंड",
           detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
           example: "A22:D23",
           require: "m",
@@ -10243,7 +10243,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "पहचान संख्या",
           example: "A1",
           detail: "15-digit or 18-digit ID number or range.",
           require: "m",
@@ -10251,7 +10251,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Deadline",
+          name: "अंतिम तिथि",
           example: "\"2017-10-01\"",
           detail: "The deadline or range of age calculation. The default is the current day.",
           require: "o",
@@ -10271,7 +10271,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
           detail: "15-digit or 18-digit ID number or range.",
           require: "m",
@@ -10291,7 +10291,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
           detail: "15-digit or 18-digit ID number or range.",
           require: "m",
@@ -10299,7 +10299,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Birthday format",
+          name: "जन्मतिथि प्रारूप",
           example: "0",
           detail: "Date type, default:0:[1900/01/01], 1:[1900-01-01], 2:[1900年1月1日]",
           require: "o",
@@ -10319,7 +10319,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
           detail: "15-digit or 18-digit ID number or range.",
           require: "m",
@@ -10339,7 +10339,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
           detail: "15-digit or 18-digit ID number or range.",
           require: "m",
@@ -10359,7 +10359,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
           detail: "15-digit or 18-digit ID number or range.",
           require: "m",
@@ -10379,7 +10379,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
           detail: "15-digit or 18-digit ID number or range.",
           require: "m",
@@ -10399,7 +10399,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
           detail: "15-digit or 18-digit ID number or range.",
           require: "m",
@@ -10419,7 +10419,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "पाठ",
           example: "\"I came to Beijing Tsinghua University\"",
           detail: "Any text that needs word segmentation.",
           require: "m",
@@ -10427,7 +10427,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Word segmentation mode",
+          name: "शब्द विभाजन मोड",
           example: "0",
           detail: "The default is 0[precision mode], 1[full mode], 2[search engine mode].",
           require: "o",
@@ -10447,7 +10447,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "पाठ",
           example: "\"I came to Beijing Tsinghua University\"",
           detail: "Any text that needs word segmentation.",
           require: "m",
@@ -10455,7 +10455,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "कीवर्ड की संख्या",
           example: "20",
           detail: "The number of keywords returned by the algorithm, the default is 20",
           require: "o",
@@ -10463,7 +10463,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "Corpus",
+          name: "कॉर्पस",
           example: "1",
           detail: "Select a corpus in a specific field, the default is 0[General], 1[Finance], 2[Medical]",
           require: "o",
@@ -10483,7 +10483,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "पाठ",
           example: "\"I came to Beijing Tsinghua University\"",
           detail: "Any text that needs word segmentation.",
           require: "m",
@@ -10491,7 +10491,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "कीवर्ड की संख्या",
           example: "20",
           detail: "The number of keywords returned by the algorithm, the default is 20",
           require: "o",
@@ -10499,7 +10499,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "Corpus",
+          name: "कॉर्पस",
           example: "1",
           detail: "Select a corpus in a specific field, the default is 0[General], 1[Finance], 2[Medical]",
           require: "o",
@@ -10519,7 +10519,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "स्टॉक कोड",
           example: "\"000001\"",
           detail: "6-digit stock code, required.",
           require: "m",
@@ -10527,7 +10527,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "तारीख़",
           example: "2015-01-08",
           detail: "The trading day of the stock, the default is the latest trading day",
           require: "o",
@@ -10535,7 +10535,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
           detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
           require: "o",
@@ -10555,7 +10555,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "स्टॉक कोड",
           example: "\"000001\"",
           detail: "6-digit stock code, required.",
           require: "m",
@@ -10563,7 +10563,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "तारीख़",
           example: "2015-01-08",
           detail: "The trading day of the stock, the default is the latest trading day",
           require: "o",
@@ -10571,7 +10571,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
           detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
           require: "o",
@@ -10591,7 +10591,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "स्टॉक कोड",
           example: "\"000001\"",
           detail: "6-digit stock code, required.",
           require: "m",
@@ -10599,7 +10599,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "तारीख़",
           example: "2015-01-08",
           detail: "The trading day of the stock, the default is the latest trading day",
           require: "o",
@@ -10607,7 +10607,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
           detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
           require: "o",
@@ -10627,7 +10627,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "स्टॉक कोड",
           example: "\"000001\"",
           detail: "6-digit stock code, required.",
           require: "m",
@@ -10635,7 +10635,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "तारीख़",
           example: "2015-01-08",
           detail: "The trading day of the stock, the default is the latest trading day",
           require: "o",
@@ -10643,7 +10643,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
           detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
           require: "o",
@@ -10663,7 +10663,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "स्टॉक कोड",
           example: "\"000001\"",
           detail: "6-digit stock code, required.",
           require: "m",
@@ -10671,7 +10671,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "तारीख़",
           example: "2015-01-08",
           detail: "The trading day of the stock, the default is the latest trading day",
           require: "o",
@@ -10679,7 +10679,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
           detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
           require: "o",
@@ -10699,7 +10699,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "स्टॉक कोड",
           example: "\"000001\"",
           detail: "6-digit stock code, required.",
           require: "m",
@@ -10707,7 +10707,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "तारीख़",
           example: "2015-01-08",
           detail: "The trading day of the stock, the default is the latest trading day",
           require: "o",
@@ -10715,7 +10715,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
           detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
           require: "o",
@@ -10735,7 +10735,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "मान",
           example: "\"1990-01-01\"",
           detail: "The value to be verified as a date.",
           require: "m",
@@ -10755,7 +10755,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "श्रेणी",
           example: "A1:A20",
           detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -10763,7 +10763,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Line color",
+          name: "रेखा का रंग",
           example: "#2ec7c9",
           detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
           require: "o",
@@ -10771,7 +10771,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Line thickness",
+          name: "रेखा मोटाई",
           example: "1",
           detail: "Line thickness of the line graph, the default is 1px",
           require: "o",
@@ -10779,7 +10779,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Auxiliary line",
+          name: "सहायक रेखा",
           example: "avg",
           detail: "A horizontal line, which can be min, max, avg, median, range or custom value, default 0 none",
           require: "o",
@@ -10787,7 +10787,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Auxiliary line color",
+          name: "सहायक रेखा का रंग",
           example: "#000",
           detail: "Color setting of auxiliary line, same as line color configuration, default #000",
           require: "o",
@@ -10795,7 +10795,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Maximum mark",
+          name: "अधिकतम चिह्न",
           example: "#fc5c5c",
           detail: "Identifies the maximum value of the line graph, the same line color configuration, default 0 does not display",
           require: "o",
@@ -10803,7 +10803,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Minimum mark",
+          name: "न्यूनतम चिह्न",
           example: "#fc5c5c",
           detail: "Identify the minimum value of the line graph, the same line color configuration, default 0 does not display",
           require: "o",
@@ -10811,7 +10811,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Mark size",
+          name: "चिह्न आकार",
           example: "1.5",
           detail: "The maximum and minimum mark size settings, the default is 1.5",
           require: "o",
@@ -10831,7 +10831,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "श्रेणी",
           example: "A1:A20",
           detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -10839,7 +10839,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Line color",
+          name: "रेखा का रंग",
           example: "#2ec7c9",
           detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
           require: "o",
@@ -10847,7 +10847,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Fill color",
+          name: "भरण रंग",
           example: "#CCF3F4",
           detail: "Form an area chart, the same line color configuration, default 0 does not display",
           require: "o",
@@ -10855,7 +10855,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Line thickness",
+          name: "रेखा मोटाई",
           example: "1",
           detail: "Line thickness of the line graph, the default is 1px",
           require: "o",
@@ -10863,7 +10863,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Auxiliary line",
+          name: "सहायक रेखा",
           example: "avg",
           detail: "A horizontal line, which can be min, max, avg, median, range or custom value, default 0 none",
           require: "o",
@@ -10871,7 +10871,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Auxiliary line color",
+          name: "सहायक रेखा का रंग",
           example: "#000",
           detail: "Color setting of auxiliary line, same as line color configuration, default #000",
           require: "o",
@@ -10891,7 +10891,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "श्रेणी",
           example: "A1:A20",
           detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -10899,7 +10899,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "बार अंतराल",
           example: "1",
           detail: "The distance between bars, the default is 1",
           require: "o",
@@ -10907,7 +10907,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "बार का रंग",
           example: "#fc5c5c",
           detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
           require: "o",
@@ -10915,7 +10915,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "ऋणात्मक बार रंग",
           example: "#97b552",
           detail: "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
           require: "o",
@@ -10923,7 +10923,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "अधिकतम",
           example: "100",
           detail: "The maximum value of the bar chart, used to standardize the length of the bar chart, the default is to automatically calculate false, auto, null",
           require: "o",
@@ -10931,7 +10931,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "रंग पैलेट",
           example: "#97b552",
           detail: "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
           require: "o",
@@ -10951,7 +10951,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "श्रेणी",
           example: "A1:A20",
           detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -10959,7 +10959,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Stack by column",
+          name: "स्तंभ अनुसार स्टैक करें",
           example: "1",
           detail: "If you need to stack by row, set this item to false or 0, the default is 1",
           require: "o",
@@ -10967,7 +10967,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "बार अंतराल",
           example: "1",
           detail: "The distance between bars, the default is 1",
           require: "o",
@@ -10975,7 +10975,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "अधिकतम",
           example: "100",
           detail: "The maximum value of the cumulative bar, used to regulate the length of the bar, the default is to automatically calculate false, auto, null",
           require: "o",
@@ -10983,7 +10983,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "रंग पैलेट",
           example: "#97b552",
           detail: "The color palette can individually set the bar color of each dimension, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
@@ -11003,7 +11003,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "श्रेणी",
           example: "A1:A20",
           detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11011,7 +11011,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "बार अंतराल",
           example: "1",
           detail: "The distance between bars, the default is 1",
           require: "o",
@@ -11019,7 +11019,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "बार का रंग",
           example: "#fc5c5c",
           detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
           require: "o",
@@ -11027,7 +11027,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "ऋणात्मक बार रंग",
           example: "#97b552",
           detail: "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
           require: "o",
@@ -11035,7 +11035,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "अधिकतम",
           example: "100",
           detail: "The maximum value of the bar chart, used to standardize the length of the bar chart, the default is to automatically calculate false, auto, null",
           require: "o",
@@ -11043,7 +11043,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "रंग पैलेट",
           example: "#97b552",
           detail: "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
           require: "o",
@@ -11063,7 +11063,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "श्रेणी",
           example: "A1:A20",
           detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11071,7 +11071,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Stack by column",
+          name: "स्तंभ अनुसार स्टैक करें",
           example: "1",
           detail: "If you need to stack by row, set this item to false or 0, the default is 1",
           require: "o",
@@ -11079,7 +11079,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "बार अंतराल",
           example: "1",
           detail: "The distance between bars, the default is 1",
           require: "o",
@@ -11087,7 +11087,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Max",
+          name: "अधिकतम",
           example: "100",
           detail: "The maximum value of the cumulative bar, used to regulate the length of the bar, the default is to automatically calculate false, auto, null",
           require: "o",
@@ -11095,7 +11095,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "रंग पैलेट",
           example: "#97b552",
           detail: "The color palette can individually set the bar color of each dimension, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
@@ -11115,7 +11115,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "श्रेणी",
           example: "A1:A20",
           detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11123,7 +11123,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Segmentation threshold",
+          name: "विभाजन थ्रेशोल्ड",
           example: "1",
           detail: "Discrete graph column color distinction, for example: if the value is 0, blue is greater than 0, red is less than 0, and the default is 0",
           require: "o",
@@ -11131,7 +11131,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Above threshold color",
+          name: "थ्रेशोल्ड से ऊपर का रंग",
           example: "#2ec7c9",
           detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
           require: "o",
@@ -11139,7 +11139,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Below threshold color",
+          name: "थ्रेशोल्ड से नीचे का रंग",
           example: "#fc5c5c",
           detail: "The color setting of the bar below the threshold, the same as the color above the threshold, default #fc5c5c",
           require: "o",
@@ -11159,7 +11159,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "श्रेणी",
           example: "A1:A20",
           detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11167,7 +11167,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar interval",
+          name: "बार अंतराल",
           example: "1",
           detail: "The distance between bars, the default is 1",
           require: "o",
@@ -11175,7 +11175,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Bar color",
+          name: "बार का रंग",
           example: "#fc5c5c",
           detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
           require: "o",
@@ -11183,7 +11183,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Negative bar color",
+          name: "ऋणात्मक बार रंग",
           example: "#97b552",
           detail: "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
           require: "o",
@@ -11191,7 +11191,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Zero value bar color",
+          name: "शून्य मान बार रंग",
           example: "#999",
           detail: "Zero value bar color setting, representing 0 value color, the same color configuration of the bar, default #999",
           require: "o",
@@ -11199,7 +11199,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "रंग पैलेट",
           example: "#97b552",
           detail: "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
           require: "o",
@@ -11219,7 +11219,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "श्रेणी",
           example: "A1:A20",
           detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11227,7 +11227,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Rotation angle",
+          name: "घूर्णन कोण",
           example: "0",
           detail: "The rotation angle of the pie chart, the default is 0",
           require: "o",
@@ -11235,7 +11235,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "border",
+          name: "बॉर्डर",
           example: "0",
           detail: "Pie chart border size, default is none 0",
           require: "o",
@@ -11243,7 +11243,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Border color",
+          name: "बॉर्डर रंग",
           example: "#000",
           detail: "The border color of the pie chart, the default is #000",
           require: "o",
@@ -11251,7 +11251,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Color palette",
+          name: "रंग पैलेट",
           example: "#97b552",
           detail: "The color of the slice can be set in the palette, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
@@ -11271,7 +11271,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Range",
+          name: "श्रेणी",
           example: "A1:A20",
           detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
           require: "m",
@@ -11279,7 +11279,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Outlier ratio",
+          name: "आउटलायर अनुपात",
           example: "1.5",
           detail: "The threshold range of outliers, if it is 0 or false, it will not be displayed, the default is 1.5 times",
           require: "o",
@@ -11287,7 +11287,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Target value",
+          name: "लक्ष्य मान",
           example: "10",
           detail: "The target value setting on the box plot, the default is false and does not display",
           require: "o",
@@ -11295,7 +11295,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Point size",
+          name: "बिंदु आकार",
           example: "1.5",
           detail: "The radius of the target point and outlier is set, the default is 1.5",
           require: "o",
@@ -11315,7 +11315,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Target",
+          name: "लक्ष्य",
           example: "10",
           detail: "The numerical value can be calculated effectively for the achieved target value, such as A1, 100, etc.",
           require: "m",
@@ -11323,7 +11323,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "achieved",
+          name: "प्राप्त",
           example: "8",
           detail: "Only when the value is completed can the value be calculated effectively, such as A1, 100, etc.",
           require: "m",
@@ -11331,7 +11331,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Contrast",
+          name: "तुलना मान",
           example: "12",
           detail: "Comparative values, such as excess, minimum, and bottom line for awards, can be effectively calculated, such as A1, 100, etc. You can set up to 9 comparison values",
           require: "o",
@@ -11351,7 +11351,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "config",
+          name: "कॉन्फ़िगरेशन",
           example: "PIESPLINES(A1:A20)",
           detail: "Sparklines chart settings, such as A1:A20, a completed pie chart, line chart settings, etc.",
           require: "m",
@@ -11371,7 +11371,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "श्रेणी",
           detail: "The data to be sorted.",
           example: "A2:A17",
           require: "m",
@@ -11379,7 +11379,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "sort_column",
+          name: "क्रम_स्तंभ",
           detail: "The index of the column in `range` or a range outside of `range` containing the values by which to sort.",
           example: "1",
           require: "o",
@@ -11387,7 +11387,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "is_ascending",
+          name: "क्या_आरोही_है",
           detail: "`TRUE` or `FALSE` indicating whether to sort `sort_column` in ascending order. `FALSE` sorts in descending order.",
           example: "-1",
           require: "o",
@@ -11395,7 +11395,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "sort_column2",
+          name: "क्रम_स्तंभ2",
           detail: "Additional columns.",
           example: "TRUE()",
           require: "o",
@@ -11415,7 +11415,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "श्रेणी",
           detail: "The data to be filtered.",
           example: "A5:D20",
           require: "m",
@@ -11423,7 +11423,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "condition1",
+          name: "शर्त1",
           detail: "A column or row containing true or false values corresponding to the first column or row of `range`, or an array formula evaluating to true or false.",
           example: "1",
           require: "m",
@@ -11431,7 +11431,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "condition2",
+          name: "शर्त2",
           detail: "Additional rows or columns containing boolean values `TRUE` or `FALSE` indicating whether the corresponding row or column in `range` should pass through `FILTER`. Can also contain array formula expressions which evaluate to such rows or columns. All conditions must be of the same type (row or column). Mixing row conditions and column conditions is not permitted.",
           example: "\"\"",
           require: "o",
@@ -11451,7 +11451,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "श्रेणी",
           detail: "The data to filter by unique entries.",
           example: "A2:B26",
           require: "m",
@@ -11459,7 +11459,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "by_col",
+          name: "स्तंभ_अनुसार",
           detail: "[Option] - Logical value, indicating how to compare; by row = FALSE() or omitted; by column = TRUE().",
           example: "TRUE()",
           require: "o",
@@ -11467,7 +11467,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "occurs_once",
+          name: "केवल_एक_बार",
           detail: "[Option] - Logical value, only one occurrence in the unique value is returned = TRUE(); including all unique values = FALSE() or omitted.",
           example: "FALSE()",
           require: "o",
@@ -11487,7 +11487,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
+          name: "पंक्तियां",
           detail: "The number of rows to populate with a random number.",
           example: "1",
           require: "o",
@@ -11495,7 +11495,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "columns",
+          name: "स्तंभ",
           detail: "The number of columns to populate with a random number.",
           example: "1",
           require: "o",
@@ -11515,7 +11515,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
+          name: "पंक्तियां",
           detail: "The number of rows in the function's resulting grid.",
           example: "1",
           require: "m",
@@ -11523,7 +11523,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "columns",
+          name: "स्तंभ",
           detail: "The number of columns in the function's resulting grid. If omitted, the result grid will have 1 column.",
           example: "1",
           require: "o",
@@ -11531,7 +11531,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "start",
+          name: "आरंभ",
           detail: "The number, at which to start the sequence. If omitted, the sequence will start at 1.",
           example: "1",
           require: "o",
@@ -11539,7 +11539,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "step",
+          name: "चरण",
           detail: "The amount each value in the sequence will differ by. If omitted, each value will differ by 1.",
           example: "1",
           require: "o",
@@ -11559,7 +11559,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "expression",
+          name: "अभिव्यक्ति",
           example: "\"A1+5*2^2\"",
           detail: "Formula or expression",
           require: "m",
@@ -11579,7 +11579,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "remote_expression",
+          name: "रिमोट_अभिव्यक्ति",
           example: "SUM(A1:A10000000)",
           detail: "Formula",
           require: "m",

@@ -162,7 +162,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要返回其絕對值的數。",
           example: "-2",
           require: "m",
@@ -1500,7 +1500,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Sample_s",
+          name: "樣本成功次數",
           detail: "樣本中成功的次數。",
           example: "4",
           require: "m",
@@ -1508,7 +1508,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "Number_sample",
+          name: "樣本量",
           detail: "樣本量。",
           example: "12",
           require: "m",
@@ -1516,7 +1516,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "Population_s",
+          name: "總體成功次數",
           detail: "總體中成功的次數。",
           example: "20",
           require: "m",
@@ -1524,7 +1524,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "Number_pop",
+          name: "總體大小",
           detail: "總體大小。",
           example: "40",
           require: "m",
@@ -1532,7 +1532,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "累積",
           detail: "决定函數形式的邏輯值。\n\n如果cumulative為TRUE（）,則HYPGEOM.DIST返回累積分佈函數；\n\n如果為FALSE（）,則返回概率密度函數。",
           example: "TRUE()",
           require: "m",
@@ -1720,7 +1720,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要確定其排名的值。",
           example: "A10",
           require: "m",
@@ -1728,7 +1728,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "ref",
+          name: "數據範圍",
           detail: "包含相關數據集的數組或範圍。",
           example: "A1:A100",
           require: "m",
@@ -1736,7 +1736,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "order",
+          name: "排序方式",
           detail: "[可選-默認為按降序（FALSE（））] - 要按昇冪還是按降序考慮\"data\"中的值。",
           example: "TRUE()",
           require: "o",
@@ -1756,7 +1756,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要確定其排名的值。",
           example: "A10",
           require: "m",
@@ -1764,7 +1764,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "ref",
+          name: "數據範圍",
           detail: "包含相關數據集的數組或範圍。",
           example: "A1:A100",
           require: "m",
@@ -1772,7 +1772,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "order",
+          name: "排序方式",
           detail: "[可選-默認為按降序（FALSE（））] - 要按昇冪還是按降序考慮\"data\"中的值。",
           example: "TRUE()",
           require: "o",
@@ -1792,7 +1792,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "數據",
           detail: "包含相關數據集的數組或範圍。",
           example: "A1:A100",
           require: "m",
@@ -1808,7 +1808,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significance",
+          name: "有效位數",
           detail: "[可選-預設值為3] - 要在計算中使用的有效位數。",
           example: "4",
           require: "o",
@@ -1828,7 +1828,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "數據",
           detail: "包含相關數據集的數組或範圍。",
           example: "A1:A100",
           require: "m",
@@ -1844,7 +1844,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significance",
+          name: "有效位數",
           detail: "[可選-預設值為3] - 要在計算中使用的有效位數。",
           example: "4",
           require: "o",
@@ -1992,7 +1992,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "累積",
           detail: "TRUE（）表示使用累積分佈函數,FALSE（）則表示使用概率密度函數。",
           example: "TRUE()",
           require: "m",
@@ -2152,7 +2152,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number_s",
+          name: "成功次數",
           detail: "試驗的成功次數。",
           example: "4",
           require: "m",
@@ -2160,7 +2160,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "trials",
+          name: "檢驗次數",
           detail: "獨立檢驗的次數。",
           example: "100",
           require: "m",
@@ -2168,7 +2168,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "probability_s",
+          name: "成功機率",
           detail: "任一給定檢驗的成功概率。",
           example: "0.005",
           require: "m",
@@ -2176,7 +2176,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "累積",
           detail: "是否使用二項式累積分佈。",
           example: "FALSE()",
           require: "m",
@@ -2196,7 +2196,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "trials",
+          name: "檢驗次數",
           detail: "貝努利試驗次數。",
           example: "100",
           require: "m",
@@ -2204,7 +2204,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "probability_s",
+          name: "成功機率",
           detail: "任一次給定檢驗的成功概率。",
           example: "0.005",
           require: "m",
@@ -2240,7 +2240,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_dev",
+          name: "標準差",
           detail: "數據區域的總體標準差。",
           example: "1.6",
           require: "m",
@@ -2248,7 +2248,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "size",
+          name: "樣本大小",
           detail: "樣本總量的大小。",
           example: "250",
           require: "m",
@@ -2396,7 +2396,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "累積",
           detail: "是否使用指數累積分佈。",
           example: "FALSE()",
           require: "m",
@@ -2416,7 +2416,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range",
+          name: "條件範圍",
           detail: "要對其檢查 criterion 的範圍。",
           example: "A1:A10",
           require: "m",
@@ -2424,7 +2424,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criterion",
+          name: "條件",
           detail: "要應用於criteria_range的模式或測試條件。\n\n等於:\"文字\" 或 1 或 \"=文字\" 或 \"=1\"\n\n大於:\">1\"\n\n大於等於:\">=1\"\n\n小於:\"<1\"\n\n小於等於:\"<=1\"\n\n不等於:\"<>1\"或\"<>文字\"",
           example: "\">20\"",
           require: "m",
@@ -2432,7 +2432,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "average_range",
+          name: "平均範圍",
           detail: "[可選] - 要計算平均值的範圍。如果未提供此參數,則改用criteria_range來計算平均值。",
           example: "B1:B10",
           require: "o",
@@ -2452,7 +2452,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "average_range",
+          name: "平均範圍",
           detail: "要計算平均值的範圍。",
           example: "A1:A10",
           require: "m",
@@ -2460,7 +2460,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria_range1",
+          name: "條件範圍1",
           detail: "要對其檢查 criterion1 的範圍。",
           example: " B1:B10",
           require: "m",
@@ -2468,7 +2468,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criterion1",
+          name: "條件1",
           detail: "要應用於criteria_range1的模式或測試條件。",
           example: " \">20\"",
           require: "m",
@@ -2476,7 +2476,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria_range2, criterion2, ...",
+          name: "條件範圍2,條件2,...",
           detail: "[可選] - 要檢查的其他範圍和條件。",
           example: " C1:C10",
           require: "m",
@@ -2496,7 +2496,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "表示對象個數的整數。",
           example: "4",
           require: "m",
@@ -2504,7 +2504,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_chosen",
+          name: "選取數",
           detail: "表示每個排列中對象個數的整數。",
           example: "2",
           require: "m",
@@ -2552,7 +2552,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "定義相對位置的數組或數據區域。",
           example: "A2:A100",
           require: "m",
@@ -2580,7 +2580,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "定義相對位置的數組或數據區域。",
           example: "A2:A100",
           require: "m",
@@ -2636,7 +2636,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "機率",
           detail: "對應於常态分配的概率。",
           example: "0.75",
           require: "m",
@@ -2664,7 +2664,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "累積",
           detail: "决定函數形式的邏輯值。\n\n如果為TRUE（）,則返回累積分佈函數；\n\n如果為FALSE（）,則返回概率密度函數。",
           example: "FALSE()",
           require: "m",
@@ -2684,7 +2684,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "機率",
           detail: "對應於常态分配的概率。",
           example: "0.75",
           require: "m",
@@ -2692,7 +2692,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "平均值",
           detail: "分佈的算術平均值。",
           example: "1",
           require: "m",
@@ -2700,7 +2700,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_dev",
+          name: "標準差",
           detail: "分佈的標準差。",
           example: "4",
           require: "m",
@@ -2728,7 +2728,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "平均值",
           detail: "分佈的算術平均值。",
           example: "1",
           require: "m",
@@ -2736,7 +2736,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_dev",
+          name: "標準差",
           detail: "分佈的標準差。",
           example: "4",
           require: "m",
@@ -2744,7 +2744,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "累積",
           detail: "决定函數形式的邏輯值。\n\n如果為TRUE（）,則返回累積分佈函數；\n\n如果為FALSE（）,則返回概率密度函數。",
           example: "FALSE()",
           require: "m",
@@ -2764,7 +2764,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number_f",
+          name: "失敗次數",
           detail: "要類比的失敗次數。",
           example: "4",
           require: "m",
@@ -2772,7 +2772,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_s",
+          name: "成功次數",
           detail: "要類比的成功次數。",
           example: "2",
           require: "m",
@@ -2780,7 +2780,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "probability_s",
+          name: "成功機率",
           detail: "任一次給定檢驗的成功概率。",
           example: "0.1",
           require: "m",
@@ -2788,7 +2788,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "累積",
           detail: "决定函數形式的邏輯值。\n\n如果為TRUE（）,則返回累積分佈函數；\n\n如果為FALSE（）,則返回概率密度函數。",
           example: "FALSE()",
           require: "m",
@@ -2948,7 +2948,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "機率",
           detail: "與對數分佈相關的概率,介於0與1之間（不含0與1）。",
           example: "0.4",
           require: "m",
@@ -2956,7 +2956,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "平均值",
           detail: "ln(x) 的平均值。",
           example: "4",
           require: "m",
@@ -2964,7 +2964,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_dev",
+          name: "標準差",
           detail: "ln(x) 的標準差,正數。",
           example: "6",
           require: "m",
@@ -2992,7 +2992,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "平均值",
           detail: "ln(x) 的平均值。",
           example: "4",
           require: "m",
@@ -3000,7 +3000,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_dev",
+          name: "標準差",
           detail: "ln(x) 的標準差,正數。",
           example: "6",
           require: "m",
@@ -3008,7 +3008,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "累積",
           detail: "决定函數形式的邏輯值。\n\n如果為TRUE（）,則返回累積分佈函數；\n\n如果為FALSE（）,則返回概率密度函數。",
           example: "FALSE()",
           require: "m",
@@ -3028,7 +3028,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "用來檢驗 x 的數組或數據區域。",
           example: "A2:A100",
           require: "m",
@@ -3064,7 +3064,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "x_range",
+          name: "x數值區域",
           detail: "具有各自相應概率值的 x 數值區域。",
           example: "A3:A6",
           require: "m",
@@ -3072,7 +3072,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "prob_range",
+          name: "機率範圍",
           detail: "與 x_range 中的值相關聯的一組概率值。",
           example: "2",
           require: "m",
@@ -3080,7 +3080,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "lower_limit",
+          name: "下限",
           detail: "要計算其概率的數值下界。",
           example: "3",
           require: "m",
@@ -3088,7 +3088,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "upper_limit",
+          name: "上限",
           detail: "[可選 - 預設值為下界] - 要計算其概率的可選數值上界。\n\n如果省略上界,PROB則計算隨機選取相應值的次數恰好等於下界的概率。",
           example: "4",
           require: "o",
@@ -3108,7 +3108,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "要求得四分位數值的數組或數字型儲存格區域。",
           example: "A2:A100",
           require: "m",
@@ -3116,7 +3116,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "quart",
+          name: "四分位值",
           detail: "要返回第幾個四分位值。\n\n1返回數據中最靠近第一個四分位值的值（25%標記）。\n\n2返回數據中最接近中值的值（50%標記）。\n\n3返回數據中最接近第三個四分位值的值（75%標記）。",
           example: "3",
           require: "m",
@@ -3136,7 +3136,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "要求得四分位數值的數組或數字型儲存格區域。",
           example: "A2:A100",
           require: "m",
@@ -3144,7 +3144,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "quart",
+          name: "四分位值",
           detail: "要返回第幾個四分位值。\n\n0返回數據中的最小值（0%標記）。\n\n1返回數據中最靠近第一個四分位值的值（25%標記）。\n\n2返回數據中最接近中值的值（50%標記）。\n\n3返回數據中最接近第三個四分位值的值（75%標記）。\n\n4返回數據中的最大值（100%標記）。",
           example: "3",
           require: "m",
@@ -3172,7 +3172,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "平均值",
           detail: "期望值。非負數",
           example: "1",
           require: "m",
@@ -3180,7 +3180,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "累積",
           detail: "一 邏輯值,確定所返回的概率分佈的形式。\n\n如果為TRUE（）,則返回發生的隨機事件數在零（含零）和x（含x）之間的累積泊松概率；\n\n如果為FALSE（）,則返回發生的事件數正好是x的泊松概率密度函數。",
           example: "FALSE()",
           require: "m",
@@ -3236,7 +3236,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "自由度",
           detail: "自由度數值。",
           example: "30",
           require: "m",
@@ -3244,7 +3244,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "tails",
+          name: "尾數",
           detail: "决定函數形式的邏輯值。\n\n如果cumulative為TRUE（）,則HYPGEOM.DIST返回累積分佈函數；\n\n如果為FALSE（）,則返回概率密度函數。",
           example: "TRUE()",
           require: "m",
@@ -3272,7 +3272,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "自由度",
           detail: "自由度數值。",
           example: "30",
           require: "m",
@@ -3300,7 +3300,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "自由度",
           detail: "自由度數值。",
           example: "30",
           require: "m",
@@ -3320,7 +3320,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "機率",
           detail: "與學生的 t 分佈相關的概率。\n\n必須大於 0 且小於 1。",
           example: "0.35",
           require: "m",
@@ -3328,7 +3328,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "deg_freedom",
+          name: "自由度",
           detail: "自由度數值。\n\n如果所提供的參數不是整數,將截取其整數部分。\n\n必須大於等於1。",
           example: "1",
           require: "m",
@@ -3348,7 +3348,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "機率",
           detail: "與學生的t分佈相關的概率。\n\n必須大於 0 且小於 1。",
           example: "0.35",
           require: "m",
@@ -3356,7 +3356,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "deg_freedom",
+          name: "自由度",
           detail: "自由度數值。\n\n如果所提供的參數不是整數,將截取其整數部分。\n\n必須大於等於1。",
           example: "1",
           require: "m",
@@ -3376,7 +3376,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array1",
+          name: "陣列1",
           detail: "將用於t檢驗的第一個數據樣本或第一組儲存格。",
           example: "A1:A4",
           require: "m",
@@ -3384,7 +3384,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array2",
+          name: "陣列2",
           detail: "將用於t檢驗的第二個數據樣本或第二組儲存格。",
           example: "B1:B4",
           require: "m",
@@ -3392,7 +3392,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "tails",
+          name: "尾數",
           detail: "指定分佈的尾數。\n\n如果為 1:使用單尾分佈。\n\n如果為 2:使用雙尾分佈。",
           example: "2",
           require: "m",
@@ -3400,7 +3400,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "類型",
           detail: "指定t檢驗的類型。\n\n如果為 1:執行配對檢驗。\n\n如果為 2:執行雙樣本等方差（同方差）檢驗。\n\n如果為 3:執行雙樣本不等方差（异方差）檢驗。",
           example: "1",
           require: "m",
@@ -3428,7 +3428,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
+          name: "自由度1",
           detail: "分子自由度。",
           example: "7",
           require: "m",
@@ -3436,7 +3436,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
+          name: "自由度2",
           detail: "分母自由度。",
           example: "6",
           require: "m",
@@ -3444,7 +3444,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "累積",
           detail: "用於確定函數形式的邏輯值。預設值為 FALSE。\n\n如果為 TRUE（）:F.DIST將返回累積分佈函數值。\n\n如果為FALSE（）:F.DIST將返回概率密度函數值。",
           example: "TRUE()",
           require: "m",
@@ -3472,7 +3472,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
+          name: "自由度1",
           detail: "分子自由度。",
           example: "7",
           require: "m",
@@ -3480,7 +3480,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
+          name: "自由度2",
           detail: "分母自由度。",
           example: "6",
           require: "m",
@@ -3556,7 +3556,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "樣本中的第一項值或範圍。",
           example: "1",
           require: "m",
@@ -3564,7 +3564,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2, ...",
+          name: "值2,...",
           detail: "[可選] - 樣本中包含的其他值或範圍。",
           example: "2",
           require: "o",
@@ -3648,7 +3648,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "平均值",
           detail: "分佈的平均值。",
           example: "80",
           require: "m",
@@ -3656,7 +3656,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_dev",
+          name: "標準差",
           detail: "分佈的標準差。",
           example: "6.7",
           require: "m",
@@ -3676,7 +3676,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "需要找到第k個最小值的數組或數值數據區域。",
           example: "A2:B100",
           require: "m",
@@ -3912,7 +3912,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "row_num",
+          name: "行號",
           detail: "一個數值,指定要在儲存格引用中使用的行號。",
           example: "1",
           require: "m",
@@ -3920,7 +3920,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "column_num",
+          name: "列號",
           detail: "一個數值,指定要在儲存格引用中使用的列號（而非名稱）。A列的編號為1。",
           example: "2",
           require: "m",
@@ -3928,7 +3928,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "abs_num",
+          name: "引用類型",
           detail: "[可選 - 預設值為1] - 一個數值,指定要返回的參考類型。\n\n1表示行列均採用絕對值（例如$A$1）；\n\n2表示採用絕對行號,相對列標（例如A$1）；\n\n3表示採用相對行號,絕對列標（例如$A1）；\n\n4表示行列均採用相對值（例如A1）。",
           example: "4",
           require: "o",
@@ -3936,7 +3936,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "A1",
+          name: "A1表示法",
           detail: "[可選 - 預設值為TRUE（）] - 一個布林值,訓示採用A1標記形式（TRUE）還是R1C1標記形式（FALSE）。",
           example: "FALSE()",
           require: "o",
@@ -3944,7 +3944,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "sheet_text",
+          name: "工作表名稱",
           detail: "[可選 - 默認預設] - 用於指定地址所指向的工作表名稱。",
           example: "\"Sheet2\"",
           require: "o",
@@ -3964,7 +3964,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ref_text",
+          name: "儲存格引用文字",
           detail: "以帶引號的字串形式提供的儲存格引用。",
           example: "\"Sheet2!\"&B10",
           require: "m",
@@ -3972,7 +3972,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "A1",
+          name: "A1表示法",
           detail: "[可選 - 預設值為TRUE（）] - 一個布林值,訓示採用A1標記形式（TRUE）還是R1C1標記形式（FALSE）。",
           example: "FALSE()",
           require: "o",
@@ -3992,7 +3992,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
+          name: "儲存格引用",
           detail: "[可選 - 默認為此公式所在的儲存格] - 要返回其行號的儲存格。\n\n如果儲存格引用指向的範圍其寬度大於一個儲存格,而此公式不是用作數組公式的,這時會僅返回儲存格引用中首行的編號值。",
           example: "A9",
           require: "o",
@@ -4012,7 +4012,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "要返回其行數的範圍。",
           example: "A9:A62",
           require: "m",
@@ -4032,7 +4032,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
+          name: "儲存格引用",
           detail: "[可選 - 默認為包含此公式的儲存格] - 要返回其列號的儲存格。A列對應的編號為1。\n\n如果儲存格引用是寬度超過一個儲存格的範圍,而此公式不是作為數組公式來使用的,囙此將返回儲存格引用中的第一列的位置。",
           example: "A9",
           require: "o",
@@ -4052,7 +4052,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "要返回其列數的範圍。",
           example: "A9:W62",
           require: "m",
@@ -4072,7 +4072,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
+          name: "儲存格引用",
           detail: "用於計算行列偏移量的起點。",
           example: "A2",
           require: "m",
@@ -4080,7 +4080,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "rows",
+          name: "行數",
           detail: "要偏移的行數。\n\n行偏移量必須是整數,但也可以是負數。如果提供的參數帶有小數,小數部分將被截去。",
           example: "3",
           require: "m",
@@ -4088,7 +4088,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cols",
+          name: "列數",
           detail: "要偏移的列數。\n\n列偏移量必須是整數,但也可以是負數。如果提供的參數帶有小數,小數部分將被截去。",
           example: "4",
           require: "m",
@@ -4096,7 +4096,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "height",
+          name: "高度",
           detail: "[可選] - 要從偏移目標開始返回的範圍的高度。",
           example: "2",
           require: "o",
@@ -4104,7 +4104,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "width",
+          name: "寬度",
           detail: "[可選] - 要從偏移目標開始返回的範圍的寬度。",
           example: "2",
           require: "o",
@@ -4124,7 +4124,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "lookup_value",
+          name: "查詢值",
           detail: "要在 lookup_array 中匹配的值。",
           example: "\"Sunday\"",
           require: "m",
@@ -4132,7 +4132,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "lookup_array",
+          name: "查詢陣列",
           detail: "要蒐索的儲存格區域。\n\n如果所用的範圍的高度和寬度均大於1,MATCH將返回#N/A！。",
           example: "A2:A9",
           require: "m",
@@ -4140,7 +4140,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "match_type",
+          name: "比對類型",
           detail: "[可選 - 預設值為1] - 要採用的蒐索管道。\n\n1為默認類型,此時MATCH會假設範圍已按昇冪排序,並返回小於等於蒐索鍵值的最大值。\n\n0表示完全匹配,在範圍未排序的情况下需要使用此管道。\n\n-1讓MATCH假設範圍是按降序排序的,並返回大於等於蒐索鍵值的最小值。",
           example: "0",
           require: "o",
@@ -4160,7 +4160,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "儲存格區域或數組常數。",
           example: "A1:C20",
           require: "m",
@@ -4168,7 +4168,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "row_num",
+          name: "行號",
           detail: "選擇數組中的某行,函數從該行返回數值。",
           example: "5",
           require: "m",
@@ -4176,7 +4176,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "column_num",
+          name: "列號",
           detail: "選擇數組中的某列,函數從該列返回數值。",
           example: "1",
           require: "m",
@@ -4196,7 +4196,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_field",
+          name: "數據欄位",
           detail: "您想從數據透視錶中獲取其數據的值名稱。\n值名稱必須括在引號中或是指向包含相關文字的任何儲存格的引用。\n如果有多個值欄位,則必須使用數據透視錶中顯示的確切名稱（如\"銷售總額\"）。",
           example: "\"SUM of number of units\"",
           require: "m",
@@ -4204,7 +4204,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "pivot_table",
+          name: "樞紐分析表",
           detail: "目標數據透視錶中的任何儲存格的引用（推薦位於頂角的儲存格）。",
           example: "'Pivot table'!A1",
           require: "m",
@@ -4212,7 +4212,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "field1",
+          name: "欄位1",
           detail: "[可選] - 源數據集（不是數據透視錶）中列的名稱。",
           example: "\"division\"",
           require: "o",
@@ -4220,7 +4220,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "item1",
+          name: "項目1",
           detail: "[可選] - 數據透視錶中顯示的與您要檢索的欄位名稱1相對應的行或列的名稱。",
           example: "\"east\"",
           require: "o",
@@ -4240,7 +4240,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "index_num",
+          name: "索引號",
           detail: "指定要返回哪一項。\n\n如果索引為零、負值或大於提供的選擇數量,將返回#VALUE！錯誤。",
           example: "2",
           require: "m",
@@ -4248,7 +4248,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value1",
+          name: "值1",
           detail: "一項可能的返回值。必須提供。可以是儲存格引用或單獨的值。",
           example: "\"A\"",
           require: "m",
@@ -4256,7 +4256,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "[可選] - 其他可以選擇的值。選擇",
           example: "\"B\"",
           require: "o",
@@ -4336,7 +4336,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time_text",
+          name: "時間文字",
           detail: "用於表示時間的字串。",
           example: "\"2:15 PM\"",
           require: "m",
@@ -4356,7 +4356,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "起始日期",
           detail: "用於計算結果的參照日期。",
           example: "DATE(1969",
           require: "m",
@@ -4364,7 +4364,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "months",
+          name: "月數",
           detail: "用於計算的起始日期之前（負）或之後（正）的月數。返回的是計算所得月份的最後那天。",
           example: "7",
           require: "m",
@@ -4384,7 +4384,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "起始日期",
           detail: "用於計算結果的參照日期。",
           example: "DATE(1969",
           require: "m",
@@ -4392,7 +4392,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "months",
+          name: "月數",
           detail: "用於計算的起始日期之前（負）或之後（正）的月數。",
           example: "7",
           require: "m",
@@ -4483,7 +4483,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "起始日期",
           detail: "用於計算淨工作日天數的時間段開始日期。",
           example: "DATE(1969",
           require: "m",
@@ -4491,7 +4491,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "結束日期",
           detail: "用於計算淨工作日天數的時間段結束日期。",
           example: "7",
           require: "m",
@@ -4499,7 +4499,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "節假日",
           detail: "[可選] - 一個範圍或數組常數,其中包含作為節假日的日期序號。\n\n在節假日數組中提供的值必須是日期序號值（例如由N所返回的值）或日期值（例如由DATE、DATEVALUE或TO_DATE返回的值）。由範圍指定的值應該是標準的日期值或日期序數值。",
           example: "16)",
           require: "o",
@@ -4519,7 +4519,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "起始日期",
           detail: "用於計算淨工作日天數的時間段開始日期。",
           example: "DATE(1969",
           require: "m",
@@ -4527,7 +4527,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "結束日期",
           detail: "用於計算淨工作日天數的時間段結束日期。",
           example: "7",
           require: "m",
@@ -4535,7 +4535,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "weekend",
+          name: "週末",
           detail: "[可選-預設值為1] - 用於表示哪些天為週末的數位或字串。\n字串管道:可以使用由0和1組成的字串來指定週末,串中的第一個數位字元代表週一,最後一個則代表周日。零表示這一天是工作日,1 表示這一天為週末。例如,\"0000011\"表示將週六和周日作為週末。\n數位管道:這種管道不使用上述字串形式,而是使用一個數位。1 =週六/周日為週末,2 =周日/週一為週末,依此類推則7 =週五/週六。11 =周日為唯一週末,12 =週一為唯一週末,依此類推則17 =週六為唯一週末。",
           example: "16)",
           require: "o",
@@ -4543,7 +4543,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "節假日",
           detail: "[可選] - 這是一個範圍或數組常數,其中包含作為節假日的日期。\n在節假日數組內提供的值必須為日期序數值（例如N的返回值）或日期值（例如DATE、DATEVALUE或TO_DATE的返回值）。由範圍指定的值應該是標準的日期值或日期序數值。",
           example: "DATE(1969",
           require: "o",
@@ -4563,7 +4563,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "日期",
           detail: "用於日期和時間計算的日期-時間程式碼。",
           example: "DATE(1969",
           require: "m",
@@ -4583,7 +4583,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "serial_number",
+          name: "日期序號",
           detail: "要確定其位於第幾周的日期,必須是對包含日期的儲存格的引用、返回日期類型的函數或者數位。",
           example: "DATE(1969",
           require: "m",
@@ -4591,7 +4591,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "return_type",
+          name: "返回類型",
           detail: "[可選-預設值為1 ] - 代表一周起始日的數位,系統也使用該數位來確定一年的第一周（1=周日,2=週一）。",
           example: "7",
           require: "o",
@@ -4611,7 +4611,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "serial_number",
+          name: "日期序號",
           detail: "要為其確定星期幾的日期。必須是對包含日期的儲存格的引用、返回日期類型的函數或者數位。",
           example: "DATE(1969",
           require: "m",
@@ -4619,7 +4619,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "return_type",
+          name: "返回類型",
           detail: "[可選-預設值為1] -以數位訓示使用哪種編號順序來表示星期幾。默認情况下,按星期日（= 1）開始計算。\n\n如果類型為1,則星期值將從星期日開始算起,並且星期日的值為1,囙此星期六的值就是7。\n\n如果類型為2,則星期值將從星期一開始算起,並且星期一的值為1,囙此星期日的值就是7。\n\n如果類型為3,則星期值將從星期一算起,並且星期一的值為0,囙此星期日的值就是6。",
           example: "7",
           require: "o",
@@ -4639,7 +4639,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "serial_number",
+          name: "日期序號",
           detail: "要從中選取具體幾號的日期。必須是以下一種:對包含日期的儲存格的引用、返回日期類型的函數或者數位。",
           example: "DATE(1969",
           require: "m",
@@ -4659,7 +4659,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "end_date",
+          name: "結束日期",
           detail: "計算中要使用的結束日期。必須是以下一種:對包含日期的儲存格的引用、返回日期類型的函數或者數位。",
           example: "2011-3-15",
           require: "m",
@@ -4667,7 +4667,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "start_date",
+          name: "起始日期",
           detail: "計算中要使用的開始日期。必須是以下一種:對包含日期的儲存格的引用、返回日期類型的函數或者數位。",
           example: "2011-2-1",
           require: "m",
@@ -4687,7 +4687,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "起始日期",
           detail: "計算中要使用的開始日期。必須是以下一種:對包含日期的儲存格的引用、返回日期類型的函數或者數位。",
           example: "DATE(1969",
           require: "m",
@@ -4695,7 +4695,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "結束日期",
           detail: "計算中要使用的結束日期。必須是以下一種:對包含日期的儲存格的引用、返回日期類型的函數或者數位。",
           example: "7",
           require: "m",
@@ -4703,7 +4703,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "method",
+          name: "方法",
           detail: "[可選 - 默認為FALSE（）] - 訓示要使用哪種天數計算方法。\n\nFALSE -採用美國（NASD）方法時,如果起始日期為某月的最後一天,為便於計算,會將起始日期的當月幾號更改為30。此外,如果結束日期是所在月份的最後一天,而且起始日期在其所在月的30號之前,則將結束日期更改為結束日期之後那個月的第一天,否則將結束日期更改為該月的30號。\n\nTRUE -採用歐洲方法時,會將所有日期在31號的起始日期或結束日期更改為當月的30號。",
           example: "FALSE()",
           require: "o",
@@ -4723,7 +4723,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "year",
+          name: "年",
           detail: "日期的年份部分,包含一到四位數位。\n\n介於0（零）到 1899 之間,會將該值與 1900 相加來計算年份；\n\n介於 1900 到 9999 之間,將使用該數值作為年份；\n\n小於0或大於等於 10000,返回錯誤值#NUM！。",
           example: "1969",
           require: "m",
@@ -4731,7 +4731,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "month",
+          name: "月",
           detail: "日期的月份部分,一個正整數或負整數。\n\n如果 month 大於 12,則 month 會將該月份數與指定年中的第一個月相加。\n\n如果 month 小於 1,month 則從指定年份的一月份開始遞減該月份數,然後再加上 1 個月。",
           example: "7",
           require: "m",
@@ -4739,7 +4739,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day",
+          name: "日",
           detail: "日期的日部分,一個正整數或負整數。\n\n如果 day 大於月中指定的天數,則 day 會將天數與該月中的第一天相加。\n\n如果 day 小於1,則 day 從指定月份的第一天開始遞減該天數,然後再加上 1 天。",
           example: "20",
           require: "m",
@@ -4759,7 +4759,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date_text",
+          name: "日期文字",
           detail: "表示日期的字串。",
           example: "\"1969-7-20\"",
           require: "m",
@@ -4815,7 +4815,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "起始日期",
           detail: "計算的開始日期。",
           example: "DATE(1969",
           require: "m",
@@ -4823,7 +4823,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "days",
+          name: "天數",
           detail: "start_date之前或之後不含週末及節假日的天數。\n\n為正值將生成未來日期；\n\n為負值生成過去日期。",
           example: "7",
           require: "m",
@@ -4831,7 +4831,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "holidays",
+          name: "節假日",
           detail: "[可選] - 一個範圍或數組常數,其中包含作為節假日的日期序號。\n\n在節假日數組中提供的值必須是日期序號值（例如由N所返回的值）或日期值（例如由DATE、DATEVALUE或TO_DATE返回的值）。由範圍指定的值應該是標準的日期值或日期序數值。",
           example: "16)",
           require: "o",
@@ -4851,7 +4851,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "起始日期",
           detail: "開始日期（將被截尾取整）。",
           example: "DATE(1969",
           require: "m",
@@ -4859,7 +4859,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "days",
+          name: "天數",
           detail: "start_date之前或之後的工作日的天數。\n\n正值表示未來日期；\n\n負值表示過去日期；\n\n零值表示開始日期。",
           example: "7",
           require: "m",
@@ -4867,7 +4867,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "weekend",
+          name: "週末",
           detail: "[可選 - 預設值為1] - 用於表示哪些天為週末的數位或字串。\n字串管道:可以使用由0和1組成的字串來指定週末,串中的第一個數位字元代表週一,最後一個則代表周日。零表示這一天是工作日,1表示這一天為週末。例如,\"0000011\"表示將週六和周日作為週末。\n數位管道:這種管道不使用上述字串形式,而是使用一個數位。1 =週六/周日為週末,2 =周日/週一為週末,依此類推則7 =週五/週六。11 =周日為唯一週末,12 =週一為唯一週末,依此類推則17 =週六為唯一週末。",
           example: "16)",
           require: "o",
@@ -4875,7 +4875,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "節假日",
           detail: "[可選] - 這是一個範圍或數組常數,其中包含作為節假日的日期。\n在節假日數組內提供的值必須為日期序數值（例如N的返回值）或日期值（例如DATE、DATEVALUE或TO_DATE的返回值）。由範圍指定的值應該是標準的日期值或日期序數值。",
           example: "DATE(1969",
           require: "o",
@@ -4895,7 +4895,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "serial_number",
+          name: "日期序號",
           detail: "用於計算年份的日期。必須是以下一種:對包含日期的儲存格的引用、返回日期類型的函數或者數位。",
           example: "DATE(1969",
           require: "m",
@@ -4915,7 +4915,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "起始日期",
           detail: "計算中要使用的開始日期。必須是以下一種:對包含日期的儲存格的引用、返回日期類型的函數或者數位。",
           example: "DATE(1969",
           require: "m",
@@ -4923,7 +4923,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "結束日期",
           detail: "計算中要使用的結束日期。必須是以下一種:對包含日期的儲存格的引用、返回日期類型的函數或者數位。",
           example: "7",
           require: "m",
@@ -4931,7 +4931,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 要使用的日計數基準類型。\n\n0表示\"美國（NASD）30/360\"方法-此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "16)",
           require: "o",
@@ -4962,7 +4962,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "serial_number",
+          name: "日期序號",
           detail: "要從中選取月份的日期。必須是以下一種:對包含日期的儲存格的引用、返回日期類型的函數或者數位。",
           example: "DATE(1969",
           require: "m",
@@ -4982,7 +4982,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "nominal_rate",
+          name: "名義利率",
           detail: "每年的名義利率。",
           example: "0.99",
           require: "m",
@@ -4990,7 +4990,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "npery",
+          name: "複利計算期數",
           detail: "每年的複利計算期數。",
           example: "12",
           require: "m",
@@ -5010,7 +5010,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要設定格式的值。",
           example: "1.2351",
           require: "m",
@@ -5018,7 +5018,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "decimals",
+          name: "小數位數",
           detail: "[可選 - 預設值為2] - 要顯示的小數位數。\n\n如果這是負數,則將數位四捨五入到小數點左側。",
           example: "4",
           require: "m",
@@ -5038,7 +5038,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "fractional_dollar",
+          name: "分數價格",
           detail: "以整數部份和分數部分表示的數位,用小數點隔開。",
           example: "100.10",
           require: "m",
@@ -5046,7 +5046,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "fraction",
+          name: "分母",
           detail: "用作分數中的分母的整數。",
           example: "32",
           require: "m",
@@ -5066,7 +5066,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_dollar",
+          name: "小數價格",
           detail: "小數。",
           example: "100.125",
           require: "m",
@@ -5074,7 +5074,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "fraction",
+          name: "分母",
           detail: "用作分數中的分母的整數。",
           example: "32",
           require: "m",
@@ -5094,7 +5094,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "成本",
           detail: "資產原值。",
           example: "100",
           require: "m",
@@ -5102,7 +5102,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "殘值",
           detail: "折舊末尾時的值（有時也稱為資產殘值）。",
           example: "50",
           require: "m",
@@ -5110,7 +5110,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "使用壽命",
           detail: "資產的折舊期數（有時也稱作資產的使用壽命）。",
           example: "10",
           require: "m",
@@ -5118,7 +5118,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "折舊期",
           detail: "在使用期限內要計算折舊的折舊期。",
           example: "2",
           require: "m",
@@ -5126,7 +5126,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "month",
+          name: "月",
           detail: "[可選 - 預設值為12] - 折舊第一年中的月數。",
           example: "10",
           require: "m",
@@ -5146,7 +5146,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "成本",
           detail: "资产原值。",
           example: "100",
           require: "m",
@@ -5154,7 +5154,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "殘值",
           detail: "折舊末尾時的值（有時也稱為資產殘值）。",
           example: "50",
           require: "m",
@@ -5162,7 +5162,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "使用壽命",
           detail: "資產的折舊期數（有時也稱作資產的使用壽命）。",
           example: "10",
           require: "m",
@@ -5170,7 +5170,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "折舊期",
           detail: "在使用期限內要計算折舊的折舊期。",
           example: "2",
           require: "m",
@@ -5178,7 +5178,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor",
+          name: "折舊係數",
           detail: "[可選 - 預設值為2] - 折舊的遞減係數。",
           example: "2.25",
           require: "m",
@@ -5198,7 +5198,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "nper",
+          name: "付款總期數",
           detail: "年金的付款總期數。",
           example: "12",
           require: "m",
@@ -5206,7 +5206,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pmt",
+          name: "付款金額",
           detail: "每期的付款金額,在年金週期內不能更改。",
           example: "-100",
           require: "m",
@@ -5214,7 +5214,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pv",
+          name: "現值",
           detail: "現值即一系列未來付款當前值的總和。",
           example: "400",
           require: "m",
@@ -5222,7 +5222,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "fv",
+          name: "未來值",
           detail: "[可選 - 預設值為0] - 未來值,或在最後一次付款後希望得到的現金餘額。",
           example: "0",
           require: "o",
@@ -5230,7 +5230,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "類型",
           detail: "[可選 - 預設值為0] - 指定各期的付款時間是在期初還是期末。\n\n0表示期末；\n\n1表示期初。",
           example: "0",
           require: "o",
@@ -5238,7 +5238,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "guess",
+          name: "預期利率",
           detail: "[可選 - 預設值為0.1] - 預期利率。",
           example: "0.1",
           require: "o",
@@ -5258,7 +5258,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "利率",
           detail: "利率。",
           example: "0.12",
           require: "m",
@@ -5266,7 +5266,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "nper",
+          name: "付款總期數",
           detail: "總付款期數。",
           example: "12",
           require: "m",
@@ -5274,7 +5274,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pv",
+          name: "現值",
           detail: "年金的現值。",
           example: "100",
           require: "m",
@@ -5282,7 +5282,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "start_period",
+          name: "起始期數",
           detail: "開始累計計算的付款期序號。\n\n首期必須大於等於1。",
           example: "1",
           require: "m",
@@ -5290,7 +5290,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_period",
+          name: "結束期數",
           detail: "結束累計計算的付款期序號。\n\n末期必須大於首期。",
           example: "5",
           require: "m",
@@ -5298,7 +5298,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "類型",
           detail: "指定各期的付款時間是在期初還是期末。\n\n0表示期末；\n\n1表示期初。",
           example: "0",
           require: "m",
@@ -5318,7 +5318,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5326,7 +5326,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "02",
           require: "m",
@@ -5334,7 +5334,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "年付息次數",
           detail: "年付息次數。\n\n如果按年支付,frequency = 1；\n\n按半年期支付,frequency = 2；\n\n按季支付,frequency = 4。",
           example: "1",
           require: "m",
@@ -5342,7 +5342,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法-此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "o",
@@ -5362,7 +5362,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "成本",
           detail: "資產原值。",
           example: "100",
           require: "m",
@@ -5370,7 +5370,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "殘值",
           detail: "折舊末尾時的值（有時也稱為資產殘值）。",
           example: "50",
           require: "m",
@@ -5378,7 +5378,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "使用壽命",
           detail: "資產的折舊期數（有時也稱作資產的使用壽命）。",
           example: "10",
           require: "m",
@@ -5386,7 +5386,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "折舊期",
           detail: "在使用期限內要計算折舊的折舊期。",
           example: "2",
           require: "m",
@@ -5406,7 +5406,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "債券的結算日期,此日期為債券發行後交付給買家的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5414,7 +5414,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "債券的到期或結束日期,届時可將其以面值或票面價值贖回。",
           example: "1",
           require: "m",
@@ -5422,7 +5422,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "貼現率",
           detail: "債券購買時的貼現率。",
           example: "2)",
           require: "m",
@@ -5442,7 +5442,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "債券的結算日期,此日期為債券發行後交付給買家的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5450,7 +5450,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "債券的到期或結束日期,届時可將其以面值或票面價值贖回。",
           example: "DATE(2010",
           require: "m",
@@ -5458,7 +5458,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "pr",
+          name: "購買價格",
           detail: "債券的購買價格。",
           example: "95",
           require: "m",
@@ -5478,7 +5478,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "債券的結算日期,此日期為債券發行後交付給買家的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5486,7 +5486,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "債券的到期或結束日期,届時可將其以面值或票面價值贖回。",
           example: "DATE(2010",
           require: "m",
@@ -5494,7 +5494,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "貼現率",
           detail: "債券購買時的貼現率。",
           example: "0.09",
           require: "m",
@@ -5514,7 +5514,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "利率",
           detail: "各期利率。",
           example: "2",
           require: "m",
@@ -5522,7 +5522,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "nper",
+          name: "付款總期數",
           detail: "年金的付款總期數。",
           example: "12",
           require: "m",
@@ -5530,7 +5530,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pmt",
+          name: "付款金額",
           detail: "每期的付款金額,在年金週期內不能更改。",
           example: "100",
           require: "m",
@@ -5538,7 +5538,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "fv",
+          name: "未來值",
           detail: "[可選] - 未來值,或在最後一次付款後希望得到的現金餘額。",
           example: "D2",
           require: "o",
@@ -5546,7 +5546,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "類型",
           detail: "[可選 - 預設值為0] - 指定各期的付款時間是在期初還是期末。\n\n0表示期末；\n\n1表示期初。",
           example: "1",
           require: "o",
@@ -5566,7 +5566,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
+          name: "發行日",
           detail: "有價證券的發行日。",
           example: "DATE(2010",
           require: "m",
@@ -5574,7 +5574,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "first_interest",
+          name: "首次計息日",
           detail: "有價證券的首次計息日。",
           example: "DATE(2010",
           require: "m",
@@ -5582,7 +5582,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5590,7 +5590,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "利率",
           detail: "有價證券的年息票利率。",
           example: "0.1",
           require: "m",
@@ -5598,7 +5598,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "par",
+          name: "票面值",
           detail: "證券的票面值。",
           example: "10000",
           require: "m",
@@ -5606,7 +5606,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "年付息次數",
           detail: "年付息次數。\n\n如果按年支付,frequency = 1；\n\n按半年期支付,frequency = 2；\n\n按季支付,frequency = 4。",
           example: "1",
           require: "m",
@@ -5614,7 +5614,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法-此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"\"歐洲30/360\"方法\"-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "o",
@@ -5622,7 +5622,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "calc_method",
+          name: "計算方法",
           detail: "[可選 - 默認為TRUE（）] - 一個邏輯值,指定當結算日期晚於首次計息日期時用於計算總應計利息的方法。\n\n如果值為TRUE,則返回從發行日到結算日的總應計利息。\n\n如果值為FALSE,則返回從首次計息日到結算日的應計利息。",
           example: "TRUE()",
           require: "o",
@@ -5642,7 +5642,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
+          name: "發行日",
           detail: "有價證券的發行日。",
           example: "DATE(1969",
           require: "m",
@@ -5650,7 +5650,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的到期日。",
           example: "DATE(1969",
           require: "m",
@@ -5658,7 +5658,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "利率",
           detail: "有價證券的年息票利率。",
           example: "0.1",
           require: "m",
@@ -5666,7 +5666,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "par",
+          name: "票面值",
           detail: "證券的票面值。",
           example: "1000",
           require: "m",
@@ -5674,7 +5674,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法-此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "12",
           require: "m",
@@ -5694,7 +5694,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5702,7 +5702,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5710,7 +5710,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "年付息次數",
           detail: "年付息次數。\n\n如果按年支付,frequency = 1；\n\n按半年期支付,frequency = 2；\n\n按季支付,frequency = 4。",
           example: "1",
           require: "m",
@@ -5718,7 +5718,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法-此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "o",
@@ -5738,7 +5738,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5746,7 +5746,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5754,7 +5754,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "年付息次數",
           detail: "年付息次數。\n\n如果按年支付,frequency = 1；\n\n按半年期支付,frequency = 2；\n\n按季支付,frequency = 4。",
           example: "1",
           require: "m",
@@ -5762,7 +5762,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] -訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法-此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "o",
@@ -5782,7 +5782,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5790,7 +5790,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5798,7 +5798,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "年付息次數",
           detail: "年付息次數。\n\n如果按年支付,frequency = 1；\n\n按半年期支付,frequency = 2；\n\n按季支付,frequency = 4。",
           example: "1",
           require: "m",
@@ -5806,7 +5806,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法  - 此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "o",
@@ -5826,7 +5826,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5834,7 +5834,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5842,7 +5842,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "年付息次數",
           detail: "年付息次數。\n\n如果按年支付,frequency = 1；\n\n按半年期支付,frequency = 2；\n\n按季支付,frequency = 4。",
           example: "01)",
           require: "m",
@@ -5850,7 +5850,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法-此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "DATE(2019",
           require: "o",
@@ -5870,7 +5870,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5878,7 +5878,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -5886,7 +5886,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "年付息次數",
           detail: "年付息次數。\n\n如果按年支付,frequency = 1；\n\n按半年期支付,frequency = 2；\n\n按季支付,frequency = 4 。",
           example: "01)",
           require: "m",
@@ -5894,7 +5894,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法-此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "DATE(2019",
           require: "o",
@@ -5914,7 +5914,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "利率",
           detail: "各期利率。",
           example: "0.12",
           require: "m",
@@ -5922,7 +5922,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "nper",
+          name: "付款總期數",
           detail: "年金的付款總期數。",
           example: "12",
           require: "m",
@@ -5930,7 +5930,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pmt",
+          name: "付款金額",
           detail: "各期所應支付的金額,在整個年金期間保持不變。",
           example: "100",
           require: "m",
@@ -5938,7 +5938,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pv",
+          name: "現值",
           detail: "[可選 - 預設值為0 ] - 現值,或一系列未來付款的當前值的累積和。",
           example: "400",
           require: "m",
@@ -5946,7 +5946,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "類型",
           detail: "[可選 - 預設值為0 ] - 指定各期的付款時間是在期初還是期末。\n\n0表示期末；\n\n1表示期初。",
           example: "1",
           require: "m",
@@ -5966,7 +5966,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "principal",
+          name: "現值",
           detail: "現值。",
           example: "10000",
           require: "m",
@@ -5974,7 +5974,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "schedule",
+          name: "利率表",
           detail: "用於計算本金複利的一組利率。\n\n利率錶必須是範圍或數組,其中包含要用於計算複利的一組利率。這些利率值應該以十進位小數形式表示,或者使用UNARY_PERCENT以百分比形式表示,即表示為0.09或UNARY_PERCENT（9）,而不要表示為9。",
           example: "A2:A100",
           require: "m",
@@ -5994,7 +5994,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6002,7 +6002,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6010,7 +6010,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "利率",
           detail: "有價證券的年息票利率。",
           example: "0.057",
           require: "m",
@@ -6018,7 +6018,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pr",
+          name: "購買價格",
           detail: "有價證券的價格。",
           example: "95",
           require: "m",
@@ -6026,7 +6026,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "清償價值",
           detail: "有價證券的清償價值。",
           example: "100",
           require: "m",
@@ -6034,7 +6034,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "年付息次數",
           detail: "年付息次數。\n\n如果按年支付,frequency = 1；\n\n按半年期支付,frequency = 2；\n\n按季支付,frequency = 4。",
           example: "1",
           require: "m",
@@ -6042,7 +6042,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法-此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法 - 此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "m",
@@ -6062,7 +6062,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6070,7 +6070,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6078,7 +6078,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "pr",
+          name: "購買價格",
           detail: "有價證券的價格。",
           example: "95",
           require: "m",
@@ -6086,7 +6086,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "清償價值",
           detail: "有價證券的清償價值。",
           example: "100",
           require: "m",
@@ -6094,7 +6094,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法-此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法 - 此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "m",
@@ -6114,7 +6114,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "effect_rate",
+          name: "實際利率",
           detail: "每年的實際利率。",
           example: "0.85",
           require: "m",
@@ -6122,7 +6122,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "npery",
+          name: "複利計算期數",
           detail: "每年的複利期數。",
           example: "12",
           require: "m",
@@ -6142,7 +6142,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "values",
+          name: "數值陣列",
           detail: "其中含有投資相關收益或支出的數組或範圍。\n\n現金流數額中必須至少包含一項負的和一項正的現金流金額才能計算回報率。",
           example: "B2:B25",
           require: "m",
@@ -6150,7 +6150,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "dates",
+          name: "日期陣列",
           detail: "與現金流數額參數中的現金流對應的日期數組或範圍。",
           example: "C2:C25",
           require: "m",
@@ -6158,7 +6158,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "guess",
+          name: "預期利率",
           detail: "[可選 - 預設值為0.1] - 對內部回報率的估算值。",
           example: "250",
           require: "o",
@@ -6178,7 +6178,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "values",
+          name: "數值陣列",
           detail: "其中含有投資相關收益或支出的數組或範圍。\n\n現金流數額中必須至少包含一項負的和一項正的現金流金額才能計算回報率。",
           example: "A2:A25",
           require: "m",
@@ -6186,7 +6186,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "finance_rate",
+          name: "融資利率",
           detail: "現金流中使用的資金支付的利率。",
           example: "0.1",
           require: "m",
@@ -6194,7 +6194,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "reinvest_rate",
+          name: "再投資收益率",
           detail: "將現金流再投資的收益率。",
           example: "0.12",
           require: "m",
@@ -6214,7 +6214,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "values",
+          name: "數值陣列",
           detail: "其中含有投資相關收益或支出的數組或範圍。\n\n現金流數額中必須至少包含一項負的和一項正的現金流金額才能計算回報率。",
           example: "A2:A25",
           require: "m",
@@ -6222,7 +6222,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "guess",
+          name: "預期利率",
           detail: "[可選 - 默認為0.1] - 內部收益率的估值。",
           example: "200",
           require: "o",
@@ -6242,7 +6242,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "利率",
           detail: "某一期間的貼現率。",
           example: "0.1",
           require: "m",
@@ -6250,7 +6250,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value1",
+          name: "值1",
           detail: "第一筆支出（負值）和收益（正值）。",
           example: "200",
           require: "m",
@@ -6258,7 +6258,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2, ...",
+          name: "值2,...",
           detail: "[可選] - 其他支出（負值）和收益（正值）。",
           example: "250",
           require: "o",
@@ -6278,7 +6278,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "利率",
           detail: "應用於現金流的貼現率。",
           example: "A2",
           require: "m",
@@ -6286,7 +6286,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "values",
+          name: "數值陣列",
           detail: "與dates中的支付時間相對應的一系列現金流。",
           example: "B2:B25",
           require: "m",
@@ -6294,7 +6294,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "dates",
+          name: "日期陣列",
           detail: "與現金流支付相對應的支付日期錶。",
           example: "C2:C25",
           require: "m",
@@ -6314,7 +6314,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "利率",
           detail: "利息率。",
           example: "0.12",
           require: "m",
@@ -6322,7 +6322,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "nper",
+          name: "付款總期數",
           detail: "總付款期數。",
           example: "12",
           require: "m",
@@ -6330,7 +6330,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pv",
+          name: "現值",
           detail: "現值。",
           example: "100",
           require: "m",
@@ -6338,7 +6338,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "start_period",
+          name: "起始期數",
           detail: "開始累計計算的付款期序號。\n\n首期必須大於等於1。",
           example: "1",
           require: "m",
@@ -6346,7 +6346,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_period",
+          name: "結束期數",
           detail: "結束累計計算的付款期序號。\n\n末期必須大於首期。",
           example: "5",
           require: "m",
@@ -6354,7 +6354,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "類型",
           detail: "指定各期的付款時間是在期初還是期末。\n\n0表示期末；\n\n1表示期初。",
           example: "0",
           require: "m",
@@ -6374,7 +6374,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "利率",
           detail: "貸款利率。",
           example: "0.08",
           require: "m",
@@ -6382,7 +6382,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "nper",
+          name: "付款總期數",
           detail: "該項貸款的付款總數。",
           example: "12",
           require: "m",
@@ -6390,7 +6390,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pv",
+          name: "現值",
           detail: "現值,或一系列未來付款額現在所值的總額,也叫本金。",
           example: " 100000",
           require: "m",
@@ -6398,7 +6398,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "fv",
+          name: "未來值",
           detail: "[可選 - 預設值為0] - 未來值,或在最後一次付款後希望得到的現金餘額。",
           example: "D2",
           require: "m",
@@ -6406,7 +6406,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "類型",
           detail: "[可選 - 預設值為0] - 指定各期的付款時間是在期初還是期末。\n\n0表示期末；\n\n1表示期初。",
           example: "1",
           require: "m",
@@ -6426,7 +6426,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "利率",
           detail: "各期利率。",
           example: "0.1",
           require: "m",
@@ -6434,7 +6434,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "per",
+          name: "期數",
           detail: "用於計算其利息數額的期數,必須在1到nper之間。",
           example: "1",
           require: "m",
@@ -6442,7 +6442,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "nper",
+          name: "付款總期數",
           detail: "年金的付款總期數。",
           example: "12",
           require: "m",
@@ -6450,7 +6450,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pv",
+          name: "現值",
           detail: "現值,或一系列未來付款的當前值的累積和。",
           example: "80000",
           require: "m",
@@ -6458,7 +6458,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "fv",
+          name: "未來值",
           detail: "[可選 - 預設值為0] - 未來值,或在最後一次付款後希望得到的現金餘額。",
           example: "E2",
           require: "m",
@@ -6466,7 +6466,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "類型",
           detail: "[可選 - 預設值為0] - 指定各期的付款時間是在期初還是期末。\n\n0表示期末；\n\n1表示期初。",
           example: "1",
           require: "m",
@@ -6486,7 +6486,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "利率",
           detail: "各期利率。",
           example: "0.1",
           require: "m",
@@ -6494,7 +6494,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "per",
+          name: "期數",
           detail: "指定期數,該值必須在 1 到 nper 範圍內。",
           example: "1",
           require: "m",
@@ -6502,7 +6502,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "nper",
+          name: "付款總期數",
           detail: "年金的付款總期數。",
           example: "3*12",
           require: "m",
@@ -6510,7 +6510,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pv",
+          name: "現值",
           detail: "現值即一系列未來付款當前值的總和。",
           example: "100000",
           require: "m",
@@ -6518,7 +6518,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "fv",
+          name: "未來值",
           detail: "[可選 - 預設值為0] - 未來值,或在最後一次付款後希望得到的現金餘額。",
           example: "0",
           require: "o",
@@ -6526,7 +6526,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "類型",
           detail: "[可選 - 預設值為0] - 指定各期的付款時間是在期初還是期末。\n\n0表示期末；\n\n1表示期初。",
           example: "0",
           require: "o",
@@ -6546,7 +6546,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6554,7 +6554,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6562,7 +6562,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "investment",
+          name: "投資額",
           detail: "有價證券的投資額。",
           example: "100000",
           require: "m",
@@ -6570,7 +6570,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "清償價值",
           detail: "有價證券到期時的兌換值。",
           example: "101200",
           require: "m",
@@ -6578,7 +6578,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法-此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法 - 此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法-此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "12",
           require: "m",
@@ -6598,7 +6598,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6606,7 +6606,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6614,7 +6614,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "利率",
           detail: "有價證券的年息票利率。",
           example: "0.057",
           require: "m",
@@ -6622,7 +6622,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yld",
+          name: "年收益率",
           detail: "有價證券的年收益率。",
           example: "0.065",
           require: "m",
@@ -6630,7 +6630,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "清償價值",
           detail: "面值￥100的有價證券的清償價值。",
           example: "100",
           require: "m",
@@ -6638,7 +6638,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "年付息次數",
           detail: "年付息次數。\n\n如果按年支付,frequency = 1；\n\n按半年期支付,frequency = 2；\n\n按季支付,frequency = 4。",
           example: "1",
           require: "m",
@@ -6646,7 +6646,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法 - 此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法 - 此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "o",
@@ -6666,7 +6666,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6674,7 +6674,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6682,7 +6682,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "貼現率",
           detail: "有价证券的贴现率。",
           example: "0.0525",
           require: "m",
@@ -6690,7 +6690,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "清償價值",
           detail: "面值￥100的有價證券的清償價值。",
           example: "100",
           require: "m",
@@ -6698,7 +6698,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法 - 此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法 - 此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "o",
@@ -6718,7 +6718,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6726,7 +6726,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6734,7 +6734,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "issue",
+          name: "發行日",
           detail: "有價證券的發行日。",
           example: "DATE(2010",
           require: "m",
@@ -6742,7 +6742,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "利率",
           detail: "有價證券在發行日的利率。",
           example: "0.061",
           require: "m",
@@ -6750,7 +6750,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yld",
+          name: "年收益率",
           detail: "有價證券的年收益率。",
           example: "0.061",
           require: "m",
@@ -6758,7 +6758,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法 - 此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法 - 此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "o",
@@ -6778,7 +6778,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6786,7 +6786,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6794,7 +6794,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "investment",
+          name: "投資額",
           detail: "有價證券的投資額。",
           example: "10000000",
           require: "m",
@@ -6802,7 +6802,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "discount",
+          name: "貼現率",
           detail: "有價證券的貼現率。",
           example: "0.0575",
           require: "m",
@@ -6810,7 +6810,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法 - 此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法 - 此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "12",
           require: "o",
@@ -6830,7 +6830,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6838,7 +6838,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6846,7 +6846,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "pr",
+          name: "購買價格",
           detail: "有價證券的價格（按面值為￥100計算）。",
           example: "97.975",
           require: "m",
@@ -6854,7 +6854,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "清償價值",
           detail: "面值￥100的有價證券的清償價值。",
           example: "100",
           require: "m",
@@ -6862,7 +6862,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法 - 此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法 - 此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "12",
           require: "o",
@@ -6882,7 +6882,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "利率",
           detail: "各期利率。",
           example: "0.12",
           require: "m",
@@ -6890,7 +6890,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pmt",
+          name: "付款金額",
           detail: "各期所應支付的金額,在整個年金期間保持不變。",
           example: "500",
           require: "m",
@@ -6898,7 +6898,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pv",
+          name: "現值",
           detail: "現值,或一系列未來付款的當前值的累積和。",
           example: "40000",
           require: "m",
@@ -6906,7 +6906,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "fv",
+          name: "未來值",
           detail: "[可選 - 預設值為0] - 未來值,或在最後一次付款後希望得到的現金餘額。",
           example: "0",
           require: "o",
@@ -6914,7 +6914,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "類型",
           detail: "[可選 - 預設值為0] - 指定各期的付款時間是在期初還是期末。\n\n0表示期末；\n\n1表示期初。",
           example: "0",
           require: "o",
@@ -6934,7 +6934,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "成本",
           detail: "資產原值。",
           example: "300000",
           require: "m",
@@ -6942,7 +6942,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "殘值",
           detail: "折舊末尾時的值（有時也稱為資產殘值）。",
           example: "75000",
           require: "m",
@@ -6950,7 +6950,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "使用壽命",
           detail: "資產的折舊期數（有時也稱作資產的使用壽命）。",
           example: "10",
           require: "m",
@@ -6970,7 +6970,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6978,7 +6978,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -6986,7 +6986,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "coupon",
+          name: "息票利率",
           detail: "有價證券的年息票利率。",
           example: "0.08",
           require: "m",
@@ -6994,7 +6994,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yld",
+          name: "年收益率",
           detail: "有價證券的年收益率。",
           example: "0.09",
           require: "m",
@@ -7002,7 +7002,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "年付息次數",
           detail: "年付息次數。\n\n如果按年支付,frequency = 1；\n\n按半年期支付,frequency = 2；\n\n按季支付,frequency = 4。",
           example: "1",
           require: "m",
@@ -7010,7 +7010,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法 - 此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法 - 此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "o",
@@ -7030,7 +7030,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "結算日",
           detail: "有價證券的結算日。有價證券結算日是在發行日之後,有價證券賣給購買者的日期。",
           example: "DATE(2010",
           require: "m",
@@ -7038,7 +7038,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "到期日",
           detail: "有價證券的到期日。到期日是有價證券有效期截止時的日期。",
           example: "DATE(2010",
           require: "m",
@@ -7046,7 +7046,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "coupon",
+          name: "息票利率",
           detail: "有價證券的年息票利率。",
           example: "0.08",
           require: "m",
@@ -7054,7 +7054,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yld",
+          name: "年收益率",
           detail: "有價證券的年收益率。",
           example: "0.09",
           require: "m",
@@ -7062,7 +7062,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "年付息次數",
           detail: "年付息次數。\n\n如果按年支付,frequency = 1；\n\n按半年期支付,frequency = 2；\n\n按季支付,frequency = 4。",
           example: "1",
           require: "m",
@@ -7070,7 +7070,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "basis",
+          name: "日計數基準",
           detail: "[可選 - 默認為0] - 訓示要使用哪種天數計算方法。\n\n0表示\"美國（NASD）30/360\"方法 - 此方法按照美國全國證券交易商協會標準,假設每月30天、每年360天,並對所輸入的月末日期進行具體調整。\n\n1表示\"實際/實際\"方法-此方法計算基於指定日期之間的實際天數和所涉及的年份中的實際天數進行計算。此方法用於美國長期債券,也是在非財經用途方面使用最多的方法。\n\n2表示\"實際/360\"方法 - 此方法基於指定日期之間的實際天數進行計算, 但假定每年為360天。\n\n3表示\"實際/365\"方法 - 此方法基於指定日期之間的實際天數進行計算,但假定每年為365天。\n\n4表示\"歐洲30 / 360\"方法-類似於0,此方法基於每月30天、每年360天進行計算,但按照歐洲金融慣例對月末日期進行調整。",
           example: "0",
           require: "o",
@@ -7090,7 +7090,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為十進位數的帶符號的10位二進位數值（以字串形式提供）。\n\n帶符號的二進位數的最高位是符號位；也就是說,負數是以二的補數形式表示的。\n\n對於此函數,最大的正數輸入值為0111111111,最小的負數輸入值為1000000000。\n\n如果所提供的帶符號的二進位數是有效的二進位數,會自動將其轉換為相應的字串輸入。例如,BIN2DEC（100）和BIN2DEC（\"100\"）得出的結果相同,均為4。",
           example: "101",
           require: "m",
@@ -7110,7 +7110,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為帶符號的十六進位數的帶符號的10位二進位數值（以字串形式提供）。\n\n帶符號的二進位數的最高位是符號位；也就是說,負數是以二的補數形式表示的。\n\n對於此函數,最大的正數輸入值為0111111111,最小的負數輸入值為1000000000。\n\n如果所提供的帶符號的二進位數是有效的二進位數,會自動將其轉換為相應的字串輸入。例如,BIN2HEX（11111）和BIN2HEX（\"11111\"）得出的結果相同,均為1F。",
           example: "101",
           require: "m",
@@ -7118,7 +7118,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "places",
+          name: "有效位數",
           detail: "[ 可選 ] -結果中要確保的有效位數。\n\n如果設定的有效位數大於結果中的有效位數,則在結果的左側填充0,使總有效位數達到有效位數。例如,BIN2HEX（\"11111\",8）所得的結果值為0000001F。\n\n如果帶符號的二進位數的最高位為1,則忽略此值；即當提供的帶符號的二進位數大於等於1000000000時忽略此值。",
           example: "8",
           require: "o",
@@ -7138,7 +7138,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為帶符號的八進制數的帶符號的10位二進位數值（以字串形式提供）。\n\n帶符號的二進位數的最高位是符號位；也就是說,負數是以二的補數形式表示的。\n\n對於此函數,最大的正數輸入值為0111111111,最小的負數輸入值為1000000000。\n\n如果所提供的帶符號的二進位數是有效的二進位數,會自動將其轉換為相應的字串輸入。例如,BIN2OCT（11111）和BIN2OCT（\"11111\"）得出的結果相同,均為37。",
           example: "101",
           require: "m",
@@ -7146,7 +7146,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "places",
+          name: "有效位數",
           detail: "[ 可選 ] - 結果中要確保的有效位數。\n\n如果設定的有效位數大於結果中的有效位數,則在結果的左側填充0,使總有效位數達到有效位數。例如,BIN2OCT（\"11111\"）得到的結果值為00000037。\n\n如果帶符號的二進位數的最高位為1,則忽略此值；即當提供的帶符號的二進位數大於等於1000000000時忽略此值。",
           example: "8",
           require: "o",
@@ -7166,7 +7166,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為帶符號的二進位數的十進位數值（以字串形式提供）。\n\n對於此函數,最大的正數輸入值為511,最小的負數輸入值為-512。\n\n如果所提供的十進位數是有效的十進位數,會自動將其轉換為相應的字串輸入。例如,DEC2BIN（199）和DEC2BIN（\"199\"）得出的結果相同,均為11000111。",
           example: "100",
           require: "m",
@@ -7174,7 +7174,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "有效位數",
           detail: "[ 可選 ] - 結果中要確保的有效位數。\n\n如果設定的有效位數大於結果中的有效位數,則在結果的左側填充0,使總有效位數達到有效位數。\n\n如果十進位數為負數,則忽略此值。",
           example: "8",
           require: "o",
@@ -7194,7 +7194,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為帶符號的十六進位數的十進位數值（以字串形式提供）。\n\n此函數可接受的最大正數值為549755813887,最小負數值為-549755814888。\n\n如果所提供的十進位數是有效的十進位數,會自動將其轉換為相應的字串輸入。例如,DEC2HEX（100）和DEC2HEX（\"100\"）得出的結果相同,均為64。",
           example: "100",
           require: "m",
@@ -7202,7 +7202,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "有效位數",
           detail: "[ 可選 ] - 結果中要確保的有效位數。\n\n如果設定的有效位數大於結果中的有效位數,則在結果的左側填充0,使總有效位數達到有效位數。\n\n如果十進位數為負數,則忽略此值。",
           example: "8",
           require: "o",
@@ -7222,7 +7222,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為帶符號的八進制數的十進位數值（以字串形式提供）。\n\n此函數可接受的最大正數值為536870911,最小負數值為-53687092。\n\n如果所提供的十進位數是有效的十進位數,會自動將其轉換為相應的字串輸入。例如,DEC2OCT（199）和DEC2OCT（\"199\"）得出的結果相同,均為307。",
           example: "100",
           require: "m",
@@ -7230,7 +7230,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "有效位數",
           detail: "[ 可選 ] -結果中要確保的有效位數。\n\n如果設定的有效位數大於結果中的有效位數,則在結果的左側填充0,使總有效位數達到有效位數。\n\n如果十進位數為負數,則忽略此值 。",
           example: "8",
           require: "o",
@@ -7250,7 +7250,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為帶符號的二進位數的帶符號的40位十六進位數值（以字串形式提供）。\n\n帶符號的十六進位數的最高位是符號位；也就是說,負數是以二的補數形式表示的。\n\n此函數可接受的最大正數值為1FF,最小負數值為FFFFFFFE00。\n\n如果所提供的帶符號的十六進位數是有效的十六進位數,函數會自動將其轉換為相應的字串輸入。例如,HEX2BIN（199）和HEX2BIN（\"199\"）得出的結果相同,均為110011001。",
           example: "\"f3\"",
           require: "m",
@@ -7258,7 +7258,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "places",
+          name: "有效位數",
           detail: "[ 可選 ] - 結果中要確保的有效位數。\n\n如果設定的有效位數大於結果中的有效位數,則在結果的左側填充0,使總有效位數達到有效位數。\n\n如果帶符號的十六進位數的最高位為1,則忽略此值；即當提供的帶符號的十六進位數大於等於8000000000時忽略此值。",
           example: "8",
           require: "o",
@@ -7278,7 +7278,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為十進位數的帶符號的40位十六進位數值（以字串形式提供）。\n\n帶符號的十六進位數的最高位是符號位；也就是說,負數是以二的補數形式表示的。\n\n此函數可接受的最大正數值為7fffffffff,最小負數值為8000000000。\n\n如果所提供的帶符號的十六進位數是有效的十六進位數,函數會自動將其轉換為相應的字串輸入。例如,HEX2DEC（199）和HEX2DEC（\"199\"）得出的結果相同,均為409 。",
           example: "\"f3\"",
           require: "m",
@@ -7298,7 +7298,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為帶符號的八進制數的帶符號的40位十六進位數值（以字串形式提供）。\n\n帶符號的十六進位數的最高位是符號位；也就是說,負數是以二的補數形式表示的。\n\n此函數可接受的最大正數值為1FFFFFFF,最小負數值為FFE0000000。\n\n如果所提供的帶符號的十六進位數是有效的十六進位數,函數會自動將其轉換為相應的字串輸入。例如,HEX2OCT（199）和HEX2OCT（\"199\"）得出的結果相同,均為631。",
           example: "\"f3\"",
           require: "m",
@@ -7306,7 +7306,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "places",
+          name: "有效位數",
           detail: "[ 可選 ] - 結果中要確保的有效位數。\n\n如果設定的有效位數大於結果中的有效位數,則在結果的左側填充0,使總有效位數達到有效位數。\n\n如果帶符號的十六進位數的最高位為1,則忽略此值；即當給定的帶符號的十六進位數大於等於8000000000時忽略此值。",
           example: "8",
           require: "o",
@@ -7326,7 +7326,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為帶符號的二進位數的帶符號的30位八進制數值（以字串形式提供）。\n\n帶符號的八進制數的最高位是符號位；也就是說,負數是以二的補數形式表示的。\n\n此函數可接受的最大正數值為777,最小負數值為7777777000。\n\n如果所提供的帶符號的八進制數是有效的八進制數,函數會自動將其轉換為相應的字串輸入。例如,OCT2BIN（177）和OCT2BIN（\"177\"）得出的結果相同,均為1111111。",
           example: "37",
           require: "m",
@@ -7334,7 +7334,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "places",
+          name: "有效位數",
           detail: "[ 可選 ] - 結果中要確保的有效位數。\n\n如果設定的有效位數大於結果中的有效位數,則在結果的左側填充0,使總有效位數達到有效位數。\n\n如果帶符號的八進制數的最高位為1,則忽略此值；即當給定的帶符號的八進制數大於等於4000000000時忽略此值。",
           example: "8",
           require: "o",
@@ -7354,7 +7354,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為十進位數的帶符號的30位八進制數值（以字串形式提供）。\n\n帶符號的ba進制數的最高位是符號位；也就是說,負數是以二的補數形式表示的。\n\n此函數可接受的最大正數值為3777777777,最小負數值為4000000000。\n\n如果所提供的帶符號的八進制數是有效的八進制數,函數會自動將其轉換為相應的字串輸入。例如,OCT2DEC（177）和OCT2DEC（\"177\"）得出的結果相同,均為127。",
           example: "37",
           require: "m",
@@ -7374,7 +7374,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要轉換為帶符號的十六進位數的帶符號的30位八進制數值（以字串形式提供）。\n\n帶符號的ba進制數的最高位是符號位；也就是說,負數是以二的補數形式表示的。\n\n此函數可接受的最大正數值為3777777777,最小負數值為4000000000。\n\n如果所提供的帶符號的八進制數是有效的八進制數,函數會自動將其轉換為相應的字串輸入。例如,OCT2HEX（177）和OCT2HEX（\"177\"）得出的結果相同,均為7F。",
           example: "37",
           require: "m",
@@ -7382,7 +7382,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "places",
+          name: "有效位數",
           detail: "[ 可選 ] - 結果中要確保的有效位數。\n\n如果設定的有效位數大於結果中的有效位數,則在結果的左側填充0,使總有效位數達到有效位數。\n\n如果帶符號的八進制數的最高位為1,則忽略此值；即當給定的帶符號的八進制數大於等於4000000000時忽略此值。",
           example: "8",
           require: "o",
@@ -7402,7 +7402,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "real_num",
+          name: "實係數",
           detail: "複數的實係數。",
           example: "3",
           require: "m",
@@ -7410,7 +7410,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "i_num",
+          name: "虛係數",
           detail: "複數的虛係數。",
           example: "4",
           require: "m",
@@ -7418,7 +7418,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "suffix",
+          name: "尾碼",
           detail: "[可選 - 默認為\"i\"] - 複數中虛係數的尾碼。",
           example: "\"j\"",
           require: "o",
@@ -7438,7 +7438,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "inumber",
+          name: "複數",
           detail: "需要計算其實係數的複數。",
           example: "\"4+5i\"",
           require: "m",
@@ -7458,7 +7458,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "inumber",
+          name: "複數",
           detail: "需要計算其虛係數的複數。",
           example: "\"4+5i\"",
           require: "m",
@@ -7478,7 +7478,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "inumber",
+          name: "複數",
           detail: "需要計算其共軛數的複數。",
           example: "\"3+4i\"",
           require: "m",
@@ -7498,7 +7498,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "inumber",
+          name: "複數",
           detail: "要計算其絕對值的複數。",
           example: "\"3+4i\"",
           require: "m",
@@ -7518,7 +7518,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number1",
+          name: "數字1",
           detail: "第一個數位。",
           example: "2",
           require: "m",
@@ -7526,7 +7526,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number2",
+          name: "數字2",
           detail: "[可選 - 默認為0] - 第二個數位。",
           example: "1",
           require: "o",
@@ -7546,7 +7546,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "inumber1",
+          name: "複數1",
           detail: "要相加的第一個複數",
           example: "\"3+4i\"",
           require: "m",
@@ -7554,7 +7554,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "inumber2, …",
+          name: "複數2,...",
           detail: "[可選] -要與值1相加的其他複數",
           example: "\"5-3i\"",
           require: "o",
@@ -7574,7 +7574,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "inumber1",
+          name: "複數1",
           detail: "從（複）數中减去 inumber2。",
           example: "\"6+5i\"",
           require: "m",
@@ -7582,7 +7582,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "inumber2",
+          name: "複數2",
           detail: "從 inumber1 中减（複）數。",
           example: "\"2+3i\"",
           require: "m",
@@ -7602,7 +7602,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "inumber1",
+          name: "複數1",
           detail: "用於計算乘積的第一個複數",
           example: "\"3+4i\"",
           require: "m",
@@ -7610,7 +7610,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "inumber2, …",
+          name: "複數2,...",
           detail: "[可選] -要相乘的其他複數。",
           example: "\"5-3i\"",
           require: "o",
@@ -7630,7 +7630,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "inumber1",
+          name: "複數1",
           detail: "複數分子或被除數。",
           example: "\"11+16i\"",
           require: "m",
@@ -7638,7 +7638,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "inumber2",
+          name: "複數2",
           detail: "複數分母或除數。",
           example: "\"3+2i\"",
           require: "m",
@@ -7658,7 +7658,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical",
+          name: "邏輯值",
           detail: "計算結果為TRUE或FALSE的任何值或運算式。",
           example: "A2",
           require: "m",
@@ -7700,7 +7700,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical1",
+          name: "邏輯值1",
           detail: "要測試的第一個條件,其計算結果可以為TRUE或FALSE。",
           example: "A2 = \"foo\"",
           require: "m",
@@ -7708,7 +7708,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "logical2,...",
+          name: "邏輯值2,...",
           detail: "[可選] - 要測試的其他條件,其計算結果可以為TRUE或FALSE,最多可包含255個條件。",
           example: "A3 = \"bar\"",
           require: "o",
@@ -7728,7 +7728,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "檢查是否存在錯誤的參數。",
           example: "A1",
           require: "m",
@@ -7736,7 +7736,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_if_error",
+          name: "錯誤時返回值",
           detail: "公式的計算結果錯誤時返回的值。計算以下錯誤類型:#N/A、#VALUE！、#REF！、#DIV/0！、#NUM！、#NAME？或#NULL！。",
           example: "\"Error in cell A1\"",
           require: "m",
@@ -7756,7 +7756,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_test",
+          name: "邏輯測試",
           detail: "一個運算式或對包含運算式的儲存格的引用,該運算式代表某種邏輯值（即TRUE或FALSE）。",
           example: "A2 = \"foo\"",
           require: "m",
@@ -7764,7 +7764,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_if_true",
+          name: "邏輯值為真時的返回值",
           detail: "當邏輯運算式為TRUE時的返回值。",
           example: "\"A2 is foo\"",
           require: "m",
@@ -7772,7 +7772,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_if_false",
+          name: "邏輯值為假時的返回值",
           detail: "[可選 - 默認為空白] - 當邏輯運算式等於FALSE時的函數返回值。",
           example: "\"A2 was false\"",
           require: "o",
@@ -7792,7 +7792,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical1",
+          name: "邏輯值1",
           detail: "要測試的第一個條件,其計算結果可以為TRUE或FALSE。",
           example: "A2 = \"foo\"",
           require: "m",
@@ -7820,7 +7820,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "第一個值。",
           example: "A2",
           require: "m",
@@ -7828,7 +7828,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "要檢查是否與 value1 不相等的值。",
           example: "A3",
           require: "m",
@@ -7848,7 +7848,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "第一個值。",
           example: "A2",
           require: "m",
@@ -7856,7 +7856,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "要檢查是否與value1相等的值。",
           example: "A3",
           require: "m",
@@ -7876,7 +7876,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "要測試其是否大於 value2 的值。",
           example: "A2",
           require: "m",
@@ -7884,7 +7884,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "第二個值。",
           example: "A3",
           require: "m",
@@ -7904,7 +7904,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "要测试其是否大于等于 value2 的值。",
           example: "A2",
           require: "m",
@@ -7912,7 +7912,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "第二個值。",
           example: "A3",
           require: "m",
@@ -7932,7 +7932,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "要测试其是否小于 value2 的值。",
           example: "A2",
           require: "m",
@@ -7940,7 +7940,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "第二個值。",
           example: "A3",
           require: "m",
@@ -7960,7 +7960,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "要测试其是否小于等于 value2 的值。",
           example: "A2",
           require: "m",
@@ -7968,7 +7968,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "第二個值。",
           example: "A3",
           require: "m",
@@ -7988,7 +7988,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "第一個加數。",
           example: "A2",
           require: "m",
@@ -7996,7 +7996,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "第二個加數。",
           example: "A3",
           require: "m",
@@ -8016,7 +8016,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "被減數,即要對其計减的數值。",
           example: "A2",
           require: "m",
@@ -8024,7 +8024,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "減數,即要從value1中减除的數值。",
           example: "A3",
           require: "m",
@@ -8044,7 +8044,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "第一個乘數。",
           example: "A2",
           require: "m",
@@ -8052,7 +8052,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "第二個乘數。",
           example: "B2",
           require: "m",
@@ -8072,7 +8072,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "要被除的數值。",
           example: "4",
           require: "m",
@@ -8080,7 +8080,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "用於除其他數的數值。\n\n除數不得為0。",
           example: "2",
           require: "m",
@@ -8100,7 +8100,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "值1",
           detail: "value2 將附於其後的值。",
           example: "\"de\"",
           require: "m",
@@ -8108,7 +8108,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "值2",
           detail: "要附於 value1 之後的值。",
           example: "\"mystify\"",
           require: "m",
@@ -8128,7 +8128,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要作為百分比解釋的數值。",
           example: "A2",
           require: "m",
@@ -8148,7 +8148,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text1",
+          name: "文字1",
           detail: "初始字串。",
           example: "\"Super\"",
           require: "m",
@@ -8156,7 +8156,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "text2…",
+          name: "文字2,...",
           detail: "[可選] - 要按順序連接在一起的其他字串。",
           example: "\"calla\"",
           require: "o",
@@ -8176,7 +8176,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要返回其首字元的Unicode映射值的字串。",
           example: "\"a\"",
           require: "m",
@@ -8196,7 +8196,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "介於1到255之間的數位。",
           example: "97",
           require: "m",
@@ -8216,7 +8216,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要轉換格式的羅馬數字",
           example: "\"XIV\"",
           require: "m",
@@ -8236,7 +8236,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要設定格式的數位,介於1到3999之間（包括這兩個數位）。",
           example: "499",
           require: "m",
@@ -8256,7 +8256,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "輸入文字。",
           example: "\"Needle in a haystack\"",
           require: "m",
@@ -8264,7 +8264,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "regular_expression",
+          name: "正規表示式",
           detail: "此函數將返回文字中符合此運算式的第一個子串。",
           example: "\".e{2}dle\"",
           require: "m",
@@ -8284,7 +8284,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要用規則運算式測試的文字。",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -8292,7 +8292,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "regular_expression",
+          name: "正規表示式",
           detail: "用來測試文字的規則運算式。",
           example: "\"S.r\"",
           require: "m",
@@ -8312,7 +8312,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要對其局部進行替換操作的文字。",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -8320,7 +8320,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "regular_expression",
+          name: "正規表示式",
           detail: "規則運算式。text中所有匹配的實例都將被替換。",
           example: "\"S.*d\"",
           require: "m",
@@ -8328,7 +8328,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "replacement",
+          name: "取代文字",
           detail: "要插入到原有文字中的文字。",
           example: "\"Bed\"",
           require: "m",
@@ -8348,7 +8348,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要轉換為文字的參數。\n\n如果值為文字,T將返回值本身。\n\n如果值為指向包含文字的儲存格的引用,T將返回值中的內容。\n\n如果值為錯誤值或包含錯誤值的儲存格,T將返回該錯誤值。\n\n對於所有其他情况,T將返回空串。",
           example: "A2",
           require: "m",
@@ -8368,7 +8368,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "要進行舍入並轉換為文字的數位。",
           example: "3.141592653",
           require: "m",
@@ -8376,7 +8376,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "decimals",
+          name: "小數位數",
           detail: "[可選-預設值為2] - 結果中要顯示的小數位數。\n\n如果數值的有效位數小於小數位數,將以零填充。如果數值的有效位數大於小數位數,則將其舍入到所需的小數位數而不是將其截斷。",
           example: "2",
           require: "o",
@@ -8384,7 +8384,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "no_commas",
+          name: "不顯示逗號",
           detail: "[可選-預設值為FALSE（）] - 一個邏輯值,如果為TRUE（）,則會禁止FIXED在返回的文字中包含逗號。",
           example: "FALSE（）",
           require: "o",
@@ -8404,7 +8404,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "find_text",
+          name: "尋找文字",
           detail: "要在要蒐索的文字中查找的字串。",
           example: "\"n\"",
           require: "m",
@@ -8412,7 +8412,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "within_text",
+          name: "搜尋範圍文字",
           detail: "要在其中蒐索蒐索字串的首次出現位置的文字。",
           example: "A2",
           require: "m",
@@ -8420,7 +8420,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "start_num",
+          name: "起始位置",
           detail: "[可選-預設值為1] - 要在要蒐索的文字中開始蒐索的字元位置。",
           example: "14",
           require: "o",
@@ -8440,7 +8440,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "find_text",
+          name: "尋找文字",
           detail: "要在要蒐索的文字中查找的字串。",
           example: "\"新\"",
           require: "m",
@@ -8448,7 +8448,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "within_text",
+          name: "搜尋範圍文字",
           detail: "要在其中蒐索蒐索字串的首次出現位置的文字。",
           example: "\"農曆新年\"",
           require: "m",
@@ -8456,7 +8456,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "start_num",
+          name: "起始位置",
           detail: "[可選-預設值為1] - 要在要蒐索的文字中開始蒐索的字元位置。",
           example: "2",
           require: "o",
@@ -8476,7 +8476,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "separator",
+          name: "分隔符",
           detail: "置於相互連接的值之間的字元或字串。\n\n定界符可以為空,例如JOIN（,{1,2,3}）。",
           example: "\"and-a\"",
           require: "m",
@@ -8484,7 +8484,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "array1",
+          name: "陣列1",
           detail: "要使用定界符連接的一個或多個值。",
           example: "{1",
           require: "m",
@@ -8492,7 +8492,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "array2,…",
+          name: "陣列2,...",
           detail: "[可選] - 要使用定界符連接的其他值或數組。",
           example: "2",
           require: "o",
@@ -8512,7 +8512,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "包含要選取的字元的文字字串。",
           example: "A2",
           require: "m",
@@ -8520,7 +8520,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "num_chars",
+          name: "字元數",
           detail: "[可選-預設值為1] - 指定要由LEFT選取的字元的數量。",
           example: "2",
           require: "m",
@@ -8540,7 +8540,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "包含要選取的字元的文字字串。",
           example: "A2",
           require: "m",
@@ -8548,7 +8548,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "num_chars",
+          name: "字元數",
           detail: "[可選-預設值為1] - 指定要由RIGHT選取的字元的數量。",
           example: "2",
           require: "m",
@@ -8568,7 +8568,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "包含要選取的字元的文字字串。",
           example: "\"get this\"",
           require: "m",
@@ -8576,7 +8576,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "start_num",
+          name: "起始位置",
           detail: "要從字串中開始選取的位置。字串中第一個字元的索引為1。",
           example: "5",
           require: "m",
@@ -8584,7 +8584,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "num_chars",
+          name: "字元數",
           detail: "指定要由MID選取的字元的數量。\n\n如果選取的字元數尚不足選取長度個字元時就到達了字串尾部,則MID返回從開始位置到字串尾部的字元。",
           example: "4",
           require: "m",
@@ -8604,7 +8604,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要返回其長度的字串。",
           example: "A2",
           require: "m",
@@ -8624,7 +8624,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要返回其位元組數的字串。（一個漢字為兩個位元組數）",
           example: "A2",
           require: "m",
@@ -8644,7 +8644,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要轉換為小寫的字串。",
           example: "\"LOREM IPSUM\"",
           require: "m",
@@ -8664,7 +8664,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要轉換為大寫的字串。",
           example: "\"lorem ipsum\"",
           require: "m",
@@ -8684,7 +8684,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text1",
+          name: "文字1",
           detail: "要比較的第一個字串。",
           example: "A1",
           require: "m",
@@ -8692,7 +8692,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "text2",
+          name: "文字2",
           detail: "要比較的第二個字串。",
           example: "A2",
           require: "m",
@@ -8712,7 +8712,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "old_text",
+          name: "原文字",
           detail: "要對其局部進行替換操作的文字。",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -8720,7 +8720,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "start_num",
+          name: "起始位置",
           detail: "開始進行替換操作的位置（文字開頭位置為1）。",
           example: "1",
           require: "m",
@@ -8728,7 +8728,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "num_chars",
+          name: "字元數",
           detail: "要在文字中替換的字元個數。",
           example: "6",
           require: "m",
@@ -8736,7 +8736,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "new_text",
+          name: "新文字",
           detail: "要插入到原有文字中的文字。",
           example: "\"Bed\"",
           require: "m",
@@ -8756,7 +8756,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要重複的字元或字串。",
           example: "\"ha\"",
           require: "m",
@@ -8764,7 +8764,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "number_times",
+          name: "重複次數",
           detail: "要重複的文字要在返回值中出現的次數。\n\n最大重複次數為100。即使重複次數大於100,REPT也僅將相應文字重複100次。",
           example: "4",
           require: "m",
@@ -8784,7 +8784,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "find_text",
+          name: "尋找文字",
           detail: "要在要蒐索的文字中查找的字串。",
           example: "\"n\"",
           require: "m",
@@ -8792,7 +8792,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "within_text",
+          name: "搜尋範圍文字",
           detail: "要在其中蒐索蒐索字串的首次出現位置的文字。",
           example: "A2",
           require: "m",
@@ -8800,7 +8800,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "start_num",
+          name: "起始位置",
           detail: "[可選-預設值為1 ] - 要在要蒐索的文字中開始蒐索的字元位置。",
           example: "14",
           require: "m",
@@ -8820,7 +8820,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "需要替換其中字元的文字,或對含有文字（需要替換其中字元）的儲存格的引用。",
           example: "\"search for it\"",
           require: "m",
@@ -8828,7 +8828,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "old_text",
+          name: "原文字",
           detail: "需要替換的文字。",
           example: "\"search for\"",
           require: "m",
@@ -8836,7 +8836,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "new_text",
+          name: "新文字",
           detail: "用於替換old_text的文字。",
           example: "\"Google\"",
           require: "m",
@@ -8844,7 +8844,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "instance_num",
+          name: "實例編號",
           detail: "[可選] - 指定要用new_text替換old_text的事件。如果指定了instance_num,則只有滿足要求的old_text被替換。否則,文字中出現的所有old_text都會更改為new_text。",
           example: "3",
           require: "m",
@@ -8864,7 +8864,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要移除其中不可列印字元的文字。",
           example: "\"AF\"&amp;CHAR（31）",
           require: "m",
@@ -8884,7 +8884,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要設定格式的數位、日期或時間。",
           example: "1.23",
           require: "m",
@@ -8892,7 +8892,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "format_text",
+          name: "格式文字",
           detail: "以括弧括起來的模式串,將按該模式設定數位的格式。\n\n0表示在數值位數少於格式指定的位數時必定以零填充。例如,TEXT（12.3,“000.00\"）將返回012.30。當數值的小數位數超過模式指定的小數位數時,四捨五入為指定的小數位數。例如,TEXT（12.305,“00.00\"）將返回12.31。\n\n#類似於0,但並不是在小數點的兩側都以零填充。例如,TEXT（12.3,“###.##\"）將返回12.3。",
           example: "\"$0.00\"",
           require: "m",
@@ -8912,7 +8912,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要修剪的字串或指向包含該字串的儲存格的引用。",
           example: "\"lorem ipsum\"",
           require: "m",
@@ -8932,7 +8932,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "包含要轉換的值的字串。",
           example: "\"123\"",
           require: "m",
@@ -8952,7 +8952,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "文字",
           detail: "要轉換的文字,其中每個單詞的首字母都將轉為大寫,所有其他字母則轉為小寫。",
           example: "\"united states\"",
           require: "m",
@@ -8972,7 +8972,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "數字",
           detail: "是以from_unit為組織的需要進行轉換的數值。",
           example: "5.1",
           require: "m",
@@ -8980,7 +8980,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "from_unit",
+          name: "原單位",
           detail: "是數值的組織。",
           example: "\"g\"",
           require: "m",
@@ -8988,7 +8988,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "to_unit",
+          name: "目標單位",
           detail: "是結果的組織。",
           example: "\"kg\"",
           require: "m",
@@ -9008,7 +9008,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
+          name: "陣列_x",
           detail: "第一個數組或數值區域。",
           example: "A2:A100",
           require: "m",
@@ -9016,7 +9016,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array_y",
+          name: "陣列_y",
           detail: "第二個數組或數值區域。",
           example: "B2:B100",
           require: "m",
@@ -9036,7 +9036,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
+          name: "陣列_x",
           detail: "第一個數組或數值區域。",
           example: "A2:A100",
           require: "m",
@@ -9044,7 +9044,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array_y",
+          name: "陣列_y",
           detail: "第二個數組或數值區域。",
           example: "B2:B100",
           require: "m",
@@ -9064,7 +9064,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
+          name: "陣列_x",
           detail: "第一個數組或數值區域。",
           example: "A2:A100",
           require: "m",
@@ -9072,7 +9072,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array_y",
+          name: "陣列_y",
           detail: "第二個數組或數值區域。",
           example: "B2:B100",
           require: "m",
@@ -9092,7 +9092,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "要將其行列互換的數組或範圍。",
           example: "{1,2}",
           require: "m",
@@ -9112,7 +9112,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_y",
+          name: "已知_y",
           detail: "關係運算式y = mx + b 中已知的y值集合。\n\n如果known_y為二維陣列或範圍,則known_x的維數必須與之相同,或者省略此參數。\n\n如果known_y為一維數組或範圍,known_x則可代表二維陣列或範圍中的多個引數。也就是說,如果known_y為單行,則將known_x中的每行解釋為各自獨立的值,類似情况也適用於known_y為單列的情况。",
           example: "B2:B10",
           require: "m",
@@ -9120,7 +9120,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_x",
+          name: "已知_x",
           detail: "[可選-默認該數組為{1,2,3,…},其大小與known_y相同] -關係運算式y = mx + b 中已知的可選x值集合。\n\n如果known_y為一維數組或範圍,known_x則可代表二維陣列或範圍中的多個引數。也就是說,如果known_y為單行,則將known_x中的每行解釋為各自獨立的值,類似情况也適用於known_y為單列的情况。",
           example: "A2:A10",
           require: "o",
@@ -9128,7 +9128,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "new_x",
+          name: "新_x",
           detail: "[可選 - 默認與known_x相同] - 需要函數TREND返回對應y值的新x值。",
           example: "A11:A13",
           require: "o",
@@ -9136,7 +9136,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "const",
+          name: "常數",
           detail: "[可選 - 預設值為TRUE（）] - 一個邏輯值,用於指定是否將常數b強制設為0。\n\nTRUE（）表示b將按正常計算；\n\nFALSE（）表示b將被設為0（零）,m 將被調整以使y = mx。",
           example: "TRUE（）",
           require: "o",
@@ -9156,7 +9156,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_array",
+          name: "數據陣列",
           detail: "要對其頻率進行計數的一組數值或對這組數值的引用。",
           example: "A2:A40",
           require: "m",
@@ -9164,7 +9164,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "bins_array",
+          name: "分段陣列",
           detail: "要將data_array中的值插入到的間隔數組或對間隔的引用。\n\n為清晰起見,應將類別排序,但如果未排序,FREQUENCY會在內部對這些指定的值進行排序並返回正確結果。",
           example: "B2:B5",
           require: "m",
@@ -9184,7 +9184,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_y",
+          name: "已知_y",
           detail: "關係運算式y = b*m^x 中已知的y值集合。\n\n如果已知數據_y為二維陣列或範圍,則已知數據_x的維數必須與之相同,或者省略此參數。\n\n如果已知數據_y為一維數組或範圍,已知數據_x則可代表二維陣列或範圍中的多個引數。也就是說,如果已知數據_y為單行,則將已知數據_x中的每行解釋為各自獨立的值,類似情况也適用於已知數據_y為單列的情况。",
           example: "B2:B10",
           require: "m",
@@ -9192,7 +9192,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_x",
+          name: "已知_x",
           detail: "[可選 - 默認該數組為{1,2,3,…},其大小與known_y相同] - 關係運算式y = b*m^x 中已知的可選x值集合。\n\n如果已知數據_y為一維數組或範圍,已知數據_x則可代表二維陣列或範圍中的多個引數。也就是說,如果已知數據_y為單行,則將已知數據_x中的每行解釋為各自獨立的值,類似情况也適用於已知數據_y為單列的情况。",
           example: "A2:A10",
           require: "o",
@@ -9200,7 +9200,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "new_x",
+          name: "新_x",
           detail: "[可選 - 默認與known_x相同] - 需要函數GROWTH返回對應y值的新x值。",
           example: "A11:A13",
           require: "o",
@@ -9208,7 +9208,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "const",
+          name: "常數",
           detail: "[可選 - 預設值為TRUE（）] - 一個邏輯值,用於指定是否將常數b強制設為1。\n\nTRUE（）表示b將按正常計算；\n\nFALSE（）表示b將被設為1,m將被調整以使y = m^x。",
           example: "TRUE（）",
           require: "o",
@@ -9228,7 +9228,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_y",
+          name: "已知_y",
           detail: "關係運算式y = mx + b 中已知的y值集合。\n\n如果known_y為二維陣列或範圍,則known_x的維數必須與之相同,或者省略此參數。\n\n如果known_y為一維數組或範圍,known_x則可代表二維陣列或範圍中的多個引數。也就是說,如果known_y為單行,則將known_x中的每行解釋為各自獨立的值,類似情况也適用於known_y為單列的情况。",
           example: "B2:B10",
           require: "m",
@@ -9236,7 +9236,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_x",
+          name: "已知_x",
           detail: "[可選 - 默認該數組為{1,2,3,…},其大小與known_y相同] - 關係運算式y = mx + b中已知的可選x值集合。\n\n如果known_y為一維數組或範圍,known_x則可代表二維陣列或範圍中的多個引數。也就是說,如果known_y為單行,則將known_x中的每行解釋為各自獨立的值,類似情况也適用於known_y為單列的情况。",
           example: "A2:A10",
           require: "o",
@@ -9244,7 +9244,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "const",
+          name: "常數",
           detail: "[可選 - 預設值為TRUE（）] - 一個邏輯值,用於指定是否將常數b強制設為0。\n\nTRUE（）表示b將按正常計算；\n\nFALSE（）表示b將被設為0（零）,m將被調整以使y = mx。",
           example: "TRUE（）",
           require: "o",
@@ -9252,7 +9252,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "stats",
+          name: "詳細統計",
           detail: "[可選 - 預設值為FALSE（）] - 一個邏輯值,用於指定是否返回附加回歸統計值。\n\n如果詳細為TRUE,除了對應於每個引數的一組線性係數和y截距之外,LINEST還返回以下資訊:\n\n每項係數和截距的標準誤差、\n\n限定係數（介於0和1之間,1表示完全相關）、\n\n因變數值的標准誤差、\n\nF統計或F觀測值,訓示所觀測到的因變數和引數變數之間的關係是隨機的還是線性的、\n\n自由度,用於在參照錶中查找F統計值以估算可信度、\n\n回歸平方和,以及\n\n殘差平方和。",
           example: "TRUE（）",
           require: "o",
@@ -9272,7 +9272,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_y",
+          name: "已知_y",
           detail: "關係運算式y = mx + b 中已知的y值集合。\n\n如果known_y為二維陣列或範圍,則known_x的維數必須與之相同,或者省略此參數。\n\n如果known_y為一維數組或範圍,known_x則可代表二維陣列或範圍中的多個引數。也就是說,如果known_y為單行,則將known_x中的每行解釋為各自獨立的值,類似情况也適用於known_y為單列的情况。",
           example: "B2:B10",
           require: "m",
@@ -9280,7 +9280,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_x",
+          name: "已知_x",
           detail: "[可選 - 默認該數組為{1,2,3,…},其大小與known_y相同] - 關係運算式y = mx + b中已知的可選x值集合。\n\n如果known_y為一維數組或範圍,known_x則可代表二維陣列或範圍中的多個引數。也就是說,如果known_y為單行,則將known_x中的每行解釋為各自獨立的值,類似情况也適用於known_y為單列的情况。",
           example: "A2:A10",
           require: "o",
@@ -9288,7 +9288,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "const",
+          name: "常數",
           detail: "[可選 - 預設值為TRUE（）] - 一個邏輯值,用於指定是否將常數b強制設為0。\n\nTRUE（）表示b將按正常計算；\n\nFALSE（）表示b將被設為0（零）,m將被調整以使y = mx。",
           example: "TRUE（）",
           require: "o",
@@ -9296,7 +9296,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "stats",
+          name: "詳細統計",
           detail: "[可選 - 預設值為FALSE（）] - 一個邏輯值,用於指定是否返回附加回歸統計值。\n\n如果詳細為TRUE,則除了為每個引數和係數b返回一組指數值之外,LOGEST還將返回以下數據:\n\n每項指數和係數的標準誤差、\n\n限定係數（介於0和1之間,1表示完全相關）、\n\n因變數值的標准誤差、\n\nF統計或F觀測值,訓示所觀測到的因變數和引數之間的關係是隨機的還是指數的、\n\n自由度-用於在參照錶中查找F統計值以估算可信度、\n\n回歸平方和,以及\n\n殘差平方和。",
           example: "TRUE（）",
           require: "o",
@@ -9316,7 +9316,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "行數和列數相等的數值數組。",
           example: "A1:D4",
           require: "m",
@@ -9336,7 +9336,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "行數和列數相等的數值數組。",
           example: "A1:D4",
           require: "m",
@@ -9356,7 +9356,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array1",
+          name: "陣列1",
           detail: "要進行矩陣乘法運算的第一個矩陣數組。\n\narray1列數必須與array2的行數相同",
           example: "A1:B3",
           require: "m",
@@ -9364,7 +9364,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array2",
+          name: "陣列2",
           detail: "要進行矩陣乘法運算的第二個矩陣數組。\n\narray2的行數必須與array1列數相同",
           example: "C1:F2",
           require: "m",
@@ -9384,7 +9384,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array1",
+          name: "陣列1",
           detail: "其相應元素需要進行相乘並求和的第一個數組參數。",
           example: "A2:C5",
           require: "m",
@@ -9392,7 +9392,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array2",
+          name: "陣列2",
           detail: "[可選] - 其相應元素需要進行相乘並求和的其它數組參數。",
           example: "D2:F5",
           require: "o",
@@ -9412,7 +9412,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell",
+          name: "儲存格",
           detail: "要檢查是否存在公式的儲存格。\n\n如果 cell 為包含公式的儲存格,則 ISFORMULA 將返回TRUE。如果 cell 為相應儲存格範圍,則當該範圍內的首個儲存格包含公式時,系統會返回TRUE。如果是任何其他值,系統都將返回FALSE。",
           example: "A2",
           require: "m",
@@ -9432,7 +9432,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "info_type",
+          name: "資訊類型",
           detail: "一個文字值,指定要返回的儲存格資訊的類型。",
           example: "\"type\"",
           require: "m",
@@ -9440,7 +9440,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "reference",
+          name: "儲存格引用",
           detail: "需要其相關資訊的儲存格。",
           example: "C2",
           require: "m",
@@ -9471,7 +9471,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "error_val",
+          name: "錯誤值",
           detail: "用於查找錯誤號的儲存格,雖然您也可以直接提供錯誤值。",
           example: "A3",
           require: "m",
@@ -9491,7 +9491,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "對要檢查其是否為空的儲存格的引用。\n\n如果是空儲存格,則TRUE；否則返回FALSE。",
           example: "A2",
           require: "m",
@@ -9511,7 +9511,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要驗證其是否為#N/A以外的錯誤類型的值。\n\n如果值是除#N/A之外的任何錯誤（包括#DIV/0！、#NAME？、#NULL！、#NUM！、#VALUE！和#REF！）,ISERR將返回TRUE。",
           example: "A2",
           require: "m",
@@ -9531,7 +9531,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要驗證其是否為錯誤類型的值。\n\n只要值是某種錯誤值（包括#DIV/0！、#N/A、#NAME？、#NULL！、#NUM！、#VALUE！和#REF！）,ISERROR就會返回TRUE。",
           example: "A2",
           require: "m",
@@ -9551,7 +9551,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要驗證其為邏輯 TRUE 還是邏輯 FALSE 的值。\n\n*如果值為TRUE或FALSE,或為指向值為TRUE或FALSE的儲存格的引用,ISLOGICAL將返回TRUE。",
           example: "A2",
           require: "m",
@@ -9571,7 +9571,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要與錯誤值#N/A進行比較的值。\n\n*如果值為#N/A或指向包含#N/A的儲存格的引用,則ISNA將返回TRUE,否則返回FALSE。",
           example: "A2",
           require: "m",
@@ -9591,7 +9591,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要檢查的文字。\n\n*如果參數為文字值或指向包含文字的儲存格的引用,ISNONTEXT將返回FALSE,否則返回TRUE。\n\n當值為指向空儲存格的引用時,ISNONTEXT會返回TRUE。\n\n當值為空字串時,ISNONTEXT將返回FALSE,因為空串被視作文字。",
           example: "A2",
           require: "m",
@@ -9611,7 +9611,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要驗證其是否為數位的值。\n\n*如果參數為數位或指向內容為數位值的儲存格的引用,ISNUMBER將返回TRUE,否則返回FALSE。",
           example: "A2",
           require: "m",
@@ -9631,7 +9631,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要驗證其是否為儲存格引用的值。\n\n*如果參數是有效的儲存格引用,ISREF將返回TRUE,否則返回FALSE。",
           example: "A2",
           require: "m",
@@ -9651,7 +9651,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要驗證其是否為文字的值。\n\n如果參數為文字值或指向包含文字值的儲存格的引用,ISTEXT將返回TRUE,否則返回FALSE。",
           example: "A2",
           require: "m",
@@ -9671,7 +9671,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要確定其類型的數據。\n\n數位返回1；\n\n文字返回2；\n\n邏輯值返回4；\n\n錯誤值返回16；\n\n數組返回64；",
           example: "C4",
           require: "m",
@@ -9691,7 +9691,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要轉換為數位的參數。\n\n如果值為數位,則返回該數位。\n\n如果值為日期,則返回該日期的序號。\n\n如果值為TRUE,則返回1。\n\n如果值為FALSE,則返回0。\n\n如果值為錯誤值,則返回錯誤值。\n\n如果值為其他值,則返回0。",
           example: "A2",
           require: "m",
@@ -9711,7 +9711,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要轉換為日期的參數或其儲存格引用。\n\n如果值為數位或指向內容為數值的儲存格的引用,TO_DATE會將值轉換為相應的日期並返回,值代表從十二月30日到對應的日期之間的天數,\n\n負值表示對應的日期在十二月30日之前,而小數值則代表一天中從午夜算起的時間。\n如果值不是數位或指向內容為數值的儲存格的引用,則TO_DATE將在不做任何修改的情况下返回值。",
           example: "25405",
           require: "m",
@@ -9731,7 +9731,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要轉換為純數位的參數或其儲存格引用。\n\n如果值為數位或指向包含數值的儲存格的引用,TO_PURE_NUMBER將以不帶任何格式與解釋的形式返回值。\n\n如果值不是數位或指向內容為數值的儲存格的引用,則TO_PERCENT將在不做任何修改的情况下返回值。",
           example: "50%",
           require: "m",
@@ -9751,7 +9751,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要轉換為文字的參數或其儲存格引用。\n\n如果值為數位或指向包含數值的儲存格的引用,TO_TEXT將返回字串形式的值,並保持現有格式。即原為貨幣的仍為貨幣,原為十進位數的仍為十進位數,原為百分比的仍為百分比,原為日期的仍為日期。\n\n如果值不是數位或指向內容為數值的儲存格的引用,則TO_TEXT將在不做任何修改的情况下返回值。",
           example: "24",
           require: "m",
@@ -9771,7 +9771,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要轉換為美元金額的參數或其儲存格引用。\n\n如果值不是數位或指向內容為數值的儲存格的引用,則TO_DOLLARS將在不做任何修改的情况下返回值。",
           example: "A2",
           require: "m",
@@ -9791,7 +9791,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "數值",
           detail: "要轉換為百分比的參數或其儲存格引用。\n\n如果值為數位或指向包含數值的儲存格的引用,TO_PERCENT會以1 = 100%為標準,將值轉換為百分比。\n\n如果值不是數位或指向內容為數值的儲存格的引用,則TO_PERCENT將在不做任何修改的情况下返回值。",
           example: "A2",
           require: "m",
@@ -9811,7 +9811,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -9819,7 +9819,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -9827,7 +9827,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -9847,7 +9847,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -9855,7 +9855,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -9863,7 +9863,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -9883,7 +9883,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -9891,7 +9891,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -9899,7 +9899,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -9919,7 +9919,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -9927,7 +9927,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -9935,7 +9935,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -9955,7 +9955,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -9963,7 +9963,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -9971,7 +9971,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -9991,7 +9991,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -9999,7 +9999,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -10007,7 +10007,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -10027,7 +10027,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -10035,7 +10035,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -10043,7 +10043,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -10063,7 +10063,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -10071,7 +10071,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -10079,7 +10079,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -10099,7 +10099,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -10107,7 +10107,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -10115,7 +10115,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -10135,7 +10135,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -10143,7 +10143,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -10151,7 +10151,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -10171,7 +10171,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -10179,7 +10179,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -10187,7 +10187,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -10207,7 +10207,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "資料庫",
           detail: "構成清單或資料庫的儲存格區域,清單的第一行包含每一列的標籤。",
           example: "A2:F20",
           require: "m",
@@ -10215,7 +10215,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
+          name: "欄位",
           detail: "指定database中的哪一列包含要選取和用於計算的值。\n\nfield可以是與database第一行中某個列標題對應的文字標籤,也可以是指定相關列的數位索引,第一列的索引值為1。",
           example: "G2",
           require: "m",
@@ -10223,7 +10223,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria",
+          name: "條件",
           detail: "包含所指定條件的儲存格區域。計算之前將使用這些條件來過濾database中的值。",
           example: "A22:D23",
           require: "m",
@@ -11371,7 +11371,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "要排序的範圍或數組。",
           example: "A2:A17",
           require: "m",
@@ -11379,7 +11379,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "sort_index",
+          name: "排序索引",
           detail: "[可選] - 表示要排序的行或列的數位。（默認row1/col1）",
           example: "1",
           require: "o",
@@ -11387,7 +11387,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "sort_order",
+          name: "排序順序",
           detail: "[可選] - 表示所需排序順序的數位；1表示昇冪（默認），-1表示降序。",
           example: "-1",
           require: "o",
@@ -11395,7 +11395,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "by_col",
+          name: "按列",
           detail: "[可選] - 表示所需排序方向的邏輯值；按行排序為FALSE（）（默認），按列排序為TRUE（）。",
           example: "TRUE()",
           require: "o",
@@ -11415,7 +11415,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "要篩選的數組或範圍。",
           example: "A5:D20",
           require: "m",
@@ -11423,7 +11423,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "include",
+          name: "包含",
           detail: "布林數組，其高度或寬度與數組相同",
           example: "1",
           require: "m",
@@ -11431,7 +11431,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "if_empty",
+          name: "空值時返回",
           detail: "[可選] - 如果包含數組中的所有值都為空（filter不返回任何值），則返回的值。",
           example: "\"\"",
           require: "o",
@@ -11451,7 +11451,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array",
+          name: "陣列",
           detail: "從其返回唯一值的數組或區域。",
           example: "A2:B26",
           require: "m",
@@ -11459,7 +11459,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "by_col",
+          name: "按列",
           detail: "[可選] - 邏輯值，訓示如何比較；按行= FALSE（）或省略；按列= TRUE（）。",
           example: "TRUE()",
           require: "o",
@@ -11467,7 +11467,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "occurs_once",
+          name: "僅一次",
           detail: "[可選] - 邏輯值，僅返回唯一值中出現一次= TRUE（）；包括所有唯一值= FALSE（）或省略。",
           example: "FALSE()",
           require: "o",
@@ -11487,7 +11487,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
+          name: "行數",
           detail: "[可選] - 要返回的行數。",
           example: "1",
           require: "o",
@@ -11495,7 +11495,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cols",
+          name: "列數",
           detail: "[可選] - 要返回的列數。",
           example: "1",
           require: "o",
@@ -11515,7 +11515,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rows",
+          name: "行數",
           detail: "要返回的行數。",
           example: "1",
           require: "m",
@@ -11523,7 +11523,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cols",
+          name: "列數",
           detail: "[可選] - 要返回的列數。",
           example: "1",
           require: "o",
@@ -11531,7 +11531,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "start",
+          name: "起始值",
           detail: "[可選] - 序列中的第一個數位。",
           example: "1",
           require: "o",
@@ -11539,7 +11539,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "step",
+          name: "步長",
           detail: "[可選] -序列中每個序列值的增量。",
           example: "1",
           require: "o",

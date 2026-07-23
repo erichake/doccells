@@ -18,7 +18,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "диапазон",
           detail: "Диапазон, который проверяется по критерию.",
           example: "A1:A10",
           require: "m",
@@ -26,7 +26,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion",
+          name: "критерий",
           detail: "Шаблон или условие, применяемое к диапазону.",
           example: "\">20\"",
           require: "m",
@@ -34,8 +34,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "sum_range",
-          detail: "Диапазон для суммирования, если отличается от `range`.",
+          name: "диапазон_суммирования",
+          detail: "Диапазон для суммирования, если отличается от `диапазон`.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -54,7 +54,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
+          name: "угол",
           detail: "Угол в радианах, для которого вычисляется тангенс.",
           example: "45*PI()/180",
           require: "m",
@@ -74,7 +74,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Любое действительное значение, для которого вычисляется гиперболический тангенс.",
           example: "A2",
           require: "m",
@@ -86,7 +86,7 @@ module.exports = {
     {
       n: "CEILING",
       t: 0,
-      d: "Округляет число вверх до ближайшего целого, кратного указанному значению `factor`.",
+      d: "Округляет число вверх до ближайшего целого, кратного указанному значению `коэффициент`.",
       a: "Округление числа вверх до ближайшего кратного.",
       m: [
         2,
@@ -94,16 +94,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Значение, которое округляется вверх до ближайшего целого, кратного `factor`.",
+          name: "значение",
+          detail: "Значение, которое округляется вверх до ближайшего целого, кратного `коэффициент`.",
           example: "23.25",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor",
-          detail: "Число, до кратного которому округляется `value`.",
+          name: "коэффициент",
+          detail: "Число, до кратного которому округляется `значение`.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -122,7 +122,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, для которого вычисляется арктангенс.",
           example: "0",
           require: "m",
@@ -142,7 +142,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, для которого вычисляется обратный гиперболический синус.",
           example: "0.9",
           require: "m",
@@ -162,7 +162,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Число, для которого возвращается абсолютное значение.",
           example: "-2",
           require: "m",
@@ -182,7 +182,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, для которого вычисляется арккосинус. Должно быть в диапазоне от `-1` до `1` включительно.",
           example: "0",
           require: "m",
@@ -202,7 +202,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, для которого вычисляется обратный гиперболический косинус. Должно быть больше или равно `1`.",
           example: "2",
           require: "m",
@@ -222,7 +222,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для рассмотрения.",
           example: "1",
           require: "m",
@@ -230,7 +230,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для рассмотрения.",
           example: "2",
           require: "o",
@@ -250,7 +250,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, для которого вычисляется обратный гиперболический тангенс. Должно быть в диапазоне от -1 до 1 (исключительно).",
           example: "0.9",
           require: "m",
@@ -298,7 +298,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон, в котором подсчитывается количество пустых ячеек.",
           example: "A2:C100",
           require: "m",
@@ -318,7 +318,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Любое действительное значение, для которого вычисляется гиперболический косинус.",
           example: "A2",
           require: "m",
@@ -338,7 +338,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, которое округляется вниз до ближайшего целого.",
           example: "99.44",
           require: "m",
@@ -358,7 +358,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, которое проверяется на чётность.",
           example: "4",
           require: "m",
@@ -378,7 +378,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, которое проверяется на нечётность.",
           example: "4",
           require: "m",
@@ -398,7 +398,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон, факторы которого учитываются при вычислении наименьшего общего кратного.",
           example: "A2:A5",
           require: "m",
@@ -406,7 +406,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны, факторы которых учитываются при вычислении наименьшего общего кратного.",
           example: "3",
           require: "o",
@@ -426,7 +426,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, для которого вычисляется натуральный логарифм.",
           example: "100",
           require: "m",
@@ -446,7 +446,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, для которого вычисляется логарифм.",
           example: "128",
           require: "m",
@@ -454,7 +454,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "base",
+          name: "основание",
           detail: "Основание для вычисления логарифма.",
           example: "2",
           require: "o",
@@ -474,7 +474,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, для которого вычисляется логарифм по основанию 10.",
           example: "100",
           require: "m",
@@ -494,7 +494,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "делимое",
           detail: "Число, которое делится для получения остатка.",
           example: "10",
           require: "m",
@@ -502,7 +502,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "divisor",
+          name: "делитель",
           detail: "Число, на которое производится деление.",
           example: "4",
           require: "m",
@@ -522,7 +522,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Число, которое округляется до ближайшего целого, кратного другому числу.",
           example: "21",
           require: "m",
@@ -530,8 +530,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor",
-          detail: "Число, до кратного которого округляется `value`.",
+          name: "коэффициент",
+          detail: "Число, до кратного которого округляется `значение`.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -550,7 +550,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, которое округляется до следующего нечётного числа.",
           example: "2",
           require: "m",
@@ -570,7 +570,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое число или диапазон, квадраты которых суммируются.",
           example: "A2:A100",
           require: "m",
@@ -578,8 +578,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Дополнительные числа или диапазоны, квадраты которых добавляются к квадрату `value1`.",
+          name: "значение2",
+          detail: "Дополнительные числа или диапазоны, квадраты которых добавляются к квадрату `значение1`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -626,7 +626,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое число или диапазон для суммирования.",
           example: "A2:A100",
           require: "m",
@@ -634,8 +634,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Дополнительные числа или диапазоны для добавления к `value1`.",
+          name: "значение2",
+          detail: "Дополнительные числа или диапазоны для добавления к `значение1`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -654,7 +654,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "function_code",
+          name: "код_функции",
           detail: "Код функции для использования в промежуточной агрегации.",
           example: "1",
           require: "m",
@@ -662,7 +662,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "range1",
+          name: "диапазон1",
           detail: "Первый диапазон, для которого вычисляется промежуточный итог.",
           example: "A2:A5",
           require: "m",
@@ -670,7 +670,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "range2",
+          name: "диапазон2",
           detail: "Дополнительные диапазоны, для которых вычисляются промежуточные итоги.",
           example: "B2:B8",
           require: "o",
@@ -690,7 +690,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, для которого вычисляется арксинус. Должно быть в диапазоне от `-1` до `1` включительно.",
           example: "0",
           require: "m",
@@ -710,7 +710,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "диапазон",
           detail: "Диапазон, который проверяется по критерию.",
           example: "A1:A10",
           require: "m",
@@ -718,7 +718,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion",
+          name: "критерий",
           detail: "Шаблон или условие, применяемое к диапазону.",
           example: "\">20\"",
           require: "m",
@@ -738,7 +738,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
+          name: "угол",
           detail: "Угол для преобразования из градусов в радианы.",
           example: "180",
           require: "m",
@@ -769,7 +769,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для учёта уникальности.",
           example: "A1:C100",
           require: "m",
@@ -777,7 +777,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для учёта уникальности.",
           example: "1",
           require: "o",
@@ -797,7 +797,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
+          name: "угол",
           detail: "Угол для преобразования из радиан в градусы.",
           example: "PI()",
           require: "m",
@@ -837,7 +837,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, которое округляется до следующего чётного числа.",
           example: "3",
           require: "m",
@@ -857,7 +857,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "exponent",
+          name: "показатель_степени",
           detail: "Степень, в которую возводится число e.",
           example: "2",
           require: "m",
@@ -877,7 +877,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Число или ссылка на число, факториал которого будет вычислен и возвращён.",
           example: "3",
           require: "m",
@@ -897,7 +897,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Число или ссылка на число, двойной факториал которого будет вычислен и возвращён.",
           example: "6",
           require: "m",
@@ -920,7 +920,7 @@ module.exports = {
     {
       n: "FLOOR",
       t: 0,
-      d: "Округляет число вниз до ближайшего целого, кратного указанному значению `factor`.",
+      d: "Округляет число вниз до ближайшего целого, кратного указанному значению `коэффициент`.",
       a: "Округление числа вниз до ближайшего кратного.",
       m: [
         2,
@@ -928,16 +928,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Значение, которое округляется вниз до ближайшего целого, кратного `factor`.",
+          name: "значение",
+          detail: "Значение, которое округляется вниз до ближайшего целого, кратного `коэффициент`.",
           example: "23.25",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor",
-          detail: "Число, до кратного которого округляется `value`.",
+          name: "коэффициент",
+          detail: "Число, до кратного которого округляется `значение`.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -956,7 +956,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон, факторы которого учитываются при вычислении наибольшего общего делителя.",
           example: "A2:A5",
           require: "m",
@@ -964,7 +964,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны, факторы которых учитываются при вычислении наибольшего общего делителя.",
           example: "96",
           require: "o",
@@ -984,7 +984,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "low",
+          name: "нижняя_граница",
           detail: "Нижняя граница случайного диапазона.",
           example: "1",
           require: "m",
@@ -992,7 +992,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "high",
+          name: "верхняя_граница",
           detail: "Верхняя граница случайного диапазона.",
           example: "10",
           require: "m",
@@ -1012,7 +1012,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, которое округляется до указанного количества знаков после запятой.",
           example: "99.44",
           require: "m",
@@ -1020,7 +1020,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "знаки",
           detail: "Количество знаков после запятой для округления.",
           example: "1",
           require: "m",
@@ -1040,7 +1040,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, которое округляется до указанного количества знаков после запятой, всегда округляя вниз.",
           example: "99.44",
           require: "m",
@@ -1048,7 +1048,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "знаки",
           detail: "Количество знаков после запятой для округления.",
           example: "1",
           require: "m",
@@ -1068,7 +1068,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, которое округляется до указанного количества знаков после запятой, всегда округляя вверх.",
           example: "99.44",
           require: "m",
@@ -1076,7 +1076,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "знаки",
           detail: "Количество знаков после запятой для округления.",
           example: "1",
           require: "m",
@@ -1140,7 +1140,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, знак которого будет определён.",
           example: "-42",
           require: "m",
@@ -1160,7 +1160,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
+          name: "угол",
           detail: "Угол в радианах, для которого вычисляется синус.",
           example: "PI()",
           require: "m",
@@ -1180,7 +1180,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Любое действительное значение, для которого вычисляется гиперболический синус.",
           example: "A2",
           require: "m",
@@ -1200,7 +1200,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Число, для которого вычисляется положительный квадратный корень.",
           example: "9",
           require: "m",
@@ -1220,7 +1220,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Число, которое умножается на Пи, и возвращается квадратный корень их произведения.",
           example: "9",
           require: "m",
@@ -1240,8 +1240,8 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Входное значение для гамма-функции. Возвращается натуральный логарифм гамма-функции от `value`.",
+          name: "значение",
+          detail: "Входное значение для гамма-функции. Возвращается натуральный логарифм гамма-функции от `значение`.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -1260,7 +1260,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "angle",
+          name: "угол",
           detail: "Угол в радианах, для которого вычисляется косинус.",
           example: "PI()",
           require: "m",
@@ -1280,7 +1280,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, которое усекается.",
           example: "3.141592654",
           require: "m",
@@ -1288,7 +1288,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "places",
+          name: "знаки",
           detail: "Количество значащих цифр после запятой, которые сохраняются.",
           example: "2",
           require: "o",
@@ -1308,7 +1308,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "делимое",
           detail: "Число, которое делится.",
           example: "4",
           require: "m",
@@ -1316,7 +1316,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "divisor",
+          name: "делитель",
           detail: "Число, на которое производится деление.",
           example: "2",
           require: "m",
@@ -1336,16 +1336,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "base",
-          detail: "Число, которое возводится в степень `exponent`.",
+          name: "основание",
+          detail: "Число, которое возводится в степень `показатель_степени`.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "exponent",
-          detail: "Степень, в которую возводится `base`.",
+          name: "показатель_степени",
+          detail: "Степень, в которую возводится `основание`.",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -1364,7 +1364,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "sum_range",
+          name: "диапазон_суммирования",
           detail: "Диапазон для суммирования.",
           example: "A1:A10",
           require: "m",
@@ -1372,7 +1372,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criteria_range1",
+          name: "диапазон_критериев1",
           detail: "Диапазон для проверки по критерию criterion1.",
           example: "B1:B10",
           require: "m",
@@ -1380,7 +1380,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion1",
+          name: "критерий1",
           detail: "Шаблон или условие, применяемое к criteria_range1.",
           example: "\">20\"",
           require: "m",
@@ -1388,7 +1388,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
+          name: "диапазон_критериев2",
           detail: "Дополнительные диапазоны для проверки.",
           example: "C1:C10",
           require: "o",
@@ -1408,7 +1408,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range1",
+          name: "диапазон_критериев1",
           detail: "Диапазон для проверки по критерию criterion1.",
           example: "A1:A10",
           require: "m",
@@ -1416,7 +1416,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "criterion1",
+          name: "критерий1",
           detail: "Шаблон или условие, применяемое к criteria_range1.",
           example: "\">20\"",
           require: "m",
@@ -1424,7 +1424,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
+          name: "диапазон_критериев2",
           detail: "Дополнительные диапазоны для проверки.",
           example: "B1:B10",
           require: "o",
@@ -1444,7 +1444,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
+          name: "множитель1",
           detail: "Первое число или диапазон для вычисления произведения.",
           example: "A2:A100",
           require: "m",
@@ -1452,7 +1452,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor2",
+          name: "множитель2",
           detail: "Дополнительные числа или диапазоны для вычисления произведения.",
           example: "2",
           require: "o",
@@ -1472,7 +1472,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
@@ -1480,7 +1480,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
@@ -1500,7 +1500,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
+          name: "количество_успехов",
           detail: "Желаемое количество успехов.",
           example: "4",
           require: "m",
@@ -1508,7 +1508,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "num_draws",
+          name: "количество_попыток",
           detail: "Количество допустимых попыток.",
           example: "12",
           require: "m",
@@ -1516,7 +1516,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "successes_in_pop",
+          name: "успехов_в_популяции",
           detail: "Общее количество успехов в популяции.",
           example: "20",
           require: "m",
@@ -1524,7 +1524,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pop_size",
+          name: "размер_популяции",
           detail: "Общий размер популяции.",
           example: "40",
           require: "m",
@@ -1532,7 +1532,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет форму функции. \n\nЕсли cumulative равно TRUE(), функция HYPGEOMDIST возвращает кумулятивную функцию распределения;\n\nесли FALSE(), возвращается функция плотности вероятности.",
           example: "TRUE()",
           require: "m",
@@ -1552,7 +1552,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
@@ -1560,7 +1560,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
@@ -1580,7 +1580,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон набора данных.",
           example: "1",
           require: "m",
@@ -1588,7 +1588,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в набор данных.",
           example: "2",
           require: "o",
@@ -1608,7 +1608,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:B100",
           require: "m",
@@ -1636,7 +1636,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
@@ -1644,7 +1644,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
@@ -1664,7 +1664,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
@@ -1672,7 +1672,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
@@ -1692,7 +1692,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
@@ -1700,7 +1700,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
@@ -1720,7 +1720,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, ранг которого будет определён.",
           example: "A10",
           require: "m",
@@ -1728,7 +1728,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A1:A100",
           require: "m",
@@ -1736,8 +1736,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "is_ascending",
-          detail: "Определяет, рассматривать ли значения в `data` в порядке убывания или возрастания. Если не указано, по умолчанию используется убывание (FALSE).",
+          name: "по_возрастанию",
+          detail: "Определяет, рассматривать ли значения в `данные` в порядке убывания или возрастания. Если не указано, по умолчанию используется убывание (FALSE).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1756,7 +1756,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, ранг которого будет определён.",
           example: "A10",
           require: "m",
@@ -1764,7 +1764,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A1:A100",
           require: "m",
@@ -1772,8 +1772,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "is_ascending",
-          detail: "Определяет, рассматривать ли значения в `data` в порядке убывания или возрастания. Если не указано, по умолчанию используется убывание (FALSE).",
+          name: "по_возрастанию",
+          detail: "Определяет, рассматривать ли значения в `данные` в порядке убывания или возрастания. Если не указано, по умолчанию используется убывание (FALSE).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -1792,7 +1792,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A1:A100",
           require: "m",
@@ -1800,7 +1800,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, процентный ранг которого будет определён.",
           example: "A2",
           require: "m",
@@ -1808,7 +1808,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "значащие_цифры",
           detail: "Количество значащих цифр для использования в вычислении. По умолчанию равно 3.",
           example: "4",
           require: "o",
@@ -1828,7 +1828,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A1:A100",
           require: "m",
@@ -1836,7 +1836,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, процентный ранг которого будет определён.",
           example: "A2",
           require: "m",
@@ -1844,7 +1844,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "значащие_цифры",
           detail: "Количество значащих цифр для использования в вычислении. По умолчанию равно 3.",
           example: "4",
           require: "o",
@@ -1872,7 +1872,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
@@ -1880,7 +1880,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
@@ -1900,7 +1900,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, для которого вычисляется обратное преобразование Фишера.",
           example: "0.962",
           require: "m",
@@ -1920,7 +1920,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, для которого вычисляется преобразование Фишера.",
           example: "0.962",
           require: "m",
@@ -1940,7 +1940,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления моды.",
           example: "A2:A100",
           require: "m",
@@ -1948,7 +1948,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления моды.",
           example: "B2:B100",
           require: "o",
@@ -1976,7 +1976,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "shape",
+          name: "форма",
           detail: "Параметр формы функции распределения Вейбулла.",
           example: "2",
           require: "m",
@@ -1984,7 +1984,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "scale",
+          name: "масштаб",
           detail: "Параметр масштаба функции распределения Вейбулла.",
           example: "3",
           require: "m",
@@ -1992,7 +1992,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет, использовать ли кумулятивную функцию распределения.",
           example: "TRUE()",
           require: "m",
@@ -2012,7 +2012,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для подсчёта.",
           example: "A2:A100",
           require: "m",
@@ -2020,7 +2020,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для подсчёта.",
           example: "B2:B100",
           require: "o",
@@ -2040,7 +2040,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для подсчёта.",
           example: "A2:A100",
           require: "m",
@@ -2048,7 +2048,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для подсчёта.",
           example: "B2:B100",
           require: "o",
@@ -2068,7 +2068,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
@@ -2076,7 +2076,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
@@ -2096,7 +2096,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления среднего значения.",
           example: "A2:A100",
           require: "m",
@@ -2104,7 +2104,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления среднего значения.",
           example: "B2:B100",
           require: "o",
@@ -2124,7 +2124,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления среднего значения.",
           example: "A2:A100",
           require: "m",
@@ -2132,7 +2132,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления среднего значения.",
           example: "B2:B100",
           require: "o",
@@ -2152,15 +2152,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_successes",
-          detail: "Количество успехов, для которого вычисляется вероятность за `num_trials` попыток.",
+          name: "количество_успехов",
+          detail: "Количество успехов, для которого вычисляется вероятность за `количество_испытаний` попыток.",
           example: "4",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "num_trials",
+          name: "количество_испытаний",
           detail: "Количество независимых попыток.",
           example: "100",
           require: "m",
@@ -2168,7 +2168,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "prob_success",
+          name: "вероятность_успеха",
           detail: "Вероятность успеха в любой отдельной попытке.",
           example: "0.005",
           require: "m",
@@ -2176,7 +2176,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет, использовать ли кумулятивное биномиальное распределение.",
           example: "FALSE()",
           require: "m",
@@ -2196,7 +2196,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_trials",
+          name: "количество_испытаний",
           detail: "Количество независимых попыток.",
           example: "100",
           require: "m",
@@ -2204,7 +2204,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "prob_success",
+          name: "вероятность_успеха",
           detail: "Вероятность успеха в любой отдельной попытке.",
           example: "0.005",
           require: "m",
@@ -2212,7 +2212,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "target_prob",
+          name: "целевая_вероятность",
           detail: "Целевая пороговая вероятность.",
           example: "0.8",
           require: "m",
@@ -2232,7 +2232,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "alpha",
+          name: "альфа",
           detail: "Единица минус желаемый уровень доверия. Например, `0.1` для 90% доверия (`0.9`).",
           example: "0.05",
           require: "m",
@@ -2240,7 +2240,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение популяции.",
           example: "1.6",
           require: "m",
@@ -2248,7 +2248,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "pop_size",
+          name: "размер_популяции",
           detail: "Размер популяции.",
           example: "250",
           require: "m",
@@ -2268,7 +2268,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
@@ -2276,7 +2276,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
@@ -2296,7 +2296,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "B2:B100",
           require: "m",
@@ -2304,7 +2304,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "A2:A100",
           require: "m",
@@ -2324,7 +2324,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
@@ -2332,7 +2332,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
@@ -2352,7 +2352,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
@@ -2360,7 +2360,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
@@ -2388,7 +2388,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "lambda",
+          name: "лямбда",
           detail: "Параметр лямбда для функции экспоненциального распределения.",
           example: "0.5",
           require: "m",
@@ -2396,7 +2396,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет, использовать ли кумулятивное экспоненциальное распределение.",
           example: "FALSE()",
           require: "m",
@@ -2416,7 +2416,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "criteria_range",
+          name: "диапазон_критериев",
           detail: "Диапазон для проверки по критерию.",
           example: "A1:A10",
           require: "m",
@@ -2424,16 +2424,16 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criterion",
-          detail: "Шаблон или условие, применяемое к `criteria_range`.",
+          name: "критерий",
+          detail: "Шаблон или условие, применяемое к `диапазон_критериев`.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "average_range",
-          detail: "Диапазон для вычисления среднего. Если не указан, используется `criteria_range`.",
+          name: "диапазон_усреднения",
+          detail: "Диапазон для вычисления среднего. Если не указан, используется `диапазон_критериев`.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -2452,7 +2452,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "average_range",
+          name: "диапазон_усреднения",
           detail: "Диапазон для вычисления среднего.",
           example: "A1:A10",
           require: "m",
@@ -2460,23 +2460,23 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "criteria_range1",
-          detail: "Диапазон для проверки по критерию `criterion1`.",
+          name: "диапазон_критериев1",
+          detail: "Диапазон для проверки по критерию `критерий1`.",
           example: "B1:B10",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criterion1",
-          detail: "Шаблон или условие, применяемое к `criteria_range1`.",
+          name: "критерий1",
+          detail: "Шаблон или условие, применяемое к `диапазон_критериев1`.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria_range2",
+          name: "диапазон_критериев2",
           detail: "Дополнительные диапазоны для проверки.",
           example: "C1:C10",
           require: "m",
@@ -2524,7 +2524,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
@@ -2532,7 +2532,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "exclude_proportion",
+          name: "исключаемая_доля",
           detail: "Доля набора данных, исключаемая с крайних значений набора.",
           example: "0.1",
           require: "m",
@@ -2552,7 +2552,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
@@ -2560,8 +2560,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "percentile",
-          detail: "Процентиль, исключая 0 и 1, значение которого в `data` будет вычислено и возвращено.",
+          name: "процентиль",
+          detail: "Процентиль, исключая 0 и 1, значение которого в `данные` будет вычислено и возвращено.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2580,7 +2580,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
@@ -2588,8 +2588,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "percentile",
-          detail: "Процентиль, значение которого в `data` будет вычислено и возвращено.",
+          name: "процентиль",
+          detail: "Процентиль, значение которого в `данные` будет вычислено и возвращено.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2608,7 +2608,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
@@ -2616,7 +2616,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
@@ -2664,7 +2664,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет форму функции. \n\nЕсли TRUE(), возвращается кумулятивная функция распределения;\n\nЕсли FALSE(), возвращается функция плотности вероятности.",
           example: "FALSE()",
           require: "m",
@@ -2692,7 +2692,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение (му) функции нормального распределения.",
           example: "1",
           require: "m",
@@ -2700,7 +2700,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение (сигма) функции нормального распределения.",
           example: "4",
           require: "m",
@@ -2728,7 +2728,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение (му) функции нормального распределения.",
           example: "1",
           require: "m",
@@ -2736,7 +2736,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение (сигма) функции нормального распределения.",
           example: "4",
           require: "m",
@@ -2744,7 +2744,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет, использовать ли кумулятивную функцию нормального распределения вместо функции распределения.",
           example: "FALSE()",
           require: "m",
@@ -2764,7 +2764,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_failures",
+          name: "количество_неудач",
           detail: "Количество неудач для моделирования.",
           example: "4",
           require: "m",
@@ -2772,7 +2772,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "num_successes",
+          name: "количество_успехов",
           detail: "Количество успехов для моделирования.",
           example: "2",
           require: "m",
@@ -2780,7 +2780,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "prob_success",
+          name: "вероятность_успеха",
           detail: "Вероятность успеха в любом отдельном испытании.",
           example: "0.1",
           require: "m",
@@ -2788,7 +2788,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет форму функции. \n\nЕсли TRUE(), возвращается кумулятивная функция распределения;\n\nЕсли FALSE(), возвращается функция плотности вероятности.",
           example: "FALSE()",
           require: "m",
@@ -2808,7 +2808,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления минимального значения.",
           example: "A2:A100",
           require: "m",
@@ -2816,7 +2816,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления минимального значения.",
           example: "B2:B100",
           require: "o",
@@ -2836,7 +2836,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления минимального значения.",
           example: "A2:A100",
           require: "m",
@@ -2844,7 +2844,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления минимального значения.",
           example: "B2:B100",
           require: "o",
@@ -2864,7 +2864,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления медианного значения.",
           example: "A2:A100",
           require: "m",
@@ -2872,7 +2872,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления медианного значения.",
           example: "B2:B100",
           require: "o",
@@ -2892,7 +2892,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления максимального значения.",
           example: "A2:A100",
           require: "m",
@@ -2900,7 +2900,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления максимального значения.",
           example: "B2:B100",
           require: "o",
@@ -2920,7 +2920,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления максимального значения.",
           example: "A2:A100",
           require: "m",
@@ -2928,7 +2928,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления максимального значения.",
           example: "B2:B100",
           require: "o",
@@ -2956,7 +2956,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение (му) обратной функции логнормального кумулятивного распределения.",
           example: "4",
           require: "m",
@@ -2964,7 +2964,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение (сигма) обратной функции логнормального кумулятивного распределения.",
           example: "6",
           require: "m",
@@ -2992,7 +2992,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение (му) функции логнормального кумулятивного распределения.",
           example: "4",
           require: "m",
@@ -3000,7 +3000,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение (сигма) функции логнормального кумулятивного распределения.",
           example: "6",
           require: "m",
@@ -3008,7 +3008,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет форму функции. \n\nЕсли TRUE(), возвращается кумулятивная функция распределения;\n\nЕсли FALSE(), возвращается функция плотности вероятности.",
           example: "FALSE()",
           require: "m",
@@ -3028,7 +3028,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
@@ -3036,7 +3036,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "value",
+          name: "значение",
           detail: "Тестовая статистика для использования в Z-тесте.",
           example: "B2",
           require: "m",
@@ -3044,7 +3044,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение для Z-теста. Если не указано, используется стандартное отклонение данных.",
           example: "3",
           require: "o",
@@ -3064,7 +3064,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A3:A6",
           require: "m",
@@ -3072,15 +3072,15 @@ module.exports = {
           type: "range"
         },
         {
-          name: "probabilities",
-          detail: "Массив или диапазон, содержащий вероятности, соответствующие `data`.",
+          name: "вероятности",
+          detail: "Массив или диапазон, содержащий вероятности, соответствующие `данные`.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "low_limit",
+          name: "нижний_предел",
           detail: "Нижняя граница диапазона значений для вычисления вероятности.",
           example: "3",
           require: "m",
@@ -3088,7 +3088,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "high_limit",
+          name: "верхний_предел",
           detail: "Верхняя граница диапазона значений для вычисления вероятности.",
           example: "4",
           require: "o",
@@ -3108,7 +3108,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
@@ -3116,7 +3116,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
+          name: "номер_квартиля",
           detail: "Какой квартиль вернуть.",
           example: "3",
           require: "m",
@@ -3136,7 +3136,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
@@ -3144,7 +3144,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
+          name: "номер_квартиля",
           detail: "Какой квартиль вернуть.",
           example: "3",
           require: "m",
@@ -3172,7 +3172,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение (му) функции распределения Пуассона.",
           example: "1",
           require: "m",
@@ -3180,7 +3180,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет, использовать ли кумулятивную функцию распределения Пуассона вместо функции распределения.",
           example: "FALSE()",
           require: "m",
@@ -3200,7 +3200,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
@@ -3208,7 +3208,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
@@ -3236,7 +3236,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "степени_свободы",
           detail: "Количество степеней свободы.",
           example: "30",
           require: "m",
@@ -3244,7 +3244,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Если TRUE(), возвращается кумулятивная функция распределения; если FALSE(), возвращается функция плотности вероятности.",
           example: "TRUE()",
           require: "m",
@@ -3272,7 +3272,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "степени_свободы",
           detail: "Количество степеней свободы.",
           example: "30",
           require: "m",
@@ -3300,7 +3300,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "степени_свободы",
           detail: "Количество степеней свободы.",
           example: "30",
           require: "m",
@@ -3320,7 +3320,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "вероятность",
           detail: "Вероятность, связанная с двухсторонним t-распределением.",
           example: "0.35",
           require: "m",
@@ -3328,7 +3328,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "степени_свободы",
           detail: "Количество степеней свободы.",
           example: "1",
           require: "m",
@@ -3348,7 +3348,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "вероятность",
           detail: "Вероятность, связанная с двухсторонним t-распределением.",
           example: "0.35",
           require: "m",
@@ -3356,7 +3356,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "степени_свободы",
           detail: "Количество степеней свободы.",
           example: "1",
           require: "m",
@@ -3376,7 +3376,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range1",
+          name: "диапазон1",
           detail: "Первая выборка данных или группа ячеек для t-теста.",
           example: "A1:A4",
           require: "m",
@@ -3384,7 +3384,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "range2",
+          name: "диапазон2",
           detail: "Вторая выборка данных или группа ячеек для t-теста.",
           example: "B1:B4",
           require: "m",
@@ -3392,7 +3392,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "tails",
+          name: "хвосты",
           detail: "Указывает количество хвостов распределения.",
           example: "2",
           require: "m",
@@ -3400,7 +3400,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "тип",
           detail: "Указывает тип t-теста.",
           example: "1",
           require: "m",
@@ -3428,7 +3428,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
+          name: "степени_свободы1",
           detail: "Числитель количества степеней свободы.",
           example: "7",
           require: "m",
@@ -3436,7 +3436,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
+          name: "степени_свободы2",
           detail: "Знаменатель количества степеней свободы.",
           example: "6",
           require: "m",
@@ -3444,7 +3444,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Логическое значение, определяющее форму функции.",
           example: "TRUE()",
           require: "m",
@@ -3472,7 +3472,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
+          name: "степени_свободы1",
           detail: "Числитель количества степеней свободы.",
           example: "7",
           require: "m",
@@ -3480,7 +3480,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
+          name: "степени_свободы2",
           detail: "Знаменатель количества степеней свободы.",
           example: "6",
           require: "m",
@@ -3500,7 +3500,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
@@ -3508,7 +3508,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
@@ -3528,7 +3528,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
@@ -3536,7 +3536,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
@@ -3556,7 +3556,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
@@ -3564,7 +3564,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
@@ -3584,7 +3584,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
@@ -3592,7 +3592,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
@@ -3612,7 +3612,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
@@ -3620,7 +3620,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
@@ -3640,7 +3640,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение случайной величины для нормализации.",
           example: "96",
           require: "m",
@@ -3648,7 +3648,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение распределения.",
           example: "80",
           require: "m",
@@ -3656,7 +3656,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение распределения.",
           example: "6.7",
           require: "m",
@@ -3676,7 +3676,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:B100",
           require: "m",
@@ -3704,7 +3704,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
@@ -3712,7 +3712,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
@@ -3732,7 +3732,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон набора данных.",
           example: "1",
           require: "m",
@@ -3740,7 +3740,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в набор данных.",
           example: "2",
           require: "o",
@@ -3760,7 +3760,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон набора данных.",
           example: "1",
           require: "m",
@@ -3768,7 +3768,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в набор данных.",
           example: "2",
           require: "o",
@@ -3788,7 +3788,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "искомое_значение",
           detail: "Значение для поиска. Например, `42`, `\"Кошки\"` или `I24`.",
           example: "10003",
           require: "m",
@@ -3796,24 +3796,24 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Диапазон для поиска. Первый столбец диапазона проверяется на наличие ключа, указанного в `search_key`.",
+          name: "диапазон",
+          detail: "Диапазон для поиска. Первый столбец диапазона проверяется на наличие ключа, указанного в `искомое_значение`.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "index",
-          detail: "Индекс столбца возвращаемого значения, где первый столбец в `range` нумеруется как 1.",
+          name: "индекс",
+          detail: "Индекс столбца возвращаемого значения, где первый столбец в `диапазон` нумеруется как 1.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
-          detail: "Указывает, отсортирован ли столбец для поиска (первый столбец указанного диапазона). В этом случае возвращается ближайшее совпадение для `search_key`.",
+          name: "отсортировано",
+          detail: "Указывает, отсортирован ли столбец для поиска (первый столбец указанного диапазона). В этом случае возвращается ближайшее совпадение для `искомое_значение`.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3832,7 +3832,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "искомое_значение",
           detail: "Значение для поиска. Например, `42`, `\"Кошки\"` или `I24`.",
           example: "10003",
           require: "m",
@@ -3840,23 +3840,23 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Диапазон для поиска. Первая строка диапазона проверяется на наличие ключа, указанного в `search_key`.",
+          name: "диапазон",
+          detail: "Диапазон для поиска. Первая строка диапазона проверяется на наличие ключа, указанного в `искомое_значение`.",
           example: "A2:Z6",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "index",
-          detail: "Индекс строки возвращаемого значения, где первая строка в `range` нумеруется как 1.",
+          name: "индекс",
+          detail: "Индекс строки возвращаемого значения, где первая строка в `диапазон` нумеруется как 1.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
+          name: "отсортировано",
           detail: "Указывает, отсортирована ли строка для поиска (первая строка указанного диапазона).",
           example: "FALSE()",
           require: "o",
@@ -3876,7 +3876,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "искомое_значение",
           detail: "Значение для поиска в строке или столбце. Например, `42`, `\"Кошки\"` или `I24`.",
           example: "10003",
           require: "m",
@@ -3884,16 +3884,16 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "search_range|search_result_array",
-          detail: "Один из способов использования функции — указать одну отсортированную строку или столбец `search_range` для поиска `search_key` с дополнительным аргументом `result_range`. Другой способ — объединить эти два аргумента в один `search_result_array`, где выполняется поиск в первой строке или столбце, а значение возвращается из последней строки или столбца массива. Если `search_key` не найден, может быть возвращено не точное совпадение.",
+          name: "диапазон_поиска|массив_результата_поиска",
+          detail: "Один из способов использования функции — указать одну отсортированную строку или столбец `search_range` для поиска `искомое_значение` с дополнительным аргументом `диапазон_результата`. Другой способ — объединить эти два аргумента в один `search_result_array`, где выполняется поиск в первой строке или столбце, а значение возвращается из последней строки или столбца массива. Если `искомое_значение` не найден, может быть возвращено не точное совпадение.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "result_range",
-          detail: "Диапазон, из которого возвращается результат. Возвращаемое значение соответствует местоположению, где `search_key` найден в `search_range`. Этот диапазон должен быть только одной строкой или столбцом и не должен использоваться, если применяется метод `search_result_array`.",
+          name: "диапазон_результата",
+          detail: "Диапазон, из которого возвращается результат. Возвращаемое значение соответствует местоположению, где `искомое_значение` найден в `search_range`. Этот диапазон должен быть только одной строкой или столбцом и не должен использоваться, если применяется метод `search_result_array`.",
           example: "B1:B100",
           require: "o",
           repeat: "n",
@@ -3912,7 +3912,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "row",
+          name: "строка",
           detail: "Номер строки ячейки.",
           example: "1",
           require: "m",
@@ -3920,7 +3920,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "column",
+          name: "столбец",
           detail: "Номер столбца (не имя) ячейки. `A` — это столбец номер `1`.",
           example: "2",
           require: "m",
@@ -3928,7 +3928,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "absolute_relative_mode",
+          name: "режим_ссылки",
           detail: "Указывает, является ли ссылка абсолютной по строке/столбцу. `1` — строка и столбец абсолютные (например, $A$1), `2` — строка абсолютная, столбец относительный (например, A$1), `3` — строка относительная, столбец абсолютный (например, $A1), `4` — строка и столбец относительные (например, A1).",
           example: "4",
           require: "o",
@@ -3936,7 +3936,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "use_a1_notation",
+          name: "использовать_нотацию_a1",
           detail: "Логическое значение, указывающее, использовать ли нотацию `A1` (TRUE) или нотацию `R1C1` (FALSE).",
           example: "FALSE()",
           require: "o",
@@ -3944,7 +3944,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "sheet",
+          name: "лист",
           detail: "Текст, указывающий имя листа, на который указывает адрес.",
           example: "\"Sheet2\"",
           require: "o",
@@ -3964,7 +3964,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference_as_string",
+          name: "ссылка_на_ячейку_как_строка",
           detail: "Ссылка на ячейку, записанная как строка в кавычках.",
           example: "\"Sheet2!\"&B10",
           require: "m",
@@ -3972,7 +3972,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "is_A1_notation",
+          name: "нотация_a1",
           detail: "Указывает, используется ли нотация A1 (TRUE) или нотация R1C1 (FALSE).",
           example: "FALSE()",
           require: "o",
@@ -3992,7 +3992,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "ссылка_на_ячейку",
           detail: "Ячейка, номер строки которой будет возвращён.",
           example: "A9",
           require: "o",
@@ -4012,7 +4012,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "диапазон",
           detail: "Диапазон, количество строк которого будет возвращено.",
           example: "A9:A62",
           require: "m",
@@ -4032,7 +4032,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "ссылка_на_ячейку",
           detail: "Ячейка, номер столбца которой будет возвращён. Столбец `A` соответствует `1`.",
           example: "A9",
           require: "o",
@@ -4052,7 +4052,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "диапазон",
           detail: "Диапазон, количество столбцов которого будет возвращено.",
           example: "A9:W62",
           require: "m",
@@ -4072,7 +4072,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "ссылка_на_ячейку",
           detail: "Начальная точка, от которой отсчитывается смещение строк и столбцов.",
           example: "A2",
           require: "m",
@@ -4080,7 +4080,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "offset_rows",
+          name: "смещение_строк",
           detail: "Количество строк для смещения.",
           example: "3",
           require: "m",
@@ -4088,7 +4088,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "offset_columns",
+          name: "смещение_столбцов",
           detail: "Количество столбцов для смещения.",
           example: "4",
           require: "m",
@@ -4096,7 +4096,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "height",
+          name: "высота",
           detail: "Высота возвращаемого диапазона, начиная с целевой точки смещения.",
           example: "2",
           require: "o",
@@ -4104,7 +4104,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "width",
+          name: "ширина",
           detail: "Ширина возвращаемого диапазона, начиная с целевой точки смещения.",
           example: "2",
           require: "o",
@@ -4124,7 +4124,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "искомое_значение",
           detail: "Значение для поиска. Например, `42`, `\"Кошки\"` или `I24`.",
           example: "\"Sunday\"",
           require: "m",
@@ -4132,7 +4132,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
+          name: "диапазон",
           detail: "Одномерный массив для поиска.",
           example: "A2:A9",
           require: "m",
@@ -4140,8 +4140,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "search_type",
-          detail: "Метод поиска. `1` (по умолчанию) находит наибольшее значение, меньшее или равное `search_key`, если `range` отсортирован по возрастанию. `0` находит точное совпадение, если `range` не отсортирован. `-1` находит наименьшее значение, большее или равное `search_key`, если `range` отсортирован по убыванию.",
+          name: "тип_поиска",
+          detail: "Метод поиска. `1` (по умолчанию) находит наибольшее значение, меньшее или равное `искомое_значение`, если `диапазон` отсортирован по возрастанию. `0` находит точное совпадение, если `диапазон` не отсортирован. `-1` находит наименьшее значение, большее или равное `искомое_значение`, если `диапазон` отсортирован по убыванию.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -4160,7 +4160,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
+          name: "ссылка",
           detail: "Массив ячеек для смещения.",
           example: "A1:C20",
           require: "m",
@@ -4168,7 +4168,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "row",
+          name: "строка",
           detail: "Количество строк для смещения.",
           example: "5",
           require: "m",
@@ -4176,7 +4176,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "column",
+          name: "столбец",
           detail: "Количество столбцов для смещения.",
           example: "1",
           require: "m",
@@ -4196,7 +4196,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value_name",
+          name: "имя_значения",
           detail: "Имя значения в сводной таблице, для которого нужно получить данные.",
           example: "\"SUM of number of units\"",
           require: "m",
@@ -4204,7 +4204,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "any_pivot_table_cell",
+          name: "ячейка_сводной_таблицы",
           detail: "Любая ссылка на ячейку в желаемой сводной таблице (рекомендуется верхний угол).",
           example: "'Pivot table'!A1",
           require: "m",
@@ -4212,7 +4212,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "original_column",
+          name: "исходный_столбец",
           detail: "Имя столбца в исходном наборе данных (не в сводной таблице).",
           example: "\"division\"",
           require: "o",
@@ -4220,8 +4220,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "pivot_item",
-          detail: "Имя строки или столбца, отображаемого в сводной таблице, соответствующего `original_column`, которое нужно извлечь.",
+          name: "элемент_сводной_таблицы",
+          detail: "Имя строки или столбца, отображаемого в сводной таблице, соответствующего `исходный_столбец`, которое нужно извлечь.",
           example: "\"east\"",
           require: "o",
           repeat: "y",
@@ -4240,7 +4240,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "index",
+          name: "индекс",
           detail: "Какой вариант (из до 30 предоставленных) вернуть.",
           example: "2",
           require: "m",
@@ -4248,7 +4248,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "choice1",
+          name: "выбор1",
           detail: "Потенциальное значение для возврата. Обязательно. Может быть ссылкой на ячейку или отдельным значением.",
           example: "\"A\"",
           require: "m",
@@ -4256,7 +4256,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "choice2",
+          name: "выбор2",
           detail: "Дополнительные значения для выбора.",
           example: "\"B\"",
           require: "o",
@@ -4280,7 +4280,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "link_label",
+          name: "текст_ссылки",
           detail: "Текст для отображения в ячейке в качестве ссылки, заключённый в кавычки, или ссылка на ячейку, содержащую такую метку.",
           example: "\"luckysheet\"",
           require: "m",
@@ -4300,7 +4300,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "hour",
+          name: "час",
           detail: "Часовая составляющая времени.",
           example: "11",
           require: "m",
@@ -4308,7 +4308,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "minute",
+          name: "минута",
           detail: "Минутная составляющая времени.",
           example: "40",
           require: "m",
@@ -4316,7 +4316,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "second",
+          name: "секунда",
           detail: "Секундная составляющая времени.",
           example: "59",
           require: "m",
@@ -4336,7 +4336,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time_string",
+          name: "строка_времени",
           detail: "Строка, содержащая представление времени.",
           example: "\"2:15 PM\"",
           require: "m",
@@ -4356,7 +4356,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Дата, от которой выполняется расчёт.",
           example: "DATE(1969",
           require: "m",
@@ -4364,8 +4364,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "months",
-          detail: "Количество месяцев до (отрицательное) или после (положительное) `start_date` для расчёта.",
+          name: "количество_месяцев",
+          detail: "Количество месяцев до (отрицательное) или после (положительное) `дата_начала` для расчёта.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4384,7 +4384,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Дата, от которой выполняется расчёт.",
           example: "DATE(1969",
           require: "m",
@@ -4392,8 +4392,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "months",
-          detail: "Количество месяцев до (отрицательное) или после (положительное) `start_date` для расчёта.",
+          name: "количество_месяцев",
+          detail: "Количество месяцев до (отрицательное) или после (положительное) `дата_начала` для расчёта.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4412,7 +4412,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "время",
           detail: "Время, из которого извлекается секундная составляющая.",
           example: "TIME(11",
           require: "m",
@@ -4432,7 +4432,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "время",
           detail: "Время, из которого извлекается минутная составляющая.",
           example: "TIME(11",
           require: "m",
@@ -4452,7 +4452,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "время",
           detail: "Время, из которого извлекается часовая составляющая.",
           example: "TIME(11",
           require: "m",
@@ -4483,7 +4483,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Начальная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "DATE(1969",
           require: "m",
@@ -4491,7 +4491,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "дата_окончания",
           detail: "Конечная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "7",
           require: "m",
@@ -4499,7 +4499,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "праздники",
           detail: "Диапазон или массив констант, содержащий серийные номера дат, считающихся праздниками.",
           example: "16)",
           require: "o",
@@ -4519,7 +4519,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Начальная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "DATE(1969",
           require: "m",
@@ -4527,7 +4527,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "дата_окончания",
           detail: "Конечная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "7",
           require: "m",
@@ -4535,7 +4535,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "weekend",
+          name: "выходные",
           detail: "Число или строка, указывающая, какие дни недели считаются выходными.",
           example: "16)",
           require: "o",
@@ -4543,7 +4543,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "праздники",
           detail: "Диапазон или массив констант, содержащий даты, считающиеся праздниками.",
           example: "DATE(1969",
           require: "o",
@@ -4563,7 +4563,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "дата",
           detail: "Дата, для которой определяется номер недели по ISO. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
@@ -4583,7 +4583,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "дата",
           detail: "Дата, для которой определяется номер недели. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
@@ -4591,7 +4591,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "type",
+          name: "тип",
           detail: "Число, представляющее день, с которого начинается неделя. Воскресенье = 1.",
           example: "7",
           require: "o",
@@ -4619,7 +4619,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение (му) функции нормального распределения.",
           example: "1",
           require: "m",
@@ -4627,7 +4627,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение (сигма) функции нормального распределения.",
           example: "4",
           require: "m",
@@ -4655,7 +4655,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение (му) функции нормального распределения.",
           example: "1",
           require: "m",
@@ -4663,7 +4663,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение (сигма) функции нормального распределения.",
           example: "4",
           require: "m",
@@ -4671,7 +4671,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет, использовать ли кумулятивную функцию нормального распределения вместо функции распределения.",
           example: "FALSE()",
           require: "m",
@@ -4691,7 +4691,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "num_failures",
+          name: "количество_неудач",
           detail: "Количество неудач для моделирования.",
           example: "4",
           require: "m",
@@ -4699,7 +4699,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "num_successes",
+          name: "количество_успехов",
           detail: "Количество успехов для моделирования.",
           example: "2",
           require: "m",
@@ -4707,7 +4707,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "prob_success",
+          name: "вероятность_успеха",
           detail: "Вероятность успеха в любом отдельном испытании.",
           example: "0.1",
           require: "m",
@@ -4715,7 +4715,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет форму функции. \n\nЕсли TRUE(), возвращается кумулятивная функция распределения;\n\nЕсли FALSE(), возвращается функция плотности вероятности.",
           example: "FALSE()",
           require: "m",
@@ -4735,7 +4735,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления минимального значения.",
           example: "A2:A100",
           require: "m",
@@ -4743,7 +4743,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления минимального значения.",
           example: "B2:B100",
           require: "o",
@@ -4763,7 +4763,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления минимального значения.",
           example: "A2:A100",
           require: "m",
@@ -4771,7 +4771,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления минимального значения.",
           example: "B2:B100",
           require: "o",
@@ -4791,7 +4791,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления медианного значения.",
           example: "A2:A100",
           require: "m",
@@ -4799,7 +4799,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления медианного значения.",
           example: "B2:B100",
           require: "o",
@@ -4819,7 +4819,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления максимального значения.",
           example: "A2:A100",
           require: "m",
@@ -4827,7 +4827,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления максимального значения.",
           example: "B2:B100",
           require: "o",
@@ -4847,7 +4847,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон для вычисления максимального значения.",
           example: "A2:A100",
           require: "m",
@@ -4855,7 +4855,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для вычисления максимального значения.",
           example: "B2:B100",
           require: "o",
@@ -4883,7 +4883,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение (му) обратной функции логнормального кумулятивного распределения.",
           example: "4",
           require: "m",
@@ -4891,7 +4891,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение (сигма) обратной функции логнормального кумулятивного распределения.",
           example: "6",
           require: "m",
@@ -4919,7 +4919,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение (му) функции логнормального кумулятивного распределения.",
           example: "4",
           require: "m",
@@ -4927,7 +4927,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение (сигма) функции логнормального кумулятивного распределения.",
           example: "6",
           require: "m",
@@ -4935,7 +4935,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет форму функции. \n\nЕсли TRUE(), возвращается кумулятивная функция распределения;\n\nЕсли FALSE(), возвращается функция плотности вероятности.",
           example: "FALSE()",
           require: "m",
@@ -4955,7 +4955,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
@@ -4963,7 +4963,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "value",
+          name: "значение",
           detail: "Тестовая статистика для использования в Z-тесте.",
           example: "B2",
           require: "m",
@@ -4971,7 +4971,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение для Z-теста. Если не указано, используется стандартное отклонение данных.",
           example: "3",
           require: "o",
@@ -4991,7 +4991,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A3:A6",
           require: "m",
@@ -4999,15 +4999,15 @@ module.exports = {
           type: "range"
         },
         {
-          name: "probabilities",
-          detail: "Массив или диапазон, содержащий вероятности, соответствующие `data`.",
+          name: "вероятности",
+          detail: "Массив или диапазон, содержащий вероятности, соответствующие `данные`.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "low_limit",
+          name: "нижний_предел",
           detail: "Нижняя граница диапазона значений для вычисления вероятности.",
           example: "3",
           require: "m",
@@ -5015,7 +5015,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "high_limit",
+          name: "верхний_предел",
           detail: "Верхняя граница диапазона значений для вычисления вероятности.",
           example: "4",
           require: "o",
@@ -5035,7 +5035,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
@@ -5043,7 +5043,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
+          name: "номер_квартиля",
           detail: "Какой квартиль вернуть.",
           example: "3",
           require: "m",
@@ -5063,7 +5063,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:A100",
           require: "m",
@@ -5071,7 +5071,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "quartile_number",
+          name: "номер_квартиля",
           detail: "Какой квартиль вернуть.",
           example: "3",
           require: "m",
@@ -5099,7 +5099,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение (му) функции распределения Пуассона.",
           example: "1",
           require: "m",
@@ -5107,7 +5107,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Определяет, использовать ли кумулятивную функцию распределения Пуассона вместо функции распределения.",
           example: "FALSE()",
           require: "m",
@@ -5127,7 +5127,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
@@ -5135,7 +5135,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
@@ -5163,7 +5163,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "степени_свободы",
           detail: "Количество степеней свободы.",
           example: "30",
           require: "m",
@@ -5171,7 +5171,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Если TRUE(), возвращается кумулятивная функция распределения; если FALSE(), возвращается функция плотности вероятности.",
           example: "TRUE()",
           require: "m",
@@ -5199,7 +5199,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "степени_свободы",
           detail: "Количество степеней свободы.",
           example: "30",
           require: "m",
@@ -5227,7 +5227,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "степени_свободы",
           detail: "Количество степеней свободы.",
           example: "30",
           require: "m",
@@ -5247,7 +5247,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "вероятность",
           detail: "Вероятность, связанная с двухсторонним t-распределением.",
           example: "0.35",
           require: "m",
@@ -5255,7 +5255,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "степени_свободы",
           detail: "Количество степеней свободы.",
           example: "1",
           require: "m",
@@ -5275,7 +5275,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "probability",
+          name: "вероятность",
           detail: "Вероятность, связанная с двухсторонним t-распределением.",
           example: "0.35",
           require: "m",
@@ -5283,7 +5283,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom",
+          name: "степени_свободы",
           detail: "Количество степеней свободы.",
           example: "1",
           require: "m",
@@ -5303,7 +5303,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range1",
+          name: "диапазон1",
           detail: "Первая выборка данных или группа ячеек для t-теста.",
           example: "A1:A4",
           require: "m",
@@ -5311,7 +5311,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "range2",
+          name: "диапазон2",
           detail: "Вторая выборка данных или группа ячеек для t-теста.",
           example: "B1:B4",
           require: "m",
@@ -5319,7 +5319,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "tails",
+          name: "хвосты",
           detail: "Указывает количество хвостов распределения.",
           example: "2",
           require: "m",
@@ -5327,7 +5327,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "type",
+          name: "тип",
           detail: "Указывает тип t-теста.",
           example: "1",
           require: "m",
@@ -5355,7 +5355,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
+          name: "степени_свободы1",
           detail: "Числитель количества степеней свободы.",
           example: "7",
           require: "m",
@@ -5363,7 +5363,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
+          name: "степени_свободы2",
           detail: "Знаменатель количества степеней свободы.",
           example: "6",
           require: "m",
@@ -5371,7 +5371,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cumulative",
+          name: "интегральная",
           detail: "Логическое значение, определяющее форму функции.",
           example: "TRUE()",
           require: "m",
@@ -5399,7 +5399,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom1",
+          name: "степени_свободы1",
           detail: "Числитель количества степеней свободы.",
           example: "7",
           require: "m",
@@ -5407,7 +5407,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "degrees_freedom2",
+          name: "степени_свободы2",
           detail: "Знаменатель количества степеней свободы.",
           example: "6",
           require: "m",
@@ -5427,7 +5427,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
@@ -5435,7 +5435,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
@@ -5455,7 +5455,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
@@ -5463,7 +5463,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
@@ -5483,7 +5483,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон выборки.",
           example: "1",
           require: "m",
@@ -5491,7 +5491,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в выборку.",
           example: "2",
           require: "o",
@@ -5511,7 +5511,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон популяции.",
           example: "1",
           require: "m",
@@ -5519,7 +5519,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в популяцию.",
           example: "2",
           require: "o",
@@ -5539,7 +5539,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
@@ -5547,7 +5547,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
@@ -5567,7 +5567,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение случайной величины для нормализации.",
           example: "96",
           require: "m",
@@ -5575,7 +5575,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "mean",
+          name: "среднее",
           detail: "Среднее значение распределения.",
           example: "80",
           require: "m",
@@ -5583,7 +5583,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "standard_deviation",
+          name: "стандартное_отклонение",
           detail: "Стандартное отклонение распределения.",
           example: "6.7",
           require: "m",
@@ -5603,7 +5603,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий набор данных для рассмотрения.",
           example: "A2:B100",
           require: "m",
@@ -5631,7 +5631,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data_y",
+          name: "данные_y",
           detail: "Диапазон, представляющий массив или матрицу зависимых данных.",
           example: "A2:A100",
           require: "m",
@@ -5639,7 +5639,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "data_x",
+          name: "данные_x",
           detail: "Диапазон, представляющий массив или матрицу независимых данных.",
           example: "B2:B100",
           require: "m",
@@ -5659,7 +5659,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон набора данных.",
           example: "1",
           require: "m",
@@ -5667,7 +5667,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в набор данных.",
           example: "2",
           require: "o",
@@ -5687,7 +5687,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение или диапазон набора данных.",
           example: "1",
           require: "m",
@@ -5695,7 +5695,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Дополнительные значения или диапазоны для включения в набор данных.",
           example: "2",
           require: "o",
@@ -5715,7 +5715,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "искомое_значение",
           detail: "Значение для поиска. Например, `42`, `\"Кошки\"` или `I24`.",
           example: "10003",
           require: "m",
@@ -5723,24 +5723,24 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Диапазон для поиска. Первый столбец диапазона проверяется на наличие ключа, указанного в `search_key`.",
+          name: "диапазон",
+          detail: "Диапазон для поиска. Первый столбец диапазона проверяется на наличие ключа, указанного в `искомое_значение`.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "index",
-          detail: "Индекс столбца возвращаемого значения, где первый столбец в `range` нумеруется как 1.",
+          name: "индекс",
+          detail: "Индекс столбца возвращаемого значения, где первый столбец в `диапазон` нумеруется как 1.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
-          detail: "Указывает, отсортирован ли столбец для поиска (первый столбец указанного диапазона). В этом случае возвращается ближайшее совпадение для `search_key`.",
+          name: "отсортировано",
+          detail: "Указывает, отсортирован ли столбец для поиска (первый столбец указанного диапазона). В этом случае возвращается ближайшее совпадение для `искомое_значение`.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -5759,7 +5759,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "искомое_значение",
           detail: "Значение для поиска. Например, `42`, `\"Кошки\"` или `I24`.",
           example: "10003",
           require: "m",
@@ -5767,23 +5767,23 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
-          detail: "Диапазон для поиска. Первая строка диапазона проверяется на наличие ключа, указанного в `search_key`.",
+          name: "диапазон",
+          detail: "Диапазон для поиска. Первая строка диапазона проверяется на наличие ключа, указанного в `искомое_значение`.",
           example: "A2:Z6",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "index",
-          detail: "Индекс строки возвращаемого значения, где первая строка в `range` нумеруется как 1.",
+          name: "индекс",
+          detail: "Индекс строки возвращаемого значения, где первая строка в `диапазон` нумеруется как 1.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "is_sorted",
+          name: "отсортировано",
           detail: "Указывает, отсортирована ли строка для поиска (первая строка указанного диапазона).",
           example: "FALSE()",
           require: "o",
@@ -5803,7 +5803,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "искомое_значение",
           detail: "Значение для поиска в строке или столбце. Например, `42`, `\"Кошки\"` или `I24`.",
           example: "10003",
           require: "m",
@@ -5811,16 +5811,16 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "search_range|search_result_array",
-          detail: "Один из способов использования функции — указать одну отсортированную строку или столбец `search_range` для поиска `search_key` с дополнительным аргументом `result_range`. Другой способ — объединить эти два аргумента в один `search_result_array`, где выполняется поиск в первой строке или столбце, а значение возвращается из последней строки или столбца массива. Если `search_key` не найден, может быть возвращено не точное совпадение.",
+          name: "диапазон_поиска|массив_результата_поиска",
+          detail: "Один из способов использования функции — указать одну отсортированную строку или столбец `search_range` для поиска `искомое_значение` с дополнительным аргументом `диапазон_результата`. Другой способ — объединить эти два аргумента в один `search_result_array`, где выполняется поиск в первой строке или столбце, а значение возвращается из последней строки или столбца массива. Если `искомое_значение` не найден, может быть возвращено не точное совпадение.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "result_range",
-          detail: "Диапазон, из которого возвращается результат. Возвращаемое значение соответствует местоположению, где `search_key` найден в `search_range`. Этот диапазон должен быть только одной строкой или столбцом и не должен использоваться, если применяется метод `search_result_array`.",
+          name: "диапазон_результата",
+          detail: "Диапазон, из которого возвращается результат. Возвращаемое значение соответствует местоположению, где `искомое_значение` найден в `search_range`. Этот диапазон должен быть только одной строкой или столбцом и не должен использоваться, если применяется метод `search_result_array`.",
           example: "B1:B100",
           require: "o",
           repeat: "n",
@@ -5839,7 +5839,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "row",
+          name: "строка",
           detail: "Номер строки ячейки.",
           example: "1",
           require: "m",
@@ -5847,7 +5847,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "column",
+          name: "столбец",
           detail: "Номер столбца (не имя) ячейки. `A` — это столбец номер `1`.",
           example: "2",
           require: "m",
@@ -5855,7 +5855,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "absolute_relative_mode",
+          name: "режим_ссылки",
           detail: "Указывает, является ли ссылка абсолютной по строке/столбцу. `1` — строка и столбец абсолютные (например, $A$1), `2` — строка абсолютная, столбец относительный (например, A$1), `3` — строка относительная, столбец абсолютный (например, $A1), `4` — строка и столбец относительные (например, A1).",
           example: "4",
           require: "o",
@@ -5863,7 +5863,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "use_a1_notation",
+          name: "использовать_нотацию_a1",
           detail: "Логическое значение, указывающее, использовать ли нотацию `A1` (TRUE) или нотацию `R1C1` (FALSE).",
           example: "FALSE()",
           require: "o",
@@ -5871,7 +5871,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "sheet",
+          name: "лист",
           detail: "Текст, указывающий имя листа, на который указывает адрес.",
           example: "\"Sheet2\"",
           require: "o",
@@ -5891,7 +5891,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference_as_string",
+          name: "ссылка_на_ячейку_как_строка",
           detail: "Ссылка на ячейку, записанная как строка в кавычках.",
           example: "\"Sheet2!\"&B10",
           require: "m",
@@ -5899,7 +5899,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "is_A1_notation",
+          name: "нотация_a1",
           detail: "Указывает, используется ли нотация A1 (TRUE) или нотация R1C1 (FALSE).",
           example: "FALSE()",
           require: "o",
@@ -5919,7 +5919,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "ссылка_на_ячейку",
           detail: "Ячейка, номер строки которой будет возвращён.",
           example: "A9",
           require: "o",
@@ -5939,7 +5939,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "диапазон",
           detail: "Диапазон, количество строк которого будет возвращено.",
           example: "A9:A62",
           require: "m",
@@ -5959,7 +5959,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "ссылка_на_ячейку",
           detail: "Ячейка, номер столбца которой будет возвращён. Столбец `A` соответствует `1`.",
           example: "A9",
           require: "o",
@@ -5979,7 +5979,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "range",
+          name: "диапазон",
           detail: "Диапазон, количество столбцов которого будет возвращено.",
           example: "A9:W62",
           require: "m",
@@ -5999,7 +5999,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell_reference",
+          name: "ссылка_на_ячейку",
           detail: "Начальная точка, от которой отсчитывается смещение строк и столбцов.",
           example: "A2",
           require: "m",
@@ -6007,7 +6007,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "offset_rows",
+          name: "смещение_строк",
           detail: "Количество строк для смещения.",
           example: "3",
           require: "m",
@@ -6015,7 +6015,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "offset_columns",
+          name: "смещение_столбцов",
           detail: "Количество столбцов для смещения.",
           example: "4",
           require: "m",
@@ -6023,7 +6023,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "height",
+          name: "высота",
           detail: "Высота возвращаемого диапазона, начиная с целевой точки смещения.",
           example: "2",
           require: "o",
@@ -6031,7 +6031,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "width",
+          name: "ширина",
           detail: "Ширина возвращаемого диапазона, начиная с целевой точки смещения.",
           example: "2",
           require: "o",
@@ -6051,7 +6051,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_key",
+          name: "искомое_значение",
           detail: "Значение для поиска. Например, `42`, `\"Кошки\"` или `I24`.",
           example: "\"Sunday\"",
           require: "m",
@@ -6059,7 +6059,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "range",
+          name: "диапазон",
           detail: "Одномерный массив для поиска.",
           example: "A2:A9",
           require: "m",
@@ -6067,8 +6067,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "search_type",
-          detail: "Метод поиска. `1` (по умолчанию) находит наибольшее значение, меньшее или равное `search_key`, если `range` отсортирован по возрастанию. `0` находит точное совпадение, если `range` не отсортирован. `-1` находит наименьшее значение, большее или равное `search_key`, если `range` отсортирован по убыванию.",
+          name: "тип_поиска",
+          detail: "Метод поиска. `1` (по умолчанию) находит наибольшее значение, меньшее или равное `искомое_значение`, если `диапазон` отсортирован по возрастанию. `0` находит точное совпадение, если `диапазон` не отсортирован. `-1` находит наименьшее значение, большее или равное `искомое_значение`, если `диапазон` отсортирован по убыванию.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6087,7 +6087,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
+          name: "ссылка",
           detail: "Массив ячеек для смещения.",
           example: "A1:C20",
           require: "m",
@@ -6095,7 +6095,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "row",
+          name: "строка",
           detail: "Количество строк для смещения.",
           example: "5",
           require: "m",
@@ -6103,7 +6103,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "column",
+          name: "столбец",
           detail: "Количество столбцов для смещения.",
           example: "1",
           require: "m",
@@ -6123,7 +6123,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value_name",
+          name: "имя_значения",
           detail: "Имя значения в сводной таблице, для которого нужно получить данные.",
           example: "\"SUM of number of units\"",
           require: "m",
@@ -6131,7 +6131,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "any_pivot_table_cell",
+          name: "ячейка_сводной_таблицы",
           detail: "Любая ссылка на ячейку в желаемой сводной таблице (рекомендуется верхний угол).",
           example: "'Pivot table'!A1",
           require: "m",
@@ -6139,7 +6139,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "original_column",
+          name: "исходный_столбец",
           detail: "Имя столбца в исходном наборе данных (не в сводной таблице).",
           example: "\"division\"",
           require: "o",
@@ -6147,8 +6147,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "pivot_item",
-          detail: "Имя строки или столбца, отображаемого в сводной таблице, соответствующего `original_column`, которое нужно извлечь.",
+          name: "элемент_сводной_таблицы",
+          detail: "Имя строки или столбца, отображаемого в сводной таблице, соответствующего `исходный_столбец`, которое нужно извлечь.",
           example: "\"east\"",
           require: "o",
           repeat: "y",
@@ -6167,7 +6167,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "index",
+          name: "индекс",
           detail: "Какой вариант (из до 30 предоставленных) вернуть.",
           example: "2",
           require: "m",
@@ -6175,7 +6175,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "choice1",
+          name: "выбор1",
           detail: "Потенциальное значение для возврата. Обязательно. Может быть ссылкой на ячейку или отдельным значением.",
           example: "\"A\"",
           require: "m",
@@ -6183,7 +6183,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "choice2",
+          name: "выбор2",
           detail: "Дополнительные значения для выбора.",
           example: "\"B\"",
           require: "o",
@@ -6207,7 +6207,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "link_label",
+          name: "текст_ссылки",
           detail: "Текст для отображения в ячейке в качестве ссылки, заключённый в кавычки, или ссылка на ячейку, содержащую такую метку.",
           example: "\"luckysheet\"",
           require: "m",
@@ -6227,7 +6227,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "hour",
+          name: "час",
           detail: "Часовая составляющая времени.",
           example: "11",
           require: "m",
@@ -6235,7 +6235,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "minute",
+          name: "минута",
           detail: "Минутная составляющая времени.",
           example: "40",
           require: "m",
@@ -6243,7 +6243,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "second",
+          name: "секунда",
           detail: "Секундная составляющая времени.",
           example: "59",
           require: "m",
@@ -6263,7 +6263,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time_string",
+          name: "строка_времени",
           detail: "Строка, содержащая представление времени.",
           example: "\"2:15 PM\"",
           require: "m",
@@ -6283,7 +6283,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Дата, от которой выполняется расчёт.",
           example: "DATE(1969",
           require: "m",
@@ -6291,8 +6291,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "months",
-          detail: "Количество месяцев до (отрицательное) или после (положительное) `start_date` для расчёта.",
+          name: "количество_месяцев",
+          detail: "Количество месяцев до (отрицательное) или после (положительное) `дата_начала` для расчёта.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -6311,7 +6311,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Дата, от которой выполняется расчёт.",
           example: "DATE(1969",
           require: "m",
@@ -6319,8 +6319,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "months",
-          detail: "Количество месяцев до (отрицательное) или после (положительное) `start_date` для расчёта.",
+          name: "количество_месяцев",
+          detail: "Количество месяцев до (отрицательное) или после (положительное) `дата_начала` для расчёта.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -6339,7 +6339,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "время",
           detail: "Время, из которого извлекается секундная составляющая.",
           example: "TIME(11",
           require: "m",
@@ -6359,7 +6359,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "время",
           detail: "Время, из которого извлекается минутная составляющая.",
           example: "TIME(11",
           require: "m",
@@ -6379,7 +6379,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "time",
+          name: "время",
           detail: "Время, из которого извлекается часовая составляющая.",
           example: "TIME(11",
           require: "m",
@@ -6410,7 +6410,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Начальная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "DATE(1969",
           require: "m",
@@ -6418,7 +6418,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "дата_окончания",
           detail: "Конечная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "7",
           require: "m",
@@ -6426,7 +6426,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "праздники",
           detail: "Диапазон или массив констант, содержащий серийные номера дат, считающихся праздниками.",
           example: "16)",
           require: "o",
@@ -6446,7 +6446,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Начальная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "DATE(1969",
           require: "m",
@@ -6454,7 +6454,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "дата_окончания",
           detail: "Конечная дата периода, для которого вычисляется количество чистых рабочих дней.",
           example: "7",
           require: "m",
@@ -6462,7 +6462,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "weekend",
+          name: "выходные",
           detail: "Число или строка, указывающая, какие дни недели считаются выходными.",
           example: "16)",
           require: "o",
@@ -6470,7 +6470,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "праздники",
           detail: "Диапазон или массив констант, содержащий даты, считающиеся праздниками.",
           example: "DATE(1969",
           require: "o",
@@ -6490,7 +6490,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "дата",
           detail: "Дата, для которой определяется номер недели по ISO. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
@@ -6510,7 +6510,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "дата",
           detail: "Дата, для которой определяется номер недели. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
@@ -6518,7 +6518,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "type",
+          name: "тип",
           detail: "Число, представляющее день, с которого начинается неделя. Воскресенье = 1.",
           example: "7",
           require: "o",
@@ -6538,7 +6538,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "дата",
           detail: "Дата, для которой определяется день недели. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
@@ -6546,7 +6546,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "type",
+          name: "тип",
           detail: "Число, указывающее, какую систему нумерации использовать для представления дней недели. По умолчанию отсчёт начинается с воскресенья = 1.",
           example: "7",
           require: "o",
@@ -6566,7 +6566,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "дата",
           detail: "Дата, из которой извлекается день.",
           example: "DATE(1969",
           require: "m",
@@ -6586,7 +6586,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "end_date",
+          name: "дата_окончания",
           detail: "Конечная дата диапазона.",
           example: "2011-3-15",
           require: "m",
@@ -6594,7 +6594,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Начальная дата диапазона.",
           example: "2011-2-1",
           require: "m",
@@ -6614,7 +6614,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Начальная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
@@ -6622,7 +6622,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "дата_окончания",
           detail: "Конечная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "7",
           require: "m",
@@ -6630,7 +6630,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "method",
+          name: "метод",
           detail: "Индикатор метода подсчёта дней.",
           example: "FALSE()",
           require: "o",
@@ -6650,7 +6650,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "year",
+          name: "год",
           detail: "Годовая составляющая даты.",
           example: "1969",
           require: "m",
@@ -6658,7 +6658,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "month",
+          name: "месяц",
           detail: "Месячная составляющая даты.",
           example: "7",
           require: "m",
@@ -6666,7 +6666,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day",
+          name: "день",
           detail: "Дневная составляющая даты.",
           example: "20",
           require: "m",
@@ -6686,7 +6686,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date_string",
+          name: "строка_даты",
           detail: "Строка, представляющая дату.",
           example: "\"1969-7-20\"",
           require: "m",
@@ -6706,7 +6706,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Начальная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
@@ -6714,7 +6714,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "дата_окончания",
           detail: "Конечная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "7",
           require: "m",
@@ -6722,7 +6722,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "unit",
+          name: "единица",
           detail: "Строковое сокращение для единицы времени. Например, \"M\" для месяца. Допустимые значения: \"Y\", \"M\", \"D\", \"MD\", \"YM\", \"YD\".",
           example: "16)",
           require: "m",
@@ -6742,7 +6742,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Дата, от которой начинается подсчёт.",
           example: "DATE(1969",
           require: "m",
@@ -6750,15 +6750,15 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "num_days",
-          detail: "Количество рабочих дней для продвижения от `start_date`. Если отрицательное, отсчёт идёт назад.",
+          name: "количество_дней",
+          detail: "Количество рабочих дней для продвижения от `дата_начала`. Если отрицательное, отсчёт идёт назад.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "holidays",
+          name: "праздники",
           detail: "Диапазон или массив констант, содержащий даты, считающиеся праздниками.",
           example: "16)",
           require: "o",
@@ -6778,7 +6778,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Дата, от которой начинается подсчёт.",
           example: "DATE(1969",
           require: "m",
@@ -6786,15 +6786,15 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "num_days",
-          detail: "Количество рабочих дней для продвижения от `start_date`. Если отрицательное, отсчёт идёт назад.",
+          name: "количество_дней",
+          detail: "Количество рабочих дней для продвижения от `дата_начала`. Если отрицательное, отсчёт идёт назад.",
           example: "7",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "weekend",
+          name: "выходные",
           detail: "Число или строка, указывающая, какие дни недели считаются выходными.",
           example: "16)",
           require: "o",
@@ -6802,7 +6802,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "holidays",
+          name: "праздники",
           detail: "Диапазон или массив констант, содержащий даты, считающиеся праздниками.",
           example: "DATE(1969",
           require: "o",
@@ -6822,7 +6822,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "дата",
           detail: "Дата, из которой извлекается год.",
           example: "DATE(1969",
           require: "m",
@@ -6842,7 +6842,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "start_date",
+          name: "дата_начала",
           detail: "Начальная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "DATE(1969",
           require: "m",
@@ -6850,7 +6850,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "end_date",
+          name: "дата_окончания",
           detail: "Конечная дата для расчёта. Должна быть ссылкой на ячейку, содержащую дату, функцией, возвращающей тип даты, или числом.",
           example: "7",
           require: "m",
@@ -6858,7 +6858,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор метода подсчёта дней.",
           example: "16)",
           require: "o",
@@ -6889,7 +6889,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "date",
+          name: "дата",
           detail: "Дата, из которой извлекается месяц.",
           example: "DATE(1969",
           require: "m",
@@ -6909,7 +6909,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "nominal_rate",
+          name: "номинальная_ставка",
           detail: "Номинальная процентная ставка за год.",
           example: "0.99",
           require: "m",
@@ -6917,7 +6917,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
+          name: "периодов_в_году",
           detail: "Количество периодов начисления процентов в году.",
           example: "12",
           require: "m",
@@ -6937,7 +6937,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "число",
           detail: "Значение для форматирования.",
           example: "1.2351",
           require: "m",
@@ -6945,7 +6945,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
+          name: "количество_знаков",
           detail: "Количество знаков после запятой для отображения.",
           example: "4",
           require: "m",
@@ -6965,7 +6965,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "fractional_price",
+          name: "дробная_цена",
           detail: "Котировка цены, заданная с использованием дробных десятичных соглашений.",
           example: "100.10",
           require: "m",
@@ -6973,7 +6973,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "unit",
+          name: "единица",
           detail: "Единицы дроби, например, `8` для 1/8 или `32` для 1/32.",
           example: "32",
           require: "m",
@@ -6993,7 +6993,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_price",
+          name: "десятичная_цена",
           detail: "Котировка цены, заданная в виде десятичного значения.",
           example: "100.125",
           require: "m",
@@ -7001,7 +7001,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "unit",
+          name: "единица",
           detail: "Единицы желаемой дроби, например, `8` для 1/8 или `32` для 1/32.",
           example: "32",
           require: "m",
@@ -7021,7 +7021,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "стоимость",
           detail: "Первоначальная стоимость актива.",
           example: "100",
           require: "m",
@@ -7029,7 +7029,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "ликвидационная_стоимость",
           detail: "Стоимость актива на конец амортизации.",
           example: "50",
           require: "m",
@@ -7037,7 +7037,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "срок_службы",
           detail: "Количество периодов, в течение которых актив амортизируется.",
           example: "10",
           require: "m",
@@ -7045,15 +7045,15 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Отдельный период в пределах `life`, для которого рассчитывается амортизация.",
+          name: "период",
+          detail: "Отдельный период в пределах `срок_службы`, для которого рассчитывается амортизация.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "month",
+          name: "месяц",
           detail: "Количество месяцев в первом году амортизации.",
           example: "10",
           require: "m",
@@ -7073,7 +7073,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "стоимость",
           detail: "Первоначальная стоимость актива.",
           example: "100",
           require: "m",
@@ -7081,7 +7081,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "ликвидационная_стоимость",
           detail: "Стоимость актива на конец амортизации.",
           example: "50",
           require: "m",
@@ -7089,7 +7089,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "срок_службы",
           detail: "Количество периодов, в течение которых актив амортизируется.",
           example: "10",
           require: "m",
@@ -7097,15 +7097,15 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Отдельный период в пределах `life`, для которого рассчитывается амортизация.",
+          name: "период",
+          detail: "Отдельный период в пределах `срок_службы`, для которого рассчитывается амортизация.",
           example: "2",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "factor",
+          name: "коэффициент",
           detail: "Коэффициент, на который уменьшается амортизация.",
           example: "2.25",
           require: "m",
@@ -7125,7 +7125,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number_of_periods",
+          name: "количество_периодов",
           detail: "Количество платежей, которые будут произведены.",
           example: "12",
           require: "m",
@@ -7133,7 +7133,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_per_period",
+          name: "платеж_за_период",
           detail: "Сумма платежа за период.",
           example: "-100",
           require: "m",
@@ -7141,7 +7141,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "текущая_стоимость",
           detail: "Текущая стоимость аннуитета.",
           example: "400",
           require: "m",
@@ -7149,7 +7149,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "будущая_стоимость",
           detail: "Будущая стоимость, остающаяся после последнего платежа.",
           example: "0",
           require: "o",
@@ -7157,7 +7157,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "конец_или_начало",
           detail: "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "0",
           require: "o",
@@ -7165,7 +7165,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "rate_guess",
+          name: "оценка_ставки",
           detail: "Оценка предполагаемой процентной ставки.",
           example: "0.1",
           require: "o",
@@ -7185,7 +7185,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "ставка",
           detail: "Процентная ставка.",
           example: "0.12",
           require: "m",
@@ -7193,7 +7193,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "количество_периодов",
           detail: "Количество платежей, которые будут произведены.",
           example: "12",
           require: "m",
@@ -7201,7 +7201,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "текущая_стоимость",
           detail: "Текущая стоимость аннуитета.",
           example: "100",
           require: "m",
@@ -7209,7 +7209,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "first_period",
+          name: "первый_период",
           detail: "Номер платёжного периода для начала совокупного расчёта.",
           example: "1",
           require: "m",
@@ -7217,7 +7217,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "last_period",
+          name: "последний_период",
           detail: "Номер платёжного периода для завершения совокупного расчёта.",
           example: "5",
           require: "m",
@@ -7225,7 +7225,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "конец_или_начало",
           detail: "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "0",
           require: "m",
@@ -7245,7 +7245,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7253,7 +7253,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "02",
           require: "m",
@@ -7261,7 +7261,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "частота",
           detail: "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
@@ -7269,7 +7269,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "o",
@@ -7289,7 +7289,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "стоимость",
           detail: "Первоначальная стоимость актива.",
           example: "100",
           require: "m",
@@ -7297,7 +7297,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "ликвидационная_стоимость",
           detail: "Стоимость актива на конец амортизации.",
           example: "50",
           require: "m",
@@ -7305,7 +7305,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "срок_службы",
           detail: "Количество периодов, в течение которых актив амортизируется.",
           example: "10",
           require: "m",
@@ -7313,8 +7313,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
-          detail: "Отдельный период в пределах `life`, для которого рассчитывается амортизация.",
+          name: "период",
+          detail: "Отдельный период в пределах `срок_службы`, для которого рассчитывается амортизация.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -7333,7 +7333,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7341,7 +7341,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "1",
           require: "m",
@@ -7349,7 +7349,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "дисконт",
           detail: "Ставка дисконта векселя на момент покупки.",
           example: "2)",
           require: "m",
@@ -7369,7 +7369,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7377,7 +7377,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -7385,7 +7385,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "price",
+          name: "цена",
           detail: "Цена, по которой ценная бумага куплена за 100 единиц номинальной стоимости.",
           example: "95",
           require: "m",
@@ -7405,7 +7405,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7413,7 +7413,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -7421,7 +7421,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "дисконт",
           detail: "Ставка дисконта векселя на момент покупки.",
           example: "0.09",
           require: "m",
@@ -7441,7 +7441,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "ставка",
           detail: "Процентная ставка.",
           example: "2",
           require: "m",
@@ -7449,7 +7449,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "количество_периодов",
           detail: "Количество платежей, которые будут произведены.",
           example: "12",
           require: "m",
@@ -7457,7 +7457,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
+          name: "сумма_платежа",
           detail: "Сумма платежа за период.",
           example: "100",
           require: "m",
@@ -7465,7 +7465,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "будущая_стоимость",
           detail: "Будущая стоимость, остающаяся после последнего платежа.",
           example: "D2",
           require: "o",
@@ -7473,7 +7473,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "конец_или_начало",
           detail: "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "1",
           require: "o",
@@ -7493,7 +7493,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
+          name: "дата_выпуска",
           detail: "Дата первоначального выпуска ценной бумаги.",
           example: "DATE(2010",
           require: "m",
@@ -7501,7 +7501,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "first_payment",
+          name: "первый_платеж",
           detail: "Дата первой выплаты процентов.",
           example: "DATE(2010",
           require: "m",
@@ -7509,7 +7509,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7517,7 +7517,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "ставка",
           detail: "Годовая процентная ставка.",
           example: "0.1",
           require: "m",
@@ -7525,7 +7525,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "сумма_погашения",
           detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "10000",
           require: "m",
@@ -7533,7 +7533,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "частота",
           detail: "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
@@ -7541,7 +7541,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "o",
@@ -7549,7 +7549,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "calc_method",
+          name: "метод_расчета",
           detail: "Логическое значение, определяющее метод расчёта общей суммы начисленных процентов, когда дата расчёта позже даты первого начисления процентов. \n\nЕсли значение TRUE, возвращается общая сумма начисленных процентов от даты выпуска до даты расчёта. \n\nЕсли значение FALSE, возвращается сумма начисленных процентов от даты первого начисления процентов до даты расчёта.",
           example: "TRUE()",
           require: "o",
@@ -7569,7 +7569,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "issue",
+          name: "дата_выпуска",
           detail: "Дата первоначального выпуска ценной бумаги.",
           example: "DATE(1969",
           require: "m",
@@ -7577,7 +7577,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения ценной бумаги.",
           example: "DATE(1969",
           require: "m",
@@ -7585,7 +7585,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "ставка",
           detail: "Годовая процентная ставка.",
           example: "0.1",
           require: "m",
@@ -7593,7 +7593,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "сумма_погашения",
           detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "1000",
           require: "m",
@@ -7601,7 +7601,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор метода подсчёта дней.",
           example: "12",
           require: "m",
@@ -7621,7 +7621,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7629,7 +7629,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -7637,7 +7637,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "частота",
           detail: "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
@@ -7645,7 +7645,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "o",
@@ -7665,7 +7665,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7673,7 +7673,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -7681,7 +7681,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "частота",
           detail: "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
@@ -7689,7 +7689,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "o",
@@ -7709,7 +7709,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7717,7 +7717,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -7725,7 +7725,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "частота",
           detail: "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
@@ -7733,7 +7733,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "o",
@@ -7753,7 +7753,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7761,7 +7761,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -7769,7 +7769,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "частота",
           detail: "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "01)",
           require: "m",
@@ -7777,7 +7777,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор метода подсчёта дней.",
           example: "DATE(2019",
           require: "o",
@@ -7797,7 +7797,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7805,7 +7805,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -7813,7 +7813,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "frequency",
+          name: "частота",
           detail: "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "01)",
           require: "m",
@@ -7821,7 +7821,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор метода подсчёта дней.",
           example: "DATE(2019",
           require: "o",
@@ -7841,7 +7841,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "ставка",
           detail: "Процентная ставка.",
           example: "0.12",
           require: "m",
@@ -7849,7 +7849,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "количество_периодов",
           detail: "Количество платежей, которые будут произведены.",
           example: "12",
           require: "m",
@@ -7857,7 +7857,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
+          name: "сумма_платежа",
           detail: "Сумма платежа за период.",
           example: "100",
           require: "m",
@@ -7865,7 +7865,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "текущая_стоимость",
           detail: "Текущая стоимость аннуитета.",
           example: "400",
           require: "m",
@@ -7873,7 +7873,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "конец_или_начало",
           detail: "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "1",
           require: "m",
@@ -7893,7 +7893,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "principal",
+          name: "основная_сумма",
           detail: "Сумма начального капитала или значения для начисления процентов.",
           example: "10000",
           require: "m",
@@ -7901,8 +7901,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "rate_schedule",
-          detail: "Ряд процентных ставок для начисления на `principal`.",
+          name: "график_ставок",
+          detail: "Ряд процентных ставок для начисления на `основная_сумма`.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -7921,7 +7921,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7929,7 +7929,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -7937,7 +7937,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "ставка",
           detail: "Годовая процентная ставка.",
           example: "0.057",
           require: "m",
@@ -7945,7 +7945,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "price",
+          name: "цена",
           detail: "Цена, по которой ценная бумага куплена за 100 единиц номинальной стоимости.",
           example: "95",
           require: "m",
@@ -7953,7 +7953,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "сумма_погашения",
           detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "100",
           require: "m",
@@ -7961,7 +7961,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "частота",
           detail: "Количество процентных или купонных платежей в год (1, 2 или 4).",
           example: "1",
           require: "m",
@@ -7969,7 +7969,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "m",
@@ -7989,7 +7989,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчёта ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -7997,7 +7997,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -8005,7 +8005,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "price",
+          name: "цена",
           detail: "Цена, по которой ценная бумага куплена за 100 единиц номинальной стоимости.",
           example: "95",
           require: "m",
@@ -8013,7 +8013,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "сумма_погашения",
           detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "100",
           require: "m",
@@ -8021,7 +8021,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор метода подсчёта дней.",
           example: "0",
           require: "m",
@@ -8041,7 +8041,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "effective_rate",
+          name: "эффективная_ставка",
           detail: "Эффективная процентная ставка за год.",
           example: "0.85",
           require: "m",
@@ -8049,7 +8049,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "periods_per_year",
+          name: "периодов_в_году",
           detail: "Количество периодов начисления процентов в году.",
           example: "12",
           require: "m",
@@ -8069,7 +8069,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
+          name: "суммы_денежных_потоков",
           detail: "Массив или диапазон, содержащий доходы или платежи, связанные с инвестицией.",
           example: "B2:B25",
           require: "m",
@@ -8077,15 +8077,15 @@ module.exports = {
           type: "range"
         },
         {
-          name: "cashflow_dates",
-          detail: "Массив или диапазон с датами, соответствующими денежным потокам в `cashflow_amounts`.",
+          name: "даты_денежных_потоков",
+          detail: "Массив или диапазон с датами, соответствующими денежным потокам в `суммы_денежных_потоков`.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
           type: "range"
         },
         {
-          name: "rate_guess",
+          name: "оценка_ставки",
           detail: "Предполагаемая оценка внутренней нормы доходности.",
           example: "250",
           require: "o",
@@ -8105,7 +8105,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
+          name: "суммы_денежных_потоков",
           detail: "Массив или диапазон, содержащий доходы или платежи, связанные с инвестицией.",
           example: "A2:A25",
           require: "m",
@@ -8113,7 +8113,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "financing_rate",
+          name: "ставка_финансирования",
           detail: "Процентная ставка, уплачиваемая по инвестированным средствам.",
           example: "0.1",
           require: "m",
@@ -8121,7 +8121,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "reinvestment_return_rate",
+          name: "ставка_реинвестирования",
           detail: "Доход (в процентах), полученный от реинвестирования доходов от инвестиции.",
           example: "0.12",
           require: "m",
@@ -8141,7 +8141,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cashflow_amounts",
+          name: "суммы_денежных_потоков",
           detail: "Массив или диапазон, содержащий доходы или платежи, связанные с инвестицией.",
           example: "A2:A25",
           require: "m",
@@ -8149,7 +8149,7 @@ module.exports = {
           type: "range"
         },
         {
-          name: "rate_guess",
+          name: "оценка_ставки",
           detail: "Предполагаемая оценка внутренней нормы доходности.",
           example: "200",
           require: "o",
@@ -8169,7 +8169,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
+          name: "дисконт",
           detail: "Ставка дисконтирования инвестиции за один период.",
           example: "0.1",
           require: "m",
@@ -8177,7 +8177,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cashflow1",
+          name: "денежный_поток1",
           detail: "Первый будущий денежный поток.",
           example: "200",
           require: "m",
@@ -8185,7 +8185,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "cashflow2",
+          name: "денежный_поток2",
           detail: "Дополнительные будущие денежные потоки.",
           example: "250",
           require: "o",
@@ -8205,7 +8205,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "discount",
+          name: "дисконт",
           detail: "Ставка дисконтирования инвестиции за один период.",
           example: "A2",
           require: "m",
@@ -8213,7 +8213,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "cashflow_amounts",
+          name: "суммы_денежных_потоков",
           detail: "Диапазон ячеек, содержащий доходы или платежи, связанные с инвестицией.",
           example: "B2:B25",
           require: "m",
@@ -8221,8 +8221,8 @@ module.exports = {
           type: "range"
         },
         {
-          name: "cashflow_dates",
-          detail: "Диапазон ячеек с датами, соответствующими денежным потокам в `cashflow_amounts`.",
+          name: "даты_денежных_потоков",
+          detail: "Диапазон ячеек с датами, соответствующими денежным потокам в `суммы_денежных_потоков`.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -8241,7 +8241,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "ставка",
           detail: "Процентная ставка.",
           example: "0.12",
           require: "m",
@@ -8249,7 +8249,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "количество_периодов",
           detail: "Количество платежей, которые необходимо сделать.",
           example: "12",
           require: "m",
@@ -8257,7 +8257,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "текущая_стоимость",
           detail: "Текущая стоимость аннуитета.",
           example: "100",
           require: "m",
@@ -8265,7 +8265,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "first_period",
+          name: "первый_период",
           detail: "Номер платежного периода для начала накопительного расчета.",
           example: "1",
           require: "m",
@@ -8273,7 +8273,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "last_period",
+          name: "последний_период",
           detail: "Номер платежного периода для окончания накопительного расчета.",
           example: "5",
           require: "m",
@@ -8281,7 +8281,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "конец_или_начало",
           detail: "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "0",
           require: "m",
@@ -8301,7 +8301,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "ставка",
           detail: "Процентная ставка.",
           example: "0.08",
           require: "m",
@@ -8309,7 +8309,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "количество_периодов",
           detail: "Количество платежей, которые необходимо сделать.",
           example: "12",
           require: "m",
@@ -8317,7 +8317,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "текущая_стоимость",
           detail: "Текущая стоимость аннуитета.",
           example: " 100000",
           require: "m",
@@ -8325,7 +8325,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "будущая_стоимость",
           detail: "Остаточная стоимость после последнего платежа.",
           example: "D2",
           require: "m",
@@ -8333,7 +8333,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "конец_или_начало",
           detail: "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "1",
           require: "m",
@@ -8353,7 +8353,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "ставка",
           detail: "Процентная ставка.",
           example: "0.1",
           require: "m",
@@ -8361,7 +8361,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "период",
           detail: "Период амортизации, выраженный в количестве периодов.",
           example: "1",
           require: "m",
@@ -8369,7 +8369,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "количество_периодов",
           detail: "Количество платежей, которые необходимо сделать.",
           example: "12",
           require: "m",
@@ -8377,7 +8377,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "текущая_стоимость",
           detail: "Текущая стоимость аннуитета.",
           example: "80000",
           require: "m",
@@ -8385,7 +8385,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "будущая_стоимость",
           detail: "Остаточная стоимость после последнего платежа.",
           example: "E2",
           require: "m",
@@ -8393,7 +8393,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "конец_или_начало",
           detail: "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "1",
           require: "m",
@@ -8413,7 +8413,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "ставка",
           detail: "Процентная ставка.",
           example: "0.1",
           require: "m",
@@ -8421,7 +8421,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "period",
+          name: "период",
           detail: "Период амортизации, выраженный в количестве периодов.",
           example: "1",
           require: "m",
@@ -8429,7 +8429,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_periods",
+          name: "количество_периодов",
           detail: "Количество платежей, которые необходимо сделать.",
           example: "3*12",
           require: "m",
@@ -8437,7 +8437,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "текущая_стоимость",
           detail: "Текущая стоимость аннуитета.",
           example: "100000",
           require: "m",
@@ -8445,7 +8445,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "будущая_стоимость",
           detail: "Остаточная стоимость после последнего платежа.",
           example: "0",
           require: "o",
@@ -8453,7 +8453,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "конец_или_начало",
           detail: "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "0",
           require: "o",
@@ -8473,7 +8473,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "buy_date",
+          name: "дата_покупки",
           detail: "Дата покупки инвестиции.",
           example: "DATE(2010",
           require: "m",
@@ -8481,7 +8481,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "sell_date",
+          name: "дата_продажи",
           detail: "Дата продажи инвестиции.",
           example: "DATE(2010",
           require: "m",
@@ -8489,7 +8489,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "buy_price",
+          name: "цена_покупки",
           detail: "Цена, по которой была приобретена инвестиция.",
           example: "100000",
           require: "m",
@@ -8497,7 +8497,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "sell_price",
+          name: "цена_продажи",
           detail: "Цена, по которой была продана инвестиция.",
           example: "101200",
           require: "m",
@@ -8505,7 +8505,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор используемого метода подсчета дней.",
           example: "12",
           require: "m",
@@ -8525,7 +8525,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -8533,7 +8533,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -8541,7 +8541,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "ставка",
           detail: "Годовая процентная ставка.",
           example: "0.057",
           require: "m",
@@ -8549,7 +8549,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "доходность",
           detail: "Ожидаемая годовая доходность ценной бумаги.",
           example: "0.065",
           require: "m",
@@ -8557,7 +8557,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "сумма_погашения",
           detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "100",
           require: "m",
@@ -8565,7 +8565,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "частота",
           detail: "Количество процентных или купонных выплат в год (1, 2 или 4).",
           example: "1",
           require: "m",
@@ -8573,7 +8573,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор используемого метода подсчета дней.",
           example: "0",
           require: "o",
@@ -8593,7 +8593,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -8601,7 +8601,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -8609,7 +8609,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "discount",
+          name: "дисконт",
           detail: "Дисконтная ставка ценной бумаги на момент покупки.",
           example: "0.0525",
           require: "m",
@@ -8617,7 +8617,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "сумма_погашения",
           detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "100",
           require: "m",
@@ -8625,7 +8625,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор используемого метода подсчета дней.",
           example: "0",
           require: "o",
@@ -8645,7 +8645,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -8653,7 +8653,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -8661,7 +8661,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "issue",
+          name: "дата_выпуска",
           detail: "Дата первоначального выпуска ценной бумаги.",
           example: "DATE(2010",
           require: "m",
@@ -8669,7 +8669,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "ставка",
           detail: "Годовая процентная ставка.",
           example: "0.061",
           require: "m",
@@ -8677,7 +8677,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "доходность",
           detail: "Ожидаемая годовая доходность ценной бумаги.",
           example: "0.061",
           require: "m",
@@ -8685,7 +8685,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор используемого метода подсчета дней.",
           example: "0",
           require: "o",
@@ -8705,7 +8705,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -8713,7 +8713,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -8721,7 +8721,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "investment",
+          name: "инвестиция",
           detail: "Сумма инвестиции (независимо от номинальной стоимости каждой ценной бумаги).",
           example: "10000000",
           require: "m",
@@ -8729,7 +8729,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "discount",
+          name: "дисконт",
           detail: "Дисконтная ставка инвестированной ценной бумаги.",
           example: "0.0575",
           require: "m",
@@ -8737,7 +8737,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор используемого метода подсчета дней.",
           example: "12",
           require: "o",
@@ -8757,7 +8757,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -8765,7 +8765,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -8773,7 +8773,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "price",
+          name: "цена",
           detail: "Цена покупки ценной бумаги за 100 единиц номинальной стоимости.",
           example: "97.975",
           require: "m",
@@ -8781,7 +8781,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "redemption",
+          name: "сумма_погашения",
           detail: "Сумма погашения за 100 единиц номинальной стоимости.",
           example: "100",
           require: "m",
@@ -8789,7 +8789,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор используемого метода подсчета дней.",
           example: "12",
           require: "o",
@@ -8809,7 +8809,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "rate",
+          name: "ставка",
           detail: "Процентная ставка.",
           example: "0.12",
           require: "m",
@@ -8817,7 +8817,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "payment_amount",
+          name: "сумма_платежа",
           detail: "Сумма каждого платежа.",
           example: "500",
           require: "m",
@@ -8825,7 +8825,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "present_value",
+          name: "текущая_стоимость",
           detail: "Текущая стоимость аннуитета.",
           example: "40000",
           require: "m",
@@ -8833,7 +8833,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "future_value",
+          name: "будущая_стоимость",
           detail: "Остаточная стоимость после последнего платежа.",
           example: "0",
           require: "o",
@@ -8841,7 +8841,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "end_or_beginning",
+          name: "конец_или_начало",
           detail: "Указывает, производятся ли платежи в конце (`0`) или начале (`1`) каждого периода.",
           example: "0",
           require: "o",
@@ -8861,7 +8861,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cost",
+          name: "стоимость",
           detail: "Первоначальная стоимость актива.",
           example: "300000",
           require: "m",
@@ -8869,7 +8869,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "salvage",
+          name: "ликвидационная_стоимость",
           detail: "Стоимость актива в конце периода амортизации.",
           example: "75000",
           require: "m",
@@ -8877,7 +8877,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "life",
+          name: "срок_службы",
           detail: "Количество периодов, в течение которых актив амортизируется.",
           example: "10",
           require: "m",
@@ -8897,7 +8897,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -8905,7 +8905,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -8913,7 +8913,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "ставка",
           detail: "Годовая процентная ставка.",
           example: "0.08",
           require: "m",
@@ -8921,7 +8921,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "доходность",
           detail: "Ожидаемая годовая доходность ценной бумаги.",
           example: "0.09",
           require: "m",
@@ -8929,7 +8929,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "частота",
           detail: "Количество процентных или купонных выплат в год (1, 2 или 4).",
           example: "1",
           require: "m",
@@ -8937,7 +8937,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор используемого метода подсчета дней.",
           example: "0",
           require: "o",
@@ -8957,7 +8957,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "settlement",
+          name: "дата_расчета",
           detail: "Дата расчета ценной бумаги, дата после выпуска, когда ценная бумага доставляется покупателю.",
           example: "DATE(2010",
           require: "m",
@@ -8965,7 +8965,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "maturity",
+          name: "срок_погашения",
           detail: "Дата погашения или окончания срока действия ценной бумаги, когда она может быть выкуплена по номинальной стоимости.",
           example: "DATE(2010",
           require: "m",
@@ -8973,7 +8973,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "rate",
+          name: "ставка",
           detail: "Годовая процентная ставка.",
           example: "0.08",
           require: "m",
@@ -8981,7 +8981,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "yield",
+          name: "доходность",
           detail: "Ожидаемая годовая доходность ценной бумаги.",
           example: "0.09",
           require: "m",
@@ -8989,7 +8989,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "frequency",
+          name: "частота",
           detail: "Количество процентных или купонных выплат в год (1, 2 или 4).",
           example: "1",
           require: "m",
@@ -8997,7 +8997,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "day_count_convention",
+          name: "базис",
           detail: "Индикатор используемого метода подсчета дней.",
           example: "0",
           require: "o",
@@ -9017,7 +9017,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
+          name: "знаковое_двоичное_число",
           detail: "Знаковое 10-битное двоичное значение, которое нужно преобразовать в десятичное, предоставленное в виде строки.",
           example: "101",
           require: "m",
@@ -9037,7 +9037,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
+          name: "знаковое_двоичное_число",
           detail: "Знаковое 10-битное двоичное значение, которое нужно преобразовать в знаковое шестнадцатеричное, предоставленное в виде строки.",
           example: "101",
           require: "m",
@@ -9045,7 +9045,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "значащие_цифры",
           detail: "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
@@ -9065,7 +9065,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_binary_number",
+          name: "знаковое_двоичное_число",
           detail: "Знаковое 10-битное двоичное значение, которое нужно преобразовать в знаковое восьмеричное, предоставленное в виде строки.",
           example: "101",
           require: "m",
@@ -9073,7 +9073,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "значащие_цифры",
           detail: "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
@@ -9093,7 +9093,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
+          name: "десятичное_число",
           detail: "Десятичное значение, которое нужно преобразовать в знаковое двоичное, предоставленное в виде строки.",
           example: "100",
           require: "m",
@@ -9101,7 +9101,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "значащие_цифры",
           detail: "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
@@ -9121,7 +9121,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
+          name: "десятичное_число",
           detail: "Десятичное значение, которое нужно преобразовать в знаковое шестнадцатеричное, предоставленное в виде строки.",
           example: "100",
           require: "m",
@@ -9129,7 +9129,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "значащие_цифры",
           detail: "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
@@ -9149,7 +9149,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "decimal_number",
+          name: "десятичное_число",
           detail: "Десятичное значение, которое нужно преобразовать в знаковое восьмеричное, предоставленное в виде строки.",
           example: "100",
           require: "m",
@@ -9157,7 +9157,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "significant_digits",
+          name: "значащие_цифры",
           detail: "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
@@ -9177,7 +9177,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
+          name: "знаковое_шестнадцатеричное_число",
           detail: "Знаковое 40-битное шестнадцатеричное значение, которое нужно преобразовать в знаковое двоичное, предоставленное в виде строки.",
           example: "\"f3\"",
           require: "m",
@@ -9185,7 +9185,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "значащие_цифры",
           detail: "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
@@ -9205,7 +9205,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
+          name: "знаковое_шестнадцатеричное_число",
           detail: "Знаковое 40-битное шестнадцатеричное значение, которое нужно преобразовать в десятичное, предоставленное в виде строки.",
           example: "\"f3\"",
           require: "m",
@@ -9225,7 +9225,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_hexadecimal_number",
+          name: "знаковое_шестнадцатеричное_число",
           detail: "Знаковое 40-битное шестнадцатеричное значение, которое нужно преобразовать в знаковое восьмеричное, предоставленное в виде строки.",
           example: "\"f3\"",
           require: "m",
@@ -9233,7 +9233,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "значащие_цифры",
           detail: "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
@@ -9253,7 +9253,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
+          name: "знаковое_восьмеричное_число",
           detail: "Знаковое 30-битное восьмеричное значение, которое нужно преобразовать в знаковое двоичное, предоставленное в виде строки.",
           example: "37",
           require: "m",
@@ -9261,7 +9261,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "значащие_цифры",
           detail: "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
@@ -9281,7 +9281,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
+          name: "знаковое_восьмеричное_число",
           detail: "Знаковое 30-битное восьмеричное значение, которое нужно преобразовать в десятичное, предоставленное в виде строки.",
           example: "37",
           require: "m",
@@ -9301,7 +9301,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "signed_octal_number",
+          name: "знаковое_восьмеричное_число",
           detail: "Знаковое 30-битное восьмеричное значение, которое нужно преобразовать в знаковое шестнадцатеричное, предоставленное в виде строки.",
           example: "37",
           require: "m",
@@ -9309,7 +9309,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "significant_digits",
+          name: "значащие_цифры",
           detail: "Количество значащих цифр, которое нужно обеспечить в результате.",
           example: "8",
           require: "o",
@@ -9329,7 +9329,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "real_part",
+          name: "действительная_часть",
           detail: "Действительный коэффициент.",
           example: "3",
           require: "m",
@@ -9337,7 +9337,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "imaginary_part",
+          name: "мнимая_часть",
           detail: "Мнимый коэффициент.",
           example: "4",
           require: "m",
@@ -9345,7 +9345,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "suffix",
+          name: "суффикс",
           detail: "Суффикс для мнимого коэффициента, может быть только \"i\" или \"j\". Если не указан, будет использоваться \"i\".",
           example: "\"j\"",
           require: "o",
@@ -9365,7 +9365,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
+          name: "комплексное_число",
           detail: "Комплексное число в формате a+bi или a+bj.",
           example: "\"4+5i\"",
           require: "m",
@@ -9385,7 +9385,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "complex_number",
+          name: "комплексное_число",
           detail: "Комплексное число в формате a+bi или a+bj.",
           example: "\"4+5i\"",
           require: "m",
@@ -9405,7 +9405,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "число",
           detail: "Комплексное число, для которого вычисляется сопряженное.",
           example: "\"3+4i\"",
           require: "m",
@@ -9425,7 +9425,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "число",
           detail: "Комплексное число, для которого вычисляется абсолютное значение.",
           example: "\"3+4i\"",
           require: "m",
@@ -9445,7 +9445,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number1",
+          name: "число1",
           detail: "Первое число для сравнения.",
           example: "2",
           require: "m",
@@ -9453,7 +9453,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number2",
+          name: "число2",
           detail: "Второе число для сравнения.",
           example: "1",
           require: "o",
@@ -9473,7 +9473,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое комплексное число или диапазон для сложения.",
           example: "\"3+4i\"",
           require: "m",
@@ -9481,8 +9481,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Дополнительные комплексные числа или диапазоны для добавления к `value1`.",
+          name: "значение2",
+          detail: "Дополнительные комплексные числа или диапазоны для добавления к `значение1`.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -9501,7 +9501,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "first_number",
+          name: "первое_число",
           detail: "Комплексное число, из которого вычитается второе число.",
           example: "\"6+5i\"",
           require: "m",
@@ -9509,7 +9509,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "second_number",
+          name: "второе_число",
           detail: "Комплексное число, которое вычитается из первого числа.",
           example: "\"2+3i\"",
           require: "m",
@@ -9529,7 +9529,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
+          name: "множитель1",
           detail: "Первое число или диапазон для вычисления произведения.",
           example: "\"3+4i\"",
           require: "m",
@@ -9537,7 +9537,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "factor2",
+          name: "множитель2",
           detail: "Дополнительные комплексные числа или диапазоны для вычисления произведения.",
           example: "\"5-3i\"",
           require: "o",
@@ -9557,7 +9557,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "делимое",
           detail: "Комплексное число, которое делится.",
           example: "\"11+16i\"",
           require: "m",
@@ -9565,7 +9565,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "divisor",
+          name: "делитель",
           detail: "Комплексное число, на которое производится деление.",
           example: "\"3+2i\"",
           require: "m",
@@ -9585,7 +9585,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
+          name: "логическое_выражение",
           detail: "Выражение или ссылка на ячейку, содержащую выражение, которое представляет некоторое логическое значение.",
           example: "A2",
           require: "m",
@@ -9627,7 +9627,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
+          name: "логическое_выражение1",
           detail: "Выражение или ссылка на ячейку, содержащую выражение, которое представляет некоторое логическое значение, т.е. `TRUE` или `FALSE`, или выражение, которое может быть преобразовано в логическое значение.",
           example: "A2 = \"foo\"",
           require: "m",
@@ -9635,7 +9635,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
+          name: "логическое_выражение2",
           detail: "Дополнительные выражения, представляющие логические значения.",
           example: "A3 = \"bar\"",
           require: "o",
@@ -9655,16 +9655,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Значение, которое возвращается, если само `value` не является ошибкой.",
+          name: "значение",
+          detail: "Значение, которое возвращается, если само `значение` не является ошибкой.",
           example: "A1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_error",
-          detail: "Значение, которое возвращается функцией, если `value` является ошибкой.",
+          name: "значение_если_ошибка",
+          detail: "Значение, которое возвращается функцией, если `значение` является ошибкой.",
           example: "\"Error in cell A1\"",
           require: "m",
           repeat: "n",
@@ -9683,7 +9683,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression",
+          name: "логическое_выражение",
           detail: "Выражение или ссылка на ячейку, содержащую выражение, которое представляет некоторое логическое значение, т.е. `TRUE` или `FALSE`.",
           example: "A2 = \"foo\"",
           require: "m",
@@ -9691,16 +9691,16 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_if_true",
-          detail: "Значение, которое возвращается функцией, если `logical_expression` равно `TRUE`.",
+          name: "значение_если_истина",
+          detail: "Значение, которое возвращается функцией, если `логическое_выражение` равно `TRUE`.",
           example: "\"A2 is foo\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_if_false",
-          detail: "Значение, которое возвращается функцией, если `logical_expression` равно `FALSE`.",
+          name: "значение_если_ложь",
+          detail: "Значение, которое возвращается функцией, если `логическое_выражение` равно `FALSE`.",
           example: "\"A2 was false\"",
           require: "o",
           repeat: "n",
@@ -9719,7 +9719,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "logical_expression1",
+          name: "логическое_выражение1",
           detail: "Выражение или ссылка на ячейку, содержащую выражение, которое представляет некоторое логическое значение, т.е. `TRUE` или `FALSE`, или выражение, которое может быть преобразовано в логическое значение.",
           example: "A2 = \"foo\"",
           require: "m",
@@ -9727,7 +9727,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "logical_expression2",
+          name: "логическое_выражение2",
           detail: "Дополнительные выражения, которые оцениваются как логические значения.",
           example: " A3 = \"bar\"",
           require: "m",
@@ -9747,7 +9747,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение.",
           example: "A2",
           require: "m",
@@ -9755,8 +9755,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Значение, с которым сравнивается `value1` на неравенство.",
+          name: "значение2",
+          detail: "Значение, с которым сравнивается `значение1` на неравенство.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -9775,7 +9775,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое значение.",
           example: "A2",
           require: "m",
@@ -9783,8 +9783,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Значение, с которым сравнивается `value1` на равенство.",
+          name: "значение2",
+          detail: "Значение, с которым сравнивается `значение1` на равенство.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -9803,15 +9803,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Значение, которое проверяется на строгое превышение над `value2`.",
+          name: "значение1",
+          detail: "Значение, которое проверяется на строгое превышение над `значение2`.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Второе значение.",
           example: "A3",
           require: "m",
@@ -9831,15 +9831,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Значение, которое проверяется на превышение или равенство с `value2`.",
+          name: "значение1",
+          detail: "Значение, которое проверяется на превышение или равенство с `значение2`.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Второе значение.",
           example: "A3",
           require: "m",
@@ -9859,15 +9859,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Значение, которое проверяется на строгое меньшинство по сравнению с `value2`.",
+          name: "значение1",
+          detail: "Значение, которое проверяется на строгое меньшинство по сравнению с `значение2`.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Второе значение.",
           example: "A3",
           require: "m",
@@ -9887,15 +9887,15 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Значение, которое проверяется на меньшинство или равенство с `value2`.",
+          name: "значение1",
+          detail: "Значение, которое проверяется на меньшинство или равенство с `значение2`.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Второе значение.",
           example: "A3",
           require: "m",
@@ -9915,7 +9915,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Первое слагаемое.",
           example: "A2",
           require: "m",
@@ -9923,7 +9923,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
+          name: "значение2",
           detail: "Второе слагаемое.",
           example: "A3",
           require: "m",
@@ -9943,7 +9943,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
+          name: "значение1",
           detail: "Уменьшаемое, число, из которого вычитается.",
           example: "A2",
           require: "m",
@@ -9951,8 +9951,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "value2",
-          detail: "Вычитаемое, число, которое вычитается из `value1`.",
+          name: "значение2",
+          detail: "Вычитаемое, число, которое вычитается из `значение1`.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -9971,7 +9971,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "factor1",
+          name: "множитель1",
           detail: "Первый множитель.",
           example: "A2",
           require: "m",
@@ -9979,7 +9979,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "factor2",
+          name: "множитель2",
           detail: "Второй множитель.",
           example: "B2",
           require: "m",
@@ -9999,7 +9999,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "dividend",
+          name: "делимое",
           detail: "Число, которое делится.",
           example: "4",
           require: "m",
@@ -10007,7 +10007,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "divisor",
+          name: "делитель",
           detail: "Число, на которое производится деление.",
           example: "2",
           require: "m",
@@ -10027,16 +10027,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "value1",
-          detail: "Значение, к которому будет присоединено `value2`.",
+          name: "значение1",
+          detail: "Значение, к которому будет присоединено `значение2`.",
           example: "\"de\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value2",
-          detail: "Значение, которое будет присоединено к `value1`.",
+          name: "значение2",
+          detail: "Значение, которое будет присоединено к `значение1`.",
           example: "\"mystify\"",
           require: "m",
           repeat: "n",
@@ -10055,7 +10055,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "percentage",
+          name: "процент",
           detail: "Значение, которое интерпретируется как процент.",
           example: "A2",
           require: "m",
@@ -10075,7 +10075,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
+          name: "строка1",
           detail: "Начальная строка.",
           example: "\"Super\"",
           require: "m",
@@ -10083,7 +10083,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "string2",
+          name: "строка2",
           detail: "Дополнительные строки для объединения в последовательности.",
           example: "\"calla\"",
           require: "o",
@@ -10103,7 +10103,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "строка",
           detail: "Строка, для первого символа которой будет возвращено значение Unicode.",
           example: "\"a\"",
           require: "m",
@@ -10123,7 +10123,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "table_number",
+          name: "номер_таблицы",
           detail: "Число символа для поиска в текущей таблице Unicode в десятичном формате.",
           example: "97",
           require: "m",
@@ -10143,7 +10143,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "roman_numeral",
+          name: "римское_число",
           detail: "Римская цифра для форматирования, значение которой должно быть от 1 до 3999 включительно.",
           example: "\"XIV\"",
           require: "m",
@@ -10163,7 +10163,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "число",
           detail: "Число для форматирования, от 1 до 3999 включительно.",
           example: "499",
           require: "m",
@@ -10183,7 +10183,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "текст",
           detail: "Входной текст.",
           example: "\"Needle in a haystack\"",
           require: "m",
@@ -10191,8 +10191,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "Первая часть `text`, соответствующая этому выражению, будет возвращена.",
+          name: "регулярное_выражение",
+          detail: "Первая часть `текст`, соответствующая этому выражению, будет возвращена.",
           example: "\".e{2}dle\"",
           require: "m",
           repeat: "n",
@@ -10211,7 +10211,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "текст",
           detail: "Текст, который проверяется на соответствие регулярному выражению.",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -10219,7 +10219,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "regular_expression",
+          name: "регулярное_выражение",
           detail: "Регулярное выражение, с которым проверяется текст.",
           example: "\"S.r\"",
           require: "m",
@@ -10239,7 +10239,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "текст",
           detail: "Текст, часть которого будет заменена.",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -10247,15 +10247,15 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "regular_expression",
-          detail: "Регулярное выражение. Все совпадающие экземпляры в `text` будут заменены.",
+          name: "регулярное_выражение",
+          detail: "Регулярное выражение. Все совпадающие экземпляры в `текст` будут заменены.",
           example: "\"S.*d\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "replacement",
+          name: "замена",
           detail: "Текст, который будет вставлен в исходный текст.",
           example: "\"Bed\"",
           require: "m",
@@ -10275,7 +10275,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Аргумент для преобразования в текст.",
           example: "A2",
           require: "m",
@@ -10295,7 +10295,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "число",
           detail: "Число для форматирования.",
           example: "3.141592653",
           require: "m",
@@ -10303,7 +10303,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "number_of_places",
+          name: "количество_знаков",
           detail: "Количество знаков после запятой для отображения в результате.",
           example: "2",
           require: "o",
@@ -10311,7 +10311,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "suppress_separator",
+          name: "подавить_разделитель",
           detail: "Указывает, подавлять ли разделитель тысяч, используемый в некоторых локалях (например, `1,000` становится `1000`). Разделители будут присутствовать, если это значение равно 0 или не указано, и отсутствовать в противном случае.",
           example: "FALSE()",
           require: "o",
@@ -10331,24 +10331,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Строка для поиска в `text_to_search`.",
+          name: "искомое",
+          detail: "Строка для поиска в `текст_для_поиска`.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Текст для поиска первого вхождения `search_for`.",
+          name: "текст_для_поиска",
+          detail: "Текст для поиска первого вхождения `искомое`.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Символ в `text_to_search`, с которого начинается поиск.",
+          name: "начиная_с",
+          detail: "Символ в `текст_для_поиска`, с которого начинается поиск.",
           example: "14",
           require: "o",
           repeat: "n",
@@ -10367,24 +10367,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Строка для поиска в `text_to_search`.",
+          name: "искомое",
+          detail: "Строка для поиска в `текст_для_поиска`.",
           example: "\"new\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Текст для поиска первого вхождения `search_for`.",
+          name: "текст_для_поиска",
+          detail: "Текст для поиска первого вхождения `искомое`.",
           example: "\"new year\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Символ в `text_to_search`, с которого начинается поиск.",
+          name: "начиная_с",
+          detail: "Символ в `текст_для_поиска`, с которого начинается поиск.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -10403,7 +10403,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "delimiter",
+          name: "разделитель",
           detail: "Символ или строка, размещаемая между каждым объединенным значением.",
           example: "\" and-a \"",
           require: "m",
@@ -10411,16 +10411,16 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "value_or_array1",
-          detail: "Значение или значения, которые будут объединены с использованием `delimiter`.",
+          name: "значение_или_массив1",
+          detail: "Значение или значения, которые будут объединены с использованием `разделитель`.",
           example: "{1",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "value_or_array2",
-          detail: "Дополнительные значения, которые будут объединены с использованием `delimiter`.",
+          name: "значение_или_массив2",
+          detail: "Дополнительные значения, которые будут объединены с использованием `разделитель`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -10439,7 +10439,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "строка",
           detail: "Строка, из которой будет возвращена левая часть.",
           example: "A2",
           require: "m",
@@ -10447,8 +10447,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
-          detail: "Количество символов, которое будет возвращено с левой стороны `string`.",
+          name: "количество_символов",
+          detail: "Количество символов, которое будет возвращено с левой стороны `строка`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -10467,7 +10467,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "строка",
           detail: "Строка, из которой будет возвращена правая часть.",
           example: "A2",
           require: "m",
@@ -10475,8 +10475,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "number_of_characters",
-          detail: "Количество символов, которое будет возвращено с правой стороны `string`.",
+          name: "количество_символов",
+          detail: "Количество символов, которое будет возвращено с правой стороны `строка`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -10495,7 +10495,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string",
+          name: "строка",
           detail: "Строка, из которой будет извлечен сегмент.",
           example: "\"get this\"",
           require: "m",
@@ -10503,15 +10503,15 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Индекс слева в `string`, с которого начинается извлечение. Первый символ в `string` имеет индекс 1.",
+          name: "начиная_с",
+          detail: "Индекс слева в `строка`, с которого начинается извлечение. Первый символ в `строка` имеет индекс 1.",
           example: "5",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "extract_length",
+          name: "длина_извлечения",
           detail: "Длина извлекаемого сегмента.",
           example: "4",
           require: "m",
@@ -10531,7 +10531,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "текст",
           detail: "Строка, длина которой будет возвращена.",
           example: "A2",
           require: "m",
@@ -10551,7 +10551,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "текст",
           detail: "Строка, длина которой будет возвращена.",
           example: "A2",
           require: "m",
@@ -10571,7 +10571,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "текст",
           detail: "Строка для преобразования в нижний регистр.",
           example: "\"LOREM IPSUM\"",
           require: "m",
@@ -10591,7 +10591,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "текст",
           detail: "Строка для преобразования в верхний регистр.",
           example: "\"lorem ipsum\"",
           require: "m",
@@ -10611,7 +10611,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "string1",
+          name: "строка1",
           detail: "Первая строка для сравнения.",
           example: "A1",
           require: "m",
@@ -10619,7 +10619,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "string2",
+          name: "строка2",
           detail: "Вторая строка для сравнения.",
           example: "A2",
           require: "m",
@@ -10639,7 +10639,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "текст",
           detail: "Текст, часть которого будет заменена.",
           example: "\"Spreadsheets\"",
           require: "m",
@@ -10647,7 +10647,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "position",
+          name: "позиция",
           detail: "Позиция, с которой начинается замена (начиная с 1).",
           example: "1",
           require: "m",
@@ -10655,7 +10655,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "length",
+          name: "длина",
           detail: "Количество символов в тексте, которые будут заменены.",
           example: "6",
           require: "m",
@@ -10663,7 +10663,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "new_text",
+          name: "новый_текст",
           detail: "Текст, который будет вставлен в исходный текст.",
           example: "\"Bed\"",
           require: "m",
@@ -10683,7 +10683,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_repeat",
+          name: "текст_для_повтора",
           detail: "Символ или строка для повторения.",
           example: "\"ha\"",
           require: "m",
@@ -10691,8 +10691,8 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "number_of_repetitions",
-          detail: "Количество раз, которое `text_to_repeat` должно появиться в результате.",
+          name: "количество_повторений",
+          detail: "Количество раз, которое `текст_для_повтора` должно появиться в результате.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -10711,24 +10711,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "search_for",
-          detail: "Строка для поиска в `text_to_search`.",
+          name: "искомое",
+          detail: "Строка для поиска в `текст_для_поиска`.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "text_to_search",
-          detail: "Текст для поиска первого вхождения `search_for`.",
+          name: "текст_для_поиска",
+          detail: "Текст для поиска первого вхождения `искомое`.",
           example: "A2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "starting_at",
-          detail: "Символ в `text_to_search`, с которого начинается поиск.",
+          name: "начиная_с",
+          detail: "Символ в `текст_для_поиска`, с которого начинается поиск.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -10747,7 +10747,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_search",
+          name: "текст_для_поиска",
           detail: "Текст, в котором будет производиться поиск и замена.",
           example: "\"search for it\"",
           require: "m",
@@ -10755,24 +10755,24 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "search_for",
-          detail: "Строка для поиска в `text_to_search`.",
+          name: "искомое",
+          detail: "Строка для поиска в `текст_для_поиска`.",
           example: "\"search for\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "replace_with",
-          detail: "Строка, которая заменит `search_for`.",
+          name: "заменить_на",
+          detail: "Строка, которая заменит `искомое`.",
           example: "\"Google\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "occurrence_number",
-          detail: "Экземпляр `search_for` в `text_to_search`, который будет заменен на `replace_with`. По умолчанию заменяются все вхождения `search_for`; если указан `occurrence_number`, заменяется только указанный экземпляр.",
+          name: "номер_вхождения",
+          detail: "Экземпляр `искомое` в `текст_для_поиска`, который будет заменен на `заменить_на`. По умолчанию заменяются все вхождения `искомое`; если указан `номер_вхождения`, заменяется только указанный экземпляр.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -10791,7 +10791,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "текст",
           detail: "Текст, из которого будут удалены непечатаемые символы.",
           example: "\"AF\"&CHAR(31)",
           require: "m",
@@ -10811,7 +10811,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "number",
+          name: "число",
           detail: "Число, дата или время для форматирования.",
           example: "1.23",
           require: "m",
@@ -10819,7 +10819,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "format",
+          name: "формат",
           detail: "Шаблон, по которому будет отформатировано число, заключенный в кавычки.",
           example: "\"$0.00\"",
           require: "m",
@@ -10839,7 +10839,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "текст",
           detail: "Текст или ссылка на ячейку, содержащую текст для обрезки.",
           example: "\" lorem ipsum\"",
           require: "m",
@@ -10859,7 +10859,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text",
+          name: "текст",
           detail: "Строка, содержащая значение для преобразования.",
           example: "\"123\"",
           require: "m",
@@ -10879,7 +10879,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "text_to_capitalize",
+          name: "текст_для_прописных",
           detail: "Текст, который будет возвращен с первой буквой каждого слова в верхнем регистре и всеми остальными буквами в нижнем регистре.",
           example: "\"united states\"",
           require: "m",
@@ -10899,24 +10899,24 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
-          detail: "Числовое значение в `start_unit` для преобразования в `end_unit`.",
+          name: "значение",
+          detail: "Числовое значение в `начальная_единица` для преобразования в `конечная_единица`.",
           example: "5.1",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "start_unit",
-          detail: "Начальная единица измерения, текущая единица, присвоенная `value`.",
+          name: "начальная_единица",
+          detail: "Начальная единица измерения, текущая единица, присвоенная `значение`.",
           example: "\"g\"",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "end_unit",
-          detail: "Единица измерения, в которую будет преобразовано значение `value`.",
+          name: "конечная_единица",
+          detail: "Единица измерения, в которую будет преобразовано значение `значение`.",
           example: "\"kg\"",
           require: "m",
           repeat: "n",
@@ -10935,16 +10935,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Массив или диапазон значений, квадраты которых будут уменьшены на квадраты соответствующих элементов в `array_y` и суммированы.",
+          name: "массив_x",
+          detail: "Массив или диапазон значений, квадраты которых будут уменьшены на квадраты соответствующих элементов в `массив_y` и суммированы.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Массив или диапазон значений, квадраты которых будут вычтены из квадратов соответствующих элементов в `array_x` и суммированы.",
+          name: "массив_y",
+          detail: "Массив или диапазон значений, квадраты которых будут вычтены из квадратов соответствующих элементов в `массив_x` и суммированы.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -10963,16 +10963,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Массив или диапазон значений, квадраты которых будут добавлены к квадратам соответствующих элементов в `array_y` и суммированы.",
+          name: "массив_x",
+          detail: "Массив или диапазон значений, квадраты которых будут добавлены к квадратам соответствующих элементов в `массив_y` и суммированы.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Массив или диапазон значений, квадраты которых будут добавлены к квадратам соответствующих элементов в `array_x` и суммированы.",
+          name: "массив_y",
+          detail: "Массив или диапазон значений, квадраты которых будут добавлены к квадратам соответствующих элементов в `массив_x` и суммированы.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -10991,16 +10991,16 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_x",
-          detail: "Массив или диапазон значений, которые будут уменьшены на соответствующие элементы в `array_y`, возведены в квадрат и суммированы.",
+          name: "массив_x",
+          detail: "Массив или диапазон значений, которые будут уменьшены на соответствующие элементы в `массив_y`, возведены в квадрат и суммированы.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "array_y",
-          detail: "Массив или диапазон значений, которые будут вычтены из соответствующих элементов в `array_x`, результат возведен в квадрат и все такие результаты суммированы.",
+          name: "массив_y",
+          detail: "Массив или диапазон значений, которые будут вычтены из соответствующих элементов в `массив_x`, результат возведен в квадрат и все такие результаты суммированы.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -11019,7 +11019,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array_or_range",
+          name: "массив_или_диапазон",
           detail: "Массив или диапазон, строки и столбцы которого будут переставлены местами.",
           example: "{1,2}",
           require: "m",
@@ -11039,7 +11039,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "известные_данные_y",
           detail: "Массив или диапазон, содержащий известные зависимые (y) значения, используемые для подгонки идеального линейного тренда.",
           example: "B2:B10",
           require: "m",
@@ -11047,15 +11047,15 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Значения независимой переменной(ых), соответствующие `known_data_y`.",
+          name: "известные_данные_x",
+          detail: "Значения независимой переменной(ых), соответствующие `известные_данные_y`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
+          name: "новые_данные_x",
           detail: "Точки данных, для которых нужно вернуть значения `y` на идеальной кривой подгонки.",
           example: "A11:A13",
           require: "o",
@@ -11083,7 +11083,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "data",
+          name: "данные",
           detail: "Массив или диапазон, содержащий значения для подсчета.",
           example: "A2:A40",
           require: "m",
@@ -11091,7 +11091,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "classes",
+          name: "классы",
           detail: "Массив или диапазон, содержащий набор классов.",
           example: "B2:B5",
           require: "m",
@@ -11111,7 +11111,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "известные_данные_y",
           detail: "Массив или диапазон, содержащий известные зависимые (y) значения, используемые для подгонки идеальной кривой экспоненциального роста.",
           example: "B2:B10",
           require: "m",
@@ -11119,15 +11119,15 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Значения независимой переменной(ых), соответствующие `known_data_y`.",
+          name: "известные_данные_x",
+          detail: "Значения независимой переменной(ых), соответствующие `известные_данные_y`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "new_data_x",
+          name: "новые_данные_x",
           detail: "Точки данных, для которых нужно вернуть значения `y` на идеальной кривой подгонки.",
           example: "A11:A13",
           require: "o",
@@ -11155,7 +11155,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "известные_данные_y",
           detail: "Массив или диапазон, содержащий известные зависимые (y) значения, используемые для подгонки идеального линейного тренда.",
           example: "B2:B10",
           require: "m",
@@ -11163,15 +11163,15 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Значения независимой переменной(ых), соответствующие `known_data_y`.",
+          name: "известные_данные_x",
+          detail: "Значения независимой переменной(ых), соответствующие `известные_данные_y`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
           type: "rangenumber"
         },
         {
-          name: "calculate_b",
+          name: "вычислить_b",
           detail: "Для линейной формы `y = m*x+b` вычисляет y-пересечение (`b`), если `TRUE`. В противном случае заставляет `b` быть равным `0` и вычисляет только значения `m`, если `FALSE`, т.е. заставляет кривую подгонки проходить через начало координат.",
           example: "TRUE()",
           require: "o",
@@ -11179,7 +11179,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "verbose",
+          name: "подробно",
           detail: "Флаг, указывающий, возвращать ли дополнительные регрессионные статистики или только линейные коэффициенты и y-пересечение (по умолчанию).",
           example: "TRUE()",
           require: "o",
@@ -11199,7 +11199,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "known_data_y",
+          name: "известные_данные_y",
           detail: "Массив или диапазон, содержащий известные зависимые (y) значения, используемые для подгонки идеальной кривой экспоненциального роста.",
           example: "B2:B10",
           require: "m",
@@ -11207,8 +11207,8 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "known_data_x",
-          detail: "Значения независимой переменной(ых), соответствующие `known_data_y`.",
+          name: "известные_данные_x",
+          detail: "Значения независимой переменной(ых), соответствующие `известные_данные_y`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -11223,7 +11223,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "verbose",
+          name: "подробно",
           detail: "Флаг, указывающий, возвращать ли дополнительные регрессионные статистики или только вычисленные коэффициенты и экспоненты.",
           example: "TRUE()",
           require: "o",
@@ -11243,7 +11243,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
+          name: "квадратная_матрица",
           detail: "Массив или диапазон с равным количеством строк и столбцов, представляющий матрицу, определитель которой будет вычислен.",
           example: "A1:D4",
           require: "m",
@@ -11263,7 +11263,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "square_matrix",
+          name: "квадратная_матрица",
           detail: "Массив или диапазон с равным количеством строк и столбцов, представляющий матрицу, обратная матрица которой будет вычислена.",
           example: "A1:D4",
           require: "m",
@@ -11283,7 +11283,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "matrix1",
+          name: "матрица1",
           detail: "Первая матрица в операции умножения матриц, представленная в виде массива или диапазона.",
           example: "A1:B3",
           require: "m",
@@ -11291,7 +11291,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "matrix2",
+          name: "матрица2",
           detail: "Вторая матрица в операции умножения матриц, представленная в виде массива или диапазона.",
           example: "C1:F2",
           require: "m",
@@ -11311,7 +11311,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "array1",
+          name: "массив1",
           detail: "Первый массив или диапазон, элементы которого будут умножены на соответствующие элементы второго массива или диапазона.",
           example: "A2:C5",
           require: "m",
@@ -11319,7 +11319,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "array2",
+          name: "массив2",
           detail: "Второй массив или диапазон, элементы которого будут умножены на соответствующие элементы первого массива или диапазона.",
           example: "D2:F5",
           require: "o",
@@ -11339,7 +11339,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "cell",
+          name: "ячейка",
           detail: "Ячейка, проверяемая на наличие формулы.",
           example: "A2",
           require: "m",
@@ -11359,7 +11359,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "info_type",
+          name: "тип_сведений",
           detail: "Тип запрашиваемой информации (см. статью для доступных типов).",
           example: "\"type\"",
           require: "m",
@@ -11367,7 +11367,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "reference",
+          name: "ссылка",
           detail: "Ссылка на ячейку.",
           example: "C2",
           require: "m",
@@ -11398,7 +11398,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "reference",
+          name: "ссылка",
           detail: "Ячейка, для которой нужно найти номер ошибки, хотя значение ошибки можно также указать напрямую.",
           example: "A3",
           require: "m",
@@ -11418,7 +11418,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Ссылка на ячейку, которая будет проверена на пустоту.",
           example: "A2",
           require: "m",
@@ -11438,7 +11438,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение для проверки на тип ошибки, кроме `#N/A`.",
           example: "A2",
           require: "m",
@@ -11458,7 +11458,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение для проверки на тип ошибки.",
           example: "A2",
           require: "m",
@@ -11478,7 +11478,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение для проверки на логическое значение `TRUE` или `FALSE`.",
           example: "A2",
           require: "m",
@@ -11498,7 +11498,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение для сравнения с ошибкой `#N/A`.",
           example: "A2",
           require: "m",
@@ -11518,7 +11518,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение для проверки.",
           example: "A2",
           require: "m",
@@ -11538,7 +11538,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение для проверки на число.",
           example: "A2",
           require: "m",
@@ -11558,7 +11558,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение для проверки на действительную ссылку на ячейку.",
           example: "A2",
           require: "m",
@@ -11578,7 +11578,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение для проверки на текст.",
           example: "A2",
           require: "m",
@@ -11598,7 +11598,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Значение, тип которого нужно определить.",
           example: "C4",
           require: "m",
@@ -11618,7 +11618,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Аргумент для преобразования в число.",
           example: "A2",
           require: "m",
@@ -11638,7 +11638,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Аргумент или ссылка на ячейку, которую нужно преобразовать в дату.",
           example: "25405",
           require: "m",
@@ -11658,7 +11658,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Аргумент или ссылка на ячейку, которую нужно преобразовать в чистое число.",
           example: "50%",
           require: "m",
@@ -11678,7 +11678,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Аргумент или ссылка на ячейку, которую нужно преобразовать в текст.",
           example: "24",
           require: "m",
@@ -11698,7 +11698,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Аргумент или ссылка на ячейку, которую нужно преобразовать в значение в долларах.",
           example: "A2",
           require: "m",
@@ -11718,7 +11718,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "value",
+          name: "значение",
           detail: "Аргумент или ссылка на ячейку, которую нужно преобразовать в процент.",
           example: "A2",
           require: "m",
@@ -11738,7 +11738,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -11746,16 +11746,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -11774,7 +11774,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -11782,16 +11782,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -11810,7 +11810,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -11818,16 +11818,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -11846,7 +11846,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -11854,16 +11854,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -11882,7 +11882,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -11890,16 +11890,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -11918,7 +11918,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -11926,16 +11926,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -11954,7 +11954,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -11962,16 +11962,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -11990,7 +11990,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -11998,16 +11998,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -12026,7 +12026,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -12034,16 +12034,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -12062,7 +12062,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -12070,16 +12070,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -12098,7 +12098,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -12106,16 +12106,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -12134,7 +12134,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "database",
+          name: "база_данных",
           detail: "Массив или диапазон, содержащий данные для обработки, структурированный так, что первая строка содержит метки для значений каждого столбца.",
           example: "A2:F20",
           require: "m",
@@ -12142,16 +12142,16 @@ module.exports = {
           type: "range"
         },
         {
-          name: "field",
-          detail: "Указывает, какой столбец в `database` содержит значения для извлечения и обработки.",
+          name: "поле",
+          detail: "Указывает, какой столбец в `база_данных` содержит значения для извлечения и обработки.",
           example: "G2",
           require: "m",
           repeat: "n",
           type: "rangeall"
         },
         {
-          name: "criteria",
-          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `database` перед выполнением операции.",
+          name: "критерии",
+          detail: "Массив или диапазон, содержащий ноль или более критериев для фильтрации значений `база_данных` перед выполнением операции.",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -12170,7 +12170,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Номер удостоверения",
           example: "A1",
           detail: "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
@@ -12178,7 +12178,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Deadline",
+          name: "Крайний срок",
           example: "\"2017-10-01\"",
           detail: "Крайний срок или диапазон для расчета возраста. По умолчанию — текущий день.",
           require: "o",
@@ -12198,7 +12198,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Номер удостоверения",
           example: "\"31033519900101XXXX\"",
           detail: "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
@@ -12218,7 +12218,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Номер удостоверения",
           example: "\"31033519900101XXXX\"",
           detail: "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
@@ -12226,7 +12226,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Birthday format",
+          name: "Формат даты рождения",
           example: "0",
           detail: "Тип даты, по умолчанию: 0:[1900/01/01], 1:[1900-01-01], 2:[1900年1月1日]",
           require: "o",
@@ -12246,7 +12246,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Номер удостоверения",
           example: "\"31033519900101XXXX\"",
           detail: "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
@@ -12266,7 +12266,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Номер удостоверения",
           example: "\"31033519900101XXXX\"",
           detail: "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
@@ -12286,7 +12286,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Номер удостоверения",
           example: "\"31033519900101XXXX\"",
           detail: "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
@@ -12306,7 +12306,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Номер удостоверения",
           example: "\"31033519900101XXXX\"",
           detail: "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
@@ -12326,7 +12326,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "ID number",
+          name: "Номер удостоверения",
           example: "\"31033519900101XXXX\"",
           detail: "15-значный или 18-значный идентификационный номер или диапазон.",
           require: "m",
@@ -12346,7 +12346,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Текст",
           example: "\"Я приехал в Пекинский университет Цинхуа\"",
           detail: "Любой текст, который нуждается в сегментации слов.",
           require: "m",
@@ -12354,7 +12354,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Word segmentation mode",
+          name: "Режим сегментации слов",
           example: "0",
           detail: "По умолчанию 0 [точный режим], 1 [полный режим], 2 [режим поисковой системы].",
           require: "o",
@@ -12374,7 +12374,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Текст",
           example: "\"Я приехал в Пекинский университет Цинхуа\"",
           detail: "Любой текст, который нуждается в сегментации слов.",
           require: "m",
@@ -12382,7 +12382,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "Количество ключевых слов",
           example: "20",
           detail: "Количество ключевых слов, возвращаемых алгоритмом, по умолчанию 20.",
           require: "o",
@@ -12390,7 +12390,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "Corpus",
+          name: "Корпус",
           example: "1",
           detail: "Выбор корпуса в определенной области, по умолчанию 0 [общий], 1 [финансы], 2 [медицина].",
           require: "o",
@@ -12410,7 +12410,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Text",
+          name: "Текст",
           example: "\"Я приехал в Пекинский университет Цинхуа\"",
           detail: "Любой текст, который нуждается в сегментации слов.",
           require: "m",
@@ -12418,7 +12418,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Number of keywords",
+          name: "Количество ключевых слов",
           example: "20",
           detail: "Количество ключевых слов, возвращаемых алгоритмом, по умолчанию 20.",
           require: "o",
@@ -12426,7 +12426,7 @@ module.exports = {
           type: "rangenumber"
         },
         {
-          name: "Corpus",
+          name: "Корпус",
           example: "1",
           detail: "Выбор корпуса в определенной области, по умолчанию 0 [общий], 1 [финансы], 2 [медицина].",
           require: "o",
@@ -12446,7 +12446,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Код акции",
           example: "\"000001\"",
           detail: "6-значный код акции, обязательный.",
           require: "m",
@@ -12454,7 +12454,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Дата",
           example: "2015-01-08",
           detail: "Торговый день акции, по умолчанию — последний торговый день.",
           require: "o",
@@ -12462,7 +12462,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Тип восстановления прав",
           example: "0",
           detail: "Выбор типа восстановления прав акции, по умолчанию 0 [переднее восстановление], 1 [оригинальная цена], 2 [заднее восстановление].",
           require: "o",
@@ -12482,7 +12482,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Код акции",
           example: "\"000001\"",
           detail: "6-значный код акции, обязательный.",
           require: "m",
@@ -12490,7 +12490,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Дата",
           example: "2015-01-08",
           detail: "Торговый день акции, по умолчанию — последний торговый день.",
           require: "o",
@@ -12498,7 +12498,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Тип восстановления прав",
           example: "0",
           detail: "Выбор типа восстановления прав акции, по умолчанию 0 [переднее восстановление], 1 [оригинальная цена], 2 [заднее восстановление].",
           require: "o",
@@ -12518,7 +12518,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Код акции",
           example: "\"000001\"",
           detail: "6-значный код акции, обязательный.",
           require: "m",
@@ -12526,7 +12526,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Дата",
           example: "2015-01-08",
           detail: "Торговый день акции, по умолчанию — последний торговый день.",
           require: "o",
@@ -12534,7 +12534,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Тип восстановления прав",
           example: "0",
           detail: "Выбор типа восстановления прав акции, по умолчанию 0 [переднее восстановление], 1 [оригинальная цена], 2 [заднее восстановление].",
           require: "o",
@@ -12554,7 +12554,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Код акции",
           example: "\"000001\"",
           detail: "6-значный код акции, обязательный.",
           require: "m",
@@ -12562,7 +12562,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Дата",
           example: "2015-01-08",
           detail: "Торговый день акции, по умолчанию — последний торговый день.",
           require: "o",
@@ -12570,7 +12570,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Тип восстановления прав",
           example: "0",
           detail: "Выбор типа восстановления прав акции, по умолчанию 0 [переднее восстановление], 1 [оригинальная цена], 2 [заднее восстановление].",
           require: "o",
@@ -12590,7 +12590,7 @@ module.exports = {
       ],
       p: [
         {
-          name: "Stock code",
+          name: "Код акции",
           example: "\"000001\"",
           detail: "6-значный код акции, обязательный.",
           require: "m",
@@ -12598,7 +12598,7 @@ module.exports = {
           type: "rangeall"
         },
         {
-          name: "Date",
+          name: "Дата",
           example: "2015-01-08",
           detail: "Торговый день акции, по умолчанию — последний торговый день.",
           require: "o",
@@ -12606,7 +12606,7 @@ module.exports = {
           type: "rangedate"
         },
         {
-          name: "Reversion and exclusion",
+          name: "Тип восстановления прав",
           example: "0",
           detail: "Выбор типа восстановления прав акции, по умолчанию 0 [переднее восстановление], 1 [оригинальная цена], 2 [заднее восстановление].",
           require: "o",
