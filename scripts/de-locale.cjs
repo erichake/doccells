@@ -3368,8 +3368,8 @@ module.exports = {
     {
       n: "T_TEST",
       t: 1,
-      d: "Beschreibung der Funktion T_TEST.",
-      a: "Kurzbeschreibung der Funktion T_TEST.",
+      d: "t-Test. Gibt die Wahrscheinlichkeit zurück, die dem t-Test nach Student zugeordnet ist. Bestimmt, ob zwei Stichproben wahrscheinlich aus denselben zwei zugrunde liegenden Grundgesamtheiten mit demselben Mittelwert stammen.",
+      a: "Gibt die dem t-Test zugeordnete Wahrscheinlichkeit zurück.",
       m: [
         4,
         4
@@ -3377,7 +3377,7 @@ module.exports = {
       p: [
         {
           name: "bereich1",
-          detail: "Parameter `bereich1` der Funktion T_TEST.",
+          detail: "Die erste Datenstichprobe oder Zellgruppe, die für den t-Test berücksichtigt werden soll.",
           example: "A1:A4",
           require: "m",
           repeat: "n",
@@ -3385,7 +3385,7 @@ module.exports = {
         },
         {
           name: "bereich2",
-          detail: "Parameter `bereich2` der Funktion T_TEST.",
+          detail: "Die zweite Datenstichprobe oder Zellgruppe, die für den t-Test berücksichtigt werden soll.",
           example: "B1:B4",
           require: "m",
           repeat: "n",
@@ -3393,7 +3393,7 @@ module.exports = {
         },
         {
           name: "seiten",
-          detail: "Parameter `seiten` der Funktion T_TEST.",
+          detail: "Gibt die Anzahl der Verteilungsseiten an.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3401,7 +3401,7 @@ module.exports = {
         },
         {
           name: "typ",
-          detail: "Parameter `typ` der Funktion T_TEST.",
+          detail: "Gibt die Art des t-Tests an.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3412,8 +3412,8 @@ module.exports = {
     {
       n: "F_DIST",
       t: 1,
-      d: "Beschreibung der Funktion F_DIST.",
-      a: "Kurzbeschreibung der Funktion F_DIST.",
+      d: "Berechnet die linksseitige F-Wahrscheinlichkeitsverteilung (Diversitätsgrad) für zwei Datensätze bei gegebener Eingabe x. Auch als Fisher-Snedecor-Verteilung oder Snedecors F-Verteilung bezeichnet.",
+      a: "F-Wahrscheinlichkeitsverteilung (linksseitig).",
       m: [
         4,
         4
@@ -3421,7 +3421,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion F_DIST.",
+          detail: "Die Eingabe für die F-Wahrscheinlichkeitsverteilungsfunktion. Der Wert, an dem die Funktion ausgewertet werden soll.",
           example: "15.35",
           require: "m",
           repeat: "n",
@@ -3429,7 +3429,7 @@ module.exports = {
         },
         {
           name: "freiheitsgrade1",
-          detail: "Parameter `freiheitsgrade1` der Funktion F_DIST.",
+          detail: "Der Zähler der Anzahl der Freiheitsgrade.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -3437,7 +3437,7 @@ module.exports = {
         },
         {
           name: "freiheitsgrade2",
-          detail: "Parameter `freiheitsgrade2` der Funktion F_DIST.",
+          detail: "Der Nenner der Anzahl der Freiheitsgrade.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3445,7 +3445,7 @@ module.exports = {
         },
         {
           name: "kumuliert",
-          detail: "Parameter `kumuliert` der Funktion F_DIST.",
+          detail: "Logischer Wert, der die Form der Funktion bestimmt.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3456,8 +3456,8 @@ module.exports = {
     {
       n: "F_DIST_RT",
       t: 1,
-      d: "Beschreibung der Funktion F_DIST_RT.",
-      a: "Kurzbeschreibung der Funktion F_DIST_RT.",
+      d: "Berechnet die rechtsseitige F-Wahrscheinlichkeitsverteilung (Diversitätsgrad) für zwei Datensätze bei gegebener Eingabe x. Auch als Fisher-Snedecor-Verteilung oder Snedecors F-Verteilung bezeichnet.",
+      a: "F-Wahrscheinlichkeitsverteilung.",
       m: [
         3,
         3
@@ -3465,7 +3465,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parameter `x` der Funktion F_DIST_RT.",
+          detail: "Die Eingabe für die F-Wahrscheinlichkeitsverteilungsfunktion. Der Wert, an dem die Funktion ausgewertet werden soll.",
           example: "15.35",
           require: "m",
           repeat: "n",
@@ -3473,7 +3473,7 @@ module.exports = {
         },
         {
           name: "freiheitsgrade1",
-          detail: "Parameter `freiheitsgrade1` der Funktion F_DIST_RT.",
+          detail: "Der Zähler der Anzahl der Freiheitsgrade.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -3481,7 +3481,7 @@ module.exports = {
         },
         {
           name: "freiheitsgrade2",
-          detail: "Parameter `freiheitsgrade2` der Funktion F_DIST_RT.",
+          detail: "Der Nenner der Anzahl der Freiheitsgrade.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3492,8 +3492,8 @@ module.exports = {
     {
       n: "VAR_P",
       t: 1,
-      d: "Beschreibung der Funktion VAR_P.",
-      a: "Kurzbeschreibung der Funktion VAR_P.",
+      d: "Berechnet die Varianz auf Basis einer gesamten Grundgesamtheit.",
+      a: "Varianz einer gesamten Grundgesamtheit.",
       m: [
         1,
         255
@@ -3501,7 +3501,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion VAR_P.",
+          detail: "Der erste Wert oder Bereich der Grundgesamtheit.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3509,7 +3509,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion VAR_P.",
+          detail: "Weitere Werte oder Bereiche, die in die Grundgesamtheit einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3520,8 +3520,8 @@ module.exports = {
     {
       n: "VAR_S",
       t: 1,
-      d: "Beschreibung der Funktion VAR_S.",
-      a: "Kurzbeschreibung der Funktion VAR_S.",
+      d: "Berechnet die Varianz auf Basis einer Stichprobe.",
+      a: "Varianz.",
       m: [
         1,
         255
@@ -3529,7 +3529,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion VAR_S.",
+          detail: "Der erste Wert oder Bereich der Stichprobe.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3537,7 +3537,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion VAR_S.",
+          detail: "Weitere Werte oder Bereiche, die in die Stichprobe einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3548,8 +3548,8 @@ module.exports = {
     {
       n: "VARA",
       t: 1,
-      d: "Beschreibung der Funktion VARA.",
-      a: "Kurzbeschreibung der Funktion VARA.",
+      d: "Berechnet die Varianz auf Basis einer Stichprobe, wobei Text auf den Wert `0` gesetzt wird.",
+      a: "Varianz einer Stichprobe (Text als 0).",
       m: [
         1,
         255
@@ -3557,7 +3557,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion VARA.",
+          detail: "Der erste Wert oder Bereich der Stichprobe.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3565,7 +3565,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion VARA.",
+          detail: "Weitere Werte oder Bereiche, die in die Stichprobe einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3576,8 +3576,8 @@ module.exports = {
     {
       n: "VARPA",
       t: 1,
-      d: "Beschreibung der Funktion VARPA.",
-      a: "Kurzbeschreibung der Funktion VARPA.",
+      d: "Berechnet die Varianz auf Basis einer gesamten Grundgesamtheit, wobei Text auf den Wert `0` gesetzt wird.",
+      a: "Varianz einer gesamten Grundgesamtheit (Text als 0).",
       m: [
         1,
         255
@@ -3585,7 +3585,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion VARPA.",
+          detail: "Der erste Wert oder Bereich der Grundgesamtheit.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3593,7 +3593,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion VARPA.",
+          detail: "Weitere Werte oder Bereiche, die in die Grundgesamtheit einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3604,8 +3604,8 @@ module.exports = {
     {
       n: "STEYX",
       t: 1,
-      d: "Beschreibung der Funktion STEYX.",
-      a: "Kurzbeschreibung der Funktion STEYX.",
+      d: "Berechnet den Standardfehler des vorhergesagten y-Werts für jedes x in der Regression eines Datensatzes.",
+      a: "Standardfehler vorhergesagter y-Werte in einer Regression.",
       m: [
         2,
         2
@@ -3613,7 +3613,7 @@ module.exports = {
       p: [
         {
           name: "daten_y",
-          detail: "Parameter `daten_y` der Funktion STEYX.",
+          detail: "Der Bereich, der das Array oder die Matrix der abhängigen Daten darstellt.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3621,7 +3621,7 @@ module.exports = {
         },
         {
           name: "daten_x",
-          detail: "Parameter `daten_x` der Funktion STEYX.",
+          detail: "Der Bereich, der das Array oder die Matrix der unabhängigen Daten darstellt.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3632,8 +3632,8 @@ module.exports = {
     {
       n: "STANDARDIZE",
       t: 1,
-      d: "Beschreibung der Funktion STANDARDIZE.",
-      a: "Kurzbeschreibung der Funktion STANDARDIZE.",
+      d: "Berechnet das normalisierte Äquivalent einer Zufallsvariablen bei gegebenem Mittelwert und gegebener Standardabweichung der Verteilung.",
+      a: "Normalisiertes Äquivalent einer Zufallsvariablen.",
       m: [
         3,
         3
@@ -3641,7 +3641,7 @@ module.exports = {
       p: [
         {
           name: "wert",
-          detail: "Parameter `wert` der Funktion STANDARDIZE.",
+          detail: "Der Wert der zu normalisierenden Zufallsvariablen.",
           example: "96",
           require: "m",
           repeat: "n",
@@ -3649,7 +3649,7 @@ module.exports = {
         },
         {
           name: "mittelwert",
-          detail: "Parameter `mittelwert` der Funktion STANDARDIZE.",
+          detail: "Der Mittelwert der Verteilung.",
           example: "80",
           require: "m",
           repeat: "n",
@@ -3657,7 +3657,7 @@ module.exports = {
         },
         {
           name: "standardabweichung",
-          detail: "Parameter `standardabweichung` der Funktion STANDARDIZE.",
+          detail: "Die Standardabweichung der Verteilung.",
           example: "6.7",
           require: "m",
           repeat: "n",
@@ -3668,8 +3668,8 @@ module.exports = {
     {
       n: "SMALL",
       t: 1,
-      d: "Beschreibung der Funktion SMALL.",
-      a: "Kurzbeschreibung der Funktion SMALL.",
+      d: "Gibt das n-te kleinste Element eines Datensatzes zurück, wobei n benutzerdefiniert ist.",
+      a: "n-tes kleinstes Element in einem Datensatz.",
       m: [
         2,
         2
@@ -3677,7 +3677,7 @@ module.exports = {
       p: [
         {
           name: "daten",
-          detail: "Parameter `daten` der Funktion SMALL.",
+          detail: "Das Array oder der Bereich mit dem zu berücksichtigenden Datensatz.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -3685,7 +3685,7 @@ module.exports = {
         },
         {
           name: "n",
-          detail: "Parameter `n` der Funktion SMALL.",
+          detail: "Die Rangfolge des zurückzugebenden Elements, von kleinstem zu größtem.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -3696,8 +3696,8 @@ module.exports = {
     {
       n: "SLOPE",
       t: 1,
-      d: "Beschreibung der Funktion SLOPE.",
-      a: "Kurzbeschreibung der Funktion SLOPE.",
+      d: "Berechnet die Steigung der aus der linearen Regression eines Datensatzes resultierenden Geraden.",
+      a: "Steigung der Geraden aus der linearen Regression von Daten.",
       m: [
         2,
         2
@@ -3705,7 +3705,7 @@ module.exports = {
       p: [
         {
           name: "daten_y",
-          detail: "Parameter `daten_y` der Funktion SLOPE.",
+          detail: "Der Bereich, der das Array oder die Matrix der abhängigen Daten darstellt.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3713,7 +3713,7 @@ module.exports = {
         },
         {
           name: "daten_x",
-          detail: "Parameter `daten_x` der Funktion SLOPE.",
+          detail: "Der Bereich, der das Array oder die Matrix der unabhängigen Daten darstellt.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3724,8 +3724,8 @@ module.exports = {
     {
       n: "SKEW",
       t: 1,
-      d: "Beschreibung der Funktion SKEW.",
-      a: "Kurzbeschreibung der Funktion SKEW.",
+      d: "Berechnet die Schiefe eines Datensatzes, die die Symmetrie dieses Datensatzes um den Mittelwert beschreibt.",
+      a: "Schiefe eines Datensatzes.",
       m: [
         1,
         255
@@ -3733,7 +3733,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion SKEW.",
+          detail: "Der erste Wert oder Bereich des Datensatzes.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3741,7 +3741,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion SKEW.",
+          detail: "Weitere Werte oder Bereiche, die in den Datensatz einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3752,8 +3752,8 @@ module.exports = {
     {
       n: "SKEW_P",
       t: 1,
-      d: "Beschreibung der Funktion SKEW_P.",
-      a: "Kurzbeschreibung der Funktion SKEW_P.",
+      d: "Berechnet die Schiefe eines Datensatzes, die die Symmetrie dieses Datensatzes um den Mittelwert beschreibt. Dabei wird angenommen, dass der Datensatz die Grundgesamtheit darstellt.",
+      a: "Schiefe des Datensatzes einer Grundgesamtheit.",
       m: [
         1,
         255
@@ -3761,7 +3761,7 @@ module.exports = {
       p: [
         {
           name: "wert1",
-          detail: "Parameter `wert1` der Funktion SKEW_P.",
+          detail: "Der erste Wert oder Bereich des Datensatzes.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3769,7 +3769,7 @@ module.exports = {
         },
         {
           name: "wert2",
-          detail: "Parameter `wert2` der Funktion SKEW_P.",
+          detail: "Weitere Werte oder Bereiche, die in den Datensatz einbezogen werden sollen.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3780,8 +3780,8 @@ module.exports = {
     {
       n: "VLOOKUP",
       t: 2,
-      d: "Beschreibung der Funktion VLOOKUP.",
-      a: "Kurzbeschreibung der Funktion VLOOKUP.",
+      d: "Vertikale Suche. Durchsucht die erste Spalte eines Bereichs nach einem Schlüssel und gibt den Wert einer angegebenen Zelle in der gefundenen Zeile zurück.",
+      a: "Vertikale Suche.",
       m: [
         3,
         4
@@ -3789,7 +3789,7 @@ module.exports = {
       p: [
         {
           name: "suchschlüssel",
-          detail: "Parameter `suchschlüssel` der Funktion VLOOKUP.",
+          detail: "Der zu suchende Wert. Zum Beispiel `42`, `\"Katzen\"` oder `I24`.",
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3797,7 +3797,7 @@ module.exports = {
         },
         {
           name: "bereich",
-          detail: "Parameter `bereich` der Funktion VLOOKUP.",
+          detail: "Der für die Suche zu berücksichtigende Bereich. Die erste Spalte des Bereichs wird nach dem in `suchkriterium` angegebenen Schlüssel durchsucht.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
@@ -3805,7 +3805,7 @@ module.exports = {
         },
         {
           name: "index",
-          detail: "Parameter `index` der Funktion VLOOKUP.",
+          detail: "Der Spaltenindex des zurückzugebenden Werts, wobei die erste Spalte in `bereich` mit 1 nummeriert ist.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3813,7 +3813,7 @@ module.exports = {
         },
         {
           name: "ist_sortiert",
-          detail: "Parameter `ist_sortiert` der Funktion VLOOKUP.",
+          detail: "Gibt an, ob die zu durchsuchende Spalte (die erste Spalte des angegebenen Bereichs) sortiert ist; in diesem Fall wird die nächstliegende Übereinstimmung für `suchkriterium` zurückgegeben.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3824,8 +3824,8 @@ module.exports = {
     {
       n: "HLOOKUP",
       t: 2,
-      d: "Beschreibung der Funktion HLOOKUP.",
-      a: "Kurzbeschreibung der Funktion HLOOKUP.",
+      d: "Horizontale Suche. Durchsucht die erste Zeile eines Bereichs nach einem Schlüssel und gibt den Wert einer angegebenen Zelle in der gefundenen Spalte zurück.",
+      a: "Horizontale Suche.",
       m: [
         3,
         4
@@ -3833,7 +3833,7 @@ module.exports = {
       p: [
         {
           name: "suchschlüssel",
-          detail: "Parameter `suchschlüssel` der Funktion HLOOKUP.",
+          detail: "Der zu suchende Wert. Zum Beispiel `42`, `\"Katzen\"` oder `I24`.",
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3841,7 +3841,7 @@ module.exports = {
         },
         {
           name: "bereich",
-          detail: "Parameter `bereich` der Funktion HLOOKUP.",
+          detail: "Der für die Suche zu berücksichtigende Bereich. Die erste Zeile des Bereichs wird nach dem in `suchkriterium` angegebenen Schlüssel durchsucht.",
           example: "A2:Z6",
           require: "m",
           repeat: "n",
@@ -3849,7 +3849,7 @@ module.exports = {
         },
         {
           name: "index",
-          detail: "Parameter `index` der Funktion HLOOKUP.",
+          detail: "Der Zeilenindex des zurückzugebenden Werts, wobei die erste Zeile in `bereich` mit 1 nummeriert ist.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3857,7 +3857,7 @@ module.exports = {
         },
         {
           name: "ist_sortiert",
-          detail: "Parameter `ist_sortiert` der Funktion HLOOKUP.",
+          detail: "Gibt an, ob die zu durchsuchende Zeile (die erste Zeile des angegebenen Bereichs) sortiert ist.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3868,8 +3868,8 @@ module.exports = {
     {
       n: "LOOKUP",
       t: 2,
-      d: "Beschreibung der Funktion LOOKUP.",
-      a: "Kurzbeschreibung der Funktion LOOKUP.",
+      d: "Durchsucht eine sortierte Zeile oder Spalte nach einem Schlüssel und gibt den Wert der Zelle in einem Ergebnisbereich zurück, der sich an derselben Position wie die Suchzeile oder -spalte befindet.",
+      a: "Einen Wert nachschlagen.",
       m: [
         2,
         3
@@ -3877,7 +3877,7 @@ module.exports = {
       p: [
         {
           name: "suchschlüssel",
-          detail: "Parameter `suchschlüssel` der Funktion LOOKUP.",
+          detail: "Der in der Zeile oder Spalte zu suchende Wert. Zum Beispiel `42`, `\"Katzen\"` oder `I24`.",
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3885,7 +3885,7 @@ module.exports = {
         },
         {
           name: "suchbereich|ergebnismatrix",
-          detail: "Parameter `search_range|search_result_array` der Funktion LOOKUP.",
+          detail: "Eine Möglichkeit, diese Funktion zu verwenden, besteht darin, eine einzelne sortierte Zeile oder Spalte `suchbereich` anzugeben, in der nach `suchkriterium` gesucht wird, zusammen mit einem zweiten Argument `ergebnisbereich`. Die andere Möglichkeit besteht darin, diese beiden Argumente in einem `tabelle_ergebnis_suche` zu kombinieren, wobei die erste Zeile oder Spalte durchsucht wird und ein Wert aus der letzten Zeile oder Spalte des Arrays zurückgegeben wird. Wird `suchkriterium` nicht gefunden, kann eine nicht exakte Übereinstimmung zurückgegeben werden.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -3893,7 +3893,7 @@ module.exports = {
         },
         {
           name: "ergebnisbereich",
-          detail: "Parameter `ergebnisbereich` der Funktion LOOKUP.",
+          detail: "Der Bereich, aus dem ein Ergebnis zurückgegeben werden soll. Der zurückgegebene Wert entspricht der Position, an der `suchkriterium` in `suchbereich` gefunden wird. Dieser Bereich darf nur eine einzelne Zeile oder Spalte umfassen und sollte nicht verwendet werden, wenn die Methode `tabelle_ergebnis_suche` verwendet wird.",
           example: "B1:B100",
           require: "o",
           repeat: "n",
@@ -3904,8 +3904,8 @@ module.exports = {
     {
       n: "ADDRESS",
       t: 2,
-      d: "Beschreibung der Funktion ADDRESS.",
-      a: "Kurzbeschreibung der Funktion ADDRESS.",
+      d: "Gibt einen Zellbezug als Text zurück.",
+      a: "Zellbezug als Text.",
       m: [
         2,
         5
@@ -3913,7 +3913,7 @@ module.exports = {
       p: [
         {
           name: "zeile",
-          detail: "Parameter `zeile` der Funktion ADDRESS.",
+          detail: "Die Zeilennummer des Zellbezugs.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3921,7 +3921,7 @@ module.exports = {
         },
         {
           name: "spalte",
-          detail: "Parameter `spalte` der Funktion ADDRESS.",
+          detail: "Die Spaltennummer (nicht der Name) des Zellbezugs. `A` ist Spaltennummer `1`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3929,7 +3929,7 @@ module.exports = {
         },
         {
           name: "modus_absolut_relativ",
-          detail: "Parameter `modus_absolut_relativ` der Funktion ADDRESS.",
+          detail: "Ein Hinweis darauf, ob der Bezug in Zeile/Spalte absolut ist. `1` bedeutet Zeile und Spalte absolut (z. B. $A$1), `2` bedeutet Zeile absolut und Spalte relativ (z. B. A$1), `3` bedeutet Zeile relativ und Spalte absolut (z. B. $A1) und `4` bedeutet Zeile und Spalte relativ (z. B. A1).",
           example: "4",
           require: "o",
           repeat: "n",
@@ -3937,7 +3937,7 @@ module.exports = {
         },
         {
           name: "a1_notation_verwenden",
-          detail: "Parameter `a1_notation_verwenden` der Funktion ADDRESS.",
+          detail: "Ein boolescher Wert, der angibt, ob die Notation im Stil `A1` (TRUE) oder im Stil `R1C1` (FALSE) verwendet werden soll.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3945,7 +3945,7 @@ module.exports = {
         },
         {
           name: "tabellenblatt",
-          detail: "Parameter `tabellenblatt` der Funktion ADDRESS.",
+          detail: "Text, der den Namen des Tabellenblatts angibt, auf das die Adresse verweist.",
           example: "\"Sheet2\"",
           require: "o",
           repeat: "n",
@@ -3956,8 +3956,8 @@ module.exports = {
     {
       n: "INDIRECT",
       t: 2,
-      d: "Beschreibung der Funktion INDIRECT.",
-      a: "Kurzbeschreibung der Funktion INDIRECT.",
+      d: "Gibt einen durch eine Zeichenfolge angegebenen Zellbezug zurück.",
+      a: "Ein durch eine Zeichenfolge angegebener Zellbezug.",
       m: [
         1,
         2
@@ -3965,7 +3965,7 @@ module.exports = {
       p: [
         {
           name: "zellbezug_als_zeichenfolge",
-          detail: "Parameter `zellbezug_als_zeichenfolge` der Funktion INDIRECT.",
+          detail: "Ein Zellbezug, geschrieben als Zeichenfolge in Anführungszeichen.",
           example: "\"Sheet2!\"&B10",
           require: "m",
           repeat: "n",
@@ -3973,7 +3973,7 @@ module.exports = {
         },
         {
           name: "ist_a1_notation",
-          detail: "Parameter `ist_a1_notation` der Funktion INDIRECT.",
+          detail: "Gibt an, ob der Zellbezug in A1-Notation (TRUE) oder R1C1-Notation (FALSE) vorliegt.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3984,8 +3984,8 @@ module.exports = {
     {
       n: "ROW",
       t: 2,
-      d: "Beschreibung der Funktion ROW.",
-      a: "Kurzbeschreibung der Funktion ROW.",
+      d: "Gibt die Zeilennummer einer angegebenen Zelle zurück.",
+      a: "Zeilennummer einer angegebenen Zelle.",
       m: [
         0,
         1
@@ -3993,7 +3993,7 @@ module.exports = {
       p: [
         {
           name: "zellbezug",
-          detail: "Parameter `zellbezug` der Funktion ROW.",
+          detail: "Die Zelle, deren Zeilennummer zurückgegeben werden soll.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4004,8 +4004,8 @@ module.exports = {
     {
       n: "ROWS",
       t: 2,
-      d: "Beschreibung der Funktion ROWS.",
-      a: "Kurzbeschreibung der Funktion ROWS.",
+      d: "Gibt die Anzahl der Zeilen in einem angegebenen Array oder Bereich zurück.",
+      a: "Anzahl der Zeilen in einem angegebenen Array oder Bereich.",
       m: [
         1,
         1
@@ -4013,7 +4013,7 @@ module.exports = {
       p: [
         {
           name: "bereich",
-          detail: "Parameter `bereich` der Funktion ROWS.",
+          detail: "Der Bereich, dessen Zeilenanzahl zurückgegeben werden soll.",
           example: "A9:A62",
           require: "m",
           repeat: "n",
@@ -4024,8 +4024,8 @@ module.exports = {
     {
       n: "COLUMN",
       t: 2,
-      d: "Beschreibung der Funktion COLUMN.",
-      a: "Kurzbeschreibung der Funktion COLUMN.",
+      d: "Gibt die Spaltennummer einer angegebenen Zelle zurück, wobei `A=1` gilt.",
+      a: "Spaltennummer einer angegebenen Zelle.",
       m: [
         0,
         1
@@ -4033,7 +4033,7 @@ module.exports = {
       p: [
         {
           name: "zellbezug",
-          detail: "Parameter `zellbezug` der Funktion COLUMN.",
+          detail: "Die Zelle, deren Spaltennummer zurückgegeben werden soll. Spalte `A` entspricht `1`.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4044,8 +4044,8 @@ module.exports = {
     {
       n: "COLUMNS",
       t: 2,
-      d: "Beschreibung der Funktion COLUMNS.",
-      a: "Kurzbeschreibung der Funktion COLUMNS.",
+      d: "Gibt die Anzahl der Spalten in einem angegebenen Array oder Bereich zurück.",
+      a: "Anzahl der Spalten in einem angegebenen Array oder Bereich.",
       m: [
         1,
         1
@@ -4053,7 +4053,7 @@ module.exports = {
       p: [
         {
           name: "bereich",
-          detail: "Parameter `bereich` der Funktion COLUMNS.",
+          detail: "Der Bereich, dessen Spaltenanzahl zurückgegeben werden soll.",
           example: "A9:W62",
           require: "m",
           repeat: "n",
@@ -4064,8 +4064,8 @@ module.exports = {
     {
       n: "OFFSET",
       t: 2,
-      d: "Beschreibung der Funktion OFFSET.",
-      a: "Kurzbeschreibung der Funktion OFFSET.",
+      d: "Gibt einen Bereichsbezug zurück, der um eine angegebene Anzahl von Zeilen und Spalten von einem Ausgangszellbezug verschoben ist.",
+      a: "Ein relativ zu einer Zelle verschobener Bereichsbezug.",
       m: [
         3,
         5
@@ -4073,7 +4073,7 @@ module.exports = {
       p: [
         {
           name: "zellbezug",
-          detail: "Parameter `zellbezug` der Funktion OFFSET.",
+          detail: "Der Ausgangspunkt, von dem aus die Verschiebung von Zeilen und Spalten gezählt wird.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -4081,7 +4081,7 @@ module.exports = {
         },
         {
           name: "zeilen_verschieben",
-          detail: "Parameter `zeilen_verschieben` der Funktion OFFSET.",
+          detail: "Die Anzahl der zu verschiebenden Zeilen.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -4089,7 +4089,7 @@ module.exports = {
         },
         {
           name: "spalten_verschieben",
-          detail: "Parameter `spalten_verschieben` der Funktion OFFSET.",
+          detail: "Die Anzahl der zu verschiebenden Spalten.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -4097,7 +4097,7 @@ module.exports = {
         },
         {
           name: "höhe",
-          detail: "Parameter `höhe` der Funktion OFFSET.",
+          detail: "Die Höhe des zurückzugebenden Bereichs, beginnend am Verschiebungsziel.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -4105,7 +4105,7 @@ module.exports = {
         },
         {
           name: "breite",
-          detail: "Parameter `breite` der Funktion OFFSET.",
+          detail: "Die Breite des zurückzugebenden Bereichs, beginnend am Verschiebungsziel.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -4116,8 +4116,8 @@ module.exports = {
     {
       n: "MATCH",
       t: 2,
-      d: "Beschreibung der Funktion MATCH.",
-      a: "Kurzbeschreibung der Funktion MATCH.",
+      d: "Gibt die relative Position eines Elements in einem Bereich zurück, das einem angegebenen Wert entspricht.",
+      a: "Position eines Elements in einem Bereich, das einem Wert entspricht.",
       m: [
         2,
         3
@@ -4125,7 +4125,7 @@ module.exports = {
       p: [
         {
           name: "suchschlüssel",
-          detail: "Parameter `suchschlüssel` der Funktion MATCH.",
+          detail: "Der zu suchende Wert. Zum Beispiel `42`, `\"Katzen\"` oder `I24`.",
           example: "\"Sunday\"",
           require: "m",
           repeat: "n",
@@ -4133,7 +4133,7 @@ module.exports = {
         },
         {
           name: "bereich",
-          detail: "Parameter `bereich` der Funktion MATCH.",
+          detail: "Das eindimensionale Array, das durchsucht werden soll.",
           example: "A2:A9",
           require: "m",
           repeat: "n",
@@ -4141,7 +4141,7 @@ module.exports = {
         },
         {
           name: "suchtyp",
-          detail: "Parameter `suchtyp` der Funktion MATCH.",
+          detail: "Die Suchmethode. `1` (Standard) findet den größten Wert, der kleiner oder gleich `suchkriterium` ist, wenn `bereich` aufsteigend sortiert ist. `0` findet den exakten Wert, wenn `bereich` unsortiert ist. `-1` findet den kleinsten Wert, der größer oder gleich `suchkriterium` ist, wenn `bereich` absteigend sortiert ist.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -4152,8 +4152,8 @@ module.exports = {
     {
       n: "INDEX",
       t: 2,
-      d: "Beschreibung der Funktion INDEX.",
-      a: "Kurzbeschreibung der Funktion INDEX.",
+      d: "Gibt den Inhalt einer durch Zeilen- und Spaltenversatz angegebenen Zelle zurück.",
+      a: "Inhalt einer durch Zeilen- und Spaltenversatz angegebenen Zelle.",
       m: [
         2,
         3
@@ -4161,7 +4161,7 @@ module.exports = {
       p: [
         {
           name: "bezug",
-          detail: "Parameter `bezug` der Funktion INDEX.",
+          detail: "Das Array von Zellen, in das versetzt werden soll.",
           example: "A1:C20",
           require: "m",
           repeat: "n",
@@ -4169,7 +4169,7 @@ module.exports = {
         },
         {
           name: "zeile",
-          detail: "Parameter `zeile` der Funktion INDEX.",
+          detail: "Die Anzahl der versetzten Zeilen.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -4177,7 +4177,7 @@ module.exports = {
         },
         {
           name: "spalte",
-          detail: "Parameter `spalte` der Funktion INDEX.",
+          detail: "Die Anzahl der versetzten Spalten.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -4188,8 +4188,8 @@ module.exports = {
     {
       n: "GETPIVOTDATA",
       t: 2,
-      d: "Beschreibung der Funktion GETPIVOTDATA.",
-      a: "Kurzbeschreibung der Funktion GETPIVOTDATA.",
+      d: "Extrahiert einen aggregierten Wert aus einer Pivot-Tabelle, der den angegebenen Zeilen- und Spaltenüberschriften entspricht.",
+      a: "Extrahiert einen aggregierten Wert aus einer Pivot-Tabelle, der den angegebenen Zeilen- und Spaltenüberschriften entspricht.",
       m: [
         2,
         254
@@ -4197,7 +4197,7 @@ module.exports = {
       p: [
         {
           name: "wertname",
-          detail: "Parameter `wertname` der Funktion GETPIVOTDATA.",
+          detail: "Der Name des Werts in der Pivot-Tabelle, für den Sie Daten abrufen möchten.",
           example: "\"SUM of number of units\"",
           require: "m",
           repeat: "n",
@@ -4205,7 +4205,7 @@ module.exports = {
         },
         {
           name: "zelle_pivot_tabelle",
-          detail: "Parameter `zelle_pivot_tabelle` der Funktion GETPIVOTDATA.",
+          detail: "Ein beliebiger Bezug auf eine Zelle in der gewünschten Pivot-Tabelle (obere Ecke empfohlen).",
           example: "'Pivot table'!A1",
           require: "m",
           repeat: "n",
@@ -4213,7 +4213,7 @@ module.exports = {
         },
         {
           name: "ursprüngliche_spalte",
-          detail: "Parameter `ursprüngliche_spalte` der Funktion GETPIVOTDATA.",
+          detail: "Der Name der Spalte im ursprünglichen Datensatz (nicht in der Pivot-Tabelle).",
           example: "\"division\"",
           require: "o",
           repeat: "y",
@@ -4221,7 +4221,7 @@ module.exports = {
         },
         {
           name: "element_pivot_tabelle",
-          detail: "Parameter `element_pivot_tabelle` der Funktion GETPIVOTDATA.",
+          detail: "Der Name der Zeile oder Spalte, die in der Pivot-Tabelle entsprechend *original_column* angezeigt wird und die Sie abrufen möchten.",
           example: "\"east\"",
           require: "o",
           repeat: "y",
@@ -4232,8 +4232,8 @@ module.exports = {
     {
       n: "CHOOSE",
       t: 2,
-      d: "Beschreibung der Funktion CHOOSE.",
-      a: "Kurzbeschreibung der Funktion CHOOSE.",
+      d: "Gibt ein Element aus einer Liste von Auswahlmöglichkeiten basierend auf einem Index zurück.",
+      a: "Ein Element aus einer Liste von Auswahlmöglichkeiten basierend auf einem Index.",
       m: [
         2,
         255
@@ -4241,7 +4241,7 @@ module.exports = {
       p: [
         {
           name: "index",
-          detail: "Parameter `index` der Funktion CHOOSE.",
+          detail: "Welche Auswahl (von bis zu 30 angegebenen) zurückgegeben werden soll.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -4249,7 +4249,7 @@ module.exports = {
         },
         {
           name: "auswahl1",
-          detail: "Parameter `auswahl1` der Funktion CHOOSE.",
+          detail: "Ein möglicher zurückzugebender Wert. Erforderlich. Kann ein Bezug auf eine Zelle oder ein einzelner Wert sein.",
           example: "\"A\"",
           require: "m",
           repeat: "n",
@@ -4257,7 +4257,7 @@ module.exports = {
         },
         {
           name: "auswahl2",
-          detail: "Parameter `auswahl2` der Funktion CHOOSE.",
+          detail: "Weitere Werte, aus denen ausgewählt werden kann.",
           example: "\"B\"",
           require: "o",
           repeat: "y",
@@ -4268,12 +4268,12 @@ module.exports = {
     {
       n: "HYPERLINK",
       t: 2,
-      d: "Beschreibung der Funktion HYPERLINK.",
-      a: "Kurzbeschreibung der Funktion HYPERLINK.",
+      d: "Erstellt einen Hyperlink innerhalb einer Zelle.",
+      a: "Erstellt einen Hyperlink innerhalb einer Zelle.",
       p: [
         {
           name: "url",
-          detail: "Parameter `url` der Funktion HYPERLINK.",
+          detail: "Die vollständige URL des Linkziels in Anführungszeichen oder ein Bezug auf eine Zelle mit einer solchen URL.",
           example: "\"http://www.luckysheet.com/\"",
           require: "m",
           repeat: "n",
@@ -4281,7 +4281,7 @@ module.exports = {
         },
         {
           name: "linktext",
-          detail: "Parameter `linktext` der Funktion HYPERLINK.",
+          detail: "Der Text, der in der Zelle als Link angezeigt werden soll, in Anführungszeichen, oder ein Bezug auf eine Zelle mit einer solchen Beschriftung.",
           example: "\"luckysheet\"",
           require: "m",
           repeat: "n",
@@ -4292,8 +4292,8 @@ module.exports = {
     {
       n: "TIME",
       t: 6,
-      d: "Beschreibung der Funktion TIME.",
-      a: "Kurzbeschreibung der Funktion TIME.",
+      d: "Wandelt eine angegebene Stunde, Minute und Sekunde in eine Uhrzeit um.",
+      a: "Wandelt Stunde/Minute/Sekunde in eine Uhrzeit um.",
       m: [
         3,
         3
@@ -4301,7 +4301,7 @@ module.exports = {
       p: [
         {
           name: "stunde",
-          detail: "Parameter `stunde` der Funktion TIME.",
+          detail: "Der Stundenanteil der Uhrzeit.",
           example: "11",
           require: "m",
           repeat: "n",
@@ -4309,7 +4309,7 @@ module.exports = {
         },
         {
           name: "minute",
-          detail: "Parameter `minute` der Funktion TIME.",
+          detail: "Der Minutenanteil der Uhrzeit.",
           example: "40",
           require: "m",
           repeat: "n",
@@ -4317,7 +4317,7 @@ module.exports = {
         },
         {
           name: "sekunde",
-          detail: "Parameter `sekunde` der Funktion TIME.",
+          detail: "Der Sekundenanteil der Uhrzeit.",
           example: "59",
           require: "m",
           repeat: "n",
@@ -4328,8 +4328,8 @@ module.exports = {
     {
       n: "TIMEVALUE",
       t: 6,
-      d: "Beschreibung der Funktion TIMEVALUE.",
-      a: "Kurzbeschreibung der Funktion TIMEVALUE.",
+      d: "Gibt den Bruchteil eines 24-Stunden-Tages zurück, den die Uhrzeit darstellt.",
+      a: "Wandelt eine Zeichenfolge mit einer Uhrzeit in ihre serielle Zahlendarstellung um.",
       m: [
         1,
         1
@@ -4337,7 +4337,7 @@ module.exports = {
       p: [
         {
           name: "uhrzeitzeichenfolge",
-          detail: "Parameter `uhrzeitzeichenfolge` der Funktion TIMEVALUE.",
+          detail: "Die Zeichenfolge, die die Uhrzeitdarstellung enthält.",
           example: "\"2:15 PM\"",
           require: "m",
           repeat: "n",
@@ -4348,8 +4348,8 @@ module.exports = {
     {
       n: "EOMONTH",
       t: 6,
-      d: "Beschreibung der Funktion EOMONTH.",
-      a: "Kurzbeschreibung der Funktion EOMONTH.",
+      d: "Gibt ein Datum am letzten Tag eines Monats zurück, der eine angegebene Anzahl von Monaten vor oder nach einem anderen Datum liegt.",
+      a: "Letzter Tag eines Monats vor oder nach einem Datum.",
       m: [
         2,
         2
@@ -4357,7 +4357,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` der Funktion EOMONTH.",
+          detail: "Das Datum, von dem aus das Ergebnis berechnet werden soll.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4365,7 +4365,7 @@ module.exports = {
         },
         {
           name: "anzahl_monate",
-          detail: "Parameter `anzahl_monate` der Funktion EOMONTH.",
+          detail: "Die Anzahl der vor (negativ) oder nach (positiv) 'startdatum' zu berücksichtigenden Monate.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4376,8 +4376,8 @@ module.exports = {
     {
       n: "EDATE",
       t: 6,
-      d: "Beschreibung der Funktion EDATE.",
-      a: "Kurzbeschreibung der Funktion EDATE.",
+      d: "Gibt ein Datum zurück, das eine angegebene Anzahl von Monaten vor oder nach einem anderen Datum liegt.",
+      a: "Datum eine Anzahl von Monaten vor/nach einem anderen Datum.",
       m: [
         2,
         2
@@ -4385,7 +4385,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` der Funktion EDATE.",
+          detail: "Das Datum, von dem aus das Ergebnis berechnet werden soll.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4393,7 +4393,7 @@ module.exports = {
         },
         {
           name: "anzahl_monate",
-          detail: "Parameter `anzahl_monate` der Funktion EDATE.",
+          detail: "Die Anzahl der vor (negativ) oder nach (positiv) 'startdatum' zu berechnenden Monate.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4404,8 +4404,8 @@ module.exports = {
     {
       n: "SECOND",
       t: 6,
-      d: "Beschreibung der Funktion SECOND.",
-      a: "Kurzbeschreibung der Funktion SECOND.",
+      d: "Gibt den Sekundenanteil einer bestimmten Uhrzeit im numerischen Format zurück.",
+      a: "Sekundenanteil einer bestimmten Uhrzeit.",
       m: [
         1,
         1
@@ -4413,7 +4413,7 @@ module.exports = {
       p: [
         {
           name: "uhrzeit",
-          detail: "Parameter `uhrzeit` der Funktion SECOND.",
+          detail: "Die Uhrzeit, aus der der Sekundenanteil berechnet werden soll.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4424,8 +4424,8 @@ module.exports = {
     {
       n: "MINUTE",
       t: 6,
-      d: "Beschreibung der Funktion MINUTE.",
-      a: "Kurzbeschreibung der Funktion MINUTE.",
+      d: "Gibt den Minutenanteil einer bestimmten Uhrzeit im numerischen Format zurück.",
+      a: "Minutenanteil einer bestimmten Uhrzeit.",
       m: [
         1,
         1
@@ -4433,7 +4433,7 @@ module.exports = {
       p: [
         {
           name: "uhrzeit",
-          detail: "Parameter `uhrzeit` der Funktion MINUTE.",
+          detail: "Die Uhrzeit, aus der der Minutenanteil berechnet werden soll.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4444,8 +4444,8 @@ module.exports = {
     {
       n: "HOUR",
       t: 6,
-      d: "Beschreibung der Funktion HOUR.",
-      a: "Kurzbeschreibung der Funktion HOUR.",
+      d: "Gibt den Stundenanteil einer bestimmten Uhrzeit im numerischen Format zurück.",
+      a: "Stundenanteil einer bestimmten Uhrzeit.",
       m: [
         1,
         1
@@ -4453,7 +4453,7 @@ module.exports = {
       p: [
         {
           name: "uhrzeit",
-          detail: "Parameter `uhrzeit` der Funktion HOUR.",
+          detail: "Die Uhrzeit, aus der der Stundenanteil berechnet werden soll.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4464,8 +4464,8 @@ module.exports = {
     {
       n: "NOW",
       t: 6,
-      d: "Beschreibung der Funktion NOW.",
-      a: "Kurzbeschreibung der Funktion NOW.",
+      d: "Gibt das aktuelle Datum und die aktuelle Uhrzeit als Datumswert zurück.",
+      a: "Aktuelles Datum und aktuelle Uhrzeit als Datumswert.",
       m: [
         0,
         0
@@ -4475,8 +4475,8 @@ module.exports = {
     {
       n: "NETWORKDAYS",
       t: 6,
-      d: "Beschreibung der Funktion NETWORKDAYS.",
-      a: "Kurzbeschreibung der Funktion NETWORKDAYS.",
+      d: "Gibt die Anzahl der Nettoarbeitstage zwischen zwei angegebenen Tagen zurück.",
+      a: "Nettoarbeitstage zwischen zwei angegebenen Tagen.",
       m: [
         2,
         3
@@ -4484,7 +4484,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` der Funktion NETWORKDAYS.",
+          detail: "Das Startdatum des Zeitraums, für den die Anzahl der Nettoarbeitstage berechnet werden soll.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4492,7 +4492,7 @@ module.exports = {
         },
         {
           name: "enddatum",
-          detail: "Parameter `enddatum` der Funktion NETWORKDAYS.",
+          detail: "Das Enddatum des Zeitraums, für den die Anzahl der Nettoarbeitstage berechnet werden soll.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4500,7 +4500,7 @@ module.exports = {
         },
         {
           name: "feiertage",
-          detail: "Parameter `feiertage` der Funktion NETWORKDAYS.",
+          detail: "Ein Bereich oder eine Array-Konstante mit den Datumsseriennummern, die als Feiertage betrachtet werden sollen.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4511,8 +4511,8 @@ module.exports = {
     {
       n: "NETWORKDAYS_INTL",
       t: 6,
-      d: "Beschreibung der Funktion NETWORKDAYS_INTL.",
-      a: "Kurzbeschreibung der Funktion NETWORKDAYS_INTL.",
+      d: "Gibt die Anzahl der Nettoarbeitstage zwischen zwei angegebenen Tagen zurück, ausgenommen die angegebenen Wochenendtage und Feiertage.",
+      a: "Nettoarbeitstage zwischen zwei Daten (mit Angabe der Wochenenden).",
       m: [
         2,
         4
@@ -4520,7 +4520,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` der Funktion NETWORKDAYS_INTL.",
+          detail: "Das Startdatum des Zeitraums, für den die Anzahl der Nettoarbeitstage berechnet werden soll.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4528,7 +4528,7 @@ module.exports = {
         },
         {
           name: "enddatum",
-          detail: "Parameter `enddatum` der Funktion NETWORKDAYS_INTL.",
+          detail: "Das Enddatum des Zeitraums, für den die Anzahl der Nettoarbeitstage berechnet werden soll.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4536,7 +4536,7 @@ module.exports = {
         },
         {
           name: "wochenende",
-          detail: "Parameter `wochenende` der Funktion NETWORKDAYS_INTL.",
+          detail: "Eine Zahl oder Zeichenfolge, die angibt, welche Wochentage als Wochenende gelten.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4544,7 +4544,7 @@ module.exports = {
         },
         {
           name: "feiertage",
-          detail: "Parameter `feiertage` der Funktion NETWORKDAYS_INTL.",
+          detail: "Ein Bereich oder eine Array-Konstante mit den als Feiertage zu betrachtenden Daten.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4555,8 +4555,8 @@ module.exports = {
     {
       n: "ISOWEEKNUM",
       t: 6,
-      d: "Beschreibung der Funktion ISOWEEKNUM.",
-      a: "Kurzbeschreibung der Funktion ISOWEEKNUM.",
+      d: "Gibt eine Zahl zurück, die die ISO-Woche des Jahres darstellt, in die das angegebene Datum fällt.",
+      a: "ISO-Wochennummer des Jahres.",
       m: [
         1,
         1
@@ -4564,7 +4564,7 @@ module.exports = {
       p: [
         {
           name: "datum",
-          detail: "Parameter `datum` der Funktion ISOWEEKNUM.",
+          detail: "Das Datum, für das die ISO-Wochennummer bestimmt werden soll. Muss ein Bezug auf eine Zelle mit einem Datum, eine Funktion, die einen Datumstyp zurückgibt, oder eine Zahl sein.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4575,8 +4575,8 @@ module.exports = {
     {
       n: "WEEKNUM",
       t: 6,
-      d: "Beschreibung der Funktion WEEKNUM.",
-      a: "Kurzbeschreibung der Funktion WEEKNUM.",
+      d: "Gibt eine Zahl zurück, die die Woche des Jahres darstellt, in die das angegebene Datum fällt.",
+      a: "Wochennummer des Jahres.",
       m: [
         1,
         2
@@ -4584,7 +4584,7 @@ module.exports = {
       p: [
         {
           name: "datum",
-          detail: "Parameter `datum` der Funktion WEEKNUM.",
+          detail: "Das Datum, für das die Wochennummer bestimmt werden soll. Muss ein Bezug auf eine Zelle mit einem Datum, eine Funktion, die einen Datumstyp zurückgibt, oder eine Zahl sein.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4592,7 +4592,7 @@ module.exports = {
         },
         {
           name: "typ",
-          detail: "Parameter `typ` der Funktion WEEKNUM.",
+          detail: "Eine Zahl, die den Tag darstellt, mit dem die Woche beginnt. Sonntag = 1.",
           example: "7",
           require: "o",
           repeat: "n",
@@ -4603,8 +4603,8 @@ module.exports = {
     {
       n: "WEEKDAY",
       t: 6,
-      d: "Beschreibung der Funktion WEEKDAY.",
-      a: "Kurzbeschreibung der Funktion WEEKDAY.",
+      d: "Gibt eine Zahl zurück, die den Wochentag des angegebenen Datums darstellt.",
+      a: "Wochentag des angegebenen Datums (als Zahl).",
       m: [
         1,
         2
@@ -4612,7 +4612,7 @@ module.exports = {
       p: [
         {
           name: "datum",
-          detail: "Parameter `datum` der Funktion WEEKDAY.",
+          detail: "Das Datum, für das der Wochentag bestimmt werden soll. Muss ein Bezug auf eine Zelle mit einem Datum, eine Funktion, die einen Datumstyp zurückgibt, oder eine Zahl sein.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4620,7 +4620,7 @@ module.exports = {
         },
         {
           name: "typ",
-          detail: "Parameter `typ` der Funktion WEEKDAY.",
+          detail: "Eine Zahl, die angibt, welches Zählsystem zur Darstellung der Wochentage verwendet werden soll. Standardmäßig beginnt die Zählung mit Sonntag = 1.",
           example: "7",
           require: "o",
           repeat: "n",
@@ -4631,8 +4631,8 @@ module.exports = {
     {
       n: "DAY",
       t: 6,
-      d: "Beschreibung der Funktion DAY.",
-      a: "Kurzbeschreibung der Funktion DAY.",
+      d: "Gibt den Tag des Monats, auf den ein bestimmtes Datum fällt, im numerischen Format zurück.",
+      a: "Tag des Monats, auf den ein bestimmtes Datum fällt.",
       m: [
         1,
         1
@@ -4640,7 +4640,7 @@ module.exports = {
       p: [
         {
           name: "datum",
-          detail: "Parameter `datum` der Funktion DAY.",
+          detail: "Das Datum, aus dem der Tag extrahiert werden soll.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4651,8 +4651,8 @@ module.exports = {
     {
       n: "DAYS",
       t: 6,
-      d: "Beschreibung der Funktion DAYS.",
-      a: "Kurzbeschreibung der Funktion DAYS.",
+      d: "Gibt die Anzahl der Tage zwischen zwei Daten zurück.",
+      a: "Anzahl der Tage zwischen zwei Daten.",
       m: [
         2,
         2
@@ -4660,7 +4660,7 @@ module.exports = {
       p: [
         {
           name: "enddatum",
-          detail: "Parameter `enddatum` der Funktion DAYS.",
+          detail: "Das Ende des Datumsbereichs.",
           example: "2011-3-15",
           require: "m",
           repeat: "n",
@@ -4668,7 +4668,7 @@ module.exports = {
         },
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` der Funktion DAYS.",
+          detail: "Der Beginn des Datumsbereichs.",
           example: "2011-2-1",
           require: "m",
           repeat: "n",
@@ -4679,8 +4679,8 @@ module.exports = {
     {
       n: "DAYS360",
       t: 6,
-      d: "Beschreibung der Funktion DAYS360.",
-      a: "Kurzbeschreibung der Funktion DAYS360.",
+      d: "Gibt die Differenz zwischen zwei Tagen zurück, basierend auf dem in einigen finanzmathematischen Zinsberechnungen verwendeten 360-Tage-Jahr.",
+      a: "Tage zwischen zwei Daten bei einem 360-Tage-Jahr.",
       m: [
         2,
         3
@@ -4688,7 +4688,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` der Funktion DAYS360.",
+          detail: "Das bei der Berechnung zu berücksichtigende Startdatum. Muss ein Bezug auf eine Zelle mit einem Datum, eine Funktion, die einen Datumstyp zurückgibt, oder eine Zahl sein.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4696,7 +4696,7 @@ module.exports = {
         },
         {
           name: "enddatum",
-          detail: "Parameter `enddatum` der Funktion DAYS360.",
+          detail: "Das bei der Berechnung zu berücksichtigende Enddatum. Muss ein Bezug auf eine Zelle mit einem Datum, eine Funktion, die einen Datumstyp zurückgibt, oder eine Zahl sein.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4704,7 +4704,7 @@ module.exports = {
         },
         {
           name: "methode",
-          detail: "Parameter `methode` der Funktion DAYS360.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -4715,8 +4715,8 @@ module.exports = {
     {
       n: "DATE",
       t: 6,
-      d: "Beschreibung der Funktion DATE.",
-      a: "Kurzbeschreibung der Funktion DATE.",
+      d: "Wandelt ein angegebenes Jahr, einen Monat und einen Tag in ein Datum um.",
+      a: "Wandelt Jahr/Monat/Tag in ein Datum um.",
       m: [
         3,
         3
@@ -4724,7 +4724,7 @@ module.exports = {
       p: [
         {
           name: "jahr",
-          detail: "Parameter `jahr` der Funktion DATE.",
+          detail: "Der Jahresanteil des Datums.",
           example: "1969",
           require: "m",
           repeat: "n",
@@ -4732,7 +4732,7 @@ module.exports = {
         },
         {
           name: "monat",
-          detail: "Parameter `monat` der Funktion DATE.",
+          detail: "Der Monatsanteil des Datums.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4740,7 +4740,7 @@ module.exports = {
         },
         {
           name: "tag",
-          detail: "Parameter `tag` der Funktion DATE.",
+          detail: "Der Tagesanteil des Datums.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -4751,8 +4751,8 @@ module.exports = {
     {
       n: "DATEVALUE",
       t: 6,
-      d: "Beschreibung der Funktion DATEVALUE.",
-      a: "Kurzbeschreibung der Funktion DATEVALUE.",
+      d: "Wandelt eine angegebene Datumszeichenfolge in einem bekannten Format in einen Datumswert um.",
+      a: "Wandelt eine Datumszeichenfolge in einen Datumswert um.",
       m: [
         1,
         1
@@ -4760,7 +4760,7 @@ module.exports = {
       p: [
         {
           name: "datumszeichenfolge",
-          detail: "Parameter `datumszeichenfolge` der Funktion DATEVALUE.",
+          detail: "Die Zeichenfolge, die das Datum darstellt.",
           example: "\"1969-7-20\"",
           require: "m",
           repeat: "n",
@@ -4771,8 +4771,8 @@ module.exports = {
     {
       n: "DATEDIF",
       t: 6,
-      d: "Beschreibung der Funktion DATEDIF.",
-      a: "Kurzbeschreibung der Funktion DATEDIF.",
+      d: "Berechnet die Anzahl der Tage, Monate oder Jahre zwischen zwei Daten.",
+      a: "Datumsdifferenz.",
       m: [
         3,
         3
@@ -4780,7 +4780,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` der Funktion DATEDIF.",
+          detail: "Das bei der Berechnung zu berücksichtigende Startdatum. Muss ein Bezug auf eine Zelle mit einem Datum, eine Funktion, die einen Datumstyp zurückgibt, oder eine Zahl sein.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4788,7 +4788,7 @@ module.exports = {
         },
         {
           name: "enddatum",
-          detail: "Parameter `enddatum` der Funktion DATEDIF.",
+          detail: "Das bei der Berechnung zu berücksichtigende Enddatum. Muss ein Bezug auf eine Zelle mit einem Datum, eine Funktion, die einen Datumstyp zurückgibt, oder eine Zahl sein.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4796,7 +4796,7 @@ module.exports = {
         },
         {
           name: "einheit",
-          detail: "Parameter `einheit` der Funktion DATEDIF.",
+          detail: "Eine Zeichenfolgenabkürzung für die Zeiteinheit. Zum Beispiel \"M\" für Monat. Zulässige Werte sind \"Y\", \"M\", \"D\", \"MD\", \"YM\", \"YD\".",
           example: "16)",
           require: "m",
           repeat: "n",
@@ -4807,8 +4807,8 @@ module.exports = {
     {
       n: "WORKDAY",
       t: 6,
-      d: "Beschreibung der Funktion WORKDAY.",
-      a: "Kurzbeschreibung der Funktion WORKDAY.",
+      d: "Berechnet das Datum nach einer Anzahl von Arbeitstagen ab einem angegebenen Startdatum.",
+      a: "Anzahl der Arbeitstage ab Startdatum.",
       m: [
         2,
         3
@@ -4816,7 +4816,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` der Funktion WORKDAY.",
+          detail: "Das Datum, ab dem gezählt werden soll.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4824,7 +4824,7 @@ module.exports = {
         },
         {
           name: "anzahl_tage",
-          detail: "Parameter `anzahl_tage` der Funktion WORKDAY.",
+          detail: "Die Anzahl der Arbeitstage, um die ab `startdatum` vorgerückt werden soll. Bei einem negativen Wert wird rückwärts gezählt.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4832,7 +4832,7 @@ module.exports = {
         },
         {
           name: "feiertage",
-          detail: "Parameter `feiertage` der Funktion WORKDAY.",
+          detail: "Ein Bereich oder eine Array-Konstante mit den als Feiertage zu betrachtenden Daten.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4843,8 +4843,8 @@ module.exports = {
     {
       n: "WORKDAY_INTL",
       t: 6,
-      d: "Beschreibung der Funktion WORKDAY_INTL.",
-      a: "Kurzbeschreibung der Funktion WORKDAY_INTL.",
+      d: "Berechnet das Datum nach einer angegebenen Anzahl von Arbeitstagen, ausgenommen die angegebenen Wochenendtage und Feiertage.",
+      a: "Datum nach einer Anzahl von Arbeitstagen (mit Angabe der Wochenenden).",
       m: [
         2,
         4
@@ -4852,7 +4852,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` der Funktion WORKDAY_INTL.",
+          detail: "Das Datum, ab dem gezählt werden soll.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4860,7 +4860,7 @@ module.exports = {
         },
         {
           name: "anzahl_tage",
-          detail: "Parameter `anzahl_tage` der Funktion WORKDAY_INTL.",
+          detail: "Die Anzahl der Arbeitstage, um die ab `startdatum` vorgerückt werden soll. Bei einem negativen Wert wird rückwärts gezählt.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4868,7 +4868,7 @@ module.exports = {
         },
         {
           name: "wochenende",
-          detail: "Parameter `wochenende` der Funktion WORKDAY_INTL.",
+          detail: "Eine Zahl oder Zeichenfolge, die angibt, welche Wochentage als Wochenende gelten.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4876,7 +4876,7 @@ module.exports = {
         },
         {
           name: "feiertage",
-          detail: "Parameter `feiertage` der Funktion WORKDAY_INTL.",
+          detail: "Ein Bereich oder eine Array-Konstante mit den als Feiertage zu betrachtenden Daten.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4887,8 +4887,8 @@ module.exports = {
     {
       n: "YEAR",
       t: 6,
-      d: "Beschreibung der Funktion YEAR.",
-      a: "Kurzbeschreibung der Funktion YEAR.",
+      d: "Gibt das durch ein angegebenes Datum bestimmte Jahr zurück.",
+      a: "Durch ein angegebenes Datum bestimmtes Jahr.",
       m: [
         1,
         1
@@ -4896,7 +4896,7 @@ module.exports = {
       p: [
         {
           name: "datum",
-          detail: "Parameter `datum` der Funktion YEAR.",
+          detail: "Das Datum, aus dem das Jahr extrahiert werden soll.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4907,8 +4907,8 @@ module.exports = {
     {
       n: "YEARFRAC",
       t: 6,
-      d: "Beschreibung der Funktion YEARFRAC.",
-      a: "Kurzbeschreibung der Funktion YEARFRAC.",
+      d: "Gibt die Anzahl der Jahre, einschließlich Bruchteilen von Jahren, zwischen zwei Daten unter Verwendung einer angegebenen Tageszählkonvention zurück.",
+      a: "Exakte Anzahl der Jahre zwischen zwei Daten.",
       m: [
         2,
         3
@@ -4916,7 +4916,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` der Funktion YEARFRAC.",
+          detail: "Das bei der Berechnung zu berücksichtigende Startdatum. Muss ein Bezug auf eine Zelle mit einem Datum, eine Funktion, die einen Datumstyp zurückgibt, oder eine Zahl sein.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4924,7 +4924,7 @@ module.exports = {
         },
         {
           name: "enddatum",
-          detail: "Parameter `enddatum` der Funktion YEARFRAC.",
+          detail: "Das bei der Berechnung zu berücksichtigende Enddatum. Muss ein Bezug auf eine Zelle mit einem Datum, eine Funktion, die einen Datumstyp zurückgibt, oder eine Zahl sein.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4932,7 +4932,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion YEARFRAC.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4943,8 +4943,8 @@ module.exports = {
     {
       n: "TODAY",
       t: 6,
-      d: "Beschreibung der Funktion TODAY.",
-      a: "Kurzbeschreibung der Funktion TODAY.",
+      d: "Gibt das aktuelle Datum als Datumswert zurück.",
+      a: "Aktuelles Datum als Datumswert.",
       m: [
         0,
         0
@@ -4954,8 +4954,8 @@ module.exports = {
     {
       n: "MONTH",
       t: 6,
-      d: "Beschreibung der Funktion MONTH.",
-      a: "Kurzbeschreibung der Funktion MONTH.",
+      d: "Gibt den Monat des Jahres, in den ein bestimmtes Datum fällt, im numerischen Format zurück.",
+      a: "Monat des Jahres, in den ein bestimmtes Datum fällt.",
       m: [
         1,
         1
@@ -4963,7 +4963,7 @@ module.exports = {
       p: [
         {
           name: "datum",
-          detail: "Parameter `datum` der Funktion MONTH.",
+          detail: "Das Datum, aus dem der Monat extrahiert werden soll.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4974,8 +4974,8 @@ module.exports = {
     {
       n: "EFFECT",
       t: 8,
-      d: "Beschreibung der Funktion EFFECT.",
-      a: "Kurzbeschreibung der Funktion EFFECT.",
+      d: "Berechnet den effektiven Jahreszinssatz bei gegebenem Nominalzinssatz und gegebener Anzahl von Zinsperioden pro Jahr.",
+      a: "Effektiver Jahreszinssatz.",
       m: [
         2,
         2
@@ -4983,7 +4983,7 @@ module.exports = {
       p: [
         {
           name: "nominalzins",
-          detail: "Parameter `nominalzins` der Funktion EFFECT.",
+          detail: "Der jährliche Nominalzinssatz.",
           example: "0.99",
           require: "m",
           repeat: "n",
@@ -4991,7 +4991,7 @@ module.exports = {
         },
         {
           name: "perioden_pro_jahr",
-          detail: "Parameter `perioden_pro_jahr` der Funktion EFFECT.",
+          detail: "Die Anzahl der Zinsperioden pro Jahr.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5002,8 +5002,8 @@ module.exports = {
     {
       n: "DOLLAR",
       t: 12,
-      d: "Beschreibung der Funktion DOLLAR.",
-      a: "Kurzbeschreibung der Funktion DOLLAR.",
+      d: "Formatiert eine Zahl in die für die Gebietsschema-Einstellung Ihrer Tabelle spezifische Währung.",
+      a: "Formatiert eine Zahl als Währung entsprechend Ihrer Gebietsschema-Einstellung.",
       m: [
         1,
         2
@@ -5011,7 +5011,7 @@ module.exports = {
       p: [
         {
           name: "zahl",
-          detail: "Parameter `zahl` der Funktion DOLLAR.",
+          detail: "Der zu formatierende Wert.",
           example: "1.2351",
           require: "m",
           repeat: "n",
@@ -5019,7 +5019,7 @@ module.exports = {
         },
         {
           name: "anzahl_dezimalstellen",
-          detail: "Parameter `anzahl_dezimalstellen` der Funktion DOLLAR.",
+          detail: "Die Anzahl der anzuzeigenden Dezimalstellen.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -5030,8 +5030,8 @@ module.exports = {
     {
       n: "DOLLARDE",
       t: 8,
-      d: "Beschreibung der Funktion DOLLARDE.",
-      a: "Kurzbeschreibung der Funktion DOLLARDE.",
+      d: "Wandelt eine als Dezimalbruch angegebene Preisnotierung in einen Dezimalwert um.",
+      a: "Wandelt einen Dezimalbruch in einen Dezimalwert um.",
       m: [
         2,
         2
@@ -5039,7 +5039,7 @@ module.exports = {
       p: [
         {
           name: "bruchpreis",
-          detail: "Parameter `bruchpreis` der Funktion DOLLARDE.",
+          detail: "Die unter Verwendung von Bruchdezimal-Konventionen angegebene Preisnotierung.",
           example: "100.10",
           require: "m",
           repeat: "n",
@@ -5047,7 +5047,7 @@ module.exports = {
         },
         {
           name: "einheit",
-          detail: "Parameter `einheit` der Funktion DOLLARDE.",
+          detail: "Die Einheiten des Bruchs, z. B. `8` für Achtel oder `32` für Zweiunddreißigstel.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5058,8 +5058,8 @@ module.exports = {
     {
       n: "DOLLARFR",
       t: 8,
-      d: "Beschreibung der Funktion DOLLARFR.",
-      a: "Kurzbeschreibung der Funktion DOLLARFR.",
+      d: "Wandelt eine als Dezimalwert angegebene Preisnotierung in einen Dezimalbruch um.",
+      a: "Wandelt einen Dezimalwert in einen Dezimalbruch um.",
       m: [
         2,
         2
@@ -5067,7 +5067,7 @@ module.exports = {
       p: [
         {
           name: "dezimalpreis",
-          detail: "Parameter `dezimalpreis` der Funktion DOLLARFR.",
+          detail: "Die als Dezimalwert angegebene Preisnotierung.",
           example: "100.125",
           require: "m",
           repeat: "n",
@@ -5075,7 +5075,7 @@ module.exports = {
         },
         {
           name: "einheit",
-          detail: "Parameter `einheit` der Funktion DOLLARFR.",
+          detail: "Die Einheiten des gewünschten Bruchs, z. B. `8` für Achtel oder `32` für Zweiunddreißigstel.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5086,8 +5086,8 @@ module.exports = {
     {
       n: "DB",
       t: 8,
-      d: "Beschreibung der Funktion DB.",
-      a: "Kurzbeschreibung der Funktion DB.",
+      d: "Berechnet die Abschreibung eines Vermögenswerts für eine angegebene Periode nach der geometrisch-degressiven Methode.",
+      a: "Abschreibung nach der geometrisch-degressiven Methode.",
       m: [
         4,
         5
@@ -5095,7 +5095,7 @@ module.exports = {
       p: [
         {
           name: "anschaffungskosten",
-          detail: "Parameter `anschaffungskosten` der Funktion DB.",
+          detail: "Die Anschaffungskosten des Vermögenswerts.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5103,7 +5103,7 @@ module.exports = {
         },
         {
           name: "restwert",
-          detail: "Parameter `restwert` der Funktion DB.",
+          detail: "Der Restwert des Vermögenswerts am Ende der Abschreibung.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5111,7 +5111,7 @@ module.exports = {
         },
         {
           name: "nutzungsdauer",
-          detail: "Parameter `nutzungsdauer` der Funktion DB.",
+          detail: "Die Anzahl der Perioden, über die der Vermögenswert abgeschrieben wird.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5119,7 +5119,7 @@ module.exports = {
         },
         {
           name: "periode",
-          detail: "Parameter `periode` der Funktion DB.",
+          detail: "Die einzelne Periode innerhalb von `nutzungsdauer`, für die die Abschreibung berechnet werden soll.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5127,7 +5127,7 @@ module.exports = {
         },
         {
           name: "monat",
-          detail: "Parameter `monat` der Funktion DB.",
+          detail: "Die Anzahl der Monate im ersten Abschreibungsjahr.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5138,8 +5138,8 @@ module.exports = {
     {
       n: "DDB",
       t: 8,
-      d: "Beschreibung der Funktion DDB.",
-      a: "Kurzbeschreibung der Funktion DDB.",
+      d: "Berechnet die Abschreibung eines Vermögenswerts für eine angegebene Periode nach der doppelt-degressiven Methode.",
+      a: "Abschreibung nach der doppelt-degressiven Methode.",
       m: [
         4,
         5
@@ -5147,7 +5147,7 @@ module.exports = {
       p: [
         {
           name: "anschaffungskosten",
-          detail: "Parameter `anschaffungskosten` der Funktion DDB.",
+          detail: "Die Anschaffungskosten des Vermögenswerts.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5155,7 +5155,7 @@ module.exports = {
         },
         {
           name: "restwert",
-          detail: "Parameter `restwert` der Funktion DDB.",
+          detail: "Der Restwert des Vermögenswerts am Ende der Abschreibung.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5163,7 +5163,7 @@ module.exports = {
         },
         {
           name: "nutzungsdauer",
-          detail: "Parameter `nutzungsdauer` der Funktion DDB.",
+          detail: "Die Anzahl der Perioden, über die der Vermögenswert abgeschrieben wird.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5171,7 +5171,7 @@ module.exports = {
         },
         {
           name: "periode",
-          detail: "Parameter `periode` der Funktion DDB.",
+          detail: "Die einzelne Periode innerhalb von `nutzungsdauer`, für die die Abschreibung berechnet werden soll.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5179,7 +5179,7 @@ module.exports = {
         },
         {
           name: "faktor",
-          detail: "Parameter `faktor` der Funktion DDB.",
+          detail: "Der Faktor, um den die Abschreibung abnimmt.",
           example: "2.25",
           require: "m",
           repeat: "n",
@@ -5190,8 +5190,8 @@ module.exports = {
     {
       n: "RATE",
       t: 8,
-      d: "Beschreibung der Funktion RATE.",
-      a: "Kurzbeschreibung der Funktion RATE.",
+      d: "Berechnet den Zinssatz einer Rentenanlage auf Basis konstanter periodischer Zahlungen und der Annahme eines konstanten Zinssatzes.",
+      a: "Zinssatz einer Rentenanlage.",
       m: [
         3,
         6
@@ -5199,7 +5199,7 @@ module.exports = {
       p: [
         {
           name: "anzahl_perioden",
-          detail: "Parameter `anzahl_perioden` der Funktion RATE.",
+          detail: "Die Anzahl der zu leistenden Zahlungen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5207,7 +5207,7 @@ module.exports = {
         },
         {
           name: "zahlung_pro_periode",
-          detail: "Parameter `zahlung_pro_periode` der Funktion RATE.",
+          detail: "Der pro Periode zu zahlende Betrag.",
           example: "-100",
           require: "m",
           repeat: "n",
@@ -5215,7 +5215,7 @@ module.exports = {
         },
         {
           name: "barwert",
-          detail: "Parameter `barwert` der Funktion RATE.",
+          detail: "Der aktuelle Wert der Rente.",
           example: "400",
           require: "m",
           repeat: "n",
@@ -5223,7 +5223,7 @@ module.exports = {
         },
         {
           name: "zukunftswert",
-          detail: "Parameter `zukunftswert` der Funktion RATE.",
+          detail: "Der nach der letzten Zahlung verbleibende zukünftige Wert.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5231,7 +5231,7 @@ module.exports = {
         },
         {
           name: "ende_oder_anfang",
-          detail: "Parameter `ende_oder_anfang` der Funktion RATE.",
+          detail: "Ob Zahlungen am Ende (`0`) oder am Anfang (`1`) jeder Periode fällig sind.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5239,7 +5239,7 @@ module.exports = {
         },
         {
           name: "zinsschätzung",
-          detail: "Parameter `zinsschätzung` der Funktion RATE.",
+          detail: "Eine Schätzung, wie hoch der Zinssatz sein wird.",
           example: "0.1",
           require: "o",
           repeat: "n",
@@ -5250,8 +5250,8 @@ module.exports = {
     {
       n: "CUMPRINC",
       t: 8,
-      d: "Beschreibung der Funktion CUMPRINC.",
-      a: "Kurzbeschreibung der Funktion CUMPRINC.",
+      d: "Berechnet die kumulierte Tilgung über einen Bereich von Zahlungsperioden für eine Anlage auf Basis konstanter periodischer Zahlungen und eines konstanten Zinssatzes.",
+      a: "Kumulierte Tilgung über einen Satz von Perioden.",
       m: [
         6,
         6
@@ -5259,7 +5259,7 @@ module.exports = {
       p: [
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion CUMPRINC.",
+          detail: "Der Zinssatz.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -5267,7 +5267,7 @@ module.exports = {
         },
         {
           name: "anzahl_perioden",
-          detail: "Parameter `anzahl_perioden` der Funktion CUMPRINC.",
+          detail: "Die Anzahl der zu leistenden Zahlungen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5275,7 +5275,7 @@ module.exports = {
         },
         {
           name: "barwert",
-          detail: "Parameter `barwert` der Funktion CUMPRINC.",
+          detail: "Der aktuelle Wert der Rente.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5283,7 +5283,7 @@ module.exports = {
         },
         {
           name: "erste_periode",
-          detail: "Parameter `erste_periode` der Funktion CUMPRINC.",
+          detail: "Die Nummer der Zahlungsperiode, mit der die kumulierte Berechnung beginnen soll.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5291,7 +5291,7 @@ module.exports = {
         },
         {
           name: "letzte_periode",
-          detail: "Parameter `letzte_periode` der Funktion CUMPRINC.",
+          detail: "Die Nummer der Zahlungsperiode, mit der die kumulierte Berechnung enden soll.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -5299,7 +5299,7 @@ module.exports = {
         },
         {
           name: "ende_oder_anfang",
-          detail: "Parameter `ende_oder_anfang` der Funktion CUMPRINC.",
+          detail: "Ob Zahlungen am Ende (`0`) oder am Anfang (`1`) jeder Periode fällig sind.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -5310,8 +5310,8 @@ module.exports = {
     {
       n: "COUPNUM",
       t: 8,
-      d: "Beschreibung der Funktion COUPNUM.",
-      a: "Kurzbeschreibung der Funktion COUPNUM.",
+      d: "Berechnet die Anzahl der Kupons bzw. Zinszahlungen zwischen dem Abrechnungsdatum und dem Fälligkeitsdatum der Anlage.",
+      a: "Anzahl der Kupons zwischen Abrechnung und Fälligkeit.",
       m: [
         3,
         4
@@ -5319,7 +5319,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion COUPNUM.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5327,7 +5327,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion COUPNUM.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "02",
           require: "m",
           repeat: "n",
@@ -5335,7 +5335,7 @@ module.exports = {
         },
         {
           name: "häufigkeit",
-          detail: "Parameter `häufigkeit` der Funktion COUPNUM.",
+          detail: "Die Anzahl der Zins- oder Kuponzahlungen pro Jahr (1, 2 oder 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5343,7 +5343,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion COUPNUM.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5354,8 +5354,8 @@ module.exports = {
     {
       n: "SYD",
       t: 8,
-      d: "Beschreibung der Funktion SYD.",
-      a: "Kurzbeschreibung der Funktion SYD.",
+      d: "Berechnet die Abschreibung eines Vermögenswerts für eine angegebene Periode nach der digitalen Abschreibungsmethode (Jahressummenmethode).",
+      a: "Abschreibung nach der digitalen Abschreibungsmethode.",
       m: [
         4,
         4
@@ -5363,7 +5363,7 @@ module.exports = {
       p: [
         {
           name: "anschaffungskosten",
-          detail: "Parameter `anschaffungskosten` der Funktion SYD.",
+          detail: "Die Anschaffungskosten des Vermögenswerts.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5371,7 +5371,7 @@ module.exports = {
         },
         {
           name: "restwert",
-          detail: "Parameter `restwert` der Funktion SYD.",
+          detail: "Der Restwert des Vermögenswerts am Ende der Abschreibung.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5379,7 +5379,7 @@ module.exports = {
         },
         {
           name: "nutzungsdauer",
-          detail: "Parameter `nutzungsdauer` der Funktion SYD.",
+          detail: "Die Anzahl der Perioden, über die der Vermögenswert abgeschrieben wird.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5387,7 +5387,7 @@ module.exports = {
         },
         {
           name: "periode",
-          detail: "Parameter `periode` der Funktion SYD.",
+          detail: "Die einzelne Periode innerhalb von `nutzungsdauer`, für die die Abschreibung berechnet werden soll.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5398,8 +5398,8 @@ module.exports = {
     {
       n: "TBILLEQ",
       t: 8,
-      d: "Beschreibung der Funktion TBILLEQ.",
-      a: "Kurzbeschreibung der Funktion TBILLEQ.",
+      d: "Berechnet die äquivalente annualisierte Rendite eines US-Schatzwechsels basierend auf dem Diskontsatz.",
+      a: "Äquivalente Rendite eines Schatzwechsels.",
       m: [
         3,
         3
@@ -5407,7 +5407,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion TBILLEQ.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5415,7 +5415,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion TBILLEQ.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5423,7 +5423,7 @@ module.exports = {
         },
         {
           name: "diskontsatz",
-          detail: "Parameter `diskontsatz` der Funktion TBILLEQ.",
+          detail: "Der Diskontsatz des Wechsels zum Zeitpunkt des Kaufs.",
           example: "2)",
           require: "m",
           repeat: "n",
@@ -5434,8 +5434,8 @@ module.exports = {
     {
       n: "TBILLYIELD",
       t: 8,
-      d: "Beschreibung der Funktion TBILLYIELD.",
-      a: "Kurzbeschreibung der Funktion TBILLYIELD.",
+      d: "Berechnet die Rendite eines US-Schatzwechsels basierend auf dem Kurs.",
+      a: "Rendite eines US-Schatzwechsels basierend auf dem Kurs.",
       m: [
         3,
         3
@@ -5443,7 +5443,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion TBILLYIELD.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5451,7 +5451,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion TBILLYIELD.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5459,7 +5459,7 @@ module.exports = {
         },
         {
           name: "preis",
-          detail: "Parameter `preis` der Funktion TBILLYIELD.",
+          detail: "Der Kurs, zu dem das Wertpapier je 100 Nennwert gekauft wird.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -5470,8 +5470,8 @@ module.exports = {
     {
       n: "TBILLPRICE",
       t: 8,
-      d: "Beschreibung der Funktion TBILLPRICE.",
-      a: "Kurzbeschreibung der Funktion TBILLPRICE.",
+      d: "Berechnet den Kurs eines US-Schatzwechsels basierend auf dem Diskontsatz.",
+      a: "Kurs eines US-Schatzwechsels.",
       m: [
         3,
         3
@@ -5479,7 +5479,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion TBILLPRICE.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5487,7 +5487,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion TBILLPRICE.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5495,7 +5495,7 @@ module.exports = {
         },
         {
           name: "diskontsatz",
-          detail: "Parameter `diskontsatz` der Funktion TBILLPRICE.",
+          detail: "Der Diskontsatz des Wechsels zum Zeitpunkt des Kaufs.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -5506,8 +5506,8 @@ module.exports = {
     {
       n: "PV",
       t: 8,
-      d: "Beschreibung der Funktion PV.",
-      a: "Kurzbeschreibung der Funktion PV.",
+      d: "Berechnet den Barwert einer Rentenanlage auf Basis konstanter periodischer Zahlungen und eines konstanten Zinssatzes.",
+      a: "Barwert einer Rentenanlage.",
       m: [
         3,
         5
@@ -5515,7 +5515,7 @@ module.exports = {
       p: [
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion PV.",
+          detail: "Der Zinssatz.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5523,7 +5523,7 @@ module.exports = {
         },
         {
           name: "anzahl_perioden",
-          detail: "Parameter `anzahl_perioden` der Funktion PV.",
+          detail: "Die Anzahl der zu leistenden Zahlungen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5531,7 +5531,7 @@ module.exports = {
         },
         {
           name: "zahlungsbetrag",
-          detail: "Parameter `zahlungsbetrag` der Funktion PV.",
+          detail: "Der pro Periode zu zahlende Betrag.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5539,7 +5539,7 @@ module.exports = {
         },
         {
           name: "zukunftswert",
-          detail: "Parameter `zukunftswert` der Funktion PV.",
+          detail: "Der nach der letzten Zahlung verbleibende zukünftige Wert.",
           example: "D2",
           require: "o",
           repeat: "n",
@@ -5547,7 +5547,7 @@ module.exports = {
         },
         {
           name: "ende_oder_anfang",
-          detail: "Parameter `ende_oder_anfang` der Funktion PV.",
+          detail: "Ob Zahlungen am Ende (`0`) oder am Anfang (`1`) jeder Periode fällig sind.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -5558,8 +5558,8 @@ module.exports = {
     {
       n: "ACCRINT",
       t: 8,
-      d: "Beschreibung der Funktion ACCRINT.",
-      a: "Kurzbeschreibung der Funktion ACCRINT.",
+      d: "Berechnet die aufgelaufenen Zinsen eines Wertpapiers mit periodischen Zahlungen.",
+      a: "Aufgelaufene Zinsen eines Wertpapiers mit periodischen Zahlungen.",
       m: [
         6,
         8
@@ -5567,7 +5567,7 @@ module.exports = {
       p: [
         {
           name: "ausgabedatum",
-          detail: "Parameter `ausgabedatum` der Funktion ACCRINT.",
+          detail: "Das Datum, an dem das Wertpapier ursprünglich ausgegeben wurde.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5575,7 +5575,7 @@ module.exports = {
         },
         {
           name: "erste_zahlung",
-          detail: "Parameter `erste_zahlung` der Funktion ACCRINT.",
+          detail: "Das erste Datum, an dem Zinsen gezahlt werden.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5583,7 +5583,7 @@ module.exports = {
         },
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion ACCRINT.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5591,7 +5591,7 @@ module.exports = {
         },
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion ACCRINT.",
+          detail: "Der annualisierte Zinssatz.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5599,7 +5599,7 @@ module.exports = {
         },
         {
           name: "rückzahlungswert",
-          detail: "Parameter `rückzahlungswert` der Funktion ACCRINT.",
+          detail: "Der Rückzahlungsbetrag je 100 Nennwert.",
           example: "10000",
           require: "m",
           repeat: "n",
@@ -5607,7 +5607,7 @@ module.exports = {
         },
         {
           name: "häufigkeit",
-          detail: "Parameter `häufigkeit` der Funktion ACCRINT.",
+          detail: "Die Anzahl der Zins- oder Kuponzahlungen pro Jahr (1, 2 oder 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5615,7 +5615,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion ACCRINT.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5623,7 +5623,7 @@ module.exports = {
         },
         {
           name: "berechnungsmethode",
-          detail: "Parameter `berechnungsmethode` der Funktion ACCRINT.",
+          detail: "[Optional, Standard TRUE()] - Ein logischer Wert, der die Methode angibt, die zur Berechnung der gesamten aufgelaufenen Zinsen verwendet wird, wenn das Abrechnungsdatum nach dem ersten Zinsauflaufdatum liegt. \n\nWenn der Wert TRUE ist, werden die gesamten aufgelaufenen Zinsen vom Emissionsdatum bis zum Abrechnungsdatum zurückgegeben. \n\nWenn der Wert FALSE ist, werden die aufgelaufenen Zinsen vom ersten Zinsauflaufdatum bis zum Abrechnungsdatum zurückgegeben.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -5634,8 +5634,8 @@ module.exports = {
     {
       n: "ACCRINTM",
       t: 8,
-      d: "Beschreibung der Funktion ACCRINTM.",
-      a: "Kurzbeschreibung der Funktion ACCRINTM.",
+      d: "Berechnet die aufgelaufenen Zinsen eines Wertpapiers, das Zinsen bei Fälligkeit zahlt.",
+      a: "Aufgelaufene Zinsen eines bei Fälligkeit zahlenden Wertpapiers.",
       m: [
         4,
         5
@@ -5643,7 +5643,7 @@ module.exports = {
       p: [
         {
           name: "ausgabedatum",
-          detail: "Parameter `ausgabedatum` der Funktion ACCRINTM.",
+          detail: "Das Datum, an dem das Wertpapier ursprünglich ausgegeben wurde.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -5651,7 +5651,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion ACCRINTM.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -5659,7 +5659,7 @@ module.exports = {
         },
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion ACCRINTM.",
+          detail: "Der annualisierte Zinssatz.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5667,7 +5667,7 @@ module.exports = {
         },
         {
           name: "rückzahlungswert",
-          detail: "Parameter `rückzahlungswert` der Funktion ACCRINTM.",
+          detail: "Der Rückzahlungsbetrag je 100 Nennwert.",
           example: "1000",
           require: "m",
           repeat: "n",
@@ -5675,7 +5675,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion ACCRINTM.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5686,8 +5686,8 @@ module.exports = {
     {
       n: "COUPDAYBS",
       t: 8,
-      d: "Beschreibung der Funktion COUPDAYBS.",
-      a: "Kurzbeschreibung der Funktion COUPDAYBS.",
+      d: "Berechnet die Anzahl der Tage vom ersten Kupon bzw. der ersten Zinszahlung bis zur Abrechnung.",
+      a: "Anzahl der Tage vom ersten Kupon bis zur Abrechnung.",
       m: [
         3,
         4
@@ -5695,7 +5695,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion COUPDAYBS.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5703,7 +5703,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion COUPDAYBS.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5711,7 +5711,7 @@ module.exports = {
         },
         {
           name: "häufigkeit",
-          detail: "Parameter `häufigkeit` der Funktion COUPDAYBS.",
+          detail: "Die Anzahl der Zins- oder Kuponzahlungen pro Jahr (1, 2 oder 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5719,7 +5719,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion COUPDAYBS.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5730,8 +5730,8 @@ module.exports = {
     {
       n: "COUPDAYS",
       t: 8,
-      d: "Beschreibung der Funktion COUPDAYS.",
-      a: "Kurzbeschreibung der Funktion COUPDAYS.",
+      d: "Berechnet die Anzahl der Tage in der Kupon- bzw. Zinsperiode, die das angegebene Abrechnungsdatum enthält.",
+      a: "Tage in der Kuponperiode, die das Abrechnungsdatum enthält.",
       m: [
         3,
         4
@@ -5739,7 +5739,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion COUPDAYS.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5747,7 +5747,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion COUPDAYS.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5755,7 +5755,7 @@ module.exports = {
         },
         {
           name: "häufigkeit",
-          detail: "Parameter `häufigkeit` der Funktion COUPDAYS.",
+          detail: "Die Anzahl der Zins- oder Kuponzahlungen pro Jahr (1, 2 oder 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5763,7 +5763,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion COUPDAYS.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5774,8 +5774,8 @@ module.exports = {
     {
       n: "COUPDAYSNC",
       t: 8,
-      d: "Beschreibung der Funktion COUPDAYSNC.",
-      a: "Kurzbeschreibung der Funktion COUPDAYSNC.",
+      d: "Berechnet die Anzahl der Tage vom Abrechnungsdatum bis zum nächsten Kupon bzw. zur nächsten Zinszahlung.",
+      a: "Tage von der Abrechnung bis zum nächsten Kupon.",
       m: [
         3,
         4
@@ -5783,7 +5783,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion COUPDAYSNC.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5791,7 +5791,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion COUPDAYSNC.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5799,7 +5799,7 @@ module.exports = {
         },
         {
           name: "häufigkeit",
-          detail: "Parameter `häufigkeit` der Funktion COUPDAYSNC.",
+          detail: "Die Anzahl der Zins- oder Kuponzahlungen pro Jahr (1, 2 oder 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5807,7 +5807,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion COUPDAYSNC.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5818,8 +5818,8 @@ module.exports = {
     {
       n: "COUPNCD",
       t: 8,
-      d: "Beschreibung der Funktion COUPNCD.",
-      a: "Kurzbeschreibung der Funktion COUPNCD.",
+      d: "Berechnet das nächste Kupon- bzw. Zinszahlungsdatum nach dem Abrechnungsdatum.",
+      a: "Nächstes Kupondatum nach dem Abrechnungsdatum.",
       m: [
         3,
         4
@@ -5827,7 +5827,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion COUPNCD.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5835,7 +5835,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion COUPNCD.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5843,7 +5843,7 @@ module.exports = {
         },
         {
           name: "häufigkeit",
-          detail: "Parameter `häufigkeit` der Funktion COUPNCD.",
+          detail: "Die Anzahl der Zins- oder Kuponzahlungen pro Jahr (1, 2 oder 4).",
           example: "01)",
           require: "m",
           repeat: "n",
@@ -5851,7 +5851,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion COUPNCD.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5862,8 +5862,8 @@ module.exports = {
     {
       n: "COUPPCD",
       t: 8,
-      d: "Beschreibung der Funktion COUPPCD.",
-      a: "Kurzbeschreibung der Funktion COUPPCD.",
+      d: "Berechnet das letzte Kupon- bzw. Zinszahlungsdatum vor dem Abrechnungsdatum.",
+      a: "Letztes Kupondatum vor dem Abrechnungsdatum.",
       m: [
         3,
         4
@@ -5871,7 +5871,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion COUPPCD.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5879,7 +5879,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion COUPPCD.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5887,7 +5887,7 @@ module.exports = {
         },
         {
           name: "häufigkeit",
-          detail: "Parameter `häufigkeit` der Funktion COUPPCD.",
+          detail: "Die Anzahl der Zins- oder Kuponzahlungen pro Jahr (1, 2 oder 4).",
           example: "01)",
           require: "m",
           repeat: "n",
@@ -5895,7 +5895,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion COUPPCD.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5906,8 +5906,8 @@ module.exports = {
     {
       n: "FV",
       t: 8,
-      d: "Beschreibung der Funktion FV.",
-      a: "Kurzbeschreibung der Funktion FV.",
+      d: "Berechnet den zukünftigen Wert einer Rentenanlage auf Basis konstanter periodischer Zahlungen und eines konstanten Zinssatzes.",
+      a: "Zukünftiger Wert einer Rentenanlage.",
       m: [
         3,
         5
@@ -5915,7 +5915,7 @@ module.exports = {
       p: [
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion FV.",
+          detail: "Der Zinssatz.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -5923,7 +5923,7 @@ module.exports = {
         },
         {
           name: "anzahl_perioden",
-          detail: "Parameter `anzahl_perioden` der Funktion FV.",
+          detail: "Die Anzahl der zu leistenden Zahlungen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5931,7 +5931,7 @@ module.exports = {
         },
         {
           name: "zahlungsbetrag",
-          detail: "Parameter `zahlungsbetrag` der Funktion FV.",
+          detail: "Der pro Periode zu zahlende Betrag.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5939,7 +5939,7 @@ module.exports = {
         },
         {
           name: "barwert",
-          detail: "Parameter `barwert` der Funktion FV.",
+          detail: "Der aktuelle Wert der Rente.",
           example: "400",
           require: "m",
           repeat: "n",
@@ -5947,7 +5947,7 @@ module.exports = {
         },
         {
           name: "ende_oder_anfang",
-          detail: "Parameter `ende_oder_anfang` der Funktion FV.",
+          detail: "Ob Zahlungen am Ende (`0`) oder am Anfang (`1`) jeder Periode fällig sind.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5958,8 +5958,8 @@ module.exports = {
     {
       n: "FVSCHEDULE",
       t: 8,
-      d: "Beschreibung der Funktion FVSCHEDULE.",
-      a: "Kurzbeschreibung der Funktion FVSCHEDULE.",
+      d: "Berechnet den zukünftigen Wert eines Kapitals auf Basis einer angegebenen Reihe potenziell variierender Zinssätze.",
+      a: "Zukünftiger Wert eines Kapitals aus einer Reihe von Zinssätzen.",
       m: [
         2,
         2
@@ -5967,7 +5967,7 @@ module.exports = {
       p: [
         {
           name: "kapital",
-          detail: "Parameter `kapital` der Funktion FVSCHEDULE.",
+          detail: "Der Betrag des Anfangskapitals oder des Werts, auf den aufgezinst werden soll.",
           example: "10000",
           require: "m",
           repeat: "n",
@@ -5975,7 +5975,7 @@ module.exports = {
         },
         {
           name: "zinsplan",
-          detail: "Parameter `zinsplan` der Funktion FVSCHEDULE.",
+          detail: "Eine Reihe von Zinssätzen, die auf das `kapital` aufgezinst werden sollen.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -5986,8 +5986,8 @@ module.exports = {
     {
       n: "YIELD",
       t: 8,
-      d: "Beschreibung der Funktion YIELD.",
-      a: "Kurzbeschreibung der Funktion YIELD.",
+      d: "Berechnet die jährliche Rendite eines Wertpapiers mit periodischer Zinszahlung, wie z. B. einer US-Staatsanleihe, basierend auf dem Kurs.",
+      a: "Jährliche Rendite eines Wertpapiers mit periodischer Zinszahlung.",
       m: [
         6,
         7
@@ -5995,7 +5995,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion YIELD.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6003,7 +6003,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion YIELD.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6011,7 +6011,7 @@ module.exports = {
         },
         {
           name: "zinssatz",
-          detail: "Parameter `zinssatz` der Funktion YIELD.",
+          detail: "Der annualisierte Zinssatz.",
           example: "0.057",
           require: "m",
           repeat: "n",
@@ -6019,7 +6019,7 @@ module.exports = {
         },
         {
           name: "preis",
-          detail: "Parameter `preis` der Funktion YIELD.",
+          detail: "Der Kurs, zu dem das Wertpapier je 100 Nennwert gekauft wird.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -6027,7 +6027,7 @@ module.exports = {
         },
         {
           name: "rückzahlungswert",
-          detail: "Parameter `rückzahlungswert` der Funktion YIELD.",
+          detail: "Der Rückzahlungsbetrag je 100 Nennwert.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6035,7 +6035,7 @@ module.exports = {
         },
         {
           name: "häufigkeit",
-          detail: "Parameter `häufigkeit` der Funktion YIELD.",
+          detail: "Die Anzahl der Zins- oder Kuponzahlungen pro Jahr (1, 2 oder 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6043,7 +6043,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion YIELD.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6054,8 +6054,8 @@ module.exports = {
     {
       n: "YIELDDISC",
       t: 8,
-      d: "Beschreibung der Funktion YIELDDISC.",
-      a: "Kurzbeschreibung der Funktion YIELDDISC.",
+      d: "Berechnet die jährliche Rendite eines Diskontpapiers (ohne Zinszahlung) basierend auf dem Kurs.",
+      a: "Jährliche Rendite eines Diskontpapiers.",
       m: [
         4,
         5
@@ -6063,7 +6063,7 @@ module.exports = {
       p: [
         {
           name: "abrechnungstermin",
-          detail: "Parameter `abrechnungstermin` der Funktion YIELDDISC.",
+          detail: "Das Abrechnungsdatum des Wertpapiers, das Datum nach der Emission, an dem das Wertpapier an den Käufer geliefert wird.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6071,7 +6071,7 @@ module.exports = {
         },
         {
           name: "fälligkeit",
-          detail: "Parameter `fälligkeit` der Funktion YIELDDISC.",
+          detail: "Das Fälligkeitsdatum des Wertpapiers, an dem es zum Nennwert eingelöst werden kann.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6079,7 +6079,7 @@ module.exports = {
         },
         {
           name: "preis",
-          detail: "Parameter `preis` der Funktion YIELDDISC.",
+          detail: "Der Kurs, zu dem das Wertpapier je 100 Nennwert gekauft wird.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -6087,7 +6087,7 @@ module.exports = {
         },
         {
           name: "rückzahlungswert",
-          detail: "Parameter `rückzahlungswert` der Funktion YIELDDISC.",
+          detail: "Der Rückzahlungsbetrag je 100 Nennwert.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6095,7 +6095,7 @@ module.exports = {
         },
         {
           name: "tageszählmethode",
-          detail: "Parameter `tageszählmethode` der Funktion YIELDDISC.",
+          detail: "Ein Hinweis auf die zu verwendende Tageszählmethode.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6106,8 +6106,8 @@ module.exports = {
     {
       n: "NOMINAL",
       t: 8,
-      d: "Beschreibung der Funktion NOMINAL.",
-      a: "Kurzbeschreibung der Funktion NOMINAL.",
+      d: "Berechnet den nominalen Jahreszinssatz bei gegebenem effektiven Zinssatz und gegebener Anzahl von Zinsperioden pro Jahr.",
+      a: "Nominaler Jahreszinssatz.",
       m: [
         2,
         2
@@ -6115,7 +6115,7 @@ module.exports = {
       p: [
         {
           name: "effektiver_zinssatz",
-          detail: "Parameter `effektiver_zinssatz` der Funktion NOMINAL.",
+          detail: "Der jährliche effektive Zinssatz.",
           example: "0.85",
           require: "m",
           repeat: "n",
@@ -6123,7 +6123,7 @@ module.exports = {
         },
         {
           name: "perioden_pro_jahr",
-          detail: "Parameter `perioden_pro_jahr` der Funktion NOMINAL.",
+          detail: "Die Anzahl der Zinsperioden pro Jahr.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6134,8 +6134,8 @@ module.exports = {
     {
       n: "XIRR",
       t: 8,
-      d: "Beschreibung der Funktion XIRR.",
-      a: "Kurzbeschreibung der Funktion XIRR.",
+      d: "Berechnet den internen Zinsfuß einer Anlage auf Basis einer angegebenen Reihe potenziell unregelmäßig verteilter Zahlungsströme.",
+      a: "Interner Zinsfuß bei unregelmäßigen Zahlungsströmen.",
       m: [
         2,
         3
@@ -6143,7 +6143,7 @@ module.exports = {
       p: [
         {
           name: "zahlungsstrombeträge",
-          detail: "Parameter `zahlungsstrombeträge` der Funktion XIRR.",
+          detail: "Ein Array oder Bereich mit den Einnahmen oder Zahlungen, die der Anlage zugeordnet sind.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
@@ -6151,7 +6151,7 @@ module.exports = {
         },
         {
           name: "zahlungsstromdaten",
-          detail: "Parameter `zahlungsstromdaten` der Funktion XIRR.",
+          detail: "Ein Array oder Bereich mit Daten, die den Zahlungsströmen in `zahlungsstrombeträge` entsprechen.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6159,7 +6159,7 @@ module.exports = {
         },
         {
           name: "zinsschätzung",
-          detail: "Parameter `zinsschätzung` der Funktion XIRR.",
+          detail: "Eine Schätzung, wie hoch der interne Zinsfuß sein wird.",
           example: "250",
           require: "o",
           repeat: "n",
