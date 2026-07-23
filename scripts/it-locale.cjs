@@ -8704,8 +8704,8 @@ module.exports = {
     {
       n: "REPLACE",
       t: 12,
-      d: "Descrizione della funzione REPLACE.",
-      a: "Sintesi della funzione REPLACE.",
+      d: "Sostituisce parte di una stringa di testo con una stringa di testo diversa.",
+      a: "Sostituisce parte di una stringa di testo con un testo diverso.",
       m: [
         4,
         4
@@ -8713,7 +8713,7 @@ module.exports = {
       p: [
         {
           name: "testo",
-          detail: "Parametro `testo` della funzione REPLACE.",
+          detail: "Il testo, una parte del quale verrà sostituita.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8721,7 +8721,7 @@ module.exports = {
         },
         {
           name: "posizione",
-          detail: "Parametro `posizione` della funzione REPLACE.",
+          detail: "La posizione in cui inizierà la sostituzione (a partire da 1).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -8729,7 +8729,7 @@ module.exports = {
         },
         {
           name: "lunghezza",
-          detail: "Parametro `lunghezza` della funzione REPLACE.",
+          detail: "Il numero di caratteri del testo da sostituire.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -8737,7 +8737,7 @@ module.exports = {
         },
         {
           name: "nuovo_testo",
-          detail: "Parametro `nuovo_testo` della funzione REPLACE.",
+          detail: "Il testo che verrà inserito nel testo originale.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8748,8 +8748,8 @@ module.exports = {
     {
       n: "REPT",
       t: 12,
-      d: "Descrizione della funzione REPT.",
-      a: "Sintesi della funzione REPT.",
+      d: "Restituisce il testo specificato ripetuto un numero di volte.",
+      a: "Testo specificato ripetuto un numero di volte.",
       m: [
         2,
         2
@@ -8757,7 +8757,7 @@ module.exports = {
       p: [
         {
           name: "testo_da_ripetere",
-          detail: "Parametro `testo_da_ripetere` della funzione REPT.",
+          detail: "Il carattere o la stringa da ripetere.",
           example: "\"ha\"",
           require: "m",
           repeat: "n",
@@ -8765,7 +8765,7 @@ module.exports = {
         },
         {
           name: "numero_ripetizioni",
-          detail: "Parametro `numero_ripetizioni` della funzione REPT.",
+          detail: "Il numero di volte in cui `testo_da_ripetere` deve apparire nel valore restituito.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8776,8 +8776,8 @@ module.exports = {
     {
       n: "SEARCH",
       t: 12,
-      d: "Descrizione della funzione SEARCH.",
-      a: "Sintesi della funzione SEARCH.",
+      d: "Restituisce la posizione in cui una stringa viene trovata per la prima volta all'interno di un testo, ignorando le maiuscole e minuscole. Restituisce `#VALORE!` se la stringa non viene trovata.",
+      a: "Prima posizione di una stringa trovata nel testo, ignorando le maiuscole.",
       m: [
         2,
         3
@@ -8785,7 +8785,7 @@ module.exports = {
       p: [
         {
           name: "da_cercare",
-          detail: "Parametro `da_cercare` della funzione SEARCH.",
+          detail: "La stringa da cercare all'interno di `testo_da_cercare`.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
@@ -8793,7 +8793,7 @@ module.exports = {
         },
         {
           name: "testo_da_cercare",
-          detail: "Parametro `testo_da_cercare` della funzione SEARCH.",
+          detail: "Il testo in cui cercare la prima occorrenza di `cerca`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8801,7 +8801,7 @@ module.exports = {
         },
         {
           name: "a_partire_da",
-          detail: "Parametro `a_partire_da` della funzione SEARCH.",
+          detail: "Il carattere all'interno di `testo_da_cercare` da cui iniziare la ricerca.",
           example: "14",
           require: "m",
           repeat: "n",
@@ -8812,8 +8812,8 @@ module.exports = {
     {
       n: "SUBSTITUTE",
       t: 12,
-      d: "Descrizione della funzione SUBSTITUTE.",
-      a: "Sintesi della funzione SUBSTITUTE.",
+      d: "Sostituisce il testo esistente con un nuovo testo in una stringa.",
+      a: "Sostituisce il testo esistente con un nuovo testo in una stringa.",
       m: [
         3,
         4
@@ -8821,7 +8821,7 @@ module.exports = {
       p: [
         {
           name: "testo_da_cercare",
-          detail: "Parametro `testo_da_cercare` della funzione SUBSTITUTE.",
+          detail: "Il testo all'interno del quale cercare e sostituire.",
           example: "\"search for it\"",
           require: "m",
           repeat: "n",
@@ -8829,7 +8829,7 @@ module.exports = {
         },
         {
           name: "da_cercare",
-          detail: "Parametro `da_cercare` della funzione SUBSTITUTE.",
+          detail: "La stringa da cercare all'interno di `testo_da_cercare`.",
           example: "\"search for\"",
           require: "m",
           repeat: "n",
@@ -8837,7 +8837,7 @@ module.exports = {
         },
         {
           name: "sostituire_con",
-          detail: "Parametro `sostituire_con` della funzione SUBSTITUTE.",
+          detail: "La stringa che sostituirà `cerca`.",
           example: "\"Google\"",
           require: "m",
           repeat: "n",
@@ -8845,7 +8845,7 @@ module.exports = {
         },
         {
           name: "numero_occorrenza",
-          detail: "Parametro `numero_occorrenza` della funzione SUBSTITUTE.",
+          detail: "L'occorrenza di `cerca` all'interno di `testo_da_cercare` da sostituire con `sostituisci_con`. Per impostazione predefinita, vengono sostituite tutte le occorrenze di `cerca`; tuttavia, se `numero_occorrenza` è specificato, viene sostituita solo l'occorrenza indicata di `cerca`.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -8856,8 +8856,8 @@ module.exports = {
     {
       n: "CLEAN",
       t: 12,
-      d: "Descrizione della funzione CLEAN.",
-      a: "Sintesi della funzione CLEAN.",
+      d: "Restituisce il testo con i caratteri ASCII non stampabili rimossi.",
+      a: "Rimuove i caratteri non stampabili da un testo.",
       m: [
         1,
         1
@@ -8865,7 +8865,7 @@ module.exports = {
       p: [
         {
           name: "testo",
-          detail: "Parametro `testo` della funzione CLEAN.",
+          detail: "Il testo di cui verranno rimossi i caratteri non stampabili.",
           example: "\"AF\"&CHAR(31)",
           require: "m",
           repeat: "n",
@@ -8876,8 +8876,8 @@ module.exports = {
     {
       n: "TEXT",
       t: 12,
-      d: "Descrizione della funzione TEXT.",
-      a: "Sintesi della funzione TEXT.",
+      d: "Converte un numero in testo secondo un formato specificato.",
+      a: "Formatta un numero in testo.",
       m: [
         2,
         2
@@ -8885,7 +8885,7 @@ module.exports = {
       p: [
         {
           name: "numero",
-          detail: "Parametro `numero` della funzione TEXT.",
+          detail: "Il numero, la data o l'ora da formattare.",
           example: "1.23",
           require: "m",
           repeat: "n",
@@ -8893,7 +8893,7 @@ module.exports = {
         },
         {
           name: "formato",
-          detail: "Parametro `formato` della funzione TEXT.",
+          detail: "Il modello secondo cui formattare il numero, racchiuso tra virgolette.",
           example: "\"$0.00\"",
           require: "m",
           repeat: "n",
@@ -8904,8 +8904,8 @@ module.exports = {
     {
       n: "TRIM",
       t: 12,
-      d: "Descrizione della funzione TRIM.",
-      a: "Sintesi della funzione TRIM.",
+      d: "Rimuove gli spazi iniziali, finali e ripetuti nel testo.",
+      a: "Rimuove i caratteri spazio.",
       m: [
         1,
         1
@@ -8913,7 +8913,7 @@ module.exports = {
       p: [
         {
           name: "testo",
-          detail: "Parametro `testo` della funzione TRIM.",
+          detail: "Il testo o il riferimento a una cella contenente il testo da ripulire.",
           example: "\" lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8924,8 +8924,8 @@ module.exports = {
     {
       n: "VALUE",
       t: 12,
-      d: "Descrizione della funzione VALUE.",
-      a: "Sintesi della funzione VALUE.",
+      d: "Converte in un numero una stringa in uno qualsiasi dei formati di data, ora o numero riconosciuti da Google Sheets.",
+      a: "Converte una stringa di data/ora/numero in un numero.",
       m: [
         1,
         1
@@ -8933,7 +8933,7 @@ module.exports = {
       p: [
         {
           name: "testo",
-          detail: "Parametro `testo` della funzione VALUE.",
+          detail: "La stringa contenente il valore da convertire.",
           example: "\"123\"",
           require: "m",
           repeat: "n",
@@ -8944,8 +8944,8 @@ module.exports = {
     {
       n: "PROPER",
       t: 12,
-      d: "Descrizione della funzione PROPER.",
-      a: "Sintesi della funzione PROPER.",
+      d: "Rende maiuscola la prima lettera di ogni parola in una stringa specificata.",
+      a: "Rende maiuscola la prima lettera di ogni parola in una stringa specificata.",
       m: [
         1,
         1
@@ -8953,7 +8953,7 @@ module.exports = {
       p: [
         {
           name: "testo_da_capitalizzare",
-          detail: "Parametro `testo_da_capitalizzare` della funzione PROPER.",
+          detail: "Il testo che verrà restituito con la prima lettera di ogni parola maiuscola e tutte le altre lettere minuscole.",
           example: "\"united states\"",
           require: "m",
           repeat: "n",
@@ -8964,8 +8964,8 @@ module.exports = {
     {
       n: "CONVERT",
       t: 13,
-      d: "Descrizione della funzione CONVERT.",
-      a: "Sintesi della funzione CONVERT.",
+      d: "Converte un valore numerico in un'altra unità di misura.",
+      a: "Conversione di unità per i numeri.",
       m: [
         3,
         3
@@ -8973,7 +8973,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione CONVERT.",
+          detail: "Il valore numerico in `unità_iniziale` da convertire in `unità_finale`.",
           example: "5.1",
           require: "m",
           repeat: "n",
@@ -8981,7 +8981,7 @@ module.exports = {
         },
         {
           name: "unità_iniziale",
-          detail: "Parametro `unità_iniziale` della funzione CONVERT.",
+          detail: "L'unità di partenza, l'unità attualmente assegnata a `valore`.",
           example: "\"g\"",
           require: "m",
           repeat: "n",
@@ -8989,7 +8989,7 @@ module.exports = {
         },
         {
           name: "unità_finale",
-          detail: "Parametro `unità_finale` della funzione CONVERT.",
+          detail: "L'unità di misura in cui convertire l'argomento `valore`.",
           example: "\"kg\"",
           require: "m",
           repeat: "n",
@@ -9000,8 +9000,8 @@ module.exports = {
     {
       n: "SUMX2MY2",
       t: 14,
-      d: "Descrizione della funzione SUMX2MY2.",
-      a: "Sintesi della funzione SUMX2MY2.",
+      d: "Calcola la somma delle differenze dei quadrati dei valori in due array.",
+      a: "Somma delle differenze dei quadrati.",
       m: [
         2,
         2
@@ -9009,7 +9009,7 @@ module.exports = {
       p: [
         {
           name: "matrice_x",
-          detail: "Parametro `matrice_x` della funzione SUMX2MY2.",
+          detail: "L'array o l'intervallo di valori i cui quadrati verranno ridotti dai quadrati delle voci corrispondenti in `array_y` e sommati insieme.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -9017,7 +9017,7 @@ module.exports = {
         },
         {
           name: "matrice_y",
-          detail: "Parametro `matrice_y` della funzione SUMX2MY2.",
+          detail: "L'array o l'intervallo di valori i cui quadrati verranno sottratti dai quadrati delle voci corrispondenti in `array_x` e sommati insieme.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9028,8 +9028,8 @@ module.exports = {
     {
       n: "SUMX2PY2",
       t: 14,
-      d: "Descrizione della funzione SUMX2PY2.",
-      a: "Sintesi della funzione SUMX2PY2.",
+      d: "Calcola la somma delle somme dei quadrati dei valori in due array.",
+      a: "Somma delle somme dei quadrati.",
       m: [
         2,
         2
@@ -9037,7 +9037,7 @@ module.exports = {
       p: [
         {
           name: "matrice_x",
-          detail: "Parametro `matrice_x` della funzione SUMX2PY2.",
+          detail: "L'array o l'intervallo di valori i cui quadrati verranno sommati ai quadrati delle voci corrispondenti in `array_y` e sommati insieme.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -9045,7 +9045,7 @@ module.exports = {
         },
         {
           name: "matrice_y",
-          detail: "Parametro `matrice_y` della funzione SUMX2PY2.",
+          detail: "L'array o l'intervallo di valori i cui quadrati verranno sommati ai quadrati delle voci corrispondenti in `array_x` e sommati insieme.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9056,8 +9056,8 @@ module.exports = {
     {
       n: "SUMXMY2",
       t: 14,
-      d: "Descrizione della funzione SUMXMY2.",
-      a: "Sintesi della funzione SUMXMY2.",
+      d: "Calcola la somma dei quadrati delle differenze dei valori in due array.",
+      a: "Somma dei quadrati delle differenze.",
       m: [
         2,
         2
@@ -9065,7 +9065,7 @@ module.exports = {
       p: [
         {
           name: "matrice_x",
-          detail: "Parametro `matrice_x` della funzione SUMXMY2.",
+          detail: "L'array o l'intervallo di valori che verranno ridotti dalle voci corrispondenti in `array_y`, elevati al quadrato e sommati insieme.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -9073,7 +9073,7 @@ module.exports = {
         },
         {
           name: "matrice_y",
-          detail: "Parametro `matrice_y` della funzione SUMXMY2.",
+          detail: "L'array o l'intervallo di valori che verranno sottratti dalle voci corrispondenti in `array_x`, il risultato elevato al quadrato e tutti questi risultati sommati insieme.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9084,8 +9084,8 @@ module.exports = {
     {
       n: "TRANSPOSE",
       t: 14,
-      d: "Descrizione della funzione TRANSPOSE.",
-      a: "Sintesi della funzione TRANSPOSE.",
+      d: "Traspone le righe e le colonne di un array o intervallo di celle.",
+      a: "Traspone le righe e le colonne di un array.",
       m: [
         1,
         1
@@ -9093,7 +9093,7 @@ module.exports = {
       p: [
         {
           name: "matrice_o_intervallo",
-          detail: "Parametro `matrice_o_intervallo` della funzione TRANSPOSE.",
+          detail: "L'array o l'intervallo le cui righe e colonne verranno scambiate.",
           example: "{1,2}",
           require: "m",
           repeat: "n",
@@ -9104,8 +9104,8 @@ module.exports = {
     {
       n: "TREND",
       t: 14,
-      d: "Descrizione della funzione TREND.",
-      a: "Sintesi della funzione TREND.",
+      d: "Dati dati parziali su una tendenza lineare, adatta una tendenza lineare ideale usando il metodo dei minimi quadrati e/o prevede ulteriori valori.",
+      a: "Adatta i punti a una tendenza lineare tramite minimi quadrati.",
       m: [
         1,
         4
@@ -9113,7 +9113,7 @@ module.exports = {
       p: [
         {
           name: "dati_y_noti",
-          detail: "Parametro `dati_y_noti` della funzione TREND.",
+          detail: "L'array o l'intervallo contenente i valori dipendenti (y) già noti, usati per adattare una tendenza lineare ideale.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9121,7 +9121,7 @@ module.exports = {
         },
         {
           name: "dati_x_noti",
-          detail: "Parametro `dati_x_noti` della funzione TREND.",
+          detail: "I valori della o delle variabili indipendenti corrispondenti a `dati_y_noti`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9129,7 +9129,7 @@ module.exports = {
         },
         {
           name: "nuovi_dati_x",
-          detail: "Parametro `nuovi_dati_x` della funzione TREND.",
+          detail: "I punti dati per cui restituire i valori `y` sulla curva ideale adattata.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9137,7 +9137,7 @@ module.exports = {
         },
         {
           name: "b",
-          detail: "Parametro `b` della funzione TREND.",
+          detail: "Data una forma lineare generale `y = m*x+b` per un adattamento della curva, calcola `b` se `VERO` oppure impone che `b` sia `0` e calcola solo i valori `m` se `FALSO`, ossia impone che la curva adattata passi per l'origine.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9148,8 +9148,8 @@ module.exports = {
     {
       n: "FREQUENCY",
       t: 14,
-      d: "Descrizione della funzione FREQUENCY.",
-      a: "Sintesi della funzione FREQUENCY.",
+      d: "Calcola la distribuzione di frequenza di un array a una colonna in classi specificate.",
+      a: "La distribuzione di frequenza di un array.",
       m: [
         2,
         2
@@ -9157,7 +9157,7 @@ module.exports = {
       p: [
         {
           name: "dati",
-          detail: "Parametro `dati` della funzione FREQUENCY.",
+          detail: "L'array o l'intervallo contenente i valori da contare.",
           example: "A2:A40",
           require: "m",
           repeat: "n",
@@ -9165,7 +9165,7 @@ module.exports = {
         },
         {
           name: "classi",
-          detail: "Parametro `classi` della funzione FREQUENCY.",
+          detail: "L'array o l'intervallo contenente l'insieme delle classi.",
           example: "B2:B5",
           require: "m",
           repeat: "n",
@@ -9176,8 +9176,8 @@ module.exports = {
     {
       n: "GROWTH",
       t: 14,
-      d: "Descrizione della funzione GROWTH.",
-      a: "Sintesi della funzione GROWTH.",
+      d: "Dati dati parziali su una tendenza di crescita esponenziale, adatta una tendenza di crescita esponenziale ideale e/o prevede ulteriori valori.",
+      a: "Adatta i punti a una tendenza di crescita esponenziale.",
       m: [
         1,
         4
@@ -9185,7 +9185,7 @@ module.exports = {
       p: [
         {
           name: "dati_y_noti",
-          detail: "Parametro `dati_y_noti` della funzione GROWTH.",
+          detail: "L'array o l'intervallo contenente i valori dipendenti (y) già noti, usati per adattare una curva di crescita esponenziale ideale.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9193,7 +9193,7 @@ module.exports = {
         },
         {
           name: "dati_x_noti",
-          detail: "Parametro `dati_x_noti` della funzione GROWTH.",
+          detail: "I valori della o delle variabili indipendenti corrispondenti a `dati_y_noti`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9201,7 +9201,7 @@ module.exports = {
         },
         {
           name: "nuovi_dati_x",
-          detail: "Parametro `nuovi_dati_x` della funzione GROWTH.",
+          detail: "I punti dati per cui restituire i valori `y` sulla curva ideale adattata.",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9209,7 +9209,7 @@ module.exports = {
         },
         {
           name: "b",
-          detail: "Parametro `b` della funzione GROWTH.",
+          detail: "Data una forma esponenziale generale `y = b*m^x` per un adattamento della curva, calcola `b` se `VERO` oppure impone che `b` sia `1` e calcola solo i valori `m` se `FALSO`.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9220,8 +9220,8 @@ module.exports = {
     {
       n: "LINEST",
       t: 14,
-      d: "Descrizione della funzione LINEST.",
-      a: "Sintesi della funzione LINEST.",
+      d: "Dati dati parziali su una tendenza lineare, calcola vari parametri sulla tendenza lineare ideale usando il metodo dei minimi quadrati.",
+      a: "Tendenza lineare di adattamento ottimale tramite minimi quadrati.",
       m: [
         1,
         4
@@ -9229,7 +9229,7 @@ module.exports = {
       p: [
         {
           name: "dati_y_noti",
-          detail: "Parametro `dati_y_noti` della funzione LINEST.",
+          detail: "L'array o l'intervallo contenente i valori dipendenti (y) già noti, usati per adattare una tendenza lineare ideale.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9237,7 +9237,7 @@ module.exports = {
         },
         {
           name: "dati_x_noti",
-          detail: "Parametro `dati_x_noti` della funzione LINEST.",
+          detail: "I valori della o delle variabili indipendenti corrispondenti a `dati_y_noti`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9245,7 +9245,7 @@ module.exports = {
         },
         {
           name: "calcolare_b",
-          detail: "Parametro `calcolare_b` della funzione LINEST.",
+          detail: "Data una forma lineare `y = m*x+b`, calcola l'intercetta y (`b`) se `VERO`. Altrimenti, impone che `b` sia `0` e calcola solo i valori `m` se `FALSO`, ossia impone che la curva adattata passi per l'origine.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9253,7 +9253,7 @@ module.exports = {
         },
         {
           name: "dettagliato",
-          detail: "Parametro `dettagliato` della funzione LINEST.",
+          detail: "Un flag che specifica se restituire statistiche di regressione aggiuntive oppure solo i coefficienti lineari e l'intercetta y (predefinito).",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9264,8 +9264,8 @@ module.exports = {
     {
       n: "LOGEST",
       t: 14,
-      d: "Descrizione della funzione LOGEST.",
-      a: "Sintesi della funzione LOGEST.",
+      d: "Dati dati parziali su una curva di crescita esponenziale, calcola vari parametri sulla curva di crescita esponenziale ideale di adattamento ottimale.",
+      a: "Curva di crescita esponenziale di adattamento ottimale.",
       m: [
         1,
         4
@@ -9273,7 +9273,7 @@ module.exports = {
       p: [
         {
           name: "dati_y_noti",
-          detail: "Parametro `dati_y_noti` della funzione LOGEST.",
+          detail: "L'array o l'intervallo contenente i valori dipendenti (y) già noti, usati per adattare una curva di crescita esponenziale ideale.",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9281,7 +9281,7 @@ module.exports = {
         },
         {
           name: "dati_x_noti",
-          detail: "Parametro `dati_x_noti` della funzione LOGEST.",
+          detail: "I valori della o delle variabili indipendenti corrispondenti a `dati_y_noti`.",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9289,7 +9289,7 @@ module.exports = {
         },
         {
           name: "b",
-          detail: "Parametro `b` della funzione LOGEST.",
+          detail: "Data una forma esponenziale generale `y = b*m^x` per un adattamento della curva, calcola `b` se `VERO` oppure impone che `b` sia `1` e calcola solo i valori `m` se `FALSO`.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9297,7 +9297,7 @@ module.exports = {
         },
         {
           name: "dettagliato",
-          detail: "Parametro `dettagliato` della funzione LOGEST.",
+          detail: "Un flag che specifica se restituire statistiche di regressione aggiuntive oppure solo il coefficiente e gli esponenti calcolati.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9308,8 +9308,8 @@ module.exports = {
     {
       n: "MDETERM",
       t: 14,
-      d: "Descrizione della funzione MDETERM.",
-      a: "Sintesi della funzione MDETERM.",
+      d: "Restituisce il determinante di matrice di una matrice quadrata specificata come array o intervallo.",
+      a: "Determinante di matrice di una matrice quadrata.",
       m: [
         1,
         1
@@ -9317,7 +9317,7 @@ module.exports = {
       p: [
         {
           name: "matrice_quadrata",
-          detail: "Parametro `matrice_quadrata` della funzione MDETERM.",
+          detail: "Un array o intervallo con un numero uguale di righe e colonne che rappresenta una matrice di cui verrà calcolato il determinante.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9328,8 +9328,8 @@ module.exports = {
     {
       n: "MINVERSE",
       t: 14,
-      d: "Descrizione della funzione MINVERSE.",
-      a: "Sintesi della funzione MINVERSE.",
+      d: "Restituisce l'inversa moltiplicativa di una matrice quadrata specificata come array o intervallo.",
+      a: "Inversa moltiplicativa di una matrice quadrata.",
       m: [
         1,
         1
@@ -9337,7 +9337,7 @@ module.exports = {
       p: [
         {
           name: "matrice_quadrata",
-          detail: "Parametro `matrice_quadrata` della funzione MINVERSE.",
+          detail: "Un array o intervallo con un numero uguale di righe e colonne che rappresenta una matrice di cui verrà calcolata l'inversa moltiplicativa.",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9348,8 +9348,8 @@ module.exports = {
     {
       n: "MMULT",
       t: 14,
-      d: "Descrizione della funzione MMULT.",
-      a: "Sintesi della funzione MMULT.",
+      d: "Calcola il prodotto matriciale di due matrici specificate come array o intervalli.",
+      a: "Il prodotto matriciale di due matrici.",
       m: [
         2,
         2
@@ -9357,7 +9357,7 @@ module.exports = {
       p: [
         {
           name: "matrice1",
-          detail: "Parametro `matrice1` della funzione MMULT.",
+          detail: "La prima matrice nell'operazione di moltiplicazione di matrici, rappresentata come array o intervallo.",
           example: "A1:B3",
           require: "m",
           repeat: "n",
@@ -9365,7 +9365,7 @@ module.exports = {
         },
         {
           name: "matrice2",
-          detail: "Parametro `matrice2` della funzione MMULT.",
+          detail: "La seconda matrice nell'operazione di moltiplicazione di matrici, rappresentata come array o intervallo.",
           example: "C1:F2",
           require: "m",
           repeat: "n",
@@ -9376,8 +9376,8 @@ module.exports = {
     {
       n: "SUMPRODUCT",
       t: 14,
-      d: "Descrizione della funzione SUMPRODUCT.",
-      a: "Sintesi della funzione SUMPRODUCT.",
+      d: "Calcola la somma dei prodotti delle voci corrispondenti in due array o intervalli di uguale dimensione.",
+      a: "Somma dei prodotti degli elementi in due array.",
       m: [
         1,
         255
@@ -9385,7 +9385,7 @@ module.exports = {
       p: [
         {
           name: "matrice1",
-          detail: "Parametro `matrice1` della funzione SUMPRODUCT.",
+          detail: "Il primo array o intervallo le cui voci verranno moltiplicate per le voci corrispondenti nel secondo array o intervallo.",
           example: "A2:C5",
           require: "m",
           repeat: "n",
@@ -9393,7 +9393,7 @@ module.exports = {
         },
         {
           name: "matrice2",
-          detail: "Parametro `matrice2` della funzione SUMPRODUCT.",
+          detail: "Il secondo array o intervallo le cui voci verranno moltiplicate per le voci corrispondenti nel primo array o intervallo.",
           example: "D2:F5",
           require: "o",
           repeat: "y",
@@ -9404,8 +9404,8 @@ module.exports = {
     {
       n: "ISFORMULA",
       t: 15,
-      d: "Descrizione della funzione ISFORMULA.",
-      a: "Sintesi della funzione ISFORMULA.",
+      d: "Verifica se un valore è una formula.",
+      a: "Se un valore è una formula.",
       m: [
         1,
         1
@@ -9413,7 +9413,7 @@ module.exports = {
       p: [
         {
           name: "cella",
-          detail: "Parametro `cella` della funzione ISFORMULA.",
+          detail: "La cella da verificare come contenente una formula.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9424,8 +9424,8 @@ module.exports = {
     {
       n: "CELL",
       t: 15,
-      d: "Descrizione della funzione CELL.",
-      a: "Sintesi della funzione CELL.",
+      d: "Restituisce le informazioni richieste sulla cella specificata.",
+      a: "Ottiene informazioni su una cella.",
       m: [
         2,
         2
@@ -9433,7 +9433,7 @@ module.exports = {
       p: [
         {
           name: "tipo_informazione",
-          detail: "Parametro `tipo_informazione` della funzione CELL.",
+          detail: "Il tipo di informazione richiesta (vedere l'articolo per i tipi disponibili).",
           example: "\"type\"",
           require: "m",
           repeat: "n",
@@ -9441,7 +9441,7 @@ module.exports = {
         },
         {
           name: "riferimento",
-          detail: "Parametro `riferimento` della funzione CELL.",
+          detail: "Il riferimento alla cella.",
           example: "C2",
           require: "m",
           repeat: "n",
@@ -9452,8 +9452,8 @@ module.exports = {
     {
       n: "NA",
       t: 15,
-      d: "Descrizione della funzione NA.",
-      a: "Sintesi della funzione NA.",
+      d: "Restituisce l'errore \"valore non disponibile\", `#N/D`.",
+      a: "L'errore `#N/D`.",
       m: [
         0,
         0
@@ -9463,8 +9463,8 @@ module.exports = {
     {
       n: "ERROR_TYPE",
       t: 15,
-      d: "Descrizione della funzione ERROR_TYPE.",
-      a: "Sintesi della funzione ERROR_TYPE.",
+      d: "Restituisce un numero corrispondente al valore di errore in una cella diversa.",
+      a: "Valore di errore di una cella (come numero).",
       m: [
         1,
         1
@@ -9472,7 +9472,7 @@ module.exports = {
       p: [
         {
           name: "riferimento",
-          detail: "Parametro `riferimento` della funzione ERROR_TYPE.",
+          detail: "La cella per cui trovare il numero di errore, sebbene sia possibile fornire anche direttamente il valore di errore.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -9483,8 +9483,8 @@ module.exports = {
     {
       n: "ISBLANK",
       t: 15,
-      d: "Descrizione della funzione ISBLANK.",
-      a: "Sintesi della funzione ISBLANK.",
+      d: "Verifica se la cella a cui si fa riferimento è vuota.",
+      a: "Se la cella a cui si fa riferimento è vuota.",
       m: [
         1,
         1
@@ -9492,7 +9492,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione ISBLANK.",
+          detail: "Riferimento alla cella che verrà verificata per la vacuità.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9503,8 +9503,8 @@ module.exports = {
     {
       n: "ISERR",
       t: 15,
-      d: "Descrizione della funzione ISERR.",
-      a: "Sintesi della funzione ISERR.",
+      d: "Verifica se un valore è un errore diverso da `#N/D`.",
+      a: "Se un valore è un errore diverso da `#n/d`.",
       m: [
         1,
         1
@@ -9512,7 +9512,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione ISERR.",
+          detail: "Il valore da verificare come tipo di errore diverso da `#N/D`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9523,8 +9523,8 @@ module.exports = {
     {
       n: "ISERROR",
       t: 15,
-      d: "Descrizione della funzione ISERROR.",
-      a: "Sintesi della funzione ISERROR.",
+      d: "Verifica se un valore è un errore.",
+      a: "Se un valore è un errore.",
       m: [
         1,
         1
@@ -9532,7 +9532,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione ISERROR.",
+          detail: "Il valore da verificare come tipo di errore.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9543,8 +9543,8 @@ module.exports = {
     {
       n: "ISLOGICAL",
       t: 15,
-      d: "Descrizione della funzione ISLOGICAL.",
-      a: "Sintesi della funzione ISLOGICAL.",
+      d: "Verifica se un valore è `VERO` o `FALSO`.",
+      a: "Se un valore è `vero` o `falso`.",
       m: [
         1,
         1
@@ -9552,7 +9552,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione ISLOGICAL.",
+          detail: "Il valore da verificare come logico `VERO` o `FALSO`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9563,8 +9563,8 @@ module.exports = {
     {
       n: "ISNA",
       t: 15,
-      d: "Descrizione della funzione ISNA.",
-      a: "Sintesi della funzione ISNA.",
+      d: "Verifica se un valore è l'errore `#N/D`.",
+      a: "Se un valore è l'errore `#n/d`.",
       m: [
         1,
         1
@@ -9572,7 +9572,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione ISNA.",
+          detail: "Il valore da confrontare con il valore di errore `#N/D`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9583,8 +9583,8 @@ module.exports = {
     {
       n: "ISNONTEXT",
       t: 15,
-      d: "Descrizione della funzione ISNONTEXT.",
-      a: "Sintesi della funzione ISNONTEXT.",
+      d: "Verifica se un valore non è testuale.",
+      a: "Se un valore non è testuale.",
       m: [
         1,
         1
@@ -9592,7 +9592,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione ISNONTEXT.",
+          detail: "Il valore da verificare.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9603,8 +9603,8 @@ module.exports = {
     {
       n: "ISNUMBER",
       t: 15,
-      d: "Descrizione della funzione ISNUMBER.",
-      a: "Sintesi della funzione ISNUMBER.",
+      d: "Verifica se un valore è un numero.",
+      a: "Se un valore è un numero.",
       m: [
         1,
         1
@@ -9612,7 +9612,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione ISNUMBER.",
+          detail: "Il valore da verificare come numero.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9623,8 +9623,8 @@ module.exports = {
     {
       n: "ISREF",
       t: 15,
-      d: "Descrizione della funzione ISREF.",
-      a: "Sintesi della funzione ISREF.",
+      d: "Verifica se un valore è un riferimento di cella valido.",
+      a: "Se un valore è un riferimento di cella valido.",
       m: [
         1,
         1
@@ -9632,7 +9632,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione ISREF.",
+          detail: "Il valore da verificare come riferimento di cella.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9643,8 +9643,8 @@ module.exports = {
     {
       n: "ISTEXT",
       t: 15,
-      d: "Descrizione della funzione ISTEXT.",
-      a: "Sintesi della funzione ISTEXT.",
+      d: "Verifica se un valore è testo.",
+      a: "Se un valore è testo.",
       m: [
         1,
         1
@@ -9652,7 +9652,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione ISTEXT.",
+          detail: "Il valore da verificare come testo.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9663,8 +9663,8 @@ module.exports = {
     {
       n: "TYPE",
       t: 15,
-      d: "Descrizione della funzione TYPE.",
-      a: "Sintesi della funzione TYPE.",
+      d: "Restituisce un numero associato al tipo di dati passato alla funzione.",
+      a: "Ottiene il tipo di un valore.",
       m: [
         1,
         1
@@ -9672,7 +9672,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione TYPE.",
+          detail: "Il valore di cui determinare il tipo.",
           example: "C4",
           require: "m",
           repeat: "n",
@@ -9683,8 +9683,8 @@ module.exports = {
     {
       n: "N",
       t: 15,
-      d: "Descrizione della funzione N.",
-      a: "Sintesi della funzione N.",
+      d: "Restituisce l'argomento fornito come numero. Il testo viene convertito in 0 e gli errori vengono restituiti così come sono.",
+      a: "Argomento fornito come numero.",
       m: [
         1,
         1
@@ -9692,7 +9692,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione N.",
+          detail: "L'argomento da convertire in numero.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9703,8 +9703,8 @@ module.exports = {
     {
       n: "TO_DATE",
       t: 16,
-      d: "Descrizione della funzione TO_DATE.",
-      a: "Sintesi della funzione TO_DATE.",
+      d: "Converte un numero fornito in una data.",
+      a: "Converte un numero fornito in una data.",
       m: [
         1,
         1
@@ -9712,7 +9712,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione TO_DATE.",
+          detail: "L'argomento o il riferimento a una cella da convertire in data.",
           example: "25405",
           require: "m",
           repeat: "n",
@@ -9723,8 +9723,8 @@ module.exports = {
     {
       n: "TO_PURE_NUMBER",
       t: 16,
-      d: "Descrizione della funzione TO_PURE_NUMBER.",
-      a: "Sintesi della funzione TO_PURE_NUMBER.",
+      d: "Converte una data/ora, percentuale, valuta o altro valore numerico formattato fornito in un numero puro senza formattazione.",
+      a: "Converte qualsiasi valore numerico in un numero puro.",
       m: [
         1,
         1
@@ -9732,7 +9732,7 @@ module.exports = {
       p: [
         {
           name: "valore",
-          detail: "Parametro `valore` della funzione TO_PURE_NUMBER.",
+          detail: "L'argomento o il riferimento a una cella da convertire in un numero puro.",
           example: "50%",
           require: "m",
           repeat: "n",
