@@ -7650,8 +7650,8 @@ module.exports = {
     {
       n: "NOT",
       t: 10,
-      d: "Descrição da função NOT.",
-      a: "Resumo da função NOT.",
+      d: "Retorna o oposto de um valor lógico - `NOT(VERDADEIRO)` retorna `FALSO`; `NOT(FALSO)` retorna `VERDADEIRO`.",
+      a: "Retorna o oposto do valor lógico fornecido.",
       m: [
         1,
         1
@@ -7659,7 +7659,7 @@ module.exports = {
       p: [
         {
           name: "expressão_lógica",
-          detail: "Parâmetro `expressão_lógica` da função NOT.",
+          detail: "Uma expressão ou referência a uma célula contendo uma expressão que representa algum valor lógico.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7670,8 +7670,8 @@ module.exports = {
     {
       n: "TRUE",
       t: 10,
-      d: "Descrição da função TRUE.",
-      a: "Resumo da função TRUE.",
+      d: "Retorna o valor lógico `VERDADEIRO`.",
+      a: "Valor lógico `verdadeiro`.",
       m: [
         0,
         0
@@ -7681,8 +7681,8 @@ module.exports = {
     {
       n: "FALSE",
       t: 10,
-      d: "Descrição da função FALSE.",
-      a: "Resumo da função FALSE.",
+      d: "Retorna o valor lógico `FALSO`.",
+      a: "Valor lógico `falso`.",
       m: [
         0,
         0
@@ -7692,8 +7692,8 @@ module.exports = {
     {
       n: "AND",
       t: 10,
-      d: "Descrição da função AND.",
-      a: "Resumo da função AND.",
+      d: "Retorna verdadeiro se todos os argumentos fornecidos forem logicamente verdadeiros, e falso se qualquer um dos argumentos fornecidos for logicamente falso.",
+      a: "Operador lógico `e`.",
       m: [
         1,
         255
@@ -7701,7 +7701,7 @@ module.exports = {
       p: [
         {
           name: "expressão_lógica1",
-          detail: "Parâmetro `expressão_lógica1` da função AND.",
+          detail: "Uma expressão ou referência a uma célula contendo uma expressão que representa algum valor lógico, ou seja, `VERDADEIRO` ou `FALSO`, ou uma expressão que pode ser convertida em um valor lógico.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7709,7 +7709,7 @@ module.exports = {
         },
         {
           name: "expressão_lógica2",
-          detail: "Parâmetro `expressão_lógica2` da função AND.",
+          detail: "Mais expressões que representam valores lógicos.",
           example: "A3 = \"bar\"",
           require: "o",
           repeat: "y",
@@ -7720,8 +7720,8 @@ module.exports = {
     {
       n: "IFERROR",
       t: 10,
-      d: "Descrição da função IFERROR.",
-      a: "Resumo da função IFERROR.",
+      d: "Retorna o primeiro argumento se não for um valor de erro, caso contrário retorna o segundo argumento se presente, ou vazio se o segundo argumento estiver ausente.",
+      a: "Valor se não for um erro, caso contrário o 2º argumento.",
       m: [
         2,
         2
@@ -7729,7 +7729,7 @@ module.exports = {
       p: [
         {
           name: "valor",
-          detail: "Parâmetro `valor` da função IFERROR.",
+          detail: "O valor a retornar se `valor` em si não for um erro.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -7737,7 +7737,7 @@ module.exports = {
         },
         {
           name: "valor_se_erro",
-          detail: "Parâmetro `valor_se_erro` da função IFERROR.",
+          detail: "O valor que a função retorna se `valor` for um erro.",
           example: "\"Error in cell A1\"",
           require: "m",
           repeat: "n",
@@ -7748,8 +7748,8 @@ module.exports = {
     {
       n: "IF",
       t: 10,
-      d: "Descrição da função IF.",
-      a: "Resumo da função IF.",
+      d: "Retorna um valor se uma expressão lógica for `VERDADEIRO` e outro se for `FALSO`.",
+      a: "Retorna valor dependendo de expressão lógica.",
       m: [
         2,
         3
@@ -7757,7 +7757,7 @@ module.exports = {
       p: [
         {
           name: "expressão_lógica",
-          detail: "Parâmetro `expressão_lógica` da função IF.",
+          detail: "Uma expressão ou referência a uma célula contendo uma expressão que representa algum valor lógico, ou seja, `VERDADEIRO` ou `FALSO`.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7765,7 +7765,7 @@ module.exports = {
         },
         {
           name: "valor_se_verdadeiro",
-          detail: "Parâmetro `valor_se_verdadeiro` da função IF.",
+          detail: "O valor que a função retorna se `expressão_lógica` for `VERDADEIRO`.",
           example: "\"A2 is foo\"",
           require: "m",
           repeat: "n",
@@ -7773,7 +7773,7 @@ module.exports = {
         },
         {
           name: "valor_se_falso",
-          detail: "Parâmetro `valor_se_falso` da função IF.",
+          detail: "O valor que a função retorna se `expressão_lógica` for `FALSO`.",
           example: "\"A2 was false\"",
           require: "o",
           repeat: "n",
@@ -7784,8 +7784,8 @@ module.exports = {
     {
       n: "OR",
       t: 10,
-      d: "Descrição da função OR.",
-      a: "Resumo da função OR.",
+      d: "Retorna verdadeiro se qualquer um dos argumentos fornecidos for logicamente verdadeiro, e falso se todos os argumentos fornecidos forem logicamente falsos.",
+      a: "Operador lógico `ou`.",
       m: [
         1,
         255
@@ -7793,7 +7793,7 @@ module.exports = {
       p: [
         {
           name: "expressão_lógica1",
-          detail: "Parâmetro `expressão_lógica1` da função OR.",
+          detail: "Uma expressão ou referência a uma célula contendo uma expressão que representa algum valor lógico, ou seja, `VERDADEIRO` ou `FALSO`, ou uma expressão que pode ser convertida em um valor lógico.",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7801,7 +7801,7 @@ module.exports = {
         },
         {
           name: "expressão_lógica2",
-          detail: "Parâmetro `expressão_lógica2` da função OR.",
+          detail: "Mais expressões que são avaliadas como valores lógicos.",
           example: " A3 = \"bar\"",
           require: "m",
           repeat: "n",
@@ -7812,8 +7812,8 @@ module.exports = {
     {
       n: "NE",
       t: 11,
-      d: "Descrição da função NE.",
-      a: "Resumo da função NE.",
+      d: "Retorna `VERDADEIRO` se dois valores especificados não forem iguais e `FALSO` caso contrário. Equivalente ao operador `!=`.",
+      a: "Diferente.",
       m: [
         2,
         2
@@ -7821,7 +7821,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função NE.",
+          detail: "O primeiro valor.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7829,7 +7829,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função NE.",
+          detail: "O valor a testar em relação a `valor1` para desigualdade.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7840,8 +7840,8 @@ module.exports = {
     {
       n: "EQ",
       t: 11,
-      d: "Descrição da função EQ.",
-      a: "Resumo da função EQ.",
+      d: "Retorna `VERDADEIRO` se dois valores especificados forem iguais e `FALSO` caso contrário. Equivalente ao operador `==`.",
+      a: "Igual.",
       m: [
         2,
         2
@@ -7849,7 +7849,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função EQ.",
+          detail: "O primeiro valor.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7857,7 +7857,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função EQ.",
+          detail: "O valor a testar em relação a `valor1` para igualdade.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7868,8 +7868,8 @@ module.exports = {
     {
       n: "GT",
       t: 11,
-      d: "Descrição da função GT.",
-      a: "Resumo da função GT.",
+      d: "Retorna `VERDADEIRO` se o primeiro argumento for estritamente maior que o segundo, e `FALSO` caso contrário. Equivalente ao operador `>`.",
+      a: "Estritamente maior que.",
       m: [
         2,
         2
@@ -7877,7 +7877,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função GT.",
+          detail: "O valor a testar como maior que `valor2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7885,7 +7885,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função GT.",
+          detail: "O segundo valor.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7896,8 +7896,8 @@ module.exports = {
     {
       n: "GTE",
       t: 11,
-      d: "Descrição da função GTE.",
-      a: "Resumo da função GTE.",
+      d: "Retorna `VERDADEIRO` se o primeiro argumento for maior ou igual ao segundo, e `FALSO` caso contrário. Equivalente ao operador `>=`.",
+      a: "Maior ou igual a.",
       m: [
         2,
         2
@@ -7905,7 +7905,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função GTE.",
+          detail: "O valor a testar como maior ou igual a `valor2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7913,7 +7913,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função GTE.",
+          detail: "O segundo valor.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7924,8 +7924,8 @@ module.exports = {
     {
       n: "LT",
       t: 11,
-      d: "Descrição da função LT.",
-      a: "Resumo da função LT.",
+      d: "Retorna `VERDADEIRO` se o primeiro argumento for estritamente menor que o segundo, e `FALSO` caso contrário. Equivalente ao operador `<`.",
+      a: "Menor que.",
       m: [
         2,
         2
@@ -7933,7 +7933,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função LT.",
+          detail: "O valor a testar como menor que `valor2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7941,7 +7941,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função LT.",
+          detail: "O segundo valor.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7952,8 +7952,8 @@ module.exports = {
     {
       n: "LTE",
       t: 11,
-      d: "Descrição da função LTE.",
-      a: "Resumo da função LTE.",
+      d: "Retorna `VERDADEIRO` se o primeiro argumento for menor ou igual ao segundo, e `FALSO` caso contrário. Equivalente ao operador `<=`.",
+      a: "Menor ou igual a.",
       m: [
         2,
         2
@@ -7961,7 +7961,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função LTE.",
+          detail: "O valor a testar como menor ou igual a `valor2`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7969,7 +7969,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função LTE.",
+          detail: "O segundo valor.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7980,8 +7980,8 @@ module.exports = {
     {
       n: "ADD",
       t: 11,
-      d: "Descrição da função ADD.",
-      a: "Resumo da função ADD.",
+      d: "Retorna a soma de dois números. Equivalente ao operador `+`.",
+      a: "Soma de dois números",
       m: [
         2,
         2
@@ -7989,7 +7989,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função ADD.",
+          detail: "A primeira parcela.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7997,7 +7997,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função ADD.",
+          detail: "A segunda parcela.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8008,8 +8008,8 @@ module.exports = {
     {
       n: "MINUS",
       t: 11,
-      d: "Descrição da função MINUS.",
-      a: "Resumo da função MINUS.",
+      d: "Retorna a diferença de dois números. Equivalente ao operador `-`.",
+      a: "Diferença de dois números",
       m: [
         2,
         2
@@ -8017,7 +8017,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função MINUS.",
+          detail: "O minuendo, ou número do qual subtrair.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8025,7 +8025,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função MINUS.",
+          detail: "O subtraendo, ou número a subtrair de `valor1`.",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8036,8 +8036,8 @@ module.exports = {
     {
       n: "MULTIPLY",
       t: 11,
-      d: "Descrição da função MULTIPLY.",
-      a: "Resumo da função MULTIPLY.",
+      d: "Retorna o produto de dois números. Equivalente ao operador `*`.",
+      a: "Produto de dois números",
       m: [
         2,
         2
@@ -8045,7 +8045,7 @@ module.exports = {
       p: [
         {
           name: "fator1",
-          detail: "Parâmetro `fator1` da função MULTIPLY.",
+          detail: "O primeiro fator.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8053,7 +8053,7 @@ module.exports = {
         },
         {
           name: "fator2",
-          detail: "Parâmetro `fator2` da função MULTIPLY.",
+          detail: "O segundo fator.",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -8064,8 +8064,8 @@ module.exports = {
     {
       n: "DIVIDE",
       t: 11,
-      d: "Descrição da função DIVIDE.",
-      a: "Resumo da função DIVIDE.",
+      d: "Retorna um número dividido por outro. Equivalente ao operador `/`.",
+      a: "Um número dividido por outro",
       m: [
         2,
         2
@@ -8073,7 +8073,7 @@ module.exports = {
       p: [
         {
           name: "dividendo",
-          detail: "Parâmetro `dividendo` da função DIVIDE.",
+          detail: "O número a ser dividido.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8081,7 +8081,7 @@ module.exports = {
         },
         {
           name: "divisor",
-          detail: "Parâmetro `divisor` da função DIVIDE.",
+          detail: "O número pelo qual dividir.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8092,8 +8092,8 @@ module.exports = {
     {
       n: "CONCAT",
       t: 11,
-      d: "Descrição da função CONCAT.",
-      a: "Resumo da função CONCAT.",
+      d: "Retorna a concatenação de dois valores. Equivalente ao operador `&`.",
+      a: "Concatenação de dois valores",
       m: [
         2,
         2
@@ -8101,7 +8101,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função CONCAT.",
+          detail: "O valor ao qual `valor2` será anexado.",
           example: "\"de\"",
           require: "m",
           repeat: "n",
@@ -8109,7 +8109,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função CONCAT.",
+          detail: "O valor a ser anexado a `valor1`.",
           example: "\"mystify\"",
           require: "m",
           repeat: "n",
@@ -8120,8 +8120,8 @@ module.exports = {
     {
       n: "UNARY_PERCENT",
       t: 11,
-      d: "Descrição da função UNARY_PERCENT.",
-      a: "Resumo da função UNARY_PERCENT.",
+      d: "Retorna um valor interpretado como porcentagem; isto é, `UNARY_PERCENT(100)` é igual a `1`.",
+      a: "Valor interpretado como porcentagem.",
       m: [
         1,
         1
@@ -8129,7 +8129,7 @@ module.exports = {
       p: [
         {
           name: "porcentagem",
-          detail: "Parâmetro `porcentagem` da função UNARY_PERCENT.",
+          detail: "O valor a interpretar como porcentagem.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8140,8 +8140,8 @@ module.exports = {
     {
       n: "CONCATENATE",
       t: 12,
-      d: "Descrição da função CONCATENATE.",
-      a: "Resumo da função CONCATENATE.",
+      d: "Anexa strings umas às outras.",
+      a: "Anexa strings umas às outras.",
       m: [
         1,
         255
@@ -8149,7 +8149,7 @@ module.exports = {
       p: [
         {
           name: "texto1",
-          detail: "Parâmetro `texto1` da função CONCATENATE.",
+          detail: "A string inicial.",
           example: "\"Super\"",
           require: "m",
           repeat: "n",
@@ -8157,7 +8157,7 @@ module.exports = {
         },
         {
           name: "texto2",
-          detail: "Parâmetro `texto2` da função CONCATENATE.",
+          detail: "Mais strings a anexar em sequência.",
           example: "\"calla\"",
           require: "o",
           repeat: "y",
@@ -8168,8 +8168,8 @@ module.exports = {
     {
       n: "CODE",
       t: 12,
-      d: "Descrição da função CODE.",
-      a: "Resumo da função CODE.",
+      d: "Retorna o valor numérico de mapa Unicode do primeiro caractere na string fornecida.",
+      a: "Valor numérico de mapa unicode de um caractere.",
       m: [
         1,
         1
@@ -8177,7 +8177,7 @@ module.exports = {
       p: [
         {
           name: "texto",
-          detail: "Parâmetro `texto` da função CODE.",
+          detail: "A string cujo valor de mapa Unicode do primeiro caractere será retornado.",
           example: "\"a\"",
           require: "m",
           repeat: "n",
@@ -8188,8 +8188,8 @@ module.exports = {
     {
       n: "CHAR",
       t: 12,
-      d: "Descrição da função CHAR.",
-      a: "Resumo da função CHAR.",
+      d: "Converte um número em um caractere de acordo com a tabela Unicode atual.",
+      a: "Obtém o caractere associado a um número.",
       m: [
         1,
         1
@@ -8197,7 +8197,7 @@ module.exports = {
       p: [
         {
           name: "número_tabela",
-          detail: "Parâmetro `número_tabela` da função CHAR.",
+          detail: "O número do caractere a procurar na tabela Unicode atual, em formato decimal.",
           example: "97",
           require: "m",
           repeat: "n",
@@ -8208,8 +8208,8 @@ module.exports = {
     {
       n: "ARABIC",
       t: 12,
-      d: "Descrição da função ARABIC.",
-      a: "Resumo da função ARABIC.",
+      d: "Calcula o valor de um algarismo romano.",
+      a: "Calcula o valor de um algarismo romano.",
       m: [
         1,
         1
@@ -8217,7 +8217,7 @@ module.exports = {
       p: [
         {
           name: "numeral_romano",
-          detail: "Parâmetro `numeral_romano` da função ARABIC.",
+          detail: "O algarismo romano a formatar, cujo valor deve estar entre 1 e 3999, inclusive.",
           example: "\"XIV\"",
           require: "m",
           repeat: "n",
@@ -8228,8 +8228,8 @@ module.exports = {
     {
       n: "ROMAN",
       t: 12,
-      d: "Descrição da função ROMAN.",
-      a: "Resumo da função ROMAN.",
+      d: "Formata um número em algarismos romanos.",
+      a: "Formata um número em algarismos romanos.",
       m: [
         1,
         1
@@ -8237,7 +8237,7 @@ module.exports = {
       p: [
         {
           name: "número",
-          detail: "Parâmetro `número` da função ROMAN.",
+          detail: "O número a formatar, entre 1 e 3999, inclusive.",
           example: "499",
           require: "m",
           repeat: "n",
@@ -8248,8 +8248,8 @@ module.exports = {
     {
       n: "REGEXEXTRACT",
       t: 12,
-      d: "Descrição da função REGEXEXTRACT.",
-      a: "Resumo da função REGEXEXTRACT.",
+      d: "Extrai substrings correspondentes de acordo com uma expressão regular.",
+      a: "Extrai substrings correspondentes com expressão regular.",
       m: [
         2,
         2
@@ -8257,7 +8257,7 @@ module.exports = {
       p: [
         {
           name: "texto",
-          detail: "Parâmetro `texto` da função REGEXEXTRACT.",
+          detail: "O texto de entrada.",
           example: "\"Needle in a haystack\"",
           require: "m",
           repeat: "n",
@@ -8265,7 +8265,7 @@ module.exports = {
         },
         {
           name: "expressão_regular",
-          detail: "Parâmetro `expressão_regular` da função REGEXEXTRACT.",
+          detail: "A primeira parte de `texto` que corresponder a esta expressão será retornada.",
           example: "\".e{2}dle\"",
           require: "m",
           repeat: "n",
@@ -8276,8 +8276,8 @@ module.exports = {
     {
       n: "REGEXMATCH",
       t: 12,
-      d: "Descrição da função REGEXMATCH.",
-      a: "Resumo da função REGEXMATCH.",
+      d: "Se um texto corresponde a uma expressão regular.",
+      a: "Se um texto corresponde a uma expressão regular.",
       m: [
         2,
         2
@@ -8285,7 +8285,7 @@ module.exports = {
       p: [
         {
           name: "texto",
-          detail: "Parâmetro `texto` da função REGEXMATCH.",
+          detail: "O texto a ser testado em relação à expressão regular.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8293,7 +8293,7 @@ module.exports = {
         },
         {
           name: "expressão_regular",
-          detail: "Parâmetro `expressão_regular` da função REGEXMATCH.",
+          detail: "A expressão regular em relação à qual testar o texto.",
           example: "\"S.r\"",
           require: "m",
           repeat: "n",
@@ -8304,8 +8304,8 @@ module.exports = {
     {
       n: "REGEXREPLACE",
       t: 12,
-      d: "Descrição da função REGEXREPLACE.",
-      a: "Resumo da função REGEXREPLACE.",
+      d: "Substitui parte de uma string de texto por uma string de texto diferente usando expressões regulares.",
+      a: "Substitui texto com expressões regulares.",
       m: [
         3,
         3
@@ -8313,7 +8313,7 @@ module.exports = {
       p: [
         {
           name: "texto",
-          detail: "Parâmetro `texto` da função REGEXREPLACE.",
+          detail: "O texto, uma parte do qual será substituída.",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8321,7 +8321,7 @@ module.exports = {
         },
         {
           name: "expressão_regular",
-          detail: "Parâmetro `expressão_regular` da função REGEXREPLACE.",
+          detail: "A expressão regular. Todas as instâncias correspondentes em `texto` serão substituídas.",
           example: "\"S.*d\"",
           require: "m",
           repeat: "n",
@@ -8329,7 +8329,7 @@ module.exports = {
         },
         {
           name: "substituição",
-          detail: "Parâmetro `substituição` da função REGEXREPLACE.",
+          detail: "O texto que será inserido no texto original.",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8340,8 +8340,8 @@ module.exports = {
     {
       n: "T",
       t: 12,
-      d: "Descrição da função T.",
-      a: "Resumo da função T.",
+      d: "Retorna argumentos de string como texto, ou a string vazia se o valor não for texto.",
+      a: "Argumentos de string como texto.",
       m: [
         1,
         1
@@ -8349,7 +8349,7 @@ module.exports = {
       p: [
         {
           name: "valor",
-          detail: "Parâmetro `valor` da função T.",
+          detail: "O argumento a ser convertido em texto.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8360,8 +8360,8 @@ module.exports = {
     {
       n: "FIXED",
       t: 12,
-      d: "Descrição da função FIXED.",
-      a: "Resumo da função FIXED.",
+      d: "Formata um número com um número fixo de casas decimais.",
+      a: "Formata número com número fixo de casas decimais.",
       m: [
         1,
         3
@@ -8369,7 +8369,7 @@ module.exports = {
       p: [
         {
           name: "número",
-          detail: "Parâmetro `número` da função FIXED.",
+          detail: "O número a formatar.",
           example: "3.141592653",
           require: "m",
           repeat: "n",
@@ -8377,7 +8377,7 @@ module.exports = {
         },
         {
           name: "número_casas_decimais",
-          detail: "Parâmetro `número_casas_decimais` da função FIXED.",
+          detail: "O número de casas decimais a exibir no resultado.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8385,7 +8385,7 @@ module.exports = {
         },
         {
           name: "suprimir_separador",
-          detail: "Parâmetro `suprimir_separador` da função FIXED.",
+          detail: "Se deve suprimir ou não o separador de milhares usado em algumas localidades (ex. `1.000` torna-se `1000`). Os separadores estarão presentes se este valor for 0 ou omitido, e ausentes caso contrário.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -8396,8 +8396,8 @@ module.exports = {
     {
       n: "FIND",
       t: 12,
-      d: "Descrição da função FIND.",
-      a: "Resumo da função FIND.",
+      d: "Retorna a posição em que uma string é encontrada pela primeira vez dentro do texto, em que a capitalização das letras importa. Retorna `#VALOR!` se a string não for encontrada.",
+      a: "Primeira posição de string encontrada no texto, com distinção entre maiúsculas e minúsculas.",
       m: [
         2,
         3
@@ -8405,7 +8405,7 @@ module.exports = {
       p: [
         {
           name: "texto_procurado",
-          detail: "Parâmetro `texto_procurado` da função FIND.",
+          detail: "A string a procurar dentro de `texto_a_pesquisar`.",
           example: "\"n\"",
           require: "m",
           repeat: "n",
@@ -8413,7 +8413,7 @@ module.exports = {
         },
         {
           name: "texto_a_pesquisar",
-          detail: "Parâmetro `texto_a_pesquisar` da função FIND.",
+          detail: "O texto no qual procurar a primeira ocorrência de `procurar_por`.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8421,7 +8421,7 @@ module.exports = {
         },
         {
           name: "a_partir_de",
-          detail: "Parâmetro `a_partir_de` da função FIND.",
+          detail: "O caractere dentro de `texto_a_pesquisar` no qual iniciar a pesquisa.",
           example: "14",
           require: "o",
           repeat: "n",
@@ -8432,8 +8432,8 @@ module.exports = {
     {
       n: "FINDB",
       t: 12,
-      d: "Descrição da função FINDB.",
-      a: "Resumo da função FINDB.",
+      d: "Retorna a posição em que uma string é encontrada pela primeira vez dentro do texto, contando cada caractere duplo como 2.",
+      a: "Posição em que uma string é encontrada pela primeira vez dentro do texto (binário).",
       m: [
         2,
         3
@@ -8441,7 +8441,7 @@ module.exports = {
       p: [
         {
           name: "texto_procurado",
-          detail: "Parâmetro `texto_procurado` da função FINDB.",
+          detail: "A string a procurar dentro de `texto_a_pesquisar`.",
           example: "\"new\"",
           require: "m",
           repeat: "n",
@@ -8449,7 +8449,7 @@ module.exports = {
         },
         {
           name: "texto_a_pesquisar",
-          detail: "Parâmetro `texto_a_pesquisar` da função FINDB.",
+          detail: "O texto no qual procurar a primeira ocorrência de `procurar_por`.",
           example: "\"new year\"",
           require: "m",
           repeat: "n",
@@ -8457,7 +8457,7 @@ module.exports = {
         },
         {
           name: "a_partir_de",
-          detail: "Parâmetro `a_partir_de` da função FINDB.",
+          detail: "O caractere dentro de `texto_a_pesquisar` no qual iniciar a pesquisa.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8468,8 +8468,8 @@ module.exports = {
     {
       n: "JOIN",
       t: 12,
-      d: "Descrição da função JOIN.",
-      a: "Resumo da função JOIN.",
+      d: "Concatena os elementos de uma ou mais matrizes unidimensionais usando um delimitador especificado.",
+      a: "Concatena elementos de matrizes com delimitador.",
       m: [
         2,
         255
@@ -8477,7 +8477,7 @@ module.exports = {
       p: [
         {
           name: "delimitador",
-          detail: "Parâmetro `delimitador` da função JOIN.",
+          detail: "O caractere ou string a colocar entre cada valor concatenado.",
           example: "\" and-a \"",
           require: "m",
           repeat: "n",
@@ -8485,7 +8485,7 @@ module.exports = {
         },
         {
           name: "valor_ou_matriz1",
-          detail: "Parâmetro `valor_ou_matriz1` da função JOIN.",
+          detail: "O valor ou valores a serem anexados usando `delimitador`.",
           example: "{1",
           require: "m",
           repeat: "n",
@@ -8493,7 +8493,7 @@ module.exports = {
         },
         {
           name: "valor_ou_matriz2",
-          detail: "Parâmetro `valor_ou_matriz2` da função JOIN.",
+          detail: "Mais valores a serem anexados usando `delimitador`.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -8504,8 +8504,8 @@ module.exports = {
     {
       n: "LEFT",
       t: 12,
-      d: "Descrição da função LEFT.",
-      a: "Resumo da função LEFT.",
+      d: "Retorna uma substring do início de uma string especificada.",
+      a: "Substring do início de uma string especificada.",
       m: [
         1,
         2
@@ -8513,7 +8513,7 @@ module.exports = {
       p: [
         {
           name: "texto",
-          detail: "Parâmetro `texto` da função LEFT.",
+          detail: "A string da qual a parte esquerda será retornada.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8521,7 +8521,7 @@ module.exports = {
         },
         {
           name: "número_caracteres",
-          detail: "Parâmetro `número_caracteres` da função LEFT.",
+          detail: "O número de caracteres a retornar do lado esquerdo de `string`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8532,8 +8532,8 @@ module.exports = {
     {
       n: "RIGHT",
       t: 12,
-      d: "Descrição da função RIGHT.",
-      a: "Resumo da função RIGHT.",
+      d: "Retorna uma substring do final de uma string especificada.",
+      a: "Uma substring do final de uma string especificada.",
       m: [
         1,
         2
@@ -8541,7 +8541,7 @@ module.exports = {
       p: [
         {
           name: "texto",
-          detail: "Parâmetro `texto` da função RIGHT.",
+          detail: "A string da qual a parte direita será retornada.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8549,7 +8549,7 @@ module.exports = {
         },
         {
           name: "número_caracteres",
-          detail: "Parâmetro `número_caracteres` da função RIGHT.",
+          detail: "O número de caracteres a retornar do lado direito de `string`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8560,8 +8560,8 @@ module.exports = {
     {
       n: "MID",
       t: 12,
-      d: "Descrição da função MID.",
-      a: "Resumo da função MID.",
+      d: "Retorna um segmento de uma string.",
+      a: "Um segmento de uma string.",
       m: [
         3,
         3
@@ -8569,7 +8569,7 @@ module.exports = {
       p: [
         {
           name: "texto",
-          detail: "Parâmetro `texto` da função MID.",
+          detail: "A string da qual extrair um segmento.",
           example: "\"get this\"",
           require: "m",
           repeat: "n",
@@ -8577,7 +8577,7 @@ module.exports = {
         },
         {
           name: "a_partir_de",
-          detail: "Parâmetro `a_partir_de` da função MID.",
+          detail: "O índice a partir da esquerda de `string` a partir do qual iniciar a extração. O primeiro caractere em `string` tem o índice 1.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -8585,7 +8585,7 @@ module.exports = {
         },
         {
           name: "comprimento_extração",
-          detail: "Parâmetro `comprimento_extração` da função MID.",
+          detail: "O comprimento do segmento a extrair.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8596,8 +8596,8 @@ module.exports = {
     {
       n: "LEN",
       t: 12,
-      d: "Descrição da função LEN.",
-      a: "Resumo da função LEN.",
+      d: "Retorna o comprimento de uma string.",
+      a: "Comprimento de uma string.",
       m: [
         1,
         1
@@ -8605,7 +8605,7 @@ module.exports = {
       p: [
         {
           name: "texto",
-          detail: "Parâmetro `texto` da função LEN.",
+          detail: "A string cujo comprimento será retornado.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8616,8 +8616,8 @@ module.exports = {
     {
       n: "LENB",
       t: 12,
-      d: "Descrição da função LENB.",
-      a: "Resumo da função LENB.",
+      d: "Retorna o comprimento de uma string em bytes.",
+      a: "Comprimento de uma string em bytes.",
       m: [
         1,
         1
@@ -8625,7 +8625,7 @@ module.exports = {
       p: [
         {
           name: "texto",
-          detail: "Parâmetro `texto` da função LENB.",
+          detail: "A string cujo comprimento será retornado.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8636,8 +8636,8 @@ module.exports = {
     {
       n: "LOWER",
       t: 12,
-      d: "Descrição da função LOWER.",
-      a: "Resumo da função LOWER.",
+      d: "Converte uma string especificada em minúsculas.",
+      a: "Converte uma string especificada em minúsculas.",
       m: [
         1,
         1
@@ -8645,7 +8645,7 @@ module.exports = {
       p: [
         {
           name: "texto",
-          detail: "Parâmetro `texto` da função LOWER.",
+          detail: "A string a converter em minúsculas.",
           example: "\"LOREM IPSUM\"",
           require: "m",
           repeat: "n",
@@ -8656,8 +8656,8 @@ module.exports = {
     {
       n: "UPPER",
       t: 12,
-      d: "Descrição da função UPPER.",
-      a: "Resumo da função UPPER.",
+      d: "Converte uma string especificada em maiúsculas.",
+      a: "Converte uma string especificada em maiúsculas.",
       m: [
         1,
         1
@@ -8665,7 +8665,7 @@ module.exports = {
       p: [
         {
           name: "texto",
-          detail: "Parâmetro `texto` da função UPPER.",
+          detail: "A string a converter em maiúsculas.",
           example: "\"lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8676,8 +8676,8 @@ module.exports = {
     {
       n: "EXACT",
       t: 12,
-      d: "Descrição da função EXACT.",
-      a: "Resumo da função EXACT.",
+      d: "Testa se duas strings são idênticas.",
+      a: "Testa se duas strings são idênticas.",
       m: [
         2,
         2
@@ -8685,7 +8685,7 @@ module.exports = {
       p: [
         {
           name: "texto1",
-          detail: "Parâmetro `texto1` da função EXACT.",
+          detail: "A primeira string a comparar.",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -8693,7 +8693,7 @@ module.exports = {
         },
         {
           name: "texto2",
-          detail: "Parâmetro `texto2` da função EXACT.",
+          detail: "A segunda string a comparar.",
           example: "A2",
           require: "m",
           repeat: "n",
