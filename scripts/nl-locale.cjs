@@ -4603,8 +4603,8 @@ module.exports = {
     {
       n: "WEEKDAY",
       t: 6,
-      d: "Beschrijving van de functie WEEKDAY.",
-      a: "Samenvatting van de functie WEEKDAY.",
+      d: "Retourneert een getal dat de dag van de week van de opgegeven datum vertegenwoordigt.",
+      a: "Dag van de week van de opgegeven datum (als getal).",
       m: [
         1,
         2
@@ -4612,7 +4612,7 @@ module.exports = {
       p: [
         {
           name: "datum",
-          detail: "Parameter `datum` van de functie WEEKDAY.",
+          detail: "De datum waarvoor de dag van de week moet worden bepaald. Moet een verwijzing zijn naar een cel met een datum, een functie die een datumtype retourneert, of een getal.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4620,7 +4620,7 @@ module.exports = {
         },
         {
           name: "type",
-          detail: "Parameter `type` van de functie WEEKDAY.",
+          detail: "Een getal dat aangeeft welk nummeringssysteem moet worden gebruikt om weekdagen weer te geven. Standaard wordt geteld vanaf zondag = 1.",
           example: "7",
           require: "o",
           repeat: "n",
@@ -4631,8 +4631,8 @@ module.exports = {
     {
       n: "DAY",
       t: 6,
-      d: "Beschrijving van de functie DAY.",
-      a: "Samenvatting van de functie DAY.",
+      d: "Retourneert de dag van de maand waarop een specifieke datum valt, in numeriek formaat.",
+      a: "Dag van de maand waarop een specifieke datum valt.",
       m: [
         1,
         1
@@ -4640,7 +4640,7 @@ module.exports = {
       p: [
         {
           name: "datum",
-          detail: "Parameter `datum` van de functie DAY.",
+          detail: "De datum waaruit de dag wordt geëxtraheerd.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4651,8 +4651,8 @@ module.exports = {
     {
       n: "DAYS",
       t: 6,
-      d: "Beschrijving van de functie DAYS.",
-      a: "Samenvatting van de functie DAYS.",
+      d: "Retourneert het aantal dagen tussen twee datums.",
+      a: "Aantal dagen tussen twee datums.",
       m: [
         2,
         2
@@ -4660,7 +4660,7 @@ module.exports = {
       p: [
         {
           name: "einddatum",
-          detail: "Parameter `einddatum` van de functie DAYS.",
+          detail: "Het einde van het datumbereik.",
           example: "2011-3-15",
           require: "m",
           repeat: "n",
@@ -4668,7 +4668,7 @@ module.exports = {
         },
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` van de functie DAYS.",
+          detail: "Het begin van het datumbereik.",
           example: "2011-2-1",
           require: "m",
           repeat: "n",
@@ -4679,8 +4679,8 @@ module.exports = {
     {
       n: "DAYS360",
       t: 6,
-      d: "Beschrijving van de functie DAYS360.",
-      a: "Samenvatting van de functie DAYS360.",
+      d: "Retourneert het verschil tussen twee dagen op basis van het jaar van 360 dagen dat wordt gebruikt bij sommige financiële renteberekeningen.",
+      a: "Dagen tussen twee datums op basis van een jaar van 360 dagen.",
       m: [
         2,
         3
@@ -4688,7 +4688,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` van de functie DAYS360.",
+          detail: "De begindatum om in de berekening in aanmerking te nemen. Moet een verwijzing zijn naar een cel met een datum, een functie die een datumtype retourneert, of een getal.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4696,7 +4696,7 @@ module.exports = {
         },
         {
           name: "einddatum",
-          detail: "Parameter `einddatum` van de functie DAYS360.",
+          detail: "De einddatum om in de berekening in aanmerking te nemen. Moet een verwijzing zijn naar een cel met een datum, een functie die een datumtype retourneert, of een getal.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4704,7 +4704,7 @@ module.exports = {
         },
         {
           name: "methode",
-          detail: "Parameter `methode` van de functie DAYS360.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -4715,8 +4715,8 @@ module.exports = {
     {
       n: "DATE",
       t: 6,
-      d: "Beschrijving van de functie DATE.",
-      a: "Samenvatting van de functie DATE.",
+      d: "Converteert een opgegeven jaar, maand en dag naar een datum.",
+      a: "Converteert jaar/maand/dag naar een datum.",
       m: [
         3,
         3
@@ -4724,7 +4724,7 @@ module.exports = {
       p: [
         {
           name: "jaar",
-          detail: "Parameter `jaar` van de functie DATE.",
+          detail: "Het jaarcomponent van de datum.",
           example: "1969",
           require: "m",
           repeat: "n",
@@ -4732,7 +4732,7 @@ module.exports = {
         },
         {
           name: "maand",
-          detail: "Parameter `maand` van de functie DATE.",
+          detail: "Het maandcomponent van de datum.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4740,7 +4740,7 @@ module.exports = {
         },
         {
           name: "dag",
-          detail: "Parameter `dag` van de functie DATE.",
+          detail: "Het dagcomponent van de datum.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -4751,8 +4751,8 @@ module.exports = {
     {
       n: "DATEVALUE",
       t: 6,
-      d: "Beschrijving van de functie DATEVALUE.",
-      a: "Samenvatting van de functie DATEVALUE.",
+      d: "Converteert een opgegeven datumreeks in een bekend formaat naar een datumwaarde.",
+      a: "Converteert een datumreeks naar een datumwaarde.",
       m: [
         1,
         1
@@ -4760,7 +4760,7 @@ module.exports = {
       p: [
         {
           name: "datumtekenreeks",
-          detail: "Parameter `datumtekenreeks` van de functie DATEVALUE.",
+          detail: "De tekenreeks die de datum vertegenwoordigt.",
           example: "\"1969-7-20\"",
           require: "m",
           repeat: "n",
@@ -4771,8 +4771,8 @@ module.exports = {
     {
       n: "DATEDIF",
       t: 6,
-      d: "Beschrijving van de functie DATEDIF.",
-      a: "Samenvatting van de functie DATEDIF.",
+      d: "Berekent het aantal dagen, maanden of jaren tussen twee datums.",
+      a: "Datumverschil.",
       m: [
         3,
         3
@@ -4780,7 +4780,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` van de functie DATEDIF.",
+          detail: "De begindatum om in de berekening in aanmerking te nemen. Moet een verwijzing zijn naar een cel met een datum, een functie die een datumtype retourneert, of een getal.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4788,7 +4788,7 @@ module.exports = {
         },
         {
           name: "einddatum",
-          detail: "Parameter `einddatum` van de functie DATEDIF.",
+          detail: "De einddatum om in de berekening in aanmerking te nemen. Moet een verwijzing zijn naar een cel met een datum, een functie die een datumtype retourneert, of een getal.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4796,7 +4796,7 @@ module.exports = {
         },
         {
           name: "eenheid",
-          detail: "Parameter `eenheid` van de functie DATEDIF.",
+          detail: "Een tekenreeksafkorting voor de tijdseenheid. Bijvoorbeeld \"M\" voor maand. Toegestane waarden zijn \"Y\",\"M\",\"D\",\"MD\",\"YM\",\"YD\".",
           example: "16)",
           require: "m",
           repeat: "n",
@@ -4807,8 +4807,8 @@ module.exports = {
     {
       n: "WORKDAY",
       t: 6,
-      d: "Beschrijving van de functie WORKDAY.",
-      a: "Samenvatting van de functie WORKDAY.",
+      d: "Berekent de datum na een aantal werkdagen vanaf een opgegeven begindatum.",
+      a: "Aantal werkdagen vanaf de begindatum.",
       m: [
         2,
         3
@@ -4816,7 +4816,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` van de functie WORKDAY.",
+          detail: "De datum vanaf welke moet worden begonnen met tellen.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4824,7 +4824,7 @@ module.exports = {
         },
         {
           name: "aantal_dagen",
-          detail: "Parameter `aantal_dagen` van de functie WORKDAY.",
+          detail: "Het aantal werkdagen om vanaf `startdatum` verder te gaan. Indien negatief, wordt terug geteld.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4832,7 +4832,7 @@ module.exports = {
         },
         {
           name: "feestdagen",
-          detail: "Parameter `feestdagen` van de functie WORKDAY.",
+          detail: "Een bereik of array-constante met de datums die als feestdagen worden beschouwd.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4843,8 +4843,8 @@ module.exports = {
     {
       n: "WORKDAY_INTL",
       t: 6,
-      d: "Beschrijving van de functie WORKDAY_INTL.",
-      a: "Samenvatting van de functie WORKDAY_INTL.",
+      d: "Berekent de datum na een opgegeven aantal werkdagen, met uitsluiting van opgegeven weekenddagen en feestdagen.",
+      a: "Datum na een aantal werkdagen (weekenden opgeven).",
       m: [
         2,
         4
@@ -4852,7 +4852,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` van de functie WORKDAY_INTL.",
+          detail: "De datum vanaf welke moet worden begonnen met tellen.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4860,7 +4860,7 @@ module.exports = {
         },
         {
           name: "aantal_dagen",
-          detail: "Parameter `aantal_dagen` van de functie WORKDAY_INTL.",
+          detail: "Het aantal werkdagen om vanaf `startdatum` verder te gaan. Indien negatief, wordt terug geteld.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4868,7 +4868,7 @@ module.exports = {
         },
         {
           name: "weekend",
-          detail: "Parameter `weekend` van de functie WORKDAY_INTL.",
+          detail: "Een getal of tekenreeks die aangeeft welke dagen van de week als weekend worden beschouwd.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4876,7 +4876,7 @@ module.exports = {
         },
         {
           name: "feestdagen",
-          detail: "Parameter `feestdagen` van de functie WORKDAY_INTL.",
+          detail: "Een bereik of array-constante met de datums die als feestdagen worden beschouwd.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4887,8 +4887,8 @@ module.exports = {
     {
       n: "YEAR",
       t: 6,
-      d: "Beschrijving van de functie YEAR.",
-      a: "Samenvatting van de functie YEAR.",
+      d: "Retourneert het jaar dat door een opgegeven datum wordt aangegeven.",
+      a: "Jaar dat door een opgegeven datum wordt aangegeven.",
       m: [
         1,
         1
@@ -4896,7 +4896,7 @@ module.exports = {
       p: [
         {
           name: "datum",
-          detail: "Parameter `datum` van de functie YEAR.",
+          detail: "De datum waaruit het jaar wordt geëxtraheerd.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4907,8 +4907,8 @@ module.exports = {
     {
       n: "YEARFRAC",
       t: 6,
-      d: "Beschrijving van de functie YEARFRAC.",
-      a: "Samenvatting van de functie YEARFRAC.",
+      d: "Retourneert het aantal jaren, inclusief fracties van jaren, tussen twee datums met behulp van een opgegeven daggetalconventie.",
+      a: "Exact aantal jaren tussen twee datums.",
       m: [
         2,
         3
@@ -4916,7 +4916,7 @@ module.exports = {
       p: [
         {
           name: "startdatum",
-          detail: "Parameter `startdatum` van de functie YEARFRAC.",
+          detail: "De begindatum om in de berekening in aanmerking te nemen. Moet een verwijzing zijn naar een cel met een datum, een functie die een datumtype retourneert, of een getal.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4924,7 +4924,7 @@ module.exports = {
         },
         {
           name: "einddatum",
-          detail: "Parameter `einddatum` van de functie YEARFRAC.",
+          detail: "De einddatum om in de berekening in aanmerking te nemen. Moet een verwijzing zijn naar een cel met een datum, een functie die een datumtype retourneert, of een getal.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4932,7 +4932,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie YEARFRAC.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4943,8 +4943,8 @@ module.exports = {
     {
       n: "TODAY",
       t: 6,
-      d: "Beschrijving van de functie TODAY.",
-      a: "Samenvatting van de functie TODAY.",
+      d: "Retourneert de huidige datum als een datumwaarde.",
+      a: "Huidige datum als een datumwaarde.",
       m: [
         0,
         0
@@ -4954,8 +4954,8 @@ module.exports = {
     {
       n: "MONTH",
       t: 6,
-      d: "Beschrijving van de functie MONTH.",
-      a: "Samenvatting van de functie MONTH.",
+      d: "Retourneert de maand van het jaar waarin een specifieke datum valt, in numeriek formaat.",
+      a: "Maand van het jaar waarin een specifieke datum valt.",
       m: [
         1,
         1
@@ -4963,7 +4963,7 @@ module.exports = {
       p: [
         {
           name: "datum",
-          detail: "Parameter `datum` van de functie MONTH.",
+          detail: "De datum waaruit de maand wordt geëxtraheerd.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4974,8 +4974,8 @@ module.exports = {
     {
       n: "EFFECT",
       t: 8,
-      d: "Beschrijving van de functie EFFECT.",
-      a: "Samenvatting van de functie EFFECT.",
+      d: "Berekent het effectieve jaarlijkse rentepercentage gegeven het nominale percentage en het aantal samengestelde periodes per jaar.",
+      a: "Effectief jaarlijks rentepercentage.",
       m: [
         2,
         2
@@ -4983,7 +4983,7 @@ module.exports = {
       p: [
         {
           name: "nominale_rente",
-          detail: "Parameter `nominale_rente` van de functie EFFECT.",
+          detail: "Het nominale jaarlijkse rentepercentage.",
           example: "0.99",
           require: "m",
           repeat: "n",
@@ -4991,7 +4991,7 @@ module.exports = {
         },
         {
           name: "periodes_per_jaar",
-          detail: "Parameter `periodes_per_jaar` van de functie EFFECT.",
+          detail: "Het aantal samengestelde periodes per jaar.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5002,8 +5002,8 @@ module.exports = {
     {
       n: "DOLLAR",
       t: 12,
-      d: "Beschrijving van de functie DOLLAR.",
-      a: "Samenvatting van de functie DOLLAR.",
+      d: "Formatteert een getal in de valuta die specifiek is voor de landinstelling van uw spreadsheet.",
+      a: "Formatteert een getal als valuta die specifiek is voor de landinstelling van uw spreadsheet.",
       m: [
         1,
         2
@@ -5011,7 +5011,7 @@ module.exports = {
       p: [
         {
           name: "getal",
-          detail: "Parameter `getal` van de functie DOLLAR.",
+          detail: "De te formatteren waarde.",
           example: "1.2351",
           require: "m",
           repeat: "n",
@@ -5019,7 +5019,7 @@ module.exports = {
         },
         {
           name: "aantal_decimalen",
-          detail: "Parameter `aantal_decimalen` van de functie DOLLAR.",
+          detail: "Het aantal weer te geven decimalen.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -5030,8 +5030,8 @@ module.exports = {
     {
       n: "DOLLARDE",
       t: 8,
-      d: "Beschrijving van de functie DOLLARDE.",
-      a: "Samenvatting van de functie DOLLARDE.",
+      d: "Converteert een prijsnotering die is opgegeven als decimale breuk naar een decimale waarde.",
+      a: "Converteert een decimale breuk naar een decimale waarde.",
       m: [
         2,
         2
@@ -5039,7 +5039,7 @@ module.exports = {
       p: [
         {
           name: "gebroken_prijs",
-          detail: "Parameter `gebroken_prijs` van de functie DOLLARDE.",
+          detail: "De prijsnotering die is opgegeven met decimale-breukconventies.",
           example: "100.10",
           require: "m",
           repeat: "n",
@@ -5047,7 +5047,7 @@ module.exports = {
         },
         {
           name: "eenheid",
-          detail: "Parameter `eenheid` van de functie DOLLARDE.",
+          detail: "De eenheden van de breuk, bijv. `8` voor achtsten of `32` voor tweeëndertigsten.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5058,8 +5058,8 @@ module.exports = {
     {
       n: "DOLLARFR",
       t: 8,
-      d: "Beschrijving van de functie DOLLARFR.",
-      a: "Samenvatting van de functie DOLLARFR.",
+      d: "Converteert een prijsnotering die is opgegeven als decimale waarde naar een decimale breuk.",
+      a: "Converteert een decimale waarde naar een decimale breuk.",
       m: [
         2,
         2
@@ -5067,7 +5067,7 @@ module.exports = {
       p: [
         {
           name: "decimale_prijs",
-          detail: "Parameter `decimale_prijs` van de functie DOLLARFR.",
+          detail: "De prijsnotering die is opgegeven als decimale waarde.",
           example: "100.125",
           require: "m",
           repeat: "n",
@@ -5075,7 +5075,7 @@ module.exports = {
         },
         {
           name: "eenheid",
-          detail: "Parameter `eenheid` van de functie DOLLARFR.",
+          detail: "De eenheden van de gewenste breuk, bijv. `8` voor achtsten of `32` voor tweeëndertigsten.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5086,8 +5086,8 @@ module.exports = {
     {
       n: "DB",
       t: 8,
-      d: "Beschrijving van de functie DB.",
-      a: "Samenvatting van de functie DB.",
+      d: "Berekent de afschrijving van een actief voor een opgegeven periode met behulp van de rekenkundige degressieve afschrijvingsmethode.",
+      a: "Afschrijving via de degressieve afschrijvingsmethode.",
       m: [
         4,
         5
@@ -5095,7 +5095,7 @@ module.exports = {
       p: [
         {
           name: "kostprijs",
-          detail: "Parameter `kostprijs` van de functie DB.",
+          detail: "De initiële kosten van het actief.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5103,7 +5103,7 @@ module.exports = {
         },
         {
           name: "restwaarde",
-          detail: "Parameter `restwaarde` van de functie DB.",
+          detail: "De waarde van het actief aan het einde van de afschrijving.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5111,7 +5111,7 @@ module.exports = {
         },
         {
           name: "levensduur",
-          detail: "Parameter `levensduur` van de functie DB.",
+          detail: "Het aantal periodes waarover het actief wordt afgeschreven.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5119,7 +5119,7 @@ module.exports = {
         },
         {
           name: "periode",
-          detail: "Parameter `periode` van de functie DB.",
+          detail: "De enkele periode binnen `levensduur` waarvoor de afschrijving moet worden berekend.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5127,7 +5127,7 @@ module.exports = {
         },
         {
           name: "maand",
-          detail: "Parameter `maand` van de functie DB.",
+          detail: "Het aantal maanden in het eerste jaar van afschrijving.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5138,8 +5138,8 @@ module.exports = {
     {
       n: "DDB",
       t: 8,
-      d: "Beschrijving van de functie DDB.",
-      a: "Samenvatting van de functie DDB.",
+      d: "Berekent de afschrijving van een actief voor een opgegeven periode met behulp van de dubbel-degressieve afschrijvingsmethode.",
+      a: "Afschrijving via de dubbel-degressieve afschrijvingsmethode.",
       m: [
         4,
         5
@@ -5147,7 +5147,7 @@ module.exports = {
       p: [
         {
           name: "kostprijs",
-          detail: "Parameter `kostprijs` van de functie DDB.",
+          detail: "De initiële kosten van het actief.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5155,7 +5155,7 @@ module.exports = {
         },
         {
           name: "restwaarde",
-          detail: "Parameter `restwaarde` van de functie DDB.",
+          detail: "De waarde van het actief aan het einde van de afschrijving.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5163,7 +5163,7 @@ module.exports = {
         },
         {
           name: "levensduur",
-          detail: "Parameter `levensduur` van de functie DDB.",
+          detail: "Het aantal periodes waarover het actief wordt afgeschreven.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5171,7 +5171,7 @@ module.exports = {
         },
         {
           name: "periode",
-          detail: "Parameter `periode` van de functie DDB.",
+          detail: "De enkele periode binnen `levensduur` waarvoor de afschrijving moet worden berekend.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5179,7 +5179,7 @@ module.exports = {
         },
         {
           name: "factor",
-          detail: "Parameter `factor` van de functie DDB.",
+          detail: "De factor waarmee de afschrijving afneemt.",
           example: "2.25",
           require: "m",
           repeat: "n",
@@ -5190,8 +5190,8 @@ module.exports = {
     {
       n: "RATE",
       t: 8,
-      d: "Beschrijving van de functie RATE.",
-      a: "Samenvatting van de functie RATE.",
+      d: "Berekent het rentepercentage van een lijfrente-investering op basis van periodieke betalingen van een constant bedrag en de aanname van een constant rentepercentage.",
+      a: "Rentepercentage van een lijfrente-investering.",
       m: [
         3,
         6
@@ -5199,7 +5199,7 @@ module.exports = {
       p: [
         {
           name: "aantal_periodes",
-          detail: "Parameter `aantal_periodes` van de functie RATE.",
+          detail: "Het aantal te verrichten betalingen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5207,7 +5207,7 @@ module.exports = {
         },
         {
           name: "betaling_per_periode",
-          detail: "Parameter `betaling_per_periode` van de functie RATE.",
+          detail: "Het per periode te betalen bedrag.",
           example: "-100",
           require: "m",
           repeat: "n",
@@ -5215,7 +5215,7 @@ module.exports = {
         },
         {
           name: "huidige_waarde",
-          detail: "Parameter `huidige_waarde` van de functie RATE.",
+          detail: "De huidige waarde van de lijfrente.",
           example: "400",
           require: "m",
           repeat: "n",
@@ -5223,7 +5223,7 @@ module.exports = {
         },
         {
           name: "toekomstige_waarde",
-          detail: "Parameter `toekomstige_waarde` van de functie RATE.",
+          detail: "De toekomstige waarde die overblijft nadat de laatste betaling is verricht.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5231,7 +5231,7 @@ module.exports = {
         },
         {
           name: "einde_of_begin",
-          detail: "Parameter `einde_of_begin` van de functie RATE.",
+          detail: "Of betalingen verschuldigd zijn aan het einde (`0`) of het begin (`1`) van elke periode.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5239,7 +5239,7 @@ module.exports = {
         },
         {
           name: "renteschatting",
-          detail: "Parameter `renteschatting` van de functie RATE.",
+          detail: "Een schatting van wat het rentepercentage zal zijn.",
           example: "0.1",
           require: "o",
           repeat: "n",
@@ -5250,8 +5250,8 @@ module.exports = {
     {
       n: "CUMPRINC",
       t: 8,
-      d: "Beschrijving van de functie CUMPRINC.",
-      a: "Samenvatting van de functie CUMPRINC.",
+      d: "Berekent de cumulatieve hoofdsom die is betaald over een reeks betalingsperiodes voor een investering op basis van periodieke betalingen van een constant bedrag en een constant rentepercentage.",
+      a: "Cumulatieve hoofdsom betaald over een reeks periodes.",
       m: [
         6,
         6
@@ -5259,7 +5259,7 @@ module.exports = {
       p: [
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie CUMPRINC.",
+          detail: "Het rentepercentage.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -5267,7 +5267,7 @@ module.exports = {
         },
         {
           name: "aantal_periodes",
-          detail: "Parameter `aantal_periodes` van de functie CUMPRINC.",
+          detail: "Het aantal te verrichten betalingen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5275,7 +5275,7 @@ module.exports = {
         },
         {
           name: "huidige_waarde",
-          detail: "Parameter `huidige_waarde` van de functie CUMPRINC.",
+          detail: "De huidige waarde van de lijfrente.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5283,7 +5283,7 @@ module.exports = {
         },
         {
           name: "eerste_periode",
-          detail: "Parameter `eerste_periode` van de functie CUMPRINC.",
+          detail: "Het nummer van de betalingsperiode waarmee de cumulatieve berekening begint.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5291,7 +5291,7 @@ module.exports = {
         },
         {
           name: "laatste_periode",
-          detail: "Parameter `laatste_periode` van de functie CUMPRINC.",
+          detail: "Het nummer van de betalingsperiode waarmee de cumulatieve berekening eindigt.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -5299,7 +5299,7 @@ module.exports = {
         },
         {
           name: "einde_of_begin",
-          detail: "Parameter `einde_of_begin` van de functie CUMPRINC.",
+          detail: "Of betalingen verschuldigd zijn aan het einde (`0`) of het begin (`1`) van elke periode.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -5310,8 +5310,8 @@ module.exports = {
     {
       n: "COUPNUM",
       t: 8,
-      d: "Beschrijving van de functie COUPNUM.",
-      a: "Samenvatting van de functie COUPNUM.",
+      d: "Berekent het aantal coupons, of rentebetalingen, tussen de afwikkelingsdatum en de vervaldatum van de investering.",
+      a: "Aantal coupons tussen afwikkeling en vervaldatum.",
       m: [
         3,
         4
@@ -5319,7 +5319,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie COUPNUM.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5327,7 +5327,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie COUPNUM.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "02",
           require: "m",
           repeat: "n",
@@ -5335,7 +5335,7 @@ module.exports = {
         },
         {
           name: "frequentie",
-          detail: "Parameter `frequentie` van de functie COUPNUM.",
+          detail: "Het aantal rente- of couponbetalingen per jaar (1, 2 of 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5343,7 +5343,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie COUPNUM.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5354,8 +5354,8 @@ module.exports = {
     {
       n: "SYD",
       t: 8,
-      d: "Beschrijving van de functie SYD.",
-      a: "Samenvatting van de functie SYD.",
+      d: "Berekent de afschrijving van een actief voor een opgegeven periode met behulp van de methode van de som van de jaartallen.",
+      a: "Afschrijving via de methode van de som van de jaartallen.",
       m: [
         4,
         4
@@ -5363,7 +5363,7 @@ module.exports = {
       p: [
         {
           name: "kostprijs",
-          detail: "Parameter `kostprijs` van de functie SYD.",
+          detail: "De initiële kosten van het actief.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5371,7 +5371,7 @@ module.exports = {
         },
         {
           name: "restwaarde",
-          detail: "Parameter `restwaarde` van de functie SYD.",
+          detail: "De waarde van het actief aan het einde van de afschrijving.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5379,7 +5379,7 @@ module.exports = {
         },
         {
           name: "levensduur",
-          detail: "Parameter `levensduur` van de functie SYD.",
+          detail: "Het aantal periodes waarover het actief wordt afgeschreven.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5387,7 +5387,7 @@ module.exports = {
         },
         {
           name: "periode",
-          detail: "Parameter `periode` van de functie SYD.",
+          detail: "De enkele periode binnen `levensduur` waarvoor de afschrijving moet worden berekend.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5398,8 +5398,8 @@ module.exports = {
     {
       n: "TBILLEQ",
       t: 8,
-      d: "Beschrijving van de functie TBILLEQ.",
-      a: "Samenvatting van de functie TBILLEQ.",
+      d: "Berekent het equivalente jaarlijkse rendement van een Amerikaanse schatkistpromesse op basis van het disconteringspercentage.",
+      a: "Equivalent rendement voor een schatkistpromesse.",
       m: [
         3,
         3
@@ -5407,7 +5407,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie TBILLEQ.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5415,7 +5415,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie TBILLEQ.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5423,7 +5423,7 @@ module.exports = {
         },
         {
           name: "discontovoet",
-          detail: "Parameter `discontovoet` van de functie TBILLEQ.",
+          detail: "Het disconteringspercentage van het biljet op het moment van aankoop.",
           example: "2)",
           require: "m",
           repeat: "n",
@@ -5434,8 +5434,8 @@ module.exports = {
     {
       n: "TBILLYIELD",
       t: 8,
-      d: "Beschrijving van de functie TBILLYIELD.",
-      a: "Samenvatting van de functie TBILLYIELD.",
+      d: "Berekent het rendement van een Amerikaanse schatkistpromesse op basis van de prijs.",
+      a: "Het rendement van een Amerikaanse schatkistpromesse op basis van de prijs.",
       m: [
         3,
         3
@@ -5443,7 +5443,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie TBILLYIELD.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5451,7 +5451,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie TBILLYIELD.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5459,7 +5459,7 @@ module.exports = {
         },
         {
           name: "prijs",
-          detail: "Parameter `prijs` van de functie TBILLYIELD.",
+          detail: "De prijs waartegen het effect wordt gekocht per 100 nominale waarde.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -5470,8 +5470,8 @@ module.exports = {
     {
       n: "TBILLPRICE",
       t: 8,
-      d: "Beschrijving van de functie TBILLPRICE.",
-      a: "Samenvatting van de functie TBILLPRICE.",
+      d: "Berekent de prijs van een Amerikaanse schatkistpromesse op basis van het disconteringspercentage.",
+      a: "Prijs van een Amerikaanse schatkistpromesse.",
       m: [
         3,
         3
@@ -5479,7 +5479,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie TBILLPRICE.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5487,7 +5487,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie TBILLPRICE.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5495,7 +5495,7 @@ module.exports = {
         },
         {
           name: "discontovoet",
-          detail: "Parameter `discontovoet` van de functie TBILLPRICE.",
+          detail: "Het disconteringspercentage van het biljet op het moment van aankoop.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -5506,8 +5506,8 @@ module.exports = {
     {
       n: "PV",
       t: 8,
-      d: "Beschrijving van de functie PV.",
-      a: "Samenvatting van de functie PV.",
+      d: "Berekent de huidige waarde van een lijfrente-investering op basis van periodieke betalingen van een constant bedrag en een constant rentepercentage.",
+      a: "Huidige waarde van een lijfrente-investering.",
       m: [
         3,
         5
@@ -5515,7 +5515,7 @@ module.exports = {
       p: [
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie PV.",
+          detail: "Het rentepercentage.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5523,7 +5523,7 @@ module.exports = {
         },
         {
           name: "aantal_periodes",
-          detail: "Parameter `aantal_periodes` van de functie PV.",
+          detail: "Het aantal te verrichten betalingen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5531,7 +5531,7 @@ module.exports = {
         },
         {
           name: "betalingsbedrag",
-          detail: "Parameter `betalingsbedrag` van de functie PV.",
+          detail: "Het per periode te betalen bedrag.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5539,7 +5539,7 @@ module.exports = {
         },
         {
           name: "toekomstige_waarde",
-          detail: "Parameter `toekomstige_waarde` van de functie PV.",
+          detail: "De toekomstige waarde die overblijft nadat de laatste betaling is verricht.",
           example: "D2",
           require: "o",
           repeat: "n",
@@ -5547,7 +5547,7 @@ module.exports = {
         },
         {
           name: "einde_of_begin",
-          detail: "Parameter `einde_of_begin` van de functie PV.",
+          detail: "Of betalingen verschuldigd zijn aan het einde (`0`) of het begin (`1`) van elke periode.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -5558,8 +5558,8 @@ module.exports = {
     {
       n: "ACCRINT",
       t: 8,
-      d: "Beschrijving van de functie ACCRINT.",
-      a: "Samenvatting van de functie ACCRINT.",
+      d: "Berekent de opgebouwde rente van een effect met periodieke betalingen.",
+      a: "Opgebouwde rente van een effect met periodieke betalingen.",
       m: [
         6,
         8
@@ -5567,7 +5567,7 @@ module.exports = {
       p: [
         {
           name: "uitgiftedatum",
-          detail: "Parameter `uitgiftedatum` van de functie ACCRINT.",
+          detail: "De datum waarop het effect oorspronkelijk werd uitgegeven.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5575,7 +5575,7 @@ module.exports = {
         },
         {
           name: "eerste_betaling",
-          detail: "Parameter `eerste_betaling` van de functie ACCRINT.",
+          detail: "De eerste datum waarop rente wordt betaald.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5583,7 +5583,7 @@ module.exports = {
         },
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie ACCRINT.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5591,7 +5591,7 @@ module.exports = {
         },
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie ACCRINT.",
+          detail: "Het geannualiseerde rentepercentage.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5599,7 +5599,7 @@ module.exports = {
         },
         {
           name: "aflossingswaarde",
-          detail: "Parameter `aflossingswaarde` van de functie ACCRINT.",
+          detail: "Het aflossingsbedrag per 100 nominale waarde.",
           example: "10000",
           require: "m",
           repeat: "n",
@@ -5607,7 +5607,7 @@ module.exports = {
         },
         {
           name: "frequentie",
-          detail: "Parameter `frequentie` van de functie ACCRINT.",
+          detail: "Het aantal rente- of couponbetalingen per jaar (1, 2 of 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5615,7 +5615,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie ACCRINT.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5623,7 +5623,7 @@ module.exports = {
         },
         {
           name: "berekeningsmethode",
-          detail: "Parameter `berekeningsmethode` van de functie ACCRINT.",
+          detail: "[Optioneel - standaard WAAR()] - Een logische waarde die de methode aangeeft die wordt gebruikt om de totale opgebouwde rente te berekenen wanneer de afwikkelingsdatum later is dan de eerste renteopbouwdatum. \n\nAls de waarde WAAR is, wordt de totale opgebouwde rente vanaf de uitgiftedatum tot de afwikkelingsdatum geretourneerd. \n\nAls de waarde ONWAAR is, wordt de opgebouwde rente vanaf de eerste renteopbouwdatum tot de afwikkelingsdatum geretourneerd.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -5634,8 +5634,8 @@ module.exports = {
     {
       n: "ACCRINTM",
       t: 8,
-      d: "Beschrijving van de functie ACCRINTM.",
-      a: "Samenvatting van de functie ACCRINTM.",
+      d: "Berekent de opgebouwde rente van een effect dat rente betaalt bij vervaldatum.",
+      a: "Opgebouwde rente van een effect dat betaalt bij vervaldatum.",
       m: [
         4,
         5
@@ -5643,7 +5643,7 @@ module.exports = {
       p: [
         {
           name: "uitgiftedatum",
-          detail: "Parameter `uitgiftedatum` van de functie ACCRINTM.",
+          detail: "De datum waarop het effect oorspronkelijk werd uitgegeven.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -5651,7 +5651,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie ACCRINTM.",
+          detail: "De vervaldatum van het effect.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -5659,7 +5659,7 @@ module.exports = {
         },
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie ACCRINTM.",
+          detail: "Het geannualiseerde rentepercentage.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5667,7 +5667,7 @@ module.exports = {
         },
         {
           name: "aflossingswaarde",
-          detail: "Parameter `aflossingswaarde` van de functie ACCRINTM.",
+          detail: "Het aflossingsbedrag per 100 nominale waarde.",
           example: "1000",
           require: "m",
           repeat: "n",
@@ -5675,7 +5675,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie ACCRINTM.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5686,8 +5686,8 @@ module.exports = {
     {
       n: "COUPDAYBS",
       t: 8,
-      d: "Beschrijving van de functie COUPDAYBS.",
-      a: "Samenvatting van de functie COUPDAYBS.",
+      d: "Berekent het aantal dagen vanaf de eerste coupon, of rentebetaling, tot de afwikkeling.",
+      a: "Aantal dagen van eerste coupon tot afwikkeling.",
       m: [
         3,
         4
@@ -5695,7 +5695,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie COUPDAYBS.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5703,7 +5703,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie COUPDAYBS.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5711,7 +5711,7 @@ module.exports = {
         },
         {
           name: "frequentie",
-          detail: "Parameter `frequentie` van de functie COUPDAYBS.",
+          detail: "Het aantal rente- of couponbetalingen per jaar (1, 2 of 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5719,7 +5719,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie COUPDAYBS.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5730,8 +5730,8 @@ module.exports = {
     {
       n: "COUPDAYS",
       t: 8,
-      d: "Beschrijving van de functie COUPDAYS.",
-      a: "Samenvatting van de functie COUPDAYS.",
+      d: "Berekent het aantal dagen in de couponperiode, of renteperiode, die de opgegeven afwikkelingsdatum bevat.",
+      a: "Dagen in couponperiode die de afwikkelingsdatum bevat.",
       m: [
         3,
         4
@@ -5739,7 +5739,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie COUPDAYS.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5747,7 +5747,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie COUPDAYS.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5755,7 +5755,7 @@ module.exports = {
         },
         {
           name: "frequentie",
-          detail: "Parameter `frequentie` van de functie COUPDAYS.",
+          detail: "Het aantal rente- of couponbetalingen per jaar (1, 2 of 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5763,7 +5763,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie COUPDAYS.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5774,8 +5774,8 @@ module.exports = {
     {
       n: "COUPDAYSNC",
       t: 8,
-      d: "Beschrijving van de functie COUPDAYSNC.",
-      a: "Samenvatting van de functie COUPDAYSNC.",
+      d: "Berekent het aantal dagen vanaf de afwikkelingsdatum tot de volgende coupon, of rentebetaling.",
+      a: "Dagen van afwikkeling tot volgende coupon.",
       m: [
         3,
         4
@@ -5783,7 +5783,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie COUPDAYSNC.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5791,7 +5791,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie COUPDAYSNC.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5799,7 +5799,7 @@ module.exports = {
         },
         {
           name: "frequentie",
-          detail: "Parameter `frequentie` van de functie COUPDAYSNC.",
+          detail: "Het aantal rente- of couponbetalingen per jaar (1, 2 of 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5807,7 +5807,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie COUPDAYSNC.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5818,8 +5818,8 @@ module.exports = {
     {
       n: "COUPNCD",
       t: 8,
-      d: "Beschrijving van de functie COUPNCD.",
-      a: "Samenvatting van de functie COUPNCD.",
+      d: "Berekent de volgende coupondatum, of renteperiode, na de afwikkelingsdatum.",
+      a: "Volgende coupondatum na de afwikkelingsdatum.",
       m: [
         3,
         4
@@ -5827,7 +5827,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie COUPNCD.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5835,7 +5835,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie COUPNCD.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5843,7 +5843,7 @@ module.exports = {
         },
         {
           name: "frequentie",
-          detail: "Parameter `frequentie` van de functie COUPNCD.",
+          detail: "Het aantal rente- of couponbetalingen per jaar (1, 2 of 4).",
           example: "01)",
           require: "m",
           repeat: "n",
@@ -5851,7 +5851,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie COUPNCD.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5862,8 +5862,8 @@ module.exports = {
     {
       n: "COUPPCD",
       t: 8,
-      d: "Beschrijving van de functie COUPPCD.",
-      a: "Samenvatting van de functie COUPPCD.",
+      d: "Berekent de laatste coupondatum, of rentebetaling, vóór de afwikkelingsdatum.",
+      a: "Laatste coupondatum vóór de afwikkelingsdatum.",
       m: [
         3,
         4
@@ -5871,7 +5871,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie COUPPCD.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5879,7 +5879,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie COUPPCD.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5887,7 +5887,7 @@ module.exports = {
         },
         {
           name: "frequentie",
-          detail: "Parameter `frequentie` van de functie COUPPCD.",
+          detail: "Het aantal rente- of couponbetalingen per jaar (1, 2 of 4).",
           example: "01)",
           require: "m",
           repeat: "n",
@@ -5895,7 +5895,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie COUPPCD.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5906,8 +5906,8 @@ module.exports = {
     {
       n: "FV",
       t: 8,
-      d: "Beschrijving van de functie FV.",
-      a: "Samenvatting van de functie FV.",
+      d: "Berekent de toekomstige waarde van een lijfrente-investering op basis van periodieke betalingen van een constant bedrag en een constant rentepercentage.",
+      a: "Toekomstige waarde van een lijfrente-investering.",
       m: [
         3,
         5
@@ -5915,7 +5915,7 @@ module.exports = {
       p: [
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie FV.",
+          detail: "Het rentepercentage.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -5923,7 +5923,7 @@ module.exports = {
         },
         {
           name: "aantal_periodes",
-          detail: "Parameter `aantal_periodes` van de functie FV.",
+          detail: "Het aantal te verrichten betalingen.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5931,7 +5931,7 @@ module.exports = {
         },
         {
           name: "betalingsbedrag",
-          detail: "Parameter `betalingsbedrag` van de functie FV.",
+          detail: "Het per periode te betalen bedrag.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5939,7 +5939,7 @@ module.exports = {
         },
         {
           name: "huidige_waarde",
-          detail: "Parameter `huidige_waarde` van de functie FV.",
+          detail: "De huidige waarde van de lijfrente.",
           example: "400",
           require: "m",
           repeat: "n",
@@ -5947,7 +5947,7 @@ module.exports = {
         },
         {
           name: "einde_of_begin",
-          detail: "Parameter `einde_of_begin` van de functie FV.",
+          detail: "Of betalingen verschuldigd zijn aan het einde (`0`) of het begin (`1`) van elke periode.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5958,8 +5958,8 @@ module.exports = {
     {
       n: "FVSCHEDULE",
       t: 8,
-      d: "Beschrijving van de functie FVSCHEDULE.",
-      a: "Samenvatting van de functie FVSCHEDULE.",
+      d: "Berekent de toekomstige waarde van een hoofdsom op basis van een opgegeven reeks mogelijk variërende rentepercentages.",
+      a: "Toekomstige waarde van hoofdsom uit een reeks percentages.",
       m: [
         2,
         2
@@ -5967,7 +5967,7 @@ module.exports = {
       p: [
         {
           name: "hoofdsom",
-          detail: "Parameter `hoofdsom` van de functie FVSCHEDULE.",
+          detail: "Het bedrag van het initiële kapitaal of de waarde waarop wordt samengesteld.",
           example: "10000",
           require: "m",
           repeat: "n",
@@ -5975,7 +5975,7 @@ module.exports = {
         },
         {
           name: "rentetabel",
-          detail: "Parameter `rentetabel` van de functie FVSCHEDULE.",
+          detail: "Een reeks rentepercentages die worden samengesteld tegen de `hoofdsom`.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -5986,8 +5986,8 @@ module.exports = {
     {
       n: "YIELD",
       t: 8,
-      d: "Beschrijving van de functie YIELD.",
-      a: "Samenvatting van de functie YIELD.",
+      d: "Berekent het jaarlijkse rendement van een effect dat periodieke rente betaalt, zoals een Amerikaanse staatsobligatie, op basis van de prijs.",
+      a: "Jaarlijks rendement van een effect dat periodieke rente betaalt.",
       m: [
         6,
         7
@@ -5995,7 +5995,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie YIELD.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6003,7 +6003,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie YIELD.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6011,7 +6011,7 @@ module.exports = {
         },
         {
           name: "rentevoet",
-          detail: "Parameter `rentevoet` van de functie YIELD.",
+          detail: "Het geannualiseerde rentepercentage.",
           example: "0.057",
           require: "m",
           repeat: "n",
@@ -6019,7 +6019,7 @@ module.exports = {
         },
         {
           name: "prijs",
-          detail: "Parameter `prijs` van de functie YIELD.",
+          detail: "De prijs waartegen het effect wordt gekocht per 100 nominale waarde.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -6027,7 +6027,7 @@ module.exports = {
         },
         {
           name: "aflossingswaarde",
-          detail: "Parameter `aflossingswaarde` van de functie YIELD.",
+          detail: "Het aflossingsbedrag per 100 nominale waarde.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6035,7 +6035,7 @@ module.exports = {
         },
         {
           name: "frequentie",
-          detail: "Parameter `frequentie` van de functie YIELD.",
+          detail: "Het aantal rente- of couponbetalingen per jaar (1, 2 of 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6043,7 +6043,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie YIELD.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6054,8 +6054,8 @@ module.exports = {
     {
       n: "YIELDDISC",
       t: 8,
-      d: "Beschrijving van de functie YIELDDISC.",
-      a: "Samenvatting van de functie YIELDDISC.",
+      d: "Berekent het jaarlijkse rendement van een discontowaardepapier (zonder rente), op basis van de prijs.",
+      a: "Jaarlijks rendement van een discontowaardepapier.",
       m: [
         4,
         5
@@ -6063,7 +6063,7 @@ module.exports = {
       p: [
         {
           name: "stortingsdatum",
-          detail: "Parameter `stortingsdatum` van de functie YIELDDISC.",
+          detail: "De afwikkelingsdatum van het effect, de datum na uitgifte waarop het effect aan de koper wordt geleverd.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6071,7 +6071,7 @@ module.exports = {
         },
         {
           name: "vervaldatum",
-          detail: "Parameter `vervaldatum` van de functie YIELDDISC.",
+          detail: "De vervaldatum of einddatum van het effect, waarop het tegen de nominale waarde kan worden ingelost.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6079,7 +6079,7 @@ module.exports = {
         },
         {
           name: "prijs",
-          detail: "Parameter `prijs` van de functie YIELDDISC.",
+          detail: "De prijs waartegen het effect wordt gekocht per 100 nominale waarde.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -6087,7 +6087,7 @@ module.exports = {
         },
         {
           name: "aflossingswaarde",
-          detail: "Parameter `aflossingswaarde` van de functie YIELDDISC.",
+          detail: "Het aflossingsbedrag per 100 nominale waarde.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6095,7 +6095,7 @@ module.exports = {
         },
         {
           name: "dagentelconventie",
-          detail: "Parameter `dagentelconventie` van de functie YIELDDISC.",
+          detail: "Een indicator van de te gebruiken methode voor het tellen van dagen.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6106,8 +6106,8 @@ module.exports = {
     {
       n: "NOMINAL",
       t: 8,
-      d: "Beschrijving van de functie NOMINAL.",
-      a: "Samenvatting van de functie NOMINAL.",
+      d: "Berekent het nominale jaarlijkse rentepercentage gegeven het effectieve percentage en het aantal samengestelde periodes per jaar.",
+      a: "Nominaal jaarlijks rentepercentage.",
       m: [
         2,
         2
@@ -6115,7 +6115,7 @@ module.exports = {
       p: [
         {
           name: "effectieve_rente",
-          detail: "Parameter `effectieve_rente` van de functie NOMINAL.",
+          detail: "Het effectieve jaarlijkse rentepercentage.",
           example: "0.85",
           require: "m",
           repeat: "n",
@@ -6123,7 +6123,7 @@ module.exports = {
         },
         {
           name: "periodes_per_jaar",
-          detail: "Parameter `periodes_per_jaar` van de functie NOMINAL.",
+          detail: "Het aantal samengestelde periodes per jaar.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6134,8 +6134,8 @@ module.exports = {
     {
       n: "XIRR",
       t: 8,
-      d: "Beschrijving van de functie XIRR.",
-      a: "Samenvatting van de functie XIRR.",
+      d: "Berekent het interne rendement van een investering op basis van een opgegeven reeks mogelijk onregelmatig gespreide kasstromen.",
+      a: "Intern rendement gegeven niet-periodieke kasstromen.",
       m: [
         2,
         3
@@ -6143,7 +6143,7 @@ module.exports = {
       p: [
         {
           name: "kasstroombedragen",
-          detail: "Parameter `kasstroombedragen` van de functie XIRR.",
+          detail: "Een array of bereik met de inkomsten of betalingen die verbonden zijn met de investering.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
@@ -6151,7 +6151,7 @@ module.exports = {
         },
         {
           name: "kasstroomdatums",
-          detail: "Parameter `kasstroomdatums` van de functie XIRR.",
+          detail: "Een array of bereik met datums die overeenkomen met de kasstromen in `kasstroombedragen`.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6159,7 +6159,7 @@ module.exports = {
         },
         {
           name: "renteschatting",
-          detail: "Parameter `renteschatting` van de functie XIRR.",
+          detail: "Een schatting van wat het interne rendement zal zijn.",
           example: "250",
           require: "o",
           repeat: "n",
