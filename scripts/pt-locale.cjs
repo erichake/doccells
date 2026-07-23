@@ -3368,8 +3368,8 @@ module.exports = {
     {
       n: "T_TEST",
       t: 1,
-      d: "Descrição da função T_TEST.",
-      a: "Resumo da função T_TEST.",
+      d: "Teste t. Retorna a probabilidade associada ao teste t de Student. Determina se é provável que duas amostras venham das mesmas duas populações subjacentes que têm a mesma média.",
+      a: "Retorna a probabilidade associada ao teste t.",
       m: [
         4,
         4
@@ -3377,7 +3377,7 @@ module.exports = {
       p: [
         {
           name: "intervalo1",
-          detail: "Parâmetro `intervalo1` da função T_TEST.",
+          detail: "A primeira amostra de dados ou grupo de células a considerar para o teste t.",
           example: "A1:A4",
           require: "m",
           repeat: "n",
@@ -3385,7 +3385,7 @@ module.exports = {
         },
         {
           name: "intervalo2",
-          detail: "Parâmetro `intervalo2` da função T_TEST.",
+          detail: "A segunda amostra de dados ou grupo de células a considerar para o teste t.",
           example: "B1:B4",
           require: "m",
           repeat: "n",
@@ -3393,7 +3393,7 @@ module.exports = {
         },
         {
           name: "caudas",
-          detail: "Parâmetro `caudas` da função T_TEST.",
+          detail: "Especifica o número de caudas da distribuição.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3401,7 +3401,7 @@ module.exports = {
         },
         {
           name: "tipo",
-          detail: "Parâmetro `tipo` da função T_TEST.",
+          detail: "Especifica o tipo de teste t.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3412,8 +3412,8 @@ module.exports = {
     {
       n: "F_DIST",
       t: 1,
-      d: "Descrição da função F_DIST.",
-      a: "Resumo da função F_DIST.",
+      d: "Calcula a distribuição de probabilidade F de cauda esquerda (grau de diversidade) para dois conjuntos de dados com uma entrada x dada. Também chamada de distribuição de Fisher-Snedecor ou distribuição F de Snedecor.",
+      a: "Distribuição de probabilidade F (cauda esquerda).",
       m: [
         4,
         4
@@ -3421,7 +3421,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função F_DIST.",
+          detail: "A entrada da função de distribuição de probabilidade F. O valor no qual avaliar a função.",
           example: "15.35",
           require: "m",
           repeat: "n",
@@ -3429,7 +3429,7 @@ module.exports = {
         },
         {
           name: "graus_liberdade1",
-          detail: "Parâmetro `graus_liberdade1` da função F_DIST.",
+          detail: "O numerador do número de graus de liberdade.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -3437,7 +3437,7 @@ module.exports = {
         },
         {
           name: "graus_liberdade2",
-          detail: "Parâmetro `graus_liberdade2` da função F_DIST.",
+          detail: "O denominador do número de graus de liberdade.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3445,7 +3445,7 @@ module.exports = {
         },
         {
           name: "cumulativo",
-          detail: "Parâmetro `cumulativo` da função F_DIST.",
+          detail: "Valor lógico que determina a forma da função.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3456,8 +3456,8 @@ module.exports = {
     {
       n: "F_DIST_RT",
       t: 1,
-      d: "Descrição da função F_DIST_RT.",
-      a: "Resumo da função F_DIST_RT.",
+      d: "Calcula a distribuição de probabilidade F de cauda direita (grau de diversidade) para dois conjuntos de dados com uma entrada x dada. Também chamada de distribuição de Fisher-Snedecor ou distribuição F de Snedecor.",
+      a: "Distribuição de probabilidade F.",
       m: [
         3,
         3
@@ -3465,7 +3465,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função F_DIST_RT.",
+          detail: "A entrada da função de distribuição de probabilidade F. O valor no qual avaliar a função.",
           example: "15.35",
           require: "m",
           repeat: "n",
@@ -3473,7 +3473,7 @@ module.exports = {
         },
         {
           name: "graus_liberdade1",
-          detail: "Parâmetro `graus_liberdade1` da função F_DIST_RT.",
+          detail: "O numerador do número de graus de liberdade.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -3481,7 +3481,7 @@ module.exports = {
         },
         {
           name: "graus_liberdade2",
-          detail: "Parâmetro `graus_liberdade2` da função F_DIST_RT.",
+          detail: "O denominador do número de graus de liberdade.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3492,8 +3492,8 @@ module.exports = {
     {
       n: "VAR_P",
       t: 1,
-      d: "Descrição da função VAR_P.",
-      a: "Resumo da função VAR_P.",
+      d: "Calcula a variância com base em uma população inteira.",
+      a: "Variância de toda a população.",
       m: [
         1,
         255
@@ -3501,7 +3501,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função VAR_P.",
+          detail: "O primeiro valor ou intervalo da população.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3509,7 +3509,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função VAR_P.",
+          detail: "Valores ou intervalos adicionais a incluir na população.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3520,8 +3520,8 @@ module.exports = {
     {
       n: "VAR_S",
       t: 1,
-      d: "Descrição da função VAR_S.",
-      a: "Resumo da função VAR_S.",
+      d: "Calcula a variância com base em uma amostra.",
+      a: "Variância.",
       m: [
         1,
         255
@@ -3529,7 +3529,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função VAR_S.",
+          detail: "O primeiro valor ou intervalo da amostra.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3537,7 +3537,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função VAR_S.",
+          detail: "Valores ou intervalos adicionais a incluir na amostra.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3548,8 +3548,8 @@ module.exports = {
     {
       n: "VARA",
       t: 1,
-      d: "Descrição da função VARA.",
-      a: "Resumo da função VARA.",
+      d: "Calcula a variância com base em uma amostra, definindo o texto como o valor `0`.",
+      a: "Variância da amostra (texto como 0).",
       m: [
         1,
         255
@@ -3557,7 +3557,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função VARA.",
+          detail: "O primeiro valor ou intervalo da amostra.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3565,7 +3565,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função VARA.",
+          detail: "Valores ou intervalos adicionais a incluir na amostra.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3576,8 +3576,8 @@ module.exports = {
     {
       n: "VARPA",
       t: 1,
-      d: "Descrição da função VARPA.",
-      a: "Resumo da função VARPA.",
+      d: "Calcula a variância com base em uma população inteira, definindo o texto como o valor `0`.",
+      a: "Variância de toda a população (texto como 0).",
       m: [
         1,
         255
@@ -3585,7 +3585,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função VARPA.",
+          detail: "O primeiro valor ou intervalo da população.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3593,7 +3593,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função VARPA.",
+          detail: "Valores ou intervalos adicionais a incluir na população.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3604,8 +3604,8 @@ module.exports = {
     {
       n: "STEYX",
       t: 1,
-      d: "Descrição da função STEYX.",
-      a: "Resumo da função STEYX.",
+      d: "Calcula o erro padrão do valor y previsto para cada x na regressão de um conjunto de dados.",
+      a: "Erro padrão de valores y previstos na regressão.",
       m: [
         2,
         2
@@ -3613,7 +3613,7 @@ module.exports = {
       p: [
         {
           name: "dados_y",
-          detail: "Parâmetro `dados_y` da função STEYX.",
+          detail: "O intervalo que representa a matriz ou matriz de dados dependentes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3621,7 +3621,7 @@ module.exports = {
         },
         {
           name: "dados_x",
-          detail: "Parâmetro `dados_x` da função STEYX.",
+          detail: "O intervalo que representa a matriz ou matriz de dados independentes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3632,8 +3632,8 @@ module.exports = {
     {
       n: "STANDARDIZE",
       t: 1,
-      d: "Descrição da função STANDARDIZE.",
-      a: "Resumo da função STANDARDIZE.",
+      d: "Calcula o equivalente normalizado de uma variável aleatória, dados a média e o desvio padrão da distribuição.",
+      a: "Equivalente normalizado de uma variável aleatória.",
       m: [
         3,
         3
@@ -3641,7 +3641,7 @@ module.exports = {
       p: [
         {
           name: "valor",
-          detail: "Parâmetro `valor` da função STANDARDIZE.",
+          detail: "O valor da variável aleatória a normalizar.",
           example: "96",
           require: "m",
           repeat: "n",
@@ -3649,7 +3649,7 @@ module.exports = {
         },
         {
           name: "média",
-          detail: "Parâmetro `média` da função STANDARDIZE.",
+          detail: "A média da distribuição.",
           example: "80",
           require: "m",
           repeat: "n",
@@ -3657,7 +3657,7 @@ module.exports = {
         },
         {
           name: "desvio_padrão",
-          detail: "Parâmetro `desvio_padrão` da função STANDARDIZE.",
+          detail: "O desvio padrão da distribuição.",
           example: "6.7",
           require: "m",
           repeat: "n",
@@ -3668,8 +3668,8 @@ module.exports = {
     {
       n: "SMALL",
       t: 1,
-      d: "Descrição da função SMALL.",
-      a: "Resumo da função SMALL.",
+      d: "Retorna o n-ésimo menor elemento de um conjunto de dados, onde n é definido pelo usuário.",
+      a: "N-ésimo menor elemento em um conjunto de dados.",
       m: [
         2,
         2
@@ -3677,7 +3677,7 @@ module.exports = {
       p: [
         {
           name: "dados",
-          detail: "Parâmetro `dados` da função SMALL.",
+          detail: "A matriz ou intervalo contendo o conjunto de dados a considerar.",
           example: "A2:B100",
           require: "m",
           repeat: "n",
@@ -3685,7 +3685,7 @@ module.exports = {
         },
         {
           name: "n",
-          detail: "Parâmetro `n` da função SMALL.",
+          detail: "A posição, do menor ao maior, do elemento a retornar.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -3696,8 +3696,8 @@ module.exports = {
     {
       n: "SLOPE",
       t: 1,
-      d: "Descrição da função SLOPE.",
-      a: "Resumo da função SLOPE.",
+      d: "Calcula a inclinação da reta resultante da regressão linear de um conjunto de dados.",
+      a: "Inclinação da reta a partir da regressão linear dos dados.",
       m: [
         2,
         2
@@ -3705,7 +3705,7 @@ module.exports = {
       p: [
         {
           name: "dados_y",
-          detail: "Parâmetro `dados_y` da função SLOPE.",
+          detail: "O intervalo que representa a matriz ou matriz de dados dependentes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3713,7 +3713,7 @@ module.exports = {
         },
         {
           name: "dados_x",
-          detail: "Parâmetro `dados_x` da função SLOPE.",
+          detail: "O intervalo que representa a matriz ou matriz de dados independentes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3724,8 +3724,8 @@ module.exports = {
     {
       n: "SKEW",
       t: 1,
-      d: "Descrição da função SKEW.",
-      a: "Resumo da função SKEW.",
+      d: "Calcula a assimetria de um conjunto de dados, que descreve a simetria desse conjunto de dados em relação à média.",
+      a: "Assimetria de um conjunto de dados.",
       m: [
         1,
         255
@@ -3733,7 +3733,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função SKEW.",
+          detail: "O primeiro valor ou intervalo do conjunto de dados.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3741,7 +3741,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função SKEW.",
+          detail: "Valores ou intervalos adicionais a incluir no conjunto de dados.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3752,8 +3752,8 @@ module.exports = {
     {
       n: "SKEW_P",
       t: 1,
-      d: "Descrição da função SKEW_P.",
-      a: "Resumo da função SKEW_P.",
+      d: "Calcula a assimetria de um conjunto de dados, que descreve a simetria desse conjunto de dados em relação à média. Isso presume que o conjunto de dados é para a população.",
+      a: "Assimetria do conjunto de dados de uma população.",
       m: [
         1,
         255
@@ -3761,7 +3761,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função SKEW_P.",
+          detail: "O primeiro valor ou intervalo do conjunto de dados.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3769,7 +3769,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função SKEW_P.",
+          detail: "Valores ou intervalos adicionais a incluir no conjunto de dados.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -3780,8 +3780,8 @@ module.exports = {
     {
       n: "VLOOKUP",
       t: 2,
-      d: "Descrição da função VLOOKUP.",
-      a: "Resumo da função VLOOKUP.",
+      d: "Pesquisa vertical. Pesquisa pela primeira coluna de um intervalo por uma chave e retorna o valor de uma célula especificada na linha encontrada.",
+      a: "Pesquisa vertical.",
       m: [
         3,
         4
@@ -3789,7 +3789,7 @@ module.exports = {
       p: [
         {
           name: "chave_pesquisa",
-          detail: "Parâmetro `chave_pesquisa` da função VLOOKUP.",
+          detail: "O valor a pesquisar. Por exemplo, `42`, `\"Gatos\"` ou `I24`.",
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3797,7 +3797,7 @@ module.exports = {
         },
         {
           name: "intervalo",
-          detail: "Parâmetro `intervalo` da função VLOOKUP.",
+          detail: "O intervalo a considerar para a pesquisa. A primeira coluna do intervalo é pesquisada pela chave especificada em `chave_pesquisa`.",
           example: "A2:B26",
           require: "m",
           repeat: "n",
@@ -3805,7 +3805,7 @@ module.exports = {
         },
         {
           name: "índice",
-          detail: "Parâmetro `índice` da função VLOOKUP.",
+          detail: "O índice da coluna do valor a retornar, onde a primeira coluna em `intervalo` é numerada como 1.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3813,7 +3813,7 @@ module.exports = {
         },
         {
           name: "está_ordenado",
-          detail: "Parâmetro `está_ordenado` da função VLOOKUP.",
+          detail: "Indica se a coluna a ser pesquisada (a primeira coluna do intervalo especificado) está ordenada; nesse caso, a correspondência mais próxima de `chave_pesquisa` será retornada.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3824,8 +3824,8 @@ module.exports = {
     {
       n: "HLOOKUP",
       t: 2,
-      d: "Descrição da função HLOOKUP.",
-      a: "Resumo da função HLOOKUP.",
+      d: "Pesquisa horizontal. Pesquisa pela primeira linha de um intervalo por uma chave e retorna o valor de uma célula especificada na coluna encontrada.",
+      a: "Pesquisa horizontal.",
       m: [
         3,
         4
@@ -3833,7 +3833,7 @@ module.exports = {
       p: [
         {
           name: "chave_pesquisa",
-          detail: "Parâmetro `chave_pesquisa` da função HLOOKUP.",
+          detail: "O valor a pesquisar. Por exemplo, `42`, `\"Gatos\"` ou `I24`.",
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3841,7 +3841,7 @@ module.exports = {
         },
         {
           name: "intervalo",
-          detail: "Parâmetro `intervalo` da função HLOOKUP.",
+          detail: "O intervalo a considerar para a pesquisa. A primeira linha do intervalo é pesquisada pela chave especificada em `chave_pesquisa`.",
           example: "A2:Z6",
           require: "m",
           repeat: "n",
@@ -3849,7 +3849,7 @@ module.exports = {
         },
         {
           name: "índice",
-          detail: "Parâmetro `índice` da função HLOOKUP.",
+          detail: "O índice da linha do valor a retornar, onde a primeira linha em `intervalo` é numerada como 1.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3857,7 +3857,7 @@ module.exports = {
         },
         {
           name: "está_ordenado",
-          detail: "Parâmetro `está_ordenado` da função HLOOKUP.",
+          detail: "Indica se a linha a ser pesquisada (a primeira linha do intervalo especificado) está ordenada.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3868,8 +3868,8 @@ module.exports = {
     {
       n: "LOOKUP",
       t: 2,
-      d: "Descrição da função LOOKUP.",
-      a: "Resumo da função LOOKUP.",
+      d: "Pesquisa em uma linha ou coluna ordenada por uma chave e retorna o valor da célula em um intervalo de resultados localizado na mesma posição da linha ou coluna de pesquisa.",
+      a: "Pesquisar um valor.",
       m: [
         2,
         3
@@ -3877,7 +3877,7 @@ module.exports = {
       p: [
         {
           name: "chave_pesquisa",
-          detail: "Parâmetro `chave_pesquisa` da função LOOKUP.",
+          detail: "O valor a pesquisar na linha ou coluna. Por exemplo, `42`, `\"Gatos\"` ou `I24`.",
           example: "10003",
           require: "m",
           repeat: "n",
@@ -3885,7 +3885,7 @@ module.exports = {
         },
         {
           name: "intervalo_pesquisa|matriz_resultado_pesquisa",
-          detail: "Parâmetro `search_range|search_result_array` da função LOOKUP.",
+          detail: "Uma forma de usar esta função é fornecer uma única linha ou coluna ordenada `intervalo_pesquisa` na qual pesquisar `chave_pesquisa`, com um segundo argumento `intervalo_resultado`. A outra forma é combinar esses dois argumentos em uma única `matriz_resultado_pesquisa`, onde a primeira linha ou coluna é pesquisada e um valor é retornado da última linha ou coluna da matriz. Se `chave_pesquisa` não for encontrada, uma correspondência não exata pode ser retornada.",
           example: "A1:A100",
           require: "m",
           repeat: "n",
@@ -3893,7 +3893,7 @@ module.exports = {
         },
         {
           name: "intervalo_resultado",
-          detail: "Parâmetro `intervalo_resultado` da função LOOKUP.",
+          detail: "O intervalo do qual retornar um resultado. O valor retornado corresponde à localização onde `chave_pesquisa` é encontrada em `intervalo_pesquisa`. Este intervalo deve conter apenas uma linha ou coluna e não deve ser usado se estiver usando o método `matriz_resultado_pesquisa`.",
           example: "B1:B100",
           require: "o",
           repeat: "n",
@@ -3904,8 +3904,8 @@ module.exports = {
     {
       n: "ADDRESS",
       t: 2,
-      d: "Descrição da função ADDRESS.",
-      a: "Resumo da função ADDRESS.",
+      d: "Retorna uma referência de célula como uma string.",
+      a: "Referência de célula como uma string.",
       m: [
         2,
         5
@@ -3913,7 +3913,7 @@ module.exports = {
       p: [
         {
           name: "linha",
-          detail: "Parâmetro `linha` da função ADDRESS.",
+          detail: "O número da linha da referência de célula.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3921,7 +3921,7 @@ module.exports = {
         },
         {
           name: "coluna",
-          detail: "Parâmetro `coluna` da função ADDRESS.",
+          detail: "O número da coluna (não o nome) da referência de célula. `A` é a coluna número `1`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3929,7 +3929,7 @@ module.exports = {
         },
         {
           name: "modo_relativo_absoluto",
-          detail: "Parâmetro `modo_relativo_absoluto` da função ADDRESS.",
+          detail: "Um indicador de se a referência é absoluta de linha/coluna. `1` é linha e coluna absolutas (ex. $A$1), `2` é linha absoluta e coluna relativa (ex. A$1), `3` é linha relativa e coluna absoluta (ex. $A1), e `4` é linha e coluna relativas (ex. A1).",
           example: "4",
           require: "o",
           repeat: "n",
@@ -3937,7 +3937,7 @@ module.exports = {
         },
         {
           name: "usar_notação_a1",
-          detail: "Parâmetro `usar_notação_a1` da função ADDRESS.",
+          detail: "Um booleano indicando se deve usar a notação estilo `A1` (VERDADEIRO) ou notação estilo `R1C1` (FALSO).",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3945,7 +3945,7 @@ module.exports = {
         },
         {
           name: "planilha",
-          detail: "Parâmetro `planilha` da função ADDRESS.",
+          detail: "Texto indicando o nome da planilha para a qual o endereço aponta.",
           example: "\"Sheet2\"",
           require: "o",
           repeat: "n",
@@ -3956,8 +3956,8 @@ module.exports = {
     {
       n: "INDIRECT",
       t: 2,
-      d: "Descrição da função INDIRECT.",
-      a: "Resumo da função INDIRECT.",
+      d: "Retorna uma referência de célula especificada por uma string.",
+      a: "Uma referência de célula especificada por uma string.",
       m: [
         1,
         2
@@ -3965,7 +3965,7 @@ module.exports = {
       p: [
         {
           name: "referência_célula_como_texto",
-          detail: "Parâmetro `referência_célula_como_texto` da função INDIRECT.",
+          detail: "Uma referência de célula, escrita como uma string entre aspas.",
           example: "\"Sheet2!\"&B10",
           require: "m",
           repeat: "n",
@@ -3973,7 +3973,7 @@ module.exports = {
         },
         {
           name: "é_notação_a1",
-          detail: "Parâmetro `é_notação_a1` da função INDIRECT.",
+          detail: "Indica se a referência de célula está na notação A1 (VERDADEIRO) ou notação R1C1 (FALSO).",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -3984,8 +3984,8 @@ module.exports = {
     {
       n: "ROW",
       t: 2,
-      d: "Descrição da função ROW.",
-      a: "Resumo da função ROW.",
+      d: "Retorna o número da linha de uma célula especificada.",
+      a: "Número da linha de uma célula especificada.",
       m: [
         0,
         1
@@ -3993,7 +3993,7 @@ module.exports = {
       p: [
         {
           name: "referência_célula",
-          detail: "Parâmetro `referência_célula` da função ROW.",
+          detail: "A célula cujo número de linha será retornado.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4004,8 +4004,8 @@ module.exports = {
     {
       n: "ROWS",
       t: 2,
-      d: "Descrição da função ROWS.",
-      a: "Resumo da função ROWS.",
+      d: "Retorna o número de linhas em uma matriz ou intervalo especificado.",
+      a: "Número de linhas em uma matriz ou intervalo especificado.",
       m: [
         1,
         1
@@ -4013,7 +4013,7 @@ module.exports = {
       p: [
         {
           name: "intervalo",
-          detail: "Parâmetro `intervalo` da função ROWS.",
+          detail: "O intervalo cuja contagem de linhas será retornada.",
           example: "A9:A62",
           require: "m",
           repeat: "n",
@@ -4024,8 +4024,8 @@ module.exports = {
     {
       n: "COLUMN",
       t: 2,
-      d: "Descrição da função COLUMN.",
-      a: "Resumo da função COLUMN.",
+      d: "Retorna o número da coluna de uma célula especificada, com `A=1`.",
+      a: "Número da coluna de uma célula especificada.",
       m: [
         0,
         1
@@ -4033,7 +4033,7 @@ module.exports = {
       p: [
         {
           name: "referência_célula",
-          detail: "Parâmetro `referência_célula` da função COLUMN.",
+          detail: "A célula cujo número de coluna será retornado. A coluna `A` corresponde a `1`.",
           example: "A9",
           require: "o",
           repeat: "n",
@@ -4044,8 +4044,8 @@ module.exports = {
     {
       n: "COLUMNS",
       t: 2,
-      d: "Descrição da função COLUMNS.",
-      a: "Resumo da função COLUMNS.",
+      d: "Retorna o número de colunas em uma matriz ou intervalo especificado.",
+      a: "Número de colunas em uma matriz ou intervalo especificado.",
       m: [
         1,
         1
@@ -4053,7 +4053,7 @@ module.exports = {
       p: [
         {
           name: "intervalo",
-          detail: "Parâmetro `intervalo` da função COLUMNS.",
+          detail: "O intervalo cuja contagem de colunas será retornada.",
           example: "A9:W62",
           require: "m",
           repeat: "n",
@@ -4064,8 +4064,8 @@ module.exports = {
     {
       n: "OFFSET",
       t: 2,
-      d: "Descrição da função OFFSET.",
-      a: "Resumo da função OFFSET.",
+      d: "Retorna uma referência de intervalo deslocada por um número especificado de linhas e colunas a partir de uma referência de célula inicial.",
+      a: "Uma referência de intervalo deslocada em relação a uma célula.",
       m: [
         3,
         5
@@ -4073,7 +4073,7 @@ module.exports = {
       p: [
         {
           name: "referência_célula",
-          detail: "Parâmetro `referência_célula` da função OFFSET.",
+          detail: "O ponto de partida a partir do qual contar as linhas e colunas de deslocamento.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -4081,7 +4081,7 @@ module.exports = {
         },
         {
           name: "linhas_deslocamento",
-          detail: "Parâmetro `linhas_deslocamento` da função OFFSET.",
+          detail: "O número de linhas para deslocar.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -4089,7 +4089,7 @@ module.exports = {
         },
         {
           name: "colunas_deslocamento",
-          detail: "Parâmetro `colunas_deslocamento` da função OFFSET.",
+          detail: "O número de colunas para deslocar.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -4097,7 +4097,7 @@ module.exports = {
         },
         {
           name: "altura",
-          detail: "Parâmetro `altura` da função OFFSET.",
+          detail: "A altura do intervalo a retornar, começando no destino do deslocamento.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -4105,7 +4105,7 @@ module.exports = {
         },
         {
           name: "largura",
-          detail: "Parâmetro `largura` da função OFFSET.",
+          detail: "A largura do intervalo a retornar, começando no destino do deslocamento.",
           example: "2",
           require: "o",
           repeat: "n",
@@ -4116,8 +4116,8 @@ module.exports = {
     {
       n: "MATCH",
       t: 2,
-      d: "Descrição da função MATCH.",
-      a: "Resumo da função MATCH.",
+      d: "Retorna a posição relativa de um item em um intervalo que corresponde a um valor especificado.",
+      a: "Posição de item em intervalo que corresponde a valor.",
       m: [
         2,
         3
@@ -4125,7 +4125,7 @@ module.exports = {
       p: [
         {
           name: "chave_pesquisa",
-          detail: "Parâmetro `chave_pesquisa` da função MATCH.",
+          detail: "O valor a pesquisar. Por exemplo, `42`, `\"Gatos\"` ou `I24`.",
           example: "\"Sunday\"",
           require: "m",
           repeat: "n",
@@ -4133,7 +4133,7 @@ module.exports = {
         },
         {
           name: "intervalo",
-          detail: "Parâmetro `intervalo` da função MATCH.",
+          detail: "A matriz unidimensional a ser pesquisada.",
           example: "A2:A9",
           require: "m",
           repeat: "n",
@@ -4141,7 +4141,7 @@ module.exports = {
         },
         {
           name: "tipo_pesquisa",
-          detail: "Parâmetro `tipo_pesquisa` da função MATCH.",
+          detail: "O método de pesquisa. `1` (padrão) encontra o maior valor menor ou igual a `chave_pesquisa` quando `intervalo` está ordenado em ordem crescente. `0` encontra o valor exato quando `intervalo` não está ordenado. `-1` encontra o menor valor maior ou igual a `chave_pesquisa` quando `intervalo` está ordenado em ordem decrescente.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -4152,8 +4152,8 @@ module.exports = {
     {
       n: "INDEX",
       t: 2,
-      d: "Descrição da função INDEX.",
-      a: "Resumo da função INDEX.",
+      d: "Retorna o conteúdo de uma célula, especificado por deslocamento de linha e coluna.",
+      a: "Conteúdo de célula especificado por deslocamento de linha e coluna.",
       m: [
         2,
         3
@@ -4161,7 +4161,7 @@ module.exports = {
       p: [
         {
           name: "referência",
-          detail: "Parâmetro `referência` da função INDEX.",
+          detail: "A matriz de células na qual o deslocamento será aplicado.",
           example: "A1:C20",
           require: "m",
           repeat: "n",
@@ -4169,7 +4169,7 @@ module.exports = {
         },
         {
           name: "linha",
-          detail: "Parâmetro `linha` da função INDEX.",
+          detail: "O número de linhas de deslocamento.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -4177,7 +4177,7 @@ module.exports = {
         },
         {
           name: "coluna",
-          detail: "Parâmetro `coluna` da função INDEX.",
+          detail: "O número de colunas de deslocamento.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -4188,8 +4188,8 @@ module.exports = {
     {
       n: "GETPIVOTDATA",
       t: 2,
-      d: "Descrição da função GETPIVOTDATA.",
-      a: "Resumo da função GETPIVOTDATA.",
+      d: "Extrai um valor agregado de uma tabela dinâmica correspondente aos cabeçalhos de linha e coluna especificados.",
+      a: "Extrai um valor agregado de uma tabela dinâmica correspondente aos cabeçalhos de linha e coluna especificados.",
       m: [
         2,
         254
@@ -4197,7 +4197,7 @@ module.exports = {
       p: [
         {
           name: "nome_valor",
-          detail: "Parâmetro `nome_valor` da função GETPIVOTDATA.",
+          detail: "O nome do valor na tabela dinâmica para o qual você deseja obter dados.",
           example: "\"SUM of number of units\"",
           require: "m",
           repeat: "n",
@@ -4205,7 +4205,7 @@ module.exports = {
         },
         {
           name: "célula_tabela_dinâmica",
-          detail: "Parâmetro `célula_tabela_dinâmica` da função GETPIVOTDATA.",
+          detail: "Qualquer referência a uma célula na tabela dinâmica desejada (o canto superior é recomendado).",
           example: "'Pivot table'!A1",
           require: "m",
           repeat: "n",
@@ -4213,7 +4213,7 @@ module.exports = {
         },
         {
           name: "coluna_original",
-          detail: "Parâmetro `coluna_original` da função GETPIVOTDATA.",
+          detail: "O nome da coluna no conjunto de dados original (não a tabela dinâmica).",
           example: "\"division\"",
           require: "o",
           repeat: "y",
@@ -4221,7 +4221,7 @@ module.exports = {
         },
         {
           name: "item_tabela_dinâmica",
-          detail: "Parâmetro `item_tabela_dinâmica` da função GETPIVOTDATA.",
+          detail: "O nome da linha ou coluna mostrada na tabela dinâmica correspondente a *coluna_original* que você deseja recuperar.",
           example: "\"east\"",
           require: "o",
           repeat: "y",
@@ -4232,8 +4232,8 @@ module.exports = {
     {
       n: "CHOOSE",
       t: 2,
-      d: "Descrição da função CHOOSE.",
-      a: "Resumo da função CHOOSE.",
+      d: "Retorna um elemento de uma lista de escolhas com base no índice.",
+      a: "Um elemento de uma lista de escolhas com base no índice.",
       m: [
         2,
         255
@@ -4241,7 +4241,7 @@ module.exports = {
       p: [
         {
           name: "índice",
-          detail: "Parâmetro `índice` da função CHOOSE.",
+          detail: "Qual escolha (das até 30 fornecidas) retornar.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -4249,7 +4249,7 @@ module.exports = {
         },
         {
           name: "escolha1",
-          detail: "Parâmetro `escolha1` da função CHOOSE.",
+          detail: "Um valor potencial a retornar. Obrigatório. Pode ser uma referência a uma célula ou um valor individual.",
           example: "\"A\"",
           require: "m",
           repeat: "n",
@@ -4257,7 +4257,7 @@ module.exports = {
         },
         {
           name: "escolha2",
-          detail: "Parâmetro `escolha2` da função CHOOSE.",
+          detail: "Valores adicionais entre os quais escolher.",
           example: "\"B\"",
           require: "o",
           repeat: "y",
@@ -4268,12 +4268,12 @@ module.exports = {
     {
       n: "HYPERLINK",
       t: 2,
-      d: "Descrição da função HYPERLINK.",
-      a: "Resumo da função HYPERLINK.",
+      d: "Cria um hiperlink dentro de uma célula.",
+      a: "Cria um hiperlink dentro de uma célula.",
       p: [
         {
           name: "url",
-          detail: "Parâmetro `url` da função HYPERLINK.",
+          detail: "A URL completa do local do link entre aspas, ou uma referência a uma célula contendo tal URL.",
           example: "\"http://www.luckysheet.com/\"",
           require: "m",
           repeat: "n",
@@ -4281,7 +4281,7 @@ module.exports = {
         },
         {
           name: "texto_link",
-          detail: "Parâmetro `texto_link` da função HYPERLINK.",
+          detail: "O texto a exibir na célula como o link, entre aspas, ou uma referência a uma célula contendo tal rótulo.",
           example: "\"luckysheet\"",
           require: "m",
           repeat: "n",
@@ -4292,8 +4292,8 @@ module.exports = {
     {
       n: "TIME",
       t: 6,
-      d: "Descrição da função TIME.",
-      a: "Resumo da função TIME.",
+      d: "Converte uma hora, minuto e segundo fornecidos em um horário.",
+      a: "Converte hora/minuto/segundo em um horário.",
       m: [
         3,
         3
@@ -4301,7 +4301,7 @@ module.exports = {
       p: [
         {
           name: "hora",
-          detail: "Parâmetro `hora` da função TIME.",
+          detail: "O componente de hora do horário.",
           example: "11",
           require: "m",
           repeat: "n",
@@ -4309,7 +4309,7 @@ module.exports = {
         },
         {
           name: "minuto",
-          detail: "Parâmetro `minuto` da função TIME.",
+          detail: "O componente de minuto do horário.",
           example: "40",
           require: "m",
           repeat: "n",
@@ -4317,7 +4317,7 @@ module.exports = {
         },
         {
           name: "segundo",
-          detail: "Parâmetro `segundo` da função TIME.",
+          detail: "O componente de segundo do horário.",
           example: "59",
           require: "m",
           repeat: "n",
@@ -4328,8 +4328,8 @@ module.exports = {
     {
       n: "TIMEVALUE",
       t: 6,
-      d: "Descrição da função TIMEVALUE.",
-      a: "Resumo da função TIMEVALUE.",
+      d: "Retorna a fração de um dia de 24 horas que o horário representa.",
+      a: "Converte uma string de horário em sua representação numérica de série.",
       m: [
         1,
         1
@@ -4337,7 +4337,7 @@ module.exports = {
       p: [
         {
           name: "texto_hora",
-          detail: "Parâmetro `texto_hora` da função TIMEVALUE.",
+          detail: "A string que contém a representação do horário.",
           example: "\"2:15 PM\"",
           require: "m",
           repeat: "n",
@@ -4348,8 +4348,8 @@ module.exports = {
     {
       n: "EOMONTH",
       t: 6,
-      d: "Descrição da função EOMONTH.",
-      a: "Resumo da função EOMONTH.",
+      d: "Retorna uma data no último dia de um mês que ocorre um número especificado de meses antes ou depois de outra data.",
+      a: "Último dia de um mês antes ou depois de uma data.",
       m: [
         2,
         2
@@ -4357,7 +4357,7 @@ module.exports = {
       p: [
         {
           name: "data_início",
-          detail: "Parâmetro `data_início` da função EOMONTH.",
+          detail: "A data a partir da qual calcular o resultado.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4365,7 +4365,7 @@ module.exports = {
         },
         {
           name: "número_de_meses",
-          detail: "Parâmetro `número_de_meses` da função EOMONTH.",
+          detail: "O número de meses antes (negativo) ou depois (positivo) de 'data_inicial' a considerar.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4376,8 +4376,8 @@ module.exports = {
     {
       n: "EDATE",
       t: 6,
-      d: "Descrição da função EDATE.",
-      a: "Resumo da função EDATE.",
+      d: "Retorna uma data um número especificado de meses antes ou depois de outra data.",
+      a: "Data um número de meses antes/depois de outra data.",
       m: [
         2,
         2
@@ -4385,7 +4385,7 @@ module.exports = {
       p: [
         {
           name: "data_início",
-          detail: "Parâmetro `data_início` da função EDATE.",
+          detail: "A data a partir da qual calcular o resultado.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4393,7 +4393,7 @@ module.exports = {
         },
         {
           name: "número_de_meses",
-          detail: "Parâmetro `número_de_meses` da função EDATE.",
+          detail: "O número de meses antes (negativo) ou depois (positivo) de 'data_inicial' a calcular.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4404,8 +4404,8 @@ module.exports = {
     {
       n: "SECOND",
       t: 6,
-      d: "Descrição da função SECOND.",
-      a: "Resumo da função SECOND.",
+      d: "Retorna o componente de segundos de um horário específico, em formato numérico.",
+      a: "Componente de segundos de um horário específico.",
       m: [
         1,
         1
@@ -4413,7 +4413,7 @@ module.exports = {
       p: [
         {
           name: "hora",
-          detail: "Parâmetro `hora` da função SECOND.",
+          detail: "O horário a partir do qual calcular o componente de segundos.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4424,8 +4424,8 @@ module.exports = {
     {
       n: "MINUTE",
       t: 6,
-      d: "Descrição da função MINUTE.",
-      a: "Resumo da função MINUTE.",
+      d: "Retorna o componente de minutos de um horário específico, em formato numérico.",
+      a: "Componente de minutos de um horário específico.",
       m: [
         1,
         1
@@ -4433,7 +4433,7 @@ module.exports = {
       p: [
         {
           name: "hora",
-          detail: "Parâmetro `hora` da função MINUTE.",
+          detail: "O horário a partir do qual calcular o componente de minutos.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4444,8 +4444,8 @@ module.exports = {
     {
       n: "HOUR",
       t: 6,
-      d: "Descrição da função HOUR.",
-      a: "Resumo da função HOUR.",
+      d: "Retorna o componente de horas de um horário específico, em formato numérico.",
+      a: "Componente de horas de um horário específico.",
       m: [
         1,
         1
@@ -4453,7 +4453,7 @@ module.exports = {
       p: [
         {
           name: "hora",
-          detail: "Parâmetro `hora` da função HOUR.",
+          detail: "O horário a partir do qual calcular o componente de horas.",
           example: "TIME(11",
           require: "m",
           repeat: "n",
@@ -4464,8 +4464,8 @@ module.exports = {
     {
       n: "NOW",
       t: 6,
-      d: "Descrição da função NOW.",
-      a: "Resumo da função NOW.",
+      d: "Retorna a data e hora atuais como um valor de data.",
+      a: "Data e hora atuais como um valor de data.",
       m: [
         0,
         0
@@ -4475,8 +4475,8 @@ module.exports = {
     {
       n: "NETWORKDAYS",
       t: 6,
-      d: "Descrição da função NETWORKDAYS.",
-      a: "Resumo da função NETWORKDAYS.",
+      d: "Retorna o número de dias úteis líquidos entre dois dias fornecidos.",
+      a: "Dias úteis líquidos entre dois dias fornecidos.",
       m: [
         2,
         3
@@ -4484,7 +4484,7 @@ module.exports = {
       p: [
         {
           name: "data_início",
-          detail: "Parâmetro `data_início` da função NETWORKDAYS.",
+          detail: "A data de início do período a partir do qual calcular o número de dias úteis líquidos.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4492,7 +4492,7 @@ module.exports = {
         },
         {
           name: "data_final",
-          detail: "Parâmetro `data_final` da função NETWORKDAYS.",
+          detail: "A data de término do período a partir do qual calcular o número de dias úteis líquidos.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4500,7 +4500,7 @@ module.exports = {
         },
         {
           name: "feriados",
-          detail: "Parâmetro `feriados` da função NETWORKDAYS.",
+          detail: "Um intervalo ou constante de matriz contendo os números de série de datas a considerar como feriados.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4511,8 +4511,8 @@ module.exports = {
     {
       n: "NETWORKDAYS_INTL",
       t: 6,
-      d: "Descrição da função NETWORKDAYS_INTL.",
-      a: "Resumo da função NETWORKDAYS_INTL.",
+      d: "Retorna o número de dias úteis líquidos entre dois dias fornecidos, excluindo dias de fim de semana e feriados especificados.",
+      a: "Dias úteis líquidos entre duas datas (especificando fins de semana).",
       m: [
         2,
         4
@@ -4520,7 +4520,7 @@ module.exports = {
       p: [
         {
           name: "data_início",
-          detail: "Parâmetro `data_início` da função NETWORKDAYS_INTL.",
+          detail: "A data de início do período a partir do qual calcular o número de dias úteis líquidos.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4528,7 +4528,7 @@ module.exports = {
         },
         {
           name: "data_final",
-          detail: "Parâmetro `data_final` da função NETWORKDAYS_INTL.",
+          detail: "A data de término do período a partir do qual calcular o número de dias úteis líquidos.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4536,7 +4536,7 @@ module.exports = {
         },
         {
           name: "fim_de_semana",
-          detail: "Parâmetro `fim_de_semana` da função NETWORKDAYS_INTL.",
+          detail: "Um número ou string representando quais dias da semana são considerados fim de semana.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4544,7 +4544,7 @@ module.exports = {
         },
         {
           name: "feriados",
-          detail: "Parâmetro `feriados` da função NETWORKDAYS_INTL.",
+          detail: "Um intervalo ou constante de matriz contendo as datas a considerar como feriados.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4555,8 +4555,8 @@ module.exports = {
     {
       n: "ISOWEEKNUM",
       t: 6,
-      d: "Descrição da função ISOWEEKNUM.",
-      a: "Resumo da função ISOWEEKNUM.",
+      d: "Retorna um número representando a semana ISO do ano em que a data fornecida cai.",
+      a: "Número da semana ISO do ano.",
       m: [
         1,
         1
@@ -4564,7 +4564,7 @@ module.exports = {
       p: [
         {
           name: "data",
-          detail: "Parâmetro `data` da função ISOWEEKNUM.",
+          detail: "A data para a qual determinar o número da semana ISO. Deve ser uma referência a uma célula contendo uma data, uma função retornando um tipo de data, ou um número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4575,8 +4575,8 @@ module.exports = {
     {
       n: "WEEKNUM",
       t: 6,
-      d: "Descrição da função WEEKNUM.",
-      a: "Resumo da função WEEKNUM.",
+      d: "Retorna um número representando a semana do ano em que a data fornecida cai.",
+      a: "Número da semana do ano.",
       m: [
         1,
         2
@@ -4584,7 +4584,7 @@ module.exports = {
       p: [
         {
           name: "data",
-          detail: "Parâmetro `data` da função WEEKNUM.",
+          detail: "A data para a qual determinar o número da semana. Deve ser uma referência a uma célula contendo uma data, uma função retornando um tipo de data, ou um número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4592,7 +4592,7 @@ module.exports = {
         },
         {
           name: "tipo",
-          detail: "Parâmetro `tipo` da função WEEKNUM.",
+          detail: "Um número representando o dia em que uma semana começa. Domingo = 1.",
           example: "7",
           require: "o",
           repeat: "n",
