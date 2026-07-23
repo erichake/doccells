@@ -6170,8 +6170,8 @@ module.exports = {
     {
       n: "MIRR",
       t: 8,
-      d: "Calculates the modified internal rate of return on an investment based on a series of periodic cash flows and the difference between the interest rate paid on financing versus the return received on reinvested income.",
-      a: "Modified internal rate of return.",
+      d: "आवधिक नकदी प्रवाहों की एक श्रृंखला और वित्तपोषण पर भुगतान की गई ब्याज दर तथा पुनर्निवेशित आय पर प्राप्त प्रतिफल के बीच के अंतर के आधार पर, किसी निवेश की संशोधित आंतरिक प्रतिफल दर परिकलित करता है।",
+      a: "संशोधित आंतरिक प्रतिफल दर।",
       m: [
         3,
         3
@@ -6179,7 +6179,7 @@ module.exports = {
       p: [
         {
           name: "नकदी_प्रवाह_राशियां",
-          detail: "An array or range containing the income or payments associated with the investment.",
+          detail: "एक सरणी या श्रेणी जिसमें निवेश से संबंधित आय या भुगतान हैं।",
           example: "A2:A25",
           require: "m",
           repeat: "n",
@@ -6187,7 +6187,7 @@ module.exports = {
         },
         {
           name: "वित्तपोषण_दर",
-          detail: "The interest rate paid on funds invested.",
+          detail: "निवेशित निधियों पर भुगतान की गई ब्याज दर।",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6195,7 +6195,7 @@ module.exports = {
         },
         {
           name: "पुनर्निवेश_प्रतिफल_दर",
-          detail: "The return (as a percentage) earned on reinvestment of income received from the investment.",
+          detail: "निवेश से प्राप्त आय के पुनर्निवेश पर अर्जित प्रतिफल (प्रतिशत के रूप में)।",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6206,8 +6206,8 @@ module.exports = {
     {
       n: "IRR",
       t: 8,
-      d: "Calculates the internal rate of return on an investment based on a series of periodic cash flows.",
-      a: "Internal rate of return given periodic cashflows.",
+      d: "आवधिक नकदी प्रवाहों की एक श्रृंखला के आधार पर, किसी निवेश की आंतरिक प्रतिफल दर परिकलित करता है।",
+      a: "आवधिक नकदी प्रवाहों को देखते हुए आंतरिक प्रतिफल दर।",
       m: [
         1,
         2
@@ -6215,7 +6215,7 @@ module.exports = {
       p: [
         {
           name: "नकदी_प्रवाह_राशियां",
-          detail: "An array or range containing the income or payments associated with the investment.",
+          detail: "एक सरणी या श्रेणी जिसमें निवेश से संबंधित आय या भुगतान हैं।",
           example: "A2:A25",
           require: "m",
           repeat: "n",
@@ -6223,7 +6223,7 @@ module.exports = {
         },
         {
           name: "दर_अनुमान",
-          detail: "An estimate for what the internal rate of return will be.",
+          detail: "आंतरिक प्रतिफल दर क्या होगी, इसका अनुमान।",
           example: "200",
           require: "o",
           repeat: "n",
@@ -6234,8 +6234,8 @@ module.exports = {
     {
       n: "NPV",
       t: 8,
-      d: "Calculates the net present value of an investment based on a series of periodic cash flows and a discount rate.",
-      a: "The net present value of an investment based on a series of periodic cash flows and a discount rate.",
+      d: "आवधिक नकदी प्रवाहों की एक श्रृंखला और एक छूट दर के आधार पर, किसी निवेश का शुद्ध वर्तमान मूल्य परिकलित करता है।",
+      a: "आवधिक नकदी प्रवाहों और एक छूट दर के आधार पर किसी निवेश का शुद्ध वर्तमान मूल्य।",
       m: [
         2,
         255
@@ -6243,7 +6243,7 @@ module.exports = {
       p: [
         {
           name: "छूट_दर",
-          detail: "The discount rate of the investment over one period.",
+          detail: "एक अवधि में निवेश की छूट दर।",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6251,7 +6251,7 @@ module.exports = {
         },
         {
           name: "नकदी_प्रवाह1",
-          detail: "The first future cash flow.",
+          detail: "पहला भविष्य नकदी प्रवाह।",
           example: "200",
           require: "m",
           repeat: "n",
@@ -6259,7 +6259,7 @@ module.exports = {
         },
         {
           name: "नकदी_प्रवाह2",
-          detail: "Additional future cash flows.",
+          detail: "अतिरिक्त भविष्य नकदी प्रवाह।",
           example: "250",
           require: "o",
           repeat: "y",
@@ -6270,8 +6270,8 @@ module.exports = {
     {
       n: "XNPV",
       t: 8,
-      d: "Calculates the net present value of an investment based on a specified series of potentially irregularly spaced cash flows and a discount rate.",
-      a: "Net present value given non-periodic cashflows.",
+      d: "संभावित रूप से अनियमित रूप से स्थान पर स्थित नकदी प्रवाहों की एक निर्दिष्ट श्रृंखला और एक छूट दर के आधार पर, किसी निवेश का शुद्ध वर्तमान मूल्य परिकलित करता है।",
+      a: "गैर-आवधिक नकदी प्रवाहों को देखते हुए शुद्ध वर्तमान मूल्य।",
       m: [
         3,
         3
@@ -6279,7 +6279,7 @@ module.exports = {
       p: [
         {
           name: "छूट_दर",
-          detail: "The discount rate of the investment over one period.",
+          detail: "एक अवधि में निवेश की छूट दर।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -6287,7 +6287,7 @@ module.exports = {
         },
         {
           name: "नकदी_प्रवाह_राशियां",
-          detail: "A range of cells containing the income or payments associated with the investment.",
+          detail: "कोशिकाओं की एक श्रेणी जिसमें निवेश से संबंधित आय या भुगतान हैं।",
           example: "B2:B25",
           require: "m",
           repeat: "n",
@@ -6295,7 +6295,7 @@ module.exports = {
         },
         {
           name: "नकदी_प्रवाह_तिथियां",
-          detail: "A range of cells with dates corresponding to the cash flows in `cashflow_amounts`.",
+          detail: "`नकदी_प्रवाह_राशियां` में नकदी प्रवाहों से संबंधित तारीखों वाली कोशिकाओं की एक श्रेणी।",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6306,8 +6306,8 @@ module.exports = {
     {
       n: "CUMIPMT",
       t: 8,
-      d: "Calculates the cumulative interest over a range of payment periods for an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Cumulative interest paid over a set of periods.",
+      d: "स्थिर-राशि की आवधिक भुगतानों और स्थिर ब्याज दर के आधार पर, किसी निवेश के भुगतान अवधियों की एक श्रेणी में संचयी ब्याज परिकलित करता है।",
+      a: "अवधियों के एक समूह में भुगतान किया गया संचयी ब्याज।",
       m: [
         6,
         6
@@ -6315,7 +6315,7 @@ module.exports = {
       p: [
         {
           name: "दर",
-          detail: "The interest rate.",
+          detail: "ब्याज दर।",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6323,7 +6323,7 @@ module.exports = {
         },
         {
           name: "अवधियों_की_संख्या",
-          detail: "The number of payments to be made.",
+          detail: "किए जाने वाले भुगतानों की संख्या।",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6331,7 +6331,7 @@ module.exports = {
         },
         {
           name: "वर्तमान_मूल्य",
-          detail: "The current value of the annuity.",
+          detail: "वार्षिकी का वर्तमान मूल्य।",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6339,7 +6339,7 @@ module.exports = {
         },
         {
           name: "पहली_अवधि",
-          detail: "The number of the payment period to begin the cumulative calculation.",
+          detail: "संचयी गणना शुरू करने के लिए भुगतान अवधि की संख्या।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6347,7 +6347,7 @@ module.exports = {
         },
         {
           name: "अंतिम_अवधि",
-          detail: "The number of the payment period to end the cumulative calculation.",
+          detail: "संचयी गणना समाप्त करने के लिए भुगतान अवधि की संख्या।",
           example: "5",
           require: "m",
           repeat: "n",
@@ -6355,7 +6355,7 @@ module.exports = {
         },
         {
           name: "अंत_या_आरंभ",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "क्या भुगतान प्रत्येक अवधि के अंत में (`0`) या शुरुआत में (`1`) देय हैं।",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6366,8 +6366,8 @@ module.exports = {
     {
       n: "PMT",
       t: 8,
-      d: "Calculates the periodic payment for an annuity investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Periodic payment for an annuity investment.",
+      d: "स्थिर-राशि की आवधिक भुगतानों और स्थिर ब्याज दर के आधार पर, किसी वार्षिकी निवेश के लिए आवधिक भुगतान परिकलित करता है।",
+      a: "किसी वार्षिकी निवेश के लिए आवधिक भुगतान।",
       m: [
         3,
         5
@@ -6375,7 +6375,7 @@ module.exports = {
       p: [
         {
           name: "दर",
-          detail: "The interest rate.",
+          detail: "ब्याज दर।",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -6383,7 +6383,7 @@ module.exports = {
         },
         {
           name: "अवधियों_की_संख्या",
-          detail: "The number of payments to be made.",
+          detail: "किए जाने वाले भुगतानों की संख्या।",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6391,7 +6391,7 @@ module.exports = {
         },
         {
           name: "वर्तमान_मूल्य",
-          detail: "The current value of the annuity.",
+          detail: "वार्षिकी का वर्तमान मूल्य।",
           example: " 100000",
           require: "m",
           repeat: "n",
@@ -6399,7 +6399,7 @@ module.exports = {
         },
         {
           name: "भविष्य_मूल्य",
-          detail: "The future value remaining after the final payment has been made.",
+          detail: "अंतिम भुगतान किए जाने के बाद शेष भविष्य का मूल्य।",
           example: "D2",
           require: "m",
           repeat: "n",
@@ -6407,7 +6407,7 @@ module.exports = {
         },
         {
           name: "अंत_या_आरंभ",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "क्या भुगतान प्रत्येक अवधि के अंत में (`0`) या शुरुआत में (`1`) देय हैं।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6418,8 +6418,8 @@ module.exports = {
     {
       n: "IPMT",
       t: 8,
-      d: "Calculates the payment on interest for an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Payment on interest for an investment.",
+      d: "स्थिर-राशि की आवधिक भुगतानों और स्थिर ब्याज दर के आधार पर, किसी निवेश के लिए ब्याज पर भुगतान परिकलित करता है।",
+      a: "किसी निवेश के लिए ब्याज पर भुगतान।",
       m: [
         4,
         6
@@ -6427,7 +6427,7 @@ module.exports = {
       p: [
         {
           name: "दर",
-          detail: "The interest rate.",
+          detail: "ब्याज दर।",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6435,7 +6435,7 @@ module.exports = {
         },
         {
           name: "अवधि",
-          detail: "The amortization period, in terms of number of periods.",
+          detail: "परिशोधन अवधि, अवधियों की संख्या के रूप में।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6443,7 +6443,7 @@ module.exports = {
         },
         {
           name: "अवधियों_की_संख्या",
-          detail: "The number of payments to be made.",
+          detail: "किए जाने वाले भुगतानों की संख्या।",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6451,7 +6451,7 @@ module.exports = {
         },
         {
           name: "वर्तमान_मूल्य",
-          detail: "The current value of the annuity.",
+          detail: "वार्षिकी का वर्तमान मूल्य।",
           example: "80000",
           require: "m",
           repeat: "n",
@@ -6459,7 +6459,7 @@ module.exports = {
         },
         {
           name: "भविष्य_मूल्य",
-          detail: "The future value remaining after the final payment has been made.",
+          detail: "अंतिम भुगतान किए जाने के बाद शेष भविष्य का मूल्य।",
           example: "E2",
           require: "m",
           repeat: "n",
@@ -6467,7 +6467,7 @@ module.exports = {
         },
         {
           name: "अंत_या_आरंभ",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "क्या भुगतान प्रत्येक अवधि के अंत में (`0`) या शुरुआत में (`1`) देय हैं।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6478,8 +6478,8 @@ module.exports = {
     {
       n: "PPMT",
       t: 8,
-      d: "Calculates the payment on the principal of an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Payment on the principal of an investment.",
+      d: "स्थिर-राशि की आवधिक भुगतानों और स्थिर ब्याज दर के आधार पर, किसी निवेश के मूलधन पर भुगतान परिकलित करता है।",
+      a: "किसी निवेश के मूलधन पर भुगतान।",
       m: [
         4,
         6
@@ -6487,7 +6487,7 @@ module.exports = {
       p: [
         {
           name: "दर",
-          detail: "The interest rate.",
+          detail: "ब्याज दर।",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6495,7 +6495,7 @@ module.exports = {
         },
         {
           name: "अवधि",
-          detail: "The amortization period, in terms of number of periods.",
+          detail: "परिशोधन अवधि, अवधियों की संख्या के रूप में।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6503,7 +6503,7 @@ module.exports = {
         },
         {
           name: "अवधियों_की_संख्या",
-          detail: "The number of payments to be made.",
+          detail: "किए जाने वाले भुगतानों की संख्या।",
           example: "3*12",
           require: "m",
           repeat: "n",
@@ -6511,7 +6511,7 @@ module.exports = {
         },
         {
           name: "वर्तमान_मूल्य",
-          detail: "The current value of the annuity.",
+          detail: "वार्षिकी का वर्तमान मूल्य।",
           example: "100000",
           require: "m",
           repeat: "n",
@@ -6519,7 +6519,7 @@ module.exports = {
         },
         {
           name: "भविष्य_मूल्य",
-          detail: "The future value remaining after the final payment has been made.",
+          detail: "अंतिम भुगतान किए जाने के बाद शेष भविष्य का मूल्य।",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6527,7 +6527,7 @@ module.exports = {
         },
         {
           name: "अंत_या_आरंभ",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "क्या भुगतान प्रत्येक अवधि के अंत में (`0`) या शुरुआत में (`1`) देय हैं।",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6538,8 +6538,8 @@ module.exports = {
     {
       n: "INTRATE",
       t: 8,
-      d: "Calculates the effective interest rate generated when an investment is purchased at one price and sold at another with no interest or dividends generated by the investment itself.",
-      a: "Calculates effective interest rate.",
+      d: "जब किसी निवेश को एक मूल्य पर खरीदा जाता है और दूसरे मूल्य पर बेचा जाता है, बिना निवेश द्वारा स्वयं कोई ब्याज या लाभांश उत्पन्न किए, तब उत्पन्न प्रभावी ब्याज दर परिकलित करता है।",
+      a: "प्रभावी ब्याज दर परिकलित करता है।",
       m: [
         4,
         5
@@ -6547,7 +6547,7 @@ module.exports = {
       p: [
         {
           name: "खरीद_तिथि",
-          detail: "The date of purchase of the investment.",
+          detail: "निवेश की खरीद तिथि।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6555,7 +6555,7 @@ module.exports = {
         },
         {
           name: "बिक्री_तिथि",
-          detail: "The date of sale of the investment.",
+          detail: "निवेश की बिक्री तिथि।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6563,7 +6563,7 @@ module.exports = {
         },
         {
           name: "खरीद_मूल्य",
-          detail: "The price at which the investment was purchased.",
+          detail: "वह मूल्य जिस पर निवेश खरीदा गया था।",
           example: "100000",
           require: "m",
           repeat: "n",
@@ -6571,7 +6571,7 @@ module.exports = {
         },
         {
           name: "बिक्री_मूल्य",
-          detail: "The price at which the investment was sold.",
+          detail: "वह मूल्य जिस पर निवेश बेचा गया था।",
           example: "101200",
           require: "m",
           repeat: "n",
@@ -6579,7 +6579,7 @@ module.exports = {
         },
         {
           name: "दिन_गणना_परिपाटी",
-          detail: "An indicator of what day count method to use.",
+          detail: "उपयोग की जाने वाली दिन-गणना पद्धति का संकेतक।",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6590,8 +6590,8 @@ module.exports = {
     {
       n: "PRICE",
       t: 8,
-      d: "Calculates the price of a security paying periodic interest, such as a US Treasury Bond, based on expected yield.",
-      a: "Price of a security paying periodic interest.",
+      d: "अपेक्षित प्रतिफल के आधार पर, आवधिक ब्याज का भुगतान करने वाली प्रतिभूति, जैसे कि अमेरिकी ट्रेजरी बॉन्ड, का मूल्य परिकलित करता है।",
+      a: "आवधिक ब्याज का भुगतान करने वाली प्रतिभूति का मूल्य।",
       m: [
         6,
         7
@@ -6599,7 +6599,7 @@ module.exports = {
       p: [
         {
           name: "निपटान_तिथि",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "प्रतिभूति की निपटान तिथि, जारी करने के बाद की वह तारीख जब प्रतिभूति खरीदार को दी जाती है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6607,7 +6607,7 @@ module.exports = {
         },
         {
           name: "परिपक्वता",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "प्रतिभूति की परिपक्वता या समाप्ति तिथि, जब इसे अंकित या सम मूल्य पर भुनाया जा सकता है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6615,7 +6615,7 @@ module.exports = {
         },
         {
           name: "दर",
-          detail: "The annualized rate of interest.",
+          detail: "वार्षिक ब्याज दर।",
           example: "0.057",
           require: "m",
           repeat: "n",
@@ -6623,7 +6623,7 @@ module.exports = {
         },
         {
           name: "प्रतिफल",
-          detail: "The expected annual yield of the security.",
+          detail: "प्रतिभूति की अपेक्षित वार्षिक प्रतिफल।",
           example: "0.065",
           require: "m",
           repeat: "n",
@@ -6631,7 +6631,7 @@ module.exports = {
         },
         {
           name: "मोचन_मूल्य",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "प्रति 100 अंकित मूल्य पर मोचन राशि।",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6639,7 +6639,7 @@ module.exports = {
         },
         {
           name: "आवृत्ति",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "प्रति वर्ष ब्याज या कूपन भुगतानों की संख्या (1, 2, या 4)।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6647,7 +6647,7 @@ module.exports = {
         },
         {
           name: "दिन_गणना_परिपाटी",
-          detail: "An indicator of what day count method to use.",
+          detail: "उपयोग की जाने वाली दिन-गणना पद्धति का संकेतक।",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6658,8 +6658,8 @@ module.exports = {
     {
       n: "PRICEDISC",
       t: 8,
-      d: "Calculates the price of a discount (non-interest-bearing) security, based on expected yield.",
-      a: "Price of a discount security.",
+      d: "अपेक्षित प्रतिफल के आधार पर, किसी छूट (गैर-ब्याज-वाहक) प्रतिभूति का मूल्य परिकलित करता है।",
+      a: "किसी छूट प्रतिभूति का मूल्य।",
       m: [
         4,
         5
@@ -6667,7 +6667,7 @@ module.exports = {
       p: [
         {
           name: "निपटान_तिथि",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "प्रतिभूति की निपटान तिथि, जारी करने के बाद की वह तारीख जब प्रतिभूति खरीदार को दी जाती है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6675,7 +6675,7 @@ module.exports = {
         },
         {
           name: "परिपक्वता",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "प्रतिभूति की परिपक्वता या समाप्ति तिथि, जब इसे अंकित या सम मूल्य पर भुनाया जा सकता है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6683,7 +6683,7 @@ module.exports = {
         },
         {
           name: "छूट_दर",
-          detail: "The discount rate of the security at time of purchase.",
+          detail: "खरीद के समय प्रतिभूति की छूट दर।",
           example: "0.0525",
           require: "m",
           repeat: "n",
@@ -6691,7 +6691,7 @@ module.exports = {
         },
         {
           name: "मोचन_मूल्य",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "प्रति 100 अंकित मूल्य पर मोचन राशि।",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6699,7 +6699,7 @@ module.exports = {
         },
         {
           name: "दिन_गणना_परिपाटी",
-          detail: "An indicator of what day count method to use.",
+          detail: "उपयोग की जाने वाली दिन-गणना पद्धति का संकेतक।",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6710,8 +6710,8 @@ module.exports = {
     {
       n: "PRICEMAT",
       t: 8,
-      d: "Calculates the price of a security paying interest at maturity, based on expected yield.",
-      a: "Price of security paying interest at maturity.",
+      d: "अपेक्षित प्रतिफल के आधार पर, परिपक्वता पर ब्याज का भुगतान करने वाली प्रतिभूति का मूल्य परिकलित करता है।",
+      a: "परिपक्वता पर ब्याज का भुगतान करने वाली प्रतिभूति का मूल्य।",
       m: [
         5,
         6
@@ -6719,7 +6719,7 @@ module.exports = {
       p: [
         {
           name: "निपटान_तिथि",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "प्रतिभूति की निपटान तिथि, जारी करने के बाद की वह तारीख जब प्रतिभूति खरीदार को दी जाती है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6727,7 +6727,7 @@ module.exports = {
         },
         {
           name: "परिपक्वता",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "प्रतिभूति की परिपक्वता या समाप्ति तिथि, जब इसे अंकित या सम मूल्य पर भुनाया जा सकता है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6735,7 +6735,7 @@ module.exports = {
         },
         {
           name: "जारी_करने_की_तिथि",
-          detail: "The date the security was initially issued.",
+          detail: "वह तारीख जब प्रतिभूति प्रारंभ में जारी की गई थी।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6743,7 +6743,7 @@ module.exports = {
         },
         {
           name: "दर",
-          detail: "The annualized rate of interest.",
+          detail: "वार्षिक ब्याज दर।",
           example: "0.061",
           require: "m",
           repeat: "n",
@@ -6751,7 +6751,7 @@ module.exports = {
         },
         {
           name: "प्रतिफल",
-          detail: "The expected annual yield of the security.",
+          detail: "प्रतिभूति की अपेक्षित वार्षिक प्रतिफल।",
           example: "0.061",
           require: "m",
           repeat: "n",
@@ -6759,7 +6759,7 @@ module.exports = {
         },
         {
           name: "दिन_गणना_परिपाटी",
-          detail: "An indicator of what day count method to use.",
+          detail: "उपयोग की जाने वाली दिन-गणना पद्धति का संकेतक।",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6770,8 +6770,8 @@ module.exports = {
     {
       n: "RECEIVED",
       t: 8,
-      d: "Calculates the amount received at maturity for an investment in fixed-income securities purchased on a given date.",
-      a: "Amount received at maturity for a security.",
+      d: "किसी दी गई तारीख को खरीदी गई निश्चित-आय प्रतिभूतियों में निवेश के लिए परिपक्वता पर प्राप्त राशि परिकलित करता है।",
+      a: "किसी प्रतिभूति के लिए परिपक्वता पर प्राप्त राशि।",
       m: [
         4,
         5
@@ -6779,7 +6779,7 @@ module.exports = {
       p: [
         {
           name: "निपटान_तिथि",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "प्रतिभूति की निपटान तिथि, जारी करने के बाद की वह तारीख जब प्रतिभूति खरीदार को दी जाती है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6787,7 +6787,7 @@ module.exports = {
         },
         {
           name: "परिपक्वता",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "प्रतिभूति की परिपक्वता या समाप्ति तिथि, जब इसे अंकित या सम मूल्य पर भुनाया जा सकता है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6795,7 +6795,7 @@ module.exports = {
         },
         {
           name: "निवेश",
-          detail: "The amount invested (irrespective of face value of each security).",
+          detail: "निवेशित राशि (प्रत्येक प्रतिभूति के अंकित मूल्य की परवाह किए बिना)।",
           example: "10000000",
           require: "m",
           repeat: "n",
@@ -6803,7 +6803,7 @@ module.exports = {
         },
         {
           name: "छूट_दर",
-          detail: "The discount rate of the security invested in.",
+          detail: "जिस प्रतिभूति में निवेश किया गया है उसकी छूट दर।",
           example: "0.0575",
           require: "m",
           repeat: "n",
@@ -6811,7 +6811,7 @@ module.exports = {
         },
         {
           name: "दिन_गणना_परिपाटी",
-          detail: "An indicator of what day count method to use.",
+          detail: "उपयोग की जाने वाली दिन-गणना पद्धति का संकेतक।",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6822,8 +6822,8 @@ module.exports = {
     {
       n: "DISC",
       t: 8,
-      d: "Calculates the discount rate of a security based on price.",
-      a: "The discount rate of a security based on price.",
+      d: "मूल्य के आधार पर किसी प्रतिभूति की छूट दर परिकलित करता है।",
+      a: "मूल्य के आधार पर किसी प्रतिभूति की छूट दर।",
       m: [
         4,
         5
@@ -6831,7 +6831,7 @@ module.exports = {
       p: [
         {
           name: "निपटान_तिथि",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "प्रतिभूति की निपटान तिथि, जारी करने के बाद की वह तारीख जब प्रतिभूति खरीदार को दी जाती है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6839,7 +6839,7 @@ module.exports = {
         },
         {
           name: "परिपक्वता",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "प्रतिभूति की परिपक्वता या समाप्ति तिथि, जब इसे अंकित या सम मूल्य पर भुनाया जा सकता है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6847,7 +6847,7 @@ module.exports = {
         },
         {
           name: "मूल्य",
-          detail: "The price at which the security is bought per 100 face value.",
+          detail: "वह मूल्य जिस पर प्रतिभूति 100 के अंकित मूल्य के लिए खरीदी जाती है।",
           example: "97.975",
           require: "m",
           repeat: "n",
@@ -6855,7 +6855,7 @@ module.exports = {
         },
         {
           name: "मोचन_मूल्य",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "प्रति 100 अंकित मूल्य पर मोचन राशि।",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6863,7 +6863,7 @@ module.exports = {
         },
         {
           name: "दिन_गणना_परिपाटी",
-          detail: "An indicator of what day count method to use.",
+          detail: "उपयोग की जाने वाली दिन-गणना पद्धति का संकेतक।",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6874,8 +6874,8 @@ module.exports = {
     {
       n: "NPER",
       t: 8,
-      d: "Calculates the number of payment periods for an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Number of payment periods for an investment.",
+      d: "स्थिर-राशि की आवधिक भुगतानों और स्थिर ब्याज दर के आधार पर, किसी निवेश के लिए भुगतान अवधियों की संख्या परिकलित करता है।",
+      a: "किसी निवेश के लिए भुगतान अवधियों की संख्या।",
       m: [
         3,
         5
@@ -6883,7 +6883,7 @@ module.exports = {
       p: [
         {
           name: "दर",
-          detail: "The interest rate.",
+          detail: "ब्याज दर।",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6891,7 +6891,7 @@ module.exports = {
         },
         {
           name: "भुगतान_राशि",
-          detail: "The amount of each payment made.",
+          detail: "किए गए प्रत्येक भुगतान की राशि।",
           example: "500",
           require: "m",
           repeat: "n",
@@ -6899,7 +6899,7 @@ module.exports = {
         },
         {
           name: "वर्तमान_मूल्य",
-          detail: "The current value of the annuity.",
+          detail: "वार्षिकी का वर्तमान मूल्य।",
           example: "40000",
           require: "m",
           repeat: "n",
@@ -6907,7 +6907,7 @@ module.exports = {
         },
         {
           name: "भविष्य_मूल्य",
-          detail: "The future value remaining after the final payment has been made.",
+          detail: "अंतिम भुगतान किए जाने के बाद शेष भविष्य का मूल्य।",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6915,7 +6915,7 @@ module.exports = {
         },
         {
           name: "अंत_या_आरंभ",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "क्या भुगतान प्रत्येक अवधि के अंत में (`0`) या शुरुआत में (`1`) देय हैं।",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6926,8 +6926,8 @@ module.exports = {
     {
       n: "SLN",
       t: 8,
-      d: "Calculates the depreciation of an asset for one period using the straight-line method.",
-      a: "Depreciation of asset using the straight-line method.",
+      d: "सीधी-रेखा विधि का उपयोग करके एक अवधि के लिए किसी परिसंपत्ति का मूल्यह्रास परिकलित करता है।",
+      a: "सीधी-रेखा विधि से परिसंपत्ति का मूल्यह्रास।",
       m: [
         3,
         3
@@ -6935,7 +6935,7 @@ module.exports = {
       p: [
         {
           name: "लागत",
-          detail: "The initial cost of the asset.",
+          detail: "परिसंपत्ति की प्रारंभिक लागत।",
           example: "300000",
           require: "m",
           repeat: "n",
@@ -6943,7 +6943,7 @@ module.exports = {
         },
         {
           name: "अवशिष्ट_मूल्य",
-          detail: "The value of the asset at the end of depreciation.",
+          detail: "मूल्यह्रास के अंत में परिसंपत्ति का मान।",
           example: "75000",
           require: "m",
           repeat: "n",
@@ -6951,7 +6951,7 @@ module.exports = {
         },
         {
           name: "उपयोगी_आयु",
-          detail: "The number of periods over which the asset is depreciated.",
+          detail: "उन अवधियों की संख्या जिन पर परिसंपत्ति का मूल्यह्रास किया जाता है।",
           example: "10",
           require: "m",
           repeat: "n",
@@ -6962,8 +6962,8 @@ module.exports = {
     {
       n: "DURATION",
       t: 8,
-      d: "Calculates the number of compounding periods required for an investment of a specified present value appreciating at a given rate to reach a target value.",
-      a: "Number of periods for an investment to reach a value.",
+      d: "किसी निर्दिष्ट वर्तमान मूल्य के निवेश को, दिए गए दर पर बढ़ते हुए, लक्ष्य मान तक पहुंचने के लिए आवश्यक चक्रवृद्धि अवधियों की संख्या परिकलित करता है।",
+      a: "किसी निवेश को किसी मान तक पहुंचने में लगने वाली अवधियों की संख्या।",
       m: [
         5,
         6
@@ -6971,7 +6971,7 @@ module.exports = {
       p: [
         {
           name: "निपटान_तिथि",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "प्रतिभूति की निपटान तिथि, जारी करने के बाद की वह तारीख जब प्रतिभूति खरीदार को दी जाती है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6979,7 +6979,7 @@ module.exports = {
         },
         {
           name: "परिपक्वता",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "प्रतिभूति की परिपक्वता या समाप्ति तिथि, जब इसे अंकित या सम मूल्य पर भुनाया जा सकता है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6987,7 +6987,7 @@ module.exports = {
         },
         {
           name: "दर",
-          detail: "The annualized rate of interest.",
+          detail: "वार्षिक ब्याज दर।",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -6995,7 +6995,7 @@ module.exports = {
         },
         {
           name: "प्रतिफल",
-          detail: "The expected annual yield of the security.",
+          detail: "प्रतिभूति की अपेक्षित वार्षिक प्रतिफल।",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -7003,7 +7003,7 @@ module.exports = {
         },
         {
           name: "आवृत्ति",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "प्रति वर्ष ब्याज या कूपन भुगतानों की संख्या (1, 2, या 4)।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -7011,7 +7011,7 @@ module.exports = {
         },
         {
           name: "दिन_गणना_परिपाटी",
-          detail: "An indicator of what day count method to use.",
+          detail: "उपयोग की जाने वाली दिन-गणना पद्धति का संकेतक।",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7022,8 +7022,8 @@ module.exports = {
     {
       n: "MDURATION",
       t: 8,
-      d: "Calculates the modified Macaulay duration of a security paying periodic interest, such as a US Treasury Bond, based on expected yield.",
-      a: "Modified Macaulay duration.",
+      d: "अपेक्षित प्रतिफल के आधार पर, आवधिक ब्याज का भुगतान करने वाली प्रतिभूति, जैसे कि अमेरिकी ट्रेजरी बॉन्ड, की संशोधित मैकाले अवधि परिकलित करता है।",
+      a: "संशोधित मैकाले अवधि।",
       m: [
         5,
         6
@@ -7031,7 +7031,7 @@ module.exports = {
       p: [
         {
           name: "निपटान_तिथि",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "प्रतिभूति की निपटान तिथि, जारी करने के बाद की वह तारीख जब प्रतिभूति खरीदार को दी जाती है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -7039,7 +7039,7 @@ module.exports = {
         },
         {
           name: "परिपक्वता",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "प्रतिभूति की परिपक्वता या समाप्ति तिथि, जब इसे अंकित या सम मूल्य पर भुनाया जा सकता है।",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -7047,7 +7047,7 @@ module.exports = {
         },
         {
           name: "दर",
-          detail: "The annualized rate of interest.",
+          detail: "वार्षिक ब्याज दर।",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -7055,7 +7055,7 @@ module.exports = {
         },
         {
           name: "प्रतिफल",
-          detail: "The expected annual yield of the security.",
+          detail: "प्रतिभूति की अपेक्षित वार्षिक प्रतिफल।",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -7063,7 +7063,7 @@ module.exports = {
         },
         {
           name: "आवृत्ति",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "प्रति वर्ष ब्याज या कूपन भुगतानों की संख्या (1, 2, या 4)।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -7071,7 +7071,7 @@ module.exports = {
         },
         {
           name: "दिन_गणना_परिपाटी",
-          detail: "An indicator of what day count method to use.",
+          detail: "उपयोग की जाने वाली दिन-गणना पद्धति का संकेतक।",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7082,8 +7082,8 @@ module.exports = {
     {
       n: "BIN2DEC",
       t: 9,
-      d: "Converts a signed binary number to decimal format.",
-      a: "Converts a signed binary number to decimal format.",
+      d: "किसी हस्ताक्षरित द्विआधारी संख्या को दशमलव प्रारूप में बदलता है।",
+      a: "किसी हस्ताक्षरित द्विआधारी संख्या को दशमलव प्रारूप में बदलता है।",
       m: [
         1,
         1
@@ -7091,7 +7091,7 @@ module.exports = {
       p: [
         {
           name: "चिह्नित_द्विआधारी_संख्या",
-          detail: "The signed 10-bit binary value to be converted to decimal, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह हस्ताक्षरित 10-बिट द्विआधारी मान जिसे दशमलव में बदलना है।",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7102,8 +7102,8 @@ module.exports = {
     {
       n: "BIN2HEX",
       t: 9,
-      d: "Converts a signed binary number to signed hexadecimal format.",
-      a: "Converts a binary number to hexadecimal.",
+      d: "किसी हस्ताक्षरित द्विआधारी संख्या को हस्ताक्षरित षोडश आधारी प्रारूप में बदलता है।",
+      a: "किसी द्विआधारी संख्या को षोडश आधारी में बदलता है।",
       m: [
         1,
         2
@@ -7111,7 +7111,7 @@ module.exports = {
       p: [
         {
           name: "चिह्नित_द्विआधारी_संख्या",
-          detail: "The signed 10-bit binary value to be converted to signed hexademical, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह हस्ताक्षरित 10-बिट द्विआधारी मान जिसे हस्ताक्षरित षोडश आधारी में बदलना है।",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7119,7 +7119,7 @@ module.exports = {
         },
         {
           name: "सार्थक_अंक",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "परिणाम में सुनिश्चित किए जाने वाले सार्थक अंकों की संख्या।",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7130,8 +7130,8 @@ module.exports = {
     {
       n: "BIN2OCT",
       t: 9,
-      d: "Converts a signed binary number to signed octal format.",
-      a: "Converts a binary number to octal.",
+      d: "किसी हस्ताक्षरित द्विआधारी संख्या को हस्ताक्षरित अष्टाधारी प्रारूप में बदलता है।",
+      a: "किसी द्विआधारी संख्या को अष्टाधारी में बदलता है।",
       m: [
         1,
         2
@@ -7139,7 +7139,7 @@ module.exports = {
       p: [
         {
           name: "चिह्नित_द्विआधारी_संख्या",
-          detail: "The signed 10-bit binary value to be converted to signed octal, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह हस्ताक्षरित 10-बिट द्विआधारी मान जिसे हस्ताक्षरित अष्टाधारी में बदलना है।",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7147,7 +7147,7 @@ module.exports = {
         },
         {
           name: "सार्थक_अंक",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "परिणाम में सुनिश्चित किए जाने वाले सार्थक अंकों की संख्या।",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7158,8 +7158,8 @@ module.exports = {
     {
       n: "DEC2BIN",
       t: 9,
-      d: "Converts a decimal number to signed binary format.",
-      a: "Converts a decimal number to signed binary format.",
+      d: "किसी दशमलव संख्या को हस्ताक्षरित द्विआधारी प्रारूप में बदलता है।",
+      a: "किसी दशमलव संख्या को हस्ताक्षरित द्विआधारी प्रारूप में बदलता है।",
       m: [
         1,
         2
@@ -7167,7 +7167,7 @@ module.exports = {
       p: [
         {
           name: "दशमलव_संख्या",
-          detail: "The decimal value to be converted to signed binary, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह दशमलव मान जिसे हस्ताक्षरित द्विआधारी में बदलना है।",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7175,7 +7175,7 @@ module.exports = {
         },
         {
           name: "सार्थक_अंक",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "परिणाम में सुनिश्चित किए जाने वाले सार्थक अंकों की संख्या।",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7186,8 +7186,8 @@ module.exports = {
     {
       n: "DEC2HEX",
       t: 9,
-      d: "Converts a decimal number to signed hexadecimal format.",
-      a: "Converts a decimal number to hexadecimal.",
+      d: "किसी दशमलव संख्या को हस्ताक्षरित षोडश आधारी प्रारूप में बदलता है।",
+      a: "किसी दशमलव संख्या को षोडश आधारी में बदलता है।",
       m: [
         1,
         2
@@ -7195,7 +7195,7 @@ module.exports = {
       p: [
         {
           name: "दशमलव_संख्या",
-          detail: "The decimal value to be converted to signed hexadecimal, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह दशमलव मान जिसे हस्ताक्षरित षोडश आधारी में बदलना है।",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7203,7 +7203,7 @@ module.exports = {
         },
         {
           name: "सार्थक_अंक",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "परिणाम में सुनिश्चित किए जाने वाले सार्थक अंकों की संख्या।",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7214,8 +7214,8 @@ module.exports = {
     {
       n: "DEC2OCT",
       t: 9,
-      d: "Converts a decimal number to signed octal format.",
-      a: "Converts a decimal number to signed octal format.",
+      d: "किसी दशमलव संख्या को हस्ताक्षरित अष्टाधारी प्रारूप में बदलता है।",
+      a: "किसी दशमलव संख्या को हस्ताक्षरित अष्टाधारी प्रारूप में बदलता है।",
       m: [
         1,
         2
@@ -7223,7 +7223,7 @@ module.exports = {
       p: [
         {
           name: "दशमलव_संख्या",
-          detail: "The decimal value to be converted to signed octal, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह दशमलव मान जिसे हस्ताक्षरित अष्टाधारी में बदलना है।",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7231,7 +7231,7 @@ module.exports = {
         },
         {
           name: "सार्थक_अंक",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "परिणाम में सुनिश्चित किए जाने वाले सार्थक अंकों की संख्या।",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7242,8 +7242,8 @@ module.exports = {
     {
       n: "HEX2BIN",
       t: 9,
-      d: "Converts a signed hexadecimal number to signed binary format.",
-      a: "Converts a hexadecimal number to binary.",
+      d: "किसी हस्ताक्षरित षोडश आधारी संख्या को हस्ताक्षरित द्विआधारी प्रारूप में बदलता है।",
+      a: "किसी षोडश आधारी संख्या को द्विआधारी में बदलता है।",
       m: [
         1,
         2
@@ -7251,7 +7251,7 @@ module.exports = {
       p: [
         {
           name: "चिह्नित_हेक्साडेसिमल_संख्या",
-          detail: "The signed 40-bit hexadecimal value to be converted to signed binary, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह हस्ताक्षरित 40-बिट षोडश आधारी मान जिसे हस्ताक्षरित द्विआधारी में बदलना है।",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7259,7 +7259,7 @@ module.exports = {
         },
         {
           name: "सार्थक_अंक",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "परिणाम में सुनिश्चित किए जाने वाले सार्थक अंकों की संख्या।",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7270,8 +7270,8 @@ module.exports = {
     {
       n: "HEX2DEC",
       t: 9,
-      d: "Converts a signed hexadecimal number to decimal format.",
-      a: "Converts a hexadecimal number to decimal.",
+      d: "किसी हस्ताक्षरित षोडश आधारी संख्या को दशमलव प्रारूप में बदलता है।",
+      a: "किसी षोडश आधारी संख्या को दशमलव में बदलता है।",
       m: [
         1,
         1
@@ -7279,7 +7279,7 @@ module.exports = {
       p: [
         {
           name: "चिह्नित_हेक्साडेसिमल_संख्या",
-          detail: "The signed 40-bit hexadecimal value to be converted to decimal, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह हस्ताक्षरित 40-बिट षोडश आधारी मान जिसे दशमलव में बदलना है।",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7290,8 +7290,8 @@ module.exports = {
     {
       n: "HEX2OCT",
       t: 9,
-      d: "Converts a signed hexadecimal number to signed octal format.",
-      a: "Converts a hexadecimal number to octal.",
+      d: "किसी हस्ताक्षरित षोडश आधारी संख्या को हस्ताक्षरित अष्टाधारी प्रारूप में बदलता है।",
+      a: "किसी षोडश आधारी संख्या को अष्टाधारी में बदलता है।",
       m: [
         1,
         2
@@ -7299,7 +7299,7 @@ module.exports = {
       p: [
         {
           name: "चिह्नित_हेक्साडेसिमल_संख्या",
-          detail: "The signed 40-bit hexadecimal value to be converted to signed octal, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह हस्ताक्षरित 40-बिट षोडश आधारी मान जिसे हस्ताक्षरित अष्टाधारी में बदलना है।",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7307,7 +7307,7 @@ module.exports = {
         },
         {
           name: "सार्थक_अंक",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "परिणाम में सुनिश्चित किए जाने वाले सार्थक अंकों की संख्या।",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7318,8 +7318,8 @@ module.exports = {
     {
       n: "OCT2BIN",
       t: 9,
-      d: "Converts a signed octal number to signed binary format.",
-      a: "Converts an octal number to binary.",
+      d: "किसी हस्ताक्षरित अष्टाधारी संख्या को हस्ताक्षरित द्विआधारी प्रारूप में बदलता है।",
+      a: "किसी अष्टाधारी संख्या को द्विआधारी में बदलता है।",
       m: [
         1,
         2
@@ -7327,7 +7327,7 @@ module.exports = {
       p: [
         {
           name: "चिह्नित_अष्टाधारी_संख्या",
-          detail: "The signed 30-bit octal value to be converted to signed binary, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह हस्ताक्षरित 30-बिट अष्टाधारी मान जिसे हस्ताक्षरित द्विआधारी में बदलना है।",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7335,7 +7335,7 @@ module.exports = {
         },
         {
           name: "सार्थक_अंक",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "परिणाम में सुनिश्चित किए जाने वाले सार्थक अंकों की संख्या।",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7346,8 +7346,8 @@ module.exports = {
     {
       n: "OCT2DEC",
       t: 9,
-      d: "Converts a signed octal number to decimal format.",
-      a: "Converts a signed octal number to decimal format.",
+      d: "किसी हस्ताक्षरित अष्टाधारी संख्या को दशमलव प्रारूप में बदलता है।",
+      a: "किसी हस्ताक्षरित अष्टाधारी संख्या को दशमलव प्रारूप में बदलता है।",
       m: [
         1,
         1
@@ -7355,7 +7355,7 @@ module.exports = {
       p: [
         {
           name: "चिह्नित_अष्टाधारी_संख्या",
-          detail: "The signed 30-bit octal value to be converted to decimal, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह हस्ताक्षरित 30-बिट अष्टाधारी मान जिसे दशमलव में बदलना है।",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7366,8 +7366,8 @@ module.exports = {
     {
       n: "OCT2HEX",
       t: 9,
-      d: "Converts a signed octal number to signed hexadecimal format.",
-      a: "Converts an octal number to hexadecimal.",
+      d: "किसी हस्ताक्षरित अष्टाधारी संख्या को हस्ताक्षरित षोडश आधारी प्रारूप में बदलता है।",
+      a: "किसी अष्टाधारी संख्या को षोडश आधारी में बदलता है।",
       m: [
         1,
         2
@@ -7375,7 +7375,7 @@ module.exports = {
       p: [
         {
           name: "चिह्नित_अष्टाधारी_संख्या",
-          detail: "The signed 30-bit octal value to be converted to signed hexadecimal, provided as a string.",
+          detail: "स्ट्रिंग के रूप में दिया गया वह हस्ताक्षरित 30-बिट अष्टाधारी मान जिसे हस्ताक्षरित षोडश आधारी में बदलना है।",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7383,7 +7383,7 @@ module.exports = {
         },
         {
           name: "सार्थक_अंक",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "परिणाम में सुनिश्चित किए जाने वाले सार्थक अंकों की संख्या।",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7394,8 +7394,8 @@ module.exports = {
     {
       n: "COMPLEX",
       t: 9,
-      d: "Creates a complex number given real and imaginary coefficients.",
-      a: "Creates a complex number.",
+      d: "दिए गए वास्तविक और काल्पनिक गुणांकों से एक सम्मिश्र संख्या बनाता है।",
+      a: "एक सम्मिश्र संख्या बनाता है।",
       m: [
         2,
         3
@@ -7403,7 +7403,7 @@ module.exports = {
       p: [
         {
           name: "वास्तविक_भाग",
-          detail: "The real coefficient.",
+          detail: "वास्तविक गुणांक।",
           example: "3",
           require: "m",
           repeat: "n",
@@ -7411,7 +7411,7 @@ module.exports = {
         },
         {
           name: "काल्पनिक_भाग",
-          detail: "The imaginary coefficient.",
+          detail: "काल्पनिक गुणांक।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -7419,7 +7419,7 @@ module.exports = {
         },
         {
           name: "प्रत्यय",
-          detail: "The suffix for the imaginary coefficient, can only be 'i' or 'j'. If omitted, 'i' will be used.",
+          detail: "काल्पनिक गुणांक के लिए प्रत्यय, जो केवल 'i' या 'j' हो सकता है। यदि छोड़ दिया जाए, तो 'i' का उपयोग किया जाएगा।",
           example: "\"j\"",
           require: "o",
           repeat: "n",
@@ -7430,8 +7430,8 @@ module.exports = {
     {
       n: "IMREAL",
       t: 9,
-      d: "Returns the real coefficient of a complex number.",
-      a: "The real coefficient of a complex number.",
+      d: "किसी सम्मिश्र संख्या का वास्तविक गुणांक देता है।",
+      a: "किसी सम्मिश्र संख्या का वास्तविक गुणांक।",
       m: [
         1,
         1
@@ -7439,7 +7439,7 @@ module.exports = {
       p: [
         {
           name: "सम्मिश्र_संख्या",
-          detail: "The complex number, in the a+bi or a+bj format.",
+          detail: "a+bi या a+bj प्रारूप में सम्मिश्र संख्या।",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7450,8 +7450,8 @@ module.exports = {
     {
       n: "IMAGINARY",
       t: 9,
-      d: "Returns the imaginary coefficient of a complex number.",
-      a: "The imaginary coefficient of a complex number.",
+      d: "किसी सम्मिश्र संख्या का काल्पनिक गुणांक देता है।",
+      a: "किसी सम्मिश्र संख्या का काल्पनिक गुणांक।",
       m: [
         1,
         1
@@ -7459,7 +7459,7 @@ module.exports = {
       p: [
         {
           name: "सम्मिश्र_संख्या",
-          detail: "The complex number, in the a+bi or a+bj format.",
+          detail: "a+bi या a+bj प्रारूप में सम्मिश्र संख्या।",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7470,8 +7470,8 @@ module.exports = {
     {
       n: "IMCONJUGATE",
       t: 9,
-      d: "Returns the complex conjugate of a number.",
-      a: "The complex conjugate of a number.",
+      d: "किसी संख्या का सम्मिश्र संयुग्मी देता है।",
+      a: "किसी संख्या का सम्मिश्र संयुग्मी।",
       m: [
         1,
         1
@@ -7479,7 +7479,7 @@ module.exports = {
       p: [
         {
           name: "संख्या",
-          detail: "The complex number to calculate the conjugate for.",
+          detail: "वह सम्मिश्र संख्या जिसका संयुग्मी परिकलित करना है।",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7490,8 +7490,8 @@ module.exports = {
     {
       n: "IMABS",
       t: 9,
-      d: "Returns absolute value (or modulus) of a complex number.",
-      a: "The absolute value of a complex number.",
+      d: "किसी सम्मिश्र संख्या का निरपेक्ष मान (या मापांक) देता है।",
+      a: "किसी सम्मिश्र संख्या का निरपेक्ष मान।",
       m: [
         1,
         1
@@ -7499,7 +7499,7 @@ module.exports = {
       p: [
         {
           name: "संख्या",
-          detail: "The complex number to calculate the absolute value of.",
+          detail: "वह सम्मिश्र संख्या जिसका निरपेक्ष मान परिकलित करना है।",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7510,8 +7510,8 @@ module.exports = {
     {
       n: "DELTA",
       t: 9,
-      d: "Compare two numeric values, returning 1 if they're equal.",
-      a: "Compare two numeric values.",
+      d: "दो संख्यात्मक मानों की तुलना करता है, यदि वे बराबर हों तो 1 लौटाता है।",
+      a: "दो संख्यात्मक मानों की तुलना करता है।",
       m: [
         1,
         2
@@ -7519,7 +7519,7 @@ module.exports = {
       p: [
         {
           name: "संख्या1",
-          detail: "The first number to compare.",
+          detail: "तुलना के लिए पहली संख्या।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -7527,7 +7527,7 @@ module.exports = {
         },
         {
           name: "संख्या2",
-          detail: "The second number to compare.",
+          detail: "तुलना के लिए दूसरी संख्या।",
           example: "1",
           require: "o",
           repeat: "n",
@@ -7538,8 +7538,8 @@ module.exports = {
     {
       n: "IMSUM",
       t: 9,
-      d: "Returns the sum of a series of complex numbers.",
-      a: "Sum of a series of complex numbers.",
+      d: "सम्मिश्र संख्याओं की एक श्रृंखला का योग देता है।",
+      a: "सम्मिश्र संख्याओं की एक श्रृंखला का योग।",
       m: [
         1,
         255
@@ -7547,7 +7547,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first complex number or range to add together.",
+          detail: "पहली सम्मिश्र संख्या या श्रेणी जिसे जोड़ना है।",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7555,7 +7555,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "Additional complex numbers or ranges to add to `value1`.",
+          detail: "अतिरिक्त सम्मिश्र संख्याएं या श्रेणियां जिन्हें `मान1` में जोड़ना है।",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7566,8 +7566,8 @@ module.exports = {
     {
       n: "IMSUB",
       t: 9,
-      d: "Returns the difference between two complex numbers.",
-      a: "The difference between two complex numbers.",
+      d: "दो सम्मिश्र संख्याओं के बीच का अंतर देता है।",
+      a: "दो सम्मिश्र संख्याओं के बीच का अंतर।",
       m: [
         2,
         2
@@ -7575,7 +7575,7 @@ module.exports = {
       p: [
         {
           name: "पहली_संख्या",
-          detail: "The complex number to subtract second_number from.",
+          detail: "वह सम्मिश्र संख्या जिसमें से second_number घटाना है।",
           example: "\"6+5i\"",
           require: "m",
           repeat: "n",
@@ -7583,7 +7583,7 @@ module.exports = {
         },
         {
           name: "दूसरी_संख्या",
-          detail: "The complex number to subtract from first_number.",
+          detail: "वह सम्मिश्र संख्या जिसे first_number से घटाना है।",
           example: "\"2+3i\"",
           require: "m",
           repeat: "n",
@@ -7594,8 +7594,8 @@ module.exports = {
     {
       n: "IMPRODUCT",
       t: 9,
-      d: "Returns the result of multiplying a series of complex numbers together.",
-      a: "Result of multiplying a series of complex numbers together.",
+      d: "सम्मिश्र संख्याओं की एक श्रृंखला को आपस में गुणा करने का परिणाम देता है।",
+      a: "सम्मिश्र संख्याओं की एक श्रृंखला को आपस में गुणा करने का परिणाम।",
       m: [
         1,
         255
@@ -7603,7 +7603,7 @@ module.exports = {
       p: [
         {
           name: "गुणक1",
-          detail: "The first number or range to calculate for the product.",
+          detail: "गुणनफल की गणना के लिए पहली संख्या या श्रेणी।",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7611,7 +7611,7 @@ module.exports = {
         },
         {
           name: "गुणक2",
-          detail: "Additional complex numbers or ranges to calculate for the product.",
+          detail: "गुणनफल की गणना के लिए अतिरिक्त सम्मिश्र संख्याएं या श्रेणियां।",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7622,8 +7622,8 @@ module.exports = {
     {
       n: "IMDIV",
       t: 9,
-      d: "Returns one complex number divided by another.",
-      a: "One complex number divided by another.",
+      d: "एक सम्मिश्र संख्या को दूसरी से विभाजित करने पर प्राप्त परिणाम देता है।",
+      a: "एक सम्मिश्र संख्या दूसरी से विभाजित।",
       m: [
         2,
         2
@@ -7631,7 +7631,7 @@ module.exports = {
       p: [
         {
           name: "भाज्य",
-          detail: "The complex number to be divided.",
+          detail: "वह सम्मिश्र संख्या जिसे विभाजित करना है।",
           example: "\"11+16i\"",
           require: "m",
           repeat: "n",
@@ -7639,7 +7639,7 @@ module.exports = {
         },
         {
           name: "भाजक",
-          detail: "The complex number to divide by.",
+          detail: "वह सम्मिश्र संख्या जिससे विभाजित करना है।",
           example: "\"3+2i\"",
           require: "m",
           repeat: "n",
@@ -7650,8 +7650,8 @@ module.exports = {
     {
       n: "NOT",
       t: 10,
-      d: "Returns the opposite of a logical value - `NOT(TRUE)` returns `FALSE`; `NOT(FALSE)` returns `TRUE`.",
-      a: "Returns opposite of provided logical value.",
+      d: "किसी तार्किक मान का विपरीत देता है - `NOT(TRUE)` `FALSE` देता है; `NOT(FALSE)` `TRUE` देता है।",
+      a: "दिए गए तार्किक मान का विपरीत देता है।",
       m: [
         1,
         1
@@ -7659,7 +7659,7 @@ module.exports = {
       p: [
         {
           name: "तार्किक_अभिव्यक्ति",
-          detail: "An expression or reference to a cell holding an expression that represents some logical value.",
+          detail: "एक अभिव्यक्ति या किसी कोशिका का संदर्भ जिसमें ऐसी अभिव्यक्ति हो जो कोई तार्किक मान दर्शाती हो।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7670,8 +7670,8 @@ module.exports = {
     {
       n: "TRUE",
       t: 10,
-      d: "Returns the logical value `TRUE`.",
-      a: "Logical value `true`.",
+      d: "तार्किक मान `TRUE` (सत्य) देता है।",
+      a: "तार्किक मान `TRUE`।",
       m: [
         0,
         0
@@ -7681,8 +7681,8 @@ module.exports = {
     {
       n: "FALSE",
       t: 10,
-      d: "Returns the logical value `FALSE`.",
-      a: "Logical value `false`.",
+      d: "तार्किक मान `FALSE` (असत्य) देता है।",
+      a: "तार्किक मान `FALSE`।",
       m: [
         0,
         0
@@ -7692,8 +7692,8 @@ module.exports = {
     {
       n: "AND",
       t: 10,
-      d: "Returns true if all of the provided arguments are logically true, and false if any of the provided arguments are logically false.",
-      a: "Logical `and` operator.",
+      d: "यदि दिए गए सभी तर्क तार्किक रूप से सत्य हैं तो सत्य (true) देता है, और यदि दिए गए किसी भी तर्क तार्किक रूप से असत्य है तो असत्य (false) देता है।",
+      a: "तार्किक \"और\" (AND) संक्रियक।",
       m: [
         1,
         255
@@ -7701,7 +7701,7 @@ module.exports = {
       p: [
         {
           name: "तार्किक_अभिव्यक्ति1",
-          detail: "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`, or an expression that can be coerced to a logical value.",
+          detail: "एक अभिव्यक्ति या किसी कोशिका का संदर्भ जिसमें ऐसी अभिव्यक्ति हो जो कोई तार्किक मान दर्शाती हो, अर्थात `TRUE` या `FALSE`, या ऐसी अभिव्यक्ति जिसे तार्किक मान में बदला जा सके।",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7709,7 +7709,7 @@ module.exports = {
         },
         {
           name: "तार्किक_अभिव्यक्ति2",
-          detail: "More expressions that represent logical values.",
+          detail: "तार्किक मानों को दर्शाने वाली अधिक अभिव्यक्तियां।",
           example: "A3 = \"bar\"",
           require: "o",
           repeat: "y",
@@ -7720,8 +7720,8 @@ module.exports = {
     {
       n: "IFERROR",
       t: 10,
-      d: "Returns the first argument if it is not an error value, otherwise returns the second argument if present, or a blank if the second argument is absent.",
-      a: "Value if it is not an error, otherwise 2nd argument.",
+      d: "यदि पहला तर्क कोई त्रुटि मान नहीं है, तो उसे लौटाता है; अन्यथा, यदि मौजूद हो तो दूसरा तर्क लौटाता है, या यदि दूसरा तर्क अनुपस्थित है तो रिक्त मान लौटाता है।",
+      a: "मान, यदि यह त्रुटि नहीं है; अन्यथा, दूसरा तर्क।",
       m: [
         2,
         2
@@ -7729,7 +7729,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to return if `value` itself is not an error.",
+          detail: "वह मान जिसे लौटाना है यदि `मान` स्वयं कोई त्रुटि नहीं है।",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -7737,7 +7737,7 @@ module.exports = {
         },
         {
           name: "त्रुटि_होने_पर_मान",
-          detail: "The value the function returns if `value` is an error.",
+          detail: "वह मान जो फलन लौटाता है यदि `मान` एक त्रुटि है।",
           example: "\"Error in cell A1\"",
           require: "m",
           repeat: "n",
@@ -7748,8 +7748,8 @@ module.exports = {
     {
       n: "IF",
       t: 10,
-      d: "Returns one value if a logical expression is `TRUE` and another if it is `FALSE`.",
-      a: "Returns value depending on logical expression.",
+      d: "यदि कोई तार्किक अभिव्यक्ति `TRUE` है तो एक मान देता है और यदि `FALSE` है तो दूसरा मान देता है।",
+      a: "तार्किक अभिव्यक्ति के आधार पर मान लौटाता है।",
       m: [
         2,
         3
@@ -7757,7 +7757,7 @@ module.exports = {
       p: [
         {
           name: "तार्किक_अभिव्यक्ति",
-          detail: "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`.",
+          detail: "एक अभिव्यक्ति या किसी कोशिका का संदर्भ जिसमें ऐसी अभिव्यक्ति हो जो कोई तार्किक मान दर्शाती हो, अर्थात `TRUE` या `FALSE`।",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7765,7 +7765,7 @@ module.exports = {
         },
         {
           name: "सत्य_होने_पर_मान",
-          detail: "The value the function returns if `logical_expression` is `TRUE`.",
+          detail: "वह मान जो फलन लौटाता है यदि `तार्किक_अभिव्यक्ति` `TRUE` है।",
           example: "\"A2 is foo\"",
           require: "m",
           repeat: "n",
@@ -7773,7 +7773,7 @@ module.exports = {
         },
         {
           name: "असत्य_होने_पर_मान",
-          detail: "The value the function returns if `logical_expression` is `FALSE`.",
+          detail: "वह मान जो फलन लौटाता है यदि `तार्किक_अभिव्यक्ति` `FALSE` है।",
           example: "\"A2 was false\"",
           require: "o",
           repeat: "n",
@@ -7784,8 +7784,8 @@ module.exports = {
     {
       n: "OR",
       t: 10,
-      d: "Returns true if any of the provided arguments are logically true, and false if all of the provided arguments are logically false.",
-      a: "Logical `or` operator.",
+      d: "यदि दिए गए किसी भी तर्क तार्किक रूप से सत्य है तो सत्य (true) देता है, और यदि दिए गए सभी तर्क तार्किक रूप से असत्य हैं तो असत्य (false) देता है।",
+      a: "तार्किक \"या\" (OR) संक्रियक।",
       m: [
         1,
         255
@@ -7793,7 +7793,7 @@ module.exports = {
       p: [
         {
           name: "तार्किक_अभिव्यक्ति1",
-          detail: "An expression or reference to a cell containing an expression that represents some logical value, i.e. `TRUE` or `FALSE`, or an expression that can be coerced to a logical value.",
+          detail: "एक अभिव्यक्ति या किसी कोशिका का संदर्भ जिसमें ऐसी अभिव्यक्ति हो जो कोई तार्किक मान दर्शाती हो, अर्थात `TRUE` या `FALSE`, या ऐसी अभिव्यक्ति जिसे तार्किक मान में बदला जा सके।",
           example: "A2 = \"foo\"",
           require: "m",
           repeat: "n",
@@ -7801,7 +7801,7 @@ module.exports = {
         },
         {
           name: "तार्किक_अभिव्यक्ति2",
-          detail: "More expressions that evaluate to logical values.",
+          detail: "तार्किक मानों के रूप में मूल्यांकित होने वाली अधिक अभिव्यक्तियां।",
           example: " A3 = \"bar\"",
           require: "m",
           repeat: "n",
@@ -7812,8 +7812,8 @@ module.exports = {
     {
       n: "NE",
       t: 11,
-      d: "Returns `TRUE` if two specified values are not equal and `FALSE` otherwise. Equivalent to the `!=` operator.",
-      a: "Not equal.",
+      d: "यदि दो निर्दिष्ट मान बराबर नहीं हैं तो `TRUE` देता है, अन्यथा `FALSE` देता है। `!=` संक्रियक के समतुल्य।",
+      a: "बराबर नहीं है।",
       m: [
         2,
         2
@@ -7821,7 +7821,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value.",
+          detail: "पहला मान।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7829,7 +7829,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "The value to test against `value1` for inequality.",
+          detail: "वह मान जिसकी `मान1` से असमानता की जांच करनी है।",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7840,8 +7840,8 @@ module.exports = {
     {
       n: "EQ",
       t: 11,
-      d: "Returns `TRUE` if two specified values are equal and `FALSE` otherwise. Equivalent to the `==` operator.",
-      a: "Equal.",
+      d: "यदि दो निर्दिष्ट मान बराबर हैं तो `TRUE` देता है, अन्यथा `FALSE` देता है। `==` संक्रियक के समतुल्य।",
+      a: "बराबर है।",
       m: [
         2,
         2
@@ -7849,7 +7849,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first value.",
+          detail: "पहला मान।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7857,7 +7857,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "The value to test against `value1` for equality.",
+          detail: "वह मान जिसकी `मान1` से समानता की जांच करनी है।",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7868,8 +7868,8 @@ module.exports = {
     {
       n: "GT",
       t: 11,
-      d: "Returns `TRUE` if the first argument is strictly greater than the second, and `FALSE` otherwise. Equivalent to the `>` operator.",
-      a: "Strictly greater than.",
+      d: "यदि पहला तर्क दूसरे से सख्ती से बड़ा है तो `TRUE` देता है, अन्यथा `FALSE` देता है। `>` संक्रियक के समतुल्य।",
+      a: "सख्ती से बड़ा।",
       m: [
         2,
         2
@@ -7877,7 +7877,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The value to test as being greater than `value2`.",
+          detail: "वह मान जिसे `मान2` से बड़ा होने की जांच करनी है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7885,7 +7885,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "The second value.",
+          detail: "दूसरा मान।",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7896,8 +7896,8 @@ module.exports = {
     {
       n: "GTE",
       t: 11,
-      d: "Returns `TRUE` if the first argument is greater than or equal to the second, and `FALSE` otherwise. Equivalent to the `>=` operator.",
-      a: "Greater than or equal to.",
+      d: "यदि पहला तर्क दूसरे से बड़ा है या उसके बराबर है तो `TRUE` देता है, अन्यथा `FALSE` देता है। `>=` संक्रियक के समतुल्य।",
+      a: "बड़ा है या बराबर है।",
       m: [
         2,
         2
@@ -7905,7 +7905,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The value to test as being greater than or equal to `value2`.",
+          detail: "वह मान जिसे `मान2` से बड़ा या बराबर होने की जांच करनी है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7913,7 +7913,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "The second value.",
+          detail: "दूसरा मान।",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7924,8 +7924,8 @@ module.exports = {
     {
       n: "LT",
       t: 11,
-      d: "Returns `TRUE` if the first argument is strictly less than the second, and `FALSE` otherwise. Equivalent to the `<` operator.",
-      a: "Less than.",
+      d: "यदि पहला तर्क दूसरे से सख्ती से छोटा है तो `TRUE` देता है, अन्यथा `FALSE` देता है। `<` संक्रियक के समतुल्य।",
+      a: "छोटा है।",
       m: [
         2,
         2
@@ -7933,7 +7933,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The value to test as being less than `value2`.",
+          detail: "वह मान जिसे `मान2` से छोटा होने की जांच करनी है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7941,7 +7941,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "The second value.",
+          detail: "दूसरा मान।",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7952,8 +7952,8 @@ module.exports = {
     {
       n: "LTE",
       t: 11,
-      d: "Returns `TRUE` if the first argument is less than or equal to the second, and `FALSE` otherwise. Equivalent to the `<=` operator.",
-      a: "Less than or equal to.",
+      d: "यदि पहला तर्क दूसरे से छोटा है या उसके बराबर है तो `TRUE` देता है, अन्यथा `FALSE` देता है। `<=` संक्रियक के समतुल्य।",
+      a: "छोटा है या बराबर है।",
       m: [
         2,
         2
@@ -7961,7 +7961,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The value to test as being less than or equal to `value2`.",
+          detail: "वह मान जिसे `मान2` से छोटा या बराबर होने की जांच करनी है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7969,7 +7969,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "The second value.",
+          detail: "दूसरा मान।",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -7980,8 +7980,8 @@ module.exports = {
     {
       n: "ADD",
       t: 11,
-      d: "Returns the sum of two numbers. Equivalent to the `+` operator.",
-      a: "Sum of two numbers",
+      d: "दो संख्याओं का योग देता है। `+` संक्रियक के समतुल्य।",
+      a: "दो संख्याओं का योग।",
       m: [
         2,
         2
@@ -7989,7 +7989,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The first addend.",
+          detail: "पहला योगज।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -7997,7 +7997,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "The second addend.",
+          detail: "दूसरा योगज।",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8008,8 +8008,8 @@ module.exports = {
     {
       n: "MINUS",
       t: 11,
-      d: "Returns the difference of two numbers. Equivalent to the `-` operator.",
-      a: "Difference of two numbers",
+      d: "दो संख्याओं का अंतर देता है। `-` संक्रियक के समतुल्य।",
+      a: "दो संख्याओं का अंतर।",
       m: [
         2,
         2
@@ -8017,7 +8017,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The minuend, or number to be subtracted from.",
+          detail: "वियोज्य, या वह संख्या जिसमें से घटाना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8025,7 +8025,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "The subtrahend, or number to subtract from `value1`.",
+          detail: "वियोजक, या वह संख्या जिसे `मान1` से घटाना है।",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -8036,8 +8036,8 @@ module.exports = {
     {
       n: "MULTIPLY",
       t: 11,
-      d: "Returns the product of two numbers. Equivalent to the `*` operator.",
-      a: "Product of two numbers",
+      d: "दो संख्याओं का गुणनफल देता है। `*` संक्रियक के समतुल्य।",
+      a: "दो संख्याओं का गुणनफल।",
       m: [
         2,
         2
@@ -8045,7 +8045,7 @@ module.exports = {
       p: [
         {
           name: "गुणक1",
-          detail: "The first multiplicand.",
+          detail: "पहला गुणक।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8053,7 +8053,7 @@ module.exports = {
         },
         {
           name: "गुणक2",
-          detail: "The second multiplicand.",
+          detail: "दूसरा गुणक।",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -8064,8 +8064,8 @@ module.exports = {
     {
       n: "DIVIDE",
       t: 11,
-      d: "Returns one number divided by another. Equivalent to the `/` operator.",
-      a: "One number divided by another",
+      d: "एक संख्या को दूसरी से विभाजित करने पर प्राप्त परिणाम देता है। `/` संक्रियक के समतुल्य।",
+      a: "एक संख्या दूसरी से विभाजित।",
       m: [
         2,
         2
@@ -8073,7 +8073,7 @@ module.exports = {
       p: [
         {
           name: "भाज्य",
-          detail: "The number to be divided.",
+          detail: "वह संख्या जिसे विभाजित करना है।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8081,7 +8081,7 @@ module.exports = {
         },
         {
           name: "भाजक",
-          detail: "The number to divide by.",
+          detail: "वह संख्या जिससे विभाजित करना है।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8092,8 +8092,8 @@ module.exports = {
     {
       n: "CONCAT",
       t: 11,
-      d: "Returns the concatenation of two values. Equivalent to the `&` operator.",
-      a: "Concatenation of two values",
+      d: "दो मानों का संयोजन (कॉन्केटेनेशन) देता है। `&` संक्रियक के समतुल्य।",
+      a: "दो मानों का संयोजन।",
       m: [
         2,
         2
@@ -8101,7 +8101,7 @@ module.exports = {
       p: [
         {
           name: "मान1",
-          detail: "The value to which `value2` will be appended.",
+          detail: "वह मान जिसमें `मान2` जोड़ा जाएगा।",
           example: "\"de\"",
           require: "m",
           repeat: "n",
@@ -8109,7 +8109,7 @@ module.exports = {
         },
         {
           name: "मान2",
-          detail: "The value to append to `value1`.",
+          detail: "वह मान जिसे `मान1` में जोड़ना है।",
           example: "\"mystify\"",
           require: "m",
           repeat: "n",
@@ -8120,8 +8120,8 @@ module.exports = {
     {
       n: "UNARY_PERCENT",
       t: 11,
-      d: "Returns a value interpreted as a percentage; that is, `UNARY_PERCENT(100)` equals `1`.",
-      a: "Value interpreted as a percentage.",
+      d: "किसी मान को प्रतिशत के रूप में व्याख्यायित करके देता है; अर्थात, `UNARY_PERCENT(100)` `1` के बराबर है।",
+      a: "प्रतिशत के रूप में व्याख्यायित मान।",
       m: [
         1,
         1
@@ -8129,7 +8129,7 @@ module.exports = {
       p: [
         {
           name: "प्रतिशत",
-          detail: "The value to interpret as a percentage.",
+          detail: "वह मान जिसे प्रतिशत के रूप में व्याख्यायित करना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8140,8 +8140,8 @@ module.exports = {
     {
       n: "CONCATENATE",
       t: 12,
-      d: "Appends strings to one another.",
-      a: "Appends strings to one another.",
+      d: "स्ट्रिंग्स को एक-दूसरे में जोड़ता है।",
+      a: "स्ट्रिंग्स को एक-दूसरे में जोड़ता है।",
       m: [
         1,
         255
@@ -8149,7 +8149,7 @@ module.exports = {
       p: [
         {
           name: "स्ट्रिंग1",
-          detail: "The initial string.",
+          detail: "प्रारंभिक स्ट्रिंग।",
           example: "\"Super\"",
           require: "m",
           repeat: "n",
@@ -8157,7 +8157,7 @@ module.exports = {
         },
         {
           name: "स्ट्रिंग2",
-          detail: "More strings to append in sequence.",
+          detail: "क्रम में जोड़ी जाने वाली अधिक स्ट्रिंग्स।",
           example: "\"calla\"",
           require: "o",
           repeat: "y",
@@ -8168,8 +8168,8 @@ module.exports = {
     {
       n: "CODE",
       t: 12,
-      d: "Returns the numeric Unicode map value of the first character in the string provided.",
-      a: "Numeric unicode map value of character.",
+      d: "दी गई स्ट्रिंग के पहले वर्ण का संख्यात्मक यूनिकोड मैप मान देता है।",
+      a: "किसी वर्ण का संख्यात्मक यूनिकोड मैप मान।",
       m: [
         1,
         1
@@ -8177,7 +8177,7 @@ module.exports = {
       p: [
         {
           name: "स्ट्रिंग",
-          detail: "The string whose first character's Unicode map value will be returned.",
+          detail: "वह स्ट्रिंग जिसके पहले वर्ण का यूनिकोड मैप मान लौटाया जाएगा।",
           example: "\"a\"",
           require: "m",
           repeat: "n",
@@ -8188,8 +8188,8 @@ module.exports = {
     {
       n: "CHAR",
       t: 12,
-      d: "Convert a number into a character according to the current Unicode table.",
-      a: "Gets character associated with number.",
+      d: "वर्तमान यूनिकोड तालिका के अनुसार किसी संख्या को एक वर्ण में बदलता है।",
+      a: "संख्या से संबद्ध वर्ण प्राप्त करता है।",
       m: [
         1,
         1
@@ -8197,7 +8197,7 @@ module.exports = {
       p: [
         {
           name: "तालिका_संख्या",
-          detail: "The number of the character to look up from the current Unicode table in decimal format.",
+          detail: "वर्तमान यूनिकोड तालिका में, दशमलव प्रारूप में, खोजे जाने वाले वर्ण की संख्या।",
           example: "97",
           require: "m",
           repeat: "n",
@@ -8208,8 +8208,8 @@ module.exports = {
     {
       n: "ARABIC",
       t: 12,
-      d: "Computes the value of a Roman numeral.",
-      a: "Computes the value of a roman numeral.",
+      d: "किसी रोमन अंक का मान परिकलित करता है।",
+      a: "किसी रोमन अंक का मान परिकलित करता है।",
       m: [
         1,
         1
@@ -8217,7 +8217,7 @@ module.exports = {
       p: [
         {
           name: "रोमन_अंक",
-          detail: "The Roman numeral to format, whose value must be between 1 and 3999, inclusive.",
+          detail: "वह रोमन अंक जिसे बदलना है, जिसका मान 1 और 3999 के बीच (दोनों सहित) होना चाहिए।",
           example: "\"XIV\"",
           require: "m",
           repeat: "n",
@@ -8228,8 +8228,8 @@ module.exports = {
     {
       n: "ROMAN",
       t: 12,
-      d: "Formats a number in Roman numerals.",
-      a: "Formats a number in Roman numerals.",
+      d: "किसी संख्या को रोमन अंकों में प्रारूपित करता है।",
+      a: "किसी संख्या को रोमन अंकों में प्रारूपित करता है।",
       m: [
         1,
         1
@@ -8237,7 +8237,7 @@ module.exports = {
       p: [
         {
           name: "संख्या",
-          detail: "The number to format, between 1 and 3999, inclusive.",
+          detail: "वह संख्या जिसे प्रारूपित करना है, 1 और 3999 के बीच (दोनों सहित)।",
           example: "499",
           require: "m",
           repeat: "n",
@@ -8248,8 +8248,8 @@ module.exports = {
     {
       n: "REGEXEXTRACT",
       t: 12,
-      d: "Extracts matching substrings according to a regular expression.",
-      a: "Extracts matching substrings with regular expression.",
+      d: "किसी नियमित अभिव्यक्ति (रेगुलर एक्सप्रेशन) के अनुसार मेल खाने वाली उप-स्ट्रिंग्स निकालता है।",
+      a: "नियमित अभिव्यक्ति के साथ मेल खाने वाली उप-स्ट्रिंग्स निकालता है।",
       m: [
         2,
         2
@@ -8257,7 +8257,7 @@ module.exports = {
       p: [
         {
           name: "पाठ",
-          detail: "The input text.",
+          detail: "इनपुट टेक्स्ट।",
           example: "\"Needle in a haystack\"",
           require: "m",
           repeat: "n",
@@ -8265,7 +8265,7 @@ module.exports = {
         },
         {
           name: "रेगुलर_एक्सप्रेशन",
-          detail: "The first part of `text` that matches this expression will be returned.",
+          detail: "`टेक्स्ट` का वह पहला भाग जो इस अभिव्यक्ति से मेल खाता है, लौटाया जाएगा।",
           example: "\".e{2}dle\"",
           require: "m",
           repeat: "n",
@@ -8276,8 +8276,8 @@ module.exports = {
     {
       n: "REGEXMATCH",
       t: 12,
-      d: "Whether a piece of text matches a regular expression.",
-      a: "Whether a piece of text matches regular expression.",
+      d: "क्या कोई टेक्स्ट किसी नियमित अभिव्यक्ति से मेल खाता है।",
+      a: "क्या कोई टेक्स्ट नियमित अभिव्यक्ति से मेल खाता है।",
       m: [
         2,
         2
@@ -8285,7 +8285,7 @@ module.exports = {
       p: [
         {
           name: "पाठ",
-          detail: "The text to be tested against the regular expression.",
+          detail: "वह टेक्स्ट जिसकी नियमित अभिव्यक्ति के विरुद्ध जांच करनी है।",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8293,7 +8293,7 @@ module.exports = {
         },
         {
           name: "रेगुलर_एक्सप्रेशन",
-          detail: "The regular expression to test the text against.",
+          detail: "वह नियमित अभिव्यक्ति जिसके विरुद्ध टेक्स्ट की जांच करनी है।",
           example: "\"S.r\"",
           require: "m",
           repeat: "n",
@@ -8304,8 +8304,8 @@ module.exports = {
     {
       n: "REGEXREPLACE",
       t: 12,
-      d: "Replaces part of a text string with a different text string using regular expressions.",
-      a: "Replaces text with regular expressions.",
+      d: "नियमित अभिव्यक्तियों का उपयोग करके किसी टेक्स्ट स्ट्रिंग के एक भाग को दूसरी टेक्स्ट स्ट्रिंग से बदलता है।",
+      a: "नियमित अभिव्यक्तियों के साथ टेक्स्ट बदलता है।",
       m: [
         3,
         3
@@ -8313,7 +8313,7 @@ module.exports = {
       p: [
         {
           name: "पाठ",
-          detail: "The text, a part of which will be replaced.",
+          detail: "वह टेक्स्ट, जिसका एक भाग बदला जाएगा।",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8321,7 +8321,7 @@ module.exports = {
         },
         {
           name: "रेगुलर_एक्सप्रेशन",
-          detail: "The regular expression.  All matching instances in `text` will be replaced.",
+          detail: "नियमित अभिव्यक्ति। `टेक्स्ट` में मेल खाने वाले सभी उदाहरण बदल दिए जाएंगे।",
           example: "\"S.*d\"",
           require: "m",
           repeat: "n",
@@ -8329,7 +8329,7 @@ module.exports = {
         },
         {
           name: "प्रतिस्थापन",
-          detail: "The text which will be inserted into the original text.",
+          detail: "वह टेक्स्ट जिसे मूल टेक्स्ट में डाला जाएगा।",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8340,8 +8340,8 @@ module.exports = {
     {
       n: "T",
       t: 12,
-      d: "Returns string arguments as text, or the empty string if the value is not text.",
-      a: "String arguments as text.",
+      d: "स्ट्रिंग तर्कों को टेक्स्ट के रूप में देता है, या यदि मान टेक्स्ट नहीं है तो रिक्त स्ट्रिंग देता है।",
+      a: "स्ट्रिंग तर्क टेक्स्ट के रूप में।",
       m: [
         1,
         1
@@ -8349,7 +8349,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The argument to be converted to text.",
+          detail: "वह तर्क जिसे टेक्स्ट में बदलना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8360,8 +8360,8 @@ module.exports = {
     {
       n: "FIXED",
       t: 12,
-      d: "Formats a number with a fixed number of decimal places.",
-      a: "Formats number with fixed number of decimal places.",
+      d: "किसी संख्या को दशमलव स्थानों की एक निश्चित संख्या के साथ प्रारूपित करता है।",
+      a: "संख्या को दशमलव स्थानों की निश्चित संख्या के साथ प्रारूपित करता है।",
       m: [
         1,
         3
@@ -8369,7 +8369,7 @@ module.exports = {
       p: [
         {
           name: "संख्या",
-          detail: "The number to format.",
+          detail: "वह संख्या जिसे प्रारूपित करना है।",
           example: "3.141592653",
           require: "m",
           repeat: "n",
@@ -8377,7 +8377,7 @@ module.exports = {
         },
         {
           name: "दशमलव_स्थानों_की_संख्या",
-          detail: "The number of decimal places to display in the result.",
+          detail: "परिणाम में प्रदर्शित किए जाने वाले दशमलव स्थानों की संख्या।",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8385,7 +8385,7 @@ module.exports = {
         },
         {
           name: "विभाजक_दबाएं",
-          detail: "Whether or not to suppress the thousands separator used in some locales (e.g. `1,000` becomes `1000`). Separators will be present if this value is 0 or omitted, and absent otherwise.",
+          detail: "क्या कुछ क्षेत्रीय सेटिंग्स में उपयोग किए जाने वाले हज़ार विभाजक को दबाना है या नहीं (उदाहरण के लिए, `1,000` `1000` बन जाता है)। यदि यह मान 0 है या छोड़ दिया गया है तो विभाजक मौजूद रहेंगे, अन्यथा अनुपस्थित रहेंगे।",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -8396,8 +8396,8 @@ module.exports = {
     {
       n: "FIND",
       t: 12,
-      d: "Returns the position at which a string is first found within text where the capitalization of letters matters. Returns `#VALUE!` if the string is not found.",
-      a: "First position of string found in text, case-sensitive.",
+      d: "किसी टेक्स्ट में किसी स्ट्रिंग के पहली बार मिलने की स्थिति देता है, जिसमें अक्षरों का बड़ा या छोटा होना मायने रखता है। यदि स्ट्रिंग नहीं मिलती है तो `#VALUE!` देता है।",
+      a: "टेक्स्ट में मिली स्ट्रिंग की पहली स्थिति, अक्षर-संवेदनशील।",
       m: [
         2,
         3
@@ -8405,7 +8405,7 @@ module.exports = {
       p: [
         {
           name: "खोजा_जाने_वाला_पाठ",
-          detail: "The string to look for within `text_to_search`.",
+          detail: "वह स्ट्रिंग जिसे `खोजने_का_पाठ` के भीतर खोजना है।",
           example: "\"n\"",
           require: "m",
           repeat: "n",
@@ -8413,7 +8413,7 @@ module.exports = {
         },
         {
           name: "खोजने_का_पाठ",
-          detail: "The text to search for the first occurrence of `search_for`.",
+          detail: "वह टेक्स्ट जिसमें `खोजा_जाने_वाला_पाठ` का पहला उदाहरण खोजना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8421,7 +8421,7 @@ module.exports = {
         },
         {
           name: "यहां_से_आरंभ",
-          detail: "The character within `text_to_search` at which to start the search.",
+          detail: "`खोजने_का_पाठ` में वह वर्ण जहां से खोज शुरू करनी है।",
           example: "14",
           require: "o",
           repeat: "n",
@@ -8432,8 +8432,8 @@ module.exports = {
     {
       n: "FINDB",
       t: 12,
-      d: "Returns the position at which a string is first found within text counting each double-character as 2.",
-      a: "Position at which a string is first found within text (binary).",
+      d: "किसी टेक्स्ट में किसी स्ट्रिंग के पहली बार मिलने की स्थिति देता है, जिसमें प्रत्येक द्वि-बाइट वर्ण को 2 गिना जाता है।",
+      a: "टेक्स्ट में स्ट्रिंग की पहली स्थिति (बाइनरी)।",
       m: [
         2,
         3
@@ -8441,7 +8441,7 @@ module.exports = {
       p: [
         {
           name: "खोजा_जाने_वाला_पाठ",
-          detail: "The string to look for within `text_to_search`.",
+          detail: "वह स्ट्रिंग जिसे `खोजने_का_पाठ` के भीतर खोजना है।",
           example: "\"new\"",
           require: "m",
           repeat: "n",
@@ -8449,7 +8449,7 @@ module.exports = {
         },
         {
           name: "खोजने_का_पाठ",
-          detail: "The text to search for the first occurrence of `search_for`.",
+          detail: "वह टेक्स्ट जिसमें `खोजा_जाने_वाला_पाठ` का पहला उदाहरण खोजना है।",
           example: "\"new year\"",
           require: "m",
           repeat: "n",
@@ -8457,7 +8457,7 @@ module.exports = {
         },
         {
           name: "यहां_से_आरंभ",
-          detail: "The character within `text_to_search` at which to start the search.",
+          detail: "`खोजने_का_पाठ` में वह वर्ण जहां से खोज शुरू करनी है।",
           example: "2",
           require: "o",
           repeat: "n",
@@ -8468,8 +8468,8 @@ module.exports = {
     {
       n: "JOIN",
       t: 12,
-      d: "Concatenates the elements of one or more one-dimensional arrays using a specified delimiter.",
-      a: "Concatenates elements of arrays with delimiter.",
+      d: "किसी निर्दिष्ट सीमांकक (डेलीमीटर) का उपयोग करके, एक या अधिक एक-आयामी सरणियों के तत्वों को जोड़ता है।",
+      a: "सीमांकक के साथ सरणियों के तत्वों को जोड़ता है।",
       m: [
         2,
         255
@@ -8477,7 +8477,7 @@ module.exports = {
       p: [
         {
           name: "सीमांकक",
-          detail: "The character or string to place between each concatenated value.",
+          detail: "प्रत्येक जुड़े हुए मान के बीच रखा जाने वाला वर्ण या स्ट्रिंग।",
           example: "\" and-a \"",
           require: "m",
           repeat: "n",
@@ -8485,7 +8485,7 @@ module.exports = {
         },
         {
           name: "मान_या_सरणी1",
-          detail: "The value or values to be appended using `delimiter`.",
+          detail: "`सीमांकक` का उपयोग करके जोड़ा जाने वाला मान या मान।",
           example: "{1",
           require: "m",
           repeat: "n",
@@ -8493,7 +8493,7 @@ module.exports = {
         },
         {
           name: "मान_या_सरणी2",
-          detail: "More values to be appended using `delimiter`.",
+          detail: "`सीमांकक` का उपयोग करके जोड़े जाने वाले अधिक मान।",
           example: "2",
           require: "o",
           repeat: "y",
@@ -8504,8 +8504,8 @@ module.exports = {
     {
       n: "LEFT",
       t: 12,
-      d: "Returns a substring from the beginning of a specified string.",
-      a: "Substring from beginning of specified string.",
+      d: "किसी निर्दिष्ट स्ट्रिंग की शुरुआत से एक उप-स्ट्रिंग देता है।",
+      a: "निर्दिष्ट स्ट्रिंग की शुरुआत से उप-स्ट्रिंग।",
       m: [
         1,
         2
@@ -8513,7 +8513,7 @@ module.exports = {
       p: [
         {
           name: "स्ट्रिंग",
-          detail: "The string from which the left portion will be returned.",
+          detail: "वह स्ट्रिंग जिसका बायां भाग लौटाया जाएगा।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8521,7 +8521,7 @@ module.exports = {
         },
         {
           name: "वर्णों_की_संख्या",
-          detail: "The number of characters to return from the left side of `string`.",
+          detail: "`स्ट्रिंग` के बाईं ओर से लौटाए जाने वाले वर्णों की संख्या।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8532,8 +8532,8 @@ module.exports = {
     {
       n: "RIGHT",
       t: 12,
-      d: "Returns a substring from the end of a specified string.",
-      a: "A substring from the end of a specified string.",
+      d: "किसी निर्दिष्ट स्ट्रिंग के अंत से एक उप-स्ट्रिंग देता है।",
+      a: "निर्दिष्ट स्ट्रिंग के अंत से एक उप-स्ट्रिंग।",
       m: [
         1,
         2
@@ -8541,7 +8541,7 @@ module.exports = {
       p: [
         {
           name: "स्ट्रिंग",
-          detail: "The string from which the right portion will be returned.",
+          detail: "वह स्ट्रिंग जिसका दायां भाग लौटाया जाएगा।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8549,7 +8549,7 @@ module.exports = {
         },
         {
           name: "वर्णों_की_संख्या",
-          detail: "The number of characters to return from the right side of `string`.",
+          detail: "`स्ट्रिंग` के दाईं ओर से लौटाए जाने वाले वर्णों की संख्या।",
           example: "2",
           require: "m",
           repeat: "n",
@@ -8560,8 +8560,8 @@ module.exports = {
     {
       n: "MID",
       t: 12,
-      d: "Returns a segment of a string.",
-      a: "A segment of a string.",
+      d: "किसी स्ट्रिंग का एक खंड देता है।",
+      a: "किसी स्ट्रिंग का एक खंड।",
       m: [
         3,
         3
@@ -8569,7 +8569,7 @@ module.exports = {
       p: [
         {
           name: "स्ट्रिंग",
-          detail: "The string to extract a segment from.",
+          detail: "वह स्ट्रिंग जिससे एक खंड निकालना है।",
           example: "\"get this\"",
           require: "m",
           repeat: "n",
@@ -8577,7 +8577,7 @@ module.exports = {
         },
         {
           name: "यहां_से_आरंभ",
-          detail: "The index from the left of `string` from which to begin extracting. The first character in `string` has the index 1.",
+          detail: "`स्ट्रिंग` के बाईं ओर से वह सूचकांक जहां से निकालना शुरू करना है। `स्ट्रिंग` के पहले वर्ण का सूचकांक 1 है।",
           example: "5",
           require: "m",
           repeat: "n",
@@ -8585,7 +8585,7 @@ module.exports = {
         },
         {
           name: "निष्कर्षण_लंबाई",
-          detail: "The length of the segment to extract.",
+          detail: "निकाले जाने वाले खंड की लंबाई।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8596,8 +8596,8 @@ module.exports = {
     {
       n: "LEN",
       t: 12,
-      d: "Returns the length of a string.",
-      a: "Length of a string.",
+      d: "किसी स्ट्रिंग की लंबाई देता है।",
+      a: "किसी स्ट्रिंग की लंबाई।",
       m: [
         1,
         1
@@ -8605,7 +8605,7 @@ module.exports = {
       p: [
         {
           name: "पाठ",
-          detail: "The string whose length will be returned.",
+          detail: "वह स्ट्रिंग जिसकी लंबाई लौटाई जाएगी।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8616,8 +8616,8 @@ module.exports = {
     {
       n: "LENB",
       t: 12,
-      d: "Returns the length of a string in bytes.",
-      a: "Length of a string in bytes.",
+      d: "किसी स्ट्रिंग की लंबाई बाइट्स में देता है।",
+      a: "किसी स्ट्रिंग की लंबाई बाइट्स में।",
       m: [
         1,
         1
@@ -8625,7 +8625,7 @@ module.exports = {
       p: [
         {
           name: "पाठ",
-          detail: "The string whose length will be returned.",
+          detail: "वह स्ट्रिंग जिसकी लंबाई लौटाई जाएगी।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8636,8 +8636,8 @@ module.exports = {
     {
       n: "LOWER",
       t: 12,
-      d: "Converts a specified string to lowercase.",
-      a: "Converts a specified string to lowercase.",
+      d: "किसी निर्दिष्ट स्ट्रिंग को लोअरकेस (छोटे अक्षरों) में बदलता है।",
+      a: "किसी निर्दिष्ट स्ट्रिंग को लोअरकेस में बदलता है।",
       m: [
         1,
         1
@@ -8645,7 +8645,7 @@ module.exports = {
       p: [
         {
           name: "पाठ",
-          detail: "The string to convert to lowercase.",
+          detail: "वह स्ट्रिंग जिसे लोअरकेस में बदलना है।",
           example: "\"LOREM IPSUM\"",
           require: "m",
           repeat: "n",
@@ -8656,8 +8656,8 @@ module.exports = {
     {
       n: "UPPER",
       t: 12,
-      d: "Converts a specified string to uppercase.",
-      a: "Converts a specified string to uppercase.",
+      d: "किसी निर्दिष्ट स्ट्रिंग को अपरकेस (बड़े अक्षरों) में बदलता है।",
+      a: "किसी निर्दिष्ट स्ट्रिंग को अपरकेस में बदलता है।",
       m: [
         1,
         1
@@ -8665,7 +8665,7 @@ module.exports = {
       p: [
         {
           name: "पाठ",
-          detail: "The string to convert to uppercase.",
+          detail: "वह स्ट्रिंग जिसे अपरकेस में बदलना है।",
           example: "\"lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8676,8 +8676,8 @@ module.exports = {
     {
       n: "EXACT",
       t: 12,
-      d: "Tests whether two strings are identical.",
-      a: "Tests whether two strings are identical.",
+      d: "जांचता है कि क्या दो स्ट्रिंग्स समान हैं।",
+      a: "जांचता है कि क्या दो स्ट्रिंग्स समान हैं।",
       m: [
         2,
         2
@@ -8685,7 +8685,7 @@ module.exports = {
       p: [
         {
           name: "स्ट्रिंग1",
-          detail: "The first string to compare",
+          detail: "तुलना के लिए पहली स्ट्रिंग।",
           example: "A1",
           require: "m",
           repeat: "n",
@@ -8693,7 +8693,7 @@ module.exports = {
         },
         {
           name: "स्ट्रिंग2",
-          detail: "The second string to compare",
+          detail: "तुलना के लिए दूसरी स्ट्रिंग।",
           example: "A2",
           require: "m",
           repeat: "n",
