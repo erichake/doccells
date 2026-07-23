@@ -8704,8 +8704,8 @@ module.exports = {
     {
       n: "REPLACE",
       t: 12,
-      d: "Replaces part of a text string with a different text string.",
-      a: "Replaces part of a text string with different text.",
+      d: "किसी टेक्स्ट स्ट्रिंग के एक भाग को दूसरी टेक्स्ट स्ट्रिंग से बदलता है।",
+      a: "किसी टेक्स्ट स्ट्रिंग के एक भाग को दूसरे टेक्स्ट से बदलता है।",
       m: [
         4,
         4
@@ -8713,7 +8713,7 @@ module.exports = {
       p: [
         {
           name: "पाठ",
-          detail: "The text, a part of which will be replaced.",
+          detail: "वह टेक्स्ट, जिसका एक भाग बदला जाएगा।",
           example: "\"Spreadsheets\"",
           require: "m",
           repeat: "n",
@@ -8721,7 +8721,7 @@ module.exports = {
         },
         {
           name: "स्थिति",
-          detail: "The position where the replacement will begin (starting from 1).",
+          detail: "वह स्थिति जहां से प्रतिस्थापन शुरू होगा (1 से गिनते हुए)।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -8729,7 +8729,7 @@ module.exports = {
         },
         {
           name: "लंबाई",
-          detail: "The number of characters in the text to be replaced.",
+          detail: "टेक्स्ट में बदले जाने वाले वर्णों की संख्या।",
           example: "6",
           require: "m",
           repeat: "n",
@@ -8737,7 +8737,7 @@ module.exports = {
         },
         {
           name: "नया_पाठ",
-          detail: "The text which will be inserted into the original text.",
+          detail: "वह टेक्स्ट जिसे मूल टेक्स्ट में डाला जाएगा।",
           example: "\"Bed\"",
           require: "m",
           repeat: "n",
@@ -8748,8 +8748,8 @@ module.exports = {
     {
       n: "REPT",
       t: 12,
-      d: "Returns specified text repeated a number of times.",
-      a: "Specified text repeated a number of times.",
+      d: "निर्दिष्ट टेक्स्ट को कई बार दोहराकर देता है।",
+      a: "निर्दिष्ट टेक्स्ट कई बार दोहराया गया।",
       m: [
         2,
         2
@@ -8757,7 +8757,7 @@ module.exports = {
       p: [
         {
           name: "दोहराने_का_पाठ",
-          detail: "The character or string to repeat.",
+          detail: "दोहराया जाने वाला वर्ण या स्ट्रिंग।",
           example: "\"ha\"",
           require: "m",
           repeat: "n",
@@ -8765,7 +8765,7 @@ module.exports = {
         },
         {
           name: "पुनरावृत्तियों_की_संख्या",
-          detail: "The number of times `text_to_repeat` should appear in the value returned.",
+          detail: "लौटाए गए मान में `दोहराने_का_पाठ` कितनी बार दिखना चाहिए, इसकी संख्या।",
           example: "4",
           require: "m",
           repeat: "n",
@@ -8776,8 +8776,8 @@ module.exports = {
     {
       n: "SEARCH",
       t: 12,
-      d: "Returns the position at which a string is first found within text and ignores capitalization of letters. Returns `#VALUE!` if the string is not found.",
-      a: "First position of string found in text, ignoring case.",
+      d: "किसी टेक्स्ट में किसी स्ट्रिंग के पहली बार मिलने की स्थिति देता है और अक्षरों के बड़े या छोटे होने को अनदेखा करता है। यदि स्ट्रिंग नहीं मिलती है तो `#VALUE!` देता है।",
+      a: "टेक्स्ट में मिली स्ट्रिंग की पहली स्थिति, बड़े-छोटे अक्षरों को अनदेखा करते हुए।",
       m: [
         2,
         3
@@ -8785,7 +8785,7 @@ module.exports = {
       p: [
         {
           name: "खोजा_जाने_वाला_पाठ",
-          detail: "The string to look for within `text_to_search`.",
+          detail: "वह स्ट्रिंग जिसे `खोजने_का_पाठ` के भीतर खोजना है।",
           example: "\"n\"",
           require: "m",
           repeat: "n",
@@ -8793,7 +8793,7 @@ module.exports = {
         },
         {
           name: "खोजने_का_पाठ",
-          detail: "The text to search for the first occurrence of `search_for`.",
+          detail: "वह टेक्स्ट जिसमें `खोजा_जाने_वाला_पाठ` का पहला उदाहरण खोजना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -8801,7 +8801,7 @@ module.exports = {
         },
         {
           name: "यहां_से_आरंभ",
-          detail: "The character within `text_to_search` at which to start the search.",
+          detail: "`खोजने_का_पाठ` में वह वर्ण जहां से खोज शुरू करनी है।",
           example: "14",
           require: "m",
           repeat: "n",
@@ -8812,8 +8812,8 @@ module.exports = {
     {
       n: "SUBSTITUTE",
       t: 12,
-      d: "Replaces existing text with new text in a string.",
-      a: "Replaces existing text with new text in a string.",
+      d: "किसी स्ट्रिंग में मौजूदा टेक्स्ट को नए टेक्स्ट से बदलता है।",
+      a: "किसी स्ट्रिंग में मौजूदा टेक्स्ट को नए टेक्स्ट से बदलता है।",
       m: [
         3,
         4
@@ -8821,7 +8821,7 @@ module.exports = {
       p: [
         {
           name: "खोजने_का_पाठ",
-          detail: "The text within which to search and replace.",
+          detail: "वह टेक्स्ट जिसमें खोजना और बदलना है।",
           example: "\"search for it\"",
           require: "m",
           repeat: "n",
@@ -8829,7 +8829,7 @@ module.exports = {
         },
         {
           name: "खोजा_जाने_वाला_पाठ",
-          detail: "The string to search for within `text_to_search`.",
+          detail: "वह स्ट्रिंग जिसे `खोजने_का_पाठ` के भीतर खोजना है।",
           example: "\"search for\"",
           require: "m",
           repeat: "n",
@@ -8837,7 +8837,7 @@ module.exports = {
         },
         {
           name: "इससे_बदलें",
-          detail: "The string that will replace `search_for`.",
+          detail: "वह स्ट्रिंग जो `खोजा_जाने_वाला_पाठ` को बदल देगी।",
           example: "\"Google\"",
           require: "m",
           repeat: "n",
@@ -8845,7 +8845,7 @@ module.exports = {
         },
         {
           name: "घटना_संख्या",
-          detail: "The instance of `search_for` within `text_to_search` to replace with `replace_with`. By default, all occurrences of `search_for` are replaced; however, if `occurrence_number` is specified, only the indicated instance of `search_for` is replaced.",
+          detail: "`खोजने_का_पाठ` में `खोजा_जाने_वाला_पाठ` का वह उदाहरण जिसे `इससे_बदलें` से बदलना है। डिफ़ॉल्ट रूप से, `खोजा_जाने_वाला_पाठ` की सभी घटनाएं बदल दी जाती हैं; हालांकि, यदि `घटना_संख्या` निर्दिष्ट की गई है, तो केवल संकेतित उदाहरण को बदला जाता है।",
           example: "3",
           require: "m",
           repeat: "n",
@@ -8856,8 +8856,8 @@ module.exports = {
     {
       n: "CLEAN",
       t: 12,
-      d: "Returns the text with the non-printable ASCII characters removed.",
-      a: "Removes non-printable characters from a piece of text.",
+      d: "गैर-मुद्रण योग्य ASCII वर्णों को हटाकर टेक्स्ट देता है।",
+      a: "किसी टेक्स्ट से गैर-मुद्रण योग्य वर्ण हटाता है।",
       m: [
         1,
         1
@@ -8865,7 +8865,7 @@ module.exports = {
       p: [
         {
           name: "पाठ",
-          detail: "The text whose non-printable characters are to be removed.",
+          detail: "वह टेक्स्ट जिसके गैर-मुद्रण योग्य वर्ण हटाए जाने हैं।",
           example: "\"AF\"&CHAR(31)",
           require: "m",
           repeat: "n",
@@ -8876,8 +8876,8 @@ module.exports = {
     {
       n: "TEXT",
       t: 12,
-      d: "Converts a number into text according to a specified format.",
-      a: "Formats a number into text.",
+      d: "किसी निर्दिष्ट प्रारूप के अनुसार किसी संख्या को टेक्स्ट में बदलता है।",
+      a: "किसी संख्या को टेक्स्ट में प्रारूपित करता है।",
       m: [
         2,
         2
@@ -8885,7 +8885,7 @@ module.exports = {
       p: [
         {
           name: "संख्या",
-          detail: "The number, date, or time to format.",
+          detail: "प्रारूपित किया जाने वाला संख्या, तारीख, या समय।",
           example: "1.23",
           require: "m",
           repeat: "n",
@@ -8893,7 +8893,7 @@ module.exports = {
         },
         {
           name: "प्रारूप",
-          detail: "The pattern by which to format the number, enclosed in quotation marks.",
+          detail: "उद्धरण चिह्नों में संलग्न वह पैटर्न जिसके अनुसार संख्या को प्रारूपित करना है।",
           example: "\"$0.00\"",
           require: "m",
           repeat: "n",
@@ -8904,8 +8904,8 @@ module.exports = {
     {
       n: "TRIM",
       t: 12,
-      d: "Removes leading, trailing, and repeated spaces in text.",
-      a: "Removes space characters.",
+      d: "टेक्स्ट में आगे, पीछे और दोहराए गए रिक्त स्थान हटाता है।",
+      a: "रिक्त स्थान वर्ण हटाता है।",
       m: [
         1,
         1
@@ -8913,7 +8913,7 @@ module.exports = {
       p: [
         {
           name: "पाठ",
-          detail: "The text or reference to a cell containing text to be trimmed.",
+          detail: "टेक्स्ट या किसी कोशिका का संदर्भ जिसमें ट्रिम किया जाने वाला टेक्स्ट है।",
           example: "\" lorem ipsum\"",
           require: "m",
           repeat: "n",
@@ -8924,8 +8924,8 @@ module.exports = {
     {
       n: "VALUE",
       t: 12,
-      d: "Converts a string in any of the date, time or number formats that Google Sheets understands into a number.",
-      a: "Converts a date/time/number string into a number.",
+      d: "Google पत्रक द्वारा समझे जाने वाले तारीख, समय, या संख्या प्रारूपों में से किसी में लिखी स्ट्रिंग को एक संख्या में बदलता है।",
+      a: "किसी तारीख/समय/संख्या स्ट्रिंग को संख्या में बदलता है।",
       m: [
         1,
         1
@@ -8933,7 +8933,7 @@ module.exports = {
       p: [
         {
           name: "पाठ",
-          detail: "The string containing the value to be converted.",
+          detail: "वह स्ट्रिंग जिसमें बदला जाने वाला मान है।",
           example: "\"123\"",
           require: "m",
           repeat: "n",
@@ -8944,8 +8944,8 @@ module.exports = {
     {
       n: "PROPER",
       t: 12,
-      d: "Capitalizes each word in a specified string.",
-      a: "Capitalizes each word in a specified string.",
+      d: "किसी निर्दिष्ट स्ट्रिंग में प्रत्येक शब्द का पहला अक्षर बड़ा करता है।",
+      a: "किसी निर्दिष्ट स्ट्रिंग में प्रत्येक शब्द का पहला अक्षर बड़ा करता है।",
       m: [
         1,
         1
@@ -8953,7 +8953,7 @@ module.exports = {
       p: [
         {
           name: "बड़े_अक्षरों_में_बदलने_का_पाठ",
-          detail: "The text which will be returned with the first letter of each word in uppercase and all other letters in lowercase.",
+          detail: "वह टेक्स्ट जो प्रत्येक शब्द के पहले अक्षर को बड़े अक्षर में और शेष सभी अक्षरों को छोटे अक्षर में लौटाया जाएगा।",
           example: "\"united states\"",
           require: "m",
           repeat: "n",
@@ -8964,8 +8964,8 @@ module.exports = {
     {
       n: "CONVERT",
       t: 13,
-      d: "Converts a numeric value to a different unit of measure.",
-      a: "Unit conversion for numbers.",
+      d: "किसी संख्यात्मक मान को माप की एक भिन्न इकाई में बदलता है।",
+      a: "संख्याओं के लिए इकाई रूपांतरण।",
       m: [
         3,
         3
@@ -8973,7 +8973,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The numeric value in `start_unit` to convert to `end_unit`.",
+          detail: "`आरंभिक_इकाई` में वह संख्यात्मक मान जिसे `अंतिम_इकाई` में बदलना है।",
           example: "5.1",
           require: "m",
           repeat: "n",
@@ -8981,7 +8981,7 @@ module.exports = {
         },
         {
           name: "आरंभिक_इकाई",
-          detail: "The starting unit, the unit currently assigned to `value`.",
+          detail: "आरंभिक इकाई, वह इकाई जो वर्तमान में `मान` को सौंपी गई है।",
           example: "\"g\"",
           require: "m",
           repeat: "n",
@@ -8989,7 +8989,7 @@ module.exports = {
         },
         {
           name: "अंतिम_इकाई",
-          detail: "The unit of measure into which to convert the argument, `value`.",
+          detail: "वह मापन इकाई जिसमें तर्क `मान` को बदलना है।",
           example: "\"kg\"",
           require: "m",
           repeat: "n",
@@ -9000,8 +9000,8 @@ module.exports = {
     {
       n: "SUMX2MY2",
       t: 14,
-      d: "Calculates the sum of the differences of the squares of values in two arrays.",
-      a: "Sum of the differences of squares.",
+      d: "दो सरणियों के मानों के वर्गों के अंतरों का योग परिकलित करता है।",
+      a: "वर्गों के अंतरों का योग।",
       m: [
         2,
         2
@@ -9009,7 +9009,7 @@ module.exports = {
       p: [
         {
           name: "सरणी_x",
-          detail: "The array or range of values whose squares will be reduced by the squares of corresponding entries in `array_y` and added together.",
+          detail: "मानों की वह सरणी या श्रेणी जिसके वर्गों को `array_y` में संगत प्रविष्टियों के वर्गों से घटाकर जोड़ा जाएगा।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -9017,7 +9017,7 @@ module.exports = {
         },
         {
           name: "सरणी_y",
-          detail: "The array or range of values whose squares will be subtracted from the squares of corresponding entries in `array_x` and added together.",
+          detail: "मानों की वह सरणी या श्रेणी जिसके वर्गों को `array_x` में संगत प्रविष्टियों के वर्गों से घटाया जाकर जोड़ा जाएगा।",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9028,8 +9028,8 @@ module.exports = {
     {
       n: "SUMX2PY2",
       t: 14,
-      d: "Calculates the sum of the sums of the squares of values in two arrays.",
-      a: "Sum of the sums of squares.",
+      d: "दो सरणियों के मानों के वर्गों के योगों का योग परिकलित करता है।",
+      a: "वर्गों के योगों का योग।",
       m: [
         2,
         2
@@ -9037,7 +9037,7 @@ module.exports = {
       p: [
         {
           name: "सरणी_x",
-          detail: "The array or range of values whose squares will be added to the squares of corresponding entries in `array_y` and added together.",
+          detail: "मानों की वह सरणी या श्रेणी जिसके वर्गों को `array_y` में संगत प्रविष्टियों के वर्गों में जोड़कर एक साथ जोड़ा जाएगा।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -9045,7 +9045,7 @@ module.exports = {
         },
         {
           name: "सरणी_y",
-          detail: "The array or range of values whose squares will be added to the squares of corresponding entries in `array_x` and added together.",
+          detail: "मानों की वह सरणी या श्रेणी जिसके वर्गों को `array_x` में संगत प्रविष्टियों के वर्गों में जोड़कर एक साथ जोड़ा जाएगा।",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9056,8 +9056,8 @@ module.exports = {
     {
       n: "SUMXMY2",
       t: 14,
-      d: "Calculates the sum of the squares of differences of values in two arrays.",
-      a: "Sum of the squares of differences.",
+      d: "दो सरणियों के मानों के अंतरों के वर्गों का योग परिकलित करता है।",
+      a: "अंतरों के वर्गों का योग।",
       m: [
         2,
         2
@@ -9065,7 +9065,7 @@ module.exports = {
       p: [
         {
           name: "सरणी_x",
-          detail: "The array or range of values that will be reduced by corresponding entries in `array_y`, squared, and added together.",
+          detail: "मानों की वह सरणी या श्रेणी जिसे `array_y` में संगत प्रविष्टियों से घटाकर, वर्ग करके, जोड़ा जाएगा।",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -9073,7 +9073,7 @@ module.exports = {
         },
         {
           name: "सरणी_y",
-          detail: "The array or range of values that will be subtracted from corresponding entries in `array_x`, the result squared, and all such results added together.",
+          detail: "मानों की वह सरणी या श्रेणी जिसे `array_x` में संगत प्रविष्टियों से घटाया जाएगा, परिणाम का वर्ग किया जाएगा, और सभी परिणामों को जोड़ा जाएगा।",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -9084,8 +9084,8 @@ module.exports = {
     {
       n: "TRANSPOSE",
       t: 14,
-      d: "Transposes the rows and columns of an array or range of cells.",
-      a: "Transposes the rows and columns of an array.",
+      d: "किसी सरणी या कोशिकाओं की श्रेणी की पंक्तियों और स्तंभों को स्थानांतरित करता है।",
+      a: "किसी सरणी की पंक्तियों और स्तंभों को स्थानांतरित करता है।",
       m: [
         1,
         1
@@ -9093,7 +9093,7 @@ module.exports = {
       p: [
         {
           name: "सरणी_या_श्रेणी",
-          detail: "The array or range whose rows and columns will be swapped.",
+          detail: "वह सरणी या श्रेणी जिसकी पंक्तियों और स्तंभों की अदला-बदली की जाएगी।",
           example: "{1,2}",
           require: "m",
           repeat: "n",
@@ -9104,8 +9104,8 @@ module.exports = {
     {
       n: "TREND",
       t: 14,
-      d: "Given partial data about a linear trend, fits an ideal linear trend using the least squares method and/or predicts further values.",
-      a: "Fits points to linear trend derived via least-squares.",
+      d: "किसी रैखिक प्रवृत्ति के बारे में आंशिक डेटा को देखते हुए, न्यूनतम वर्ग विधि का उपयोग करके एक आदर्श रैखिक प्रवृत्ति फिट करता है और/या अतिरिक्त मानों का पूर्वानुमान लगाता है।",
+      a: "न्यूनतम-वर्गों के माध्यम से प्राप्त रैखिक प्रवृत्ति में बिंदुओं को फिट करता है।",
       m: [
         1,
         4
@@ -9113,7 +9113,7 @@ module.exports = {
       p: [
         {
           name: "ज्ञात_डेटा_y",
-          detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal linear trend.",
+          detail: "वह सरणी या श्रेणी जिसमें पहले से ज्ञात आश्रित (y) मान हैं, जिनका उपयोग एक आदर्श रैखिक प्रवृत्ति को फिट करने के लिए किया जाता है।",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9121,7 +9121,7 @@ module.exports = {
         },
         {
           name: "ज्ञात_डेटा_x",
-          detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
+          detail: "`ज्ञात_डेटा_y` के अनुरूप स्वतंत्र चर(चरों) के मान।",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9129,7 +9129,7 @@ module.exports = {
         },
         {
           name: "नया_डेटा_x",
-          detail: "The data points to return the `y` values for on the ideal curve fit.",
+          detail: "वे डेटा बिंदु जिनके लिए आदर्श कर्व फिट पर `y` मान लौटाने हैं।",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9137,7 +9137,7 @@ module.exports = {
         },
         {
           name: "b",
-          detail: "Given a general linear form of `y = m*x+b` for a curve fit, calculates `b` if `TRUE` or forces `b` to be `0` and only calculates the `m` values if `FALSE`, i.e. forces the curve fit to pass through the origin.",
+          detail: "किसी कर्व फिट के लिए `y = m*x+b` के सामान्य रैखिक रूप को देखते हुए, यदि `TRUE` है तो `b` की गणना करता है, या यदि `FALSE` है तो `b` को `0` पर बाध्य करता है और केवल `m` मानों की गणना करता है, अर्थात कर्व फिट को मूल बिंदु से गुजरने के लिए बाध्य करता है।",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9148,8 +9148,8 @@ module.exports = {
     {
       n: "FREQUENCY",
       t: 14,
-      d: "Calculates the frequency distribution of a one-column array into specified classes.",
-      a: "The frequency distribution of array.",
+      d: "किसी एक-स्तंभ सरणी के आवृत्ति वितरण को निर्दिष्ट वर्गों में परिकलित करता है।",
+      a: "सरणी का आवृत्ति वितरण।",
       m: [
         2,
         2
@@ -9157,7 +9157,7 @@ module.exports = {
       p: [
         {
           name: "डेटा",
-          detail: "The array or range containing the values to be counted.",
+          detail: "वह सरणी या श्रेणी जिसमें गिने जाने वाले मान हैं।",
           example: "A2:A40",
           require: "m",
           repeat: "n",
@@ -9165,7 +9165,7 @@ module.exports = {
         },
         {
           name: "वर्ग",
-          detail: "The array or range containing the set of classes.",
+          detail: "वह सरणी या श्रेणी जिसमें वर्गों का समूह है।",
           example: "B2:B5",
           require: "m",
           repeat: "n",
@@ -9176,8 +9176,8 @@ module.exports = {
     {
       n: "GROWTH",
       t: 14,
-      d: "Given partial data about an exponential growth trend, fits an ideal exponential growth trend and/or predicts further values.",
-      a: "Fits points to exponential growth trend.",
+      d: "किसी घातांकी वृद्धि प्रवृत्ति के बारे में आंशिक डेटा को देखते हुए, एक आदर्श घातांकी वृद्धि प्रवृत्ति फिट करता है और/या अतिरिक्त मानों का पूर्वानुमान लगाता है।",
+      a: "घातांकी वृद्धि प्रवृत्ति में बिंदुओं को फिट करता है।",
       m: [
         1,
         4
@@ -9185,7 +9185,7 @@ module.exports = {
       p: [
         {
           name: "ज्ञात_डेटा_y",
-          detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal exponential growth curve.",
+          detail: "वह सरणी या श्रेणी जिसमें पहले से ज्ञात आश्रित (y) मान हैं, जिनका उपयोग एक आदर्श घातांकी वृद्धि वक्र को फिट करने के लिए किया जाता है।",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9193,7 +9193,7 @@ module.exports = {
         },
         {
           name: "ज्ञात_डेटा_x",
-          detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
+          detail: "`ज्ञात_डेटा_y` के अनुरूप स्वतंत्र चर(चरों) के मान।",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9201,7 +9201,7 @@ module.exports = {
         },
         {
           name: "नया_डेटा_x",
-          detail: "The data points to return the `y` values for on the ideal curve fit.",
+          detail: "वे डेटा बिंदु जिनके लिए आदर्श कर्व फिट पर `y` मान लौटाने हैं।",
           example: "A11:A13",
           require: "o",
           repeat: "n",
@@ -9209,7 +9209,7 @@ module.exports = {
         },
         {
           name: "b",
-          detail: "Given a general exponential form of `y = b*m^x` for a curve fit, calculates `b` if `TRUE` or forces `b` to be `1` and only calculates the `m` values if `FALSE`.",
+          detail: "किसी कर्व फिट के लिए `y = b*m^x` के सामान्य घातांकी रूप को देखते हुए, यदि `TRUE` है तो `b` की गणना करता है, या यदि `FALSE` है तो `b` को `1` पर बाध्य करता है और केवल `m` मानों की गणना करता है।",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9220,8 +9220,8 @@ module.exports = {
     {
       n: "LINEST",
       t: 14,
-      d: "Given partial data about a linear trend, calculates various parameters about the ideal linear trend using the least-squares method.",
-      a: "Best-fit linear trend via least-squares.",
+      d: "किसी रैखिक प्रवृत्ति के बारे में आंशिक डेटा को देखते हुए, न्यूनतम-वर्ग विधि का उपयोग करके आदर्श रैखिक प्रवृत्ति के विभिन्न पैरामीटर परिकलित करता है।",
+      a: "न्यूनतम-वर्गों के माध्यम से सर्वश्रेष्ठ-फिट रैखिक प्रवृत्ति।",
       m: [
         1,
         4
@@ -9229,7 +9229,7 @@ module.exports = {
       p: [
         {
           name: "ज्ञात_डेटा_y",
-          detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal linear trend.",
+          detail: "वह सरणी या श्रेणी जिसमें पहले से ज्ञात आश्रित (y) मान हैं, जिनका उपयोग एक आदर्श रैखिक प्रवृत्ति को फिट करने के लिए किया जाता है।",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9237,7 +9237,7 @@ module.exports = {
         },
         {
           name: "ज्ञात_डेटा_x",
-          detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
+          detail: "`ज्ञात_डेटा_y` के अनुरूप स्वतंत्र चर(चरों) के मान।",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9245,7 +9245,7 @@ module.exports = {
         },
         {
           name: "b_की_गणना_करें",
-          detail: "Given a linear form of `y = m*x+b`, calculates the y-intercept (`b`) if `TRUE`. Otherwise, forces `b` to be `0` and only calculates the `m` values if `FALSE`, i.e. forces the curve fit to pass through the origin.",
+          detail: "`y = m*x+b` के रैखिक रूप को देखते हुए, यदि `TRUE` है तो y-अंतःखंड (`b`) की गणना करता है। अन्यथा, `b` को `0` पर बाध्य करता है और यदि `FALSE` है तो केवल `m` मानों की गणना करता है, अर्थात कर्व फिट को मूल बिंदु से गुजरने के लिए बाध्य करता है।",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9253,7 +9253,7 @@ module.exports = {
         },
         {
           name: "विस्तृत",
-          detail: "A flag specifying whether to return additional regression statistics or only the linear coefficients and the y-intercept (default).",
+          detail: "एक ध्वज जो निर्दिष्ट करता है कि अतिरिक्त समाश्रयण सांख्यिकी लौटाई जाए या केवल रैखिक गुणांक और y-अंतःखंड (डिफ़ॉल्ट)।",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9264,8 +9264,8 @@ module.exports = {
     {
       n: "LOGEST",
       t: 14,
-      d: "Given partial data about an exponential growth curve, calculates various parameters about the best fit ideal exponential growth curve.",
-      a: "Best-fit exponential growth curve.",
+      d: "किसी घातांकी वृद्धि वक्र के बारे में आंशिक डेटा को देखते हुए, सर्वश्रेष्ठ-फिट आदर्श घातांकी वृद्धि वक्र के विभिन्न पैरामीटर परिकलित करता है।",
+      a: "सर्वश्रेष्ठ-फिट घातांकी वृद्धि वक्र।",
       m: [
         1,
         4
@@ -9273,7 +9273,7 @@ module.exports = {
       p: [
         {
           name: "ज्ञात_डेटा_y",
-          detail: "The array or range containing dependent (y) values that are already known, used to curve fit an ideal exponential growth curve.",
+          detail: "वह सरणी या श्रेणी जिसमें पहले से ज्ञात आश्रित (y) मान हैं, जिनका उपयोग एक आदर्श घातांकी वृद्धि वक्र को फिट करने के लिए किया जाता है।",
           example: "B2:B10",
           require: "m",
           repeat: "n",
@@ -9281,7 +9281,7 @@ module.exports = {
         },
         {
           name: "ज्ञात_डेटा_x",
-          detail: "The values of the independent variable(s) corresponding with `known_data_y`.",
+          detail: "`ज्ञात_डेटा_y` के अनुरूप स्वतंत्र चर(चरों) के मान।",
           example: "A2:A10",
           require: "o",
           repeat: "n",
@@ -9289,7 +9289,7 @@ module.exports = {
         },
         {
           name: "b",
-          detail: "Given a general exponential form of `y = b*m^x` for a curve fit, calculates `b` if `TRUE` or forces `b` to be `1` and only calculates the `m` values if `FALSE`.",
+          detail: "किसी कर्व फिट के लिए `y = b*m^x` के सामान्य घातांकी रूप को देखते हुए, यदि `TRUE` है तो `b` की गणना करता है, या यदि `FALSE` है तो `b` को `1` पर बाध्य करता है और केवल `m` मानों की गणना करता है।",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9297,7 +9297,7 @@ module.exports = {
         },
         {
           name: "विस्तृत",
-          detail: "A flag specifying whether to return additional regression statistics or only the calculated coefficient and exponents.",
+          detail: "एक ध्वज जो निर्दिष्ट करता है कि अतिरिक्त समाश्रयण सांख्यिकी लौटाई जाए या केवल परिकलित गुणांक और घातांक।",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -9308,8 +9308,8 @@ module.exports = {
     {
       n: "MDETERM",
       t: 14,
-      d: "Returns the matrix determinant of a square matrix specified as an array or range.",
-      a: "Matrix determinant of a square matrix.",
+      d: "सरणी या श्रेणी के रूप में निर्दिष्ट किसी वर्ग मैट्रिक्स का सारणिक (डिटर्मिनेंट) देता है।",
+      a: "किसी वर्ग मैट्रिक्स का मैट्रिक्स सारणिक।",
       m: [
         1,
         1
@@ -9317,7 +9317,7 @@ module.exports = {
       p: [
         {
           name: "वर्ग_मैट्रिक्स",
-          detail: "An array or range with an equal number of rows and columns representing a matrix whose determinant will be calculated.",
+          detail: "बराबर संख्या में पंक्तियों और स्तंभों वाली एक सरणी या श्रेणी, जो एक ऐसे मैट्रिक्स का प्रतिनिधित्व करती है जिसका सारणिक परिकलित किया जाएगा।",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9328,8 +9328,8 @@ module.exports = {
     {
       n: "MINVERSE",
       t: 14,
-      d: "Returns the multiplicative inverse of a square matrix specified as an array or range.",
-      a: "Multiplicative inverse of square matrix.",
+      d: "सरणी या श्रेणी के रूप में निर्दिष्ट किसी वर्ग मैट्रिक्स का गुणात्मक प्रतिलोम देता है।",
+      a: "वर्ग मैट्रिक्स का गुणात्मक प्रतिलोम।",
       m: [
         1,
         1
@@ -9337,7 +9337,7 @@ module.exports = {
       p: [
         {
           name: "वर्ग_मैट्रिक्स",
-          detail: "An array or range with an equal number of rows and columns representing a matrix whose multiplicative inverse will be calculated.",
+          detail: "बराबर संख्या में पंक्तियों और स्तंभों वाली एक सरणी या श्रेणी, जो एक ऐसे मैट्रिक्स का प्रतिनिधित्व करती है जिसका गुणात्मक प्रतिलोम परिकलित किया जाएगा।",
           example: "A1:D4",
           require: "m",
           repeat: "n",
@@ -9348,8 +9348,8 @@ module.exports = {
     {
       n: "MMULT",
       t: 14,
-      d: "Calculates the matrix product of two matrices specified as arrays or ranges.",
-      a: "The matrix product of two matrices.",
+      d: "सरणियों या श्रेणियों के रूप में निर्दिष्ट दो मैट्रिक्स का मैट्रिक्स गुणनफल परिकलित करता है।",
+      a: "दो मैट्रिक्स का मैट्रिक्स गुणनफल।",
       m: [
         2,
         2
@@ -9357,7 +9357,7 @@ module.exports = {
       p: [
         {
           name: "मैट्रिक्स1",
-          detail: "The first matrix in the matrix multiplication operation, represented as an array or range.",
+          detail: "मैट्रिक्स गुणन संक्रिया में पहला मैट्रिक्स, सरणी या श्रेणी के रूप में दर्शाया गया।",
           example: "A1:B3",
           require: "m",
           repeat: "n",
@@ -9365,7 +9365,7 @@ module.exports = {
         },
         {
           name: "मैट्रिक्स2",
-          detail: "The second matrix in the matrix multiplication operation, represented as an array or range.",
+          detail: "मैट्रिक्स गुणन संक्रिया में दूसरा मैट्रिक्स, सरणी या श्रेणी के रूप में दर्शाया गया।",
           example: "C1:F2",
           require: "m",
           repeat: "n",
@@ -9376,8 +9376,8 @@ module.exports = {
     {
       n: "SUMPRODUCT",
       t: 14,
-      d: "Calculates the sum of the products of corresponding entries in two equal-sized arrays or ranges.",
-      a: "Sum of products of elements in two arrays.",
+      d: "दो समान आकार की सरणियों या श्रेणियों में संगत प्रविष्टियों के गुणनफलों का योग परिकलित करता है।",
+      a: "दो सरणियों में तत्वों के गुणनफलों का योग।",
       m: [
         1,
         255
@@ -9385,7 +9385,7 @@ module.exports = {
       p: [
         {
           name: "सरणी1",
-          detail: "The first array or range whose entries will be multiplied with corresponding entries in the second such array or range.",
+          detail: "पहली सरणी या श्रेणी जिसकी प्रविष्टियों को दूसरी ऐसी सरणी या श्रेणी की संगत प्रविष्टियों से गुणा किया जाएगा।",
           example: "A2:C5",
           require: "m",
           repeat: "n",
@@ -9393,7 +9393,7 @@ module.exports = {
         },
         {
           name: "सरणी2",
-          detail: "The second array or range whose entries will be multiplied with corresponding entries in the first such array or range.",
+          detail: "दूसरी सरणी या श्रेणी जिसकी प्रविष्टियों को पहली ऐसी सरणी या श्रेणी की संगत प्रविष्टियों से गुणा किया जाएगा।",
           example: "D2:F5",
           require: "o",
           repeat: "y",
@@ -9404,8 +9404,8 @@ module.exports = {
     {
       n: "ISFORMULA",
       t: 15,
-      d: "Checks whether a value is a formula.",
-      a: "Whether a value is a formula.",
+      d: "जांचता है कि क्या कोई मान एक सूत्र (फॉर्मूला) है।",
+      a: "क्या कोई मान एक सूत्र है।",
       m: [
         1,
         1
@@ -9413,7 +9413,7 @@ module.exports = {
       p: [
         {
           name: "सेल",
-          detail: "The cell to be verified as containing a formula.",
+          detail: "वह कोशिका जिसे सूत्र रखने के रूप में सत्यापित करना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9424,8 +9424,8 @@ module.exports = {
     {
       n: "CELL",
       t: 15,
-      d: "Returns the requested information about the specified cell.",
-      a: "Gets information about a cell.",
+      d: "निर्दिष्ट कोशिका के बारे में अनुरोधित जानकारी देता है।",
+      a: "किसी कोशिका के बारे में जानकारी प्राप्त करता है।",
       m: [
         2,
         2
@@ -9433,7 +9433,7 @@ module.exports = {
       p: [
         {
           name: "जानकारी_प्रकार",
-          detail: "The type of information requested (see article for available types)",
+          detail: "अनुरोधित जानकारी का प्रकार (उपलब्ध प्रकारों के लिए लेख देखें)।",
           example: "\"type\"",
           require: "m",
           repeat: "n",
@@ -9441,7 +9441,7 @@ module.exports = {
         },
         {
           name: "संदर्भ",
-          detail: "The reference to the cell.",
+          detail: "कोशिका का संदर्भ।",
           example: "C2",
           require: "m",
           repeat: "n",
@@ -9452,8 +9452,8 @@ module.exports = {
     {
       n: "NA",
       t: 15,
-      d: "Returns the \"value not available\" error, `#N/A`.",
-      a: "The `#N/A` error.",
+      d: "\"मान उपलब्ध नहीं है\" त्रुटि, `#N/A`, देता है।",
+      a: "`#N/A` त्रुटि।",
       m: [
         0,
         0
@@ -9463,8 +9463,8 @@ module.exports = {
     {
       n: "ERROR_TYPE",
       t: 15,
-      d: "Returns a number corresponding to the error value in a different cell.",
-      a: "Error value of cell (as number).",
+      d: "किसी अन्य कोशिका में त्रुटि मान से संबंधित एक संख्या देता है।",
+      a: "कोशिका का त्रुटि मान (संख्या के रूप में)।",
       m: [
         1,
         1
@@ -9472,7 +9472,7 @@ module.exports = {
       p: [
         {
           name: "संदर्भ",
-          detail: "The cell to find the error number for although you can also provide the error value directly.",
+          detail: "वह कोशिका जिसके लिए त्रुटि संख्या ज्ञात करनी है, हालांकि आप सीधे त्रुटि मान भी प्रदान कर सकते हैं।",
           example: "A3",
           require: "m",
           repeat: "n",
@@ -9483,8 +9483,8 @@ module.exports = {
     {
       n: "ISBLANK",
       t: 15,
-      d: "Checks whether the referenced cell is empty.",
-      a: "Whether the referenced cell is empty.",
+      d: "जांचता है कि क्या संदर्भित कोशिका रिक्त है।",
+      a: "क्या संदर्भित कोशिका रिक्त है।",
       m: [
         1,
         1
@@ -9492,7 +9492,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "Reference to the cell that will be checked for emptiness.",
+          detail: "उस कोशिका का संदर्भ जिसे रिक्त होने के लिए जांचा जाएगा।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9503,8 +9503,8 @@ module.exports = {
     {
       n: "ISERR",
       t: 15,
-      d: "Checks whether a value is an error other than `#N/A`.",
-      a: "Whether a value is an error other than `#n/a`.",
+      d: "जांचता है कि क्या कोई मान `#N/A` के अलावा कोई त्रुटि है।",
+      a: "क्या कोई मान `#N/A` के अलावा कोई त्रुटि है।",
       m: [
         1,
         1
@@ -9512,7 +9512,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to be verified as an error type other than `#N/A`.",
+          detail: "वह मान जिसे `#N/A` के अलावा किसी त्रुटि प्रकार के रूप में सत्यापित करना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9523,8 +9523,8 @@ module.exports = {
     {
       n: "ISERROR",
       t: 15,
-      d: "Checks whether a value is an error.",
-      a: "Whether a value is an error.",
+      d: "जांचता है कि क्या कोई मान एक त्रुटि है।",
+      a: "क्या कोई मान एक त्रुटि है।",
       m: [
         1,
         1
@@ -9532,7 +9532,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to be verified as an error type.",
+          detail: "वह मान जिसे त्रुटि प्रकार के रूप में सत्यापित करना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9543,8 +9543,8 @@ module.exports = {
     {
       n: "ISLOGICAL",
       t: 15,
-      d: "Checks whether a value is `TRUE` or `FALSE`.",
-      a: "Whether a value is `true` or `false`.",
+      d: "जांचता है कि क्या कोई मान `TRUE` या `FALSE` है।",
+      a: "क्या कोई मान `TRUE` या `FALSE` है।",
       m: [
         1,
         1
@@ -9552,7 +9552,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to be verified as a logical `TRUE` or `FALSE`.",
+          detail: "वह मान जिसे तार्किक `TRUE` या `FALSE` के रूप में सत्यापित करना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9563,8 +9563,8 @@ module.exports = {
     {
       n: "ISNA",
       t: 15,
-      d: "Checks whether a value is the error `#N/A`.",
-      a: "Whether a value is the error `#n/a`.",
+      d: "जांचता है कि क्या कोई मान त्रुटि `#N/A` है।",
+      a: "क्या कोई मान त्रुटि `#N/A` है।",
       m: [
         1,
         1
@@ -9572,7 +9572,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to be compared with the error value `#N/A`.",
+          detail: "वह मान जिसकी त्रुटि मान `#N/A` से तुलना करनी है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9583,8 +9583,8 @@ module.exports = {
     {
       n: "ISNONTEXT",
       t: 15,
-      d: "Checks whether a value is non-textual.",
-      a: "Whether a value is non-textual.",
+      d: "जांचता है कि क्या कोई मान टेक्स्ट-रहित है।",
+      a: "क्या कोई मान टेक्स्ट-रहित है।",
       m: [
         1,
         1
@@ -9592,7 +9592,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to be checked.",
+          detail: "वह मान जिसे जांचना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9603,8 +9603,8 @@ module.exports = {
     {
       n: "ISNUMBER",
       t: 15,
-      d: "Checks whether a value is a number.",
-      a: "Whether a value is a number.",
+      d: "जांचता है कि क्या कोई मान एक संख्या है।",
+      a: "क्या कोई मान एक संख्या है।",
       m: [
         1,
         1
@@ -9612,7 +9612,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to be verified as a number.",
+          detail: "वह मान जिसे संख्या के रूप में सत्यापित करना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9623,8 +9623,8 @@ module.exports = {
     {
       n: "ISREF",
       t: 15,
-      d: "Checks whether a value is a valid cell reference.",
-      a: "Whether a value is a valid cell reference.",
+      d: "जांचता है कि क्या कोई मान एक वैध कोशिका संदर्भ है।",
+      a: "क्या कोई मान एक वैध कोशिका संदर्भ है।",
       m: [
         1,
         1
@@ -9632,7 +9632,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to be verified as a cell reference.",
+          detail: "वह मान जिसे कोशिका संदर्भ के रूप में सत्यापित करना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9643,8 +9643,8 @@ module.exports = {
     {
       n: "ISTEXT",
       t: 15,
-      d: "Checks whether a value is text.",
-      a: "Whether a value is text.",
+      d: "जांचता है कि क्या कोई मान टेक्स्ट है।",
+      a: "क्या कोई मान टेक्स्ट है।",
       m: [
         1,
         1
@@ -9652,7 +9652,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value to be verified as text.",
+          detail: "वह मान जिसे टेक्स्ट के रूप में सत्यापित करना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9663,8 +9663,8 @@ module.exports = {
     {
       n: "TYPE",
       t: 15,
-      d: "Returns a number associated with the type of data passed into the function.",
-      a: "Get the type of a value.",
+      d: "फलन में दिए गए डेटा के प्रकार से संबद्ध एक संख्या देता है।",
+      a: "किसी मान का प्रकार प्राप्त करता है।",
       m: [
         1,
         1
@@ -9672,7 +9672,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The value whose type is to be determined.",
+          detail: "वह मान जिसका प्रकार निर्धारित करना है।",
           example: "C4",
           require: "m",
           repeat: "n",
@@ -9683,8 +9683,8 @@ module.exports = {
     {
       n: "N",
       t: 15,
-      d: "Returns the argument provided as a number. Text is converted to 0 and errors are returned as-is.",
-      a: "Argument provided as a number.",
+      d: "दिए गए तर्क को एक संख्या के रूप में देता है। टेक्स्ट को 0 में बदल दिया जाता है और त्रुटियां जैसी हैं वैसी ही लौटाई जाती हैं।",
+      a: "संख्या के रूप में दिया गया तर्क।",
       m: [
         1,
         1
@@ -9692,7 +9692,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The argument to be converted to a number.",
+          detail: "वह तर्क जिसे संख्या में बदलना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9703,8 +9703,8 @@ module.exports = {
     {
       n: "TO_DATE",
       t: 16,
-      d: "Converts a provided number to a date.",
-      a: "Converts a provided number to a date.",
+      d: "दी गई संख्या को एक तारीख में बदलता है।",
+      a: "दी गई संख्या को एक तारीख में बदलता है।",
       m: [
         1,
         1
@@ -9712,7 +9712,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The argument or reference to a cell to be converted to a date.",
+          detail: "वह तर्क, या किसी कोशिका का संदर्भ, जिसे तारीख में बदलना है।",
           example: "25405",
           require: "m",
           repeat: "n",
@@ -9723,8 +9723,8 @@ module.exports = {
     {
       n: "TO_PURE_NUMBER",
       t: 16,
-      d: "Converts a provided date/time, percentage, currency or other formatted numeric value to a pure number without formatting.",
-      a: "Converts any numeric value to a pure number.",
+      d: "दी गई तारीख/समय, प्रतिशत, मुद्रा, या अन्य प्रारूपित संख्यात्मक मान को बिना किसी प्रारूपण के शुद्ध संख्या में बदलता है।",
+      a: "किसी भी संख्यात्मक मान को शुद्ध संख्या में बदलता है।",
       m: [
         1,
         1
@@ -9732,7 +9732,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The argument or reference to a cell to be converted to a pure number.",
+          detail: "वह तर्क, या किसी कोशिका का संदर्भ, जिसे शुद्ध संख्या में बदलना है।",
           example: "50%",
           require: "m",
           repeat: "n",
@@ -9743,8 +9743,8 @@ module.exports = {
     {
       n: "TO_TEXT",
       t: 16,
-      d: "Converts a provided numeric value to a text value.",
-      a: "Converts a provided numeric value to a text value.",
+      d: "दिए गए संख्यात्मक मान को टेक्स्ट मान में बदलता है।",
+      a: "दिए गए संख्यात्मक मान को टेक्स्ट मान में बदलता है।",
       m: [
         1,
         1
@@ -9752,7 +9752,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The argument or reference to a cell to be converted to text.",
+          detail: "वह तर्क, या किसी कोशिका का संदर्भ, जिसे टेक्स्ट में बदलना है।",
           example: "24",
           require: "m",
           repeat: "n",
@@ -9763,8 +9763,8 @@ module.exports = {
     {
       n: "TO_DOLLARS",
       t: 16,
-      d: "Converts a provided number to a dollar value.",
-      a: "Converts a provided number to a dollar value.",
+      d: "दी गई संख्या को डॉलर मूल्य में बदलता है।",
+      a: "दी गई संख्या को डॉलर मूल्य में बदलता है।",
       m: [
         1,
         1
@@ -9772,7 +9772,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The argument or reference to a cell to be converted to a dollar value.",
+          detail: "वह तर्क, या किसी कोशिका का संदर्भ, जिसे डॉलर मूल्य में बदलना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9783,8 +9783,8 @@ module.exports = {
     {
       n: "TO_PERCENT",
       t: 16,
-      d: "Converts a provided number to a percentage.",
-      a: "Converts a provided number to a percentage.",
+      d: "दी गई संख्या को प्रतिशत में बदलता है।",
+      a: "दी गई संख्या को प्रतिशत में बदलता है।",
       m: [
         1,
         1
@@ -9792,7 +9792,7 @@ module.exports = {
       p: [
         {
           name: "मान",
-          detail: "The argument or reference to a cell to be converted to a percentage.",
+          detail: "वह तर्क, या किसी कोशिका का संदर्भ, जिसे प्रतिशत में बदलना है।",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -9803,8 +9803,8 @@ module.exports = {
     {
       n: "DGET",
       t: 17,
-      d: "Returns a single value from a database table-like array or range using a SQL-like query.",
-      a: "Single value from a table-like range.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से एक एकल मान देता है।",
+      a: "तालिका-सदृश श्रेणी से एकल मान।",
       m: [
         3,
         3
@@ -9812,7 +9812,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9820,7 +9820,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9828,7 +9828,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9839,8 +9839,8 @@ module.exports = {
     {
       n: "DMAX",
       t: 17,
-      d: "Returns the maximum value selected from a database table-like array or range using a SQL-like query.",
-      a: "Maximum of values from a table-like range.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से चुना गया अधिकतम मान देता है।",
+      a: "तालिका-सदृश श्रेणी से मानों का अधिकतम।",
       m: [
         3,
         3
@@ -9848,7 +9848,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9856,7 +9856,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9864,7 +9864,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9875,8 +9875,8 @@ module.exports = {
     {
       n: "DMIN",
       t: 17,
-      d: "Returns the minimum value selected from a database table-like array or range using a SQL-like query.",
-      a: "Minimum of values from a table-like range.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से चुना गया न्यूनतम मान देता है।",
+      a: "तालिका-सदृश श्रेणी से मानों का न्यूनतम।",
       m: [
         3,
         3
@@ -9884,7 +9884,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9892,7 +9892,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9900,7 +9900,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9911,8 +9911,8 @@ module.exports = {
     {
       n: "DAVERAGE",
       t: 17,
-      d: "Returns the average of a set of values selected from a database table-like array or range using a SQL-like query.",
-      a: "Average of a set of values from a table-like range.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से चुने गए मानों के समूह का औसत देता है।",
+      a: "तालिका-सदृश श्रेणी से मानों के समूह का औसत।",
       m: [
         3,
         3
@@ -9920,7 +9920,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9928,7 +9928,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9936,7 +9936,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9947,8 +9947,8 @@ module.exports = {
     {
       n: "DCOUNT",
       t: 17,
-      d: "Counts numeric values selected from a database table-like array or range using a SQL-like query.",
-      a: "Counts values from a table-like range.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से चुने गए संख्यात्मक मानों की गणना करता है।",
+      a: "तालिका-सदृश श्रेणी से मानों की गणना करता है।",
       m: [
         3,
         3
@@ -9956,7 +9956,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -9964,7 +9964,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -9972,7 +9972,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -9983,8 +9983,8 @@ module.exports = {
     {
       n: "DCOUNTA",
       t: 17,
-      d: "Counts values, including text, selected from a database table-like array or range using a SQL-like query.",
-      a: "Counts values and text from a table-like range.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से चुने गए मानों, टेक्स्ट सहित, की गणना करता है।",
+      a: "तालिका-सदृश श्रेणी से मानों और टेक्स्ट की गणना करता है।",
       m: [
         3,
         3
@@ -9992,7 +9992,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10000,7 +10000,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10008,7 +10008,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10019,8 +10019,8 @@ module.exports = {
     {
       n: "DPRODUCT",
       t: 17,
-      d: "Returns the product of values selected from a database table-like array or range using a SQL-like query.",
-      a: "Product of values from a table-like range.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से चुने गए मानों का गुणनफल देता है।",
+      a: "तालिका-सदृश श्रेणी से मानों का गुणनफल।",
       m: [
         3,
         3
@@ -10028,7 +10028,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10036,7 +10036,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10044,7 +10044,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10055,8 +10055,8 @@ module.exports = {
     {
       n: "DSTDEV",
       t: 17,
-      d: "Returns the standard deviation of a population sample selected from a database table-like array or range using a SQL-like query.",
-      a: "Standard deviation of population sample from table.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से चुने गए जनसंख्या नमूने का मानक विचलन देता है।",
+      a: "तालिका से जनसंख्या नमूने का मानक विचलन।",
       m: [
         3,
         3
@@ -10064,7 +10064,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10072,7 +10072,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10080,7 +10080,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10091,8 +10091,8 @@ module.exports = {
     {
       n: "DSTDEVP",
       t: 17,
-      d: "Returns the standard deviation of an entire population selected from a database table-like array or range using a SQL-like query.",
-      a: "Standard deviation of entire population from table.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से चुनी गई संपूर्ण जनसंख्या का मानक विचलन देता है।",
+      a: "तालिका से संपूर्ण जनसंख्या का मानक विचलन।",
       m: [
         3,
         3
@@ -10100,7 +10100,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10108,7 +10108,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10116,7 +10116,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10127,8 +10127,8 @@ module.exports = {
     {
       n: "DSUM",
       t: 17,
-      d: "Returns the sum of values selected from a database table-like array or range using a SQL-like query.",
-      a: "Sum of values from a table-like range.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से चुने गए मानों का योग देता है।",
+      a: "तालिका-सदृश श्रेणी से मानों का योग।",
       m: [
         3,
         3
@@ -10136,7 +10136,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10144,7 +10144,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10152,7 +10152,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10163,8 +10163,8 @@ module.exports = {
     {
       n: "DVAR",
       t: 17,
-      d: "Returns the variance of a population sample selected from a database table-like array or range using a SQL-like query.",
-      a: "Variance of population sample from table-like range.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से चुने गए जनसंख्या नमूने का प्रसरण देता है।",
+      a: "तालिका-सदृश श्रेणी से जनसंख्या नमूने का प्रसरण।",
       m: [
         3,
         3
@@ -10172,7 +10172,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10180,7 +10180,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10188,7 +10188,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10199,8 +10199,8 @@ module.exports = {
     {
       n: "DVARP",
       t: 17,
-      d: "Returns the variance of an entire population selected from a database table-like array or range using a SQL-like query.",
-      a: "Variance of a population from a table-like range.",
+      d: "SQL जैसी क्वेरी का उपयोग करके किसी डेटाबेस-सदृश सरणी या श्रेणी से चुनी गई संपूर्ण जनसंख्या का प्रसरण देता है।",
+      a: "तालिका-सदृश श्रेणी से जनसंख्या का प्रसरण।",
       m: [
         3,
         3
@@ -10208,7 +10208,7 @@ module.exports = {
       p: [
         {
           name: "डेटाबेस",
-          detail: "The array or range containing the data to consider, structured in such a way that the first row contains the labels for each column's values.",
+          detail: "वह सरणी या श्रेणी जिसमें विचार करने के लिए डेटा है, इस प्रकार संरचित कि पहली पंक्ति में प्रत्येक स्तंभ के मानों के लेबल हों।",
           example: "A2:F20",
           require: "m",
           repeat: "n",
@@ -10216,7 +10216,7 @@ module.exports = {
         },
         {
           name: "फ़ील्ड",
-          detail: "Indicates which column in `database` contains the values to be extracted and operated on.",
+          detail: "इंगित करता है कि `database` में कौन सा स्तंभ निकाले और संचालित किए जाने वाले मान रखता है।",
           example: "G2",
           require: "m",
           repeat: "n",
@@ -10224,7 +10224,7 @@ module.exports = {
         },
         {
           name: "मानदंड",
-          detail: "An array or range containing zero or more criteria to filter the `database` values by before operating.",
+          detail: "एक सरणी या श्रेणी जिसमें संचालन से पहले `database` मानों को फ़िल्टर करने के लिए शून्य या अधिक मानदंड हैं।",
           example: "A22:D23",
           require: "m",
           repeat: "n",
@@ -10235,8 +10235,8 @@ module.exports = {
     {
       n: "AGE_BY_IDCARD",
       t: "3",
-      d: "Calculate the age based on the Chinese ID number. Support 15 or 18",
-      a: "Get age based on ID number.",
+      d: "चीनी पहचान संख्या के आधार पर आयु परिकलित करता है। 15 या 18 अंकों का समर्थन करता है।",
+      a: "पहचान संख्या के आधार पर आयु प्राप्त करता है।",
       m: [
         1,
         2
@@ -10245,7 +10245,7 @@ module.exports = {
         {
           name: "पहचान संख्या",
           example: "A1",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "15-अंकों या 18-अंकों की पहचान संख्या या श्रेणी।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10253,7 +10253,7 @@ module.exports = {
         {
           name: "अंतिम तिथि",
           example: "\"2017-10-01\"",
-          detail: "The deadline or range of age calculation. The default is the current day.",
+          detail: "आयु गणना की समय सीमा या श्रेणी। डिफ़ॉल्ट वर्तमान दिन है।",
           require: "o",
           repeat: "n",
           type: "rangedatetime"
@@ -10263,8 +10263,8 @@ module.exports = {
     {
       n: "SEX_BY_IDCARD",
       t: "3",
-      d: "Calculate gender based on Chinese ID number. Support 15 or 18",
-      a: "Get gender based on ID number.",
+      d: "चीनी पहचान संख्या के आधार पर लिंग परिकलित करता है। 15 या 18 अंकों का समर्थन करता है।",
+      a: "पहचान संख्या के आधार पर लिंग प्राप्त करता है।",
       m: [
         1,
         1
@@ -10273,7 +10273,7 @@ module.exports = {
         {
           name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "15-अंकों या 18-अंकों की पहचान संख्या या श्रेणी।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10283,8 +10283,8 @@ module.exports = {
     {
       n: "BIRTHDAY_BY_IDCARD",
       t: "3",
-      d: "Calculate the birthday based on the Chinese ID number. Support 15 or 18",
-      a: "Get the birthday based on the ID number.",
+      d: "चीनी पहचान संख्या के आधार पर जन्मदिन परिकलित करता है। 15 या 18 अंकों का समर्थन करता है।",
+      a: "पहचान संख्या के आधार पर जन्मदिन प्राप्त करता है।",
       m: [
         1,
         2
@@ -10293,7 +10293,7 @@ module.exports = {
         {
           name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "15-अंकों या 18-अंकों की पहचान संख्या या श्रेणी।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10301,7 +10301,7 @@ module.exports = {
         {
           name: "जन्मतिथि प्रारूप",
           example: "0",
-          detail: "Date type, default:0:[1900/01/01], 1:[1900-01-01], 2:[1900年1月1日]",
+          detail: "तारीख प्रकार, डिफ़ॉल्ट: 0:[1900/01/01], 1:[1900-01-01], 2:[1 जनवरी 1900]।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10311,8 +10311,8 @@ module.exports = {
     {
       n: "PROVINCE_BY_IDCARD",
       t: "3",
-      d: "Calculate the province of birthplace based on the Chinese ID number. Support 15 or 18",
-      a: "Get the province of birthplace based on the ID number.",
+      d: "चीनी पहचान संख्या के आधार पर जन्मस्थान का प्रांत परिकलित करता है। 15 या 18 अंकों का समर्थन करता है।",
+      a: "पहचान संख्या के आधार पर जन्मस्थान का प्रांत प्राप्त करता है।",
       m: [
         1,
         1
@@ -10321,7 +10321,7 @@ module.exports = {
         {
           name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "15-अंकों या 18-अंकों की पहचान संख्या या श्रेणी।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10331,8 +10331,8 @@ module.exports = {
     {
       n: "CITY_BY_IDCARD",
       t: "3",
-      d: "Calculate the city of birthplace based on the Chinese ID number. Support 15 or 18",
-      a: "Get the city of birthplace based on the ID number.",
+      d: "चीनी पहचान संख्या के आधार पर जन्मस्थान का शहर परिकलित करता है। 15 या 18 अंकों का समर्थन करता है।",
+      a: "पहचान संख्या के आधार पर जन्मस्थान का शहर प्राप्त करता है।",
       m: [
         1,
         1
@@ -10341,7 +10341,7 @@ module.exports = {
         {
           name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "15-अंकों या 18-अंकों की पहचान संख्या या श्रेणी।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10351,8 +10351,8 @@ module.exports = {
     {
       n: "STAR_BY_IDCARD",
       t: "3",
-      d: "Calculate the constellation based on the Chinese ID number. Support 15 or 18",
-      a: "Get the constellation based on the ID number.",
+      d: "चीनी पहचान संख्या के आधार पर राशि परिकलित करता है। 15 या 18 अंकों का समर्थन करता है।",
+      a: "पहचान संख्या के आधार पर राशि प्राप्त करता है।",
       m: [
         1,
         1
@@ -10361,7 +10361,7 @@ module.exports = {
         {
           name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "15-अंकों या 18-अंकों की पहचान संख्या या श्रेणी।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10371,8 +10371,8 @@ module.exports = {
     {
       n: "ANIMAL_BY_IDCARD",
       t: "3",
-      d: "Calculate the zodiac (rat, ox, tiger, rabbit...) based on the Chinese ID number. Support 15 or 18",
-      a: "Get the zodiac according to the ID number.",
+      d: "चीनी पहचान संख्या के आधार पर राशिचक्र पशु (चूहा, बैल, बाघ, खरगोश...) परिकलित करता है। 15 या 18 अंकों का समर्थन करता है।",
+      a: "पहचान संख्या के अनुसार राशिचक्र पशु प्राप्त करता है।",
       m: [
         1,
         1
@@ -10381,7 +10381,7 @@ module.exports = {
         {
           name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "15-अंकों या 18-अंकों की पहचान संख्या या श्रेणी।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10391,8 +10391,8 @@ module.exports = {
     {
       n: "ISIDCARD",
       t: "3",
-      d: "Verify that the format of the ID card is correct. Support 15 or 18",
-      a: "Verify the correctness of the ID card format.",
+      d: "सत्यापित करता है कि पहचान पत्र का प्रारूप सही है। 15 या 18 अंकों का समर्थन करता है।",
+      a: "पहचान पत्र प्रारूप की शुद्धता सत्यापित करता है।",
       m: [
         1,
         1
@@ -10401,7 +10401,7 @@ module.exports = {
         {
           name: "पहचान संख्या",
           example: "\"31033519900101XXXX\"",
-          detail: "15-digit or 18-digit ID number or range.",
+          detail: "15-अंकों या 18-अंकों की पहचान संख्या या श्रेणी।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10411,8 +10411,8 @@ module.exports = {
     {
       n: "DM_TEXT_CUTWORD",
       t: "4",
-      d: "Text segmentation. Split a series of words into a series of individual words",
-      a: "Chinese text segmentation.",
+      d: "टेक्स्ट विभाजन। शब्दों की एक श्रृंखला को अलग-अलग शब्दों की एक श्रृंखला में विभाजित करता है।",
+      a: "चीनी टेक्स्ट विभाजन।",
       m: [
         1,
         2
@@ -10421,7 +10421,7 @@ module.exports = {
         {
           name: "पाठ",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Any text that needs word segmentation.",
+          detail: "कोई भी टेक्स्ट जिसे शब्द विभाजन की आवश्यकता है।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10429,7 +10429,7 @@ module.exports = {
         {
           name: "शब्द विभाजन मोड",
           example: "0",
-          detail: "The default is 0[precision mode], 1[full mode], 2[search engine mode].",
+          detail: "डिफ़ॉल्ट 0[परिशुद्धता मोड], 1[पूर्ण मोड], 2[खोज इंजन मोड] है।",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10439,8 +10439,8 @@ module.exports = {
     {
       n: "DM_TEXT_TFIDF",
       t: "4",
-      d: "Use tf-idf algorithm for keyword extraction. Identify keywords from a series of text",
-      a: "tf-idf keyword recognition.",
+      d: "कीवर्ड निष्कर्षण के लिए tf-idf एल्गोरिदम का उपयोग करता है। टेक्स्ट की एक श्रृंखला से कीवर्ड की पहचान करता है।",
+      a: "tf-idf कीवर्ड पहचान।",
       m: [
         1,
         3
@@ -10449,7 +10449,7 @@ module.exports = {
         {
           name: "पाठ",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Any text that needs word segmentation.",
+          detail: "कोई भी टेक्स्ट जिसे शब्द विभाजन की आवश्यकता है।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10457,7 +10457,7 @@ module.exports = {
         {
           name: "कीवर्ड की संख्या",
           example: "20",
-          detail: "The number of keywords returned by the algorithm, the default is 20",
+          detail: "एल्गोरिदम द्वारा लौटाए गए कीवर्ड की संख्या, डिफ़ॉल्ट 20 है।",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10465,7 +10465,7 @@ module.exports = {
         {
           name: "कॉर्पस",
           example: "1",
-          detail: "Select a corpus in a specific field, the default is 0[General], 1[Finance], 2[Medical]",
+          detail: "किसी विशिष्ट क्षेत्र में एक कॉर्पस चुनें, डिफ़ॉल्ट 0[सामान्य], 1[वित्त], 2[चिकित्सा] है।",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10475,8 +10475,8 @@ module.exports = {
     {
       n: "DM_TEXT_TEXTRANK",
       t: "4",
-      d: "Use TextRank algorithm to extract keywords. Identify keywords from a series of text",
-      a: "TextRank keyword recognition.",
+      d: "कीवर्ड निकालने के लिए TextRank एल्गोरिदम का उपयोग करता है। टेक्स्ट की एक श्रृंखला से कीवर्ड की पहचान करता है।",
+      a: "TextRank कीवर्ड पहचान।",
       m: [
         1,
         3
@@ -10485,7 +10485,7 @@ module.exports = {
         {
           name: "पाठ",
           example: "\"I came to Beijing Tsinghua University\"",
-          detail: "Any text that needs word segmentation.",
+          detail: "कोई भी टेक्स्ट जिसे शब्द विभाजन की आवश्यकता है।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10493,7 +10493,7 @@ module.exports = {
         {
           name: "कीवर्ड की संख्या",
           example: "20",
-          detail: "The number of keywords returned by the algorithm, the default is 20",
+          detail: "एल्गोरिदम द्वारा लौटाए गए कीवर्ड की संख्या, डिफ़ॉल्ट 20 है।",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10501,7 +10501,7 @@ module.exports = {
         {
           name: "कॉर्पस",
           example: "1",
-          detail: "Select a corpus in a specific field, the default is 0[General], 1[Finance], 2[Medical]",
+          detail: "किसी विशिष्ट क्षेत्र में एक कॉर्पस चुनें, डिफ़ॉल्ट 0[सामान्य], 1[वित्त], 2[चिकित्सा] है।",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10511,8 +10511,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_CLOSE",
       t: "5",
-      d: "According to the stock code and date, return the corresponding stock closing price of A shares.",
-      a: "Returns the closing price of stock.",
+      d: "स्टॉक कोड और तारीख के अनुसार, A शेयरों का संगत समापन मूल्य लौटाता है।",
+      a: "स्टॉक का समापन मूल्य लौटाता है।",
       m: [
         1,
         3
@@ -10521,7 +10521,7 @@ module.exports = {
         {
           name: "स्टॉक कोड",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "6-अंकों का स्टॉक कोड, आवश्यक।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10529,7 +10529,7 @@ module.exports = {
         {
           name: "तारीख़",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "स्टॉक का ट्रेडिंग दिन, डिफ़ॉल्ट नवीनतम ट्रेडिंग दिन है।",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10537,7 +10537,7 @@ module.exports = {
         {
           name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "स्टॉक के अधिकार पुनर्स्थापन प्रकार का चयन करें, डिफ़ॉल्ट 0 [पूर्व पुनर्स्थापन], 1 [मूल मूल्य], 2 [उत्तर पुनर्स्थापन]।",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10547,8 +10547,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_OPEN",
       t: "5",
-      d: "According to the stock code and date, return the opening price of stock.",
-      a: "Return the opening price of a shares.",
+      d: "स्टॉक कोड और तारीख के अनुसार, स्टॉक का प्रारंभिक मूल्य लौटाता है।",
+      a: "A शेयरों का प्रारंभिक मूल्य लौटाता है।",
       m: [
         1,
         3
@@ -10557,7 +10557,7 @@ module.exports = {
         {
           name: "स्टॉक कोड",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "6-अंकों का स्टॉक कोड, आवश्यक।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10565,7 +10565,7 @@ module.exports = {
         {
           name: "तारीख़",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "स्टॉक का ट्रेडिंग दिन, डिफ़ॉल्ट नवीनतम ट्रेडिंग दिन है।",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10573,7 +10573,7 @@ module.exports = {
         {
           name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "स्टॉक के अधिकार पुनर्स्थापन प्रकार का चयन करें, डिफ़ॉल्ट 0 [पूर्व पुनर्स्थापन], 1 [मूल मूल्य], 2 [उत्तर पुनर्स्थापन]।",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10583,8 +10583,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_MAX",
       t: "5",
-      d: "According to the stock code and date, return the highest price of stock.",
-      a: "Return the highest price of stock.",
+      d: "स्टॉक कोड और तारीख के अनुसार, स्टॉक का उच्चतम मूल्य लौटाता है।",
+      a: "स्टॉक का उच्चतम मूल्य लौटाता है।",
       m: [
         1,
         3
@@ -10593,7 +10593,7 @@ module.exports = {
         {
           name: "स्टॉक कोड",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "6-अंकों का स्टॉक कोड, आवश्यक।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10601,7 +10601,7 @@ module.exports = {
         {
           name: "तारीख़",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "स्टॉक का ट्रेडिंग दिन, डिफ़ॉल्ट नवीनतम ट्रेडिंग दिन है।",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10609,7 +10609,7 @@ module.exports = {
         {
           name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "स्टॉक के अधिकार पुनर्स्थापन प्रकार का चयन करें, डिफ़ॉल्ट 0 [पूर्व पुनर्स्थापन], 1 [मूल मूल्य], 2 [उत्तर पुनर्स्थापन]।",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10619,8 +10619,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_MIN",
       t: "5",
-      d: "According to the stock code and date, return the lowest price of stock.",
-      a: "Returns the lowest price of stock.",
+      d: "स्टॉक कोड और तारीख के अनुसार, स्टॉक का न्यूनतम मूल्य लौटाता है।",
+      a: "स्टॉक का न्यूनतम मूल्य लौटाता है।",
       m: [
         1,
         3
@@ -10629,7 +10629,7 @@ module.exports = {
         {
           name: "स्टॉक कोड",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "6-अंकों का स्टॉक कोड, आवश्यक।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10637,7 +10637,7 @@ module.exports = {
         {
           name: "तारीख़",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "स्टॉक का ट्रेडिंग दिन, डिफ़ॉल्ट नवीनतम ट्रेडिंग दिन है।",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10645,7 +10645,7 @@ module.exports = {
         {
           name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "स्टॉक के अधिकार पुनर्स्थापन प्रकार का चयन करें, डिफ़ॉल्ट 0 [पूर्व पुनर्स्थापन], 1 [मूल मूल्य], 2 [उत्तर पुनर्स्थापन]।",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10655,8 +10655,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_VOLUMN",
       t: "5",
-      d: "According to the stock code and date, return the corresponding stock trading volume of A shares.",
-      a: "Returns the corresponding stock trading volume of A shares.",
+      d: "स्टॉक कोड और तारीख के अनुसार, A शेयरों का संगत ट्रेडिंग वॉल्यूम लौटाता है।",
+      a: "A शेयरों का संगत ट्रेडिंग वॉल्यूम लौटाता है।",
       m: [
         1,
         3
@@ -10665,7 +10665,7 @@ module.exports = {
         {
           name: "स्टॉक कोड",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "6-अंकों का स्टॉक कोड, आवश्यक।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10673,7 +10673,7 @@ module.exports = {
         {
           name: "तारीख़",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "स्टॉक का ट्रेडिंग दिन, डिफ़ॉल्ट नवीनतम ट्रेडिंग दिन है।",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10681,7 +10681,7 @@ module.exports = {
         {
           name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "स्टॉक के अधिकार पुनर्स्थापन प्रकार का चयन करें, डिफ़ॉल्ट 0 [पूर्व पुनर्स्थापन], 1 [मूल मूल्य], 2 [उत्तर पुनर्स्थापन]।",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10691,8 +10691,8 @@ module.exports = {
     {
       n: "DATA_CN_STOCK_AMOUNT",
       t: "5",
-      d: "According to the stock code and date, return the corresponding stock turnover of A shares.",
-      a: "Returns the corresponding stock turnover of A shares.",
+      d: "स्टॉक कोड और तारीख के अनुसार, A शेयरों का संगत टर्नओवर लौटाता है।",
+      a: "A शेयरों का संगत टर्नओवर लौटाता है।",
       m: [
         1,
         3
@@ -10701,7 +10701,7 @@ module.exports = {
         {
           name: "स्टॉक कोड",
           example: "\"000001\"",
-          detail: "6-digit stock code, required.",
+          detail: "6-अंकों का स्टॉक कोड, आवश्यक।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10709,7 +10709,7 @@ module.exports = {
         {
           name: "तारीख़",
           example: "2015-01-08",
-          detail: "The trading day of the stock, the default is the latest trading day",
+          detail: "स्टॉक का ट्रेडिंग दिन, डिफ़ॉल्ट नवीनतम ट्रेडिंग दिन है।",
           require: "o",
           repeat: "n",
           type: "rangedate"
@@ -10717,7 +10717,7 @@ module.exports = {
         {
           name: "शेयर पुनर्स्थापन प्रकार",
           example: "0",
-          detail: "Select the ex right restoration type of the stock, default to 0 [former reversion], 1 [original price], 2 [post reversion]",
+          detail: "स्टॉक के अधिकार पुनर्स्थापन प्रकार का चयन करें, डिफ़ॉल्ट 0 [पूर्व पुनर्स्थापन], 1 [मूल मूल्य], 2 [उत्तर पुनर्स्थापन]।",
           require: "o",
           repeat: "n",
           type: "rangenumber"
@@ -10727,8 +10727,8 @@ module.exports = {
     {
       n: "ISDATE",
       t: "6",
-      d: "Returns whether a value is a date.",
-      a: "Whether a value is a date.",
+      d: "बताता है कि क्या कोई मान एक तारीख है।",
+      a: "क्या कोई मान एक तारीख है।",
       m: [
         1,
         1
@@ -10737,7 +10737,7 @@ module.exports = {
         {
           name: "मान",
           example: "\"1990-01-01\"",
-          detail: "The value to be verified as a date.",
+          detail: "वह मान जिसे तारीख के रूप में सत्यापित करना है।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10747,8 +10747,8 @@ module.exports = {
     {
       n: "LINESPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell to describe the continuous trend of data",
-      a: "Generate sparklines line chart",
+      d: "डेटा की निरंतर प्रवृत्ति का वर्णन करने के लिए कोशिका में एम्बेड किए गए स्पार्कलाइन बनाता है।",
+      a: "स्पार्कलाइन लाइन चार्ट बनाता है।",
       m: [
         1,
         8
@@ -10757,7 +10757,7 @@ module.exports = {
         {
           name: "श्रेणी",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "श्रेणी। मानों की प्रभावी रूप से गणना की जा सकती है, जैसे A1:A20, {1,2,3,4,5}, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10765,7 +10765,7 @@ module.exports = {
         {
           name: "रेखा का रंग",
           example: "#2ec7c9",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
+          detail: "लाइन ग्राफ का लाइन रंग A1 श्रेणी, रंग तालिका सूचकांक मान या विशिष्ट रंग मान हो सकता है। इसे प्रदर्शित न करने के लिए 0 या false पर सेट करें। यह regx, rgb, rgba आदि का समर्थन करता है। डिफ़ॉल्ट #2ec7c9।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10773,7 +10773,7 @@ module.exports = {
         {
           name: "रेखा मोटाई",
           example: "1",
-          detail: "Line thickness of the line graph, the default is 1px",
+          detail: "लाइन ग्राफ की लाइन मोटाई, डिफ़ॉल्ट 1px है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10781,7 +10781,7 @@ module.exports = {
         {
           name: "सहायक रेखा",
           example: "avg",
-          detail: "A horizontal line, which can be min, max, avg, median, range or custom value, default 0 none",
+          detail: "एक क्षैतिज रेखा, जो न्यूनतम, अधिकतम, औसत, माध्यिका, श्रेणी या कस्टम मान हो सकती है, डिफ़ॉल्ट 0 कोई नहीं।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10789,7 +10789,7 @@ module.exports = {
         {
           name: "सहायक रेखा का रंग",
           example: "#000",
-          detail: "Color setting of auxiliary line, same as line color configuration, default #000",
+          detail: "सहायक रेखा का रंग सेटिंग, लाइन रंग कॉन्फ़िगरेशन के समान, डिफ़ॉल्ट #000।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10797,7 +10797,7 @@ module.exports = {
         {
           name: "अधिकतम चिह्न",
           example: "#fc5c5c",
-          detail: "Identifies the maximum value of the line graph, the same line color configuration, default 0 does not display",
+          detail: "लाइन ग्राफ के अधिकतम मान की पहचान करता है, वही लाइन रंग कॉन्फ़िगरेशन, डिफ़ॉल्ट 0 प्रदर्शित नहीं होता।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10805,7 +10805,7 @@ module.exports = {
         {
           name: "न्यूनतम चिह्न",
           example: "#fc5c5c",
-          detail: "Identify the minimum value of the line graph, the same line color configuration, default 0 does not display",
+          detail: "लाइन ग्राफ के न्यूनतम मान की पहचान करता है, वही लाइन रंग कॉन्फ़िगरेशन, डिफ़ॉल्ट 0 प्रदर्शित नहीं होता।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10813,7 +10813,7 @@ module.exports = {
         {
           name: "चिह्न आकार",
           example: "1.5",
-          detail: "The maximum and minimum mark size settings, the default is 1.5",
+          detail: "अधिकतम और न्यूनतम चिह्न आकार सेटिंग, डिफ़ॉल्ट 1.5 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10823,8 +10823,8 @@ module.exports = {
     {
       n: "AREASPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell area chart, generally used to describe the continuous cumulative value trend of the data",
-      a: "Generate sparklines area chart",
+      d: "कोशिका क्षेत्र चार्ट में एम्बेड किए गए स्पार्कलाइन बनाता है, आम तौर पर डेटा की निरंतर संचयी मान प्रवृत्ति का वर्णन करने के लिए उपयोग किया जाता है।",
+      a: "स्पार्कलाइन क्षेत्र चार्ट बनाता है।",
       m: [
         1,
         5
@@ -10833,7 +10833,7 @@ module.exports = {
         {
           name: "श्रेणी",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "श्रेणी। मानों की प्रभावी रूप से गणना की जा सकती है, जैसे A1:A20, {1,2,3,4,5}, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10841,7 +10841,7 @@ module.exports = {
         {
           name: "रेखा का रंग",
           example: "#2ec7c9",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
+          detail: "लाइन ग्राफ का लाइन रंग A1 श्रेणी, रंग तालिका सूचकांक मान या विशिष्ट रंग मान हो सकता है। इसे प्रदर्शित न करने के लिए 0 या false पर सेट करें। यह regx, rgb, rgba आदि का समर्थन करता है। डिफ़ॉल्ट #2ec7c9।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10849,7 +10849,7 @@ module.exports = {
         {
           name: "भरण रंग",
           example: "#CCF3F4",
-          detail: "Form an area chart, the same line color configuration, default 0 does not display",
+          detail: "एक क्षेत्र चार्ट बनाता है, वही लाइन रंग कॉन्फ़िगरेशन, डिफ़ॉल्ट 0 प्रदर्शित नहीं होता।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10857,7 +10857,7 @@ module.exports = {
         {
           name: "रेखा मोटाई",
           example: "1",
-          detail: "Line thickness of the line graph, the default is 1px",
+          detail: "लाइन ग्राफ की लाइन मोटाई, डिफ़ॉल्ट 1px है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10865,7 +10865,7 @@ module.exports = {
         {
           name: "सहायक रेखा",
           example: "avg",
-          detail: "A horizontal line, which can be min, max, avg, median, range or custom value, default 0 none",
+          detail: "एक क्षैतिज रेखा, जो न्यूनतम, अधिकतम, औसत, माध्यिका, श्रेणी या कस्टम मान हो सकती है, डिफ़ॉल्ट 0 कोई नहीं।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10873,7 +10873,7 @@ module.exports = {
         {
           name: "सहायक रेखा का रंग",
           example: "#000",
-          detail: "Color setting of auxiliary line, same as line color configuration, default #000",
+          detail: "सहायक रेखा का रंग सेटिंग, लाइन रंग कॉन्फ़िगरेशन के समान, डिफ़ॉल्ट #000।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10883,8 +10883,8 @@ module.exports = {
     {
       n: "COLUMNSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the vertical histogram of cells, generally used to describe the size of discrete data",
-      a: "Generate sparklines vertical histogram",
+      d: "कोशिकाओं के ऊर्ध्वाधर हिस्टोग्राम में एम्बेड किए गए स्पार्कलाइन बनाता है, आम तौर पर असतत डेटा के आकार का वर्णन करने के लिए उपयोग किया जाता है।",
+      a: "स्पार्कलाइन ऊर्ध्वाधर हिस्टोग्राम बनाता है।",
       m: [
         1,
         6
@@ -10893,7 +10893,7 @@ module.exports = {
         {
           name: "श्रेणी",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "श्रेणी। मानों की प्रभावी रूप से गणना की जा सकती है, जैसे A1:A20, {1,2,3,4,5}, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10901,7 +10901,7 @@ module.exports = {
         {
           name: "बार अंतराल",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "बारों के बीच की दूरी, डिफ़ॉल्ट 1 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10909,7 +10909,7 @@ module.exports = {
         {
           name: "बार का रंग",
           example: "#fc5c5c",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
+          detail: "लाइन ग्राफ का लाइन रंग A1 श्रेणी, रंग तालिका सूचकांक मान या विशिष्ट रंग मान हो सकता है। इसे प्रदर्शित न करने के लिए 0 या false पर सेट करें। यह regx, rgb, rgba आदि का समर्थन करता है। डिफ़ॉल्ट #fc5c5c।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10917,7 +10917,7 @@ module.exports = {
         {
           name: "ऋणात्मक बार रंग",
           example: "#97b552",
-          detail: "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
+          detail: "ऋणात्मक बार रंग सेटिंग, ऋणात्मक मान के रंग का प्रतिनिधित्व करती है, बार रंग कॉन्फ़िगरेशन के समान, डिफ़ॉल्ट #97b552।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10925,7 +10925,7 @@ module.exports = {
         {
           name: "अधिकतम",
           example: "100",
-          detail: "The maximum value of the bar chart, used to standardize the length of the bar chart, the default is to automatically calculate false, auto, null",
+          detail: "बार चार्ट का अधिकतम मान, बार चार्ट की लंबाई को मानकीकृत करने के लिए उपयोग किया जाता है, डिफ़ॉल्ट स्वचालित रूप से गणना करना है false, auto, null।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10933,7 +10933,7 @@ module.exports = {
         {
           name: "रंग पैलेट",
           example: "#97b552",
-          detail: "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
+          detail: "रंग पैलेट प्रत्येक बार का रंग अलग-अलग सेट कर सकता है, कई सेटिंग्स सेट की जा सकती हैं, और दो प्रारूप समर्थित हैं: 1 रंग जैसे #000, जिसका अर्थ है कि पहली बार का रंग काला है; 2 मान श्रेणी: रंग, जैसे -2:#000 इंगित करता है कि -2 मान वाली बार काली है, 0:5:#000 इंगित करता है कि 0-5 मान वाली बार काली है, और डिफ़ॉल्ट रिक्त है।",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -10943,8 +10943,8 @@ module.exports = {
     {
       n: "STACKCOLUMNSPLINES",
       t: "3",
-      d: "Generate sparklines, a cumulative vertical histogram embedded in a cell, generally used to describe the numerical size of multiple dimensions of discrete data",
-      a: "Generate sparklines cumulative vertical histogram",
+      d: "कोशिका में एम्बेड किए गए संचयी ऊर्ध्वाधर हिस्टोग्राम स्पार्कलाइन बनाता है, आम तौर पर असतत डेटा के कई आयामों के संख्यात्मक आकार का वर्णन करने के लिए उपयोग किया जाता है।",
+      a: "स्पार्कलाइन संचयी ऊर्ध्वाधर हिस्टोग्राम बनाता है।",
       m: [
         1,
         5
@@ -10953,7 +10953,7 @@ module.exports = {
         {
           name: "श्रेणी",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "श्रेणी। मानों की प्रभावी रूप से गणना की जा सकती है, जैसे A1:A20, {1,2,3,4,5}, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -10961,7 +10961,7 @@ module.exports = {
         {
           name: "स्तंभ अनुसार स्टैक करें",
           example: "1",
-          detail: "If you need to stack by row, set this item to false or 0, the default is 1",
+          detail: "यदि आपको पंक्ति के अनुसार स्टैक करने की आवश्यकता है, तो इसे false या 0 पर सेट करें, डिफ़ॉल्ट 1 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10969,7 +10969,7 @@ module.exports = {
         {
           name: "बार अंतराल",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "बारों के बीच की दूरी, डिफ़ॉल्ट 1 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10977,7 +10977,7 @@ module.exports = {
         {
           name: "अधिकतम",
           example: "100",
-          detail: "The maximum value of the cumulative bar, used to regulate the length of the bar, the default is to automatically calculate false, auto, null",
+          detail: "संचयी बार का अधिकतम मान, बार की लंबाई को नियंत्रित करने के लिए उपयोग किया जाता है, डिफ़ॉल्ट स्वचालित रूप से गणना करना है false, auto, null।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -10985,7 +10985,7 @@ module.exports = {
         {
           name: "रंग पैलेट",
           example: "#97b552",
-          detail: "The color palette can individually set the bar color of each dimension, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
+          detail: "रंग पैलेट प्रत्येक आयाम के बार रंग को अलग-अलग सेट कर सकता है, जिसे A1:A10 आदि की श्रेणी के रूप में सेट किया जा सकता है। डिफ़ॉल्ट #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -10995,8 +10995,8 @@ module.exports = {
     {
       n: "BARSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell, generally used to describe the size of discrete data",
-      a: "Generate sparklines horizontal bar graph",
+      d: "कोशिका में एम्बेड किए गए स्पार्कलाइन बनाता है, आम तौर पर असतत डेटा के आकार का वर्णन करने के लिए उपयोग किया जाता है।",
+      a: "स्पार्कलाइन क्षैतिज बार ग्राफ बनाता है।",
       m: [
         1,
         6
@@ -11005,7 +11005,7 @@ module.exports = {
         {
           name: "श्रेणी",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "श्रेणी। मानों की प्रभावी रूप से गणना की जा सकती है, जैसे A1:A20, {1,2,3,4,5}, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11013,7 +11013,7 @@ module.exports = {
         {
           name: "बार अंतराल",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "बारों के बीच की दूरी, डिफ़ॉल्ट 1 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11021,7 +11021,7 @@ module.exports = {
         {
           name: "बार का रंग",
           example: "#fc5c5c",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
+          detail: "लाइन ग्राफ का लाइन रंग A1 श्रेणी, रंग तालिका सूचकांक मान या विशिष्ट रंग मान हो सकता है। इसे प्रदर्शित न करने के लिए 0 या false पर सेट करें। यह regx, rgb, rgba आदि का समर्थन करता है। डिफ़ॉल्ट #fc5c5c।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11029,7 +11029,7 @@ module.exports = {
         {
           name: "ऋणात्मक बार रंग",
           example: "#97b552",
-          detail: "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
+          detail: "ऋणात्मक बार रंग सेटिंग, ऋणात्मक मान के रंग का प्रतिनिधित्व करती है, बार रंग कॉन्फ़िगरेशन के समान, डिफ़ॉल्ट #97b552।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11037,7 +11037,7 @@ module.exports = {
         {
           name: "अधिकतम",
           example: "100",
-          detail: "The maximum value of the bar chart, used to standardize the length of the bar chart, the default is to automatically calculate false, auto, null",
+          detail: "बार चार्ट का अधिकतम मान, बार चार्ट की लंबाई को मानकीकृत करने के लिए उपयोग किया जाता है, डिफ़ॉल्ट स्वचालित रूप से गणना करना है false, auto, null।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11045,7 +11045,7 @@ module.exports = {
         {
           name: "रंग पैलेट",
           example: "#97b552",
-          detail: "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
+          detail: "रंग पैलेट प्रत्येक बार का रंग अलग-अलग सेट कर सकता है, कई सेटिंग्स सेट की जा सकती हैं, और दो प्रारूप समर्थित हैं: 1 रंग जैसे #000, जिसका अर्थ है कि पहली बार का रंग काला है; 2 मान श्रेणी: रंग, जैसे -2:#000 इंगित करता है कि -2 मान वाली बार काली है, 0:5:#000 इंगित करता है कि 0-5 मान वाली बार काली है, और डिफ़ॉल्ट रिक्त है।",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11055,8 +11055,8 @@ module.exports = {
     {
       n: "STACKBARSPLINES",
       t: "3",
-      d: "Generate sparklines, a cumulative horizontal bar graph embedded in a cell, which is generally used to describe the numerical size of multiple dimensions of discrete data",
-      a: "Generate sparklines cumulative horizontal bar graph",
+      d: "कोशिका में एम्बेड किए गए संचयी क्षैतिज बार ग्राफ स्पार्कलाइन बनाता है, जिसका उपयोग आम तौर पर असतत डेटा के कई आयामों के संख्यात्मक आकार का वर्णन करने के लिए किया जाता है।",
+      a: "स्पार्कलाइन संचयी क्षैतिज बार ग्राफ बनाता है।",
       m: [
         1,
         5
@@ -11065,7 +11065,7 @@ module.exports = {
         {
           name: "श्रेणी",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "श्रेणी। मानों की प्रभावी रूप से गणना की जा सकती है, जैसे A1:A20, {1,2,3,4,5}, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11073,7 +11073,7 @@ module.exports = {
         {
           name: "स्तंभ अनुसार स्टैक करें",
           example: "1",
-          detail: "If you need to stack by row, set this item to false or 0, the default is 1",
+          detail: "यदि आपको पंक्ति के अनुसार स्टैक करने की आवश्यकता है, तो इसे false या 0 पर सेट करें, डिफ़ॉल्ट 1 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11081,7 +11081,7 @@ module.exports = {
         {
           name: "बार अंतराल",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "बारों के बीच की दूरी, डिफ़ॉल्ट 1 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11089,7 +11089,7 @@ module.exports = {
         {
           name: "अधिकतम",
           example: "100",
-          detail: "The maximum value of the cumulative bar, used to regulate the length of the bar, the default is to automatically calculate false, auto, null",
+          detail: "संचयी बार का अधिकतम मान, बार की लंबाई को नियंत्रित करने के लिए उपयोग किया जाता है, डिफ़ॉल्ट स्वचालित रूप से गणना करना है false, auto, null।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11097,7 +11097,7 @@ module.exports = {
         {
           name: "रंग पैलेट",
           example: "#97b552",
-          detail: "The color palette can individually set the bar color of each dimension, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
+          detail: "रंग पैलेट प्रत्येक आयाम के बार रंग को अलग-अलग सेट कर सकता है, जिसे A1:A10 आदि की श्रेणी के रूप में सेट किया जा सकता है। डिफ़ॉल्ट #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11107,8 +11107,8 @@ module.exports = {
     {
       n: "DISCRETESPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell, generally used to describe the trend of discrete data",
-      a: "Generate sparklines discrete graph",
+      d: "कोशिका में एम्बेड किए गए स्पार्कलाइन बनाता है, आम तौर पर असतत डेटा की प्रवृत्ति का वर्णन करने के लिए उपयोग किया जाता है।",
+      a: "स्पार्कलाइन असतत ग्राफ बनाता है।",
       m: [
         1,
         4
@@ -11117,7 +11117,7 @@ module.exports = {
         {
           name: "श्रेणी",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "श्रेणी। मानों की प्रभावी रूप से गणना की जा सकती है, जैसे A1:A20, {1,2,3,4,5}, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11125,7 +11125,7 @@ module.exports = {
         {
           name: "विभाजन थ्रेशोल्ड",
           example: "1",
-          detail: "Discrete graph column color distinction, for example: if the value is 0, blue is greater than 0, red is less than 0, and the default is 0",
+          detail: "असतत ग्राफ स्तंभ रंग भेद, उदाहरण के लिए: यदि मान 0 है, तो नीला 0 से बड़ा है, लाल 0 से छोटा है, और डिफ़ॉल्ट 0 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11133,7 +11133,7 @@ module.exports = {
         {
           name: "थ्रेशोल्ड से ऊपर का रंग",
           example: "#2ec7c9",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #2ec7c9",
+          detail: "लाइन ग्राफ का लाइन रंग A1 श्रेणी, रंग तालिका सूचकांक मान या विशिष्ट रंग मान हो सकता है। इसे प्रदर्शित न करने के लिए 0 या false पर सेट करें। यह regx, rgb, rgba आदि का समर्थन करता है। डिफ़ॉल्ट #2ec7c9।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11141,7 +11141,7 @@ module.exports = {
         {
           name: "थ्रेशोल्ड से नीचे का रंग",
           example: "#fc5c5c",
-          detail: "The color setting of the bar below the threshold, the same as the color above the threshold, default #fc5c5c",
+          detail: "थ्रेशोल्ड से नीचे की बार का रंग सेटिंग, थ्रेशोल्ड से ऊपर के रंग के समान, डिफ़ॉल्ट #fc5c5c।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11151,8 +11151,8 @@ module.exports = {
     {
       n: "TRISTATESPLINES",
       t: "3",
-      d: "Generate sparklines, a three-state graph embedded in the cell, which is generally used to describe the trend of three situations, such as winning, losing, or drawing.",
-      a: "Generate sparklines three-state graph",
+      d: "कोशिका में एम्बेड किए गए त्रि-स्थिति ग्राफ स्पार्कलाइन बनाता है, आम तौर पर जीत, हार या ड्रॉ जैसी तीन स्थितियों की प्रवृत्ति का वर्णन करने के लिए उपयोग किया जाता है।",
+      a: "स्पार्कलाइन त्रि-स्थिति ग्राफ बनाता है।",
       m: [
         1,
         6
@@ -11161,7 +11161,7 @@ module.exports = {
         {
           name: "श्रेणी",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "श्रेणी। मानों की प्रभावी रूप से गणना की जा सकती है, जैसे A1:A20, {1,2,3,4,5}, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11169,7 +11169,7 @@ module.exports = {
         {
           name: "बार अंतराल",
           example: "1",
-          detail: "The distance between bars, the default is 1",
+          detail: "बारों के बीच की दूरी, डिफ़ॉल्ट 1 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11177,7 +11177,7 @@ module.exports = {
         {
           name: "बार का रंग",
           example: "#fc5c5c",
-          detail: "The line color of the line graph can be range A1, color table index value or specific color value. Set it to 0 or false to not display it. It supports regx, rgb, rgba, etc. Default #fc5c5c",
+          detail: "लाइन ग्राफ का लाइन रंग A1 श्रेणी, रंग तालिका सूचकांक मान या विशिष्ट रंग मान हो सकता है। इसे प्रदर्शित न करने के लिए 0 या false पर सेट करें। यह regx, rgb, rgba आदि का समर्थन करता है। डिफ़ॉल्ट #fc5c5c।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11185,7 +11185,7 @@ module.exports = {
         {
           name: "ऋणात्मक बार रंग",
           example: "#97b552",
-          detail: "Negative bar color setting, representing the color of negative value, same as the bar color configuration, default #97b552",
+          detail: "ऋणात्मक बार रंग सेटिंग, ऋणात्मक मान के रंग का प्रतिनिधित्व करती है, बार रंग कॉन्फ़िगरेशन के समान, डिफ़ॉल्ट #97b552।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11193,7 +11193,7 @@ module.exports = {
         {
           name: "शून्य मान बार रंग",
           example: "#999",
-          detail: "Zero value bar color setting, representing 0 value color, the same color configuration of the bar, default #999",
+          detail: "शून्य मान बार रंग सेटिंग, 0 मान के रंग का प्रतिनिधित्व करती है, बार रंग कॉन्फ़िगरेशन के समान, डिफ़ॉल्ट #999।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11201,7 +11201,7 @@ module.exports = {
         {
           name: "रंग पैलेट",
           example: "#97b552",
-          detail: "The color palette can set the color of each bar individually, multiple settings can be set, and two formats are supported: 1 color such as #000, which means that the color of the first bar is black; 2 value range: color, such as -2:# 000 indicates that the bar with a value of -2 is black, 0:5:#000 indicates that the bar with a value of 0-5 is black, and the default is empty",
+          detail: "रंग पैलेट प्रत्येक बार का रंग अलग-अलग सेट कर सकता है, कई सेटिंग्स सेट की जा सकती हैं, और दो प्रारूप समर्थित हैं: 1 रंग जैसे #000, जिसका अर्थ है कि पहली बार का रंग काला है; 2 मान श्रेणी: रंग, जैसे -2:#000 इंगित करता है कि -2 मान वाली बार काली है, 0:5:#000 इंगित करता है कि 0-5 मान वाली बार काली है, और डिफ़ॉल्ट रिक्त है।",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11211,8 +11211,8 @@ module.exports = {
     {
       n: "PIESPLINES",
       t: "3",
-      d: "Generate sparklines pie chart embedded in the cell, generally used to describe the proportion of data",
-      a: "Generate sparklines pie chart",
+      d: "कोशिका में एम्बेड किए गए स्पार्कलाइन पाई चार्ट बनाता है, आम तौर पर डेटा के अनुपात का वर्णन करने के लिए उपयोग किया जाता है।",
+      a: "स्पार्कलाइन पाई चार्ट बनाता है।",
       m: [
         1,
         5
@@ -11221,7 +11221,7 @@ module.exports = {
         {
           name: "श्रेणी",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "श्रेणी। मानों की प्रभावी रूप से गणना की जा सकती है, जैसे A1:A20, {1,2,3,4,5}, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11229,7 +11229,7 @@ module.exports = {
         {
           name: "घूर्णन कोण",
           example: "0",
-          detail: "The rotation angle of the pie chart, the default is 0",
+          detail: "पाई चार्ट का घूर्णन कोण, डिफ़ॉल्ट 0 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11237,7 +11237,7 @@ module.exports = {
         {
           name: "बॉर्डर",
           example: "0",
-          detail: "Pie chart border size, default is none 0",
+          detail: "पाई चार्ट सीमा आकार, डिफ़ॉल्ट कोई नहीं 0 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11245,7 +11245,7 @@ module.exports = {
         {
           name: "बॉर्डर रंग",
           example: "#000",
-          detail: "The border color of the pie chart, the default is #000",
+          detail: "पाई चार्ट का सीमा रंग, डिफ़ॉल्ट #000 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11253,7 +11253,7 @@ module.exports = {
         {
           name: "रंग पैलेट",
           example: "#97b552",
-          detail: "The color of the slice can be set in the palette, which can be set to the range of A1:A10, etc. The default is #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
+          detail: "स्लाइस का रंग पैलेट में सेट किया जा सकता है, जिसे A1:A10 आदि की श्रेणी के रूप में सेट किया जा सकता है। डिफ़ॉल्ट #2ec7c9, #fc5c5c, #5ab1ef, #ffb980...",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11263,8 +11263,8 @@ module.exports = {
     {
       n: "BOXSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell box plot, generally used to describe the statistical distribution of the data set",
-      a: "Generate sparklines box plot",
+      d: "कोशिका बॉक्स प्लॉट में एम्बेड किए गए स्पार्कलाइन बनाता है, आम तौर पर डेटा सेट के सांख्यिकीय वितरण का वर्णन करने के लिए उपयोग किया जाता है।",
+      a: "स्पार्कलाइन बॉक्स प्लॉट बनाता है।",
       m: [
         1,
         4
@@ -11273,7 +11273,7 @@ module.exports = {
         {
           name: "श्रेणी",
           example: "A1:A20",
-          detail: "Range，Values can be calculated effectively, such as A1:A20, {1,2,3,4,5}, etc.",
+          detail: "श्रेणी। मानों की प्रभावी रूप से गणना की जा सकती है, जैसे A1:A20, {1,2,3,4,5}, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11281,7 +11281,7 @@ module.exports = {
         {
           name: "आउटलायर अनुपात",
           example: "1.5",
-          detail: "The threshold range of outliers, if it is 0 or false, it will not be displayed, the default is 1.5 times",
+          detail: "आउटलायर की थ्रेशोल्ड श्रेणी, यदि यह 0 या false है, तो इसे प्रदर्शित नहीं किया जाएगा, डिफ़ॉल्ट 1.5 गुना है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11289,7 +11289,7 @@ module.exports = {
         {
           name: "लक्ष्य मान",
           example: "10",
-          detail: "The target value setting on the box plot, the default is false and does not display",
+          detail: "बॉक्स प्लॉट पर लक्ष्य मान सेटिंग, डिफ़ॉल्ट false है और प्रदर्शित नहीं होती।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11297,7 +11297,7 @@ module.exports = {
         {
           name: "बिंदु आकार",
           example: "1.5",
-          detail: "The radius of the target point and outlier is set, the default is 1.5",
+          detail: "लक्ष्य बिंदु और आउटलायर की त्रिज्या सेट की गई है, डिफ़ॉल्ट 1.5 है।",
           require: "o",
           repeat: "n",
           type: "rangeall"
@@ -11307,8 +11307,8 @@ module.exports = {
     {
       n: "BULLETSPLINES",
       t: "3",
-      d: "Generate sparklines embedded in the cell, generally used to describe the task achievement rate",
-      a: "Generating sparklines bullets",
+      d: "कोशिका में एम्बेड किए गए स्पार्कलाइन बनाता है, आम तौर पर कार्य पूर्णता दर का वर्णन करने के लिए उपयोग किया जाता है।",
+      a: "स्पार्कलाइन बुलेट चार्ट बनाता है।",
       m: [
         2,
         3
@@ -11317,7 +11317,7 @@ module.exports = {
         {
           name: "लक्ष्य",
           example: "10",
-          detail: "The numerical value can be calculated effectively for the achieved target value, such as A1, 100, etc.",
+          detail: "प्राप्त लक्ष्य मान के लिए संख्यात्मक मान की प्रभावी रूप से गणना की जा सकती है, जैसे A1, 100, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11325,7 +11325,7 @@ module.exports = {
         {
           name: "प्राप्त",
           example: "8",
-          detail: "Only when the value is completed can the value be calculated effectively, such as A1, 100, etc.",
+          detail: "केवल तभी जब मान पूरा हो जाए, मान की प्रभावी रूप से गणना की जा सकती है, जैसे A1, 100, आदि।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11333,7 +11333,7 @@ module.exports = {
         {
           name: "तुलना मान",
           example: "12",
-          detail: "Comparative values, such as excess, minimum, and bottom line for awards, can be effectively calculated, such as A1, 100, etc. You can set up to 9 comparison values",
+          detail: "तुलनात्मक मान, जैसे पुरस्कारों के लिए अधिशेष, न्यूनतम और निचली सीमा, की प्रभावी रूप से गणना की जा सकती है, जैसे A1, 100, आदि। आप 9 तुलनात्मक मानों तक सेट कर सकते हैं।",
           require: "o",
           repeat: "y",
           type: "rangeall"
@@ -11343,8 +11343,8 @@ module.exports = {
     {
       n: "COMPOSESPLINES",
       t: "3",
-      d: "Support multiple types of pictures in the same cell, each parameter represents a sparklines diagram",
-      a: "Combine sparklines graphs into one cell",
+      d: "एक ही कोशिका में कई प्रकार की छवियों का समर्थन करता है, प्रत्येक पैरामीटर एक स्पार्कलाइन आरेख का प्रतिनिधित्व करता है।",
+      a: "स्पार्कलाइन ग्राफ को एक कोशिका में जोड़ता है।",
       m: [
         1,
         1
@@ -11353,7 +11353,7 @@ module.exports = {
         {
           name: "कॉन्फ़िगरेशन",
           example: "PIESPLINES(A1:A20)",
-          detail: "Sparklines chart settings, such as A1:A20, a completed pie chart, line chart settings, etc.",
+          detail: "स्पार्कलाइन चार्ट सेटिंग्स, जैसे A1:A20, एक पूर्ण पाई चार्ट, लाइन चार्ट सेटिंग्स, आदि।",
           require: "m",
           repeat: "y",
           type: "rangeall"
@@ -11363,8 +11363,8 @@ module.exports = {
     {
       n: "SORT",
       t: "14",
-      d: "Sorts the rows of a given array or range by the values in one or more columns.",
-      a: "Sorts rows of range by specified column.",
+      d: "किसी दी गई सरणी या श्रेणी की पंक्तियों को एक या अधिक स्तंभों के मानों के अनुसार क्रमबद्ध करता है।",
+      a: "निर्दिष्ट स्तंभ के अनुसार श्रेणी की पंक्तियों को क्रमबद्ध करता है।",
       m: [
         1,
         4
@@ -11372,7 +11372,7 @@ module.exports = {
       p: [
         {
           name: "श्रेणी",
-          detail: "The data to be sorted.",
+          detail: "क्रमबद्ध किया जाने वाला डेटा।",
           example: "A2:A17",
           require: "m",
           repeat: "n",
@@ -11380,7 +11380,7 @@ module.exports = {
         },
         {
           name: "क्रम_स्तंभ",
-          detail: "The index of the column in `range` or a range outside of `range` containing the values by which to sort.",
+          detail: "`श्रेणी` में उस स्तंभ का सूचकांक, या `श्रेणी` के बाहर एक श्रेणी, जिसमें क्रमबद्ध करने के लिए मान हैं।",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11388,7 +11388,7 @@ module.exports = {
         },
         {
           name: "क्या_आरोही_है",
-          detail: "`TRUE` or `FALSE` indicating whether to sort `sort_column` in ascending order. `FALSE` sorts in descending order.",
+          detail: "`TRUE` या `FALSE` यह दर्शाते हुए कि क्या `क्रम_स्तंभ` को आरोही क्रम में क्रमबद्ध करना है। `FALSE` अवरोही क्रम में क्रमबद्ध करता है।",
           example: "-1",
           require: "o",
           repeat: "n",
@@ -11396,7 +11396,7 @@ module.exports = {
         },
         {
           name: "क्रम_स्तंभ2",
-          detail: "Additional columns.",
+          detail: "अतिरिक्त स्तंभ।",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -11407,8 +11407,8 @@ module.exports = {
     {
       n: "FILTER",
       t: "14",
-      d: "Returns a filtered version of the source range, returning only rows or columns which meet the specified conditions.",
-      a: "Filters a range based off provided conditions.",
+      d: "स्रोत श्रेणी का एक फ़िल्टर किया गया संस्करण देता है, केवल उन पंक्तियों या स्तंभों को लौटाता है जो निर्दिष्ट शर्तों को पूरा करते हैं।",
+      a: "दी गई शर्तों के आधार पर किसी श्रेणी को फ़िल्टर करता है।",
       m: [
         2,
         3
@@ -11416,7 +11416,7 @@ module.exports = {
       p: [
         {
           name: "श्रेणी",
-          detail: "The data to be filtered.",
+          detail: "फ़िल्टर किया जाने वाला डेटा।",
           example: "A5:D20",
           require: "m",
           repeat: "n",
@@ -11424,7 +11424,7 @@ module.exports = {
         },
         {
           name: "शर्त1",
-          detail: "A column or row containing true or false values corresponding to the first column or row of `range`, or an array formula evaluating to true or false.",
+          detail: "एक स्तंभ या पंक्ति जिसमें `श्रेणी` की पहली पंक्ति या स्तंभ के अनुरूप सत्य या असत्य मान हों, या एक सरणी सूत्र जो सत्य या असत्य के रूप में मूल्यांकित होता हो।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -11432,7 +11432,7 @@ module.exports = {
         },
         {
           name: "शर्त2",
-          detail: "Additional rows or columns containing boolean values `TRUE` or `FALSE` indicating whether the corresponding row or column in `range` should pass through `FILTER`. Can also contain array formula expressions which evaluate to such rows or columns. All conditions must be of the same type (row or column). Mixing row conditions and column conditions is not permitted.",
+          detail: "अतिरिक्त पंक्तियां या स्तंभ जिनमें बूलियन मान `TRUE` या `FALSE` हों, यह दर्शाते हुए कि क्या `श्रेणी` की संगत पंक्ति या स्तंभ `FILTER` से गुजरनी चाहिए। इसमें ऐसे सरणी सूत्र अभिव्यक्तियां भी हो सकती हैं जो ऐसी पंक्तियों या स्तंभों के रूप में मूल्यांकित होती हैं। सभी शर्तें एक ही प्रकार की होनी चाहिए (पंक्ति या स्तंभ)। पंक्ति शर्तों और स्तंभ शर्तों को मिलाना अनुमत नहीं है।",
           example: "\"\"",
           require: "o",
           repeat: "n",
@@ -11443,8 +11443,8 @@ module.exports = {
     {
       n: "UNIQUE",
       t: "14",
-      d: "Returns unique rows in the provided source range, discarding duplicates. Rows are returned in the order in which they first appear in the source range.",
-      a: "Unique rows in the provided source range.",
+      d: "दिए गए स्रोत श्रेणी में अद्वितीय पंक्तियां देता है, डुप्लिकेट को छोड़ते हुए। पंक्तियां उसी क्रम में लौटाई जाती हैं जिसमें वे स्रोत श्रेणी में पहली बार दिखाई देती हैं।",
+      a: "दी गई स्रोत श्रेणी में अद्वितीय पंक्तियां।",
       m: [
         1,
         3
@@ -11452,7 +11452,7 @@ module.exports = {
       p: [
         {
           name: "श्रेणी",
-          detail: "The data to filter by unique entries.",
+          detail: "अद्वितीय प्रविष्टियों द्वारा फ़िल्टर किया जाने वाला डेटा।",
           example: "A2:B26",
           require: "m",
           repeat: "n",
@@ -11460,7 +11460,7 @@ module.exports = {
         },
         {
           name: "स्तंभ_अनुसार",
-          detail: "[Option] - Logical value, indicating how to compare; by row = FALSE() or omitted; by column = TRUE().",
+          detail: "[विकल्प] - तार्किक मान, यह दर्शाता है कि तुलना कैसे करनी है; पंक्ति के अनुसार = FALSE() या छोड़ा गया; स्तंभ के अनुसार = TRUE()।",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -11468,7 +11468,7 @@ module.exports = {
         },
         {
           name: "केवल_एक_बार",
-          detail: "[Option] - Logical value, only one occurrence in the unique value is returned = TRUE(); including all unique values = FALSE() or omitted.",
+          detail: "[विकल्प] - तार्किक मान, अद्वितीय मान में केवल एक ही घटना लौटाई जाती है = TRUE(); सभी अद्वितीय मान शामिल हैं = FALSE() या छोड़ा गया।",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -11479,8 +11479,8 @@ module.exports = {
     {
       n: "RANDARRAY",
       t: "14",
-      d: "Returns a grid of random numbers between 0 inclusive and 1 exclusive. The grid size will match the provided rows and columns arguments. If neither rows nor columns are provided, then the grid will be size 1 x 1.",
-      a: "Returns a grid of random numbers.",
+      d: "0 (सहित) और 1 (असहित) के बीच यादृच्छिक संख्याओं की एक ग्रिड देता है। ग्रिड का आकार दी गई पंक्तियों और स्तंभों के तर्कों से मेल खाएगा। यदि न तो पंक्तियां और न ही स्तंभ प्रदान किए गए हैं, तो ग्रिड का आकार 1 x 1 होगा।",
+      a: "यादृच्छिक संख्याओं की एक ग्रिड देता है।",
       m: [
         0,
         2
@@ -11488,7 +11488,7 @@ module.exports = {
       p: [
         {
           name: "पंक्तियां",
-          detail: "The number of rows to populate with a random number.",
+          detail: "यादृच्छिक संख्या से भरी जाने वाली पंक्तियों की संख्या।",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11496,7 +11496,7 @@ module.exports = {
         },
         {
           name: "स्तंभ",
-          detail: "The number of columns to populate with a random number.",
+          detail: "यादृच्छिक संख्या से भरे जाने वाले स्तंभों की संख्या।",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11507,8 +11507,8 @@ module.exports = {
     {
       n: "SEQUENCE",
       t: "14",
-      d: "Returns a grid of sequential numbers starting at a specified start value and  increasing by a specified step size. By default, the sequence starts at and  increases by 1.",
-      a: "Returns a grid of sequential numbers.",
+      d: "एक निर्दिष्ट प्रारंभ मान से शुरू होकर और एक निर्दिष्ट चरण आकार से बढ़ती हुई क्रमिक संख्याओं की एक ग्रिड देता है। डिफ़ॉल्ट रूप से, अनुक्रम 1 से शुरू होता है और 1 से बढ़ता है।",
+      a: "क्रमिक संख्याओं की एक ग्रिड देता है।",
       m: [
         1,
         4
@@ -11516,7 +11516,7 @@ module.exports = {
       p: [
         {
           name: "पंक्तियां",
-          detail: "The number of rows in the function's resulting grid.",
+          detail: "फलन की परिणामी ग्रिड में पंक्तियों की संख्या।",
           example: "1",
           require: "m",
           repeat: "n",
@@ -11524,7 +11524,7 @@ module.exports = {
         },
         {
           name: "स्तंभ",
-          detail: "The number of columns in the function's resulting grid. If omitted, the result grid will have 1 column.",
+          detail: "फलन की परिणामी ग्रिड में स्तंभों की संख्या। यदि छोड़ दिया जाए, तो परिणाम ग्रिड में 1 स्तंभ होगा।",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11532,7 +11532,7 @@ module.exports = {
         },
         {
           name: "आरंभ",
-          detail: "The number, at which to start the sequence. If omitted, the sequence will start at 1.",
+          detail: "वह संख्या जिस पर अनुक्रम शुरू होगा। यदि छोड़ दिया जाए, तो अनुक्रम 1 से शुरू होगा।",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11540,7 +11540,7 @@ module.exports = {
         },
         {
           name: "चरण",
-          detail: "The amount each value in the sequence will differ by. If omitted, each value will differ by 1.",
+          detail: "वह मात्रा जिससे अनुक्रम में प्रत्येक मान भिन्न होगा। यदि छोड़ दिया जाए, तो प्रत्येक मान 1 से भिन्न होगा।",
           example: "1",
           require: "o",
           repeat: "n",
@@ -11551,8 +11551,8 @@ module.exports = {
     {
       n: "EVALUATE",
       t: "3",
-      d: "Evaluate a formula or expression expressed in words and return the result",
-      a: "Evaluate according to literal formula or expression.",
+      d: "शब्दों में व्यक्त किसी सूत्र या अभिव्यक्ति का मूल्यांकन करता है और परिणाम लौटाता है।",
+      a: "शाब्दिक सूत्र या अभिव्यक्ति के अनुसार मूल्यांकन करता है।",
       m: [
         1,
         1
@@ -11561,7 +11561,7 @@ module.exports = {
         {
           name: "अभिव्यक्ति",
           example: "\"A1+5*2^2\"",
-          detail: "Formula or expression",
+          detail: "सूत्र या अभिव्यक्ति।",
           require: "m",
           repeat: "n",
           type: "rangeall"
@@ -11571,8 +11571,8 @@ module.exports = {
     {
       n: "REMOTE",
       t: "5",
-      d: "Calls a function on a remote server",
-      a: "Calls a function on a remote back end server/API.",
+      d: "किसी रिमोट सर्वर पर एक फलन को कॉल करता है।",
+      a: "किसी रिमोट बैकएंड सर्वर/API पर एक फलन को कॉल करता है।",
       m: [
         1,
         1
@@ -11581,7 +11581,7 @@ module.exports = {
         {
           name: "रिमोट_अभिव्यक्ति",
           example: "SUM(A1:A10000000)",
-          detail: "Formula",
+          detail: "सूत्र।",
           require: "m",
           repeat: "n",
           type: "string"
