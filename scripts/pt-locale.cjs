@@ -2088,8 +2088,8 @@ module.exports = {
     {
       n: "AVERAGE",
       t: 1,
-      d: "Descrição da função AVERAGE.",
-      a: "Resumo da função AVERAGE.",
+      d: "Retorna o valor médio numérico em um conjunto de dados, ignorando texto.",
+      a: "Valor médio numérico em um conjunto de dados, ignorando texto.",
       m: [
         1,
         255
@@ -2097,7 +2097,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função AVERAGE.",
+          detail: "O primeiro valor ou intervalo a considerar no cálculo do valor médio.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2105,7 +2105,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função AVERAGE.",
+          detail: "Valores ou intervalos adicionais a considerar no cálculo do valor médio.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2116,8 +2116,8 @@ module.exports = {
     {
       n: "AVERAGEA",
       t: 1,
-      d: "Descrição da função AVERAGEA.",
-      a: "Resumo da função AVERAGEA.",
+      d: "Retorna o valor médio numérico em um conjunto de dados.",
+      a: "Valor médio numérico em um conjunto de dados.",
       m: [
         1,
         255
@@ -2125,7 +2125,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função AVERAGEA.",
+          detail: "O primeiro valor ou intervalo a considerar no cálculo do valor médio.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2133,7 +2133,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função AVERAGEA.",
+          detail: "Valores ou intervalos adicionais a considerar no cálculo do valor médio.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2144,8 +2144,8 @@ module.exports = {
     {
       n: "BINOM_DIST",
       t: 1,
-      d: "Descrição da função BINOM_DIST.",
-      a: "Resumo da função BINOM_DIST.",
+      d: "Calcula a probabilidade de obter determinado número de sucessos (ou um número máximo de sucessos) em determinado número de tentativas, dada uma população de determinado tamanho contendo determinado número de sucessos, com reposição das extrações.",
+      a: "Probabilidade de distribuição binomial.",
       m: [
         4,
         4
@@ -2153,7 +2153,7 @@ module.exports = {
       p: [
         {
           name: "número_sucessos",
-          detail: "Parâmetro `número_sucessos` da função BINOM_DIST.",
+          detail: "O número de sucessos para o qual calcular a probabilidade em `número_tentativas` tentativas.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2161,7 +2161,7 @@ module.exports = {
         },
         {
           name: "número_tentativas",
-          detail: "Parâmetro `número_tentativas` da função BINOM_DIST.",
+          detail: "O número de tentativas independentes.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -2169,7 +2169,7 @@ module.exports = {
         },
         {
           name: "probabilidade_sucesso",
-          detail: "Parâmetro `probabilidade_sucesso` da função BINOM_DIST.",
+          detail: "A probabilidade de sucesso em determinada tentativa.",
           example: "0.005",
           require: "m",
           repeat: "n",
@@ -2177,7 +2177,7 @@ module.exports = {
         },
         {
           name: "cumulativo",
-          detail: "Parâmetro `cumulativo` da função BINOM_DIST.",
+          detail: "Se usar a distribuição binomial cumulativa.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2188,8 +2188,8 @@ module.exports = {
     {
       n: "BINOM_INV",
       t: 1,
-      d: "Descrição da função BINOM_INV.",
-      a: "Resumo da função BINOM_INV.",
+      d: "Calcula o menor valor para o qual a distribuição binomial cumulativa é maior ou igual a um critério especificado.",
+      a: "Função de distribuição binomial cumulativa inversa.",
       m: [
         3,
         3
@@ -2197,7 +2197,7 @@ module.exports = {
       p: [
         {
           name: "número_tentativas",
-          detail: "Parâmetro `número_tentativas` da função BINOM_INV.",
+          detail: "O número de tentativas independentes.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -2205,7 +2205,7 @@ module.exports = {
         },
         {
           name: "probabilidade_sucesso",
-          detail: "Parâmetro `probabilidade_sucesso` da função BINOM_INV.",
+          detail: "A probabilidade de sucesso em determinada tentativa.",
           example: "0.005",
           require: "m",
           repeat: "n",
@@ -2213,7 +2213,7 @@ module.exports = {
         },
         {
           name: "probabilidade_meta",
-          detail: "Parâmetro `probabilidade_meta` da função BINOM_INV.",
+          detail: "O limite de probabilidade desejado.",
           example: "0.8",
           require: "m",
           repeat: "n",
@@ -2224,8 +2224,8 @@ module.exports = {
     {
       n: "CONFIDENCE_NORM",
       t: 1,
-      d: "Descrição da função CONFIDENCE_NORM.",
-      a: "Resumo da função CONFIDENCE_NORM.",
+      d: "Calcula a largura de metade do intervalo de confiança para uma distribuição normal.",
+      a: "Intervalo de confiança para uma distribuição normal.",
       m: [
         3,
         3
@@ -2233,7 +2233,7 @@ module.exports = {
       p: [
         {
           name: "alfa",
-          detail: "Parâmetro `alfa` da função CONFIDENCE_NORM.",
+          detail: "Um menos o nível de confiança desejado. Por exemplo, `0,1` para uma confiança de `0,9`, ou 90%.",
           example: "0.05",
           require: "m",
           repeat: "n",
@@ -2241,7 +2241,7 @@ module.exports = {
         },
         {
           name: "desvio_padrão",
-          detail: "Parâmetro `desvio_padrão` da função CONFIDENCE_NORM.",
+          detail: "O desvio padrão da população.",
           example: "1.6",
           require: "m",
           repeat: "n",
@@ -2249,7 +2249,7 @@ module.exports = {
         },
         {
           name: "tamanho_população",
-          detail: "Parâmetro `tamanho_população` da função CONFIDENCE_NORM.",
+          detail: "O tamanho da população.",
           example: "250",
           require: "m",
           repeat: "n",
@@ -2260,8 +2260,8 @@ module.exports = {
     {
       n: "CORREL",
       t: 1,
-      d: "Descrição da função CORREL.",
-      a: "Resumo da função CORREL.",
+      d: "Calcula r, o coeficiente de correlação momento-produto de Pearson de um conjunto de dados.",
+      a: "Coeficiente de correlação momento-produto de Pearson.",
       m: [
         2,
         2
@@ -2269,7 +2269,7 @@ module.exports = {
       p: [
         {
           name: "dados_y",
-          detail: "Parâmetro `dados_y` da função CORREL.",
+          detail: "O intervalo que representa a matriz ou matriz de dados dependentes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2277,7 +2277,7 @@ module.exports = {
         },
         {
           name: "dados_x",
-          detail: "Parâmetro `dados_x` da função CORREL.",
+          detail: "O intervalo que representa a matriz ou matriz de dados independentes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2288,8 +2288,8 @@ module.exports = {
     {
       n: "COVARIANCE_P",
       t: 1,
-      d: "Descrição da função COVARIANCE_P.",
-      a: "Resumo da função COVARIANCE_P.",
+      d: "Calcula a covariância de um conjunto de dados.",
+      a: "A covariância de um conjunto de dados.",
       m: [
         2,
         2
@@ -2297,7 +2297,7 @@ module.exports = {
       p: [
         {
           name: "dados_y",
-          detail: "Parâmetro `dados_y` da função COVARIANCE_P.",
+          detail: "O intervalo que representa a matriz ou matriz de dados dependentes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2305,7 +2305,7 @@ module.exports = {
         },
         {
           name: "dados_x",
-          detail: "Parâmetro `dados_x` da função COVARIANCE_P.",
+          detail: "O intervalo que representa a matriz ou matriz de dados independentes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2316,8 +2316,8 @@ module.exports = {
     {
       n: "COVARIANCE_S",
       t: 1,
-      d: "Descrição da função COVARIANCE_S.",
-      a: "Resumo da função COVARIANCE_S.",
+      d: "Calcula a covariância amostral de um conjunto de dados.",
+      a: "A covariância amostral de um conjunto de dados.",
       m: [
         2,
         2
@@ -2325,7 +2325,7 @@ module.exports = {
       p: [
         {
           name: "dados_y",
-          detail: "Parâmetro `dados_y` da função COVARIANCE_S.",
+          detail: "O intervalo que representa a matriz ou matriz de dados dependentes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2333,7 +2333,7 @@ module.exports = {
         },
         {
           name: "dados_x",
-          detail: "Parâmetro `dados_x` da função COVARIANCE_S.",
+          detail: "O intervalo que representa a matriz ou matriz de dados independentes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2344,8 +2344,8 @@ module.exports = {
     {
       n: "DEVSQ",
       t: 1,
-      d: "Descrição da função DEVSQ.",
-      a: "Resumo da função DEVSQ.",
+      d: "Calcula a soma dos quadrados dos desvios com base em uma amostra.",
+      a: "A soma dos quadrados dos desvios com base em uma amostra.",
       m: [
         1,
         255
@@ -2353,7 +2353,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função DEVSQ.",
+          detail: "O primeiro valor ou intervalo da amostra.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2361,7 +2361,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função DEVSQ.",
+          detail: "Valores ou intervalos adicionais a incluir na amostra.",
           example: "2",
           require: "o",
           repeat: "y",
@@ -2372,8 +2372,8 @@ module.exports = {
     {
       n: "EXPON_DIST",
       t: 1,
-      d: "Descrição da função EXPON_DIST.",
-      a: "Resumo da função EXPON_DIST.",
+      d: "Retorna o valor da função de distribuição exponencial com um lambda especificado em um valor especificado.",
+      a: "Função de distribuição exponencial.",
       m: [
         3,
         3
@@ -2381,7 +2381,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função EXPON_DIST.",
+          detail: "A entrada da função de distribuição exponencial.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2389,7 +2389,7 @@ module.exports = {
         },
         {
           name: "lambda",
-          detail: "Parâmetro `lambda` da função EXPON_DIST.",
+          detail: "O lambda para especificar a função de distribuição exponencial.",
           example: "0.5",
           require: "m",
           repeat: "n",
@@ -2397,7 +2397,7 @@ module.exports = {
         },
         {
           name: "cumulativo",
-          detail: "Parâmetro `cumulativo` da função EXPON_DIST.",
+          detail: "Se usar a distribuição cumulativa exponencial.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2408,8 +2408,8 @@ module.exports = {
     {
       n: "AVERAGEIF",
       t: 1,
-      d: "Descrição da função AVERAGEIF.",
-      a: "Resumo da função AVERAGEIF.",
+      d: "Retorna a média de um intervalo dependendo de critérios.",
+      a: "Média de valores dependendo de critérios.",
       m: [
         2,
         3
@@ -2417,7 +2417,7 @@ module.exports = {
       p: [
         {
           name: "intervalo_critérios",
-          detail: "Parâmetro `intervalo_critérios` da função AVERAGEIF.",
+          detail: "O intervalo a verificar em relação a `critério`.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -2425,7 +2425,7 @@ module.exports = {
         },
         {
           name: "critério",
-          detail: "Parâmetro `critério` da função AVERAGEIF.",
+          detail: "O padrão ou teste a aplicar a `intervalo_critérios`.",
           example: "\">20\"",
           require: "m",
           repeat: "n",
@@ -2433,7 +2433,7 @@ module.exports = {
         },
         {
           name: "intervalo_média",
-          detail: "Parâmetro `intervalo_média` da função AVERAGEIF.",
+          detail: "O intervalo a calcular a média. Se não incluído, `intervalo_critérios` é usado para a média em seu lugar.",
           example: "B1:B10",
           require: "o",
           repeat: "n",
@@ -2444,8 +2444,8 @@ module.exports = {
     {
       n: "AVERAGEIFS",
       t: 1,
-      d: "Descrição da função AVERAGEIFS.",
-      a: "Resumo da função AVERAGEIFS.",
+      d: "Retorna a média de um intervalo dependendo de múltiplos critérios.",
+      a: "Média de valores dependendo de múltiplos critérios.",
       m: [
         2,
         255
@@ -2453,7 +2453,7 @@ module.exports = {
       p: [
         {
           name: "intervalo_média",
-          detail: "Parâmetro `intervalo_média` da função AVERAGEIFS.",
+          detail: "O intervalo a calcular a média.",
           example: "A1:A10",
           require: "m",
           repeat: "n",
@@ -2461,7 +2461,7 @@ module.exports = {
         },
         {
           name: "intervalo_critérios1",
-          detail: "Parâmetro `intervalo_critérios1` da função AVERAGEIFS.",
+          detail: "O intervalo a verificar em relação a `critério1`.",
           example: " B1:B10",
           require: "m",
           repeat: "n",
@@ -2469,7 +2469,7 @@ module.exports = {
         },
         {
           name: "critério1",
-          detail: "Parâmetro `critério1` da função AVERAGEIFS.",
+          detail: "O padrão ou teste a aplicar a `intervalo_critérios1`.",
           example: " \">20\"",
           require: "m",
           repeat: "n",
@@ -2477,7 +2477,7 @@ module.exports = {
         },
         {
           name: "intervalo_critérios2",
-          detail: "Parâmetro `intervalo_critérios2` da função AVERAGEIFS.",
+          detail: "Intervalos adicionais a verificar.",
           example: " C1:C10",
           require: "m",
           repeat: "n",
@@ -2488,8 +2488,8 @@ module.exports = {
     {
       n: "PERMUT",
       t: 1,
-      d: "Descrição da função PERMUT.",
-      a: "Resumo da função PERMUT.",
+      d: "Retorna o número de maneiras de escolher determinado número de objetos de um conjunto de objetos de determinado tamanho, considerando a ordem.",
+      a: "Número de permutações de um número de objetos.",
       m: [
         2,
         2
@@ -2497,7 +2497,7 @@ module.exports = {
       p: [
         {
           name: "n",
-          detail: "Parâmetro `n` da função PERMUT.",
+          detail: "O tamanho do conjunto de objetos do qual escolher.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2505,7 +2505,7 @@ module.exports = {
         },
         {
           name: "k",
-          detail: "Parâmetro `k` da função PERMUT.",
+          detail: "O número de objetos a escolher.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2516,8 +2516,8 @@ module.exports = {
     {
       n: "TRIMMEAN",
       t: 1,
-      d: "Descrição da função TRIMMEAN.",
-      a: "Resumo da função TRIMMEAN.",
+      d: "Calcula a média de um conjunto de dados excluindo uma proporção dos dados dos extremos superior e inferior do conjunto de dados.",
+      a: "Média de um conjunto de dados excluindo extremos.",
       m: [
         2,
         2
@@ -2525,7 +2525,7 @@ module.exports = {
       p: [
         {
           name: "dados",
-          detail: "Parâmetro `dados` da função TRIMMEAN.",
+          detail: "Matriz ou intervalo contendo o conjunto de dados a considerar.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2533,7 +2533,7 @@ module.exports = {
         },
         {
           name: "proporção_excluída",
-          detail: "Parâmetro `proporção_excluída` da função TRIMMEAN.",
+          detail: "A proporção do conjunto de dados a excluir, dos extremos do conjunto.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2544,8 +2544,8 @@ module.exports = {
     {
       n: "PERCENTILE_EXC",
       t: 1,
-      d: "Descrição da função PERCENTILE_EXC.",
-      a: "Resumo da função PERCENTILE_EXC.",
+      d: "Retorna o valor em um determinado percentil de um conjunto de dados, exclusive 0 e 1.",
+      a: "Valor em um determinado percentil de um conjunto de dados, exclusive 0 e 1.",
       m: [
         2,
         2
@@ -2553,7 +2553,7 @@ module.exports = {
       p: [
         {
           name: "dados",
-          detail: "Parâmetro `dados` da função PERCENTILE_EXC.",
+          detail: "A matriz ou intervalo contendo o conjunto de dados a considerar.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2561,7 +2561,7 @@ module.exports = {
         },
         {
           name: "percentil",
-          detail: "Parâmetro `percentil` da função PERCENTILE_EXC.",
+          detail: "O percentil, exclusive 0 e 1, cujo valor dentro de 'dados' será calculado e retornado.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2572,8 +2572,8 @@ module.exports = {
     {
       n: "PERCENTILE_INC",
       t: 1,
-      d: "Descrição da função PERCENTILE_INC.",
-      a: "Resumo da função PERCENTILE_INC.",
+      d: "Retorna o valor em um determinado percentil de um conjunto de dados.",
+      a: "Valor em um determinado percentil de um conjunto de dados.",
       m: [
         2,
         2
@@ -2581,7 +2581,7 @@ module.exports = {
       p: [
         {
           name: "dados",
-          detail: "Parâmetro `dados` da função PERCENTILE_INC.",
+          detail: "A matriz ou intervalo contendo o conjunto de dados a considerar.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2589,7 +2589,7 @@ module.exports = {
         },
         {
           name: "percentil",
-          detail: "Parâmetro `percentil` da função PERCENTILE_INC.",
+          detail: "O percentil cujo valor dentro de `dados` será calculado e retornado.",
           example: "0.25",
           require: "m",
           repeat: "n",
@@ -2600,8 +2600,8 @@ module.exports = {
     {
       n: "PEARSON",
       t: 1,
-      d: "Descrição da função PEARSON.",
-      a: "Resumo da função PEARSON.",
+      d: "Calcula r, o coeficiente de correlação momento-produto de Pearson de um conjunto de dados.",
+      a: "Coeficiente de correlação momento-produto de Pearson.",
       m: [
         2,
         2
@@ -2609,7 +2609,7 @@ module.exports = {
       p: [
         {
           name: "dados_y",
-          detail: "Parâmetro `dados_y` da função PEARSON.",
+          detail: "O intervalo que representa a matriz ou matriz de dados dependentes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2617,7 +2617,7 @@ module.exports = {
         },
         {
           name: "dados_x",
-          detail: "Parâmetro `dados_x` da função PEARSON.",
+          detail: "O intervalo que representa a matriz ou matriz de dados independentes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -2628,8 +2628,8 @@ module.exports = {
     {
       n: "NORM_S_INV",
       t: 1,
-      d: "Descrição da função NORM_S_INV.",
-      a: "Resumo da função NORM_S_INV.",
+      d: "Retorna o valor da função de distribuição normal padrão inversa para um valor especificado.",
+      a: "Função de distribuição normal padrão inversa.",
       m: [
         1,
         1
@@ -2637,7 +2637,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função NORM_S_INV.",
+          detail: "A entrada da função de distribuição normal padrão inversa.",
           example: "0.75",
           require: "m",
           repeat: "n",
@@ -2648,8 +2648,8 @@ module.exports = {
     {
       n: "NORM_S_DIST",
       t: 1,
-      d: "Descrição da função NORM_S_DIST.",
-      a: "Resumo da função NORM_S_DIST.",
+      d: "Retorna o valor da função de distribuição cumulativa normal padrão para um valor especificado.",
+      a: "Função de distribuição cumulativa normal padrão.",
       m: [
         2,
         2
@@ -2657,7 +2657,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função NORM_S_DIST.",
+          detail: "A entrada da função de distribuição cumulativa normal padrão.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -2665,7 +2665,7 @@ module.exports = {
         },
         {
           name: "cumulativo",
-          detail: "Parâmetro `cumulativo` da função NORM_S_DIST.",
+          detail: "Determina o valor lógico da forma da função. \n\nSe for VERDADEIRO(), retorna a função de distribuição cumulativa;\n\nSe for FALSO(), retorna a função de densidade de probabilidade.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2676,8 +2676,8 @@ module.exports = {
     {
       n: "NORM_INV",
       t: 1,
-      d: "Descrição da função NORM_INV.",
-      a: "Resumo da função NORM_INV.",
+      d: "Retorna o valor da função de distribuição normal inversa para um valor, média e desvio padrão especificados.",
+      a: "Função de distribuição normal inversa.",
       m: [
         3,
         3
@@ -2685,7 +2685,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função NORM_INV.",
+          detail: "A entrada da função de distribuição normal inversa.",
           example: "0.75",
           require: "m",
           repeat: "n",
@@ -2693,7 +2693,7 @@ module.exports = {
         },
         {
           name: "média",
-          detail: "Parâmetro `média` da função NORM_INV.",
+          detail: "A média (mu) da função de distribuição normal.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2701,7 +2701,7 @@ module.exports = {
         },
         {
           name: "desvio_padrão",
-          detail: "Parâmetro `desvio_padrão` da função NORM_INV.",
+          detail: "O desvio padrão (sigma) da função de distribuição normal.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2712,8 +2712,8 @@ module.exports = {
     {
       n: "NORM_DIST",
       t: 1,
-      d: "Descrição da função NORM_DIST.",
-      a: "Resumo da função NORM_DIST.",
+      d: "Retorna o valor da função de distribuição normal (ou função de distribuição cumulativa normal) para um valor, média e desvio padrão especificados.",
+      a: "Função de distribuição normal.",
       m: [
         4,
         4
@@ -2721,7 +2721,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função NORM_DIST.",
+          detail: "A entrada da função de distribuição normal.",
           example: "2.4",
           require: "m",
           repeat: "n",
@@ -2729,7 +2729,7 @@ module.exports = {
         },
         {
           name: "média",
-          detail: "Parâmetro `média` da função NORM_DIST.",
+          detail: "A média (mu) da função de distribuição normal.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -2737,7 +2737,7 @@ module.exports = {
         },
         {
           name: "desvio_padrão",
-          detail: "Parâmetro `desvio_padrão` da função NORM_DIST.",
+          detail: "O desvio padrão (sigma) da função de distribuição normal.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2745,7 +2745,7 @@ module.exports = {
         },
         {
           name: "cumulativo",
-          detail: "Parâmetro `cumulativo` da função NORM_DIST.",
+          detail: "Se usar a função de distribuição cumulativa normal em vez da função de distribuição.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2756,8 +2756,8 @@ module.exports = {
     {
       n: "NEGBINOM_DIST",
       t: 1,
-      d: "Descrição da função NEGBINOM_DIST.",
-      a: "Resumo da função NEGBINOM_DIST.",
+      d: "Calcula a probabilidade de obter determinado número de falhas antes de determinado número de sucessos, dada uma probabilidade de sucesso em tentativas independentes.",
+      a: "Probabilidade de distribuição binomial negativa.",
       m: [
         4,
         4
@@ -2765,7 +2765,7 @@ module.exports = {
       p: [
         {
           name: "número_falhas",
-          detail: "Parâmetro `número_falhas` da função NEGBINOM_DIST.",
+          detail: "O número de falhas a modelar.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2773,7 +2773,7 @@ module.exports = {
         },
         {
           name: "número_sucessos",
-          detail: "Parâmetro `número_sucessos` da função NEGBINOM_DIST.",
+          detail: "O número de sucessos a modelar.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -2781,7 +2781,7 @@ module.exports = {
         },
         {
           name: "probabilidade_sucesso",
-          detail: "Parâmetro `probabilidade_sucesso` da função NEGBINOM_DIST.",
+          detail: "A probabilidade de sucesso em determinada tentativa.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -2789,7 +2789,7 @@ module.exports = {
         },
         {
           name: "cumulativo",
-          detail: "Parâmetro `cumulativo` da função NEGBINOM_DIST.",
+          detail: "Determina o valor lógico da forma da função. \n\nSe for VERDADEIRO(), retorna a função de distribuição cumulativa;\n\nSe for FALSO(), retorna a função de densidade de probabilidade.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -2800,8 +2800,8 @@ module.exports = {
     {
       n: "MINA",
       t: 1,
-      d: "Descrição da função MINA.",
-      a: "Resumo da função MINA.",
+      d: "Retorna o valor numérico mínimo em um conjunto de dados.",
+      a: "Valor numérico mínimo em um conjunto de dados.",
       m: [
         1,
         255
@@ -2809,7 +2809,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função MINA.",
+          detail: "O primeiro valor ou intervalo a considerar no cálculo do valor mínimo.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2817,7 +2817,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função MINA.",
+          detail: "Valores ou intervalos adicionais a considerar no cálculo do valor mínimo.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2828,8 +2828,8 @@ module.exports = {
     {
       n: "MIN",
       t: 1,
-      d: "Descrição da função MIN.",
-      a: "Resumo da função MIN.",
+      d: "Retorna o valor mínimo em um conjunto de dados numérico.",
+      a: "Valor mínimo em um conjunto de dados numérico.",
       m: [
         1,
         255
@@ -2837,7 +2837,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função MIN.",
+          detail: "O primeiro valor ou intervalo a considerar no cálculo do valor mínimo.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2845,7 +2845,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função MIN.",
+          detail: "Valores ou intervalos adicionais a considerar no cálculo do valor mínimo.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2856,8 +2856,8 @@ module.exports = {
     {
       n: "MEDIAN",
       t: 1,
-      d: "Descrição da função MEDIAN.",
-      a: "Resumo da função MEDIAN.",
+      d: "Retorna o valor mediano em um conjunto de dados numérico.",
+      a: "Valor mediano em um conjunto de dados numérico.",
       m: [
         1,
         255
@@ -2865,7 +2865,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função MEDIAN.",
+          detail: "O primeiro valor ou intervalo a considerar no cálculo do valor mediano.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2873,7 +2873,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função MEDIAN.",
+          detail: "Valores ou intervalos adicionais a considerar no cálculo do valor mediano.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2884,8 +2884,8 @@ module.exports = {
     {
       n: "MAXA",
       t: 1,
-      d: "Descrição da função MAXA.",
-      a: "Resumo da função MAXA.",
+      d: "Retorna o valor numérico máximo em um conjunto de dados.",
+      a: "Valor numérico máximo em um conjunto de dados.",
       m: [
         1,
         255
@@ -2893,7 +2893,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função MAXA.",
+          detail: "O primeiro valor ou intervalo a considerar no cálculo do valor máximo.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2901,7 +2901,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função MAXA.",
+          detail: "Valores ou intervalos adicionais a considerar no cálculo do valor máximo.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2912,8 +2912,8 @@ module.exports = {
     {
       n: "MAX",
       t: 1,
-      d: "Descrição da função MAX.",
-      a: "Resumo da função MAX.",
+      d: "Retorna o valor máximo em um conjunto de dados numérico.",
+      a: "Valor máximo em um conjunto de dados numérico.",
       m: [
         1,
         255
@@ -2921,7 +2921,7 @@ module.exports = {
       p: [
         {
           name: "valor1",
-          detail: "Parâmetro `valor1` da função MAX.",
+          detail: "O primeiro valor ou intervalo a considerar no cálculo do valor máximo.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -2929,7 +2929,7 @@ module.exports = {
         },
         {
           name: "valor2",
-          detail: "Parâmetro `valor2` da função MAX.",
+          detail: "Valores ou intervalos adicionais a considerar no cálculo do valor máximo.",
           example: "B2:B100",
           require: "o",
           repeat: "y",
@@ -2940,8 +2940,8 @@ module.exports = {
     {
       n: "LOGNORM_INV",
       t: 1,
-      d: "Descrição da função LOGNORM_INV.",
-      a: "Resumo da função LOGNORM_INV.",
+      d: "Retorna o valor da distribuição cumulativa log-normal inversa com a média e o desvio padrão fornecidos em um valor especificado.",
+      a: "Função de distribuição cumulativa log-normal inversa.",
       m: [
         3,
         3
@@ -2949,7 +2949,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função LOGNORM_INV.",
+          detail: "A entrada da função de distribuição cumulativa log-normal inversa.",
           example: "0.4",
           require: "m",
           repeat: "n",
@@ -2957,7 +2957,7 @@ module.exports = {
         },
         {
           name: "média",
-          detail: "Parâmetro `média` da função LOGNORM_INV.",
+          detail: "A média (mu) da função de distribuição cumulativa log-normal inversa.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2965,7 +2965,7 @@ module.exports = {
         },
         {
           name: "desvio_padrão",
-          detail: "Parâmetro `desvio_padrão` da função LOGNORM_INV.",
+          detail: "O desvio padrão (sigma) da função de distribuição cumulativa log-normal inversa.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -2976,8 +2976,8 @@ module.exports = {
     {
       n: "LOGNORM_DIST",
       t: 1,
-      d: "Descrição da função LOGNORM_DIST.",
-      a: "Resumo da função LOGNORM_DIST.",
+      d: "Retorna o valor da distribuição cumulativa log-normal com a média e o desvio padrão fornecidos em um valor especificado.",
+      a: "Probabilidade de distribuição cumulativa log-normal.",
       m: [
         4,
         4
@@ -2985,7 +2985,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função LOGNORM_DIST.",
+          detail: "A entrada da função de distribuição cumulativa log-normal.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -2993,7 +2993,7 @@ module.exports = {
         },
         {
           name: "média",
-          detail: "Parâmetro `média` da função LOGNORM_DIST.",
+          detail: "A média (mu) da função de distribuição cumulativa log-normal.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -3001,7 +3001,7 @@ module.exports = {
         },
         {
           name: "desvio_padrão",
-          detail: "Parâmetro `desvio_padrão` da função LOGNORM_DIST.",
+          detail: "O desvio padrão (sigma) da função de distribuição cumulativa log-normal.",
           example: "6",
           require: "m",
           repeat: "n",
@@ -3009,7 +3009,7 @@ module.exports = {
         },
         {
           name: "cumulativo",
-          detail: "Parâmetro `cumulativo` da função LOGNORM_DIST.",
+          detail: "Determina o valor lógico da forma da função. \n\nSe for VERDADEIRO(), retorna a função de distribuição cumulativa;\n\nSe for FALSO(), retorna a função de densidade de probabilidade.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3020,8 +3020,8 @@ module.exports = {
     {
       n: "Z_TEST",
       t: 1,
-      d: "Descrição da função Z_TEST.",
-      a: "Resumo da função Z_TEST.",
+      d: "Retorna o valor-p unilateral de um teste Z com distribuição padrão.",
+      a: "Valor-p unilateral de um teste z.",
       m: [
         2,
         3
@@ -3029,7 +3029,7 @@ module.exports = {
       p: [
         {
           name: "dados",
-          detail: "Parâmetro `dados` da função Z_TEST.",
+          detail: "A matriz ou intervalo contendo o conjunto de dados a considerar.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3037,7 +3037,7 @@ module.exports = {
         },
         {
           name: "valor",
-          detail: "Parâmetro `valor` da função Z_TEST.",
+          detail: "A estatística de teste a usar no teste Z.",
           example: "B2",
           require: "m",
           repeat: "n",
@@ -3045,7 +3045,7 @@ module.exports = {
         },
         {
           name: "desvio_padrão",
-          detail: "Parâmetro `desvio_padrão` da função Z_TEST.",
+          detail: "O desvio padrão a assumir para o teste Z. Se não fornecido, será usado o desvio padrão dos dados.",
           example: "3",
           require: "o",
           repeat: "n",
@@ -3056,8 +3056,8 @@ module.exports = {
     {
       n: "PROB",
       t: 1,
-      d: "Descrição da função PROB.",
-      a: "Resumo da função PROB.",
+      d: "Dado um conjunto de valores e probabilidades correspondentes, calcula a probabilidade de um valor escolhido aleatoriamente estar entre dois limites.",
+      a: "Probabilidade de valores estarem em um intervalo.",
       m: [
         3,
         4
@@ -3065,7 +3065,7 @@ module.exports = {
       p: [
         {
           name: "dados",
-          detail: "Parâmetro `dados` da função PROB.",
+          detail: "Matriz ou intervalo contendo o conjunto de dados a considerar.",
           example: "A3:A6",
           require: "m",
           repeat: "n",
@@ -3073,7 +3073,7 @@ module.exports = {
         },
         {
           name: "probabilidades",
-          detail: "Parâmetro `probabilidades` da função PROB.",
+          detail: "Matriz ou intervalo contendo as probabilidades correspondentes a `dados`.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3081,7 +3081,7 @@ module.exports = {
         },
         {
           name: "limite_inferior",
-          detail: "Parâmetro `limite_inferior` da função PROB.",
+          detail: "O limite inferior do intervalo de valores para o qual calcular a probabilidade.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3089,7 +3089,7 @@ module.exports = {
         },
         {
           name: "limite_superior",
-          detail: "Parâmetro `limite_superior` da função PROB.",
+          detail: "O limite superior do intervalo de valores para o qual calcular a probabilidade.",
           example: "4",
           require: "o",
           repeat: "n",
@@ -3100,8 +3100,8 @@ module.exports = {
     {
       n: "QUARTILE_EXC",
       t: 1,
-      d: "Descrição da função QUARTILE_EXC.",
-      a: "Resumo da função QUARTILE_EXC.",
+      d: "Retorna um valor mais próximo de um quartil especificado de um conjunto de dados, exclusive 0 e 4.",
+      a: "Valor mais próximo de um quartil específico de um conjunto de dados, exclusive 0 e 4.",
       m: [
         2,
         2
@@ -3109,7 +3109,7 @@ module.exports = {
       p: [
         {
           name: "dados",
-          detail: "Parâmetro `dados` da função QUARTILE_EXC.",
+          detail: "A matriz ou intervalo contendo o conjunto de dados a considerar.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3117,7 +3117,7 @@ module.exports = {
         },
         {
           name: "número_quartil",
-          detail: "Parâmetro `número_quartil` da função QUARTILE_EXC.",
+          detail: "Qual quartil retornar.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3128,8 +3128,8 @@ module.exports = {
     {
       n: "QUARTILE_INC",
       t: 1,
-      d: "Descrição da função QUARTILE_INC.",
-      a: "Resumo da função QUARTILE_INC.",
+      d: "Retorna um valor mais próximo de um quartil especificado de um conjunto de dados.",
+      a: "Valor mais próximo de um quartil específico de um conjunto de dados.",
       m: [
         2,
         2
@@ -3137,7 +3137,7 @@ module.exports = {
       p: [
         {
           name: "dados",
-          detail: "Parâmetro `dados` da função QUARTILE_INC.",
+          detail: "A matriz ou intervalo contendo o conjunto de dados a considerar.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3145,7 +3145,7 @@ module.exports = {
         },
         {
           name: "número_quartil",
-          detail: "Parâmetro `número_quartil` da função QUARTILE_INC.",
+          detail: "Qual valor de quartil retornar.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -3156,8 +3156,8 @@ module.exports = {
     {
       n: "POISSON_DIST",
       t: 1,
-      d: "Descrição da função POISSON_DIST.",
-      a: "Resumo da função POISSON_DIST.",
+      d: "Retorna o valor da função de distribuição de Poisson (ou função de distribuição cumulativa de Poisson) para um valor e média especificados.",
+      a: "Função de distribuição de poisson.",
       m: [
         3,
         3
@@ -3165,7 +3165,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função POISSON_DIST.",
+          detail: "A entrada da função de distribuição de Poisson.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -3173,7 +3173,7 @@ module.exports = {
         },
         {
           name: "média",
-          detail: "Parâmetro `média` da função POISSON_DIST.",
+          detail: "A média (mu) da função de distribuição de Poisson.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3181,7 +3181,7 @@ module.exports = {
         },
         {
           name: "cumulativo",
-          detail: "Parâmetro `cumulativo` da função POISSON_DIST.",
+          detail: "Se usar a função de distribuição cumulativa de Poisson em vez da função de distribuição.",
           example: "FALSE()",
           require: "m",
           repeat: "n",
@@ -3192,8 +3192,8 @@ module.exports = {
     {
       n: "RSQ",
       t: 1,
-      d: "Descrição da função RSQ.",
-      a: "Resumo da função RSQ.",
+      d: "Calcula o quadrado de r, o coeficiente de correlação momento-produto de Pearson de um conjunto de dados.",
+      a: "Quadrado do coeficiente de correlação.",
       m: [
         2,
         2
@@ -3201,7 +3201,7 @@ module.exports = {
       p: [
         {
           name: "dados_y",
-          detail: "Parâmetro `dados_y` da função RSQ.",
+          detail: "O intervalo que representa a matriz ou matriz de dados dependentes.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -3209,7 +3209,7 @@ module.exports = {
         },
         {
           name: "dados_x",
-          detail: "Parâmetro `dados_x` da função RSQ.",
+          detail: "O intervalo que representa a matriz ou matriz de dados independentes.",
           example: "B2:B100",
           require: "m",
           repeat: "n",
@@ -3220,8 +3220,8 @@ module.exports = {
     {
       n: "T_DIST",
       t: 1,
-      d: "Descrição da função T_DIST.",
-      a: "Resumo da função T_DIST.",
+      d: "Calcula a probabilidade de cauda esquerda para uma distribuição t de Student com uma entrada dada (x).",
+      a: "A distribuição t de Student de cauda esquerda.",
       m: [
         3,
         3
@@ -3229,7 +3229,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função T_DIST.",
+          detail: "A entrada da função de distribuição t.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3237,7 +3237,7 @@ module.exports = {
         },
         {
           name: "graus_liberdade",
-          detail: "Parâmetro `graus_liberdade` da função T_DIST.",
+          detail: "O número de graus de liberdade.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3245,7 +3245,7 @@ module.exports = {
         },
         {
           name: "cumulativo",
-          detail: "Parâmetro `cumulativo` da função T_DIST.",
+          detail: "Se cumulativo for VERDADEIRO, T.DIST retorna a função de distribuição cumulativa; se for FALSO, retorna a função de densidade de probabilidade.",
           example: "TRUE()",
           require: "m",
           repeat: "n",
@@ -3256,8 +3256,8 @@ module.exports = {
     {
       n: "T_DIST_2T",
       t: 1,
-      d: "Descrição da função T_DIST_2T.",
-      a: "Resumo da função T_DIST_2T.",
+      d: "Calcula a probabilidade para uma distribuição t de Student bicaudal com uma entrada dada (x).",
+      a: "A distribuição t de Student bicaudal.",
       m: [
         2,
         2
@@ -3265,7 +3265,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função T_DIST_2T.",
+          detail: "A entrada da função de distribuição t.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3273,7 +3273,7 @@ module.exports = {
         },
         {
           name: "graus_liberdade",
-          detail: "Parâmetro `graus_liberdade` da função T_DIST_2T.",
+          detail: "O número de graus de liberdade.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3284,8 +3284,8 @@ module.exports = {
     {
       n: "T_DIST_RT",
       t: 1,
-      d: "Descrição da função T_DIST_RT.",
-      a: "Resumo da função T_DIST_RT.",
+      d: "Calcula a probabilidade de cauda direita para uma distribuição t de Student com uma entrada dada (x).",
+      a: "A distribuição t de Student de cauda direita.",
       m: [
         2,
         2
@@ -3293,7 +3293,7 @@ module.exports = {
       p: [
         {
           name: "x",
-          detail: "Parâmetro `x` da função T_DIST_RT.",
+          detail: "A entrada da função de distribuição t.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -3301,7 +3301,7 @@ module.exports = {
         },
         {
           name: "graus_liberdade",
-          detail: "Parâmetro `graus_liberdade` da função T_DIST_RT.",
+          detail: "O número de graus de liberdade.",
           example: "30",
           require: "m",
           repeat: "n",
@@ -3312,8 +3312,8 @@ module.exports = {
     {
       n: "T_INV",
       t: 1,
-      d: "Descrição da função T_INV.",
-      a: "Resumo da função T_INV.",
+      d: "Calcula a inversa negativa da função TDIST unilateral.",
+      a: "T.INV",
       m: [
         2,
         2
@@ -3321,7 +3321,7 @@ module.exports = {
       p: [
         {
           name: "probabilidade",
-          detail: "Parâmetro `probabilidade` da função T_INV.",
+          detail: "A probabilidade associada à distribuição t bicaudal.",
           example: "0.35",
           require: "m",
           repeat: "n",
@@ -3329,7 +3329,7 @@ module.exports = {
         },
         {
           name: "graus_liberdade",
-          detail: "Parâmetro `graus_liberdade` da função T_INV.",
+          detail: "O número de graus de liberdade.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -3340,8 +3340,8 @@ module.exports = {
     {
       n: "T_INV_2T",
       t: 1,
-      d: "Descrição da função T_INV_2T.",
-      a: "Resumo da função T_INV_2T.",
+      d: "Calcula a inversa da função TDIST bicaudal.",
+      a: "T.INV.2T",
       m: [
         2,
         2
@@ -3349,7 +3349,7 @@ module.exports = {
       p: [
         {
           name: "probabilidade",
-          detail: "Parâmetro `probabilidade` da função T_INV_2T.",
+          detail: "A probabilidade associada à distribuição t bicaudal.",
           example: "0.35",
           require: "m",
           repeat: "n",
@@ -3357,7 +3357,7 @@ module.exports = {
         },
         {
           name: "graus_liberdade",
-          detail: "Parâmetro `graus_liberdade` da função T_INV_2T.",
+          detail: "O número de graus de liberdade.",
           example: "1",
           require: "m",
           repeat: "n",
