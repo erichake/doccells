@@ -4634,8 +4634,8 @@ module.exports = {  "insertLink": {
     {
       n: "WEEKDAY",
       t: 6,
-      d: "Returns a number representing the day of the week of the date provided.",
-      a: "Day of the week of the date provided (as number).",
+      d: "Devuelve un número que representa el día de la semana de la fecha proporcionada.",
+      a: "Día de la semana de la fecha proporcionada (como número).",
       m: [
         1,
         2
@@ -4643,7 +4643,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha",
-          detail: "The date for which to determine the day of the week. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+          detail: "La fecha para la que se determinará el día de la semana. Debe ser una referencia a una celda que contenga una fecha, una función que devuelva un tipo de fecha, o un número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4651,7 +4651,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tipo",
-          detail: "A number indicating which numbering system to use to represent weekdays. By default, counts starting with Sunday = 1.",
+          detail: "Un número que indica qué sistema de numeración se usará para representar los días de la semana. De forma predeterminada, la numeración comienza en domingo = 1.",
           example: "7",
           require: "o",
           repeat: "n",
@@ -4662,8 +4662,8 @@ module.exports = {  "insertLink": {
     {
       n: "DAY",
       t: 6,
-      d: "Returns the day of the month that a specific date falls on, in numeric format.",
-      a: "Day of the month that a specific date falls on.",
+      d: "Devuelve el día del mes en el que cae una fecha determinada, en formato numérico.",
+      a: "Día del mes en el que cae una fecha determinada.",
       m: [
         1,
         1
@@ -4671,7 +4671,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha",
-          detail: "The date from which to extract the day.",
+          detail: "La fecha de la que se extraerá el día.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4682,8 +4682,8 @@ module.exports = {  "insertLink": {
     {
       n: "DAYS",
       t: 6,
-      d: "Returns the number of days between two dates.",
-      a: "Number of days between two dates.",
+      d: "Devuelve el número de días entre dos fechas.",
+      a: "Número de días entre dos fechas.",
       m: [
         2,
         2
@@ -4691,7 +4691,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_fin",
-          detail: "The end of the date range.",
+          detail: "El final del rango de fechas.",
           example: "2011-3-15",
           require: "m",
           repeat: "n",
@@ -4699,7 +4699,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fecha_inicio",
-          detail: "The start of the date range.",
+          detail: "El inicio del rango de fechas.",
           example: "2011-2-1",
           require: "m",
           repeat: "n",
@@ -4710,8 +4710,8 @@ module.exports = {  "insertLink": {
     {
       n: "DAYS360",
       t: 6,
-      d: "Returns the difference between two days based on the 360 day year used in some financial interest calculations.",
-      a: "Days between two dates on a 360-day year.",
+      d: "Devuelve la diferencia entre dos fechas basándose en el año de 360 días usado en algunos cálculos de interés financiero.",
+      a: "Días entre dos fechas según un año de 360 días.",
       m: [
         2,
         3
@@ -4719,7 +4719,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_inicio",
-          detail: "The start date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+          detail: "La fecha de inicio que se tendrá en cuenta en el cálculo. Debe ser una referencia a una celda que contenga una fecha, una función que devuelva un tipo de fecha, o un número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4727,7 +4727,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fecha_fin",
-          detail: "The end date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+          detail: "La fecha de fin que se tendrá en cuenta en el cálculo. Debe ser una referencia a una celda que contenga una fecha, una función que devuelva un tipo de fecha, o un número.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4735,7 +4735,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "método",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "FALSE()",
           require: "o",
           repeat: "n",
@@ -4746,8 +4746,8 @@ module.exports = {  "insertLink": {
     {
       n: "DATE",
       t: 6,
-      d: "Converts a provided year, month, and day into a date.",
-      a: "Converts year/month/day into a date.",
+      d: "Convierte un año, un mes y un día proporcionados en una fecha.",
+      a: "Convierte año/mes/día en una fecha.",
       m: [
         3,
         3
@@ -4755,7 +4755,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "año",
-          detail: "The year component of the date.",
+          detail: "El componente de año de la fecha.",
           example: "1969",
           require: "m",
           repeat: "n",
@@ -4763,7 +4763,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "mes",
-          detail: "The month component of the date.",
+          detail: "El componente de mes de la fecha.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4771,7 +4771,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "día",
-          detail: "The day component of the date.",
+          detail: "El componente de día de la fecha.",
           example: "20",
           require: "m",
           repeat: "n",
@@ -4782,8 +4782,8 @@ module.exports = {  "insertLink": {
     {
       n: "DATEVALUE",
       t: 6,
-      d: "Converts a provided date string in a known format to a date value.",
-      a: "Converts a date string to a date value.",
+      d: "Convierte una cadena de fecha proporcionada en un formato conocido a un valor de fecha.",
+      a: "Convierte una cadena de fecha en un valor de fecha.",
       m: [
         1,
         1
@@ -4791,7 +4791,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "cadena_fecha",
-          detail: "The string representing the date.",
+          detail: "La cadena que representa la fecha.",
           example: "\"1969-7-20\"",
           require: "m",
           repeat: "n",
@@ -4802,8 +4802,8 @@ module.exports = {  "insertLink": {
     {
       n: "DATEDIF",
       t: 6,
-      d: "Calculates the number of days, months, or years between two dates.",
-      a: "Date Difference.",
+      d: "Calcula el número de días, meses o años entre dos fechas.",
+      a: "Diferencia de fechas.",
       m: [
         3,
         3
@@ -4811,7 +4811,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_inicio",
-          detail: "The start date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+          detail: "La fecha de inicio que se tendrá en cuenta en el cálculo. Debe ser una referencia a una celda que contenga una fecha, una función que devuelva un tipo de fecha, o un número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4819,7 +4819,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fecha_fin",
-          detail: "The end date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+          detail: "La fecha de fin que se tendrá en cuenta en el cálculo. Debe ser una referencia a una celda que contenga una fecha, una función que devuelva un tipo de fecha, o un número.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4827,7 +4827,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "unidad",
-          detail: "A string abbreviation for unit of time. For example, \"M\" for month. Accepted values are \"Y\",\"M\",\"D\",\"MD\",\"YM\",\"YD\".",
+          detail: "Una abreviatura de texto para la unidad de tiempo. Por ejemplo, \"M\" para mes. Los valores aceptados son \"Y\", \"M\", \"D\", \"MD\", \"YM\", \"YD\".",
           example: "16)",
           require: "m",
           repeat: "n",
@@ -4838,8 +4838,8 @@ module.exports = {  "insertLink": {
     {
       n: "WORKDAY",
       t: 6,
-      d: "Calculates the date after a number of working days from a specified start date.",
-      a: "Number of working days from start date.",
+      d: "Calcula la fecha resultante tras un número de días laborables a partir de una fecha de inicio especificada.",
+      a: "Número de días laborables a partir de una fecha de inicio.",
       m: [
         2,
         3
@@ -4847,7 +4847,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_inicio",
-          detail: "The date from which to begin counting.",
+          detail: "La fecha a partir de la cual se comenzará a contar.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4855,7 +4855,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_días",
-          detail: "The number of working days to advance from `start_date`. If negative, counts backwards.",
+          detail: "El número de días laborables que se avanzará desde `fecha_inicio`. Si es negativo, cuenta hacia atrás.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4863,7 +4863,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "días_festivos",
-          detail: "A range or array constant containing the dates to consider holidays.",
+          detail: "Un rango o matriz constante que contiene las fechas que se considerarán festivos.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4874,8 +4874,8 @@ module.exports = {  "insertLink": {
     {
       n: "WORKDAY_INTL",
       t: 6,
-      d: "Calculates the date after a specified number of workdays excluding specified weekend days and holidays.",
-      a: "Date after a number of workdays (specifying weekends).",
+      d: "Calcula la fecha resultante tras un número especificado de días laborables, excluyendo los días de fin de semana y festivos especificados.",
+      a: "Fecha tras un número de días laborables (especificando fines de semana).",
       m: [
         2,
         4
@@ -4883,7 +4883,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_inicio",
-          detail: "The date from which to begin counting.",
+          detail: "La fecha a partir de la cual se comenzará a contar.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4891,7 +4891,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_días",
-          detail: "The number of working days to advance from `start_date`. If negative, counts backwards.",
+          detail: "El número de días laborables que se avanzará desde `fecha_inicio`. Si es negativo, cuenta hacia atrás.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4899,7 +4899,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fin_de_semana",
-          detail: "A number or string representing which days of the week are considered weekends.",
+          detail: "Un número o cadena que representa qué días de la semana se consideran fin de semana.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4907,7 +4907,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "días_festivos",
-          detail: "A range or array constant containing the dates to consider holidays.",
+          detail: "Un rango o matriz constante que contiene las fechas que se considerarán festivos.",
           example: "DATE(1969",
           require: "o",
           repeat: "n",
@@ -4918,8 +4918,8 @@ module.exports = {  "insertLink": {
     {
       n: "YEAR",
       t: 6,
-      d: "Returns the year specified by a given date.",
-      a: "Year specified by a given date.",
+      d: "Devuelve el año especificado por una fecha determinada.",
+      a: "Año especificado por una fecha determinada.",
       m: [
         1,
         1
@@ -4927,7 +4927,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha",
-          detail: "The date from which to extract the year.",
+          detail: "La fecha de la que se extraerá el año.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4938,8 +4938,8 @@ module.exports = {  "insertLink": {
     {
       n: "YEARFRAC",
       t: 6,
-      d: "Returns the number of years, including fractional years, between two dates using a specified day count convention.",
-      a: "Exact number of years between two dates.",
+      d: "Devuelve el número de años, incluyendo fracciones de año, entre dos fechas, usando una convención de recuento de días especificada.",
+      a: "Número exacto de años entre dos fechas.",
       m: [
         2,
         3
@@ -4947,7 +4947,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_inicio",
-          detail: "The start date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+          detail: "La fecha de inicio que se tendrá en cuenta en el cálculo. Debe ser una referencia a una celda que contenga una fecha, una función que devuelva un tipo de fecha, o un número.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -4955,7 +4955,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fecha_fin",
-          detail: "The end date to consider in the calculation. Must be a reference to a cell containing a date, a function returning a date type, or a number.",
+          detail: "La fecha de fin que se tendrá en cuenta en el cálculo. Debe ser una referencia a una celda que contenga una fecha, una función que devuelva un tipo de fecha, o un número.",
           example: "7",
           require: "m",
           repeat: "n",
@@ -4963,7 +4963,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "16)",
           require: "o",
           repeat: "n",
@@ -4974,8 +4974,8 @@ module.exports = {  "insertLink": {
     {
       n: "TODAY",
       t: 6,
-      d: "Returns the current date as a date value.",
-      a: "Current date as a date value.",
+      d: "Devuelve la fecha actual como un valor de fecha.",
+      a: "Fecha actual como valor de fecha.",
       m: [
         0,
         0
@@ -4985,8 +4985,8 @@ module.exports = {  "insertLink": {
     {
       n: "MONTH",
       t: 6,
-      d: "Returns the month of the year a specific date falls in, in numeric format.",
-      a: "Month of the year a specific date falls in.",
+      d: "Devuelve el mes del año en el que cae una fecha determinada, en formato numérico.",
+      a: "Mes del año en el que cae una fecha determinada.",
       m: [
         1,
         1
@@ -4994,7 +4994,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha",
-          detail: "The date from which to extract the month.",
+          detail: "La fecha de la que se extraerá el mes.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -5005,8 +5005,8 @@ module.exports = {  "insertLink": {
     {
       n: "EFFECT",
       t: 8,
-      d: "Calculates the annual effective interest rate given the nominal rate and number of compounding periods per year.",
-      a: "Annual effective interest rate.",
+      d: "Calcula la tasa de interés anual efectiva dados la tasa nominal y el número de períodos de capitalización por año.",
+      a: "Tasa de interés anual efectiva.",
       m: [
         2,
         2
@@ -5014,7 +5014,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa_nominal",
-          detail: "The nominal interest rate per year.",
+          detail: "La tasa de interés nominal anual.",
           example: "0.99",
           require: "m",
           repeat: "n",
@@ -5022,7 +5022,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "períodos_por_año",
-          detail: "The number of compounding periods per year.",
+          detail: "El número de períodos de capitalización por año.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5033,8 +5033,8 @@ module.exports = {  "insertLink": {
     {
       n: "DOLLAR",
       t: 12,
-      d: "Formats a number into the currency specific to your spreadsheet locale.",
-      a: "Formats a number as currency specific to your spreadsheet locale.",
+      d: "Da formato a un número según la moneda específica de la configuración regional de tu hoja de cálculo.",
+      a: "Da formato a un número como moneda específica de tu configuración regional.",
       m: [
         1,
         2
@@ -5042,7 +5042,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número",
-          detail: "The value to be formatted.",
+          detail: "El valor al que se dará formato.",
           example: "1.2351",
           require: "m",
           repeat: "n",
@@ -5050,7 +5050,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_decimales",
-          detail: "The number of decimal places to display.",
+          detail: "El número de decimales que se mostrarán.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -5061,8 +5061,8 @@ module.exports = {  "insertLink": {
     {
       n: "DOLLARDE",
       t: 8,
-      d: "Converts a price quotation given as a decimal fraction into a decimal value.",
-      a: "Converts a decimal fraction to decimal value.",
+      d: "Convierte una cotización de precio expresada como fracción decimal en un valor decimal.",
+      a: "Convierte una fracción decimal en un valor decimal.",
       m: [
         2,
         2
@@ -5070,7 +5070,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "precio_fraccionario",
-          detail: "The price quotation given using fractional decimal conventions.",
+          detail: "La cotización de precio expresada mediante convenciones decimales fraccionarias.",
           example: "100.10",
           require: "m",
           repeat: "n",
@@ -5078,7 +5078,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "unidad",
-          detail: "The units of the fraction, e.g. `8` for 1/8ths or `32` for 1/32nds.",
+          detail: "Las unidades de la fracción; por ejemplo, `8` para octavos o `32` para treintaidosavos.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5089,8 +5089,8 @@ module.exports = {  "insertLink": {
     {
       n: "DOLLARFR",
       t: 8,
-      d: "Converts a price quotation given as a decimal value into a decimal fraction.",
-      a: "Converts a decimal value to decimal fraction.",
+      d: "Convierte una cotización de precio expresada como valor decimal en una fracción decimal.",
+      a: "Convierte un valor decimal en una fracción decimal.",
       m: [
         2,
         2
@@ -5098,7 +5098,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "precio_decimal",
-          detail: "The price quotation given as a decimal value.",
+          detail: "La cotización de precio expresada como valor decimal.",
           example: "100.125",
           require: "m",
           repeat: "n",
@@ -5106,7 +5106,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "unidad",
-          detail: "The units of the desired fraction, e.g. `8` for 1/8ths or `32` for 1/32nds.",
+          detail: "Las unidades de la fracción deseada; por ejemplo, `8` para octavos o `32` para treintaidosavos.",
           example: "32",
           require: "m",
           repeat: "n",
@@ -5117,8 +5117,8 @@ module.exports = {  "insertLink": {
     {
       n: "DB",
       t: 8,
-      d: "Calculates the depreciation of an asset for a specified period using the arithmetic declining balance method.",
-      a: "Depreciation via declining balance method.",
+      d: "Calcula la depreciación de un activo para un período especificado usando el método de saldo decreciente aritmético.",
+      a: "Depreciación mediante el método de saldo decreciente.",
       m: [
         4,
         5
@@ -5126,7 +5126,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "costo",
-          detail: "The initial cost of the asset.",
+          detail: "El costo inicial del activo.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5134,7 +5134,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_residual",
-          detail: "The value of the asset at the end of depreciation.",
+          detail: "El valor del activo al final de la depreciación.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5142,7 +5142,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vida_útil",
-          detail: "The number of periods over which the asset is depreciated.",
+          detail: "El número de períodos durante los cuales se deprecia el activo.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5150,7 +5150,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "período",
-          detail: "The single period within `life` for which to calculate depreciation.",
+          detail: "El período concreto dentro de `vida` para el que se calculará la depreciación.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5158,7 +5158,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "mes",
-          detail: "The number of months in the first year of depreciation.",
+          detail: "El número de meses del primer año de depreciación.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5169,8 +5169,8 @@ module.exports = {  "insertLink": {
     {
       n: "DDB",
       t: 8,
-      d: "Calculates the depreciation of an asset for a specified period using the double-declining balance method.",
-      a: "Depreciation via double-declining balance method.",
+      d: "Calcula la depreciación de un activo para un período especificado usando el método de doble saldo decreciente.",
+      a: "Depreciación mediante el método de doble saldo decreciente.",
       m: [
         4,
         5
@@ -5178,7 +5178,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "costo",
-          detail: "The initial cost of the asset.",
+          detail: "El costo inicial del activo.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5186,7 +5186,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_residual",
-          detail: "The value of the asset at the end of depreciation.",
+          detail: "El valor del activo al final de la depreciación.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5194,7 +5194,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vida_útil",
-          detail: "The number of periods over which the asset is depreciated.",
+          detail: "El número de períodos durante los cuales se deprecia el activo.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5202,7 +5202,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "período",
-          detail: "The single period within `life` for which to calculate depreciation.",
+          detail: "El período concreto dentro de `vida` para el que se calculará la depreciación.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5210,7 +5210,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "factor",
-          detail: "The factor by which depreciation decreases.",
+          detail: "El factor por el que disminuye la depreciación.",
           example: "2.25",
           require: "m",
           repeat: "n",
@@ -5221,8 +5221,8 @@ module.exports = {  "insertLink": {
     {
       n: "RATE",
       t: 8,
-      d: "Calculates the interest rate of an annuity investment based on constant-amount periodic payments and the assumption of a constant interest rate.",
-      a: "Interest rate of an annuity investment.",
+      d: "Calcula la tasa de interés de una inversión de anualidad basándose en pagos periódicos de importe constante y suponiendo una tasa de interés constante.",
+      a: "Tasa de interés de una inversión de anualidad.",
       m: [
         3,
         6
@@ -5230,7 +5230,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_períodos",
-          detail: "The number of payments to be made.",
+          detail: "El número de pagos que se realizarán.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5238,7 +5238,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "pago_por_período",
-          detail: "The amount per period to be paid.",
+          detail: "El importe que se pagará por período.",
           example: "-100",
           require: "m",
           repeat: "n",
@@ -5246,7 +5246,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_actual",
-          detail: "The current value of the annuity.",
+          detail: "El valor actual de la anualidad.",
           example: "400",
           require: "m",
           repeat: "n",
@@ -5254,7 +5254,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_futuro",
-          detail: "The future value remaining after the final payment has been made.",
+          detail: "El valor futuro que quedará tras realizar el último pago.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5262,7 +5262,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fin_o_inicio",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "Si los pagos vencen al final (`0`) o al principio (`1`) de cada período.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5270,7 +5270,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "estimación_tasa",
-          detail: "An estimate for what the interest rate will be.",
+          detail: "Una estimación de cuál será la tasa de interés.",
           example: "0.1",
           require: "o",
           repeat: "n",
@@ -5281,8 +5281,8 @@ module.exports = {  "insertLink": {
     {
       n: "CUMPRINC",
       t: 8,
-      d: "Calculates the cumulative principal paid over a range of payment periods for an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Cumulative principal paid over a set of periods.",
+      d: "Calcula el capital acumulado pagado durante un rango de períodos de pago para una inversión basada en pagos periódicos de importe constante y una tasa de interés constante.",
+      a: "Capital acumulado pagado durante un conjunto de períodos.",
       m: [
         6,
         6
@@ -5290,7 +5290,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa",
-          detail: "The interest rate.",
+          detail: "La tasa de interés.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -5298,7 +5298,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_períodos",
-          detail: "The number of payments to be made.",
+          detail: "El número de pagos que se realizarán.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5306,7 +5306,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_actual",
-          detail: "The current value of the annuity.",
+          detail: "El valor actual de la anualidad.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5314,7 +5314,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "primer_período",
-          detail: "The number of the payment period to begin the cumulative calculation.",
+          detail: "El número del período de pago en el que comenzará el cálculo acumulado.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5322,7 +5322,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "último_período",
-          detail: "The number of the payment period to end the cumulative calculation.",
+          detail: "El número del período de pago en el que terminará el cálculo acumulado.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -5330,7 +5330,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fin_o_inicio",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "Si los pagos vencen al final (`0`) o al principio (`1`) de cada período.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -5341,8 +5341,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUPNUM",
       t: 8,
-      d: "Calculates the number of coupons, or interest payments, between the settlement date and the maturity date of the investment.",
-      a: "Number of coupons between settlement and maturity.",
+      d: "Calcula el número de cupones, o pagos de intereses, entre la fecha de liquidación y la fecha de vencimiento de la inversión.",
+      a: "Número de cupones entre la liquidación y el vencimiento.",
       m: [
         3,
         4
@@ -5350,7 +5350,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5358,7 +5358,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "02",
           require: "m",
           repeat: "n",
@@ -5366,7 +5366,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "frecuencia",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "El número de pagos de intereses o cupones por año (1, 2 o 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5374,7 +5374,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5385,8 +5385,8 @@ module.exports = {  "insertLink": {
     {
       n: "SYD",
       t: 8,
-      d: "Calculates the depreciation of an asset for a specified period using the sum of years digits method.",
-      a: "Depreciation via sum of years digits method.",
+      d: "Calcula la depreciación de un activo para un período especificado usando el método de suma de dígitos de los años.",
+      a: "Depreciación mediante el método de suma de dígitos de los años.",
       m: [
         4,
         4
@@ -5394,7 +5394,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "costo",
-          detail: "The initial cost of the asset.",
+          detail: "El costo inicial del activo.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5402,7 +5402,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_residual",
-          detail: "The value of the asset at the end of depreciation.",
+          detail: "El valor del activo al final de la depreciación.",
           example: "50",
           require: "m",
           repeat: "n",
@@ -5410,7 +5410,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vida_útil",
-          detail: "The number of periods over which the asset is depreciated.",
+          detail: "El número de períodos durante los cuales se deprecia el activo.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -5418,7 +5418,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "período",
-          detail: "The single period within `life` for which to calculate depreciation.",
+          detail: "El período concreto dentro de `vida` para el que se calculará la depreciación.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5429,8 +5429,8 @@ module.exports = {  "insertLink": {
     {
       n: "TBILLEQ",
       t: 8,
-      d: "Calculates the equivalent annualized rate of return of a US Treasury Bill based on discount rate.",
-      a: "Equivalent rate of return for a Treasury bill.",
+      d: "Calcula la tasa de rendimiento anualizada equivalente de una letra del Tesoro de EE. UU. a partir de la tasa de descuento.",
+      a: "Tasa de rendimiento equivalente de una letra del Tesoro.",
       m: [
         3,
         3
@@ -5438,7 +5438,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5446,7 +5446,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5454,7 +5454,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa_descuento",
-          detail: "The discount rate of the bill at time of purchase.",
+          detail: "La tasa de descuento de la letra en el momento de la compra.",
           example: "2)",
           require: "m",
           repeat: "n",
@@ -5465,8 +5465,8 @@ module.exports = {  "insertLink": {
     {
       n: "TBILLYIELD",
       t: 8,
-      d: "Calculates the yield of a US Treasury Bill based on price.",
-      a: "The yield of a us treasury bill based on price.",
+      d: "Calcula el rendimiento de una letra del Tesoro de EE. UU. a partir de su precio.",
+      a: "Rendimiento de una letra del Tesoro de EE. UU. a partir del precio.",
       m: [
         3,
         3
@@ -5474,7 +5474,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5482,7 +5482,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5490,7 +5490,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "precio",
-          detail: "The price at which the security is bought per 100 face value.",
+          detail: "El precio al que se compra el valor por cada 100 de valor nominal.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -5501,8 +5501,8 @@ module.exports = {  "insertLink": {
     {
       n: "TBILLPRICE",
       t: 8,
-      d: "Calculates the price of a US Treasury Bill based on discount rate.",
-      a: "Price of US treasury bill.",
+      d: "Calcula el precio de una letra del Tesoro de EE. UU. a partir de la tasa de descuento.",
+      a: "Precio de una letra del Tesoro de EE. UU.",
       m: [
         3,
         3
@@ -5510,7 +5510,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5518,7 +5518,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5526,7 +5526,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa_descuento",
-          detail: "The discount rate of the bill at time of purchase.",
+          detail: "La tasa de descuento de la letra en el momento de la compra.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -5537,8 +5537,8 @@ module.exports = {  "insertLink": {
     {
       n: "PV",
       t: 8,
-      d: "Calculates the present value of an annuity investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Present value of an annuity investment.",
+      d: "Calcula el valor actual de una inversión de anualidad basándose en pagos periódicos de importe constante y una tasa de interés constante.",
+      a: "Valor actual de una inversión de anualidad.",
       m: [
         3,
         5
@@ -5546,7 +5546,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa",
-          detail: "The interest rate.",
+          detail: "La tasa de interés.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -5554,7 +5554,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_períodos",
-          detail: "The number of payments to be made.",
+          detail: "El número de pagos que se realizarán.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5562,7 +5562,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "importe_pago",
-          detail: "The amount per period to be paid.",
+          detail: "El importe que se pagará por período.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5570,7 +5570,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_futuro",
-          detail: "The future value remaining after the final payment has been made.",
+          detail: "El valor futuro que quedará tras realizar el último pago.",
           example: "D2",
           require: "o",
           repeat: "n",
@@ -5578,7 +5578,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fin_o_inicio",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "Si los pagos vencen al final (`0`) o al principio (`1`) de cada período.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -5589,8 +5589,8 @@ module.exports = {  "insertLink": {
     {
       n: "ACCRINT",
       t: 8,
-      d: "Calculates the accrued interest of a security that has periodic payments.",
-      a: "Accrued interest of security with periodic payments.",
+      d: "Calcula el interés acumulado de un valor que realiza pagos periódicos.",
+      a: "Interés acumulado de un valor con pagos periódicos.",
       m: [
         6,
         8
@@ -5598,7 +5598,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_emisión",
-          detail: "The date the security was initially issued.",
+          detail: "La fecha en la que se emitió inicialmente el valor.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5606,7 +5606,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "primer_pago",
-          detail: "The first date interest will be paid.",
+          detail: "La primera fecha en la que se pagarán intereses.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5614,7 +5614,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5622,7 +5622,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa",
-          detail: "The annualized rate of interest.",
+          detail: "La tasa de interés anualizada.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5630,7 +5630,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_reembolso",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "El importe de reembolso por cada 100 de valor nominal.",
           example: "10000",
           require: "m",
           repeat: "n",
@@ -5638,7 +5638,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "frecuencia",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "El número de pagos de intereses o cupones por año (1, 2 o 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5646,7 +5646,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5654,7 +5654,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "método_cálculo",
-          detail: "[Optional-defaults to TRUE()] - A logical value that specifies the method used to calculate the total accrued interest when the settlement date is later than the first interest accrual date. \n\nIf the value is TRUE, the total accrued interest from the issue date to the settlement date is returned. \n\nIf the value is FALSE, return the accrued interest from the first interest accrual date to the settlement date.",
+          detail: "[Opcional; el valor predeterminado es TRUE()] - Un valor lógico que especifica el método usado para calcular el total de intereses acumulados cuando la fecha de liquidación es posterior a la primera fecha de acumulación de intereses. \n\nSi el valor es TRUE, se devuelve el total de intereses acumulados desde la fecha de emisión hasta la fecha de liquidación. \n\nSi el valor es FALSE, se devuelve el interés acumulado desde la primera fecha de acumulación de intereses hasta la fecha de liquidación.",
           example: "TRUE()",
           require: "o",
           repeat: "n",
@@ -5665,8 +5665,8 @@ module.exports = {  "insertLink": {
     {
       n: "ACCRINTM",
       t: 8,
-      d: "Calculates the accrued interest of a security that pays interest at maturity.",
-      a: "Accrued interest of security paying at maturity.",
+      d: "Calcula el interés acumulado de un valor que paga intereses al vencimiento.",
+      a: "Interés acumulado de un valor que paga al vencimiento.",
       m: [
         4,
         5
@@ -5674,7 +5674,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_emisión",
-          detail: "The date the security was initially issued.",
+          detail: "La fecha en la que se emitió inicialmente el valor.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -5682,7 +5682,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity date of the security.",
+          detail: "La fecha de vencimiento del valor.",
           example: "DATE(1969",
           require: "m",
           repeat: "n",
@@ -5690,7 +5690,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa",
-          detail: "The annualized rate of interest.",
+          detail: "La tasa de interés anualizada.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -5698,7 +5698,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_reembolso",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "El importe de reembolso por cada 100 de valor nominal.",
           example: "1000",
           require: "m",
           repeat: "n",
@@ -5706,7 +5706,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5717,8 +5717,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUPDAYBS",
       t: 8,
-      d: "Calculates the number of days from the first coupon, or interest payment, until settlement.",
-      a: "Number of days from first coupon to settlement.",
+      d: "Calcula el número de días desde el primer cupón, o pago de intereses, hasta la liquidación.",
+      a: "Número de días desde el primer cupón hasta la liquidación.",
       m: [
         3,
         4
@@ -5726,7 +5726,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5734,7 +5734,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5742,7 +5742,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "frecuencia",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "El número de pagos de intereses o cupones por año (1, 2 o 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5750,7 +5750,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5761,8 +5761,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUPDAYS",
       t: 8,
-      d: "Calculates the number of days in the coupon, or interest payment, period that contains the specified settlement date.",
-      a: "Days in coupon period containing settlement date.",
+      d: "Calcula el número de días en el período del cupón, o de pago de intereses, que contiene la fecha de liquidación especificada.",
+      a: "Días del período del cupón que contiene la fecha de liquidación.",
       m: [
         3,
         4
@@ -5770,7 +5770,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5778,7 +5778,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5786,7 +5786,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "frecuencia",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "El número de pagos de intereses o cupones por año (1, 2 o 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5794,7 +5794,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5805,8 +5805,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUPDAYSNC",
       t: 8,
-      d: "Calculates the number of days from the settlement date until the next coupon, or interest payment.",
-      a: "Days from settlement until next coupon.",
+      d: "Calcula el número de días desde la fecha de liquidación hasta el siguiente cupón, o pago de intereses.",
+      a: "Días desde la liquidación hasta el siguiente cupón.",
       m: [
         3,
         4
@@ -5814,7 +5814,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5822,7 +5822,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5830,7 +5830,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "frecuencia",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "El número de pagos de intereses o cupones por año (1, 2 o 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5838,7 +5838,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -5849,8 +5849,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUPNCD",
       t: 8,
-      d: "Calculates next coupon, or interest payment, date after the settlement date.",
-      a: "Next coupon date after the settlement date.",
+      d: "Calcula la fecha del siguiente cupón, o pago de intereses, posterior a la fecha de liquidación.",
+      a: "Fecha del siguiente cupón tras la fecha de liquidación.",
       m: [
         3,
         4
@@ -5858,7 +5858,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5866,7 +5866,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5874,7 +5874,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "frecuencia",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "El número de pagos de intereses o cupones por año (1, 2 o 4).",
           example: "01)",
           require: "m",
           repeat: "n",
@@ -5882,7 +5882,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5893,8 +5893,8 @@ module.exports = {  "insertLink": {
     {
       n: "COUPPCD",
       t: 8,
-      d: "Calculates last coupon, or interest payment, date before the settlement date.",
-      a: "Last coupon date before settlement date.",
+      d: "Calcula la fecha del último cupón, o pago de intereses, anterior a la fecha de liquidación.",
+      a: "Fecha del último cupón antes de la fecha de liquidación.",
       m: [
         3,
         4
@@ -5902,7 +5902,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5910,7 +5910,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -5918,7 +5918,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "frecuencia",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "El número de pagos de intereses o cupones por año (1, 2 o 4).",
           example: "01)",
           require: "m",
           repeat: "n",
@@ -5926,7 +5926,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "DATE(2019",
           require: "o",
           repeat: "n",
@@ -5937,8 +5937,8 @@ module.exports = {  "insertLink": {
     {
       n: "FV",
       t: 8,
-      d: "Calculates the future value of an annuity investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Future value of an annuity investment.",
+      d: "Calcula el valor futuro de una inversión de anualidad basándose en pagos periódicos de importe constante y una tasa de interés constante.",
+      a: "Valor futuro de una inversión de anualidad.",
       m: [
         3,
         5
@@ -5946,7 +5946,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa",
-          detail: "The interest rate.",
+          detail: "La tasa de interés.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -5954,7 +5954,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_períodos",
-          detail: "The number of payments to be made.",
+          detail: "El número de pagos que se realizarán.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -5962,7 +5962,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "importe_pago",
-          detail: "The amount per period to be paid.",
+          detail: "El importe que se pagará por período.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -5970,7 +5970,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_actual",
-          detail: "The current value of the annuity.",
+          detail: "El valor actual de la anualidad.",
           example: "400",
           require: "m",
           repeat: "n",
@@ -5978,7 +5978,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fin_o_inicio",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "Si los pagos vencen al final (`0`) o al principio (`1`) de cada período.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -5989,8 +5989,8 @@ module.exports = {  "insertLink": {
     {
       n: "FVSCHEDULE",
       t: 8,
-      d: "Calculates the future value of some principal based on a specified series of potentially varying interest rates.",
-      a: "Future value of principal from series of rates.",
+      d: "Calcula el valor futuro de un capital basándose en una serie especificada de tasas de interés potencialmente variables.",
+      a: "Valor futuro de un capital a partir de una serie de tasas.",
       m: [
         2,
         2
@@ -5998,7 +5998,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "capital",
-          detail: "The amount of initial capital or value to compound against.",
+          detail: "El importe del capital inicial o valor sobre el que se capitalizará.",
           example: "10000",
           require: "m",
           repeat: "n",
@@ -6006,7 +6006,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "calendario_tasas",
-          detail: "A series of interest rates to compound against the `principal`.",
+          detail: "Una serie de tasas de interés que se capitalizarán sobre el `capital`.",
           example: "A2:A100",
           require: "m",
           repeat: "n",
@@ -6017,8 +6017,8 @@ module.exports = {  "insertLink": {
     {
       n: "YIELD",
       t: 8,
-      d: "Calculates the annual yield of a security paying periodic interest, such as a US Treasury Bond, based on price.",
-      a: "Annual yield of a security paying periodic interest.",
+      d: "Calcula el rendimiento anual de un valor que paga intereses periódicos, como un bono del Tesoro de EE. UU., a partir de su precio.",
+      a: "Rendimiento anual de un valor con pago periódico de intereses.",
       m: [
         6,
         7
@@ -6026,7 +6026,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6034,7 +6034,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6042,7 +6042,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa",
-          detail: "The annualized rate of interest.",
+          detail: "La tasa de interés anualizada.",
           example: "0.057",
           require: "m",
           repeat: "n",
@@ -6050,7 +6050,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "precio",
-          detail: "The price at which the security is bought per 100 face value.",
+          detail: "El precio al que se compra el valor por cada 100 de valor nominal.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -6058,7 +6058,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_reembolso",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "El importe de reembolso por cada 100 de valor nominal.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6066,7 +6066,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "frecuencia",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "El número de pagos de intereses o cupones por año (1, 2 o 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6074,7 +6074,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6085,8 +6085,8 @@ module.exports = {  "insertLink": {
     {
       n: "YIELDDISC",
       t: 8,
-      d: "Calculates the annual yield of a discount (non-interest-bearing) security, based on price.",
-      a: "Annual yield of a discount security.",
+      d: "Calcula el rendimiento anual de un valor de descuento (que no paga intereses), a partir de su precio.",
+      a: "Rendimiento anual de un valor de descuento.",
       m: [
         4,
         5
@@ -6094,7 +6094,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6102,7 +6102,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6110,7 +6110,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "precio",
-          detail: "The price at which the security is bought per 100 face value.",
+          detail: "El precio al que se compra el valor por cada 100 de valor nominal.",
           example: "95",
           require: "m",
           repeat: "n",
@@ -6118,7 +6118,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_reembolso",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "El importe de reembolso por cada 100 de valor nominal.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6126,7 +6126,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6137,8 +6137,8 @@ module.exports = {  "insertLink": {
     {
       n: "NOMINAL",
       t: 8,
-      d: "Calculates the annual nominal interest rate given the effective rate and number of compounding periods per year.",
-      a: "Annual nominal interest rate.",
+      d: "Calcula la tasa de interés nominal anual dados la tasa efectiva y el número de períodos de capitalización por año.",
+      a: "Tasa de interés nominal anual.",
       m: [
         2,
         2
@@ -6146,7 +6146,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa_efectiva",
-          detail: "The effective interest rate per year.",
+          detail: "La tasa de interés efectiva anual.",
           example: "0.85",
           require: "m",
           repeat: "n",
@@ -6154,7 +6154,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "períodos_por_año",
-          detail: "The number of compounding periods per year.",
+          detail: "El número de períodos de capitalización por año.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6165,8 +6165,8 @@ module.exports = {  "insertLink": {
     {
       n: "XIRR",
       t: 8,
-      d: "Calculates the internal rate of return of an investment based on a specified series of potentially irregularly spaced cash flows.",
-      a: "Internal rate of return given non-periodic cashflows.",
+      d: "Calcula la tasa interna de retorno de una inversión basándose en una serie especificada de flujos de caja potencialmente irregulares en el tiempo.",
+      a: "Tasa interna de retorno con flujos de caja no periódicos.",
       m: [
         2,
         3
@@ -6174,7 +6174,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "importes_flujo_caja",
-          detail: "An array or range containing the income or payments associated with the investment.",
+          detail: "Una matriz o rango que contiene los ingresos o pagos asociados a la inversión.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
@@ -6182,7 +6182,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fechas_flujo_caja",
-          detail: "An array or range with dates corresponding to the cash flows in `cashflow_amounts`.",
+          detail: "Una matriz o rango con fechas correspondientes a los flujos de caja de `importes_flujo_caja`.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6190,7 +6190,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "estimación_tasa",
-          detail: "An estimate for what the internal rate of return will be.",
+          detail: "Una estimación de cuál será la tasa interna de retorno.",
           example: "250",
           require: "o",
           repeat: "n",
@@ -6201,8 +6201,8 @@ module.exports = {  "insertLink": {
     {
       n: "MIRR",
       t: 8,
-      d: "Calculates the modified internal rate of return on an investment based on a series of periodic cash flows and the difference between the interest rate paid on financing versus the return received on reinvested income.",
-      a: "Modified internal rate of return.",
+      d: "Calcula la tasa interna de retorno modificada de una inversión basándose en una serie de flujos de caja periódicos y en la diferencia entre la tasa de interés pagada por la financiación y el rendimiento obtenido de los ingresos reinvertidos.",
+      a: "Tasa interna de retorno modificada.",
       m: [
         3,
         3
@@ -6210,7 +6210,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "importes_flujo_caja",
-          detail: "An array or range containing the income or payments associated with the investment.",
+          detail: "Una matriz o rango que contiene los ingresos o pagos asociados a la inversión.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
@@ -6218,7 +6218,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa_financiación",
-          detail: "The interest rate paid on funds invested.",
+          detail: "La tasa de interés pagada por los fondos invertidos.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6226,7 +6226,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa_rendimiento_reinversión",
-          detail: "The return (as a percentage) earned on reinvestment of income received from the investment.",
+          detail: "El rendimiento (en porcentaje) obtenido al reinvertir los ingresos recibidos de la inversión.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6237,8 +6237,8 @@ module.exports = {  "insertLink": {
     {
       n: "IRR",
       t: 8,
-      d: "Calculates the internal rate of return on an investment based on a series of periodic cash flows.",
-      a: "Internal rate of return given periodic cashflows.",
+      d: "Calcula la tasa interna de retorno de una inversión basándose en una serie de flujos de caja periódicos.",
+      a: "Tasa interna de retorno con flujos de caja periódicos.",
       m: [
         1,
         2
@@ -6246,7 +6246,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "importes_flujo_caja",
-          detail: "An array or range containing the income or payments associated with the investment.",
+          detail: "Una matriz o rango que contiene los ingresos o pagos asociados a la inversión.",
           example: "A2:A25",
           require: "m",
           repeat: "n",
@@ -6254,7 +6254,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "estimación_tasa",
-          detail: "An estimate for what the internal rate of return will be.",
+          detail: "Una estimación de cuál será la tasa interna de retorno.",
           example: "200",
           require: "o",
           repeat: "n",
@@ -6265,8 +6265,8 @@ module.exports = {  "insertLink": {
     {
       n: "NPV",
       t: 8,
-      d: "Calculates the net present value of an investment based on a series of periodic cash flows and a discount rate.",
-      a: "The net present value of an investment based on a series of periodic cash flows and a discount rate.",
+      d: "Calcula el valor actual neto de una inversión basándose en una serie de flujos de caja periódicos y una tasa de descuento.",
+      a: "Valor actual neto de una inversión a partir de flujos de caja periódicos y una tasa de descuento.",
       m: [
         2,
         255
@@ -6274,7 +6274,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa_descuento",
-          detail: "The discount rate of the investment over one period.",
+          detail: "La tasa de descuento de la inversión durante un período.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6282,7 +6282,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "flujo_caja1",
-          detail: "The first future cash flow.",
+          detail: "El primer flujo de caja futuro.",
           example: "200",
           require: "m",
           repeat: "n",
@@ -6290,7 +6290,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "flujo_caja2",
-          detail: "Additional future cash flows.",
+          detail: "Flujos de caja futuros adicionales.",
           example: "250",
           require: "o",
           repeat: "y",
@@ -6301,8 +6301,8 @@ module.exports = {  "insertLink": {
     {
       n: "XNPV",
       t: 8,
-      d: "Calculates the net present value of an investment based on a specified series of potentially irregularly spaced cash flows and a discount rate.",
-      a: "Net present value given non-periodic cashflows.",
+      d: "Calcula el valor actual neto de una inversión basándose en una serie especificada de flujos de caja potencialmente irregulares en el tiempo y una tasa de descuento.",
+      a: "Valor actual neto con flujos de caja no periódicos.",
       m: [
         3,
         3
@@ -6310,7 +6310,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa_descuento",
-          detail: "The discount rate of the investment over one period.",
+          detail: "La tasa de descuento de la inversión durante un período.",
           example: "A2",
           require: "m",
           repeat: "n",
@@ -6318,7 +6318,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "importes_flujo_caja",
-          detail: "A range of cells containing the income or payments associated with the investment.",
+          detail: "Un rango de celdas que contiene los ingresos o pagos asociados a la inversión.",
           example: "B2:B25",
           require: "m",
           repeat: "n",
@@ -6326,7 +6326,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fechas_flujo_caja",
-          detail: "A range of cells with dates corresponding to the cash flows in `cashflow_amounts`.",
+          detail: "Un rango de celdas con fechas correspondientes a los flujos de caja de `importes_flujo_caja`.",
           example: "C2:C25",
           require: "m",
           repeat: "n",
@@ -6337,8 +6337,8 @@ module.exports = {  "insertLink": {
     {
       n: "CUMIPMT",
       t: 8,
-      d: "Calculates the cumulative interest over a range of payment periods for an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Cumulative interest paid over a set of periods.",
+      d: "Calcula el interés acumulado durante un rango de períodos de pago para una inversión basada en pagos periódicos de importe constante y una tasa de interés constante.",
+      a: "Interés acumulado pagado durante un conjunto de períodos.",
       m: [
         6,
         6
@@ -6346,7 +6346,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa",
-          detail: "The interest rate.",
+          detail: "La tasa de interés.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6354,7 +6354,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_períodos",
-          detail: "The number of payments to be made.",
+          detail: "El número de pagos que se realizarán.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6362,7 +6362,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_actual",
-          detail: "The current value of the annuity.",
+          detail: "El valor actual de la anualidad.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6370,7 +6370,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "primer_período",
-          detail: "The number of the payment period to begin the cumulative calculation.",
+          detail: "El número del período de pago en el que comenzará el cálculo acumulado.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6378,7 +6378,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "último_período",
-          detail: "The number of the payment period to end the cumulative calculation.",
+          detail: "El número del período de pago en el que terminará el cálculo acumulado.",
           example: "5",
           require: "m",
           repeat: "n",
@@ -6386,7 +6386,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fin_o_inicio",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "Si los pagos vencen al final (`0`) o al principio (`1`) de cada período.",
           example: "0",
           require: "m",
           repeat: "n",
@@ -6397,8 +6397,8 @@ module.exports = {  "insertLink": {
     {
       n: "PMT",
       t: 8,
-      d: "Calculates the periodic payment for an annuity investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Periodic payment for an annuity investment.",
+      d: "Calcula el pago periódico de una inversión de anualidad basándose en pagos periódicos de importe constante y una tasa de interés constante.",
+      a: "Pago periódico de una inversión de anualidad.",
       m: [
         3,
         5
@@ -6406,7 +6406,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa",
-          detail: "The interest rate.",
+          detail: "La tasa de interés.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -6414,7 +6414,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_períodos",
-          detail: "The number of payments to be made.",
+          detail: "El número de pagos que se realizarán.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6422,7 +6422,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_actual",
-          detail: "The current value of the annuity.",
+          detail: "El valor actual de la anualidad.",
           example: " 100000",
           require: "m",
           repeat: "n",
@@ -6430,7 +6430,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_futuro",
-          detail: "The future value remaining after the final payment has been made.",
+          detail: "El valor futuro que quedará tras realizar el último pago.",
           example: "D2",
           require: "m",
           repeat: "n",
@@ -6438,7 +6438,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fin_o_inicio",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "Si los pagos vencen al final (`0`) o al principio (`1`) de cada período.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6449,8 +6449,8 @@ module.exports = {  "insertLink": {
     {
       n: "IPMT",
       t: 8,
-      d: "Calculates the payment on interest for an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Payment on interest for an investment.",
+      d: "Calcula el pago de intereses de una inversión basándose en pagos periódicos de importe constante y una tasa de interés constante.",
+      a: "Pago de intereses de una inversión.",
       m: [
         4,
         6
@@ -6458,7 +6458,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa",
-          detail: "The interest rate.",
+          detail: "La tasa de interés.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6466,7 +6466,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "período",
-          detail: "The amortization period, in terms of number of periods.",
+          detail: "El período de amortización, expresado en número de períodos.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6474,7 +6474,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_períodos",
-          detail: "The number of payments to be made.",
+          detail: "El número de pagos que se realizarán.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6482,7 +6482,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_actual",
-          detail: "The current value of the annuity.",
+          detail: "El valor actual de la anualidad.",
           example: "80000",
           require: "m",
           repeat: "n",
@@ -6490,7 +6490,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_futuro",
-          detail: "The future value remaining after the final payment has been made.",
+          detail: "El valor futuro que quedará tras realizar el último pago.",
           example: "E2",
           require: "m",
           repeat: "n",
@@ -6498,7 +6498,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fin_o_inicio",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "Si los pagos vencen al final (`0`) o al principio (`1`) de cada período.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6509,8 +6509,8 @@ module.exports = {  "insertLink": {
     {
       n: "PPMT",
       t: 8,
-      d: "Calculates the payment on the principal of an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Payment on the principal of an investment.",
+      d: "Calcula el pago del capital de una inversión basándose en pagos periódicos de importe constante y una tasa de interés constante.",
+      a: "Pago del capital de una inversión.",
       m: [
         4,
         6
@@ -6518,7 +6518,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa",
-          detail: "The interest rate.",
+          detail: "La tasa de interés.",
           example: "0.1",
           require: "m",
           repeat: "n",
@@ -6526,7 +6526,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "período",
-          detail: "The amortization period, in terms of number of periods.",
+          detail: "El período de amortización, expresado en número de períodos.",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6534,7 +6534,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número_períodos",
-          detail: "The number of payments to be made.",
+          detail: "El número de pagos que se realizarán.",
           example: "3*12",
           require: "m",
           repeat: "n",
@@ -6542,7 +6542,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_actual",
-          detail: "The current value of the annuity.",
+          detail: "El valor actual de la anualidad.",
           example: "100000",
           require: "m",
           repeat: "n",
@@ -6550,7 +6550,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_futuro",
-          detail: "The future value remaining after the final payment has been made.",
+          detail: "El valor futuro que quedará tras realizar el último pago.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6558,7 +6558,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fin_o_inicio",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "Si los pagos vencen al final (`0`) o al principio (`1`) de cada período.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6569,8 +6569,8 @@ module.exports = {  "insertLink": {
     {
       n: "INTRATE",
       t: 8,
-      d: "Calculates the effective interest rate generated when an investment is purchased at one price and sold at another with no interest or dividends generated by the investment itself.",
-      a: "Calculates effective interest rate.",
+      d: "Calcula la tasa de interés efectiva generada cuando se compra una inversión a un precio y se vende a otro, sin que la propia inversión genere intereses ni dividendos.",
+      a: "Calcula la tasa de interés efectiva.",
       m: [
         4,
         5
@@ -6578,7 +6578,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "fecha_compra",
-          detail: "The date of purchase of the investment.",
+          detail: "La fecha de compra de la inversión.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6586,7 +6586,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fecha_venta",
-          detail: "The date of sale of the investment.",
+          detail: "La fecha de venta de la inversión.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6594,7 +6594,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "precio_compra",
-          detail: "The price at which the investment was purchased.",
+          detail: "El precio al que se compró la inversión.",
           example: "100000",
           require: "m",
           repeat: "n",
@@ -6602,7 +6602,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "precio_venta",
-          detail: "The price at which the investment was sold.",
+          detail: "El precio al que se vendió la inversión.",
           example: "101200",
           require: "m",
           repeat: "n",
@@ -6610,7 +6610,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "12",
           require: "m",
           repeat: "n",
@@ -6621,8 +6621,8 @@ module.exports = {  "insertLink": {
     {
       n: "PRICE",
       t: 8,
-      d: "Calculates the price of a security paying periodic interest, such as a US Treasury Bond, based on expected yield.",
-      a: "Price of a security paying periodic interest.",
+      d: "Calcula el precio de un valor que paga intereses periódicos, como un bono del Tesoro de EE. UU., a partir del rendimiento esperado.",
+      a: "Precio de un valor con pago periódico de intereses.",
       m: [
         6,
         7
@@ -6630,7 +6630,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6638,7 +6638,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6646,7 +6646,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa",
-          detail: "The annualized rate of interest.",
+          detail: "La tasa de interés anualizada.",
           example: "0.057",
           require: "m",
           repeat: "n",
@@ -6654,7 +6654,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rendimiento",
-          detail: "The expected annual yield of the security.",
+          detail: "El rendimiento anual esperado del valor.",
           example: "0.065",
           require: "m",
           repeat: "n",
@@ -6662,7 +6662,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_reembolso",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "El importe de reembolso por cada 100 de valor nominal.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6670,7 +6670,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "frecuencia",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "El número de pagos de intereses o cupones por año (1, 2 o 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -6678,7 +6678,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6689,8 +6689,8 @@ module.exports = {  "insertLink": {
     {
       n: "PRICEDISC",
       t: 8,
-      d: "Calculates the price of a discount (non-interest-bearing) security, based on expected yield.",
-      a: "Price of a discount security.",
+      d: "Calcula el precio de un valor de descuento (que no paga intereses), a partir del rendimiento esperado.",
+      a: "Precio de un valor de descuento.",
       m: [
         4,
         5
@@ -6698,7 +6698,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6706,7 +6706,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6714,7 +6714,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa_descuento",
-          detail: "The discount rate of the security at time of purchase.",
+          detail: "La tasa de descuento del valor en el momento de la compra.",
           example: "0.0525",
           require: "m",
           repeat: "n",
@@ -6722,7 +6722,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_reembolso",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "El importe de reembolso por cada 100 de valor nominal.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6730,7 +6730,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6741,8 +6741,8 @@ module.exports = {  "insertLink": {
     {
       n: "PRICEMAT",
       t: 8,
-      d: "Calculates the price of a security paying interest at maturity, based on expected yield.",
-      a: "Price of security paying interest at maturity.",
+      d: "Calcula el precio de un valor que paga intereses al vencimiento, a partir del rendimiento esperado.",
+      a: "Precio de un valor que paga intereses al vencimiento.",
       m: [
         5,
         6
@@ -6750,7 +6750,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6758,7 +6758,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6766,7 +6766,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fecha_emisión",
-          detail: "The date the security was initially issued.",
+          detail: "La fecha en la que se emitió inicialmente el valor.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6774,7 +6774,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa",
-          detail: "The annualized rate of interest.",
+          detail: "La tasa de interés anualizada.",
           example: "0.061",
           require: "m",
           repeat: "n",
@@ -6782,7 +6782,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rendimiento",
-          detail: "The expected annual yield of the security.",
+          detail: "El rendimiento anual esperado del valor.",
           example: "0.061",
           require: "m",
           repeat: "n",
@@ -6790,7 +6790,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6801,8 +6801,8 @@ module.exports = {  "insertLink": {
     {
       n: "RECEIVED",
       t: 8,
-      d: "Calculates the amount received at maturity for an investment in fixed-income securities purchased on a given date.",
-      a: "Amount received at maturity for a security.",
+      d: "Calcula el importe recibido al vencimiento por una inversión en valores de renta fija comprados en una fecha determinada.",
+      a: "Importe recibido al vencimiento de un valor.",
       m: [
         4,
         5
@@ -6810,7 +6810,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6818,7 +6818,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6826,7 +6826,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "inversión",
-          detail: "The amount invested (irrespective of face value of each security).",
+          detail: "El importe invertido (con independencia del valor nominal de cada valor).",
           example: "10000000",
           require: "m",
           repeat: "n",
@@ -6834,7 +6834,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa_descuento",
-          detail: "The discount rate of the security invested in.",
+          detail: "La tasa de descuento del valor en el que se invierte.",
           example: "0.0575",
           require: "m",
           repeat: "n",
@@ -6842,7 +6842,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6853,8 +6853,8 @@ module.exports = {  "insertLink": {
     {
       n: "DISC",
       t: 8,
-      d: "Calculates the discount rate of a security based on price.",
-      a: "The discount rate of a security based on price.",
+      d: "Calcula la tasa de descuento de un valor a partir de su precio.",
+      a: "La tasa de descuento de un valor a partir de su precio.",
       m: [
         4,
         5
@@ -6862,7 +6862,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6870,7 +6870,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -6878,7 +6878,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "precio",
-          detail: "The price at which the security is bought per 100 face value.",
+          detail: "El precio al que se compra el valor por cada 100 de valor nominal.",
           example: "97.975",
           require: "m",
           repeat: "n",
@@ -6886,7 +6886,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_reembolso",
-          detail: "The redemption amount per 100 face value, or par.",
+          detail: "El importe de reembolso por cada 100 de valor nominal.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -6894,7 +6894,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "12",
           require: "o",
           repeat: "n",
@@ -6905,8 +6905,8 @@ module.exports = {  "insertLink": {
     {
       n: "NPER",
       t: 8,
-      d: "Calculates the number of payment periods for an investment based on constant-amount periodic payments and a constant interest rate.",
-      a: "Number of payment periods for an investment.",
+      d: "Calcula el número de períodos de pago de una inversión basándose en pagos periódicos de importe constante y una tasa de interés constante.",
+      a: "Número de períodos de pago de una inversión.",
       m: [
         3,
         5
@@ -6914,7 +6914,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "tasa",
-          detail: "The interest rate.",
+          detail: "La tasa de interés.",
           example: "0.12",
           require: "m",
           repeat: "n",
@@ -6922,7 +6922,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "importe_pago",
-          detail: "The amount of each payment made.",
+          detail: "El importe de cada pago realizado.",
           example: "500",
           require: "m",
           repeat: "n",
@@ -6930,7 +6930,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_actual",
-          detail: "The current value of the annuity.",
+          detail: "El valor actual de la anualidad.",
           example: "40000",
           require: "m",
           repeat: "n",
@@ -6938,7 +6938,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_futuro",
-          detail: "The future value remaining after the final payment has been made.",
+          detail: "El valor futuro que quedará tras realizar el último pago.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6946,7 +6946,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "fin_o_inicio",
-          detail: "Whether payments are due at the end (`0`) or beginning (`1`) of each period.",
+          detail: "Si los pagos vencen al final (`0`) o al principio (`1`) de cada período.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -6957,8 +6957,8 @@ module.exports = {  "insertLink": {
     {
       n: "SLN",
       t: 8,
-      d: "Calculates the depreciation of an asset for one period using the straight-line method.",
-      a: "Depreciation of asset using the straight-line method.",
+      d: "Calcula la depreciación de un activo durante un período usando el método lineal.",
+      a: "Depreciación de un activo mediante el método lineal.",
       m: [
         3,
         3
@@ -6966,7 +6966,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "costo",
-          detail: "The initial cost of the asset.",
+          detail: "El costo inicial del activo.",
           example: "300000",
           require: "m",
           repeat: "n",
@@ -6974,7 +6974,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor_residual",
-          detail: "The value of the asset at the end of depreciation.",
+          detail: "El valor del activo al final de la depreciación.",
           example: "75000",
           require: "m",
           repeat: "n",
@@ -6982,7 +6982,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vida_útil",
-          detail: "The number of periods over which the asset is depreciated.",
+          detail: "El número de períodos durante los cuales se deprecia el activo.",
           example: "10",
           require: "m",
           repeat: "n",
@@ -6993,8 +6993,8 @@ module.exports = {  "insertLink": {
     {
       n: "DURATION",
       t: 8,
-      d: "Calculates the number of compounding periods required for an investment of a specified present value appreciating at a given rate to reach a target value.",
-      a: "Number of periods for an investment to reach a value.",
+      d: "Calcula el número de períodos de capitalización necesarios para que una inversión de un valor actual especificado, que se revaloriza a una tasa dada, alcance un valor objetivo.",
+      a: "Número de períodos para que una inversión alcance un valor.",
       m: [
         5,
         6
@@ -7002,7 +7002,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -7010,7 +7010,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -7018,7 +7018,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa",
-          detail: "The annualized rate of interest.",
+          detail: "La tasa de interés anualizada.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -7026,7 +7026,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rendimiento",
-          detail: "The expected annual yield of the security.",
+          detail: "El rendimiento anual esperado del valor.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -7034,7 +7034,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "frecuencia",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "El número de pagos de intereses o cupones por año (1, 2 o 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -7042,7 +7042,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7053,8 +7053,8 @@ module.exports = {  "insertLink": {
     {
       n: "MDURATION",
       t: 8,
-      d: "Calculates the modified Macaulay duration of a security paying periodic interest, such as a US Treasury Bond, based on expected yield.",
-      a: "Modified Macaulay duration.",
+      d: "Calcula la duración de Macaulay modificada de un valor que paga intereses periódicos, como un bono del Tesoro de EE. UU., a partir del rendimiento esperado.",
+      a: "Duración de Macaulay modificada.",
       m: [
         5,
         6
@@ -7062,7 +7062,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "liquidación",
-          detail: "The settlement date of the security, the date after issuance when the security is delivered to the buyer.",
+          detail: "La fecha de liquidación del valor, la fecha posterior a la emisión en la que el valor se entrega al comprador.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -7070,7 +7070,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "vencimiento",
-          detail: "The maturity or end date of the security, when it can be redeemed at face, or par value.",
+          detail: "La fecha de vencimiento del valor, cuando puede canjearse a su valor nominal.",
           example: "DATE(2010",
           require: "m",
           repeat: "n",
@@ -7078,7 +7078,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "tasa",
-          detail: "The annualized rate of interest.",
+          detail: "La tasa de interés anualizada.",
           example: "0.08",
           require: "m",
           repeat: "n",
@@ -7086,7 +7086,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "rendimiento",
-          detail: "The expected annual yield of the security.",
+          detail: "El rendimiento anual esperado del valor.",
           example: "0.09",
           require: "m",
           repeat: "n",
@@ -7094,7 +7094,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "frecuencia",
-          detail: "The number of interest or coupon payments per year (1, 2, or 4).",
+          detail: "El número de pagos de intereses o cupones por año (1, 2 o 4).",
           example: "1",
           require: "m",
           repeat: "n",
@@ -7102,7 +7102,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "convención_recuento_días",
-          detail: "An indicator of what day count method to use.",
+          detail: "Un indicador del método de recuento de días que se usará.",
           example: "0",
           require: "o",
           repeat: "n",
@@ -7113,8 +7113,8 @@ module.exports = {  "insertLink": {
     {
       n: "BIN2DEC",
       t: 9,
-      d: "Converts a signed binary number to decimal format.",
-      a: "Converts a signed binary number to decimal format.",
+      d: "Convierte un número binario con signo a formato decimal.",
+      a: "Convierte un número binario con signo a formato decimal.",
       m: [
         1,
         1
@@ -7122,7 +7122,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_binario_con_signo",
-          detail: "The signed 10-bit binary value to be converted to decimal, provided as a string.",
+          detail: "El valor binario con signo de 10 bits que se convertirá a decimal, proporcionado como una cadena.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7133,8 +7133,8 @@ module.exports = {  "insertLink": {
     {
       n: "BIN2HEX",
       t: 9,
-      d: "Converts a signed binary number to signed hexadecimal format.",
-      a: "Converts a binary number to hexadecimal.",
+      d: "Convierte un número binario con signo a formato hexadecimal con signo.",
+      a: "Convierte un número binario a hexadecimal.",
       m: [
         1,
         2
@@ -7142,7 +7142,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_binario_con_signo",
-          detail: "The signed 10-bit binary value to be converted to signed hexademical, provided as a string.",
+          detail: "El valor binario con signo de 10 bits que se convertirá a hexadecimal con signo, proporcionado como una cadena.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7150,7 +7150,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cifras_significativas",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "El número de cifras significativas que deberá tener el resultado.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7161,8 +7161,8 @@ module.exports = {  "insertLink": {
     {
       n: "BIN2OCT",
       t: 9,
-      d: "Converts a signed binary number to signed octal format.",
-      a: "Converts a binary number to octal.",
+      d: "Convierte un número binario con signo a formato octal con signo.",
+      a: "Convierte un número binario a octal.",
       m: [
         1,
         2
@@ -7170,7 +7170,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_binario_con_signo",
-          detail: "The signed 10-bit binary value to be converted to signed octal, provided as a string.",
+          detail: "El valor binario con signo de 10 bits que se convertirá a octal con signo, proporcionado como una cadena.",
           example: "101",
           require: "m",
           repeat: "n",
@@ -7178,7 +7178,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cifras_significativas",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "El número de cifras significativas que deberá tener el resultado.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7189,8 +7189,8 @@ module.exports = {  "insertLink": {
     {
       n: "DEC2BIN",
       t: 9,
-      d: "Converts a decimal number to signed binary format.",
-      a: "Converts a decimal number to signed binary format.",
+      d: "Convierte un número decimal a formato binario con signo.",
+      a: "Convierte un número decimal a formato binario con signo.",
       m: [
         1,
         2
@@ -7198,7 +7198,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_decimal",
-          detail: "The decimal value to be converted to signed binary, provided as a string.",
+          detail: "El valor decimal que se convertirá a binario con signo, proporcionado como una cadena.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7206,7 +7206,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cifras_significativas",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "El número de cifras significativas que deberá tener el resultado.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7217,8 +7217,8 @@ module.exports = {  "insertLink": {
     {
       n: "DEC2HEX",
       t: 9,
-      d: "Converts a decimal number to signed hexadecimal format.",
-      a: "Converts a decimal number to hexadecimal.",
+      d: "Convierte un número decimal a formato hexadecimal con signo.",
+      a: "Convierte un número decimal a hexadecimal.",
       m: [
         1,
         2
@@ -7226,7 +7226,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_decimal",
-          detail: "The decimal value to be converted to signed hexadecimal, provided as a string.",
+          detail: "El valor decimal que se convertirá a hexadecimal con signo, proporcionado como una cadena.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7234,7 +7234,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cifras_significativas",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "El número de cifras significativas que deberá tener el resultado.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7245,8 +7245,8 @@ module.exports = {  "insertLink": {
     {
       n: "DEC2OCT",
       t: 9,
-      d: "Converts a decimal number to signed octal format.",
-      a: "Converts a decimal number to signed octal format.",
+      d: "Convierte un número decimal a formato octal con signo.",
+      a: "Convierte un número decimal a formato octal con signo.",
       m: [
         1,
         2
@@ -7254,7 +7254,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_decimal",
-          detail: "The decimal value to be converted to signed octal, provided as a string.",
+          detail: "El valor decimal que se convertirá a octal con signo, proporcionado como una cadena.",
           example: "100",
           require: "m",
           repeat: "n",
@@ -7262,7 +7262,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cifras_significativas",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "El número de cifras significativas que deberá tener el resultado.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7273,8 +7273,8 @@ module.exports = {  "insertLink": {
     {
       n: "HEX2BIN",
       t: 9,
-      d: "Converts a signed hexadecimal number to signed binary format.",
-      a: "Converts a hexadecimal number to binary.",
+      d: "Convierte un número hexadecimal con signo a formato binario con signo.",
+      a: "Convierte un número hexadecimal a binario.",
       m: [
         1,
         2
@@ -7282,7 +7282,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_hexadecimal_con_signo",
-          detail: "The signed 40-bit hexadecimal value to be converted to signed binary, provided as a string.",
+          detail: "El valor hexadecimal con signo de 40 bits que se convertirá a binario con signo, proporcionado como una cadena.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7290,7 +7290,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cifras_significativas",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "El número de cifras significativas que deberá tener el resultado.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7301,8 +7301,8 @@ module.exports = {  "insertLink": {
     {
       n: "HEX2DEC",
       t: 9,
-      d: "Converts a signed hexadecimal number to decimal format.",
-      a: "Converts a hexadecimal number to decimal.",
+      d: "Convierte un número hexadecimal con signo a formato decimal.",
+      a: "Convierte un número hexadecimal a decimal.",
       m: [
         1,
         1
@@ -7310,7 +7310,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_hexadecimal_con_signo",
-          detail: "The signed 40-bit hexadecimal value to be converted to decimal, provided as a string.",
+          detail: "El valor hexadecimal con signo de 40 bits que se convertirá a decimal, proporcionado como una cadena.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7321,8 +7321,8 @@ module.exports = {  "insertLink": {
     {
       n: "HEX2OCT",
       t: 9,
-      d: "Converts a signed hexadecimal number to signed octal format.",
-      a: "Converts a hexadecimal number to octal.",
+      d: "Convierte un número hexadecimal con signo a formato octal con signo.",
+      a: "Convierte un número hexadecimal a octal.",
       m: [
         1,
         2
@@ -7330,7 +7330,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_hexadecimal_con_signo",
-          detail: "The signed 40-bit hexadecimal value to be converted to signed octal, provided as a string.",
+          detail: "El valor hexadecimal con signo de 40 bits que se convertirá a octal con signo, proporcionado como una cadena.",
           example: "\"f3\"",
           require: "m",
           repeat: "n",
@@ -7338,7 +7338,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cifras_significativas",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "El número de cifras significativas que deberá tener el resultado.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7349,8 +7349,8 @@ module.exports = {  "insertLink": {
     {
       n: "OCT2BIN",
       t: 9,
-      d: "Converts a signed octal number to signed binary format.",
-      a: "Converts an octal number to binary.",
+      d: "Convierte un número octal con signo a formato binario con signo.",
+      a: "Convierte un número octal a binario.",
       m: [
         1,
         2
@@ -7358,7 +7358,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_octal_con_signo",
-          detail: "The signed 30-bit octal value to be converted to signed binary, provided as a string.",
+          detail: "El valor octal con signo de 30 bits que se convertirá a binario con signo, proporcionado como una cadena.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7366,7 +7366,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cifras_significativas",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "El número de cifras significativas que deberá tener el resultado.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7377,8 +7377,8 @@ module.exports = {  "insertLink": {
     {
       n: "OCT2DEC",
       t: 9,
-      d: "Converts a signed octal number to decimal format.",
-      a: "Converts a signed octal number to decimal format.",
+      d: "Convierte un número octal con signo a formato decimal.",
+      a: "Convierte un número octal con signo a formato decimal.",
       m: [
         1,
         1
@@ -7386,7 +7386,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_octal_con_signo",
-          detail: "The signed 30-bit octal value to be converted to decimal, provided as a string.",
+          detail: "El valor octal con signo de 30 bits que se convertirá a decimal, proporcionado como una cadena.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7397,8 +7397,8 @@ module.exports = {  "insertLink": {
     {
       n: "OCT2HEX",
       t: 9,
-      d: "Converts a signed octal number to signed hexadecimal format.",
-      a: "Converts an octal number to hexadecimal.",
+      d: "Convierte un número octal con signo a formato hexadecimal con signo.",
+      a: "Convierte un número octal a hexadecimal.",
       m: [
         1,
         2
@@ -7406,7 +7406,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_octal_con_signo",
-          detail: "The signed 30-bit octal value to be converted to signed hexadecimal, provided as a string.",
+          detail: "El valor octal con signo de 30 bits que se convertirá a hexadecimal con signo, proporcionado como una cadena.",
           example: "37",
           require: "m",
           repeat: "n",
@@ -7414,7 +7414,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "cifras_significativas",
-          detail: "The number of significant digits to ensure in the result.",
+          detail: "El número de cifras significativas que deberá tener el resultado.",
           example: "8",
           require: "o",
           repeat: "n",
@@ -7425,8 +7425,8 @@ module.exports = {  "insertLink": {
     {
       n: "COMPLEX",
       t: 9,
-      d: "Creates a complex number given real and imaginary coefficients.",
-      a: "Creates a complex number.",
+      d: "Crea un número complejo a partir de los coeficientes real e imaginario dados.",
+      a: "Crea un número complejo.",
       m: [
         2,
         3
@@ -7434,7 +7434,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "parte_real",
-          detail: "The real coefficient.",
+          detail: "El coeficiente real.",
           example: "3",
           require: "m",
           repeat: "n",
@@ -7442,7 +7442,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "parte_imaginaria",
-          detail: "The imaginary coefficient.",
+          detail: "El coeficiente imaginario.",
           example: "4",
           require: "m",
           repeat: "n",
@@ -7450,7 +7450,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "sufijo",
-          detail: "The suffix for the imaginary coefficient, can only be 'i' or 'j'. If omitted, 'i' will be used.",
+          detail: "El sufijo del coeficiente imaginario; solo puede ser 'i' o 'j'. Si se omite, se usará 'i'.",
           example: "\"j\"",
           require: "o",
           repeat: "n",
@@ -7461,8 +7461,8 @@ module.exports = {  "insertLink": {
     {
       n: "IMREAL",
       t: 9,
-      d: "Returns the real coefficient of a complex number.",
-      a: "The real coefficient of a complex number.",
+      d: "Devuelve el coeficiente real de un número complejo.",
+      a: "El coeficiente real de un número complejo.",
       m: [
         1,
         1
@@ -7470,7 +7470,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_complejo",
-          detail: "The complex number, in the a+bi or a+bj format.",
+          detail: "El número complejo, en formato a+bi o a+bj.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7481,8 +7481,8 @@ module.exports = {  "insertLink": {
     {
       n: "IMAGINARY",
       t: 9,
-      d: "Returns the imaginary coefficient of a complex number.",
-      a: "The imaginary coefficient of a complex number.",
+      d: "Devuelve el coeficiente imaginario de un número complejo.",
+      a: "El coeficiente imaginario de un número complejo.",
       m: [
         1,
         1
@@ -7490,7 +7490,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número_complejo",
-          detail: "The complex number, in the a+bi or a+bj format.",
+          detail: "El número complejo, en formato a+bi o a+bj.",
           example: "\"4+5i\"",
           require: "m",
           repeat: "n",
@@ -7501,8 +7501,8 @@ module.exports = {  "insertLink": {
     {
       n: "IMCONJUGATE",
       t: 9,
-      d: "Returns the complex conjugate of a number.",
-      a: "The complex conjugate of a number.",
+      d: "Devuelve el conjugado complejo de un número.",
+      a: "El conjugado complejo de un número.",
       m: [
         1,
         1
@@ -7510,7 +7510,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número",
-          detail: "The complex number to calculate the conjugate for.",
+          detail: "El número complejo para el que se calculará el conjugado.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7521,8 +7521,8 @@ module.exports = {  "insertLink": {
     {
       n: "IMABS",
       t: 9,
-      d: "Returns absolute value (or modulus) of a complex number.",
-      a: "The absolute value of a complex number.",
+      d: "Devuelve el valor absoluto (o módulo) de un número complejo.",
+      a: "El valor absoluto de un número complejo.",
       m: [
         1,
         1
@@ -7530,7 +7530,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número",
-          detail: "The complex number to calculate the absolute value of.",
+          detail: "El número complejo cuyo valor absoluto se calculará.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7541,8 +7541,8 @@ module.exports = {  "insertLink": {
     {
       n: "DELTA",
       t: 9,
-      d: "Compare two numeric values, returning 1 if they're equal.",
-      a: "Compare two numeric values.",
+      d: "Compara dos valores numéricos y devuelve 1 si son iguales.",
+      a: "Compara dos valores numéricos.",
       m: [
         1,
         2
@@ -7550,7 +7550,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "número1",
-          detail: "The first number to compare.",
+          detail: "El primer número que se comparará.",
           example: "2",
           require: "m",
           repeat: "n",
@@ -7558,7 +7558,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "número2",
-          detail: "The second number to compare.",
+          detail: "El segundo número que se comparará.",
           example: "1",
           require: "o",
           repeat: "n",
@@ -7569,8 +7569,8 @@ module.exports = {  "insertLink": {
     {
       n: "IMSUM",
       t: 9,
-      d: "Returns the sum of a series of complex numbers.",
-      a: "Sum of a series of complex numbers.",
+      d: "Devuelve la suma de una serie de números complejos.",
+      a: "Suma de una serie de números complejos.",
       m: [
         1,
         255
@@ -7578,7 +7578,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "valor1",
-          detail: "The first complex number or range to add together.",
+          detail: "El primer número complejo o rango que se sumará.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7586,7 +7586,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "valor2",
-          detail: "Additional complex numbers or ranges to add to `value1`.",
+          detail: "Números complejos o rangos adicionales que se sumarán a `valor1`.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7597,8 +7597,8 @@ module.exports = {  "insertLink": {
     {
       n: "IMSUB",
       t: 9,
-      d: "Returns the difference between two complex numbers.",
-      a: "The difference between two complex numbers.",
+      d: "Devuelve la diferencia entre dos números complejos.",
+      a: "La diferencia entre dos números complejos.",
       m: [
         2,
         2
@@ -7606,7 +7606,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "primer_número",
-          detail: "The complex number to subtract second_number from.",
+          detail: "El número complejo del que se restará segundo_número.",
           example: "\"6+5i\"",
           require: "m",
           repeat: "n",
@@ -7614,7 +7614,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "segundo_número",
-          detail: "The complex number to subtract from first_number.",
+          detail: "El número complejo que se restará de primer_número.",
           example: "\"2+3i\"",
           require: "m",
           repeat: "n",
@@ -7625,8 +7625,8 @@ module.exports = {  "insertLink": {
     {
       n: "IMPRODUCT",
       t: 9,
-      d: "Returns the result of multiplying a series of complex numbers together.",
-      a: "Result of multiplying a series of complex numbers together.",
+      d: "Devuelve el resultado de multiplicar entre sí una serie de números complejos.",
+      a: "Resultado de multiplicar entre sí una serie de números complejos.",
       m: [
         1,
         255
@@ -7634,7 +7634,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "factor1",
-          detail: "The first number or range to calculate for the product.",
+          detail: "El primer número o rango que se usará para calcular el producto.",
           example: "\"3+4i\"",
           require: "m",
           repeat: "n",
@@ -7642,7 +7642,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "factor2",
-          detail: "Additional complex numbers or ranges to calculate for the product.",
+          detail: "Números complejos o rangos adicionales que se usarán para calcular el producto.",
           example: "\"5-3i\"",
           require: "o",
           repeat: "y",
@@ -7653,8 +7653,8 @@ module.exports = {  "insertLink": {
     {
       n: "IMDIV",
       t: 9,
-      d: "Returns one complex number divided by another.",
-      a: "One complex number divided by another.",
+      d: "Devuelve un número complejo dividido entre otro.",
+      a: "Un número complejo dividido entre otro.",
       m: [
         2,
         2
@@ -7662,7 +7662,7 @@ module.exports = {  "insertLink": {
       p: [
         {
           name: "dividendo",
-          detail: "The complex number to be divided.",
+          detail: "El número complejo que se dividirá.",
           example: "\"11+16i\"",
           require: "m",
           repeat: "n",
@@ -7670,7 +7670,7 @@ module.exports = {  "insertLink": {
         },
         {
           name: "divisor",
-          detail: "The complex number to divide by.",
+          detail: "El número complejo por el que se dividirá.",
           example: "\"3+2i\"",
           require: "m",
           repeat: "n",
