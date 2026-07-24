@@ -69,6 +69,16 @@
  * name when one exists, and to insert it into the cell -- the existing
  * execfunction()/functionlistMap patches above already translate that
  * locale name back to canonical on commit, same as typing it by hand.
+ *
+ * One more gap, unrelated to localization: the inline autocomplete dropdown
+ * (FormulaSearch in @fortune-sheet/react) never supported click-to-insert at
+ * all, in any locale -- only Enter/Tab (via selectActiveFormula) and arrow
+ * keys did anything; clicking an item just blurred the formula's
+ * contentEditable and the dropdown closed with nothing inserted. Patched to
+ * add an onMouseDown handler (mousedown + preventDefault, not click, so the
+ * editor never loses focus/selection) on each item that duplicates
+ * selectActiveFormula's insertion logic inline, since that function lives in
+ * a different component and isn't reachable from here.
  */
 
 const fs = require("fs");
@@ -636,6 +646,99 @@ function formulaLibRowOld(L) {
     }, /*#__PURE__*/${L}.createElement("div", null, v.n), /*#__PURE__*/${L}.createElement("div", null, v.a));
   }))`;
 }
+// ---------------------------------------------------------------------------
+// Patch 13 (@fortune-sheet/react bundles): FormulaSearch -- the inline
+// autocomplete dropdown -- add click-to-insert. Differs per bundle in how
+// useContext/isEmpty/getrangeseleciton are referenced (React.useContext vs
+// bare useContext, lodash default-interop vs bare `_`, `core.` prefix vs
+// bare import), so it's parameterized accordingly.
+// ---------------------------------------------------------------------------
+
+function formulaSearchClickOld(createElement, useContextExpr, isEmptyFn) {
+  return `var FormulaSearch = function FormulaSearch(props) {
+  var _useContext = ${useContextExpr},
+    context = _useContext.context;
+  if (${isEmptyFn}(context.functionCandidates)) return null;
+  return /*#__PURE__*/${createElement}.createElement("div", _objectSpread2(_objectSpread2({}, props), {}, {
+    id: "luckysheet-formula-search-c",
+    className: "luckysheet-formula-search-c"
+  }), context.functionCandidates.map(function (v, index) {
+    return /*#__PURE__*/${createElement}.createElement("div", {
+      key: v.n,
+      "data-func": v.n,
+      className: "luckysheet-formula-search-item ".concat(index === 0 ? "luckysheet-formula-search-item-active" : "")
+    }, /*#__PURE__*/${createElement}.createElement("div", {
+      className: "luckysheet-formula-search-func"
+    }, v.n), /*#__PURE__*/${createElement}.createElement("div", {
+      className: "luckysheet-formula-search-detail"
+    }, v.d));
+  }));
+};`;
+}
+function formulaSearchClickNew(createElement, useContextExpr, isEmptyFn, getRangeSelectionCall) {
+  return `var __doccellsInsertFormulaCandidate = function __doccellsInsertFormulaCandidate(setContext, formulaName) {
+  var textEditor = document.getElementById("luckysheet-rich-text-editor");
+  if (!textEditor) return;
+  var __doccellsRangeSel = ${getRangeSelectionCall};
+  var searchTxt = (__doccellsRangeSel && __doccellsRangeSel.textContent) || "";
+  var deleteCount = searchTxt.length;
+  textEditor.focus();
+  var selection = window.getSelection();
+  if (!selection || selection.rangeCount === 0) return;
+  var range = selection.getRangeAt(0);
+  if (deleteCount !== 0 && range) {
+    var startOffset = Math.max(range.startOffset - deleteCount, 0);
+    var endOffset = range.startOffset;
+    range.setStart(range.startContainer, startOffset);
+    range.setEnd(range.startContainer, endOffset);
+    range.deleteContents();
+  }
+  var functionStr = "<span dir=\\"auto\\" class=\\"luckysheet-formula-text-func\\">".concat(formulaName, "</span>");
+  var lParStr = "<span dir=\\"auto\\" class=\\"luckysheet-formula-text-lpar\\">(</span>";
+  var functionNode = new DOMParser().parseFromString(functionStr, "text/html").body.childNodes[0];
+  var lParNode = new DOMParser().parseFromString(lParStr, "text/html").body.childNodes[0];
+  if (range && range.startContainer.parentNode) {
+    range.setStart(range.startContainer.parentNode, 1);
+  }
+  if (range) {
+    range.insertNode(lParNode);
+    range.insertNode(functionNode);
+    range.collapse();
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+  setContext(function (draftCtx) {
+    draftCtx.functionCandidates = [];
+    draftCtx.functionHint = formulaName;
+  });
+};
+var FormulaSearch = function FormulaSearch(props) {
+  var _useContext = ${useContextExpr},
+    context = _useContext.context,
+    setContext = _useContext.setContext;
+  if (${isEmptyFn}(context.functionCandidates)) return null;
+  return /*#__PURE__*/${createElement}.createElement("div", _objectSpread2(_objectSpread2({}, props), {}, {
+    id: "luckysheet-formula-search-c",
+    className: "luckysheet-formula-search-c"
+  }), context.functionCandidates.map(function (v, index) {
+    return /*#__PURE__*/${createElement}.createElement("div", {
+      key: v.n,
+      "data-func": v.n,
+      className: "luckysheet-formula-search-item ".concat(index === 0 ? "luckysheet-formula-search-item-active" : ""),
+      onMouseDown: function onMouseDown(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        __doccellsInsertFormulaCandidate(setContext, v.n);
+      }
+    }, /*#__PURE__*/${createElement}.createElement("div", {
+      className: "luckysheet-formula-search-func"
+    }, v.n), /*#__PURE__*/${createElement}.createElement("div", {
+      className: "luckysheet-formula-search-detail"
+    }, v.d));
+  }));
+};`;
+}
+
 function formulaLibRowNew(L) {
   return `  }, filteredFunctionList.map(function (v, index) {
     var __doccellsRowName = __doccellsInsertFnLocaleNames[v.n] || v.n;
@@ -751,10 +854,22 @@ for (const { file: bundle, lodash: L } of BUNDLES) {
 }
 
 const REACT_BUNDLES = [
-  { file: "index.js", createElement: "React__default['default']" },
-  { file: "index.esm.js", createElement: "React" },
+  {
+    file: "index.js",
+    createElement: "React__default['default']",
+    useContextExpr: "React.useContext(WorkbookContext)",
+    isEmptyFn: "___default['default'].isEmpty",
+    getRangeSelectionCall: "core.getrangeseleciton()",
+  },
+  {
+    file: "index.esm.js",
+    createElement: "React",
+    useContextExpr: "useContext(WorkbookContext)",
+    isEmptyFn: "_.isEmpty",
+    getRangeSelectionCall: "getrangeseleciton()",
+  },
 ];
-for (const { file: bundle, createElement } of REACT_BUNDLES) {
+for (const { file: bundle, createElement, useContextExpr, isEmptyFn, getRangeSelectionCall } of REACT_BUNDLES) {
   const file = path.join(REACT_DIST, bundle);
   if (!fs.existsSync(file)) {
     console.warn(`patch-fortune-formula-names: react ${bundle} not found, skipping`);
@@ -773,6 +888,11 @@ for (const { file: bundle, createElement } of REACT_BUNDLES) {
     { name: "Formula library insert-on-confirm", old: FORMULA_LIB_INSERT_OLD, new: FORMULA_LIB_INSERT_NEW },
     { name: "Formula library function hint", old: FORMULA_LIB_HINT_OLD, new: FORMULA_LIB_HINT_NEW },
     { name: "Formula library row display name", old: formulaLibRowOld(createElement), new: formulaLibRowNew(createElement) },
+    {
+      name: "FormulaSearch click-to-insert",
+      old: formulaSearchClickOld(createElement, useContextExpr, isEmptyFn),
+      new: formulaSearchClickNew(createElement, useContextExpr, isEmptyFn, getRangeSelectionCall),
+    },
   ];
 
   let ok = 0;
