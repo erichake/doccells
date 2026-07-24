@@ -145,6 +145,83 @@ const preserveCustomList = (liveList, previousList) => {
   return Array.isArray(liveList) ? liveList : [];
 };
 
+// Normalise le celldata d'une feuille à partir de sa grille vivante, en
+// réutilisant le cache du passage précédent : FortuneSheet passe par immer,
+// donc une feuille (ou une ligne) inchangée garde la même référence d'objet.
+// Une ligne n'est réutilisable que si elle ne contient aucune formule : la
+// normalisation d'une cellule sans formule est purement locale, alors qu'une
+// formule (WORKDAY) peut dépendre de cellules situées ailleurs.
+const normalizeSheetCelldata = (sheet, cached) => {
+  if (!sheet.data) return null;
+  if (cached && cached.dataRef === sheet.data) return cached;
+
+  const rowCache = [];
+  const celldata = [];
+  const normalizedValues = new Map();
+
+  const resolveCellValue = (targetRow, targetColumn) => {
+    const normalized = normalizedValues.get(`${targetRow}_${targetColumn}`);
+    if (normalized !== undefined) return normalized;
+
+    const targetCell = sheet.data?.[targetRow]?.[targetColumn];
+    if (!targetCell || typeof targetCell !== "object") return targetCell;
+    return targetCell.v ?? targetCell.m;
+  };
+
+  sheet.data.forEach((row, r) => {
+    const prevRow = cached?.rowCache?.[r];
+    if (prevRow && prevRow.rowRef === row && !prevRow.hasFormula) {
+      rowCache[r] = prevRow;
+      prevRow.cells.forEach((entry) => celldata.push(entry));
+      return;
+    }
+
+    const cells = [];
+    let hasFormula = false;
+    row.forEach((cell, c) => {
+      if (!cell) return;
+      if (cell.f) hasFormula = true;
+      const parsedValue =
+        cell.v === null
+          ? null
+          : typeof cell.v === "number"
+            ? Number.isFinite(cell.v)
+              ? cell.v
+              : undefined
+            : typeof cell.v === "string" && cell.v.trim() === ""
+              ? cell.v
+              : typeof cell.v === "string" && !Number.isNaN(Number(cell.v))
+                ? parseFloat(cell.v)
+                : cell.v;
+      const formulaValue = cell.f
+        ? (calculateSimpleWorkdayFormula(cell.f, resolveCellValue) ??
+          toExcelFormulaValue(parsedValue))
+        : parsedValue;
+      const displayValue =
+        cell.f && formulaValue !== parsedValue
+          ? getFormulaDisplayValue(formulaValue, cell)
+          : cell.m;
+      const updatedVF = cell.f ? { f: cell.f, v: formulaValue } : {};
+      normalizedValues.set(`${r}_${c}`, formulaValue);
+
+      cells.push({
+        r,
+        c,
+        v: {
+          ...cell,
+          v: formulaValue,
+          m: displayValue,
+          VF: Object.keys(updatedVF).length ? updatedVF : undefined,
+        },
+      });
+    });
+    rowCache[r] = { rowRef: row, cells, hasFormula };
+    cells.forEach((entry) => celldata.push(entry));
+  });
+
+  return { dataRef: sheet.data, rowCache, celldata };
+};
+
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
   const [appMode, setAppMode] = useState("teacher");
@@ -171,6 +248,7 @@ const App = () => {
   const workbookRef = useRef(null);
   const formulasRef = useRef({});
   const syncingConditionalRef = useRef(false);
+  const normalizeCacheRef = useRef(new Map());
 
   // Ready state for external API (docshare iframe caller)
   const isReadyRef = useRef(false);
@@ -218,6 +296,7 @@ const App = () => {
 
   const resetWorkbook = useCallback(async () => {
     formulasRef.current = {};
+    normalizeCacheRef.current = new Map();
     isReadyRef.current = false;
     pendingRef.current = [];
     setSheetData([]);
@@ -231,6 +310,7 @@ const App = () => {
     });
 
     formulasRef.current = formulas;
+    normalizeCacheRef.current = new Map();
     setSheetData(applyConditionalFormatting(sheets));
   }, []);
 
@@ -863,65 +943,14 @@ const App = () => {
   const handleWorkbookChange = useCallback((newData) => {
     if (syncingConditionalRef.current) return;
     if (Array.isArray(newData) && newData.length > 0) {
+      const nextCache = new Map();
       const updatedData = newData.map((sheet, index) => {
         const oldCells = sheetDataRef.current[index]?.celldata || [];
-        const newCells = [];
-        const normalizedValues = new Map();
-
-        if (sheet.data) {
-          const resolveCellValue = (targetRow, targetColumn) => {
-            const normalized = normalizedValues.get(`${targetRow}_${targetColumn}`);
-            if (normalized !== undefined) return normalized;
-
-            const targetCell = sheet.data?.[targetRow]?.[targetColumn];
-            if (!targetCell || typeof targetCell !== "object") return targetCell;
-            return targetCell.v ?? targetCell.m;
-          };
-
-          sheet.data.forEach((row, r) => {
-            row.forEach((cell, c) => {
-              if (cell) {
-                const parsedValue =
-                  cell.v === null
-                    ? null
-                    : typeof cell.v === "number"
-                      ? Number.isFinite(cell.v)
-                        ? cell.v
-                        : undefined
-                      : typeof cell.v === "string" && cell.v.trim() === ""
-                        ? cell.v
-                        : typeof cell.v === "string" && !Number.isNaN(Number(cell.v))
-                          ? parseFloat(cell.v)
-                          : cell.v;
-                const formulaValue = cell.f
-                  ? (calculateSimpleWorkdayFormula(cell.f, resolveCellValue) ??
-                    toExcelFormulaValue(parsedValue))
-                  : parsedValue;
-                const displayValue =
-                  cell.f && formulaValue !== parsedValue
-                    ? getFormulaDisplayValue(formulaValue, cell)
-                    : cell.m;
-                const updatedVF = cell.f
-                  ? { f: cell.f, v: formulaValue }
-                  : {};
-                normalizedValues.set(`${r}_${c}`, formulaValue);
-
-                newCells.push({
-                  r,
-                  c,
-                  v: {
-                    ...cell,
-                    v: formulaValue,
-                    m: displayValue,
-                    VF: Object.keys(updatedVF).length
-                      ? updatedVF
-                      : undefined,
-                  },
-                });
-              }
-            });
-          });
-        }
+        const cached =
+          sheet.id != null ? normalizeCacheRef.current.get(sheet.id) : undefined;
+        const normalized = normalizeSheetCelldata(sheet, cached);
+        if (normalized && sheet.id != null) nextCache.set(sheet.id, normalized);
+        const newCells = normalized ? normalized.celldata : [];
 
         return {
           ...sheet,
@@ -941,6 +970,8 @@ const App = () => {
         };
       });
 
+      normalizeCacheRef.current = nextCache;
+
       const hasConditionalRules = updatedData.some(
         (sheet) => (sheet.customConditionalFormatting || []).length > 0,
       );
@@ -956,17 +987,17 @@ const App = () => {
         setChartRenderKey((key) => key + 1);
       }
       if (hasConditionalRules) {
-        syncingConditionalRef.current = true;
-        setSheetData(finalData);
-        requestAnimationFrame(() => {
-          const apiCalls = createConditionalFormatApiCalls(finalData);
-          if (apiCalls.length > 0) {
-            workbookRef.current?.batchCallApis?.(apiCalls);
-          }
+        const apiCalls = createConditionalFormatApiCalls(finalData);
+        if (apiCalls.length > 0) {
+          syncingConditionalRef.current = true;
+          setSheetData(finalData);
           requestAnimationFrame(() => {
-            syncingConditionalRef.current = false;
+            workbookRef.current?.batchCallApis?.(apiCalls);
+            requestAnimationFrame(() => {
+              syncingConditionalRef.current = false;
+            });
           });
-        });
+        }
       }
     } else {
       console.warn(

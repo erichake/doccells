@@ -3,11 +3,7 @@ import {
   getConditionalFormattingTexts,
 } from "./conditionalFormattingConstants.js";
 
-const CONDITIONAL_STYLE_KEYS = [
-  ["bold", "bl"],
-  ["italic", "it"],
-  ["underline", "ul"],
-];
+const CONDITIONAL_DISPLAY_KEYS = ["fc", "bg", "bl", "it", "ul"];
 
 const dataToCelldata = (data) => {
   const celldata = [];
@@ -136,15 +132,56 @@ const compareConditionalValue = (cellValue, ruleValue, ruleValue2, condition) =>
   return false;
 };
 
-const cloneSheetForConditionalFormatting = (sheet) => ({
+const getActiveRules = (rules) =>
+  (rules || []).filter((rule) => rule.enabled !== false && rule.range);
+
+const collectTouchedCellKeys = (rules) => {
+  const touched = new Set();
+  rules.forEach((rule) => {
+    const { row, column } = rule.range;
+    for (let r = row[0]; r <= row[1]; r++) {
+      for (let c = column[0]; c <= column[1]; c++) {
+        touched.add(getCellKey(r, c));
+      }
+    }
+  });
+  return touched;
+};
+
+const hasConditionalMarker = (value) =>
+  Boolean(value && typeof value === "object" && value._dcCf);
+
+const sheetHasConditionalMarkers = (sheet) => {
+  if (Array.isArray(sheet.celldata)) {
+    return sheet.celldata.some((cell) => hasConditionalMarker(cell?.v));
+  }
+  if (Array.isArray(sheet.data)) {
+    return sheet.data.some(
+      (row) => Array.isArray(row) && row.some(hasConditionalMarker),
+    );
+  }
+  return false;
+};
+
+// Seules les cellules des plages de règles et celles portant un marqueur
+// _dcCf sont mutées ensuite : les autres gardent leur référence d'origine.
+const cloneSheetForConditionalFormatting = (sheet, touchedCells) => ({
   ...sheet,
-  celldata: (sheet.celldata || dataToCelldata(sheet.data)).map((cell) => ({
-    ...cell,
-    v:
-      cell.v && typeof cell.v === "object"
-        ? { ...cell.v, ct: cell.v.ct ? { ...cell.v.ct } : cell.v.ct }
-        : cell.v,
-  })),
+  celldata: (sheet.celldata || dataToCelldata(sheet.data)).map((cell) => {
+    if (
+      !touchedCells.has(getCellKey(cell.r, cell.c)) &&
+      !hasConditionalMarker(cell.v)
+    ) {
+      return cell;
+    }
+    return {
+      ...cell,
+      v:
+        cell.v && typeof cell.v === "object"
+          ? { ...cell.v, ct: cell.v.ct ? { ...cell.v.ct } : cell.v.ct }
+          : cell.v,
+    };
+  }),
 });
 
 const resetConditionalFormattingCells = (sheet) => {
@@ -165,19 +202,7 @@ const resetConditionalFormattingCells = (sheet) => {
   });
 };
 
-const clearConditionalDisplayStyles = (sheet, rules) => {
-  const touchedCells = new Set();
-  rules
-    .filter((rule) => rule.enabled !== false && rule.range)
-    .forEach((rule) => {
-      const { row, column } = rule.range;
-      for (let r = row[0]; r <= row[1]; r++) {
-        for (let c = column[0]; c <= column[1]; c++) {
-          touchedCells.add(getCellKey(r, c));
-        }
-      }
-    });
-
+const clearConditionalDisplayStyles = (sheet, touchedCells) => {
   if (!touchedCells.size) return;
 
   sheet.celldata.forEach((cell) => {
@@ -238,35 +263,37 @@ const applyConditionalStyle = (cell, rule) => {
 
 export const applyConditionalFormatting = (sheets) =>
   sheets.map((originalSheet) => {
-    const sheet = cloneSheetForConditionalFormatting(originalSheet);
+    const rules = getActiveRules(originalSheet.customConditionalFormatting);
+    if (!rules.length && !sheetHasConditionalMarkers(originalSheet)) {
+      return originalSheet;
+    }
+    const touchedCells = collectTouchedCellKeys(rules);
+    const sheet = cloneSheetForConditionalFormatting(originalSheet, touchedCells);
     resetConditionalFormattingCells(sheet);
-    const rules = sheet.customConditionalFormatting || [];
     if (!rules.length) return sheet;
-    clearConditionalDisplayStyles(sheet, rules);
+    clearConditionalDisplayStyles(sheet, touchedCells);
 
     const cellMap = buildCellMap(sheet);
-    rules
-      .filter((rule) => rule.enabled !== false && rule.range)
-      .forEach((rule) => {
-        const { row, column } = rule.range;
-        for (let r = row[0]; r <= row[1]; r++) {
-          for (let c = column[0]; c <= column[1]; c++) {
-            let cell = cellMap.get(getCellKey(r, c));
-            if (!cell) {
-              cell = { r, c, v: {} };
-              sheet.celldata.push(cell);
-              cellMap.set(getCellKey(r, c), cell);
-            }
-            const cellValue = getCellDisplayValue(cell);
-            const [value1, value2] = resolveRuleCompareValue(rule, r, cellMap);
-            if (
-              compareConditionalValue(cellValue, value1, value2, rule.condition)
-            ) {
-              applyConditionalStyle(cell, rule);
-            }
+    rules.forEach((rule) => {
+      const { row, column } = rule.range;
+      for (let r = row[0]; r <= row[1]; r++) {
+        for (let c = column[0]; c <= column[1]; c++) {
+          let cell = cellMap.get(getCellKey(r, c));
+          if (!cell) {
+            cell = { r, c, v: {} };
+            sheet.celldata.push(cell);
+            cellMap.set(getCellKey(r, c), cell);
+          }
+          const cellValue = getCellDisplayValue(cell);
+          const [value1, value2] = resolveRuleCompareValue(rule, r, cellMap);
+          if (
+            compareConditionalValue(cellValue, value1, value2, rule.condition)
+          ) {
+            applyConditionalStyle(cell, rule);
           }
         }
-      });
+      }
+    });
 
     return sheet;
   });
@@ -339,37 +366,29 @@ export const getRulePreviewStyle = (rule) => ({
 export const createConditionalFormatApiCalls = (sheets) => {
   const calls = [];
   sheets.forEach((sheet) => {
-    const rules = sheet.customConditionalFormatting || [];
+    const rules = getActiveRules(sheet.customConditionalFormatting);
     if (!rules.length) return;
 
-    const touchedCells = new Set();
-    rules
-      .filter((rule) => rule.enabled !== false && rule.range)
-      .forEach((rule) => {
-        const { row, column } = rule.range;
-        for (let r = row[0]; r <= row[1]; r++) {
-          for (let c = column[0]; c <= column[1]; c++) {
-            touchedCells.add(getCellKey(r, c));
-          }
-        }
-      });
-
+    const touchedCells = collectTouchedCellKeys(rules);
     const cellMap = buildCellMap(sheet);
+    // La grille vivante (sheet.data, émise par onChange) sert de référence :
+    // seuls les styles qui diffèrent réellement génèrent un appel API.
+    const liveData = Array.isArray(sheet.data) ? sheet.data : null;
     touchedCells.forEach((key) => {
       const [row, column] = key.split("_").map(Number);
       const cellValue = cellMap.get(key)?.v;
-      const fc = cellValue && typeof cellValue === "object" ? cellValue.fc : undefined;
-      const bg = cellValue && typeof cellValue === "object" ? cellValue.bg : undefined;
+      const liveValue = liveData?.[row]?.[column];
       const options = sheet.id != null ? { id: sheet.id } : {};
 
-      calls.push({ name: "setCellFormat", args: [row, column, "fc", fc, options] });
-      calls.push({ name: "setCellFormat", args: [row, column, "bg", bg, options] });
-      CONDITIONAL_STYLE_KEYS.forEach(([, cellKey]) => {
-        const value =
+      CONDITIONAL_DISPLAY_KEYS.forEach((cellKey) => {
+        const desired =
           cellValue && typeof cellValue === "object" ? cellValue[cellKey] : undefined;
+        const live =
+          liveValue && typeof liveValue === "object" ? liveValue[cellKey] : undefined;
+        if (liveData && (desired ?? null) === (live ?? null)) return;
         calls.push({
           name: "setCellFormat",
-          args: [row, column, cellKey, value, options],
+          args: [row, column, cellKey, desired, options],
         });
       });
     });
