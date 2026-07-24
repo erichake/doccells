@@ -592,6 +592,13 @@ const CANONICAL_FORMULA_CALLS = [
   ["execfunction(ctx, _f3, _i21, _j3)", "__doccellsExecCanonicalFormula(ctx, _f3, _i21, _j3)"],
   ["execfunction(ctx, _func5, _actualRow5, _vc5, undefined, undefined, true)", "__doccellsExecCanonicalFormula(ctx, _func5, _actualRow5, _vc5, undefined, undefined, true)"],
   ["execfunction(ctx, func, h, c, undefined, undefined, true)", "__doccellsExecCanonicalFormula(ctx, func, h, c, undefined, undefined, true)"],
+  // executeAffectedFormulas(): recalcul des formules dépendantes après
+  // modification d'une cellule référencée -- calc_funcStr vient du cell.f
+  // stocké, donc canonique.
+  ["execfunction(ctx, calc_funcStr, formulaCell.r, formulaCell.c, formulaCell.id, calcChainSet)", "__doccellsExecCanonicalFormula(ctx, calc_funcStr, formulaCell.r, formulaCell.c, formulaCell.id, calcChainSet)"],
+  // Rafraîchissement des formules d'une plage : lit data[r][c].f stocké,
+  // donc canonique.
+  ["var result = execfunction(ctx, (_ctx$luckysheetfile$i2 = ctx.luckysheetfile[index$1].data[r][c]) === null || _ctx$luckysheetfile$i2 === void 0 ? void 0 : _ctx$luckysheetfile$i2.f, r, c, id)", "var result = __doccellsExecCanonicalFormula(ctx, (_ctx$luckysheetfile$i2 = ctx.luckysheetfile[index$1].data[r][c]) === null || _ctx$luckysheetfile$i2 === void 0 ? void 0 : _ctx$luckysheetfile$i2.f, r, c, id)"],
 ];
 
 const CANONICAL_HELPER_UPGRADE_OLD = `function execfunction(ctx, txt, r, c, id, calcChainSet, isrefresh, notInsertFunc) {
@@ -1192,9 +1199,17 @@ for (const { file: bundle, lodash: L } of BUNDLES) {
     }
 
     if (src.includes("__doccellsExecCanonicalFormula")) {
+      // Répare les appels canoniques manquants (entrées ajoutées à
+      // CANONICAL_FORMULA_CALLS après un premier passage du patch).
+      for (const [old, replacement] of CANONICAL_FORMULA_CALLS) {
+        if (src.includes(old)) {
+          src = src.replace(old, replacement);
+          repaired = true;
+        }
+      }
       if (repaired) {
         fs.writeFileSync(file, src, "utf8");
-        console.log(`patch-fortune-formula-names: repaired searchFunction locale matching in ${bundle}`);
+        console.log(`patch-fortune-formula-names: repaired ${bundle}`);
       } else {
         console.log(`patch-fortune-formula-names: ${bundle} already patched`);
       }
