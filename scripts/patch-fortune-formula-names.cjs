@@ -372,7 +372,7 @@ function searchFunctionBuggy(L) {
   ctx.functionCandidates = list;
 }`;
 }
-function searchFunctionNew(L) {
+function searchFunctionNoRangeSuggestion(L) {
   return `function searchFunction(ctx, searchtxt) {
   var _locale = locale(ctx),
     functionlist = _locale.functionlist;
@@ -409,6 +409,87 @@ function searchFunctionNew(L) {
   var list = [].concat(f, s, t);
   if (list.length <= 0) {
     return;
+  }
+  ctx.functionCandidates = list;
+}`;
+}
+// Range-eligible functions: same 5 as the toolbar's quick-formula (Σ)
+// dropdown (QUICK_FORMULA_KEYS above) -- Google Sheets limits its "range
+// suggestion" autocomplete entry to this same handful of aggregate
+// functions, not every function in the library.
+function searchFunctionNew(L) {
+  return `function searchFunction(ctx, searchtxt) {
+  var _locale = locale(ctx),
+    functionlist = _locale.functionlist;
+  var f = [];
+  var s = [];
+  var t = [];
+  var result_i = 0;
+  var __doccellsShort = __doccellsShortLocale();
+  var __doccellsToLocaleMap = __doccellsFormulaNamesByEnglish[__doccellsShort];
+  for (var _i13 = 0; _i13 < functionlist.length; _i13 += 1) {
+    var item = functionlist[_i13];
+    var n = item.n;
+    var matchName = n;
+    var displayItem = item;
+    var __doccellsLocaleName = __doccellsToLocaleMap ? __doccellsToLocaleMap[n] : undefined;
+    if (__doccellsLocaleName) {
+      matchName = __doccellsLocaleName.toUpperCase();
+      displayItem = Object.assign({}, item, { n: __doccellsLocaleName, __doccellsEnglishName: n });
+    } else {
+      displayItem = Object.assign({}, item, { __doccellsEnglishName: n });
+    }
+    if (matchName === searchtxt) {
+      f.unshift(displayItem);
+      result_i += 1;
+    } else if (${L}.startsWith(matchName, searchtxt)) {
+      s.unshift(displayItem);
+      result_i += 1;
+    } else if (matchName.indexOf(searchtxt) > -1) {
+      t.unshift(displayItem);
+      result_i += 1;
+    }
+    if (result_i >= 10) {
+      break;
+    }
+  }
+  var list = [].concat(f, s, t);
+  if (list.length <= 0) {
+    return;
+  }
+  var __doccellsRangeFnKeys = { SUM: 1, AVERAGE: 1, COUNT: 1, MAX: 1, MIN: 1 };
+  var __doccellsTop = list[0];
+  if (__doccellsRangeFnKeys[__doccellsTop.__doccellsEnglishName] && ctx.luckysheetCellUpdate && ctx.luckysheetCellUpdate.length === 2) {
+    var __doccellsRow = ctx.luckysheetCellUpdate[0];
+    var __doccellsCol = ctx.luckysheetCellUpdate[1];
+    var __doccellsFlowdata = getFlowdata(ctx);
+    if (__doccellsFlowdata && __doccellsFlowdata[__doccellsRow]) {
+      var __doccellsRangeRow = null;
+      var __doccellsRangeCol = null;
+      if (__doccellsRow - 1 >= 0 && checkNoNullValue(__doccellsFlowdata[__doccellsRow - 1][__doccellsCol])) {
+        var __doccellsStartR = getNoNullValue(__doccellsFlowdata, __doccellsCol, __doccellsRow, "r");
+        if (__doccellsStartR != null) {
+          __doccellsRangeRow = [__doccellsStartR, __doccellsRow - 1];
+          __doccellsRangeCol = [__doccellsCol, __doccellsCol];
+        }
+      } else if (__doccellsCol - 1 >= 0 && checkNoNullValue(__doccellsFlowdata[__doccellsRow][__doccellsCol - 1])) {
+        var __doccellsStartC = getNoNullValue(__doccellsFlowdata, __doccellsRow, __doccellsCol, "c");
+        if (__doccellsStartC != null) {
+          __doccellsRangeRow = [__doccellsRow, __doccellsRow];
+          __doccellsRangeCol = [__doccellsStartC, __doccellsCol - 1];
+        }
+      }
+      if (__doccellsRangeRow && __doccellsRangeCol) {
+        var __doccellsRangeTxt = getRangetxt(ctx, ctx.currentSheetId, { row: __doccellsRangeRow, column: __doccellsRangeCol }, ctx.currentSheetId);
+        if (__doccellsRangeTxt) {
+          list.unshift({
+            n: __doccellsTop.n + "(" + __doccellsRangeTxt + ")",
+            d: __doccellsTop.d,
+            __doccellsFullInsert: true
+          });
+        }
+      }
+    }
   }
   ctx.functionCandidates = list;
 }`;
@@ -675,7 +756,7 @@ function formulaSearchClickOld(createElement, useContextExpr, isEmptyFn) {
   }));
 };`;
 }
-function formulaSearchClickNew(createElement, useContextExpr, isEmptyFn, getRangeSelectionCall) {
+function formulaSearchClickNoRangeSuggestion(createElement, useContextExpr, isEmptyFn, getRangeSelectionCall) {
   return `var __doccellsInsertFormulaCandidate = function __doccellsInsertFormulaCandidate(setContext, formulaName) {
   var textEditor = document.getElementById("luckysheet-rich-text-editor");
   if (!textEditor) return;
@@ -738,6 +819,218 @@ var FormulaSearch = function FormulaSearch(props) {
   }));
 };`;
 }
+function formulaSearchClickNoCommit(createElement, useContextExpr, isEmptyFn, getRangeSelectionCall) {
+  return `var __doccellsInsertFormulaCandidate = function __doccellsInsertFormulaCandidate(setContext, formulaName, isFullInsert) {
+  var textEditor = document.getElementById("luckysheet-rich-text-editor");
+  if (!textEditor) return;
+  var __doccellsRangeSel = ${getRangeSelectionCall};
+  var searchTxt = (__doccellsRangeSel && __doccellsRangeSel.textContent) || "";
+  var deleteCount = searchTxt.length;
+  textEditor.focus();
+  var selection = window.getSelection();
+  if (!selection || selection.rangeCount === 0) return;
+  var range = selection.getRangeAt(0);
+  if (deleteCount !== 0 && range) {
+    var startOffset = Math.max(range.startOffset - deleteCount, 0);
+    var endOffset = range.startOffset;
+    range.setStart(range.startContainer, startOffset);
+    range.setEnd(range.startContainer, endOffset);
+    range.deleteContents();
+  }
+  var functionStr = "<span dir=\\"auto\\" class=\\"luckysheet-formula-text-func\\">".concat(formulaName, "</span>");
+  var lParStr = "<span dir=\\"auto\\" class=\\"luckysheet-formula-text-lpar\\">(</span>";
+  var functionNode = new DOMParser().parseFromString(functionStr, "text/html").body.childNodes[0];
+  var lParNode = new DOMParser().parseFromString(lParStr, "text/html").body.childNodes[0];
+  if (range && range.startContainer.parentNode) {
+    range.setStart(range.startContainer.parentNode, 1);
+  }
+  if (range) {
+    if (!isFullInsert) {
+      range.insertNode(lParNode);
+    }
+    range.insertNode(functionNode);
+    range.collapse();
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+  setContext(function (draftCtx) {
+    draftCtx.functionCandidates = [];
+    draftCtx.functionHint = formulaName;
+  });
+};
+var FormulaSearch = function FormulaSearch(props) {
+  var _useContext = ${useContextExpr},
+    context = _useContext.context,
+    setContext = _useContext.setContext;
+  if (${isEmptyFn}(context.functionCandidates)) return null;
+  return /*#__PURE__*/${createElement}.createElement("div", _objectSpread2(_objectSpread2({}, props), {}, {
+    id: "luckysheet-formula-search-c",
+    className: "luckysheet-formula-search-c"
+  }), context.functionCandidates.map(function (v, index) {
+    return /*#__PURE__*/${createElement}.createElement("div", {
+      key: v.n,
+      "data-func": v.n,
+      "data-doccells-full": v.__doccellsFullInsert ? "1" : undefined,
+      className: "luckysheet-formula-search-item ".concat(index === 0 ? "luckysheet-formula-search-item-active" : ""),
+      onMouseDown: function onMouseDown(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        __doccellsInsertFormulaCandidate(setContext, v.n, !!v.__doccellsFullInsert);
+      }
+    }, /*#__PURE__*/${createElement}.createElement("div", {
+      className: "luckysheet-formula-search-func"
+    }, v.n), /*#__PURE__*/${createElement}.createElement("div", {
+      className: "luckysheet-formula-search-detail"
+    }, v.d));
+  }));
+};`;
+}
+// Auto-commits the cell when a range-suggestion candidate is accepted:
+// unlike a plain "NAME(" partial insert (which leaves the user mid-edit to
+// type/select the range themselves), the range suggestion is already a
+// complete, valid formula, so there's nothing left to type -- mirrors
+// handleGlobalEnter()'s own commit-and-move-down sequence (core dist
+// index.js ~191166: updateCell + luckysheet_select_save + moveHighlightCell).
+function formulaSearchClickNew(createElement, useContextExpr, isEmptyFn, getRangeSelectionCall, corePrefix) {
+  return `var __doccellsInsertFormulaCandidate = function __doccellsInsertFormulaCandidate(setContext, formulaName, isFullInsert) {
+  var textEditor = document.getElementById("luckysheet-rich-text-editor");
+  if (!textEditor) return;
+  var __doccellsRangeSel = ${getRangeSelectionCall};
+  var searchTxt = (__doccellsRangeSel && __doccellsRangeSel.textContent) || "";
+  var deleteCount = searchTxt.length;
+  textEditor.focus();
+  var selection = window.getSelection();
+  if (!selection || selection.rangeCount === 0) return;
+  var range = selection.getRangeAt(0);
+  if (deleteCount !== 0 && range) {
+    var startOffset = Math.max(range.startOffset - deleteCount, 0);
+    var endOffset = range.startOffset;
+    range.setStart(range.startContainer, startOffset);
+    range.setEnd(range.startContainer, endOffset);
+    range.deleteContents();
+  }
+  var functionStr = "<span dir=\\"auto\\" class=\\"luckysheet-formula-text-func\\">".concat(formulaName, "</span>");
+  var lParStr = "<span dir=\\"auto\\" class=\\"luckysheet-formula-text-lpar\\">(</span>";
+  var functionNode = new DOMParser().parseFromString(functionStr, "text/html").body.childNodes[0];
+  var lParNode = new DOMParser().parseFromString(lParStr, "text/html").body.childNodes[0];
+  if (range && range.startContainer.parentNode) {
+    range.setStart(range.startContainer.parentNode, 1);
+  }
+  if (range) {
+    if (!isFullInsert) {
+      range.insertNode(lParNode);
+    }
+    range.insertNode(functionNode);
+    range.collapse();
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+  setContext(function (draftCtx) {
+    draftCtx.functionCandidates = [];
+    draftCtx.functionHint = formulaName;
+    if (isFullInsert && draftCtx.luckysheetCellUpdate && draftCtx.luckysheetCellUpdate.length === 2) {
+      var __doccellsLastCellUpdate = draftCtx.luckysheetCellUpdate.slice();
+      ${corePrefix}updateCell(draftCtx, __doccellsLastCellUpdate[0], __doccellsLastCellUpdate[1], textEditor);
+      draftCtx.luckysheet_select_save = [{
+        row: [__doccellsLastCellUpdate[0], __doccellsLastCellUpdate[0]],
+        column: [__doccellsLastCellUpdate[1], __doccellsLastCellUpdate[1]],
+        row_focus: __doccellsLastCellUpdate[0],
+        column_focus: __doccellsLastCellUpdate[1]
+      }];
+      ${corePrefix}moveHighlightCell(draftCtx, "down", 1, "rangeOfSelect");
+    }
+  });
+};
+var FormulaSearch = function FormulaSearch(props) {
+  var _useContext = ${useContextExpr},
+    context = _useContext.context,
+    setContext = _useContext.setContext;
+  if (${isEmptyFn}(context.functionCandidates)) return null;
+  return /*#__PURE__*/${createElement}.createElement("div", _objectSpread2(_objectSpread2({}, props), {}, {
+    id: "luckysheet-formula-search-c",
+    className: "luckysheet-formula-search-c"
+  }), context.functionCandidates.map(function (v, index) {
+    return /*#__PURE__*/${createElement}.createElement("div", {
+      key: v.n,
+      "data-func": v.n,
+      "data-doccells-full": v.__doccellsFullInsert ? "1" : undefined,
+      className: "luckysheet-formula-search-item ".concat(index === 0 ? "luckysheet-formula-search-item-active" : ""),
+      onMouseDown: function onMouseDown(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        __doccellsInsertFormulaCandidate(setContext, v.n, !!v.__doccellsFullInsert);
+      }
+    }, /*#__PURE__*/${createElement}.createElement("div", {
+      className: "luckysheet-formula-search-func"
+    }, v.n), /*#__PURE__*/${createElement}.createElement("div", {
+      className: "luckysheet-formula-search-detail"
+    }, v.d));
+  }));
+};`;
+}
+
+// ---------------------------------------------------------------------------
+// Patch 14 (@fortune-sheet/react bundles): selectActiveFormula -- the
+// Tab/Enter keyboard-accept path for the autocomplete dropdown (separate
+// code from the click handler above: it re-reads the active item from the
+// live DOM instead of the React candidate object). Needs the same
+// full-insert awareness as the click handler, but can only learn the flag
+// via the `data-doccells-full` attribute stamped on the DOM node by Patch 13.
+// Both anchor blocks below are textually identical across index.js/
+// index.esm.js (the two bundles only differ earlier in this function, in how
+// getrangeseleciton() is referenced, which these patches don't touch).
+// ---------------------------------------------------------------------------
+
+const SELECT_ACTIVE_FORMULA_FLAG_OLD = `      var formulaName = formulaNameDiv.textContent;`;
+const SELECT_ACTIVE_FORMULA_FLAG_NEW = `      var formulaName = formulaNameDiv.textContent;
+      var __doccellsFullInsert = activeFormula.getAttribute("data-doccells-full") === "1";`;
+
+const SELECT_ACTIVE_FORMULA_INSERT_OLD = `        if (range === null || range === void 0 ? void 0 : range.startContainer.parentNode) {
+          range === null || range === void 0 ? void 0 : range.setStart(range.startContainer.parentNode, 1);
+        }
+        range === null || range === void 0 ? void 0 : range.insertNode(lParNode);
+        range === null || range === void 0 ? void 0 : range.insertNode(functionNode);`;
+const SELECT_ACTIVE_FORMULA_INSERT_NEW = `        if (range === null || range === void 0 ? void 0 : range.startContainer.parentNode) {
+          range === null || range === void 0 ? void 0 : range.setStart(range.startContainer.parentNode, 1);
+        }
+        if (!__doccellsFullInsert) {
+          range === null || range === void 0 ? void 0 : range.insertNode(lParNode);
+        }
+        range === null || range === void 0 ? void 0 : range.insertNode(functionNode);`;
+
+// Same auto-commit behavior as the click path (formulaSearchClickNew, above)
+// for the Tab/Enter keyboard-accept path: a range-suggestion is a complete
+// formula, so accepting it should also commit the cell and move down, same
+// as handleGlobalEnter()'s own sequence.
+function selectActiveFormulaCommitOld() {
+  return `        range === null || range === void 0 ? void 0 : range.collapse();
+        selection === null || selection === void 0 ? void 0 : selection.removeAllRanges();
+        if (range) selection === null || selection === void 0 ? void 0 : selection.addRange(range);
+        setContext(function (draftCtx) {
+          draftCtx.functionCandidates = [];
+          draftCtx.functionHint = formulaName;
+        });`;
+}
+function selectActiveFormulaCommitNew(corePrefix) {
+  return `        range === null || range === void 0 ? void 0 : range.collapse();
+        selection === null || selection === void 0 ? void 0 : selection.removeAllRanges();
+        if (range) selection === null || selection === void 0 ? void 0 : selection.addRange(range);
+        setContext(function (draftCtx) {
+          draftCtx.functionCandidates = [];
+          draftCtx.functionHint = formulaName;
+          if (__doccellsFullInsert && draftCtx.luckysheetCellUpdate && draftCtx.luckysheetCellUpdate.length === 2) {
+            var __doccellsLastCellUpdate = draftCtx.luckysheetCellUpdate.slice();
+            ${corePrefix}updateCell(draftCtx, __doccellsLastCellUpdate[0], __doccellsLastCellUpdate[1], textEditor);
+            draftCtx.luckysheet_select_save = [{
+              row: [__doccellsLastCellUpdate[0], __doccellsLastCellUpdate[0]],
+              column: [__doccellsLastCellUpdate[1], __doccellsLastCellUpdate[1]],
+              row_focus: __doccellsLastCellUpdate[0],
+              column_focus: __doccellsLastCellUpdate[1]
+            }];
+            ${corePrefix}moveHighlightCell(draftCtx, "down", 1, "rangeOfSelect");
+          }
+        });`;
+}
 
 function formulaLibRowNew(L) {
   return `  }, filteredFunctionList.map(function (v, index) {
@@ -767,10 +1060,14 @@ for (const { file: bundle, lodash: L } of BUNDLES) {
   if (alreadyDone) {
     // Repair pass: earlier installs may carry the buggy searchFunction()
     // that still fell back to matching the raw English name (see comment
-    // above Patch 5). Fix it in place without requiring a clean reinstall.
+    // above Patch 5), or a version predating the range-suggestion feature.
+    // Fix both in place without requiring a clean reinstall.
     let repaired = false;
     if (src.includes(searchFunctionBuggy(L))) {
       src = src.replace(searchFunctionBuggy(L), searchFunctionNew(L));
+      repaired = true;
+    } else if (src.includes(searchFunctionNoRangeSuggestion(L))) {
+      src = src.replace(searchFunctionNoRangeSuggestion(L), searchFunctionNew(L));
       repaired = true;
     }
 
@@ -860,6 +1157,7 @@ const REACT_BUNDLES = [
     useContextExpr: "React.useContext(WorkbookContext)",
     isEmptyFn: "___default['default'].isEmpty",
     getRangeSelectionCall: "core.getrangeseleciton()",
+    corePrefix: "core.",
   },
   {
     file: "index.esm.js",
@@ -867,9 +1165,10 @@ const REACT_BUNDLES = [
     useContextExpr: "useContext(WorkbookContext)",
     isEmptyFn: "_.isEmpty",
     getRangeSelectionCall: "getrangeseleciton()",
+    corePrefix: "",
   },
 ];
-for (const { file: bundle, createElement, useContextExpr, isEmptyFn, getRangeSelectionCall } of REACT_BUNDLES) {
+for (const { file: bundle, createElement, useContextExpr, isEmptyFn, getRangeSelectionCall, corePrefix } of REACT_BUNDLES) {
   const file = path.join(REACT_DIST, bundle);
   if (!fs.existsSync(file)) {
     console.warn(`patch-fortune-formula-names: react ${bundle} not found, skipping`);
@@ -889,9 +1188,32 @@ for (const { file: bundle, createElement, useContextExpr, isEmptyFn, getRangeSel
     { name: "Formula library function hint", old: FORMULA_LIB_HINT_OLD, new: FORMULA_LIB_HINT_NEW },
     { name: "Formula library row display name", old: formulaLibRowOld(createElement), new: formulaLibRowNew(createElement) },
     {
+      // Three possible starting points: a pristine bundle (never had
+      // click-to-insert), one upgraded to click-to-insert but predating the
+      // range-suggestion feature, or one with range-suggestion insert but
+      // predating auto-commit-on-accept.
       name: "FormulaSearch click-to-insert",
-      old: formulaSearchClickOld(createElement, useContextExpr, isEmptyFn),
-      new: formulaSearchClickNew(createElement, useContextExpr, isEmptyFn, getRangeSelectionCall),
+      old: [
+        formulaSearchClickNoCommit(createElement, useContextExpr, isEmptyFn, getRangeSelectionCall),
+        formulaSearchClickNoRangeSuggestion(createElement, useContextExpr, isEmptyFn, getRangeSelectionCall),
+        formulaSearchClickOld(createElement, useContextExpr, isEmptyFn),
+      ],
+      new: formulaSearchClickNew(createElement, useContextExpr, isEmptyFn, getRangeSelectionCall, corePrefix),
+    },
+    {
+      name: "selectActiveFormula full-insert flag",
+      old: SELECT_ACTIVE_FORMULA_FLAG_OLD,
+      new: SELECT_ACTIVE_FORMULA_FLAG_NEW,
+    },
+    {
+      name: "selectActiveFormula full-insert paren skip",
+      old: SELECT_ACTIVE_FORMULA_INSERT_OLD,
+      new: SELECT_ACTIVE_FORMULA_INSERT_NEW,
+    },
+    {
+      name: "selectActiveFormula auto-commit range suggestion",
+      old: selectActiveFormulaCommitOld(),
+      new: selectActiveFormulaCommitNew(corePrefix),
     },
   ];
 
@@ -900,8 +1222,12 @@ for (const { file: bundle, createElement, useContextExpr, isEmptyFn, getRangeSel
   for (const p of reactPatches) {
     if (src.includes(p.new)) {
       ok++;
-    } else if (src.includes(p.old)) {
-      src = src.replace(p.old, p.new);
+      continue;
+    }
+    const oldCandidates = Array.isArray(p.old) ? p.old : [p.old];
+    const matchedOld = oldCandidates.find((candidate) => src.includes(candidate));
+    if (matchedOld) {
+      src = src.replace(matchedOld, p.new);
       changed = true;
       ok++;
     } else {
