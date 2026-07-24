@@ -34,6 +34,7 @@ __build_for_doctools.command
 
 # Audit files (internal)
 audit_*.txt
+AMELIORATIONS_POSSIBLES.md
 
 # Alternate lockfiles (npm only)
 yarn.lock
