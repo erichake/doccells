@@ -769,6 +769,8 @@ const App = () => {
     openConditionalDialog,
     openCustomNumberFormatDialog,
     chartToolbarText: chartTexts.toolbar,
+    openButtonText: t.standaloneMenu?.open ?? "Open...",
+    exportButtonText: t.standaloneMenu?.export ?? "Export...",
     toggleGridLinesText: t.toggleGridLines ?? "Show / hide gridlines",
     toggleSheetProtectionText: t.toggleSheetProtection,
     conditionalFormattingToolbarText: conditionalFormattingTexts.toolbar,
