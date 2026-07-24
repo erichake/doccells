@@ -13427,6 +13427,7 @@ module.exports = {
     formulaTip: "Εισαγάγετε τύπο"
   },
   formulaMore: {
+    dialogTitle: "Βιβλιοθήκη τύπων",
     valueTitle: "Τιμή",
     tipSelectDataRange: "Επιλογή περιοχής δεδομένων",
     tipDataRangeTile: "Περιοχή δεδομένων",

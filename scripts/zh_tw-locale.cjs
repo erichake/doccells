@@ -12747,6 +12747,7 @@ module.exports = {  "linkTypeList": [
     ifGenTipNotGenCondition: "沒有生成可用的條件！"
   },
   formulaMore: {
+    dialogTitle: "公式庫",
     valueTitle: "值",
     tipSelectDataRange: "選取數據範圍",
     tipDataRangeTile: "數據範圍",

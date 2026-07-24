@@ -13496,6 +13496,7 @@ module.exports = {
     formulaTip: "Formel eingeben"
   },
   formulaMore: {
+    dialogTitle: "Formelbibliothek",
     valueTitle: "Wert",
     tipSelectDataRange: "Datenbereich auswählen",
     tipDataRangeTile: "Datenbereich",

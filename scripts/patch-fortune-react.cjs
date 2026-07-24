@@ -109,6 +109,34 @@ const NEW5_CJS = `        draftCtx.currentSheetId = sheet.id;
     tabIndex: 0
   }, /*#__PURE__*/React__default['default'].createElement("span", {`;
 
+// Formula library — add a real, localized dialog title. The upstream dialog
+// only renders field labels, leaving its header visually empty.
+const OLD6 = `  return /*#__PURE__*/React.createElement("div", {
+    id: "luckysheet-search-formula"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "inpbox"
+  }, /*#__PURE__*/React.createElement("div", null, formulaMore.findFunctionTitle, "\\uFF1A"),`;
+const NEW6 = `  return /*#__PURE__*/React.createElement("div", {
+    id: "luckysheet-search-formula"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "dc-formula-dialog-title"
+  }, formulaMore.dialogTitle), /*#__PURE__*/React.createElement("div", {
+    className: "inpbox"
+  }, /*#__PURE__*/React.createElement("div", null, formulaMore.findFunctionTitle, "\\uFF1A"),`;
+
+const OLD6_CJS = `  return /*#__PURE__*/React__default['default'].createElement("div", {
+    id: "luckysheet-search-formula"
+  }, /*#__PURE__*/React__default['default'].createElement("div", {
+    className: "inpbox"
+  }, /*#__PURE__*/React__default['default'].createElement("div", null, formulaMore.findFunctionTitle, "\\uFF1A"),`;
+const NEW6_CJS = `  return /*#__PURE__*/React__default['default'].createElement("div", {
+    id: "luckysheet-search-formula"
+  }, /*#__PURE__*/React__default['default'].createElement("div", {
+    className: "dc-formula-dialog-title"
+  }, formulaMore.dialogTitle), /*#__PURE__*/React__default['default'].createElement("div", {
+    className: "inpbox"
+  }, /*#__PURE__*/React__default['default'].createElement("div", null, formulaMore.findFunctionTitle, "\\uFF1A"),`;
+
 const PATCH_GROUPS = [
   { name: "SelectItem count parens fix",      variants: [{ old: OLD1, new: NEW1 }] },
   { name: "DateSelectTreeItem count parens fix", variants: [{ old: OLD2, new: NEW2 }] },
@@ -120,6 +148,10 @@ const PATCH_GROUPS = [
   {
     name: "Sheet list afterActivateSheet hook",
     variants: [{ old: OLD5, new: NEW5 }, { old: OLD5_CJS, new: NEW5_CJS }],
+  },
+  {
+    name: "Localized formula dialog title",
+    variants: [{ old: OLD6, new: NEW6 }, { old: OLD6_CJS, new: NEW6_CJS }],
   },
 ];
 

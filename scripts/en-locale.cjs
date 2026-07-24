@@ -13339,6 +13339,7 @@ module.exports = {
     ifGenTipNotGenCondition: "No conditions are available for generation!"
   },
   formulaMore: {
+    dialogTitle: "Formula library",
     valueTitle: "Value",
     tipSelectDataRange: "Select data range",
     tipDataRangeTile: "Data range",

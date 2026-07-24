@@ -13330,6 +13330,7 @@ module.exports = {
     ifGenTipNotGenCondition: "उत्पादन के लिए कोई शर्तें उपलब्ध नहीं हैं!"
   },
   formulaMore: {
+    dialogTitle: "सूत्र लाइब्रेरी",
     valueTitle: "मान",
     tipSelectDataRange: "डेटा रेंज चुनें",
     tipDataRangeTile: "डेटा रेंज",

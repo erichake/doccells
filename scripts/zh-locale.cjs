@@ -13363,6 +13363,7 @@ module.exports = {
     ifGenTipNotGenCondition: "没有生成可用的条件！"
   },
   formulaMore: {
+    dialogTitle: "公式库",
     valueTitle: "值",
     tipSelectDataRange: "选取数据范围",
     tipDataRangeTile: "数据范围",

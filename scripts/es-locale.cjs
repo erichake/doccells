@@ -12700,6 +12700,7 @@ module.exports = {  "insertLink": {
     ifGenTipNotGenCondition: "No hay condiciones disponibles para la generación!"
   },
   formulaMore: {
+    dialogTitle: "Biblioteca de fórmulas",
     valueTitle: "Valor",
     tipSelectDataRange: "Selecciona rango de datos",
     tipDataRangeTile: "Rango de datos",

@@ -13573,6 +13573,7 @@ module.exports = {
     formulaTip: "Formule invoeren"
   },
   formulaMore: {
+    dialogTitle: "Formulebibliotheek",
     valueTitle: "Waarde",
     tipSelectDataRange: "Gegevensbereik selecteren",
     tipDataRangeTile: "Gegevensbereik",
