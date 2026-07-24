@@ -60,10 +60,15 @@
  * which joined parameter names/examples with a hardcoded ", " even in
  * locales where the user must type ";".
  *
- * Deliberately NOT covered here: the standalone "Insert Function" browsing
- * dialog in @fortune-sheet/react (a separate, independent name-matcher from
- * the inline autocomplete patched above) -- lower priority, still English
- * names only there.
+ * Also covered: the standalone "Formula library" / "Insert Function"
+ * browsing dialog in @fortune-sheet/react (FormulaSearch$1 -- a separate,
+ * independent name-matcher from the inline autocomplete patched above). Its
+ * list, search box, and click-to-insert all worked off the raw canonical
+ * `functionlist[].n` ("SUM"), so it read as untranslated even in an
+ * otherwise fully localized UI. Patched to display and search the locale
+ * name when one exists, and to insert it into the cell -- the existing
+ * execfunction()/functionlistMap patches above already translate that
+ * locale name back to canonical on commit, same as typing it by hand.
  */
 
 const fs = require("fs");
@@ -527,6 +532,76 @@ const HINT_SEP_EXAMPLE_OLD = `    }, param.example, i !== fn.p.length - 1 && ", 
 const HINT_SEP_EXAMPLE_NEW = `    }, param.example, i !== fn.p.length - 1 && __doccellsHintArgSep);`;
 
 // ---------------------------------------------------------------------------
+// Patch 12 (@fortune-sheet/react bundles): the "Formula library" dialog
+// (FormulaSearch$1) lists, searches, and inserts functions purely by their
+// canonical English name (functionlist[].n). Give it the same locale-name
+// table used elsewhere so it displays/searches/inserts "SOMME" under fr-FR,
+// etc., while still handing off a name execfunction() already knows how to
+// translate back to canonical on commit.
+// ---------------------------------------------------------------------------
+
+const FORMULA_LIB_HELPER_OLD = `var FormulaSearch$1 = function FormulaSearch(_ref) {`;
+const FORMULA_LIB_HELPER_NEW = `var __doccellsInsertFnLocaleNames = (function () {
+  var lang = (typeof navigator !== "undefined" && navigator.language) || "en";
+  var table = ${TO_LOCALE_JSON};
+  return table[lang.split("-")[0]] || {};
+})();
+var FormulaSearch$1 = function FormulaSearch(_ref) {`;
+
+const FORMULA_LIB_SEARCH_OLD = `      for (var i = 0; i < functionlist.length; i += 1) {
+        if (/^[a-zA-Z]+$/.test(text)) {
+          if (functionlist[i].n.indexOf(text) !== -1) {
+            list.push(functionlist[i]);
+          }
+        } else if (functionlist[i].a.indexOf(text) !== -1) {
+          list.push(functionlist[i]);
+        }
+      }`;
+const FORMULA_LIB_SEARCH_NEW = `      for (var i = 0; i < functionlist.length; i += 1) {
+        if (/^[a-zA-Z]+$/.test(text)) {
+          var __doccellsLocaleName = __doccellsInsertFnLocaleNames[functionlist[i].n];
+          if (functionlist[i].n.indexOf(text) !== -1 || __doccellsLocaleName && __doccellsLocaleName.toUpperCase().indexOf(text) !== -1) {
+            list.push(functionlist[i]);
+          }
+        } else if (functionlist[i].a.indexOf(text) !== -1) {
+          list.push(functionlist[i]);
+        }
+      }`;
+
+const FORMULA_LIB_INSERT_OLD = `    var formulaTxt = "<span dir=\\"auto\\" class=\\"luckysheet-formula-text-color\\">=</span><span dir=\\"auto\\" class=\\"luckysheet-formula-text-color\\">".concat(filteredFunctionList[selectedFuncIndex].n.toUpperCase(), "</span><span dir=\\"auto\\" class=\\"luckysheet-formula-text-color\\">(</span>");`;
+const FORMULA_LIB_INSERT_NEW = `    var __doccellsSelectedFnName = (__doccellsInsertFnLocaleNames[filteredFunctionList[selectedFuncIndex].n] || filteredFunctionList[selectedFuncIndex].n).toUpperCase();
+    var formulaTxt = "<span dir=\\"auto\\" class=\\"luckysheet-formula-text-color\\">=</span><span dir=\\"auto\\" class=\\"luckysheet-formula-text-color\\">".concat(__doccellsSelectedFnName, "</span><span dir=\\"auto\\" class=\\"luckysheet-formula-text-color\\">(</span>");`;
+
+const FORMULA_LIB_HINT_OLD = `        ctx.functionHint = filteredFunctionList[selectedFuncIndex].n.toUpperCase();`;
+const FORMULA_LIB_HINT_NEW = `        ctx.functionHint = __doccellsSelectedFnName;`;
+
+function formulaLibRowOld(L) {
+  return `  }, filteredFunctionList.map(function (v, index) {
+    return /*#__PURE__*/${L}.createElement("div", {
+      className: "listBox".concat(index === selectedFuncIndex ? " on" : ""),
+      key: v.n,
+      onClick: function onClick() {
+        return setSelectedFuncIndex(index);
+      },
+      tabIndex: 0
+    }, /*#__PURE__*/${L}.createElement("div", null, v.n), /*#__PURE__*/${L}.createElement("div", null, v.a));
+  }))`;
+}
+function formulaLibRowNew(L) {
+  return `  }, filteredFunctionList.map(function (v, index) {
+    var __doccellsRowName = __doccellsInsertFnLocaleNames[v.n] || v.n;
+    return /*#__PURE__*/${L}.createElement("div", {
+      className: "listBox".concat(index === selectedFuncIndex ? " on" : ""),
+      key: v.n,
+      onClick: function onClick() {
+        return setSelectedFuncIndex(index);
+      },
+      tabIndex: 0
+    }, /*#__PURE__*/${L}.createElement("div", null, __doccellsRowName), /*#__PURE__*/${L}.createElement("div", null, v.a));
+  }))`;
+}
+
+// ---------------------------------------------------------------------------
 
 let allPatched = 0;
 for (const { file: bundle, lodash: L } of BUNDLES) {
@@ -612,7 +687,11 @@ for (const { file: bundle, lodash: L } of BUNDLES) {
   }
 }
 
-for (const bundle of ["index.js", "index.esm.js"]) {
+const REACT_BUNDLES = [
+  { file: "index.js", createElement: "React__default['default']" },
+  { file: "index.esm.js", createElement: "React" },
+];
+for (const { file: bundle, createElement } of REACT_BUNDLES) {
   const file = path.join(REACT_DIST, bundle);
   if (!fs.existsSync(file)) {
     console.warn(`patch-fortune-formula-names: react ${bundle} not found, skipping`);
@@ -626,6 +705,11 @@ for (const bundle of ["index.js", "index.esm.js"]) {
     { name: "FormulaHint repeat separator", old: HINT_SEP_REPEAT_OLD, new: HINT_SEP_REPEAT_NEW },
     { name: "FormulaHint signature separator", old: HINT_SEP_NAME_OLD, new: HINT_SEP_NAME_NEW },
     { name: "FormulaHint example separator", old: HINT_SEP_EXAMPLE_OLD, new: HINT_SEP_EXAMPLE_NEW },
+    { name: "Formula library locale-name helper", old: FORMULA_LIB_HELPER_OLD, new: FORMULA_LIB_HELPER_NEW },
+    { name: "Formula library search matching", old: FORMULA_LIB_SEARCH_OLD, new: FORMULA_LIB_SEARCH_NEW },
+    { name: "Formula library insert-on-confirm", old: FORMULA_LIB_INSERT_OLD, new: FORMULA_LIB_INSERT_NEW },
+    { name: "Formula library function hint", old: FORMULA_LIB_HINT_OLD, new: FORMULA_LIB_HINT_NEW },
+    { name: "Formula library row display name", old: formulaLibRowOld(createElement), new: formulaLibRowNew(createElement) },
   ];
 
   let ok = 0;
