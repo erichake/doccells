@@ -43,5 +43,8 @@ pnpm-lock.yaml
 memory
 memory/*.md
 
+# Claude Code project skills (local automation, not shipped)
+.claude/skills
+
 # Documents
 documents
