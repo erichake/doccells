@@ -279,6 +279,14 @@ const FUNCLIST_MAP_NEW = `      ctx.formulaCache.functionlistMap[functionlist[_i
 
 // ---------------------------------------------------------------------------
 // Patch 5: searchFunction() -- match + display locale names in the dropdown.
+//
+// Whenever a function has a translated name for the active locale, matching
+// must use ONLY that locale name -- never fall back to the raw English
+// canonical name -- otherwise typing an English function name (e.g. "SUM" in
+// fr-FR) still surfaces it in the dropdown even though it isn't a valid
+// French function name (only "SOMME" is). The English name is used as a
+// match target only for functions that have no translation at all for the
+// active locale, so the dropdown still finds those (better than nothing).
 // ---------------------------------------------------------------------------
 
 function searchFunctionOld(L) {
@@ -313,7 +321,7 @@ function searchFunctionOld(L) {
   ctx.functionCandidates = list;
 }`;
 }
-function searchFunctionNew(L) {
+function searchFunctionBuggy(L) {
   return `function searchFunction(ctx, searchtxt) {
   var _locale = locale(ctx),
     functionlist = _locale.functionlist;
@@ -330,6 +338,47 @@ function searchFunctionNew(L) {
     var displayItem = item;
     var __doccellsLocaleName = __doccellsToLocaleMap ? __doccellsToLocaleMap[n] : undefined;
     if (__doccellsLocaleName && __doccellsLocaleName.toUpperCase().indexOf(searchtxt) > -1) {
+      matchName = __doccellsLocaleName.toUpperCase();
+      displayItem = Object.assign({}, item, { n: __doccellsLocaleName });
+    }
+    if (matchName === searchtxt) {
+      f.unshift(displayItem);
+      result_i += 1;
+    } else if (${L}.startsWith(matchName, searchtxt)) {
+      s.unshift(displayItem);
+      result_i += 1;
+    } else if (matchName.indexOf(searchtxt) > -1) {
+      t.unshift(displayItem);
+      result_i += 1;
+    }
+    if (result_i >= 10) {
+      break;
+    }
+  }
+  var list = [].concat(f, s, t);
+  if (list.length <= 0) {
+    return;
+  }
+  ctx.functionCandidates = list;
+}`;
+}
+function searchFunctionNew(L) {
+  return `function searchFunction(ctx, searchtxt) {
+  var _locale = locale(ctx),
+    functionlist = _locale.functionlist;
+  var f = [];
+  var s = [];
+  var t = [];
+  var result_i = 0;
+  var __doccellsShort = __doccellsShortLocale();
+  var __doccellsToLocaleMap = __doccellsFormulaNamesByEnglish[__doccellsShort];
+  for (var _i13 = 0; _i13 < functionlist.length; _i13 += 1) {
+    var item = functionlist[_i13];
+    var n = item.n;
+    var matchName = n;
+    var displayItem = item;
+    var __doccellsLocaleName = __doccellsToLocaleMap ? __doccellsToLocaleMap[n] : undefined;
+    if (__doccellsLocaleName) {
       matchName = __doccellsLocaleName.toUpperCase();
       displayItem = Object.assign({}, item, { n: __doccellsLocaleName });
     }
@@ -613,8 +662,22 @@ for (const { file: bundle, lodash: L } of BUNDLES) {
   let src = fs.readFileSync(file, "utf8");
   const alreadyDone = src.includes("__doccellsDelocalizeFormulaOutput");
   if (alreadyDone) {
+    // Repair pass: earlier installs may carry the buggy searchFunction()
+    // that still fell back to matching the raw English name (see comment
+    // above Patch 5). Fix it in place without requiring a clean reinstall.
+    let repaired = false;
+    if (src.includes(searchFunctionBuggy(L))) {
+      src = src.replace(searchFunctionBuggy(L), searchFunctionNew(L));
+      repaired = true;
+    }
+
     if (src.includes("__doccellsExecCanonicalFormula")) {
-      console.log(`patch-fortune-formula-names: ${bundle} already patched`);
+      if (repaired) {
+        fs.writeFileSync(file, src, "utf8");
+        console.log(`patch-fortune-formula-names: repaired searchFunction locale matching in ${bundle}`);
+      } else {
+        console.log(`patch-fortune-formula-names: ${bundle} already patched`);
+      }
       allPatched++;
       continue;
     }
