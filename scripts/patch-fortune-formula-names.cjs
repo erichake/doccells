@@ -1047,6 +1047,126 @@ function formulaLibRowNew(L) {
 }
 
 // ---------------------------------------------------------------------------
+// Patch 15 (@fortune-sheet/react bundles): "Formula library" dialog category
+// dropdown (#formulaTypeSelect) -- typeList is a hardcoded array of all 16
+// category codes, but functionlist (per-locale) never contains any function
+// tagged `t: 7` ("Filter") or `t: -1` ("Other") in any locale -- picking
+// either shows an empty .formulaList with nothing to click. Filter typeList
+// down to categories that actually have at least one matching function,
+// determined from the live functionlist rather than a hardcoded list of
+// which codes are empty, so it stays correct if upstream data changes.
+// Identical across both bundles except the `React.useMemo`/`useMemo` call
+// just above this block, which this patch doesn't touch.
+// ---------------------------------------------------------------------------
+
+const FORMULA_TYPE_LIST_OLD = `    return [{
+      t: 0,
+      n: formulaMore.Math
+    }, {
+      t: 1,
+      n: formulaMore.Statistical
+    }, {
+      t: 2,
+      n: formulaMore.Lookup
+    }, {
+      t: 3,
+      n: formulaMore.luckysheet
+    }, {
+      t: 4,
+      n: formulaMore.dataMining
+    }, {
+      t: 5,
+      n: formulaMore.Database
+    }, {
+      t: 6,
+      n: formulaMore.Date
+    }, {
+      t: 7,
+      n: formulaMore.Filter
+    }, {
+      t: 8,
+      n: formulaMore.Financial
+    }, {
+      t: 9,
+      n: formulaMore.Engineering
+    }, {
+      t: 10,
+      n: formulaMore.Logical
+    }, {
+      t: 11,
+      n: formulaMore.Operator
+    }, {
+      t: 12,
+      n: formulaMore.Text
+    }, {
+      t: 13,
+      n: formulaMore.Parser
+    }, {
+      t: 14,
+      n: formulaMore.Array
+    }, {
+      t: -1,
+      n: formulaMore.other
+    }];
+  }, [formulaMore]);`;
+const FORMULA_TYPE_LIST_NEW = `    var __doccellsAllTypes = [{
+      t: 0,
+      n: formulaMore.Math
+    }, {
+      t: 1,
+      n: formulaMore.Statistical
+    }, {
+      t: 2,
+      n: formulaMore.Lookup
+    }, {
+      t: 3,
+      n: formulaMore.luckysheet
+    }, {
+      t: 4,
+      n: formulaMore.dataMining
+    }, {
+      t: 5,
+      n: formulaMore.Database
+    }, {
+      t: 6,
+      n: formulaMore.Date
+    }, {
+      t: 7,
+      n: formulaMore.Filter
+    }, {
+      t: 8,
+      n: formulaMore.Financial
+    }, {
+      t: 9,
+      n: formulaMore.Engineering
+    }, {
+      t: 10,
+      n: formulaMore.Logical
+    }, {
+      t: 11,
+      n: formulaMore.Operator
+    }, {
+      t: 12,
+      n: formulaMore.Text
+    }, {
+      t: 13,
+      n: formulaMore.Parser
+    }, {
+      t: 14,
+      n: formulaMore.Array
+    }, {
+      t: -1,
+      n: formulaMore.other
+    }];
+    return __doccellsAllTypes.filter(function (__doccellsType) {
+      for (var __doccellsI = 0; __doccellsI < functionlist.length; __doccellsI += 1) {
+        if (functionlist[__doccellsI].t === __doccellsType.t) return true;
+      }
+      return false;
+    });
+  }, [formulaMore, functionlist]);`;
+
+// ---------------------------------------------------------------------------
 
 let allPatched = 0;
 for (const { file: bundle, lodash: L } of BUNDLES) {
@@ -1214,6 +1334,11 @@ for (const { file: bundle, createElement, useContextExpr, isEmptyFn, getRangeSel
       name: "selectActiveFormula auto-commit range suggestion",
       old: selectActiveFormulaCommitOld(),
       new: selectActiveFormulaCommitNew(corePrefix),
+    },
+    {
+      name: "Formula library category list hides empty categories",
+      old: FORMULA_TYPE_LIST_OLD,
+      new: FORMULA_TYPE_LIST_NEW,
     },
   ];
 
