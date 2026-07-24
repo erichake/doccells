@@ -1,4 +1,3 @@
-import ExcelJS from "exceljs";
 import saveAs from "file-saver";
 import {
   patchWorkbookWithNativeCharts,
@@ -388,6 +387,9 @@ export const exportToExcel = async (
     }))
     .filter((sheet) => sheet.customCharts.length > 0);
 
+  // Chargé à la demande : exceljs (~1 Mo minifié) ne sert qu'à l'export et
+  // resterait sinon dans le bundle initial.
+  const { default: ExcelJS } = await import("exceljs");
   const workbook = new ExcelJS.Workbook();
 
   for (let sheetIndex = 0; sheetIndex < sheetsToExport.length; sheetIndex++) {
