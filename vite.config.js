@@ -3,7 +3,10 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import SplashLogo from "./src/shared/SplashLogo.js";
-import { SPLASH_TAGLINES } from "./src/shared/splashTaglines.js";
+import {
+  SPLASH_RECOVERY_TEXTS,
+  SPLASH_TAGLINES,
+} from "./src/shared/splashTaglines.js";
 
 const padDatePart = (value) => String(value).padStart(2, "0");
 
@@ -39,6 +42,10 @@ export default defineConfig(({ mode }) => {
             .replace(
               "/*__SPLASH_TAGLINES__*/ {}",
               JSON.stringify(SPLASH_TAGLINES),
+            )
+            .replace(
+              "/*__SPLASH_RECOVERY_TEXTS__*/ {}",
+              JSON.stringify(SPLASH_RECOVERY_TEXTS),
             );
         },
       },

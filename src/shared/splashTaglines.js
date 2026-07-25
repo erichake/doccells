@@ -11,3 +11,83 @@ export const SPLASH_TAGLINES = {
   it: "Semplice. Veloce.",
   nl: "Eenvoudig. Snel.",
 };
+
+export const SPLASH_RECOVERY_TEXTS = {
+  "zh-CN": {
+    title: "找到自动保存的会话",
+    description: "DocCells 可以恢复您之前的工作。",
+    saved: "保存于 {date}",
+    restore: "恢复",
+    ignore: "忽略",
+  },
+  "zh-TW": {
+    title: "找到自動儲存的工作階段",
+    description: "DocCells 可以還原您先前的工作。",
+    saved: "儲存於 {date}",
+    restore: "還原",
+    ignore: "忽略",
+  },
+  en: {
+    title: "An autosaved session was found",
+    description: "DocCells can restore your previous work.",
+    saved: "Saved {date}",
+    restore: "Restore",
+    ignore: "Ignore",
+  },
+  "fr-FR": {
+    title: "Une session autosauvegardée a été trouvée",
+    description: "DocCells peut restaurer votre travail précédent.",
+    saved: "Enregistrée le {date}",
+    restore: "Restaurer",
+    ignore: "Ignorer",
+  },
+  "es-ES": {
+    title: "Se encontró una sesión guardada automáticamente",
+    description: "DocCells puede restaurar tu trabajo anterior.",
+    saved: "Guardada el {date}",
+    restore: "Restaurar",
+    ignore: "Ignorar",
+  },
+  hi: {
+    title: "अपने-आप सहेजा गया सत्र मिला",
+    description: "DocCells आपका पिछला काम बहाल कर सकता है।",
+    saved: "{date} को सहेजा गया",
+    restore: "बहाल करें",
+    ignore: "अनदेखा करें",
+  },
+  pt: {
+    title: "Foi encontrada uma sessão salva automaticamente",
+    description: "O DocCells pode restaurar o seu trabalho anterior.",
+    saved: "Salva em {date}",
+    restore: "Restaurar",
+    ignore: "Ignorar",
+  },
+  de: {
+    title: "Eine automatisch gespeicherte Sitzung wurde gefunden",
+    description: "DocCells kann Ihre vorherige Arbeit wiederherstellen.",
+    saved: "Gespeichert am {date}",
+    restore: "Wiederherstellen",
+    ignore: "Ignorieren",
+  },
+  el: {
+    title: "Βρέθηκε μια αυτόματα αποθηκευμένη περίοδος",
+    description: "Το DocCells μπορεί να επαναφέρει την προηγούμενη εργασία σας.",
+    saved: "Αποθηκεύτηκε στις {date}",
+    restore: "Επαναφορά",
+    ignore: "Παράβλεψη",
+  },
+  it: {
+    title: "È stata trovata una sessione salvata automaticamente",
+    description: "DocCells può ripristinare il lavoro precedente.",
+    saved: "Salvata il {date}",
+    restore: "Ripristina",
+    ignore: "Ignora",
+  },
+  nl: {
+    title: "Er is een automatisch opgeslagen sessie gevonden",
+    description: "DocCells kan uw vorige werk herstellen.",
+    saved: "Opgeslagen op {date}",
+    restore: "Herstellen",
+    ignore: "Negeren",
+  },
+};

@@ -43,6 +43,12 @@ import {
   rangeToText,
   stripConditionalFormattingMarkers,
 } from "./features/conditionalFormatting/conditionalFormattingUtils.js";
+import {
+  AUTOSAVE_DEBOUNCE_MS,
+  deleteRecoverySnapshot,
+  getRecoverySnapshot,
+  saveRecoverySnapshot,
+} from "./features/autosave/indexedDbAutosave.js";
 
 const SUPPORTED_LANGS = ["zh-CN", "zh-TW", "en", "fr-FR", "es-ES", "hi", "ru", "pt", "de", "el", "it", "nl"];
 const detectedLang =
@@ -145,6 +151,29 @@ const preserveCustomList = (liveList, previousList) => {
   return Array.isArray(liveList) ? liveList : [];
 };
 
+const isTopLevelWindow = () => {
+  try {
+    return window.self === window.top;
+  } catch {
+    return false;
+  }
+};
+
+const requestRecoveryChoice = (snapshot) =>
+  new Promise((resolve) => {
+    const handleChoice = (event) => {
+      window.removeEventListener("doccells:recovery-choice", handleChoice);
+      resolve(event.detail);
+    };
+
+    window.addEventListener("doccells:recovery-choice", handleChoice);
+    window.dispatchEvent(
+      new CustomEvent("doccells:recovery-available", {
+        detail: { savedAt: snapshot.savedAt },
+      }),
+    );
+  });
+
 // Normalise le celldata d'une feuille à partir de sa grille vivante, en
 // réutilisant le cache du passage précédent : FortuneSheet passe par immer,
 // donc une feuille (ou une ligne) inchangée garde la même référence d'objet.
@@ -200,19 +229,25 @@ const normalizeSheetCelldata = (sheet, cached) => {
       const displayValue =
         cell.f && formulaValue !== parsedValue
           ? getFormulaDisplayValue(formulaValue, cell)
-          : cell.m;
+          : (cell.m ?? getFormulaDisplayValue(formulaValue, cell));
       const updatedVF = cell.f ? { f: cell.f, v: formulaValue } : {};
       normalizedValues.set(`${r}_${c}`, formulaValue);
+
+      const normalizedCell = {
+        ...cell,
+        v: formulaValue,
+        VF: Object.keys(updatedVF).length ? updatedVF : undefined,
+      };
+      if (displayValue === undefined) {
+        delete normalizedCell.m;
+      } else {
+        normalizedCell.m = displayValue;
+      }
 
       cells.push({
         r,
         c,
-        v: {
-          ...cell,
-          v: formulaValue,
-          m: displayValue,
-          VF: Object.keys(updatedVF).length ? updatedVF : undefined,
-        },
+        v: normalizedCell,
       });
     });
     rowCache[r] = { rowRef: row, cells, hasFormula };
@@ -249,6 +284,11 @@ const App = () => {
   const formulasRef = useRef({});
   const syncingConditionalRef = useRef(false);
   const normalizeCacheRef = useRef(new Map());
+  const autosaveTimerRef = useRef(null);
+  const autosaveArmTimerRef = useRef(null);
+  const autosaveEnabledRef = useRef(false);
+  const autosaveGenerationRef = useRef(0);
+  const awaitingInitialWorkbookChangeRef = useRef(true);
 
   // Ready state for external API (docshare iframe caller)
   const isReadyRef = useRef(false);
@@ -283,6 +323,41 @@ const App = () => {
     flushPending();
   }, [flushPending]);
 
+  const scheduleAutosave = useCallback((sheets) => {
+    if (!autosaveEnabledRef.current || !Array.isArray(sheets) || sheets.length === 0) {
+      return;
+    }
+
+    const generation = autosaveGenerationRef.current;
+    window.clearTimeout(autosaveTimerRef.current);
+    autosaveTimerRef.current = window.setTimeout(async () => {
+      try {
+        await saveRecoverySnapshot(sheets);
+        if (generation !== autosaveGenerationRef.current) {
+          await deleteRecoverySnapshot();
+        }
+      } catch (error) {
+        console.warn("Autosauvegarde IndexedDB indisponible :", error);
+      }
+    }, AUTOSAVE_DEBOUNCE_MS);
+  }, []);
+
+  const markSessionClean = useCallback(async () => {
+    autosaveGenerationRef.current += 1;
+    window.clearTimeout(autosaveTimerRef.current);
+    await deleteRecoverySnapshot().catch((error) => {
+      console.warn("Impossible de supprimer l'autosauvegarde après export :", error);
+    });
+  }, []);
+
+  const armAutosaveAfterInitialization = useCallback(() => {
+    window.clearTimeout(autosaveArmTimerRef.current);
+    autosaveArmTimerRef.current = window.setTimeout(() => {
+      awaitingInitialWorkbookChangeRef.current = false;
+      autosaveEnabledRef.current = isTopLevelWindow();
+    }, 250);
+  }, []);
+
   const nextFrame = useCallback(
     () => new Promise((resolve) => requestAnimationFrame(() => resolve())),
     [],
@@ -295,6 +370,11 @@ const App = () => {
   }, []);
 
   const resetWorkbook = useCallback(async () => {
+    autosaveGenerationRef.current += 1;
+    autosaveEnabledRef.current = false;
+    awaitingInitialWorkbookChangeRef.current = true;
+    window.clearTimeout(autosaveTimerRef.current);
+    window.clearTimeout(autosaveArmTimerRef.current);
     formulasRef.current = {};
     normalizeCacheRef.current = new Map();
     isReadyRef.current = false;
@@ -309,8 +389,15 @@ const App = () => {
       sheetPrefix,
     });
 
+    autosaveGenerationRef.current += 1;
+    window.clearTimeout(autosaveTimerRef.current);
+    await deleteRecoverySnapshot().catch((error) => {
+      console.warn("Impossible de supprimer l'ancienne autosauvegarde :", error);
+    });
     formulasRef.current = formulas;
     normalizeCacheRef.current = new Map();
+    autosaveEnabledRef.current = false;
+    awaitingInitialWorkbookChangeRef.current = true;
     setSheetData(applyConditionalFormatting(sheets));
   }, []);
 
@@ -320,6 +407,14 @@ const App = () => {
       markReady();
     }
   }, [sheetData, markReady]);
+
+  useEffect(
+    () => () => {
+      window.clearTimeout(autosaveTimerRef.current);
+      window.clearTimeout(autosaveArmTimerRef.current);
+    },
+    [],
+  );
 
   useEffect(() => {
     const sanitizeNameBox = () => {
@@ -483,11 +578,12 @@ const App = () => {
     syncingConditionalRef.current = true;
     sheetDataRef.current = formatted;
     setSheetData(formatted);
+    scheduleAutosave(formatted);
     if (remount) setWorkbookKey((key) => key + 1);
     requestAnimationFrame(() => {
       syncingConditionalRef.current = false;
     });
-  }, []);
+  }, [scheduleAutosave]);
 
   const openConditionalDialog = useCallback(() => {
     const sheetIndex = getActiveSheetIndex();
@@ -634,8 +730,9 @@ const App = () => {
       };
       sheetDataRef.current = sheets;
       setSheetData(sheets);
+      scheduleAutosave(sheets);
     },
-    [chartSheetIndex, getWorkbookSheetsForCommit],
+    [chartSheetIndex, getWorkbookSheetsForCommit, scheduleAutosave],
   );
 
   const deleteChart = useCallback(
@@ -651,9 +748,10 @@ const App = () => {
       };
       sheetDataRef.current = sheets;
       setSheetData(sheets);
+      scheduleAutosave(sheets);
       setChartEditing((chart) => (chart?.id === chartId ? null : chart));
     },
-    [chartSheetIndex, getWorkbookSheetsForCommit],
+    [chartSheetIndex, getWorkbookSheetsForCommit, scheduleAutosave],
   );
 
   const updateChartPosition = useCallback(
@@ -673,8 +771,9 @@ const App = () => {
       };
       sheetDataRef.current = sheets;
       setSheetData(sheets);
+      scheduleAutosave(sheets);
     },
-    [activeSheetIndex],
+    [activeSheetIndex, scheduleAutosave],
   );
 
   const editChartFromLayer = useCallback(
@@ -771,6 +870,7 @@ const App = () => {
     chartToolbarText: chartTexts.toolbar,
     openButtonText: t.standaloneMenu?.open ?? "Open...",
     exportButtonText: t.standaloneMenu?.export ?? "Export...",
+    onExportSuccess: markSessionClean,
     toggleGridLinesText: t.toggleGridLines ?? "Show / hide gridlines",
     toggleSheetProtectionText: t.toggleSheetProtection,
     conditionalFormattingToolbarText: conditionalFormattingTexts.toolbar,
@@ -882,8 +982,31 @@ const App = () => {
       }
     }
 
-    const fileName = urlParams.get("url") || "empty.xlsx";
-    loadExcelFromURL(fileName, fileName).catch(handleLoadError);
+    const start = async () => {
+      if (isTopLevelWindow()) {
+        try {
+          const snapshot = await getRecoverySnapshot();
+          if (snapshot) {
+            const choice = await requestRecoveryChoice(snapshot);
+            if (choice === "restore") {
+              normalizeCacheRef.current = new Map();
+              autosaveEnabledRef.current = false;
+              awaitingInitialWorkbookChangeRef.current = true;
+              setSheetData(applyConditionalFormatting(snapshot.sheets));
+              return;
+            }
+            await deleteRecoverySnapshot();
+          }
+        } catch (error) {
+          console.warn("Récupération IndexedDB indisponible :", error);
+        }
+      }
+
+      const fileName = urlParams.get("url") || "empty.xlsx";
+      await loadExcelFromURL(fileName, fileName);
+    };
+
+    start().catch(handleLoadError);
   }, [loadExcelFromURL, handleLoadError]);
   const workbookHooks = useMemo(() => ({
     beforeAddSheet: (sheet) => {
@@ -981,6 +1104,11 @@ const App = () => {
         ? applyConditionalFormatting(updatedData)
         : updatedData;
       sheetDataRef.current = finalData;
+      if (awaitingInitialWorkbookChangeRef.current) {
+        armAutosaveAfterInitialization();
+      } else {
+        scheduleAutosave(finalData);
+      }
       if (
         finalData.some(
           (sheet) => (sheet.customCharts || []).length > 0,
@@ -1006,7 +1134,7 @@ const App = () => {
         "⚠️ `onChange` a capturé des données invalides, mise à jour ignorée !",
       );
     }
-  }, []);
+  }, [armAutosaveAfterInitialization, scheduleAutosave]);
 
   return sheetData.length !== 0 ? (
     <div className="dc-app-shell">
@@ -1015,15 +1143,15 @@ const App = () => {
         id="fileInput"
         style={{ display: "none" }}
         accept=".xlsx"
-        onChange={(e) => {
-          if (e.target.files.length > 0) {
-            // 🔹 Reset complet des variables liées à FortuneSheet
-            formulasRef.current = {};
-            setSheetData([]);
+        onChange={async (event) => {
+          const file = event.target.files[0];
+          if (!file) return;
 
-            requestAnimationFrame(() => {
-              loadExcelFromFile(e.target.files[0]).catch(handleLoadError);
-            });
+          await resetWorkbook();
+          try {
+            await loadExcelFromFile(file);
+          } catch (error) {
+            await handleLoadError(error);
           }
         }}
       />
@@ -1077,6 +1205,7 @@ const App = () => {
         onOpenChartDialog={openChartDialog}
         onOpenConditionalDialog={openConditionalDialog}
         onOpenCustomNumberFormatDialog={openCustomNumberFormatDialog}
+        onExportSuccess={markSessionClean}
       />
 
       <div className="dc-workbook-shell">

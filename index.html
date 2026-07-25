@@ -26,13 +26,83 @@
         transition: opacity 0.3s ease;
       }
 
-      #splash-screen svg {
+      #splash-card {
         width: 500px;
-        height: 200px;
         max-width: 90vw;
-        max-height: 60vh;
+        overflow: hidden;
+        background: #fff;
         border-radius: 8px;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      #splash-screen svg {
+        display: block;
+        width: 100%;
+        height: 200px;
+        max-height: 60vh;
+      }
+
+      #splash-recovery {
+        display: none;
+        padding: 0 30px 26px;
+        color: #202124;
+        font-family: Inter, Roboto, Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+
+      #splash-screen.splash-recovery-visible #splash-recovery {
+        display: block;
+      }
+
+      #splash-recovery-title {
+        margin: 0 0 7px;
+        font-size: 18px;
+        line-height: 1.35;
+      }
+
+      #splash-recovery-description,
+      #splash-recovery-date {
+        margin: 0;
+        color: #5f6368;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      #splash-recovery-date {
+        margin-top: 4px;
+        font-size: 12px;
+      }
+
+      #splash-recovery-actions {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      #splash-recovery-actions button {
+        min-height: 38px;
+        padding: 0 18px;
+        border: 1px solid #c7cdd4;
+        border-radius: 6px;
+        color: #30343a;
+        background: #fff;
+        font: 600 14px Inter, Roboto, Arial, Helvetica, sans-serif;
+        cursor: pointer;
+      }
+
+      #splash-recovery-actions button:hover {
+        background: #f5f7f9;
+      }
+
+      #splash-restore {
+        border-color: #1a73e8 !important;
+        color: #fff !important;
+        background: #1a73e8 !important;
+      }
+
+      #splash-restore:hover {
+        background: #1765cc !important;
       }
 
       #splash-screen.splash-hidden {
@@ -43,12 +113,24 @@
   </head>
   <body>
     <div id="root"></div>
-    <div id="splash-screen" aria-label="DocCells" role="img">
-      <!--SPLASH_LOGO-->
+    <div id="splash-screen" aria-label="DocCells" role="dialog" aria-modal="true">
+      <div id="splash-card">
+        <!--SPLASH_LOGO-->
+        <div id="splash-recovery" aria-live="polite">
+          <h1 id="splash-recovery-title"></h1>
+          <p id="splash-recovery-description"></p>
+          <p id="splash-recovery-date"></p>
+          <div id="splash-recovery-actions">
+            <button id="splash-ignore" type="button"></button>
+            <button id="splash-restore" type="button"></button>
+          </div>
+        </div>
+      </div>
     </div>
     <script>
       (function () {
         var splashTexts = /*__SPLASH_TAGLINES__*/ {};
+        var recoveryTexts = /*__SPLASH_RECOVERY_TEXTS__*/ {};
         var supportedSplashLangs = Object.keys(splashTexts);
         var browserLang = navigator.language || "en";
         var splashLang = supportedSplashLangs.includes(browserLang)
@@ -74,6 +156,37 @@
           splash.remove();
           return;
         }
+
+        window.addEventListener("doccells:recovery-available", function (event) {
+          var texts = recoveryTexts[splashLang] || recoveryTexts.en;
+          var savedAt = new Date(event.detail.savedAt);
+          var formattedDate = new Intl.DateTimeFormat(splashLang, {
+            dateStyle: "medium",
+            timeStyle: "short",
+          }).format(savedAt);
+
+          document.getElementById("splash-recovery-title").textContent = texts.title;
+          document.getElementById("splash-recovery-description").textContent =
+            texts.description;
+          document.getElementById("splash-recovery-date").textContent =
+            texts.saved.replace("{date}", formattedDate);
+          document.getElementById("splash-ignore").textContent = texts.ignore;
+          document.getElementById("splash-restore").textContent = texts.restore;
+          splash.classList.add("splash-recovery-visible");
+          document.getElementById("splash-restore").focus();
+        });
+
+        document.getElementById("splash-ignore").addEventListener("click", function () {
+          window.dispatchEvent(
+            new CustomEvent("doccells:recovery-choice", { detail: "ignore" }),
+          );
+        });
+
+        document.getElementById("splash-restore").addEventListener("click", function () {
+          window.dispatchEvent(
+            new CustomEvent("doccells:recovery-choice", { detail: "restore" }),
+          );
+        });
 
         var minDelay = new Promise(function (resolve) {
           setTimeout(resolve, 1000);

@@ -114,6 +114,7 @@ export const StandaloneMenuBar = ({
   onOpenChartDialog,
   onOpenConditionalDialog,
   onOpenCustomNumberFormatDialog,
+  onExportSuccess,
 }) => {
   const [isStandalone, setIsStandalone] = useState(isTopWindow);
   const [openMenu, setOpenMenu] = useState(null);
@@ -173,12 +174,17 @@ export const StandaloneMenuBar = ({
     };
   }, [isAboutOpen]);
 
-  const exportWorkbook = useCallback(() => {
+  const exportWorkbook = useCallback(async () => {
     const sheets = sheetDataRef.current;
     if (sheets.length > 0) {
-      exportToExcel(stripConditionalFormattingMarkers(sheets));
+      try {
+        await exportToExcel(stripConditionalFormattingMarkers(sheets));
+        await onExportSuccess?.();
+      } catch (error) {
+        console.error("❌ Échec de l'export :", error);
+      }
     }
-  }, [sheetDataRef]);
+  }, [onExportSuccess, sheetDataRef]);
 
   const isGridLinesVisible = !areGridLinesHidden(sheetDataRef.current);
   const isProtected = isWorkbookProtected(
