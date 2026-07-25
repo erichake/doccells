@@ -1,14 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import SplashLogo from "../../shared/SplashLogo.js";
-import { exportToExcel } from "../../utils/exportToExcel.js";
-import { stripConditionalFormattingMarkers } from "../conditionalFormatting/conditionalFormattingUtils.js";
 import { areGridLinesHidden, isWorkbookProtected } from "../workbook/workbookUtils.js";
 import {
   clickToolbarIcon,
   getWorkbookFreezeRange,
   getWorkbookMenuState,
-  openFilePicker,
   triggerGridLines,
   triggerFilterMenuOption,
   triggerNativeImagePicker,
@@ -114,7 +111,13 @@ export const StandaloneMenuBar = ({
   onOpenChartDialog,
   onOpenConditionalDialog,
   onOpenCustomNumberFormatDialog,
-  onExportSuccess,
+  documentName,
+  documentDirty,
+  supportsNativeFileSave,
+  onOpenDocument,
+  onSaveDocument,
+  onSaveDocumentAs,
+  onExportDocument,
 }) => {
   const [isStandalone, setIsStandalone] = useState(isTopWindow);
   const [openMenu, setOpenMenu] = useState(null);
@@ -174,24 +177,14 @@ export const StandaloneMenuBar = ({
     };
   }, [isAboutOpen]);
 
-  const exportWorkbook = useCallback(async () => {
-    const sheets = sheetDataRef.current;
-    if (sheets.length > 0) {
-      try {
-        await exportToExcel(stripConditionalFormattingMarkers(sheets));
-        await onExportSuccess?.();
-      } catch (error) {
-        console.error("❌ Échec de l'export :", error);
-      }
-    }
-  }, [onExportSuccess, sheetDataRef]);
-
   const isGridLinesVisible = !areGridLinesHidden(sheetDataRef.current);
   const isProtected = isWorkbookProtected(
     workbookRef.current?.getAllSheets?.() || sheetDataRef.current,
   );
 
   useEffect(() => {
+    if (!isStandalone) return undefined;
+
     const runShortcut = (event) => {
       if (
         event.defaultPrevented ||
@@ -206,7 +199,8 @@ export const StandaloneMenuBar = ({
       const commandByKey = {
         b: () => triggerWorkbookFormat(workbookRef, "bl"),
         i: () => triggerWorkbookFormat(workbookRef, "it"),
-        o: openFilePicker,
+        o: onOpenDocument,
+        s: supportsNativeFileSave ? onSaveDocument : onExportDocument,
         u: () => triggerWorkbookFormat(workbookRef, "un"),
         y: () => triggerWorkbookRedo(workbookRef),
         z: () =>
@@ -226,17 +220,31 @@ export const StandaloneMenuBar = ({
     return () => {
       document.removeEventListener("keydown", runShortcut, true);
     };
-  }, [runCommand, workbookRef]);
+  }, [
+    isStandalone,
+    onExportDocument,
+    onOpenDocument,
+    onSaveDocument,
+    runCommand,
+    supportsNativeFileSave,
+    workbookRef,
+  ]);
 
   const menus = useMemo(
     () => [
       {
         id: "file",
         label: texts.roots.file,
-        items: [
-          { icon: "folder", label: texts.items.open, shortcut: "⌘O", command: openFilePicker },
-          { icon: "download", label: texts.items.export, command: exportWorkbook },
-        ],
+        items: supportsNativeFileSave
+          ? [
+              { icon: "folder", label: texts.items.open, shortcut: "⌘O", command: onOpenDocument },
+              { icon: "download", label: texts.items.save, shortcut: "⌘S", command: onSaveDocument },
+              { icon: "download", label: texts.items.saveAs, command: onSaveDocumentAs },
+            ]
+          : [
+              { icon: "folder", label: texts.items.open, shortcut: "⌘O", command: onOpenDocument },
+              { icon: "download", label: texts.items.export, command: onExportDocument },
+            ],
       },
       {
         id: "edit",
@@ -491,13 +499,17 @@ export const StandaloneMenuBar = ({
     ],
     [
       appMode,
-      exportWorkbook,
       isGridLinesVisible,
       isProtected,
       menuState,
       onOpenChartDialog,
       onOpenConditionalDialog,
       onOpenCustomNumberFormatDialog,
+      onExportDocument,
+      onOpenDocument,
+      onSaveDocument,
+      onSaveDocumentAs,
+      supportsNativeFileSave,
       texts,
       workbookRef,
     ],
@@ -543,6 +555,18 @@ export const StandaloneMenuBar = ({
           ) : null}
         </div>
       ))}
+
+      <div
+        className={`dc-document-identity${documentDirty ? " dc-document-dirty" : ""}`}
+        title={
+          documentDirty
+            ? `${documentName} — ${texts.items.unsavedChanges}`
+            : documentName
+        }
+      >
+        <span className="dc-document-name">{documentName}</span>
+        {documentDirty ? <span className="dc-document-dirty-dot" aria-hidden="true" /> : null}
+      </div>
 
       {isAboutOpen ? (
         <div

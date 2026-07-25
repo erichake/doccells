@@ -188,7 +188,7 @@ export const getRecoverySnapshot = async () => {
   };
 };
 
-export const saveRecoverySnapshot = (sheets) => {
+export const saveRecoverySnapshot = (sheets, { documentName } = {}) => {
   if (!Array.isArray(sheets) || sheets.length === 0) {
     return Promise.resolve();
   }
@@ -202,6 +202,7 @@ export const saveRecoverySnapshot = (sheets) => {
       {
         version: 1,
         savedAt: Date.now(),
+        documentName,
         sheets: prepareSheetsForRecovery(sheets),
       },
       SNAPSHOT_KEY,

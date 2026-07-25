@@ -1,6 +1,4 @@
 import { useCallback, useEffect } from "react";
-import { exportToExcel } from "../../utils/exportToExcel.js";
-import { stripConditionalFormattingMarkers } from "../conditionalFormatting/conditionalFormattingUtils.js";
 import {
   areGridLinesHidden,
   dataToCelldata,
@@ -60,7 +58,8 @@ export const useFortuneToolbarButtons = ({
   chartToolbarText,
   openButtonText,
   exportButtonText,
-  onExportSuccess,
+  onOpenDocument,
+  onPrimaryFileAction,
   toggleGridLinesText,
   toggleSheetProtectionText,
   conditionalFormattingToolbarText,
@@ -137,7 +136,7 @@ export const useFortuneToolbarButtons = ({
 </svg>
 <div class="fortune-tooltip">${openButtonText}</div>`;
     openButton.addEventListener("click", () => {
-      document.getElementById("fileInput").click();
+      onOpenDocument();
     });
 
     toolbar.insertBefore(openButton, toolbar.firstChild);
@@ -149,16 +148,9 @@ export const useFortuneToolbarButtons = ({
     exportButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#000000" fill="none"><path d="M51,53.48H10.52V13A2.48,2.48,0,0,1,13,10.52H46.07l7.41,6.4V51A2.48,2.48,0,0,1,51,53.48Z" stroke-linecap="round"/><rect x="21.5" y="10.52" width="21.01" height="15.5" stroke-linecap="round"/><rect x="17.86" y="36.46" width="28.28" height="17.02" stroke-linecap="round"/></svg>
     <div class="fortune-tooltip">${exportButtonText}</div>`;
 
-    exportButton.addEventListener("click", async () => {
+    exportButton.addEventListener("click", () => {
       if (sheetDataRef.current.length > 0) {
-        try {
-          await exportToExcel(
-            stripConditionalFormattingMarkers(sheetDataRef.current),
-          );
-          await onExportSuccess?.();
-        } catch (error) {
-          console.error("❌ Échec de l'export :", error);
-        }
+        onPrimaryFileAction();
       } else {
         console.error("❌ Aucune donnée à exporter !");
       }
@@ -312,7 +304,8 @@ export const useFortuneToolbarButtons = ({
     chartToolbarText,
     openButtonText,
     exportButtonText,
-    onExportSuccess,
+    onOpenDocument,
+    onPrimaryFileAction,
     conditionalFormattingToolbarText,
     openChartDialog,
     openConditionalDialog,

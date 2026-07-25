@@ -259,6 +259,10 @@ const normalizeSheetCelldata = (sheet, cached) => {
 
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
+  const [documentName, setDocumentName] = useState(
+    standaloneMenuTexts.items.untitled,
+  );
+  const [documentDirty, setDocumentDirty] = useState(false);
   const [appMode, setAppMode] = useState("teacher");
   const [workbookKey, setWorkbookKey] = useState(0);
   const [conditionalDialogOpen, setConditionalDialogOpen] = useState(false);
@@ -289,11 +293,17 @@ const App = () => {
   const autosaveEnabledRef = useRef(false);
   const autosaveGenerationRef = useRef(0);
   const awaitingInitialWorkbookChangeRef = useRef(true);
+  const documentNameRef = useRef(standaloneMenuTexts.items.untitled);
+  const fileHandleRef = useRef(null);
 
   // Ready state for external API (docshare iframe caller)
   const isReadyRef = useRef(false);
   const pendingRef = useRef([]);
   const opQueueRef = useRef(Promise.resolve());
+  const supportsNativeFileSave =
+    isTopLevelWindow() &&
+    typeof window.showOpenFilePicker === "function" &&
+    typeof window.showSaveFilePicker === "function";
 
   const flushPending = useCallback(() => {
     const queue = pendingRef.current.splice(0);
@@ -329,10 +339,13 @@ const App = () => {
     }
 
     const generation = autosaveGenerationRef.current;
+    setDocumentDirty(true);
     window.clearTimeout(autosaveTimerRef.current);
     autosaveTimerRef.current = window.setTimeout(async () => {
       try {
-        await saveRecoverySnapshot(sheets);
+        await saveRecoverySnapshot(sheets, {
+          documentName: documentNameRef.current,
+        });
         if (generation !== autosaveGenerationRef.current) {
           await deleteRecoverySnapshot();
         }
@@ -345,9 +358,18 @@ const App = () => {
   const markSessionClean = useCallback(async () => {
     autosaveGenerationRef.current += 1;
     window.clearTimeout(autosaveTimerRef.current);
+    setDocumentDirty(false);
     await deleteRecoverySnapshot().catch((error) => {
       console.warn("Impossible de supprimer l'autosauvegarde après export :", error);
     });
+  }, []);
+
+  const updateDocumentIdentity = useCallback((name, handle = null) => {
+    const nextName = name || standaloneMenuTexts.items.untitled;
+    documentNameRef.current = nextName;
+    fileHandleRef.current = handle;
+    setDocumentName(nextName);
+    setDocumentDirty(false);
   }, []);
 
   const armAutosaveAfterInitialization = useCallback(() => {
@@ -417,6 +439,11 @@ const App = () => {
   );
 
   useEffect(() => {
+    if (!isTopLevelWindow()) return;
+    document.title = `${documentDirty ? "● " : ""}${documentName} — DocCells`;
+  }, [documentDirty, documentName]);
+
+  useEffect(() => {
     const sanitizeNameBox = () => {
       document.querySelectorAll(".fortune-name-box").forEach((box) => {
         const text = box.textContent || "";
@@ -459,6 +486,135 @@ const App = () => {
     },
     [handleExcelLoad],
   );
+
+  const loadDocumentFromFile = useCallback(
+    async (file, handle = null) => {
+      await resetWorkbook();
+      await loadExcelFromFile(file);
+      updateDocumentIdentity(file.name, handle);
+    },
+    [loadExcelFromFile, resetWorkbook, updateDocumentIdentity],
+  );
+
+  const openDocument = useCallback(async () => {
+    if (!isTopLevelWindow()) return;
+
+    if (!supportsNativeFileSave) {
+      document.getElementById("fileInput")?.click();
+      return;
+    }
+
+    try {
+      const [handle] = await window.showOpenFilePicker({
+        multiple: false,
+        types: [
+          {
+            description: "Excel workbook",
+            accept: {
+              "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [
+                ".xlsx",
+              ],
+            },
+          },
+        ],
+      });
+      if (!handle) return;
+      await loadDocumentFromFile(await handle.getFile(), handle);
+    } catch (error) {
+      if (error?.name !== "AbortError") {
+        console.error("❌ Impossible d'ouvrir ce fichier :", error);
+        alert(`Impossible d'ouvrir ce fichier.\n${error?.message || String(error)}`);
+      }
+    }
+  }, [loadDocumentFromFile, supportsNativeFileSave]);
+
+  const getSuggestedFileName = useCallback(() => {
+    const name = documentNameRef.current || standaloneMenuTexts.items.untitled;
+    return name.toLowerCase().endsWith(".xlsx") ? name : `${name}.xlsx`;
+  }, []);
+
+  const writeDocumentToHandle = useCallback(
+    async (handle) => {
+      const permission = await handle.queryPermission?.({ mode: "readwrite" });
+      if (
+        permission !== "granted" &&
+        (await handle.requestPermission?.({ mode: "readwrite" })) !== "granted"
+      ) {
+        throw new DOMException("Write permission was not granted.", "NotAllowedError");
+      }
+
+      const blob = await exportToExcel(
+        stripConditionalFormattingMarkers(sheetDataRef.current),
+        { returnBlob: true },
+      );
+      const writable = await handle.createWritable();
+      await writable.write(blob);
+      await writable.close();
+
+      updateDocumentIdentity(handle.name, handle);
+      await markSessionClean();
+    },
+    [markSessionClean, updateDocumentIdentity],
+  );
+
+  const saveDocumentAs = useCallback(async () => {
+    if (!supportsNativeFileSave || !isTopLevelWindow()) return;
+
+    try {
+      // Le picker doit précéder la génération asynchrone du classeur afin de
+      // conserver l'activation utilisateur exigée par le navigateur.
+      const handle = await window.showSaveFilePicker({
+        suggestedName: getSuggestedFileName(),
+        types: [
+          {
+            description: "Excel workbook",
+            accept: {
+              "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [
+                ".xlsx",
+              ],
+            },
+          },
+        ],
+      });
+      if (handle) await writeDocumentToHandle(handle);
+    } catch (error) {
+      if (error?.name !== "AbortError") {
+        console.error("❌ Échec de l'enregistrement :", error);
+      }
+    }
+  }, [getSuggestedFileName, supportsNativeFileSave, writeDocumentToHandle]);
+
+  const saveDocument = useCallback(async () => {
+    if (!supportsNativeFileSave || !isTopLevelWindow()) return;
+    if (!fileHandleRef.current) {
+      await saveDocumentAs();
+      return;
+    }
+
+    try {
+      await writeDocumentToHandle(fileHandleRef.current);
+    } catch (error) {
+      if (error?.name === "NotAllowedError") {
+        await saveDocumentAs();
+      } else if (error?.name !== "AbortError") {
+        console.error("❌ Échec de l'enregistrement :", error);
+      }
+    }
+  }, [saveDocumentAs, supportsNativeFileSave, writeDocumentToHandle]);
+
+  const exportDocument = useCallback(async () => {
+    if (!isTopLevelWindow() || sheetDataRef.current.length === 0) return;
+
+    try {
+      await exportToExcel(
+        stripConditionalFormattingMarkers(sheetDataRef.current),
+        { fileName: getSuggestedFileName() },
+      );
+      await markSessionClean();
+    } catch (error) {
+      console.error("❌ Échec de l'export :", error);
+    }
+  }, [getSuggestedFileName, markSessionClean]);
 
   const loadFallback = useCallback(async () => {
     try {
@@ -823,6 +979,7 @@ const App = () => {
         } catch (error) {
           await handleLoadError(error);
         }
+        updateDocumentIdentity(fileName);
         await waitUntilReady();
       });
 
@@ -831,6 +988,7 @@ const App = () => {
     window.setSheetData = (data) =>
       enqueueOp(async () => {
         await resetWorkbook();
+        updateDocumentIdentity(standaloneMenuTexts.items.untitled);
         setSheetData(typeof data === "string" ? JSON.parse(data) : data);
         await waitUntilReady();
       });
@@ -854,6 +1012,7 @@ const App = () => {
     loadExcelFromFile,
     loadExcelFromURL,
     resetWorkbook,
+    updateDocumentIdentity,
     waitUntilReady,
   ]);
 
@@ -869,8 +1028,13 @@ const App = () => {
     openCustomNumberFormatDialog,
     chartToolbarText: chartTexts.toolbar,
     openButtonText: t.standaloneMenu?.open ?? "Open...",
-    exportButtonText: t.standaloneMenu?.export ?? "Export...",
-    onExportSuccess: markSessionClean,
+    exportButtonText: supportsNativeFileSave
+      ? standaloneMenuTexts.items.save
+      : (t.standaloneMenu?.export ?? "Export..."),
+    onOpenDocument: openDocument,
+    onPrimaryFileAction: supportsNativeFileSave
+      ? saveDocument
+      : exportDocument,
     toggleGridLinesText: t.toggleGridLines ?? "Show / hide gridlines",
     toggleSheetProtectionText: t.toggleSheetProtection,
     conditionalFormattingToolbarText: conditionalFormattingTexts.toolbar,
@@ -992,6 +1156,12 @@ const App = () => {
               normalizeCacheRef.current = new Map();
               autosaveEnabledRef.current = false;
               awaitingInitialWorkbookChangeRef.current = true;
+              const restoredName =
+                snapshot.documentName || standaloneMenuTexts.items.untitled;
+              documentNameRef.current = restoredName;
+              fileHandleRef.current = null;
+              setDocumentName(restoredName);
+              setDocumentDirty(true);
               setSheetData(applyConditionalFormatting(snapshot.sheets));
               return;
             }
@@ -1004,10 +1174,15 @@ const App = () => {
 
       const fileName = urlParams.get("url") || "empty.xlsx";
       await loadExcelFromURL(fileName, fileName);
+      updateDocumentIdentity(
+        fileName === "empty.xlsx"
+          ? standaloneMenuTexts.items.untitled
+          : fileName.split("/").pop(),
+      );
     };
 
     start().catch(handleLoadError);
-  }, [loadExcelFromURL, handleLoadError]);
+  }, [loadExcelFromURL, handleLoadError, updateDocumentIdentity]);
   const workbookHooks = useMemo(() => ({
     beforeAddSheet: (sheet) => {
       sheet.showGridLines = getWorkbookGridLinesPreference(sheetDataRef.current);
@@ -1147,9 +1322,8 @@ const App = () => {
           const file = event.target.files[0];
           if (!file) return;
 
-          await resetWorkbook();
           try {
-            await loadExcelFromFile(file);
+            await loadDocumentFromFile(file);
           } catch (error) {
             await handleLoadError(error);
           }
@@ -1205,7 +1379,13 @@ const App = () => {
         onOpenChartDialog={openChartDialog}
         onOpenConditionalDialog={openConditionalDialog}
         onOpenCustomNumberFormatDialog={openCustomNumberFormatDialog}
-        onExportSuccess={markSessionClean}
+        documentName={documentName}
+        documentDirty={documentDirty}
+        supportsNativeFileSave={supportsNativeFileSave}
+        onOpenDocument={openDocument}
+        onSaveDocument={saveDocument}
+        onSaveDocumentAs={saveDocumentAs}
+        onExportDocument={exportDocument}
       />
 
       <div className="dc-workbook-shell">

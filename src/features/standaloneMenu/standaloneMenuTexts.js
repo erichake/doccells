@@ -11,11 +11,30 @@ const FALLBACK_TEXTS = {
   tools: "Tools",
   open: "Open",
   export: "Export",
+  save: "Save",
+  saveAs: "Save as...",
+  untitled: "Untitled",
+  unsavedChanges: "Unsaved changes",
   show: "Show",
   gridlines: "Gridlines",
   about: "About...",
   splashTagline: SPLASH_TAGLINES.en,
   licenseGithub: "License & GitHub",
+};
+
+const TRANSLATED_DOCUMENT = {
+  "zh-CN": { save: "保存", saveAs: "另存为...", untitled: "无标题", unsavedChanges: "未保存的更改" },
+  "zh-TW": { save: "儲存", saveAs: "另存新檔...", untitled: "未命名", unsavedChanges: "未儲存的變更" },
+  en: { save: "Save", saveAs: "Save as...", untitled: "Untitled", unsavedChanges: "Unsaved changes" },
+  "fr-FR": { save: "Enregistrer", saveAs: "Enregistrer sous...", untitled: "Sans titre", unsavedChanges: "Modifications non enregistrées" },
+  "es-ES": { save: "Guardar", saveAs: "Guardar como...", untitled: "Sin título", unsavedChanges: "Cambios sin guardar" },
+  hi: { save: "सहेजें", saveAs: "इस रूप में सहेजें...", untitled: "शीर्षकहीन", unsavedChanges: "सहेजे नहीं गए बदलाव" },
+  ru: { save: "Сохранить", saveAs: "Сохранить как...", untitled: "Без названия", unsavedChanges: "Несохранённые изменения" },
+  pt: { save: "Guardar", saveAs: "Guardar como...", untitled: "Sem título", unsavedChanges: "Alterações não guardadas" },
+  de: { save: "Speichern", saveAs: "Speichern unter...", untitled: "Unbenannt", unsavedChanges: "Nicht gespeicherte Änderungen" },
+  el: { save: "Αποθήκευση", saveAs: "Αποθήκευση ως...", untitled: "Χωρίς τίτλο", unsavedChanges: "Μη αποθηκευμένες αλλαγές" },
+  it: { save: "Salva", saveAs: "Salva con nome...", untitled: "Senza titolo", unsavedChanges: "Modifiche non salvate" },
+  nl: { save: "Opslaan", saveAs: "Opslaan als...", untitled: "Naamloos", unsavedChanges: "Niet-opgeslagen wijzigingen" },
 };
 
 const TRANSLATED_ABOUT = {
@@ -105,6 +124,8 @@ export const getStandaloneMenuTexts = (appTexts, lang, currency = "$") => {
     TRANSLATED_LICENSE_LINK[lang] || TRANSLATED_LICENSE_LINK.en;
   const formatMenu =
     TRANSLATED_FORMAT_MENU[lang] || TRANSLATED_FORMAT_MENU.en;
+  const documentTexts =
+    TRANSLATED_DOCUMENT[lang] || TRANSLATED_DOCUMENT.en;
 
   return {
     menuBarLabel: pick(custom.menuBarLabel, FALLBACK_TEXTS.menuBarLabel),
@@ -120,6 +141,14 @@ export const getStandaloneMenuTexts = (appTexts, lang, currency = "$") => {
     items: {
       open: pick(custom.open, FALLBACK_TEXTS.open),
       export: pick(custom.export, FALLBACK_TEXTS.export),
+      save: pick(custom.save, documentTexts.save, FALLBACK_TEXTS.save),
+      saveAs: pick(custom.saveAs, documentTexts.saveAs, FALLBACK_TEXTS.saveAs),
+      untitled: pick(custom.untitled, documentTexts.untitled, FALLBACK_TEXTS.untitled),
+      unsavedChanges: pick(
+        custom.unsavedChanges,
+        documentTexts.unsavedChanges,
+        FALLBACK_TEXTS.unsavedChanges,
+      ),
       undo: pick(toolbar.undo, "Undo"),
       redo: pick(toolbar.redo, "Redo"),
       clearFormat: pick(toolbar["clear-format"], formatMenu.clearFormat),

@@ -35,6 +35,37 @@
   display: flex;
 }
 
+.dc-document-identity {
+  display: flex;
+  min-width: 0;
+  max-width: min(38vw, 420px);
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 0 10px 0 18px;
+  color: #5f6368;
+  font-size: 13px;
+}
+
+.dc-document-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dc-document-dirty {
+  color: #202124;
+  font-weight: 500;
+}
+
+.dc-document-dirty-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  background: #d93025;
+  border-radius: 50%;
+}
+
 .dc-menu-root-button {
   min-width: 0;
   min-height: 36px;

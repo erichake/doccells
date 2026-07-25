@@ -6,7 +6,11 @@ import { DOCCELLS_METADATA_SHEET_NAME } from "../features/charts/chartUtils.js";
 
 export const exportToExcel = async (
   sheetsData,
-  { returnBase64 = false } = {},
+  {
+    fileName = "export.xlsx",
+    returnBase64 = false,
+    returnBlob = false,
+  } = {},
 ) => {
   const convertColor = (hex) => {
     if (!hex || !hex.startsWith("#")) return undefined;
@@ -702,10 +706,9 @@ export const exportToExcel = async (
       binary += String.fromCharCode(bytes[i]);
     return btoa(binary);
   }
-  saveAs(
-    new Blob([finalBuffer], {
-      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    }),
-    "export.xlsx",
-  );
+  const blob = new Blob([finalBuffer], {
+    type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  });
+  if (returnBlob) return blob;
+  saveAs(blob, fileName);
 };
