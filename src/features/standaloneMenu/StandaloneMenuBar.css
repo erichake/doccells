@@ -18,7 +18,7 @@
 
 .dc-menu-bar {
   position: relative;
-  z-index: 35;
+  z-index: 9000;
   display: flex;
   align-items: stretch;
   min-height: 36px;
