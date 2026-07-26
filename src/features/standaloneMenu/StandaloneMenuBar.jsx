@@ -556,17 +556,19 @@ export const StandaloneMenuBar = ({
         </div>
       ))}
 
-      <div
-        className={`dc-document-identity${documentDirty ? " dc-document-dirty" : ""}`}
-        title={
-          documentDirty
-            ? `${documentName} — ${texts.items.unsavedChanges}`
-            : documentName
-        }
-      >
-        <span className="dc-document-name">{documentName}</span>
-        {documentDirty ? <span className="dc-document-dirty-dot" aria-hidden="true" /> : null}
-      </div>
+      {supportsNativeFileSave ? (
+        <div
+          className={`dc-document-identity${documentDirty ? " dc-document-dirty" : ""}`}
+          title={
+            documentDirty
+              ? `${documentName} — ${texts.items.unsavedChanges}`
+              : documentName
+          }
+        >
+          <span className="dc-document-name">{documentName}</span>
+          {documentDirty ? <span className="dc-document-dirty-dot" aria-hidden="true" /> : null}
+        </div>
+      ) : null}
 
       {isAboutOpen ? (
         <div

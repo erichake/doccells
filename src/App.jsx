@@ -440,8 +440,10 @@ const App = () => {
 
   useEffect(() => {
     if (!isTopLevelWindow()) return;
-    document.title = `${documentDirty ? "● " : ""}${documentName} — DocCells`;
-  }, [documentDirty, documentName]);
+    document.title = supportsNativeFileSave
+      ? `${documentDirty ? "● " : ""}${documentName} — DocCells`
+      : "DocCells";
+  }, [documentDirty, documentName, supportsNativeFileSave]);
 
   useEffect(() => {
     const sanitizeNameBox = () => {
