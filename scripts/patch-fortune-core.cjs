@@ -513,6 +513,23 @@ const NEW10 = `                    var _cell$ct;
                       cell.m = mask[0].toString();
                     }`;
 
+// Patch 11: consecutive fill-handle drags must translate formulas from the
+// actual source cell being repeated, not merely by the destination's offset
+// inside the new apply range. For example, after B3:B7 has been produced from
+// =B2+1, extending that selection must make B8 reference B7. Upstream cycles
+// back to B3 and shifts it by only one row, incorrectly producing =B3+1.
+const OLD11_DOWN = `var f = "=".concat(functionCopy(ctx, cell.f, "down", j - apply_str_r + 1));`;
+const NEW11_DOWN = `var f = "=".concat(functionCopy(ctx, cell.f, "down", j - (copy_str_r + (j - apply_str_r) % csLen)));`;
+
+const OLD11_UP = `var _f = "=".concat(functionCopy(ctx, _cell.f, "up", apply_end_r - _j + 1));`;
+const NEW11_UP = `var _f = "=".concat(functionCopy(ctx, _cell.f, "up", (copy_end_r - (apply_end_r - _j) % csLen) - _j));`;
+
+const OLD11_RIGHT = `var _f2 = "=".concat(functionCopy(ctx, _cell2.f, "right", _j2 - apply_str_c + 1));`;
+const NEW11_RIGHT = `var _f2 = "=".concat(functionCopy(ctx, _cell2.f, "right", _j2 - (copy_str_c + (_j2 - apply_str_c) % csLen)));`;
+
+const OLD11_LEFT = `var _f3 = "=".concat(functionCopy(ctx, _cell3.f, "left", apply_end_c - _j3 + 1));`;
+const NEW11_LEFT = `var _f3 = "=".concat(functionCopy(ctx, _cell3.f, "left", (copy_end_c - (apply_end_c - _j3) % csLen) - _j3));`;
+
 // Groups: each group has variants, exactly one must match per bundle
 const PATCH_GROUPS = [
   { name: "single-cell header fix",    variants: [{ old: OLD1, new: NEW1 }] },
@@ -537,6 +554,10 @@ const PATCH_GROUPS = [
   { name: "Excel-compatible date formulas", variants: [{ old: OLD8_ESM, new: NEW8_ESM }, { old: OLD8_CJS, new: NEW8_CJS }] },
   { name: "Date formula serial values", variants: [{ old: OLD9_ESM, new: NEW9_ESM }, { old: OLD9_CJS, new: NEW9_CJS }] },
   { name: "fill-handle down keeps number format", variants: [{ old: OLD10, new: NEW10 }] },
+  { name: "fill-handle down formula source offset", variants: [{ old: OLD11_DOWN, new: NEW11_DOWN }] },
+  { name: "fill-handle up formula source offset", variants: [{ old: OLD11_UP, new: NEW11_UP }] },
+  { name: "fill-handle right formula source offset", variants: [{ old: OLD11_RIGHT, new: NEW11_RIGHT }] },
+  { name: "fill-handle left formula source offset", variants: [{ old: OLD11_LEFT, new: NEW11_LEFT }] },
 ];
 
 let allPatched = 0;

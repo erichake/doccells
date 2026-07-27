@@ -3,6 +3,11 @@
  *
  * Patch 1: filter value list — remove parentheses from the count badge
  *   Before: "( 3 )"  →  After: "3"  (styled as a pill in App.css)
+ *
+ * Patch 7: fill handle — prevent the browser's native drag operation from
+ * competing with FortuneSheet's mouse-driven autofill. This especially
+ * affected a second consecutive drag after the first fill had enlarged the
+ * selection, showing a native drag cursor and blocking the autofill.
  */
 
 const fs = require("fs");
@@ -137,6 +142,37 @@ const NEW6_CJS = `  return /*#__PURE__*/React__default['default'].createElement(
     className: "inpbox"
   }, /*#__PURE__*/React__default['default'].createElement("div", null, formulaMore.findFunctionTitle, "\\uFF1A"),`;
 
+const OLD7 = `      className: "luckysheet-cs-fillhandle",
+      onMouseDown: function onMouseDown(e) {
+        var nativeEvent = e.nativeEvent;
+        setContext(function (draftContext) {
+          createDropCellRange(draftContext, nativeEvent, containerRef.current);
+        });
+        e.stopPropagation();
+      }
+    }),`;
+
+const NEW7 = `      className: "luckysheet-cs-fillhandle",
+      onMouseDown: function onMouseDown(e) {
+        e.preventDefault();
+        var nativeEvent = e.nativeEvent;
+        setContext(function (draftContext) {
+          createDropCellRange(draftContext, nativeEvent, containerRef.current);
+        });
+        e.stopPropagation();
+      }
+    }),`;
+
+const OLD7_CJS = OLD7.replace(
+  "createDropCellRange(draftContext, nativeEvent, containerRef.current);",
+  "core.createDropCellRange(draftContext, nativeEvent, containerRef.current);",
+);
+
+const NEW7_CJS = NEW7.replace(
+  "createDropCellRange(draftContext, nativeEvent, containerRef.current);",
+  "core.createDropCellRange(draftContext, nativeEvent, containerRef.current);",
+);
+
 const PATCH_GROUPS = [
   { name: "SelectItem count parens fix",      variants: [{ old: OLD1, new: NEW1 }] },
   { name: "DateSelectTreeItem count parens fix", variants: [{ old: OLD2, new: NEW2 }] },
@@ -152,6 +188,10 @@ const PATCH_GROUPS = [
   {
     name: "Localized formula dialog title",
     variants: [{ old: OLD6, new: NEW6 }, { old: OLD6_CJS, new: NEW6_CJS }],
+  },
+  {
+    name: "Fill handle native drag guard",
+    variants: [{ old: OLD7, new: NEW7 }, { old: OLD7_CJS, new: NEW7_CJS }],
   },
 ];
 
