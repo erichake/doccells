@@ -20,6 +20,10 @@ const FALLBACK_TEXTS = {
   about: "About...",
   splashTagline: SPLASH_TAGLINES.en,
   licenseGithub: "License & GitHub",
+  docToolsTitle: "DocCells is part of DocTools",
+  docToolsDescription:
+    "DocCells is the spreadsheet in DocTools, a platform for remediation, assessment and document sharing",
+  discoverDocTools: "Discover DocTools",
 };
 
 const TRANSLATED_DOCUMENT = {
@@ -80,6 +84,81 @@ const TRANSLATED_LICENSE_LINK = {
   nl: "Licentie & GitHub",
 };
 
+const TRANSLATED_DOCTOOLS = {
+  "zh-CN": {
+    title: "DocCells 是 DocTools 的一部分",
+    description:
+      "DocCells 是 DocTools 的电子表格工具，DocTools 是一个用于补救教学、评估和文档共享的平台",
+    discover: "探索 DocTools",
+  },
+  "zh-TW": {
+    title: "DocCells 是 DocTools 的一部分",
+    description:
+      "DocCells 是 DocTools 的試算表工具，DocTools 是一個用於補救教學、評量和文件分享的平台",
+    discover: "探索 DocTools",
+  },
+  en: {
+    title: "DocCells is part of DocTools",
+    description:
+      "DocCells is the spreadsheet in DocTools, a platform for remediation, assessment and document sharing",
+    discover: "Discover DocTools",
+  },
+  "fr-FR": {
+    title: "DocCells fait partie de DocTools",
+    description:
+      "DocCells est le tableur de DocTools, une plateforme de remédiation, d'évaluation et de partage de documents",
+    discover: "Découvrir DocTools",
+  },
+  "es-ES": {
+    title: "DocCells forma parte de DocTools",
+    description:
+      "DocCells es la hoja de cálculo de DocTools, una plataforma de refuerzo, evaluación y uso compartido de documentos",
+    discover: "Descubrir DocTools",
+  },
+  hi: {
+    title: "DocCells, DocTools का हिस्सा है",
+    description:
+      "DocCells, DocTools का स्प्रेडशीट है, जो सुधारात्मक शिक्षण, मूल्यांकन और दस्तावेज़ साझा करने का एक मंच है",
+    discover: "DocTools के बारे में जानें",
+  },
+  ru: {
+    title: "DocCells является частью DocTools",
+    description:
+      "DocCells — это электронная таблица DocTools, платформы для коррекционного обучения, оценивания и обмена документами",
+    discover: "Познакомиться с DocTools",
+  },
+  pt: {
+    title: "O DocCells faz parte do DocTools",
+    description:
+      "O DocCells é a folha de cálculo do DocTools, uma plataforma de remediação, avaliação e partilha de documentos",
+    discover: "Descobrir o DocTools",
+  },
+  de: {
+    title: "DocCells ist Teil von DocTools",
+    description:
+      "DocCells ist die Tabellenkalkulation von DocTools, einer Plattform für Förderung, Bewertung und den Austausch von Dokumenten",
+    discover: "DocTools entdecken",
+  },
+  el: {
+    title: "Το DocCells αποτελεί μέρος του DocTools",
+    description:
+      "Το DocCells είναι το υπολογιστικό φύλλο του DocTools, μιας πλατφόρμας για ενισχυτική διδασκαλία, αξιολόγηση και κοινή χρήση εγγράφων",
+    discover: "Ανακαλύψτε το DocTools",
+  },
+  it: {
+    title: "DocCells fa parte di DocTools",
+    description:
+      "DocCells è il foglio di calcolo di DocTools, una piattaforma per il recupero, la valutazione e la condivisione di documenti",
+    discover: "Scopri DocTools",
+  },
+  nl: {
+    title: "DocCells maakt deel uit van DocTools",
+    description:
+      "DocCells is het rekenblad van DocTools, een platform voor remediëring, evaluatie en het delen van documenten",
+    discover: "DocTools ontdekken",
+  },
+};
+
 const stripShortcutHint = (text) =>
   typeof text === "string" ? text.replace(/\s*\([^)]*\)\s*$/, "") : text;
 
@@ -126,6 +205,8 @@ export const getStandaloneMenuTexts = (appTexts, lang, currency = "$") => {
     TRANSLATED_FORMAT_MENU[lang] || TRANSLATED_FORMAT_MENU.en;
   const documentTexts =
     TRANSLATED_DOCUMENT[lang] || TRANSLATED_DOCUMENT.en;
+  const docToolsTexts =
+    TRANSLATED_DOCTOOLS[lang] || TRANSLATED_DOCTOOLS.en;
 
   return {
     menuBarLabel: pick(custom.menuBarLabel, FALLBACK_TEXTS.menuBarLabel),
@@ -256,6 +337,21 @@ export const getStandaloneMenuTexts = (appTexts, lang, currency = "$") => {
         custom.licenseGithub,
         licenseLink,
         FALLBACK_TEXTS.licenseGithub,
+      ),
+      docToolsTitle: pick(
+        custom.docToolsTitle,
+        docToolsTexts.title,
+        FALLBACK_TEXTS.docToolsTitle,
+      ),
+      docToolsDescription: pick(
+        custom.docToolsDescription,
+        docToolsTexts.description,
+        FALLBACK_TEXTS.docToolsDescription,
+      ),
+      discoverDocTools: pick(
+        custom.discoverDocTools,
+        docToolsTexts.discover,
+        FALLBACK_TEXTS.discoverDocTools,
       ),
     },
     numberFormats,

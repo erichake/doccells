@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import docToolsFavicon from "../../assets/doctools-favicon.png";
 import SplashLogo from "../../shared/SplashLogo.js";
 import { areGridLinesHidden, isWorkbookProtected } from "../workbook/workbookUtils.js";
 import {
@@ -50,6 +51,11 @@ const isEditableTarget = (target) => {
 
 const isPrimaryShortcut = (event) =>
   (event.metaKey || event.ctrlKey) && !event.altKey;
+
+const openExternalPage = (url) => {
+  const openedWindow = window.open(url, "_blank", "noopener,noreferrer");
+  if (openedWindow) openedWindow.opener = null;
+};
 
 const Icon = ({ name, checked }) => (
   <span className="dc-menu-icon" aria-hidden="true">
@@ -490,6 +496,18 @@ export const StandaloneMenuBar = ({
           },
           "divider",
           {
+            icon: "docTools",
+            label: "DocTools",
+            command: () => openExternalPage("https://doctools.org"),
+          },
+          {
+            icon: "licenseGithub",
+            label: texts.items.licenseGithub,
+            command: () =>
+              openExternalPage("https://github.com/erichake/doccells"),
+          },
+          "divider",
+          {
             icon: "info",
             label: texts.items.about,
             command: () => setIsAboutOpen(true),
@@ -587,14 +605,32 @@ export const StandaloneMenuBar = ({
               tagline={texts.items.splashTagline}
               version={`version ${buildVersion}`}
             />
-            <a
-              className="dc-about-license-link"
-              href="https://github.com/erichake/doccells"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {texts.items.licenseGithub}
-            </a>
+            <div className="dc-about-doctools">
+              <strong className="dc-about-doctools-title">
+                {texts.items.docToolsTitle}
+              </strong>
+              <p className="dc-about-doctools-description">
+                {texts.items.docToolsDescription}
+              </p>
+              <a
+                className="dc-about-doctools-link"
+                href="https://doctools.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {texts.items.discoverDocTools}
+              </a>
+            </div>
+            <div className="dc-about-footer">
+              <a
+                className="dc-about-license-link"
+                href="https://github.com/erichake/doccells"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {texts.items.licenseGithub}
+              </a>
+            </div>
           </div>
         </div>
       ) : null}
@@ -603,6 +639,18 @@ export const StandaloneMenuBar = ({
 };
 
 const icons = {
+  docTools: (
+    <img
+      className="dc-menu-image-icon"
+      src={docToolsFavicon}
+      alt=""
+    />
+  ),
+  licenseGithub: (
+    <svg className="dc-github-icon" viewBox="0 0 24 24">
+      <path d="M12 .7A11.5 11.5 0 0 0 8.36 23.1c.58.1.79-.25.79-.56v-2.02c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.57-.3-5.27-1.29-5.27-5.69 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.41-2.71 5.39-5.29 5.68.42.36.79 1.07.79 2.16v3.02c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z" />
+    </svg>
+  ),
   check: (
     <svg className="dc-check-icon" viewBox="0 0 24 24">
       <path d="m5.5 12.5 4.2 4.2 8.8-9.4" />

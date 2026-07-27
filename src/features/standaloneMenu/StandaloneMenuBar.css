@@ -179,11 +179,24 @@
   stroke-linejoin: round;
 }
 
+.dc-menu-image-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 .dc-menu-icon .dc-check-icon {
   width: 20px;
   height: 20px;
   stroke: #3c4043;
   stroke-width: 2.1;
+}
+
+.dc-menu-icon .dc-github-icon {
+  width: 20px;
+  height: 20px;
+  fill: #4b5563;
+  stroke: none;
 }
 
 .dc-menu-label {
@@ -231,34 +244,69 @@ body.dc-suppress-toolbar-combo-popup .fortune-toolbar-combo-popup {
 }
 
 .dc-about-card {
-  position: relative;
+  width: 500px;
+  max-width: 90vw;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  font-family: Inter, Roboto, Arial, Helvetica, sans-serif;
 }
 
 .dc-about-splash {
   display: block;
-  width: 500px;
+  width: 100%;
   height: 200px;
-  max-width: 90vw;
-  max-height: 60vh;
-  border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dc-about-doctools {
+  padding: 18px 28px 16px;
+  color: #334155;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+}
+
+.dc-about-doctools-title {
+  display: block;
+  color: #1e293b;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.dc-about-doctools-description {
+  max-width: 420px;
+  margin: 8px auto 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.dc-about-doctools-link {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dc-about-doctools-link:hover,
+.dc-about-doctools-link:focus-visible {
+  text-decoration: underline;
+}
+
+.dc-about-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 14px 10px;
+  border-top: 1px solid #f1f5f9;
 }
 
 .dc-about-license-link {
-  position: absolute;
-  right: 14px;
-  bottom: 10px;
-  border: none;
-  background: none;
-  padding: 0;
-  font-family: Inter, Roboto, Arial, Helvetica, sans-serif;
-  font-size: 11px;
   color: #94a3b8;
+  font-size: 11px;
   text-decoration: underline;
-  cursor: pointer;
 }
 
-.dc-about-license-link:hover {
+.dc-about-license-link:hover,
+.dc-about-license-link:focus-visible {
   color: #60a5fa;
 }
 
