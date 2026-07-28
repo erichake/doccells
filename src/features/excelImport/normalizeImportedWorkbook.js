@@ -194,12 +194,28 @@ const formatImportedSheets = (sheets, sheetPrefix) =>
     };
   });
 
-export const normalizeImportedWorkbook = (sheets, { sheetPrefix }) => {
+const normalizeDefinedNames = (definedNames) =>
+  (definedNames || []).map((item) => ({
+    name: item.name,
+    refersTo: item.refersTo,
+    scopeSheetId:
+      item.localSheetIndex == null
+        ? null
+        : String(item.localSheetIndex),
+    hidden: Boolean(item.hidden),
+    comment: item.comment || "",
+  })).filter((item) => item.name && item.refersTo);
+
+export const normalizeImportedWorkbook = (
+  sheets,
+  { sheetPrefix, definedNames: importedDefinedNames = [] },
+) => {
   const metadata = extractDocCellsMetadata(sheets);
   const workbookSheets = removeDocCellsMetadataSheets(sheets);
+  const definedNames = normalizeDefinedNames(importedDefinedNames);
   workbookSheets.forEach(normalizeImportedMerges);
   workbookSheets.forEach(normalizeImportedGeneralAlignment);
-  applyImportedFormulaResults(workbookSheets);
+  applyImportedFormulaResults(workbookSheets, definedNames);
 
   const formulas = collectFormulaMetadata(workbookSheets);
   const formattedSheets = applyDocCellsMetadata(
@@ -212,6 +228,7 @@ export const normalizeImportedWorkbook = (sheets, { sheetPrefix }) => {
 
   return {
     formulas,
-    sheets: normalizedSheets,
+    sheets: normalizedSheets.map((sheet) => ({ ...sheet, definedNames })),
+    definedNames,
   };
 };

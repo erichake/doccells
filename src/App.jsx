@@ -18,6 +18,13 @@ import {
 import { normalizeImportedWorkbook } from "./features/excelImport/normalizeImportedWorkbook.js";
 import { useFortuneToolbarButtons } from "./features/fortuneSheet/useFortuneToolbarButtons.js";
 import { StandaloneMenuBar } from "./features/standaloneMenu/StandaloneMenuBar.jsx";
+import { DefinedNamesUI } from "./features/definedNames/DefinedNamesUI.jsx";
+import { getDefinedNamesTexts } from "./features/definedNames/definedNamesTexts.js";
+import {
+  parseDefinedNameReference,
+  selectionToDefinedNameReference,
+  upsertDefinedName,
+} from "./features/definedNames/definedNamesUtils.js";
 import { getStandaloneMenuTexts } from "./features/standaloneMenu/standaloneMenuTexts.js";
 import {
   dataToCelldata,
@@ -95,6 +102,7 @@ const standaloneMenuTexts = getStandaloneMenuTexts(
   detectedLang,
   currencySymbol,
 );
+const definedNamesTexts = getDefinedNamesTexts(detectedLang);
 
 const isSingleColumnRange = (range) =>
   Boolean(range?.row && range?.column && range.column[0] === range.column[1]);
@@ -278,6 +286,9 @@ const App = () => {
   const [customNumberFormatSelection, setCustomNumberFormatSelection] = useState([]);
   const [customNumberFormatSelectionLabel, setCustomNumberFormatSelectionLabel] = useState("A1");
   const [activeSheetIndex, setActiveSheetIndex] = useState(0);
+  const [definedNames, setDefinedNames] = useState([]);
+  const [nameBoxLocation, setNameBoxLocation] = useState("");
+  const [nameBoxReference, setNameBoxReference] = useState("");
   const [, setChartRenderKey] = useState(0);
   const sheetDataRef = useRef([]);
   useEffect(() => {
@@ -398,6 +409,7 @@ const App = () => {
     window.clearTimeout(autosaveTimerRef.current);
     window.clearTimeout(autosaveArmTimerRef.current);
     formulasRef.current = {};
+    setDefinedNames([]);
     normalizeCacheRef.current = new Map();
     isReadyRef.current = false;
     pendingRef.current = [];
@@ -407,8 +419,9 @@ const App = () => {
 
   const handleExcelLoad = useCallback(async (file) => {
     const fortuneData = await transformExcelToFortune(file);
-    const { formulas, sheets } = normalizeImportedWorkbook(fortuneData.sheets, {
+    const { formulas, sheets, definedNames: importedDefinedNames } = normalizeImportedWorkbook(fortuneData.sheets, {
       sheetPrefix,
+      definedNames: fortuneData.definedNames,
     });
 
     autosaveGenerationRef.current += 1;
@@ -417,6 +430,9 @@ const App = () => {
       console.warn("Impossible de supprimer l'ancienne autosauvegarde :", error);
     });
     formulasRef.current = formulas;
+    setDefinedNames(importedDefinedNames);
+    setNameBoxLocation("");
+    setNameBoxReference("");
     normalizeCacheRef.current = new Map();
     autosaveEnabledRef.current = false;
     awaitingInitialWorkbookChangeRef.current = true;
@@ -1066,36 +1082,15 @@ const App = () => {
       document.removeEventListener("mousedown", blockResizeIfProtected, true);
   }, []);
 
-  // Injecte "Verrouiller / Déverrouiller" dans le menu contextuel FortuneSheet
+  // Injecte les commandes propres à DocCells dans le menu contextuel FortuneSheet.
   useEffect(() => {
-    const injectLockMenuItem = (menuEl) => {
+    const injectDocCellsMenuItems = (menuEl) => {
       const wb = workbookRef.current;
       if (!wb) return;
       const sel = wb.getSelection();
       if (!sel?.length) return;
 
-      // lo===0 → déverrouillé explicitement ; lo===1 ou undefined → verrouillé (par défaut)
-      const allUnlocked = sel.every((range) => {
-        const cells = wb.getCellsByRange(range);
-        return cells.every((row) => row.every((cell) => cell?.lo === 0));
-      });
-      const label = allUnlocked ? t.lockCells : t.unlockCells;
-      const newLo = allUnlocked ? 1 : 0;
-
-      const divider = document.createElement("div");
-      divider.className = "fortune-context-menu-divider";
-
-      const item = document.createElement("div");
-      item.className = "luckysheet-cols-menuitem";
-      const content = document.createElement("div");
-      content.className = "luckysheet-cols-menuitem-content";
-      content.textContent = label;
-      item.appendChild(content);
-
-      item.addEventListener("click", () => {
-        sel.forEach((range) => wb.setCellFormatByRange("lo", newLo, range));
-        // Ferme le menu contextuel : mousedown hors-limites sur la zone cellule
-        // handleCellAreaMouseDown efface contextMenu avant le bounds-check
+      const closeContextMenu = () => {
         const cellArea = document.querySelector(".fortune-cell-area");
         if (cellArea) {
           cellArea.dispatchEvent(
@@ -1108,10 +1103,44 @@ const App = () => {
             }),
           );
         }
+      };
+      const createMenuItem = (label, onClick) => {
+        const item = document.createElement("div");
+        item.className = "luckysheet-cols-menuitem";
+        const content = document.createElement("div");
+        content.className = "luckysheet-cols-menuitem-content";
+        content.textContent = label;
+        item.appendChild(content);
+        item.addEventListener("click", () => {
+          onClick();
+          closeContextMenu();
+        });
+        return item;
+      };
+
+      // lo===0 → déverrouillé explicitement ; lo===1 ou undefined → verrouillé (par défaut)
+      const allUnlocked = sel.every((range) => {
+        const cells = wb.getCellsByRange(range);
+        return cells.every((row) => row.every((cell) => cell?.lo === 0));
+      });
+      const label = allUnlocked ? t.lockCells : t.unlockCells;
+      const newLo = allUnlocked ? 1 : 0;
+
+      const divider = document.createElement("div");
+      divider.className = "fortune-context-menu-divider";
+
+      const lockItem = createMenuItem(label, () => {
+        sel.forEach((range) => wb.setCellFormatByRange("lo", newLo, range));
+      });
+      const defineNameItem = createMenuItem(definedNamesTexts.define, () => {
+        window.dispatchEvent(
+          new Event("doccells:open-defined-name-dialog"),
+        );
       });
 
       menuEl.appendChild(divider);
-      menuEl.appendChild(item);
+      menuEl.appendChild(defineNameItem);
+      menuEl.appendChild(lockItem);
     };
 
     const observer = new MutationObserver((mutations) => {
@@ -1124,7 +1153,7 @@ const App = () => {
             !node.classList.contains("fortune-sheet-list")
           ) {
             if (appMode !== "student") {
-              injectLockMenuItem(node);
+              injectDocCellsMenuItems(node);
             }
           }
         }
@@ -1236,11 +1265,36 @@ const App = () => {
       const index = sheets.findIndex((sheet) => sheet.id === id);
       setActiveSheetIndex(index >= 0 ? index : 0);
     },
+    afterSelectionChange: (id, selection) => {
+      const sheets = workbookRef.current?.getAllSheets?.() || sheetDataRef.current;
+      const sheet = sheets.find((item) => String(item.id) === String(id));
+      if (!sheet || !selection?.row || !selection?.column) return;
+      const coordinates = [...selection.row, ...selection.column];
+      if (!coordinates.every(Number.isFinite)) {
+        setNameBoxLocation("");
+        setNameBoxReference("");
+        return;
+      }
+      const reference = selectionToDefinedNameReference(sheet.name, selection);
+      const matchingName =
+        definedNames.find(
+          (item) =>
+            String(item.scopeSheetId) === String(id) &&
+            item.refersTo.replace(/^=/, "") === reference,
+        ) ||
+        definedNames.find(
+          (item) =>
+            item.scopeSheetId == null &&
+            item.refersTo.replace(/^=/, "") === reference,
+        );
+      setNameBoxLocation(matchingName?.name || rangeToText(selection));
+      setNameBoxReference(reference);
+    },
     afterUpdateCell: (row, column, _oldValue, newValue) => {
       syncExcelDateFormulaResult(row, column, newValue);
       syncExcelGeneralAlignment(row, column, newValue);
     },
-  }), [syncExcelDateFormulaResult, syncExcelGeneralAlignment]);
+  }), [definedNames, syncExcelDateFormulaResult, syncExcelGeneralAlignment]);
 
   const handleWorkbookChange = useCallback((newData) => {
     if (syncingConditionalRef.current) return;
@@ -1265,6 +1319,10 @@ const App = () => {
             sheet.customCharts,
             sheetDataRef.current[index]?.customCharts,
           ),
+          definedNames:
+            sheet.definedNames ||
+            sheetDataRef.current[index]?.definedNames ||
+            definedNames,
           showGridLines: normalizeShowGridLines(
             sheet.showGridLines ??
               sheetDataRef.current[index]?.showGridLines,
@@ -1281,6 +1339,8 @@ const App = () => {
         ? applyConditionalFormatting(updatedData)
         : updatedData;
       sheetDataRef.current = finalData;
+      const liveDefinedNames = finalData[0]?.definedNames;
+      if (Array.isArray(liveDefinedNames)) setDefinedNames(liveDefinedNames);
       if (awaitingInitialWorkbookChangeRef.current) {
         armAutosaveAfterInitialization();
       } else {
@@ -1311,7 +1371,64 @@ const App = () => {
         "⚠️ `onChange` a capturé des données invalides, mise à jour ignorée !",
       );
     }
-  }, [armAutosaveAfterInitialization, scheduleAutosave]);
+  }, [armAutosaveAfterInitialization, definedNames, scheduleAutosave]);
+
+  const commitDefinedNames = useCallback(
+    (nextDefinedNames) => {
+      const sheets = sheetDataRef.current.map((sheet) => ({
+        ...sheet,
+        celldata: sheet.celldata || dataToCelldata(sheet.data),
+        definedNames: nextDefinedNames,
+      }));
+      setDefinedNames(nextDefinedNames);
+      sheetDataRef.current = sheets;
+      setSheetData(sheets);
+      setWorkbookKey((key) => key + 1);
+      scheduleAutosave(sheets);
+    },
+    [scheduleAutosave],
+  );
+
+  const saveDefinedName = useCallback(
+    (definition, editingKey) => {
+      const withoutEdited = editingKey
+        ? definedNames.filter(
+            (item) =>
+              `${item.scopeSheetId ?? "workbook"}:${item.name.toLowerCase()}` !==
+              editingKey,
+          )
+        : definedNames;
+      commitDefinedNames(upsertDefinedName(withoutEdited, definition));
+    },
+    [commitDefinedNames, definedNames],
+  );
+
+  const deleteDefinedName = useCallback(
+    (key) => {
+      commitDefinedNames(
+        definedNames.filter(
+          (item) =>
+            `${item.scopeSheetId ?? "workbook"}:${item.name.toLowerCase()}` !== key,
+        ),
+      );
+    },
+    [commitDefinedNames, definedNames],
+  );
+
+  const navigateToDefinedName = useCallback((definition) => {
+    const parsed = parseDefinedNameReference(definition.refersTo);
+    if (!parsed) return;
+    const workbook = workbookRef.current;
+    const sheets = workbook?.getAllSheets?.() || sheetDataRef.current;
+    const targetSheet = sheets.find((sheet) => sheet.name === parsed.sheetName);
+    if (!workbook || !targetSheet) return;
+    workbook.activateSheet?.({ id: targetSheet.id });
+    requestAnimationFrame(() => {
+      workbook.setSelection?.([parsed.range]);
+      setNameBoxLocation(definition.name);
+      setNameBoxReference(definition.refersTo);
+    });
+  }, []);
 
   return sheetData.length !== 0 ? (
     <div className="dc-app-shell">
@@ -1391,6 +1508,17 @@ const App = () => {
       />
 
       <div className="dc-workbook-shell">
+        <DefinedNamesUI
+          activeSheetId={sheetDataRef.current[activeSheetIndex]?.id ?? null}
+          definedNames={definedNames}
+          initialReference={nameBoxReference}
+          locale={detectedLang}
+          locationText={nameBoxLocation}
+          sheets={sheetDataRef.current}
+          onDelete={deleteDefinedName}
+          onNavigate={navigateToDefinedName}
+          onSave={saveDefinedName}
+        />
         <Workbook
           key={workbookKey}
           ref={workbookRef}

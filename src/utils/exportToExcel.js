@@ -3,6 +3,7 @@ import {
   patchWorkbookWithNativeCharts,
 } from "../features/charts/excelChartOoxml.js";
 import { DOCCELLS_METADATA_SHEET_NAME } from "../features/charts/chartUtils.js";
+import { patchWorkbookWithDefinedNames } from "../features/definedNames/definedNamesOoxml.js";
 
 export const exportToExcel = async (
   sheetsData,
@@ -698,7 +699,12 @@ export const exportToExcel = async (
   }
 
   const buffer = await workbook.xlsx.writeBuffer();
-  const finalBuffer = await patchWorkbookWithNativeCharts(buffer, sheetsToExport);
+  const chartBuffer = await patchWorkbookWithNativeCharts(buffer, sheetsToExport);
+  const finalBuffer = await patchWorkbookWithDefinedNames(
+    chartBuffer,
+    sheetsToExport,
+    sheetsData?.[0]?.definedNames || [],
+  );
   if (returnBase64) {
     const bytes = new Uint8Array(finalBuffer);
     let binary = "";

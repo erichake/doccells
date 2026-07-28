@@ -5,6 +5,10 @@ import {
   shouldRecalculateFormula,
   toExcelFormulaValue,
 } from "../workbook/excelDateFormulaUtils.js";
+import {
+  replaceDefinedNamesInFormula,
+  replaceReferenceFunctionsInFormula,
+} from "../definedNames/definedNamesUtils.js";
 
 const getFormulaCellText = (cellValue) => {
   if (Array.isArray(cellValue?.ct?.s)) {
@@ -28,7 +32,7 @@ const normalizeFormulaOperand = (value, cellValue) => {
   return value;
 };
 
-export const applyImportedFormulaResults = (sheets) => {
+export const applyImportedFormulaResults = (sheets, definedNames = []) => {
   if (!Array.isArray(sheets) || sheets.length === 0) return;
 
   const parser = configureExcelDateFunctions(new Parser());
@@ -82,7 +86,18 @@ export const applyImportedFormulaResults = (sheets) => {
     if (visiting.has(key)) return undefined;
     visiting.add(key);
 
-    const expression = formula.startsWith("=") ? formula.slice(1) : formula;
+    const resolvedFormula = replaceReferenceFunctionsInFormula(
+      replaceDefinedNamesInFormula(
+        formula,
+        definedNames,
+        String(sheetIndex),
+      ),
+      cell.r,
+      cell.c,
+    );
+    const expression = resolvedFormula.startsWith("=")
+      ? resolvedFormula.slice(1)
+      : resolvedFormula;
     const previousFormulaStack = activeFormulaStack;
     let response;
     try {

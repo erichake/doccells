@@ -8,9 +8,10 @@
     "dev": "vite --force --port 5174 --strictPort",
     "build": "vite build",
     "build:doctools": "vite build --mode doctools",
+    "test:defined-names": "node --test tests/definedNames.test.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postinstall": "node scripts/patch-fortune-core.cjs && node scripts/patch-fortune-react.cjs && node scripts/patch-fortune-formula-parser.cjs && node scripts/inject-locales.cjs && node scripts/patch-fortune-date-format.cjs && node scripts/patch-fortune-currency-position.cjs && node scripts/patch-fortune-currency-grouping.cjs && node scripts/patch-fortune-number-separators.cjs && node scripts/patch-fortune-number-input.cjs && node scripts/patch-fortune-formula-names.cjs"
+    "postinstall": "node scripts/patch-fortune-core.cjs && node scripts/patch-fortune-react.cjs && node scripts/patch-fortune-formula-parser.cjs && node scripts/inject-locales.cjs && node scripts/patch-fortune-date-format.cjs && node scripts/patch-fortune-currency-position.cjs && node scripts/patch-fortune-currency-grouping.cjs && node scripts/patch-fortune-number-separators.cjs && node scripts/patch-fortune-number-input.cjs && node scripts/patch-fortune-formula-names.cjs && node scripts/patch-fortune-defined-names.cjs"
   },
   "dependencies": {
     "@fortune-sheet/core": "^1.0.4",
