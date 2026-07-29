@@ -725,7 +725,12 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
           cellValue.ct = cellFormat;
         }
       }
-      else if (t == ST_CellType["InlineString"] && v != null) {
+      else if (t == ST_CellType["Boolean"]) {
+        const booleanValue =
+          value === "1" || value.toString().toLowerCase() === "true";
+        cellValue.v = booleanValue;
+        cellValue.m = booleanValue ? "TRUE" : "FALSE";
+      } else if (t == ST_CellType["InlineString"] && v != null) {
         value = escapeCharacter(value);
         cellValue.v = value;
       } else {
@@ -739,6 +744,9 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
     }
     if (quotePrefix != null) {
       cellValue.qp = parseInt(quotePrefix);
+    }
+    if (this.styles.checkboxStyleIndexes?.has(Number(s))) {
+      cellValue._dcExcelCheckbox = true;
     }
     return cellValue;
   }

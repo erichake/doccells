@@ -26,6 +26,14 @@ import {
   upsertDefinedName,
 } from "./features/definedNames/definedNamesUtils.js";
 import { getStandaloneMenuTexts } from "./features/standaloneMenu/standaloneMenuTexts.js";
+import { DropdownDialog } from "./features/dataValidation/DropdownDialog.jsx";
+import { getDataValidationTexts } from "./features/dataValidation/dataValidationTexts.js";
+import {
+  applyDataValidation,
+  createCheckboxRule,
+  createDropdownRule,
+  getSelectedRanges,
+} from "./features/dataValidation/dataValidationUtils.js";
 import {
   clearRecentFiles,
   forgetRecentFile,
@@ -105,11 +113,20 @@ const currencySymbol =
     it: "€",
     nl: "€",
   }[detectedLang] ?? "$";
-const standaloneMenuTexts = getStandaloneMenuTexts(
+const dataValidationTexts = getDataValidationTexts(detectedLang);
+const standaloneMenuTextsBase = getStandaloneMenuTexts(
   t,
   detectedLang,
   currencySymbol,
 );
+const standaloneMenuTexts = {
+  ...standaloneMenuTextsBase,
+  items: {
+    ...standaloneMenuTextsBase.items,
+    checkbox: dataValidationTexts.checkbox,
+    dropdown: dataValidationTexts.dropdown,
+  },
+};
 const definedNamesTexts = getDefinedNamesTexts(detectedLang);
 
 const isSingleColumnRange = (range) =>
@@ -294,6 +311,9 @@ const App = () => {
   const [customNumberFormatInitial, setCustomNumberFormatInitial] = useState("#,##0.00");
   const [customNumberFormatSelection, setCustomNumberFormatSelection] = useState([]);
   const [customNumberFormatSelectionLabel, setCustomNumberFormatSelectionLabel] = useState("A1");
+  const [dropdownDialogOpen, setDropdownDialogOpen] = useState(false);
+  const [dataValidationSelection, setDataValidationSelection] = useState([]);
+  const [dataValidationSelectionLabel, setDataValidationSelectionLabel] = useState("A1");
   const [activeSheetIndex, setActiveSheetIndex] = useState(0);
   const [definedNames, setDefinedNames] = useState([]);
   const [nameBoxLocation, setNameBoxLocation] = useState("");
@@ -874,6 +894,59 @@ const App = () => {
     setCustomNumberFormatSelectionLabel(ranges.map(rangeToText).join(", "));
     setCustomNumberFormatOpen(true);
   }, []);
+
+  const getCurrentValidationSelection = useCallback(() => {
+    const ranges = getSelectedRanges(workbookRef.current?.getSelection?.());
+    return {
+      ranges,
+      label: ranges.map(rangeToText).join(", "),
+    };
+  }, []);
+
+  const commitDataValidation = useCallback(
+    (rule, ranges, options) => {
+      const sheets = getWorkbookSheetsForCommit();
+      const sheetIndex = getActiveSheetIndex();
+      if (!sheets[sheetIndex]) return;
+      if (sheets[sheetIndex]?.config?.authority?.sheet === 1) return;
+      sheets[sheetIndex] = applyDataValidation(
+        sheets[sheetIndex],
+        ranges,
+        rule,
+        options,
+      );
+      sheetDataRef.current = sheets;
+      setSheetData(sheets);
+      setWorkbookKey((key) => key + 1);
+      scheduleAutosave(sheets);
+    },
+    [getActiveSheetIndex, getWorkbookSheetsForCommit, scheduleAutosave],
+  );
+
+  const insertCheckboxes = useCallback(() => {
+    const { ranges } = getCurrentValidationSelection();
+    commitDataValidation(createCheckboxRule(), ranges, {
+      initializeCheckboxes: true,
+    });
+  }, [commitDataValidation, getCurrentValidationSelection]);
+
+  const openDropdownDialog = useCallback(() => {
+    const { ranges, label } = getCurrentValidationSelection();
+    setDataValidationSelection(ranges);
+    setDataValidationSelectionLabel(label);
+    setDropdownDialogOpen(true);
+  }, [getCurrentValidationSelection]);
+
+  const insertDropdown = useCallback(
+    (options) => {
+      commitDataValidation(
+        createDropdownRule(options),
+        dataValidationSelection,
+      );
+      setDropdownDialogOpen(false);
+    },
+    [commitDataValidation, dataValidationSelection],
+  );
 
   const applyCustomNumberFormat = useCallback(
     (format) => {
@@ -1540,6 +1613,14 @@ const App = () => {
         texts={customNumberFormatTexts}
       />
 
+      <DropdownDialog
+        open={dropdownDialogOpen}
+        selectionLabel={dataValidationSelectionLabel}
+        texts={dataValidationTexts}
+        onClose={() => setDropdownDialogOpen(false)}
+        onInsert={insertDropdown}
+      />
+
       <ChartDialog
         open={chartDialogOpen}
         sheet={sheetDataRef.current[chartSheetIndex]}
@@ -1564,6 +1645,8 @@ const App = () => {
         onOpenChartDialog={openChartDialog}
         onOpenConditionalDialog={openConditionalDialog}
         onOpenCustomNumberFormatDialog={openCustomNumberFormatDialog}
+        onInsertCheckbox={insertCheckboxes}
+        onOpenDropdownDialog={openDropdownDialog}
         documentName={documentName}
         documentDirty={documentDirty}
         supportsNativeFileSave={supportsNativeFileSave}

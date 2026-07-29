@@ -15,6 +15,7 @@ import { ReadXml } from "./ReadXml.js";
 import { getXmlAttibute } from "../common/method.js";
 import { FortuneFileBase, FortuneFileInfo, FortuneSheetBase } from "./FortuneBase.js";
 import { ImageList } from "./FortuneImage.js";
+import { getExcelCheckboxStyleIndexes } from "../../../features/dataValidation/excelCheckboxOoxml.js";
 export class FortuneFile {
     constructor(files, fileName) {
         this.columnWidthSet = [];
@@ -27,6 +28,7 @@ export class FortuneFile {
         this.calcChain = this.readXml.getElementsByTagName("calcChain/c", calcChainFile);
         this.styles = {};
         this.styles["cellXfs"] = this.readXml.getElementsByTagName("cellXfs/xf", stylesFile);
+        this.styles["checkboxStyleIndexes"] = getExcelCheckboxStyleIndexes(files, this.styles["cellXfs"]);
         this.styles["cellStyleXfs"] = this.readXml.getElementsByTagName("cellStyleXfs/xf", stylesFile);
         this.styles["cellStyles"] = this.readXml.getElementsByTagName("cellStyles/cellStyle", stylesFile);
         this.styles["fonts"] = this.readXml.getElementsByTagName("fonts/font", stylesFile);

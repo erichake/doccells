@@ -92,6 +92,7 @@ export const hasMeaningfulRecoveryContent = (sheets) => {
     if (hasEntries(sheet.images)) return true;
     if (hasEntries(sheet.customCharts)) return true;
     if (hasEntries(sheet.customConditionalFormatting)) return true;
+    if (hasEntries(sheet.dataVerification)) return true;
 
     const config = sheet.config || {};
     if (hasNonDefaultSizes(config.columnlen, 99)) return true;

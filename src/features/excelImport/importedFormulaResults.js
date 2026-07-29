@@ -32,7 +32,11 @@ const normalizeFormulaOperand = (value, cellValue) => {
   return value;
 };
 
-export const applyImportedFormulaResults = (sheets, definedNames = []) => {
+export const applyImportedFormulaResults = (
+  sheets,
+  definedNames = [],
+  { recalculateBooleanResults = false } = {},
+) => {
   if (!Array.isArray(sheets) || sheets.length === 0) return;
 
   const parser = configureExcelDateFunctions(new Parser());
@@ -46,6 +50,10 @@ export const applyImportedFormulaResults = (sheets, definedNames = []) => {
     });
     return map;
   });
+  const shouldForceFormula = (cellValue) =>
+    recalculateBooleanResults &&
+    Boolean(cellValue?.f) &&
+    ["0", "1", 0, 1].includes(cellValue.v);
 
   const getSheetIndex = (sheetName, fallbackSheetIndex) => {
     if (!sheetName) return fallbackSheetIndex;
@@ -57,7 +65,14 @@ export const applyImportedFormulaResults = (sheets, definedNames = []) => {
     const cellValue = cell?.v;
     if (cellValue == null) return undefined;
 
-    if (cellValue.f && (cellValue.v == null || shouldRecalculateFormula(cellValue))) {
+    if (
+      cellValue.f &&
+      (
+        cellValue.v == null ||
+        shouldRecalculateFormula(cellValue) ||
+        shouldForceFormula(cellValue)
+      )
+    ) {
       const result = calculateCellFormula(sheetIndex, cell, visiting);
       if (result !== undefined) return result;
     }
@@ -144,7 +159,11 @@ export const applyImportedFormulaResults = (sheets, definedNames = []) => {
       const cellValue = cell?.v;
       if (!cellValue?.f) return;
 
-      if (cellValue.v == null || shouldRecalculateFormula(cellValue)) {
+      if (
+        cellValue.v == null ||
+        shouldRecalculateFormula(cellValue) ||
+        shouldForceFormula(cellValue)
+      ) {
         calculateCellFormula(sheetIndex, cell);
       }
 

@@ -118,6 +118,8 @@ export const StandaloneMenuBar = ({
   onOpenChartDialog,
   onOpenConditionalDialog,
   onOpenCustomNumberFormatDialog,
+  onInsertCheckbox,
+  onOpenDropdownDialog,
   documentName,
   documentDirty,
   supportsNativeFileSave,
@@ -352,6 +354,19 @@ export const StandaloneMenuBar = ({
         items: [
           { icon: "image", label: texts.items.image, command: triggerNativeImagePicker },
           { icon: "chart", label: texts.items.chart, command: onOpenChartDialog },
+          "divider",
+          {
+            icon: "checkbox",
+            label: texts.items.checkbox,
+            command: onInsertCheckbox,
+            disabled: isProtected,
+          },
+          {
+            icon: "dropdown",
+            label: texts.items.dropdown,
+            command: onOpenDropdownDialog,
+            disabled: isProtected,
+          },
         ],
       },
       {
@@ -553,6 +568,8 @@ export const StandaloneMenuBar = ({
       onOpenChartDialog,
       onOpenConditionalDialog,
       onOpenCustomNumberFormatDialog,
+      onInsertCheckbox,
+      onOpenDropdownDialog,
       onExportDocument,
       onClearRecentFiles,
       onOpenDocument,
@@ -687,6 +704,18 @@ const icons = {
   check: (
     <svg className="dc-check-icon" viewBox="0 0 24 24">
       <path d="m5.5 12.5 4.2 4.2 8.8-9.4" />
+    </svg>
+  ),
+  checkbox: (
+    <svg viewBox="0 0 24 24">
+      <rect x="4.5" y="4.5" width="15" height="15" rx="2" />
+      <path d="m8 12 2.6 2.6L16.5 9" />
+    </svg>
+  ),
+  dropdown: (
+    <svg viewBox="0 0 24 24">
+      <rect x="3.75" y="5.25" width="16.5" height="13.5" rx="2" />
+      <path d="m15.25 10 2.25 2.25-2.25 2.25M7 9h5M7 12.25h5M7 15.5h5" />
     </svg>
   ),
   eye: (

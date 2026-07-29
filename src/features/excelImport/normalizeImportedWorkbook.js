@@ -47,12 +47,47 @@ const applyDocCellsMetadata = (sheets, metadata) => {
   const byName = new Map(metadata.sheets.map((sheet) => [sheet.name, sheet]));
   return sheets.map((sheet, index) => {
     const stored = metadata.sheets.find((item) => item.index === index) || byName.get(sheet.name);
-    if (!Array.isArray(stored?.customCharts)) return sheet;
     return {
       ...sheet,
-      customCharts: stored.customCharts.map(normalizeChart),
+      customCharts: Array.isArray(stored?.customCharts)
+        ? stored.customCharts.map(normalizeChart)
+        : sheet.customCharts,
+      dataVerification:
+        stored?.dataVerification || sheet.dataVerification || {},
     };
   });
+};
+
+export const normalizeImportedCheckboxValues = (sheets) => {
+  (sheets || []).forEach((sheet) => {
+    const rules = sheet?.dataVerification || {};
+    const cells = new Map(
+      (sheet?.celldata || []).map((cell) => [`${cell.r}_${cell.c}`, cell]),
+    );
+
+    Object.entries(rules).forEach(([key, rule]) => {
+      if (rule?.type !== "checkbox") return;
+      const cell = cells.get(key);
+      if (!cell?.v) return;
+      const rawValue = cell.v.v;
+      const checked =
+        rawValue === true ||
+        rawValue === 1 ||
+        String(rawValue).toUpperCase() === "TRUE" ||
+        String(rawValue) === "1";
+      const unchecked =
+        rawValue === false ||
+        rawValue === 0 ||
+        String(rawValue).toUpperCase() === "FALSE" ||
+        String(rawValue) === "0";
+      if (!checked && !unchecked) return;
+
+      cell.v.v = checked;
+      cell.v.m = checked ? "TRUE" : "FALSE";
+      rule.checked = checked;
+    });
+  });
+  return sheets;
 };
 
 const normalizeImportedMerges = (sheet) => {
@@ -180,6 +215,7 @@ const formatImportedSheets = (sheets, sheetPrefix) =>
       filter_select: sheet.filter_select,
       customConditionalFormatting: sheet.customConditionalFormatting || [],
       customCharts: sheet.customCharts || [],
+      dataVerification: sheet.dataVerification || {},
       showGridLines: normalizeShowGridLines(sheet.showGridLines),
       config: {
         columnlen: sheet.config?.columnlen || {},
@@ -215,12 +251,24 @@ export const normalizeImportedWorkbook = (
   const definedNames = normalizeDefinedNames(importedDefinedNames);
   workbookSheets.forEach(normalizeImportedMerges);
   workbookSheets.forEach(normalizeImportedGeneralAlignment);
-  applyImportedFormulaResults(workbookSheets, definedNames);
-
-  const formulas = collectFormulaMetadata(workbookSheets);
-  const formattedSheets = applyDocCellsMetadata(
-    formatImportedSheets(workbookSheets, sheetPrefix),
+  const enrichedWorkbookSheets = applyDocCellsMetadata(
+    workbookSheets,
     metadata,
+  );
+  normalizeImportedCheckboxValues(enrichedWorkbookSheets);
+  const hasCheckboxes = enrichedWorkbookSheets.some((sheet) =>
+    Object.values(sheet?.dataVerification || {}).some(
+      (rule) => rule?.type === "checkbox",
+    ),
+  );
+  applyImportedFormulaResults(enrichedWorkbookSheets, definedNames, {
+    recalculateBooleanResults: hasCheckboxes,
+  });
+
+  const formulas = collectFormulaMetadata(enrichedWorkbookSheets);
+  const formattedSheets = formatImportedSheets(
+    enrichedWorkbookSheets,
+    sheetPrefix,
   );
   const normalizedSheets = isWorkbookProtected(formattedSheets)
     ? setWorkbookProtection(formattedSheets, 1)

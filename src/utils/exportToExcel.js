@@ -4,6 +4,11 @@ import {
 } from "../features/charts/excelChartOoxml.js";
 import { DOCCELLS_METADATA_SHEET_NAME } from "../features/charts/chartUtils.js";
 import { patchWorkbookWithDefinedNames } from "../features/definedNames/definedNamesOoxml.js";
+import {
+  getDataValidationMetadata,
+  toExcelDataValidation,
+} from "../features/dataValidation/dataValidationUtils.js";
+import { patchWorkbookWithNativeCheckboxes } from "../features/dataValidation/excelCheckboxOoxml.js";
 
 export const exportToExcel = async (
   sheetsData,
@@ -384,13 +389,17 @@ export const exportToExcel = async (
   const sheetsToExport = Array.isArray(sheetsData) && sheetsData.length > 0
     ? sheetsData.filter((sheet) => sheet?.name !== DOCCELLS_METADATA_SHEET_NAME)
     : [{ name: "Feuille1", celldata: [], config: {} }];
-  const chartMetadata = sheetsToExport
+  const docCellsMetadata = sheetsToExport
     .map((sheet, index) => ({
       index,
       name: sheet.name || `Feuille${index + 1}`,
       customCharts: sheet.customCharts || [],
+      dataVerification: getDataValidationMetadata(sheet),
     }))
-    .filter((sheet) => sheet.customCharts.length > 0);
+    .filter(
+      (sheet) =>
+        sheet.customCharts.length > 0 || sheet.dataVerification,
+    );
 
   // Chargé à la demande : exceljs (~1 Mo minifié) ne sert qu'à l'export et
   // resterait sinon dans le bundle initial.
@@ -560,6 +569,15 @@ export const exportToExcel = async (
       }
     });
 
+    Object.entries(sheet.dataVerification || {}).forEach(([key, rule]) => {
+      const [rowIndex, columnIndex] = key.split("_").map(Number);
+      if (!Number.isInteger(rowIndex) || !Number.isInteger(columnIndex)) return;
+      const validation = toExcelDataValidation(rule);
+      if (!validation) return;
+      worksheet.getCell(rowIndex + 1, columnIndex + 1).dataValidation =
+        validation;
+    });
+
     const borderMap = buildBorderMap(config?.borderInfo);
     borderMap.forEach((cellBorder, key) => {
       const [rowIndex, colIndex] = key.split("_").map(Number);
@@ -688,20 +706,24 @@ export const exportToExcel = async (
     }
   }
 
-  if (chartMetadata.length > 0) {
+  if (docCellsMetadata.length > 0) {
     const metadataWorksheet = workbook.addWorksheet(DOCCELLS_METADATA_SHEET_NAME, {
       state: "veryHidden",
     });
     metadataWorksheet.getCell("A1").value = JSON.stringify({
       version: 1,
-      sheets: chartMetadata,
+      sheets: docCellsMetadata,
     });
   }
 
   const buffer = await workbook.xlsx.writeBuffer();
   const chartBuffer = await patchWorkbookWithNativeCharts(buffer, sheetsToExport);
-  const finalBuffer = await patchWorkbookWithDefinedNames(
+  const checkboxBuffer = await patchWorkbookWithNativeCheckboxes(
     chartBuffer,
+    sheetsToExport,
+  );
+  const finalBuffer = await patchWorkbookWithDefinedNames(
+    checkboxBuffer,
     sheetsToExport,
     sheetsData?.[0]?.definedNames || [],
   );

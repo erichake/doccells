@@ -220,6 +220,22 @@ export class FortuneSheet extends FortuneSheetBase {
     }
     // dataVerification config
     this.dataVerification = this.generateConfigDataValidations();
+    this.celldata.forEach((cell) => {
+      if (!cell?.v?._dcExcelCheckbox) return;
+      const checked = cell.v.v === true;
+      this.dataVerification[`${cell.r}_${cell.c}`] = {
+        type: "checkbox",
+        type2: null,
+        value1: true,
+        value2: false,
+        checked,
+        remote: false,
+        prohibitInput: true,
+        hintShow: false,
+        hintText: "",
+      };
+      delete cell.v._dcExcelCheckbox;
+    });
     // hyperlink config
     this.hyperlink = this.generateConfigHyperlinks();
     // conditional formatting config
