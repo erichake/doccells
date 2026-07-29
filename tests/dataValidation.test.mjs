@@ -16,6 +16,7 @@ import {
   shiftDropdownRangeReference,
   toExcelDataValidation,
 } from "../src/features/dataValidation/dataValidationUtils.js";
+import { getDataValidationTexts } from "../src/features/dataValidation/dataValidationTexts.js";
 import { normalizeImportedWorkbook } from "../src/features/excelImport/normalizeImportedWorkbook.js";
 import { transformExcelToFortune } from "../src/lib/FortuneSheetExcel/main.js";
 import { FortuneSheetCelldata } from "../src/lib/FortuneSheetExcel/ToFortuneSheet/FortuneCell.js";
@@ -31,6 +32,38 @@ test("normalizes the current FortuneSheet selection", () => {
     getSelectedRanges([{ row: [4, 2], column: [3, 3] }]),
     [{ row: [2, 4], column: [3, 3] }],
   );
+});
+
+test("localizes every dropdown range-mode label", () => {
+  const english = getDataValidationTexts("en");
+  const locales = [
+    "fr-FR",
+    "es-ES",
+    "de",
+    "it",
+    "pt",
+    "nl",
+    "ru",
+    "el",
+    "hi",
+    "zh-CN",
+    "zh-TW",
+  ];
+
+  locales.forEach((locale) => {
+    const texts = getDataValidationTexts(locale);
+    assert.notEqual(texts.valuesMode, english.valuesMode, locale);
+    assert.notEqual(texts.rangeMode, english.rangeMode, locale);
+    assert.notEqual(texts.rangeLabel, english.rangeLabel, locale);
+    assert.notEqual(texts.rangePlaceholder, english.rangePlaceholder, locale);
+    assert.notEqual(texts.errors.empty, english.errors.empty, locale);
+    assert.notEqual(texts.errors.comma, english.errors.comma, locale);
+    assert.notEqual(texts.errors.range, english.errors.range, locale);
+  });
+
+  const spanish = getDataValidationTexts("es-ES");
+  assert.equal(spanish.valuesMode, "Valores");
+  assert.equal(spanish.rangeMode, "Desde un rango");
 });
 
 test("keeps a formula reference to an empty cell visually empty", () => {
