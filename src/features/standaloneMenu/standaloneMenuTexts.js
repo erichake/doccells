@@ -10,6 +10,8 @@ const FALLBACK_TEXTS = {
   data: "Data",
   tools: "Tools",
   open: "Open",
+  openRecent: "Open recent file",
+  clearRecentFiles: "Clear list",
   export: "Export",
   save: "Save",
   saveAs: "Save as...",
@@ -27,18 +29,18 @@ const FALLBACK_TEXTS = {
 };
 
 const TRANSLATED_DOCUMENT = {
-  "zh-CN": { save: "保存", saveAs: "另存为...", untitled: "无标题", unsavedChanges: "未保存的更改" },
-  "zh-TW": { save: "儲存", saveAs: "另存新檔...", untitled: "未命名", unsavedChanges: "未儲存的變更" },
-  en: { save: "Save", saveAs: "Save as...", untitled: "Untitled", unsavedChanges: "Unsaved changes" },
-  "fr-FR": { save: "Enregistrer", saveAs: "Enregistrer sous...", untitled: "Sans titre", unsavedChanges: "Modifications non enregistrées" },
-  "es-ES": { save: "Guardar", saveAs: "Guardar como...", untitled: "Sin título", unsavedChanges: "Cambios sin guardar" },
-  hi: { save: "सहेजें", saveAs: "इस रूप में सहेजें...", untitled: "शीर्षकहीन", unsavedChanges: "सहेजे नहीं गए बदलाव" },
-  ru: { save: "Сохранить", saveAs: "Сохранить как...", untitled: "Без названия", unsavedChanges: "Несохранённые изменения" },
-  pt: { save: "Guardar", saveAs: "Guardar como...", untitled: "Sem título", unsavedChanges: "Alterações não guardadas" },
-  de: { save: "Speichern", saveAs: "Speichern unter...", untitled: "Unbenannt", unsavedChanges: "Nicht gespeicherte Änderungen" },
-  el: { save: "Αποθήκευση", saveAs: "Αποθήκευση ως...", untitled: "Χωρίς τίτλο", unsavedChanges: "Μη αποθηκευμένες αλλαγές" },
-  it: { save: "Salva", saveAs: "Salva con nome...", untitled: "Senza titolo", unsavedChanges: "Modifiche non salvate" },
-  nl: { save: "Opslaan", saveAs: "Opslaan als...", untitled: "Naamloos", unsavedChanges: "Niet-opgeslagen wijzigingen" },
+  "zh-CN": { save: "保存", saveAs: "另存为...", untitled: "无标题", unsavedChanges: "未保存的更改", openRecent: "打开最近的文件", clearRecentFiles: "清除列表" },
+  "zh-TW": { save: "儲存", saveAs: "另存新檔...", untitled: "未命名", unsavedChanges: "未儲存的變更", openRecent: "開啟最近的檔案", clearRecentFiles: "清除清單" },
+  en: { save: "Save", saveAs: "Save as...", untitled: "Untitled", unsavedChanges: "Unsaved changes", openRecent: "Open recent file", clearRecentFiles: "Clear list" },
+  "fr-FR": { save: "Enregistrer", saveAs: "Enregistrer sous...", untitled: "Sans titre", unsavedChanges: "Modifications non enregistrées", openRecent: "Ouvrir un fichier récent", clearRecentFiles: "Effacer la liste" },
+  "es-ES": { save: "Guardar", saveAs: "Guardar como...", untitled: "Sin título", unsavedChanges: "Cambios sin guardar", openRecent: "Abrir un archivo reciente", clearRecentFiles: "Borrar la lista" },
+  hi: { save: "सहेजें", saveAs: "इस रूप में सहेजें...", untitled: "शीर्षकहीन", unsavedChanges: "सहेजे नहीं गए बदलाव", openRecent: "हाल की फ़ाइल खोलें", clearRecentFiles: "सूची साफ़ करें" },
+  ru: { save: "Сохранить", saveAs: "Сохранить как...", untitled: "Без названия", unsavedChanges: "Несохранённые изменения", openRecent: "Открыть недавний файл", clearRecentFiles: "Очистить список" },
+  pt: { save: "Guardar", saveAs: "Guardar como...", untitled: "Sem título", unsavedChanges: "Alterações não guardadas", openRecent: "Abrir ficheiro recente", clearRecentFiles: "Limpar lista" },
+  de: { save: "Speichern", saveAs: "Speichern unter...", untitled: "Unbenannt", unsavedChanges: "Nicht gespeicherte Änderungen", openRecent: "Zuletzt verwendete Datei öffnen", clearRecentFiles: "Liste leeren" },
+  el: { save: "Αποθήκευση", saveAs: "Αποθήκευση ως...", untitled: "Χωρίς τίτλο", unsavedChanges: "Μη αποθηκευμένες αλλαγές", openRecent: "Άνοιγμα πρόσφατου αρχείου", clearRecentFiles: "Εκκαθάριση λίστας" },
+  it: { save: "Salva", saveAs: "Salva con nome...", untitled: "Senza titolo", unsavedChanges: "Modifiche non salvate", openRecent: "Apri un file recente", clearRecentFiles: "Cancella elenco" },
+  nl: { save: "Opslaan", saveAs: "Opslaan als...", untitled: "Naamloos", unsavedChanges: "Niet-opgeslagen wijzigingen", openRecent: "Recent bestand openen", clearRecentFiles: "Lijst wissen" },
 };
 
 const TRANSLATED_ABOUT = {
@@ -221,6 +223,16 @@ export const getStandaloneMenuTexts = (appTexts, lang, currency = "$") => {
     },
     items: {
       open: pick(custom.open, FALLBACK_TEXTS.open),
+      openRecent: pick(
+        custom.openRecent,
+        documentTexts.openRecent,
+        FALLBACK_TEXTS.openRecent,
+      ),
+      clearRecentFiles: pick(
+        custom.clearRecentFiles,
+        documentTexts.clearRecentFiles,
+        FALLBACK_TEXTS.clearRecentFiles,
+      ),
       export: pick(custom.export, FALLBACK_TEXTS.export),
       save: pick(custom.save, documentTexts.save, FALLBACK_TEXTS.save),
       saveAs: pick(custom.saveAs, documentTexts.saveAs, FALLBACK_TEXTS.saveAs),

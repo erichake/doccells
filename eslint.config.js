@@ -5,7 +5,14 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
-  { ignores: ['dist'] },
+  {
+    ignores: [
+      'dist',
+      // Copie locale de la bibliothèque tierce FortuneSheetExcel. Son code
+      // distribué n'est pas maintenu selon les règles ESLint de DocCells.
+      'src/lib/FortuneSheetExcel/**',
+    ],
+  },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {

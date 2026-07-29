@@ -27,6 +27,14 @@ import {
 } from "./features/definedNames/definedNamesUtils.js";
 import { getStandaloneMenuTexts } from "./features/standaloneMenu/standaloneMenuTexts.js";
 import {
+  clearRecentFiles,
+  forgetRecentFile,
+  getRecentFiles,
+  isMissingRecentFileError,
+  rememberRecentFile,
+  requestRecentFilePermission,
+} from "./features/recentFiles/indexedDbRecentFiles.js";
+import {
   dataToCelldata,
   getAvailableDefaultSheetName,
   getDefaultSheetNumber,
@@ -271,6 +279,7 @@ const App = () => {
     standaloneMenuTexts.items.untitled,
   );
   const [documentDirty, setDocumentDirty] = useState(false);
+  const [recentFiles, setRecentFiles] = useState([]);
   const [appMode, setAppMode] = useState("teacher");
   const [workbookKey, setWorkbookKey] = useState(0);
   const [conditionalDialogOpen, setConditionalDialogOpen] = useState(false);
@@ -315,6 +324,16 @@ const App = () => {
     isTopLevelWindow() &&
     typeof window.showOpenFilePicker === "function" &&
     typeof window.showSaveFilePicker === "function";
+
+  useEffect(() => {
+    if (!supportsNativeFileSave) return;
+
+    getRecentFiles()
+      .then(setRecentFiles)
+      .catch((error) => {
+        console.warn("Liste des fichiers récents indisponible :", error);
+      });
+  }, [supportsNativeFileSave]);
 
   const flushPending = useCallback(() => {
     const queue = pendingRef.current.splice(0);
@@ -514,6 +533,15 @@ const App = () => {
     [loadExcelFromFile, resetWorkbook, updateDocumentIdentity],
   );
 
+  const rememberFileHandle = useCallback(async (handle) => {
+    if (!handle) return;
+    try {
+      setRecentFiles(await rememberRecentFile(handle));
+    } catch (error) {
+      console.warn("Impossible de mémoriser le fichier récent :", error);
+    }
+  }, []);
+
   const openDocument = useCallback(async () => {
     if (!isTopLevelWindow()) return;
 
@@ -538,13 +566,50 @@ const App = () => {
       });
       if (!handle) return;
       await loadDocumentFromFile(await handle.getFile(), handle);
+      await rememberFileHandle(handle);
     } catch (error) {
       if (error?.name !== "AbortError") {
         console.error("❌ Impossible d'ouvrir ce fichier :", error);
         alert(`Impossible d'ouvrir ce fichier.\n${error?.message || String(error)}`);
       }
     }
-  }, [loadDocumentFromFile, supportsNativeFileSave]);
+  }, [loadDocumentFromFile, rememberFileHandle, supportsNativeFileSave]);
+
+  const openRecentFile = useCallback(
+    async (entry) => {
+      try {
+        if (!(await requestRecentFilePermission(entry.handle))) return;
+        await loadDocumentFromFile(await entry.handle.getFile(), entry.handle);
+        await rememberFileHandle(entry.handle);
+      } catch (error) {
+        if (isMissingRecentFileError(error)) {
+          try {
+            setRecentFiles(await forgetRecentFile(entry.id));
+          } catch (storageError) {
+            setRecentFiles((entries) =>
+              entries.filter((recentEntry) => recentEntry.id !== entry.id),
+            );
+            console.warn(
+              "Impossible de retirer le fichier récent disparu :",
+              storageError,
+            );
+          }
+        } else if (error?.name !== "AbortError") {
+          console.error("❌ Impossible d'ouvrir ce fichier récent :", error);
+          alert(`Impossible d'ouvrir ce fichier.\n${error?.message || String(error)}`);
+        }
+      }
+    },
+    [loadDocumentFromFile, rememberFileHandle],
+  );
+
+  const clearRecentFileList = useCallback(async () => {
+    try {
+      setRecentFiles(await clearRecentFiles());
+    } catch (error) {
+      console.warn("Impossible d'effacer la liste des fichiers récents :", error);
+    }
+  }, []);
 
   const getSuggestedFileName = useCallback(() => {
     const name = documentNameRef.current || standaloneMenuTexts.items.untitled;
@@ -571,8 +636,9 @@ const App = () => {
 
       updateDocumentIdentity(handle.name, handle);
       await markSessionClean();
+      await rememberFileHandle(handle);
     },
-    [markSessionClean, updateDocumentIdentity],
+    [markSessionClean, rememberFileHandle, updateDocumentIdentity],
   );
 
   const saveDocumentAs = useCallback(async () => {
@@ -1505,6 +1571,9 @@ const App = () => {
         onSaveDocument={saveDocument}
         onSaveDocumentAs={saveDocumentAs}
         onExportDocument={exportDocument}
+        recentFiles={recentFiles}
+        onOpenRecentFile={openRecentFile}
+        onClearRecentFiles={clearRecentFileList}
       />
 
       <div className="dc-workbook-shell">

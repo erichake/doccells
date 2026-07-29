@@ -72,6 +72,7 @@ const MenuItem = ({ item, onRun }) => {
         type="button"
         className="dc-menu-item"
         disabled={item.disabled}
+        title={item.title}
         onClick={() => {
           if (!hasSubmenu) onRun(item.command);
         }}
@@ -95,7 +96,7 @@ const MenuItem = ({ item, onRun }) => {
               <MenuDivider key={`${item.label}-divider-${index}`} />
             ) : (
               <MenuItem
-                key={subItem.label}
+                key={subItem.key || subItem.label}
                 item={subItem}
                 onRun={onRun}
               />
@@ -124,6 +125,9 @@ export const StandaloneMenuBar = ({
   onSaveDocument,
   onSaveDocumentAs,
   onExportDocument,
+  recentFiles,
+  onOpenRecentFile,
+  onClearRecentFiles,
 }) => {
   const [isStandalone, setIsStandalone] = useState(isTopWindow);
   const [openMenu, setOpenMenu] = useState(null);
@@ -244,6 +248,32 @@ export const StandaloneMenuBar = ({
         items: supportsNativeFileSave
           ? [
               { icon: "folder", label: texts.items.open, shortcut: "⌘O", command: onOpenDocument },
+              recentFiles.length > 0
+                ? {
+                    icon: "folder",
+                    label: texts.items.openRecent,
+                    items: [
+                      ...recentFiles.map((entry) => ({
+                        key: entry.id,
+                        icon: "file",
+                        label: entry.name,
+                        title: entry.name,
+                        command: () => onOpenRecentFile(entry),
+                      })),
+                      "divider",
+                      {
+                        icon: "trash",
+                        label: texts.items.clearRecentFiles,
+                        command: onClearRecentFiles,
+                      },
+                    ],
+                  }
+                : {
+                    icon: "folder",
+                    label: texts.items.openRecent,
+                    disabled: true,
+                  },
+              "divider",
               { icon: "download", label: texts.items.save, shortcut: "⌘S", command: onSaveDocument },
               { icon: "download", label: texts.items.saveAs, command: onSaveDocumentAs },
             ]
@@ -524,9 +554,12 @@ export const StandaloneMenuBar = ({
       onOpenConditionalDialog,
       onOpenCustomNumberFormatDialog,
       onExportDocument,
+      onClearRecentFiles,
       onOpenDocument,
+      onOpenRecentFile,
       onSaveDocument,
       onSaveDocumentAs,
+      recentFiles,
       supportsNativeFileSave,
       texts,
       workbookRef,
@@ -666,6 +699,17 @@ const icons = {
     <svg viewBox="0 0 24 24">
       <path d="M3.75 6.75h5l1.55 2h9.95v8.5a1 1 0 0 1-1 1H4.75a1 1 0 0 1-1-1V6.75Z" />
       <path d="M3.75 8.75V6.5a1 1 0 0 1 1-1h4.1l1.55 2" />
+    </svg>
+  ),
+  file: (
+    <svg viewBox="0 0 24 24">
+      <path d="M6.5 3.75h7l4 4v12.5h-11Z" />
+      <path d="M13.5 3.75v4h4M9 12h6M9 15.5h6" />
+    </svg>
+  ),
+  trash: (
+    <svg viewBox="0 0 24 24">
+      <path d="M5.5 7h13M9 7V4.5h6V7M7.5 7l.75 13h7.5l.75-13M10 10.5v6M14 10.5v6" />
     </svg>
   ),
   download: (

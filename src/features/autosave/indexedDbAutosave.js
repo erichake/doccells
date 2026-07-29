@@ -1,6 +1,9 @@
-const DATABASE_NAME = "doccells";
-const DATABASE_VERSION = 1;
-const STORE_NAME = "recovery";
+import {
+  RECOVERY_STORE_NAME,
+  runStoreRequest,
+} from "../persistence/indexedDbDatabase.js";
+import { getFormulaDisplayValue } from "../workbook/excelDateFormulaUtils.js";
+
 const SNAPSHOT_KEY = "current-session";
 
 export const AUTOSAVE_DEBOUNCE_MS = 800;
@@ -121,49 +124,8 @@ export const prepareSheetsForRecovery = (sheets) =>
     return preparedSheet;
   });
 
-const openDatabase = () =>
-  new Promise((resolve, reject) => {
-    if (!("indexedDB" in window)) {
-      reject(new Error("IndexedDB is not available in this browser."));
-      return;
-    }
-
-    const request = window.indexedDB.open(DATABASE_NAME, DATABASE_VERSION);
-    request.onerror = () => reject(request.error);
-    request.onupgradeneeded = () => {
-      const database = request.result;
-      if (!database.objectStoreNames.contains(STORE_NAME)) {
-        database.createObjectStore(STORE_NAME);
-      }
-    };
-    request.onsuccess = () => resolve(request.result);
-  });
-
-const runRequest = async (mode, operation) => {
-  const database = await openDatabase();
-
-  try {
-    return await new Promise((resolve, reject) => {
-      const transaction = database.transaction(STORE_NAME, mode);
-      const store = transaction.objectStore(STORE_NAME);
-      const request = operation(store);
-      let result;
-
-      request.onerror = () => reject(request.error);
-      request.onsuccess = () => {
-        result = request.result;
-      };
-      transaction.oncomplete = () => resolve(result);
-      transaction.onabort = () => reject(transaction.error);
-      transaction.onerror = () => reject(transaction.error);
-    });
-  } finally {
-    database.close();
-  }
-};
-
 export const getRecoverySnapshot = async () => {
-  const snapshot = await runRequest("readonly", (store) =>
+  const snapshot = await runStoreRequest(RECOVERY_STORE_NAME, "readonly", (store) =>
     store.get(SNAPSHOT_KEY),
   );
 
@@ -197,7 +159,7 @@ export const saveRecoverySnapshot = (sheets, { documentName } = {}) => {
     return deleteRecoverySnapshot();
   }
 
-  return runRequest("readwrite", (store) =>
+  return runStoreRequest(RECOVERY_STORE_NAME, "readwrite", (store) =>
     store.put(
       {
         version: 1,
@@ -211,5 +173,6 @@ export const saveRecoverySnapshot = (sheets, { documentName } = {}) => {
 };
 
 export const deleteRecoverySnapshot = () =>
-  runRequest("readwrite", (store) => store.delete(SNAPSHOT_KEY));
-import { getFormulaDisplayValue } from "../workbook/excelDateFormulaUtils.js";
+  runStoreRequest(RECOVERY_STORE_NAME, "readwrite", (store) =>
+    store.delete(SNAPSHOT_KEY),
+  );
