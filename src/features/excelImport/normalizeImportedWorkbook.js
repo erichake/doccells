@@ -10,6 +10,7 @@ import {
   setWorkbookProtection,
 } from "../workbook/workbookUtils.js";
 import { applyAutoGeneralAlignment } from "../workbook/excelGeneralAlignment.js";
+import { DOCCELLS_DROPDOWN_NAME_PREFIX } from "../dataValidation/dataValidationUtils.js";
 
 const getCellRawValue = (cell) => {
   const value = cell?.v;
@@ -240,7 +241,12 @@ const normalizeDefinedNames = (definedNames) =>
         : String(item.localSheetIndex),
     hidden: Boolean(item.hidden),
     comment: item.comment || "",
-  })).filter((item) => item.name && item.refersTo);
+  })).filter(
+    (item) =>
+      item.name &&
+      item.refersTo &&
+      !item.name.startsWith(DOCCELLS_DROPDOWN_NAME_PREFIX),
+  );
 
 export const normalizeImportedWorkbook = (
   sheets,

@@ -5,6 +5,21 @@ body,
   height: 100%;
 }
 
+#luckysheet-dataVerification-dropdown-btn {
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 80ms ease-out;
+}
+
+#luckysheet-dataVerification-dropdown-btn:hover {
+  background: rgba(60, 64, 67, 0.08);
+}
+
+#luckysheet-dataVerification-dropdown-btn svg {
+  display: none;
+}
+
 /* Round fill handle (like Google Sheets), instead of the library's small square */
 .luckysheet-cs-fillhandle {
   width: 8px;
@@ -646,6 +661,32 @@ body,
 .dc-dv-close:hover { background: #f1f3f5; }
 .dc-dv-body { padding: 20px 22px; overflow: auto; }
 .dc-dv-label { display: block; margin-bottom: 9px; color: #344054; font-size: 12px; font-weight: 700; }
+.dc-dv-source-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 18px;
+  padding: 3px;
+  background: #f1f3f5;
+  border-radius: 8px;
+}
+
+.dc-dv-source-tabs button {
+  height: 34px;
+  color: #667085;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  font: 600 13px/1.2 inherit;
+  cursor: pointer;
+}
+
+.dc-dv-source-tabs button.is-active {
+  color: #175cd3;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.12);
+}
+
 .dc-dv-options { display: flex; flex-direction: column; gap: 8px; }
 
 .dc-dv-option {
@@ -709,6 +750,24 @@ body,
 }
 
 .dc-dv-add:hover { background: #eef5ff; }
+.dc-dv-range input {
+  width: 100%;
+  height: 40px;
+  padding: 0 11px;
+  color: #202124;
+  background: #fff;
+  border: 1px solid #cbd3dd;
+  border-radius: 7px;
+  box-sizing: border-box;
+  font: 14px/1.2 inherit;
+}
+
+.dc-dv-range input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.13);
+  outline: none;
+}
+
 .dc-dv-error { margin: 12px 0 0 21px; color: #b42318; font-size: 12px; }
 
 .dc-dv-footer {

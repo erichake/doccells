@@ -5,7 +5,10 @@ import {
 import { DOCCELLS_METADATA_SHEET_NAME } from "../features/charts/chartUtils.js";
 import { patchWorkbookWithDefinedNames } from "../features/definedNames/definedNamesOoxml.js";
 import {
+  DOCCELLS_DROPDOWN_NAME_PREFIX,
+  getDropdownOptions,
   getDataValidationMetadata,
+  requiresExcelDropdownRange,
   toExcelDataValidation,
 } from "../features/dataValidation/dataValidationUtils.js";
 import { patchWorkbookWithNativeCheckboxes } from "../features/dataValidation/excelCheckboxOoxml.js";
@@ -405,6 +408,7 @@ export const exportToExcel = async (
   // resterait sinon dans le bundle initial.
   const { default: ExcelJS } = await import("exceljs");
   const workbook = new ExcelJS.Workbook();
+  const deferredDropdownValidations = [];
 
   for (let sheetIndex = 0; sheetIndex < sheetsToExport.length; sheetIndex++) {
     const sheet = sheetsToExport[sheetIndex] || {};
@@ -572,6 +576,15 @@ export const exportToExcel = async (
     Object.entries(sheet.dataVerification || {}).forEach(([key, rule]) => {
       const [rowIndex, columnIndex] = key.split("_").map(Number);
       if (!Number.isInteger(rowIndex) || !Number.isInteger(columnIndex)) return;
+      if (requiresExcelDropdownRange(rule)) {
+        deferredDropdownValidations.push({
+          worksheet,
+          rowIndex,
+          columnIndex,
+          rule,
+        });
+        return;
+      }
       const validation = toExcelDataValidation(rule);
       if (!validation) return;
       worksheet.getCell(rowIndex + 1, columnIndex + 1).dataValidation =
@@ -706,13 +719,44 @@ export const exportToExcel = async (
     }
   }
 
-  if (docCellsMetadata.length > 0) {
+  if (docCellsMetadata.length > 0 || deferredDropdownValidations.length > 0) {
     const metadataWorksheet = workbook.addWorksheet(DOCCELLS_METADATA_SHEET_NAME, {
       state: "veryHidden",
     });
-    metadataWorksheet.getCell("A1").value = JSON.stringify({
-      version: 1,
-      sheets: docCellsMetadata,
+    if (docCellsMetadata.length > 0) {
+      metadataWorksheet.getCell("A1").value = JSON.stringify({
+        version: 1,
+        sheets: docCellsMetadata,
+      });
+    }
+
+    const sourceColumnByOptions = new Map();
+    deferredDropdownValidations.forEach((item) => {
+      const options = getDropdownOptions(item.rule);
+      const optionsKey = JSON.stringify(options);
+      let source = sourceColumnByOptions.get(optionsKey);
+      if (!source) {
+        const sourceColumn = sourceColumnByOptions.size + 2;
+        const sourceColumnName = columnToLetter(sourceColumn - 1);
+        const sourceRange =
+          `'${DOCCELLS_METADATA_SHEET_NAME}'!` +
+          `$${sourceColumnName}$1:$${sourceColumnName}$${options.length}`;
+        source = {
+          name: `${DOCCELLS_DROPDOWN_NAME_PREFIX}${sourceColumn - 1}`,
+        };
+        sourceColumnByOptions.set(optionsKey, source);
+        options.forEach((option, optionIndex) => {
+          metadataWorksheet.getCell(optionIndex + 1, sourceColumn).value =
+            option;
+        });
+        workbook.definedNames.add(sourceRange, source.name);
+      }
+      item.worksheet.getCell(
+        item.rowIndex + 1,
+        item.columnIndex + 1,
+      ).dataValidation = toExcelDataValidation(item.rule, {
+        formula1: source.name,
+      });
     });
   }
 

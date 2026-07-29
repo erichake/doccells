@@ -1,26 +1,75 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { deleteSelectedCellText, FormulaCache } from "@fortune-sheet/core";
 import JSZip from "jszip";
 import {
   applyDataValidation,
   createCheckboxRule,
+  createDropdownRangeRule,
   createDropdownRule,
+  getDataValidationRulesByCell,
+  getDropdownOptions,
   getSelectedRanges,
+  isValidDropdownRangeReference,
+  requiresExcelDropdownRange,
+  shiftDropdownRangeReference,
   toExcelDataValidation,
 } from "../src/features/dataValidation/dataValidationUtils.js";
 import { normalizeImportedWorkbook } from "../src/features/excelImport/normalizeImportedWorkbook.js";
+import { transformExcelToFortune } from "../src/lib/FortuneSheetExcel/main.js";
 import { FortuneSheetCelldata } from "../src/lib/FortuneSheetExcel/ToFortuneSheet/FortuneCell.js";
 import { Element } from "../src/lib/FortuneSheetExcel/ToFortuneSheet/ReadXml.js";
 import {
   getExcelCheckboxStyleIndexes,
   patchWorkbookWithNativeCheckboxes,
 } from "../src/features/dataValidation/excelCheckboxOoxml.js";
+import { exportToExcel } from "../src/utils/exportToExcel.js";
 
 test("normalizes the current FortuneSheet selection", () => {
   assert.deepEqual(
     getSelectedRanges([{ row: [4, 2], column: [3, 3] }]),
     [{ row: [2, 4], column: [3, 3] }],
+  );
+});
+
+test("keeps a formula reference to an empty cell visually empty", () => {
+  const formulaCache = new FormulaCache();
+
+  assert.equal(formulaCache.tryGetCellAsNumber(undefined), "");
+  assert.equal(formulaCache.tryGetCellAsNumber({ v: null }), "");
+  assert.equal(formulaCache.tryGetCellAsNumber({ v: "Option 1" }), "Option 1");
+});
+
+test("deleting a range also removes validation rules from empty cells", () => {
+  const dropdown = createDropdownRule(["Option 1", "Option 2"]);
+  const context = {
+    allowEdit: true,
+    currentSheetId: "sheet-1",
+    config: {},
+    luckysheet_select_save: [{
+      row: [0, 2],
+      column: [0, 2],
+      row_focus: 0,
+      column_focus: 0,
+    }],
+    luckysheetfile: [{
+      id: "sheet-1",
+      data: Array.from({ length: 3 }, () => Array(3).fill(null)),
+      dataVerification: {
+        "0_1": dropdown,
+        "1_1": dropdown,
+        "2_1": dropdown,
+        "4_1": dropdown,
+      },
+      hyperlink: {},
+    }],
+  };
+
+  assert.equal(deleteSelectedCellText(context), "success");
+  assert.deepEqual(
+    Object.keys(context.luckysheetfile[0].dataVerification),
+    ["4_1"],
   );
 });
 
@@ -55,13 +104,110 @@ test("creates dropdown rules and Excel list validations", () => {
   });
 });
 
+test("normalizes dropdown options and detects lists requiring a helper range", () => {
+  const shortRule = createDropdownRule([
+    " À faire ",
+    "Terminé",
+    "À faire",
+  ]);
+  const longRule = createDropdownRule(
+    Array.from({ length: 40 }, (_, index) => `Option ${index + 1}`),
+  );
+  const quotedRule = createDropdownRule(['Option "spéciale"']);
+
+  assert.deepEqual(getDropdownOptions(shortRule), ["À faire", "Terminé"]);
+  assert.equal(requiresExcelDropdownRange(shortRule), false);
+  assert.equal(requiresExcelDropdownRange(longRule), true);
+  assert.equal(requiresExcelDropdownRange(quotedRule), true);
+});
+
+test("preserves a dropdown backed by an Excel cell range", () => {
+  const rangeRule = createDropdownRangeRule("='Sources'!$A$1:$A$3");
+
+  assert.deepEqual(toExcelDataValidation(rangeRule), {
+    type: "list",
+    allowBlank: true,
+    showErrorMessage: true,
+    errorStyle: "error",
+    formulae: ["'Sources'!$A$1:$A$3"],
+  });
+  assert.equal(isValidDropdownRangeReference("Feuille2!A1:A10"), true);
+  assert.equal(
+    isValidDropdownRangeReference("'Feuille source'!$B$2:$B$20"),
+    true,
+  );
+  assert.equal(isValidDropdownRangeReference("Feuille2!A0:A10"), false);
+  assert.equal(isValidDropdownRangeReference("pas une plage"), false);
+});
+
+test("resolves relative and absolute dropdown source references like Excel", () => {
+  assert.equal(
+    shiftDropdownRangeReference("A1:A10", 5, 0),
+    "A6:A15",
+  );
+  assert.equal(
+    shiftDropdownRangeReference("A$1:A$10", 5, 0),
+    "A$1:A$10",
+  );
+  assert.equal(
+    shiftDropdownRangeReference("$A1:$A10", 5, 2),
+    "$A6:$A15",
+  );
+  assert.equal(
+    shiftDropdownRangeReference("'Source data'!A1:B10", 2, 1),
+    "'Source data'!B3:C12",
+  );
+
+  const relativeRules = getDataValidationRulesByCell(
+    [{ row: [0, 9], column: [2, 2] }],
+    createDropdownRangeRule("A1:A10"),
+  );
+  const absoluteRowRules = getDataValidationRulesByCell(
+    [{ row: [0, 9], column: [2, 2] }],
+    createDropdownRangeRule("A$1:A$10"),
+  );
+
+  assert.equal(relativeRules["5_2"].value1, "A6:A15");
+  assert.equal(absoluteRowRules["5_2"].value1, "A$1:A$10");
+});
+
 test("exports checkboxes as plain booleans without a fake dropdown", () => {
   assert.equal(toExcelDataValidation(createCheckboxRule()), null);
+});
+
+test("exports resolved relative dropdown source ranges", async () => {
+  const dataVerification = getDataValidationRulesByCell(
+    [{ row: [0, 9], column: [2, 2] }],
+    createDropdownRangeRule("A1:A10"),
+  );
+  const blob = await exportToExcel([
+    {
+      name: "Feuille1",
+      celldata: [],
+      dataVerification,
+      config: {},
+    },
+  ], { returnBlob: true });
+  const zip = await JSZip.loadAsync(await blob.arrayBuffer());
+  const sheetXml = await zip.file("xl/worksheets/sheet1.xml").async("string");
+
+  assert.match(
+    sheetXml,
+    /sqref="C1"><formula1>A1:A10<\/formula1>/,
+  );
+  assert.match(
+    sheetXml,
+    /sqref="C6"><formula1>A6:A15<\/formula1>/,
+  );
 });
 
 test("patched validation controls notify the formula dependency engine", async () => {
   const coreBundle = await readFile(
     new URL("../node_modules/@fortune-sheet/core/dist/index.js", import.meta.url),
+    "utf8",
+  );
+  const reactBundle = await readFile(
+    new URL("../node_modules/@fortune-sheet/react/dist/index.esm.js", import.meta.url),
     "utf8",
   );
   const checkboxChange = coreBundle.slice(
@@ -81,6 +227,178 @@ test("patched validation controls notify the formula dependency engine", async (
     dropdownChange,
     /execFunctionGroup\(ctx, rowIndex, colIndex, value\);\s+setCellValue\(ctx, rowIndex, colIndex, d, value\);/,
   );
+  assert.match(
+    coreBundle,
+    /dropdownRenderItem\.type\) === "dropdown"/,
+  );
+  assert.match(
+    coreBundle,
+    /dropdownBackgroundItem\.type\) === "dropdown"[\s\S]*?doccellsDropdownHoverCell[\s\S]*?"#d3d6da" : "#e8eaed"/,
+  );
+  assert.match(
+    coreBundle,
+    /nullDropdownItem\.type\) === "dropdown"[\s\S]*?nullDropdownPillWidth/,
+  );
+  assert.match(
+    coreBundle,
+    /dropdownArrowX = endX \+ offsetLeft - 22 \* this\.sheetCtx\.zoomRatio/,
+  );
+  assert.match(
+    coreBundle,
+    /if \(clickMode\) \{\s+ctx\.dataVerificationDropDownList = true;/,
+  );
+  assert.match(
+    coreBundle,
+    /dropdownHoverCell = getCellRowColumn\([\s\S]*?ctx\.doccellsDropdownHoverCell = dropdownHoverKey;/,
+  );
+  assert.match(
+    coreBundle,
+    /tryGetCellAsNumber\(cell\)[\s\S]*?if \(cell == null \|\| isRealNull\(cell\.v\)\) \{\s+return "";/,
+  );
+  assert.match(
+    coreBundle,
+    /dropdownTextX = _pos_x \+ 12 \* dropdownTextZoom[\s\S]*?dropdownTextWidth = Math\.max\(0, cellWidth - 44 \* dropdownTextZoom\)[\s\S]*?textBaseline = "middle"/,
+  );
+  assert.match(
+    coreBundle,
+    /selectedDataVerification[\s\S]*?delete selectedDataVerification\[""\.concat\(r, "_"\)\.concat\(c\)\]/,
+  );
+  assert.match(
+    coreBundle,
+    /dropDownBtn\.style\.width = ""\.concat\(Math\.max\(0, col - col_pre - 10\)/,
+  );
+  assert.match(
+    coreBundle,
+    /&& !isRealNull\(value\) && !validateCellData\(/,
+  );
+  assert.match(
+    coreBundle,
+    /if \(!cell \|\| isRealNull\(cell\.v\)\)[\s\S]*?var v = isRealNull\(cell\.m\) \? cell\.v : cell\.m;/,
+  );
+  assert.equal(
+    reactBundle.match(/setDataValidation: function setDataValidation/g)?.length,
+    1,
+  );
+  assert.match(
+    reactBundle,
+    /return setContext\(function \(draftCtx\)[\s\S]*?cellRule = options\.rulesByCell && options\.rulesByCell\[validationKey\] \|\| rule;[\s\S]*?sheet\.dataVerification\[validationKey\] = Object\.assign\(\{\}, cellRule\)/,
+  );
+  assert.match(
+    reactBundle,
+    /fortuneApi\.setCellValue\(draftCtx, row, column, rule\.value2, cellInput, \{\}\)/,
+  );
+  assert.match(
+    reactBundle,
+    /openDropdownOnFirstPress = draftCtx\.dataVerificationDropDownList === true;[\s\S]*?draftCtx\.dataVerificationDropDownList = true;/,
+  );
+  assert.match(
+    reactBundle,
+    /id: "luckysheet-dataVerification-dropdown-btn",\s+onMouseDown: function onMouseDown\(e\)/,
+  );
+});
+
+test("exports long dropdowns through a hidden helper range", async () => {
+  const options = Array.from(
+    { length: 40 },
+    (_, index) => `Choix numéro ${index + 1}`,
+  );
+  const blob = await exportToExcel([
+    {
+      name: "Feuille1",
+      celldata: [],
+      dataVerification: {
+        "0_0": createDropdownRule(options),
+      },
+      config: {},
+    },
+  ], { returnBlob: true });
+  const exportedBuffer = await blob.arrayBuffer();
+  const zip = await JSZip.loadAsync(exportedBuffer);
+  const sheetXml = await zip.file("xl/worksheets/sheet1.xml").async("string");
+  const workbookXml = await zip.file("xl/workbook.xml").async("string");
+
+  assert.match(
+    sheetXml,
+    /<formula1>_DocCellsDropdown1<\/formula1>/,
+  );
+  assert.match(
+    workbookXml,
+    /<sheet sheetId="2" name="__DOCCELLS_METADATA__" state="veryHidden"/,
+  );
+  assert.match(
+    workbookXml,
+    /<definedName name="_DocCellsDropdown1">&apos;__DOCCELLS_METADATA__&apos;!\$B\$1:\$B\$40<\/definedName>/,
+  );
+
+  const input = Buffer.from(exportedBuffer);
+  input.name = "long-dropdown.xlsx";
+  const parsed = await transformExcelToFortune(input);
+  const imported = normalizeImportedWorkbook(parsed.sheets, {
+    sheetPrefix: "Feuille",
+    definedNames: parsed.definedNames,
+  });
+  assert.equal(
+    imported.sheets[0].dataVerification["0_0"].value1,
+    options.join(","),
+  );
+  assert.equal(imported.definedNames.length, 0);
+});
+
+test("imports an Excel dropdown backed by a cell range", async () => {
+  const { default: ExcelJS } = await import("exceljs");
+  const workbook = new ExcelJS.Workbook();
+  const worksheet = workbook.addWorksheet("Feuille1");
+  const sources = workbook.addWorksheet("Sources");
+  sources.getCell("A1").value = "À faire";
+  sources.getCell("A2").value = "Terminé";
+  worksheet.getCell("A1").dataValidation = {
+    type: "list",
+    formulae: ["Sources!$A$1:$A$2"],
+  };
+  const input = Buffer.from(await workbook.xlsx.writeBuffer());
+  input.name = "dropdown-range.xlsx";
+
+  const parsed = await transformExcelToFortune(input);
+  const imported = normalizeImportedWorkbook(parsed.sheets, {
+    sheetPrefix: "Feuille",
+    definedNames: parsed.definedNames,
+  });
+  const rule = imported.sheets[0].dataVerification["0_0"];
+
+  assert.equal(rule.type, "dropdown");
+  assert.equal(rule.sourceType, "range");
+  assert.equal(rule.value1, "Sources!$A$1:$A$2");
+});
+
+test("imports Excel dropdown ranges with relative reference semantics", async () => {
+  const { default: ExcelJS } = await import("exceljs");
+  const workbook = new ExcelJS.Workbook();
+  const worksheet = workbook.addWorksheet("Feuille1");
+  for (let row = 1; row <= 10; row += 1) {
+    worksheet.getCell(row, 1).value = row;
+  }
+  worksheet.dataValidations.add("C1:C10", {
+    type: "list",
+    formulae: ["A1:A10"],
+  });
+  worksheet.dataValidations.add("D1:D10", {
+    type: "list",
+    formulae: ["A$1:A$10"],
+  });
+  const input = Buffer.from(await workbook.xlsx.writeBuffer());
+  input.name = "dropdown-relative-range.xlsx";
+
+  const parsed = await transformExcelToFortune(input);
+  const imported = normalizeImportedWorkbook(parsed.sheets, {
+    sheetPrefix: "Feuille",
+    definedNames: parsed.definedNames,
+  });
+  const rules = imported.sheets[0].dataVerification;
+
+  assert.equal(rules["0_2"].value1, "A1:A10");
+  assert.equal(rules["5_2"].value1, "A6:A15");
+  assert.equal(rules["0_3"].value1, "A$1:A$10");
+  assert.equal(rules["5_3"].value1, "A$1:A$10");
 });
 
 test("restores exported checkbox booleans and dependent formula results", () => {

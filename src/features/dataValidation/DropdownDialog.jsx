@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useMemo, useRef, useState } from "react";
-import { parseDropdownOptions } from "./dataValidationUtils.js";
+import {
+  isValidDropdownRangeReference,
+  normalizeDropdownRangeReference,
+  parseDropdownOptions,
+} from "./dataValidationUtils.js";
 
 export const DropdownDialog = ({
   open,
@@ -10,6 +14,8 @@ export const DropdownDialog = ({
   onInsert,
 }) => {
   const [options, setOptions] = useState(["Option 1", "Option 2"]);
+  const [sourceType, setSourceType] = useState("list");
+  const [rangeReference, setRangeReference] = useState("");
   const [error, setError] = useState("");
   const firstInputRef = useRef(null);
   const dialogRef = useRef(null);
@@ -21,6 +27,8 @@ export const DropdownDialog = ({
   useEffect(() => {
     if (!open) return;
     setOptions([texts.defaultOption1, texts.defaultOption2]);
+    setSourceType("list");
+    setRangeReference("");
     setError("");
     requestAnimationFrame(() => {
       firstInputRef.current?.focus();
@@ -71,6 +79,17 @@ export const DropdownDialog = ({
   };
 
   const submit = () => {
+    if (sourceType === "range") {
+      if (!isValidDropdownRangeReference(rangeReference)) {
+        setError(texts.errors.range);
+        return;
+      }
+      onInsert({
+        sourceType: "range",
+        reference: normalizeDropdownRangeReference(rangeReference),
+      });
+      return;
+    }
     if (normalizedOptions.length === 0) {
       setError(texts.errors.empty);
       firstInputRef.current?.focus();
@@ -80,7 +99,7 @@ export const DropdownDialog = ({
       setError(texts.errors.comma);
       return;
     }
-    onInsert(normalizedOptions);
+    onInsert({ sourceType: "list", options: normalizedOptions });
   };
 
   return (
@@ -112,39 +131,83 @@ export const DropdownDialog = ({
         </header>
 
         <div className="dc-dv-body">
-          <label className="dc-dv-label">{texts.options}</label>
-          <div className="dc-dv-options">
-            {options.map((option, index) => (
-              <div className="dc-dv-option" key={index}>
-                <span aria-hidden="true" />
-                <input
-                  aria-label={`${texts.option} ${index + 1}`}
-                  onChange={(event) => updateOption(index, event.target.value)}
-                  ref={index === 0 ? firstInputRef : null}
-                  value={option}
-                />
-                <button
-                  aria-label={`${texts.remove} ${index + 1}`}
-                  disabled={options.length === 1}
-                  onClick={() =>
-                    setOptions((current) =>
-                      current.filter((_, optionIndex) => optionIndex !== index),
-                    )
-                  }
-                  type="button"
-                >
-                  ×
-                </button>
-              </div>
-            ))}
+          <div className="dc-dv-source-tabs" role="tablist">
+            <button
+              aria-selected={sourceType === "list"}
+              className={sourceType === "list" ? "is-active" : ""}
+              onClick={() => {
+                setSourceType("list");
+                setError("");
+              }}
+              role="tab"
+              type="button"
+            >
+              {texts.valuesMode}
+            </button>
+            <button
+              aria-selected={sourceType === "range"}
+              className={sourceType === "range" ? "is-active" : ""}
+              onClick={() => {
+                setSourceType("range");
+                setError("");
+              }}
+              role="tab"
+              type="button"
+            >
+              {texts.rangeMode}
+            </button>
           </div>
-          <button
-            className="dc-dv-add"
-            onClick={() => setOptions((current) => [...current, ""])}
-            type="button"
-          >
-            + {texts.addOption}
-          </button>
+
+          {sourceType === "list" ? (
+            <>
+              <label className="dc-dv-label">{texts.options}</label>
+              <div className="dc-dv-options">
+                {options.map((option, index) => (
+                  <div className="dc-dv-option" key={index}>
+                    <span aria-hidden="true" />
+                    <input
+                      aria-label={`${texts.option} ${index + 1}`}
+                      onChange={(event) => updateOption(index, event.target.value)}
+                      ref={index === 0 ? firstInputRef : null}
+                      value={option}
+                    />
+                    <button
+                      aria-label={`${texts.remove} ${index + 1}`}
+                      disabled={options.length === 1}
+                      onClick={() =>
+                        setOptions((current) =>
+                          current.filter((_, optionIndex) => optionIndex !== index),
+                        )
+                      }
+                      type="button"
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+              <button
+                className="dc-dv-add"
+                onClick={() => setOptions((current) => [...current, ""])}
+                type="button"
+              >
+                + {texts.addOption}
+              </button>
+            </>
+          ) : (
+            <label className="dc-dv-range">
+              <span className="dc-dv-label">{texts.rangeLabel}</span>
+              <input
+                autoFocus
+                onChange={(event) => {
+                  setRangeReference(event.target.value);
+                  setError("");
+                }}
+                placeholder={texts.rangePlaceholder}
+                value={rangeReference}
+              />
+            </label>
+          )}
           {error ? <p className="dc-dv-error" role="alert">{error}</p> : null}
         </div>
 

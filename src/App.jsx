@@ -31,7 +31,9 @@ import { getDataValidationTexts } from "./features/dataValidation/dataValidation
 import {
   applyDataValidation,
   createCheckboxRule,
+  createDropdownRangeRule,
   createDropdownRule,
+  getDataValidationRulesByCell,
   getSelectedRanges,
 } from "./features/dataValidation/dataValidationUtils.js";
 import {
@@ -905,6 +907,17 @@ const App = () => {
 
   const commitDataValidation = useCallback(
     (rule, ranges, options) => {
+      const workbook = workbookRef.current;
+      const activeSheet = workbook?.getSheet?.();
+      if (activeSheet?.config?.authority?.sheet === 1) return;
+      if (typeof workbook?.setDataValidation === "function") {
+        workbook.setDataValidation(ranges, rule, {
+          ...options,
+          rulesByCell: getDataValidationRulesByCell(ranges, rule),
+        });
+        return;
+      }
+
       const sheets = getWorkbookSheetsForCommit();
       const sheetIndex = getActiveSheetIndex();
       if (!sheets[sheetIndex]) return;
@@ -938,12 +951,17 @@ const App = () => {
   }, [getCurrentValidationSelection]);
 
   const insertDropdown = useCallback(
-    (options) => {
+    ({ sourceType, options, reference }) => {
       commitDataValidation(
-        createDropdownRule(options),
+        sourceType === "range"
+          ? createDropdownRangeRule(reference)
+          : createDropdownRule(options),
         dataValidationSelection,
       );
       setDropdownDialogOpen(false);
+      requestAnimationFrame(() => {
+        document.querySelector(".fortune-sheet-overlay")?.focus();
+      });
     },
     [commitDataValidation, dataValidationSelection],
   );

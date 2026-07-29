@@ -26,6 +26,7 @@ import {
   FortuneSheetConfigMerge,
 } from "./FortuneBase.js";
 import dayjs from "dayjs";
+import { shiftDropdownRangeReference } from "../../../features/dataValidation/dataValidationUtils.js";
 
 const EXCEL_MAX_ROW_INDEX = 1048575;
 const DATA_VALIDATION_ROW_BUFFER = 1000;
@@ -1285,12 +1286,34 @@ export class FortuneSheet extends FortuneSheetBase {
       if (_type === "checkbox" || _type === "dropdown") {
         _type2 = null;
       }
+      const dropdownSourceType =
+        _type === "dropdown"
+          ? /&quot;|<(?:x14:formula1|xm:f)>"/.test(formulaValue)
+            ? "list"
+            : "range"
+          : undefined;
+      const validationAnchor = sqrefIndexArr[0]
+        ?.split("_")
+        .map(Number);
       // dynamically add dataVerifications
       for (const ref of sqrefIndexArr) {
+        const [validationRow, validationColumn] = ref.split("_").map(Number);
+        const dropdownValue1 =
+          dropdownSourceType === "range" &&
+          validationAnchor?.length === 2
+            ? shiftDropdownRangeReference(
+                _value1,
+                validationRow - validationAnchor[0],
+                validationColumn - validationAnchor[1],
+              )
+            : _value1;
         dataVerification[ref] = {
           type: _type,
           type2: _type2,
-          value1: _value1,
+          ...(dropdownSourceType
+            ? { sourceType: dropdownSourceType }
+            : {}),
+          value1: dropdownValue1,
           value2: _value2,
           checked: false,
           remote: false,

@@ -173,6 +173,115 @@ const NEW7_CJS = NEW7.replace(
   "core.createDropCellRange(draftContext, nativeEvent, containerRef.current);",
 );
 
+const OLD8 = `    getCellValue: function getCellValue(row, column) {`;
+
+const OLD_DATA_VALIDATION_API_METHOD = `    setDataValidation: function setDataValidation(ranges, rule) {
+      var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      return setContext(function (draftCtx) {
+        var getSheetIndexApi = typeof getSheetIndex === "function" ? getSheetIndex : core.getSheetIndex;
+        var fortuneApi = typeof api !== "undefined" ? api : core.api;
+        var sheetIndex = getSheetIndexApi(draftCtx, draftCtx.currentSheetId);
+        if (sheetIndex == null) return;
+        var sheet = draftCtx.luckysheetfile[sheetIndex];
+        if (!sheet) return;
+        if (!sheet.dataVerification) sheet.dataVerification = {};
+        (ranges || []).forEach(function (range) {
+          for (var row = range.row[0]; row <= range.row[1]; row += 1) {
+            for (var column = range.column[0]; column <= range.column[1]; column += 1) {
+              sheet.dataVerification["".concat(row, "_").concat(column)] = Object.assign({}, rule);
+              if (options.initializeCheckboxes) {
+                fortuneApi.setCellValue(draftCtx, row, column, rule.value2, cellInput, {});
+              }
+            }
+          }
+        });
+      });
+    },
+`;
+
+const DATA_VALIDATION_API_METHOD = OLD_DATA_VALIDATION_API_METHOD.replace(
+  `              sheet.dataVerification["".concat(row, "_").concat(column)] = Object.assign({}, rule);`,
+  `              var validationKey = "".concat(row, "_").concat(column);
+              var cellRule = options.rulesByCell && options.rulesByCell[validationKey] || rule;
+              sheet.dataVerification[validationKey] = Object.assign({}, cellRule);`,
+);
+
+const NEW8 = `${DATA_VALIDATION_API_METHOD}${OLD8}`;
+
+const OLD9 = `  var cellAreaMouseDown = useCallback(function (e) {
+    var nativeEvent = e.nativeEvent;
+    if (e.button !== 2) {
+      setContext(function (draftCtx) {
+        var _draftCtx$luckysheet_;
+        handleCellAreaMouseDown(draftCtx, refs.globalCache, nativeEvent, refs.cellInput.current, refs.cellArea.current, refs.fxInput.current, refs.canvas.current.getContext("2d"));
+        if (!_.isEmpty((_draftCtx$luckysheet_ = draftCtx.luckysheet_select_save) === null || _draftCtx$luckysheet_ === void 0 ? void 0 : _draftCtx$luckysheet_[0]) && refs.cellInput.current) {
+          setTimeout(function () {
+            var _refs$cellInput$curre;
+            (_refs$cellInput$curre = refs.cellInput.current) === null || _refs$cellInput$curre === void 0 ? void 0 : _refs$cellInput$curre.focus();
+          });
+        }
+      });
+    }
+  }, [setContext, refs.globalCache, refs.cellInput, refs.cellArea, refs.fxInput, refs.canvas]);`;
+
+const NEW9 = OLD9.replace(
+  `    if (e.button !== 2) {
+      setContext(function (draftCtx) {`,
+  `    if (e.button !== 2) {
+      var openDropdownOnFirstPress = false;
+      setContext(function (draftCtx) {`,
+).replace(
+  `        handleCellAreaMouseDown(draftCtx, refs.globalCache, nativeEvent, refs.cellInput.current, refs.cellArea.current, refs.fxInput.current, refs.canvas.current.getContext("2d"));`,
+  `        handleCellAreaMouseDown(draftCtx, refs.globalCache, nativeEvent, refs.cellInput.current, refs.cellArea.current, refs.fxInput.current, refs.canvas.current.getContext("2d"));
+        openDropdownOnFirstPress = draftCtx.dataVerificationDropDownList === true;`,
+).replace(
+  `      });
+    }
+  }, [setContext, refs.globalCache, refs.cellInput, refs.cellArea, refs.fxInput, refs.canvas]);`,
+  `      });
+      if (openDropdownOnFirstPress) {
+        setTimeout(function () {
+          setContext(function (draftCtx) {
+            draftCtx.dataVerificationDropDownList = true;
+          });
+        });
+      }
+    }
+  }, [setContext, refs.globalCache, refs.cellInput, refs.cellArea, refs.fxInput, refs.canvas]);`,
+);
+
+const OLD9_CJS = OLD9
+  .replace("useCallback", "React.useCallback")
+  .replace(
+    "handleCellAreaMouseDown(draftCtx",
+    "core.handleCellAreaMouseDown(draftCtx",
+  )
+  .replace("!_.isEmpty", "!___default['default'].isEmpty");
+
+const NEW9_CJS = NEW9
+  .replace("useCallback", "React.useCallback")
+  .replace(
+    "handleCellAreaMouseDown(draftCtx",
+    "core.handleCellAreaMouseDown(draftCtx",
+  )
+  .replace("!_.isEmpty", "!___default['default'].isEmpty");
+
+const OLD10 = `    onClick: function onClick() {
+      setContext(function (ctx) {
+        ctx.dataVerificationDropDownList = true;
+        dataVerificationHintBoxRef.current.style.display = "none";
+      });
+    },`;
+
+const NEW10 = `    onMouseDown: function onMouseDown(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      setContext(function (ctx) {
+        ctx.dataVerificationDropDownList = true;
+        dataVerificationHintBoxRef.current.style.display = "none";
+      });
+    },`;
+
 const PATCH_GROUPS = [
   { name: "SelectItem count parens fix",      variants: [{ old: OLD1, new: NEW1 }] },
   { name: "DateSelectTreeItem count parens fix", variants: [{ old: OLD2, new: NEW2 }] },
@@ -193,6 +302,21 @@ const PATCH_GROUPS = [
     name: "Fill handle native drag guard",
     variants: [{ old: OLD7, new: NEW7 }, { old: OLD7_CJS, new: NEW7_CJS }],
   },
+  {
+    name: "Undoable data-validation API",
+    variants: [{ old: OLD8, new: NEW8 }],
+  },
+  {
+    name: "Dropdown opens on first cell press",
+    variants: [
+      { old: OLD9, new: NEW9 },
+      { old: OLD9_CJS, new: NEW9_CJS },
+    ],
+  },
+  {
+    name: "Dropdown button opens on mouse down",
+    variants: [{ old: OLD10, new: NEW10 }],
+  },
 ];
 
 let allPatched = 0;
@@ -200,12 +324,24 @@ for (const bundle of BUNDLES) {
   const file = path.join(REACT_DIST, bundle);
   if (!fs.existsSync(file)) { console.warn(`patch-fortune-react: ${bundle} not found, skipping`); continue; }
   let src = fs.readFileSync(file, "utf8");
+  src = src.replace(
+    OLD_DATA_VALIDATION_API_METHOD,
+    DATA_VALIDATION_API_METHOD,
+  );
+  while (src.includes(
+    `${DATA_VALIDATION_API_METHOD}${DATA_VALIDATION_API_METHOD}`,
+  )) {
+    src = src.replace(
+      `${DATA_VALIDATION_API_METHOD}${DATA_VALIDATION_API_METHOD}`,
+      DATA_VALIDATION_API_METHOD,
+    );
+  }
   let groupsOk = 0;
   for (const group of PATCH_GROUPS) {
     let matched = false;
     for (const v of group.variants) {
-      if (src.includes(v.old)) { src = src.replace(v.old, v.new); matched = true; break; }
       if (src.includes(v.new)) { matched = true; break; }
+      if (src.includes(v.old)) { src = src.replace(v.old, v.new); matched = true; break; }
     }
     if (matched) { groupsOk++; }
     else { console.warn(`patch-fortune-react: [${group.name}] pattern not found in ${bundle}`); }
