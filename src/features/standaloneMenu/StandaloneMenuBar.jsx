@@ -127,6 +127,7 @@ export const StandaloneMenuBar = ({
   onSaveDocument,
   onSaveDocumentAs,
   onExportDocument,
+  onPrintDocument,
   recentFiles,
   onOpenRecentFile,
   onClearRecentFiles,
@@ -212,6 +213,7 @@ export const StandaloneMenuBar = ({
         b: () => triggerWorkbookFormat(workbookRef, "bl"),
         i: () => triggerWorkbookFormat(workbookRef, "it"),
         o: onOpenDocument,
+        p: onPrintDocument,
         s: supportsNativeFileSave ? onSaveDocument : onExportDocument,
         u: () => triggerWorkbookFormat(workbookRef, "un"),
         y: () => triggerWorkbookRedo(workbookRef),
@@ -236,6 +238,7 @@ export const StandaloneMenuBar = ({
     isStandalone,
     onExportDocument,
     onOpenDocument,
+    onPrintDocument,
     onSaveDocument,
     runCommand,
     supportsNativeFileSave,
@@ -278,10 +281,14 @@ export const StandaloneMenuBar = ({
               "divider",
               { icon: "download", label: texts.items.save, shortcut: "⌘S", command: onSaveDocument },
               { icon: "download", label: texts.items.saveAs, command: onSaveDocumentAs },
+              "divider",
+              { icon: "print", label: texts.items.print, shortcut: "⌘P", command: onPrintDocument },
             ]
           : [
               { icon: "folder", label: texts.items.open, shortcut: "⌘O", command: onOpenDocument },
               { icon: "download", label: texts.items.export, command: onExportDocument },
+              "divider",
+              { icon: "print", label: texts.items.print, shortcut: "⌘P", command: onPrintDocument },
             ],
       },
       {
@@ -574,6 +581,7 @@ export const StandaloneMenuBar = ({
       onClearRecentFiles,
       onOpenDocument,
       onOpenRecentFile,
+      onPrintDocument,
       onSaveDocument,
       onSaveDocumentAs,
       recentFiles,
@@ -746,6 +754,13 @@ const icons = {
       <path d="M12 4.75v9.5" />
       <path d="m8.5 11 3.5 3.5 3.5-3.5" />
       <path d="M5.5 18.75h13" />
+    </svg>
+  ),
+  print: (
+    <svg viewBox="0 0 24 24">
+      <path d="M7 8V4.5h10V8M7 16H5.5A1.5 1.5 0 0 1 4 14.5v-5A1.5 1.5 0 0 1 5.5 8h13A1.5 1.5 0 0 1 20 9.5v5a1.5 1.5 0 0 1-1.5 1.5H17" />
+      <rect x="7" y="13" width="10" height="6.5" />
+      <circle cx="17" cy="10.5" r=".75" />
     </svg>
   ),
   undo: (

@@ -28,6 +28,8 @@ import {
 import { getStandaloneMenuTexts } from "./features/standaloneMenu/standaloneMenuTexts.js";
 import { DropdownDialog } from "./features/dataValidation/DropdownDialog.jsx";
 import { getDataValidationTexts } from "./features/dataValidation/dataValidationTexts.js";
+import { PrintDialog } from "./features/printing/PrintDialog.jsx";
+import { getPrintingTexts } from "./features/printing/printingTexts.js";
 import {
   applyDataValidation,
   createCheckboxRule,
@@ -116,6 +118,7 @@ const currencySymbol =
     nl: "€",
   }[detectedLang] ?? "$";
 const dataValidationTexts = getDataValidationTexts(detectedLang);
+const printingTexts = getPrintingTexts(detectedLang);
 const standaloneMenuTextsBase = getStandaloneMenuTexts(
   t,
   detectedLang,
@@ -127,6 +130,7 @@ const standaloneMenuTexts = {
     ...standaloneMenuTextsBase.items,
     checkbox: dataValidationTexts.checkbox,
     dropdown: dataValidationTexts.dropdown,
+    print: printingTexts.menuItem,
   },
 };
 const definedNamesTexts = getDefinedNamesTexts(detectedLang);
@@ -318,6 +322,9 @@ const App = () => {
   const [dataValidationSelectionLabel, setDataValidationSelectionLabel] = useState("A1");
   const [activeSheetIndex, setActiveSheetIndex] = useState(0);
   const [definedNames, setDefinedNames] = useState([]);
+  const [printDialogOpen, setPrintDialogOpen] = useState(false);
+  const [printSheet, setPrintSheet] = useState(null);
+  const [printSelection, setPrintSelection] = useState(null);
   const [nameBoxLocation, setNameBoxLocation] = useState("");
   const [nameBoxReference, setNameBoxReference] = useState("");
   const [, setChartRenderKey] = useState(0);
@@ -834,6 +841,26 @@ const App = () => {
       ),
     }));
   }, []);
+
+  const openPrintDialog = useCallback(() => {
+    const workbook = workbookRef.current;
+    const sheet = workbook?.getSheet?.() || sheetDataRef.current[getActiveSheetIndex()];
+    if (!sheet) return;
+    const ranges = (workbook?.getSelection?.() || []).filter(
+      (range) => range?.row && range?.column,
+    );
+    const selection = ranges.length ? ranges[ranges.length - 1] : null;
+    setPrintSheet({
+      ...sheet,
+      celldata: sheet.celldata || dataToCelldata(sheet.data),
+    });
+    setPrintSelection(
+      selection
+        ? { row: [...selection.row], column: [...selection.column] }
+        : null,
+    );
+    setPrintDialogOpen(true);
+  }, [getActiveSheetIndex]);
 
   const commitConditionalSheets = useCallback((sheets, { remount = true } = {}) => {
     const formatted = applyConditionalFormatting(sheets);
@@ -1655,6 +1682,14 @@ const App = () => {
         texts={chartTexts}
       />
 
+      <PrintDialog
+        open={printDialogOpen}
+        sheet={printSheet}
+        selection={printSelection}
+        texts={printingTexts}
+        onClose={() => setPrintDialogOpen(false)}
+      />
+
       <StandaloneMenuBar
         appMode={appMode}
         sheetDataRef={sheetDataRef}
@@ -1672,6 +1707,7 @@ const App = () => {
         onSaveDocument={saveDocument}
         onSaveDocumentAs={saveDocumentAs}
         onExportDocument={exportDocument}
+        onPrintDocument={openPrintDialog}
         recentFiles={recentFiles}
         onOpenRecentFile={openRecentFile}
         onClearRecentFiles={clearRecentFileList}
