@@ -12,6 +12,14 @@ const preserveCustomList = (liveList, previousList) => {
   return Array.isArray(liveList) ? liveList : [];
 };
 
+const isTopWindow = () => {
+  try {
+    return window.self === window.top;
+  } catch {
+    return false;
+  }
+};
+
 const findPreviousSheet = (previousSheets, sheet, fallbackIndex) => {
   if (sheet?.id != null) {
     const byId = previousSheets.find(
@@ -68,6 +76,7 @@ export const useFortuneToolbarButtons = ({
   const addButtons = useCallback(() => {
     const toolbar = document.getElementsByClassName("fortune-toolbar")[0];
     if (!toolbar) return;
+    const showFileButtons = isTopWindow();
     const statArea = document.getElementsByClassName("fortune-stat-area")[0];
     if (statArea) {
       statArea.style.height = "0px";
@@ -139,7 +148,9 @@ export const useFortuneToolbarButtons = ({
       onOpenDocument();
     });
 
-    toolbar.insertBefore(openButton, toolbar.firstChild);
+    if (showFileButtons) {
+      toolbar.insertBefore(openButton, toolbar.firstChild);
+    }
 
     // 🔹 Création du bouton "Exporter..."
     const exportButton = document.createElement("div");
@@ -156,7 +167,9 @@ export const useFortuneToolbarButtons = ({
       }
     });
 
-    toolbar.insertBefore(exportButton, openButton.nextSibling);
+    if (showFileButtons) {
+      toolbar.insertBefore(exportButton, openButton.nextSibling);
+    }
 
     // 🔹 Création du bouton "Afficher / masquer le quadrillage"
     const gridLinesButton = document.createElement("div");
@@ -204,7 +217,10 @@ export const useFortuneToolbarButtons = ({
     });
 
     updateGridLinesButtonStyle();
-    toolbar.insertBefore(gridLinesButton, exportButton.nextSibling);
+    toolbar.insertBefore(
+      gridLinesButton,
+      showFileButtons ? exportButton.nextSibling : toolbar.firstChild,
+    );
 
     // 🔹 Création du bouton "Graphique"
     const chartButton = document.createElement("div");
