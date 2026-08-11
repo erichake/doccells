@@ -9,6 +9,22 @@ import {
   getCellStyle,
   getPrintableRange,
 } from "../src/features/printing/printLayout.js";
+import { getPrintingTexts } from "../src/features/printing/printingTexts.js";
+
+const SUPPORTED_LOCALES = [
+  "zh-CN",
+  "zh-TW",
+  "en",
+  "fr-FR",
+  "es-ES",
+  "hi",
+  "ru",
+  "pt",
+  "de",
+  "el",
+  "it",
+  "nl",
+];
 
 test("detects the used range from cells and merged cells", () => {
   const sheet = {
@@ -127,4 +143,24 @@ test("fit scaling is applied directly to cell typography", () => {
   const scaled = getCellStyle({ v: "Header", fs: 12 }, true, true, 0.5);
 
   assert.equal(scaled.fontSize, "6pt");
+});
+
+test("all supported locales provide every print-dialog text", () => {
+  const english = getPrintingTexts("en");
+  const expectedKeys = Object.keys(english).sort();
+
+  SUPPORTED_LOCALES.forEach((locale) => {
+    const texts = getPrintingTexts(locale);
+    assert.deepEqual(Object.keys(texts).sort(), expectedKeys, locale);
+    expectedKeys.forEach((key) => {
+      assert.equal(
+        typeof texts[key],
+        typeof english[key],
+        `${locale}.${key}`,
+      );
+    });
+    if (locale !== "en") {
+      assert.notEqual(texts.menuItem, english.menuItem, locale);
+    }
+  });
 });
