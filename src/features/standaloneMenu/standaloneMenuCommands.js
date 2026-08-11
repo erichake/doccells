@@ -13,19 +13,22 @@ const getUseHref = (useElement) =>
   useElement.getAttribute("xlink:href") ||
   "";
 
-const findToolbarControlByIcon = (iconId) => {
-  const toolbar = getToolbar();
-  if (!toolbar) return null;
+const findControlByIcon = (root, iconId) => {
+  if (!root) return null;
 
-  const iconUse = Array.from(toolbar.querySelectorAll("use")).find(
-    (useElement) => getUseHref(useElement) === `#${iconId}`,
-  );
-  if (!iconUse) return null;
-
-  return iconUse.closest(
-    ".fortune-toolbar-button, .fortune-toolbar-combo, .fortune-toobar-combo-container",
-  );
+  return Array.from(root.querySelectorAll("use"))
+    .filter((useElement) => getUseHref(useElement) === `#${iconId}`)
+    .map((useElement) => useElement.closest(
+      ".fortune-toolbar-button, .fortune-toolbar-combo, .fortune-toobar-combo-container",
+    ))
+    .find(Boolean) || null;
 };
+
+const findToolbarControlByIcon = (iconId) =>
+  findControlByIcon(getToolbar(), iconId);
+
+const findMountedControlByIcon = (iconId) =>
+  findControlByIcon(document, iconId);
 
 const findToolbarComboOption = (container, optionIconId) => {
   const optionIcon = Array.from(
@@ -138,31 +141,55 @@ export const clickToolbarIcon = (iconId) => {
 };
 
 export const triggerToolbarComboOption = (comboIconId, optionIconId) => {
-  const control = comboIconId ? findToolbarControlByIcon(comboIconId) : null;
-  const container =
-    control?.closest(".fortune-toobar-combo-container") ||
-    findToolbarComboByOptionFamily(optionIconId) ||
-    findToolbarComboByOptionIcon(optionIconId);
-  const arrow = container?.querySelector(".fortune-toolbar-combo-arrow");
-  if (!container || !arrow) return false;
+  const runOption = (control) => {
+    const container =
+      control?.closest(".fortune-toobar-combo-container") ||
+      findToolbarComboByOptionFamily(optionIconId) ||
+      findToolbarComboByOptionIcon(optionIconId);
+    const arrow = container?.querySelector(".fortune-toolbar-combo-arrow");
+    if (!container || !arrow) return false;
 
-  document.body.classList.add(SUPPRESS_TOOLBAR_COMBO_CLASS);
+    document.body.classList.add(SUPPRESS_TOOLBAR_COMBO_CLASS);
 
-  if (!findToolbarComboOption(container, optionIconId)) {
-    arrow.click();
-  }
+    if (!findToolbarComboOption(container, optionIconId)) {
+      arrow.click();
+    }
 
+    requestAnimationFrame(() => {
+      const option = findToolbarComboOption(container, optionIconId);
+      if (option) {
+        option.click();
+        cleanupSuppressedToolbarCombo();
+        return;
+      }
+
+      requestAnimationFrame(() => {
+        findToolbarComboOption(container, optionIconId)?.click();
+        cleanupSuppressedToolbarCombo();
+      });
+    });
+
+    return true;
+  };
+
+  const control = comboIconId ? findMountedControlByIcon(comboIconId) : null;
+  if (control || !comboIconId) return runOption(control);
+
+  // FortuneSheet moves trailing toolbar controls into its “More” popup on
+  // narrower layouts. Mount that popup before looking up the requested combo.
+  const moreControl = findToolbarControlByIcon("more");
+  if (!moreControl) return false;
+
+  moreControl.click();
   requestAnimationFrame(() => {
-    const option = findToolbarComboOption(container, optionIconId);
-    if (option) {
-      option.click();
-      cleanupSuppressedToolbarCombo();
+    const overflowControl = findMountedControlByIcon(comboIconId);
+    if (overflowControl) {
+      runOption(overflowControl);
       return;
     }
 
     requestAnimationFrame(() => {
-      findToolbarComboOption(container, optionIconId)?.click();
-      cleanupSuppressedToolbarCombo();
+      runOption(findMountedControlByIcon(comboIconId));
     });
   });
 
