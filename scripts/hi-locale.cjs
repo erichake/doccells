@@ -8,6 +8,16 @@ module.exports = {
   },
   functionlist: [
     {
+      n: "SPARKLINE", t: -1,
+      d: "डेटा श्रेणी से एक सेल में छोटा चार्ट बनाता है।",
+      a: "एक सेल में छोटा चार्ट बनाता है।",
+      m: [1, 2],
+      p: [
+        { name: "डेटा", detail: "दिखाए जाने वाले मानों की श्रेणी या सरणी।", example: "B2:B12", require: "m", repeat: "n", type: "range" },
+        { name: "विकल्प", detail: "प्रकार: line, bar, column, winloss। सामान्य: charttype, empty, nan, rtl। लाइन: color, linewidth, xmin, xmax, ymin, ymax। बार: max, color1, color2। कॉलम/winloss: color, negcolor, lowcolor, highcolor, firstcolor, lastcolor, axis, axiscolor, ymin, ymax। मान और उदाहरण SPARKLINE दस्तावेज़ में हैं।", helpHref: "sparkline/hi.html", helpLabel: "SPARKLINE दस्तावेज़", example: "{\"charttype\",\"column\";\"color\",\"#4285F4\"}", require: "o", repeat: "n", type: "rangeall" }
+      ]
+    },
+    {
       n: "SUMIF",
       t: 0,
       d: "किसी श्रेणी में एक सशर्त योग देता है।",

@@ -8,6 +8,16 @@ module.exports = {
   },
   functionlist: [
     {
+      n: "SPARKLINE", t: -1,
+      d: "Создает миниатюрную диаграмму в одной ячейке на основе диапазона данных.",
+      a: "Создает миниатюрную диаграмму в ячейке.",
+      m: [1, 2],
+      p: [
+        { name: "данные", detail: "Диапазон или массив значений для отображения.", example: "B2:B12", require: "m", repeat: "n", type: "range" },
+        { name: "параметры", detail: "Типы: line, bar, column, winloss. Общие: charttype, empty, nan, rtl. Линия: color, linewidth, xmin, xmax, ymin, ymax. Полоса: max, color1, color2. Столбцы/winloss: color, negcolor, lowcolor, highcolor, firstcolor, lastcolor, axis, axiscolor, ymin, ymax. Значения и примеры приведены в документации SPARKLINE.", helpHref: "sparkline/ru.html", helpLabel: "документации SPARKLINE", example: "{\"charttype\",\"column\";\"color\",\"#4285F4\"}", require: "o", repeat: "n", type: "rangeall" }
+      ]
+    },
+    {
       n: "СУММЕСЛИ",
       t: 0,
       d: "Возвращает сумму значений в диапазоне, удовлетворяющих заданному условию.",

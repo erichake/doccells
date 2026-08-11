@@ -8,6 +8,16 @@ module.exports = {
   },
   functionlist: [
     {
+      n: "SPARKLINE", t: -1,
+      d: "Crea un grafico in miniatura in una cella da un intervallo di dati.",
+      a: "Crea un grafico in miniatura in una cella.",
+      m: [1, 2],
+      p: [
+        { name: "dati", detail: "L’intervallo o la matrice di valori da rappresentare.", example: "B2:B12", require: "m", repeat: "n", type: "range" },
+        { name: "opzioni", detail: "Tipi: line, bar, column, winloss. Comuni: charttype, empty, nan, rtl. Linea: color, linewidth, xmin, xmax, ymin, ymax. Barra: max, color1, color2. Colonne/winloss: color, negcolor, lowcolor, highcolor, firstcolor, lastcolor, axis, axiscolor, ymin, ymax. Vedere la documentazione SPARKLINE per valori ed esempi.", helpHref: "sparkline/it.html", helpLabel: "documentazione SPARKLINE", example: "{\"charttype\"\\\"column\";\"color\"\\\"#4285F4\"}", require: "o", repeat: "n", type: "rangeall" }
+      ]
+    },
+    {
       n: "SUMIF",
       t: 0,
       d: "Restituisce una somma condizionale su un intervallo.",

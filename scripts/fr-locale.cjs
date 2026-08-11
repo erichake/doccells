@@ -8,6 +8,16 @@ module.exports = {
   },
   functionlist: [
     {
+      n: "SPARKLINE", t: -1,
+      d: "Crée un graphique miniature dans une cellule à partir d’une plage de données.",
+      a: "Crée un graphique miniature dans une cellule.",
+      m: [1, 2],
+      p: [
+        { name: "données", detail: "La plage ou le tableau de valeurs à représenter.", example: "B2:B12", require: "m", repeat: "n", type: "range" },
+        { name: "options", detail: "Types : line, bar, column, winloss. Communes : charttype, empty, nan, rtl. Courbe : color, linewidth, xmin, xmax, ymin, ymax. Barre : max, color1, color2. Colonnes/winloss : color, negcolor, lowcolor, highcolor, firstcolor, lastcolor, axis, axiscolor, ymin, ymax. Voir la documentation SPARKLINE pour les valeurs et exemples.", helpHref: "sparkline/fr.html", helpLabel: "documentation SPARKLINE", example: "{\"charttype\"\\\"column\";\"color\"\\\"#4285F4\"}", require: "o", repeat: "n", type: "rangeall" }
+      ]
+    },
+    {
       n: "SUMIF",
       t: 0,
       d: "Renvoie une somme conditionnelle sur une plage.",

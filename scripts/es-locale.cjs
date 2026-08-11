@@ -39,6 +39,16 @@ module.exports = {  "insertLink": {
   },
   functionlist: [
     {
+      n: "SPARKLINE", t: -1,
+      d: "Crea un gráfico en miniatura en una celda a partir de un intervalo de datos.",
+      a: "Crea un gráfico en miniatura en una celda.",
+      m: [1, 2],
+      p: [
+        { name: "datos", detail: "El intervalo o la matriz de valores que se representará.", example: "B2:B12", require: "m", repeat: "n", type: "range" },
+        { name: "opciones", detail: "Tipos: line, bar, column, winloss. Comunes: charttype, empty, nan, rtl. Línea: color, linewidth, xmin, xmax, ymin, ymax. Barra: max, color1, color2. Columnas/winloss: color, negcolor, lowcolor, highcolor, firstcolor, lastcolor, axis, axiscolor, ymin, ymax. Consulte la documentación de SPARKLINE para ver valores y ejemplos.", helpHref: "sparkline/es.html", helpLabel: "documentación de SPARKLINE", example: "{\"charttype\"\\\"column\";\"color\"\\\"#4285F4\"}", require: "o", repeat: "n", type: "rangeall" }
+      ]
+    },
+    {
       n: "SUMIF",
       t: 0,
       d: "Devuelve una suma condicional en un rango.",

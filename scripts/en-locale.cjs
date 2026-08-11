@@ -8,6 +8,16 @@ module.exports = {
   },
   functionlist: [
     {
+      n: "SPARKLINE", t: -1,
+      d: "Creates a miniature chart in a single cell from a data range.",
+      a: "Creates a miniature chart in a cell.",
+      m: [1, 2],
+      p: [
+        { name: "data", detail: "The range or array containing the values to plot.", example: "B2:B12", require: "m", repeat: "n", type: "range" },
+        { name: "options", detail: "Types: line, bar, column, winloss. Common: charttype, empty, nan, rtl. Line: color, linewidth, xmin, xmax, ymin, ymax. Bar: max, color1, color2. Column/winloss: color, negcolor, lowcolor, highcolor, firstcolor, lastcolor, axis, axiscolor, ymin, ymax. See the SPARKLINE documentation for values and examples.", helpHref: "sparkline/en.html", helpLabel: "SPARKLINE documentation", example: "{\"charttype\",\"column\";\"color\",\"#4285F4\"}", require: "o", repeat: "n", type: "rangeall" }
+      ]
+    },
+    {
       n: "SUMIF",
       t: 0,
       d: "Returns a conditional sum across a range.",

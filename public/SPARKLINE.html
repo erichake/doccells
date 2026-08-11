@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARKLINE — DocCells</title>
+    <script>
+      const supported = new Set(["en", "fr", "es", "pt", "de", "el", "it", "nl", "ru", "hi", "zh", "zh_tw"]);
+      const browserLocale = (navigator.language || "en").toLowerCase().replace("-", "_");
+      const locale = browserLocale === "zh_tw" || browserLocale === "zh_hk"
+        ? "zh_tw"
+        : browserLocale.startsWith("zh")
+          ? "zh"
+          : browserLocale.split("_")[0];
+      window.location.replace(`sparkline/${supported.has(locale) ? locale : "en"}.html`);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1920,6 +1920,19 @@ body,
   pointer-events: none;
 }
 
+.dc-formula-help-link {
+  color: #1967d2;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.dc-formula-help-link:hover,
+.dc-formula-help-link:focus-visible {
+  color: #174ea6;
+}
+
 #luckysheet-search-formula input,
 #luckysheet-search-formula select,
 #luckysheet-search-formula button,

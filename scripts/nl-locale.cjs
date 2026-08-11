@@ -8,6 +8,16 @@ module.exports = {
   },
   functionlist: [
     {
+      n: "SPARKLINE", t: -1,
+      d: "Maakt vanuit een gegevensbereik een miniatuurgrafiek in één cel.",
+      a: "Maakt een miniatuurgrafiek in een cel.",
+      m: [1, 2],
+      p: [
+        { name: "gegevens", detail: "Het bereik of de matrix met waarden die moeten worden weergegeven.", example: "B2:B12", require: "m", repeat: "n", type: "range" },
+        { name: "opties", detail: "Typen: line, bar, column, winloss. Algemeen: charttype, empty, nan, rtl. Lijn: color, linewidth, xmin, xmax, ymin, ymax. Balk: max, color1, color2. Kolom/winloss: color, negcolor, lowcolor, highcolor, firstcolor, lastcolor, axis, axiscolor, ymin, ymax. Zie de SPARKLINE-documentatie voor waarden en voorbeelden.", helpHref: "sparkline/nl.html", helpLabel: "SPARKLINE-documentatie", example: "{\"charttype\"\\\"column\";\"color\"\\\"#4285F4\"}", require: "o", repeat: "n", type: "rangeall" }
+      ]
+    },
+    {
       n: "SUMIF",
       t: 0,
       d: "Retourneert een voorwaardelijke som over een bereik.",

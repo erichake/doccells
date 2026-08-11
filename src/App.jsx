@@ -2,6 +2,11 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { Workbook } from "@fortune-sheet/react";
 import { update as formatNumber } from "@fortune-sheet/core";
 import { transformExcelToFortune } from "./lib/FortuneSheetExcel/main.js";
+import {
+  drawSparkline,
+  parseSparklineFormula,
+  resolveSparklineValues,
+} from "./features/sparklines/sparklineUtils.js";
 import { exportToExcel } from "./utils/exportToExcel.js";
 import { customLocales } from "./locales/custom.js";
 import { ConditionalFormattingDialog } from "./features/conditionalFormatting/ConditionalFormattingDialog.jsx";
@@ -200,6 +205,14 @@ const isTopLevelWindow = () => {
 
 const requestRecoveryChoice = (snapshot) =>
   new Promise((resolve) => {
+    // During a Vite refresh the splash may already have completed its exit.
+    // Do not leave application startup waiting forever for controls that no
+    // longer exist.
+    if (!document.getElementById("splash-screen")) {
+      resolve("ignore");
+      return;
+    }
+
     const handleChoice = (event) => {
       window.removeEventListener("doccells:recovery-choice", handleChoice);
       resolve(event.detail);
@@ -342,6 +355,33 @@ const App = () => {
   const autosaveEnabledRef = useRef(false);
   const autosaveGenerationRef = useRef(0);
   const awaitingInitialWorkbookChangeRef = useRef(true);
+
+  useEffect(() => {
+    const commitPastedSparkline = (event) => {
+      const target = event.target;
+      if (!(target instanceof Element) || !target.closest(".fortune-container")) return;
+
+      const formula = event.clipboardData?.getData("text/plain")?.trim();
+      if (!parseSparklineFormula(formula)) return;
+
+      const workbook = workbookRef.current;
+      const selection = workbook?.getSelection?.();
+      const row = selection?.[0]?.row?.[0];
+      const column = selection?.[0]?.column?.[0];
+      if (!Number.isInteger(row) || !Number.isInteger(column)) return;
+
+      // FortuneSheet sometimes treats a paste as text editing instead of a
+      // cell paste. In that path the formula remains in the floating editor
+      // and is discarded when the user clicks elsewhere. Commit a complete
+      // SPARKLINE formula directly to the selected cell instead.
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      workbook.setCellValue(row, column, formula);
+    };
+
+    document.addEventListener("paste", commitPastedSparkline, true);
+    return () => document.removeEventListener("paste", commitPastedSparkline, true);
+  }, []);
   const documentNameRef = useRef(standaloneMenuTexts.items.untitled);
   const fileHandleRef = useRef(null);
 
@@ -1399,6 +1439,27 @@ const App = () => {
     start().catch(handleLoadError);
   }, [loadExcelFromURL, handleLoadError, updateDocumentIdentity]);
   const workbookHooks = useMemo(() => ({
+    afterRenderCell: (cell, cellInfo, context) => {
+      const definition = parseSparklineFormula(cell?.f);
+      if (!definition) return;
+      const sheets = workbookRef.current?.getAllSheets?.() || sheetDataRef.current;
+      const activeSheetId =
+        cellInfo.sheetId ||
+        workbookRef.current?.getSheet?.()?.id ||
+        sheetDataRef.current[activeSheetIndex]?.id;
+      const liveSheets = cellInfo.data
+        ? [
+            ...sheets.filter((sheet) => String(sheet.id) !== String(activeSheetId)),
+            {
+              ...(sheets.find((sheet) => String(sheet.id) === String(activeSheetId)) || {}),
+              id: activeSheetId,
+              data: cellInfo.data,
+            },
+          ]
+        : sheets;
+      const values = resolveSparklineValues(definition, liveSheets, activeSheetId);
+      drawSparkline(context, cellInfo, values, definition.options);
+    },
     beforeAddSheet: (sheet) => {
       sheet.showGridLines = getWorkbookGridLinesPreference(sheetDataRef.current);
       if (!isDefaultSheetName(sheet?.name)) return;
@@ -1478,7 +1539,7 @@ const App = () => {
       syncExcelDateFormulaResult(row, column, newValue);
       syncExcelGeneralAlignment(row, column, newValue);
     },
-  }), [definedNames, syncExcelDateFormulaResult, syncExcelGeneralAlignment]);
+  }), [activeSheetIndex, definedNames, syncExcelDateFormulaResult, syncExcelGeneralAlignment]);
 
   const handleWorkbookChange = useCallback((newData) => {
     if (syncingConditionalRef.current) return;

@@ -8,6 +8,16 @@ module.exports = {
   },
   functionlist: [
     {
+      n: "SPARKLINE", t: -1,
+      d: "Δημιουργεί ένα μικροσκοπικό γράφημα σε ένα κελί από μια περιοχή δεδομένων.",
+      a: "Δημιουργεί ένα μικροσκοπικό γράφημα σε ένα κελί.",
+      m: [1, 2],
+      p: [
+        { name: "δεδομένα", detail: "Η περιοχή ή ο πίνακας τιμών που θα απεικονιστεί.", example: "B2:B12", require: "m", repeat: "n", type: "range" },
+        { name: "επιλογές", detail: "Τύποι: line, bar, column, winloss. Κοινά: charttype, empty, nan, rtl. Γραμμή: color, linewidth, xmin, xmax, ymin, ymax. Ράβδος: max, color1, color2. Στήλες/winloss: color, negcolor, lowcolor, highcolor, firstcolor, lastcolor, axis, axiscolor, ymin, ymax. Δείτε την τεκμηρίωση SPARKLINE για τιμές και παραδείγματα.", helpHref: "sparkline/el.html", helpLabel: "τεκμηρίωση SPARKLINE", example: "{\"charttype\",\"column\";\"color\",\"#4285F4\"}", require: "o", repeat: "n", type: "rangeall" }
+      ]
+    },
+    {
       n: "SUMIF",
       t: 0,
       d: "Επιστρέφει ένα υπό όρους άθροισμα σε ένα εύρος.",

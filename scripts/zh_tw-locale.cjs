@@ -22,6 +22,16 @@ module.exports = {  "linkTypeList": [
   },
   functionlist: [
     {
+      n: "SPARKLINE", t: -1,
+      d: "根據資料範圍在單一儲存格中建立迷你圖。",
+      a: "在儲存格中建立迷你圖。",
+      m: [1, 2],
+      p: [
+        { name: "資料", detail: "要繪製的數值範圍或陣列。", example: "B2:B12", require: "m", repeat: "n", type: "range" },
+        { name: "選項", detail: "類型：line、bar、column、winloss。通用：charttype、empty、nan、rtl。折線：color、linewidth、xmin、xmax、ymin、ymax。長條：max、color1、color2。直條/winloss：color、negcolor、lowcolor、highcolor、firstcolor、lastcolor、axis、axiscolor、ymin、ymax。值和範例請參閱 SPARKLINE 文件。", helpHref: "sparkline/zh_tw.html", helpLabel: "SPARKLINE 文件", example: "{\"charttype\",\"column\";\"color\",\"#4285F4\"}", require: "o", repeat: "n", type: "rangeall" }
+      ]
+    },
+    {
       n: "SUMIF",
       t: 0,
       d: "對範圍中符合指定條件的值求和。",

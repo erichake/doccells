@@ -282,6 +282,69 @@ const NEW10 = `    onMouseDown: function onMouseDown(e) {
       });
     },`;
 
+// Formula argument help — turn the localized SPARKLINE.md reference into a
+// real link. The relative URL works both under Vite's /fortunesheet/ base and
+// in the standalone doctools build, where public files sit beside index.html.
+const OLD11 = `/*#__PURE__*/React.createElement("span", {
+      className: "luckysheet-arguments-help-parameter-content"
+    }, param.detail)`;
+
+const PREVIOUS11 = `/*#__PURE__*/React.createElement("span", {
+      className: "luckysheet-arguments-help-parameter-content"
+    }, param.detail.includes("SPARKLINE.md") ? [param.detail.slice(0, param.detail.indexOf("SPARKLINE.md")), /*#__PURE__*/React.createElement("a", {
+      className: "dc-formula-help-link",
+      href: "SPARKLINE.md",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      key: "sparkline-help-link",
+      onMouseDown: function onMouseDown(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, "SPARKLINE.md"), param.detail.slice(param.detail.indexOf("SPARKLINE.md") + "SPARKLINE.md".length)] : param.detail)`;
+
+const PREVIOUS11_HTML = PREVIOUS11.replace(
+  'href: "SPARKLINE.md"',
+  'href: "SPARKLINE.html"',
+);
+
+const PREVIOUS11_LOCALIZED_HREF = PREVIOUS11.replace(
+  'href: "SPARKLINE.md"',
+  'href: param.helpHref || "sparkline/en.html"',
+);
+
+const NEW11 = PREVIOUS11_LOCALIZED_HREF
+  .replaceAll('"SPARKLINE.md"', "param.helpLabel")
+  .replace(
+    "param.detail.includes(param.helpLabel)",
+    "param.helpLabel && param.detail.includes(param.helpLabel)",
+  );
+
+const OLD11_CJS = OLD11.replaceAll(
+  "React.createElement",
+  "React__default['default'].createElement",
+);
+
+const PREVIOUS11_CJS = PREVIOUS11.replaceAll(
+  "React.createElement",
+  "React__default['default'].createElement",
+);
+
+const PREVIOUS11_HTML_CJS = PREVIOUS11_HTML.replaceAll(
+  "React.createElement",
+  "React__default['default'].createElement",
+);
+
+const PREVIOUS11_LOCALIZED_HREF_CJS = PREVIOUS11_LOCALIZED_HREF.replaceAll(
+  "React.createElement",
+  "React__default['default'].createElement",
+);
+
+const NEW11_CJS = NEW11.replaceAll(
+  "React.createElement",
+  "React__default['default'].createElement",
+);
+
 const PATCH_GROUPS = [
   { name: "SelectItem count parens fix",      variants: [{ old: OLD1, new: NEW1 }] },
   { name: "DateSelectTreeItem count parens fix", variants: [{ old: OLD2, new: NEW2 }] },
@@ -316,6 +379,19 @@ const PATCH_GROUPS = [
   {
     name: "Dropdown button opens on mouse down",
     variants: [{ old: OLD10, new: NEW10 }],
+  },
+  {
+    name: "Clickable formula documentation link",
+    variants: [
+      { old: OLD11, new: NEW11 },
+      { old: OLD11_CJS, new: NEW11_CJS },
+      { old: PREVIOUS11, new: NEW11 },
+      { old: PREVIOUS11_CJS, new: NEW11_CJS },
+      { old: PREVIOUS11_HTML, new: NEW11 },
+      { old: PREVIOUS11_HTML_CJS, new: NEW11_CJS },
+      { old: PREVIOUS11_LOCALIZED_HREF, new: NEW11 },
+      { old: PREVIOUS11_LOCALIZED_HREF_CJS, new: NEW11_CJS },
+    ],
   },
 ];
 

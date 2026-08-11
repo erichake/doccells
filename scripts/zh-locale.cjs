@@ -8,6 +8,16 @@ module.exports = {
   },
   functionlist: [
     {
+      n: "SPARKLINE", t: -1,
+      d: "根据数据区域在单个单元格中创建迷你图。",
+      a: "在单元格中创建迷你图。",
+      m: [1, 2],
+      p: [
+        { name: "数据", detail: "要绘制的数值区域或数组。", example: "B2:B12", require: "m", repeat: "n", type: "range" },
+        { name: "选项", detail: "类型：line、bar、column、winloss。通用：charttype、empty、nan、rtl。折线：color、linewidth、xmin、xmax、ymin、ymax。条形：max、color1、color2。柱形/winloss：color、negcolor、lowcolor、highcolor、firstcolor、lastcolor、axis、axiscolor、ymin、ymax。值和示例请参阅 SPARKLINE 文档。", helpHref: "sparkline/zh.html", helpLabel: "SPARKLINE 文档", example: "{\"charttype\",\"column\";\"color\",\"#4285F4\"}", require: "o", repeat: "n", type: "rangeall" }
+      ]
+    },
+    {
       n: "SUMIF",
       t: 0,
       d: "对范围中符合指定条件的值求和。",

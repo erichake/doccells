@@ -8,6 +8,16 @@ module.exports = {
   },
   functionlist: [
     {
+      n: "SPARKLINE", t: -1,
+      d: "Erstellt aus einem Datenbereich ein Miniaturdiagramm in einer Zelle.",
+      a: "Erstellt ein Miniaturdiagramm in einer Zelle.",
+      m: [1, 2],
+      p: [
+        { name: "Daten", detail: "Der Bereich oder das Array mit den darzustellenden Werten.", example: "B2:B12", require: "m", repeat: "n", type: "range" },
+        { name: "Optionen", detail: "Typen: line, bar, column, winloss. Allgemein: charttype, empty, nan, rtl. Linie: color, linewidth, xmin, xmax, ymin, ymax. Balken: max, color1, color2. Säulen/winloss: color, negcolor, lowcolor, highcolor, firstcolor, lastcolor, axis, axiscolor, ymin, ymax. Werte und Beispiele stehen in der SPARKLINE-Dokumentation.", helpHref: "sparkline/de.html", helpLabel: "SPARKLINE-Dokumentation", example: "{\"charttype\"\\\"column\";\"color\"\\\"#4285F4\"}", require: "o", repeat: "n", type: "rangeall" }
+      ]
+    },
+    {
       n: "SUMIF",
       t: 0,
       d: "Gibt eine bedingte Summe über einen Bereich zurück.",
