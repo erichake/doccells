@@ -10,11 +10,63 @@ import {
   getInitialDatePickerValue,
   isCellLockedByProtection,
 } from "./dateCellPickerUtils.js";
+import { calculateFormulaResultUpdates } from "../excelImport/importedFormulaResults.js";
 
 const DOUBLE_CLICK_DELAY_MS = 900;
 
+const cloneCellForCalculation = (cell) => {
+  if (!cell || typeof cell !== "object") return cell;
+  return {
+    ...cell,
+    ct: cell.ct ? { ...cell.ct } : cell.ct,
+    VF: cell.VF ? { ...cell.VF } : cell.VF,
+  };
+};
+
+const getSheetIndexById = (sheets, sheetId, fallbackIndex) => {
+  const byId = sheets.findIndex((sheet) => String(sheet?.id) === String(sheetId));
+  return byId >= 0 ? byId : fallbackIndex;
+};
+
+const cloneSheetsWithPatchedCell = (sheets, sheetIndex, row, column, nextCell) =>
+  sheets.map((sheet, index) => {
+    const data = Array.isArray(sheet?.data)
+      ? sheet.data.map((sheetRow) =>
+          Array.isArray(sheetRow)
+            ? sheetRow.map(cloneCellForCalculation)
+            : sheetRow,
+        )
+      : [];
+
+    const celldata = (sheet?.celldata || []).map((cell) => {
+      return { ...cell, v: cloneCellForCalculation(cell.v) };
+    });
+
+    if (index === sheetIndex) {
+      data[row] = Array.isArray(data[row]) ? data[row] : [];
+      data[row][column] = cloneCellForCalculation(nextCell);
+
+      let patchedCelldata = false;
+      celldata.forEach((cell) => {
+        if (cell.r !== row || cell.c !== column) return;
+        patchedCelldata = true;
+        cell.v = cloneCellForCalculation(nextCell);
+      });
+      if (!patchedCelldata) {
+        celldata.push({ r: row, c: column, v: cloneCellForCalculation(nextCell) });
+      }
+    }
+
+    return {
+      ...sheet,
+      data,
+      celldata,
+    };
+  });
+
 export const useDateCellPicker = ({
   activeSheetIndex,
+  definedNames = [],
   workbookRef,
   sheetDataRef,
 }) => {
@@ -220,23 +272,59 @@ export const useDateCellPicker = ({
           t: "d",
         },
       };
+      const sheets = workbook.getAllSheets?.() || sheetDataRef.current;
+      const sheetIndex = getSheetIndexById(sheets, datePicker.sheetId, activeSheetIndex);
+      const calculationSheets = cloneSheetsWithPatchedCell(
+        sheets,
+        sheetIndex,
+        datePicker.row,
+        datePicker.column,
+        nextCell,
+      );
+      const formulaUpdates = calculateFormulaResultUpdates(
+        calculationSheets,
+        definedNames,
+      );
+      const apiCalls = [
+        {
+          name: "setCellValue",
+          args: [datePicker.row, datePicker.column, nextCell],
+        },
+        ...formulaUpdates.map((update) => {
+          const targetSheet = calculationSheets[update.sheetIndex];
+          return {
+            name: "setCellValue",
+            args: [
+              update.row,
+              update.column,
+              update.value,
+              undefined,
+              targetSheet?.id == null ? undefined : { id: targetSheet.id },
+            ],
+          };
+        }),
+      ];
 
       if (typeof workbook.batchCallApis === "function") {
-        workbook.batchCallApis([
-          {
-            name: "setCellValue",
-            args: [datePicker.row, datePicker.column, nextCell],
-          },
-        ]);
+        workbook.batchCallApis(apiCalls);
       } else {
         workbook.setCellValue?.(datePicker.row, datePicker.column, nextCell);
+        formulaUpdates.forEach((update) => {
+          const targetSheet = calculationSheets[update.sheetIndex];
+          workbook.setCellValue?.(
+            update.row,
+            update.column,
+            update.value,
+            targetSheet?.id == null ? undefined : { id: targetSheet.id },
+          );
+        });
       }
       closeDatePicker();
       requestAnimationFrame(() => {
         document.querySelector(".fortune-sheet-overlay")?.focus();
       });
     },
-    [closeDatePicker, datePicker, workbookRef],
+    [activeSheetIndex, closeDatePicker, datePicker, definedNames, sheetDataRef, workbookRef],
   );
 
   const changeDatePickerViewMonth = useCallback((offset) => {

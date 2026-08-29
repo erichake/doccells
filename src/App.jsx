@@ -369,6 +369,7 @@ const App = () => {
     beforeDateCellMouseDown,
   } = useDateCellPicker({
     activeSheetIndex,
+    definedNames,
     workbookRef,
     sheetDataRef,
   });

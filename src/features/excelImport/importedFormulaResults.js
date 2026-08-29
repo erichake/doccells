@@ -32,21 +32,46 @@ const normalizeFormulaOperand = (value, cellValue) => {
   return value;
 };
 
-export const applyImportedFormulaResults = (
-  sheets,
-  definedNames = [],
-  { recalculateBooleanResults = false } = {},
-) => {
-  if (!Array.isArray(sheets) || sheets.length === 0) return;
+const getSheetCellEntries = (sheet) => {
+  const entries = [];
+  const seen = new Set();
 
+  if (Array.isArray(sheet?.data)) {
+    sheet.data.forEach((row, r) => {
+      if (!Array.isArray(row)) return;
+      row.forEach((cellValue, c) => {
+        if (cellValue == null) return;
+        entries.push({ r, c, v: cellValue });
+        seen.add(`${r}_${c}`);
+      });
+    });
+  }
+
+  (sheet?.celldata || []).forEach((cell) => {
+    const key = `${cell.r}_${cell.c}`;
+    if (seen.has(key)) return;
+    entries.push(cell);
+    seen.add(key);
+  });
+
+  return entries;
+};
+
+const createFormulaEvaluator = (
+  sheets,
+  definedNames,
+  { forceFormulaResults = false, recalculateBooleanResults = false } = {},
+) => {
   const parser = configureExcelDateFunctions(new Parser());
   let activeFormulaStack = null;
   const sheetNameToIndex = new Map();
+  const formulaCells = [];
   const cellMaps = sheets.map((sheet, sheetIndex) => {
     if (sheet?.name) sheetNameToIndex.set(sheet.name, sheetIndex);
     const map = new Map();
-    (sheet?.celldata || []).forEach((cell) => {
+    getSheetCellEntries(sheet).forEach((cell) => {
       map.set(`${cell.r}_${cell.c}`, cell);
+      if (cell?.v?.f) formulaCells.push({ sheetIndex, cell });
     });
     return map;
   });
@@ -69,6 +94,7 @@ export const applyImportedFormulaResults = (
       cellValue.f &&
       (
         cellValue.v == null ||
+        forceFormulaResults ||
         shouldRecalculateFormula(cellValue) ||
         shouldForceFormula(cellValue)
       )
@@ -128,6 +154,7 @@ export const applyImportedFormulaResults = (
     const result = toExcelFormulaValue(response.result);
     cellValue.v = result;
     cellValue.m = getFormulaDisplayValue(result, cellValue);
+    cellValue.VF = { ...(cellValue.VF || {}), f: formula, v: result };
     return normalizeFormulaOperand(result, cellValue);
   };
 
@@ -154,17 +181,85 @@ export const applyImportedFormulaResults = (
     );
   });
 
+  return {
+    calculateCellFormula,
+    formulaCells,
+    shouldForceFormula,
+  };
+};
+
+export const calculateFormulaResultUpdates = (
+  sheets,
+  definedNames = [],
+  options = {},
+) => {
+  if (!Array.isArray(sheets) || sheets.length === 0) return [];
+
+  const evaluator = createFormulaEvaluator(sheets, definedNames, {
+    ...options,
+    forceFormulaResults: true,
+  });
+  const formulaSnapshots = evaluator.formulaCells.map(({ sheetIndex, cell }) => {
+    const cellValue = cell?.v;
+    return {
+      sheetIndex,
+      cell,
+      oldValue: cellValue?.v,
+      oldDisplay: cellValue?.m,
+      oldFormulaValue: cellValue?.VF?.v,
+    };
+  });
+  const updates = [];
+
+  formulaSnapshots.forEach(({ sheetIndex, cell }) => {
+    const cellValue = cell?.v;
+    if (!cellValue?.f) return;
+    evaluator.calculateCellFormula(sheetIndex, cell);
+  });
+
+  formulaSnapshots.forEach(({ sheetIndex, cell, oldValue, oldDisplay, oldFormulaValue }) => {
+    const cellValue = cell?.v;
+    if (!cellValue?.f) return;
+
+    if (
+      cellValue.v !== oldValue ||
+      cellValue.m !== oldDisplay ||
+      cellValue.VF?.v !== oldFormulaValue
+    ) {
+      updates.push({
+        sheetIndex,
+        row: cell.r,
+        column: cell.c,
+        value: { ...cellValue },
+      });
+    }
+  });
+
+  return updates;
+};
+
+export const applyImportedFormulaResults = (
+  sheets,
+  definedNames = [],
+  { recalculateBooleanResults = false } = {},
+) => {
+  if (!Array.isArray(sheets) || sheets.length === 0) return;
+
+  const evaluator = createFormulaEvaluator(sheets, definedNames, {
+    recalculateBooleanResults,
+  });
+
   sheets.forEach((sheet, sheetIndex) => {
-    (sheet?.celldata || []).forEach((cell) => {
+    getSheetCellEntries(sheet).forEach((cell) => {
       const cellValue = cell?.v;
       if (!cellValue?.f) return;
 
       if (
         cellValue.v == null ||
         shouldRecalculateFormula(cellValue) ||
-        shouldForceFormula(cellValue)
+        evaluator.shouldForceFormula(cellValue)
       ) {
-        calculateCellFormula(sheetIndex, cell);
+        evaluator.calculateCellFormula(sheetIndex, cell);
       }
 
       // Excel may provide a valid cached result (`v`) without the display
