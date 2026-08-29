@@ -35,6 +35,8 @@ import { DropdownDialog } from "./features/dataValidation/DropdownDialog.jsx";
 import { getDataValidationTexts } from "./features/dataValidation/dataValidationTexts.js";
 import { PrintDialog } from "./features/printing/PrintDialog.jsx";
 import { getPrintingTexts } from "./features/printing/printingTexts.js";
+import { DateCellPickerPopover } from "./features/dateCellPicker/DateCellPickerPopover.jsx";
+import { useDateCellPicker } from "./features/dateCellPicker/useDateCellPicker.js";
 import {
   applyDataValidation,
   createCheckboxRule,
@@ -355,6 +357,18 @@ const App = () => {
   const autosaveEnabledRef = useRef(false);
   const autosaveGenerationRef = useRef(0);
   const awaitingInitialWorkbookChangeRef = useRef(true);
+
+  const {
+    datePicker,
+    closeDatePicker,
+    commitDatePickerValue,
+    changeDatePickerViewMonth,
+    beforeDateCellMouseDown,
+  } = useDateCellPicker({
+    activeSheetIndex,
+    workbookRef,
+    sheetDataRef,
+  });
 
   useEffect(() => {
     const commitPastedSparkline = (event) => {
@@ -1535,11 +1549,20 @@ const App = () => {
       setNameBoxLocation(matchingName?.name || rangeToText(selection));
       setNameBoxReference(reference);
     },
+    beforeCellMouseDown: (_cell, cellInfo) => {
+      return beforeDateCellMouseDown(_cell, cellInfo);
+    },
     afterUpdateCell: (row, column, _oldValue, newValue) => {
       syncExcelDateFormulaResult(row, column, newValue);
       syncExcelGeneralAlignment(row, column, newValue);
     },
-  }), [activeSheetIndex, definedNames, syncExcelDateFormulaResult, syncExcelGeneralAlignment]);
+  }), [
+    activeSheetIndex,
+    definedNames,
+    beforeDateCellMouseDown,
+    syncExcelDateFormulaResult,
+    syncExcelGeneralAlignment,
+  ]);
 
   const handleWorkbookChange = useCallback((newData) => {
     if (syncingConditionalRef.current) return;
@@ -1749,6 +1772,14 @@ const App = () => {
         selection={printSelection}
         texts={printingTexts}
         onClose={() => setPrintDialogOpen(false)}
+      />
+
+      <DateCellPickerPopover
+        locale={detectedLang}
+        picker={datePicker}
+        onClose={closeDatePicker}
+        onCommit={commitDatePickerValue}
+        onViewMonthChange={changeDatePickerViewMonth}
       />
 
       <StandaloneMenuBar
