@@ -92,7 +92,10 @@ const detectedLang =
 const t = customLocales[detectedLang] ?? customLocales["en"];
 const conditionalFormattingTexts = getConditionalFormattingTexts(t.conditionalFormatting);
 const chartTexts = getChartTexts(t.charts);
-const customNumberFormatTexts = getCustomNumberFormatTexts(t.customNumberFormat);
+const customNumberFormatTexts = getCustomNumberFormatTexts(
+  t.customNumberFormat,
+  detectedLang,
+);
 const DEFAULT_COLUMN_WIDTH = 99;
 const sheetPrefix =
   {

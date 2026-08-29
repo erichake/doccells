@@ -2,11 +2,14 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { update as formatNumber } from "@fortune-sheet/core";
 import {
+  CUSTOM_DATE_FORMAT_PRESETS,
+  CUSTOM_DATE_FORMAT_PREVIEW_SERIAL,
   CUSTOM_NUMBER_FORMAT_PRESETS,
   CUSTOM_UNIT_FORMAT_PRESETS,
   getCurrencyFormatPresets,
   getCustomNumberFormatLocale,
   getCustomNumberFormatTexts,
+  isCustomDateNumberFormat,
   localizeCustomNumberFormat,
   normalizeCustomNumberFormat,
   validateCustomNumberFormat,
@@ -22,7 +25,10 @@ export const CustomNumberFormatDialog = ({
   onClose,
   texts,
 }) => {
-  const copy = useMemo(() => getCustomNumberFormatTexts(texts), [texts]);
+  const copy = useMemo(
+    () => getCustomNumberFormatTexts(texts, locale),
+    [locale, texts],
+  );
   const [format, setFormat] = useState("#,##0.00");
   const [error, setError] = useState("");
   const [helpOpen, setHelpOpen] = useState(false);
@@ -33,15 +39,27 @@ export const CustomNumberFormatDialog = ({
   const presetGroups = useMemo(
     () => [
       { label: copy.standardFormats, formats: CUSTOM_NUMBER_FORMAT_PRESETS },
+      { label: copy.dateFormats, formats: CUSTOM_DATE_FORMAT_PRESETS },
       { label: copy.currencyFormats, formats: getCurrencyFormatPresets(currencySymbol, locale) },
       { label: copy.unitFormats, formats: CUSTOM_UNIT_FORMAT_PRESETS },
     ],
-    [copy.currencyFormats, copy.standardFormats, copy.unitFormats, currencySymbol, locale],
+    [
+      copy.currencyFormats,
+      copy.dateFormats,
+      copy.standardFormats,
+      copy.unitFormats,
+      currencySymbol,
+      locale,
+    ],
   );
 
   const preview = useCallback((code) => {
     try {
-      return String(formatNumber(normalizeCustomNumberFormat(code, locale), 1234.56));
+      const normalized = normalizeCustomNumberFormat(code, locale);
+      const value = isCustomDateNumberFormat(normalized, locale)
+        ? CUSTOM_DATE_FORMAT_PREVIEW_SERIAL
+        : 1234.56;
+      return String(formatNumber(normalized, value));
     } catch {
       return "—";
     }

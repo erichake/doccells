@@ -5,24 +5,107 @@ import {
 } from "./dateCellPickerUtils.js";
 import "./DateCellPicker.css";
 
-const getDatePickerTexts = (locale) => {
-  const shortLocale = String(locale || "en").toLowerCase().split("-")[0];
-  if (shortLocale === "fr") {
-    return {
-      previousMonth: "Mois precedent",
-      nextMonth: "Mois suivant",
-      today: "Aujourd'hui",
-      close: "Fermer",
-      title: "Choisir une date",
-    };
-  }
-  return {
+const DATE_PICKER_TEXTS = {
+  en: {
     previousMonth: "Previous month",
     nextMonth: "Next month",
     today: "Today",
     close: "Close",
     title: "Choose date",
-  };
+  },
+  "fr-FR": {
+    previousMonth: "Mois précédent",
+    nextMonth: "Mois suivant",
+    today: "Aujourd’hui",
+    close: "Fermer",
+    title: "Choisir une date",
+  },
+  "zh-CN": {
+    previousMonth: "上个月",
+    nextMonth: "下个月",
+    today: "今天",
+    close: "关闭",
+    title: "选择日期",
+  },
+  "zh-TW": {
+    previousMonth: "上個月",
+    nextMonth: "下個月",
+    today: "今天",
+    close: "關閉",
+    title: "選擇日期",
+  },
+  "es-ES": {
+    previousMonth: "Mes anterior",
+    nextMonth: "Mes siguiente",
+    today: "Hoy",
+    close: "Cerrar",
+    title: "Elegir fecha",
+  },
+  hi: {
+    previousMonth: "पिछला महीना",
+    nextMonth: "अगला महीना",
+    today: "आज",
+    close: "बंद करें",
+    title: "तिथि चुनें",
+  },
+  ru: {
+    previousMonth: "Предыдущий месяц",
+    nextMonth: "Следующий месяц",
+    today: "Сегодня",
+    close: "Закрыть",
+    title: "Выбрать дату",
+  },
+  pt: {
+    previousMonth: "Mês anterior",
+    nextMonth: "Próximo mês",
+    today: "Hoje",
+    close: "Fechar",
+    title: "Escolher data",
+  },
+  de: {
+    previousMonth: "Vorheriger Monat",
+    nextMonth: "Nächster Monat",
+    today: "Heute",
+    close: "Schließen",
+    title: "Datum auswählen",
+  },
+  el: {
+    previousMonth: "Προηγούμενος μήνας",
+    nextMonth: "Επόμενος μήνας",
+    today: "Σήμερα",
+    close: "Κλείσιμο",
+    title: "Επιλογή ημερομηνίας",
+  },
+  it: {
+    previousMonth: "Mese precedente",
+    nextMonth: "Mese successivo",
+    today: "Oggi",
+    close: "Chiudi",
+    title: "Scegli data",
+  },
+  nl: {
+    previousMonth: "Vorige maand",
+    nextMonth: "Volgende maand",
+    today: "Vandaag",
+    close: "Sluiten",
+    title: "Datum kiezen",
+  },
+};
+
+const getDatePickerTexts = (locale) => {
+  const localeId = String(locale || "en").toLowerCase();
+  const languageId = localeId.split("-")[0];
+  const exactKey = Object.keys(DATE_PICKER_TEXTS).find(
+    (key) => key.toLowerCase() === localeId,
+  );
+  const languageKey = Object.keys(DATE_PICKER_TEXTS).find(
+    (key) => key.toLowerCase().split("-")[0] === languageId,
+  );
+  return (
+    DATE_PICKER_TEXTS[exactKey] ||
+    DATE_PICKER_TEXTS[languageKey] ||
+    DATE_PICKER_TEXTS.en
+  );
 };
 
 export const DateCellPickerPopover = ({
