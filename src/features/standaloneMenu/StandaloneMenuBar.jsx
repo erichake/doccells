@@ -118,6 +118,7 @@ export const StandaloneMenuBar = ({
   onOpenChartDialog,
   onOpenConditionalDialog,
   onOpenCustomNumberFormatDialog,
+  onOpenAlternatingColorsDialog,
   onInsertCheckbox,
   onOpenDropdownDialog,
   documentName,
@@ -495,6 +496,12 @@ export const StandaloneMenuBar = ({
             ],
           },
           "divider",
+          {
+            icon: "alternatingColors",
+            label: texts.items.alternatingColors,
+            command: onOpenAlternatingColorsDialog,
+            disabled: isProtected,
+          },
           { icon: "spark", label: texts.items.conditionalFormatting, command: onOpenConditionalDialog },
           "divider",
           { icon: "eraser", label: texts.items.clearFormat, command: () => clickToolbarIcon("clear-format") },
@@ -575,6 +582,7 @@ export const StandaloneMenuBar = ({
       onOpenChartDialog,
       onOpenConditionalDialog,
       onOpenCustomNumberFormatDialog,
+      onOpenAlternatingColorsDialog,
       onInsertCheckbox,
       onOpenDropdownDialog,
       onExportDocument,
@@ -854,6 +862,13 @@ const icons = {
   number: (
     <svg viewBox="0 0 24 24">
       <path d="M4 7h5M6.5 7v10M4 17h5M13 7h2.5a2 2 0 0 1 0 4H13h2.5a2 2 0 0 1 0 4H13" />
+    </svg>
+  ),
+  alternatingColors: (
+    <svg viewBox="0 0 24 24">
+      <rect x="4.75" y="5.25" width="14.5" height="13.5" rx="1.5" />
+      <path d="M4.75 9.75h14.5M4.75 14.25h14.5M9.6 5.25v13.5M14.4 5.25v13.5" />
+      <path d="M5.25 10h14M5.25 14.5h14" />
     </svg>
   ),
   text: (

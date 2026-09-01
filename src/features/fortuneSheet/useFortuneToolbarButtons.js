@@ -63,6 +63,7 @@ export const useFortuneToolbarButtons = ({
   openChartDialog,
   openConditionalDialog,
   openCustomNumberFormatDialog,
+  openAlternatingColorsDialog,
   chartToolbarText,
   openButtonText,
   exportButtonText,
@@ -71,6 +72,7 @@ export const useFortuneToolbarButtons = ({
   toggleGridLinesText,
   toggleSheetProtectionText,
   conditionalFormattingToolbarText,
+  alternatingColorsToolbarText,
   customNumberFormatMenuText,
 }) => {
   const addButtons = useCallback(() => {
@@ -88,6 +90,7 @@ export const useFortuneToolbarButtons = ({
     document.getElementById("custom-export-button")?.remove();
     document.getElementById("custom-gridlines-button")?.remove();
     document.getElementById("custom-chart-button")?.remove();
+    document.getElementById("custom-alternating-colors-button")?.remove();
     document.getElementById("custom-conditional-format-button")?.remove();
     document.getElementById("custom-protect-sheet-button")?.remove();
     document.getElementById("custom-after-protect-divider")?.remove();
@@ -236,6 +239,19 @@ export const useFortuneToolbarButtons = ({
 <div class="fortune-tooltip">${chartToolbarText}</div>`;
     chartButton.addEventListener("click", openChartDialog);
 
+    // 🔹 Création du bouton "Couleurs alternées"
+    const alternatingColorsButton = document.createElement("div");
+    alternatingColorsButton.id = "custom-alternating-colors-button";
+    alternatingColorsButton.className = "fortune-toolbar-button fortune-toolbar-item";
+    alternatingColorsButton.innerHTML = `<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="4.5" y="5" width="15" height="14" rx="1.5" stroke="#222" stroke-width="1.4"/>
+<path d="M4.5 9.7h15M4.5 14.3h15M9.5 5v14M14.5 5v14" stroke="#222" stroke-width="1.1"/>
+<path d="M5.4 10h13.2M5.4 14.6h13.2" stroke="#1a73e8" stroke-width="2"/>
+</svg>
+<div class="fortune-tooltip">${alternatingColorsToolbarText}</div>`;
+    alternatingColorsButton.addEventListener("click", openAlternatingColorsDialog);
+    toolbar.insertBefore(alternatingColorsButton, gridLinesButton.nextSibling);
+
     // 🔹 Création du bouton "Formatage conditionnel"
     const conditionalFormatButton = document.createElement("div");
     conditionalFormatButton.id = "custom-conditional-format-button";
@@ -247,7 +263,7 @@ export const useFortuneToolbarButtons = ({
 </svg>
 <div class="fortune-tooltip">${conditionalFormattingToolbarText}</div>`;
     conditionalFormatButton.addEventListener("click", openConditionalDialog);
-    toolbar.insertBefore(conditionalFormatButton, gridLinesButton.nextSibling);
+    toolbar.insertBefore(conditionalFormatButton, alternatingColorsButton.nextSibling);
 
     let chartAnchor = conditionalFormatButton;
     if (appMode !== "student") {
@@ -318,6 +334,7 @@ export const useFortuneToolbarButtons = ({
   }, [
     appMode,
     chartToolbarText,
+    alternatingColorsToolbarText,
     openButtonText,
     exportButtonText,
     onOpenDocument,
@@ -325,6 +342,7 @@ export const useFortuneToolbarButtons = ({
     conditionalFormattingToolbarText,
     openChartDialog,
     openConditionalDialog,
+    openAlternatingColorsDialog,
     setSheetData,
     setWorkbookKey,
     sheetDataRef,

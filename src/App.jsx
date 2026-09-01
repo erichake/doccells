@@ -15,6 +15,7 @@ import { ChartDialog } from "./features/charts/ChartDialog.jsx";
 import { ChartLayer } from "./features/charts/ChartRenderer.jsx";
 import { CustomNumberFormatDialog } from "./features/customNumberFormat/CustomNumberFormatDialog.jsx";
 import { getCustomNumberFormatTexts } from "./features/customNumberFormat/customNumberFormatUtils.js";
+import { AlternatingColorsDialog } from "./features/alternatingColors/AlternatingColorsDialog.jsx";
 import {
   columnToName,
   getChartTexts,
@@ -144,6 +145,7 @@ const standaloneMenuTexts = {
   },
 };
 const definedNamesTexts = getDefinedNamesTexts(detectedLang);
+const alternatingColorsTexts = standaloneMenuTexts.alternatingColors;
 
 const isSingleColumnRange = (range) =>
   Boolean(range?.row && range?.column && range.column[0] === range.column[1]);
@@ -335,6 +337,9 @@ const App = () => {
   const [customNumberFormatInitial, setCustomNumberFormatInitial] = useState("#,##0.00");
   const [customNumberFormatSelection, setCustomNumberFormatSelection] = useState([]);
   const [customNumberFormatSelectionLabel, setCustomNumberFormatSelectionLabel] = useState("A1");
+  const [alternatingColorsOpen, setAlternatingColorsOpen] = useState(false);
+  const [alternatingColorsInitialRange, setAlternatingColorsInitialRange] = useState("A1");
+  const [alternatingColorsSheetIndex, setAlternatingColorsSheetIndex] = useState(0);
   const [dropdownDialogOpen, setDropdownDialogOpen] = useState(false);
   const [dataValidationSelection, setDataValidationSelection] = useState([]);
   const [dataValidationSelectionLabel, setDataValidationSelectionLabel] = useState("A1");
@@ -982,6 +987,67 @@ const App = () => {
     setCustomNumberFormatOpen(true);
   }, []);
 
+  const openAlternatingColorsDialog = useCallback(() => {
+    const workbook = workbookRef.current;
+    const ranges = getSelectedRanges(workbook?.getSelection?.());
+    const range = ranges[ranges.length - 1];
+    setAlternatingColorsSheetIndex(getActiveSheetIndex());
+    setAlternatingColorsInitialRange(rangeToText(range));
+    setAlternatingColorsOpen(true);
+  }, [getActiveSheetIndex]);
+
+  const applyAlternatingColors = useCallback((options) => {
+    const workbook = workbookRef.current;
+    const activeSheet = workbook?.getSheet?.();
+    if (!workbook || activeSheet?.config?.authority?.sheet === 1) return;
+
+    const { range, hasHeader, headerColor, firstRowColor, secondRowColor } = options;
+    const calls = [];
+    const pushFormat = (attr, value, rowStart, rowEnd) => {
+      if (rowStart > rowEnd) return;
+      calls.push({
+        name: "setCellFormatByRange",
+        args: [
+          attr,
+          value,
+          [{
+            row: [rowStart, rowEnd],
+            column: [...range.column],
+          }],
+        ],
+      });
+    };
+
+    let firstDataRow = range.row[0];
+    if (hasHeader) {
+      pushFormat("bg", headerColor, range.row[0], range.row[0]);
+      firstDataRow += 1;
+    }
+
+    for (let row = firstDataRow; row <= range.row[1]; row += 1) {
+      const color = (row - firstDataRow) % 2 === 0 ? firstRowColor : secondRowColor;
+      pushFormat("bg", color, row, row);
+    }
+
+    if (typeof workbook.batchCallApis === "function") {
+      workbook.batchCallApis(calls);
+    } else {
+      calls.forEach((call) => {
+        workbook.setCellFormatByRange?.(...call.args);
+      });
+    }
+    setAlternatingColorsOpen(false);
+  }, []);
+
+  const clearAlternatingColors = useCallback((range) => {
+    const workbook = workbookRef.current;
+    const activeSheet = workbook?.getSheet?.();
+    if (!workbook || activeSheet?.config?.authority?.sheet === 1) return;
+
+    workbook.setCellFormatByRange?.("bg", undefined, [range]);
+    setAlternatingColorsOpen(false);
+  }, []);
+
   const getCurrentValidationSelection = useCallback(() => {
     const ranges = getSelectedRanges(workbookRef.current?.getSelection?.());
     return {
@@ -1286,6 +1352,7 @@ const App = () => {
     openChartDialog,
     openConditionalDialog,
     openCustomNumberFormatDialog,
+    openAlternatingColorsDialog,
     chartToolbarText: chartTexts.toolbar,
     openButtonText: t.standaloneMenu?.open ?? "Open...",
     exportButtonText: supportsNativeFileSave
@@ -1298,6 +1365,7 @@ const App = () => {
     toggleGridLinesText: t.toggleGridLines ?? "Show / hide gridlines",
     toggleSheetProtectionText: t.toggleSheetProtection,
     conditionalFormattingToolbarText: conditionalFormattingTexts.toolbar,
+    alternatingColorsToolbarText: alternatingColorsTexts.menuItem,
     customNumberFormatMenuText: customNumberFormatTexts.menuItem,
   });
 
@@ -1746,6 +1814,16 @@ const App = () => {
         texts={customNumberFormatTexts}
       />
 
+      <AlternatingColorsDialog
+        open={alternatingColorsOpen}
+        initialRangeText={alternatingColorsInitialRange}
+        sheetName={sheetDataRef.current[alternatingColorsSheetIndex]?.name}
+        texts={alternatingColorsTexts}
+        onApply={applyAlternatingColors}
+        onClear={clearAlternatingColors}
+        onClose={() => setAlternatingColorsOpen(false)}
+      />
+
       <DropdownDialog
         open={dropdownDialogOpen}
         selectionLabel={dataValidationSelectionLabel}
@@ -1794,6 +1872,7 @@ const App = () => {
         onOpenChartDialog={openChartDialog}
         onOpenConditionalDialog={openConditionalDialog}
         onOpenCustomNumberFormatDialog={openCustomNumberFormatDialog}
+        onOpenAlternatingColorsDialog={openAlternatingColorsDialog}
         onInsertCheckbox={insertCheckboxes}
         onOpenDropdownDialog={openDropdownDialog}
         documentName={documentName}
