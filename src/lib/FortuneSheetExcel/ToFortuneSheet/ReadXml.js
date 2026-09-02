@@ -1,5 +1,20 @@
 import { indexedColors } from "../common/constant.js";
 import { LightenDarkenColor } from "../common/method.js";
+
+const escapeRegExp = (text) =>
+    String(text).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+const tagNamePattern = (tag) => {
+    const localName = String(tag).split(":").pop();
+    return "(?:[A-Za-z_][A-Za-z0-9_.-]*:)?" + escapeRegExp(localName);
+};
+
+const tagBlockPattern = (tag) => {
+    const name = tagNamePattern(tag);
+    const start = "<" + name + "(?=\\s|>|/)[^>]*?";
+    return start + "/>|" + start + ">[\\s\\S]*?</" + name + ">";
+};
+
 class xmloperation {
     /**
     * @param tag Search xml tag name , div,title etc.
@@ -7,19 +22,21 @@ class xmloperation {
     * @return Xml element string
     */
     getElementsByOneTag(tag, file) {
-        //<a:[^/>: ]+?>.*?</a:[^/>: ]+?>
+        if (!file) {
+            return [];
+        }
         let readTagReg;
         if (tag.indexOf("|") > -1) {
             let tags = tag.split("|"), tagsRegTxt = "";
             for (let i = 0; i < tags.length; i++) {
                 let t = tags[i];
-                tagsRegTxt += "|<" + t + " [^>]+?[^/]>[\\s\\S]*?</" + t + ">|<" + t + " [^>]+?/>|<" + t + ">[\\s\\S]*?</" + t + ">|<" + t + "/>";
+                tagsRegTxt += "|" + tagBlockPattern(t);
             }
             tagsRegTxt = tagsRegTxt.substr(1, tagsRegTxt.length);
             readTagReg = new RegExp(tagsRegTxt, "g");
         }
         else {
-            readTagReg = new RegExp("<" + tag + " [^>]+?[^/]>[\\s\\S]*?</" + tag + ">|<" + tag + " [^>]+?/>|<" + tag + ">[\\s\\S]*?</" + tag + ">|<" + tag + "/>", "g");
+            readTagReg = new RegExp(tagBlockPattern(tag), "g");
         }
         let ret = file.match(readTagReg);
         if (ret == null) {
@@ -134,23 +151,20 @@ export class Element extends xmloperation {
     */
     setValue() {
         let str = this.elementString;
-        if (str.substr(str.length - 2, 2) == "/>") {
+        this.value = "";
+        this.container = str;
+        if (/\/>\s*$/.test(str)) {
             this.value = "";
             this.container = str;
         }
         else {
             let firstTag = this.getFirstTag();
-            const firstTagReg = new RegExp("(<" + firstTag + " [^>]+?[^/]>)([\\s\\S]*?)</" + firstTag + ">|(<" + firstTag + ">)([\\s\\S]*?)</" + firstTag + ">", "g");
+            const escapedFirstTag = escapeRegExp(firstTag);
+            const firstTagReg = new RegExp("(<" + escapedFirstTag + "(?=\\s|>|/)[^>]*?>)([\\s\\S]*?)</" + escapedFirstTag + ">", "g");
             let result = firstTagReg.exec(str);
             if (result != null) {
-                if (result[1] != null) {
-                    this.container = result[1];
-                    this.value = result[2];
-                }
-                else {
-                    this.container = result[3];
-                    this.value = result[4];
-                }
+                this.container = result[1];
+                this.value = result[2];
             }
         }
     }

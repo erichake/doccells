@@ -973,7 +973,7 @@ export class FortuneSheet extends FortuneSheetBase {
     return width;
   }
   isBlankImportCell(cell) {
-    return !/<(?:v|f|is|t)\b/.test(cell.elementString);
+    return !/<(?:[A-Za-z_][A-Za-z0-9_.-]*:)?(?:v|f|is|t)\b/.test(cell.elementString);
   }
   getBlankCellStyleSkip(styleId) {
     if (this.blankCellStyleSkipCache == null) {
