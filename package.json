@@ -5,7 +5,8 @@
   "license": "GPL-3.0-or-later",
   "type": "module",
   "scripts": {
-    "dev": "vite --force --port 5174 --strictPort",
+    "dev": "bash scripts/dev.sh",
+    "dev:vite": "vite --force --port 5174 --strictPort",
     "build": "vite build",
     "build:doctools": "vite build --mode doctools",
     "test:defined-names": "node --test tests/definedNames.test.mjs",

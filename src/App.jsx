@@ -22,6 +22,10 @@ import {
   normalizeChart,
 } from "./features/charts/chartUtils.js";
 import { normalizeImportedWorkbook } from "./features/excelImport/normalizeImportedWorkbook.js";
+import {
+  extractGoogleSheetId,
+  buildGoogleSheetProxyUrl,
+} from "./utils/googleSheetsUrl.js";
 import { useFortuneToolbarButtons } from "./features/fortuneSheet/useFortuneToolbarButtons.js";
 import { StandaloneMenuBar } from "./features/standaloneMenu/StandaloneMenuBar.jsx";
 import { DefinedNamesUI } from "./features/definedNames/DefinedNamesUI.jsx";
@@ -1513,10 +1517,15 @@ const App = () => {
         }
       }
 
-      const fileName = urlParams.get("url") || "empty.xlsx";
-      await loadExcelFromURL(fileName, fileName);
+      const rawUrl = urlParams.get("url") || "empty.xlsx";
+      const googleSheetId = extractGoogleSheetId(rawUrl);
+      const fetchUrl = googleSheetId
+        ? buildGoogleSheetProxyUrl(googleSheetId)
+        : rawUrl;
+      const fileName = googleSheetId ? `${googleSheetId}.xlsx` : rawUrl;
+      await loadExcelFromURL(fetchUrl, fileName);
       updateDocumentIdentity(
-        fileName === "empty.xlsx"
+        rawUrl === "empty.xlsx"
           ? standaloneMenuTexts.items.untitled
           : fileName.split("/").pop(),
       );
