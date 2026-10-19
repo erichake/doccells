@@ -40,6 +40,8 @@ import { DropdownDialog } from "./features/dataValidation/DropdownDialog.jsx";
 import { getDataValidationTexts } from "./features/dataValidation/dataValidationTexts.js";
 import { PrintDialog } from "./features/printing/PrintDialog.jsx";
 import { getPrintingTexts } from "./features/printing/printingTexts.js";
+import { FileDropVeil } from "./features/fileDrop/FileDropVeil.jsx";
+import { getFileDropTexts } from "./features/fileDrop/fileDropTexts.js";
 import { DateCellPickerPopover } from "./features/dateCellPicker/DateCellPickerPopover.jsx";
 import { useDateCellPicker } from "./features/dateCellPicker/useDateCellPicker.js";
 import {
@@ -134,6 +136,7 @@ const currencySymbol =
   }[detectedLang] ?? "$";
 const dataValidationTexts = getDataValidationTexts(detectedLang);
 const printingTexts = getPrintingTexts(detectedLang);
+const fileDropTexts = getFileDropTexts(detectedLang);
 const standaloneMenuTextsBase = getStandaloneMenuTexts(
   t,
   detectedLang,
@@ -872,6 +875,24 @@ const App = () => {
       await loadFallback();
     },
     [loadFallback],
+  );
+
+  // A dropped workbook opens like a chosen one, keeping its handle when the
+  // browser provides it so that saving writes back to the dropped file.
+  const openDroppedFile = useCallback(
+    async (file, handlePromise) => {
+      const handle = await handlePromise;
+      const fileHandle =
+        supportsNativeFileSave && handle?.kind === "file" ? handle : null;
+      try {
+        await loadDocumentFromFile(file, fileHandle);
+      } catch (error) {
+        await handleLoadError(error);
+        return;
+      }
+      await rememberFileHandle(fileHandle);
+    },
+    [handleLoadError, loadDocumentFromFile, rememberFileHandle, supportsNativeFileSave],
   );
 
   const getActiveSheetIndex = useCallback(() => {
@@ -1796,6 +1817,12 @@ const App = () => {
             await handleLoadError(error);
           }
         }}
+      />
+
+      <FileDropVeil
+        enabled={isTopLevelWindow() && appMode !== "student"}
+        texts={fileDropTexts}
+        onDropFile={openDroppedFile}
       />
 
       <ConditionalFormattingDialog
