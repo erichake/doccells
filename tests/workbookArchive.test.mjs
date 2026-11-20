@@ -99,3 +99,27 @@ test("WORKBOOK_FORMAT.md décrit exactement les champs du code", () => {
   assert.deepEqual(archived, ARCHIVED_SHEET_FIELDS);
   assert.deepEqual(unarchived, UNARCHIVED_SHEET_FIELDS);
 });
+
+test("images : seules les images en URL data: sont gardées", () => {
+  const png = "data:image/png;base64,iVBORw0KGgo=";
+  const { sheets } = readWorkbookArchive({
+    format: "doccells",
+    version: 1,
+    sheets: [
+      {
+        name: "Feuille1",
+        images: [
+          { id: "a", src: png, left: 0, top: 0, width: 10, height: 10 },
+          { id: "b", src: "https://evil.test/pixel.png" },
+          { id: "c", src: "javascript:alert(1)" },
+          { id: "d", src: 'data:image/png;base64,x"),url(https://evil.test/' },
+          { id: "e" },
+          "f",
+        ],
+      },
+      { name: "Feuille2", images: "x" },
+    ],
+  });
+  assert.deepEqual(sheets[0].images.map((image) => image.id), ["a"]);
+  assert.deepEqual(sheets[1].images, []);
+});

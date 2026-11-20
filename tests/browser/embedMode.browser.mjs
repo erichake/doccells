@@ -114,6 +114,45 @@ const workbook = () => {
   };
 };
 
+// Archive piégée : chaque texte tente d'exécuter top.__xss.push(…) s'il est
+// injecté en HTML.
+const xss = (name) => `<img src=x onerror="top.__xss.push('${name}')">`;
+const trappedWorkbook = () => ({
+  format: "doccells",
+  version: 1,
+  sheets: [
+    {
+      name: "Feuille1",
+      order: 0,
+      status: 1,
+      config: {},
+      celldata: [
+        { r: 0, c: 0, v: { f: `="${xss("formula")}"`, v: xss("formula"), m: xss("formula") } },
+        { r: 1, c: 0, v: { v: `<span>${xss("span-text")}</span>`, m: `<span>${xss("span-text")}</span>`, ct: { fa: "@", t: "s" } } },
+        {
+          r: 2, c: 0,
+          v: { ct: { fa: "General", t: "inlineStr", s: [{ v: xss("inline"), ff: `Arial' onmouseover='top.__xss.push("style")` }] } },
+        },
+        {
+          r: 3, c: 0,
+          v: { v: "note", m: "note", ps: { value: xss("comment"), isShow: true, left: 200, top: 60, width: 150, height: 60 } },
+        },
+        { r: 4, c: 0, v: { v: "hint", m: "hint" } },
+        { r: 6, c: 0, v: { f: '=IF(SUM(B1:B3)<2,"a<b&c",1)', v: "a<b&c", m: "a<b&c" } },
+        { r: 5, c: 0, v: { v: "copy", m: "copy", bg: `red"><img src=x onerror="top.__xss.push('copy')"><b x="`, fc: `#000"><img src=x onerror="top.__xss.push('copy-fc')"><b x="` } },
+      ],
+      dataVerification: {
+        "4_0": {
+          type: "text_content", type2: "include", value1: xss("hint-value"), value2: "",
+          hintShow: true, hintValue: xss("hint"), prohibitInput: false, remote: false, checked: false,
+        },
+      },
+      images: [{ id: "img", src: "http://evil.test/pixel.png", left: 400, top: 100, width: 20, height: 20 }],
+    },
+    { name: `Feuille<b>2</b>${xss("sheet")}`, order: 1, celldata: [], config: {} },
+  ],
+});
+
 // Exemple publié du format d'archivage (WORKBOOK_FORMAT.md), enregistré par
 // DocCells en français.
 const archiveFixture = JSON.parse(
@@ -156,7 +195,11 @@ const newContext = async (locale = "en-US") => {
     return route.fulfill({ status: 404, body: "not found" });
   });
   await context.route("http://hote.test/**", (route) => route.fulfill({ body: HOST_HTML, contentType: "text/html" }));
-  await context.route("http://evil.test/**", (route) => route.fulfill({ body: EVIL_HTML, contentType: "text/html" }));
+  context.evilRequests = [];
+  await context.route("http://evil.test/**", (route) => {
+    context.evilRequests.push(route.request().url());
+    return route.fulfill({ body: EVIL_HTML, contentType: "text/html" });
+  });
   return context;
 };
 
@@ -535,6 +578,56 @@ try {
     hiddenStart.size.join("x") === "0x0" && close(hiddenStart.first, expectedSum(1)) &&
       close(hiddenStart.value, expectedSum(0.25)) && hiddenStart.drawsHidden === 0 && hiddenStart.drawsShown >= 1,
     JSON.stringify(hiddenStart),
+  );
+  await context.close();
+
+  // ------------------------------------------------------------------
+  console.log("--- archive piégée (hôte de même origine) ---");
+  context = await newContext();
+  page = await openHost(context, "http://doccells.test/host.html");
+  await page.evaluate(() => window.waitEvent((e) => e.event === "ready", 15000));
+  const trapped = await page.evaluate(async (wb) => {
+    window.__xss = [];
+    const dc = document.getElementById("dc").contentWindow.docCells;
+    await dc.load(wb);
+    return { images: dc.save().sheets[0].images?.length ?? 0 };
+  }, trappedWorkbook());
+  const trapFrame = page.frame({ url: /doccells\.test\/fortunesheet/ });
+  const trapArea = await trapFrame.locator(".fortune-cell-area").boundingBox();
+  const cellAt = (r) => ({ x: trapArea.x + 49, y: trapArea.y + r * 20 + 10 });
+  const fxTexts = [];
+  for (const r of [0, 1, 2, 4, 5, 6]) {
+    await page.mouse.click(cellAt(r).x, cellAt(r).y);
+    await page.waitForTimeout(150);
+    fxTexts.push(await trapFrame.locator(".fortune-fx-input").textContent());
+    await page.mouse.dblclick(cellAt(r).x, cellAt(r).y);
+    await page.waitForTimeout(150);
+    await page.keyboard.press("End");
+    await page.keyboard.type(" ");
+    await page.waitForTimeout(150);
+    await page.keyboard.press("Escape");
+  }
+  await page.mouse.click(cellAt(0).x, cellAt(0).y);
+  await page.mouse.click(cellAt(5).x, cellAt(5).y, { modifiers: ["Shift"] });
+  await page.keyboard.press("ControlOrMeta+c");
+  await trapFrame.locator(".luckysheet-sheets-item-name").nth(1).click();
+  await page.waitForTimeout(800);
+  const fired = await page.evaluate(() => window.__xss);
+  check(
+    "aucun script de l'archive exécuté (formule, texte, texte enrichi, commentaire, aide, copie, onglet)",
+    fired.length === 0,
+    fired.length ? fired.join(", ") : "aucun",
+  );
+  check(
+    "les textes s'affichent tels quels",
+    fxTexts[0] === `="${xss("formula")}"` && fxTexts[1] === `<span>${xss("span-text")}</span>` &&
+      fxTexts[5] === '=IF(SUM(B1:B3)<2,"a<b&c",1)',
+    JSON.stringify([fxTexts[0], fxTexts[1], fxTexts[5]]),
+  );
+  check(
+    "image d'une autre adresse retirée, aucune requête",
+    trapped.images === 0 && !context.evilRequests.some((url) => url.includes("pixel")),
+    `${trapped.images} image(s), ${context.evilRequests.length} requête(s)`,
   );
   await context.close();
 } finally {

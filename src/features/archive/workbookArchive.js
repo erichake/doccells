@@ -113,6 +113,22 @@ const validateCurrentVersion = (archive) => {
   });
 };
 
+// Une archive peut venir de n'importe où : une image n'est gardée que si
+// sa source est une image en URL data: (aucune requête vers un autre site,
+// rien d'exécutable). Le reste du contenu est protégé à l'affichage
+// (scripts/patch-fortune-html-safety.cjs).
+const SAFE_IMAGE_SOURCE = /^data:image\/(png|jpe?g|gif|webp|bmp|svg\+xml)[;,][A-Za-z0-9+/=;,%._~-]*$/i;
+
+const sanitizeSheet = (sheet) => {
+  if (sheet.images === undefined) return sheet;
+  const images = Array.isArray(sheet.images)
+    ? sheet.images.filter(
+        (image) => isPlainObject(image) && typeof image.src === "string" && SAFE_IMAGE_SOURCE.test(image.src),
+      )
+    : [];
+  return { ...sheet, images };
+};
+
 /**
  * Lit une archive de n'importe quelle version publiée.
  * @returns { sheets, definedNames } : feuilles prêtes pour DocCells (copie),
@@ -136,7 +152,7 @@ export const readWorkbookArchive = (input) => {
   return {
     definedNames,
     sheets: archive.sheets.map((sheet) => ({
-      ...archiveSheet(sheet),
+      ...sanitizeSheet(archiveSheet(sheet)),
       definedNames: jsonCopy(definedNames),
     })),
   };

@@ -23,6 +23,30 @@ Une archive d'une version plus récente que celle que connaît DocCells est
 refusée (`Unsupported workbook version: N`), sans rien perdre du classeur
 affiché.
 
+## Archives d'origine inconnue
+
+Une archive peut venir de n'importe où (fichier d'une page hôte ouvert depuis
+une adresse quelconque). Rien de ce qu'elle contient ne doit pouvoir
+s'exécuter dans DocCells, ni donc dans un hôte de même origine :
+
+- **à la lecture** (`readWorkbookArchive`), une image n'est gardée que si sa
+  source est une image en URL `data:` (`data:image/png;base64,…`) : ni
+  requête vers une autre adresse, ni contenu actif ;
+- **à l'affichage**, les textes de l'archive (valeurs, formules, texte
+  enrichi et ses styles, commentaires, textes des validations, noms de
+  feuilles) ne sont jamais interprétés comme du HTML : FortuneSheet les
+  écrivait par `innerHTML` sans les échapper à plusieurs endroits, corrigés
+  par `scripts/patch-fortune-html-safety.cjs` (détail en tête du fichier) ;
+  les commentaires, enregistrés en HTML, et le tableau HTML de la copie
+  passent par un nettoyage qui ne garde que quelques balises de mise en
+  forme sans attribut actif ;
+- les liens (`hyperlink`) n'ouvrent qu'une adresse `http(s)` (FortuneSheet
+  préfixe `https://` toute autre adresse) ou une plage du classeur ;
+- les formules sont calculées par le moteur de DocCells, qui n'évalue aucun
+  code.
+
+Testé par `tests/browser/embedMode.browser.mjs` (« archive piégée »).
+
 ## Version 1
 
 ```json
