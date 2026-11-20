@@ -494,6 +494,23 @@ try {
     return dc.stats().draws - draws;
   });
   check("10 écritures dans une image : un seul dessin", perFrame === 1, `${perFrame} dessin(s)`);
+
+  // Barre de formule : A1 est sélectionnée ; une écriture rapide y apparaît
+  // à la resynchronisation qui suit la rafale (300 ms).
+  const formulaBar = await page.evaluate(async () => {
+    const iframe = document.getElementById("dc");
+    const dc = iframe.contentWindow.docCells;
+    const read = () => iframe.contentDocument.querySelector(".fortune-fx-input")?.textContent;
+    dc.setCellValues([{ ref: "Feuille1!A1", v: 0.125 }]);
+    const immediately = read();
+    await new Promise((resolve) => setTimeout(resolve, 600));
+    return { immediately, after: read() };
+  });
+  check(
+    "barre de formule à jour après la rafale",
+    formulaBar.after === "0.125",
+    `${formulaBar.immediately} → ${formulaBar.after}`,
+  );
   await context.close();
 
   // ------------------------------------------------------------------

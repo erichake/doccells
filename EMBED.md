@@ -296,6 +296,11 @@ page au premier affichage, ce qui donne quelques dessins de plus (3 mesurés).
 Visible, les écritures rapides sont dessinées à l'image suivante, une fois
 quel que soit leur nombre (10 écritures dans une image : 1 dessin).
 
+La barre de formule, que FortuneSheet ne relit qu'à un changement de
+sélection, est remise à jour à la resynchronisation qui suit une rafale
+d'écritures (300 ms après la dernière), sauf pendant une saisie dans la
+barre ou dans une cellule.
+
 ## 9. Attentes d'une image
 
 `requestAnimationFrame` est suspendu dans une iframe masquée. Les attentes
@@ -332,7 +337,7 @@ feuille cachée). Le `.xlsx` reste disponible pour l'export et l'échange
   version, archives refusées, accord entre `WORKBOOK_FORMAT.md` et le code).
 - `tests/browser/embedMode.browser.mjs` (Playwright, sans serveur ni port ;
   mode d'emploi en tête du fichier), avec un hôte d'une autre origine et un
-  hôte de même origine (30 vérifications) :
+  hôte de même origine (31 vérifications) :
   - `ready`, menus sans Fichier, `load` avec recalcul, `display` ;
   - `values` avant la réponse, rafale de 20 `setCellValues` fusionnée,
     erreurs ;
@@ -341,7 +346,7 @@ feuille cachée). Le `.xlsx` reste disponible pour l'export et l'échange
   - messages d'une autre fenêtre ignorés, origine non autorisée
     (`?embed=…`) ;
   - accès synchrone, iframe masquée après chargement et iframe chargée
-    masquée, un seul dessin par image ;
+    masquée, un seul dessin par image, barre de formule après une rafale ;
   - exemple v1 du format d'archivage rechargé à l'identique en français,
     mêmes valeurs et formules en anglais, champs de feuille tous décrits,
     version future refusée.

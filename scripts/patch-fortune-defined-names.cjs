@@ -259,14 +259,20 @@ for (const fileName of ["index.js", "index.esm.js"]) {
     '__doccellsInsertFormulaCandidate(setContext, v.n, !!v.__doccellsFullInsert);',
     '__doccellsInsertFormulaCandidate(setContext, v.n, !!v.__doccellsFullInsert, !!v.__doccellsDefinedName);',
   );
-  source = source.replace(
-    '      "data-doccells-full": v.__doccellsFullInsert ? "1" : undefined,',
-    '      "data-doccells-full": v.__doccellsFullInsert ? "1" : undefined,\n      "data-doccells-name": v.__doccellsDefinedName ? "1" : undefined,',
-  );
-  source = source.replace(
-    '      var __doccellsFullInsert = activeFormula.getAttribute("data-doccells-full") === "1";',
-    '      var __doccellsFullInsert = activeFormula.getAttribute("data-doccells-full") === "1";\n      var __doccellsDefinedName = activeFormula.getAttribute("data-doccells-name") === "1";',
-  );
+  // Gardés : leur point d'ancrage reste présent après coup, et un postinstall
+  // rejoué ajouterait sinon la ligne une fois de plus.
+  if (!source.includes('"data-doccells-name": v.__doccellsDefinedName ? "1" : undefined,')) {
+    source = source.replace(
+      '      "data-doccells-full": v.__doccellsFullInsert ? "1" : undefined,',
+      '      "data-doccells-full": v.__doccellsFullInsert ? "1" : undefined,\n      "data-doccells-name": v.__doccellsDefinedName ? "1" : undefined,',
+    );
+  }
+  if (!source.includes('var __doccellsDefinedName = activeFormula.getAttribute("data-doccells-name") === "1";')) {
+    source = source.replace(
+      '      var __doccellsFullInsert = activeFormula.getAttribute("data-doccells-full") === "1";',
+      '      var __doccellsFullInsert = activeFormula.getAttribute("data-doccells-full") === "1";\n      var __doccellsDefinedName = activeFormula.getAttribute("data-doccells-name") === "1";',
+    );
+  }
   if (!source.includes("if (__doccellsDefinedName) __doccellsFullInsert = true;")) {
     source = source.replace(
       '      var __doccellsDefinedName = activeFormula.getAttribute("data-doccells-name") === "1";',

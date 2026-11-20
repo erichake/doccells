@@ -551,7 +551,14 @@ const PATCH_GROUPS = [
   },
   { name: "localized generated sheet names", variants: [{ old: OLD6, new: NEW6 }] },
   { name: "clear content keeps cell protection", variants: [{ old: OLD7, new: NEW7 }] },
-  { name: "Excel-compatible date formulas", variants: [{ old: OLD8_ESM, new: NEW8_ESM }, { old: OLD8_CJS, new: NEW8_CJS }] },
+  {
+    name: "Excel-compatible date formulas",
+    variants: [{ old: OLD8_ESM, new: NEW8_ESM }, { old: OLD8_CJS, new: NEW8_CJS }],
+    // Les patchs suivants (noms définis, sparklines, moteur de formules)
+    // modifient ce passage : son texte complet ne s'y retrouve plus quand le
+    // postinstall est rejoué, ce repère si.
+    applied: "var __doccellsExcelWorkday = function __doccellsExcelWorkday(",
+  },
   { name: "Date formula serial values", variants: [{ old: OLD9_ESM, new: NEW9_ESM }, { old: OLD9_CJS, new: NEW9_CJS }] },
   { name: "fill-handle down keeps number format", variants: [{ old: OLD10, new: NEW10 }] },
   { name: "fill-handle down formula source offset", variants: [{ old: OLD11_DOWN, new: NEW11_DOWN }] },
@@ -567,8 +574,8 @@ for (const bundle of BUNDLES) {
   let src = fs.readFileSync(file, "utf8");
   let groupsOk = 0;
   for (const group of PATCH_GROUPS) {
-    let matched = false;
-    for (const v of group.variants) {
+    let matched = Boolean(group.applied && src.includes(group.applied));
+    for (const v of matched ? [] : group.variants) {
       if (src.includes(v.old)) { src = src.replace(v.old, v.new); matched = true; break; }
       if (src.includes(v.new)) { matched = true; break; }
     }

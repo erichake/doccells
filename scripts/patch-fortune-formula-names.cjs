@@ -1303,6 +1303,32 @@ const REACT_BUNDLES = [
     corePrefix: "",
   },
 ];
+// patch-fortune-defined-names.cjs modifie ensuite certains de ces passages
+// (paramètre isDefinedName) : quand le postinstall est rejoué, leur forme
+// modifiée signale aussi qu'ils sont déjà appliqués.
+const withDefinedNamesPatch = (text) =>
+  text
+    .replace(
+      "var __doccellsInsertFormulaCandidate = function __doccellsInsertFormulaCandidate(setContext, formulaName, isFullInsert) {",
+      "var __doccellsInsertFormulaCandidate = function __doccellsInsertFormulaCandidate(setContext, formulaName, isFullInsert, isDefinedName) {",
+    )
+    .replace(
+      "    if (!isFullInsert) {\n      range.insertNode(lParNode);",
+      "    if (!isFullInsert && !isDefinedName) {\n      range.insertNode(lParNode);",
+    )
+    .replace(
+      "__doccellsInsertFormulaCandidate(setContext, v.n, !!v.__doccellsFullInsert);",
+      "__doccellsInsertFormulaCandidate(setContext, v.n, !!v.__doccellsFullInsert, !!v.__doccellsDefinedName);",
+    )
+    .replace(
+      '      "data-doccells-full": v.__doccellsFullInsert ? "1" : undefined,',
+      '      "data-doccells-full": v.__doccellsFullInsert ? "1" : undefined,\n      "data-doccells-name": v.__doccellsDefinedName ? "1" : undefined,',
+    )
+    .replace(
+      "        if (!__doccellsFullInsert) {\n          range === null || range === void 0 ? void 0 : range.insertNode(lParNode);",
+      "        if (!__doccellsFullInsert && !__doccellsDefinedName) {\n          range === null || range === void 0 ? void 0 : range.insertNode(lParNode);",
+    );
+
 for (const { file: bundle, createElement, useContextExpr, isEmptyFn, getRangeSelectionCall, corePrefix } of REACT_BUNDLES) {
   const file = path.join(REACT_DIST, bundle);
   if (!fs.existsSync(file)) {
@@ -1360,7 +1386,7 @@ for (const { file: bundle, createElement, useContextExpr, isEmptyFn, getRangeSel
   let ok = 0;
   let changed = false;
   for (const p of reactPatches) {
-    if (src.includes(p.new)) {
+    if (src.includes(p.new) || src.includes(withDefinedNamesPatch(p.new))) {
       ok++;
       continue;
     }

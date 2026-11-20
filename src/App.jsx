@@ -583,6 +583,9 @@ const App = () => {
         workbookChangeOriginRef.current = "user";
       }
     }
+    // La barre de formule ne suit pas les écritures rapides (pas de rendu
+    // React) : elle est remise à jour ici, une fois la rafale terminée.
+    workbookRef.current?.doccellsRefreshFormulaBar?.();
   }, []);
 
   // Dessin du canevas après des écritures rapides : au plus un par image,
