@@ -6,6 +6,10 @@
 // plages à chaque modification. L'index associe au contraire à chaque
 // cellule les formules qui la lisent, et se tient à jour à partir des clés
 // marquées par setFormulaCellInfo (patch-fortune-formula-engine.cjs).
+//
+// Il associe aussi à chaque nom d'hôte (=GEO("AB"), hostValues.js) les
+// formules qui le lisent.
+import { hostNamesOfFormula } from "./hostValues.js";
 
 // Au-delà de cette taille, une plage n'est pas éclatée en cellules : elle est
 // rangée par colonne et testée par encadrement.
@@ -30,6 +34,8 @@ export const createFormulaIndex = (map) => {
     dirty: new Set(),
     entries: new Map(),
     sheets: new Map(),
+    // nom d'hôte -> Set(clé de formule)
+    hostReaders: new Map(),
     nextOrdinal: 0,
   };
   for (const key of Object.keys(map)) addEntry(index, key, map[key], null);
@@ -86,10 +92,20 @@ const addEntry = (index, key, item, ordinal) => {
       }
     }
   }
+  const hostNames = hostNamesOfFormula(item.calc_funcStr);
+  for (const name of hostNames) {
+    let readers = index.hostReaders.get(name);
+    if (!readers) {
+      readers = new Set();
+      index.hostReaders.set(name, readers);
+    }
+    readers.add(key);
+  }
   index.entries.set(key, {
     item,
     ordinal: ordinal ?? index.nextOrdinal++,
     registrations,
+    hostNames,
   });
 };
 
@@ -107,6 +123,11 @@ const removeEntry = (index, key, entry) => {
       const position = list.indexOf(registration.box);
       if (position >= 0) list.splice(position, 1);
     }
+  }
+  for (const name of entry.hostNames) {
+    const readers = index.hostReaders.get(name);
+    readers.delete(key);
+    if (readers.size === 0) index.hostReaders.delete(name);
   }
   index.entries.delete(key);
 };
@@ -177,6 +198,71 @@ export const formulasReadingFormula = (index, map, formula) => {
   const counts = new Map();
   collectReaders(index, formula.id, formula.r, formula.c, counts);
   return orderedItems(index, map, counts, false);
+};
+
+// Formules qui lisent l'un des noms d'hôte donnés, dans l'ordre de la table.
+export const formulasReadingHostNames = (index, map, names) => {
+  const counts = new Map();
+  for (const name of names) {
+    for (const key of index.hostReaders.get(name) || []) counts.set(key, 1);
+  }
+  return orderedItems(index, map, counts, false);
+};
+
+// Noms d'hôte lus par les formules du classeur, triés.
+export const indexedHostNames = (index) => [...index.hostReaders.keys()].sort();
+
+/**
+ * Noms d'hôte dont dépend une plage { sheetId, r0, c0, r1, c1 }, directement
+ * (formule GEO dans la plage) ou non (formule de la plage qui lit une cellule
+ * qui en dépend), triés.
+ */
+export const hostNamesOfRange = (index, range) => {
+  // Formules par feuille : numéro de cellule -> clé.
+  const formulas = new Map();
+  for (const [key, entry] of index.entries) {
+    const id = String(entry.item.id);
+    if (!formulas.has(id)) formulas.set(id, new Map());
+    formulas.get(id).set(cellNumber(entry.item.r, entry.item.c), key);
+  }
+  const names = new Set();
+  const visited = new Set();
+  const pending = [range];
+  while (pending.length > 0) {
+    const { sheetId, r0, c0, r1, c1 } = pending.pop();
+    const cells = formulas.get(String(sheetId));
+    if (!cells) continue;
+    const visit = (key) => {
+      if (visited.has(key)) return;
+      visited.add(key);
+      const entry = index.entries.get(key);
+      for (const name of entry.hostNames) names.add(name);
+      for (const dependency of entry.item.formulaDependency || []) {
+        pending.push({
+          sheetId: dependency.sheetId,
+          r0: dependency.row[0],
+          r1: dependency.row[1],
+          c0: dependency.column[0],
+          c1: dependency.column[1],
+        });
+      }
+    };
+    if ((r1 - r0 + 1) * (c1 - c0 + 1) <= cells.size) {
+      for (let r = r0; r <= r1; r += 1) {
+        for (let c = c0; c <= c1; c += 1) {
+          const key = cells.get(cellNumber(r, c));
+          if (key !== undefined) visit(key);
+        }
+      }
+    } else {
+      for (const [number, key] of cells) {
+        const r = Math.floor(number / MAX_COLUMNS);
+        const c = number % MAX_COLUMNS;
+        if (r >= r0 && r <= r1 && c >= c0 && c <= c1) visit(key);
+      }
+    }
+  }
+  return [...names].sort();
 };
 
 const orderedItems = (index, map, counts, repeat) => {

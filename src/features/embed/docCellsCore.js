@@ -8,6 +8,7 @@
 import { parseReference, formatReference } from "./references.js";
 import { readRange } from "./cellValues.js";
 import { nextTask } from "./visibility.js";
+import { isHostValue, replaceHostValues } from "../recalc/hostValues.js";
 
 // Clés d'une feuille qui décrivent la vue et non le contenu : leur changement
 // n'est pas une modification du classeur (événement « change »).
@@ -43,6 +44,9 @@ export const createDocCellsCore = ({
   getContext,
   whenReady,
   writeValues,
+  writeHostValues,
+  readHostNames,
+  readHostDependencies,
   loadWorkbook,
   saveWorkbook,
 }) => {
@@ -54,6 +58,8 @@ export const createDocCellsCore = ({
   let loading = false;
   let hostWritePending = false;
   let changeScheduled = false;
+  // Noms d'hôte lus par le classeur, tels que signalés en dernier.
+  let hostNamesKey = null;
 
   const emit = (owner, payload) => {
     for (const listener of listeners.get(owner) || []) listener(payload);
@@ -147,6 +153,53 @@ export const createDocCellsCore = ({
     };
   };
 
+  // --- Valeurs fournies par l'hôte (GEO) -----------------------------------
+
+  const validateHostUpdates = (updates) => {
+    if (!Array.isArray(updates)) throw new Error("Invalid request");
+    return updates.map((update) => {
+      if (
+        !update ||
+        typeof update !== "object" ||
+        typeof update.name !== "string" ||
+        !isHostValue(update.v)
+      ) {
+        throw new Error("Invalid request");
+      }
+      return { name: update.name, v: update.v };
+    });
+  };
+
+  const prepareHostUpdates = (updates) => {
+    requireContext();
+    return validateHostUpdates(updates);
+  };
+
+  const writeHostPrepared = (prepared, owner) => {
+    const ctx = requireContext();
+    const result = writeHostValues(prepared);
+    const values = emitChanges(collectChanges(ctx), "host", owner);
+    return { recalculated: result.recalculated, values };
+  };
+
+  const hostNames = () => readHostNames(requireContext());
+
+  const hostDependencies = (ref) => {
+    const ctx = requireContext();
+    const reference = parseReference(ref);
+    return readHostDependencies(ctx, { ...reference, sheetId: sheetIdByName(ctx, reference.sheetName) });
+  };
+
+  // Événement hostNamesChanged si les noms lus par le classeur ont changé
+  // depuis le dernier signalement (ou le dernier load).
+  const checkHostNames = (ctx, silent = false) => {
+    const names = readHostNames(ctx);
+    const key = JSON.stringify(names);
+    if (key === hostNamesKey) return;
+    hostNamesKey = key;
+    if (!silent) emitAll({ event: "hostNamesChanged", names });
+  };
+
   // --- Notifications après une modification de la grille -----------------
 
   const scheduleChangeEvent = () => {
@@ -168,6 +221,7 @@ export const createDocCellsCore = ({
     if (loading || !ctx || !Array.isArray(sheets)) return;
     if (!sheetNames) {
       rememberSheets(sheets);
+      checkHostNames(ctx, true);
       return;
     }
     const byUser = origin === "user" && !hostWritePending;
@@ -192,6 +246,7 @@ export const createDocCellsCore = ({
     emitChanges(collectChanges(ctx), hostWritePending || origin === "sync" ? "host" : "user");
     if (origin !== "sync") hostWritePending = false;
     rememberSheets(sheets);
+    checkHostNames(ctx);
   };
 
   // Écriture faite hors du cœur (window.setCellValues).
@@ -204,10 +259,18 @@ export const createDocCellsCore = ({
 
   // loadWorkbook lit l'archive (WORKBOOK_FORMAT.md) et la refuse, avant de
   // toucher au classeur courant, si elle est invalide.
-  const load = async (workbook, { recalculate = true } = {}) => {
+  // Les valeurs d'hôte appartiennent au classeur montré : load les remplace
+  // par celles de hostValues (aucune par défaut), avant le recalcul. Une
+  // archive refusée rend les précédentes.
+  const load = async (workbook, { recalculate = true, hostValues } = {}) => {
+    const initialHostValues = hostValues === undefined ? [] : validateHostUpdates(hostValues);
     loading = true;
+    const previousHostValues = replaceHostValues(initialHostValues);
     try {
       await loadWorkbook(workbook, { recalculate: recalculate !== false });
+    } catch (error) {
+      replaceHostValues(previousHostValues);
+      throw error;
     } finally {
       loading = false;
     }
@@ -218,6 +281,7 @@ export const createDocCellsCore = ({
       const sheet = ctx.luckysheetfile.find((item) => item.name === subscription.sheetName);
       subscription.sheetId = sheet ? sheet.id : null;
     }
+    checkHostNames(ctx, true);
     emitChanges(collectChanges(ctx), "load");
     return { sheets: ctx.luckysheetfile.map((sheet) => ({ id: sheet.id, name: sheet.name })) };
   };
@@ -271,6 +335,11 @@ export const createDocCellsCore = ({
     prepareUpdates,
     writePrepared,
     setCellValues: (updates, owner) => writePrepared(prepareUpdates(updates), owner),
+    prepareHostUpdates,
+    writeHostPrepared,
+    setHostValues: (updates, owner) => writeHostPrepared(prepareHostUpdates(updates), owner),
+    hostNames,
+    hostDependencies,
     getValues,
     subscribe,
     unsubscribe,

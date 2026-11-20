@@ -18,7 +18,13 @@ import {
   setCellValue,
   setFormulaCellInfoMap,
 } from "@fortune-sheet/core";
-import { isFormulaInfoMapEmpty } from "../recalc/formulaIndex.js";
+import {
+  hostNamesOfRange,
+  indexedHostNames,
+  isFormulaInfoMapEmpty,
+  syncFormulaIndex,
+} from "../recalc/formulaIndex.js";
+import { storeHostValues } from "../recalc/hostValues.js";
 
 const isFormulaText = (value) =>
   typeof value === "string" && value.length > 1 && value.charAt(0) === "=";
@@ -155,6 +161,42 @@ const refreshRecalculatedValues = (ctx, touched) => {
   cache.execFunctionExist = undefined;
   return recalculated;
 };
+
+/**
+ * Enregistre des valeurs d'hôte ([{ name, v }], hostValues.js) et recalcule
+ * les formules GEO qui lisent celles qui ont changé, puis leurs dépendants,
+ * comme applyLiveCellUpdates.
+ *
+ * @returns { changed, recalculated, touched } ; changed : noms dont la valeur
+ *   a changé.
+ */
+export const applyHostValueUpdates = (ctx, updates) => {
+  const changed = storeHostValues(updates);
+  const touched = new Map();
+  if (changed.length === 0) return { changed, recalculated: 0, touched };
+  ensureFormulaCellInfoMap(ctx);
+  const cache = ctx.formulaCache;
+  cache.execFunctionGlobalData = {};
+  cache.execFunctionExist = [];
+  cache.doccellsChangedHostNames = changed;
+  const index = getSheetIndex(ctx, ctx.currentSheetId);
+  const data = index == null ? undefined : ctx.luckysheetfile[index]?.data;
+  execFunctionGroup(ctx, null, null, null, ctx.currentSheetId, data);
+  const recalculated = refreshRecalculatedValues(ctx, touched);
+  return { changed, recalculated, touched };
+};
+
+// Index des formules du classeur, à jour.
+const formulaIndexOf = (ctx) => {
+  ensureFormulaCellInfoMap(ctx);
+  return syncFormulaIndex(ctx.formulaCache);
+};
+
+// Noms d'hôte lus par les formules GEO du classeur, triés.
+export const readHostNames = (ctx) => indexedHostNames(formulaIndexOf(ctx));
+
+// Noms d'hôte dont dépend la plage { sheetId, r0, c0, r1, c1 }, triés.
+export const readHostDependencies = (ctx, range) => hostNamesOfRange(formulaIndexOf(ctx), range);
 
 /**
  * Recalcule toutes les formules du classeur, dans l'ordre des dépendances

@@ -11,8 +11,9 @@ deux façons qui partagent le même code :
 
 L'hôte fournit le classeur, le lit pour l'enregistrer dans son propre
 stockage, écrit des valeurs dans des cellules et s'abonne à des cellules ou
-plages dont il reçoit les nouvelles valeurs après chaque recalcul. Rien de ce
-mode ne dépend d'une application hôte particulière. Les conventions
+plages dont il reçoit les nouvelles valeurs après chaque recalcul. Il peut
+aussi fournir des valeurs nommées, que les formules lisent par `=GEO("nom")`
+(section 7). Rien de ce mode ne dépend d'une application hôte particulière. Les conventions
 (enveloppe versionnée, réponses par `id`, traitement dans l'ordre) sont celles
 du protocole de DocGeo.
 
@@ -22,7 +23,8 @@ inchangée et reste disponible avec ou sans `?embed`.
 
 Code : `src/features/embed/` (cœur `docCellsCore.js`, protocole
 `messageProtocol.js`, références `references.js`, valeurs `cellValues.js`,
-visibilité et dessin `visibility.js`, activation `embedMode.js`).
+visibilité et dessin `visibility.js`, activation `embedMode.js`) ;
+valeurs de l'hôte et fonction `GEO` : `src/features/recalc/hostValues.js`.
 
 ## 1. Activation et interface
 
@@ -30,9 +32,13 @@ visibilité et dessin `visibility.js`, activation `embedMode.js`).
 <iframe src="apps/doccells/index.html?embed" style="border: 0"></iframe>
 ```
 
-`?embed` n'a d'effet que dans une iframe. Il se combine avec `?mode=student`.
-`?embed=https://hote.example` (plusieurs origines séparées par des virgules)
-restreint les origines acceptées (section 4.4).
+`?embed` n'a d'effet que dans une iframe. Il se combine avec `?mode=student`
+et `?lang=`. `?embed=https://hote.example` (plusieurs origines séparées par
+des virgules) restreint les origines acceptées (section 4.4).
+
+`?lang=fr` (ou `fr-FR`, `de`, `zh-TW`…), avec ou sans `?embed`, impose la
+langue de DocCells (menus, noms de fonctions, séparateur décimal) au lieu de
+celle du navigateur : un hôte qui a sa propre langue la transmet ainsi.
 
 Dans toute iframe, avec ou sans `?embed`, DocCells n'affiche pas d'écran de
 démarrage ni les boutons Ouvrir / Exporter de la barre d'outils, et ne fait ni
@@ -48,7 +54,7 @@ Avec `?embed` :
 - le paramètre `url=` est ignoré : DocCells ouvre le classeur vide habituel
   (`empty.xlsx`), puis l'hôte fournit le sien (`load`) ;
 - `window.docCells` et le protocole `postMessage` sont actifs ;
-- aucun dessin n'a lieu tant que l'iframe est masquée (section 8).
+- aucun dessin n'a lieu tant que l'iframe est masquée (section 9).
 
 ## 2. Accès synchrone : `window.docCells`
 
@@ -62,6 +68,10 @@ docCells.on("values", (event) => { /* changement venu de l'utilisateur */ });
 // Pendant un glissement, dans la même image :
 const result = docCells.setCellValues([{ ref: "Feuille1!A1", v: 0.73 }]);
 // result.values : nouvelles valeurs des abonnements de ce client
+
+// Valeurs lues par =GEO("AB") (section 7) :
+const names = docCells.hostNames(); // ["AB"]
+docCells.setHostValues([{ name: "AB", v: 2.5 }]); // { recalculated, values }
 ```
 
 | Méthode                            | Résultat                                                         |
@@ -73,16 +83,19 @@ const result = docCells.setCellValues([{ ref: "Feuille1!A1", v: 0.73 }]);
 | `getValues(ref, { display })`      | tableau de lignes                                                |
 | `subscribe(ref, { display })`      | `{ subscription, ref, values }`                                  |
 | `unsubscribe(subscription)`        | `null`                                                           |
+| `setHostValues(updates)`           | `{ recalculated, values }`                                       |
+| `hostNames()`                      | noms lus par les formules `GEO` du classeur, triés               |
+| `hostDependencies(ref)`            | noms dont dépend une cellule ou une plage, triés                 |
 | `on(event, listener)`              | fonction qui retire l'écouteur                                   |
 | `stats()`                          | `{ draws }` : nombre de dessins du canevas (diagnostic)          |
 
 Les opérations sont celles du protocole (sections 5 et 6), mêmes paramètres,
 mêmes erreurs (levées en `Error`). Différences :
 
-- `setCellValues` recalcule tout de suite et renvoie dans `values` les
-  abonnements **de ce client** dont les valeurs ont changé, sous la forme
-  `[{ subscription, ref, values }]` ; ces changements ne sont pas aussi
-  envoyés en événements. Le dessin est fait à l'image suivante, une seule
+- `setCellValues` et `setHostValues` recalculent tout de suite et renvoient
+  dans `values` les abonnements **de ce client** dont les valeurs ont
+  changé, sous la forme `[{ subscription, ref, values }]` ; ces changements
+  ne sont pas aussi envoyés en événements. Le dessin est fait à l'image suivante, une seule
   fois quel que soit le nombre d'écritures.
 - `on` reçoit les événements de la section 6 ; `values` n'y arrive que pour
   les changements qui ne sont pas renvoyés par un appel de ce client
@@ -112,7 +125,9 @@ soulignés (`'Données 2'!A1`).
 ### Valeurs
 
 Une cellule est transmise par sa valeur calculée : nombre (une date est son
-numéro de série), texte, booléen ou `null` (vide). Une erreur est un objet
+numéro de série), texte, booléen ou `null` (vide). Un nombre saisi au
+clavier, que FortuneSheet garde sous forme de texte (`v: "3"` avec le type
+`n`), est transmis comme un nombre. Une erreur est un objet
 `{ error: "#DIV/0!" }` ; la chaîne `"DIV/0"` que FortuneSheet produit pour
 une division par zéro est normalisée en `"#DIV/0!"`. Avec `display: true`,
 chaque cellule est `{ v, m }`, `m` étant le texte affiché (`"19/11/2026"`,
@@ -173,12 +188,15 @@ Restreindre qui peut afficher DocCells dans une iframe relève du serveur
 
 | `type`          | Paramètres                                                 | `result`                                   |
 | --------------- | ---------------------------------------------------------- | ------------------------------------------ |
-| `load`          | `workbook`, `recalculate` (booléen, `true` par défaut)     | `{ sheets: [{ id, name }] }`               |
+| `load`          | `workbook`, `recalculate` (booléen, `true` par défaut), `hostValues` (`[{ name, v }]`) | `{ sheets: [{ id, name }] }` |
 | `save`          | —                                                          | `{ workbook }`                             |
 | `setCellValues` | `updates: [{ ref, v }]`                                    | `{ written, recalculated, skipped }`       |
 | `getValues`     | `ref`, `display` (booléen)                                 | `{ values }`                               |
 | `subscribe`     | `ref`, `display` (booléen)                                 | `{ subscription, ref, values }`            |
 | `unsubscribe`   | `subscription`                                             | `null`                                     |
+| `setHostValues` | `updates: [{ name, v }]`                                   | `{ recalculated }`                         |
+| `hostNames`     | —                                                          | `{ names }`                                |
+| `hostDependencies` | `ref`                                                   | `{ names }`                                |
 
 ### `load`
 
@@ -186,12 +204,14 @@ Remplace le classeur. `workbook` est une archive au format d'archivage de
 DocCells, `{ format: "doccells", version, definedNames, sheets }`, décrit
 dans `WORKBOOK_FORMAT.md` : celle que `save` renvoie, de n'importe quelle
 version publiée (une archive ancienne est convertie). Un `calcChain` absent
-est reconstruit depuis les formules. Le classeur est entièrement recalculé (section 7), les
+est reconstruit depuis les formules. Les valeurs de l'hôte (section 7) sont
+remplacées par `hostValues` (aucune s'il manque) avant le recalcul. Le
+classeur est entièrement recalculé (section 8), les
 abonnements en cours sont résolus à nouveau par nom de feuille et reçoivent
 leurs valeurs (`source: "load"`), puis la réponse part. L'historique
 d'annulation repart de zéro. Une archive invalide ou d'une version future
 est refusée (`Invalid workbook: …`, `Unsupported workbook version: N`), et le
-classeur précédent reste affiché. L'archive fournie n'est pas modifiée
+classeur précédent reste affiché, avec ses valeurs de l'hôte. L'archive fournie n'est pas modifiée
 (DocCells en fait une copie).
 
 ### `save`
@@ -213,6 +233,14 @@ historique) ; ses effets arrivent ensuite en événements `values`
 feuille inconnue ou une référence invalide refuse la requête entière, sans
 rien écrire.
 
+### `setHostValues`, `hostNames`, `hostDependencies`
+
+Voir la section 7. Les `setHostValues` consécutifs sont fusionnés comme les
+`setCellValues` (section 4.2 ; pour un même nom, la dernière valeur
+l'emporte). Une mise à jour invalide (nom qui n'est pas un texte, valeur qui
+n'est ni nombre, ni texte, ni booléen, ni `null`) refuse la requête entière
+(`Invalid request`), sans rien écrire.
+
 ### `subscribe` et `unsubscribe`
 
 `subscribe` renvoie un identifiant, la référence canonique et les valeurs
@@ -232,6 +260,7 @@ Après `load`, il est résolu à nouveau par nom de feuille.
 | `change`       | l'utilisateur a modifié le contenu du classeur (saisie, collage, mise en forme, annulation, feuille ajoutée…)              | —                                                 |
 | `sheetRenamed` | l'utilisateur a renommé une feuille                                                                                       | `{ id, oldName, newName }`                        |
 | `sheetDeleted` | l'utilisateur a supprimé une feuille                                                                                      | `{ id, name }`                                    |
+| `hostNamesChanged` | les noms lus par les formules `GEO` ont changé (formule saisie, effacée, collée, annulation…)                         | `{ names }`                                       |
 | `save`         | l'utilisateur a demandé l'enregistrement (Cmd-S / Ctrl-S)                                                                 | —                                                 |
 
 - `source` de `values` vaut `"host"` (écriture de l'hôte), `"user"` (action
@@ -242,6 +271,8 @@ Après `load`, il est résolu à nouveau par nom de feuille.
   modifications dans la même tâche n'en donnent qu'un.
 - Après `sheetRenamed` ou `sheetDeleted`, l'hôte met à jour ses propres
   références.
+- `hostNamesChanged` n'est pas émis par `load` : après un `load`, l'hôte lit
+  `hostNames()`.
 
 ### Erreurs
 
@@ -256,7 +287,51 @@ Après `load`, il est résolu à nouveau par nom de feuille.
 | `Unknown subscription: …`  | `unsubscribe` d'un identifiant inconnu ou d'un autre client        |
 | `Workbook not ready`       | opération pendant un `load` (accès synchrone)                      |
 
-## 7. Recalcul complet au chargement
+## 7. Valeurs fournies par l'hôte : `GEO`
+
+Une formule lit une valeur que l'hôte fournit sous un nom :
+`=GEO("AB")`. DocCells ne donne aucun sens à ces noms ; l'hôte les
+interprète (DocGeo y lit les objets de sa figure).
+
+- Le nom `GEO` est le même dans toutes les langues de DocCells.
+- L'argument doit être un texte écrit dans la formule (`GEO("AB")`) ;
+  sinon (`GEO(A1)`, `GEO("A"&"B")`, aucun ou deux arguments) : `#VALUE!`.
+  Un guillemet doublé dans le nom n'est pas pris en charge (`#VALUE!`).
+- Un nom que l'hôte n'a pas fourni, ou fourni avec `null`, ou avec un nombre
+  non fini : `#N/A`.
+- Une valeur est un nombre, un texte ou un booléen. Comme pour toute cellule,
+  FortuneSheet ne propage pas les erreurs dans un calcul : `GEO("AB")+1`
+  vaut `#VALUE!` tant que `AB` n'a pas de valeur.
+
+Opérations (accès synchrone et protocole) :
+
+- `hostNames()` : les noms lus par les formules `GEO` du classeur, triés.
+  L'événement `hostNamesChanged` signale qu'ils ont changé à la suite d'une
+  action de l'utilisateur ou d'une écriture de formule par l'hôte.
+- `setHostValues([{ name, v }])` : enregistre les valeurs, puis recalcule
+  par l'index inverse les formules `GEO` qui lisent un nom dont la valeur a
+  changé, et tout ce qui en dépend ; un nom inchangé ne recalcule rien. Le
+  chemin est celui de `setCellValues` : sans historique d'annulation ni rendu
+  React, dessin à l'image suivante, abonnements de ce client renvoyés,
+  autres clients en événements `values` (`source: "host"`).
+- `hostDependencies(ref)` : les noms dont dépend une cellule ou une plage,
+  directement (formule `GEO` dans la plage) ou non (formule qui lit une
+  cellule qui en dépend, sur n'importe quelle feuille), triés. Les plages
+  calculées (`INDIRECT`, `OFFSET`) y sont suivies comme dans le recalcul de
+  FortuneSheet, c'est-à-dire approximativement.
+
+Les valeurs de l'hôte appartiennent au classeur montré : chaque `load` les
+remplace (par `hostValues`, sinon par aucune), avant le recalcul complet. Un
+hôte qui ne connaît pas encore les noms charge sans `hostValues`, lit
+`hostNames()`, puis appelle `setHostValues` : les cellules `GEO` valent
+`#N/A` entre les deux. Elles ne sont pas enregistrées dans l'archive : seul
+le dernier résultat des formules l'est (`v`), comme pour toute formule.
+
+Un hôte qui lit des cellules dépendant de `GEO` et fournit des valeurs
+calculées d'après d'autres cellules doit éviter les cycles lui-même :
+DocCells ne voit que ses propres formules.
+
+## 8. Recalcul complet au chargement
 
 FortuneSheet ne recalcule pas les formules à l'ouverture : il affiche les
 valeurs enregistrées. `load` recalcule donc toutes les formules dans l'ordre
@@ -274,7 +349,7 @@ puis seulement quand une de leurs dépendances change.
 Le recalcul forcé du moteur de DocCells est comparé à celui d'origine de
 FortuneSheet par `tests/formulaEngine.test.mjs`.
 
-## 8. Iframe masquée et dessin
+## 9. Iframe masquée et dessin
 
 DocCells considère sa fenêtre comme masquée quand :
 
@@ -301,7 +376,7 @@ sélection, est remise à jour à la resynchronisation qui suit une rafale
 d'écritures (300 ms après la dernière), sauf pendant une saisie dans la
 barre ou dans une cellule.
 
-## 9. Attentes d'une image
+## 10. Attentes d'une image
 
 `requestAnimationFrame` est suspendu dans une iframe masquée. Les attentes
 qui sont sur le chemin d'une requête ont donc été retirées :
@@ -313,7 +388,7 @@ qui sont sur le chemin d'une requête ont donc été retirées :
 - La synchronisation de la mise en forme conditionnelle attend l'image
   suivante si la fenêtre est visible, la tâche suivante sinon.
 
-## 10. Format d'enregistrement
+## 11. Format d'enregistrement
 
 `save` et `load` utilisent le format d'archivage de DocCells, décrit champ
 par champ dans `WORKBOOK_FORMAT.md` : enveloppe versionnée, lecture garantie
@@ -327,17 +402,19 @@ aplati, repères internes perdus, éléments propres à DocCells rangés dans un
 feuille cachée). Le `.xlsx` reste disponible pour l'export et l'échange
 (`window.getExcelAsBase64`).
 
-## 11. Tests et mesures
+## 12. Tests et mesures
 
-- `tests/embed.test.mjs` (Node) : références, valeurs et erreurs, cœur sur un
-  vrai contexte FortuneSheet (deux clients, valeurs renvoyées ou émises,
-  écritures refusées, feuilles renommées et supprimées, `change`).
+- `tests/embed.test.mjs` (Node) : références, valeurs et erreurs, nombre
+  saisi au clavier, cœur sur un vrai contexte FortuneSheet (deux clients,
+  valeurs renvoyées ou émises, écritures refusées, feuilles renommées et
+  supprimées, `change`), `GEO` (valeurs, `#N/A`, `#VALUE!`, `hostNames`,
+  `hostDependencies` directes et indirectes, `hostNamesChanged`).
 - `tests/formulaEngine.test.mjs` : recalcul forcé comparé à celui d'origine.
 - `tests/workbookArchive.test.mjs` : format d'archivage (exemples de chaque
   version, archives refusées, accord entre `WORKBOOK_FORMAT.md` et le code).
 - `tests/browser/embedMode.browser.mjs` (Playwright, sans serveur ni port ;
   mode d'emploi en tête du fichier), avec un hôte d'une autre origine et un
-  hôte de même origine (31 vérifications) :
+  hôte de même origine (44 vérifications) :
   - `ready`, menus sans Fichier, `load` avec recalcul, `display` ;
   - `values` avant la réponse, rafale de 20 `setCellValues` fusionnée,
     erreurs ;
@@ -349,7 +426,14 @@ feuille cachée). Le `.xlsx` reste disponible pour l'export et l'échange
     masquée, un seul dessin par image, barre de formule après une rafale ;
   - exemple v1 du format d'archivage rechargé à l'identique en français,
     mêmes valeurs et formules en anglais, champs de feuille tous décrits,
-    version future refusée.
+    version future refusée ;
+  - `?lang=fr` ; `GEO` par le protocole (`hostNames`, `setHostValues` avant
+    la réponse, rafale fusionnée, `hostDependencies`, formule `GEO` saisie au
+    clavier : `hostNamesChanged`, `load` avec `hostValues`) et par l'accès
+    synchrone ; nombre saisi au clavier transmis comme un nombre ;
+  - archive piégée (WORKBOOK_FORMAT.md, « Archives d'origine inconnue ») :
+    aucun script exécuté en sélectionnant, éditant et copiant ses cellules,
+    textes affichés tels quels, image d'une autre adresse retirée.
 - `embed_test.html` (racine, hors build) : page d'essai manuel avec
   `npm run dev` (curseur qui écrit `Feuille1!A1` à chaque image).
 
@@ -357,10 +441,12 @@ Mesures (Chrome headless, 300 formules dépendantes de la cellule écrite) :
 
 - accès synchrone `setCellValues` : environ 1,3 ms (recalcul ; le dessin, environ
   2 ms, a lieu à l'image suivante) ;
+- accès synchrone `setHostValues` : environ 1,1 ms (une formule `GEO` dont
+  dépendent les 300 formules) ;
 - `postMessage`, hôte d'une autre origine : environ 5,6 ms entre l'envoi de
   `setCellValues` et la réception de `values`.
 
-## 12. Exemple (`postMessage`)
+## 13. Exemple (`postMessage`)
 
 ```js
 const iframe = document.querySelector("iframe");

@@ -1,3 +1,5 @@
+// Avant tout autre module : ?lang= remplace la langue du navigateur.
+import "./utils/langParameter.js";
 import ReactDOM from "react-dom/client";
 // Avant App : le moteur de formules doit être en place à la création du Workbook.
 import "./features/recalc/installFormulaEngine.js";

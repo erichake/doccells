@@ -7,7 +7,7 @@
 // - Les requêtes sont traitées dans l'ordre. Les setCellValues consécutifs
 //   arrivés avant leur traitement sont fusionnés (pour une même cellule, la
 //   dernière valeur l'emporte) : un seul recalcul, puis les valeurs des
-//   abonnements, puis les réponses.
+//   abonnements, puis les réponses. De même pour setHostValues (par nom).
 import { nextTask } from "./visibility.js";
 
 export const PROTOCOL_VERSION = 1;
@@ -41,27 +41,46 @@ export const startMessageProtocol = ({ core, allowedOrigins = null, version }) =
   };
 
   const handlers = {
-    load: async ({ workbook, recalculate }) => core.load(workbook, { recalculate }),
+    load: async ({ workbook, recalculate, hostValues }) =>
+      core.load(workbook, { recalculate, hostValues }),
     save: async () => ({ workbook: core.save() }),
     getValues: async ({ ref, display }) => ({
       values: core.getValues(requireString(ref), { display }),
     }),
     subscribe: async ({ ref, display }) => core.subscribe(requireString(ref), { display }, OWNER),
     unsubscribe: async ({ subscription }) => core.unsubscribe(subscription, OWNER),
+    hostNames: async () => ({ names: core.hostNames() }),
+    hostDependencies: async ({ ref }) => ({ names: core.hostDependencies(requireString(ref)) }),
   };
 
-  // setCellValues consécutifs en tête de file : validés un par un (une
-  // requête invalide n'empêche pas les autres), puis écrits ensemble.
-  const processSetCellValues = () => {
+  // Écritures rapides : setCellValues (par cellule) et setHostValues (par
+  // nom d'hôte).
+  const FAST_WRITES = {
+    setCellValues: {
+      prepare: (request) => core.prepareUpdates(request.updates),
+      key: (update) => `${update.sheetId}\u0000${update.r}\u0000${update.c}`,
+      write: (updates) => core.writePrepared(updates, OWNER),
+    },
+    setHostValues: {
+      prepare: (request) => core.prepareHostUpdates(request.updates),
+      key: (update) => update.name,
+      write: (updates) => core.writeHostPrepared(updates, OWNER),
+    },
+  };
+
+  // Écritures rapides consécutives du même type en tête de file : validées
+  // une par une (une requête invalide n'empêche pas les autres), puis faites
+  // ensemble.
+  const processFastWrites = () => {
+    const type = queue[0].type;
+    const { prepare, key, write } = FAST_WRITES[type];
     const batch = [];
-    while (queue.length > 0 && queue[0].type === "setCellValues") batch.push(queue.shift());
+    while (queue.length > 0 && queue[0].type === type) batch.push(queue.shift());
     const accepted = [];
     const merged = new Map();
     for (const request of batch) {
       try {
-        for (const update of core.prepareUpdates(request.updates)) {
-          merged.set(`${update.sheetId}\u0000${update.r}\u0000${update.c}`, update);
-        }
+        for (const update of prepare(request)) merged.set(key(update), update);
         accepted.push(request);
       } catch (error) {
         respond(request, false, errorMessage(error));
@@ -70,7 +89,7 @@ export const startMessageProtocol = ({ core, allowedOrigins = null, version }) =
     if (accepted.length === 0) return;
     let result;
     try {
-      result = core.writePrepared([...merged.values()], OWNER);
+      result = write([...merged.values()]);
     } catch (error) {
       for (const request of accepted) respond(request, false, errorMessage(error));
       return;
@@ -85,12 +104,12 @@ export const startMessageProtocol = ({ core, allowedOrigins = null, version }) =
     processing = true;
     try {
       while (queue.length > 0) {
-        if (queue[0].type === "setCellValues") {
-          processSetCellValues();
+        if (Object.hasOwn(FAST_WRITES, queue[0].type)) {
+          processFastWrites();
           continue;
         }
         const request = queue.shift();
-        const handler = handlers[request.type];
+        const handler = Object.hasOwn(handlers, request.type) ? handlers[request.type] : null;
         if (!handler) {
           respond(request, false, `Unknown request: ${request.type}`);
           continue;

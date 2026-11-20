@@ -5,7 +5,14 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { defaultContext, setFormulaCellInfoMap } from "@fortune-sheet/core";
 import "../src/features/recalc/installFormulaEngine.js";
-import { applyLiveCellUpdates } from "../src/features/liveUpdate/liveCellUpdates.js";
+import {
+  applyHostValueUpdates,
+  applyLiveCellUpdates,
+  readHostDependencies,
+  readHostNames,
+  recalculateWorkbook,
+} from "../src/features/liveUpdate/liveCellUpdates.js";
+import { replaceHostValues } from "../src/features/recalc/hostValues.js";
 import { formatReference, parseReference } from "../src/features/embed/references.js";
 import { readRange, toPublicValue } from "../src/features/embed/cellValues.js";
 import { createDocCellsCore } from "../src/features/embed/docCellsCore.js";
@@ -50,6 +57,15 @@ test("valeurs : erreurs distinguées, DIV/0 normalisé, affichage", () => {
   assert.deepEqual(readRange([[{ v: 1 }]], { r0: 0, c0: 0, r1: 1, c1: 1 }), [[1, null], [null, null]]);
 });
 
+test("valeurs : un nombre saisi au clavier (texte de type n) est un nombre", () => {
+  assert.equal(toPublicValue({ v: "3", m: "3", ct: { fa: "General", t: "n" } }), 3);
+  assert.equal(toPublicValue({ v: "-2.5e3", ct: { t: "n" } }), -2500);
+  assert.deepEqual(toPublicValue({ v: "3", m: "3,00", ct: { t: "n" } }, true), { v: 3, m: "3,00" });
+  assert.equal(toPublicValue({ v: "3", ct: { t: "s" } }), "3");
+  assert.equal(toPublicValue({ v: "abc", ct: { t: "n" } }), "abc");
+  assert.equal(toPublicValue({ v: "", ct: { t: "n" } }), "");
+});
+
 const number = (v) => ({ v, m: String(v), ct: { fa: "General", t: "n" } });
 
 // Classeur de deux feuilles : B1:B3 = $A$1*k sur Feuille1, Autre!A1 =
@@ -88,6 +104,9 @@ const createCore = (ctx) =>
         formulas: 0,
       };
     },
+    writeHostValues: (updates) => applyHostValueUpdates(ctx, updates),
+    readHostNames,
+    readHostDependencies,
     loadWorkbook: async () => {},
     saveWorkbook: () => [],
   });
@@ -192,4 +211,126 @@ test("« change » seulement pour une modification du contenu par l'utilisateur"
   core.observeWorkbook(ctx.luckysheetfile.map((sheet) => ({ ...sheet, config: {} })), "user");
   await nextTurn();
   assert.deepEqual(events, ["change"]);
+});
+
+// Classeur qui lit des valeurs d'hôte : Feuille1!C1 = GEO("AB")*2,
+// C2 = C1+1, C3 = GEO(A1) (argument calculé), C4 = GEO("absent"),
+// C5 = GEO("t")&"!" ; Autre!A1 = Feuille1!C2*10.
+const createHostWorkbookContext = () => {
+  replaceHostValues([]);
+  const ctx = defaultContext({});
+  const grid = () => Array.from({ length: 10 }, () => new Array(5).fill(null));
+  const main = grid();
+  main[0][0] = { v: "AB", m: "AB", ct: { fa: "General", t: "g" } };
+  const formulas = ['=GEO("AB")*2', "=C1+1", "=GEO(A1)", '=GEO("absent")', '=GEO("t")&"!"'];
+  formulas.forEach((f, r) => {
+    main[r][2] = { f, v: 0, m: "0" };
+  });
+  const other = grid();
+  other[0][0] = { f: "=Feuille1!C2*10", v: 0, m: "0" };
+  const mainChain = formulas.map((_, r) => ({ r, c: 2, id: "a" }));
+  const otherChain = [{ r: 0, c: 0, id: "b" }];
+  ctx.luckysheetfile = [
+    { name: "Feuille1", id: "a", order: 0, status: 1, data: main, calcChain: mainChain, config: {} },
+    { name: "Autre", id: "b", order: 1, status: 0, data: other, calcChain: otherChain, config: {} },
+  ];
+  ctx.currentSheetId = "a";
+  setFormulaCellInfoMap(ctx, mainChain, main);
+  setFormulaCellInfoMap(ctx, otherChain, other);
+  recalculateWorkbook(ctx);
+  return ctx;
+};
+
+test("GEO : valeurs de l'hôte, nom absent, argument calculé", () => {
+  const ctx = createHostWorkbookContext();
+  const core = createCore(ctx);
+  const values = () => core.getValues("Feuille1!C1:C5").map((row) => row[0]);
+  // Rien de fourni : #N/A ; argument qui n'est pas un texte écrit : #VALUE!.
+  // (FortuneSheet ne propage pas l'erreur : #N/A+1 donne #VALUE!.)
+  assert.deepEqual(values(), [
+    { error: "#N/A" }, { error: "#VALUE!" }, { error: "#VALUE!" }, { error: "#N/A" }, { error: "#N/A" },
+  ]);
+
+  const column = core.subscribe("Feuille1!C1:C2", {}, "window");
+  const other = core.subscribe("Autre!A1", {}, "window");
+  const result = core.setHostValues([{ name: "AB", v: 3 }, { name: "t", v: "texte" }], "window");
+  assert.equal(result.recalculated, 4);
+  assert.deepEqual(result.values, [
+    { subscription: column.subscription, ref: "Feuille1!C1:C2", values: [[6], [7]] },
+    { subscription: other.subscription, ref: "Autre!A1", values: [[70]] },
+  ]);
+  assert.deepEqual(values(), [6, 7, { error: "#VALUE!" }, { error: "#N/A" }, "texte!"]);
+
+  // Même valeur : rien n'est recalculé.
+  assert.equal(core.setHostValues([{ name: "AB", v: 3 }], "window").recalculated, 0);
+  core.setHostValues([{ name: "absent", v: true }], "window");
+  assert.equal(values()[3], true);
+  // Valeur indéfinie (ou nombre non fini) : #N/A.
+  core.setHostValues([{ name: "AB", v: null }], "window");
+  assert.deepEqual(values().slice(0, 2), [{ error: "#N/A" }, { error: "#VALUE!" }]);
+  core.setHostValues([{ name: "AB", v: 1 }], "window");
+  core.setHostValues([{ name: "AB", v: Number.NaN }], "window");
+  assert.deepEqual(values()[0], { error: "#N/A" });
+});
+
+test("GEO : les autres clients reçoivent les valeurs en événements", () => {
+  const ctx = createHostWorkbookContext();
+  const core = createCore(ctx);
+  const events = [];
+  core.listen("message", (event) => events.push(event));
+  const theirs = core.subscribe("Autre!A1", {}, "message");
+  core.setHostValues([{ name: "AB", v: 1 }], "window");
+  assert.deepEqual(events, [
+    { event: "values", subscription: theirs.subscription, ref: "Autre!A1", values: [[30]], source: "host" },
+  ]);
+});
+
+test("GEO : setHostValues refuse une requête invalide sans rien écrire", () => {
+  const ctx = createHostWorkbookContext();
+  const core = createCore(ctx);
+  assert.throws(() => core.setHostValues({}, "window"), /Invalid request/);
+  assert.throws(() => core.setHostValues([{ name: 3, v: 1 }], "window"), /Invalid request/);
+  assert.throws(
+    () => core.setHostValues([{ name: "AB", v: 1 }, { name: "t", v: { x: 1 } }], "window"),
+    /Invalid request/,
+  );
+  assert.deepEqual(core.getValues("Feuille1!C1"), [[{ error: "#N/A" }]]);
+});
+
+test("GEO : noms lus par le classeur et dépendances d'une plage", () => {
+  const ctx = createHostWorkbookContext();
+  const core = createCore(ctx);
+  assert.deepEqual(core.hostNames(), ["AB", "absent", "t"]);
+  assert.deepEqual(core.hostDependencies("Feuille1!C1"), ["AB"]);
+  // Indirectement : C2 lit C1 ; Autre!A1 lit C2.
+  assert.deepEqual(core.hostDependencies("Feuille1!C2"), ["AB"]);
+  assert.deepEqual(core.hostDependencies("Autre!A1"), ["AB"]);
+  assert.deepEqual(core.hostDependencies("Feuille1!A1:C5"), ["AB", "absent", "t"]);
+  assert.deepEqual(core.hostDependencies("Feuille1!A1:B10"), []);
+  assert.throws(() => core.hostDependencies("Inconnue!A1"), /Unknown sheet/);
+  assert.throws(() => core.hostDependencies("A1"), /Invalid reference/);
+});
+
+test("GEO : hostNamesChanged quand l'utilisateur ajoute ou retire un nom", () => {
+  const ctx = createHostWorkbookContext();
+  const core = createCore(ctx);
+  const events = [];
+  core.listen("window", (event) => events.push(event));
+  // Le premier état observé sert de référence, sans événement.
+  core.observeWorkbook(ctx.luckysheetfile, "user");
+  core.observeWorkbook(ctx.luckysheetfile, "user");
+  assert.deepEqual(events, []);
+
+  // Formule saisie dans D1 : un nouveau nom.
+  const main = ctx.luckysheetfile[0];
+  main.data[0][3] = { f: '=GEO("CD")+GEO("AB")', v: 0 };
+  main.calcChain.push({ r: 0, c: 3, id: "a" });
+  setFormulaCellInfoMap(ctx, [{ r: 0, c: 3, id: "a" }], main.data);
+  core.observeWorkbook(ctx.luckysheetfile, "user");
+  assert.deepEqual(events, [{ event: "hostNamesChanged", names: ["AB", "CD", "absent", "t"] }]);
+  // Rien de changé : pas d'événement.
+  core.observeWorkbook(ctx.luckysheetfile, "user");
+  assert.equal(events.length, 1);
+  core.setHostValues([{ name: "CD", v: 10 }, { name: "AB", v: 1 }], "window");
+  assert.deepEqual(core.getValues("Feuille1!D1"), [[11]]);
 });

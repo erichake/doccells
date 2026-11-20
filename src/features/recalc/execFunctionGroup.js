@@ -15,6 +15,7 @@
 import {
   formulasReadingCells,
   formulasReadingFormula,
+  formulasReadingHostNames,
   isFormulaInfoMapEmpty,
   syncFormulaIndex,
 } from "./formulaIndex.js";
@@ -126,9 +127,18 @@ export const execFunctionGroup = (ctx, originRow, originColumn, value, id, data,
   const map = cache.formulaCellInfoMap;
   const index = syncFormulaIndex(cache);
 
-  const updateValueArray = isForce
+  let updateValueArray = isForce
     ? Object.keys(map).map((key) => map[key])
     : formulasReadingCells(index, map, changed);
+  // Valeurs d'hôte modifiées (setHostValues) : les formules GEO qui les
+  // lisent sont recalculées, puis celles qui en dépendent.
+  const hostNames = cache.doccellsChangedHostNames;
+  if (hostNames) {
+    cache.doccellsChangedHostNames = undefined;
+    if (!isForce) {
+      updateValueArray = updateValueArray.concat(formulasReadingHostNames(index, map, hostNames));
+    }
+  }
   const formulaRunList = getFormulaRunList(updateValueArray, map, index);
 
   if (formulaRunList.length > 0) {

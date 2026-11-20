@@ -20,9 +20,17 @@ const ERROR_CODES = new Set([
   "#GETTING_DATA",
 ]);
 
+// FortuneSheet garde un nombre saisi au clavier sous forme de texte (v: "3",
+// ct.t: "n") : il est rendu comme un nombre, comme le lisent ses formules.
+const NUMERIC_TEXT = /^\s*[-+]?(\d+\.?\d*|\.\d+)(e[-+]?\d+)?\s*$/i;
+
 const rawValue = (cell) => {
   if (cell == null) return null;
   if (typeof cell !== "object") return cell;
+  if (typeof cell.v === "string" && cell.ct?.t === "n" && NUMERIC_TEXT.test(cell.v)) {
+    const number = Number(cell.v);
+    if (Number.isFinite(number)) return number;
+  }
   if (cell.v !== undefined && cell.v !== null) return cell.v;
   // Texte enrichi : FortuneSheet range les morceaux dans ct.s.
   if (cell.ct?.t === "inlineStr" && Array.isArray(cell.ct.s)) {

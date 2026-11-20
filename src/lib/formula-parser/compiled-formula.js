@@ -119,6 +119,29 @@ export const compileFormula = (expression) => {
 
 export const clearCompiledFormulas = () => cache.clear();
 
+// Appels de la fonction name (en majuscules) dans une formule sans « = » :
+// la liste de leurs arguments non évalués (un texte écrit dans la formule
+// reste une chaîne). Formule illisible : aucun appel.
+export const functionCalls = (expression, name) => {
+  const compiled = compileFormula(expression);
+  const calls = [];
+  if (compiled === LEGACY) return calls;
+  const visit = (node) => {
+    if (!isNode(node)) return;
+    if (node.kind === FUNCTION) {
+      if (node.a.toUpperCase() === name) calls.push(node.b ?? []);
+      for (const param of node.b ?? []) visit(param);
+    } else if (node.kind === OPERATOR) {
+      visit(node.b);
+      visit(node.c);
+    } else if (node.kind === UNARY_MINUS || node.kind === UNARY_PLUS) {
+      visit(node.a);
+    }
+  };
+  visit(compiled.tree);
+  return calls;
+};
+
 // parser : instance de Parser (parser.js), pour ses rappels.
 const evaluate = (parser, node) => {
   if (!isNode(node)) return node;
@@ -132,6 +155,9 @@ const evaluate = (parser, node) => {
       return parser._cellValueFromExtracted(node.a, node.b);
     case FUNCTION: {
       const params = node.b;
+      // DocCells : fonction qui reçoit ses arguments non évalués (GEO).
+      const raw = parser.rawFunctions?.[node.a.toUpperCase()];
+      if (raw !== undefined) return raw(params ?? []);
       if (params === undefined) return parser._callFunction(node.a);
       const values = new Array(params.length);
       for (let i = 0; i < params.length; i += 1) values[i] = evaluate(parser, params[i]);

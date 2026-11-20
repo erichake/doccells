@@ -87,8 +87,11 @@ import {
   stripConditionalFormattingMarkers,
 } from "./features/conditionalFormatting/conditionalFormattingUtils.js";
 import {
+  applyHostValueUpdates,
   applyLiveCellUpdates,
   isFormulaUpdate,
+  readHostDependencies,
+  readHostNames,
   recalculateWorkbook,
   resolveSheetId,
 } from "./features/liveUpdate/liveCellUpdates.js";
@@ -655,6 +658,19 @@ const App = () => {
       formulas: formulas.length,
       ms: { recalc },
     };
+  }, [markLiveRowsChanged, requestRedraw]);
+
+  // Valeurs fournies par l'hôte (GEO), même chemin rapide que writeLiveValues.
+  // updates : [{ name, v }]. Renvoie null sans classeur prêt.
+  const writeHostValuesLive = useCallback((updates) => {
+    const ctx = isReadyRef.current ? workbookRef.current?.doccellsGetLiveContext?.() : null;
+    if (!ctx) return null;
+    const result = applyHostValueUpdates(ctx, updates);
+    if (result.recalculated > 0) {
+      markLiveRowsChanged(result.touched);
+      requestRedraw();
+    }
+    return { recalculated: result.recalculated };
   }, [markLiveRowsChanged, requestRedraw]);
 
   // Recalcul complet du classeur chargé (FortuneSheet affiche sinon les
@@ -1487,10 +1503,11 @@ const App = () => {
   useEffect(() => {
     embedOperationsRef.current = {
       writeLiveValues,
+      writeHostValuesLive,
       loadWorkbookFromHost,
       saveWorkbookForHost,
     };
-  }, [loadWorkbookFromHost, saveWorkbookForHost, writeLiveValues]);
+  }, [loadWorkbookFromHost, saveWorkbookForHost, writeHostValuesLive, writeLiveValues]);
 
   useEffect(() => {
     if (!embedConfig.enabled) return undefined;
@@ -1503,6 +1520,13 @@ const App = () => {
         if (!result) throw new Error("Workbook not ready");
         return result;
       },
+      writeHostValues: (updates) => {
+        const result = embedOperationsRef.current.writeHostValuesLive(updates);
+        if (!result) throw new Error("Workbook not ready");
+        return result;
+      },
+      readHostNames,
+      readHostDependencies,
       loadWorkbook: (workbook, options) =>
         embedOperationsRef.current.loadWorkbookFromHost(workbook, options),
       saveWorkbook: () => embedOperationsRef.current.saveWorkbookForHost(),

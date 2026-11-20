@@ -90,6 +90,9 @@ var Parser = /*#__PURE__*/function (_Emitter) {
     _this.functions = Object.create(null);
     _this.options = Object.create(null);
     _this.useCompiledFormulas = true;
+    // DocCells : fonctions appelées avec leurs arguments non évalués
+    // (compiled-formula.js), par nom en majuscules.
+    _this.rawFunctions = Object.create(null);
 
     _this.setVariable("TRUE", true).setVariable("FALSE", false).setVariable("NULL", null);
 

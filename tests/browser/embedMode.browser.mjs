@@ -114,6 +114,14 @@ const workbook = () => {
   };
 };
 
+// Classeur qui lit une valeur de l'hôte : A1 = GEO("AB"), le reste comme
+// workbook() (300 formules qui dépendent de $A$1).
+const hostWorkbook = () => {
+  const wb = workbook();
+  wb.sheets[0].celldata[0] = { r: 0, c: 0, v: { f: '=GEO("AB")', v: 0, m: "0" } };
+  return wb;
+};
+
 // Archive piégée : chaque texte tente d'exécuter top.__xss.push(…) s'il est
 // injecté en HTML.
 const xss = (name) => `<img src=x onerror="top.__xss.push('${name}')">`;
@@ -578,6 +586,127 @@ try {
     hiddenStart.size.join("x") === "0x0" && close(hiddenStart.first, expectedSum(1)) &&
       close(hiddenStart.value, expectedSum(0.25)) && hiddenStart.drawsHidden === 0 && hiddenStart.drawsShown >= 1,
     JSON.stringify(hiddenStart),
+  );
+  await context.close();
+
+  // ------------------------------------------------------------------
+  console.log("--- GEO : valeurs fournies par l'hôte (postMessage, ?lang=fr) ---");
+  context = await newContext("en-US");
+  page = await openHost(context, "http://hote.test/host.html", "embed&lang=fr");
+  await page.evaluate(() => window.waitEvent((e) => e.event === "ready", 15000));
+  const geoFrame = page.frame({ url: /doccells\.test\/fortunesheet/ });
+  const language = await geoFrame.evaluate(() => navigator.language);
+  const frenchMenus = await geoFrame.locator(".dc-menu-root-button").allTextContents();
+  check("?lang=fr : langue imposée", language === "fr" && frenchMenus.includes("Édition"), `${language} : ${frenchMenus.join(", ")}`);
+
+  await page.evaluate((wb) => window.request("load", { workbook: wb }), hostWorkbook());
+  const geo = await page.evaluate(async () => {
+    const names = await window.request("hostNames");
+    const sum = await window.request("subscribe", { ref: "Feuille1!C1" });
+    const a1 = await window.request("subscribe", { ref: "Feuille1!A1" });
+    window.events.length = 0;
+    const result = await window.request("setHostValues", { updates: [{ name: "AB", v: 0.5 }] });
+    const values = window.events.filter((e) => e.event === "values");
+    const dependencies = [
+      await window.request("hostDependencies", { ref: "Feuille1!C1" }),
+      await window.request("hostDependencies", { ref: "Feuille1!A2:A10" }),
+    ];
+    let invalid = null;
+    try {
+      await window.request("setHostValues", { updates: [{ name: "AB", v: [1, 2] }] });
+    } catch (error) {
+      invalid = error.message;
+    }
+    return { names, before: [a1.values, sum.values], result, values, dependencies, invalid, sum: sum.subscription };
+  });
+  const geoSum = geo.values.find((e) => e.subscription === geo.sum);
+  check(
+    "GEO : #N/A avant toute valeur, hostNames",
+    geo.before[0][0][0]?.error === "#N/A" && geo.names.names.join() === "AB",
+    JSON.stringify({ names: geo.names, a1: geo.before[0] }),
+  );
+  check(
+    "setHostValues : values avant la réponse, 300 formules recalculées",
+        // A1 (GEO), B2:B301, C1, D1 et 'Données 2'!A1.
+    geoSum?.source === "host" && close(geoSum.values[0][0], expectedSum(0.5)) && geo.result.recalculated === N + 4,
+    JSON.stringify(geo.result),
+  );
+  check(
+    "hostDependencies, requête invalide",
+    geo.dependencies[0].names.join() === "AB" && geo.dependencies[1].names.length === 0 && geo.invalid === "Invalid request",
+    JSON.stringify(geo.dependencies),
+  );
+
+  const geoBurst = await page.evaluate(async (id) => {
+    window.events.length = 0;
+    for (let k = 1; k <= 20; k += 1) window.send("setHostValues", { updates: [{ name: "AB", v: 0.6 + k / 100 }] });
+    const result = await window.request("getValues", { ref: "Feuille1!A1" });
+    return { a1: result.values[0][0], events: window.events.filter((e) => e.subscription === id).length };
+  }, geo.sum);
+  check("rafale de 20 setHostValues fusionnée", geoBurst.a1 === 0.8 && geoBurst.events < 20, `${geoBurst.events} événements values pour 20 envois`);
+
+  // Saisie de l'utilisateur : une formule GEO (nouveau nom), puis un nombre.
+  const geoArea = await geoFrame.locator(".fortune-cell-area").boundingBox();
+  const typed = await page.evaluate(() => window.request("subscribe", { ref: "Feuille1!E1" }));
+  await page.evaluate(() => { window.events.length = 0; });
+  await page.mouse.click(geoArea.x + 3 * 99 + 49, geoArea.y + 10);
+  await page.keyboard.type('=GEO("CD")*2');
+  await page.keyboard.press("Enter");
+  const namesChanged = await page.evaluate(() => window.waitEvent((e) => e.event === "hostNamesChanged").catch(() => null));
+  check("saisie d'une formule GEO : hostNamesChanged", namesChanged?.names.join() === "AB,CD", JSON.stringify(namesChanged?.names));
+  const cd = await page.evaluate(async () => {
+    await window.request("setHostValues", { updates: [{ name: "CD", v: 21 }] });
+    return (await window.request("getValues", { ref: "Feuille1!D1" })).values[0][0];
+  });
+  check("la formule saisie lit la valeur de l'hôte", cd === 42, String(cd));
+  await page.evaluate(() => { window.events.length = 0; });
+  await page.mouse.click(geoArea.x + 4 * 99 + 49, geoArea.y + 10);
+  await page.keyboard.type("7");
+  await page.keyboard.press("Enter");
+  const typedNumber = await page.evaluate((id) => window.waitEvent((e) => e.event === "values" && e.subscription === id).catch(() => null), typed.subscription);
+  check("nombre saisi au clavier rendu comme un nombre", typedNumber?.values[0][0] === 7, JSON.stringify(typedNumber?.values));
+
+  const reloaded = await page.evaluate(async (wb) => {
+    window.events.length = 0;
+    await window.request("load", { workbook: wb, hostValues: [{ name: "AB", v: 1 }] });
+    const sum = window.events.find((e) => e.event === "values" && e.source === "load" && e.ref === "Feuille1!C1");
+    const cleared = await window.request("getValues", { ref: "Feuille1!D1" });
+    await window.request("load", { workbook: wb });
+    const empty = await window.request("getValues", { ref: "Feuille1!A1" });
+    return { sum: sum?.values[0][0], cleared: cleared.values[0][0], empty: empty.values[0][0] };
+  }, hostWorkbook());
+  check(
+    "load : hostValues avant le recalcul, valeurs précédentes effacées",
+    close(reloaded.sum, expectedSum(1)) && reloaded.empty?.error === "#N/A",
+    JSON.stringify(reloaded),
+  );
+  await context.close();
+
+  // ------------------------------------------------------------------
+  console.log("--- GEO : hôte de même origine (window.docCells) ---");
+  context = await newContext();
+  page = await openHost(context, "http://doccells.test/host.html");
+  await page.evaluate(() => window.waitEvent((e) => e.event === "ready", 15000));
+  const geoSync = await page.evaluate(async (wb) => {
+    const dc = document.getElementById("dc").contentWindow.docCells;
+    await dc.load(wb);
+    const names = dc.hostNames();
+    const dependencies = dc.hostDependencies("Feuille1!B2:B301");
+    dc.subscribe("Feuille1!C1");
+    const times = [];
+    let last;
+    for (let k = 0; k < 40; k += 1) {
+      const started = performance.now();
+      last = dc.setHostValues([{ name: "AB", v: 0.4 + k / 1000 }]);
+      times.push(performance.now() - started);
+    }
+    return { names, dependencies, last, times };
+  }, hostWorkbook());
+  check(
+    "setHostValues synchrone renvoie les valeurs",
+    geoSync.names.join() === "AB" && geoSync.dependencies.join() === "AB" &&
+      geoSync.last.values.length === 1 && close(geoSync.last.values[0].values[0][0], expectedSum(0.4 + 39 / 1000)),
+    `médiane ${median(geoSync.times).toFixed(2)} ms pour 300 formules (recalcul seul)`,
   );
   await context.close();
 

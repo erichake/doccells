@@ -50,6 +50,9 @@ export const createWindowApi = (core, { stats } = {}) => ({
   getValues: (ref, options) => core.getValues(ref, options),
   subscribe: (ref, options) => core.subscribe(ref, options, OWNER),
   unsubscribe: (subscription) => core.unsubscribe(subscription, OWNER),
+  setHostValues: (updates) => core.setHostValues(updates, OWNER),
+  hostNames: () => core.hostNames(),
+  hostDependencies: (ref) => core.hostDependencies(ref),
   on: (event, listener) =>
     core.listen(OWNER, (payload) => {
       if (payload.event === event) listener(payload);
