@@ -86,6 +86,11 @@ import {
   stripConditionalFormattingMarkers,
 } from "./features/conditionalFormatting/conditionalFormattingUtils.js";
 import {
+  applyLiveCellUpdates,
+  isFormulaUpdate,
+  resolveSheetId,
+} from "./features/liveUpdate/liveCellUpdates.js";
+import {
   AUTOSAVE_DEBOUNCE_MS,
   deleteRecoverySnapshot,
   getRecoverySnapshot,
@@ -105,6 +110,10 @@ const customNumberFormatTexts = getCustomNumberFormatTexts(
   detectedLang,
 );
 const DEFAULT_COLUMN_WIDTH = 99;
+// Délai sans mise à jour rapide (window.setCellValues) après lequel App
+// resynchronise son état (getSheetData, autosauvegarde, mise en forme
+// conditionnelle, graphiques) : une seule fois en fin de glissement.
+const LIVE_UPDATE_COMMIT_DELAY_MS = 300;
 const sheetPrefix =
   {
     "zh-CN": "工作表",
@@ -373,6 +382,9 @@ const App = () => {
   const autosaveEnabledRef = useRef(false);
   const autosaveGenerationRef = useRef(0);
   const awaitingInitialWorkbookChangeRef = useRef(true);
+  const handleWorkbookChangeRef = useRef(null);
+  const liveUpdateTimerRef = useRef(null);
+  const liveUpdatePendingRef = useRef(false);
 
   const {
     datePicker,
@@ -532,6 +544,8 @@ const App = () => {
     normalizeCacheRef.current = new Map();
     isReadyRef.current = false;
     pendingRef.current = [];
+    window.clearTimeout(liveUpdateTimerRef.current);
+    liveUpdatePendingRef.current = false;
     setSheetData([]);
     // FortuneSheet n'accepte la prop data que tant que son classeur interne
     // est vide : sans remontage, le document suivant serait ignoré et la
@@ -539,6 +553,67 @@ const App = () => {
     setWorkbookKey((key) => key + 1);
     await nextFrame();
   }, [nextFrame]);
+
+  // Resynchronise App avec la grille vivante après des mises à jour rapides.
+  const flushLiveUpdates = useCallback(() => {
+    window.clearTimeout(liveUpdateTimerRef.current);
+    if (!liveUpdatePendingRef.current) return;
+    liveUpdatePendingRef.current = false;
+    const sheets = workbookRef.current?.getAllSheets?.();
+    if (Array.isArray(sheets) && sheets.length > 0) {
+      handleWorkbookChangeRef.current?.(sheets);
+    }
+  }, []);
+
+  // Mise à jour rapide d'un lot de cellules (voir liveCellUpdates.js) :
+  // recalcul des dépendants et un seul redessin du canevas, sans historique
+  // ni rendu React. Renvoie null si aucun classeur n'est prêt.
+  const setCellValuesLive = useCallback((updates, options = {}) => {
+    const workbook = workbookRef.current;
+    const ctx = isReadyRef.current ? workbook?.doccellsGetLiveContext?.() : null;
+    if (!ctx || !Array.isArray(updates)) return null;
+    const sheetId = resolveSheetId(ctx, options.sheet);
+    if (sheetId == null) throw new Error(`Feuille inconnue : ${options.sheet}`);
+
+    const formulas = updates.filter(isFormulaUpdate);
+    const values = formulas.length > 0
+      ? updates.filter((update) => !isFormulaUpdate(update))
+      : updates;
+    const startedAt = performance.now();
+    const result = applyLiveCellUpdates(ctx, values, sheetId);
+    const recalculatedAt = performance.now();
+    workbook.doccellsRedraw?.();
+    const drawnAt = performance.now();
+
+    // Les lignes modifiées sur place gardent leur référence : on les retire
+    // du cache de normalisation pour que la resynchronisation les relise.
+    result.touched.forEach((rows, id) => {
+      const cached = normalizeCacheRef.current.get(id);
+      if (!cached) return;
+      cached.dataRef = null;
+      rows.forEach((row) => {
+        cached.rowCache[row] = undefined;
+      });
+    });
+    liveUpdatePendingRef.current = true;
+    window.clearTimeout(liveUpdateTimerRef.current);
+    liveUpdateTimerRef.current = window.setTimeout(
+      flushLiveUpdates,
+      LIVE_UPDATE_COMMIT_DELAY_MS,
+    );
+
+    // Une formule passe par le chemin normal (historique, dépendances).
+    formulas.forEach(({ r, c, v }) => {
+      workbook.setCellValue(r, c, v, { id: sheetId });
+    });
+
+    return {
+      written: result.written + formulas.length,
+      recalculated: result.recalculated,
+      skipped: result.skipped.length,
+      ms: { recalc: recalculatedAt - startedAt, draw: drawnAt - recalculatedAt },
+    };
+  }, [flushLiveUpdates]);
 
   const handleExcelLoad = useCallback(async (file) => {
     const fortuneData = await transformExcelToFortune(file);
@@ -1354,7 +1429,10 @@ const App = () => {
         await waitUntilReady();
       });
 
-    window.getSheetData = () => sheetDataRef.current;
+    window.getSheetData = () => {
+      flushLiveUpdates();
+      return sheetDataRef.current;
+    };
 
     window.setSheetData = (data) =>
       enqueueOp(async () => {
@@ -1366,7 +1444,10 @@ const App = () => {
         await waitUntilReady();
       });
 
+    window.setCellValues = setCellValuesLive;
+
     window.getExcelAsBase64 = async () => {
+      flushLiveUpdates();
       return await exportToExcel(stripConditionalFormattingMarkers(sheetDataRef.current), {
         returnBase64: true,
       });
@@ -1376,15 +1457,18 @@ const App = () => {
       delete window.openExcel;
       delete window.getSheetData;
       delete window.setSheetData;
+      delete window.setCellValues;
       delete window.getExcelAsBase64;
       delete window.whenDocCellsReady;
     };
   }, [
     enqueueOp,
+    flushLiveUpdates,
     handleLoadError,
     loadExcelFromFile,
     loadExcelFromURL,
     resetWorkbook,
+    setCellValuesLive,
     updateDocumentIdentity,
     waitUntilReady,
   ]);
@@ -1767,6 +1851,10 @@ const App = () => {
       );
     }
   }, [armAutosaveAfterInitialization, definedNames, scheduleAutosave]);
+
+  useEffect(() => {
+    handleWorkbookChangeRef.current = handleWorkbookChange;
+  }, [handleWorkbookChange]);
 
   const commitDefinedNames = useCallback(
     (nextDefinedNames) => {
