@@ -62,6 +62,7 @@ import {
 } from "./features/recentFiles/indexedDbRecentFiles.js";
 import {
   dataToCelldata,
+  ensureSheetCalcChains,
   getAvailableDefaultSheetName,
   getDefaultSheetNumber,
   getWorkbookGridLinesPreference,
@@ -532,6 +533,10 @@ const App = () => {
     isReadyRef.current = false;
     pendingRef.current = [];
     setSheetData([]);
+    // FortuneSheet n'accepte la prop data que tant que son classeur interne
+    // est vide : sans remontage, le document suivant serait ignoré et la
+    // grille garderait l'ancien.
+    setWorkbookKey((key) => key + 1);
     await nextFrame();
   }, [nextFrame]);
 
@@ -558,10 +563,25 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (workbookRef.current && sheetData.length > 0) {
-      // Workbook vraiment exploitable
-      markReady();
-    }
+    if (sheetData.length === 0) return undefined;
+    // Le Workbook n'initialise sa grille qu'après son propre rendu : on
+    // attend qu'elle existe pour que l'appelant puisse s'en servir dès la
+    // résolution de whenDocCellsReady / setSheetData. Sondage par minuterie
+    // et non par requestAnimationFrame, suspendu dans une iframe masquée.
+    let timer = 0;
+    const markWhenGridIsReady = () => {
+      const liveSheets = workbookRef.current?.getAllSheets?.();
+      if (
+        Array.isArray(liveSheets) &&
+        liveSheets.some((sheet) => Array.isArray(sheet?.data))
+      ) {
+        markReady();
+      } else {
+        timer = window.setTimeout(markWhenGridIsReady, 16);
+      }
+    };
+    markWhenGridIsReady();
+    return () => window.clearTimeout(timer);
   }, [sheetData, markReady]);
 
   useEffect(
@@ -1340,7 +1360,9 @@ const App = () => {
       enqueueOp(async () => {
         await resetWorkbook();
         updateDocumentIdentity(standaloneMenuTexts.items.untitled);
-        setSheetData(typeof data === "string" ? JSON.parse(data) : data);
+        setSheetData(
+          ensureSheetCalcChains(typeof data === "string" ? JSON.parse(data) : data),
+        );
         await waitUntilReady();
       });
 
@@ -1552,8 +1574,11 @@ const App = () => {
       );
     };
 
-    start().catch(handleLoadError);
-  }, [loadExcelFromURL, handleLoadError, updateDocumentIdentity]);
+    // Dans la file des chargements : un document fourni par l'API pendant le
+    // démarrage (window.setSheetData, openExcel) passe après le classeur
+    // initial au lieu d'être écrasé par lui.
+    enqueueOp(start).catch(handleLoadError);
+  }, [enqueueOp, loadExcelFromURL, handleLoadError, updateDocumentIdentity]);
   const workbookHooks = useMemo(() => ({
     afterRenderCell: (cell, cellInfo, context) => {
       const definition = parseSparklineFormula(cell?.f);

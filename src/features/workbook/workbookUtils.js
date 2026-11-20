@@ -62,6 +62,33 @@ export const dataToCelldata = (data) => {
   return celldata;
 };
 
+// FortuneSheet ne recalcule que les formules listées dans calcChain. Une
+// feuille fournie par programme (window.setSheetData) peut ne pas l'avoir :
+// on la reconstruit depuis les formules de celldata. Les feuilles sans
+// identifiant en reçoivent un, pour que calcChain le désigne.
+export const ensureSheetCalcChains = (sheets) => {
+  if (!Array.isArray(sheets)) return sheets;
+  const usedIds = new Set(sheets.map((sheet) => sheet?.id).filter((id) => id != null));
+  let nextId = 0;
+  const freshId = () => {
+    while (usedIds.has(String(nextId))) nextId += 1;
+    usedIds.add(String(nextId));
+    return String(nextId);
+  };
+  return sheets.map((sheet) => {
+    if (!sheet || typeof sheet !== "object") return sheet;
+    const id = sheet.id ?? freshId();
+    if (Array.isArray(sheet.calcChain) && sheet.id != null) return sheet;
+    const cells = Array.isArray(sheet.celldata) ? sheet.celldata : dataToCelldata(sheet.data);
+    const calcChain = Array.isArray(sheet.calcChain)
+      ? sheet.calcChain.map((entry) => ({ ...entry, id }))
+      : cells
+          .filter((cell) => typeof cell?.v?.f === "string" && cell.v.f.startsWith("="))
+          .map((cell) => ({ r: cell.r, c: cell.c, id }));
+    return { ...sheet, id, calcChain };
+  });
+};
+
 export const isSheetProtected = (sheet) =>
   sheet?.config?.authority?.sheet === 1 ||
   sheet?.config?.authority?.sheet === "1";
