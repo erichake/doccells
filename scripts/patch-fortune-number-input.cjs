@@ -25,6 +25,9 @@
  * normalized "2.5%" instead of what the user actually typed ("2,5%"). We
  * stash the pre-normalization string in __doccellsRawInput and use that for
  * the percent branch's display mask.
+ *
+ * Fast path: every pattern below needs a comma, so a string without one is
+ * returned at once (setCellValue runs this for every recalculated formula).
  */
 
 const fs = require("fs");
@@ -35,8 +38,17 @@ const BUNDLES = ["index.js", "index.esm.js"];
 
 const HELPER_OLD = `function setCellValue(ctx, r, c, d, v) {`;
 
+const FAST_PATH_OLD = `function __doccellsNormalizeNumberInput(str) {
+  if (typeof str !== "string" || str === "") return str;
+  var lang`;
+const FAST_PATH_NEW = `function __doccellsNormalizeNumberInput(str) {
+  if (typeof str !== "string" || str === "") return str;
+  if (str.indexOf(",") === -1) return str;
+  var lang`;
+
 const HELPER_NEW = `function __doccellsNormalizeNumberInput(str) {
   if (typeof str !== "string" || str === "") return str;
+  if (str.indexOf(",") === -1) return str;
   var lang = (typeof navigator !== "undefined" && navigator.language) || "en";
   var short = lang.split("-")[0];
   var groupTable = {
@@ -96,7 +108,12 @@ for (const bundle of BUNDLES) {
 
   const alreadyPatched = src.includes("__doccellsNormalizeNumberInput") && src.includes("__doccellsNormalized");
   if (alreadyPatched) {
-    console.log(`patch-fortune-number-input: ${bundle} already patched`);
+    if (!src.includes(FAST_PATH_NEW) && src.includes(FAST_PATH_OLD)) {
+      fs.writeFileSync(file, src.replace(FAST_PATH_OLD, FAST_PATH_NEW), "utf8");
+      console.log(`patch-fortune-number-input: added fast path to ${bundle}`);
+    } else {
+      console.log(`patch-fortune-number-input: ${bundle} already patched`);
+    }
     allPatched++;
     continue;
   }

@@ -112,6 +112,9 @@ function __doccellsResolveDefinedNames(ctx, formula, sheetId) {
   }).join("");
 }
 function __doccellsResolveReferenceFunctions(formula, currentRow, currentColumn) {
+  /* Sans ROW ni COLUMN, rien à remplacer : découpage et recollage rendraient
+     le même texte. Évite quatre expressions régulières par recalcul. */
+  if (!/ROW|COLUMN/i.test(String(formula || ""))) return String(formula || "");
   var columnIndex = function (letters) {
     return String(letters).toUpperCase().split("").reduce(function (value, character) {
       return value * 26 + character.charCodeAt(0) - 64;
