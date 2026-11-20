@@ -11,6 +11,10 @@ export default [
       // Copie locale de la bibliothèque tierce FortuneSheetExcel. Son code
       // distribué n'est pas maintenu selon les règles ESLint de DocCells.
       'src/lib/FortuneSheetExcel/**',
+      // Copie locale de @fortune-sheet/formula-parser (code transpilé), hors
+      // le module d'arbre des formules propre à DocCells.
+      'src/lib/formula-parser/**/*.js',
+      '!src/lib/formula-parser/compiled-formula.js',
     ],
   },
   {

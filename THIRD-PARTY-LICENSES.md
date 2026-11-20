@@ -14,6 +14,17 @@ the licenses of the packages it depends on via npm.
 - **`src/lib/ToFortuneSheet/`**, **`src/lib/HandleZip.ts`** — derived from the
   same `@zenmrp/fortune-sheet-excel` sources above, under the same MIT
   license.
+- **`src/lib/formula-parser/`** — copied from
+  [`@fortune-sheet/formula-parser`](https://www.npmjs.com/package/@fortune-sheet/formula-parser)
+  0.2.13 (ES build), itself derived from Handsontable's `hot-formula-parser`,
+  MIT License, Copyright (c) Handsoncode sp. z o.o. The original license text
+  is kept alongside the copied code at `src/lib/formula-parser/LICENSE`.
+  DocCells' changes: `compiled-formula.js` (each formula's tree is parsed
+  once and cached), the unary-sign grammar actions moved into `parser.js`, the
+  blank-cell-as-zero fix of `scripts/patch-fortune-formula-parser.cjs`, and
+  explicit `.js` import extensions. The copy imports `@formulajs/formulajs`
+  and `tiny-emitter` (both MIT), installed through
+  `@fortune-sheet/formula-parser`.
 - **`scripts/formula-function-names.json`** — localized (Excel/Google
   Sheets-compatible) formula function names, derived from the
   [LibreOffice Calc translation files](https://github.com/LibreOffice/translations)
