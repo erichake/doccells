@@ -66,7 +66,8 @@
           celldata.push({ r: i, c: 1, v: { f: `=SIN($A$1*A${i + 1})+A${i + 1}^2/2` } });
         }
         celldata.push({ r: 0, c: 2, v: { f: "=SUM(B2:B301)" } });
-        return [{ name: "Feuille1", celldata }];
+        // Format d'archivage (WORKBOOK_FORMAT.md).
+        return { format: "doccells", version: 1, sheets: [{ name: "Feuille1", celldata }] };
       };
 
       document.getElementById("load").onclick = async () => {

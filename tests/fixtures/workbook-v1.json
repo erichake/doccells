@@ -1,0 +1,1001 @@
+{
+  "format": "doccells",
+  "version": 1,
+  "definedNames": [
+    {
+      "name": "taux",
+      "refersTo": "=Feuille1!$B$10",
+      "scopeSheetId": null
+    }
+  ],
+  "sheets": [
+    {
+      "name": "Feuille1",
+      "id": "0",
+      "order": 0,
+      "status": 1,
+      "showGridLines": true,
+      "frozen": {
+        "type": "row"
+      },
+      "config": {
+        "merge": {
+          "14_0": {
+            "r": 14,
+            "c": 0,
+            "rs": 1,
+            "cs": 3
+          }
+        },
+        "columnlen": {
+          "0": 140,
+          "3": 110
+        },
+        "rowlen": {
+          "0": 28
+        },
+        "colhidden": {
+          "7": 0
+        },
+        "borderInfo": [
+          {
+            "rangeType": "range",
+            "borderType": "border-all",
+            "color": "#000000",
+            "style": "1",
+            "range": [
+              {
+                "row": [
+                  0,
+                  4
+                ],
+                "column": [
+                  0,
+                  3
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "celldata": [
+        {
+          "r": 0,
+          "c": 0,
+          "v": {
+            "v": "Article",
+            "m": "Article",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            },
+            "bl": 1,
+            "bg": "#d9e1f2",
+            "fc": "#1f3864"
+          }
+        },
+        {
+          "r": 0,
+          "c": 1,
+          "v": {
+            "v": "Prix",
+            "m": "Prix",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            },
+            "bl": 1,
+            "bg": "#d9e1f2",
+            "fc": "#1f3864"
+          }
+        },
+        {
+          "r": 0,
+          "c": 2,
+          "v": {
+            "v": "Quantité",
+            "m": "Quantité",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            },
+            "bl": 1,
+            "bg": "#d9e1f2",
+            "fc": "#1f3864"
+          }
+        },
+        {
+          "r": 0,
+          "c": 3,
+          "v": {
+            "v": "Total",
+            "m": "Total",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            },
+            "bl": 1,
+            "bg": "#d9e1f2",
+            "fc": "#1f3864"
+          }
+        },
+        {
+          "r": 0,
+          "c": 4,
+          "v": {
+            "v": "Livré",
+            "m": "Livré",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            },
+            "bl": 1,
+            "bg": "#d9e1f2",
+            "fc": "#1f3864"
+          }
+        },
+        {
+          "r": 0,
+          "c": 5,
+          "v": {
+            "v": "Catégorie",
+            "m": "Catégorie",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            },
+            "bl": 1,
+            "bg": "#d9e1f2",
+            "fc": "#1f3864"
+          }
+        },
+        {
+          "r": 1,
+          "c": 0,
+          "v": {
+            "v": "Pommes",
+            "m": "Pommes",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            },
+            "ps": {
+              "value": "Bio",
+              "isShow": false,
+              "left": null,
+              "top": null,
+              "width": null,
+              "height": null
+            }
+          }
+        },
+        {
+          "r": 1,
+          "c": 1,
+          "v": {
+            "v": 2.5,
+            "m": "2,50",
+            "ct": {
+              "fa": "0.00",
+              "t": "n"
+            }
+          }
+        },
+        {
+          "r": 1,
+          "c": 2,
+          "v": {
+            "v": 4,
+            "m": "4",
+            "ct": {
+              "fa": "General",
+              "t": "n"
+            }
+          }
+        },
+        {
+          "r": 1,
+          "c": 3,
+          "v": {
+            "f": "=B2*C2",
+            "ct": {
+              "fa": "0.00",
+              "t": "n"
+            },
+            "v": 10,
+            "m": "10,00",
+            "VF": {
+              "f": "=B2*C2",
+              "v": 10
+            }
+          }
+        },
+        {
+          "r": 1,
+          "c": 4,
+          "v": {
+            "v": true,
+            "m": "TRUE",
+            "ct": {
+              "fa": "General",
+              "t": "b"
+            }
+          }
+        },
+        {
+          "r": 1,
+          "c": 5,
+          "v": {
+            "v": "Fruit",
+            "m": "Fruit",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 2,
+          "c": 0,
+          "v": {
+            "v": "Carottes",
+            "m": "Carottes",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 2,
+          "c": 1,
+          "v": {
+            "v": 1.2,
+            "m": "1,20",
+            "ct": {
+              "fa": "0.00",
+              "t": "n"
+            }
+          }
+        },
+        {
+          "r": 2,
+          "c": 2,
+          "v": {
+            "v": 10,
+            "m": "10",
+            "ct": {
+              "fa": "General",
+              "t": "n"
+            }
+          }
+        },
+        {
+          "r": 2,
+          "c": 3,
+          "v": {
+            "f": "=B3*C3",
+            "ct": {
+              "fa": "0.00",
+              "t": "n"
+            },
+            "v": 12,
+            "m": "12,00",
+            "VF": {
+              "f": "=B3*C3",
+              "v": 12
+            }
+          }
+        },
+        {
+          "r": 2,
+          "c": 4,
+          "v": {
+            "v": false,
+            "m": "FALSE",
+            "ct": {
+              "fa": "General",
+              "t": "b"
+            }
+          }
+        },
+        {
+          "r": 2,
+          "c": 5,
+          "v": {
+            "v": "Légume",
+            "m": "Légume",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 3,
+          "c": 0,
+          "v": {
+            "v": "Poires",
+            "m": "Poires",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 3,
+          "c": 1,
+          "v": {
+            "v": 3.1,
+            "m": "3,10",
+            "ct": {
+              "fa": "0.00",
+              "t": "n"
+            }
+          }
+        },
+        {
+          "r": 3,
+          "c": 2,
+          "v": {
+            "v": 2,
+            "m": "2",
+            "ct": {
+              "fa": "General",
+              "t": "n"
+            }
+          }
+        },
+        {
+          "r": 3,
+          "c": 3,
+          "v": {
+            "f": "=B4*C4",
+            "ct": {
+              "fa": "0.00",
+              "t": "n"
+            },
+            "v": 6.2,
+            "m": "6,20",
+            "VF": {
+              "f": "=B4*C4",
+              "v": 6.2
+            }
+          }
+        },
+        {
+          "r": 3,
+          "c": 4,
+          "v": {
+            "v": true,
+            "m": "TRUE",
+            "ct": {
+              "fa": "General",
+              "t": "b"
+            }
+          }
+        },
+        {
+          "r": 3,
+          "c": 5,
+          "v": {
+            "v": "Fruit",
+            "m": "Fruit",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 4,
+          "c": 0,
+          "v": {
+            "v": "Poireaux",
+            "m": "Poireaux",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 4,
+          "c": 1,
+          "v": {
+            "v": 2,
+            "m": "2,00",
+            "ct": {
+              "fa": "0.00",
+              "t": "n"
+            }
+          }
+        },
+        {
+          "r": 4,
+          "c": 2,
+          "v": {
+            "v": 6,
+            "m": "6",
+            "ct": {
+              "fa": "General",
+              "t": "n"
+            }
+          }
+        },
+        {
+          "r": 4,
+          "c": 3,
+          "v": {
+            "f": "=B5*C5",
+            "ct": {
+              "fa": "0.00",
+              "t": "n"
+            },
+            "v": 12,
+            "m": "12,00",
+            "VF": {
+              "f": "=B5*C5",
+              "v": 12
+            }
+          }
+        },
+        {
+          "r": 4,
+          "c": 4,
+          "v": {
+            "v": false,
+            "m": "FALSE",
+            "ct": {
+              "fa": "General",
+              "t": "b"
+            }
+          }
+        },
+        {
+          "r": 4,
+          "c": 5,
+          "v": {
+            "v": "Légume",
+            "m": "Légume",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 6,
+          "c": 0,
+          "v": {
+            "v": "Total",
+            "m": "Total",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            },
+            "bl": 1
+          }
+        },
+        {
+          "r": 6,
+          "c": 3,
+          "v": {
+            "f": "=SUM(D2:D5)",
+            "bl": 1,
+            "ct": {
+              "fa": "0.00",
+              "t": "n"
+            },
+            "v": 40.2,
+            "m": "40,20",
+            "VF": {
+              "f": "=SUM(D2:D5)",
+              "v": 40.2
+            }
+          }
+        },
+        {
+          "r": 7,
+          "c": 0,
+          "v": {
+            "v": "TVA",
+            "m": "TVA",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 7,
+          "c": 3,
+          "v": {
+            "f": "=D7*taux",
+            "ct": {
+              "fa": "0.00",
+              "t": "n"
+            },
+            "v": 8.040000000000001,
+            "m": "8,04",
+            "VF": {
+              "f": "=D7*taux",
+              "v": 8.040000000000001
+            }
+          }
+        },
+        {
+          "r": 8,
+          "c": 0,
+          "v": {
+            "v": "Livraison",
+            "m": "Livraison",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 8,
+          "c": 1,
+          "v": {
+            "f": "=DATE(2026,11,19)",
+            "ct": {
+              "fa": "yyyy-MM-dd",
+              "t": "d"
+            },
+            "v": 46345,
+            "m": "2026-11-19",
+            "VF": {
+              "f": "=DATE(2026,11,19)",
+              "v": 46345
+            }
+          }
+        },
+        {
+          "r": 8,
+          "c": 2,
+          "v": {
+            "f": "=B9+30",
+            "ct": {
+              "fa": "yyyy-MM-dd",
+              "t": "d"
+            },
+            "v": 46375,
+            "m": "2026-12-19",
+            "VF": {
+              "f": "=B9+30",
+              "v": 46375
+            }
+          }
+        },
+        {
+          "r": 9,
+          "c": 0,
+          "v": {
+            "v": "Taux",
+            "m": "Taux",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 9,
+          "c": 1,
+          "v": {
+            "v": 0.2,
+            "m": "20%",
+            "ct": {
+              "fa": "0%",
+              "t": "n"
+            }
+          }
+        },
+        {
+          "r": 10,
+          "c": 0,
+          "v": {
+            "f": "=1/0",
+            "m": "DIV/0",
+            "ct": {
+              "fa": "General",
+              "t": "g"
+            },
+            "v": "DIV/0",
+            "VF": {
+              "f": "=1/0",
+              "v": "DIV/0"
+            }
+          }
+        },
+        {
+          "r": 11,
+          "c": 0,
+          "v": {
+            "f": "='Données'!B2*2",
+            "v": 42,
+            "ct": {
+              "fa": "General",
+              "t": "n"
+            },
+            "m": "42",
+            "VF": {
+              "f": "='Données'!B2*2",
+              "v": 42
+            }
+          }
+        },
+        {
+          "r": 12,
+          "c": 0,
+          "v": {
+            "f": "=IF(D7>40,\"gros\",\"petit\")",
+            "it": 1,
+            "m": "gros",
+            "ct": {
+              "fa": "General",
+              "t": "g"
+            },
+            "v": "gros",
+            "VF": {
+              "f": "=IF(D7>40,\"gros\",\"petit\")",
+              "v": "gros"
+            }
+          }
+        },
+        {
+          "r": 14,
+          "c": 0,
+          "v": {
+            "v": "Titre fusionné",
+            "m": "Titre fusionné",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            },
+            "mc": {
+              "r": 14,
+              "c": 0,
+              "rs": 1,
+              "cs": 3
+            },
+            "ht": 0
+          }
+        },
+        {
+          "r": 14,
+          "c": 1,
+          "v": {
+            "mc": {
+              "r": 14,
+              "c": 0
+            }
+          }
+        },
+        {
+          "r": 14,
+          "c": 2,
+          "v": {
+            "mc": {
+              "r": 14,
+              "c": 0
+            }
+          }
+        }
+      ],
+      "calcChain": [
+        {
+          "r": 1,
+          "c": 3,
+          "id": "0"
+        },
+        {
+          "r": 2,
+          "c": 3,
+          "id": "0"
+        },
+        {
+          "r": 3,
+          "c": 3,
+          "id": "0"
+        },
+        {
+          "r": 4,
+          "c": 3,
+          "id": "0"
+        },
+        {
+          "r": 6,
+          "c": 3,
+          "id": "0"
+        },
+        {
+          "r": 7,
+          "c": 3,
+          "id": "0"
+        },
+        {
+          "r": 8,
+          "c": 1,
+          "id": "0"
+        },
+        {
+          "r": 8,
+          "c": 2,
+          "id": "0"
+        },
+        {
+          "r": 10,
+          "c": 0,
+          "id": "0"
+        },
+        {
+          "r": 11,
+          "c": 0,
+          "id": "0"
+        },
+        {
+          "r": 12,
+          "c": 0,
+          "id": "0"
+        }
+      ],
+      "dataVerification": {
+        "1_4": {
+          "type": "checkbox",
+          "type2": null,
+          "value1": true,
+          "value2": false,
+          "checked": true,
+          "remote": false,
+          "prohibitInput": true,
+          "hintShow": false,
+          "hintText": ""
+        },
+        "1_5": {
+          "type": "dropdown",
+          "type2": "",
+          "sourceType": "list",
+          "value1": "Fruit,Légume",
+          "value2": "",
+          "checked": false,
+          "remote": false,
+          "prohibitInput": true,
+          "hintShow": false,
+          "hintText": ""
+        },
+        "2_4": {
+          "type": "checkbox",
+          "type2": null,
+          "value1": true,
+          "value2": false,
+          "checked": false,
+          "remote": false,
+          "prohibitInput": true,
+          "hintShow": false,
+          "hintText": ""
+        },
+        "2_5": {
+          "type": "dropdown",
+          "type2": "",
+          "sourceType": "list",
+          "value1": "Fruit,Légume",
+          "value2": "",
+          "checked": false,
+          "remote": false,
+          "prohibitInput": true,
+          "hintShow": false,
+          "hintText": ""
+        },
+        "3_4": {
+          "type": "checkbox",
+          "type2": null,
+          "value1": true,
+          "value2": false,
+          "checked": true,
+          "remote": false,
+          "prohibitInput": true,
+          "hintShow": false,
+          "hintText": ""
+        },
+        "3_5": {
+          "type": "dropdown",
+          "type2": "",
+          "sourceType": "list",
+          "value1": "Fruit,Légume",
+          "value2": "",
+          "checked": false,
+          "remote": false,
+          "prohibitInput": true,
+          "hintShow": false,
+          "hintText": ""
+        },
+        "4_4": {
+          "type": "checkbox",
+          "type2": null,
+          "value1": true,
+          "value2": false,
+          "checked": false,
+          "remote": false,
+          "prohibitInput": true,
+          "hintShow": false,
+          "hintText": ""
+        },
+        "4_5": {
+          "type": "dropdown",
+          "type2": "",
+          "sourceType": "list",
+          "value1": "Fruit,Légume",
+          "value2": "",
+          "checked": false,
+          "remote": false,
+          "prohibitInput": true,
+          "hintShow": false,
+          "hintText": ""
+        }
+      },
+      "customConditionalFormatting": [
+        {
+          "id": "dc_cf_1",
+          "enabled": true,
+          "condition": "greaterThan",
+          "compareType": "value",
+          "value": "10",
+          "value2": "",
+          "reference": "",
+          "textColor": "#ffffff",
+          "backgroundColor": "#c00000",
+          "bold": true,
+          "italic": false,
+          "underline": false,
+          "range": {
+            "row": [
+              1,
+              4
+            ],
+            "column": [
+              3,
+              3
+            ]
+          },
+          "rangeText": "D2:D5"
+        }
+      ],
+      "customCharts": [
+        {
+          "id": "dc_chart_1",
+          "type": "bar",
+          "title": "Totaux",
+          "rangeText": "D2:D5",
+          "range": {
+            "row": [
+              1,
+              4
+            ],
+            "column": [
+              3,
+              3
+            ]
+          },
+          "labels": {
+            "type": "sameRowColumn",
+            "reference": "A"
+          },
+          "color": "#4F81BD",
+          "position": {
+            "left": 420,
+            "top": 40,
+            "width": 380,
+            "height": 260
+          },
+          "showValues": false,
+          "showLegend": false,
+          "showXAxis": true,
+          "showYAxis": true,
+          "showGridlines": true
+        }
+      ]
+    },
+    {
+      "name": "Données",
+      "id": "1",
+      "order": 1,
+      "status": 0,
+      "color": "#70ad47",
+      "showGridLines": false,
+      "config": {},
+      "celldata": [
+        {
+          "r": 0,
+          "c": 0,
+          "v": {
+            "v": "Mesure",
+            "m": "Mesure",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 0,
+          "c": 1,
+          "v": {
+            "v": "Valeur",
+            "m": "Valeur",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 1,
+          "c": 0,
+          "v": {
+            "v": "Base",
+            "m": "Base",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 1,
+          "c": 1,
+          "v": {
+            "v": 21,
+            "m": "21",
+            "ct": {
+              "fa": "General",
+              "t": "n"
+            }
+          }
+        },
+        {
+          "r": 2,
+          "c": 0,
+          "v": {
+            "v": "Total feuille 1",
+            "m": "Total feuille 1",
+            "ct": {
+              "fa": "General",
+              "t": "s"
+            }
+          }
+        },
+        {
+          "r": 2,
+          "c": 1,
+          "v": {
+            "f": "=Feuille1!D7",
+            "v": 40.2,
+            "ct": {
+              "fa": "General",
+              "t": "n"
+            },
+            "m": "40,2",
+            "VF": {
+              "f": "=Feuille1!D7",
+              "v": 40.2
+            }
+          }
+        }
+      ],
+      "calcChain": [
+        {
+          "r": 2,
+          "c": 1,
+          "id": "1"
+        }
+      ],
+      "customConditionalFormatting": [],
+      "customCharts": []
+    }
+  ]
+}

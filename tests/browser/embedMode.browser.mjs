@@ -17,6 +17,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { isDeepStrictEqual } from "node:util";
+import {
+  ARCHIVED_SHEET_FIELDS,
+  UNARCHIVED_SHEET_FIELDS,
+} from "../../src/features/archive/workbookArchive.js";
 
 const playwrightModule = process.env.PLAYWRIGHT_MODULE
   ? pathToFileURL(path.resolve(process.env.PLAYWRIGHT_MODULE)).href
@@ -94,15 +99,33 @@ const workbook = () => {
   celldata.push({ r: 0, c: 2, v: { f: `=SUM(B2:B${N + 1})`, v: 0, m: "0" } });
   celldata.push({ r: 0, c: 3, v: { f: "=A1/0", v: 0, m: "0" } });
   celldata.push({ r: 1, c: 3, v: { f: "=DATE(2026,11,19)", v: 0, m: "0", ct: { fa: "yyyy-MM-dd", t: "d" } } });
-  return [
-    { name: "Feuille1", order: 0, celldata, config: {} },
-    {
-      name: "Données 2",
-      order: 1,
-      celldata: [{ r: 0, c: 0, v: { f: "=Feuille1!C1*2", v: 0, m: "0" } }],
-      config: {},
-    },
-  ];
+  return {
+    format: "doccells",
+    version: 1,
+    sheets: [
+      { name: "Feuille1", order: 0, celldata, config: {} },
+      {
+        name: "Données 2",
+        order: 1,
+        celldata: [{ r: 0, c: 0, v: { f: "=Feuille1!C1*2", v: 0, m: "0" } }],
+        config: {},
+      },
+    ],
+  };
+};
+
+// Exemple publié du format d'archivage (WORKBOOK_FORMAT.md), enregistré par
+// DocCells en français.
+const archiveFixture = JSON.parse(
+  fs.readFileSync(new URL("../fixtures/workbook-v1.json", import.meta.url), "utf8"),
+);
+
+const listDifferences = (a, b, where = "", out = []) => {
+  if (isDeepStrictEqual(a, b)) return out;
+  if (a && b && typeof a === "object" && typeof b === "object") {
+    for (const key of new Set([...Object.keys(a), ...Object.keys(b)])) listDifferences(a[key], b[key], `${where}.${key}`, out);
+  } else out.push(`${where}: ${JSON.stringify(a)?.slice(0, 50)} → ${JSON.stringify(b)?.slice(0, 50)}`);
+  return out;
 };
 const expectedSum = (x) => {
   let sum = 0;
@@ -120,8 +143,8 @@ const median = (values) => values.slice().sort((a, b) => a - b)[values.length >>
 
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 
-const newContext = async () => {
-  const context = await browser.newContext({ locale: "en-US", viewport: { width: 1300, height: 800 } });
+const newContext = async (locale = "en-US") => {
+  const context = await browser.newContext({ locale, viewport: { width: 1300, height: 800 } });
   await context.route("http://doccells.test/**", async (route) => {
     const url = new URL(route.request().url());
     if (url.pathname === "/host.html") return route.fulfill({ body: HOST_HTML, contentType: "text/html" });
@@ -222,7 +245,8 @@ try {
     "erreurs",
     errors.join("|") ===
       "Unknown request: inconnue|Invalid reference: B3 (sheet name required)|Unknown sheet: Absente|" +
-        "Invalid reference: Feuille1!A1:A2 (single cell expected)|Invalid workbook|Unknown subscription: 1234|Invalid request",
+        "Invalid reference: Feuille1!A1:A2 (single cell expected)|" +
+        'Invalid workbook: expected { format: "doccells", version, sheets }|Unknown subscription: 1234|Invalid request',
     errors.join(" | "),
   );
 
@@ -319,6 +343,58 @@ try {
   }, sub.subscription);
   console.log(`   mesure : aller-retour postMessage (autre origine), 300 formules : médiane ${median(roundTrips).toFixed(1)} ms, max ${Math.max(...roundTrips).toFixed(1)} ms`);
   await context.close();
+
+  // ------------------------------------------------------------------
+  for (const locale of ["fr-FR", "en-US"]) {
+    console.log(`--- format d'archivage (${locale}) ---`);
+    context = await newContext(locale);
+    page = await openHost(context, "http://doccells.test/host.html");
+    await page.evaluate(() => window.waitEvent((e) => e.event === "ready", 15000));
+    const archive = await page.evaluate(async (fixture) => {
+      const iframe = document.getElementById("dc");
+      const dc = iframe.contentWindow.docCells;
+      await dc.load(fixture);
+      const saved = dc.save();
+      const keys = [...new Set(iframe.contentWindow.getSheetData().flatMap((sheet) => Object.keys(sheet)))];
+      const values = dc.getValues("Feuille1!A7:D13");
+      const other = dc.getValues("Données!B3");
+      let refused = null;
+      try {
+        await dc.load({ ...fixture, version: 2 });
+      } catch (error) {
+        refused = error.message;
+      }
+      return { saved, keys, values, other, refused, after: dc.getValues("Feuille1!D7") };
+    }, archiveFixture);
+    const cellsOf = (workbook) =>
+      workbook.sheets.map((sheet) => sheet.celldata.map(({ r, c, v }) => [r, c, v?.v ?? null, v?.f ?? null]));
+    if (locale === "fr-FR") {
+      const diff = listDifferences(archiveFixture, archive.saved);
+      check("exemple v1 : load puis save le reproduit à l'identique", diff.length === 0, diff.slice(0, 4).join(" ; "));
+    } else {
+      check(
+        "exemple v1 dans une autre langue : mêmes valeurs et formules",
+        isDeepStrictEqual(cellsOf(archive.saved), cellsOf(archiveFixture)),
+      );
+    }
+    check(
+      `exemple v1 : valeurs recalculées (${locale})`,
+      close(archive.values[0][3], 40.2) && close(archive.values[1][3], 8.04) && archive.values[2][2] === 46375 &&
+        archive.values[4][0]?.error === "#DIV/0!" && archive.values[5][0] === 42 && archive.values[6][0] === "gros" &&
+        close(archive.other[0][0], 40.2),
+      JSON.stringify(archive.values.map((row) => row.filter((value) => value !== null))),
+    );
+    const unknown = archive.keys.filter(
+      (key) => !ARCHIVED_SHEET_FIELDS.includes(key) && !UNARCHIVED_SHEET_FIELDS.includes(key),
+    );
+    check(`champs de feuille tous décrits dans WORKBOOK_FORMAT.md (${locale})`, unknown.length === 0, unknown.join(", "));
+    check(
+      `archive d'une version future refusée, classeur conservé (${locale})`,
+      archive.refused === "Unsupported workbook version: 2" && close(archive.after[0][0], 40.2),
+      archive.refused,
+    );
+    await context.close();
+  }
 
   // ------------------------------------------------------------------
   console.log("--- origine restreinte (?embed=https://autre.test) ---");

@@ -202,20 +202,9 @@ export const createDocCellsCore = ({
 
   // --- Opérations publiques ----------------------------------------------
 
+  // loadWorkbook lit l'archive (WORKBOOK_FORMAT.md) et la refuse, avant de
+  // toucher au classeur courant, si elle est invalide.
   const load = async (workbook, { recalculate = true } = {}) => {
-    if (
-      !Array.isArray(workbook) ||
-      workbook.length === 0 ||
-      !workbook.every(
-        (sheet) =>
-          sheet &&
-          typeof sheet === "object" &&
-          typeof sheet.name === "string" &&
-          (sheet.celldata === undefined || Array.isArray(sheet.celldata)),
-      )
-    ) {
-      throw new Error("Invalid workbook");
-    }
     loading = true;
     try {
       await loadWorkbook(workbook, { recalculate: recalculate !== false });

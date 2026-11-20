@@ -98,6 +98,10 @@ import {
   embedConfig,
 } from "./features/embed/embedMode.js";
 import { startMessageProtocol } from "./features/embed/messageProtocol.js";
+import {
+  readWorkbookArchive,
+  writeWorkbookArchive,
+} from "./features/archive/workbookArchive.js";
 import { afterFrameOrTask, createRedrawScheduler } from "./features/embed/visibility.js";
 import {
   AUTOSAVE_DEBOUNCE_MS,
@@ -1455,17 +1459,14 @@ const App = () => {
     [activeSheetIndex],
   );
 
-  // Mode intégré (EMBED.md) : chargement et enregistrement pour l'hôte.
+  // Mode intégré (EMBED.md) : chargement et enregistrement pour l'hôte, au
+  // format d'archivage (WORKBOOK_FORMAT.md).
   const loadWorkbookFromHost = useCallback(
     (workbook, { recalculate }) =>
       enqueueOp(async () => {
-        // Copie : DocCells modifie ensuite les cellules sur place, et l'hôte
-        // (accès synchrone) garde son propre objet.
-        const sheets = structuredClone(workbook).map((sheet) => {
-          const copy = { ...sheet };
-          delete copy.data;
-          return copy;
-        });
+        // Lu (et copié) avant de vider le classeur : une archive refusée
+        // laisse le classeur courant affiché.
+        const { sheets } = readWorkbookArchive(workbook);
         await resetWorkbook();
         updateDocumentIdentity(standaloneMenuTexts.items.untitled);
         setSheetData(ensureSheetCalcChains(sheets));
@@ -1477,12 +1478,7 @@ const App = () => {
 
   const saveWorkbookForHost = useCallback(() => {
     flushLiveUpdates();
-    const sheets = stripConditionalFormattingMarkers(sheetDataRef.current).map((sheet) => {
-      const copy = { ...sheet };
-      delete copy.data;
-      return copy;
-    });
-    return JSON.parse(JSON.stringify(sheets));
+    return writeWorkbookArchive(stripConditionalFormattingMarkers(sheetDataRef.current));
   }, [flushLiveUpdates]);
 
   useEffect(() => {

@@ -182,24 +182,24 @@ Restreindre qui peut afficher DocCells dans une iframe relève du serveur
 
 ### `load`
 
-Remplace le classeur. `workbook` est un tableau de feuilles FortuneSheet
-décrites par `celldata` (format de `save` et de `window.getSheetData()` ; une
-matrice `data` éventuelle est ignorée). Un `calcChain` absent est reconstruit
-depuis les formules. Le classeur est entièrement recalculé (section 7), les
+Remplace le classeur. `workbook` est une archive au format d'archivage de
+DocCells, `{ format: "doccells", version, definedNames, sheets }`, décrit
+dans `WORKBOOK_FORMAT.md` : celle que `save` renvoie, de n'importe quelle
+version publiée (une archive ancienne est convertie). Un `calcChain` absent
+est reconstruit depuis les formules. Le classeur est entièrement recalculé (section 7), les
 abonnements en cours sont résolus à nouveau par nom de feuille et reçoivent
 leurs valeurs (`source: "load"`), puis la réponse part. L'historique
-d'annulation repart de zéro. Un `workbook` qui n'est pas un tableau non vide
-de feuilles ayant un `name` texte (et un `celldata` tableau s'il est présent)
-est refusé, et le classeur précédent reste affiché. Le classeur fourni n'est
-pas modifié (DocCells en fait une copie).
+d'annulation repart de zéro. Une archive invalide ou d'une version future
+est refusée (`Invalid workbook: …`, `Unsupported workbook version: N`), et le
+classeur précédent reste affiché. L'archive fournie n'est pas modifiée
+(DocCells en fait une copie).
 
 ### `save`
 
-Le classeur courant au format accepté par `load` : feuilles avec `celldata`,
-sans la matrice `data` ni les marqueurs internes de mise en forme
-conditionnelle, écritures rapides en attente comprises. `load(save())`
-reproduit le classeur à l'identique (testé). Le format d'archivage à long
-terme est à décider (section 10).
+Le classeur courant, archive de la version courante du format d'archivage
+(`WORKBOOK_FORMAT.md`), écritures rapides en attente comprises. C'est ce que
+l'hôte enregistre durablement. `load(save())` reproduit le classeur à
+l'identique (testé).
 
 ### `setCellValues`
 
@@ -251,7 +251,8 @@ Après `load`, il est résolu à nouveau par nom de feuille.
 | `Invalid request`          | paramètre absent ou de mauvais type                                |
 | `Invalid reference: …`     | référence illisible, sans nom de feuille, colonne ou ligne entière, plage trop grande, plage là où une cellule est attendue |
 | `Unknown sheet: …`         | nom de feuille inconnu                                             |
-| `Invalid workbook`         | classeur refusé par `load`                                         |
+| `Invalid workbook: …`      | archive refusée par `load` (la cause suit les deux-points)         |
+| `Unsupported workbook version: N` | archive d'une version plus récente que celle que connaît DocCells |
 | `Unknown subscription: …`  | `unsubscribe` d'un identifiant inconnu ou d'un autre client        |
 | `Workbook not ready`       | opération pendant un `load` (accès synchrone)                      |
 
@@ -307,26 +308,19 @@ qui sont sur le chemin d'une requête ont donc été retirées :
 - La synchronisation de la mise en forme conditionnelle attend l'image
   suivante si la fenêtre est visible, la tâche suivante sinon.
 
-## 10. Format d'enregistrement à long terme — à décider
+## 10. Format d'enregistrement
 
-L'hôte gardera les classeurs pendant des années. Mesures faites sur trois
-classeurs réels (`public/test.xlsx`, un classeur d'essai de 46 cellules,
-`ELEVES.xlsx` de 2 472 cellules) :
+`save` et `load` utilisent le format d'archivage de DocCells, décrit champ
+par champ dans `WORKBOOK_FORMAT.md` : enveloppe versionnée, lecture garantie
+de toutes les versions publiées, un fichier d'exemple par version
+(`tests/fixtures/workbook-v<N>.json`) chargé par les tests.
 
-- **JSON de `save` / `getSheetData`** : l'aller-retour ne perd rien
-  (0 différence sur les trois). Mais c'est le modèle interne de FortuneSheet,
-  plus quelques champs propres à DocCells (`customCharts`,
-  `customConditionalFormatting`, marqueurs d'alignement automatique…).
-- **.xlsx** : format normalisé, lisible par Excel et LibreOffice, mais
-  l'aller-retour par DocCells n'est pas exact. Valeurs et formules sont
-  conservées. En revanche, les valeurs par défaut deviennent explicites (police,
-  taille, couleur, type de nombre), le texte enrichi perd ses mises en forme
-  par morceau, un repère interne d'alignement disparaît, et ce qu'Excel ne
-  représente pas (graphiques DocCells, règles de validation) est rangé dans une
-  feuille cachée propre à DocCells. 13 596 différences pour `ELEVES.xlsx`,
-  74 pour le classeur d'essai, 2 pour `test.xlsx`.
-
-Rien n'est codé sur ce point avant décision.
+Pourquoi pas le `.xlsx` : sur trois classeurs réels, l'aller-retour par le
+JSON ne perdait rien, alors que l'aller-retour par le `.xlsx` changeait des
+milliers de détails (valeurs par défaut rendues explicites, texte enrichi
+aplati, repères internes perdus, éléments propres à DocCells rangés dans une
+feuille cachée). Le `.xlsx` reste disponible pour l'export et l'échange
+(`window.getExcelAsBase64`).
 
 ## 11. Tests et mesures
 
@@ -334,9 +328,11 @@ Rien n'est codé sur ce point avant décision.
   vrai contexte FortuneSheet (deux clients, valeurs renvoyées ou émises,
   écritures refusées, feuilles renommées et supprimées, `change`).
 - `tests/formulaEngine.test.mjs` : recalcul forcé comparé à celui d'origine.
-- `.claude/skills/run-doccells-tests/doccells-embed-dist.mjs` (Playwright,
-  sans serveur ni port), avec un hôte d'une autre origine et un hôte de même
-  origine (22 vérifications) :
+- `tests/workbookArchive.test.mjs` : format d'archivage (exemples de chaque
+  version, archives refusées, accord entre `WORKBOOK_FORMAT.md` et le code).
+- `tests/browser/embedMode.browser.mjs` (Playwright, sans serveur ni port ;
+  mode d'emploi en tête du fichier), avec un hôte d'une autre origine et un
+  hôte de même origine (30 vérifications) :
   - `ready`, menus sans Fichier, `load` avec recalcul, `display` ;
   - `values` avant la réponse, rafale de 20 `setCellValues` fusionnée,
     erreurs ;
@@ -345,7 +341,10 @@ Rien n'est codé sur ce point avant décision.
   - messages d'une autre fenêtre ignorés, origine non autorisée
     (`?embed=…`) ;
   - accès synchrone, iframe masquée après chargement et iframe chargée
-    masquée, un seul dessin par image.
+    masquée, un seul dessin par image ;
+  - exemple v1 du format d'archivage rechargé à l'identique en français,
+    mêmes valeurs et formules en anglais, champs de feuille tous décrits,
+    version future refusée.
 - `embed_test.html` (racine, hors build) : page d'essai manuel avec
   `npm run dev` (curseur qui écrit `Feuille1!A1` à chaque image).
 
@@ -382,6 +381,7 @@ const request = (type, parameters = {}) =>
   });
 
 async function start() {
+  // storedWorkbook : ce que save a renvoyé, { format: "doccells", version, … }
   await request("load", { workbook: storedWorkbook });
   await request("subscribe", { ref: "Feuille1!B2:B21" });
 }
