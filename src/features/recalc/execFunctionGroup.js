@@ -83,11 +83,13 @@ const getFormulaRunList = (updateValueArray, map, index) => {
 };
 
 /**
+ * @param isForce recalcul forcé : toutes les formules, dans l'ordre de la
+ *   table, comme FortuneSheet (recalcul complet au chargement d'un classeur).
  * @param core fonctions internes de FortuneSheet transmises par le patch :
  *   getFlowdata, setCellValue, getAllFunctionGroup, setFormulaCellInfoMap,
  *   execCanonicalFormula.
  */
-export const execFunctionGroup = (ctx, originRow, originColumn, value, id, data, core) => {
+export const execFunctionGroup = (ctx, originRow, originColumn, value, id, data, isForce, core) => {
   const cache = ctx.formulaCache;
   if (data == null) data = core.getFlowdata(ctx);
   if (cache.execFunctionGlobalData == null) cache.execFunctionGlobalData = {};
@@ -124,7 +126,9 @@ export const execFunctionGroup = (ctx, originRow, originColumn, value, id, data,
   const map = cache.formulaCellInfoMap;
   const index = syncFormulaIndex(cache);
 
-  const updateValueArray = formulasReadingCells(index, map, changed);
+  const updateValueArray = isForce
+    ? Object.keys(map).map((key) => map[key])
+    : formulasReadingCells(index, map, changed);
   const formulaRunList = getFormulaRunList(updateValueArray, map, index);
 
   if (formulaRunList.length > 0) {

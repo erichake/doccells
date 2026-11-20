@@ -65,19 +65,29 @@ const addTouchedRow = (touched, sheetId, row) => {
 };
 
 /**
- * Écrit des valeurs dans le contexte vivant et recalcule leurs dépendants.
+ * Écrit des valeurs dans le contexte vivant et recalcule leurs dépendants, en
+ * un seul passage du moteur même si les cellules sont sur plusieurs feuilles.
  *
  * @param ctx contexte FortuneSheet vivant (workbook.doccellsGetLiveContext())
- * @param updates [{ r, c, v }] ; v : nombre, texte, booléen, null (vide) ou
- *   objet cellule partiel ({ v, ct, m }). Pas de formule (voir isFormulaUpdate).
- * @param sheetId identifiant de la feuille des cellules modifiées
+ * @param updates [{ r, c, v, sheetId? }] ; v : nombre, texte, booléen, null
+ *   (vide) ou objet cellule partiel ({ v, ct, m }). Pas de formule (voir
+ *   isFormulaUpdate). sheetId vaut par défaut le paramètre suivant.
+ * @param sheetId feuille des mises à jour qui n'en précisent pas
  * @returns { written, skipped, recalculated, touched } ; touched associe à
  *   chaque feuille l'ensemble des lignes dont une cellule a changé.
  */
 export const applyLiveCellUpdates = (ctx, updates, sheetId) => {
-  const sheetIndex = getSheetIndex(ctx, sheetId);
-  const data = sheetIndex == null ? null : ctx.luckysheetfile[sheetIndex]?.data;
-  if (!data) throw new Error(`Feuille introuvable ou non initialisée : ${sheetId}`);
+  const dataBySheet = new Map();
+  const sheetData = (id) => {
+    if (!dataBySheet.has(id)) {
+      const index = getSheetIndex(ctx, id);
+      dataBySheet.set(id, index == null ? null : ctx.luckysheetfile[index]?.data ?? null);
+    }
+    return dataBySheet.get(id);
+  };
+  if (!updates.some((update) => update.sheetId != null) && !sheetData(sheetId)) {
+    throw new Error(`Feuille introuvable ou non initialisée : ${sheetId}`);
+  }
 
   ensureFormulaCellInfoMap(ctx);
   const cache = ctx.formulaCache;
@@ -87,7 +97,10 @@ export const applyLiveCellUpdates = (ctx, updates, sheetId) => {
 
   for (const update of updates) {
     const { r, c } = update;
+    const id = update.sheetId ?? sheetId;
+    const data = sheetData(id);
     if (
+      !data ||
       !Number.isInteger(r) ||
       !Number.isInteger(c) ||
       r < 0 ||
@@ -107,31 +120,59 @@ export const applyLiveCellUpdates = (ctx, updates, sheetId) => {
       // Une valeur remplace la formule, comme une saisie au clavier.
       delete cell.f;
       delete cell.VF;
-      delFunctionGroup(ctx, r, c, sheetId);
-      const key = `r${r}c${c}i${sheetId}`;
+      delFunctionGroup(ctx, r, c, id);
+      const key = `r${r}c${c}i${id}`;
       if (cache.formulaCellInfoMap) delete cache.formulaCellInfoMap[key];
       cache.doccellsFormulaIndex?.dirty.add(key);
     }
     data[r][c] = cell;
     const value = update.v && typeof update.v === "object" ? { ...update.v } : update.v;
     setCellValue(ctx, r, c, data, value ?? null);
-    changed.push({ r, c, i: sheetId });
-    addTouchedRow(touched, sheetId, r);
+    changed.push({ r, c, i: id });
+    addTouchedRow(touched, id, r);
   }
 
   let recalculated = 0;
   if (changed.length > 0) {
     cache.execFunctionGlobalData = {};
     cache.execFunctionExist = changed;
-    execFunctionGroup(ctx, null, null, null, sheetId, data);
-    recalculated = ctx.groupValuesRefreshData.length;
-    for (const item of ctx.groupValuesRefreshData) {
-      addTouchedRow(touched, item.id, item.r);
-    }
-    groupValuesRefresh(ctx);
-    cache.execFunctionGlobalData = null;
-    cache.execFunctionExist = undefined;
+    execFunctionGroup(ctx, null, null, null, changed[0].i, sheetData(changed[0].i));
+    recalculated = refreshRecalculatedValues(ctx, touched);
   }
 
   return { written: changed.length, skipped, recalculated, touched };
+};
+
+// Écrit dans la grille les résultats du recalcul et en note les lignes.
+const refreshRecalculatedValues = (ctx, touched) => {
+  const cache = ctx.formulaCache;
+  const recalculated = ctx.groupValuesRefreshData.length;
+  for (const item of ctx.groupValuesRefreshData) {
+    addTouchedRow(touched, item.id, item.r);
+  }
+  groupValuesRefresh(ctx);
+  cache.execFunctionGlobalData = null;
+  cache.execFunctionExist = undefined;
+  return recalculated;
+};
+
+/**
+ * Recalcule toutes les formules du classeur, dans l'ordre des dépendances
+ * (FortuneSheet ne le fait pas à l'ouverture : il affiche les valeurs
+ * enregistrées). Même chemin que le recalcul forcé de FortuneSheet
+ * (execFunctionGroup avec isForce), pris en charge par le moteur de DocCells.
+ *
+ * @returns { recalculated, touched }
+ */
+export const recalculateWorkbook = (ctx) => {
+  ensureFormulaCellInfoMap(ctx);
+  const cache = ctx.formulaCache;
+  const touched = new Map();
+  cache.execFunctionGlobalData = {};
+  cache.execFunctionExist = undefined;
+  const index = getSheetIndex(ctx, ctx.currentSheetId);
+  const data = index == null ? undefined : ctx.luckysheetfile[index]?.data;
+  execFunctionGroup(ctx, null, null, null, ctx.currentSheetId, data, true);
+  const recalculated = refreshRecalculatedValues(ctx, touched);
+  return { recalculated, touched };
 };

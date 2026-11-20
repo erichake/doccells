@@ -14,8 +14,13 @@
  *   once without a React render. The effect itself still calls it.
  *
  * Patch 3: the Workbook API gains doccellsGetLiveContext() (the context of
- *   the last render, i.e. the object React holds as state) and
- *   doccellsRedraw() (redraws the current sheet from that context).
+ *   the last render, i.e. the object React holds as state),
+ *   doccellsRedraw() (redraws the current sheet from that context) and
+ *   doccellsDrawCount() (canvas draws so far, whoever asked for them).
+ *
+ * Patch 4: __doccellsSetDrawGate(gate) is exported. Every canvas draw, React
+ *   effect included, first asks gate(); when it returns false the draw is
+ *   skipped (DocCells redraws once when its iframe is shown again).
  */
 
 const fs = require("fs");
@@ -39,6 +44,20 @@ const DRAW_FUNCTION_END = (useEffect) => `  };
     __doccellsDrawSheet(context);
   }, [context, refs.canvas, refs.globalCache.freezen, setContext, sheet.id]);`;
 
+const COUNT_DRAW = (canvasClass) => `    var tableCanvas = new ${canvasClass}(refs.canvas.current, context);`;
+const COUNT_DRAW_WITH_COUNTER = (canvasClass) => `    refs.globalCache.doccellsDrawCount = (refs.globalCache.doccellsDrawCount || 0) + 1;
+${COUNT_DRAW(canvasClass)}`;
+const GATED_DRAW = (canvasClass) => `    if (__doccellsDrawGate && !__doccellsDrawGate()) return;
+${COUNT_DRAW_WITH_COUNTER(canvasClass)}`;
+
+const DRAW_GATE_ANCHOR = "var triggerGroupValuesRefresh = function triggerGroupValuesRefresh(ctx) {";
+const DRAW_GATE = `/* __doccells_draw_gate__ */
+var __doccellsDrawGate = null;
+function __doccellsSetDrawGate(gate) {
+  __doccellsDrawGate = gate || null;
+}
+${DRAW_GATE_ANCHOR}`;
+
 const CONTEXT_STATE = `    context = _useState2[0],
     setContext = _useState2[1];
   var _locale = `;
@@ -59,12 +78,18 @@ const API_RETURN_WITH_LIVE = `    var __doccellsApi = generateAPIs(context, setC
       var liveContext = __doccellsContextRef.current;
       if (draw && liveContext) draw(liveContext);
     };
+    __doccellsApi.doccellsDrawCount = function () {
+      return globalCache.current.doccellsDrawCount || 0;
+    };
     return __doccellsApi;`;
 
 const VARIANTS = {
   "index.esm.js": {
     useEffect: "useEffect",
     useRef: "useRef",
+    canvasClass: "Canvas",
+    exportOld: "export { Workbook };",
+    exportNew: "export { Workbook, __doccellsSetDrawGate };",
     freeze: [
       {
         old: `import produce, { applyPatches, enablePatches, produceWithPatches } from 'immer';`,
@@ -76,6 +101,9 @@ const VARIANTS = {
   "index.js": {
     useEffect: "React.useEffect",
     useRef: "React.useRef",
+    canvasClass: "core.Canvas",
+    exportOld: "exports.Workbook = Workbook;",
+    exportNew: "exports.Workbook = Workbook;\nexports.__doccellsSetDrawGate = __doccellsSetDrawGate;",
     freeze: [
       { old: `\nproduce.enablePatches();\n`, new: `\nproduce.enablePatches();\n/* __doccells_no_autofreeze__ */\nproduce.setAutoFreeze(false);\n` },
     ],
@@ -90,12 +118,21 @@ for (const [bundle, v] of Object.entries(VARIANTS)) {
     continue;
   }
   let src = fs.readFileSync(file, "utf8");
+  // Version sans compteur de dessins, mise à niveau sur place.
+  const previousApi = API_RETURN_WITH_LIVE.replace(/    __doccellsApi\.doccellsDrawCount = [\s\S]*?\n    };\n/, "");
+  if (!src.includes(API_RETURN_WITH_LIVE) && src.includes(previousApi)) {
+    src = src.replace(previousApi, API_RETURN_WITH_LIVE);
+  }
   const replacements = [
     ...v.freeze,
     { old: DRAW_EFFECT_START(v.useEffect), new: DRAW_FUNCTION_START },
     { old: DRAW_EFFECT_END, new: DRAW_FUNCTION_END(v.useEffect) },
     { old: CONTEXT_STATE, new: CONTEXT_STATE_WITH_REF(v.useRef) },
     { old: API_RETURN, new: API_RETURN_WITH_LIVE },
+    { old: COUNT_DRAW(v.canvasClass), new: COUNT_DRAW_WITH_COUNTER(v.canvasClass) },
+    { old: COUNT_DRAW_WITH_COUNTER(v.canvasClass), new: GATED_DRAW(v.canvasClass) },
+    { old: DRAW_GATE_ANCHOR, new: DRAW_GATE },
+    { old: v.exportOld, new: v.exportNew },
   ];
   let ok = true;
   for (const { old, new: next } of replacements) {

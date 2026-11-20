@@ -7,8 +7,8 @@
  *   engine (used by the comparison tests).
  * Patch 2: FormulaCache creates its parser from the configured Parser class
  *   (DocCells' copy, which keeps each formula's tree).
- * Patch 3: execFunctionGroup delegates to the configured function, except
- *   for forced full recalculations, with the internals it needs.
+ * Patch 3: execFunctionGroup delegates to the configured function, forced
+ *   full recalculations included, with the internals it needs.
  * Patch 4: setFormulaCellInfo marks the formula key it changes, so that the
  *   reverse dependency index can update just that entry.
  *
@@ -41,9 +41,16 @@ function __doccellsGetFormulaEngineInternals() {
 }
 var FormulaCache = /*#__PURE__*/function () {`;
 
-const DELEGATION = `  var isForce = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : false;
+// Version of the delegation without forced recalculations, upgraded in place.
+const PREVIOUS_DELEGATION = `  var isForce = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : false;
   if (__doccellsFormulaEngine.execFunctionGroup && !isForce) {
     __doccellsFormulaEngine.execFunctionGroup(ctx, origin_r, origin_c, value, id, data, __doccellsGetFormulaEngineInternals());
+    return;
+  }`;
+
+const DELEGATION = `  var isForce = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : false;
+  if (__doccellsFormulaEngine.execFunctionGroup) {
+    __doccellsFormulaEngine.execFunctionGroup(ctx, origin_r, origin_c, value, id, data, isForce, __doccellsGetFormulaEngineInternals());
     return;
   }`;
 
@@ -73,6 +80,7 @@ for (const [bundle, variant] of Object.entries(BUNDLES)) {
     continue;
   }
   let src = fs.readFileSync(file, "utf8");
+  if (src.includes(PREVIOUS_DELEGATION)) src = src.replace(PREVIOUS_DELEGATION, DELEGATION);
   const replacements = [
     { old: "var FormulaCache = /*#__PURE__*/function () {", new: REGISTRY },
     {

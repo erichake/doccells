@@ -112,6 +112,8 @@ const MenuDivider = () => <div className="dc-menu-divider" role="separator" />;
 
 export const StandaloneMenuBar = ({
   appMode,
+  embedded = false,
+  onRequestSave,
   sheetDataRef,
   texts,
   workbookRef,
@@ -133,7 +135,8 @@ export const StandaloneMenuBar = ({
   onOpenRecentFile,
   onClearRecentFiles,
 }) => {
-  const [isStandalone, setIsStandalone] = useState(isTopWindow);
+  // Mode intégré (?embed) : menus affichés dans l'iframe, sans menu Fichier.
+  const [isStandalone, setIsStandalone] = useState(() => isTopWindow() || embedded);
   const [openMenu, setOpenMenu] = useState(null);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [menuState, setMenuState] = useState({});
@@ -142,8 +145,8 @@ export const StandaloneMenuBar = ({
   const buildVersion = import.meta.env.DOCCELLS_BUILD_VERSION || "dev";
 
   useEffect(() => {
-    setIsStandalone(isTopWindow());
-  }, []);
+    setIsStandalone(isTopWindow() || embedded);
+  }, [embedded]);
 
   useEffect(() => {
     if (!openMenu) return undefined;
@@ -210,12 +213,19 @@ export const StandaloneMenuBar = ({
       }
 
       const key = event.key.toLowerCase();
+      // Intégré : l'hôte enregistre (événement « save ») ; ni ouverture ni
+      // impression, qui sont dans le menu Fichier absent.
+      const fileCommands = embedded
+        ? { s: onRequestSave }
+        : {
+            o: onOpenDocument,
+            p: onPrintDocument,
+            s: supportsNativeFileSave ? onSaveDocument : onExportDocument,
+          };
       const commandByKey = {
+        ...fileCommands,
         b: () => triggerWorkbookFormat(workbookRef, "bl"),
         i: () => triggerWorkbookFormat(workbookRef, "it"),
-        o: onOpenDocument,
-        p: onPrintDocument,
-        s: supportsNativeFileSave ? onSaveDocument : onExportDocument,
         u: () => triggerWorkbookFormat(workbookRef, "un"),
         y: () => triggerWorkbookRedo(workbookRef),
         z: () =>
@@ -236,7 +246,9 @@ export const StandaloneMenuBar = ({
       document.removeEventListener("keydown", runShortcut, true);
     };
   }, [
+    embedded,
     isStandalone,
+    onRequestSave,
     onExportDocument,
     onOpenDocument,
     onPrintDocument,
@@ -600,6 +612,7 @@ export const StandaloneMenuBar = ({
   );
 
   if (!isStandalone) return null;
+  const visibleMenus = embedded ? menus.filter((menu) => menu.id !== "file") : menus;
 
   return (
     <nav
@@ -609,7 +622,7 @@ export const StandaloneMenuBar = ({
       onMouseEnter={refreshMenuState}
       onFocus={refreshMenuState}
     >
-      {menus.map((menu) => (
+      {visibleMenus.map((menu) => (
         <div className="dc-menu-root" key={menu.id}>
           <button
             type="button"
