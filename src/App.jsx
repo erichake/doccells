@@ -1574,7 +1574,7 @@ const App = () => {
       allowedOrigins: embedConfig.allowedOrigins,
       version: import.meta.env.DOCCELLS_BUILD_VERSION || "dev",
     });
-    const stopDialogs = watchDialogs((open) => core.notifyDialog(open));
+    const stopDialogs = watchDialogs((open, veil) => core.notifyDialog(open, veil));
     return () => {
       stopDialogs();
       stopProtocol();

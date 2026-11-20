@@ -11,6 +11,9 @@
 // - Hauteur : chaque barre prend la hauteur de l'élément reçu, contenu
 //   centré verticalement ; celle d'un élément sans hauteur imposée est la
 //   sienne.
+// - Taille du texte : la barre de menus (boutons, listes, sous-menus) prend
+//   celle de l'élément menus, héritée à travers le shadow root ; dans
+//   l'iframe, ses tailles fixes (15 px…) restent.
 //
 // Le code de DocCells qui cherche ces barres dans son document (commandes
 // des menus, boutons ajoutés à la barre, dialogues) passe par queryChrome et
@@ -85,6 +88,9 @@ const CHROME_CSS = `
 }
 .dc-chrome > .dc-menu-bar { align-items: stretch; }
 .dc-chrome .dc-menu-root-button { min-height: 0; }
+.dc-chrome-menus .dc-menu-root-button,
+.dc-chrome-menus .dc-menu-item,
+.dc-chrome-menus .dc-menu-shortcut { font-size: inherit; }
 .dc-chrome-toolbar .fortune-toolbar { overflow: visible; }
 .dc-chrome-toolbar > .fortune-toolbar-more-container { top: 100%; right: 40px; margin-right: 0; z-index: 1; }
 .dc-chrome-toolbar .fortune-tooltip { top: calc(100% + 4px); }
@@ -144,10 +150,12 @@ const INHERITED = [
   "-webkit-font-smoothing",
 ];
 
-const copyInherited = (from, to) => {
+const copyInherited = (from, to, skip = []) => {
   if (!from) return;
   const style = window.getComputedStyle(from);
-  for (const name of INHERITED) to.style.setProperty(name, style.getPropertyValue(name));
+  for (const name of INHERITED) {
+    if (!skip.includes(name)) to.style.setProperty(name, style.getPropertyValue(name));
+  }
 };
 
 const isElement = (host) =>
@@ -159,8 +167,9 @@ const prepare = (host, kind, sheet) => {
   root.adoptedStyleSheets = [sheet];
   const mount = host.ownerDocument.createElement("div");
   mount.className = `dc-chrome dc-chrome-${kind}`;
-  // Ce dont la barre hérite dans l'iframe.
-  copyInherited(document.body, mount);
+  // Ce dont la barre hérite dans l'iframe, sauf, pour la barre de menus, la
+  // taille du texte : celle de l'élément de l'hôte.
+  copyInherited(document.body, mount, kind === "menus" ? ["font-size"] : []);
   if (kind === "toolbar") copyInherited(document.querySelector(".fortune-container"), mount);
   // Un clic dans la page hôte lui donne le focus : la cellule en cours de
   // saisie dans l'iframe le perdrait. On le laisse où il est, sauf pour un

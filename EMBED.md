@@ -289,7 +289,7 @@ Après `load`, il est résolu à nouveau par nom de feuille.
 | `sheetRenamed` | l'utilisateur a renommé une feuille                                                                                       | `{ id, oldName, newName }`                        |
 | `sheetDeleted` | l'utilisateur a supprimé une feuille                                                                                      | `{ id, name }`                                    |
 | `hostNamesChanged` | les noms lus par les formules `GEO` ont changé (formule saisie, effacée, collée, annulation…)                         | `{ names }`                                       |
-| `dialog`       | un dialogue de DocCells ou de FortuneSheet s'est ouvert, ou le dernier ouvert s'est fermé                                 | `{ open }`                                       |
+| `dialog`       | un dialogue de DocCells ou de FortuneSheet s'est ouvert, ou le dernier ouvert s'est fermé, ou le voile du premier plan a changé | `{ open, veil }` (`veil` avec `open: true`)      |
 | `save`         | l'utilisateur a demandé l'enregistrement (Cmd-S / Ctrl-S)                                                                 | —                                                 |
 
 - `source` de `values` vaut `"host"` (écriture de l'hôte), `"user"` (action
@@ -311,6 +311,20 @@ Après `load`, il est résolu à nouveau par nom de feuille.
   les listes ni les menus. Leur voile ne couvre que l'iframe (« À propos »,
   dessiné dans la barre de menus sortie, couvre la page hôte) : l'hôte pose
   le sien sur sa page pendant ce temps.
+- `veil`, avec `open: true` : le voile du dialogue au premier plan, en
+  valeurs CSS calculées, `{ background, backdropFilter }` (par exemple
+  `{ background: "rgba(32, 33, 36, 0.38)", backdropFilter: "none" }`), pour
+  que l'hôte donne le même au sien ; `null` si ce dialogue n'a pas de voile
+  (recherche / remplacement). Le premier plan est le voile de plus grand
+  `z-index` parmi les dialogues ouverts. Tant qu'un dialogue reste ouvert,
+  un nouvel événement `{ open: true, veil }` est émis quand ce voile change
+  (une alerte de FortuneSheet ouverte par-dessus la recherche, puis
+  fermée). `open: false` n'a pas de `veil`. Voiles actuels : la plupart des
+  dialogues de DocCells `rgba(32, 33, 36, 0.38)` ; format des nombres
+  `rgba(31, 35, 41, 0.48)` avec `blur(2px)` ; noms définis
+  `rgba(15, 23, 42, 0.38)` ; « À propos » `rgba(15, 23, 42, 0.35)` ;
+  impression `#eef1f4` (opaque) ; dialogues et alertes de FortuneSheet
+  `rgba(255, 255, 255, 0.5)`.
 
 ### Erreurs
 
@@ -473,12 +487,13 @@ feuille cachée). Le `.xlsx` reste disponible pour l'export et l'échange
     aucun script exécuté en sélectionnant, éditant et copiant ses cellules,
     textes affichés tels quels, image d'une autre adresse retirée.
 - `tests/browser/chromePortal.browser.mjs` (Playwright, sans serveur ni port,
-  page hôte de même origine avec des bandes de 32 et 48 px, 33
+  page hôte de même origine avec des bandes de 32 et 48 px, 37
   vérifications) : barres sorties identiques à celles de l'iframe, hauteurs
-  imposées et contenu centré, feuille de style partagée ; boutons, listes et
-  palettes, Gras pendant une saisie, fermeture des menus par un clic
-  n'importe où, dialogues et événement `dialog` (accès synchrone et
-  protocole), raccourcis, `unmountChrome` puis `mountChrome`, « More »
+  imposées et contenu centré, feuille de style partagée, taille du texte des
+  menus donnée par l'hôte (13 px, puis 11 px, et 15 px de retour dans
+  l'iframe) ; boutons, listes et palettes, Gras pendant une saisie,
+  fermeture des menus par un clic n'importe où, dialogues et événement
+  `dialog` avec son voile (accès synchrone et protocole), raccourcis, `unmountChrome` puis `mountChrome`, « More »
   quand la bande change de largeur ou quand les barres ont été montées dans
   une bande masquée, listes et sous-menus près du bord droit, info-bulles,
   navigation au clavier, `mode=student`, `&singleSheet`.
@@ -546,7 +561,11 @@ docCells.mountChrome({
   menus: document.getElementById("menus"), // par exemple 32 px de haut
   toolbar: document.getElementById("toolbar"), // par exemple 48 px de haut
 });
-docCells.on("dialog", ({ open }) => veil.hidden = !open);
+docCells.on("dialog", ({ open, veil: v }) => {
+  veil.hidden = !open;
+  veil.style.background = v?.background ?? "transparent";
+  veil.style.backdropFilter = v?.backdropFilter ?? "none";
+});
 // …
 docCells.unmountChrome(); // les barres reviennent dans l'iframe
 ```
@@ -568,6 +587,12 @@ docCells.unmountChrome(); // les barres reviennent dans l'iframe
   centré verticalement : c'est l'hôte qui fixe cette hauteur (dans
   l'iframe, les barres font 37 et 41 px ; 32 et 48 px sont vérifiés par les
   tests).
+- **Taille du texte** : la barre de menus prend la taille du texte de
+  l'élément `menus` (sa valeur calculée, donc héritée de la page hôte s'il
+  n'en a pas), pour ses boutons, leurs listes, leurs sous-menus et les
+  raccourcis affichés ; elle suit ses changements. Dans l'iframe, et dans
+  DocCells seul, les menus gardent leurs tailles (boutons 15 px, listes
+  14 px). La barre de boutons garde les siennes.
 - **Largeur** : la barre de boutons suit la largeur de son élément ; ce qui
   n'y tient pas va dans « More », recalculé à chaque changement de largeur,
   y compris quand les barres ont été montées dans un élément masqué.

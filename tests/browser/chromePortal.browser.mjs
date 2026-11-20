@@ -1,5 +1,6 @@
 // Barres de DocCells (menus et boutons) dessinées dans la page hôte par
-// window.docCells.mountChrome (EMBED.md, section 14), événement dialog,
+// window.docCells.mountChrome (EMBED.md, section 14), taille du texte des
+// menus donnée par l'hôte, événement dialog et son voile,
 // feuille unique (&singleSheet) et mode élève intégré (&mode=student).
 // Contre le build dist/, sans serveur ni port (comme embedMode.browser.mjs).
 //
@@ -63,12 +64,20 @@ const HOST_HTML = `<!doctype html><html><head><style>
 const iframe = document.getElementById("dc");
 window.dc = () => iframe.contentWindow.docCells;
 window.dialogEvents = { window: [], message: [] };
+// Événements complets ({ open, veil }), remis à zéro par les tests du voile.
+window.dialogFull = { window: [], message: [] };
 window.addEventListener("message", ({ source, data }) => {
   if (source !== iframe.contentWindow || data?.doccells !== 1) return;
   if (data.event === "ready") iframe.contentWindow.postMessage({ doccells: 1, id: 1, type: "hostNames" }, "*");
-  if (data.event === "dialog") window.dialogEvents.message.push(data.open);
+  if (data.event === "dialog") {
+    window.dialogEvents.message.push(data.open);
+    window.dialogFull.message.push({ open: data.open, veil: data.veil });
+  }
 });
-window.listenDialogs = () => window.dc().on("dialog", (event) => window.dialogEvents.window.push(event.open));
+window.listenDialogs = () => window.dc().on("dialog", (event) => {
+  window.dialogEvents.window.push(event.open);
+  window.dialogFull.window.push({ open: event.open, veil: event.veil });
+});
 iframe.src = new URLSearchParams(location.search).get("src");
 </script></body></html>`;
 
@@ -256,7 +265,10 @@ try {
   boldWhileEditingBaseline = await boldWhileEditing(frame.locator('.fortune-toolbar-button[aria-label^="Bold"]'), 3, 3);
   await page.mouse.move(1250, 700);
 
+  // Menus à la taille de ceux de l'iframe (15 px) pour comparer ; la page
+  // hôte donne ensuite 13 px (point 1, taille du texte).
   const mountTimed = await page.evaluate(() => {
+    document.getElementById("menus").style.fontSize = "15px";
     const started = performance.now();
     const ok = window.dc().mountChrome({
       menus: document.getElementById("menus"),
@@ -311,7 +323,41 @@ try {
   const toolbarDiff = compare(before.toolbar, after.toolbar);
   const menuDiff = compare(before.menus, after.menus);
   check("1. barre de boutons identique (tailles, polices, couleurs, icônes)", toolbarDiff.every((line) => line.startsWith("(")), toolbarDiff.slice(0, 8).join(" ; "));
-  check("1. barre de menus identique", menuDiff.length === 0, menuDiff.slice(0, 8).join(" ; "));
+  check("1. barre de menus identique (élément menus à 15 px)", menuDiff.length === 0, menuDiff.slice(0, 8).join(" ; "));
+  // Taille du texte : celle de l'élément menus, héritée de la page hôte
+  // (13 px), pour les boutons, les listes, les sous-menus et les raccourcis,
+  // et suivie quand elle change.
+  const menuFonts = async () => {
+    await page.locator("#menus .dc-menu-root-button", { hasText: "Format" }).click();
+    await page.locator("#menus .dc-menu-popover > .dc-menu-item-wrap > .dc-menu-item:has(.dc-menu-chevron)").first().hover();
+    await page.waitForTimeout(100);
+    const sizes = await page.evaluate(() => {
+      const root = document.getElementById("menus").shadowRoot;
+      const sizes = (selector) => [...new Set(Array.from(root.querySelectorAll(selector))
+        .filter((item) => item.getBoundingClientRect().width > 0)
+        .map((item) => getComputedStyle(item).fontSize))];
+      return {
+        buttons: sizes(".dc-menu-root-button"),
+        items: sizes(".dc-menu-popover > .dc-menu-item-wrap > .dc-menu-item"),
+        submenu: sizes(".dc-menu-submenu .dc-menu-item"),
+        shortcuts: sizes(".dc-menu-shortcut"),
+      };
+    });
+    await page.locator("#menus .dc-menu-root-button", { hasText: "Format" }).click();
+    return sizes;
+  };
+  const only = (sizes, px) => Object.values(sizes).every((list) => list.length === 1 && list[0] === px);
+  await page.evaluate(() => document.getElementById("menus").style.removeProperty("font-size"));
+  const fonts13 = await menuFonts();
+  await page.evaluate(() => { document.body.style.fontSize = "11px"; });
+  const fonts11 = await menuFonts();
+  await page.evaluate(() => document.body.style.removeProperty("font-size"));
+  await shot(page, "1-menus-13px", { x: 0, y: 0, width: 700, height: 420 });
+  check(
+    "1. menus sortis à la taille du texte de l'élément menus (13 px hérités, puis 11 px), listes, sous-menus et raccourcis compris",
+    only(fonts13, "13px") && only(fonts11, "11px") && fonts13.shortcuts.length === 1,
+    `13 px : ${JSON.stringify(fonts13)} ; 11 px : ${JSON.stringify(fonts11)}`,
+  );
   note(`hauteurs dans l'iframe : menus ${before.menuBarHeight} px, boutons ${before.toolbar.h} px`);
   // Hauteur de l'élément reçu, contenu centré verticalement.
   const centering = await page.evaluate(() => {
@@ -624,6 +670,83 @@ try {
     `recherche ouverte ${searchOpen} ; window ${events.window.length}, protocole ${events.message.length}`,
   );
 
+  // Voile du dialogue au premier plan, porté par l'événement dialog : égal
+  // au voile dessiné par DocCells ; null pour la recherche ; nouvel
+  // événement quand le premier plan change de voile, dialogues ouverts.
+  console.log("--- 6. voile des dialogues ---");
+  const veilOf = (root, selector) => {
+    const element = root.querySelector(selector);
+    if (!element) return "absent";
+    const style = getComputedStyle(element);
+    return { background: style.backgroundColor, backdropFilter: style.backdropFilter };
+  };
+  const takeFull = () => page.evaluate(() => {
+    const full = window.dialogFull;
+    window.dialogFull = { window: [], message: [] };
+    return full;
+  });
+  const veils = {};
+  await takeFull();
+  await clickCell(1, 0);
+  await openFromMenu("Format", "Alternating colors");
+  veils.alternating = { drawn: await frame.evaluate(`(${veilOf})(document, ".dc-ac-backdrop")`), events: await takeFull() };
+  await closeDialogs();
+  const closes = [await takeFull()];
+  await openFromMenu("Format", "Custom", "Number");
+  veils.numberFormat = { drawn: await frame.evaluate(`(${veilOf})(document, ".dc-nf-backdrop")`), events: await takeFull() };
+  await page.keyboard.press("Escape");
+  await closeDialogs();
+  closes.push(await takeFull());
+  await openFromMenu("Tools", "About");
+  veils.about = {
+    drawn: await page.evaluate(`(${veilOf})(document.getElementById("menus").shadowRoot, ".dc-about-overlay")`),
+    events: await takeFull(),
+  };
+  await page.mouse.click(1250, 700);
+  await page.waitForTimeout(200);
+  closes.push(await takeFull());
+  const sameVeil = ({ drawn, events }) =>
+    drawn !== "absent" && events.window.length === 1 && events.window[0].open === true
+    && JSON.stringify(events.window[0].veil) === JSON.stringify(drawn)
+    && JSON.stringify(events.message) === JSON.stringify(events.window);
+  for (const [name, item] of Object.entries(veils)) note(`${name} : ${JSON.stringify(item.events.window)}`);
+  check(
+    "6. voile de l'événement dialog égal à celui du dialogue (couleurs alternées, format des nombres avec flou, À propos), identique par le protocole",
+    sameVeil(veils.alternating) && sameVeil(veils.numberFormat) && sameVeil(veils.about)
+      && veils.numberFormat.drawn.backdropFilter !== "none" && veils.alternating.drawn.backdropFilter === "none"
+      && closes.every((events) => JSON.stringify(events.window) === '[{"open":false}]' && JSON.stringify(events.message) === JSON.stringify(events.window)),
+    JSON.stringify({ alternating: veils.alternating.drawn, numberFormat: veils.numberFormat.drawn, about: veils.about.drawn }),
+  );
+  // Recherche (sans voile), puis alerte de FortuneSheet par-dessus
+  // (suppression de la seule feuille : refusée), fermée, puis recherche
+  // fermée.
+  await clickCell(1, 0);
+  await page.keyboard.press("ControlOrMeta+f");
+  await page.waitForTimeout(200);
+  await frame.locator(".luckysheet-sheets-item-name").first().click({ button: "right" });
+  await frame.locator(".fortune-sheet-list-item, .luckysheet-cols-menuitem", { hasText: /^\s*Delete\s*$/ }).first().click();
+  await page.waitForTimeout(200);
+  const fortuneVeil = await frame.evaluate(`(${veilOf})(document, ".fortune-modal-container")`);
+  await frame.locator(".fortune-modal-container .fortune-message-box-button").first().click();
+  await page.waitForTimeout(200);
+  const searchStill = await frame.evaluate(() => Boolean(document.querySelector(".fortune-search-replace")));
+  await frame.evaluate(() => document.querySelector(".fortune-search-replace .fortune-modal-dialog-icon-close")?.click());
+  await page.waitForTimeout(200);
+  const stacked = await takeFull();
+  const sheetsLeft = await page.evaluate(() => window.dc().save().sheets.length);
+  note(`recherche puis confirmation : ${JSON.stringify(stacked.window)}`);
+  check(
+    "6. recherche : veil null ; alerte de FortuneSheet par-dessus : nouvel événement avec son voile, puis null, puis fermé",
+    JSON.stringify(stacked.window) === JSON.stringify([
+      { open: true, veil: null },
+      { open: true, veil: fortuneVeil },
+      { open: true, veil: null },
+      { open: false },
+    ]) && fortuneVeil !== "absent" && searchStill && sheetsLeft === 1
+      && JSON.stringify(stacked.message) === JSON.stringify(stacked.window),
+    `voile de FortuneSheet ${JSON.stringify(fortuneVeil)}, recherche restée ouverte ${searchStill}`,
+  );
+
   // 7. Raccourcis dans la grille.
   console.log("--- 7. raccourcis ---");
   await clickCell(2, 0);
@@ -659,6 +782,16 @@ try {
   }));
   const savedBack = await page.evaluate(() => JSON.stringify(window.dc().save()));
   await shot(page, "8-unmounted", { x: 0, y: 0, width: 1300, height: 200 });
+  // Dans l'iframe, les menus gardent leurs tailles (15 px, listes 14 px).
+  await frame.locator(".dc-menu-root-button", { hasText: "Format" }).click();
+  await page.waitForTimeout(100);
+  const iframeFonts = await frame.evaluate(() => ({
+    button: getComputedStyle(document.querySelector(".dc-menu-root-button")).fontSize,
+    item: getComputedStyle(document.querySelector(".dc-menu-popover .dc-menu-item")).fontSize,
+  }));
+  await page.keyboard.press("Escape");
+  if (await frame.locator(".dc-menu-popover").count()) await frame.locator(".dc-menu-root-button", { hasText: "Format" }).click();
+  check("8. menus rendus à l'iframe : 15 px, listes 14 px", iframeFonts.button === "15px" && iframeFonts.item === "14px", JSON.stringify(iframeFonts));
   check(
     "8. unmountChrome : barres rendues à l'iframe, classeur intact",
     back.toolbar && back.menus && back.custom > 0 && back.bold !== "" && hostEmpty.menus === 0 && hostEmpty.toolbar === 0 && savedBack === saved,

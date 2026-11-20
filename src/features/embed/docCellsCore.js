@@ -347,8 +347,11 @@ export const createDocCellsCore = ({
     observeWorkbook,
     notifyHostWrite,
     requestSave: () => emitAll({ event: "save" }),
-    // Un dialogue de DocCells ou de FortuneSheet s'ouvre ou se ferme
-    // (dialogWatch.js) : l'hôte pose ou retire son propre voile.
-    notifyDialog: (open) => emitAll({ event: "dialog", open: Boolean(open) }),
+    // Un dialogue de DocCells ou de FortuneSheet s'ouvre ou se ferme, ou le
+    // voile du dialogue au premier plan change (dialogWatch.js) : l'hôte
+    // pose, ajuste ou retire son propre voile. veil (avec open: true) :
+    // { background, backdropFilter } ou null.
+    notifyDialog: (open, veil = null) =>
+      emitAll(open ? { event: "dialog", open: true, veil } : { event: "dialog", open: false }),
   };
 };
