@@ -18,6 +18,7 @@ import {
   setCellValue,
   setFormulaCellInfoMap,
 } from "@fortune-sheet/core";
+import { isFormulaInfoMapEmpty } from "../recalc/formulaIndex.js";
 
 const isFormulaText = (value) =>
   typeof value === "string" && value.length > 1 && value.charAt(0) === "=";
@@ -45,8 +46,7 @@ export const resolveSheetId = (ctx, sheet) => {
 // feuilles.
 const ensureFormulaCellInfoMap = (ctx) => {
   const cache = ctx.formulaCache;
-  const map = cache.formulaCellInfoMap;
-  if (map && Object.keys(map).length > 0) return;
+  if (!isFormulaInfoMapEmpty(cache)) return;
   cache.formulaCellInfoMap = {};
   for (const sheet of ctx.luckysheetfile) {
     if (sheet?.calcChain?.length && sheet.data) {
@@ -108,7 +108,9 @@ export const applyLiveCellUpdates = (ctx, updates, sheetId) => {
       delete cell.f;
       delete cell.VF;
       delFunctionGroup(ctx, r, c, sheetId);
-      if (cache.formulaCellInfoMap) delete cache.formulaCellInfoMap[`r${r}c${c}i${sheetId}`];
+      const key = `r${r}c${c}i${sheetId}`;
+      if (cache.formulaCellInfoMap) delete cache.formulaCellInfoMap[key];
+      cache.doccellsFormulaIndex?.dirty.add(key);
     }
     data[r][c] = cell;
     const value = update.v && typeof update.v === "object" ? { ...update.v } : update.v;
