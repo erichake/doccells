@@ -106,6 +106,14 @@ import {
   writeWorkbookArchive,
 } from "./features/archive/workbookArchive.js";
 import { afterFrameOrTask, createRedrawScheduler } from "./features/embed/visibility.js";
+// Barres dans la page hôte (EMBED.md, section 14).
+import {
+  getChrome,
+  setChromeAvailable,
+  subscribeChrome,
+  unmountChrome,
+} from "./features/embed/chromeMount.js";
+import { watchDialogs } from "./features/embed/dialogWatch.js";
 import {
   AUTOSAVE_DEBOUNCE_MS,
   deleteRecoverySnapshot,
@@ -349,6 +357,16 @@ const normalizeSheetCelldata = (sheet, cached) => {
   return { dataRef: sheet.data, rowCache, celldata };
 };
 
+// Feuille unique (?singleSheet, EMBED.md) : la première feuille, dans l'ordre
+// des onglets, est celle qui est montrée.
+const showFirstSheet = (sheets) => {
+  if (sheets.length === 0) return sheets;
+  const first = sheets.reduce((best, sheet) =>
+    (Number(sheet.order) || 0) < (Number(best.order) || 0) ? sheet : best,
+  );
+  return sheets.map((sheet) => ({ ...sheet, status: sheet === first ? 1 : 0 }));
+};
+
 const App = () => {
   const [sheetData, setSheetData] = useState([]);
   const [documentName, setDocumentName] = useState(
@@ -357,7 +375,21 @@ const App = () => {
   const [documentDirty, setDocumentDirty] = useState(false);
   const [recentFiles, setRecentFiles] = useState([]);
   const [appMode, setAppMode] = useState("teacher");
+  // Mode élève intégré : ni barre de menus ni barre de boutons (la barre de
+  // formule reste), donc rien à sortir dans la page hôte (EMBED.md).
+  const embeddedWithoutBars =
+    embedConfig.enabled && (embedConfig.student || appMode === "student");
+  useEffect(() => {
+    setChromeAvailable(!embeddedWithoutBars);
+    if (embeddedWithoutBars) unmountChrome();
+  }, [embeddedWithoutBars]);
   const [workbookKey, setWorkbookKey] = useState(0);
+  // Barres dessinées dans la page hôte (chromeMount.js), ou null.
+  const [chrome, setChrome] = useState(getChrome);
+  useEffect(
+    () => subscribeChrome((next) => flushSync(() => setChrome(next))),
+    [],
+  );
   const [conditionalDialogOpen, setConditionalDialogOpen] = useState(false);
   const [conditionalSheetIndex, setConditionalSheetIndex] = useState(0);
   const [conditionalInitialRange, setConditionalInitialRange] = useState("A1");
@@ -1488,7 +1520,9 @@ const App = () => {
         const { sheets } = readWorkbookArchive(workbook);
         await resetWorkbook();
         updateDocumentIdentity(standaloneMenuTexts.items.untitled);
-        setSheetData(ensureSheetCalcChains(sheets));
+        setSheetData(
+          ensureSheetCalcChains(embedConfig.singleSheet ? showFirstSheet(sheets) : sheets),
+        );
         await waitUntilReady();
         if (recalculate) recalculateLiveWorkbook();
       }),
@@ -1540,7 +1574,9 @@ const App = () => {
       allowedOrigins: embedConfig.allowedOrigins,
       version: import.meta.env.DOCCELLS_BUILD_VERSION || "dev",
     });
+    const stopDialogs = watchDialogs((open) => core.notifyDialog(open));
     return () => {
+      stopDialogs();
       stopProtocol();
       delete window.docCells;
       docCellsCoreRef.current = null;
@@ -1656,6 +1692,7 @@ const App = () => {
     conditionalFormattingToolbarText: conditionalFormattingTexts.toolbar,
     alternatingColorsToolbarText: alternatingColorsTexts.menuItem,
     customNumberFormatMenuText: customNumberFormatTexts.menuItem,
+    chrome,
   });
 
   // Bloque le redimensionnement colonnes/lignes quand la feuille est protégée
@@ -2181,7 +2218,9 @@ const App = () => {
 
       <StandaloneMenuBar
         appMode={appMode}
+        chromeContainer={chrome?.menus.mount ?? null}
         embedded={embedConfig.enabled}
+        hidden={embeddedWithoutBars}
         onRequestSave={() => docCellsCoreRef.current?.requestSave()}
         sheetDataRef={sheetDataRef}
         texts={standaloneMenuTexts}
@@ -2226,6 +2265,9 @@ const App = () => {
           defaultColWidth={DEFAULT_COLUMN_WIDTH}
           hooks={workbookHooks}
           onChange={handleWorkbookChange}
+          doccellsToolbarContainer={chrome?.toolbar.mount ?? null}
+          showToolbar={!embeddedWithoutBars}
+          showSheetTabs={!embedConfig.singleSheet}
           toolbarItems={[
             "image",
             "|",

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import docToolsFavicon from "../../assets/doctools-favicon.png";
 import SplashLogo from "../../shared/SplashLogo.js";
 import { areGridLinesHidden, isWorkbookProtected } from "../workbook/workbookUtils.js";
@@ -112,7 +113,11 @@ const MenuDivider = () => <div className="dc-menu-divider" role="separator" />;
 
 export const StandaloneMenuBar = ({
   appMode,
+  // Élément de la page hôte où dessiner la barre (chromeMount.js), ou null.
+  chromeContainer = null,
   embedded = false,
+  // Barre non dessinée (mode élève intégré) ; ses raccourcis restent.
+  hidden = false,
   onRequestSave,
   sheetDataRef,
   texts,
@@ -151,10 +156,13 @@ export const StandaloneMenuBar = ({
   useEffect(() => {
     if (!openMenu) return undefined;
 
+    // Barre dans la page hôte : un clic y est vu par son document, avec pour
+    // cible l'élément porteur du shadow root (d'où composedPath).
     const closeOnPointerDown = (event) => {
-      if (!menuRef.current?.contains(event.target)) {
-        setOpenMenu(null);
-      }
+      const menu = menuRef.current;
+      if (!menu || menu.contains(event.target)) return;
+      if (event.composedPath?.().includes(menu)) return;
+      setOpenMenu(null);
     };
     const closeOnEscape = (event) => {
       if (event.key === "Escape") {
@@ -162,11 +170,18 @@ export const StandaloneMenuBar = ({
       }
     };
 
-    document.addEventListener("mousedown", closeOnPointerDown);
-    document.addEventListener("keydown", closeOnEscape);
+    const documents = [document];
+    const own = menuRef.current?.ownerDocument;
+    if (own && own !== document) documents.push(own);
+    for (const doc of documents) {
+      doc.addEventListener("mousedown", closeOnPointerDown);
+      doc.addEventListener("keydown", closeOnEscape);
+    }
     return () => {
-      document.removeEventListener("mousedown", closeOnPointerDown);
-      document.removeEventListener("keydown", closeOnEscape);
+      for (const doc of documents) {
+        doc.removeEventListener("mousedown", closeOnPointerDown);
+        doc.removeEventListener("keydown", closeOnEscape);
+      }
     };
   }, [openMenu]);
 
@@ -188,9 +203,13 @@ export const StandaloneMenuBar = ({
       if (event.key === "Escape") setIsAboutOpen(false);
     };
 
-    document.addEventListener("keydown", closeOnEscape);
+    // « À propos » dessiné dans la page hôte : Échap y est vu aussi.
+    const documents = [document];
+    const own = menuRef.current?.ownerDocument;
+    if (own && own !== document) documents.push(own);
+    for (const doc of documents) doc.addEventListener("keydown", closeOnEscape);
     return () => {
-      document.removeEventListener("keydown", closeOnEscape);
+      for (const doc of documents) doc.removeEventListener("keydown", closeOnEscape);
     };
   }, [isAboutOpen]);
 
@@ -611,10 +630,10 @@ export const StandaloneMenuBar = ({
     ],
   );
 
-  if (!isStandalone) return null;
+  if (!isStandalone || hidden) return null;
   const visibleMenus = embedded ? menus.filter((menu) => menu.id !== "file") : menus;
 
-  return (
+  const bar = (
     <nav
       className="dc-menu-bar"
       aria-label={texts.menuBarLabel}
@@ -715,6 +734,7 @@ export const StandaloneMenuBar = ({
       ) : null}
     </nav>
   );
+  return chromeContainer ? createPortal(bar, chromeContainer) : bar;
 };
 
 const icons = {

@@ -1,8 +1,12 @@
-const getToolbar = () => document.querySelector(".fortune-toolbar");
+// La barre de boutons peut être dessinée dans la page hôte (EMBED.md,
+// section 14, chromeMount.js).
+import { queryChrome, queryChromeAll, toggleChromeClass } from "../embed/chromeMount.js";
+
+const getToolbar = () => queryChrome(".fortune-toolbar");
 const SUPPRESS_TOOLBAR_COMBO_CLASS = "dc-suppress-toolbar-combo-popup";
 
 const clickElement = (selector) => {
-  const element = document.querySelector(selector);
+  const element = queryChrome(selector);
   if (!element) return false;
   element.click();
   return true;
@@ -16,7 +20,7 @@ const getUseHref = (useElement) =>
 const findControlByIcon = (root, iconId) => {
   if (!root) return null;
 
-  return Array.from(root.querySelectorAll("use"))
+  return Array.from(root === document ? queryChromeAll("use") : root.querySelectorAll("use"))
     .filter((useElement) => getUseHref(useElement) === `#${iconId}`)
     .map((useElement) => useElement.closest(
       ".fortune-toolbar-button, .fortune-toolbar-combo, .fortune-toobar-combo-container",
@@ -77,8 +81,7 @@ const findToolbarComboByOptionFamily = (optionIconId) => {
 };
 
 const findFormatCombo = (formatLabels = []) => {
-  const mountedMenu = document
-    .querySelector(".dc-custom-number-format-menu-item, .more-format")
+  const mountedMenu = queryChrome(".dc-custom-number-format-menu-item, .more-format")
     ?.closest(".fortune-toobar-combo-container");
   if (mountedMenu) return mountedMenu;
 
@@ -122,7 +125,7 @@ const findTextComboOption = (container, label) =>
 
 const cleanupSuppressedToolbarCombo = () => {
   requestAnimationFrame(() => {
-    document.body.classList.remove(SUPPRESS_TOOLBAR_COMBO_CLASS);
+    toggleChromeClass(SUPPRESS_TOOLBAR_COMBO_CLASS, false);
   });
 };
 
@@ -149,7 +152,7 @@ export const triggerToolbarComboOption = (comboIconId, optionIconId) => {
     const arrow = container?.querySelector(".fortune-toolbar-combo-arrow");
     if (!container || !arrow) return false;
 
-    document.body.classList.add(SUPPRESS_TOOLBAR_COMBO_CLASS);
+    toggleChromeClass(SUPPRESS_TOOLBAR_COMBO_CLASS, true);
 
     if (!findToolbarComboOption(container, optionIconId)) {
       arrow.click();
@@ -201,7 +204,7 @@ export const triggerToolbarFormatOption = (label, formatLabels) => {
   const arrow = container?.querySelector(".fortune-toolbar-combo-arrow");
   if (!container || !arrow || !label) return false;
 
-  document.body.classList.add(SUPPRESS_TOOLBAR_COMBO_CLASS);
+  toggleChromeClass(SUPPRESS_TOOLBAR_COMBO_CLASS, true);
   if (!findFormatOptionByLabel(container, label)) arrow.click();
 
   requestAnimationFrame(() => {
@@ -229,7 +232,7 @@ export const triggerToolbarTextComboOption = (
   const arrow = container?.querySelector(".fortune-toolbar-combo-arrow");
   if (!container || !arrow) return false;
 
-  document.body.classList.add(SUPPRESS_TOOLBAR_COMBO_CLASS);
+  toggleChromeClass(SUPPRESS_TOOLBAR_COMBO_CLASS, true);
   arrow.click();
 
   requestAnimationFrame(() => {
@@ -298,7 +301,7 @@ export const triggerSheetProtection = () =>
   clickElement("#custom-protect-sheet-button");
 
 export const triggerNativeImagePicker = () => {
-  const uploadInput = document.querySelector("#fortune-img-upload");
+  const uploadInput = queryChrome("#fortune-img-upload");
   const uploadButton = uploadInput?.closest(".fortune-toolbar-button");
   if (uploadButton) {
     uploadButton.click();

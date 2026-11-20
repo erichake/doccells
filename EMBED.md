@@ -23,7 +23,8 @@ inchangée et reste disponible avec ou sans `?embed`.
 
 Code : `src/features/embed/` (cœur `docCellsCore.js`, protocole
 `messageProtocol.js`, références `references.js`, valeurs `cellValues.js`,
-visibilité et dessin `visibility.js`, activation `embedMode.js`) ;
+visibilité et dessin `visibility.js`, activation `embedMode.js`, barres
+dans la page hôte `chromeMount.js`, dialogues `dialogWatch.js`) ;
 valeurs de l'hôte et fonction `GEO` : `src/features/recalc/hostValues.js`.
 
 ## 1. Activation et interface
@@ -32,8 +33,8 @@ valeurs de l'hôte et fonction `GEO` : `src/features/recalc/hostValues.js`.
 <iframe src="apps/doccells/index.html?embed" style="border: 0"></iframe>
 ```
 
-`?embed` n'a d'effet que dans une iframe. Il se combine avec `?mode=student`
-et `?lang=`. `?embed=https://hote.example` (plusieurs origines séparées par
+`?embed` n'a d'effet que dans une iframe. Il se combine avec `?mode=student`,
+`?lang=` et `?singleSheet`. `?embed=https://hote.example` (plusieurs origines séparées par
 des virgules) restreint les origines acceptées (section 4.4).
 
 `?lang=fr` (ou `fr-FR`, `de`, `zh-TW`…), avec ou sans `?embed`, impose la
@@ -54,7 +55,32 @@ Avec `?embed` :
 - le paramètre `url=` est ignoré : DocCells ouvre le classeur vide habituel
   (`empty.xlsx`), puis l'hôte fournit le sien (`load`) ;
 - `window.docCells` et le protocole `postMessage` sont actifs ;
-- aucun dessin n'a lieu tant que l'iframe est masquée (section 9).
+- aucun dessin n'a lieu tant que l'iframe est masquée (section 9) ;
+- l'hôte de même origine peut dessiner les barres de DocCells dans sa propre
+  page (`mountChrome`, section 14) ;
+- `&mode=student` n'affiche ni la barre de menus ni la barre de boutons ;
+  la barre de formule reste, et les raccourcis clavier de la grille
+  (Cmd-B, Cmd-Z…) marchent toujours. `mountChrome` n'y sort rien.
+
+### Feuille unique : `&singleSheet`
+
+`?embed&singleSheet` (aussi `&singleSheet=1` ; `=0`, `false`, `no` ou
+`off` le désactivent) est fait pour un hôte qui montre une seule feuille et
+tient lieu lui-même d'onglets :
+
+- `load` montre la première feuille dans l'ordre des onglets (`order`),
+  quelle que soit la feuille active enregistrée ;
+- la barre d'onglets de feuilles et le zoom, qui est dans cette barre, sont
+  masqués ;
+- aucun moyen de créer une feuille ne reste : le bouton « + », la liste et
+  le menu contextuel des onglets sont dans cette barre ; ni les menus de
+  DocCells, ni le menu contextuel de la grille, ni un raccourci n'en créent,
+  et le mode intégré n'ouvre aucun fichier (pas de menu Fichier, ni Cmd-O,
+  ni glisser-déposer).
+
+Les autres feuilles d'une archive restent dans le classeur (des formules
+peuvent les lire) et dans ce que `save` renvoie, sans être montrées. Le
+zoom au clavier ou à la molette de FortuneSheet reste possible.
 
 ## 2. Accès synchrone : `window.docCells`
 
@@ -88,6 +114,8 @@ docCells.setHostValues([{ name: "AB", v: 2.5 }]); // { recalculated, values }
 | `hostDependencies(ref)`            | noms dont dépend une cellule ou une plage, triés                 |
 | `on(event, listener)`              | fonction qui retire l'écouteur                                   |
 | `stats()`                          | `{ draws }` : nombre de dessins du canevas (diagnostic)          |
+| `mountChrome({ menus, toolbar })`  | `true`, ou `false` en `mode=student` (section 14)                |
+| `unmountChrome()`                  | `true`, ou `false` si les barres n'étaient pas sorties            |
 
 Les opérations sont celles du protocole (sections 5 et 6), mêmes paramètres,
 mêmes erreurs (levées en `Error`). Différences :
@@ -261,6 +289,7 @@ Après `load`, il est résolu à nouveau par nom de feuille.
 | `sheetRenamed` | l'utilisateur a renommé une feuille                                                                                       | `{ id, oldName, newName }`                        |
 | `sheetDeleted` | l'utilisateur a supprimé une feuille                                                                                      | `{ id, name }`                                    |
 | `hostNamesChanged` | les noms lus par les formules `GEO` ont changé (formule saisie, effacée, collée, annulation…)                         | `{ names }`                                       |
+| `dialog`       | un dialogue de DocCells ou de FortuneSheet s'est ouvert, ou le dernier ouvert s'est fermé                                 | `{ open }`                                       |
 | `save`         | l'utilisateur a demandé l'enregistrement (Cmd-S / Ctrl-S)                                                                 | —                                                 |
 
 - `source` de `values` vaut `"host"` (écriture de l'hôte), `"user"` (action
@@ -273,6 +302,15 @@ Après `load`, il est résolu à nouveau par nom de feuille.
   références.
 - `hostNamesChanged` n'est pas émis par `load` : après un `load`, l'hôte lit
   `hostNames()`.
+- `dialog` : `open: true` quand un premier dialogue s'ouvre, `open: false`
+  quand plus aucun ne l'est (deux dialogues ouverts à la suite ne donnent
+  pas deux `true`). Sont des dialogues : ceux de DocCells (format des
+  nombres, mise en forme conditionnelle, couleurs alternées, liste
+  déroulante, graphique, impression, noms définis, « À propos »), les
+  dialogues et alertes de FortuneSheet et sa recherche / remplacement ; pas
+  les listes ni les menus. Leur voile ne couvre que l'iframe (« À propos »,
+  dessiné dans la barre de menus sortie, couvre la page hôte) : l'hôte pose
+  le sien sur sa page pendant ce temps.
 
 ### Erreurs
 
@@ -434,6 +472,16 @@ feuille cachée). Le `.xlsx` reste disponible pour l'export et l'échange
   - archive piégée (WORKBOOK_FORMAT.md, « Archives d'origine inconnue ») :
     aucun script exécuté en sélectionnant, éditant et copiant ses cellules,
     textes affichés tels quels, image d'une autre adresse retirée.
+- `tests/browser/chromePortal.browser.mjs` (Playwright, sans serveur ni port,
+  page hôte de même origine avec des bandes de 32 et 48 px, 33
+  vérifications) : barres sorties identiques à celles de l'iframe, hauteurs
+  imposées et contenu centré, feuille de style partagée ; boutons, listes et
+  palettes, Gras pendant une saisie, fermeture des menus par un clic
+  n'importe où, dialogues et événement `dialog` (accès synchrone et
+  protocole), raccourcis, `unmountChrome` puis `mountChrome`, « More »
+  quand la bande change de largeur ou quand les barres ont été montées dans
+  une bande masquée, listes et sous-menus près du bord droit, info-bulles,
+  navigation au clavier, `mode=student`, `&singleSheet`.
 - `embed_test.html` (racine, hors build) : page d'essai manuel avec
   `npm run dev` (curseur qui écrit `Feuille1!A1` à chaque image).
 
@@ -485,3 +533,60 @@ function onDrag(x) {
   );
 }
 ```
+
+## 14. Barres dans la page hôte
+
+Un hôte de **même origine** peut faire dessiner la barre de menus et la barre
+de boutons de DocCells dans sa propre page, à la place des siennes, par
+l'accès synchrone (un élément de la page ne passe pas par `postMessage`) :
+
+```js
+const docCells = iframe.contentWindow.docCells;
+docCells.mountChrome({
+  menus: document.getElementById("menus"), // par exemple 32 px de haut
+  toolbar: document.getElementById("toolbar"), // par exemple 48 px de haut
+});
+docCells.on("dialog", ({ open }) => veil.hidden = !open);
+// …
+docCells.unmountChrome(); // les barres reviennent dans l'iframe
+```
+
+- **`mountChrome({ menus, toolbar })`** : deux éléments distincts de la page
+  hôte. Chacun reçoit un shadow root ouvert (créé s'il n'existe pas, vidé
+  sinon), où DocCells dessine sa barre, vivante : c'est le même composant
+  React, par un portail, et non une copie. Les barres quittent l'iframe,
+  dont la grille remonte en haut. Un second appel déplace les barres dans
+  les nouveaux éléments. Éléments absents ou identiques : `Invalid request`.
+  En `mode=student`, il n'y a pas de barres : rien n'est monté, et la
+  méthode renvoie `false`.
+- **`unmountChrome()`** : rend les barres à l'iframe et vide les shadow
+  roots. Le classeur, la sélection et l'annulation sont gardés, mais
+  FortuneSheet recrée sa barre de boutons (une couleur personnalisée
+  choisie repart de zéro) : pour cacher et remontrer les barres souvent,
+  l'hôte cache ses éléments plutôt que d'appeler `unmountChrome`.
+- **Hauteur** : chaque barre prend la hauteur de l'élément reçu, contenu
+  centré verticalement : c'est l'hôte qui fixe cette hauteur (dans
+  l'iframe, les barres font 37 et 41 px ; 32 et 48 px sont vérifiés par les
+  tests).
+- **Largeur** : la barre de boutons suit la largeur de son élément ; ce qui
+  n'y tient pas va dans « More », recalculé à chaque changement de largeur,
+  y compris quand les barres ont été montées dans un élément masqué.
+- **Styles** : une seule feuille, construite dans le document hôte avec
+  toutes les règles de DocCells, adoptée par les deux shadow roots
+  (`adoptedStyleSheets`) ; refaite à chaque `mountChrome`. Les styles de
+  l'hôte n'atteignent pas les barres, ni ceux des barres la page hôte.
+- **Focus** : un clic dans la barre de boutons (hors champ de saisie) ne
+  prend pas le focus : une saisie en cours dans une cellule continue, et le
+  Gras s'y applique. La barre de menus et la barre de boutons se parcourent
+  au clavier (Tab) depuis la page hôte ; Entrée ouvre un menu, Échap le
+  ferme.
+- **Fermeture** : un menu, une liste ou une palette ouverts se ferment sur un
+  clic ailleurs, dans l'iframe comme dans la page hôte, et sur Échap.
+- **Listes et sous-menus** sont dessinés sous leur bouton, dans la page hôte,
+  au-dessus de l'iframe, et ramenés à gauche près du bord droit de la
+  fenêtre hôte. Les dialogues ouverts depuis les barres s'ouvrent dans
+  l'iframe (sauf « À propos ») : voir l'événement `dialog` (section 6).
+
+La barre de boutons de FortuneSheet est sortie par un correctif de son
+bundle, appliqué à l'installation (`scripts/patch-fortune-chrome-portal.cjs`,
+dans `postinstall`).

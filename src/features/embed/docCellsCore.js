@@ -347,5 +347,8 @@ export const createDocCellsCore = ({
     observeWorkbook,
     notifyHostWrite,
     requestSave: () => emitAll({ event: "save" }),
+    // Un dialogue de DocCells ou de FortuneSheet s'ouvre ou se ferme
+    // (dialogWatch.js) : l'hôte pose ou retire son propre voile.
+    notifyDialog: (open) => emitAll({ event: "dialog", open: Boolean(open) }),
   };
 };

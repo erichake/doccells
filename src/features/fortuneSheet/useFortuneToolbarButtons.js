@@ -6,6 +6,9 @@ import {
   setWorkbookGridLines,
   setWorkbookProtection,
 } from "../workbook/workbookUtils.js";
+// La barre de boutons peut être dessinée dans la page hôte (EMBED.md,
+// section 14, chromeMount.js).
+import { observeChrome, queryChrome, queryChromeAll } from "../embed/chromeMount.js";
 
 const preserveCustomList = (liveList, previousList) => {
   if (Array.isArray(previousList)) return previousList;
@@ -74,9 +77,12 @@ export const useFortuneToolbarButtons = ({
   conditionalFormattingToolbarText,
   alternatingColorsToolbarText,
   customNumberFormatMenuText,
+  // Barres sorties dans la page hôte (ou null) : la barre de boutons a été
+  // redessinée ailleurs, ses boutons ajoutés sont à remettre.
+  chrome = null,
 }) => {
   const addButtons = useCallback(() => {
-    const toolbar = document.getElementsByClassName("fortune-toolbar")[0];
+    const toolbar = queryChrome(".fortune-toolbar");
     if (!toolbar) return;
     const showFileButtons = isTopWindow();
     const statArea = document.getElementsByClassName("fortune-stat-area")[0];
@@ -86,14 +92,14 @@ export const useFortuneToolbarButtons = ({
     }
 
     // 🔹 Supprimer les anciens boutons pour éviter les doublons
-    document.getElementById("custom-open-button")?.remove();
-    document.getElementById("custom-export-button")?.remove();
-    document.getElementById("custom-gridlines-button")?.remove();
-    document.getElementById("custom-chart-button")?.remove();
-    document.getElementById("custom-alternating-colors-button")?.remove();
-    document.getElementById("custom-conditional-format-button")?.remove();
-    document.getElementById("custom-protect-sheet-button")?.remove();
-    document.getElementById("custom-after-protect-divider")?.remove();
+    queryChrome("#custom-open-button")?.remove();
+    queryChrome("#custom-export-button")?.remove();
+    queryChrome("#custom-gridlines-button")?.remove();
+    queryChrome("#custom-chart-button")?.remove();
+    queryChrome("#custom-alternating-colors-button")?.remove();
+    queryChrome("#custom-conditional-format-button")?.remove();
+    queryChrome("#custom-protect-sheet-button")?.remove();
+    queryChrome("#custom-after-protect-divider")?.remove();
 
     const createToolbarDivider = (id) => {
       const divider = document.createElement("div");
@@ -355,37 +361,43 @@ export const useFortuneToolbarButtons = ({
     if (sheetData.length === 0) return undefined;
 
     const observer = new MutationObserver(() => {
-      const toolbar = document.getElementsByClassName("fortune-toolbar")[0];
+      const toolbar = queryChrome(".fortune-toolbar");
       if (toolbar) {
         addButtons();
         observer.disconnect();
       }
     });
 
-    observer.observe(document.body, { childList: true, subtree: true });
+    observeChrome(observer);
 
     return () => observer.disconnect();
-  }, [sheetData, addButtons]);
+  }, [sheetData, addButtons, chrome]);
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
-      const toolbar = document.getElementsByClassName("fortune-toolbar")[0];
+      const toolbar = queryChrome(".fortune-toolbar");
       if (toolbar) {
         addButtons();
         observer.disconnect();
       }
     });
 
-    observer.observe(document.body, { childList: true, subtree: true });
+    observeChrome(observer);
 
     return () => observer.disconnect();
-  }, [addButtons]);
+  }, [addButtons, chrome]);
+
+  // Barre redessinée ailleurs (sortie ou rendue à l'iframe) : elle peut déjà
+  // être en place, sans les boutons ajoutés.
+  useEffect(() => {
+    if (queryChrome(".fortune-toolbar") && !queryChrome("#custom-gridlines-button")) addButtons();
+  }, [addButtons, chrome]);
 
   useEffect(() => {
     if (sheetData.length === 0) return undefined;
 
     const installMenuItem = () => {
-      document.querySelectorAll(".more-format").forEach((menu) => {
+      queryChromeAll(".more-format").forEach((menu) => {
         const nativeCustomFormatsItem = menu.closest(
           ".fortune-toolbar-select-option",
         );
@@ -422,15 +434,16 @@ export const useFortuneToolbarButtons = ({
 
     installMenuItem();
     const observer = new MutationObserver(installMenuItem);
-    observer.observe(document.body, { childList: true, subtree: true });
+    observeChrome(observer);
     return () => {
       observer.disconnect();
-      document.querySelectorAll(".dc-custom-number-format-menu-item").forEach((item) => item.remove());
-      document.querySelectorAll(".dc-hidden-native-format-item").forEach((item) => {
+      queryChromeAll(".dc-custom-number-format-menu-item").forEach((item) => item.remove());
+      queryChromeAll(".dc-hidden-native-format-item").forEach((item) => {
         item.classList.remove("dc-hidden-native-format-item");
       });
     };
   }, [
+    chrome,
     customNumberFormatMenuText,
     openCustomNumberFormatDialog,
     sheetData.length,
