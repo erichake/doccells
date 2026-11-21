@@ -593,6 +593,58 @@ docCells.unmountChrome(); // les barres reviennent dans l'iframe
   raccourcis affichés ; elle suit ses changements. Dans l'iframe, et dans
   DocCells seul, les menus gardent leurs tailles (boutons 15 px, listes
   14 px). La barre de boutons garde les siennes.
+- **Police** : de même, la barre de menus prend la famille de police de
+  l'élément `menus` (boutons, listes, sous-menus, raccourcis). Dans
+  l'iframe : `Inter, Roboto, Arial, Helvetica, sans-serif`. La barre de
+  boutons et « À propos » gardent la leur.
+- **Apparence des menus** : l'hôte peut donner, sur l'élément `menus` (ou
+  un de ses ancêtres), des propriétés CSS personnalisées que la barre de
+  menus lit à travers le shadow root. Absente, chacune garde la valeur de
+  DocCells ; dans l'iframe, rien ne change. Les longueurs ont une unité
+  (`0px` et non `0`).
+
+  | Propriété | Effet | DocCells |
+  | --- | --- | --- |
+  | `--dc-menu-color` | couleur du texte des titres et des listes | `#202124` |
+  | `--dc-menu-title-radius` | arrondi d'un titre de menu (survol, menu ouvert) | `4px` |
+  | `--dc-menu-list-offset` | écart entre le bas du titre et sa liste | `1px` |
+  | `--dc-menu-list-padding` | marge intérieure de la liste, tout autour | `8px` en haut et en bas, `0px` sur les côtés |
+  | `--dc-menu-list-min-width` | largeur minimale d'une liste | `288px` |
+  | `--dc-menu-list-border` | bord d'une liste (forme courte de `border`) | `1px solid #dadce0` |
+  | `--dc-menu-list-shadow` | ombre d'une liste | `0 14px 28px rgba(60, 64, 67, 0.22), 0 2px 8px rgba(60, 64, 67, 0.12)` |
+  | `--dc-menu-item-height` | hauteur minimale d'une ligne | `38px` |
+  | `--dc-menu-item-padding` | marge intérieure d'une ligne | `0 12px 0 14px` |
+  | `--dc-menu-item-radius` | arrondi d'une ligne | `0` |
+  | `--dc-menu-item-hover-background` | fond d'une ligne survolée (ou dont le sous-menu est ouvert) | `#f1f3f4` |
+  | `--dc-menu-item-hover-color` | texte, icône, raccourci et chevron d'une ligne survolée | leurs couleurs |
+  | `--dc-menu-icon-size` | côté des icônes, et largeur de leur colonne | `22px` |
+  | `--dc-menu-disabled-opacity` | opacité d'une ligne désactivée | `0.4` |
+  | `--dc-menu-shortcut-opacity` | opacité des raccourcis et des chevrons (couleur du texte) | `0.45` |
+  | `--dc-menu-divider-margin` | marges d'un séparateur | `8px 0` |
+
+  Les raccourcis, chevrons et icônes d'une ligne désactivée prennent la
+  couleur de son texte : ils restent lisibles sur un fond de survol foncé
+  (texte blanc). Une ligne désactivée n'a pas de fond au survol. Par
+  exemple, pour des menus comme ceux de DocGeo :
+
+  ```css
+  #menus {
+    --dc-menu-color: #1f2937;
+    --dc-menu-title-radius: 6px;
+    --dc-menu-list-padding: 4px;
+    --dc-menu-list-min-width: 220px;
+    --dc-menu-list-border: 1px solid #d1d5db;
+    --dc-menu-list-shadow: 0 6px 20px rgb(0 0 0 / 0.14);
+    --dc-menu-item-height: 32px;
+    --dc-menu-item-padding: 6px 12px 6px 4px;
+    --dc-menu-item-radius: 5px;
+    --dc-menu-item-hover-background: #2563eb;
+    --dc-menu-item-hover-color: #fff;
+    --dc-menu-icon-size: 18px;
+    --dc-menu-shortcut-opacity: 0.6;
+    --dc-menu-divider-margin: 4px 8px;
+  }
+  ```
 - **Largeur** : la barre de boutons suit la largeur de son élément ; ce qui
   n'y tient pas va dans « More », recalculé à chaque changement de largeur,
   y compris quand les barres ont été montées dans un élément masqué.

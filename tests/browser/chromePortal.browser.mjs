@@ -1,6 +1,7 @@
 // Barres de DocCells (menus et boutons) dessinées dans la page hôte par
-// window.docCells.mountChrome (EMBED.md, section 14), taille du texte des
-// menus donnée par l'hôte, événement dialog et son voile,
+// window.docCells.mountChrome (EMBED.md, section 14), police et taille du
+// texte des menus données par l'hôte, apparence des menus par les propriétés
+// --dc-menu-*, événement dialog et son voile,
 // feuille unique (&singleSheet) et mode élève intégré (&mode=student).
 // Contre le build dist/, sans serveur ni port (comme embedMode.browser.mjs).
 //
@@ -246,6 +247,111 @@ const boldWhileEditing = async (boldButton, r, c) => {
 };
 let boldWhileEditingBaseline = null;
 
+// Apparence des menus (EMBED.md, section 14) : valeurs de DocGeo données par
+// l'hôte, et ce qu'on attend avec et sans elles.
+const DOCGEO_MENU_VARS = {
+  "--dc-menu-color": "#1f2937",
+  "--dc-menu-title-radius": "6px",
+  "--dc-menu-list-padding": "4px",
+  "--dc-menu-list-min-width": "220px",
+  "--dc-menu-list-border": "1px solid #d1d5db",
+  "--dc-menu-list-shadow": "0 6px 20px rgb(0 0 0 / 0.14)",
+  "--dc-menu-item-height": "32px",
+  "--dc-menu-item-padding": "6px 12px 6px 4px",
+  "--dc-menu-item-radius": "5px",
+  "--dc-menu-item-hover-background": "#2563eb",
+  "--dc-menu-item-hover-color": "#fff",
+  "--dc-menu-icon-size": "18px",
+  "--dc-menu-shortcut-opacity": "0.6",
+  "--dc-menu-divider-margin": "4px 8px",
+};
+const DOCCELLS_LOOK = {
+  color: "rgb(32, 33, 36)", titleRadius: "4px", listPadding: "8px 0px", listMinWidth: "288px",
+  listBorder: "1px rgb(218, 220, 224)", itemHeight: 38, itemRadius: "0px",
+  hoverBackground: "rgb(241, 243, 244)", hoverColor: "rgb(32, 33, 36)", iconSize: "22x22",
+  iconStroke: "rgb(75, 85, 99)", chevron: "rgb(32, 33, 36)", iconInside: true, submenuAligned: true,
+  shortcutColor: "rgb(32, 33, 36)", shortcutOpacity: "0.45", dividerMargin: "8px 0px",
+  openParentBackground: "rgb(241, 243, 244)",
+};
+const DOCGEO_LOOK = {
+  color: "rgb(31, 41, 55)", titleRadius: "6px", listPadding: "4px 4px", listMinWidth: "220px",
+  listBorder: "1px rgb(209, 213, 219)", itemHeight: 32, itemRadius: "5px",
+  hoverBackground: "rgb(37, 99, 235)", hoverColor: "rgb(255, 255, 255)", iconSize: "18x18",
+  iconStroke: "rgb(255, 255, 255)", chevron: "rgb(255, 255, 255)", iconInside: true, submenuAligned: true,
+  shortcutColor: "rgb(255, 255, 255)", shortcutOpacity: "0.6", dividerMargin: "4px 8px",
+  openParentBackground: "rgb(37, 99, 235)",
+};
+const lookDiff = (look, expected) =>
+  Object.entries(expected)
+    .filter(([key, value]) => look[key] !== value)
+    .map(([key, value]) => `${key}: ${JSON.stringify(look[key])} au lieu de ${JSON.stringify(value)}`);
+
+// Ouvre Format, survole sa première ligne à sous-menu (Nombre, dont les
+// lignes ont des exemples en raccourci), puis une ligne à raccourci du
+// sous-menu ; relève police, tailles et couleurs, puis referme.
+// scope : la page (barre sortie, prefix "#menus ") ou l'iframe (prefix "").
+const menuLooks = async (scope, prefix, shotName) => {
+  const rootButton = scope.locator(`${prefix}.dc-menu-root-button`, { hasText: "Format" });
+  await rootButton.click();
+  await scope.locator(`${prefix}.dc-menu-popover > .dc-menu-item-wrap > .dc-menu-item:has(.dc-menu-chevron)`).first().hover();
+  await page.waitForTimeout(100);
+  const inHost = prefix !== "";
+  const first = await scope.evaluate((inHost) => {
+    const root = inHost ? document.getElementById("menus").shadowRoot : document;
+    const style = (element) => getComputedStyle(element);
+    const popover = root.querySelector(".dc-menu-root > .dc-menu-popover");
+    const parent = popover.querySelector(":scope > .dc-menu-item-wrap > .dc-menu-item:has(.dc-menu-chevron)");
+    const plain = Array.from(popover.querySelectorAll(":scope > .dc-menu-item-wrap > .dc-menu-item"))
+      .find((item) => item !== parent && !item.disabled);
+    const icon = parent.querySelector(".dc-menu-icon svg");
+    const parentBox = parent.getBoundingClientRect();
+    const iconBox = icon.getBoundingClientRect();
+    const submenu = parent.parentElement.querySelector(".dc-menu-submenu");
+    const subFirst = submenu.querySelector(".dc-menu-item");
+    const divider = popover.querySelector(".dc-menu-divider");
+    const p = style(popover);
+    return {
+      fonts: [root.querySelector(".dc-menu-root-button"), parent, plain, subFirst]
+        .map((element) => style(element).fontFamily),
+      color: style(plain).color,
+      titleRadius: style(root.querySelector(".dc-menu-root-button")).borderTopLeftRadius,
+      listPadding: `${p.paddingTop} ${p.paddingLeft}`,
+      listMinWidth: p.minWidth,
+      listBorder: `${p.borderTopWidth} ${p.borderTopColor}`,
+      itemHeight: Math.round(plain.getBoundingClientRect().height),
+      itemRadius: style(parent).borderTopLeftRadius,
+      hoverBackground: style(parent).backgroundColor,
+      hoverColor: style(parent).color,
+      iconSize: `${Math.round(iconBox.width)}x${Math.round(iconBox.height)}`,
+      iconStroke: style(icon).stroke,
+      chevron: style(parent.querySelector(".dc-menu-chevron")).borderLeftColor,
+      iconInside: iconBox.top >= parentBox.top && iconBox.bottom <= parentBox.bottom,
+      submenuAligned: Math.abs(subFirst.getBoundingClientRect().top - parentBox.top) <= 1,
+      dividerMargin: divider ? `${style(divider).marginTop} ${style(divider).marginLeft}` : null,
+    };
+  }, inHost);
+  await scope.locator(`${prefix}.dc-menu-submenu .dc-menu-item:has(.dc-menu-shortcut)`).first().hover();
+  await page.waitForTimeout(100);
+  const second = await scope.evaluate((inHost) => {
+    const root = inHost ? document.getElementById("menus").shadowRoot : document;
+    const item = Array.from(root.querySelectorAll(".dc-menu-submenu .dc-menu-item"))
+      .find((element) => element.matches(":hover") && element.querySelector(".dc-menu-shortcut"));
+    const parent = item.closest(".dc-menu-submenu").parentElement.querySelector(":scope > .dc-menu-item");
+    const shortcut = getComputedStyle(item.querySelector(".dc-menu-shortcut"));
+    return {
+      fonts: [getComputedStyle(item.querySelector(".dc-menu-shortcut")).fontFamily],
+      shortcutColor: shortcut.color,
+      shortcutOpacity: shortcut.opacity,
+      openParentBackground: getComputedStyle(parent).backgroundColor,
+    };
+  }, inHost);
+  if (shotName) await shot(page, shotName, { x: 0, y: 0, width: 900, height: 520 });
+  await rootButton.click();
+  if (await scope.locator(`${prefix}.dc-menu-popover`).count()) await page.keyboard.press("Escape");
+  const fonts = [...new Set([...first.fonts, ...second.fonts])];
+  return { ...first, ...second, fonts };
+};
+
 try {
   // ------------------------------------------------------------------
   console.log("--- 0. barres dans l'iframe, puis mountChrome ---");
@@ -265,10 +371,12 @@ try {
   boldWhileEditingBaseline = await boldWhileEditing(frame.locator('.fortune-toolbar-button[aria-label^="Bold"]'), 3, 3);
   await page.mouse.move(1250, 700);
 
-  // Menus à la taille de ceux de l'iframe (15 px) pour comparer ; la page
-  // hôte donne ensuite 13 px (point 1, taille du texte).
+  // Menus à la taille et à la police de ceux de l'iframe (15 px, Inter…)
+  // pour comparer ; la page hôte donne ensuite les siennes (point 1, taille
+  // du texte, apparence des menus).
   const mountTimed = await page.evaluate(() => {
     document.getElementById("menus").style.fontSize = "15px";
+    document.getElementById("menus").style.fontFamily = "Inter, Roboto, Arial, Helvetica, sans-serif";
     const started = performance.now();
     const ok = window.dc().mountChrome({
       menus: document.getElementById("menus"),
@@ -323,7 +431,8 @@ try {
   const toolbarDiff = compare(before.toolbar, after.toolbar);
   const menuDiff = compare(before.menus, after.menus);
   check("1. barre de boutons identique (tailles, polices, couleurs, icônes)", toolbarDiff.every((line) => line.startsWith("(")), toolbarDiff.slice(0, 8).join(" ; "));
-  check("1. barre de menus identique (élément menus à 15 px)", menuDiff.length === 0, menuDiff.slice(0, 8).join(" ; "));
+  check("1. barre de menus identique (élément menus à 15 px, police d'Inter)", menuDiff.length === 0, menuDiff.slice(0, 8).join(" ; "));
+  await page.evaluate(() => document.getElementById("menus").style.removeProperty("font-family"));
   // Taille du texte : celle de l'élément menus, héritée de la page hôte
   // (13 px), pour les boutons, les listes, les sous-menus et les raccourcis,
   // et suivie quand elle change.
@@ -358,6 +467,30 @@ try {
     only(fonts13, "13px") && only(fonts11, "11px") && fonts13.shortcuts.length === 1,
     `13 px : ${JSON.stringify(fonts13)} ; 11 px : ${JSON.stringify(fonts11)}`,
   );
+  // Apparence des menus : police de l'élément menus, puis propriétés
+  // --dc-menu-* (valeurs de DocGeo) ; sans elles, celles de DocCells.
+  console.log("--- 1. apparence des menus ---");
+  const looks = await menuLooks(page, "#menus ", "1-menus-default");
+  await page.evaluate((vars) => {
+    const menus = document.getElementById("menus");
+    for (const [name, value] of Object.entries(vars)) menus.style.setProperty(name, value);
+  }, DOCGEO_MENU_VARS);
+  const styled = await menuLooks(page, "#menus ", "1-menus-docgeo");
+  await page.evaluate((vars) => {
+    const menus = document.getElementById("menus");
+    for (const name of Object.keys(vars)) menus.style.removeProperty(name);
+  }, DOCGEO_MENU_VARS);
+  const hostFont = await page.evaluate(() => getComputedStyle(document.getElementById("menus")).fontFamily);
+  check(
+    "1. menus sortis dans la police de l'élément menus (titres, listes, sous-menus, raccourcis)",
+    [looks.fonts, styled.fonts].every((fonts) => fonts.length === 1 && fonts[0] === hostFont) && !/Inter/.test(hostFont),
+    `hôte « ${hostFont} », sans variables ${JSON.stringify(looks.fonts)}, avec ${JSON.stringify(styled.fonts)}`,
+  );
+  const defaultsDiff = lookDiff(looks, DOCCELLS_LOOK);
+  check("1. sans variables : apparence de DocCells (lignes 38 px, survol #f1f3f4, icônes 22 px…)", defaultsDiff.length === 0, defaultsDiff.join(" ; ") || JSON.stringify(looks));
+  const styledDiff = lookDiff(styled, DOCGEO_LOOK);
+  check("1. avec les variables de DocGeo : lignes 32 px, survol bleu, texte, icônes, chevron et raccourcis blancs, icônes 18 px dans la ligne", styledDiff.length === 0, styledDiff.join(" ; ") || JSON.stringify(styled));
+  note(`avec les variables : ${JSON.stringify(styled)}`);
   note(`hauteurs dans l'iframe : menus ${before.menuBarHeight} px, boutons ${before.toolbar.h} px`);
   // Hauteur de l'élément reçu, contenu centré verticalement.
   const centering = await page.evaluate(() => {
@@ -792,6 +925,22 @@ try {
   await page.keyboard.press("Escape");
   if (await frame.locator(".dc-menu-popover").count()) await frame.locator(".dc-menu-root-button", { hasText: "Format" }).click();
   check("8. menus rendus à l'iframe : 15 px, listes 14 px", iframeFonts.button === "15px" && iframeFonts.item === "14px", JSON.stringify(iframeFonts));
+  // Les variables de l'hôte n'atteignent pas les menus de l'iframe.
+  await page.evaluate((vars) => {
+    const menus = document.getElementById("menus");
+    for (const [name, value] of Object.entries(vars)) menus.style.setProperty(name, value);
+  }, DOCGEO_MENU_VARS);
+  const iframeLook = await menuLooks(frame, "", "8-iframe-menus");
+  await page.evaluate((vars) => {
+    const menus = document.getElementById("menus");
+    for (const name of Object.keys(vars)) menus.style.removeProperty(name);
+  }, DOCGEO_MENU_VARS);
+  const iframeLookDiff = lookDiff(iframeLook, DOCCELLS_LOOK);
+  check(
+    "8. menus rendus à l'iframe : police Inter et apparence de DocCells, variables de l'hôte sans effet",
+    iframeLookDiff.length === 0 && iframeLook.fonts.length === 1 && /^Inter\b/.test(iframeLook.fonts[0]),
+    iframeLookDiff.join(" ; ") || JSON.stringify(iframeLook.fonts),
+  );
   check(
     "8. unmountChrome : barres rendues à l'iframe, classeur intact",
     back.toolbar && back.menus && back.custom > 0 && back.bold !== "" && hostEmpty.menus === 0 && hostEmpty.toolbar === 0 && savedBack === saved,

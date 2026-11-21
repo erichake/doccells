@@ -11,9 +11,13 @@
 // - Hauteur : chaque barre prend la hauteur de l'élément reçu, contenu
 //   centré verticalement ; celle d'un élément sans hauteur imposée est la
 //   sienne.
-// - Taille du texte : la barre de menus (boutons, listes, sous-menus) prend
-//   celle de l'élément menus, héritée à travers le shadow root ; dans
-//   l'iframe, ses tailles fixes (15 px…) restent.
+// - Police : la barre de menus (boutons, listes, sous-menus, raccourcis)
+//   prend la famille et la taille de l'élément menus, héritées à travers le
+//   shadow root ; dans l'iframe, Inter… et ses tailles fixes (15 px…)
+//   restent.
+// - Apparence des menus : propriétés CSS --dc-menu-* posées par l'hôte sur
+//   l'élément menus (elles traversent aussi le shadow root), lues par
+//   StandaloneMenuBar.css, qui a les valeurs de DocCells par défaut.
 //
 // Le code de DocCells qui cherche ces barres dans son document (commandes
 // des menus, boutons ajoutés à la barre, dialogues) passe par queryChrome et
@@ -88,6 +92,7 @@ const CHROME_CSS = `
 }
 .dc-chrome > .dc-menu-bar { align-items: stretch; }
 .dc-chrome .dc-menu-root-button { min-height: 0; }
+.dc-chrome-menus .dc-menu-bar { font-family: inherit; }
 .dc-chrome-menus .dc-menu-root-button,
 .dc-chrome-menus .dc-menu-item,
 .dc-chrome-menus .dc-menu-shortcut { font-size: inherit; }
@@ -168,8 +173,8 @@ const prepare = (host, kind, sheet) => {
   const mount = host.ownerDocument.createElement("div");
   mount.className = `dc-chrome dc-chrome-${kind}`;
   // Ce dont la barre hérite dans l'iframe, sauf, pour la barre de menus, la
-  // taille du texte : celle de l'élément de l'hôte.
-  copyInherited(document.body, mount, kind === "menus" ? ["font-size"] : []);
+  // famille et la taille de la police : celles de l'élément de l'hôte.
+  copyInherited(document.body, mount, kind === "menus" ? ["font-family", "font-size"] : []);
   if (kind === "toolbar") copyInherited(document.querySelector(".fortune-container"), mount);
   // Un clic dans la page hôte lui donne le focus : la cellule en cours de
   // saisie dans l'iframe le perdrait. On le laisse où il est, sauf pour un
