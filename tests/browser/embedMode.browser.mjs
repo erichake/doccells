@@ -613,7 +613,7 @@ try {
     ];
     let invalid = null;
     try {
-      await window.request("setHostValues", { updates: [{ name: "AB", v: [1, 2] }] });
+      await window.request("setHostValues", { updates: [{ name: "AB", v: [1, "a"] }] });
     } catch (error) {
       invalid = error.message;
     }
@@ -757,6 +757,89 @@ try {
     "image d'une autre adresse retirée, aucune requête",
     trapped.images === 0 && !context.evilRequests.some((url) => url.includes("pixel")),
     `${trapped.images} image(s), ${context.evilRequests.length} requête(s)`,
+  );
+  await context.close();
+
+  // ------------------------------------------------------------------
+  console.log("--- désignation de cellules (setPicking, pick) ---");
+  context = await newContext();
+  page = await openHost(context, "http://doccells.test/host.html", "embed&singleSheet");
+  await page.evaluate(() => window.waitEvent((e) => e.event === "ready", 15000));
+  await page.evaluate(async (wb) => {
+    const dc = document.getElementById("dc").contentWindow.docCells;
+    await dc.load(wb);
+    window.picks = [];
+    dc.on("pick", ({ ref, done }) => window.picks.push({ ref, done }));
+  }, { format: "doccells", version: 1, sheets: [{ name: "Feuille 1", order: 0, celldata: [], config: {} }] });
+  const pickFrame = page.frame({ url: /doccells\.test\/fortunesheet/ });
+  const pickArea = await pickFrame.locator(".fortune-cell-area").boundingBox();
+  const nameBox = () => pickFrame.locator(".fortune-name-box").textContent();
+  // Colonnes de 100 px, lignes de 20 px (valeurs par défaut de DocCells).
+  const at = (r, c) => ({ x: pickArea.x + c * 100 + 50, y: pickArea.y + r * 20 + 10 });
+  await page.mouse.click(at(0, 0).x, at(0, 0).y);
+  const before = await nameBox();
+  await page.evaluate(() => {
+    const input = document.body.appendChild(document.createElement("input"));
+    input.id = "formula";
+    input.focus();
+  });
+  const protocolAnswers = await page.evaluate(async () => [
+    await window.request("setPicking", { on: true }),
+    await window.request("setPicking", { on: 1 }).catch((error) => error.message),
+  ]);
+  check("setPicking par le protocole", protocolAnswers[0] === null && protocolAnswers[1] === "Invalid request", JSON.stringify(protocolAnswers));
+  await page.mouse.move(at(1, 1).x, at(1, 1).y);
+  await page.mouse.down();
+  await page.mouse.move(at(2, 1).x, at(2, 1).y, { steps: 3 });
+  const frameBox = await pickFrame.locator(".dc-pick-frame").boundingBox();
+  await page.mouse.move(at(3, 2).x, at(3, 2).y, { steps: 3 });
+  await page.mouse.up();
+  const dragged = await page.evaluate(() => ({
+    picks: window.picks.splice(0),
+    focus: document.activeElement.id,
+  }));
+  check(
+    "glissé : pick à chaque plage, done au relâchement",
+    JSON.stringify(dragged.picks) ===
+      JSON.stringify([
+        { ref: "'Feuille 1'!B2", done: false },
+        { ref: "'Feuille 1'!B2:B3", done: false },
+        { ref: "'Feuille 1'!B2:C4", done: false },
+        { ref: "'Feuille 1'!B2:C4", done: true },
+      ]),
+    JSON.stringify(dragged.picks),
+  );
+  check(
+    "cadre de la plage désignée pendant le glissé",
+    frameBox && Math.abs(frameBox.x - (pickArea.x + 99)) <= 2 && Math.abs(frameBox.height - 41) <= 2,
+    JSON.stringify(frameBox),
+  );
+  check(
+    "sélection et focus inchangés",
+    (await nameBox()) === before && dragged.focus === "formula",
+    `${before} → ${await nameBox()}, focus ${dragged.focus}`,
+  );
+  await page.mouse.dblclick(at(4, 3).x, at(4, 3).y);
+  await page.waitForTimeout(150);
+  const clicked = await page.evaluate(() => ({
+    picks: window.picks.splice(0),
+    focus: document.activeElement.id,
+  }));
+  check(
+    "double clic : pick, aucun éditeur de cellule",
+    clicked.picks.at(-1)?.ref === "'Feuille 1'!D5" && clicked.picks.every((p) => p.ref === "'Feuille 1'!D5") &&
+      clicked.focus === "formula" && (await nameBox()) === before &&
+      !(await pickFrame.locator(".luckysheet-cell-input.editable, #luckysheet-rich-text-editor:focus").count()),
+    JSON.stringify(clicked),
+  );
+  await page.evaluate(() => document.getElementById("dc").contentWindow.docCells.setPicking(false));
+  await page.mouse.click(at(4, 3).x, at(4, 3).y);
+  await page.waitForTimeout(150);
+  check(
+    "fermé : plus de cadre ni de pick, la grille sélectionne",
+    (await pickFrame.locator(".dc-pick-frame").count()) === 0 &&
+      (await page.evaluate(() => window.picks.length)) === 0 && (await nameBox()) === "D5",
+    await nameBox(),
   );
   await context.close();
 } finally {

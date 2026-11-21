@@ -49,6 +49,7 @@ export const createDocCellsCore = ({
   readHostDependencies,
   loadWorkbook,
   saveWorkbook,
+  setPicking,
 }) => {
   const subscriptions = new Map();
   const listeners = new Map();
@@ -353,5 +354,13 @@ export const createDocCellsCore = ({
     // { background, backdropFilter } ou null.
     notifyDialog: (open, veil = null) =>
       emitAll(open ? { event: "dialog", open: true, veil } : { event: "dialog", open: false }),
+    // Mode « désignation » (cellPicker.js), ouvert ou fermé par l'hôte : pick
+    // à chaque plage désignée, done au relâchement.
+    setPicking: (on) => {
+      if (typeof on !== "boolean") throw new Error("Invalid request");
+      setPicking(on);
+      return null;
+    },
+    notifyPick: (ref, done) => emitAll({ event: "pick", ref, done }),
   };
 };

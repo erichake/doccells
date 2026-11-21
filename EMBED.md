@@ -24,7 +24,8 @@ inchangée et reste disponible avec ou sans `?embed`.
 Code : `src/features/embed/` (cœur `docCellsCore.js`, protocole
 `messageProtocol.js`, références `references.js`, valeurs `cellValues.js`,
 visibilité et dessin `visibility.js`, activation `embedMode.js`, barres
-dans la page hôte `chromeMount.js`, dialogues `dialogWatch.js`) ;
+dans la page hôte `chromeMount.js`, dialogues `dialogWatch.js`,
+désignation de cellules `cellPicker.js`) ;
 valeurs de l'hôte et fonction `GEO` : `src/features/recalc/hostValues.js`.
 
 ## 1. Activation et interface
@@ -116,6 +117,7 @@ docCells.setHostValues([{ name: "AB", v: 2.5 }]); // { recalculated, values }
 | `stats()`                          | `{ draws }` : nombre de dessins du canevas (diagnostic)          |
 | `mountChrome({ menus, toolbar })`  | `true`, ou `false` en `mode=student` (section 14)                |
 | `unmountChrome()`                  | `true`, ou `false` si les barres n'étaient pas sorties            |
+| `setPicking(on)`                   | `null` ; ouvre ou ferme la désignation de cellules (section 15)   |
 
 Les opérations sont celles du protocole (sections 5 et 6), mêmes paramètres,
 mêmes erreurs (levées en `Error`). Différences :
@@ -226,6 +228,7 @@ Restreindre qui peut afficher DocCells dans une iframe relève du serveur
 | `setHostValues` | `updates: [{ name, v }]`                                   | `{ recalculated }`                         |
 | `hostNames`     | —                                                          | `{ names }`                                |
 | `hostDependencies` | `ref`                                                   | `{ names }`                                |
+| `setPicking`    | `on` (booléen)                                             | `null` (section 15)                        |
 
 ### `load`
 
@@ -293,6 +296,7 @@ Après `load`, il est résolu à nouveau par nom de feuille.
 | `hostNamesChanged` | les noms lus par les formules `GEO` ont changé (formule saisie, effacée, collée, annulation…)                         | `{ names }`                                       |
 | `dialog`       | un dialogue de DocCells ou de FortuneSheet s'est ouvert, ou le dernier ouvert s'est fermé, ou le voile du premier plan a changé | `{ open, veil }` (`veil` avec `open: true`)      |
 | `save`         | l'utilisateur a demandé l'enregistrement (Cmd-S / Ctrl-S)                                                                 | —                                                 |
+| `pick`         | désignation ouverte : une cellule ou une plage désignée sur la grille (section 15)                                        | `{ ref, done }`                                   |
 
 - `source` de `values` vaut `"host"` (écriture de l'hôte), `"user"` (action
   de l'utilisateur) ou `"load"`. Il permet d'ignorer l'écho de ses propres
@@ -671,3 +675,35 @@ docCells.unmountChrome(); // les barres reviennent dans l'iframe
 La barre de boutons de FortuneSheet est sortie par un correctif de son
 bundle, appliqué à l'installation (`scripts/patch-fortune-chrome-portal.cjs`,
 dans `postinstall`).
+
+## 15. Désignation de cellules : `setPicking` et `pick`
+
+Comme dans Excel quand on écrit une formule : pendant que l'utilisateur
+écrit dans un champ de la page hôte, cliquer une cellule ou glisser sur une
+plage de la grille en donne la référence, que l'hôte insère dans son champ.
+
+- `setPicking(true)` ouvre le mode « désignation », `setPicking(false)` le
+  ferme (accès synchrone, ou requête `setPicking` `{ on }` du protocole ;
+  `on` doit être un booléen, sinon `Invalid request`). C'est l'hôte qui
+  l'ouvre, tant que son champ a le focus, par exemple.
+- **Désignation ouverte**, un appui sur la grille (bouton principal),
+  puis le glissé, émettent `pick` `{ ref, done }` à chaque nouvelle plage
+  désignée : `ref` est sa référence canonique (section 3), avec le nom de la
+  feuille montrée (`Feuille1!B3`, `Feuille1!A1:A20`), une cellule fusionnée
+  comptant entière ; `done` vaut `true` au relâchement (ou à l'annulation
+  du pointeur), avec la dernière plage. Hors de la grille pendant le
+  glissé, la cellule la plus proche du bord compte.
+- **Rien ne change dans DocCells** : ni la cellule active, ni la
+  sélection, ni le contenu ; aucun éditeur de cellule ne s'ouvre (double
+  clic compris), aucun menu contextuel. Le focus reste où il est (dans le
+  champ de l'hôte). L'appui et les événements de souris et de toucher qui
+  le suivent n'atteignent ni FortuneSheet ni les écouteurs de l'hôte posés
+  sur la fenêtre de l'iframe (ils sont arrêtés en capture, avant eux).
+- Un **cadre** pointillé montre la plage désignée, dans la grille ; il
+  reste après le relâchement, jusqu'à la désignation suivante ou la
+  fermeture du mode.
+- Les en-têtes, les barres de défilement, la barre de formule et les
+  barres d'outils se comportent comme d'habitude : un clic y prend le
+  focus, et c'est à l'hôte de fermer alors la désignation.
+- Fermé pendant un glissé, le mode s'arrête sans autre événement `pick`.
+

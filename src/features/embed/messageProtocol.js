@@ -51,6 +51,7 @@ export const startMessageProtocol = ({ core, allowedOrigins = null, version }) =
     unsubscribe: async ({ subscription }) => core.unsubscribe(subscription, OWNER),
     hostNames: async () => ({ names: core.hostNames() }),
     hostDependencies: async ({ ref }) => ({ names: core.hostDependencies(requireString(ref)) }),
+    setPicking: async ({ on }) => core.setPicking(on),
   };
 
   // Écritures rapides : setCellValues (par cellule) et setHostValues (par

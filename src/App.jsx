@@ -110,6 +110,7 @@ import {
   unmountChrome,
 } from "./features/embed/chromeMount.js";
 import { watchDialogs } from "./features/embed/dialogWatch.js";
+import { startCellPicker } from "./features/embed/cellPicker.js";
 import {
   AUTOSAVE_DEBOUNCE_MS,
   deleteRecoverySnapshot,
@@ -1520,9 +1521,16 @@ const App = () => {
 
   useEffect(() => {
     if (!embedConfig.enabled) return undefined;
+    const getContext = () =>
+      (isReadyRef.current && workbookRef.current?.doccellsGetLiveContext?.()) || null;
+    // Avant tout écouteur de l'hôte, posé après ready (cellPicker.js).
+    const picker = startCellPicker({
+      getContext,
+      getFreeze: () => workbookRef.current?.doccellsFreeze?.(),
+      onPick: (ref, done) => docCellsCoreRef.current?.notifyPick(ref, done),
+    });
     const core = createDocCellsCore({
-      getContext: () =>
-        (isReadyRef.current && workbookRef.current?.doccellsGetLiveContext?.()) || null,
+      getContext,
       whenReady: () => waitUntilReady(),
       writeValues: (updates) => {
         const result = embedOperationsRef.current.writeLiveValues(updates);
@@ -1539,6 +1547,7 @@ const App = () => {
       loadWorkbook: (workbook, options) =>
         embedOperationsRef.current.loadWorkbookFromHost(workbook, options),
       saveWorkbook: () => embedOperationsRef.current.saveWorkbookForHost(),
+      setPicking: picker.setPicking,
     });
     docCellsCoreRef.current = core;
     window.docCells = createWindowApi(core, {
@@ -1553,6 +1562,7 @@ const App = () => {
     return () => {
       stopDialogs();
       stopProtocol();
+      picker.stop();
       delete window.docCells;
       docCellsCoreRef.current = null;
     };

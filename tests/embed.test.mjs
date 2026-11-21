@@ -109,6 +109,7 @@ const createCore = (ctx) =>
     readHostDependencies,
     loadWorkbook: async () => {},
     saveWorkbook: () => [],
+    setPicking: (on) => (ctx.picking = on),
   });
 
 const nextTurn = () => new Promise((resolve) => setTimeout(resolve, 10));
@@ -350,4 +351,23 @@ test("GEO : hostNamesChanged quand l'utilisateur ajoute ou retire un nom", () =>
   assert.equal(events.length, 1);
   core.setHostValues([{ name: "CD", v: 10 }, { name: "AB", v: 1 }], "window");
   assert.deepEqual(core.getValues("Feuille1!D1"), [[11]]);
+});
+
+test("désignation : setPicking ouvert et fermé par l'hôte, pick à tous les clients", () => {
+  const ctx = createWorkbookContext();
+  const core = createCore(ctx);
+  assert.equal(core.setPicking(true), null);
+  assert.equal(ctx.picking, true);
+  assert.throws(() => core.setPicking("yes"), /Invalid request/);
+  assert.equal(ctx.picking, true);
+  const events = [];
+  core.listen("window", (event) => events.push(event));
+  core.listen("message", (event) => events.push(event));
+  core.notifyPick("Feuille1!A1:A3", false);
+  assert.deepEqual(events, [
+    { event: "pick", ref: "Feuille1!A1:A3", done: false },
+    { event: "pick", ref: "Feuille1!A1:A3", done: false },
+  ]);
+  core.setPicking(false);
+  assert.equal(ctx.picking, false);
 });

@@ -16,9 +16,11 @@
  * Patch 3: the Workbook API gains doccellsGetLiveContext() (the context of
  *   the last render, i.e. the object React holds as state),
  *   doccellsRedraw() (redraws the current sheet from that context),
- *   doccellsDrawCount() (canvas draws so far, whoever asked for them) and
+ *   doccellsDrawCount() (canvas draws so far, whoever asked for them),
  *   doccellsRefreshFormulaBar() (shows the selected cell's current content in
- *   the formula bar, which FortuneSheet only refreshes on selection changes).
+ *   the formula bar, which FortuneSheet only refreshes on selection changes)
+ *   and doccellsFreeze() (the frozen panes of the current sheet, which
+ *   FortuneSheet keeps out of the context, for the embedded cell picker).
  *
  * Patch 4: __doccellsSetDrawGate(gate) is exported. Every canvas draw, React
  *   effect included, first asks gate(); when it returns false the draw is
@@ -111,11 +113,18 @@ const API_PARTS = {
       input.innerHTML = ${core}escapeHTMLTag(${core}escapeScriptTag(value));
     };
 `,
+  freeze: () => `    __doccellsApi.doccellsFreeze = function () {
+      var liveContext = __doccellsContextRef.current;
+      var freezen = globalCache.current.freezen;
+      return liveContext && freezen ? freezen[liveContext.currentSheetId] : undefined;
+    };
+`,
 };
 const API_VERSIONS = [
   ["liveContext", "redraw"],
   ["liveContext", "redraw", "drawCount"],
   ["liveContext", "redraw", "drawCount", "formulaBar"],
+  ["liveContext", "redraw", "drawCount", "formulaBar", "freeze"],
 ];
 const buildApi = (parts, core) => `    var __doccellsApi = generateAPIs(context, setContextWithProduce, handleUndo, handleRedo, mergedSettings, cellInput.current, scrollbarX.current, scrollbarY.current);
 ${parts.map((part) => API_PARTS[part](core)).join("")}    return __doccellsApi;`;
