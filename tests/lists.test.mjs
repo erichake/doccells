@@ -5,13 +5,19 @@ import test from "node:test";
 import {
   defaultContext,
   delFunctionGroup,
+  dropCellCache,
   execFunctionGroup,
   execfunction,
   groupValuesRefresh,
   handleNumberDecrease,
   handleNumberIncrease,
+  handlePaste,
+  rangeValueToHtml,
+  selectionCache,
   setCellValue,
   setFormulaCellInfoMap,
+  update,
+  updateDropCell,
   valueShowEs,
 } from "@fortune-sheet/core";
 import "../src/features/recalc/installFormulaEngine.js";
@@ -173,4 +179,82 @@ test("décimales : colonne sélectionnée depuis une cellule vide, le format vie
   assert.equal(cell("D8").m, "0.00000000");
   handleNumberIncrease(ctx, null);
   assert.equal(cell("D6").m, "[-0.137278759, 0.270863488]");
+});
+
+// Copier-coller dans la feuille (Cmd+C, Cmd+V) : le presse-papiers porte le
+// tableau HTML de la copie, reconnu comme une copie de la feuille.
+const copyPaste = (ctx, from, to) => {
+  const at = (address) => [Number(address.slice(1)) - 1, "ABCDE".indexOf(address[0])];
+  const [r, c] = at(from);
+  const [r2, c2] = at(to);
+  const range = { row: [r, r], column: [c, c] };
+  ctx.luckysheet_select_save = [range];
+  ctx.luckysheet_copy_save = { dataSheetId: "s", copyRange: [range], RowlChange: false, HasMC: false };
+  const html = rangeValueToHtml(ctx, "s", ctx.luckysheet_select_save);
+  ctx.luckysheet_select_save = [{ row: [r2, r2], column: [c2, c2], row_focus: r2, column_focus: c2 }];
+  selectionCache.isPasteAction = true;
+  handlePaste(ctx, { clipboardData: { getData: (kind) => (kind === "text/html" ? html : "") } });
+};
+
+test("copier-coller et poignée de recopie d'une formule dont le résultat est une liste", () => {
+  const { type, cell, data, ctx } = createSheet();
+  type("D2", "[-1.2564, 4.568]");
+  type("D3", "=D2^2");
+  // Collée sous elle-même : =D3^2, une liste (le collage s'arrêtait sur
+  // l'erreur « unsupported value in General format »).
+  copyPaste(ctx, "D3", "D4");
+  assert.equal(cell("D4").f, "=D3^2");
+  assert.deepEqual([cell("D4").m, cell("D4").ct], ["[240.2748646, 442.7953805]", { fa: "General", t: "g" }]);
+  // Collée ailleurs : =E1^2 vaut 0, un nombre aligné comme un nombre.
+  copyPaste(ctx, "D3", "E2");
+  assert.equal(cell("E2").f, "=E1^2");
+  assert.deepEqual([cell("E2").v, cell("E2").m, cell("E2").ct], [0, "0", { fa: "General", t: "n" }]);
+  // Le format de nombres de la cellule copiée suit la liste.
+  data[2][3].ct = { fa: "0.00", t: "g" };
+  copyPaste(ctx, "D3", "D5");
+  assert.deepEqual([cell("D5").m, cell("D5").ct], ["[-138335.74, 212785.20]", { fa: "0.00", t: "g" }]);
+  // Poignée de recopie de D3 vers le bas (la liste prenait le format texte).
+  Object.assign(dropCellCache, {
+    direction: "down",
+    copyRange: { row: [2, 2], column: [3, 3] },
+    applyRange: { row: [5, 6], column: [3, 3] },
+  });
+  ctx.luckysheet_select_save = [{ row: [2, 6], column: [3, 3] }];
+  updateDropCell(ctx);
+  assert.equal(cell("D6").f, "=D5^2");
+  assert.deepEqual(cell("D6").ct, { fa: "0.00", t: "g" });
+  assert.match(cell("D6").m, /^\[-?[\d.]+, -?[\d.]+\]$/);
+  // Le formateur commun accepte une liste.
+  assert.equal(update("General", [1.5, 2]), "[1.5, 2]");
+});
+
+// Texte collé depuis une autre application : saisi comme au clavier.
+const pasteText = (ctx, to, text) => {
+  const r = Number(to.slice(1)) - 1;
+  const c = "ABCDE".indexOf(to[0]);
+  ctx.luckysheet_copy_save = undefined;
+  ctx.luckysheet_select_save = [{ row: [r, r], column: [c, c], row_focus: r, column_focus: c }];
+  selectionCache.isPasteAction = true;
+  handlePaste(ctx, { clipboardData: { getData: (kind) => (kind === "text/plain" ? text : ""), files: [] } });
+};
+
+test("collage de texte venu d'ailleurs : liste et nombre comme à la saisie", () => {
+  const { type, cell, data, ctx } = createSheet();
+  type("A1", "=B1*2");
+  type("B2", "=SUM(B1)");
+  // Une liste collée remplace la formule de la cellule.
+  pasteText(ctx, "B1", "[1, 2]");
+  assert.deepEqual([cell("B1").v, cell("B1").m, cell("B1").f], [[1, 2], "[1, 2]", undefined]);
+  // Plusieurs cellules (tabulations), dont une au format Texte.
+  data[2][1] = { ct: { fa: "@", t: "s" } };
+  pasteText(ctx, "A3", "1.5\t[3, 4]\n'7\t2");
+  type("E1", "1.5");
+  type("E2", "'7");
+  type("E3", "2");
+  assert.deepEqual(cell("A3"), cell("E1"));
+  assert.equal(cell("B3").v, "[3, 4]");
+  assert.deepEqual(cell("A4"), cell("E2"));
+  assert.deepEqual(cell("B4"), cell("E3"));
+  // Le tableau HTML (Excel, Numbers, une page web) passe par le DOM : testé
+  // dans le navigateur.
 });

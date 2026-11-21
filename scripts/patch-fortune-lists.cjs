@@ -21,6 +21,13 @@
  *   cell holds no number nor list (a column selected from an empty cell),
  *   the buttons take the format of the selection's first list or nonzero
  *   number.
+ * Patch 6: a formula's result written outside setCellValue (paste, fill
+ *   handle, sort, a formula pasted as text) is shown like one typed in the
+ *   cell: update() formats a list instead of throwing ("unsupported value in
+ *   General format", which stopped a paste halfway), a list result gets its
+ *   text and type "g" (the fill handle gave it the text format "@"), and a
+ *   number result in a cell copied from a list is a number again (type "n",
+ *   aligned right).
  *
  * Must run after patch-fortune-formula-names.cjs (__doccellsShortLocale).
  */
@@ -181,6 +188,69 @@ const DECIMALS_LIST = `  var __doccellsListCell = !!__doccellsLists && !!cell &&
     if (!cell || !cell.v) return;
     var mask = genarate(__doccellsListCell ? __doccellsListMaskValue(cell.v) : cell.v);`;
 
+const UPDATE_START = `function update(fmt, v) {
+  return SSF.format(fmt, v);
+}`;
+
+const UPDATE_LIST = `// A formula's result written outside setCellValue (paste, fill handle,
+// sort): a list gets its text and keeps the cell's number format, with type
+// "g"; a number in a cell copied from a list is a number again. True when the
+// cell holds a list.
+function __doccellsFormulaResult(cell) {
+  if (!__doccellsLists || !cell || typeof cell !== "object") return false;
+  if (Array.isArray(cell.v)) {
+    var fa = __doccellsListFormat(cell.ct);
+    cell.ct = { fa: fa, t: "g" };
+    cell.m = __doccellsFormatList(cell.v, fa);
+    return true;
+  }
+  if (cell.ct && cell.ct.t === "g" && typeof cell.v === "number") {
+    cell.ct = { fa: cell.ct.fa || "General", t: "n" };
+  }
+  return false;
+}
+function update(fmt, v) {
+  if (__doccellsLists && Array.isArray(v)) return __doccellsFormatList(v, __doccellsListFormat({ fa: fmt, t: "n" }));
+  return SSF.format(fmt, v);
+}`;
+
+// pasteHandlerOfCopyPaste: a pasted formula, recalculated at its new place.
+const PASTE_RESULT = `                value.m = update("General", funcV[1]);
+              }`;
+
+const PASTE_RESULT_LIST = `                value.m = update("General", funcV[1]);
+              }
+              __doccellsFormulaResult(value);`;
+
+// handleFormulaStringPaste: a formula pasted as text.
+const TEXT_PASTE_RESULT = `  d[r][c].m = val.toString();
+  d[r][c].v = val;`;
+
+const TEXT_PASTE_RESULT_LIST = `  d[r][c].m = val.toString();
+  d[r][c].v = val;
+  __doccellsFormulaResult(d[r][c]);`;
+
+// updateDropCell (fill handle), down, up, right and left.
+const fillResult = (cell, v) => [
+  `            if (${cell}.spl != null) {
+              ${cell}.spl = ${v}[3].data;
+            } else if (${cell}.v != null) {`,
+  `            if (${cell}.spl != null) {
+              ${cell}.spl = ${v}[3].data;
+            } else if (__doccellsFormulaResult(${cell})) ; else if (${cell}.v != null) {`,
+];
+
+// sortSelection and the sort patches of patch-fortune-core.cjs.
+const SORT_RESULT_LINES = [
+  `        cell.m = update(((_cell$ct = cell.ct) === null || _cell$ct === void 0 ? void 0 : _cell$ct.fa) || "General", cell.v);`,
+  `          _cellSort4.m = update((((_ct4 = _cellSort4.ct) === null || _ct4 === void 0 ? void 0 : _ct4.fa) || "General"), _cellSort4.v);`,
+  `          _cellSort5.m = update((((_ct5 = _cellSort5.ct) === null || _ct5 === void 0 ? void 0 : _ct5.fa) || "General"), _cellSort5.v);`,
+];
+const sortResult = (line) => {
+  const indent = line.match(/^ */)[0];
+  return [line, `${line}\n${indent}__doccellsFormulaResult(${line.trim().split(".")[0]});`];
+};
+
 const EXPORT_LINES = {
   "index.esm.js": "\nexport { __doccellsConfigureLists };\n",
   "index.js": "\nexports.__doccellsConfigureLists = __doccellsConfigureLists;\n",
@@ -208,6 +278,17 @@ for (const [bundle, exportLine] of Object.entries(EXPORT_LINES)) {
     { old: FORMAT_CELL_START, new: FORMAT_CELL_LIST },
     { old: DECIMALS_FOCUS, new: DECIMALS_FOCUS_SELECTION, count: 2 },
     { old: DECIMALS_START, new: DECIMALS_LIST, count: 2 },
+    { old: UPDATE_START, new: UPDATE_LIST },
+    { old: PASTE_RESULT, new: PASTE_RESULT_LIST },
+    { old: TEXT_PASTE_RESULT, new: TEXT_PASTE_RESULT_LIST },
+    ...[["cell", "v"], ["_cell", "_v2"], ["_cell2", "_v4"], ["_cell3", "_v6"]].map(([cell, v]) => {
+      const [old, next] = fillResult(cell, v);
+      return { old, new: next };
+    }),
+    ...SORT_RESULT_LINES.map((line) => {
+      const [old, next] = sortResult(line);
+      return { old, new: next };
+    }),
   ];
   let ok = true;
   for (const { old, new: next, count: expected = 1 } of replacements) {
