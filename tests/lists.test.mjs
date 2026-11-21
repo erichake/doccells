@@ -3,6 +3,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  api,
   defaultContext,
   delFunctionGroup,
   dropCellCache,
@@ -257,4 +258,23 @@ test("collage de texte venu d'ailleurs : liste et nombre comme à la saisie", ()
   assert.deepEqual(cell("B4"), cell("E3"));
   // Le tableau HTML (Excel, Numbers, une page web) passe par le DOM : testé
   // dans le navigateur.
+});
+
+test("classeur relu dans une autre langue : une liste saisie prend les séparateurs de la langue affichée", () => {
+  // Enregistrée en français : m n'est qu'un texte d'affichage
+  // (WORKBOOK_FORMAT.md), la valeur fait foi. Les tests tournent en anglais.
+  const saved = Object.freeze({ v: Object.freeze([0, 0.5]), m: "[0; 0,5]", ct: Object.freeze({ fa: "General", t: "g" }) });
+  const number = { v: 2.5, m: "2,5", ct: { fa: "General", t: "n" } };
+  const celldata = [
+    { r: 0, c: 0, v: saved },
+    { r: 0, c: 1, v: number },
+  ];
+  const data = api.celldataToData(celldata, 1, 2);
+  assert.deepEqual(data[0][0], { v: [0, 0.5], m: "[0, 0.5]", ct: { fa: "General", t: "g" } });
+  assert.equal(data[0][1], number);
+  // Même chemin à l'ouverture d'une feuille par le classeur.
+  const ctx = defaultContext({});
+  ctx.luckysheetfile = [];
+  api.initSheetData(ctx, 0, { name: "Feuille1", id: "s", celldata, row: 1, column: 2 });
+  assert.equal(ctx.luckysheetfile[0].data[0][0].m, "[0, 0.5]");
 });

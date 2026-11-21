@@ -123,7 +123,7 @@ connus :
 | Champ              | Contenu                                                                                   |
 | ------------------ | ----------------------------------------------------------------------------------------- |
 | `v`                | valeur : nombre (date : numéro de série, 1 = 1900-01-01), texte, booléen ou liste (tableau JSON de nombres et de listes, `[2.5, [1, 2]]`, écrit `[2,5; [1; 2]]` en français) ; pour une formule, son dernier résultat |
-| `m`                | texte affiché, dans la langue du navigateur qui a enregistré (« 10,00 » en français) : recalculé au chargement pour une formule, affiché tel quel pour une valeur |
+| `m`                | texte affiché, dans la langue du navigateur qui a enregistré (« 10,00 » en français) : recalculé au chargement pour une formule et pour une liste, affiché tel quel pour une autre valeur |
 | `f`                | formule, en anglais avec la virgule pour séparateur (`=SUM(A1,7)`), quelle que soit la langue de saisie |
 | `ct`               | format : `{ fa, t }`, `fa` le format de nombre (`General`, `0.00`, `yyyy-MM-dd`, `@` pour du texte…), `t` le type (`n` nombre, `s` texte, `d` date, `b` booléen, `e` erreur, `inlineStr` texte enrichi, ses morceaux dans `s`) |
 | `bg`, `fc`         | couleur de fond et du texte                                                               |
@@ -142,7 +142,8 @@ connus :
 
 `v` et `f` font foi ; `m` n'est qu'un texte d'affichage. Une archive
 rechargée dans une autre langue donne donc les mêmes valeurs et formules,
-avec des textes affichés recalculés pour les formules.
+avec des textes affichés recalculés pour les formules et les listes
+(`[0; 0]` enregistré en français s'affiche `[0, 0]` en anglais).
 
 Les marqueurs internes de la mise en forme conditionnelle (`_dcCf`) ne sont
 jamais archivés : `save` les retire, le style étant reconstruit depuis

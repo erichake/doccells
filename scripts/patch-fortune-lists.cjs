@@ -28,6 +28,12 @@
  *   text and type "g" (the fill handle gave it the text format "@"), and a
  *   number result in a cell copied from a list is a number again (type "n",
  *   aligned right).
+ * Patch 7: a list read from a saved workbook (celldata, by initSheetData in
+ *   @fortune-sheet/core and its copy in @fortune-sheet/react, and by
+ *   celldataToData) gets its text in the language shown: m was written in
+ *   the language of the browser that saved it ("[0; 0]" in French), and is
+ *   only a display text (WORKBOOK_FORMAT.md). The saved cell is left
+ *   untouched (it may be frozen by immer): the grid gets a copy.
  *
  * Must run after patch-fortune-formula-names.cjs (__doccellsShortLocale).
  */
@@ -36,6 +42,7 @@ const fs = require("fs");
 const path = require("path");
 
 const CORE_DIST = path.join(__dirname, "..", "node_modules", "@fortune-sheet", "core", "dist");
+const REACT_DIST = path.join(__dirname, "..", "node_modules", "@fortune-sheet", "react", "dist");
 
 const REGISTRY = `/* __doccells_lists__ */
 var __doccellsLists = null;
@@ -251,9 +258,35 @@ const sortResult = (line) => {
   return [line, `${line}\n${indent}__doccellsFormulaResult(${line.trim().split(".")[0]});`];
 };
 
+// Patch 7: celldata to the grid's rows.
+const LOAD_CELL = `      expandedData[d.r][d.c] = d.v;`;
+const LOAD_CELL_LIST = (fn) => `      expandedData[d.r][d.c] = ${fn}(d.v);`;
+const LOADED_CELL_START = `function initSheetData(draftCtx, index, newData) {`;
+const LOADED_CELL = `// A list read from a saved workbook: its text in the language shown.
+function __doccellsLoadedCell(cell) {
+  if (!__doccellsLists || !cell || typeof cell !== "object" || !Array.isArray(cell.v)) return cell;
+  var fa = __doccellsListFormat(cell.ct);
+  return Object.assign({}, cell, { m: __doccellsFormatList(cell.v, fa), ct: { fa: fa, t: "g" } });
+}
+function initSheetData(draftCtx, index, newData) {`;
+
 const EXPORT_LINES = {
   "index.esm.js": "\nexport { __doccellsConfigureLists };\n",
   "index.js": "\nexports.__doccellsConfigureLists = __doccellsConfigureLists;\n",
+};
+
+const LOADED_EXPORT_LINES = {
+  "index.esm.js": "export { __doccellsLoadedCell };\n",
+  "index.js": "exports.__doccellsLoadedCell = __doccellsLoadedCell;\n",
+};
+
+// Patch 7 in @fortune-sheet/react, whose initSheetData is its own copy.
+const REACT_LOAD = {
+  "index.esm.js": {
+    fn: "__doccellsLoadedCell",
+    header: "import { __doccellsLoadedCell } from '@fortune-sheet/core';\n",
+  },
+  "index.js": { fn: "core.__doccellsLoadedCell", header: "" },
 };
 
 let failures = 0;
@@ -289,6 +322,8 @@ for (const [bundle, exportLine] of Object.entries(EXPORT_LINES)) {
       const [old, next] = sortResult(line);
       return { old, new: next };
     }),
+    { old: LOADED_CELL_START, new: LOADED_CELL },
+    { old: LOAD_CELL, new: LOAD_CELL_LIST("__doccellsLoadedCell"), count: 2 },
   ];
   let ok = true;
   for (const { old, new: next, count: expected = 1 } of replacements) {
@@ -302,11 +337,31 @@ for (const [bundle, exportLine] of Object.entries(EXPORT_LINES)) {
     src = src.split(old).join(next);
   }
   if (!src.includes(exportLine)) src += exportLine;
+  if (!src.includes(LOADED_EXPORT_LINES[bundle])) src += LOADED_EXPORT_LINES[bundle];
   if (!ok) {
     failures += 1;
     continue;
   }
   fs.writeFileSync(file, src, "utf8");
   console.log(`patch-fortune-lists: patched ${bundle}`);
+}
+for (const [bundle, { fn, header }] of Object.entries(REACT_LOAD)) {
+  const file = path.join(REACT_DIST, bundle);
+  if (!fs.existsSync(file)) {
+    console.warn(`patch-fortune-lists: react ${bundle} not found, skipping`);
+    continue;
+  }
+  let src = fs.readFileSync(file, "utf8");
+  const next = LOAD_CELL_LIST(fn);
+  if (src.includes(next)) continue;
+  const count = src.split(LOAD_CELL).length - 1;
+  if (count !== 1) {
+    console.error(`patch-fortune-lists: ${count} matches instead of 1 in react ${bundle} for:\n${LOAD_CELL}`);
+    failures += 1;
+    continue;
+  }
+  src = header + src.replace(LOAD_CELL, next);
+  fs.writeFileSync(file, src, "utf8");
+  console.log(`patch-fortune-lists: patched react ${bundle}`);
 }
 if (failures > 0) process.exit(1);
