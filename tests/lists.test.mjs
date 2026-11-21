@@ -8,6 +8,8 @@ import {
   execFunctionGroup,
   execfunction,
   groupValuesRefresh,
+  handleNumberDecrease,
+  handleNumberIncrease,
   setCellValue,
   setFormulaCellInfoMap,
   valueShowEs,
@@ -42,7 +44,7 @@ const createSheet = () => {
     groupValuesRefresh(ctx);
   };
   const cell = (address) => data[Number(address.slice(1)) - 1]["ABCDE".indexOf(address[0])];
-  return { data, type, cell };
+  return { ctx, data, type, cell };
 };
 
 test("opérateurs : complexes, terme à terme, multiples, comme DocGeo", () => {
@@ -121,4 +123,54 @@ test("cellules : liste saisie, formules, recalcul des dépendantes", () => {
   assert.deepEqual([cell("A4").v.map((x) => x + 0), cell("A4").m], [[0, -1], "[0, -1]"]);
   type("A1", "5");
   assert.deepEqual(cell("A3").v, [15, 10]);
+});
+
+test("décimales : les boutons et le format de la cellule s'appliquent aux nombres d'une liste", () => {
+  const { type, cell, data, ctx } = createSheet();
+  type("A1", "[-0.137278759, 0.270863488]");
+  type("A2", "1.5");
+  type("A3", "=A1*2");
+  // Plage A1:A3, cellule active A1 (une liste).
+  ctx.luckysheet_select_save = [{ row: [0, 2], column: [0, 0], row_focus: 0, column_focus: 0 }];
+  handleNumberDecrease(ctx, null);
+  assert.deepEqual(cell("A1").ct, { fa: "0.00000000", t: "g" });
+  assert.equal(cell("A1").m, "[-0.13727876, 0.27086349]");
+  assert.equal(cell("A2").m, "1.50000000");
+  for (let i = 0; i < 6; i += 1) handleNumberDecrease(ctx, null);
+  assert.equal(cell("A1").m, "[-0.14, 0.27]");
+  assert.deepEqual(cell("A1").v, [-0.137278759, 0.270863488]);
+  assert.equal(cell("A3").m, "[-0.27, 0.54]");
+  handleNumberIncrease(ctx, null);
+  assert.equal(cell("A1").m, "[-0.137, 0.271]");
+  // Le format reste au recalcul et à une nouvelle saisie de liste.
+  type("A1", "[1, 2]");
+  assert.equal(cell("A1").m, "[1.000, 2.000]");
+  assert.equal(cell("A3").m, "[2.000, 4.000]");
+  // Cellule active : un nombre, la liste suit.
+  ctx.luckysheet_select_save = [{ row: [0, 2], column: [0, 0], row_focus: 1, column_focus: 0 }];
+  handleNumberDecrease(ctx, null);
+  assert.equal(cell("A1").m, "[1.00, 2.00]");
+  // Une liste qui devient un nombre garde le format, comme un nombre.
+  type("A1", "5");
+  assert.deepEqual([cell("A1").ct, cell("A1").m], [{ fa: "0.00", t: "n" }, "5.00"]);
+  // Liste en General, cellule active sans décimales : rien à réduire.
+  type("B1", "[2, 1]");
+  ctx.luckysheet_select_save = [{ row: [0, 0], column: [1, 1], row_focus: 0, column_focus: 1 }];
+  handleNumberIncrease(ctx, null);
+  assert.equal(cell("B1").m, "[2.0, 1.0]");
+});
+
+test("décimales : colonne sélectionnée depuis une cellule vide, le format vient de la première liste", () => {
+  const { type, cell, ctx } = createSheet();
+  type("D6", "[-0.137278759, 0.270863488]");
+  type("D7", "[0, 0]");
+  type("D8", "0");
+  // Toute la colonne D, cellule active D1 vide.
+  ctx.luckysheet_select_save = [{ row: [0, 19], column: [3, 3], row_focus: 0, column_focus: 3 }];
+  handleNumberDecrease(ctx, null);
+  assert.equal(cell("D6").m, "[-0.13727876, 0.27086349]");
+  assert.equal(cell("D7").m, "[0.00000000, 0.00000000]");
+  assert.equal(cell("D8").m, "0.00000000");
+  handleNumberIncrease(ctx, null);
+  assert.equal(cell("D6").m, "[-0.137278759, 0.270863488]");
 });
