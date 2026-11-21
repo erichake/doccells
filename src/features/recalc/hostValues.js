@@ -9,16 +9,17 @@
 // - Un nom non fourni, ou fourni sans valeur : #N/A.
 // - Le nom GEO est le même dans toutes les langues.
 import { functionCalls } from "../../lib/formula-parser/compiled-formula.js";
+import { isList } from "../../lib/formula-parser/helper/list.js";
 
 export const HOST_FUNCTION = "GEO";
 
 const values = new Map();
 
-// Valeur gardée : nombre fini, texte, booléen ; tout le reste est « sans
-// valeur » (undefined).
+// Valeur gardée : nombre fini, texte, booléen, liste (helper/list.js) ; tout
+// le reste est « sans valeur » (undefined).
 const normalize = (value) => {
   if (typeof value === "number") return Number.isFinite(value) ? value : undefined;
-  if (typeof value === "string" || typeof value === "boolean") return value;
+  if (typeof value === "string" || typeof value === "boolean" || isList(value)) return value;
   return undefined;
 };
 
@@ -27,7 +28,11 @@ export const isHostValue = (value) =>
   value === null ||
   typeof value === "number" ||
   typeof value === "string" ||
-  typeof value === "boolean";
+  typeof value === "boolean" ||
+  isList(value);
+
+const sameValue = (a, b) =>
+  a === b || (Array.isArray(a) && Array.isArray(b) && JSON.stringify(a) === JSON.stringify(b));
 
 /**
  * Enregistre des valeurs : [{ name, v }]. Renvoie les noms dont la valeur a
@@ -37,7 +42,7 @@ export const storeHostValues = (updates) => {
   const changed = [];
   for (const { name, v } of updates) {
     const value = normalize(v);
-    if (values.get(name) === value) continue;
+    if (sameValue(values.get(name), value)) continue;
     if (value === undefined) values.delete(name);
     else values.set(name, value);
     changed.push(name);

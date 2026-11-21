@@ -1,7 +1,10 @@
 import { toNumber } from "./../../helper/number.js";
+import { listOperation } from "./../../helper/list.js";
 import { ERROR_VALUE } from "./../../error.js";
 export var SYMBOL = "+";
 export default function func(first) {
+  // DocCells : listes (helper/list.js).
+  if (Array.isArray(first) || Array.isArray(arguments[1])) return listOperation(SYMBOL, first, arguments[1]);
   for (var _len = arguments.length, rest = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     rest[_key - 1] = arguments[_key];
   }

@@ -12,6 +12,7 @@ import {
   toExcelDataValidation,
 } from "../features/dataValidation/dataValidationUtils.js";
 import { patchWorkbookWithNativeCheckboxes } from "../features/dataValidation/excelCheckboxOoxml.js";
+import { rewriteListLiterals } from "../lib/formula-parser/helper/list.js";
 
 export const exportToExcel = async (
   sheetsData,
@@ -478,12 +479,17 @@ export const exportToExcel = async (
       // Récupération et modification d'une cellule spécifique
       const cell = worksheet.getCell(r + 1, c + 1);
       const formula = v?.VF?.f || v?.f;
-      if (formula) {
+      // Excel ne lit ni les listes ni leurs crochets : le texte de la liste,
+      // ou la valeur de la formule.
+      const list = Array.isArray(v?.v) || (formula && rewriteListLiterals(formula) !== formula);
+      if (formula && !list) {
         const result = sanitizeFormulaResult(v?.VF?.v ?? v?.v, v);
         cell.value = {
           formula: formula.startsWith("=") ? formula.slice(1) : formula,
           ...(result !== undefined ? { result } : {}),
         };
+      } else if (Array.isArray(v?.v)) {
+        cell.value = v.m;
       } else if (v?.v !== undefined) {
         const value = sanitizeCellValue(v.v, v);
         if (value !== undefined) {

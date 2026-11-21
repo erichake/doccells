@@ -153,7 +153,8 @@ soulignés (`'Données 2'!A1`).
 ### Valeurs
 
 Une cellule est transmise par sa valeur calculée : nombre (une date est son
-numéro de série), texte, booléen ou `null` (vide). Un nombre saisi au
+numéro de série), texte, booléen, liste (tableau de nombres et de listes,
+`[2, [1, 3]]`) ou `null` (vide). Un nombre saisi au
 clavier, que FortuneSheet garde sous forme de texte (`v: "3"` avec le type
 `n`), est transmis comme un nombre. Une erreur est un objet
 `{ error: "#DIV/0!" }` ; la chaîne `"DIV/0"` que FortuneSheet produit pour
@@ -252,7 +253,7 @@ l'identique (testé).
 ### `setCellValues`
 
 Chaque mise à jour désigne **une cellule**. `v` est un nombre, un texte, un
-booléen ou `null` (vider la cellule) ; une valeur remplace une formule. Le
+booléen, une liste ou `null` (vider la cellule) ; une valeur remplace une formule. Le
 chemin est celui de `window.setCellValues` : recalcul des dépendants par
 l'index inverse, sans historique d'annulation ni rendu React. Un texte
 commençant par `=` est une formule et prend le chemin normal (avec
@@ -266,7 +267,8 @@ rien écrire.
 Voir la section 7. Les `setHostValues` consécutifs sont fusionnés comme les
 `setCellValues` (section 4.2 ; pour un même nom, la dernière valeur
 l'emporte). Une mise à jour invalide (nom qui n'est pas un texte, valeur qui
-n'est ni nombre, ni texte, ni booléen, ni `null`) refuse la requête entière
+n'est ni nombre, ni texte, ni booléen, ni liste de nombres finis, ni `null`)
+refuse la requête entière
 (`Invalid request`), sans rien écrire.
 
 ### `subscribe` et `unsubscribe`
@@ -351,7 +353,9 @@ interprète (DocGeo y lit les objets de sa figure).
   Un guillemet doublé dans le nom n'est pas pris en charge (`#VALUE!`).
 - Un nom que l'hôte n'a pas fourni, ou fourni avec `null`, ou avec un nombre
   non fini : `#N/A`.
-- Une valeur est un nombre, un texte ou un booléen. Comme pour toute cellule,
+- Une valeur est un nombre, un texte, un booléen ou une liste de nombres
+  finis et de listes (DocGeo y donne un point : `[x, y]`). Comme pour toute
+  cellule,
   FortuneSheet ne propage pas les erreurs dans un calcul : `GEO("AB")+1`
   vaut `#VALUE!` tant que `AB` n'a pas de valeur.
 

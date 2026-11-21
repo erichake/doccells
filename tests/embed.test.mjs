@@ -273,6 +273,23 @@ test("GEO : valeurs de l'hôte, nom absent, argument calculé", () => {
   assert.deepEqual(values()[0], { error: "#N/A" });
 });
 
+test("GEO et setCellValues : listes (points de DocGeo)", () => {
+  const ctx = createHostWorkbookContext();
+  const core = createCore(ctx);
+  const result = core.setHostValues([{ name: "AB", v: [2, 1] }], "window");
+  assert.equal(result.recalculated, 3);
+  // C1 = GEO("AB")*2, C2 = C1+1 (complexes), Autre!A1 = C2*10.
+  assert.deepEqual(core.getValues("Feuille1!C1:C2"), [[[4, 2]], [[5, 2]]]);
+  assert.deepEqual(core.getValues("Autre!A1", { display: true }), [[{ v: [50, 20], m: "[50, 20]" }]]);
+  // Même liste : rien n'est recalculé ; liste invalide : requête refusée.
+  assert.equal(core.setHostValues([{ name: "AB", v: [2, 1] }], "window").recalculated, 0);
+  assert.throws(() => core.setHostValues([{ name: "AB", v: [2, "1"] }], "window"), /Invalid request/);
+  assert.throws(() => core.setHostValues([{ name: "AB", v: [2, Number.NaN] }], "window"), /Invalid request/);
+
+  core.setCellValues([{ ref: "Feuille1!B1", v: [[1, 2], [3]] }], "window");
+  assert.deepEqual(core.getValues("Feuille1!B1", { display: true }), [[{ v: [[1, 2], [3]], m: "[[1, 2], [3]]" }]]);
+});
+
 test("GEO : les autres clients reçoivent les valeurs en événements", () => {
   const ctx = createHostWorkbookContext();
   const core = createCore(ctx);

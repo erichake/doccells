@@ -21,6 +21,7 @@ import { trimEdges } from "./helper/string.js";
 import { toNumber, invertNumber } from "./helper/number.js";
 import { ERROR_VALUE } from "./error.js";
 import { extractLabel, toLabel } from "./helper/cell.js";
+import { negateList, rewriteListLiterals } from "./helper/list.js";
 
 export const LEGACY = { legacy: true };
 
@@ -44,6 +45,7 @@ class AstNode {
 
 // Calculs purs partagés avec l'évaluation d'origine (parser.js).
 export const unaryMinus = (value) => {
+  if (Array.isArray(value)) return negateList(value);
   const result = invertNumber(value);
   return isNaN(result) ? 0 : result;
 };
@@ -108,7 +110,7 @@ export const compileFormula = (expression) => {
   let compiled = cache.get(expression);
   if (compiled !== undefined) return compiled;
   try {
-    compiled = { tree: builder.parse(expression) };
+    compiled = { tree: builder.parse(rewriteListLiterals(expression)) };
   } catch {
     compiled = LEGACY;
   }

@@ -39,6 +39,7 @@ import { trimEdges } from "./helper/string.js";
 import { toNumber, invertNumber } from "./helper/number.js";
 import errorParser, { isValidStrict as isErrorValid, ERROR, ERROR_NAME } from "./error.js";
 import { extractLabel } from "./helper/cell.js";
+import { LIST_FUNCTION, rewriteListLiterals } from "./helper/list.js";
 import {
   LEGACY,
   compileFormula,
@@ -94,6 +95,9 @@ var Parser = /*#__PURE__*/function (_Emitter) {
     // (compiled-formula.js), par nom en majuscules.
     _this.rawFunctions = Object.create(null);
 
+    _this.setFunction(LIST_FUNCTION, function (params) {
+      return params;
+    });
     _this.setVariable("TRUE", true).setVariable("FALSE", false).setVariable("NULL", null);
 
     return _this;
@@ -121,7 +125,7 @@ var Parser = /*#__PURE__*/function (_Emitter) {
         } else {
           // DocCells : arbre analysé une seule fois par texte de formule.
           var compiled = this.useCompiledFormulas ? compileFormula(expression) : LEGACY;
-          result = compiled === LEGACY ? this.parser.parse(expression) : evaluateCompiled(this, compiled);
+          result = compiled === LEGACY ? this.parser.parse(rewriteListLiterals(expression)) : evaluateCompiled(this, compiled);
         }
       } catch (ex) {
         var message = errorParser(ex.message);

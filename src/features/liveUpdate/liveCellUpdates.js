@@ -132,7 +132,7 @@ export const applyLiveCellUpdates = (ctx, updates, sheetId) => {
       cache.doccellsFormulaIndex?.dirty.add(key);
     }
     data[r][c] = cell;
-    const value = update.v && typeof update.v === "object" ? { ...update.v } : update.v;
+    const value = update.v && typeof update.v === "object" && !Array.isArray(update.v) ? { ...update.v } : update.v;
     setCellValue(ctx, r, c, data, value ?? null);
     changed.push({ r, c, i: id });
     addTouchedRow(touched, id, r);
