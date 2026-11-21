@@ -45,6 +45,21 @@ const TRANSLATED_DOCUMENT = {
   nl: { save: "Opslaan", saveAs: "Opslaan als...", untitled: "Naamloos", unsavedChanges: "Niet-opgeslagen wijzigingen", openRecent: "Recent bestand openen", clearRecentFiles: "Lijst wissen" },
 };
 
+const TRANSLATED_FILL = {
+  "zh-CN": { fillDown: "向下填充", fillRight: "向右填充" },
+  "zh-TW": { fillDown: "向下填滿", fillRight: "向右填滿" },
+  en: { fillDown: "Fill down", fillRight: "Fill right" },
+  "fr-FR": { fillDown: "Recopier vers le bas", fillRight: "Recopier à droite" },
+  "es-ES": { fillDown: "Rellenar hacia abajo", fillRight: "Rellenar hacia la derecha" },
+  hi: { fillDown: "नीचे भरें", fillRight: "दाईं ओर भरें" },
+  ru: { fillDown: "Заполнить вниз", fillRight: "Заполнить вправо" },
+  pt: { fillDown: "Preencher para baixo", fillRight: "Preencher para a direita" },
+  de: { fillDown: "Nach unten ausfüllen", fillRight: "Nach rechts ausfüllen" },
+  el: { fillDown: "Συμπλήρωση προς τα κάτω", fillRight: "Συμπλήρωση προς τα δεξιά" },
+  it: { fillDown: "Riempi in basso", fillRight: "Riempi a destra" },
+  nl: { fillDown: "Omlaag doorvoeren", fillRight: "Rechts doorvoeren" },
+};
+
 const TRANSLATED_ABOUT = {
   "zh-CN": "关于...",
   "zh-TW": "關於...",
@@ -409,6 +424,7 @@ export const getStandaloneMenuTexts = (appTexts, lang, currency = "$") => {
     numberFormats.find((item) => item !== "divider" && item.value === value)?.text ||
     fallback;
   const about = TRANSLATED_ABOUT[lang] || TRANSLATED_ABOUT.en;
+  const fillTexts = TRANSLATED_FILL[lang] || TRANSLATED_FILL.en;
   const splashTagline = SPLASH_TAGLINES[lang] || SPLASH_TAGLINES.en;
   const licenseLink =
     TRANSLATED_LICENSE_LINK[lang] || TRANSLATED_LICENSE_LINK.en;
@@ -456,6 +472,8 @@ export const getStandaloneMenuTexts = (appTexts, lang, currency = "$") => {
       ),
       undo: pick(toolbar.undo, "Undo"),
       redo: pick(toolbar.redo, "Redo"),
+      fillDown: pick(custom.fillDown, fillTexts.fillDown),
+      fillRight: pick(custom.fillRight, fillTexts.fillRight),
       clearFormat: pick(toolbar["clear-format"], formatMenu.clearFormat),
       alternatingColors: pick(
         appTexts?.alternatingColors?.menuItem,

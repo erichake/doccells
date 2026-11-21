@@ -292,6 +292,56 @@ export const triggerWorkbookRedo = (workbookRef) => {
   return true;
 };
 
+// Recopier vers le bas (Ctrl+D) et à droite (Ctrl+R), comme Excel : la
+// première ligne (colonne) de la plage est copiée dans les suivantes ; une
+// seule ligne (colonne) sélectionnée reçoit la ligne du dessus (la colonne de
+// gauche). C'est la poignée de recopie de FortuneSheet en mode copie
+// (scripts/patch-fortune-fill.cjs) : références relatives décalées, formats,
+// bordures et validations recopiés, une entrée d'historique par plage.
+const fillRanges = (range, direction) => {
+  const [r0, r1] = range.row;
+  const [c0, c1] = range.column;
+  if (direction === "down") {
+    if (r0 === r1) {
+      if (r0 === 0) return null;
+      return [
+        { row: [r0 - 1, r0 - 1], column: [c0, c1] },
+        { row: [r0, r1], column: [c0, c1] },
+      ];
+    }
+    return [
+      { row: [r0, r0], column: [c0, c1] },
+      { row: [r0 + 1, r1], column: [c0, c1] },
+    ];
+  }
+  if (c0 === c1) {
+    if (c0 === 0) return null;
+    return [
+      { row: [r0, r1], column: [c0 - 1, c0 - 1] },
+      { row: [r0, r1], column: [c0, c1] },
+    ];
+  }
+  return [
+    { row: [r0, r1], column: [c0, c0] },
+    { row: [r0, r1], column: [c0 + 1, c1] },
+  ];
+};
+
+export const triggerWorkbookFill = (workbookRef, direction) => {
+  const workbook = workbookRef?.current;
+  if (typeof workbook?.autoFillCell !== "function") return false;
+  const selection = workbook.getSelection?.() || [];
+  let filled = false;
+  for (const range of selection) {
+    if (!range?.row || !range?.column) continue;
+    const ranges = fillRanges(range, direction);
+    if (!ranges) continue;
+    workbook.autoFillCell(ranges[0], ranges[1], direction, "0");
+    filled = true;
+  }
+  return filled;
+};
+
 export const openFilePicker = () =>
   clickElement("#custom-open-button") || clickElement("#fileInput");
 

@@ -14,6 +14,7 @@ import {
   triggerToolbarComboOption,
   triggerToolbarFormatOption,
   triggerToolbarTextComboOption,
+  triggerWorkbookFill,
   triggerWorkbookFormat,
   triggerWorkbookRedo,
   triggerSheetProtection,
@@ -244,6 +245,14 @@ export const StandaloneMenuBar = ({
       const commandByKey = {
         ...fileCommands,
         b: () => triggerWorkbookFormat(workbookRef, "bl"),
+        // ⌘D et ⌘R sont gardés même sur feuille protégée : pas de signet
+        // ni de rechargement de la page. ⌘⇧R (rechargement forcé) passe.
+        ...(event.shiftKey
+          ? {}
+          : {
+              d: () => !isProtected && triggerWorkbookFill(workbookRef, "down"),
+              r: () => !isProtected && triggerWorkbookFill(workbookRef, "right"),
+            }),
         i: () => triggerWorkbookFormat(workbookRef, "it"),
         u: () => triggerWorkbookFormat(workbookRef, "un"),
         y: () => triggerWorkbookRedo(workbookRef),
@@ -266,6 +275,7 @@ export const StandaloneMenuBar = ({
     };
   }, [
     embedded,
+    isProtected,
     isStandalone,
     onRequestSave,
     onExportDocument,
@@ -329,6 +339,21 @@ export const StandaloneMenuBar = ({
         items: [
           { icon: "undo", label: texts.items.undo, shortcut: "⌘Z", command: () => triggerWorkbookUndo(workbookRef) },
           { icon: "redo", label: texts.items.redo, shortcut: "⌘Y", command: () => triggerWorkbookRedo(workbookRef) },
+          "divider",
+          {
+            icon: "fillDown",
+            label: texts.items.fillDown,
+            shortcut: "⌘D",
+            disabled: isProtected,
+            command: () => triggerWorkbookFill(workbookRef, "down"),
+          },
+          {
+            icon: "fillRight",
+            label: texts.items.fillRight,
+            shortcut: "⌘R",
+            disabled: isProtected,
+            command: () => triggerWorkbookFill(workbookRef, "right"),
+          },
         ],
       },
       {
@@ -814,6 +839,20 @@ const icons = {
     <svg viewBox="0 0 24 24">
       <path d="M15 8h4V4" />
       <path d="M18.4 8.1a7.3 7.3 0 1 0 .1 7.7" />
+    </svg>
+  ),
+  fillDown: (
+    <svg viewBox="0 0 24 24">
+      <rect x="5" y="3" width="14" height="5" rx="1" />
+      <path d="M12 11v9" />
+      <path d="m8 16 4 4 4-4" />
+    </svg>
+  ),
+  fillRight: (
+    <svg viewBox="0 0 24 24">
+      <rect x="3" y="5" width="5" height="14" rx="1" />
+      <path d="M11 12h9" />
+      <path d="m16 8 4 4-4 4" />
     </svg>
   ),
   eraser: (
