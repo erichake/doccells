@@ -9,6 +9,10 @@
  *   separators.
  * Patch 3: valueShowEs gives the cell editor the list's text in the current
  *   language, instead of the array's toString.
+ * Patch 4: a character typed with Option (Mac) or AltGr (Windows) on a
+ *   selected cell starts the entry, like a digit: "[" is Option+Shift+5 on
+ *   a French Mac keyboard, AltGr+5 on Windows. FortuneSheet ignored every
+ *   key pressed with Alt, and sent AltGr (Ctrl+Alt) to its shortcuts.
  *
  * Must run after patch-fortune-formula-names.cjs (__doccellsShortLocale).
  */
@@ -58,6 +62,17 @@ const SHOW_LIST = `function valueShowEs(r, c, d) {
   if (d[r] && d[r][c] && Array.isArray(d[r][c].v)) return __doccellsLists.format(d[r][c].v, __doccellsFormatListNumber, __doccellsListSeparator());
   var value = getCellValue(r, c, d, "m");`;
 
+const CTRL_START = `    if (e.ctrlKey || e.metaKey) {
+      handleWithCtrlOrMetaKey(ctx, cache, e, cellInput, fxInput, handleUndo, handleRedo);`;
+
+const CTRL_TYPED = `    var __doccellsAltChar = !!kstr && kstr.length === 1 && e.altKey && !e.metaKey && (!e.ctrlKey || !!(e.getModifierState && e.getModifierState("AltGraph")));
+    if ((e.ctrlKey || e.metaKey) && !__doccellsAltChar) {
+      handleWithCtrlOrMetaKey(ctx, cache, e, cellInput, fxInput, handleUndo, handleRedo);`;
+
+const EDIT_KEYS = `kcode === 0 || e.ctrlKey && kcode === 86) {`;
+
+const EDIT_KEYS_TYPED = `kcode === 0 || e.ctrlKey && kcode === 86 || __doccellsAltChar) {`;
+
 const EXPORT_LINES = {
   "index.esm.js": "\nexport { __doccellsConfigureLists };\n",
   "index.js": "\nexports.__doccellsConfigureLists = __doccellsConfigureLists;\n",
@@ -80,6 +95,8 @@ for (const [bundle, exportLine] of Object.entries(EXPORT_LINES)) {
     { old: "function setCellValue(ctx, r, c, d, v) {", new: REGISTRY },
     { old: NULL_CHECK, new: LIST_BRANCH },
     { old: SHOW_START, new: SHOW_LIST },
+    { old: CTRL_START, new: CTRL_TYPED },
+    { old: EDIT_KEYS, new: EDIT_KEYS_TYPED },
   ];
   let ok = true;
   for (const { old, new: next } of replacements) {
