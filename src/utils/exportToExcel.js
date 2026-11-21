@@ -3,6 +3,7 @@ import {
   patchWorkbookWithNativeCharts,
 } from "../features/charts/excelChartOoxml.js";
 import { DOCCELLS_METADATA_SHEET_NAME } from "../features/charts/chartUtils.js";
+import { chosenHorizontalAlignment } from "../features/workbook/excelGeneralAlignment.js";
 import { patchWorkbookWithDefinedNames } from "../features/definedNames/definedNamesOoxml.js";
 import {
   DOCCELLS_DROPDOWN_NAME_PREFIX,
@@ -526,8 +527,9 @@ export const exportToExcel = async (
           color: styleValue.fc ? { argb: convertColor(styleValue.fc) } : null,
         };
       }
+      const chosenHt = chosenHorizontalAlignment(v);
       if (
-        v?.ht !== undefined ||
+        chosenHt !== undefined ||
         v?.vt !== undefined ||
         v?.tb !== undefined ||
         v?.tr !== undefined ||
@@ -535,7 +537,7 @@ export const exportToExcel = async (
       ) {
         // Configuration de l'alignement des cellules (centré, gauche, droite, renvoi à la ligne, rotation...)
         const vt = v.vt === undefined ? 0 : parseInt("" + v.vt);
-        const ht = v.ht === undefined ? 1 : parseInt("" + v.ht);
+        const ht = chosenHt === undefined ? undefined : parseInt("" + chosenHt);
         const tb = v.tb !== undefined ? parseInt("" + v.tb) : undefined;
         const tr = v.tr !== undefined ? parseInt("" + v.tr) : undefined;
         const rt = v.rt !== undefined ? parseInt("" + v.rt) : undefined;
@@ -557,7 +559,7 @@ export const exportToExcel = async (
           textRotation = rt <= 90 ? rt : -(rt - 90);
         }
         cellStyle.alignment = {
-          horizontal: ht === 1 ? "left" : ht === 0 ? "center" : "right",
+          horizontal: ht === undefined ? undefined : ht === 1 ? "left" : ht === 0 ? "center" : "right",
           vertical: vt === 1 ? "top" : vt === 0 ? "middle" : "bottom",
           wrapText: tb === 2 ? true : tb === 1 ? false : undefined,
           textRotation,

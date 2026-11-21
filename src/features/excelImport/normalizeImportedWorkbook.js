@@ -9,7 +9,6 @@ import {
   normalizeShowGridLines,
   setWorkbookProtection,
 } from "../workbook/workbookUtils.js";
-import { applyAutoGeneralAlignment } from "../workbook/excelGeneralAlignment.js";
 import { DOCCELLS_DROPDOWN_NAME_PREFIX } from "../dataValidation/dataValidationUtils.js";
 
 const getCellRawValue = (cell) => {
@@ -36,12 +35,6 @@ const extractDocCellsMetadata = (sheets) => {
 
 const removeDocCellsMetadataSheets = (sheets) =>
   sheets.filter((sheet) => sheet?.name !== DOCCELLS_METADATA_SHEET_NAME);
-
-const normalizeImportedGeneralAlignment = (sheet) => {
-  sheet?.celldata?.forEach((cell) => {
-    applyAutoGeneralAlignment(cell.v);
-  });
-};
 
 const applyDocCellsMetadata = (sheets, metadata) => {
   if (!metadata?.sheets) return sheets;
@@ -256,7 +249,6 @@ export const normalizeImportedWorkbook = (
   const workbookSheets = removeDocCellsMetadataSheets(sheets);
   const definedNames = normalizeDefinedNames(importedDefinedNames);
   workbookSheets.forEach(normalizeImportedMerges);
-  workbookSheets.forEach(normalizeImportedGeneralAlignment);
   const enrichedWorkbookSheets = applyDocCellsMetadata(
     workbookSheets,
     metadata,

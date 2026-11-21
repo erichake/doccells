@@ -72,10 +72,6 @@ import {
   setWorkbookGridLines,
 } from "./features/workbook/workbookUtils.js";
 import {
-  AUTO_GENERAL_ALIGNMENT_KEY,
-  hasExcelGeneralNumericValue,
-} from "./features/workbook/excelGeneralAlignment.js";
-import {
   calculateSimpleWorkdayFormula,
   getFormulaDisplayValue,
   toExcelFormulaValue,
@@ -1023,27 +1019,6 @@ const App = () => {
     }
   }, [loadExcelFromURL]);
 
-  const syncExcelGeneralAlignment = useCallback((row, column, newValue) => {
-    if (!newValue || typeof newValue !== "object") return;
-
-    const isAutoAligned = newValue[AUTO_GENERAL_ALIGNMENT_KEY] === 1;
-    const isNumeric = hasExcelGeneralNumericValue(newValue);
-    const workbook = workbookRef.current;
-    if (!workbook?.batchCallApis) return;
-
-    if (isNumeric && (newValue.ht === undefined || isAutoAligned)) {
-      workbook.batchCallApis([
-        { name: "setCellFormat", args: [row, column, "ht", 2] },
-        { name: "setCellFormat", args: [row, column, AUTO_GENERAL_ALIGNMENT_KEY, 1] },
-      ]);
-    } else if (!isNumeric && isAutoAligned) {
-      workbook.batchCallApis([
-        { name: "setCellFormat", args: [row, column, "ht", undefined] },
-        { name: "setCellFormat", args: [row, column, AUTO_GENERAL_ALIGNMENT_KEY, undefined] },
-      ]);
-    }
-  }, []);
-
   const syncExcelDateFormulaResult = useCallback((row, column, newValue) => {
     if (!newValue || typeof newValue !== "object" || !newValue.f) return;
 
@@ -1961,14 +1936,12 @@ const App = () => {
     },
     afterUpdateCell: (row, column, _oldValue, newValue) => {
       syncExcelDateFormulaResult(row, column, newValue);
-      syncExcelGeneralAlignment(row, column, newValue);
     },
   }), [
     activeSheetIndex,
     definedNames,
     beforeDateCellMouseDown,
     syncExcelDateFormulaResult,
-    syncExcelGeneralAlignment,
   ]);
 
   const handleWorkbookChange = useCallback((newData) => {
