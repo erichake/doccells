@@ -6,6 +6,7 @@ import { __doccellsSetDrawGate } from "@fortune-sheet/react";
 import { createDocCellsCore } from "./docCellsCore.js";
 import { drawGate } from "./visibility.js";
 import { mountChrome, unmountChrome } from "./chromeMount.js";
+import { registerHostFunctionHelp } from "./hostFunctionHelp.js";
 
 const isInIframe = () => {
   try {
@@ -48,6 +49,9 @@ export const embedConfig = readEmbedConfig();
 // Aucun dessin tant que l'iframe est masquée (EMBED.md, section 9), y
 // compris ceux que FortuneSheet déclenche lui-même (montage, chargement).
 if (embedConfig.enabled) __doccellsSetDrawGate(drawGate);
+
+// GEO proposée par la complétion automatique et l'aide des fonctions.
+if (embedConfig.enabled) registerHostFunctionHelp();
 
 const OWNER = "window";
 
