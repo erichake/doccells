@@ -842,6 +842,143 @@ try {
     await nameBox(),
   );
   await context.close();
+
+  // ------------------------------------------------------------------
+  console.log("--- nom de l'hôte dans la formule éditée (insertHostName, formulaEditing) ---");
+  context = await newContext();
+  page = await openHost(context, "http://doccells.test/host.html", "embed&singleSheet");
+  await page.evaluate(() => window.waitEvent((e) => e.event === "ready", 15000));
+  await page.evaluate(async (wb) => {
+    const dc = document.getElementById("dc").contentWindow.docCells;
+    await dc.load(wb);
+    window.editing = [];
+    dc.on("formulaEditing", ({ on }) => window.editing.push(on));
+    // Deux « points » de la figure, hors de l'iframe : un clic (qui prend le
+    // focus à l'iframe, sans preventDefault) insère leur nom.
+    window.inserted = [];
+    for (const [name, top] of [["A", 100], ["B", 140]]) {
+      const point = document.body.appendChild(document.createElement("button"));
+      point.textContent = name;
+      point.style.cssText = `position:absolute;left:1220px;top:${top}px;width:40px;height:30px`;
+      point.addEventListener("click", () => window.inserted.push(dc.insertHostName(name)));
+    }
+  }, { format: "doccells", version: 1, sheets: [{ name: "Feuille 1", order: 0, celldata: [], config: {} }] });
+  const nameFrame = page.frame({ url: /doccells\.test\/fortunesheet/ });
+  const nameArea = await nameFrame.locator(".fortune-cell-area").boundingBox();
+  const cell = (r, c) => ({ x: nameArea.x + c * 100 + 50, y: nameArea.y + r * 20 + 10 });
+  const clickPoint = (name) => page.mouse.click(1240, name === "A" ? 115 : 155);
+  const readState = () =>
+    page.evaluate(() => ({ editing: window.editing.splice(0), inserted: window.inserted.splice(0) }));
+  const formulaOf = (ref) =>
+    page.evaluate((target) => {
+      const sheet = document.getElementById("dc").contentWindow.docCells.save().sheets[0];
+      const [r, c] = target;
+      return sheet.celldata.find((item) => item.r === r && item.c === c)?.v?.f ?? null;
+    }, ref);
+
+  // Cellule sélectionnée, sans édition : rien.
+  await page.mouse.click(cell(1, 1).x, cell(1, 1).y);
+  await clickPoint("A");
+  const idle = await readState();
+  check("sans édition : rien d'inséré, pas de formulaEditing", idle.inserted.join() === "false" && idle.editing.length === 0, JSON.stringify(idle));
+
+  // Formule tapée, puis clics sur A puis B (B remplace A), puis suite au clavier.
+  await page.mouse.click(cell(1, 1).x, cell(1, 1).y);
+  await page.keyboard.type("=2*");
+  await page.waitForTimeout(100);
+  await clickPoint("A");
+  const afterA = await nameFrame.locator("#luckysheet-rich-text-editor").textContent();
+  await clickPoint("B");
+  await page.waitForTimeout(50);
+  const afterB = {
+    cell: await nameFrame.locator("#luckysheet-rich-text-editor").textContent(),
+    bar: await nameFrame.locator(".fortune-fx-input").textContent(),
+    focus: await nameFrame.evaluate(() => document.activeElement?.id),
+  };
+  await page.keyboard.type("+1");
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(150);
+  const typedState = await readState();
+  check(
+    "édition : GEO inséré au curseur, focus rendu à l'éditeur",
+    afterA === '=2*GEO("A")' && afterB.cell === '=2*GEO("B")' && afterB.bar === '=2*GEO("B")' &&
+      afterB.focus === "luckysheet-rich-text-editor",
+    JSON.stringify({ afterA, afterB }),
+  );
+  check(
+    "deux clics de suite : le second remplace le premier, la saisie continue",
+    (await formulaOf([1, 1])) === '=2*GEO("B")+1' && typedState.inserted.join() === "true,true",
+    `${await formulaOf([1, 1])} ${JSON.stringify(typedState.inserted)}`,
+  );
+  check("formulaEditing : true à l'ouverture, false à la validation", typedState.editing.join() === "true,false", JSON.stringify(typedState.editing));
+  const geoValue = await page.evaluate(() => {
+    const dc = document.getElementById("dc").contentWindow.docCells;
+    dc.setHostValues([{ name: "B", v: 5 }]);
+    return dc.getValues("'Feuille 1'!B2")[0][0];
+  });
+  check("la formule insérée lit la valeur de l'hôte", geoValue === 11, String(geoValue));
+
+  // Éditeur vide (double clic sur une cellule vide) : formule complète.
+  await page.mouse.dblclick(cell(2, 1).x, cell(2, 1).y);
+  await page.waitForTimeout(100);
+  await clickPoint("A");
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(150);
+  const emptyState = await readState();
+  check(
+    "éditeur vide : =GEO(\"A\")",
+    (await formulaOf([2, 1])) === '=GEO("A")' && emptyState.editing.join() === "true,false",
+    `${await formulaOf([2, 1])} ${JSON.stringify(emptyState)}`,
+  );
+
+  // Texte qui n'est pas une formule : rien, formulaEditing faux dès la frappe.
+  await page.mouse.click(cell(3, 1).x, cell(3, 1).y);
+  await page.keyboard.type("abc");
+  await page.waitForTimeout(100);
+  await clickPoint("A");
+  const textEditor = await nameFrame.locator("#luckysheet-rich-text-editor").textContent();
+  await nameFrame.locator("#luckysheet-rich-text-editor").focus();
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(100);
+  const textState = await readState();
+  check(
+    "texte (pas une formule) : rien d'inséré",
+    textEditor === "abc" && textState.inserted.join() === "false" && !textState.editing.includes(true),
+    JSON.stringify({ textEditor, textState }),
+  );
+
+  // Barre de formule : insertion au curseur, dans la barre.
+  await page.mouse.click(cell(4, 1).x, cell(4, 1).y);
+  await nameFrame.locator(".fortune-fx-input").click();
+  await page.keyboard.type("=1+");
+  await page.waitForTimeout(100);
+  await clickPoint("B");
+  await page.waitForTimeout(50);
+  const barFocus = await nameFrame.evaluate(() => document.activeElement?.className);
+  await page.keyboard.type("*3");
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(150);
+  check(
+    "barre de formule : insertion au curseur",
+    (await formulaOf([4, 1])) === '=1+GEO("B")*3' && String(barFocus).includes("fortune-fx-input"),
+    `${await formulaOf([4, 1])}, focus ${barFocus}`,
+  );
+
+  // Entrée dans la barre de formule laisse FortuneSheet éditer la cellule
+  // suivante : Échap la ferme.
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(100);
+  const nameAnswers = await page.evaluate(async () => [
+    await window.request("insertHostName", { name: "A" }),
+    await window.request("insertHostName", { name: 'A"B' }).catch((error) => error.message),
+    await window.request("insertHostName", {}).catch((error) => error.message),
+  ]);
+  check(
+    "insertHostName par le protocole",
+    nameAnswers[0]?.inserted === false && nameAnswers[1] === "Invalid request" && nameAnswers[2] === "Invalid request",
+    JSON.stringify(nameAnswers),
+  );
+  await context.close();
 } finally {
   await browser.close();
 }

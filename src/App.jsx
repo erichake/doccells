@@ -111,6 +111,7 @@ import {
 } from "./features/embed/chromeMount.js";
 import { watchDialogs } from "./features/embed/dialogWatch.js";
 import { startCellPicker } from "./features/embed/cellPicker.js";
+import { startHostNameInsertion } from "./features/embed/hostNameInsertion.js";
 import {
   AUTOSAVE_DEBOUNCE_MS,
   deleteRecoverySnapshot,
@@ -1529,6 +1530,10 @@ const App = () => {
       getFreeze: () => workbookRef.current?.doccellsFreeze?.(),
       onPick: (ref, done) => docCellsCoreRef.current?.notifyPick(ref, done),
     });
+    const hostNameInsertion = startHostNameInsertion({
+      getContext,
+      onFormulaEditing: (on) => docCellsCoreRef.current?.notifyFormulaEditing(on),
+    });
     const core = createDocCellsCore({
       getContext,
       whenReady: () => waitUntilReady(),
@@ -1548,6 +1553,7 @@ const App = () => {
         embedOperationsRef.current.loadWorkbookFromHost(workbook, options),
       saveWorkbook: () => embedOperationsRef.current.saveWorkbookForHost(),
       setPicking: picker.setPicking,
+      insertHostName: hostNameInsertion.insert,
     });
     docCellsCoreRef.current = core;
     window.docCells = createWindowApi(core, {
@@ -1563,6 +1569,7 @@ const App = () => {
       stopDialogs();
       stopProtocol();
       picker.stop();
+      hostNameInsertion.stop();
       delete window.docCells;
       docCellsCoreRef.current = null;
     };

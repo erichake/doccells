@@ -76,6 +76,8 @@ export const createWindowApi = (core, { stats } = {}) => ({
   stats: () => (stats ? stats() : {}),
   // Désignation de cellules à la souris (EMBED.md, section 15).
   setPicking: (on) => core.setPicking(on),
+  // GEO("nom") dans la formule en cours d'édition (EMBED.md, section 16).
+  insertHostName: (name) => core.insertHostName(name),
   // Barres dans la page hôte (EMBED.md, section 14).
   mountChrome: (elements) => mountChrome(elements),
   unmountChrome: () => unmountChrome(),

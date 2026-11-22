@@ -50,6 +50,7 @@ export const createDocCellsCore = ({
   loadWorkbook,
   saveWorkbook,
   setPicking,
+  insertHostName,
 }) => {
   const subscriptions = new Map();
   const listeners = new Map();
@@ -362,5 +363,15 @@ export const createDocCellsCore = ({
       return null;
     },
     notifyPick: (ref, done) => emitAll({ event: "pick", ref, done }),
+    // Nom de l'hôte écrit dans la formule en cours d'édition
+    // (hostNameInsertion.js) : GEO("name") au curseur. Un nom vide ou avec
+    // un guillemet (que GEO ne lit pas) est refusé.
+    insertHostName: (name) => {
+      if (typeof name !== "string" || name === "" || name.includes('"')) {
+        throw new Error("Invalid request");
+      }
+      return insertHostName(name);
+    },
+    notifyFormulaEditing: (on) => emitAll({ event: "formulaEditing", on }),
   };
 };

@@ -25,7 +25,8 @@ Code : `src/features/embed/` (cœur `docCellsCore.js`, protocole
 `messageProtocol.js`, références `references.js`, valeurs `cellValues.js`,
 visibilité et dessin `visibility.js`, activation `embedMode.js`, barres
 dans la page hôte `chromeMount.js`, dialogues `dialogWatch.js`,
-désignation de cellules `cellPicker.js`) ;
+désignation de cellules `cellPicker.js`, nom de l'hôte dans la formule
+éditée `hostNameInsertion.js`) ;
 valeurs de l'hôte et fonction `GEO` : `src/features/recalc/hostValues.js`.
 
 ## 1. Activation et interface
@@ -118,6 +119,7 @@ docCells.setHostValues([{ name: "AB", v: 2.5 }]); // { recalculated, values }
 | `mountChrome({ menus, toolbar })`  | `true`, ou `false` en `mode=student` (section 14)                |
 | `unmountChrome()`                  | `true`, ou `false` si les barres n'étaient pas sorties            |
 | `setPicking(on)`                   | `null` ; ouvre ou ferme la désignation de cellules (section 15)   |
+| `insertHostName(name)`             | `true` si `GEO("name")` a été écrit dans la formule éditée (section 16) |
 
 Les opérations sont celles du protocole (sections 5 et 6), mêmes paramètres,
 mêmes erreurs (levées en `Error`). Différences :
@@ -229,6 +231,7 @@ Restreindre qui peut afficher DocCells dans une iframe relève du serveur
 | `hostNames`     | —                                                          | `{ names }`                                |
 | `hostDependencies` | `ref`                                                   | `{ names }`                                |
 | `setPicking`    | `on` (booléen)                                             | `null` (section 15)                        |
+| `insertHostName` | `name` (texte)                                            | `{ inserted }` (section 16)                |
 
 ### `load`
 
@@ -297,6 +300,7 @@ Après `load`, il est résolu à nouveau par nom de feuille.
 | `dialog`       | un dialogue de DocCells ou de FortuneSheet s'est ouvert, ou le dernier ouvert s'est fermé, ou le voile du premier plan a changé | `{ open, veil }` (`veil` avec `open: true`)      |
 | `save`         | l'utilisateur a demandé l'enregistrement (Cmd-S / Ctrl-S)                                                                 | —                                                 |
 | `pick`         | désignation ouverte : une cellule ou une plage désignée sur la grille (section 15)                                        | `{ ref, done }`                                   |
+| `formulaEditing` | un clic sur un objet de l'hôte écrirait désormais son nom dans la formule éditée (`on: true`), ou plus (`on: false`) (section 16) | `{ on }`                          |
 
 - `source` de `values` vaut `"host"` (écriture de l'hôte), `"user"` (action
   de l'utilisateur) ou `"load"`. Il permet d'ignorer l'écho de ses propres
@@ -468,13 +472,15 @@ feuille cachée). Le `.xlsx` reste disponible pour l'export et l'échange
   saisi au clavier, cœur sur un vrai contexte FortuneSheet (deux clients,
   valeurs renvoyées ou émises, écritures refusées, feuilles renommées et
   supprimées, `change`), `GEO` (valeurs, `#N/A`, `#VALUE!`, `hostNames`,
-  `hostDependencies` directes et indirectes, `hostNamesChanged`).
+  `hostDependencies` directes et indirectes, `hostNamesChanged`),
+  `insertHostName` et `formulaEditing` (noms refusés, texte de la formule
+  après l'insertion).
 - `tests/formulaEngine.test.mjs` : recalcul forcé comparé à celui d'origine.
 - `tests/workbookArchive.test.mjs` : format d'archivage (exemples de chaque
   version, archives refusées, accord entre `WORKBOOK_FORMAT.md` et le code).
 - `tests/browser/embedMode.browser.mjs` (Playwright, sans serveur ni port ;
   mode d'emploi en tête du fichier), avec un hôte d'une autre origine et un
-  hôte de même origine (44 vérifications) :
+  hôte de même origine (59 vérifications) :
   - `ready`, menus sans Fichier, `load` avec recalcul, `display` ;
   - `values` avant la réponse, rafale de 20 `setCellValues` fusionnée,
     erreurs ;
@@ -487,6 +493,11 @@ feuille cachée). Le `.xlsx` reste disponible pour l'export et l'échange
   - exemple v1 du format d'archivage rechargé à l'identique en français,
     mêmes valeurs et formules en anglais, champs de feuille tous décrits,
     version future refusée ;
+  - désignation de cellules (`setPicking`, `pick`) ; nom de l'hôte dans la
+    formule éditée (`insertHostName`, `formulaEditing`) : clic dans la
+    page hôte pendant une saisie dans la cellule ou dans la barre de
+    formule, deux clics de suite, éditeur vide, texte qui n'est pas une
+    formule, protocole ;
   - `?lang=fr` ; `GEO` par le protocole (`hostNames`, `setHostValues` avant
     la réponse, rafale fusionnée, `hostDependencies`, formule `GEO` saisie au
     clavier : `hostNamesChanged`, `load` avec `hostValues`) et par l'accès
@@ -706,4 +717,53 @@ plage de la grille en donne la référence, que l'hôte insère dans son champ.
   barres d'outils se comportent comme d'habitude : un clic y prend le
   focus, et c'est à l'hôte de fermer alors la désignation.
 - Fermé pendant un glissé, le mode s'arrête sans autre événement `pick`.
+
+## 16. Nom de l'hôte dans la formule éditée : `insertHostName` et `formulaEditing`
+
+Le pendant de la section 15, dans l'autre sens, et comme un clic sur une
+cellule pendant la saisie d'une formule : pendant que l'utilisateur écrit
+une formule dans DocCells, un clic sur un objet de la page hôte (le point
+`A` d'une figure de DocGeo) y écrit `GEO("A")`.
+
+```js
+const docCells = iframe.contentWindow.docCells;
+let formulaEditing = false;
+docCells.on("formulaEditing", ({ on }) => (formulaEditing = on));
+figure.addEventListener("click", (event) => {
+  const name = objectNameAt(event); // propre à l'hôte
+  if (formulaEditing && name) docCells.insertHostName(name);
+  // sinon : action habituelle de l'hôte sur l'objet
+});
+```
+
+- **`formulaEditing` `{ on }`** : `on` vaut `true` tant qu'un éditeur est
+  ouvert (dans la cellule ou dans la barre de formule) et qu'il est vide
+  ou commence par `=` ; `false` sinon (éditeur fermé, validé, annulé, ou
+  texte qui n'est pas une formule). Émis à chaque changement seulement,
+  `false` au départ. L'hôte s'en sert pour savoir si un clic sur un objet
+  désigne cet objet (insertion) ou garde son action habituelle
+  (sélection, déplacement…).
+- **`insertHostName(name)`** (accès synchrone, `true` ou `false` ; requête
+  `insertHostName` `{ name }` du protocole, `{ inserted }`) :
+  - éditeur vide : il contient `=GEO("name")` ;
+  - formule : `GEO("name")` remplace la sélection de l'éditeur, ou s'écrit
+    au curseur (jamais avant le `=`) ; sans curseur dans l'éditeur, à la
+    fin ;
+  - **deux insertions de suite**, sans frappe ni déplacement du curseur
+    entre elles, se remplacent : cliquer `A` puis `B` donne `GEO("B")`,
+    comme deux clics sur des cellules. Pour écrire les deux, l'utilisateur
+    tape un opérateur entre les clics (`=GEO("A")-GEO("B")`) ;
+  - aucun éditeur ouvert, ou un texte qui n'est pas une formule : rien
+    n'est écrit, `false` (`{ inserted: false }`). Une cellule seulement
+    sélectionnée, même vide, n'est jamais modifiée ;
+  - `name` doit être un texte non vide, sans guillemet (que `GEO` ne lit
+    pas, section 7), sinon `Invalid request`.
+- Rien n'est validé : l'utilisateur continue d'écrire (`+1`), puis valide
+  par Entrée ou annule par Échap, comme pour une saisie au clavier. Le
+  focus revient à l'éditeur, curseur après `GEO("name")`, même si le clic
+  de l'hôte l'avait pris à l'iframe (vérifié dans Chrome avec un hôte de
+  même origine et avec un hôte d'une autre origine).
+- FortuneSheet laisse l'éditeur ouvert sur la cellule suivante après une
+  validation par Entrée **dans la barre de formule** : `formulaEditing`
+  reste alors `true`, et un clic insère dans cette cellule.
 

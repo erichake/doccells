@@ -52,6 +52,7 @@ export const startMessageProtocol = ({ core, allowedOrigins = null, version }) =
     hostNames: async () => ({ names: core.hostNames() }),
     hostDependencies: async ({ ref }) => ({ names: core.hostDependencies(requireString(ref)) }),
     setPicking: async ({ on }) => core.setPicking(on),
+    insertHostName: async ({ name }) => ({ inserted: core.insertHostName(name) }),
   };
 
   // Écritures rapides : setCellValues (par cellule) et setHostValues (par

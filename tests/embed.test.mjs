@@ -16,6 +16,7 @@ import { replaceHostValues } from "../src/features/recalc/hostValues.js";
 import { formatReference, parseReference } from "../src/features/embed/references.js";
 import { readRange, toPublicValue } from "../src/features/embed/cellValues.js";
 import { createDocCellsCore } from "../src/features/embed/docCellsCore.js";
+import { planHostNameInsertion } from "../src/features/embed/hostNameInsertion.js";
 
 test("références : nom de feuille obligatoire, plages normalisées", () => {
   assert.deepEqual(parseReference("Feuille1!B3"), { sheetName: "Feuille1", r0: 2, r1: 2, c0: 1, c1: 1 });
@@ -110,6 +111,10 @@ const createCore = (ctx) =>
     loadWorkbook: async () => {},
     saveWorkbook: () => [],
     setPicking: (on) => (ctx.picking = on),
+    insertHostName: (name) => {
+      ctx.inserted = name;
+      return true;
+    },
   });
 
 const nextTurn = () => new Promise((resolve) => setTimeout(resolve, 10));
@@ -370,4 +375,49 @@ test("désignation : setPicking ouvert et fermé par l'hôte, pick à tous les c
   ]);
   core.setPicking(false);
   assert.equal(ctx.picking, false);
+});
+
+test("nom de l'hôte : insertHostName vérifie le nom, formulaEditing à tous les clients", () => {
+  const ctx = createWorkbookContext();
+  const core = createCore(ctx);
+  assert.equal(core.insertHostName("A"), true);
+  assert.equal(ctx.inserted, "A");
+  for (const name of ["", 'A"B', 3, null, undefined]) {
+    assert.throws(() => core.insertHostName(name), /Invalid request/);
+  }
+  assert.equal(ctx.inserted, "A");
+  const events = [];
+  core.listen("window", (event) => events.push(event));
+  core.listen("message", (event) => events.push(event));
+  core.notifyFormulaEditing(true);
+  assert.deepEqual(events, [
+    { event: "formulaEditing", on: true },
+    { event: "formulaEditing", on: true },
+  ]);
+});
+
+test("nom de l'hôte : texte de la formule après l'insertion", () => {
+  // Éditeur vide : formule complète.
+  assert.deepEqual(planHostNameInsertion("", [0, 0], "A"), { text: '=GEO("A")', start: 1, end: 9 });
+  // Au curseur, jamais avant le « = ».
+  assert.deepEqual(planHostNameInsertion("=1+", [3, 3], "AB"), { text: '=1+GEO("AB")', start: 3, end: 12 });
+  assert.equal(planHostNameInsertion("=", [0, 0], "A").text, '=GEO("A")');
+  assert.equal(planHostNameInsertion("=SUM(,2)", [5, 5], "A").text, '=SUM(GEO("A"),2)');
+  // Sélection remplacée, dans un sens ou dans l'autre.
+  assert.equal(planHostNameInsertion("=A1+B1", [3, 1], "P").text, '=GEO("P")+B1');
+  // Curseur hors du texte : à la fin.
+  assert.equal(planHostNameInsertion("=1+", [9, 9], "A").text, '=1+GEO("A")');
+  // Texte qui n'est pas une formule : rien.
+  assert.equal(planHostNameInsertion("abc", [3, 3], "A"), null);
+  assert.equal(planHostNameInsertion(" =1", [3, 3], "A"), null);
+  // Deux insertions de suite : la seconde remplace la première.
+  const first = planHostNameInsertion("=2*", [3, 3], "A");
+  const second = planHostNameInsertion(first.text, [first.end, first.end], "B", first);
+  assert.deepEqual(second, { text: '=2*GEO("B")', start: 3, end: 11 });
+  // Texte écrit, ou curseur déplacé, entre les deux : ajout.
+  assert.equal(
+    planHostNameInsertion('=2*GEO("A")+', [12, 12], "B", first).text,
+    '=2*GEO("A")+GEO("B")',
+  );
+  assert.equal(planHostNameInsertion(first.text, [1, 1], "B", first).text, '=GEO("B")2*GEO("A")');
 });
