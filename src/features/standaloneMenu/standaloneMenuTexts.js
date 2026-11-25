@@ -60,6 +60,21 @@ const TRANSLATED_FILL = {
   nl: { fillDown: "Omlaag doorvoeren", fillRight: "Rechts doorvoeren" },
 };
 
+const TRANSLATED_MANUAL = {
+  "zh-CN": "用户手册",
+  "zh-TW": "使用手冊",
+  en: "User manual",
+  "fr-FR": "Manuel d’utilisation",
+  "es-ES": "Manual de usuario",
+  hi: "उपयोगकर्ता पुस्तिका",
+  ru: "Руководство пользователя",
+  pt: "Manual do utilizador",
+  de: "Benutzerhandbuch",
+  el: "Εγχειρίδιο χρήσης",
+  it: "Manuale d’uso",
+  nl: "Gebruikershandleiding",
+};
+
 const TRANSLATED_ABOUT = {
   "zh-CN": "关于...",
   "zh-TW": "關於...",
@@ -574,6 +589,7 @@ export const getStandaloneMenuTexts = (appTexts, lang, currency = "$") => {
         appTexts?.toggleSheetProtection,
         "Protect / Unprotect workbook",
       ),
+      manual: TRANSLATED_MANUAL[lang] || TRANSLATED_MANUAL.en,
       about: pick(custom.about, about, FALLBACK_TEXTS.about),
       splashTagline: pick(
         custom.splashTagline,

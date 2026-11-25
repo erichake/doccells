@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>复选框、列表与日历 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>复选框、列表与日历</h1>
+<figure><img src="img/controles.webp" alt="复选框、下拉列表和日期的日历" width="1280" height="560" /></figure>
+<h2 id="cases">复选框</h2>
+<p>选择单元格，<strong>插入 › 复选框</strong>。单击可勾选或取消；单元格的值为 TRUE 或 FALSE。</p>
+<pre><code>=IF(B2, "已完成", "待办")
+=SUMPRODUCT(B2:B6, C2:C6)
+=SUMPRODUCT(B2:B6, B2:B6)</code></pre>
+<p>第二个公式对勾选行的 C 列值求和；第三个公式统计勾选的数目。</p>
+<h2 id="listes">下拉列表</h2>
+<p>选择单元格，<strong>插入 › 下拉列表…</strong>。</p>
+<div class="table"><table><thead><tr><th>来源</th><th>内容</th></tr></thead><tbody>
+<tr><td><strong>值</strong></td><td>选项，每个输入框一个；<strong>添加选项</strong>；不含逗号</td></tr>
+<tr><td><strong>从范围</strong></td><td>以其单元格为选项的区域：<code>工作表2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>不带 <code>$</code> 的区域会像填充的公式一样逐格移动。其单元格变化时，选项随之变化。</p>
+<p>单元格显示箭头；单击打开选项。不接受列表以外的值。</p>
+<h2 id="calendrier">日历</h2>
+<p>双击日期单元格会打开日历：选择日期，用 <strong><</strong> 和 <strong>></strong> 切换月份，<strong>今天</strong> 选择今天。凡设有日期格式的单元格（即使为空）都会打开日历，除非其中有公式或已<a href="protection.html">锁定</a>。</p>
+<div class="tip"><p>要用日历填写一列日期：选择该列并设置 <strong>日期</strong> 格式。</p></div>
+<h2 id="retirer">移除</h2>
+<p><kbd>Delete</kbd> 移除单元格中的复选框或列表及其值。</p>
+<p>复选框和列表保存在 Excel 文件中；复选框在其中即为 Excel 复选框。</p>
+</main>
+</body>
+</html>

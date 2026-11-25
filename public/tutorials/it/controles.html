@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Caselle, elenchi e calendario — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Caselle, elenchi e calendario</h1>
+<figure><img src="img/controles.webp" alt="Caselle di controllo, un elenco a discesa e il calendario di una data" width="1280" height="560" /></figure>
+<h2 id="cases">Caselle di controllo</h2>
+<p>Selezionare le celle, <strong>Inserisci › Casella di controllo</strong>. Un clic spunta o toglie la spunta; la cella vale TRUE o FALSE.</p>
+<pre><code>=SE(B2; "fatto"; "da fare")
+=MATR.SOMMA.PRODOTTO(B2:B6; C2:C6)
+=MATR.SOMMA.PRODOTTO(B2:B6; B2:B6)</code></pre>
+<p>La seconda formula somma i valori della colonna C la cui casella è spuntata; la terza conta le caselle spuntate.</p>
+<h2 id="listes">Elenchi a discesa</h2>
+<p>Selezionare le celle, <strong>Inserisci › Elenco a discesa…</strong>.</p>
+<div class="table"><table><thead><tr><th>Origine</th><th>Contenuto</th></tr></thead><tbody>
+<tr><td><strong>Valori</strong></td><td>le opzioni, una per campo; <strong>Aggiungi opzione</strong>; senza virgola</td></tr>
+<tr><td><strong>Da un intervallo</strong></td><td>un intervallo le cui celle sono le opzioni: <code>Foglio2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>Un intervallo senza <code>$</code> si sposta da una cella all’altra, come una formula riempita. Se le sue celle cambiano, le opzioni seguono.</p>
+<p>La cella mostra una freccia; un clic apre le opzioni. Un valore diverso da quelli dell’elenco non è accettato.</p>
+<h2 id="calendrier">Calendario</h2>
+<p>Un doppio clic su una cella di data apre un calendario: scegliere un giorno, cambiare mese con <strong><</strong> e <strong>></strong>, <strong>Oggi</strong> per la data di oggi. Si apre su ogni cella con un formato di data, anche vuota, salvo se contiene una formula o è <a href="protection.html">bloccata</a>.</p>
+<div class="tip"><p>Per una colonna di date da riempire con il calendario: selezionarla e darle il formato <strong>Data</strong>.</p></div>
+<h2 id="retirer">Togliere</h2>
+<p><kbd>Canc</kbd> toglie la casella o l’elenco dalla cella, con il suo valore.</p>
+<p>Caselle ed elenchi sono salvati nel file Excel; le caselle vi sono caselle di controllo di Excel.</p>
+</main>
+</body>
+</html>

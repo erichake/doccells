@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intervalli denominati — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Intervalli denominati</h1>
+<h2 id="definir">Dare un nome</h2>
+<ol>
+<li>Selezionare la cella o l’intervallo.</li>
+<li>Clic destro › <strong>Definisci nome…</strong> (o la freccia della casella del nome › <strong>Gestione nomi</strong>).</li>
+<li>Scrivere il nome, scegliere l’ambito, <strong>OK</strong>.</li>
+</ol>
+<figure><img src="img/noms.webp" alt="La finestra di un nuovo nome" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Campo</th><th>Contenuto</th></tr></thead><tbody>
+<tr><td><strong>Nome</strong></td><td>comincia con una lettera o <code>_</code>; lettere, cifre, <code>_</code> e <code>.</code>, senza spazio; non un indirizzo come <code>B2</code></td></tr>
+<tr><td><strong>Ambito</strong></td><td><strong>Cartella di lavoro</strong>: letto da tutti i fogli; un foglio: letto solo da lì, dove prevale su un nome della cartella</td></tr>
+<tr><td><strong>Riferito a</strong></td><td>una cella o un intervallo, con il suo foglio: <code>'Foglio1'!$B$2:$B$6</code></td></tr>
+</tbody></table></div>
+<h2 id="utiliser">Usare un nome</h2>
+<pre><code>=MEDIA(voti)
+=prezzo*(1+iva)</code></pre>
+<ul>
+<li>La freccia della casella del nome elenca i nomi: sceglierne uno seleziona il suo intervallo, nel suo foglio.</li>
+<li>Quando la selezione è esattamente un intervallo denominato, la casella del nome mostra il suo nome.</li>
+<li>Un <a href="controles.html#listes">elenco a discesa</a> può leggere un intervallo di celle, indicato dal suo indirizzo.</li>
+</ul>
+<h2 id="gerer">Modificare, eliminare</h2>
+<p>Nella <strong>Gestione nomi</strong>, un clic su un nome riporta i suoi campi in modifica; <strong>Elimina</strong> lo elimina; <strong>Nuovo</strong> torna a un nome vuoto. Prima di eliminare un nome, sostituire le formule che lo leggono: conservano l’ultimo valore, poi non si calcolano più.</p>
+<p>I nomi sono salvati nel file Excel e letti da esso.</p>
+</main>
+</body>
+</html>

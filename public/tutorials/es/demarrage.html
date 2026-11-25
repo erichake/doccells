@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Abrir y guardar — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Abrir y guardar</h1>
+<h2 id="nouveau">Empezar</h2>
+<p>DocCells se abre con un libro vacío de una hoja. Para volver a empezar con un libro vacío, recargue la página o abra DocCells en otra pestaña del navegador.</p>
+<h2 id="ouvrir">Abrir un libro</h2>
+<div class="table"><table><thead><tr><th>Medio</th><th>Efecto</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i>, <strong>Archivo › Abrir</strong>, <kbd>Ctrl</kbd> <kbd>O</kbd></td><td>elegir un archivo <code>.xlsx</code> del ordenador</td></tr>
+<tr><td>Arrastrar el archivo a la página</td><td>un velo indica dónde soltarlo; el libro sustituye al que estaba abierto</td></tr>
+<tr><td><strong>Archivo › Abrir un archivo reciente</strong></td><td>los diez últimos archivos abiertos o guardados (Chrome y Edge)</td></tr>
+<tr><td>Un enlace <code>?url=…</code></td><td>un libro en línea o un Google Sheet (<a href="partager.html#url">compartir</a>)</td></tr>
+</tbody></table></div>
+<p>El único formato que se lee es Excel <code>.xlsx</code>. Los antiguos <code>.xls</code>, los <code>.ods</code> y los <code>.csv</code> deben convertirse antes. Lo que se conserva de un archivo de Excel se describe en <a href="excel.html">Compatibilidad con Excel</a>.</p>
+<div class="warn"><p>Abrir un libro sustituye al que se muestra: guarde antes los cambios.</p></div>
+<h3 id="recents">Archivos recientes</h3>
+<p>El navegador puede volver a pedir permiso para leer el archivo. Un archivo movido, renombrado o eliminado se retira de la lista. <strong>Borrar la lista</strong> la vacía. La lista permanece en este navegador, en este ordenador.</p>
+<h2 id="enregistrer">Guardar</h2>
+<h3>Chrome y Edge</h3>
+<div class="table"><table><thead><tr><th>Comando</th><th>Efecto</th></tr></thead><tbody>
+<tr><td><i data-i="save"></i>, <strong>Archivo › Guardar</strong>, <kbd>Ctrl</kbd> <kbd>S</kbd></td><td>la primera vez pregunta dónde guardar el archivo; después lo sustituye sin preguntar</td></tr>
+<tr><td><strong>Archivo › Guardar como...</strong></td><td>elegir otro archivo</td></tr>
+</tbody></table></div>
+<p>Un archivo abierto con <i data-i="open"></i>, desde los recientes o soltado en la página se vuelve a guardar en su sitio; el navegador pide una vez permiso para modificarlo.</p>
+<p>El nombre del libro está al final de la barra de menús. Un punto rojo indica cambios sin guardar; el título de la pestaña del navegador empieza entonces por ●.</p>
+<h3>Firefox, Safari</h3>
+<p>Estos navegadores no permiten escribir en un archivo. <strong>Archivo › Exportar</strong> o <kbd>Ctrl</kbd> <kbd>S</kbd> descarga el libro, con el nombre del libro abierto.</p>
+<h2 id="recuperer">Recuperar un libro no guardado</h2>
+<p>Mientras hay cambios sin guardar, DocCells conserva una copia en el navegador, actualizada menos de un segundo después de cada cambio. Si la página se cierra sin guardar, la siguiente apertura de DocCells propone, con la fecha de la copia, restaurarla (<strong>Restaurar</strong>) o no (<strong>Ignorar</strong>).</p>
+<ul>
+<li>Guardar, exportar o abrir otro libro borra esta copia.</li>
+<li>Ignorar la copia la elimina definitivamente.</li>
+<li>La copia solo se hace cuando DocCells ocupa toda la página, no cuando está integrado en otra.</li>
+</ul>
+<h2 id="langue">Idioma</h2>
+<p>DocCells toma el idioma del navegador entre los doce de su interfaz: alemán, chino simplificado y tradicional, español, francés, griego, hindi, inglés, italiano, neerlandés, portugués, ruso. Para los demás se usa el inglés. <code>?lang=es</code> en la dirección impone un idioma.</p>
+<p>El idioma cambia los menús, los nombres de funciones, el separador decimal, el símbolo monetario y el orden de las fechas mostradas. El archivo guardado no depende de él: un libro escrito en francés se abre en alemán con sus fórmulas en alemán.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>輸入資料 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>輸入資料</h1>
+<h2 id="ecrire">在儲存格中書寫</h2>
+<div class="table"><table><thead><tr><th>操作</th><th>效果</th></tr></thead><tbody>
+<tr><td>在選中的儲存格上輸入</td><td>替換其內容</td></tr>
+<tr><td>按兩下、<kbd>F2</kbd> 或 <kbd>Enter</kbd></td><td>修改其內容</td></tr>
+<tr><td><kbd>Enter</kbd></td><td>確認並下移一個儲存格</td></tr>
+<tr><td>按一下另一個儲存格</td><td>確認</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>放棄輸入</td></tr>
+<tr><td><kbd>Alt</kbd> <kbd>Enter</kbd></td><td>在儲存格內換行</td></tr>
+<tr><td><kbd>Delete</kbd> 或 <kbd>⌫</kbd></td><td>清空選中的儲存格，包括核取方塊和下拉式清單；格式保留</td></tr>
+<tr><td>右鍵 › <strong>清除內容</strong></td><td>同上</td></tr>
+</tbody></table></div>
+<p>輸入時，方向鍵在文字中移動游標。其他時候，方向鍵、<kbd>Tab</kbd> 和 <kbd>Shift</kbd> <kbd>Tab</kbd> 切換儲存格。</p>
+<h2 id="types">DocCells 辨識的內容</h2>
+<div class="table"><table><thead><tr><th>輸入</th><th>得到</th></tr></thead><tbody>
+<tr><td><code>12</code>、<code>-3</code>、<code>1e5</code></td><td>數字，右對齊</td></tr>
+<tr><td><code>2.5</code></td><td>小數；分隔符是小數點</td></tr>
+<tr><td><code>25%</code>、<code>2.5%</code></td><td>百分比</td></tr>
+<tr><td><code>2026-11-25</code>、<code>2026/11/25</code></td><td>日期</td></tr>
+<tr><td><code>2026-11-25 14:30</code></td><td>日期和時間</td></tr>
+<tr><td><code>TRUE</code>、<code>FALSE</code></td><td>邏輯值</td></tr>
+<tr><td><code>[2, 1]</code></td><td><a href="listes.html">清單</a></td></tr>
+<tr><td><code>=A1+B1</code></td><td><a href="formules.html">公式</a></td></tr>
+<tr><td>其他任何內容</td><td>文字，左對齊</td></tr>
+</tbody></table></div>
+<h3 id="dates">日期</h3>
+<p>日期按年份在前輸入：<code>2026-11-25</code>。<code>11/25/2026</code> 仍是文字，不能參與計算。要改變顯示方式，請選擇 <strong>格式 › 數位 › 日期</strong>（<code>2017-11-29</code>）或<a href="nombres.html#personnalise">自訂格式</a>。</p>
+<p>按兩下日期儲存格會開啟<a href="controles.html#calendrier">日曆</a>。<code>=TODAY()</code> 給出今天的日期。</p>
+<h3 id="textes">由數字組成的文字</h3>
+<p>以零開頭的編號會丟失零：<code>007</code> 變成 7。要保留零，請先給儲存格設定 <strong>純文字</strong> 格式（<strong>格式 › 數位 › 純文字</strong>），或以單引號開頭：<code>'007</code>。</p>
+<h2 id="erreurs">常見的輸入問題</h2>
+<div class="table"><table><thead><tr><th>看到的情況</th><th>原因</th></tr></thead><tbody>
+<tr><td>數字左對齊</td><td>它是文字：用了小數逗號、帶單位（<code>12 元</code>）、多了空格</td></tr>
+<tr><td>顯示 <code>46351</code> 而不是日期</td><td>日期為 <strong>自動</strong> 格式：設定為 <strong>日期</strong> 格式</td></tr>
+<tr><td>文字被相鄰儲存格截斷</td><td>加寬<a href="lignes-colonnes.html#taille">欄</a>，或選擇 <strong>自動換行</strong></td></tr>
+</tbody></table></div>
+<p>需要單位時，只輸入數字並設定<a href="nombres.html">格式</a>：貨幣，或自訂格式如 <code>0.00 "m"</code>。</p>
+</main>
+</body>
+</html>

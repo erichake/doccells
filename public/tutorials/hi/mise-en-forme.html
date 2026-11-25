@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>फ़ॉर्मेटिंग — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>फ़ॉर्मेटिंग</h1>
+<h2 id="texte">टेक्स्ट</h2>
+<div class="table"><table><thead><tr><th>आदेश</th><th>कहाँ</th></tr></thead><tbody>
+<tr><td>बोल्ड, इटैलिक, रेखांकित</td><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i>; <kbd>Ctrl</kbd> <kbd>B</kbd>, <kbd>Ctrl</kbd> <kbd>I</kbd>, <kbd>Ctrl</kbd> <kbd>U</kbd></td></tr>
+<tr><td>फ़ॉन्ट</td><td><strong>Arial</strong> सूची: तेरह फ़ॉन्ट</td></tr>
+<tr><td>आकार</td><td><strong>10</strong> सूची, या <strong>प्रारूप › फ़ॉन्ट साइज़</strong>: 9 से 72</td></tr>
+<tr><td>टेक्स्ट का रंग, पृष्ठभूमि का रंग</td><td><i data-i="font-color"></i> <i data-i="background"></i></td></tr>
+<tr><td>फ़ॉर्मेटिंग हटाना</td><td><i data-i="clear-format"></i>, <strong>प्रारूप › फॉर्मेट साफ़ करें</strong></td></tr>
+</tbody></table></div>
+<p>रंग पट्टिका में <strong>रंग रीसेट करें</strong> रंग हटाता है; <strong>कस्टम</strong> सिस्टम का रंग चयनक खोलता है।</p>
+<p>सेल संपादित करते समय फ़ॉर्मेटिंग टेक्स्ट के चुने भाग पर लगती है।</p>
+<h2 id="alignement">संरेखण</h2>
+<div class="table"><table><thead><tr><th>आदेश</th><th>विकल्प</th></tr></thead><tbody>
+<tr><td><i data-i="align-left"></i> क्षैतिज</td><td>बाएँ, मध्य, दाएँ</td></tr>
+<tr><td><i data-i="align-top"></i> लंबवत</td><td>ऊपर, मध्य, नीचे</td></tr>
+<tr><td><i data-i="text-rotation-none"></i> घुमाव</td><td>तिरछा, लंबवत, स्टैक</td></tr>
+<tr><td><i data-i="text-overflow"></i> रैप</td><td><strong>ओवरफ्लो</strong>: बगल के खाली सेलों पर; <strong>रैप</strong>: कई पंक्तियों में; <strong>क्लिप</strong>: किनारे पर कटा</td></tr>
+</tbody></table></div>
+<p>संरेखण न चुना हो तो संख्याएँ और दिनांक दाएँ, बाकी बाएँ रहते हैं।</p>
+<h2 id="bordures">बॉर्डर</h2>
+<p><i data-i="border-all"></i> चुना हुआ बॉर्डर खींचता है; उसका तीर किनारे (ऊपर, बाहरी, भीतरी, सभी, कोई नहीं, विकर्ण), रेखा का <strong>रंग</strong> और <strong>शैली</strong> देता है। किनारे से पहले रंग और शैली चुनें।</p>
+<h2 id="fusion">सेल मिलाना</h2>
+<p><i data-i="merge-all"></i> या <strong>प्रारूप › सेल मिलाएँ</strong>:</p>
+<div class="table"><table><thead><tr><th>आदेश</th><th>परिणाम</th></tr></thead><tbody>
+<tr><td><strong>सभी को मिलाएँ</strong></td><td>एक ही सेल, जिसमें एक सामग्री रहती है</td></tr>
+<tr><td><strong>लंबवत मिलाएँ</strong></td><td>हर कॉलम में एक सेल</td></tr>
+<tr><td><strong>क्षैतिज मिलाएँ</strong></td><td>हर पंक्ति में एक सेल</td></tr>
+<tr><td><strong>मिलाना रद्द करें</strong></td><td>सेल लौटाता है</td></tr>
+</tbody></table></div>
+<p>मिले हुए सेलों वाली रेंज क्रमबद्ध या फ़िल्टर नहीं होती।</p>
+<h2 id="alternees">बारी-बारी रंग</h2>
+<p><i data-i="alternating"></i> या <strong>प्रारूप › बारी-बारी रंग...</strong> चुनी रेंज की हर दूसरी पंक्ति रंगता है, चाहें तो शीर्षक पंक्ति सहित। तीनों रंग चुने जा सकते हैं।</p>
+<figure><img src="img/couleurs-alternees.webp" alt="बारी-बारी रंगों की विंडो" width="1280" height="760" /></figure>
+<p>ये साधारण पृष्ठभूमि रंग हैं: क्रम बदलने या पंक्ति जोड़ने पर साथ नहीं चलते। <strong>रंग हटाएँ</strong> उन्हें रेंज से हटाता है।</p>
+<h2 id="quadrillage">ग्रिडलाइन</h2>
+<p><i data-i="gridlines"></i> या <strong>दृश्य › दिखाएँ › ग्रिडलाइन</strong> वर्कबुक की सभी शीटों में धूसर रेखाएँ छिपाता या दिखाता है। <a href="impression.html">प्रिंट</a> की अपनी सेटिंग है।</p>
+<p>मान पर निर्भर रंग के लिए <a href="conditionnelle.html">सशर्त स्वरूपण</a> देखें।</p>
+</main>
+</body>
+</html>

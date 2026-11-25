@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>输入数据 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>输入数据</h1>
+<h2 id="ecrire">在单元格中书写</h2>
+<div class="table"><table><thead><tr><th>操作</th><th>效果</th></tr></thead><tbody>
+<tr><td>在选中的单元格上键入</td><td>替换其内容</td></tr>
+<tr><td>双击、<kbd>F2</kbd> 或 <kbd>Enter</kbd></td><td>修改其内容</td></tr>
+<tr><td><kbd>Enter</kbd></td><td>确认并下移一个单元格</td></tr>
+<tr><td>单击另一个单元格</td><td>确认</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>放弃输入</td></tr>
+<tr><td><kbd>Alt</kbd> <kbd>Enter</kbd></td><td>在单元格内换行</td></tr>
+<tr><td><kbd>Delete</kbd> 或 <kbd>⌫</kbd></td><td>清空选中的单元格，包括复选框和下拉列表；格式保留</td></tr>
+<tr><td>右键 › <strong>清除内容</strong></td><td>同上</td></tr>
+</tbody></table></div>
+<p>输入时，方向键在文本中移动光标。其他时候，方向键、<kbd>Tab</kbd> 和 <kbd>Shift</kbd> <kbd>Tab</kbd> 切换单元格。</p>
+<h2 id="types">DocCells 识别的内容</h2>
+<div class="table"><table><thead><tr><th>键入</th><th>得到</th></tr></thead><tbody>
+<tr><td><code>12</code>、<code>-3</code>、<code>1e5</code></td><td>数字，右对齐</td></tr>
+<tr><td><code>2.5</code></td><td>小数；分隔符是小数点</td></tr>
+<tr><td><code>25%</code>、<code>2.5%</code></td><td>百分比</td></tr>
+<tr><td><code>2026-11-25</code>、<code>2026/11/25</code></td><td>日期</td></tr>
+<tr><td><code>2026-11-25 14:30</code></td><td>日期和时间</td></tr>
+<tr><td><code>TRUE</code>、<code>FALSE</code></td><td>逻辑值</td></tr>
+<tr><td><code>[2, 1]</code></td><td><a href="listes.html">列表</a></td></tr>
+<tr><td><code>=A1+B1</code></td><td><a href="formules.html">公式</a></td></tr>
+<tr><td>其他任何内容</td><td>文本，左对齐</td></tr>
+</tbody></table></div>
+<h3 id="dates">日期</h3>
+<p>日期按年份在前键入：<code>2026-11-25</code>。<code>11/25/2026</code> 仍是文本，不能参与计算。要改变显示方式，请选择 <strong>格式 › 数字 › 日期</strong>（<code>2017-11-29</code>）或<a href="nombres.html#personnalise">自定义格式</a>。</p>
+<p>双击日期单元格会打开<a href="controles.html#calendrier">日历</a>。<code>=TODAY()</code> 给出今天的日期。</p>
+<h3 id="textes">由数字组成的文本</h3>
+<p>以零开头的编号会丢失零：<code>007</code> 变成 7。要保留零，请先给单元格设置 <strong>纯文本</strong> 格式（<strong>格式 › 数字 › 纯文本</strong>），或以撇号开头：<code>'007</code>。</p>
+<h2 id="erreurs">常见的输入问题</h2>
+<div class="table"><table><thead><tr><th>看到的情况</th><th>原因</th></tr></thead><tbody>
+<tr><td>数字左对齐</td><td>它是文本：用了小数逗号、带单位（<code>12 元</code>）、多了空格</td></tr>
+<tr><td>显示 <code>46351</code> 而不是日期</td><td>日期为 <strong>自动</strong> 格式：设置为 <strong>日期</strong> 格式</td></tr>
+<tr><td>文本被相邻单元格截断</td><td>加宽<a href="lignes-colonnes.html#taille">列</a>，或选择 <strong>自动换行</strong></td></tr>
+</tbody></table></div>
+<p>需要单位时，只输入数字并设置<a href="nombres.html">格式</a>：货币，或自定义格式如 <code>0.00 "m"</code>。</p>
+</main>
+</body>
+</html>

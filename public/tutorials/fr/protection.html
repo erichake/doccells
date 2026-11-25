@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Protéger — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Protéger</h1>
+<p class="lead">Un classeur protégé n’est modifiable que dans les cellules déverrouillées : on prépare ainsi une feuille d’exercice.</p>
+<h2 id="preparer">Préparer une feuille pour des élèves</h2>
+<ol>
+<li>Sélectionner les cellules à remplir, clic droit › <strong>Déverrouiller les cellules</strong>.</li>
+<li><i data-i="protect"></i> ou <strong>Outils › Protéger / Déprotéger le classeur</strong>.</li>
+<li>Enregistrer, puis <a href="partager.html">diffuser le fichier ou son lien</a>.</li>
+</ol>
+<p>Toutes les cellules sont verrouillées au départ ; le verrouillage n’a d’effet que sur un classeur protégé. <strong>Verrouiller les cellules</strong> annule.</p>
+<h2 id="effets">Ce que bloque la protection</h2>
+<div class="table"><table><thead><tr><th>Dans un classeur protégé</th><th>Cellule verrouillée</th><th>Cellule déverrouillée</th></tr></thead><tbody>
+<tr><td>saisir, effacer</td><td>non</td><td>oui</td></tr>
+<tr><td>calendrier d’une date</td><td>non</td><td>oui</td></tr>
+<tr><td>largeurs et hauteurs</td><td>non</td><td>non</td></tr>
+<tr><td>couleurs alternées, insertion de cases et de listes, recopie par menu</td><td>non</td><td>non</td></tr>
+<tr><td>mise en forme, insertion de lignes et de colonnes, graphiques</td><td>oui</td><td>oui</td></tr>
+</tbody></table></div>
+<p>La protection porte sur toutes les feuilles. Elle est enregistrée dans le fichier Excel, avec les cellules déverrouillées, et relue par DocCells et Excel.</p>
+<h2 id="eleve">Mode élève</h2>
+<p><code>?mode=student</code> dans l’adresse ouvre DocCells sans le bouton <i data-i="protect"></i> ni les commandes <strong>Déverrouiller les cellules</strong> et <strong>Définir un nom…</strong> ; <strong>Protéger / Déprotéger le classeur</strong> est grisé. L’élève ne peut pas lever la protection.</p>
+<pre><code>https://…/doccells/?mode=student&amp;url=https://…/exercice.xlsx</code></pre>
+<div class="note"><p>C’est une protection d’usage, sans mot de passe : quelqu’un qui ouvre le fichier dans un autre tableur, ou sans <code>mode=student</code>, peut la lever.</p></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formules — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Formules</h1>
+<h2 id="ecrire">Een formule schrijven</h2>
+<p>Een formule begint met <code>=</code>. Ze bevat getallen, teksten tussen aanhalingstekens, celverwijzingen, operatoren en <a href="fonctions.html">functies</a>.</p>
+<pre><code>=B2*2
+=(B2+C2+D2)/3
+=GEMIDDELDE(B2:B6)
+="Totaal: "&amp;SOM(B2:B6)</code></pre>
+<p>De cel toont het resultaat, de formulebalk de formule. Cellen die van een gewijzigde cel afhangen, worden meteen herberekend.</p>
+<p>In het Nederlands is de komma decimaal en scheidt de puntkomma de argumenten: <code>=AFRONDEN(3,14159; 2)</code>. Functienamen worden in kleine letters of hoofdletters getypt, in het Nederlands of het Engels: <code>=som(B2:B6)</code> en <code>=SUM(B2:B6)</code> worden aanvaard.</p>
+<h2 id="souris">Cellen met de muis aanwijzen</h2>
+<p>Tijdens het schrijven van een formule voegt een klik op een cel van het blad haar adres in, slepen het bereik. Elke verwijzing heeft haar kleur, in de formule en op het blad.</p>
+<h2 id="completion">Aanvullen</h2>
+<p>Vanaf de eerste letters van een naam stelt DocCells de functies voor die ze bevatten: <kbd>↑</kbd> <kbd>↓</kbd> om te doorlopen, <kbd>Enter</kbd>, <kbd>Tab</kbd> of een klik om te kiezen. Na het openingshaakje herinnert een hulpvak aan de argumenten.</p>
+<figure><img src="img/completion.webp" alt="De na de eerste letters voorgestelde functies" width="760" height="560" /></figure>
+<figure><img src="img/aide-formule.webp" alt="De hulp van een functie" width="760" height="560" /></figure>
+<h2 id="somme">De automatische som</h2>
+<p><i data-i="formula-sum"></i> schrijft een som. De pijl biedt <strong>Som</strong>, <strong>Gemiddelde</strong>, <strong>Aantal</strong>, <strong>Maximum</strong>, <strong>Minimum</strong> en <strong>Alle formules</strong> aan: de bibliotheek, waar je een functie zoekt op naam, beschrijving of categorie.</p>
+<figure><img src="img/bibliotheque.webp" alt="De formulebibliotheek" width="1280" height="760" /></figure>
+<h2 id="operateurs">Operatoren</h2>
+<div class="table"><table><thead><tr><th>Operator</th><th>Rol</th></tr></thead><tbody>
+<tr><td><code>+</code> <code>-</code> <code>*</code> <code>/</code></td><td>vier bewerkingen</td></tr>
+<tr><td><code>^</code></td><td>macht: <code>=2^10</code></td></tr>
+<tr><td><code>%</code></td><td>percentage: <code>=20%*B2</code></td></tr>
+<tr><td><code>&amp;</code></td><td>voegt teksten samen: <code>=A2&amp;" "&amp;B2</code></td></tr>
+<tr><td><code>=</code> <code>&lt;&gt;</code></td><td>gelijk, verschillend</td></tr>
+<tr><td><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code></td><td>vergelijkingen</td></tr>
+<tr><td><code>( )</code></td><td>voorrang</td></tr>
+</tbody></table></div>
+<p>Machten gaan voor producten en quotiënten, dan sommen, dan vergelijkingen. <code>=-2^2</code> geeft −4 (4 in Excel).</p>
+<h2 id="references">Verwijzingen</h2>
+<div class="table"><table><thead><tr><th>Schrijfwijze</th><th>Betekenis</th></tr></thead><tbody>
+<tr><td><code>B2</code></td><td>een cel; volgt het doorvoeren</td></tr>
+<tr><td><code>$B$2</code></td><td>dezelfde cel, ook bij doorvoeren</td></tr>
+<tr><td><code>B$2</code>, <code>$B2</code></td><td>vaste rij, vaste kolom</td></tr>
+<tr><td><code>B2:D6</code></td><td>een bereik</td></tr>
+<tr><td><code>B:B</code>, <code>2:2</code></td><td>een hele kolom, een hele rij</td></tr>
+<tr><td><code>Blad2!B2</code>, <code>'Cijfers 2'!B2</code></td><td>een cel van een <a href="feuilles.html#references">ander blad</a></td></tr>
+<tr><td><code>cijfers</code></td><td>een <a href="noms.html">benoemd bereik</a></td></tr>
+</tbody></table></div>
+<p>Omlaag doorgevoerd wordt <code>=B2*$B$1</code> tot <code>=B3*$B$1</code>, <code>=B4*$B$1</code>…</p>
+<h2 id="conditions">Voorwaarden</h2>
+<pre><code>=ALS(B2&gt;=10; "geslaagd"; "gezakt")
+=ALS(EN(B2&gt;=10; C2&gt;=10); "ja"; "nee")
+=SCHAKELEN(A2; "a"; 1; "b"; 2; 0)
+=AANTAL.ALS(B2:B6; "&gt;10")
+=SOM.ALS(A2:A6; "Ana"; B2:B6)
+=GEMIDDELDE.ALS(B2:B6; "&lt;10")</code></pre>
+<ul>
+<li>Logische waarden worden <code>WAAR()</code> en <code>ONWAAR()</code> geschreven, met haakjes. Ze worden als TRUE en FALSE getoond.</li>
+<li>Een criterium is een tekst: <code>"&gt;10"</code>, <code>"&lt;&gt;0"</code>, <code>"Ana"</code>. De jokertekens <code>*</code> en <code>?</code> worden niet herkend.</li>
+<li>Een lege cel herken je met <code>=B2=""</code>; ze is niet gelijk aan 0.</li>
+</ul>
+<h2 id="chercher">Opzoeken in een tabel</h2>
+<pre><code>=VERT.ZOEKEN("Léa"; A2:D6; 3; 0)
+=INDEX(A2:A6; VERGELIJKEN(MAX(B2:B6); B2:B6; 0))</code></pre>
+<p>De eerste zoekt Léa in de eerste kolom van de tabel en geeft de derde; het laatste argument 0 vraagt de exacte waarde. De tweede geeft de naam van wie het beste cijfer heeft.</p>
+<h2 id="dates">Datums en tijden</h2>
+<p>Een datum is een aantal dagen, een tijd een deel van een dag: in cellen kun je ze optellen en aftrekken.</p>
+<pre><code>=A2+7
+=A3-A2
+=DAGEN(A3; A2)
+=WEEKDAG(A2; 2)</code></pre>
+<p>Een datum van <code>DATUM</code> of <code>VANDAAG</code> moet via een cel gaan om ermee op te tellen: <code>=VANDAAG()+1</code> geeft <code>#VALUE!</code>, maar als A1 <code>=VANDAAG()</code> bevat, geeft <code>=A1+1</code> morgen. Het resultaat is een getal: geef het een notatie <strong>Datum</strong>.</p>
+<h2 id="erreurs">Fouten</h2>
+<div class="table"><table><thead><tr><th>Getoond</th><th>Oorzaak</th></tr></thead><tbody>
+<tr><td><code>#NAME?</code></td><td>onbekende naam: typefout, <a href="fonctions.html#non-calculees">niet berekende</a> functie, <code>WAAR</code> zonder haakjes, tekst zonder aanhalingstekens</td></tr>
+<tr><td><code>#VALUE!</code></td><td>onverwacht type: een tekst waar een getal nodig is</td></tr>
+<tr><td><code>DIV/0</code></td><td>deling door nul of door een lege cel</td></tr>
+<tr><td><code>#N/A</code></td><td>waarde niet gevonden (<code>VERGELIJKEN</code>, <code>VERT.ZOEKEN</code>), of <code>GEO</code> buiten DocGeo</td></tr>
+<tr><td><code>#REF!</code></td><td>cel of blad dat niet bestaat</td></tr>
+<tr><td><code>#NUM!</code></td><td>getal buiten het domein: <code>=WORTEL(-1)</code></td></tr>
+<tr><td><code>#ERROR!</code></td><td>verkeerd geschreven formule, of niet berekende functie</td></tr>
+</tbody></table></div>
+<p><code>ALS.FOUT</code> vervangt de fout van een functie (<code>#N/A</code>, <code>#NUM!</code>): <code>=ALS.FOUT(VERT.ZOEKEN(E1; A2:D6; 2; 0); "afwezig")</code>. Die van een berekening (<code>DIV/0</code>, <code>#VALUE!</code>) vervangt ze niet: test tegen een deling door nul de deler, <code>=ALS(B2; B3/B2; "")</code>, wat geldt voor een nul en voor een lege cel.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>I fogli — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>I fogli</h1>
+<h2 id="ajouter">Aggiungere, cambiare foglio</h2>
+<ul>
+<li><i data-i="plus"></i> aggiunge un foglio, chiamato «Foglio2», «Foglio3»…</li>
+<li>Un clic su una scheda la mostra; <i data-i="all-sheets"></i> elenca i fogli, compresi i nascosti, e mostra quello scelto.</li>
+</ul>
+<h2 id="menu">Il menu di una scheda</h2>
+<p>Clic destro sulla scheda, o la sua freccia:</p>
+<div class="table"><table><thead><tr><th>Comando</th><th>Effetto</th></tr></thead><tbody>
+<tr><td><strong>Elimina</strong></td><td>dopo conferma; l’ultimo foglio visibile non si può eliminare</td></tr>
+<tr><td><strong>Copia</strong></td><td>duplica il foglio</td></tr>
+<tr><td><strong>Rinomina</strong></td><td>o doppio clic sul nome; senza <code>[ ] : ? * / ' "</code></td></tr>
+<tr><td><strong>Change color</strong></td><td>colore della scheda</td></tr>
+<tr><td><strong>Nascondi</strong></td><td>le formule leggono ancora il foglio; <i data-i="all-sheets"></i> lo mostra di nuovo</td></tr>
+<tr><td><strong>Move left</strong>, <strong>Move right</strong></td><td>cambia l’ordine; si può anche trascinare la scheda</td></tr>
+</tbody></table></div>
+<h2 id="references">Leggere un altro foglio</h2>
+<p>Il nome del foglio, un punto esclamativo, l’indirizzo. Il nome va tra apostrofi se contiene uno spazio o un segno.</p>
+<pre><code>=Foglio2!B2*2
+='Voti 2'!B2
+=SOMMA('Voti 2'!B2:B6)</code></pre>
+<p>Il riferimento si scrive: cambiare scheda mentre si scrive una formula abbandona l’immissione.</p>
+<p>Perché un intervallo sia letto da tutti i fogli con un nome, <a href="noms.html">denominarlo</a> con l’ambito <strong>Cartella di lavoro</strong>.</p>
+</main>
+</body>
+</html>

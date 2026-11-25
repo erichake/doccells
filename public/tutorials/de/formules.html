@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formeln — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Formeln</h1>
+<h2 id="ecrire">Eine Formel schreiben</h2>
+<p>Eine Formel beginnt mit <code>=</code>. Sie enthält Zahlen, Texte in Anführungszeichen, Zellbezüge, Operatoren und <a href="fonctions.html">Funktionen</a>.</p>
+<pre><code>=B2*2
+=(B2+C2+D2)/3
+=MITTELWERT(B2:B6)
+="Summe: "&amp;SUMME(B2:B6)</code></pre>
+<p>Die Zelle zeigt das Ergebnis, die Bearbeitungsleiste die Formel. Zellen, die von einer geänderten Zelle abhängen, werden sofort neu berechnet.</p>
+<p>Im Deutschen ist das Komma das Dezimaltrennzeichen, das Semikolon trennt die Argumente: <code>=RUNDEN(3,14159; 2)</code>. Funktionsnamen werden klein oder groß, deutsch oder englisch getippt: <code>=summe(B2:B6)</code> und <code>=SUM(B2:B6)</code> werden angenommen.</p>
+<h2 id="souris">Zellen mit der Maus angeben</h2>
+<p>Beim Schreiben einer Formel fügt ein Klick auf eine Zelle des Blatts ihre Adresse ein, ein Ziehen den Bereich. Jeder Bezug hat seine Farbe, in der Formel wie auf dem Blatt.</p>
+<h2 id="completion">Die Vervollständigung</h2>
+<p>Ab den ersten Buchstaben eines Namens schlägt DocCells die Funktionen vor, die sie enthalten: <kbd>↑</kbd> <kbd>↓</kbd> zum Durchlaufen, <kbd>Eingabe</kbd>, <kbd>Tab</kbd> oder ein Klick zum Wählen. Nach der öffnenden Klammer erinnert eine Hilfe an die Argumente.</p>
+<figure><img src="img/completion.webp" alt="Die nach den ersten Buchstaben vorgeschlagenen Funktionen" width="760" height="560" /></figure>
+<figure><img src="img/aide-formule.webp" alt="Die Hilfe zu einer Funktion" width="760" height="560" /></figure>
+<h2 id="somme">Die automatische Summe</h2>
+<p><i data-i="formula-sum"></i> schreibt eine Summe. Ihr Pfeil bietet <strong>SUMME</strong>, <strong>MITTELWERT</strong>, <strong>ANZAHL</strong>, <strong>MAX</strong>, <strong>MIN</strong> und <strong>Alle Formeln</strong> an: die Bibliothek, in der man eine Funktion nach Name, Beschreibung oder Kategorie sucht.</p>
+<figure><img src="img/bibliotheque.webp" alt="Die Formelbibliothek" width="1280" height="760" /></figure>
+<h2 id="operateurs">Operatoren</h2>
+<div class="table"><table><thead><tr><th>Operator</th><th>Aufgabe</th></tr></thead><tbody>
+<tr><td><code>+</code> <code>-</code> <code>*</code> <code>/</code></td><td>vier Grundrechenarten</td></tr>
+<tr><td><code>^</code></td><td>Potenz: <code>=2^10</code></td></tr>
+<tr><td><code>%</code></td><td>Prozent: <code>=20%*B2</code></td></tr>
+<tr><td><code>&amp;</code></td><td>verkettet Texte: <code>=A2&amp;" "&amp;B2</code></td></tr>
+<tr><td><code>=</code> <code>&lt;&gt;</code></td><td>gleich, ungleich</td></tr>
+<tr><td><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code></td><td>Vergleiche</td></tr>
+<tr><td><code>( )</code></td><td>Vorrang</td></tr>
+</tbody></table></div>
+<p>Potenzen kommen vor Produkten und Quotienten, dann Summen, dann Vergleiche. <code>=-2^2</code> ergibt −4 (4 in Excel).</p>
+<h2 id="references">Bezüge</h2>
+<div class="table"><table><thead><tr><th>Schreibweise</th><th>Bedeutung</th></tr></thead><tbody>
+<tr><td><code>B2</code></td><td>eine Zelle; folgt dem Ausfüllen</td></tr>
+<tr><td><code>$B$2</code></td><td>dieselbe Zelle, auch beim Ausfüllen</td></tr>
+<tr><td><code>B$2</code>, <code>$B2</code></td><td>feste Zeile, feste Spalte</td></tr>
+<tr><td><code>B2:D6</code></td><td>ein Bereich</td></tr>
+<tr><td><code>B:B</code>, <code>2:2</code></td><td>eine ganze Spalte, eine ganze Zeile</td></tr>
+<tr><td><code>Tabelle2!B2</code>, <code>'Noten 2'!B2</code></td><td>eine Zelle eines <a href="feuilles.html#references">anderen Blatts</a></td></tr>
+<tr><td><code>noten</code></td><td>ein <a href="noms.html">benannter Bereich</a></td></tr>
+</tbody></table></div>
+<p>Nach unten ausgefüllt wird <code>=B2*$B$1</code> zu <code>=B3*$B$1</code>, <code>=B4*$B$1</code>…</p>
+<h2 id="conditions">Bedingungen</h2>
+<pre><code>=WENN(B2&gt;=10; "bestanden"; "nicht bestanden")
+=WENN(UND(B2&gt;=10; C2&gt;=10); "ja"; "nein")
+=SCHALTER(A2; "a"; 1; "b"; 2; 0)
+=ZÄHLENWENN(B2:B6; "&gt;10")
+=SUMMEWENN(A2:A6; "Ana"; B2:B6)
+=MITTELWERTWENN(B2:B6; "&lt;10")</code></pre>
+<ul>
+<li>Wahrheitswerte werden <code>WAHR()</code> und <code>FALSCH()</code> geschrieben, mit Klammern. Sie werden als TRUE und FALSE angezeigt.</li>
+<li>Ein Kriterium ist ein Text: <code>"&gt;10"</code>, <code>"&lt;&gt;0"</code>, <code>"Ana"</code>. Die Platzhalter <code>*</code> und <code>?</code> werden nicht erkannt.</li>
+<li>Eine leere Zelle erkennt man mit <code>=B2=""</code>; sie ist nicht gleich 0.</li>
+</ul>
+<h2 id="chercher">In einer Tabelle suchen</h2>
+<pre><code>=SVERWEIS("Léa"; A2:D6; 3; 0)
+=INDEX(A2:A6; VERGLEICH(MAX(B2:B6); B2:B6; 0))</code></pre>
+<p>Die erste sucht Léa in der ersten Spalte der Tabelle und gibt die dritte zurück; das letzte Argument 0 verlangt den genauen Wert. Die zweite gibt den Namen der Person mit der besten Note.</p>
+<h2 id="dates">Datum und Uhrzeit</h2>
+<p>Ein Datum ist eine Anzahl von Tagen, eine Uhrzeit ein Bruchteil eines Tages: in Zellen lassen sie sich addieren und subtrahieren.</p>
+<pre><code>=A2+7
+=A3-A2
+=TAGE(A3; A2)
+=WOCHENTAG(A2; 2)</code></pre>
+<p>Ein von <code>DATUM</code> oder <code>HEUTE</code> geliefertes Datum muss über eine Zelle gehen, um damit zu addieren: <code>=HEUTE()+1</code> ergibt <code>#VALUE!</code>, aber wenn A1 <code>=HEUTE()</code> enthält, ergibt <code>=A1+1</code> morgen. Das Ergebnis ist eine Zahl: ihr ein Format <strong>Datum</strong> geben.</p>
+<h2 id="erreurs">Fehler</h2>
+<div class="table"><table><thead><tr><th>Anzeige</th><th>Ursache</th></tr></thead><tbody>
+<tr><td><code>#NAME?</code></td><td>unbekannter Name: Tippfehler, <a href="fonctions.html#non-calculees">nicht berechnete</a> Funktion, <code>WAHR</code> ohne Klammern, Text ohne Anführungszeichen</td></tr>
+<tr><td><code>#VALUE!</code></td><td>unerwarteter Typ: ein Text, wo eine Zahl nötig ist</td></tr>
+<tr><td><code>DIV/0</code></td><td>Division durch null oder durch eine leere Zelle</td></tr>
+<tr><td><code>#N/A</code></td><td>Wert nicht gefunden (<code>VERGLEICH</code>, <code>SVERWEIS</code>) oder <code>GEO</code> außerhalb von DocGeo</td></tr>
+<tr><td><code>#REF!</code></td><td>nicht vorhandene Zelle oder nicht vorhandenes Blatt</td></tr>
+<tr><td><code>#NUM!</code></td><td>Zahl außerhalb des Definitionsbereichs: <code>=WURZEL(-1)</code></td></tr>
+<tr><td><code>#ERROR!</code></td><td>falsch geschriebene Formel oder nicht berechnete Funktion</td></tr>
+</tbody></table></div>
+<p><code>WENNFEHLER</code> ersetzt den Fehler einer Funktion (<code>#N/A</code>, <code>#NUM!</code>): <code>=WENNFEHLER(SVERWEIS(E1; A2:D6; 2; 0); "fehlt")</code>. Den einer Rechnung (<code>DIV/0</code>, <code>#VALUE!</code>) ersetzt es nicht: gegen eine Division durch null den Divisor prüfen, <code>=WENN(B2; B3/B2; "")</code>, was für eine Null wie für eine leere Zelle gilt.</p>
+</main>
+</body>
+</html>

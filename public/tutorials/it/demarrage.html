@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aprire e salvare — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Aprire e salvare</h1>
+<h2 id="nouveau">Iniziare</h2>
+<p>DocCells si apre con una cartella vuota di un foglio. Per ripartire da una cartella vuota, ricaricare la pagina o aprire DocCells in un’altra scheda del browser.</p>
+<h2 id="ouvrir">Aprire una cartella</h2>
+<div class="table"><table><thead><tr><th>Modo</th><th>Effetto</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i>, <strong>File › Apri</strong>, <kbd>Ctrl</kbd> <kbd>O</kbd></td><td>scegliere un file <code>.xlsx</code> del computer</td></tr>
+<tr><td>Trascinare il file sulla pagina</td><td>un velo indica dove rilasciarlo; la cartella sostituisce quella aperta</td></tr>
+<tr><td><strong>File › Apri un file recente</strong></td><td>gli ultimi dieci file aperti o salvati (Chrome e Edge)</td></tr>
+<tr><td>Un link <code>?url=…</code></td><td>una cartella in rete o un Google Sheet (<a href="partager.html#url">condividere</a>)</td></tr>
+</tbody></table></div>
+<p>L’unico formato letto è Excel <code>.xlsx</code>. I vecchi <code>.xls</code>, gli <code>.ods</code> e i <code>.csv</code> vanno prima convertiti. Ciò che si conserva di un file Excel è descritto in <a href="excel.html">Compatibilità con Excel</a>.</p>
+<div class="warn"><p>Aprire una cartella sostituisce quella mostrata: salvare prima le modifiche.</p></div>
+<h3 id="recents">File recenti</h3>
+<p>Il browser può chiedere di nuovo il permesso di leggere il file. Un file spostato, rinominato o eliminato viene tolto dall’elenco. <strong>Cancella elenco</strong> lo svuota. L’elenco resta in questo browser, su questo computer.</p>
+<h2 id="enregistrer">Salvare</h2>
+<h3>Chrome e Edge</h3>
+<div class="table"><table><thead><tr><th>Comando</th><th>Effetto</th></tr></thead><tbody>
+<tr><td><i data-i="save"></i>, <strong>File › Salva</strong>, <kbd>Ctrl</kbd> <kbd>S</kbd></td><td>la prima volta chiede dove mettere il file; poi lo sostituisce senza chiedere</td></tr>
+<tr><td><strong>File › Salva con nome...</strong></td><td>scegliere un altro file</td></tr>
+</tbody></table></div>
+<p>Un file aperto con <i data-i="open"></i>, dai recenti o rilasciato sulla pagina viene salvato al suo posto; il browser chiede una volta il permesso di modificarlo.</p>
+<p>Il nome della cartella è in fondo alla barra dei menu. Un punto rosso indica modifiche non salvate; il titolo della scheda del browser comincia allora con ●.</p>
+<h3>Firefox, Safari</h3>
+<p>Questi browser non permettono di scrivere in un file. <strong>File › Esporta</strong> o <kbd>Ctrl</kbd> <kbd>S</kbd> scarica la cartella, con il nome di quella aperta.</p>
+<h2 id="recuperer">Recuperare una cartella non salvata</h2>
+<p>Finché ci sono modifiche non salvate, DocCells ne tiene una copia nel browser, aggiornata meno di un secondo dopo ogni modifica. Se la pagina si chiude senza salvare, alla successiva apertura DocCells propone, con la data della copia, di ripristinarla (<strong>Ripristina</strong>) o no (<strong>Ignora</strong>).</p>
+<ul>
+<li>Salvare, esportare o aprire un’altra cartella cancella questa copia.</li>
+<li>Ignorare la copia la elimina definitivamente.</li>
+<li>La copia si fa solo quando DocCells occupa tutta la pagina, non quando è incorporato in un’altra.</li>
+</ul>
+<h2 id="langue">Lingua</h2>
+<p>DocCells prende la lingua del browser tra le dodici della sua interfaccia: cinese semplificato e tradizionale, francese, greco, hindi, inglese, italiano, olandese, portoghese, russo, spagnolo, tedesco. Per le altre vale l’inglese. <code>?lang=it</code> nell’indirizzo impone una lingua.</p>
+<p>La lingua cambia i menu, i nomi delle funzioni, il separatore decimale, il simbolo di valuta e l’ordine delle date mostrate. Il file salvato non ne dipende: una cartella scritta in francese si apre in tedesco con le formule in tedesco.</p>
+</main>
+</body>
+</html>

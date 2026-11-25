@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/pt.md: do not edit. -->
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Caixas, listas e calendário — Manual do DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Caixas, listas e calendário</h1>
+<figure><img src="img/controles.webp" alt="Caixas de verificação, uma lista pendente e o calendário de uma data" width="1280" height="560" /></figure>
+<h2 id="cases">Caixas de verificação</h2>
+<p>Selecionar as células, <strong>Inserir › Caixa de seleção</strong>. Um clique marca ou desmarca; a célula vale TRUE ou FALSE.</p>
+<pre><code>=SE(B2; "feito"; "por fazer")
+=SOMARPRODUTO(B2:B6; C2:C6)
+=SOMARPRODUTO(B2:B6; B2:B6)</code></pre>
+<p>A segunda fórmula soma os valores da coluna C cuja caixa está marcada; a terceira conta as caixas marcadas.</p>
+<h2 id="listes">Listas pendentes</h2>
+<p>Selecionar as células, <strong>Inserir › Lista pendente…</strong>.</p>
+<div class="table"><table><thead><tr><th>Origem</th><th>Conteúdo</th></tr></thead><tbody>
+<tr><td><strong>Valores</strong></td><td>as opções, uma por campo; <strong>Adicionar opção</strong>; sem vírgula</td></tr>
+<tr><td><strong>A partir de um intervalo</strong></td><td>um intervalo cujas células são as opções: <code>Folha2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>Um intervalo sem <code>$</code> desloca-se de uma célula para outra, como uma fórmula preenchida. Se as suas células mudam, as opções acompanham.</p>
+<p>A célula mostra uma seta; um clique abre as opções. Um valor diferente dos da lista não é aceite.</p>
+<h2 id="calendrier">Calendário</h2>
+<p>Um duplo clique numa célula de data abre um calendário: escolher um dia, mudar de mês com <strong><</strong> e <strong>></strong>, <strong>Hoje</strong> para a data de hoje. Abre-se em qualquer célula com formato de data, mesmo vazia, salvo se contém uma fórmula ou está <a href="protection.html">bloqueada</a>.</p>
+<div class="tip"><p>Para uma coluna de datas a preencher com o calendário: selecioná-la e dar-lhe o formato <strong>Data</strong>.</p></div>
+<h2 id="retirer">Retirar</h2>
+<p><kbd>Delete</kbd> retira a caixa ou a lista da célula, com o seu valor.</p>
+<p>Caixas e listas são guardadas no ficheiro Excel; as caixas são aí caixas de verificação do Excel.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Las hojas — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Las hojas</h1>
+<h2 id="ajouter">Añadir, cambiar de hoja</h2>
+<ul>
+<li><i data-i="plus"></i> añade una hoja, llamada «Hoja2», «Hoja3»…</li>
+<li>Un clic en una pestaña la muestra; <i data-i="all-sheets"></i> lista las hojas, incluidas las ocultas, y muestra la que se elija.</li>
+</ul>
+<h2 id="menu">El menú de una pestaña</h2>
+<p>Clic derecho en la pestaña, o su flecha:</p>
+<div class="table"><table><thead><tr><th>Comando</th><th>Efecto</th></tr></thead><tbody>
+<tr><td><strong>Eliminar</strong></td><td>tras confirmar; la última hoja visible no puede eliminarse</td></tr>
+<tr><td><strong>Copiar</strong></td><td>duplica la hoja</td></tr>
+<tr><td><strong>Renombrar</strong></td><td>o doble clic en el nombre; sin <code>[ ] : ? * / ' "</code></td></tr>
+<tr><td><strong>Cambiar color</strong></td><td>color de la pestaña</td></tr>
+<tr><td><strong>Ocultar</strong></td><td>las fórmulas siguen leyendo la hoja; <i data-i="all-sheets"></i> la vuelve a mostrar</td></tr>
+<tr><td><strong>Mover izquierda</strong>, <strong>Mover derecja</strong></td><td>cambia el orden; también se puede arrastrar la pestaña</td></tr>
+</tbody></table></div>
+<h2 id="references">Leer otra hoja</h2>
+<p>El nombre de la hoja, un signo de exclamación, la dirección. El nombre va entre apóstrofos si contiene un espacio o un signo.</p>
+<pre><code>=Hoja2!B2*2
+='Notas 2'!B2
+=SUMA('Notas 2'!B2:B6)</code></pre>
+<p>La referencia se teclea: cambiar de pestaña mientras se escribe una fórmula abandona la entrada.</p>
+<p>Para que un rango se lea desde todas las hojas por un nombre, <a href="noms.html">ponerle nombre</a> con el ámbito <strong>Libro</strong>.</p>
+</main>
+</body>
+</html>

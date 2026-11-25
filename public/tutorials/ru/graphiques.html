@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Диаграммы и спарклайны — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Диаграммы и спарклайны</h1>
+<h2 id="creer">Создание диаграммы</h2>
+<ol>
+<li>Выделить данные.</li>
+<li><i data-i="chart"></i> или <strong>Вставка › Вставить диаграмму</strong>.</li>
+<li>Выбрать тип и параметры; образец меняется сразу.</li>
+<li><strong>Добавить</strong>, затем <strong>Закрыть</strong>.</li>
+</ol>
+<figure><img src="img/graphique.webp" alt="Окно диаграмм" width="1280" height="900" /></figure>
+<div class="table"><table><thead><tr><th>Выделено</th><th>Понимается как</th></tr></thead><tbody>
+<tr><td>столбец или строка чисел</td><td>данные</td></tr>
+<tr><td>два столбца</td><td>подписи в первом, данные во втором</td></tr>
+<tr><td>две строки</td><td>подписи в первой, данные во второй</td></tr>
+<tr><td>два отдельных столбца, выбранные с <kbd>Ctrl</kbd></td><td>то же</td></tr>
+</tbody></table></div>
+<p>Диаграмма показывает один ряд: строку или столбец данных. Ячейки без числа, например заголовок, пропускаются.</p>
+<h2 id="types">Типы</h2>
+<div class="table"><table><thead><tr><th>Тип</th><th>Для чего</th><th>Подписи</th></tr></thead><tbody>
+<tr><td><strong>Столбцы</strong></td><td>сравнение</td><td>под столбиками</td></tr>
+<tr><td><strong>Линия</strong></td><td>изменение</td><td>по оси абсцисс</td></tr>
+<tr><td><strong>Точечная</strong></td><td>связь двух величин</td><td>это абсциссы, если они числа; иначе 1, 2, 3…</td></tr>
+<tr><td><strong>Секторы</strong></td><td>доли; положительные значения</td><td>в легенде или на секторах</td></tr>
+</tbody></table></div>
+<p>До 120 значений, 24 для секторов.</p>
+<figure><img src="img/graphiques.webp" alt="Четыре типа диаграмм" width="1280" height="640" /></figure>
+<h2 id="options">Параметры</h2>
+<div class="table"><table><thead><tr><th>Поле</th><th>Содержание</th></tr></thead><tbody>
+<tr><td><strong>Заголовок</strong></td><td>обязательно; показан вверху диаграммы</td></tr>
+<tr><td><strong>Цвет</strong></td><td>выбор или код <code>#4F81BD</code>; у секторов свои цвета</td></tr>
+<tr><td><strong>Данные</strong></td><td>диапазон: <code>B2:B6</code></td></tr>
+<tr><td><strong>Метки</strong></td><td><strong>Нет</strong>; <strong>Столбец той же строки</strong> (<code>A</code>); <strong>Строка тех же столбцов</strong> (<code>1</code>); <strong>Пользовательский диапазон</strong>, того же размера, что данные</td></tr>
+<tr><td><strong>Отображение</strong></td><td>значения, легенда, абсциссы, ординаты, сетка</td></tr>
+</tbody></table></div>
+<h2 id="modifier">Перемещение, изменение</h2>
+<ul>
+<li>Потянув полосу заголовка, перемещают диаграмму; потянув правый нижний угол, меняют размер.</li>
+<li><strong>Редактировать</strong> снова открывает окно, <strong>Удалить</strong> удаляет диаграмму. Окно также перечисляет все диаграммы листа.</li>
+<li>Диаграмма следует данным своих ячеек.</li>
+</ul>
+<p>Диаграммы сохраняются в файле Excel как настоящие и снова читаются DocCells. С листом они не <a href="impression.html">печатаются</a>.</p>
+<h2 id="sparklines">Спарклайны</h2>
+<p>Функция <code>SPARKLINE</code> рисует в ячейке миниатюрную диаграмму.</p>
+<pre><code>=SPARKLINE(B2:F2)
+=SPARKLINE(B2:F2; {"charttype"\"column"})
+=SPARKLINE(B2:F2; {"charttype"\"line"; "color"\"#dc2626"; "linewidth"\2})
+=SPARKLINE(B2:F2; {"charttype"\"bar"; "max"\100})</code></pre>
+<figure><img src="img/sparklines.webp" alt="Спарклайны в виде линии и столбиков" width="900" height="300" /></figure>
+<p>Параметры пишут в фигурных скобках: имя, обратная косая черта, значение; между параметрами точка с запятой.</p>
+<div class="table"><table><thead><tr><th><code>charttype</code></th><th>Рисунок</th><th>Свои параметры</th></tr></thead><tbody>
+<tr><td><code>"line"</code> (по умолчанию)</td><td>линия</td><td><code>color</code>, <code>linewidth</code>, <code>xmin</code>, <code>xmax</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"bar"</code></td><td>полосы с накоплением</td><td><code>max</code>, <code>color1</code>, <code>color2</code></td></tr>
+<tr><td><code>"column"</code></td><td>столбики</td><td><code>color</code>, <code>negcolor</code>, <code>lowcolor</code>, <code>highcolor</code>, <code>firstcolor</code>, <code>lastcolor</code>, <code>axis</code>, <code>axiscolor</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"winloss"</code></td><td>выигрыши и проигрыши</td><td>те же, без <code>ymin</code> и <code>ymax</code></td></tr>
+</tbody></table></div>
+<p>Общие параметры: <code>empty</code> (<code>"zero"</code> или <code>"ignore"</code>), <code>nan</code> (<code>"convert"</code> или <code>"ignore"</code>), <code>rtl</code> (справа налево). <a href="../../sparkline/ru.html">Документация SPARKLINE</a> даёт все значения с примерами.</p>
+<p>Для рисунка крупнее увеличьте строку и столбец или объедините ячейки.</p>
+</main>
+</body>
+</html>

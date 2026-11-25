@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>शीट — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>शीट</h1>
+<h2 id="ajouter">जोड़ना, बदलना</h2>
+<ul>
+<li><i data-i="plus"></i> शीट जोड़ता है, नाम “शीट2”, “शीट3”…</li>
+<li>टैब पर क्लिक शीट दिखाता है; <i data-i="all-sheets"></i> छिपी सहित सभी शीट दिखाता है और चुनी हुई खोलता है।</li>
+</ul>
+<h2 id="menu">टैब का मेनू</h2>
+<p>टैब पर दायाँ क्लिक, या उसका तीर:</p>
+<div class="table"><table><thead><tr><th>आदेश</th><th>परिणाम</th></tr></thead><tbody>
+<tr><td><strong>हटाएं</strong></td><td>पुष्टि के बाद; अंतिम दिखती शीट नहीं हटती</td></tr>
+<tr><td><strong>कॉपी करें</strong></td><td>शीट की प्रति बनाता है</td></tr>
+<tr><td><strong>नाम बदलें</strong></td><td>या नाम पर डबल क्लिक; बिना <code>[ ] : ? * / ' "</code></td></tr>
+<tr><td><strong>रंग बदलें</strong></td><td>टैब का रंग</td></tr>
+<tr><td><strong>छुपाएं</strong></td><td>सूत्र शीट को पढ़ते रहते हैं; <i data-i="all-sheets"></i> उसे फिर दिखाता है</td></tr>
+<tr><td><strong>बाएं जाएं</strong>, <strong>दाएं जाएं</strong></td><td>क्रम बदलता है; टैब खींचा भी जा सकता है</td></tr>
+</tbody></table></div>
+<h2 id="references">दूसरी शीट पढ़ना</h2>
+<p>शीट का नाम, विस्मयादिबोधक चिह्न, पता। नाम में स्पेस या चिह्न हो तो उसे एपॉस्ट्रॉफ़ी में लिखें।</p>
+<pre><code>=शीट2!B2*2
+='Marks 2'!B2
+=SUM('Marks 2'!B2:B6)</code></pre>
+<p>संदर्भ टाइप किया जाता है: सूत्र लिखते समय टैब बदलने से प्रविष्टि छूट जाती है।</p>
+<p>किसी रेंज को सभी शीटों से नाम द्वारा पढ़ने के लिए <strong>कार्यपुस्तिका</strong> दायरे के साथ <a href="noms.html">नाम दें</a>।</p>
+</main>
+</body>
+</html>

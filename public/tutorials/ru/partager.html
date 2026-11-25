@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Публикация и встраивание — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Публикация и встраивание</h1>
+<h2 id="url">Книга по ссылке</h2>
+<p><code>?url=</code> и адрес файла <code>.xlsx</code> в интернете открывают его в DocCells.</p>
+<pre><code>https://…/doccells/?url=https://example.org/marks.xlsx</code></pre>
+<p>Сайт с файлом должен разрешать чтение другим сайтам (заголовок CORS); файла рядом с DocCells, на том же сайте, это не касается. Каждый открывает свою копию: изменения не возвращаются в исходный файл.</p>
+<h2 id="google">Google Таблица</h2>
+<p>Подходит и адрес Google Таблицы.</p>
+<pre><code>https://…/doccells/?url=https://docs.google.com/spreadsheets/d/…</code></pre>
+<ul>
+<li>Откройте к ней доступ «Все, у кого есть ссылка».</li>
+<li>DocCells при каждом открытии читает копию в формате Excel: документ Google не изменяется.</li>
+<li>Сайт с DocCells должен выполнять PHP; не более 25 МБ.</li>
+</ul>
+<h2 id="options">Параметры адреса</h2>
+<div class="table"><table><thead><tr><th>Параметр</th><th>Результат</th></tr></thead><tbody>
+<tr><td><code>url=…</code></td><td>открывает книгу или Google Таблицу</td></tr>
+<tr><td><code>mode=student</code></td><td><a href="protection.html#eleve">режим ученика</a></td></tr>
+<tr><td><code>lang=ru</code></td><td>задаёт язык: <code>de</code>, <code>el</code>, <code>en</code>, <code>es</code>, <code>fr</code>, <code>hi</code>, <code>it</code>, <code>nl</code>, <code>pt</code>, <code>ru</code>, <code>zh-CN</code>, <code>zh-TW</code></td></tr>
+</tbody></table></div>
+<p>Параметры идут подряд через <code>&amp;</code>: <code>?lang=ru&amp;mode=student&amp;url=…</code>. Первый стоит после <code>?</code>.</p>
+<h2 id="integrer">На веб-странице</h2>
+<pre><code>&lt;iframe src="https://…/doccells/?url=https://example.org/marks.xlsx"
+    style="width:100%;height:500px;border:1px solid #ccc"&gt;&lt;/iframe&gt;</code></pre>
+<p>Во фрейме у DocCells нет меню, кнопок открытия и сохранения, копии для восстановления: видны панель кнопок, строка формул и лист.</p>
+<h2 id="programme">Из программы</h2>
+<p>Страница может управлять DocCells: загружать книгу, читать и записывать ячейки, следить за их значениями. Параметр <code>embed</code> включает этот режим; он описан для разработчиков в файле проекта <a href="https://github.com/erichake/doccells/blob/main/EMBED.md">EMBED.md</a> (по-французски).</p>
+</main>
+</body>
+</html>

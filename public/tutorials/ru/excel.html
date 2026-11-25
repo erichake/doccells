@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Совместимость с Excel — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Совместимость с Excel</h1>
+<p class="lead">DocCells читает и записывает формат Excel <code>.xlsx</code>. Следующее сохраняется в обе стороны.</p>
+<h2 id="conserve">Что сохраняется</h2>
+<div class="table"><table><thead><tr><th>Элемент</th><th>Примечание</th></tr></thead><tbody>
+<tr><td>значения, тексты, даты, формулы</td><td>формулы показаны на языке DocCells</td></tr>
+<tr><td><a href="nombres.html">числовые форматы</a></td><td>в том числе пользовательские</td></tr>
+<tr><td>шрифт, цвета, выравнивание, поворот, перенос</td><td></td></tr>
+<tr><td>границы, объединённые ячейки</td><td></td></tr>
+<tr><td>ширина, высота, скрытые строки и столбцы</td><td></td></tr>
+<tr><td><a href="lignes-colonnes.html#figer">закреплённые строки и столбцы</a>, сетка</td><td></td></tr>
+<tr><td>несколько листов</td><td></td></tr>
+<tr><td><a href="noms.html">именованные диапазоны</a></td><td></td></tr>
+<tr><td><a href="conditionnelle.html">условное форматирование</a></td><td>правила DocCells, простые правила Excel (сравнение, содержит текст)</td></tr>
+<tr><td><a href="controles.html">флажки, раскрывающиеся списки</a></td><td></td></tr>
+<tr><td><a href="graphiques.html">диаграммы</a></td><td>записываются как диаграммы Excel; диаграммы DocCells читаются снова</td></tr>
+<tr><td><a href="images-liens.html">изображения</a></td><td></td></tr>
+<tr><td><a href="tri-filtre.html#filtrer">фильтры</a></td><td></td></tr>
+<tr><td><a href="protection.html">защита</a>, разблокированные ячейки</td><td></td></tr>
+</tbody></table></div>
+<h2 id="perdu">Что не сохраняется</h2>
+<div class="table"><table><thead><tr><th>Элемент</th><th>Становится</th></tr></thead><tbody>
+<tr><td><a href="images-liens.html#liens">ссылки</a></td><td>их текстом</td></tr>
+<tr><td><a href="listes.html">списки</a> в ячейках</td><td>текстом, <code>[2; 1]</code></td></tr>
+<tr><td>спарклайны DocCells или Google Таблиц</td><td>формулой <code>SPARKLINE</code>, которую DocCells читает; Excel её не знает</td></tr>
+<tr><td>диаграммы, созданные в Excel</td><td>не сохраняются</td></tr>
+<tr><td>сводные таблицы, макросы, срезы, комментарии</td><td>не сохраняются</td></tr>
+<tr><td>условное форматирование с цветовыми шкалами, гистограммами, значками</td><td>не сохраняется</td></tr>
+</tbody></table></div>
+<div class="tip"><p>Прежде чем заменить сложную книгу Excel, сохраните её из DocCells под другим именем (<strong>Сохранить как...</strong>).</p></div>
+<h2 id="listes">Списки</h2>
+<p>Список, открытый из <code>.xlsx</code>, — текст: наберите его снова, и он станет списком. Список, вычисленный формулой, снова становится списком при пересчёте.</p>
+<h2 id="formules">Формулы</h2>
+<p>При открытии формула обычно хранит результат, сохранённый Excel, пока не изменится одна из её ячеек. Функция, <a href="fonctions.html#non-calculees">не вычисляемая DocCells</a>, тогда даёт <code>#NAME?</code> или <code>#ERROR!</code>.</p>
+<h2 id="formats">Другие форматы</h2>
+<div class="table"><table><thead><tr><th>Формат</th><th>Как</th></tr></thead><tbody>
+<tr><td><code>.csv</code></td><td>откройте файл в текстовом редакторе, скопируйте и вставьте в DocCells, если значения разделены табуляцией; иначе преобразуйте в <code>.xlsx</code></td></tr>
+<tr><td><code>.ods</code>, <code>.xls</code></td><td>сохраните как <code>.xlsx</code> в LibreOffice или Excel</td></tr>
+<tr><td>Google Таблицы</td><td><a href="partager.html#google">по ссылке</a> или скачав как <code>.xlsx</code></td></tr>
+<tr><td>PDF</td><td><a href="impression.html">печать</a>, «Сохранить как PDF»</td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

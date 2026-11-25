@@ -1,0 +1,392 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Functions — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Functions</h1>
+<p class="lead">The 314 functions computed by DocCells, by field, with an example of each.</p>
+<ul>
+<li>To search: typing a function's name in the field at the top of the page (<kbd>/</kbd>) leads to its row.</li>
+<li>Arguments are separated by commas; arguments between square brackets <code>[ ]</code> are optional.</li>
+<li><code>TRUE()</code> and <code>FALSE()</code> are written with their parentheses; 1 and 0 can also be written.</li>
+<li>A “range” argument can be a <a href="listes.html">list</a>: <code>=AVERAGE([12, 15, 8])</code>.</li>
+<li>See also <a href="formules.html">Formulas</a>: operators, references, errors.</li>
+</ul>
+<h2 id="exemples">The cells of the examples</h2>
+<p>The examples read this sheet:</p>
+<div class="table"><table class="cells"><tr><th></th><th>A</th><th>B</th><th>C</th><th>F</th><th>G</th></tr><tr><th>1</th><td class="num">12</td><td class="num">2</td><td>Ana</td><td class="num">1</td><td class="num">2</td></tr><tr><th>2</th><td class="num">15</td><td class="num">4</td><td>Paul</td><td class="num">3</td><td class="num">4</td></tr><tr><th>3</th><td class="num">8</td><td class="num">6</td><td>Léa</td><td></td><td></td></tr><tr><th>4</th><td class="num">17</td><td class="num">8</td><td>Tom</td><td></td><td></td></tr><tr><th>5</th><td class="num">10</td><td class="num">11</td><td>Zoé</td><td></td><td></td></tr></table></div>
+<h2 id="math">Mathematics</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="SUM"><td><code><strong>SUM</strong>(value1, [value2, …])</code></td><td>Sum of a series of numbers and/or cells.<span class="ex"><code>=SUM(A1:A5)</code> → <code>62</code></span></td></tr>
+<tr id="SUMIF"><td><code><strong>SUMIF</strong>(range, criterion, [sum_range])</code></td><td>Sum of the cells of a range that meet a criterion ("&gt;=10", "Ana"), or of the matching cells of sum_range.<span class="ex"><code>=SUMIF(A1:A5, "&gt;=10")</code> → <code>54</code></span></td></tr>
+<tr id="SUMIFS"><td><code><strong>SUMIFS</strong>(sum_range, criteria_range1, criterion1, [criteria_range2, …])</code></td><td>Sums a range depending on multiple criteria.<span class="ex"><code>=SUMIFS(A1:A5, A1:A5, "&gt;9", B1:B5, "&lt;8")</code> → <code>27</code></span></td></tr>
+<tr id="SUMPRODUCT"><td><code><strong>SUMPRODUCT</strong>(array1, [array2, …])</code></td><td>Sum of products of elements in two arrays.<span class="ex"><code>=SUMPRODUCT(A1:A5, B1:B5)</code> → <code>378</code></span></td></tr>
+<tr id="SUMSQ"><td><code><strong>SUMSQ</strong>(value1, [value2, …])</code></td><td>Sum of squares.<span class="ex"><code>=SUMSQ(B1:B3)</code> → <code>56</code></span></td></tr>
+<tr id="SUMX2MY2"><td><code><strong>SUMX2MY2</strong>(array_x, array_y)</code></td><td>Sum of the differences of squares.<span class="ex"><code>=SUMX2MY2(A1:A5, B1:B5)</code> → <code>581</code></span></td></tr>
+<tr id="SUMX2PY2"><td><code><strong>SUMX2PY2</strong>(array_x, array_y)</code></td><td>Sum of the sums of squares.<span class="ex"><code>=SUMX2PY2(A1:A5, B1:B5)</code> → <code>1063</code></span></td></tr>
+<tr id="SUMXMY2"><td><code><strong>SUMXMY2</strong>(array_x, array_y)</code></td><td>Sum of the squares of differences.<span class="ex"><code>=SUMXMY2(A1:A5, B1:B5)</code> → <code>307</code></span></td></tr>
+<tr id="SERIESSUM"><td><code><strong>SERIESSUM</strong>(x, n, m, a)</code></td><td>Sum of a power series.<span class="ex"><code>=SERIESSUM(2, 0, 1, [1, 1, 1])</code> → <code>7</code></span></td></tr>
+<tr id="SUBTOTAL"><td><code><strong>SUBTOTAL</strong>(function_code, range1, [range2, …])</code></td><td>Summary of a range by a code: 1 average, 2 count, 4 max, 5 min, 9 sum.<span class="ex"><code>=SUBTOTAL(9, A1:A5)</code> → <code>62</code></span></td></tr>
+<tr id="AGGREGATE"><td><code><strong>AGGREGATE</strong>(function, option, range)</code></td><td>Summary of a range by a code: 1 average, 2 count, 4 max, 5 min, 9 sum. Options: 0 to 7, as in Excel.<span class="ex"><code>=AGGREGATE(9, 0, A1:A5)</code> → <code>62</code></span></td></tr>
+<tr id="PRODUCT"><td><code><strong>PRODUCT</strong>(factor1, [factor2, …])</code></td><td>Result of multiplying a series of numbers together.<span class="ex"><code>=PRODUCT(B1:B3)</code> → <code>48</code></span></td></tr>
+<tr id="COUNTUNIQUE"><td><code><strong>COUNTUNIQUE</strong>(value1, [value2])</code></td><td>Counts number of unique values in a range.<span class="ex"><code>=COUNTUNIQUE(A1:A5)</code> → <code>5</code></span></td></tr>
+<tr id="ABS"><td><code><strong>ABS</strong>(value)</code></td><td>Absolute value of a number.<span class="ex"><code>=ABS(-3)</code> → <code>3</code></span></td></tr>
+<tr id="SIGN"><td><code><strong>SIGN</strong>(value)</code></td><td>Sign of a provided number (+/-/0).<span class="ex"><code>=SIGN(-3)</code> → <code>-1</code></span></td></tr>
+<tr id="INT"><td><code><strong>INT</strong>(value)</code></td><td>Integer part: the greatest integer less than or equal.<span class="ex"><code>=INT(-3.2)</code> → <code>-4</code></span></td></tr>
+<tr id="TRUNC"><td><code><strong>TRUNC</strong>(value, [places])</code></td><td>Truncates a number.<span class="ex"><code>=TRUNC(3.789, 1)</code> → <code>3.7</code></span></td></tr>
+<tr id="ROUND"><td><code><strong>ROUND</strong>(value, places)</code></td><td>Rounds a number according to standard rules.<span class="ex"><code>=ROUND(3.14159, 2)</code> → <code>3.14</code></span></td></tr>
+<tr id="ROUNDUP"><td><code><strong>ROUNDUP</strong>(value, places)</code></td><td>Rounds up a number.<span class="ex"><code>=ROUNDUP(3.11, 1)</code> → <code>3.2</code></span></td></tr>
+<tr id="ROUNDDOWN"><td><code><strong>ROUNDDOWN</strong>(value, places)</code></td><td>Rounds down a number.<span class="ex"><code>=ROUNDDOWN(3.19, 1)</code> → <code>3.1</code></span></td></tr>
+<tr id="MROUND"><td><code><strong>MROUND</strong>(value, factor)</code></td><td>Rounds a number to the nearest integer multiple.<span class="ex"><code>=MROUND(17, 5)</code> → <code>15</code></span></td></tr>
+<tr id="CEILING"><td><code><strong>CEILING</strong>(value, factor)</code></td><td>Rounds number up to nearest multiple of a factor.<span class="ex"><code>=CEILING(12.3, 5)</code> → <code>15</code></span></td></tr>
+<tr id="FLOOR"><td><code><strong>FLOOR</strong>(value, factor)</code></td><td>Rounds number down to nearest multiple of a factor.<span class="ex"><code>=FLOOR(12.3, 5)</code> → <code>10</code></span></td></tr>
+<tr id="EVEN"><td><code><strong>EVEN</strong>(value)</code></td><td>Rounds a number up to the nearest even integer.<span class="ex"><code>=EVEN(3)</code> → <code>4</code></span></td></tr>
+<tr id="ODD"><td><code><strong>ODD</strong>(value)</code></td><td>Rounds a number up to the nearest odd integer.<span class="ex"><code>=ODD(4)</code> → <code>5</code></span></td></tr>
+<tr id="ISEVEN"><td><code><strong>ISEVEN</strong>(value)</code></td><td>Whether the provided value is even.<span class="ex"><code>=ISEVEN(4)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISODD"><td><code><strong>ISODD</strong>(value)</code></td><td>Whether the provided value is odd.<span class="ex"><code>=ISODD(4)</code> → <code>FALSE</code></span></td></tr>
+<tr id="MOD"><td><code><strong>MOD</strong>(dividend, divisor)</code></td><td>Modulo (remainder) operator.<span class="ex"><code>=MOD(17, 5)</code> → <code>2</code></span></td></tr>
+<tr id="QUOTIENT"><td><code><strong>QUOTIENT</strong>(dividend, divisor)</code></td><td>One number divided by another.<span class="ex"><code>=QUOTIENT(17, 5)</code> → <code>3</code></span></td></tr>
+<tr id="GCD"><td><code><strong>GCD</strong>(value1, [value2, …])</code></td><td>Greatest common divisor of one or more integers.<span class="ex"><code>=GCD(24, 36)</code> → <code>12</code></span></td></tr>
+<tr id="LCM"><td><code><strong>LCM</strong>(value1, [value2, …])</code></td><td>Least common multiple of one or more integers.<span class="ex"><code>=LCM(4, 6)</code> → <code>12</code></span></td></tr>
+<tr id="FACT"><td><code><strong>FACT</strong>(value)</code></td><td>Factorial of a number.<span class="ex"><code>=FACT(5)</code> → <code>120</code></span></td></tr>
+<tr id="FACTDOUBLE"><td><code><strong>FACTDOUBLE</strong>(value)</code></td><td>"double factorial" of a number.<span class="ex"><code>=FACTDOUBLE(7)</code> → <code>105</code></span></td></tr>
+<tr id="COMBIN"><td><code><strong>COMBIN</strong>(n, k)</code></td><td>Number of combinations from a set of objects.<span class="ex"><code>=COMBIN(5, 2)</code> → <code>10</code></span></td></tr>
+<tr id="COMBINA"><td><code><strong>COMBINA</strong>(n, k)</code></td><td>Number of combinations with repetition.<span class="ex"><code>=COMBINA(4, 2)</code> → <code>10</code></span></td></tr>
+<tr id="MULTINOMIAL"><td><code><strong>MULTINOMIAL</strong>(value1, [value2, …])</code></td><td>Multinomial distribution function.<span class="ex"><code>=MULTINOMIAL(2, 3)</code> → <code>10</code></span></td></tr>
+<tr id="POWER"><td><code><strong>POWER</strong>(base, exponent)</code></td><td>A number raised to a power.<span class="ex"><code>=POWER(2, 10)</code> → <code>1024</code></span></td></tr>
+<tr id="SQRT"><td><code><strong>SQRT</strong>(value)</code></td><td>Positive square root of a positive number.<span class="ex"><code>=SQRT(16)</code> → <code>4</code></span></td></tr>
+<tr id="SQRTPI"><td><code><strong>SQRTPI</strong>(value)</code></td><td>Square root of the product of pi and number.<span class="ex"><code>=SQRTPI(2)</code> → <code>2.506628275</code></span></td></tr>
+<tr id="EXP"><td><code><strong>EXP</strong>(exponent)</code></td><td>Euler's number, e (~2.718) raised to a power.<span class="ex"><code>=EXP(1)</code> → <code>2.718281828</code></span></td></tr>
+<tr id="LN"><td><code><strong>LN</strong>(value)</code></td><td>The logarithm of a number, base e (euler's number).<span class="ex"><code>=LN(10)</code> → <code>2.302585093</code></span></td></tr>
+<tr id="LOG"><td><code><strong>LOG</strong>(number, base)</code></td><td>Logarithm in a base; the base is required.<span class="ex"><code>=LOG(8, 2)</code> → <code>3</code></span></td></tr>
+<tr id="LOG10"><td><code><strong>LOG10</strong>(value)</code></td><td>The logarithm of a number, base 10.<span class="ex"><code>=LOG10(100)</code> → <code>2</code></span></td></tr>
+<tr id="RAND"><td><code><strong>RAND</strong>()</code></td><td>A random number between 0 inclusive and 1 exclusive.<span class="ex"><code>=RAND()</code></span></td></tr>
+<tr id="RANDBETWEEN"><td><code><strong>RANDBETWEEN</strong>(low, high)</code></td><td>Random integer between two values, inclusive.<span class="ex"><code>=RANDBETWEEN(1, 6)</code></span></td></tr>
+<tr id="BASE"><td><code><strong>BASE</strong>(number, base, [length])</code></td><td>An integer written in a base, as text.<span class="ex"><code>=BASE(10, 2)</code> → <code>1010</code></span></td></tr>
+<tr id="DECIMAL"><td><code><strong>DECIMAL</strong>(text, base)</code></td><td>Value of a number written in a base from 2 to 10.<span class="ex"><code>=DECIMAL("1010", 2)</code> → <code>10</code></span></td></tr>
+<tr id="ROMAN"><td><code><strong>ROMAN</strong>(number)</code></td><td>Formats a number in Roman numerals.<span class="ex"><code>=ROMAN(2026)</code> → <code>MMXXVI</code></span></td></tr>
+<tr id="ARABIC"><td><code><strong>ARABIC</strong>(roman_numeral)</code></td><td>Computes the value of a roman numeral.<span class="ex"><code>=ARABIC("MMXXVI")</code> → <code>2026</code></span></td></tr>
+</tbody></table></div>
+<h2 id="trig">Trigonometry</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="PI"><td><code><strong>PI</strong>()</code></td><td>The number pi.<span class="ex"><code>=PI()</code> → <code>3.141592654</code></span></td></tr>
+<tr id="RADIANS"><td><code><strong>RADIANS</strong>(angle)</code></td><td>Converts an angle value in degrees to radians.<span class="ex"><code>=RADIANS(180)</code> → <code>3.141592654</code></span></td></tr>
+<tr id="DEGREES"><td><code><strong>DEGREES</strong>(angle)</code></td><td>Converts an angle value in radians to degrees.<span class="ex"><code>=DEGREES(PI())</code> → <code>180</code></span></td></tr>
+<tr id="SIN"><td><code><strong>SIN</strong>(angle)</code></td><td>Sine of an angle provided in radians.<span class="ex"><code>=SIN(PI()/2)</code> → <code>1</code></span></td></tr>
+<tr id="COS"><td><code><strong>COS</strong>(angle)</code></td><td>Cosine of an angle provided in radians.<span class="ex"><code>=COS(PI())</code> → <code>-1</code></span></td></tr>
+<tr id="TAN"><td><code><strong>TAN</strong>(angle)</code></td><td>Tangent of an angle provided in radians.<span class="ex"><code>=TAN(1)</code> → <code>1.557407725</code></span></td></tr>
+<tr id="COT"><td><code><strong>COT</strong>(angle)</code></td><td>Cotangent of an angle in radians.<span class="ex"><code>=COT(1)</code> → <code>0.642092616</code></span></td></tr>
+<tr id="SEC"><td><code><strong>SEC</strong>(angle)</code></td><td>Secant of an angle in radians.<span class="ex"><code>=SEC(1)</code> → <code>1.850815718</code></span></td></tr>
+<tr id="CSC"><td><code><strong>CSC</strong>(angle)</code></td><td>Cosecant of an angle in radians.<span class="ex"><code>=CSC(1)</code> → <code>1.188395106</code></span></td></tr>
+<tr id="ASIN"><td><code><strong>ASIN</strong>(value)</code></td><td>Inverse sine of a value, in radians.<span class="ex"><code>=ASIN(1)</code> → <code>1.570796327</code></span></td></tr>
+<tr id="ACOS"><td><code><strong>ACOS</strong>(value)</code></td><td>Inverse cosine of a value, in radians.<span class="ex"><code>=ACOS(0)</code> → <code>1.570796327</code></span></td></tr>
+<tr id="ATAN"><td><code><strong>ATAN</strong>(value)</code></td><td>Inverse tangent of a value, in radians.<span class="ex"><code>=ATAN(1)</code> → <code>0.785398163</code></span></td></tr>
+<tr id="ATAN2"><td><code><strong>ATAN2</strong>(x, y)</code></td><td>Arctangent of a value.<span class="ex"><code>=ATAN2(1, 1)</code> → <code>0.785398163</code></span></td></tr>
+<tr id="ACOT"><td><code><strong>ACOT</strong>(number)</code></td><td>Arc cotangent, in radians.<span class="ex"><code>=ACOT(1)</code> → <code>0.785398163</code></span></td></tr>
+<tr id="SINH"><td><code><strong>SINH</strong>(value)</code></td><td>Hyperbolic sine of any real number.<span class="ex"><code>=SINH(1)</code> → <code>1.175201194</code></span></td></tr>
+<tr id="COSH"><td><code><strong>COSH</strong>(value)</code></td><td>Hyperbolic cosine of any real number.<span class="ex"><code>=COSH(1)</code> → <code>1.543080635</code></span></td></tr>
+<tr id="TANH"><td><code><strong>TANH</strong>(value)</code></td><td>Hyperbolic tangent of any real number.<span class="ex"><code>=TANH(1)</code> → <code>0.761594156</code></span></td></tr>
+<tr id="COTH"><td><code><strong>COTH</strong>(number)</code></td><td>Hyperbolic cotangent.<span class="ex"><code>=COTH(1)</code> → <code>1.313035285</code></span></td></tr>
+<tr id="SECH"><td><code><strong>SECH</strong>(number)</code></td><td>Hyperbolic secant.<span class="ex"><code>=SECH(1)</code> → <code>0.648054274</code></span></td></tr>
+<tr id="CSCH"><td><code><strong>CSCH</strong>(number)</code></td><td>Hyperbolic cosecant.<span class="ex"><code>=CSCH(1)</code> → <code>0.850918128</code></span></td></tr>
+<tr id="ASINH"><td><code><strong>ASINH</strong>(value)</code></td><td>Inverse hyperbolic sine of a number.<span class="ex"><code>=ASINH(1)</code> → <code>0.881373587</code></span></td></tr>
+<tr id="ACOSH"><td><code><strong>ACOSH</strong>(value)</code></td><td>Inverse hyperbolic cosine of a number.<span class="ex"><code>=ACOSH(2)</code> → <code>1.316957897</code></span></td></tr>
+<tr id="ATANH"><td><code><strong>ATANH</strong>(value)</code></td><td>Inverse hyperbolic tangent of a number.<span class="ex"><code>=ATANH(0.5)</code> → <code>0.549306144</code></span></td></tr>
+<tr id="ACOTH"><td><code><strong>ACOTH</strong>(number)</code></td><td>Inverse hyperbolic cotangent.<span class="ex"><code>=ACOTH(2)</code> → <code>0.549306144</code></span></td></tr>
+</tbody></table></div>
+<h2 id="logical">Logic</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="IF"><td><code><strong>IF</strong>(logical_expression, value_if_true, [value_if_false])</code></td><td>Returns value depending on logical expression.<span class="ex"><code>=IF(A1&gt;=10, "pass", "fail")</code> → <code>pass</code></span></td></tr>
+<tr id="IFS"><td><code><strong>IFS</strong>(condition1, value1, [condition2, value2, …])</code></td><td>Value of the first true condition; #N/A if none is.<span class="ex"><code>=IFS(A1&gt;=16, "very good", A1&gt;=12, "good")</code> → <code>good</code></span></td></tr>
+<tr id="SWITCH"><td><code><strong>SWITCH</strong>(expression, case1, value1, [case2, value2, …], [default])</code></td><td>Value of the case equal to the expression.<span class="ex"><code>=SWITCH(2, 1, "one", 2, "two", "other")</code> → <code>two</code></span></td></tr>
+<tr id="AND"><td><code><strong>AND</strong>(logical_expression1, [logical_expression2, …])</code></td><td>Logical `and` operator.<span class="ex"><code>=AND(A1&gt;10, B1&gt;1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="OR"><td><code><strong>OR</strong>(logical_expression1, logical_expression2)</code></td><td>Logical `or` operator.<span class="ex"><code>=OR(A1&gt;20, B1&gt;1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="XOR"><td><code><strong>XOR</strong>(value1, value2, …)</code></td><td>True if an odd number of values are true.<span class="ex"><code>=XOR(TRUE(), FALSE())</code> → <code>TRUE</code></span></td></tr>
+<tr id="NOT"><td><code><strong>NOT</strong>(logical_expression)</code></td><td>Returns opposite of provided logical value.<span class="ex"><code>=NOT(TRUE())</code> → <code>FALSE</code></span></td></tr>
+<tr id="TRUE"><td><code><strong>TRUE</strong>()</code></td><td>The logical value true, displayed as TRUE.<span class="ex"><code>=TRUE()</code> → <code>TRUE</code></span></td></tr>
+<tr id="FALSE"><td><code><strong>FALSE</strong>()</code></td><td>The logical value false, displayed as FALSE.<span class="ex"><code>=FALSE()</code> → <code>FALSE</code></span></td></tr>
+<tr id="IFERROR"><td><code><strong>IFERROR</strong>(value, value_if_error)</code></td><td>The value, or another one if it is the error of a function (#N/A, #NUM!). Replaces neither DIV/0 nor #VALUE!.<span class="ex"><code>=IFERROR(NA(), "absent")</code> → <code>absent</code></span></td></tr>
+<tr id="IFNA"><td><code><strong>IFNA</strong>(value, value_if_na)</code></td><td>The value, or another one if it is the #N/A error.<span class="ex"><code>=IFNA(NA(), "absent")</code> → <code>absent</code></span></td></tr>
+</tbody></table></div>
+<h2 id="stat">Statistics</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="COUNT"><td><code><strong>COUNT</strong>(value1, [value2, …])</code></td><td>The number of numeric values in dataset.<span class="ex"><code>=COUNT(A1:A5)</code> → <code>5</code></span></td></tr>
+<tr id="COUNTA"><td><code><strong>COUNTA</strong>(value1, [value2, …])</code></td><td>The number of values in a dataset.<span class="ex"><code>=COUNTA(A1:C5)</code> → <code>15</code></span></td></tr>
+<tr id="COUNTBLANK"><td><code><strong>COUNTBLANK</strong>(value1)</code></td><td>Number of empty values.<span class="ex"><code>=COUNTBLANK(A1:E1)</code> → <code>2</code></span></td></tr>
+<tr id="COUNTIF"><td><code><strong>COUNTIF</strong>(range, criterion)</code></td><td>Number of cells that meet a criterion: "&gt;10", "&lt;&gt;0", "Ana". The wildcards * and ? are not recognized.<span class="ex"><code>=COUNTIF(A1:A5, "&gt;10")</code> → <code>3</code></span></td></tr>
+<tr id="COUNTIFS"><td><code><strong>COUNTIFS</strong>(criteria_range1, criterion1, [criteria_range2, …])</code></td><td>Count values depending on multiple criteria.<span class="ex"><code>=COUNTIFS(A1:A5, "&gt;9", B1:B5, "&lt;8")</code> → <code>2</code></span></td></tr>
+<tr id="AVERAGE"><td><code><strong>AVERAGE</strong>(value1, [value2, …])</code></td><td>Numerical average value in a dataset, ignoring text.<span class="ex"><code>=AVERAGE(A1:A5)</code> → <code>12.4</code></span></td></tr>
+<tr id="AVERAGEA"><td><code><strong>AVERAGEA</strong>(value1, [value2, …])</code></td><td>Numerical average value in a dataset.<span class="ex"><code>=AVERAGEA(A1:A5)</code> → <code>12.4</code></span></td></tr>
+<tr id="AVERAGEIF"><td><code><strong>AVERAGEIF</strong>(criteria_range, criterion, [average_range])</code></td><td>Average of values depending on criteria.<span class="ex"><code>=AVERAGEIF(A1:A5, "&gt;10")</code> → <code>14.666666667</code></span></td></tr>
+<tr id="AVERAGEIFS"><td><code><strong>AVERAGEIFS</strong>(average_range, criteria_range1, criterion1, criteria_range2)</code></td><td>Average of values depending on multiple criteria.<span class="ex"><code>=AVERAGEIFS(A1:A5, B1:B5, "&gt;3")</code> → <code>12.5</code></span></td></tr>
+<tr id="GEOMEAN"><td><code><strong>GEOMEAN</strong>(value1, [value2, …])</code></td><td>The geometric mean of a dataset.<span class="ex"><code>=GEOMEAN(A1:A5)</code> → <code>11.960856575</code></span></td></tr>
+<tr id="HARMEAN"><td><code><strong>HARMEAN</strong>(value1, [value2, …])</code></td><td>The harmonic mean of a dataset.<span class="ex"><code>=HARMEAN(A1:A5)</code> → <code>11.525423729</code></span></td></tr>
+<tr id="TRIMMEAN"><td><code><strong>TRIMMEAN</strong>(data, exclude_proportion)</code></td><td>Mean of a dataset excluding high/low ends.<span class="ex"><code>=TRIMMEAN(A1:A5, 0.4)</code> → <code>12.333333333</code></span></td></tr>
+<tr id="MEDIAN"><td><code><strong>MEDIAN</strong>(value1, [value2, …])</code></td><td>Median value in a numeric dataset.<span class="ex"><code>=MEDIAN(A1:A5)</code> → <code>12</code></span></td></tr>
+<tr id="MODE"><td><code><strong>MODE</strong>(range)</code></td><td>Most frequent value.<span class="ex"><code>=MODE([1, 2, 2, 3])</code> → <code>2</code></span></td></tr>
+<tr id="MIN"><td><code><strong>MIN</strong>(value1, [value2, …])</code></td><td>Minimum value in a numeric dataset.<span class="ex"><code>=MIN(A1:A5)</code> → <code>8</code></span></td></tr>
+<tr id="MAX"><td><code><strong>MAX</strong>(value1, [value2, …])</code></td><td>Maximum value in a numeric dataset.<span class="ex"><code>=MAX(A1:A5)</code> → <code>17</code></span></td></tr>
+<tr id="MINA"><td><code><strong>MINA</strong>(value1, [value2, …])</code></td><td>Minimum numeric value in a dataset.<span class="ex"><code>=MINA(A1:A5)</code> → <code>8</code></span></td></tr>
+<tr id="MAXA"><td><code><strong>MAXA</strong>(value1, [value2, …])</code></td><td>Maximum numeric value in a dataset.<span class="ex"><code>=MAXA(A1:A5)</code> → <code>17</code></span></td></tr>
+<tr id="LARGE"><td><code><strong>LARGE</strong>(data, n)</code></td><td>Nth largest element from a data set.<span class="ex"><code>=LARGE(A1:A5, 2)</code> → <code>15</code></span></td></tr>
+<tr id="SMALL"><td><code><strong>SMALL</strong>(data, n)</code></td><td>Nth smallest element in a data set.<span class="ex"><code>=SMALL(A1:A5, 2)</code> → <code>10</code></span></td></tr>
+<tr id="RANK"><td><code><strong>RANK</strong>(number, range, [order])</code></td><td>Rank of a number in a range, descending; ascending if order is 1.<span class="ex"><code>=RANK(A2, A1:A5)</code> → <code>2</code></span></td></tr>
+<tr id="QUARTILE"><td><code><strong>QUARTILE</strong>(range, k)</code></td><td>Quartile: k from 0 (minimum) to 4 (maximum).<span class="ex"><code>=QUARTILE(A1:A5, 1)</code> → <code>10</code></span></td></tr>
+<tr id="QUARTILEEXC"><td><code><strong>QUARTILEEXC</strong>(range, k)</code></td><td>Quartile, bounds excluded: k from 1 to 3.<span class="ex"><code>=QUARTILEEXC(A1:A5, 1)</code> → <code>9</code></span></td></tr>
+<tr id="PERCENTILEINC"><td><code><strong>PERCENTILEINC</strong>(range, k)</code></td><td>Percentile: k from 0 to 1.<span class="ex"><code>=PERCENTILEINC(A1:A5, 0.9)</code> → <code>16.2</code></span></td></tr>
+<tr id="PERCENTILEEXC"><td><code><strong>PERCENTILEEXC</strong>(range, k)</code></td><td>Percentile, bounds excluded.<span class="ex"><code>=PERCENTILEEXC(A1:A5, 0.8)</code> → <code>16.6</code></span></td></tr>
+<tr id="PERCENTRANK"><td><code><strong>PERCENTRANK</strong>(range, number)</code></td><td>Rank of a number as a proportion, from 0 to 1.<span class="ex"><code>=PERCENTRANK(A1:A5, 12)</code> → <code>0.5</code></span></td></tr>
+<tr id="STDEV"><td><code><strong>STDEV</strong>(value1, [value2, …])</code></td><td>Standard deviation of a sample (divisor n − 1).<span class="ex"><code>=STDEV(A1:A5)</code> → <code>3.646916506</code></span></td></tr>
+<tr id="STDEVP"><td><code><strong>STDEVP</strong>(value1, [value2, …])</code></td><td>Standard deviation of a population (divisor n).<span class="ex"><code>=STDEVP(A1:A5)</code> → <code>3.261901286</code></span></td></tr>
+<tr id="STDEVA"><td><code><strong>STDEVA</strong>(value1, [value2, …])</code></td><td>Standard deviation of sample (text as 0).<span class="ex"><code>=STDEVA(A1:A5)</code> → <code>3.646916506</code></span></td></tr>
+<tr id="STDEVPA"><td><code><strong>STDEVPA</strong>(value1, [value2, …])</code></td><td>Standard deviation of a population, texts counting as 0.<span class="ex"><code>=STDEVPA(A1:A5)</code> → <code>3.261901286</code></span></td></tr>
+<tr id="VAR"><td><code><strong>VAR</strong>(value1, [value2, …])</code></td><td>Variance of a sample (divisor n − 1).<span class="ex"><code>=VAR(A1:A5)</code> → <code>13.3</code></span></td></tr>
+<tr id="VARP"><td><code><strong>VARP</strong>(value1, [value2, …])</code></td><td>Variance of a population (divisor n).<span class="ex"><code>=VARP(A1:A5)</code> → <code>10.64</code></span></td></tr>
+<tr id="VARA"><td><code><strong>VARA</strong>(value1, [value2, …])</code></td><td>Variance of sample (text as 0).<span class="ex"><code>=VARA(A1:A5)</code> → <code>13.3</code></span></td></tr>
+<tr id="VARPA"><td><code><strong>VARPA</strong>(value1, [value2, …])</code></td><td>Variance of entire population (text as 0).<span class="ex"><code>=VARPA(A1:A5)</code> → <code>10.64</code></span></td></tr>
+<tr id="AVEDEV"><td><code><strong>AVEDEV</strong>(value1, [value2, …])</code></td><td>Average magnitude of deviations from mean.<span class="ex"><code>=AVEDEV(A1:A5)</code> → <code>2.88</code></span></td></tr>
+<tr id="DEVSQ"><td><code><strong>DEVSQ</strong>(value1, [value2, …])</code></td><td>The sum of squares of deviations based on a sample.<span class="ex"><code>=DEVSQ(A1:A5)</code> → <code>53.2</code></span></td></tr>
+<tr id="SKEW"><td><code><strong>SKEW</strong>(value1, [value2, …])</code></td><td>Skewness of a dataset.<span class="ex"><code>=SKEW(A1:A5)</code> → <code>0.136071281</code></span></td></tr>
+<tr id="SKEWP"><td><code><strong>SKEWP</strong>(range)</code></td><td>Skewness of a population.<span class="ex"><code>=SKEWP(A1:A5)</code> → <code>0.09127939</code></span></td></tr>
+<tr id="KURT"><td><code><strong>KURT</strong>(value1, [value2, …])</code></td><td>Kurtosis of a dataset.<span class="ex"><code>=KURT(A1:A5)</code> → <code>-1.629826446</code></span></td></tr>
+<tr id="STANDARDIZE"><td><code><strong>STANDARDIZE</strong>(value, mean, standard_deviation)</code></td><td>Normalized equivalent of a random variable.<span class="ex"><code>=STANDARDIZE(12, 10, 2)</code> → <code>1</code></span></td></tr>
+<tr id="FREQUENCY"><td><code><strong>FREQUENCY</strong>(data, classes)</code></td><td>Counts of the classes bounded by a list, as a list.<span class="ex"><code>=FREQUENCY(A1:A5, [10, 15])</code> → <code>[2, 2, 1]</code></span></td></tr>
+<tr id="CORREL"><td><code><strong>CORREL</strong>(data_y, data_x)</code></td><td>Pearson Product-Moment Correlation Coefficient.<span class="ex"><code>=CORREL(A1:A5, B1:B5)</code> → <code>-0.125607117</code></span></td></tr>
+<tr id="PEARSON"><td><code><strong>PEARSON</strong>(data_y, data_x)</code></td><td>Pearson Product-Moment Correlation Coefficient.<span class="ex"><code>=PEARSON(A1:A5, B1:B5)</code> → <code>-0.125607117</code></span></td></tr>
+<tr id="RSQ"><td><code><strong>RSQ</strong>(data_y, data_x)</code></td><td>Square of the correlation coefficient.<span class="ex"><code>=RSQ(A1:A5, B1:B5)</code> → <code>0.015777148</code></span></td></tr>
+<tr id="COVARIANCEP"><td><code><strong>COVARIANCEP</strong>(y_range, x_range)</code></td><td>Covariance of a population.<span class="ex"><code>=COVARIANCEP(A1:A5, B1:B5)</code> → <code>-1.28</code></span></td></tr>
+<tr id="COVARIANCES"><td><code><strong>COVARIANCES</strong>(y_range, x_range)</code></td><td>Covariance of a sample.<span class="ex"><code>=COVARIANCES(A1:A5, B1:B5)</code> → <code>-1.6</code></span></td></tr>
+<tr id="SLOPE"><td><code><strong>SLOPE</strong>(data_y, data_x)</code></td><td>Slope of line from linear regression of data.<span class="ex"><code>=SLOPE(A1:A5, B1:B5)</code> → <code>-0.131147541</code></span></td></tr>
+<tr id="INTERCEPT"><td><code><strong>INTERCEPT</strong>(data_y, data_x)</code></td><td>Y-intercept of line derived via linear regression.<span class="ex"><code>=INTERCEPT(A1:A5, B1:B5)</code> → <code>13.213114754</code></span></td></tr>
+<tr id="FORECAST"><td><code><strong>FORECAST</strong>(x, data_y, data_x)</code></td><td>Expected y-value based of linear regression.<span class="ex"><code>=FORECAST(10, A1:A5, B1:B5)</code> → <code>11.901639344</code></span></td></tr>
+<tr id="STEYX"><td><code><strong>STEYX</strong>(data_y, data_x)</code></td><td>Standard error of predicted y-values in regression.<span class="ex"><code>=STEYX(A1:A5, B1:B5)</code> → <code>4.177744836</code></span></td></tr>
+<tr id="LINEST"><td><code><strong>LINEST</strong>(y_range, x_range)</code></td><td>Least squares line: the list of the slope and the y-intercept.<span class="ex"><code>=LINEST(A1:A5, B1:B5)</code> → <code>[-0.131147541, 13.213114754]</code></span></td></tr>
+<tr id="LOGEST"><td><code><strong>LOGEST</strong>(y_range, x_range)</code></td><td>Fit y = b·mˣ: the list of m and b.<span class="ex"><code>=LOGEST(A1:A5, B1:B5)</code> → <code>[0.986607, 13.003773]</code></span></td></tr>
+<tr id="TREND"><td><code><strong>TREND</strong>(y_range, x_range, new_x)</code></td><td>Values of the linear fit, as a list.<span class="ex"><code>=TREND(A1:A5, B1:B5, [10])</code> → <code>[11.901639344]</code></span></td></tr>
+<tr id="GROWTH"><td><code><strong>GROWTH</strong>(y_range, x_range, new_x)</code></td><td>Values of the exponential fit, as a list.<span class="ex"><code>=GROWTH(A1:A5, B1:B5, [10])</code> → <code>[11.363432839]</code></span></td></tr>
+<tr id="PERMUT"><td><code><strong>PERMUT</strong>(n, k)</code></td><td>Number of permutations from a number of objects.<span class="ex"><code>=PERMUT(5, 2)</code> → <code>20</code></span></td></tr>
+<tr id="PERMUTATIONA"><td><code><strong>PERMUTATIONA</strong>(n, k)</code></td><td>Number of k-tuples of n elements, with repetition.<span class="ex"><code>=PERMUTATIONA(5, 2)</code> → <code>25</code></span></td></tr>
+</tbody></table></div>
+<h2 id="proba">Probability distributions and tests</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="PROB"><td><code><strong>PROB</strong>(data, probabilities, low_limit, [high_limit])</code></td><td>Probability values lie in a range.<span class="ex"><code>=PROB(B1:B2, [0.4, 0.6], 2)</code> → <code>0.4</code></span></td></tr>
+<tr id="NORMDIST"><td><code><strong>NORMDIST</strong>(x, mean, standard_deviation, cumulative)</code></td><td>Normal distribution: P(X ≤ x) if cumulative is true, density otherwise.<span class="ex"><code>=NORMDIST(12, 10, 2, TRUE())</code> → <code>0.841344746</code></span></td></tr>
+<tr id="NORMINV"><td><code><strong>NORMINV</strong>(probability, mean, standard_deviation)</code></td><td>x such that P(X ≤ x) is the probability, normal distribution.<span class="ex"><code>=NORMINV(0.95, 10, 2)</code> → <code>13.289707254</code></span></td></tr>
+<tr id="NORMSDIST"><td><code><strong>NORMSDIST</strong>(z, cumulative)</code></td><td>Standard normal distribution: P(Z ≤ z) if cumulative is true, density otherwise.<span class="ex"><code>=NORMSDIST(1.96, TRUE())</code> → <code>0.975002105</code></span></td></tr>
+<tr id="NORMSINV"><td><code><strong>NORMSINV</strong>(probability)</code></td><td>z such that P(Z ≤ z) is the probability.<span class="ex"><code>=NORMSINV(0.975)</code> → <code>1.959963985</code></span></td></tr>
+<tr id="GAUSS"><td><code><strong>GAUSS</strong>(z)</code></td><td>P(0 ≤ Z ≤ z), standard normal distribution.<span class="ex"><code>=GAUSS(1)</code> → <code>0.341344746</code></span></td></tr>
+<tr id="PHI"><td><code><strong>PHI</strong>(z)</code></td><td>Density of the standard normal distribution.<span class="ex"><code>=PHI(0)</code> → <code>0.39894228</code></span></td></tr>
+<tr id="BINOMDIST"><td><code><strong>BINOMDIST</strong>(k, n, p, cumulative)</code></td><td>Binomial distribution: P(X ≤ k) if cumulative is true, P(X = k) otherwise.<span class="ex"><code>=BINOMDIST(3, 10, 0.5, FALSE())</code> → <code>0.1171875</code></span></td></tr>
+<tr id="CRITBINOM"><td><code><strong>CRITBINOM</strong>(n, p, alpha)</code></td><td>Smallest k such that P(X ≤ k) ≥ alpha, binomial distribution.<span class="ex"><code>=CRITBINOM(10, 0.5, 0.9)</code> → <code>7</code></span></td></tr>
+<tr id="NEGBINOMDIST"><td><code><strong>NEGBINOMDIST</strong>(failures, successes, p, cumulative)</code></td><td>Negative binomial distribution.<span class="ex"><code>=NEGBINOMDIST(3, 2, 0.5, FALSE())</code> → <code>0.125</code></span></td></tr>
+<tr id="POISSON"><td><code><strong>POISSON</strong>(k, lambda, cumulative)</code></td><td>Poisson distribution: P(X ≤ k) if cumulative is true, P(X = k) otherwise.<span class="ex"><code>=POISSON(2, 3, FALSE())</code> → <code>0.224041808</code></span></td></tr>
+<tr id="HYPGEOMDIST"><td><code><strong>HYPGEOMDIST</strong>(k, n, successes, population, cumulative)</code></td><td>Hypergeometric distribution.<span class="ex"><code>=HYPGEOMDIST(1, 4, 8, 20, FALSE())</code> → <code>0.363261094</code></span></td></tr>
+<tr id="EXPONDIST"><td><code><strong>EXPONDIST</strong>(x, lambda, cumulative)</code></td><td>Exponential distribution.<span class="ex"><code>=EXPONDIST(1, 2, TRUE())</code> → <code>0.864664717</code></span></td></tr>
+<tr id="GAMMADIST"><td><code><strong>GAMMADIST</strong>(x, alpha, beta, cumulative)</code></td><td>Gamma distribution.<span class="ex"><code>=GAMMADIST(2, 3, 2, TRUE())</code> → <code>0.080301397</code></span></td></tr>
+<tr id="GAMMAINV"><td><code><strong>GAMMAINV</strong>(probability, alpha, beta)</code></td><td>Inverse of the gamma distribution.<span class="ex"><code>=GAMMAINV(0.5, 3, 2)</code> → <code>5.348120627</code></span></td></tr>
+<tr id="BETADIST"><td><code><strong>BETADIST</strong>(x, alpha, beta, cumulative, a, b)</code></td><td>Beta distribution on [a, b].<span class="ex"><code>=BETADIST(0.4, 2, 3, TRUE(), 0, 1)</code> → <code>0.5248</code></span></td></tr>
+<tr id="BETAINV"><td><code><strong>BETAINV</strong>(probability, alpha, beta)</code></td><td>Inverse of the beta distribution.<span class="ex"><code>=BETAINV(0.5, 2, 3)</code> → <code>0.385727568</code></span></td></tr>
+<tr id="LOGNORMDIST"><td><code><strong>LOGNORMDIST</strong>(x, mean, standard_deviation, cumulative)</code></td><td>Log-normal distribution.<span class="ex"><code>=LOGNORMDIST(4, 1, 0.5, TRUE())</code> → <code>0.78011709</code></span></td></tr>
+<tr id="LOGNORMINV"><td><code><strong>LOGNORMINV</strong>(probability, mean, standard_deviation)</code></td><td>Inverse of the log-normal distribution.<span class="ex"><code>=LOGNORMINV(0.5, 1, 0.5)</code> → <code>2.718281828</code></span></td></tr>
+<tr id="WEIBULL"><td><code><strong>WEIBULL</strong>(x, alpha, beta, cumulative)</code></td><td>Weibull distribution.<span class="ex"><code>=WEIBULL(1, 2, 3, TRUE())</code> → <code>0.105160683</code></span></td></tr>
+<tr id="CHIDIST"><td><code><strong>CHIDIST</strong>(x, degrees, cumulative)</code></td><td>Chi-squared distribution: P(X ≤ x) if cumulative is true.<span class="ex"><code>=CHIDIST(3, 2, TRUE())</code> → <code>0.77686984</code></span></td></tr>
+<tr id="CHIDISTRT"><td><code><strong>CHIDISTRT</strong>(x, degrees)</code></td><td>Chi-squared distribution: P(X &gt; x).<span class="ex"><code>=CHIDISTRT(3, 2)</code> → <code>0.22313016</code></span></td></tr>
+<tr id="CHIINVRT"><td><code><strong>CHIINVRT</strong>(probability, degrees)</code></td><td>x such that P(X &gt; x) is the probability, chi-squared distribution.<span class="ex"><code>=CHIINVRT(0.05, 2)</code> → <code>5.991464547</code></span></td></tr>
+<tr id="FDIST"><td><code><strong>FDIST</strong>(x, degrees1, degrees2, cumulative)</code></td><td>F distribution: P(X ≤ x) if cumulative is true.<span class="ex"><code>=FDIST(2, 3, 4, TRUE())</code> → <code>0.743612798</code></span></td></tr>
+<tr id="FDISTRT"><td><code><strong>FDISTRT</strong>(x, degrees1, degrees2)</code></td><td>F distribution: P(X &gt; x).<span class="ex"><code>=FDISTRT(2, 3, 4)</code> → <code>0.256387202</code></span></td></tr>
+<tr id="TTEST"><td><code><strong>TTEST</strong>(range1, range2)</code></td><td>Probability of Student's t-test on two samples.<span class="ex"><code>=TTEST(A1:A5, B1:B5)</code> → <code>0.025237456</code></span></td></tr>
+<tr id="CONFIDENCE"><td><code><strong>CONFIDENCE</strong>(alpha, standard_deviation, n)</code></td><td>Half-width of the confidence interval of a mean (normal distribution).<span class="ex"><code>=CONFIDENCE(0.05, 2, 50)</code> → <code>0.55436153</code></span></td></tr>
+<tr id="FISHER"><td><code><strong>FISHER</strong>(value)</code></td><td>Fisher transformation of a specified value.<span class="ex"><code>=FISHER(0.5)</code> → <code>0.549306144</code></span></td></tr>
+<tr id="FISHERINV"><td><code><strong>FISHERINV</strong>(value)</code></td><td>Inverse fisher transformation of a specified value.<span class="ex"><code>=FISHERINV(0.5)</code> → <code>0.462117157</code></span></td></tr>
+<tr id="GAMMA"><td><code><strong>GAMMA</strong>(number)</code></td><td>Gamma function.<span class="ex"><code>=GAMMA(5)</code> → <code>24</code></span></td></tr>
+<tr id="GAMMALN"><td><code><strong>GAMMALN</strong>(value)</code></td><td>Logarithm of gamma function.<span class="ex"><code>=GAMMALN(5)</code> → <code>3.17805383</code></span></td></tr>
+</tbody></table></div>
+<h2 id="lookup">Lookup and lists</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="VLOOKUP"><td><code><strong>VLOOKUP</strong>(search_key, range, index, [is_sorted])</code></td><td>Looks for a value in the first column of a range, returns the cell of the same row. Last argument 0: exact value.<span class="ex"><code>=VLOOKUP("Paul", C1:C5, 1, 0)</code> → <code>Paul</code></span></td></tr>
+<tr id="HLOOKUP"><td><code><strong>HLOOKUP</strong>(search_key, range, index, [is_sorted])</code></td><td>Looks for a value in the first row of a range, returns the cell of the same column. Last argument 0: exact value.<span class="ex"><code>=HLOOKUP(1, F1:G2, 2, 0)</code> → <code>3</code></span></td></tr>
+<tr id="LOOKUP"><td><code><strong>LOOKUP</strong>(value, sorted_range, result_range)</code></td><td>Looks for a value in a sorted range, returns the matching value of another range.<span class="ex"><code>=LOOKUP(6, B1:B5, A1:A5)</code> → <code>8</code></span></td></tr>
+<tr id="MATCH"><td><code><strong>MATCH</strong>(search_key, range, [search_type])</code></td><td>Position of a value in a range. Last argument 0: exact value.<span class="ex"><code>=MATCH("Léa", C1:C5, 0)</code> → <code>3</code></span></td></tr>
+<tr id="INDEX"><td><code><strong>INDEX</strong>(reference, row, column)</code></td><td>Cell of a range or element of a list, by its position.<span class="ex"><code>=INDEX(A1:A5, MATCH("Léa", C1:C5, 0))</code> → <code>8</code></span></td></tr>
+<tr id="CHOOSE"><td><code><strong>CHOOSE</strong>(index, choice1, [choice2, …])</code></td><td>An element from a list of choices based on index.<span class="ex"><code>=CHOOSE(2, "a", "b", "c")</code> → <code>b</code></span></td></tr>
+<tr id="ROW"><td><code><strong>ROW</strong>([cell_reference])</code></td><td>Row number of a specified cell.<span class="ex"><code>=ROW(B7)</code> → <code>7</code></span></td></tr>
+<tr id="COLUMN"><td><code><strong>COLUMN</strong>([cell_reference])</code></td><td>Column number of a specified cell.<span class="ex"><code>=COLUMN(B7)</code> → <code>2</code></span></td></tr>
+<tr id="ROWS"><td><code><strong>ROWS</strong>(range)</code></td><td>Number of rows in a specified array or range.<span class="ex"><code>=ROWS(A1:C5)</code> → <code>5</code></span></td></tr>
+<tr id="COLUMNS"><td><code><strong>COLUMNS</strong>(range)</code></td><td>Number of columns in a specified array or range.<span class="ex"><code>=COLUMNS(A1:C5)</code> → <code>3</code></span></td></tr>
+<tr id="TRANSPOSE"><td><code><strong>TRANSPOSE</strong>(array_or_range)</code></td><td>Swaps rows and columns; the result is a list of rows, in one cell.<span class="ex"><code>=TRANSPOSE(F1:G2)</code> → <code>[[1, 3], [2, 4]]</code></span></td></tr>
+<tr id="FLATTEN"><td><code><strong>FLATTEN</strong>(range)</code></td><td>The values of a range, row after row, as a list.<span class="ex"><code>=FLATTEN(F1:G2)</code> → <code>[1, 2, 3, 4]</code></span></td></tr>
+<tr id="UNIQUE"><td><code><strong>UNIQUE</strong>(value1, value2, …)</code></td><td>List of the values without duplicates.<span class="ex"><code>=UNIQUE(1, 2, 2)</code> → <code>[1, 2]</code></span></td></tr>
+</tbody></table></div>
+<h2 id="text">Text</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="CONCATENATE"><td><code><strong>CONCATENATE</strong>(string1, [string2, …])</code></td><td>Appends strings to one another.<span class="ex"><code>=CONCATENATE("Mark: ", A1)</code> → <code>Mark: 12</code></span></td></tr>
+<tr id="CONCAT"><td><code><strong>CONCAT</strong>(value1, value2)</code></td><td>Joins two texts.<span class="ex"><code>=CONCAT("a", "b")</code> → <code>ab</code></span></td></tr>
+<tr id="LEFT"><td><code><strong>LEFT</strong>(string, number_of_characters)</code></td><td>Substring from beginning of specified string.<span class="ex"><code>=LEFT("tables", 3)</code> → <code>tab</code></span></td></tr>
+<tr id="RIGHT"><td><code><strong>RIGHT</strong>(string, number_of_characters)</code></td><td>A substring from the end of a specified string.<span class="ex"><code>=RIGHT("tables", 3)</code> → <code>les</code></span></td></tr>
+<tr id="MID"><td><code><strong>MID</strong>(string, starting_at, extract_length)</code></td><td>A segment of a string.<span class="ex"><code>=MID("tables", 2, 3)</code> → <code>abl</code></span></td></tr>
+<tr id="LEN"><td><code><strong>LEN</strong>(text)</code></td><td>Length of a string.<span class="ex"><code>=LEN("tables")</code> → <code>6</code></span></td></tr>
+<tr id="LOWER"><td><code><strong>LOWER</strong>(text)</code></td><td>Converts a specified string to lowercase.<span class="ex"><code>=LOWER("ABC")</code> → <code>abc</code></span></td></tr>
+<tr id="UPPER"><td><code><strong>UPPER</strong>(text)</code></td><td>Converts a specified string to uppercase.<span class="ex"><code>=UPPER("abc")</code> → <code>ABC</code></span></td></tr>
+<tr id="PROPER"><td><code><strong>PROPER</strong>(text_to_capitalize)</code></td><td>Capitalizes each word in a specified string.<span class="ex"><code>=PROPER("john smith")</code> → <code>John Smith</code></span></td></tr>
+<tr id="TRIM"><td><code><strong>TRIM</strong>(text)</code></td><td>Removes space characters.<span class="ex"><code>=TRIM(" a  b ")</code> → <code>a b</code></span></td></tr>
+<tr id="CLEAN"><td><code><strong>CLEAN</strong>(text)</code></td><td>Removes non-printable characters from a piece of text.<span class="ex"><code>=CLEAN("abc")</code> → <code>abc</code></span></td></tr>
+<tr id="FIND"><td><code><strong>FIND</strong>(search_for, text_to_search, [starting_at])</code></td><td>First position of string found in text, case-sensitive.<span class="ex"><code>=FIND("b", "tables")</code> → <code>3</code></span></td></tr>
+<tr id="SEARCH"><td><code><strong>SEARCH</strong>(search_for, text_to_search, starting_at)</code></td><td>First position of string found in text, ignoring case.<span class="ex"><code>=SEARCH("B", "tables")</code> → <code>3</code></span></td></tr>
+<tr id="REPLACE"><td><code><strong>REPLACE</strong>(text, position, length, new_text)</code></td><td>Replaces part of a text string with different text.<span class="ex"><code>=REPLACE("tables", 1, 5, "X")</code> → <code>Xs</code></span></td></tr>
+<tr id="SUBSTITUTE"><td><code><strong>SUBSTITUTE</strong>(text_to_search, search_for, replace_with, occurrence_number)</code></td><td>Replaces existing text with new text in a string.<span class="ex"><code>=SUBSTITUTE("a-b-c", "-", "+")</code> → <code>a+b+c</code></span></td></tr>
+<tr id="REPT"><td><code><strong>REPT</strong>(text_to_repeat, number_of_repetitions)</code></td><td>Specified text repeated a number of times.<span class="ex"><code>=REPT("ab", 3)</code> → <code>ababab</code></span></td></tr>
+<tr id="EXACT"><td><code><strong>EXACT</strong>(string1, string2)</code></td><td>Tests whether two strings are identical.<span class="ex"><code>=EXACT("a", "A")</code> → <code>FALSE</code></span></td></tr>
+<tr id="SPLIT"><td><code><strong>SPLIT</strong>(text, separator)</code></td><td>Cuts a text into a list.<span class="ex"><code>=SPLIT("a-b", "-")</code> → <code>[a, b]</code></span></td></tr>
+<tr id="VALUE"><td><code><strong>VALUE</strong>(text)</code></td><td>Number written in a text, with a decimal point.<span class="ex"><code>=VALUE("12")</code> → <code>12</code></span></td></tr>
+<tr id="CHAR"><td><code><strong>CHAR</strong>(table_number)</code></td><td>Gets character associated with number.<span class="ex"><code>=CHAR(65)</code> → <code>A</code></span></td></tr>
+<tr id="CODE"><td><code><strong>CODE</strong>(string)</code></td><td>Numeric unicode map value of character.<span class="ex"><code>=CODE("A")</code> → <code>65</code></span></td></tr>
+<tr id="UNICHAR"><td><code><strong>UNICHAR</strong>(code)</code></td><td>Character of a Unicode code.<span class="ex"><code>=UNICHAR(960)</code> → <code>π</code></span></td></tr>
+<tr id="UNICODE"><td><code><strong>UNICODE</strong>(text)</code></td><td>Unicode code of the first character.<span class="ex"><code>=UNICODE("π")</code> → <code>960</code></span></td></tr>
+<tr id="REGEXMATCH"><td><code><strong>REGEXMATCH</strong>(text, regular_expression)</code></td><td>Whether a piece of text matches regular expression.<span class="ex"><code>=REGEXMATCH("abc", "b")</code> → <code>TRUE</code></span></td></tr>
+<tr id="REGEXEXTRACT"><td><code><strong>REGEXEXTRACT</strong>(text, regular_expression)</code></td><td>Extracts matching substrings with regular expression.<span class="ex"><code>=REGEXEXTRACT("ab12", "[0-9]+")</code> → <code>12</code></span></td></tr>
+<tr id="REGEXREPLACE"><td><code><strong>REGEXREPLACE</strong>(text, regular_expression, replacement)</code></td><td>Replaces text with regular expressions.<span class="ex"><code>=REGEXREPLACE("ab12", "[0-9]+", "x")</code> → <code>abx</code></span></td></tr>
+</tbody></table></div>
+<h2 id="date">Dates and times</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="TODAY"><td><code><strong>TODAY</strong>()</code></td><td>Today's date. To calculate with it, put it in a cell.<span class="ex"><code>=TODAY()</code></span></td></tr>
+<tr id="NOW"><td><code><strong>NOW</strong>()</code></td><td>Date and time, recalculated at each change.<span class="ex"><code>=NOW()</code></span></td></tr>
+<tr id="DATE"><td><code><strong>DATE</strong>(year, month, day)</code></td><td>Date of a year, a month and a day; give the cell a date format.<span class="ex"><code>=DATE(2026, 11, 25)</code> → <code>46351</code></span></td></tr>
+<tr id="YEAR"><td><code><strong>YEAR</strong>(date)</code></td><td>Year specified by a given date.<span class="ex"><code>=YEAR(DATE(2026, 11, 25))</code> → <code>2026</code></span></td></tr>
+<tr id="MONTH"><td><code><strong>MONTH</strong>(date)</code></td><td>Month of the year a specific date falls in.<span class="ex"><code>=MONTH(DATE(2026, 11, 25))</code> → <code>11</code></span></td></tr>
+<tr id="DAY"><td><code><strong>DAY</strong>(date)</code></td><td>Day of the month that a specific date falls on.<span class="ex"><code>=DAY(DATE(2026, 11, 25))</code> → <code>25</code></span></td></tr>
+<tr id="WEEKDAY"><td><code><strong>WEEKDAY</strong>(date, [type])</code></td><td>Day of the week; with type 2, from 1 (Monday) to 7 (Sunday).<span class="ex"><code>=WEEKDAY(DATE(2026, 11, 25), 2)</code> → <code>3</code></span></td></tr>
+<tr id="WEEKNUM"><td><code><strong>WEEKNUM</strong>(date, [type])</code></td><td>Week number of the year.<span class="ex"><code>=WEEKNUM(DATE(2026, 11, 25))</code> → <code>48</code></span></td></tr>
+<tr id="ISOWEEKNUM"><td><code><strong>ISOWEEKNUM</strong>(date)</code></td><td>ISO week number of the year.<span class="ex"><code>=ISOWEEKNUM(DATE(2026, 11, 25))</code> → <code>48</code></span></td></tr>
+<tr id="DAYS"><td><code><strong>DAYS</strong>(end_date, start_date)</code></td><td>Number of days between two dates.<span class="ex"><code>=DAYS(DATE(2026, 12, 25), DATE(2026, 11, 25))</code> → <code>30</code></span></td></tr>
+<tr id="DAYS360"><td><code><strong>DAYS360</strong>(start_date, end_date, [method])</code></td><td>Days between two dates on a 360-day year.<span class="ex"><code>=DAYS360(DATE(2026, 1, 1), DATE(2026, 11, 25))</code> → <code>324</code></span></td></tr>
+<tr id="DATEDIF"><td><code><strong>DATEDIF</strong>(start_date, end_date, unit)</code></td><td>Duration between two dates, in years ("Y"), months ("M") or days ("D").<span class="ex"><code>=DATEDIF(DATE(2020, 1, 1), DATE(2026, 11, 25), "Y")</code> → <code>6</code></span></td></tr>
+<tr id="YEARFRAC"><td><code><strong>YEARFRAC</strong>(start_date, end_date, [day_count_convention])</code></td><td>Exact number of years between two dates.<span class="ex"><code>=YEARFRAC(DATE(2026, 1, 1), DATE(2026, 7, 1))</code> → <code>0.5</code></span></td></tr>
+<tr id="EDATE"><td><code><strong>EDATE</strong>(start_date, months)</code></td><td>Date a number of months before/after another date.<span class="ex"><code>=EDATE(DATE(2026, 11, 25), 2)</code> → <code>46412</code></span></td></tr>
+<tr id="EOMONTH"><td><code><strong>EOMONTH</strong>(start_date, months)</code></td><td>Last day of a month before or after a date.<span class="ex"><code>=EOMONTH(DATE(2026, 2, 1), 0)</code> → <code>46081</code></span></td></tr>
+<tr id="WORKDAY"><td><code><strong>WORKDAY</strong>(start_date, num_days, [holidays])</code></td><td>Number of working days from start date.<span class="ex"><code>=WORKDAY(DATE(2026, 11, 25), 10)</code> → <code>46365</code></span></td></tr>
+<tr id="NETWORKDAYS"><td><code><strong>NETWORKDAYS</strong>(start_date, end_date, [holidays])</code></td><td>Net working days between two provided days.<span class="ex"><code>=NETWORKDAYS(DATE(2026, 11, 25), DATE(2026, 12, 9))</code> → <code>11</code></span></td></tr>
+<tr id="TIME"><td><code><strong>TIME</strong>(hour, minute, second)</code></td><td>Time, as a fraction of a day; give the cell a time format.<span class="ex"><code>=TIME(14, 30, 0)</code> → <code>0.604166667</code></span></td></tr>
+<tr id="HOUR"><td><code><strong>HOUR</strong>(time)</code></td><td>Hours of a time.<span class="ex"><code>=HOUR(TIME(14, 30, 0))</code> → <code>14</code></span></td></tr>
+<tr id="MINUTE"><td><code><strong>MINUTE</strong>(time)</code></td><td>Minutes of a time.<span class="ex"><code>=MINUTE(TIME(14, 30, 0))</code> → <code>30</code></span></td></tr>
+<tr id="SECOND"><td><code><strong>SECOND</strong>(time)</code></td><td>Seconds of a time.<span class="ex"><code>=SECOND(TIME(14, 30, 12))</code> → <code>12</code></span></td></tr>
+</tbody></table></div>
+<h2 id="finance">Finance</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="PMT"><td><code><strong>PMT</strong>(rate, number_of_periods, present_value, future_value, end_or_beginning)</code></td><td>Constant payment of a loan; the capital is counted as negative.<span class="ex"><code>=PMT(0.02/12, 240, -100000)</code> → <code>505.883335045</code></span></td></tr>
+<tr id="IPMT"><td><code><strong>IPMT</strong>(rate, period, number_of_periods, present_value, future_value, end_or_beginning)</code></td><td>Payment on interest for an investment.<span class="ex"><code>=IPMT(0.02/12, 1, 240, -100000)</code> → <code>166.666666667</code></span></td></tr>
+<tr id="PPMT"><td><code><strong>PPMT</strong>(rate, period, number_of_periods, present_value, [future_value], [end_or_beginning])</code></td><td>Payment on the principal of an investment.<span class="ex"><code>=PPMT(0.02/12, 1, 240, -100000)</code> → <code>339.216668378</code></span></td></tr>
+<tr id="CUMIPMT"><td><code><strong>CUMIPMT</strong>(rate, number_of_periods, present_value, first_period, last_period, end_or_beginning)</code></td><td>Cumulative interest paid over a set of periods.<span class="ex"><code>=CUMIPMT(0.02/12, 240, 100000, 1, 12, 0)</code> → <code>-1962.478087955</code></span></td></tr>
+<tr id="CUMPRINC"><td><code><strong>CUMPRINC</strong>(rate, number_of_periods, present_value, first_period, last_period, end_or_beginning)</code></td><td>Cumulative principal paid over a set of periods.<span class="ex"><code>=CUMPRINC(0.02/12, 240, 100000, 1, 12, 0)</code> → <code>-4108.121932587</code></span></td></tr>
+<tr id="PV"><td><code><strong>PV</strong>(rate, number_of_periods, payment_amount, [future_value], [end_or_beginning])</code></td><td>Present value of an annuity investment.<span class="ex"><code>=PV(0.02/12, 240, -500)</code> → <code>98837.017423279</code></span></td></tr>
+<tr id="FV"><td><code><strong>FV</strong>(rate, number_of_periods, payment_amount, present_value, end_or_beginning)</code></td><td>Future value of an annuity investment.<span class="ex"><code>=FV(0.03, 10, -1000)</code> → <code>11463.879311471</code></span></td></tr>
+<tr id="FVSCHEDULE"><td><code><strong>FVSCHEDULE</strong>(principal, rate_schedule)</code></td><td>Future value of principal from series of rates.<span class="ex"><code>=FVSCHEDULE(1000, [0.1, 0.05])</code> → <code>1155</code></span></td></tr>
+<tr id="NPER"><td><code><strong>NPER</strong>(rate, payment_amount, present_value, [future_value], [end_or_beginning])</code></td><td>Number of payment periods for an investment.<span class="ex"><code>=NPER(0.01, -500, 10000)</code> → <code>22.425741878</code></span></td></tr>
+<tr id="RATE"><td><code><strong>RATE</strong>(number_of_periods, payment_per_period, present_value, [future_value], [end_or_beginning], [rate_guess])</code></td><td>Interest rate of an annuity investment.<span class="ex"><code>=RATE(240, -505.88, 100000)</code> → <code>0.001666608</code></span></td></tr>
+<tr id="PDURATION"><td><code><strong>PDURATION</strong>(rate, present_value, future_value)</code></td><td>Number of periods to reach a value.<span class="ex"><code>=PDURATION(0.05, 1000, 2000)</code> → <code>14.206699083</code></span></td></tr>
+<tr id="RRI"><td><code><strong>RRI</strong>(periods, present_value, future_value)</code></td><td>Equivalent interest rate of a growth.<span class="ex"><code>=RRI(10, 1000, 2000)</code> → <code>0.071773463</code></span></td></tr>
+<tr id="ISPMT"><td><code><strong>ISPMT</strong>(rate, period, periods, capital)</code></td><td>Interest of a period of a loan with constant principal.<span class="ex"><code>=ISPMT(0.1, 1, 3, 1000)</code> → <code>-66.666666667</code></span></td></tr>
+<tr id="NPV"><td><code><strong>NPV</strong>(discount, cashflow1, [cashflow2, …])</code></td><td>The net present value of an investment based on a series of periodic cash flows and a discount rate.<span class="ex"><code>=NPV(0.1, 60, 60)</code> → <code>104.132231405</code></span></td></tr>
+<tr id="XNPV"><td><code><strong>XNPV</strong>(discount, cashflow_amounts, cashflow_dates)</code></td><td>Net present value given non-periodic cashflows.<span class="ex"><code>=XNPV(0.1, [-100, 60, 60], [46000, 46100, 46400])</code> → <code>12.50275272</code></span></td></tr>
+<tr id="IRR"><td><code><strong>IRR</strong>(cashflow_amounts, [rate_guess])</code></td><td>Internal rate of return given periodic cashflows.<span class="ex"><code>=IRR([-100, 60, 60])</code> → <code>0.130662386</code></span></td></tr>
+<tr id="MIRR"><td><code><strong>MIRR</strong>(cashflow_amounts, financing_rate, reinvestment_return_rate)</code></td><td>Modified internal rate of return.<span class="ex"><code>=MIRR([-100, 60, 60], 0.1, 0.12)</code> → <code>0.127829774</code></span></td></tr>
+<tr id="XIRR"><td><code><strong>XIRR</strong>(cashflow_amounts, cashflow_dates, [rate_guess])</code></td><td>Internal rate of return given non-periodic cashflows.<span class="ex"><code>=XIRR([-100, 60, 60], [46000, 46100, 46400])</code> → <code>0.317227411</code></span></td></tr>
+<tr id="EFFECT"><td><code><strong>EFFECT</strong>(nominal_rate, periods_per_year)</code></td><td>Annual effective interest rate.<span class="ex"><code>=EFFECT(0.12, 12)</code> → <code>0.12682503</code></span></td></tr>
+<tr id="NOMINAL"><td><code><strong>NOMINAL</strong>(effective_rate, periods_per_year)</code></td><td>Annual nominal interest rate.<span class="ex"><code>=NOMINAL(0.1268, 12)</code> → <code>0.119977565</code></span></td></tr>
+<tr id="SLN"><td><code><strong>SLN</strong>(cost, salvage, life)</code></td><td>Depreciation of asset using the straight-line method.<span class="ex"><code>=SLN(10000, 1000, 5)</code> → <code>1800</code></span></td></tr>
+<tr id="SYD"><td><code><strong>SYD</strong>(cost, salvage, life, period)</code></td><td>Depreciation via sum of years digits method.<span class="ex"><code>=SYD(10000, 1000, 5, 1)</code> → <code>3000</code></span></td></tr>
+<tr id="DB"><td><code><strong>DB</strong>(cost, salvage, life, period, month)</code></td><td>Depreciation via declining balance method.<span class="ex"><code>=DB(10000, 1000, 5, 1)</code> → <code>3690</code></span></td></tr>
+<tr id="DDB"><td><code><strong>DDB</strong>(cost, salvage, life, period, factor)</code></td><td>Depreciation via double-declining balance method.<span class="ex"><code>=DDB(10000, 1000, 5, 1)</code> → <code>4000</code></span></td></tr>
+<tr id="DOLLARDE"><td><code><strong>DOLLARDE</strong>(fractional_price, unit)</code></td><td>Converts a decimal fraction to decimal value.<span class="ex"><code>=DOLLARDE(1.02, 16)</code> → <code>1.125</code></span></td></tr>
+<tr id="DOLLARFR"><td><code><strong>DOLLARFR</strong>(decimal_price, unit)</code></td><td>Converts a decimal value to decimal fraction.<span class="ex"><code>=DOLLARFR(1.125, 16)</code> → <code>1.02</code></span></td></tr>
+<tr id="TBILLEQ"><td><code><strong>TBILLEQ</strong>(settlement, maturity, discount)</code></td><td>Equivalent rate of return for a Treasury bill.<span class="ex"><code>=TBILLEQ(46000, 46100, 0.05)</code> → <code>0.051408451</code></span></td></tr>
+<tr id="TBILLPRICE"><td><code><strong>TBILLPRICE</strong>(settlement, maturity, discount)</code></td><td>Price of US treasury bill.<span class="ex"><code>=TBILLPRICE(46000, 46100, 0.05)</code> → <code>98.611111111</code></span></td></tr>
+<tr id="TBILLYIELD"><td><code><strong>TBILLYIELD</strong>(settlement, maturity, price)</code></td><td>The yield of a us treasury bill based on price.<span class="ex"><code>=TBILLYIELD(46000, 46100, 98)</code> → <code>0.073469388</code></span></td></tr>
+</tbody></table></div>
+<h2 id="engineering">Number bases, units, special functions</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="BIN2DEC"><td><code><strong>BIN2DEC</strong>(signed_binary_number)</code></td><td>Converts a signed binary number to decimal format.<span class="ex"><code>=BIN2DEC("1010")</code> → <code>10</code></span></td></tr>
+<tr id="BIN2HEX"><td><code><strong>BIN2HEX</strong>(signed_binary_number, [significant_digits])</code></td><td>Converts a binary number to hexadecimal.<span class="ex"><code>=BIN2HEX("1010")</code> → <code>a</code></span></td></tr>
+<tr id="BIN2OCT"><td><code><strong>BIN2OCT</strong>(signed_binary_number, [significant_digits])</code></td><td>Converts a binary number to octal.<span class="ex"><code>=BIN2OCT("1010")</code> → <code>12</code></span></td></tr>
+<tr id="DEC2BIN"><td><code><strong>DEC2BIN</strong>(decimal_number, [significant_digits])</code></td><td>Converts a decimal number to signed binary format.<span class="ex"><code>=DEC2BIN(10)</code> → <code>1010</code></span></td></tr>
+<tr id="DEC2HEX"><td><code><strong>DEC2HEX</strong>(decimal_number, [significant_digits])</code></td><td>Converts a decimal number to hexadecimal.<span class="ex"><code>=DEC2HEX(255)</code> → <code>ff</code></span></td></tr>
+<tr id="DEC2OCT"><td><code><strong>DEC2OCT</strong>(decimal_number, [significant_digits])</code></td><td>Converts a decimal number to signed octal format.<span class="ex"><code>=DEC2OCT(8)</code> → <code>10</code></span></td></tr>
+<tr id="HEX2BIN"><td><code><strong>HEX2BIN</strong>(signed_hexadecimal_number, [significant_digits])</code></td><td>Converts a hexadecimal number to binary.<span class="ex"><code>=HEX2BIN("F")</code> → <code>1111</code></span></td></tr>
+<tr id="HEX2DEC"><td><code><strong>HEX2DEC</strong>(signed_hexadecimal_number)</code></td><td>Converts a hexadecimal number to decimal.<span class="ex"><code>=HEX2DEC("FF")</code> → <code>255</code></span></td></tr>
+<tr id="HEX2OCT"><td><code><strong>HEX2OCT</strong>(signed_hexadecimal_number, [significant_digits])</code></td><td>Converts a hexadecimal number to octal.<span class="ex"><code>=HEX2OCT("F")</code> → <code>17</code></span></td></tr>
+<tr id="OCT2BIN"><td><code><strong>OCT2BIN</strong>(signed_octal_number, [significant_digits])</code></td><td>Converts an octal number to binary.<span class="ex"><code>=OCT2BIN("7")</code> → <code>111</code></span></td></tr>
+<tr id="OCT2DEC"><td><code><strong>OCT2DEC</strong>(signed_octal_number)</code></td><td>Converts a signed octal number to decimal format.<span class="ex"><code>=OCT2DEC("17")</code> → <code>15</code></span></td></tr>
+<tr id="OCT2HEX"><td><code><strong>OCT2HEX</strong>(signed_octal_number, [significant_digits])</code></td><td>Converts an octal number to hexadecimal.<span class="ex"><code>=OCT2HEX("17")</code> → <code>f</code></span></td></tr>
+<tr id="BITAND"><td><code><strong>BITAND</strong>(a, b)</code></td><td>Bitwise AND.<span class="ex"><code>=BITAND(6, 3)</code> → <code>2</code></span></td></tr>
+<tr id="BITOR"><td><code><strong>BITOR</strong>(a, b)</code></td><td>Bitwise OR.<span class="ex"><code>=BITOR(6, 3)</code> → <code>7</code></span></td></tr>
+<tr id="BITXOR"><td><code><strong>BITXOR</strong>(a, b)</code></td><td>Bitwise exclusive OR.<span class="ex"><code>=BITXOR(6, 3)</code> → <code>5</code></span></td></tr>
+<tr id="BITLSHIFT"><td><code><strong>BITLSHIFT</strong>(number, shift)</code></td><td>Shifts bits to the left.<span class="ex"><code>=BITLSHIFT(1, 4)</code> → <code>16</code></span></td></tr>
+<tr id="BITRSHIFT"><td><code><strong>BITRSHIFT</strong>(number, shift)</code></td><td>Shifts bits to the right.<span class="ex"><code>=BITRSHIFT(16, 4)</code> → <code>1</code></span></td></tr>
+<tr id="CONVERT"><td><code><strong>CONVERT</strong>(value, start_unit, end_unit)</code></td><td>Converts a measure from one unit to another: "m", "km", "mi", "hr", "mn", "kg"… Temperatures are not converted.<span class="ex"><code>=CONVERT(1, "mi", "km")</code> → <code>1.609344</code></span></td></tr>
+<tr id="DELTA"><td><code><strong>DELTA</strong>(number1, [number2])</code></td><td>Compare two numeric values.<span class="ex"><code>=DELTA(3, 3)</code> → <code>1</code></span></td></tr>
+<tr id="GESTEP"><td><code><strong>GESTEP</strong>(number, step)</code></td><td>1 if the number reaches the step, 0 otherwise.<span class="ex"><code>=GESTEP(5, 4)</code> → <code>1</code></span></td></tr>
+<tr id="ERF"><td><code><strong>ERF</strong>(x)</code></td><td>Gauss error function.<span class="ex"><code>=ERF(1)</code> → <code>0.842700793</code></span></td></tr>
+<tr id="ERFC"><td><code><strong>ERFC</strong>(z)</code></td><td>Complementary gauss error function of a value.<span class="ex"><code>=ERFC(1)</code> → <code>0.157299207</code></span></td></tr>
+<tr id="BESSELJ"><td><code><strong>BESSELJ</strong>(x, n)</code></td><td>Bessel function Jₙ.<span class="ex"><code>=BESSELJ(1, 0)</code> → <code>0.765197684</code></span></td></tr>
+<tr id="BESSELY"><td><code><strong>BESSELY</strong>(x, n)</code></td><td>Bessel function Yₙ.<span class="ex"><code>=BESSELY(1, 0)</code> → <code>0.088256971</code></span></td></tr>
+<tr id="BESSELI"><td><code><strong>BESSELI</strong>(x, n)</code></td><td>Modified Bessel function Iₙ.<span class="ex"><code>=BESSELI(1, 0)</code> → <code>1.266065848</code></span></td></tr>
+<tr id="BESSELK"><td><code><strong>BESSELK</strong>(x, n)</code></td><td>Modified Bessel function Kₙ.<span class="ex"><code>=BESSELK(1, 0)</code> → <code>0.421024421</code></span></td></tr>
+</tbody></table></div>
+<h2 id="complex">Complex numbers as text</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="COMPLEX"><td><code><strong>COMPLEX</strong>(real_part, imaginary_part, [suffix])</code></td><td>Creates a complex number.<span class="ex"><code>=COMPLEX(3, 4)</code> → <code>3+4i</code></span></td></tr>
+<tr id="IMREAL"><td><code><strong>IMREAL</strong>(complex_number)</code></td><td>The real coefficient of a complex number.<span class="ex"><code>=IMREAL("3+4i")</code> → <code>3</code></span></td></tr>
+<tr id="IMAGINARY"><td><code><strong>IMAGINARY</strong>(complex_number)</code></td><td>The imaginary coefficient of a complex number.<span class="ex"><code>=IMAGINARY("3+4i")</code> → <code>4</code></span></td></tr>
+<tr id="IMABS"><td><code><strong>IMABS</strong>(number)</code></td><td>The absolute value of a complex number.<span class="ex"><code>=IMABS("3+4i")</code> → <code>5</code></span></td></tr>
+<tr id="IMARGUMENT"><td><code><strong>IMARGUMENT</strong>(complex)</code></td><td>Argument, in radians.<span class="ex"><code>=IMARGUMENT("1+i")</code> → <code>0.785398163</code></span></td></tr>
+<tr id="IMCONJUGATE"><td><code><strong>IMCONJUGATE</strong>(number)</code></td><td>The complex conjugate of a number.<span class="ex"><code>=IMCONJUGATE("3+4i")</code> → <code>3-4i</code></span></td></tr>
+<tr id="IMSUM"><td><code><strong>IMSUM</strong>(value1, [value2, …])</code></td><td>Sum of a series of complex numbers.<span class="ex"><code>=IMSUM("3+4i", "1+i")</code> → <code>4+5i</code></span></td></tr>
+<tr id="IMSUB"><td><code><strong>IMSUB</strong>(first_number, second_number)</code></td><td>The difference between two complex numbers.<span class="ex"><code>=IMSUB("3+4i", "1+i")</code> → <code>2+3i</code></span></td></tr>
+<tr id="IMPRODUCT"><td><code><strong>IMPRODUCT</strong>(factor1, [factor2, …])</code></td><td>Result of multiplying a series of complex numbers together.<span class="ex"><code>=IMPRODUCT("3+4i", "1+i")</code> → <code>-1+7i</code></span></td></tr>
+<tr id="IMDIV"><td><code><strong>IMDIV</strong>(dividend, divisor)</code></td><td>One complex number divided by another.<span class="ex"><code>=IMDIV("3+4i", "1+i")</code> → <code>3.5+0.5i</code></span></td></tr>
+<tr id="IMPOWER"><td><code><strong>IMPOWER</strong>(complex, exponent)</code></td><td>Power of a complex number.<span class="ex"><code>=IMPOWER("3+4i", 2)</code> → <code>-6.999999999999998+24.000000000000004i</code></span></td></tr>
+<tr id="IMSQRT"><td><code><strong>IMSQRT</strong>(complex)</code></td><td>Square root of a complex number.<span class="ex"><code>=IMSQRT("3+4i")</code> → <code>2+i</code></span></td></tr>
+<tr id="IMEXP"><td><code><strong>IMEXP</strong>(complex)</code></td><td>Exponential of a complex number.<span class="ex"><code>=IMEXP("i")</code> → <code>0.5403023058681398+0.8414709848078965i</code></span></td></tr>
+<tr id="IMLN"><td><code><strong>IMLN</strong>(complex)</code></td><td>Natural logarithm of a complex number.<span class="ex"><code>=IMLN("3+4i")</code> → <code>1.6094379124341003+0.9272952180016122i</code></span></td></tr>
+<tr id="IMLOG10"><td><code><strong>IMLOG10</strong>(complex)</code></td><td>Decimal logarithm of a complex number.<span class="ex"><code>=IMLOG10("3+4i")</code> → <code>0.6989700043360187+0.4027191962733731i</code></span></td></tr>
+<tr id="IMLOG2"><td><code><strong>IMLOG2</strong>(complex)</code></td><td>Base 2 logarithm of a complex number.<span class="ex"><code>=IMLOG2("3+4i")</code> → <code>2.321928094887362+1.3378042124509761i</code></span></td></tr>
+<tr id="IMSIN"><td><code><strong>IMSIN</strong>(complex)</code></td><td>Sine of a complex number.<span class="ex"><code>=IMSIN("i")</code> → <code>1.1752011936438014i</code></span></td></tr>
+<tr id="IMCOS"><td><code><strong>IMCOS</strong>(complex)</code></td><td>Cosine of a complex number.<span class="ex"><code>=IMCOS("i")</code> → <code>1.5430806348152437</code></span></td></tr>
+<tr id="IMTAN"><td><code><strong>IMTAN</strong>(complex)</code></td><td>Tangent of a complex number.<span class="ex"><code>=IMTAN("i")</code> → <code>0.7615941559557649i</code></span></td></tr>
+</tbody></table></div>
+<h2 id="info">Information</h2>
+<div class="table"><table class="functions"><thead><tr><th>Function</th><th>Description and example</th></tr></thead><tbody>
+<tr id="ISNUMBER"><td><code><strong>ISNUMBER</strong>(value)</code></td><td>Whether a value is a number.<span class="ex"><code>=ISNUMBER(A1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISTEXT"><td><code><strong>ISTEXT</strong>(value)</code></td><td>Whether a value is text.<span class="ex"><code>=ISTEXT(C1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISNONTEXT"><td><code><strong>ISNONTEXT</strong>(value)</code></td><td>Whether a value is non-textual.<span class="ex"><code>=ISNONTEXT(A1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISLOGICAL"><td><code><strong>ISLOGICAL</strong>(value)</code></td><td>Whether a value is `true` or `false`.<span class="ex"><code>=ISLOGICAL(TRUE())</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISERROR"><td><code><strong>ISERROR</strong>(value)</code></td><td>True if the value is the error of a function (#N/A, #NUM!).<span class="ex"><code>=ISERROR(NA())</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISERR"><td><code><strong>ISERR</strong>(value)</code></td><td>True if the value is the error of a function other than #N/A.<span class="ex"><code>=ISERR(NA())</code> → <code>FALSE</code></span></td></tr>
+<tr id="ISNA"><td><code><strong>ISNA</strong>(value)</code></td><td>True if the value is the #N/A error.<span class="ex"><code>=ISNA(NA())</code> → <code>TRUE</code></span></td></tr>
+<tr id="NA"><td><code><strong>NA</strong>()</code></td><td>The #N/A error.<span class="ex"><code>=NA()</code> → <code>#N/A</code></span></td></tr>
+<tr id="TYPE"><td><code><strong>TYPE</strong>(value)</code></td><td>Type of a value: 1 number, 2 text, 4 logical, 16 error, 64 list.<span class="ex"><code>=TYPE(5)</code> → <code>1</code></span></td></tr>
+</tbody></table></div>
+<h2 id="non-calculees">Functions not computed</h2>
+<p>The completion and the library of DocCells also name functions that are not computed: they give <code>#NAME?</code> or <code>#ERROR!</code>. The same goes for recent Excel functions.</p>
+<div class="table"><table><thead><tr><th>Not computed</th><th>Instead</th></tr></thead><tbody>
+<tr><td><code>TEXT</code>, <code>FIXED</code>, <code>DOLLAR</code></td><td>a <a href="nombres.html">number format</a> in the cell</td></tr>
+<tr><td><code>XLOOKUP</code>, <code>OFFSET</code>, <code>INDIRECT</code>, <code>ADDRESS</code></td><td><code>INDEX</code> and <code>MATCH</code>, <code>VLOOKUP</code>, <code>CHOOSE</code></td></tr>
+<tr><td><code>FILTER</code>, <code>SORT</code>, <code>SEQUENCE</code>, <code>LET</code>, <code>LAMBDA</code></td><td><a href="tri-filtre.html">sort and filter</a>; <a href="selection.html#recopier">fill</a> a formula</td></tr>
+<tr><td><code>MAXIFS</code>, <code>MINIFS</code>, <code>TEXTJOIN</code></td><td>a filter; the <code>&amp;</code> operator</td></tr>
+<tr><td><code>MMULT</code>, <code>MDETERM</code>, <code>MINVERSE</code></td><td><code>SUMPRODUCT</code>, one formula per element</td></tr>
+<tr><td><code>HYPERLINK</code></td><td><a href="images-liens.html#liens">insert a link</a></td></tr>
+<tr><td>Excel names with a dot: <code>RANK.EQ</code>, <code>VAR.S</code>, <code>NORM.DIST</code>…</td><td>the name without the dot or the old name: <code>RANK</code>, <code>VAR</code>, <code>NORMDIST</code></td></tr>
+<tr><td>database functions (<code>DSUM</code>…), coupons and securities (<code>PRICE</code>, <code>COUPNUM</code>…), <code>ISBLANK</code>, <code>CELL</code>, <code>ISFORMULA</code></td><td><code>SUMIFS</code>; <code>=A1=""</code> for an empty cell</td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

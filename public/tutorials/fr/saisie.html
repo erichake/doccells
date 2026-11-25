@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Saisir des données — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Saisir des données</h1>
+<h2 id="ecrire">Écrire dans une cellule</h2>
+<div class="table"><table><thead><tr><th>Action</th><th>Effet</th></tr></thead><tbody>
+<tr><td>taper sur une cellule sélectionnée</td><td>remplace son contenu</td></tr>
+<tr><td>double clic, <kbd>F2</kbd> ou <kbd>Entrée</kbd></td><td>modifie son contenu</td></tr>
+<tr><td><kbd>Entrée</kbd></td><td>valide et descend d’une cellule</td></tr>
+<tr><td>clic dans une autre cellule</td><td>valide</td></tr>
+<tr><td><kbd>Échap</kbd></td><td>abandonne la saisie</td></tr>
+<tr><td><kbd>Alt</kbd> <kbd>Entrée</kbd></td><td>va à la ligne dans la cellule</td></tr>
+<tr><td><kbd>Suppr</kbd> ou <kbd>⌫</kbd></td><td>vide les cellules sélectionnées, cases et listes déroulantes comprises ; leur mise en forme reste</td></tr>
+<tr><td>clic droit › <strong>Effacer le contenu</strong></td><td>de même</td></tr>
+</tbody></table></div>
+<p>Pendant une saisie, les flèches déplacent le curseur dans le texte. Hors saisie, les flèches, <kbd>Tab</kbd> et <kbd>Maj</kbd> <kbd>Tab</kbd> changent de cellule.</p>
+<h2 id="types">Ce que DocCells reconnaît</h2>
+<div class="table"><table><thead><tr><th>On tape</th><th>On obtient</th></tr></thead><tbody>
+<tr><td><code>12</code>, <code>-3</code>, <code>1e5</code></td><td>un nombre, aligné à droite</td></tr>
+<tr><td><code>2,5</code></td><td>un nombre décimal ; la virgule est le séparateur français</td></tr>
+<tr><td><code>1 234,5</code></td><td>le nombre 1234,5 ; pour garder l’espace à l’affichage, choisir un <a href="nombres.html">format</a></td></tr>
+<tr><td><code>25%</code>, <code>2,5%</code></td><td>un pourcentage</td></tr>
+<tr><td><code>2026-11-25</code>, <code>2026/11/25</code></td><td>une date</td></tr>
+<tr><td><code>2026-11-25 14:30</code></td><td>une date et une heure</td></tr>
+<tr><td><code>TRUE</code>, <code>FALSE</code></td><td>une valeur logique</td></tr>
+<tr><td><code>[2; 1]</code></td><td>une <a href="listes.html">liste</a></td></tr>
+<tr><td><code>=A1+B1</code></td><td>une <a href="formules.html">formule</a></td></tr>
+<tr><td>toute autre chose</td><td>un texte, aligné à gauche</td></tr>
+</tbody></table></div>
+<h3 id="dates">Dates</h3>
+<p>Une date se tape année d’abord : <code>2026-11-25</code>. <code>25/11/2026</code> reste un texte, avec lequel on ne calcule pas. Pour l’afficher à la française, choisir <strong>Format › Nombre › Date</strong> (<code>29/11/2017</code>) ou un <a href="nombres.html#personnalise">format personnalisé</a>.</p>
+<p>Un double clic sur une cellule de date ouvre un <a href="controles.html#calendrier">calendrier</a>. <code>=AUJOURDHUI()</code> donne la date du jour.</p>
+<h3 id="textes">Textes faits de chiffres</h3>
+<p>Un numéro qui commence par zéro perd ce zéro : <code>007</code> devient 7. Pour le garder, donner d’abord le format <strong>Texte</strong> aux cellules (<strong>Format › Nombre › Texte</strong>), ou commencer par une apostrophe : <code>'007</code>.</p>
+<h2 id="erreurs">Les erreurs de saisie courantes</h2>
+<div class="table"><table><thead><tr><th>On voit</th><th>Cause</th></tr></thead><tbody>
+<tr><td>un nombre aligné à gauche</td><td>c’est un texte : un point décimal tapé là où il faut une virgule, une unité (<code>12 €</code>), une espace en trop</td></tr>
+<tr><td><code>46351</code> au lieu d’une date</td><td>une date au format <strong>Automatique</strong> : lui donner le format <strong>Date</strong></td></tr>
+<tr><td>le texte coupé par la cellule voisine</td><td>élargir la <a href="lignes-colonnes.html#taille">colonne</a>, ou choisir <strong>Renvoi à la ligne</strong></td></tr>
+</tbody></table></div>
+<p>Pour une unité, saisir le nombre seul et lui donner un <a href="nombres.html">format</a> : monnaie, ou personnalisé comme <code>0,00 "m"</code>.</p>
+</main>
+</body>
+</html>

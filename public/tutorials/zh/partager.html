@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>共享与嵌入 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>共享与嵌入</h1>
+<h2 id="url">通过链接打开工作簿</h2>
+<p><code>?url=</code> 后接在线 <code>.xlsx</code> 文件的地址，即可在 DocCells 中打开。</p>
+<pre><code>https://…/doccells/?url=https://example.org/marks.xlsx</code></pre>
+<p>存放文件的网站必须允许其他网站读取（CORS 标头）；与 DocCells 放在同一网站的文件没有此限制。每个人打开的是自己的副本：更改不会写回原文件。</p>
+<h2 id="google">Google 表格</h2>
+<p>也可以使用 Google 表格的地址。</p>
+<pre><code>https://…/doccells/?url=https://docs.google.com/spreadsheets/d/…</code></pre>
+<ul>
+<li>将其共享给“知道链接的任何人”。</li>
+<li>DocCells 每次打开时读取 Excel 格式的副本：Google 文档不会被修改。</li>
+<li>存放 DocCells 的网站必须能运行 PHP；最大 25 MB。</li>
+</ul>
+<h2 id="options">地址选项</h2>
+<div class="table"><table><thead><tr><th>选项</th><th>效果</th></tr></thead><tbody>
+<tr><td><code>url=…</code></td><td>打开工作簿或 Google 表格</td></tr>
+<tr><td><code>mode=student</code></td><td><a href="protection.html#eleve">学生模式</a></td></tr>
+<tr><td><code>lang=zh-CN</code></td><td>指定语言：<code>de</code>、<code>el</code>、<code>en</code>、<code>es</code>、<code>fr</code>、<code>hi</code>、<code>it</code>、<code>nl</code>、<code>pt</code>、<code>ru</code>、<code>zh-CN</code>、<code>zh-TW</code></td></tr>
+</tbody></table></div>
+<p>各选项依次排列，用 <code>&amp;</code> 分隔：<code>?lang=zh-CN&amp;mode=student&amp;url=…</code>。第一个选项在 <code>?</code> 之后。</p>
+<h2 id="integrer">在网页中</h2>
+<pre><code>&lt;iframe src="https://…/doccells/?url=https://example.org/marks.xlsx"
+    style="width:100%;height:500px;border:1px solid #ccc"&gt;&lt;/iframe&gt;</code></pre>
+<p>在框架中，DocCells 没有菜单、打开和保存按钮以及恢复副本：只显示按钮栏、公式栏和工作表。</p>
+<h2 id="programme">通过程序</h2>
+<p>网页可以控制 DocCells：加载工作簿、读写单元格、跟踪其值。<code>embed</code> 选项打开此模式；面向开发者的说明见项目的 <a href="https://github.com/erichake/doccells/blob/main/EMBED.md">EMBED.md</a> 文件（法语）。</p>
+</main>
+</body>
+</html>

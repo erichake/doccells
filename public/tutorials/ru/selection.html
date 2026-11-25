@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Выделение, копирование, заполнение — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Выделение, копирование, заполнение</h1>
+<h2 id="selectionner">Выделение</h2>
+<div class="table"><table><thead><tr><th>Действие</th><th>Выделено</th></tr></thead><tbody>
+<tr><td>щелчок</td><td>ячейка</td></tr>
+<tr><td>протянуть</td><td>диапазон</td></tr>
+<tr><td>щелчок, затем <kbd>Shift</kbd> и щелчок</td><td>диапазон между ними</td></tr>
+<tr><td><kbd>Shift</kbd> и стрелка</td><td>расширяет диапазон</td></tr>
+<tr><td><kbd>Ctrl</kbd> и щелчок или протягивание</td><td>ещё один диапазон</td></tr>
+<tr><td>щелчок по букве, по номеру</td><td>столбец, строка</td></tr>
+<tr><td>протянуть по буквам, по номерам</td><td>несколько столбцов, строк</td></tr>
+<tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>весь лист</td></tr>
+<tr><td>поле имени, стрелка</td><td><a href="noms.html">именованный диапазон</a></td></tr>
+</tbody></table></div>
+<p>Адрес выделения — в поле имени, слева от строки формул.</p>
+<h2 id="copier">Копировать, вырезать, вставить</h2>
+<p><kbd>Ctrl</kbd> <kbd>C</kbd>, <kbd>Ctrl</kbd> <kbd>X</kbd>, <kbd>Ctrl</kbd> <kbd>V</kbd> или <strong>Копировать</strong> и <strong>Вставить</strong> в меню правой кнопки.</p>
+<ul>
+<li><strong>Вставить</strong> в меню правой кнопки вставляет значения без формул; <kbd>Ctrl</kbd> <kbd>V</kbd> вставляет формулы.</li>
+<li>Вставленная формула следует новому месту: <code>=B2</code>, скопированная на строку ниже, становится <code>=B3</code>. Знак <code>$</code> закрепляет строку или столбец (<a href="formules.html#references">ссылки</a>).</li>
+<li>Вырезанная формула сохраняет свои ссылки.</li>
+<li>Таблица, скопированная из Excel, Numbers, с веб-страницы или из текста с табуляцией, вставляется по ячейкам; десятичные числа и списки распознаются как при наборе.</li>
+<li>Несколько диапазонов сразу вырезать или вставить нельзя.</li>
+</ul>
+<h2 id="deplacer">Перемещение</h2>
+<p>Потяните границу выделения: ячейки перемещаются вместе с оформлением.</p>
+<h2 id="recopier">Заполнение</h2>
+<p>Синий маркер в правом нижнем углу выделения тянут вниз, вверх, влево или вправо.</p>
+<div class="table"><table><thead><tr><th>Исходные ячейки</th><th>Маркер даёт</th></tr></thead><tbody>
+<tr><td>формула</td><td>формулу со сдвинутыми ссылками</td></tr>
+<tr><td>два числа, 1 и 2</td><td>ряд: 3, 4, 5…</td></tr>
+<tr><td>одно число, текст или дата</td><td>то же значение</td></tr>
+<tr><td>две даты</td><td>следующие даты с тем же шагом</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="Ряд 1, 2, продолженный маркером" width="760" height="300" /></figure>
+<p>Без мыши или для большого диапазона:</p>
+<div class="table"><table><thead><tr><th>Команда</th><th>Результат</th></tr></thead><tbody>
+<tr><td><strong>Правка › Заполнить вниз</strong>, <kbd>Ctrl</kbd> <kbd>D</kbd></td><td>первая строка выделенного диапазона копируется в следующие</td></tr>
+<tr><td><strong>Правка › Заполнить вправо</strong>, <kbd>Ctrl</kbd> <kbd>R</kbd></td><td>первый столбец копируется в следующие</td></tr>
+</tbody></table></div>
+<p>Если выделена одна строка, <kbd>Ctrl</kbd> <kbd>D</kbd> копирует в неё строку выше; если один столбец, <kbd>Ctrl</kbd> <kbd>R</kbd> копирует столбец слева. Эти команды всегда копируют, не создавая ряда, вместе с форматами, границами, флажками и списками.</p>
+<div class="tip"><p>Формула на весь столбец: наберите её сверху, выделите от этой ячейки до последней, <kbd>Ctrl</kbd> <kbd>D</kbd>.</p></div>
+</main>
+</body>
+</html>

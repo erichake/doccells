@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Opening and saving — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Opening and saving</h1>
+<h2 id="nouveau">Starting</h2>
+<p>DocCells opens on an empty workbook with one sheet. To start again from an empty workbook, reload the page or open DocCells in another browser tab.</p>
+<h2 id="ouvrir">Opening a workbook</h2>
+<div class="table"><table><thead><tr><th>How</th><th>Effect</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i>, <strong>File › Open</strong>, <kbd>Ctrl</kbd> <kbd>O</kbd></td><td>choose an <code>.xlsx</code> file on the computer</td></tr>
+<tr><td>Drag the file onto the page</td><td>a veil shows where to drop it; the workbook replaces the one that was open</td></tr>
+<tr><td><strong>File › Open recent file</strong></td><td>the last ten files opened or saved (Chrome and Edge)</td></tr>
+<tr><td>A <code>?url=…</code> link</td><td>an online workbook or a Google Sheet (<a href="partager.html#url">sharing</a>)</td></tr>
+</tbody></table></div>
+<p>The only format read is Excel <code>.xlsx</code>. Convert old <code>.xls</code> files, <code>.ods</code> and <code>.csv</code> files first. What is kept from an Excel file is described in <a href="excel.html">Excel compatibility</a>.</p>
+<div class="warn"><p>Opening a workbook replaces the one displayed: save your changes first.</p></div>
+<h3 id="recents">Recent files</h3>
+<p>The browser may ask again for permission to read the file. A file that was moved, renamed or deleted is removed from the list. <strong>Clear list</strong> empties it. The list stays in this browser, on this computer.</p>
+<h2 id="enregistrer">Saving</h2>
+<h3>Chrome and Edge</h3>
+<div class="table"><table><thead><tr><th>Command</th><th>Effect</th></tr></thead><tbody>
+<tr><td><i data-i="save"></i>, <strong>File › Save</strong>, <kbd>Ctrl</kbd> <kbd>S</kbd></td><td>the first time, asks where to put the file; then replaces it without asking</td></tr>
+<tr><td><strong>File › Save as...</strong></td><td>choose another file</td></tr>
+</tbody></table></div>
+<p>A file opened with <i data-i="open"></i>, from the recent files or dropped on the page is saved back in place; the browser asks once for permission to change it.</p>
+<p>The workbook's name is at the end of the menu bar. A red dot means unsaved changes; the title of the browser tab then starts with ●.</p>
+<h3>Firefox, Safari</h3>
+<p>These browsers do not allow writing to a file. <strong>File › Export</strong> or <kbd>Ctrl</kbd> <kbd>S</kbd> downloads the workbook, under the name of the open workbook.</p>
+<h2 id="recuperer">Recovering an unsaved workbook</h2>
+<p>While there are unsaved changes, DocCells keeps a copy in the browser, updated less than a second after each change. If the page closes without saving, the next time DocCells opens it offers, with the date of the copy, to restore it (<strong>Restore</strong>) or not (<strong>Ignore</strong>).</p>
+<ul>
+<li>Saving, exporting or opening another workbook erases this copy.</li>
+<li>Ignoring the copy deletes it for good.</li>
+<li>The copy is only made when DocCells fills the whole page, not when it is embedded in another one.</li>
+</ul>
+<h2 id="langue">Language</h2>
+<p>DocCells takes the browser's language among the twelve of its interface: Chinese (simplified and traditional), Dutch, English, French, German, Greek, Hindi, Italian, Portuguese, Russian, Spanish. English is used for the others. <code>?lang=en</code> in the address sets the language.</p>
+<p>The language changes the menus, the function names, the decimal separator, the currency symbol and the order of displayed dates. The saved file does not depend on it: a workbook written in French opens in German with its formulas in German.</p>
+</main>
+</body>
+</html>

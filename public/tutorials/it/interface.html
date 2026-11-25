@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>L’interfaccia — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>L’interfaccia</h1>
+<figure><img src="img/interface.webp" alt="La finestra di DocCells" width="1280" height="760" /></figure>
+<p>Dall’alto in basso: la barra dei menu, la barra dei pulsanti, la barra della formula, il foglio, le schede dei fogli e lo zoom.</p>
+<h2 id="menus">I menu</h2>
+<div class="table"><table><thead><tr><th>Menu</th><th>Contenuto</th></tr></thead><tbody>
+<tr><td><strong>File</strong></td><td><a href="demarrage.html">aprire, salvare</a>, <a href="impression.html">stampare</a></td></tr>
+<tr><td><strong>Modifica</strong></td><td>annullare, ripetere, <a href="selection.html#recopier">riempire in basso, a destra</a></td></tr>
+<tr><td><strong>Visualizza</strong></td><td><a href="mise-en-forme.html#quadrillage">griglia</a>, <a href="lignes-colonnes.html#figer">bloccare</a></td></tr>
+<tr><td><strong>Inserisci</strong></td><td><a href="images-liens.html">immagine</a>, <a href="graphiques.html">grafico</a>, <a href="controles.html">casella di controllo, elenco a discesa</a></td></tr>
+<tr><td><strong>Formato</strong></td><td><a href="nombres.html">numero</a>, <a href="mise-en-forme.html">testo, allineamento, unione</a>, <a href="mise-en-forme.html#alternees">colori alternati</a>, <a href="conditionnelle.html">formattazione condizionale</a></td></tr>
+<tr><td><strong>Dati</strong></td><td><a href="tri-filtre.html">ordinare e filtrare</a></td></tr>
+<tr><td><strong>Strumenti</strong></td><td><a href="protection.html">proteggere</a>, questo manuale (<strong>Manuale d’uso</strong>), DocTools, codice sorgente, versione (<strong>Informazioni...</strong>)</td></tr>
+</tbody></table></div>
+<p>Un segno di spunta indica un’opzione attiva: griglia visibile, celle bloccate, grassetto, filtro, cartella protetta.</p>
+<figure><img src="img/menus.webp" alt="Il menu del formato e i formati numerici" width="1280" height="620" /></figure>
+<h2 id="boutons">La barra dei pulsanti</h2>
+<div class="table"><table><thead><tr><th>Pulsante</th><th>Funzione</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i> <i data-i="save"></i></td><td><a href="demarrage.html">aprire, salvare</a></td></tr>
+<tr><td><i data-i="gridlines"></i></td><td>mostrare o nascondere la <a href="mise-en-forme.html#quadrillage">griglia</a></td></tr>
+<tr><td><i data-i="alternating"></i></td><td><a href="mise-en-forme.html#alternees">colori alternati</a></td></tr>
+<tr><td><i data-i="conditional"></i></td><td><a href="conditionnelle.html">formattazione condizionale</a></td></tr>
+<tr><td><i data-i="protect"></i></td><td><a href="protection.html">proteggere</a>; azzurrato quando la cartella è protetta</td></tr>
+<tr><td><i data-i="chart"></i></td><td><a href="graphiques.html">inserire un grafico</a></td></tr>
+<tr><td><i data-i="image"></i></td><td><a href="images-liens.html">inserire un’immagine</a></td></tr>
+<tr><td><i data-i="undo"></i> <i data-i="redo"></i></td><td>annullare, ripetere</td></tr>
+<tr><td><i data-i="clear-format"></i></td><td>cancellare la formattazione</td></tr>
+<tr><td><i data-i="percentage-format"></i> <i data-i="number-decrease"></i> <i data-i="number-increase"></i></td><td><a href="nombres.html">percentuale, meno o più decimali</a></td></tr>
+<tr><td><strong>Automatico</strong>, <strong>Arial</strong>, <strong>10</strong></td><td>formato numerico, carattere, dimensione</td></tr>
+<tr><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i></td><td>grassetto, corsivo, sottolineato</td></tr>
+<tr><td><i data-i="font-color"></i> <i data-i="background"></i></td><td>colore del testo, dello sfondo</td></tr>
+<tr><td><i data-i="border-all"></i> <i data-i="merge-all"></i></td><td><a href="mise-en-forme.html">bordi, unione</a></td></tr>
+<tr><td><i data-i="align-left"></i> <i data-i="align-top"></i> <i data-i="text-rotation-none"></i> <i data-i="text-overflow"></i></td><td>allineamenti, rotazione, testo a capo</td></tr>
+<tr><td><i data-i="freeze-row-col"></i></td><td><a href="lignes-colonnes.html#figer">bloccare</a></td></tr>
+<tr><td><i data-i="formula-sum"></i></td><td><a href="formules.html#somme">somma automatica</a> e altre formule</td></tr>
+<tr><td><i data-i="filter"></i></td><td><a href="tri-filtre.html">ordinare e filtrare</a></td></tr>
+</tbody></table></div>
+<p>La freccetta di un pulsante apre le sue scelte; il pulsante stesso ripete l’ultima. In una finestra stretta, gli ultimi pulsanti sono dietro <i data-i="more"></i>.</p>
+<h2 id="barre">La barra della formula</h2>
+<ul>
+<li>A sinistra, la <strong>casella del nome</strong>: l’indirizzo della selezione, o il <a href="noms.html">nome dell’intervallo</a>. La sua freccia elenca gli intervalli denominati e apre la gestione dei nomi.</li>
+<li>A destra di <em>fx</em>, il contenuto della cella, formula compresa: si può modificare lì.</li>
+</ul>
+<h2 id="feuille">Il foglio</h2>
+<ul>
+<li>Il clic destro apre un menu secondo il posto: cella, intestazione di colonna o di riga, scheda del foglio.</li>
+<li>Il foglio iniziale ha 84 righe e 60 colonne (da A a BH). Se ne aggiungono con il clic destro, <strong>Inserisci</strong> (<a href="lignes-colonnes.html">righe e colonne</a>).</li>
+<li>Il quadratino blu all’angolo della selezione <a href="selection.html#recopier">riempie</a>.</li>
+</ul>
+<h2 id="zoom">Schede e zoom</h2>
+<p>In basso, <i data-i="plus"></i> aggiunge un foglio, <i data-i="all-sheets"></i> li elenca tutti (<a href="feuilles.html">i fogli</a>). A destra, <strong>−</strong> e <strong>+</strong> regolano lo zoom; un clic sulla percentuale propone da 10 % a 400 %.</p>
+<h2 id="annuler">Annullare</h2>
+<p><i data-i="undo"></i> o <kbd>Ctrl</kbd> <kbd>Z</kbd> annulla, <i data-i="redo"></i>, <kbd>Ctrl</kbd> <kbd>Y</kbd> o <kbd>Ctrl</kbd> <kbd>Maiusc</kbd> <kbd>Z</kbd> ripete: immissioni, incollature, formattazioni, inserimenti. La cronologia riparte da zero quando si apre una cartella, si mostra o nasconde la griglia, si protegge la cartella, o si aggiunge un nome o una regola di formattazione condizionale. I grafici non ne fanno parte: si <a href="graphiques.html#modifier">modificano o eliminano</a> con i loro pulsanti.</p>
+</main>
+</body>
+</html>

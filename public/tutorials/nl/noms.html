@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Benoemde bereiken — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Benoemde bereiken</h1>
+<h2 id="definir">Een naam geven</h2>
+<ol>
+<li>De cel of het bereik selecteren.</li>
+<li>Rechtsklikken › <strong>Naam definiëren…</strong> (of de pijl van het naamvak › <strong>Namen beheren</strong>).</li>
+<li>De naam typen, het bereik van de naam kiezen, <strong>OK</strong>.</li>
+</ol>
+<figure><img src="img/noms.webp" alt="Het venster voor een nieuwe naam" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Veld</th><th>Inhoud</th></tr></thead><tbody>
+<tr><td><strong>Naam</strong></td><td>begint met een letter of <code>_</code>; letters, cijfers, <code>_</code> en <code>.</code>, zonder spatie; geen adres zoals <code>B2</code></td></tr>
+<tr><td><strong>Bereik</strong></td><td><strong>Werkmap</strong>: gelezen vanuit alle bladen; een blad: alleen daaruit gelezen, waar de naam voorgaat op een naam van de werkmap</td></tr>
+<tr><td><strong>Verwijst naar</strong></td><td>een cel of een bereik, met zijn blad: <code>'Blad1'!$B$2:$B$6</code></td></tr>
+</tbody></table></div>
+<h2 id="utiliser">Een naam gebruiken</h2>
+<pre><code>=GEMIDDELDE(cijfers)
+=prijs*(1+btw)</code></pre>
+<ul>
+<li>De pijl van het naamvak somt de namen op: er een kiezen selecteert het bereik, in zijn blad.</li>
+<li>Is de selectie precies een benoemd bereik, dan toont het naamvak de naam.</li>
+<li>Een <a href="controles.html#listes">keuzelijst</a> kan een celbereik lezen, aangeduid met zijn adres.</li>
+</ul>
+<h2 id="gerer">Wijzigen, verwijderen</h2>
+<p>In het <strong>Namen beheren</strong> zet een klik op een naam zijn velden weer in wijziging; <strong>Verwijderen</strong> verwijdert hem; <strong>Nieuw</strong> keert terug naar een lege naam. Vervang vóór het verwijderen van een naam de formules die hem lezen: ze behouden hun laatste waarde en worden daarna niet meer berekend.</p>
+<p>Namen worden in het Excel-bestand opgeslagen en eruit gelezen.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>数字格式 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>数字格式</h1>
+<p class="lead">格式改变数字的显示，不改变其值：计算保留所有小数位。</p>
+<h2 id="choisir">选择格式</h2>
+<p><strong>格式 › 数字</strong>，或按钮栏的 <strong>自动</strong> 列表。</p>
+<div class="table"><table><thead><tr><th>格式</th><th>示例</th></tr></thead><tbody>
+<tr><td><strong>自动</strong></td><td><code>1200.09</code></td></tr>
+<tr><td><strong>纯文本</strong></td><td><code>1200.09</code>，左对齐；输入保持为文本</td></tr>
+<tr><td><strong>数字</strong></td><td><code>1200.09</code></td></tr>
+<tr><td><strong>百分比</strong></td><td><code>120009.00%</code>；0.25 变为 <code>25.00%</code></td></tr>
+<tr><td><strong>科学计数</strong></td><td><code>1.20E+03</code></td></tr>
+<tr><td><strong>会计</strong></td><td><code>¥(1,200.09)</code></td></tr>
+<tr><td><strong>货币</strong></td><td><code>¥1,200.09</code></td></tr>
+<tr><td><strong>日期</strong>、<strong>时间</strong>、<strong>日期时间</strong></td><td>用于日期：<code>2017-11-29</code>、<code>3:00 PM</code>、<code>15:00</code>…</td></tr>
+</tbody></table></div>
+<p>货币符号由界面语言决定。</p>
+<div class="table"><table><thead><tr><th>按钮</th><th>效果</th></tr></thead><tbody>
+<tr><td><i data-i="percentage-format"></i></td><td>百分比</td></tr>
+<tr><td><i data-i="number-decrease"></i></td><td>减少一位小数</td></tr>
+<tr><td><i data-i="number-increase"></i></td><td>增加一位小数</td></tr>
+</tbody></table></div>
+<p>这些按钮也适用于<a href="listes.html">列表</a>中的数字。要对值本身取整，请使用 <code>ROUND</code>。</p>
+<h2 id="personnalise">自定义格式</h2>
+<p><strong>格式 › 数字 › 自定义数字格式…</strong>：选择建议的格式，或编写代码。预览显示结果；<strong>格式指南</strong> 说明各符号；<strong>应用</strong> 应用到选区。</p>
+<figure><img src="img/format-personnalise.webp" alt="自定义数字格式窗口" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>符号</th><th>作用</th><th>代码</th><th>1234.5 显示为</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td>一位数字，包括零</td><td><code>0.00</code></td><td><code>1234.50</code></td></tr>
+<tr><td><code>#</code></td><td>需要时才显示的数字</td><td><code>#.##</code></td><td><code>1234.5</code></td></tr>
+<tr><td><code>,</code></td><td>千位分组</td><td><code>#,##0</code></td><td><code>1,235</code></td></tr>
+<tr><td><code>%</code></td><td>百分比</td><td><code>0%</code></td><td><code>123450%</code></td></tr>
+<tr><td><code>"文本"</code></td><td>文本、单位</td><td><code>0.0 "m"</code></td><td><code>1234.5 m</code></td></tr>
+<tr><td><code>E+00</code></td><td>科学记数法</td><td><code>0.00E+00</code></td><td><code>1.23E+03</code></td></tr>
+<tr><td><code>;</code></td><td>正数、负数、零、文本的格式</td><td><code>0;-0;"无"</code></td><td><code>1235</code></td></tr>
+<tr><td><code>[Red]</code></td><td>颜色</td><td><code>0;[Red]-0</code></td><td>负数为红色</td></tr>
+</tbody></table></div>
+<p>代码使用该语言的分隔符键入；窗口显示保存时的形式（<code>#,##0.00</code>），与 Excel 相同。</p>
+<h3 id="dates-heures">日期与时间</h3>
+<div class="table"><table><thead><tr><th>代码</th><th>2026 年 8 月 29 日 14:30</th></tr></thead><tbody>
+<tr><td><code>dd/MM/yyyy</code></td><td><code>29/08/2026</code></td></tr>
+<tr><td><code>d mmm yyyy</code></td><td><code>29 Aug 2026</code></td></tr>
+<tr><td><code>dddd d mmmm yyyy</code></td><td><code>Saturday 29 August 2026</code></td></tr>
+<tr><td><code>hh:mm</code></td><td><code>14:30</code></td></tr>
+<tr><td><code>dd/MM/yyyy hh:mm</code></td><td><code>29/08/2026 14:30</code></td></tr>
+</tbody></table></div>
+<p>月份和星期的名称以英文显示。</p>
+<h3 id="unites">单位</h3>
+<p>在 <strong>单位</strong> 下有 <code>0.00 "V"</code>、<code>0.00 "Ω"</code>、<code>0.00 "mm"</code> 等格式：单元格仍是数字，可以参与计算。</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bedingte Formatierung — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Bedingte Formatierung</h1>
+<p class="lead">Eine Regel ändert das Aussehen der Zellen eines Bereichs, die eine Bedingung erfüllen. Sie folgt den Werten, eingegeben oder berechnet.</p>
+<h2 id="creer">Eine Regel erstellen</h2>
+<ol>
+<li>Den Bereich ohne seine Kopfzeile auswählen.</li>
+<li><i data-i="conditional"></i> oder <strong>Format › Bedingte Formatierung</strong>.</li>
+<li>Die Bedingung, den Vergleichswert, die Farben oder den Stil wählen.</li>
+<li><strong>Hinzufügen</strong>.</li>
+</ol>
+<figure><img src="img/conditionnelle.webp" alt="Das Fenster der bedingten Formatierung mit einer angewendeten Regel" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Bedingung</th><th>Die Zelle</th></tr></thead><tbody>
+<tr><td><code>&lt;</code></td><td>ist kleiner als</td></tr>
+<tr><td><code>&gt;</code></td><td>ist größer als</td></tr>
+<tr><td><code>=</code></td><td>ist gleich</td></tr>
+<tr><td><code>!=</code></td><td>ist ungleich</td></tr>
+<tr><td><code>[]</code></td><td>liegt zwischen zwei Werten, Grenzen eingeschlossen</td></tr>
+<tr><td><code>abc</code></td><td>enthält einen Text, Groß- und Kleinschreibung gleichgültig</td></tr>
+</tbody></table></div>
+<h2 id="comparer">Womit vergleichen</h2>
+<div class="table"><table><thead><tr><th>Vergleichen mit</th><th>Beispiel</th></tr></thead><tbody>
+<tr><td><strong>einem festen Wert</strong></td><td>die Noten unter 10</td></tr>
+<tr><td><strong>einer festen Zelle</strong></td><td>die Noten unter der in <code>F1</code> geschriebenen Schwelle</td></tr>
+<tr><td><strong>einer Spalte in derselben Zeile</strong></td><td>in Spalte C die Werte über denen der Spalte B, Zeile für Zeile</td></tr>
+</tbody></table></div>
+<h2 id="apparence">Aussehen</h2>
+<p><strong>Textfarbe</strong> und <strong>Füllung</strong> wählen die Farben, <strong>Keine</strong> entfernt sie; <strong>B</strong>, <em>I</em>, <strong>U</strong> setzen fett, kursiv, unterstrichen. Mindestens eine Farbe oder ein Stil ist nötig.</p>
+<h2 id="regles">Mehrere Regeln</h2>
+<p>Die linke Spalte listet die Regeln des Blatts auf: <strong>Bearbeiten</strong>, <strong>Löschen</strong>. Gelten mehrere Regeln für eine Zelle, hat die letzte der Liste Vorrang, Farbe für Farbe.</p>
+<div class="warn"><p>In einem von einer Regel abgedeckten Bereich werden direkt vergebene Text- und Hintergrundfarben nicht mehr angezeigt.</p></div>
+<p>Die Regeln werden in der Excel-Datei als bedingte Formatierungen von Excel gespeichert.</p>
+</main>
+</body>
+</html>

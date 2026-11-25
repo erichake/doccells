@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>图表与迷你图 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>图表与迷你图</h1>
+<h2 id="creer">创建图表</h2>
+<ol>
+<li>选择数据。</li>
+<li><i data-i="chart"></i> 或 <strong>插入 › 插入图表</strong>。</li>
+<li>选择类型和选项；预览随之变化。</li>
+<li><strong>添加</strong>，然后 <strong>关闭</strong>。</li>
+</ol>
+<figure><img src="img/graphique.webp" alt="图表窗口" width="1280" height="900" /></figure>
+<div class="table"><table><thead><tr><th>选区</th><th>解释为</th></tr></thead><tbody>
+<tr><td>一列或一行数字</td><td>数据</td></tr>
+<tr><td>两列</td><td>第一列为标签，第二列为数据</td></tr>
+<tr><td>两行</td><td>第一行为标签，第二行为数据</td></tr>
+<tr><td>用 <kbd>Ctrl</kbd> 选择的两个分开的列</td><td>同上</td></tr>
+</tbody></table></div>
+<p>一个图表显示一个系列：一行或一列数据。没有数字的单元格（如标题）会被忽略。</p>
+<h2 id="types">类型</h2>
+<div class="table"><table><thead><tr><th>类型</th><th>用于</th><th>标签</th></tr></thead><tbody>
+<tr><td><strong>柱状图</strong></td><td>比较</td><td>在柱形下方</td></tr>
+<tr><td><strong>折线图</strong></td><td>变化趋势</td><td>在横轴上</td></tr>
+<tr><td><strong>散点图</strong></td><td>两个量的关系</td><td>若为数字，则是横坐标；否则为 1、2、3…</td></tr>
+<tr><td><strong>饼图</strong></td><td>占比；正值</td><td>在图例或扇区上</td></tr>
+</tbody></table></div>
+<p>最多 120 个值，饼图 24 个。</p>
+<figure><img src="img/graphiques.webp" alt="四种图表" width="1280" height="640" /></figure>
+<h2 id="options">选项</h2>
+<div class="table"><table><thead><tr><th>字段</th><th>内容</th></tr></thead><tbody>
+<tr><td><strong>标题</strong></td><td>必填；显示在图表顶部</td></tr>
+<tr><td><strong>颜色</strong></td><td>取色器或代码 <code>#4F81BD</code>；扇区有各自的颜色</td></tr>
+<tr><td><strong>数据</strong></td><td>区域：<code>B2:B6</code></td></tr>
+<tr><td><strong>标签</strong></td><td><strong>无</strong>；<strong>同一行的列</strong>（<code>A</code>）；<strong>同一列范围的行</strong>（<code>1</code>）；<strong>自定义区域</strong>，与数据大小相同</td></tr>
+<tr><td><strong>显示</strong></td><td>数值、图例、横轴、纵轴、网格</td></tr>
+</tbody></table></div>
+<h2 id="modifier">移动、修改</h2>
+<ul>
+<li>拖动标题条可移动图表；拖动右下角可调整大小。</li>
+<li><strong>编辑</strong> 重新打开窗口，<strong>删除</strong> 删除图表。窗口中还列出工作表的所有图表。</li>
+<li>图表随其单元格的数据变化。</li>
+</ul>
+<p>图表以真正的图表保存在 Excel 文件中，DocCells 可再次读取。它们不会随工作表<a href="impression.html">打印</a>。</p>
+<h2 id="sparklines">迷你图</h2>
+<p><code>SPARKLINE</code> 函数在单元格中绘制微型图表。</p>
+<pre><code>=SPARKLINE(B2:F2)
+=SPARKLINE(B2:F2, {"charttype"\"column"})
+=SPARKLINE(B2:F2, {"charttype"\"line", "color"\"#dc2626", "linewidth"\2})
+=SPARKLINE(B2:F2, {"charttype"\"bar", "max"\100})</code></pre>
+<figure><img src="img/sparklines.webp" alt="折线和柱形迷你图" width="900" height="300" /></figure>
+<p>选项写在花括号中：名称、反斜杠、值；选项之间用逗号分隔。</p>
+<div class="table"><table><thead><tr><th><code>charttype</code></th><th>图形</th><th>专用选项</th></tr></thead><tbody>
+<tr><td><code>"line"</code>（默认）</td><td>折线</td><td><code>color</code>、<code>linewidth</code>、<code>xmin</code>、<code>xmax</code>、<code>ymin</code>、<code>ymax</code></td></tr>
+<tr><td><code>"bar"</code></td><td>堆积条形</td><td><code>max</code>、<code>color1</code>、<code>color2</code></td></tr>
+<tr><td><code>"column"</code></td><td>柱形</td><td><code>color</code>、<code>negcolor</code>、<code>lowcolor</code>、<code>highcolor</code>、<code>firstcolor</code>、<code>lastcolor</code>、<code>axis</code>、<code>axiscolor</code>、<code>ymin</code>、<code>ymax</code></td></tr>
+<tr><td><code>"winloss"</code></td><td>盈亏</td><td>同上，但没有 <code>ymin</code> 和 <code>ymax</code></td></tr>
+</tbody></table></div>
+<p>通用选项：<code>empty</code>（<code>"zero"</code> 或 <code>"ignore"</code>）、<code>nan</code>（<code>"convert"</code> 或 <code>"ignore"</code>）、<code>rtl</code>（从右到左）。<a href="../../sparkline/zh.html">SPARKLINE 文档</a>给出所有取值及示例。</p>
+<p>要画得更大，请加大行高和列宽，或合并单元格。</p>
+</main>
+</body>
+</html>

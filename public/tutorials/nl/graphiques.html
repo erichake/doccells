@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Grafieken en sparklines — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Grafieken en sparklines</h1>
+<h2 id="creer">Een grafiek maken</h2>
+<ol>
+<li>De gegevens selecteren.</li>
+<li><i data-i="chart"></i> of <strong>Invoegen › Grafiek invoegen</strong>.</li>
+<li>Het type en de opties kiezen; het voorbeeld volgt.</li>
+<li><strong>Toevoegen</strong>, dan <strong>Sluiten</strong>.</li>
+</ol>
+<figure><img src="img/graphique.webp" alt="Het grafiekvenster" width="1280" height="900" /></figure>
+<div class="table"><table><thead><tr><th>Selectie</th><th>Opgevat als</th></tr></thead><tbody>
+<tr><td>een kolom of rij getallen</td><td>de gegevens</td></tr>
+<tr><td>twee kolommen</td><td>labels in de eerste, gegevens in de tweede</td></tr>
+<tr><td>twee rijen</td><td>labels in de eerste, gegevens in de tweede</td></tr>
+<tr><td>twee losse kolommen, gekozen met <kbd>Ctrl</kbd></td><td>hetzelfde</td></tr>
+</tbody></table></div>
+<p>Een grafiek toont één reeks: een rij of kolom gegevens. Cellen zonder getal, zoals een kop, worden overgeslagen.</p>
+<h2 id="types">Typen</h2>
+<div class="table"><table><thead><tr><th>Type</th><th>Voor</th><th>Labels</th></tr></thead><tbody>
+<tr><td><strong>Balken</strong></td><td>vergelijken</td><td>onder de balken</td></tr>
+<tr><td><strong>Lijn</strong></td><td>een verloop</td><td>op de x-as</td></tr>
+<tr><td><strong>Spreiding</strong></td><td>een verband tussen twee grootheden</td><td>het zijn de x-waarden, als het getallen zijn; anders 1, 2, 3…</td></tr>
+<tr><td><strong>Taart</strong></td><td>delen; positieve waarden</td><td>in de legenda of op de sectoren</td></tr>
+</tbody></table></div>
+<p>Tot 120 waarden, 24 voor sectoren.</p>
+<figure><img src="img/graphiques.webp" alt="De vier soorten grafieken" width="1280" height="640" /></figure>
+<h2 id="options">Opties</h2>
+<div class="table"><table><thead><tr><th>Veld</th><th>Inhoud</th></tr></thead><tbody>
+<tr><td><strong>Titel</strong></td><td>verplicht; bovenaan de grafiek getoond</td></tr>
+<tr><td><strong>Kleur</strong></td><td>kiezer of code <code>#4F81BD</code>; sectoren hebben hun eigen kleuren</td></tr>
+<tr><td><strong>Gegevens</strong></td><td>het bereik: <code>B2:B6</code></td></tr>
+<tr><td><strong>Labels</strong></td><td><strong>Geen labels</strong>; <strong>Kolom van dezelfde rij</strong> (<code>A</code>); <strong>Rij van dezelfde kolommen</strong> (<code>1</code>); <strong>Aangepast bereik</strong>, even groot als de gegevens</td></tr>
+<tr><td><strong>Weergave</strong></td><td>waarden, legenda, x-as, y-as, raster</td></tr>
+</tbody></table></div>
+<h2 id="modifier">Verplaatsen, wijzigen</h2>
+<ul>
+<li>De titelstrook slepen verplaatst de grafiek; de hoek rechtsonder slepen verandert de grootte.</li>
+<li><strong>Bewerken</strong> heropent het venster, <strong>Verwijderen</strong> verwijdert de grafiek. Het venster somt ook alle grafieken van het blad op.</li>
+<li>De grafiek volgt de gegevens van zijn cellen.</li>
+</ul>
+<p>Grafieken worden in het Excel-bestand als echte grafieken opgeslagen, en door DocCells weer gelezen. Ze worden niet met het blad <a href="impression.html">afgedrukt</a>.</p>
+<h2 id="sparklines">Sparklines</h2>
+<p>De functie <code>SPARKLINE</code> tekent een miniatuurgrafiek in de cel.</p>
+<pre><code>=SPARKLINE(B2:F2)
+=SPARKLINE(B2:F2; {"charttype"\"column"})
+=SPARKLINE(B2:F2; {"charttype"\"line"; "color"\"#dc2626"; "linewidth"\2})
+=SPARKLINE(B2:F2; {"charttype"\"bar"; "max"\100})</code></pre>
+<figure><img src="img/sparklines.webp" alt="Sparklines als lijn en als kolommen" width="900" height="300" /></figure>
+<p>Opties staan tussen accolades: de naam, een backslash, de waarde; een puntkomma tussen twee opties.</p>
+<div class="table"><table><thead><tr><th><code>charttype</code></th><th>Tekening</th><th>Eigen opties</th></tr></thead><tbody>
+<tr><td><code>"line"</code> (standaard)</td><td>lijn</td><td><code>color</code>, <code>linewidth</code>, <code>xmin</code>, <code>xmax</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"bar"</code></td><td>gestapelde balken</td><td><code>max</code>, <code>color1</code>, <code>color2</code></td></tr>
+<tr><td><code>"column"</code></td><td>kolommen</td><td><code>color</code>, <code>negcolor</code>, <code>lowcolor</code>, <code>highcolor</code>, <code>firstcolor</code>, <code>lastcolor</code>, <code>axis</code>, <code>axiscolor</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"winloss"</code></td><td>winst en verlies</td><td>dezelfde, zonder <code>ymin</code> en <code>ymax</code></td></tr>
+</tbody></table></div>
+<p>Gemeenschappelijke opties: <code>empty</code> (<code>"zero"</code> of <code>"ignore"</code>), <code>nan</code> (<code>"convert"</code> of <code>"ignore"</code>), <code>rtl</code> (van rechts naar links). De <a href="../../sparkline/nl.html">documentatie van SPARKLINE</a> geeft alle waarden, met voorbeelden.</p>
+<p>Voor een grotere tekening de rij en de kolom vergroten, of cellen samenvoegen.</p>
+</main>
+</body>
+</html>

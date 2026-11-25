@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formatage conditionnel — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Formatage conditionnel</h1>
+<p class="lead">Une règle change l’apparence des cellules d’une plage qui remplissent une condition. Elle suit les valeurs, saisies ou calculées.</p>
+<h2 id="creer">Créer une règle</h2>
+<ol>
+<li>Sélectionner la plage, sans son en-tête.</li>
+<li><i data-i="conditional"></i> ou <strong>Format › Formatage conditionnel</strong>.</li>
+<li>Choisir la condition, la valeur à comparer, les couleurs ou le style.</li>
+<li><strong>Ajouter</strong>.</li>
+</ol>
+<figure><img src="img/conditionnelle.webp" alt="La fenêtre du formatage conditionnel, une règle appliquée" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Condition</th><th>La cellule</th></tr></thead><tbody>
+<tr><td><code>&lt;</code></td><td>est inférieure à</td></tr>
+<tr><td><code>&gt;</code></td><td>est supérieure à</td></tr>
+<tr><td><code>=</code></td><td>est égale à</td></tr>
+<tr><td><code>!=</code></td><td>est différente de</td></tr>
+<tr><td><code>[]</code></td><td>est comprise entre deux valeurs, bornes comprises</td></tr>
+<tr><td><code>abc</code></td><td>contient un texte, majuscules indifférentes</td></tr>
+</tbody></table></div>
+<h2 id="comparer">À quoi comparer</h2>
+<div class="table"><table><thead><tr><th>Comparer à</th><th>Exemple</th></tr></thead><tbody>
+<tr><td><strong>une valeur fixe</strong></td><td>les notes inférieures à 10</td></tr>
+<tr><td><strong>une cellule fixe</strong></td><td>les notes inférieures au seuil écrit en <code>F1</code></td></tr>
+<tr><td><strong>une colonne même ligne</strong></td><td>en colonne C, les valeurs supérieures à celles de la colonne B, ligne par ligne</td></tr>
+</tbody></table></div>
+<h2 id="apparence">Apparence</h2>
+<p><strong>Texte</strong> et <strong>Fond</strong> choisissent les couleurs, <strong>Aucun</strong> les retire ; <strong>B</strong>, <em>I</em>, <strong>U</strong> mettent en gras, italique, souligné. Il faut au moins une couleur ou un style.</p>
+<h2 id="regles">Plusieurs règles</h2>
+<p>La colonne de gauche liste les règles de la feuille : <strong>Modifier</strong>, <strong>Supprimer</strong>. Si plusieurs règles s’appliquent à une cellule, la dernière de la liste l’emporte, couleur par couleur.</p>
+<div class="warn"><p>Dans une plage couverte par une règle, la couleur du texte et du fond donnée directement aux cellules n’est plus affichée.</p></div>
+<p>Les règles sont enregistrées dans le fichier Excel comme mises en forme conditionnelles d’Excel.</p>
+</main>
+</body>
+</html>

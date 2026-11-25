@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Casillas, listas y calendario — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Casillas, listas y calendario</h1>
+<figure><img src="img/controles.webp" alt="Casillas, una lista desplegable y el calendario de una fecha" width="1280" height="560" /></figure>
+<h2 id="cases">Casillas</h2>
+<p>Seleccionar las celdas, <strong>Insertar › Casilla de verificación</strong>. Un clic marca o desmarca; la celda vale TRUE o FALSE.</p>
+<pre><code>=SI(B2; "hecho"; "por hacer")
+=SUMA.PRODUCTO(B2:B6; C2:C6)
+=SUMA.PRODUCTO(B2:B6; B2:B6)</code></pre>
+<p>La segunda fórmula suma los valores de la columna C cuya casilla está marcada; la tercera cuenta las casillas marcadas.</p>
+<h2 id="listes">Listas desplegables</h2>
+<p>Seleccionar las celdas, <strong>Insertar › Lista desplegable…</strong>.</p>
+<div class="table"><table><thead><tr><th>Origen</th><th>Contenido</th></tr></thead><tbody>
+<tr><td><strong>Valores</strong></td><td>las opciones, una por campo; <strong>Añadir opción</strong>; sin coma</td></tr>
+<tr><td><strong>Desde un rango</strong></td><td>un rango cuyas celdas son las opciones: <code>Hoja2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>Un rango sin <code>$</code> se desplaza de una celda a otra, como una fórmula rellenada. Si sus celdas cambian, las opciones las siguen.</p>
+<p>La celda muestra una flecha; un clic abre las opciones. No se acepta un valor distinto de los de la lista.</p>
+<h2 id="calendrier">Calendario</h2>
+<p>Un doble clic en una celda de fecha abre un calendario: elegir un día, cambiar de mes con <strong><</strong> y <strong>></strong>, <strong>Hoy</strong> para la fecha de hoy. Se abre en toda celda con formato de fecha, aunque esté vacía, salvo si contiene una fórmula o está <a href="protection.html">bloqueada</a>.</p>
+<div class="tip"><p>Para una columna de fechas que se rellenará con el calendario: seleccionarla y darle el formato <strong>Fecha</strong>.</p></div>
+<h2 id="retirer">Retirar</h2>
+<p><kbd>Supr</kbd> retira la casilla o la lista de la celda, con su valor.</p>
+<p>Casillas y listas se guardan en el archivo de Excel; allí las casillas son casillas de Excel.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>行与列 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>行与列</h1>
+<h2 id="taille">大小</h2>
+<div class="table"><table><thead><tr><th>操作</th><th>效果</th></tr></thead><tbody>
+<tr><td>拖动列标的右边框</td><td>改变列宽</td></tr>
+<tr><td>拖动行标的下边框</td><td>改变行高</td></tr>
+<tr><td>右键单击行标或列标 › <strong>宽</strong>、<strong>高</strong></td><td>以像素设置所有选中列或行的大小</td></tr>
+</tbody></table></div>
+<h2 id="inserer">插入、删除</h2>
+<p>在单元格或行列标上右键：<strong>插入 1 行 上</strong>、<strong>插入 1 行 下</strong>、<strong>插入 1 列 左</strong>、<strong>插入 1 列 右</strong>。数量在框中键入。在行列标上右键：<strong>删除选中 行</strong>、<strong>删除选中 列</strong>。</p>
+<figure><img src="img/menu-contextuel.webp" alt="右键菜单" width="760" height="650" /></figure>
+<p>公式会自动调整：其引用随移动的单元格变化。上限为 10 000 行、1 000 列。</p>
+<h2 id="masquer">隐藏</h2>
+<p>在行列标上右键 › <strong>隐藏选中 行</strong>、<strong>隐藏选中 列</strong>。隐藏的单元格仍会计算。要重新显示，请选择其两侧的行列标，然后右键 › <strong>显示隐藏</strong>。</p>
+<h2 id="figer">冻结</h2>
+<p>冻结的行和列在滚动时保持可见。选择边界单元格，然后 <i data-i="freeze-row-col"></i> 或 <strong>查看 › 冻结</strong>：</p>
+<div class="table"><table><thead><tr><th>命令</th><th>保持可见</th></tr></thead><tbody>
+<tr><td><strong>冻结至当前行</strong></td><td>直到该单元格所在行（含）</td></tr>
+<tr><td><strong>冻结至当前列</strong></td><td>直到该单元格所在列（含）</td></tr>
+<tr><td><strong>冻结至当前行列</strong></td><td>两者</td></tr>
+<tr><td><strong>取消冻结</strong></td><td>无</td></tr>
+</tbody></table></div>
+<p>要保留标题行：单击第 1 行的单元格，<strong>冻结至当前行</strong>。</p>
+</main>
+</body>
+</html>

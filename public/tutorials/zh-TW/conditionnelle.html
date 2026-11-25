@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>條件式格式 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>條件式格式</h1>
+<p class="lead">規則改變範圍中滿足條件的儲存格的外觀，並隨輸入或計算的值而變化。</p>
+<h2 id="creer">建立規則</h2>
+<ol>
+<li>選擇範圍，不含標題。</li>
+<li><i data-i="conditional"></i> 或 <strong>格式 › 條件格式</strong>。</li>
+<li>選擇條件、比較值、色彩或樣式。</li>
+<li><strong>加入</strong>。</li>
+</ol>
+<figure><img src="img/conditionnelle.webp" alt="條件式格式視窗，已應用一條規則" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>條件</th><th>儲存格</th></tr></thead><tbody>
+<tr><td><code>&lt;</code></td><td>小於</td></tr>
+<tr><td><code>&gt;</code></td><td>大於</td></tr>
+<tr><td><code>=</code></td><td>等於</td></tr>
+<tr><td><code>!=</code></td><td>不等於</td></tr>
+<tr><td><code>[]</code></td><td>介於兩個值之間（含端點）</td></tr>
+<tr><td><code>abc</code></td><td>包含某文字，不區分大小寫</td></tr>
+</tbody></table></div>
+<h2 id="comparer">與什麼比較</h2>
+<div class="table"><table><thead><tr><th>比較對象</th><th>範例</th></tr></thead><tbody>
+<tr><td><strong>固定值</strong></td><td>低於 10 的成績</td></tr>
+<tr><td><strong>固定儲存格</strong></td><td>低於 <code>F1</code> 中所寫界限的成績</td></tr>
+<tr><td><strong>同一列的欄</strong></td><td>C 欄中逐列大於 B 欄的值</td></tr>
+</tbody></table></div>
+<h2 id="apparence">外觀</h2>
+<p><strong>文字</strong> 和 <strong>背景</strong> 選擇色彩，<strong>無</strong> 移除色彩；<strong>B</strong>、<em>I</em>、<strong>U</strong> 設為粗體、斜體、下劃線。至少需要一種色彩或樣式。</p>
+<h2 id="regles">多條規則</h2>
+<p>左欄列出工作表的規則：<strong>編輯</strong>、<strong>刪除</strong>。如果多條規則適用於同一儲存格，清單中最後一條按色彩逐項優先。</p>
+<div class="warn"><p>在規則覆蓋的範圍中，直接給儲存格設定的文字和填滿色彩不再顯示。</p></div>
+<p>規則以 Excel 條件式格式的形式儲存在 Excel 檔案中。</p>
+</main>
+</body>
+</html>

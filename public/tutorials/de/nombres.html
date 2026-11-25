@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zahlenformate — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Zahlenformate</h1>
+<p class="lead">Ein Format ändert die Anzeige einer Zahl, nicht ihren Wert: Rechnungen behalten alle Dezimalstellen.</p>
+<h2 id="choisir">Ein Format wählen</h2>
+<p><strong>Format › Zahl</strong> oder die Liste <strong>Automatisch</strong> der Symbolleiste.</p>
+<div class="table"><table><thead><tr><th>Format</th><th>Beispiel</th></tr></thead><tbody>
+<tr><td><strong>Automatisch</strong></td><td><code>1200,09</code></td></tr>
+<tr><td><strong>Nur Text</strong></td><td><code>1200,09</code>, linksbündig; die Eingabe bleibt ein Text</td></tr>
+<tr><td><strong>Zahl</strong></td><td><code>1200,09</code></td></tr>
+<tr><td><strong>Prozent</strong></td><td><code>120009,00%</code>; 0,25 wird <code>25,00%</code></td></tr>
+<tr><td><strong>Wissenschaftlich</strong></td><td><code>1,20E+03</code></td></tr>
+<tr><td><strong>Buchhaltung</strong></td><td><code>(1.200,09) €</code></td></tr>
+<tr><td><strong>Währung</strong></td><td><code>1.200,09 €</code></td></tr>
+<tr><td><strong>Datum</strong>, <strong>Uhrzeit</strong>, <strong>Datum und Uhrzeit</strong></td><td>für Daten: <code>29.11.2017</code>, <code>3:00 PM</code>, <code>15:00</code>…</td></tr>
+</tbody></table></div>
+<p>Das Währungssymbol ist das der Sprache der Oberfläche.</p>
+<div class="table"><table><thead><tr><th>Schaltfläche</th><th>Wirkung</th></tr></thead><tbody>
+<tr><td><i data-i="percentage-format"></i></td><td>Prozent</td></tr>
+<tr><td><i data-i="number-decrease"></i></td><td>eine Dezimalstelle weniger</td></tr>
+<tr><td><i data-i="number-increase"></i></td><td>eine Dezimalstelle mehr</td></tr>
+</tbody></table></div>
+<p>Diese Schaltflächen gelten auch für die Zahlen einer <a href="listes.html">Liste</a>. Um den Wert selbst zu runden, <code>RUNDEN</code> verwenden.</p>
+<h2 id="personnalise">Benutzerdefiniertes Format</h2>
+<p><strong>Format › Zahl › Benutzerdefiniertes Zahlenformat…</strong>: ein vorgeschlagenes Format wählen oder einen Code schreiben. Die Vorschau zeigt das Ergebnis; <strong>Formatübersicht</strong> erinnert an die Zeichen; <strong>Anwenden</strong> gibt es der Auswahl.</p>
+<figure><img src="img/format-personnalise.webp" alt="Das Fenster der benutzerdefinierten Zahlenformate" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Zeichen</th><th>Aufgabe</th><th>Code</th><th>1234,5 wird angezeigt</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td>eine Ziffer, auch null</td><td><code>0,00</code></td><td><code>1234,50</code></td></tr>
+<tr><td><code>#</code></td><td>eine Ziffer, wenn sie nötig ist</td><td><code>#,##</code></td><td><code>1234,5</code></td></tr>
+<tr><td><code>.</code></td><td>gruppiert die Tausender</td><td><code>#.##0</code></td><td><code>1.235</code></td></tr>
+<tr><td><code>%</code></td><td>Prozent</td><td><code>0%</code></td><td><code>123450%</code></td></tr>
+<tr><td><code>"Text"</code></td><td>ein Text, eine Einheit</td><td><code>0,0 "m"</code></td><td><code>1234,5 m</code></td></tr>
+<tr><td><code>E+00</code></td><td>wissenschaftliche Schreibweise</td><td><code>0,00E+00</code></td><td><code>1,23E+03</code></td></tr>
+<tr><td><code>;</code></td><td>Formate für Positive, Negative, Nullen, Texte</td><td><code>0;-0;"null"</code></td><td><code>1235</code></td></tr>
+<tr><td><code>[Red]</code></td><td>Farbe</td><td><code>0;[Red]-0</code></td><td>negative Zahlen rot</td></tr>
+</tbody></table></div>
+<p>Der Code wird mit den Trennzeichen der Sprache getippt; das Fenster zeigt die Form, in der er gespeichert wird (<code>#,##0.00</code>), dieselbe wie in Excel.</p>
+<h3 id="dates-heures">Datum und Uhrzeit</h3>
+<div class="table"><table><thead><tr><th>Code</th><th>29. August 2026, 14:30 Uhr</th></tr></thead><tbody>
+<tr><td><code>dd/MM/yyyy</code></td><td><code>29/08/2026</code></td></tr>
+<tr><td><code>d mmm yyyy</code></td><td><code>29 Aug 2026</code></td></tr>
+<tr><td><code>dddd d mmmm yyyy</code></td><td><code>Saturday 29 August 2026</code></td></tr>
+<tr><td><code>hh:mm</code></td><td><code>14:30</code></td></tr>
+<tr><td><code>dd/MM/yyyy hh:mm</code></td><td><code>29/08/2026 14:30</code></td></tr>
+</tbody></table></div>
+<p>Monats- und Tagesnamen werden englisch angezeigt.</p>
+<h3 id="unites">Einheiten</h3>
+<p>Unter <strong>Einheiten</strong> Formate wie <code>0,00 "V"</code>, <code>0,00 "Ω"</code>, <code>0,00 "mm"</code>: die Zelle bleibt eine Zahl, mit der gerechnet wird.</p>
+</main>
+</body>
+</html>

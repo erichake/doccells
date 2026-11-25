@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Φύλλα — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Φύλλα</h1>
+<h2 id="ajouter">Προσθήκη, αλλαγή φύλλου</h2>
+<ul>
+<li>Το <i data-i="plus"></i> προσθέτει φύλλο, με όνομα «Φύλλο2», «Φύλλο3»…</li>
+<li>Κλικ σε καρτέλα την εμφανίζει· το <i data-i="all-sheets"></i> απαριθμεί τα φύλλα, μαζί με τα κρυφά, και εμφανίζει το επιλεγμένο.</li>
+</ul>
+<h2 id="menu">Το μενού μιας καρτέλας</h2>
+<p>Δεξί κλικ στην καρτέλα, ή το βέλος της:</p>
+<div class="table"><table><thead><tr><th>Εντολή</th><th>Αποτέλεσμα</th></tr></thead><tbody>
+<tr><td><strong>Διαγραφή</strong></td><td>μετά από επιβεβαίωση· το τελευταίο ορατό φύλλο δεν διαγράφεται</td></tr>
+<tr><td><strong>Αντιγραφή</strong></td><td>διπλασιάζει το φύλλο</td></tr>
+<tr><td><strong>Μετονομασία</strong></td><td>ή διπλό κλικ στο όνομα· χωρίς <code>[ ] : ? * / ' "</code></td></tr>
+<tr><td><strong>Αλλαγή χρώματος</strong></td><td>χρώμα της καρτέλας</td></tr>
+<tr><td><strong>Απόκρυψη</strong></td><td>οι τύποι διαβάζουν ακόμη το φύλλο· το <i data-i="all-sheets"></i> το εμφανίζει ξανά</td></tr>
+<tr><td><strong>Μετακίνηση αριστερά</strong>, <strong>Μετακίνηση δεξιά</strong></td><td>αλλάζει τη σειρά· η καρτέλα μπορεί και να συρθεί</td></tr>
+</tbody></table></div>
+<h2 id="references">Ανάγνωση άλλου φύλλου</h2>
+<p>Το όνομα του φύλλου, ένα θαυμαστικό, η διεύθυνση. Το όνομα μπαίνει σε αποστρόφους αν περιέχει κενό ή σύμβολο.</p>
+<pre><code>=Φύλλο2!B2*2
+='Βαθμοί 2'!B2
+=SUM('Βαθμοί 2'!B2:B6)</code></pre>
+<p>Η αναφορά πληκτρολογείται: η αλλαγή καρτέλας όσο γράφετε τύπο εγκαταλείπει την εισαγωγή.</p>
+<p>Για να διαβάζεται μια περιοχή από όλα τα φύλλα με όνομα, <a href="noms.html">ονομάστε την</a> με πεδίο ισχύος <strong>Βιβλίο εργασίας</strong>.</p>
+</main>
+</body>
+</html>

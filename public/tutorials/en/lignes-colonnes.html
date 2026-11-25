@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rows and columns — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Rows and columns</h1>
+<h2 id="taille">Size</h2>
+<div class="table"><table><thead><tr><th>Action</th><th>Effect</th></tr></thead><tbody>
+<tr><td>drag the right border of a column header</td><td>changes its width</td></tr>
+<tr><td>drag the bottom border of a row header</td><td>changes its height</td></tr>
+<tr><td>right-click on the header › <strong>Width</strong>, <strong>Height</strong></td><td>size in pixels, for all the selected columns or rows</td></tr>
+</tbody></table></div>
+<h2 id="inserer">Inserting, deleting</h2>
+<p>Right-click in a cell or on a header: <strong>Insert 1 Row Above</strong>, <strong>Insert 1 Row Below</strong>, <strong>Insert 1 Column Left</strong>, <strong>Insert 1 Column Right</strong>. The number is typed in the field. Right-click on a header: <strong>Delete selected Row</strong>, <strong>Delete selected Column</strong>.</p>
+<figure><img src="img/menu-contextuel.webp" alt="The right-click menu" width="760" height="650" /></figure>
+<p>Formulas are adjusted: their references follow the moved cells. The limit is 10,000 rows and 1,000 columns.</p>
+<h2 id="masquer">Hiding</h2>
+<p>Right-click on the header › <strong>Hide selected Row</strong>, <strong>Hide selected Column</strong>. Hidden cells are still calculated. To show them again, select the headers around them, then right-click › <strong>Show hidden</strong>.</p>
+<h2 id="figer">Freezing</h2>
+<p>Frozen rows and columns stay visible when scrolling. Select the limit cell, then <i data-i="freeze-row-col"></i> or <strong>View › Freeze</strong>:</p>
+<div class="table"><table><thead><tr><th>Command</th><th>Stay visible</th></tr></thead><tbody>
+<tr><td><strong>Freeze to current row</strong></td><td>the rows up to that of the cell, included</td></tr>
+<tr><td><strong>Freeze to current column</strong></td><td>the columns up to that of the cell, included</td></tr>
+<tr><td><strong>Freeze to current cell</strong></td><td>both</td></tr>
+<tr><td><strong>Cancel freezing</strong></td><td>nothing in particular</td></tr>
+</tbody></table></div>
+<p>To keep the header row: click a cell of row 1, <strong>Freeze to current row</strong>.</p>
+</main>
+</body>
+</html>

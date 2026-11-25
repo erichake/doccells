@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sorting, filtering, finding — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Sorting, filtering, finding</h1>
+<h2 id="trier">Sorting</h2>
+<div class="table"><table><thead><tr><th>Command</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong>Data › Sort and filter › Ascending</strong>, <strong>Descending</strong></td><td>sorts the selection by its first column; also with <i data-i="filter"></i> and the right-click menu</td></tr>
+<tr><td>right-click › <strong>Sort</strong></td><td>chooses the sort column, the order, and whether the first row is a header</td></tr>
+</tbody></table></div>
+<figure><img src="img/tri.webp" alt="The window that sorts a range" width="1280" height="760" /></figure>
+<p>Select the whole table, not a single column: rows must stay whole. A range that contains merged cells cannot be sorted.</p>
+<h2 id="filtrer">Filtering</h2>
+<ol>
+<li>Select the table, header included.</li>
+<li><strong>Data › Sort and filter › create filter</strong>, or <i data-i="filter"></i>, or right-click › <strong>Filter</strong>.</li>
+<li>Click the arrow of a column.</li>
+</ol>
+<figure><img src="img/filtre.webp" alt="The filter of a column" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>In the menu of a column</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong>Ascending sort</strong>, <strong>Descending sort</strong></td><td>sorts the rows of the table</td></tr>
+<tr><td><strong>Filter by color</strong></td><td>by fill color or text color</td></tr>
+<tr><td><strong>Filter by values</strong></td><td>check the values to keep; <strong>Check all</strong>, <strong>Clear</strong>, <strong>Inverse</strong>; the field looks for a value</td></tr>
+<tr><td><strong>Confirm</strong></td><td>applies</td></tr>
+<tr><td><strong>Clear filter</strong></td><td>removes the filter from the table</td></tr>
+</tbody></table></div>
+<p>Rows left out are hidden, not deleted. The filters of several columns add up. <strong>Data › Sort and filter › Clear filter</strong> removes the filter.</p>
+<h2 id="rechercher">Finding, replacing</h2>
+<p><kbd>Ctrl</kbd> <kbd>F</kbd> opens <strong>Find</strong>, <kbd>Ctrl</kbd> <kbd>H</kbd> <strong>Replace</strong>.</p>
+<figure><img src="img/rechercher.webp" alt="The search" width="1280" height="660" /></figure>
+<div class="table"><table><thead><tr><th>Option</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong>Regular Expression</strong></td><td>the text searched for is a regular expression: <code>^A</code> finds what starts with A</td></tr>
+<tr><td><strong>Whole word</strong></td><td>the whole cell is equal to the text</td></tr>
+<tr><td><strong>Case sensitive</strong></td><td>distinguishes uppercase and lowercase</td></tr>
+<tr><td><strong>Find All</strong></td><td>lists the cells found; clicking a line goes there</td></tr>
+<tr><td><strong>Find next</strong></td><td>goes to the next one</td></tr>
+<tr><td><strong>Replace</strong>, <strong>Replace All</strong></td><td>one cell, all of them</td></tr>
+</tbody></table></div>
+<p>The search covers the displayed sheet.</p>
+</main>
+</body>
+</html>

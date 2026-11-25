@@ -1,0 +1,126 @@
+words|-|admis=geslaagd; refusé=gezakt; très bien=zeer goed; assez bien=goed; un=een; deux=twee; autre=ander; absent=afwezig; Note : =Cijfer: ; tableur=tabel; jean dupont=jan jansen
+SUMIF|-|Som van de cellen van een bereik die aan een criterium voldoen (">=10", "Ana"), of van de overeenkomstige cellen van een ander bereik.
+SUBTOTAL|-|Samenvatting van een bereik volgens een code: 1 gemiddelde, 2 aantal, 4 max, 5 min, 9 som.
+AGGREGATE|functie; optie; bereik|Samenvatting van een bereik volgens een code: 1 gemiddelde, 2 aantal, 4 max, 5 min, 9 som. Opties: 0 tot 7, zoals Excel.
+INT|-|Geheel deel: het grootste gehele getal kleiner dan of gelijk aan.
+COMBINA|n; k|Aantal combinaties met herhaling.
+LOG|getal; grondtal|Logaritme met een grondtal; het grondtal is verplicht.
+BASE|getal; grondtal; [lengte]|Schrijfwijze van een geheel getal in een talstelsel, als tekst.
+DECIMAL|tekst; grondtal|Waarde van een getal geschreven in een talstelsel van 2 tot 10.
+COT|hoek|Cotangens van een hoek in radialen.
+SEC|hoek|Secans van een hoek in radialen.
+CSC|hoek|Cosecans van een hoek in radialen.
+ACOT|getal|Boogcotangens, in radialen.
+COTH|getal|Cotangens hyperbolicus.
+SECH|getal|Secans hyperbolicus.
+CSCH|getal|Cosecans hyperbolicus.
+ACOTH|getal|Inverse cotangens hyperbolicus.
+IFS|voorwaarde1; waarde1; [voorwaarde2; waarde2; …]|Waarde van de eerste ware voorwaarde; #N/A als geen waar is.
+SWITCH|uitdrukking; geval1; waarde1; [geval2; waarde2; …]; [standaard]|Waarde van het geval gelijk aan de uitdrukking.
+XOR|waarde1; waarde2; …|Waar als een oneven aantal waarden waar is.
+TRUE|-|De logische waarde waar, getoond als TRUE.
+FALSE|-|De logische waarde onwaar, getoond als FALSE.
+IFERROR|waarde; waarde_bij_fout|De waarde, of een andere bij de fout van een functie (#N/A, #NUM!). Vervangt DIV/0 noch #VALUE!.
+IFNA|waarde; waarde_bij_nb|De waarde, of een andere bij de fout #N/A.
+COUNTIF|-|Aantal cellen die aan een criterium voldoen: ">10", "<>0", "Ana". De jokertekens * en ? worden niet herkend.
+MODE|bereik|Meest voorkomende waarde.
+RANK|getal; bereik; [volgorde]|Rang van een getal in een bereik, aflopend; oplopend bij volgorde 1.
+QUARTILE|bereik; k|Kwartiel: k van 0 (minimum) tot 4 (maximum).
+QUARTILEEXC|bereik; k|Kwartiel, grenzen uitgesloten: k van 1 tot 3.
+PERCENTILEINC|bereik; k|Percentiel: k van 0 tot 1.
+PERCENTILEEXC|bereik; k|Percentiel, grenzen uitgesloten.
+PERCENTRANK|bereik; getal|Rang van een getal als verhouding, van 0 tot 1.
+STDEV|waarde1; [waarde2; …]|Standaardafwijking van een steekproef (noemer n − 1).
+STDEVP|-|Standaardafwijking van een populatie (noemer n).
+STDEVPA|waarde1; [waarde2; …]|Standaardafwijking van een populatie, teksten tellen als 0.
+VAR|waarde1; [waarde2; …]|Variantie van een steekproef (noemer n − 1).
+VARP|waarde1; [waarde2; …]|Variantie van een populatie (noemer n).
+SKEWP|bereik|Scheefheid van een populatie.
+FREQUENCY|-|Frequenties van de door een lijst begrensde klassen, als lijst.
+COVARIANCEP|y_bereik; x_bereik|Covariantie van een populatie.
+COVARIANCES|y_bereik; x_bereik|Covariantie van een steekproef.
+LINEST|y_bereik; x_bereik|Kleinste-kwadratenlijn: de lijst van helling en snijpunt met de y-as.
+LOGEST|y_bereik; x_bereik|Aanpassing y = b·mˣ: de lijst van m en b.
+TREND|y_bereik; x_bereik; nieuwe_x|Waarden van de lineaire aanpassing, als lijst.
+GROWTH|y_bereik; x_bereik; nieuwe_x|Waarden van de exponentiële aanpassing, als lijst.
+PERMUTATIONA|n; k|Aantal variaties met herhaling.
+NORMDIST|x; gemiddelde; afwijking; cumulatief|Normale verdeling: P(X ≤ x) als cumulatief waar is, anders dichtheid.
+NORMINV|kans; gemiddelde; afwijking|x zodat P(X ≤ x) de kans is, normale verdeling.
+NORMSDIST|z; cumulatief|Standaardnormale verdeling: P(Z ≤ z) als cumulatief waar is, anders dichtheid.
+NORMSINV|kans|z zodat P(Z ≤ z) de kans is.
+GAUSS|z|P(0 ≤ Z ≤ z), standaardnormale verdeling.
+PHI|z|Dichtheid van de standaardnormale verdeling.
+BINOMDIST|k; n; p; cumulatief|Binomiale verdeling: P(X ≤ k) als cumulatief waar is, anders P(X = k).
+CRITBINOM|n; p; alfa|Kleinste k zodat P(X ≤ k) ≥ alfa, binomiaal.
+NEGBINOMDIST|mislukkingen; successen; p; cumulatief|Negatieve binomiale verdeling.
+POISSON|k; lambda; cumulatief|Poissonverdeling: P(X ≤ k) als cumulatief waar is, anders P(X = k).
+HYPGEOMDIST|k; n; successen; populatie; cumulatief|Hypergeometrische verdeling.
+EXPONDIST|x; lambda; cumulatief|Exponentiële verdeling.
+GAMMADIST|x; alfa; bèta; cumulatief|Gammaverdeling.
+GAMMAINV|kans; alfa; bèta|Inverse van de gammaverdeling.
+BETADIST|x; alfa; bèta; cumulatief; a; b|Bètaverdeling op [a, b].
+BETAINV|kans; alfa; bèta|Inverse van de bètaverdeling.
+LOGNORMDIST|x; gemiddelde; afwijking; cumulatief|Lognormale verdeling.
+LOGNORMINV|kans; gemiddelde; afwijking|Inverse van de lognormale verdeling.
+WEIBULL|x; alfa; bèta; cumulatief|Weibullverdeling.
+CHIDIST|x; vrijheidsgraden; cumulatief|Chi-kwadraatverdeling: P(X ≤ x) als cumulatief waar is.
+CHIDISTRT|x; vrijheidsgraden|Chi-kwadraatverdeling: P(X > x).
+CHIINVRT|kans; vrijheidsgraden|x zodat P(X > x) de kans is, chi-kwadraat.
+FDIST|x; vrijheidsgraden1; vrijheidsgraden2; cumulatief|F-verdeling: P(X ≤ x) als cumulatief waar is.
+FDISTRT|x; vrijheidsgraden1; vrijheidsgraden2|F-verdeling: P(X > x).
+TTEST|bereik1; bereik2|Kans van de Student t-toets op twee steekproeven.
+CONFIDENCE|alfa; afwijking; n|Halve breedte van het betrouwbaarheidsinterval van een gemiddelde (normaal).
+GAMMA|getal|Gammafunctie.
+VLOOKUP|-|Zoekt een waarde in de eerste kolom van een bereik en geeft de cel van dezelfde rij. Laatste argument 0: exacte waarde.
+HLOOKUP|-|Zoekt een waarde in de eerste rij van een bereik en geeft de cel van dezelfde kolom. Laatste argument 0: exacte waarde.
+LOOKUP|waarde; gesorteerd_bereik; resultaatbereik|Zoekt een waarde in een gesorteerd bereik en geeft de overeenkomstige waarde van een ander.
+MATCH|-|Positie van een waarde in een bereik. Laatste argument 0: exacte waarde.
+INDEX|-|Cel van een bereik of element van een lijst, volgens positie.
+TRANSPOSE|-|Verwisselt rijen en kolommen; het resultaat is een lijst van rijen, in één cel.
+FLATTEN|bereik|De waarden van een bereik, rij na rij, als lijst.
+UNIQUE|waarde1; waarde2; …|Lijst van de waarden zonder dubbele.
+SPLIT|tekst; scheidingsteken|Splitst een tekst in een lijst.
+CONCAT|waarde1; waarde2|Voegt twee teksten samen.
+VALUE|-|Getal in een tekst, met een decimale punt.
+UNICHAR|code|Teken van een Unicode-code.
+UNICODE|tekst|Unicode-code van het eerste teken.
+TODAY|-|Datum van vandaag. Om ermee te rekenen, ze in een cel zetten.
+NOW|-|Datum en tijd, bij elke wijziging herberekend.
+DATE|-|Datum van een jaar, een maand en een dag; geef de cel een datumnotatie.
+WEEKDAY|-|Dag van de week; met type 2 van 1 (maandag) tot 7 (zondag).
+DATEDIF|-|Duur tussen twee datums, in jaren ("Y"), maanden ("M") of dagen ("D").
+TIME|-|Tijd, als deel van een dag; geef de cel een tijdnotatie.
+HOUR|-|Uren van een tijd.
+MINUTE|-|Minuten van een tijd.
+SECOND|-|Seconden van een tijd.
+PMT|-|Vaste termijn van een lening; het kapitaal telt negatief.
+PDURATION|rente; huidige_waarde; toekomstige_waarde|Aantal perioden om een waarde te bereiken.
+RRI|perioden; huidige_waarde; toekomstige_waarde|Gelijkwaardige rentevoet van een groei.
+ISPMT|rente; periode; perioden; kapitaal|Rente van een periode bij vaste aflossing.
+BITAND|a; b|EN bit voor bit.
+BITOR|a; b|OF bit voor bit.
+BITXOR|a; b|Exclusieve OF bit voor bit.
+BITLSHIFT|getal; verschuiving|Verschuift de bits naar links.
+BITRSHIFT|getal; verschuiving|Verschuift de bits naar rechts.
+CONVERT|-|Zet een maat om van de ene eenheid in de andere: "m", "km", "mi", "hr", "mn", "kg"… Temperaturen worden niet omgezet.
+GESTEP|getal; drempel|1 als het getal de drempel bereikt, anders 0.
+ERF|x|Foutfunctie van Gauss.
+BESSELJ|x; n|Besselfunctie Jₙ.
+BESSELY|x; n|Besselfunctie Yₙ.
+BESSELI|x; n|Gewijzigde Besselfunctie Iₙ.
+BESSELK|x; n|Gewijzigde Besselfunctie Kₙ.
+IMARGUMENT|complex|Argument, in radialen.
+IMPOWER|complex; exponent|Macht van een complex getal.
+IMSQRT|complex|Vierkantswortel van een complex getal.
+IMEXP|complex|Exponentiële van een complex getal.
+IMLN|complex|Natuurlijke logaritme van een complex getal.
+IMLOG10|complex|Tiendelige logaritme van een complex getal.
+IMLOG2|complex|Logaritme met grondtal 2 van een complex getal.
+IMSIN|complex|Sinus van een complex getal.
+IMCOS|complex|Cosinus van een complex getal.
+IMTAN|complex|Tangens van een complex getal.
+ISERROR|-|Waar als de waarde de fout van een functie is (#N/A, #NUM!).
+ISERR|-|Waar als de waarde de fout van een functie is, behalve #N/A.
+ISNA|-|Waar als de waarde de fout #N/A is.
+NA|-|De fout #N/A.
+TYPE|-|Type van een waarde: 1 getal, 2 tekst, 4 logisch, 16 fout, 64 lijst.

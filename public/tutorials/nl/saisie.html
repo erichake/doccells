@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gegevens invoeren — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Gegevens invoeren</h1>
+<h2 id="ecrire">In een cel schrijven</h2>
+<div class="table"><table><thead><tr><th>Handeling</th><th>Effect</th></tr></thead><tbody>
+<tr><td>op een geselecteerde cel typen</td><td>vervangt de inhoud</td></tr>
+<tr><td>dubbelklikken, <kbd>F2</kbd> of <kbd>Enter</kbd></td><td>wijzigt de inhoud</td></tr>
+<tr><td><kbd>Enter</kbd></td><td>bevestigt en gaat een cel omlaag</td></tr>
+<tr><td>klikken in een andere cel</td><td>bevestigt</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>breekt de invoer af</td></tr>
+<tr><td><kbd>Alt</kbd> <kbd>Enter</kbd></td><td>nieuwe regel in de cel</td></tr>
+<tr><td><kbd>Delete</kbd> of <kbd>⌫</kbd></td><td>maakt de geselecteerde cellen leeg, ook selectievakjes en keuzelijsten; de opmaak blijft</td></tr>
+<tr><td>rechtsklikken › <strong>Inhoud wissen</strong></td><td>hetzelfde</td></tr>
+</tbody></table></div>
+<p>Tijdens het invoeren verplaatsen de pijltoetsen de cursor in de tekst. Anders wisselen de pijltoetsen, <kbd>Tab</kbd> en <kbd>Shift</kbd> <kbd>Tab</kbd> van cel.</p>
+<h2 id="types">Wat DocCells herkent</h2>
+<div class="table"><table><thead><tr><th>Je typt</th><th>Je krijgt</th></tr></thead><tbody>
+<tr><td><code>12</code>, <code>-3</code>, <code>1e5</code></td><td>een getal, rechts uitgelijnd</td></tr>
+<tr><td><code>2,5</code></td><td>een decimaal getal; de komma is het Nederlandse decimaalteken</td></tr>
+<tr><td><code>1.234,5</code></td><td>het getal 1234,5; om de punt van de duizendtallen te tonen, een <a href="nombres.html">notatie</a> kiezen</td></tr>
+<tr><td><code>25%</code>, <code>2,5%</code></td><td>een percentage</td></tr>
+<tr><td><code>2026-11-25</code>, <code>2026/11/25</code></td><td>een datum</td></tr>
+<tr><td><code>2026-11-25 14:30</code></td><td>een datum en een tijd</td></tr>
+<tr><td><code>TRUE</code>, <code>FALSE</code></td><td>een logische waarde</td></tr>
+<tr><td><code>[2; 1]</code></td><td>een <a href="listes.html">lijst</a></td></tr>
+<tr><td><code>=A1+B1</code></td><td>een <a href="formules.html">formule</a></td></tr>
+<tr><td>al het andere</td><td>een tekst, links uitgelijnd</td></tr>
+</tbody></table></div>
+<h3 id="dates">Datums</h3>
+<p>Een datum wordt met het jaar eerst getypt: <code>2026-11-25</code>. <code>25-11-2026</code> blijft een tekst, waarmee niet gerekend wordt. Om ze gewoon te tonen, <strong>Opmaak › Getal › Datum</strong> (<code>29-11-2017</code>) of een <a href="nombres.html#personnalise">aangepaste notatie</a> kiezen.</p>
+<p>Dubbelklikken op een datumcel opent een <a href="controles.html#calendrier">kalender</a>. <code>=VANDAAG()</code> geeft de datum van vandaag.</p>
+<h3 id="textes">Teksten van cijfers</h3>
+<p>Een nummer dat met nul begint, verliest die nul: <code>007</code> wordt 7. Om ze te behouden, de cellen eerst de notatie <strong>Platte tekst</strong> geven (<strong>Opmaak › Getal › Platte tekst</strong>), of met een apostrof beginnen: <code>'007</code>.</p>
+<h2 id="erreurs">Veelvoorkomende invoerfouten</h2>
+<div class="table"><table><thead><tr><th>Je ziet</th><th>Oorzaak</th></tr></thead><tbody>
+<tr><td>een links uitgelijnd getal</td><td>het is een tekst: een decimale punt in plaats van een komma, een eenheid (<code>12 €</code>), een spatie te veel</td></tr>
+<tr><td><code>46351</code> in plaats van een datum</td><td>een datum in de notatie <strong>Automatisch</strong>: geef ze de notatie <strong>Datum</strong></td></tr>
+<tr><td>de tekst afgekapt door de buurcel</td><td>de <a href="lignes-colonnes.html#taille">kolom</a> verbreden, of <strong>Terugloop</strong> kiezen</td></tr>
+</tbody></table></div>
+<p>Voor een eenheid alleen het getal invoeren en het een <a href="nombres.html">notatie</a> geven: valuta, of aangepast zoals <code>0,00 "m"</code>.</p>
+</main>
+</body>
+</html>

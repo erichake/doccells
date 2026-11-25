@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Proteggere — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Proteggere</h1>
+<p class="lead">Una cartella protetta si modifica solo nelle celle sbloccate: così si prepara un foglio di esercizi.</p>
+<h2 id="preparer">Preparare un foglio per gli studenti</h2>
+<ol>
+<li>Selezionare le celle da riempire, clic destro › <strong>Sblocca celle</strong>.</li>
+<li><i data-i="protect"></i> o <strong>Strumenti › Proteggi / rimuovi protezione cartella di lavoro</strong>.</li>
+<li>Salvare, poi <a href="partager.html">diffondere il file o il suo link</a>.</li>
+</ol>
+<p>All’inizio tutte le celle sono bloccate; il blocco ha effetto solo in una cartella protetta. <strong>Blocca celle</strong> lo annulla.</p>
+<h2 id="effets">Che cosa blocca la protezione</h2>
+<div class="table"><table><thead><tr><th>In una cartella protetta</th><th>Cella bloccata</th><th>Cella sbloccata</th></tr></thead><tbody>
+<tr><td>scrivere, cancellare</td><td>no</td><td>sì</td></tr>
+<tr><td>calendario di una data</td><td>no</td><td>sì</td></tr>
+<tr><td>larghezze e altezze</td><td>no</td><td>no</td></tr>
+<tr><td>colori alternati, inserimento di caselle ed elenchi, riempimento da menu</td><td>no</td><td>no</td></tr>
+<tr><td>formattazione, inserimento di righe e colonne, grafici</td><td>sì</td><td>sì</td></tr>
+</tbody></table></div>
+<p>La protezione riguarda tutti i fogli. È salvata nel file Excel, con le celle sbloccate, e riletta da DocCells e da Excel.</p>
+<h2 id="eleve">Modalità studente</h2>
+<p><code>?mode=student</code> nell’indirizzo apre DocCells senza il pulsante <i data-i="protect"></i> né i comandi <strong>Sblocca celle</strong> e <strong>Definisci nome…</strong>; <strong>Proteggi / rimuovi protezione cartella di lavoro</strong> è disattivato. Lo studente non può togliere la protezione.</p>
+<pre><code>https://…/doccells/?mode=student&amp;url=https://…/esercizio.xlsx</code></pre>
+<div class="note"><p>È una protezione d’uso, senza password: chi apre il file in un altro foglio di calcolo, o senza <code>mode=student</code>, può toglierla.</p></div>
+</main>
+</body>
+</html>

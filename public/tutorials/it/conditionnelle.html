@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formattazione condizionale — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Formattazione condizionale</h1>
+<p class="lead">Una regola cambia l’aspetto delle celle di un intervallo che soddisfano una condizione. Segue i valori, immessi o calcolati.</p>
+<h2 id="creer">Creare una regola</h2>
+<ol>
+<li>Selezionare l’intervallo, senza la sua intestazione.</li>
+<li><i data-i="conditional"></i> o <strong>Formato › Formattazione condizionale</strong>.</li>
+<li>Scegliere la condizione, il valore di confronto, i colori o lo stile.</li>
+<li><strong>Aggiungi</strong>.</li>
+</ol>
+<figure><img src="img/conditionnelle.webp" alt="La finestra della formattazione condizionale, con una regola applicata" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Condizione</th><th>La cella</th></tr></thead><tbody>
+<tr><td><code>&lt;</code></td><td>è minore di</td></tr>
+<tr><td><code>&gt;</code></td><td>è maggiore di</td></tr>
+<tr><td><code>=</code></td><td>è uguale a</td></tr>
+<tr><td><code>!=</code></td><td>è diversa da</td></tr>
+<tr><td><code>[]</code></td><td>è compresa tra due valori, estremi inclusi</td></tr>
+<tr><td><code>abc</code></td><td>contiene un testo, maiuscole o minuscole</td></tr>
+</tbody></table></div>
+<h2 id="comparer">Con che cosa confrontare</h2>
+<div class="table"><table><thead><tr><th>Confronta con</th><th>Esempio</th></tr></thead><tbody>
+<tr><td><strong>un valore fisso</strong></td><td>i voti inferiori a 10</td></tr>
+<tr><td><strong>una cella fissa</strong></td><td>i voti inferiori alla soglia scritta in <code>F1</code></td></tr>
+<tr><td><strong>una colonna della stessa riga</strong></td><td>nella colonna C, i valori superiori a quelli della colonna B, riga per riga</td></tr>
+</tbody></table></div>
+<h2 id="apparence">Aspetto</h2>
+<p><strong>Testo</strong> e <strong>Riempimento</strong> scelgono i colori, <strong>Nessuno</strong> li toglie; <strong>B</strong>, <em>I</em>, <strong>U</strong> mettono in grassetto, corsivo, sottolineato. Serve almeno un colore o uno stile.</p>
+<h2 id="regles">Più regole</h2>
+<p>La colonna di sinistra elenca le regole del foglio: <strong>Modifica</strong>, <strong>Elimina</strong>. Se più regole si applicano a una cella, prevale l’ultima dell’elenco, colore per colore.</p>
+<div class="warn"><p>In un intervallo coperto da una regola, i colori di testo e di sfondo dati direttamente alle celle non si mostrano più.</p></div>
+<p>Le regole sono salvate nel file Excel come formattazioni condizionali di Excel.</p>
+</main>
+</body>
+</html>

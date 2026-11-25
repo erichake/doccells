@@ -1,0 +1,392 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>函數 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>函數</h1>
+<p class="lead">DocCells 計算的 314 個函數，按領域分類，各附一個範例。</p>
+<ul>
+<li>搜尋：在頁面頂部的搜尋框（<kbd>/</kbd>）中輸入函數名，即可找到它所在的列。</li>
+<li>引數之間用逗號分隔；方括號 <code>[ ]</code> 中的引數可省略。</li>
+<li><code>TRUE()</code> 和 <code>FALSE()</code> 要帶括號；也可寫 1 和 0。</li>
+<li>「範圍」引數可以是<a href="listes.html">清單</a>：<code>=AVERAGE([12, 15, 8])</code>。</li>
+<li>另見<a href="formules.html">公式</a>：運算子、參照、錯誤。</li>
+</ul>
+<h2 id="exemples">範例所用的儲存格</h2>
+<p>範例讀取這張工作表：</p>
+<div class="table"><table class="cells"><tr><th></th><th>A</th><th>B</th><th>C</th><th>F</th><th>G</th></tr><tr><th>1</th><td class="num">12</td><td class="num">2</td><td>Ana</td><td class="num">1</td><td class="num">2</td></tr><tr><th>2</th><td class="num">15</td><td class="num">4</td><td>Paul</td><td class="num">3</td><td class="num">4</td></tr><tr><th>3</th><td class="num">8</td><td class="num">6</td><td>Léa</td><td></td><td></td></tr><tr><th>4</th><td class="num">17</td><td class="num">8</td><td>Tom</td><td></td><td></td></tr><tr><th>5</th><td class="num">10</td><td class="num">11</td><td>Zoé</td><td></td><td></td></tr></table></div>
+<h2 id="math">數學</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="SUM"><td><code><strong>SUM</strong>(值1, [值2, …])</code></td><td>返回一組數值和/或儲存格的總和。<span class="ex"><code>=SUM(A1:A5)</code> → <code>62</code></span></td></tr>
+<tr id="SUMIF"><td><code><strong>SUMIF</strong>(範圍, 條件, [求和範圍])</code></td><td>對範圍中滿足條件（"&gt;=10"、"Ana"）的儲存格，或另一範圍中對應的儲存格求和。<span class="ex"><code>=SUMIF(A1:A5, "&gt;=10")</code> → <code>54</code></span></td></tr>
+<tr id="SUMIFS"><td><code><strong>SUMIFS</strong>(求和範圍, 條件範圍1, 條件1, [條件範圍2,條件2…, …])</code></td><td>根據多項條件返回範圍之和。<span class="ex"><code>=SUMIFS(A1:A5, A1:A5, "&gt;9", B1:B5, "&lt;8")</code> → <code>27</code></span></td></tr>
+<tr id="SUMPRODUCT"><td><code><strong>SUMPRODUCT</strong>(陣列1, [陣列2, …])</code></td><td>在給定的幾組數組中,將數組間對應的元素相乘,並返回乘積之和。<span class="ex"><code>=SUMPRODUCT(A1:A5, B1:B5)</code> → <code>378</code></span></td></tr>
+<tr id="SUMSQ"><td><code><strong>SUMSQ</strong>(值1, [值2, ..., …])</code></td><td>返回一組數值和/或儲存格的平方總和。<span class="ex"><code>=SUMSQ(B1:B3)</code> → <code>56</code></span></td></tr>
+<tr id="SUMX2MY2"><td><code><strong>SUMX2MY2</strong>(陣列_x, 陣列_y)</code></td><td>返回兩數組中對應數值的平方差之和。<span class="ex"><code>=SUMX2MY2(A1:A5, B1:B5)</code> → <code>581</code></span></td></tr>
+<tr id="SUMX2PY2"><td><code><strong>SUMX2PY2</strong>(陣列_x, 陣列_y)</code></td><td>返回兩數組中對應數值的平方和之和。<span class="ex"><code>=SUMX2PY2(A1:A5, B1:B5)</code> → <code>1063</code></span></td></tr>
+<tr id="SUMXMY2"><td><code><strong>SUMXMY2</strong>(陣列_x, 陣列_y)</code></td><td>返回兩數組中對應數值之差的平方和。<span class="ex"><code>=SUMXMY2(A1:A5, B1:B5)</code> → <code>307</code></span></td></tr>
+<tr id="SERIESSUM"><td><code><strong>SERIESSUM</strong>(x, n, m, a)</code></td><td>給定參數x、n、m和a<span class="ex"><code>=SERIESSUM(2, 0, 1, [1, 1, 1])</code> → <code>7</code></span></td></tr>
+<tr id="SUBTOTAL"><td><code><strong>SUBTOTAL</strong>(函數程式碼, 範圍1, [範圍2, …])</code></td><td>按代碼彙總範圍：1 平平均值、2 計數、4 最大值、5 最小值、9 求和。<span class="ex"><code>=SUBTOTAL(9, A1:A5)</code> → <code>62</code></span></td></tr>
+<tr id="AGGREGATE"><td><code><strong>AGGREGATE</strong>(函數, 選項, 範圍)</code></td><td>按代碼彙總範圍：1 平平均值、2 計數、4 最大值、5 最小值、9 求和。選項：0 到 7，與 Excel 相同。<span class="ex"><code>=AGGREGATE(9, 0, A1:A5)</code> → <code>62</code></span></td></tr>
+<tr id="PRODUCT"><td><code><strong>PRODUCT</strong>(乘數1, [乘數2 ... 乘數30, …])</code></td><td>返回將一組數相乘所得的結果。<span class="ex"><code>=PRODUCT(B1:B3)</code> → <code>48</code></span></td></tr>
+<tr id="COUNTUNIQUE"><td><code><strong>COUNTUNIQUE</strong>(值1, [值2])</code></td><td>計算一列指定值和範圍中不重複數值的個數。<span class="ex"><code>=COUNTUNIQUE(A1:A5)</code> → <code>5</code></span></td></tr>
+<tr id="ABS"><td><code><strong>ABS</strong>(數值)</code></td><td>返回數值的絕對值。<span class="ex"><code>=ABS(-3)</code> → <code>3</code></span></td></tr>
+<tr id="SIGN"><td><code><strong>SIGN</strong>(值)</code></td><td>給定輸入數值<span class="ex"><code>=SIGN(-3)</code> → <code>-1</code></span></td></tr>
+<tr id="INT"><td><code><strong>INT</strong>(值)</code></td><td>整數部分：不大於該數的最大整數。<span class="ex"><code>=INT(-3.2)</code> → <code>-4</code></span></td></tr>
+<tr id="TRUNC"><td><code><strong>TRUNC</strong>(值, [位數])</code></td><td>除指定有效位之外的部分<span class="ex"><code>=TRUNC(3.789, 1)</code> → <code>3.7</code></span></td></tr>
+<tr id="ROUND"><td><code><strong>ROUND</strong>(值, 位數)</code></td><td>將數位四捨五入到指定的位數。<span class="ex"><code>=ROUND(3.14159, 2)</code> → <code>3.14</code></span></td></tr>
+<tr id="ROUNDUP"><td><code><strong>ROUNDUP</strong>(值, 位數)</code></td><td>朝著遠離0（零）的方向將數位進行向上舍入。<span class="ex"><code>=ROUNDUP(3.11, 1)</code> → <code>3.2</code></span></td></tr>
+<tr id="ROUNDDOWN"><td><code><strong>ROUNDDOWN</strong>(值, 位數)</code></td><td>朝著零的方向將數位進行向下舍入。<span class="ex"><code>=ROUNDDOWN(3.19, 1)</code> → <code>3.1</code></span></td></tr>
+<tr id="MROUND"><td><code><strong>MROUND</strong>(值, 因數)</code></td><td>將數值取整為另一整數最接近的整數倍。<span class="ex"><code>=MROUND(17, 5)</code> → <code>15</code></span></td></tr>
+<tr id="CEILING"><td><code><strong>CEILING</strong>(值, 因數)</code></td><td>將數值向上取整為最接近的指定因數的倍數。<span class="ex"><code>=CEILING(12.3, 5)</code> → <code>15</code></span></td></tr>
+<tr id="FLOOR"><td><code><strong>FLOOR</strong>(值, 因數)</code></td><td>將數值向下取整為指定因數的最接近的整數倍。<span class="ex"><code>=FLOOR(12.3, 5)</code> → <code>10</code></span></td></tr>
+<tr id="EVEN"><td><code><strong>EVEN</strong>(值)</code></td><td>將數值向上取整為最接近的偶整數。<span class="ex"><code>=EVEN(3)</code> → <code>4</code></span></td></tr>
+<tr id="ODD"><td><code><strong>ODD</strong>(值)</code></td><td>將數值向上取整為最接近的奇整數。<span class="ex"><code>=ODD(4)</code> → <code>5</code></span></td></tr>
+<tr id="ISEVEN"><td><code><strong>ISEVEN</strong>(值)</code></td><td>檢查所提供的數值是否為偶數。<span class="ex"><code>=ISEVEN(4)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISODD"><td><code><strong>ISODD</strong>(值)</code></td><td>檢查所提供的數值是否為奇數。<span class="ex"><code>=ISODD(4)</code> → <code>FALSE</code></span></td></tr>
+<tr id="MOD"><td><code><strong>MOD</strong>(被除數, 除數)</code></td><td>返回兩數相除的餘數。<span class="ex"><code>=MOD(17, 5)</code> → <code>2</code></span></td></tr>
+<tr id="QUOTIENT"><td><code><strong>QUOTIENT</strong>(被除數, 除數)</code></td><td>返回以一個數除以另一個數所得的結果<span class="ex"><code>=QUOTIENT(17, 5)</code> → <code>3</code></span></td></tr>
+<tr id="GCD"><td><code><strong>GCD</strong>(值1, [值2, …])</code></td><td>返回一個或多個整數的最大公約數。<span class="ex"><code>=GCD(24, 36)</code> → <code>12</code></span></td></tr>
+<tr id="LCM"><td><code><strong>LCM</strong>(值1, [值2, …])</code></td><td>返回一個或多個整數的最小公倍數。<span class="ex"><code>=LCM(4, 6)</code> → <code>12</code></span></td></tr>
+<tr id="FACT"><td><code><strong>FACT</strong>(值)</code></td><td>返回數值的階乘。<span class="ex"><code>=FACT(5)</code> → <code>120</code></span></td></tr>
+<tr id="FACTDOUBLE"><td><code><strong>FACTDOUBLE</strong>(值)</code></td><td>返回數值的"雙階乘"。<span class="ex"><code>=FACTDOUBLE(7)</code> → <code>105</code></span></td></tr>
+<tr id="COMBIN"><td><code><strong>COMBIN</strong>(n, k)</code></td><td>給定集合中的對象總數和要選擇的對象數量<span class="ex"><code>=COMBIN(5, 2)</code> → <code>10</code></span></td></tr>
+<tr id="COMBINA"><td><code><strong>COMBINA</strong>(n, k)</code></td><td>可重複的組合數。<span class="ex"><code>=COMBINA(4, 2)</code> → <code>10</code></span></td></tr>
+<tr id="MULTINOMIAL"><td><code><strong>MULTINOMIAL</strong>(值1, [值2, …])</code></td><td>返回參數和的階乘除以各參數階乘的乘積後得到的值。<span class="ex"><code>=MULTINOMIAL(2, 3)</code> → <code>10</code></span></td></tr>
+<tr id="POWER"><td><code><strong>POWER</strong>(底數, 指數)</code></td><td>返回數值的指定次幂。<span class="ex"><code>=POWER(2, 10)</code> → <code>1024</code></span></td></tr>
+<tr id="SQRT"><td><code><strong>SQRT</strong>(值)</code></td><td>返回一個正數的正平方根。<span class="ex"><code>=SQRT(16)</code> → <code>4</code></span></td></tr>
+<tr id="SQRTPI"><td><code><strong>SQRTPI</strong>(值)</code></td><td>返回PI與給定正數乘積的正平方根。<span class="ex"><code>=SQRTPI(2)</code> → <code>2.506628275</code></span></td></tr>
+<tr id="EXP"><td><code><strong>EXP</strong>(指數)</code></td><td>返回歐拉數e（~2.718）的指定次幂。<span class="ex"><code>=EXP(1)</code> → <code>2.718281828</code></span></td></tr>
+<tr id="LN"><td><code><strong>LN</strong>(值)</code></td><td>返回數值以e（歐拉數）為底的對數。<span class="ex"><code>=LN(10)</code> → <code>2.302585093</code></span></td></tr>
+<tr id="LOG"><td><code><strong>LOG</strong>(數值, 底數)</code></td><td>以某數為底的對數；底數必填。<span class="ex"><code>=LOG(8, 2)</code> → <code>3</code></span></td></tr>
+<tr id="LOG10"><td><code><strong>LOG10</strong>(值)</code></td><td>返回數值以10為底的對數。<span class="ex"><code>=LOG10(100)</code> → <code>2</code></span></td></tr>
+<tr id="RAND"><td><code><strong>RAND</strong>()</code></td><td>返回一個介於0和1之間（包括0但不包括1）的亂數。<span class="ex"><code>=RAND()</code></span></td></tr>
+<tr id="RANDBETWEEN"><td><code><strong>RANDBETWEEN</strong>(下界, 上界)</code></td><td>返回介於兩個整數之間（包括這兩個整數）的亂數。<span class="ex"><code>=RANDBETWEEN(1, 6)</code></span></td></tr>
+<tr id="BASE"><td><code><strong>BASE</strong>(數值, 基數, [長度])</code></td><td>整數在某進位制下的寫法，結果為文字。<span class="ex"><code>=BASE(10, 2)</code> → <code>1010</code></span></td></tr>
+<tr id="DECIMAL"><td><code><strong>DECIMAL</strong>(文字, 基數)</code></td><td>以 2 到 10 進位制書寫的數的值。<span class="ex"><code>=DECIMAL("1010", 2)</code> → <code>10</code></span></td></tr>
+<tr id="ROMAN"><td><code><strong>ROMAN</strong>(數字)</code></td><td>將數位格式設定為羅馬數字形式。<span class="ex"><code>=ROMAN(2026)</code> → <code>MMXXVI</code></span></td></tr>
+<tr id="ARABIC"><td><code><strong>ARABIC</strong>(文字)</code></td><td>將羅馬數字轉換為阿拉伯數字。<span class="ex"><code>=ARABIC("MMXXVI")</code> → <code>2026</code></span></td></tr>
+</tbody></table></div>
+<h2 id="trig">三角</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="PI"><td><code><strong>PI</strong>()</code></td><td>返回帶有14位小數的PI值。<span class="ex"><code>=PI()</code> → <code>3.141592654</code></span></td></tr>
+<tr id="RADIANS"><td><code><strong>RADIANS</strong>(角度)</code></td><td>將以度表示的角度值轉換為弧度。<span class="ex"><code>=RADIANS(180)</code> → <code>3.141592654</code></span></td></tr>
+<tr id="DEGREES"><td><code><strong>DEGREES</strong>(角度)</code></td><td>將以弧度表示的角度值轉換為度。<span class="ex"><code>=DEGREES(PI())</code> → <code>180</code></span></td></tr>
+<tr id="SIN"><td><code><strong>SIN</strong>(角度)</code></td><td>給定角度（以弧度表示）<span class="ex"><code>=SIN(PI()/2)</code> → <code>1</code></span></td></tr>
+<tr id="COS"><td><code><strong>COS</strong>(角度)</code></td><td>返回給定角度的余弦值（角度以弧度表示）。<span class="ex"><code>=COS(PI())</code> → <code>-1</code></span></td></tr>
+<tr id="TAN"><td><code><strong>TAN</strong>(角度)</code></td><td>返回已知角度的正切值。<span class="ex"><code>=TAN(1)</code> → <code>1.557407725</code></span></td></tr>
+<tr id="COT"><td><code><strong>COT</strong>(角度)</code></td><td>弧度角的餘切。<span class="ex"><code>=COT(1)</code> → <code>0.642092616</code></span></td></tr>
+<tr id="SEC"><td><code><strong>SEC</strong>(角度)</code></td><td>弧度角的正割。<span class="ex"><code>=SEC(1)</code> → <code>1.850815718</code></span></td></tr>
+<tr id="CSC"><td><code><strong>CSC</strong>(角度)</code></td><td>弧度角的餘割。<span class="ex"><code>=CSC(1)</code> → <code>1.188395106</code></span></td></tr>
+<tr id="ASIN"><td><code><strong>ASIN</strong>(值)</code></td><td>返回數值的反正弦值<span class="ex"><code>=ASIN(1)</code> → <code>1.570796327</code></span></td></tr>
+<tr id="ACOS"><td><code><strong>ACOS</strong>(值)</code></td><td>返回數值的反余弦值<span class="ex"><code>=ACOS(0)</code> → <code>1.570796327</code></span></td></tr>
+<tr id="ATAN"><td><code><strong>ATAN</strong>(值)</code></td><td>返回數值的反正切值<span class="ex"><code>=ATAN(1)</code> → <code>0.785398163</code></span></td></tr>
+<tr id="ATAN2"><td><code><strong>ATAN2</strong>(x, y)</code></td><td>以弧度為組織返回x軸與從原點（0,0）到指定座標點（`x`,`y`）之間連線的夾角。<span class="ex"><code>=ATAN2(1, 1)</code> → <code>0.785398163</code></span></td></tr>
+<tr id="ACOT"><td><code><strong>ACOT</strong>(數值)</code></td><td>反餘切，以弧度表示。<span class="ex"><code>=ACOT(1)</code> → <code>0.785398163</code></span></td></tr>
+<tr id="SINH"><td><code><strong>SINH</strong>(值)</code></td><td>返回給定實數的雙曲正弦值。<span class="ex"><code>=SINH(1)</code> → <code>1.175201194</code></span></td></tr>
+<tr id="COSH"><td><code><strong>COSH</strong>(值)</code></td><td>返回給定實數的雙曲余弦值。<span class="ex"><code>=COSH(1)</code> → <code>1.543080635</code></span></td></tr>
+<tr id="TANH"><td><code><strong>TANH</strong>(值)</code></td><td>返回給定實數的雙曲正切值。<span class="ex"><code>=TANH(1)</code> → <code>0.761594156</code></span></td></tr>
+<tr id="COTH"><td><code><strong>COTH</strong>(數值)</code></td><td>雙曲餘切。<span class="ex"><code>=COTH(1)</code> → <code>1.313035285</code></span></td></tr>
+<tr id="SECH"><td><code><strong>SECH</strong>(數值)</code></td><td>雙曲正割。<span class="ex"><code>=SECH(1)</code> → <code>0.648054274</code></span></td></tr>
+<tr id="CSCH"><td><code><strong>CSCH</strong>(數值)</code></td><td>雙曲餘割。<span class="ex"><code>=CSCH(1)</code> → <code>0.850918128</code></span></td></tr>
+<tr id="ASINH"><td><code><strong>ASINH</strong>(值)</code></td><td>返回數值的反雙曲正弦值。<span class="ex"><code>=ASINH(1)</code> → <code>0.881373587</code></span></td></tr>
+<tr id="ACOSH"><td><code><strong>ACOSH</strong>(值)</code></td><td>返回數值的反雙曲余弦值。<span class="ex"><code>=ACOSH(2)</code> → <code>1.316957897</code></span></td></tr>
+<tr id="ATANH"><td><code><strong>ATANH</strong>(值)</code></td><td>返回數值的反雙曲正切值。<span class="ex"><code>=ATANH(0.5)</code> → <code>0.549306144</code></span></td></tr>
+<tr id="ACOTH"><td><code><strong>ACOTH</strong>(數值)</code></td><td>反雙曲餘切。<span class="ex"><code>=ACOTH(2)</code> → <code>0.549306144</code></span></td></tr>
+</tbody></table></div>
+<h2 id="logical">邏輯</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="IF"><td><code><strong>IF</strong>(邏輯測試, 邏輯值為真時的返回值, [邏輯值為假時的返回值])</code></td><td>當邏輯運算式的值為TRUE時返回一個值,而當其為FALSE時返回另一個值。<span class="ex"><code>=IF(A1&gt;=10, "及格", "不及格")</code> → <code>及格</code></span></td></tr>
+<tr id="IFS"><td><code><strong>IFS</strong>(條件1, 值1, [條件2, 值2, …])</code></td><td>第一個為真的條件對應的值；都不為真則為 #N/A。<span class="ex"><code>=IFS(A1&gt;=16, "優秀", A1&gt;=12, "良好")</code> → <code>良好</code></span></td></tr>
+<tr id="SWITCH"><td><code><strong>SWITCH</strong>(表示式, 情形1, 值1, [情形2, 值2, …], [預設值])</code></td><td>與表示式相等的情形對應的值。<span class="ex"><code>=SWITCH(2, 1, "一", 2, "二", "其他")</code> → <code>二</code></span></td></tr>
+<tr id="AND"><td><code><strong>AND</strong>(邏輯值1, [邏輯值2,..., …])</code></td><td>所有參數的計算結果為TRUE時,返回TRUE；只要有一個參數的計算結果為FALSE,即返回FALSE。<span class="ex"><code>=AND(A1&gt;10, B1&gt;1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="OR"><td><code><strong>OR</strong>(邏輯值1, 邏輯運算式2)</code></td><td>只要有一個參數的計算結果為TRUE時,返回TRUE；所有參數的計算結果為FALSE,即返回FALSE。<span class="ex"><code>=OR(A1&gt;20, B1&gt;1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="XOR"><td><code><strong>XOR</strong>(值1, 值2, …)</code></td><td>為真的值有奇數個時為真。<span class="ex"><code>=XOR(TRUE(), FALSE())</code> → <code>TRUE</code></span></td></tr>
+<tr id="NOT"><td><code><strong>NOT</strong>(邏輯值)</code></td><td>返回某個邏輯值的相反值-"NOT（TRUE（））"將返回FALSE；"NOT（FALSE（））"將返回TRUE。<span class="ex"><code>=NOT(TRUE())</code> → <code>FALSE</code></span></td></tr>
+<tr id="TRUE"><td><code><strong>TRUE</strong>()</code></td><td>邏輯值真，顯示為 TRUE。<span class="ex"><code>=TRUE()</code> → <code>TRUE</code></span></td></tr>
+<tr id="FALSE"><td><code><strong>FALSE</strong>()</code></td><td>邏輯值假，顯示為 FALSE。<span class="ex"><code>=FALSE()</code> → <code>FALSE</code></span></td></tr>
+<tr id="IFERROR"><td><code><strong>IFERROR</strong>(值, 出錯時的值)</code></td><td>該值；若為函數錯誤（#N/A、#NUM!）則為另一個值。不替換 DIV/0 和 #VALUE!。<span class="ex"><code>=IFERROR(NA(), "缺席")</code> → <code>缺席</code></span></td></tr>
+<tr id="IFNA"><td><code><strong>IFNA</strong>(值, 為NA時的值)</code></td><td>該值；若為錯誤 #N/A 則為另一個值。<span class="ex"><code>=IFNA(NA(), "缺席")</code> → <code>缺席</code></span></td></tr>
+</tbody></table></div>
+<h2 id="stat">統計</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="COUNT"><td><code><strong>COUNT</strong>(值1, [值2, ..., …])</code></td><td>返回數據集中數值的個數。<span class="ex"><code>=COUNT(A1:A5)</code> → <code>5</code></span></td></tr>
+<tr id="COUNTA"><td><code><strong>COUNTA</strong>(值1, [值2, ..., …])</code></td><td>返回數據集中值的數量。<span class="ex"><code>=COUNTA(A1:C5)</code> → <code>15</code></span></td></tr>
+<tr id="COUNTBLANK"><td><code><strong>COUNTBLANK</strong>(範圍)</code></td><td>返回給定範圍內的空儲存格數。<span class="ex"><code>=COUNTBLANK(A1:E1)</code> → <code>2</code></span></td></tr>
+<tr id="COUNTIF"><td><code><strong>COUNTIF</strong>(範圍, 條件)</code></td><td>滿足條件的儲存格數："&gt;10"、"&lt;&gt;0"、"Ana"。不辨識萬用字元 * 和 ?。<span class="ex"><code>=COUNTIF(A1:A5, "&gt;10")</code> → <code>3</code></span></td></tr>
+<tr id="COUNTIFS"><td><code><strong>COUNTIFS</strong>(條件範圍1, 條件1, [條件範圍2,條件2…, …])</code></td><td>根據多項條件返回範圍中的儲存格數量。<span class="ex"><code>=COUNTIFS(A1:A5, "&gt;9", B1:B5, "&lt;8")</code> → <code>2</code></span></td></tr>
+<tr id="AVERAGE"><td><code><strong>AVERAGE</strong>(值1, [值2, ..., …])</code></td><td>返回數據集的算術平均值<span class="ex"><code>=AVERAGE(A1:A5)</code> → <code>12.4</code></span></td></tr>
+<tr id="AVERAGEA"><td><code><strong>AVERAGEA</strong>(值1, [值2, ..., …])</code></td><td>返回數據集的算術平均值。<span class="ex"><code>=AVERAGEA(A1:A5)</code> → <code>12.4</code></span></td></tr>
+<tr id="AVERAGEIF"><td><code><strong>AVERAGEIF</strong>(條件範圍, 條件, [平均範圍])</code></td><td>根據條件返回範圍的平均值。<span class="ex"><code>=AVERAGEIF(A1:A5, "&gt;10")</code> → <code>14.666666667</code></span></td></tr>
+<tr id="AVERAGEIFS"><td><code><strong>AVERAGEIFS</strong>(平均範圍, 條件範圍1, 條件1, 條件範圍2,條件2,...)</code></td><td>根據多項條件返回範圍的平均值。<span class="ex"><code>=AVERAGEIFS(A1:A5, B1:B5, "&gt;3")</code> → <code>12.5</code></span></td></tr>
+<tr id="GEOMEAN"><td><code><strong>GEOMEAN</strong>(值1, [值2, ..., …])</code></td><td>計算數據集的幾何平均值。<span class="ex"><code>=GEOMEAN(A1:A5)</code> → <code>11.960856575</code></span></td></tr>
+<tr id="HARMEAN"><td><code><strong>HARMEAN</strong>(值1, [值2, ..., …])</code></td><td>計算數據集的調和平均值。<span class="ex"><code>=HARMEAN(A1:A5)</code> → <code>11.525423729</code></span></td></tr>
+<tr id="TRIMMEAN"><td><code><strong>TRIMMEAN</strong>(數據, 排除比例)</code></td><td>在排除數據集高低兩端的部分數據之後計算所得的平均值。<span class="ex"><code>=TRIMMEAN(A1:A5, 0.4)</code> → <code>12.333333333</code></span></td></tr>
+<tr id="MEDIAN"><td><code><strong>MEDIAN</strong>(值1, [值2, …])</code></td><td>返回數值數據集中的中值。<span class="ex"><code>=MEDIAN(A1:A5)</code> → <code>12</code></span></td></tr>
+<tr id="MODE"><td><code><strong>MODE</strong>(範圍)</code></td><td>出現最多的值。<span class="ex"><code>=MODE([1, 2, 2, 3])</code> → <code>2</code></span></td></tr>
+<tr id="MIN"><td><code><strong>MIN</strong>(值1, [值2, …])</code></td><td>返回數值數據集中的最小值。<span class="ex"><code>=MIN(A1:A5)</code> → <code>8</code></span></td></tr>
+<tr id="MAX"><td><code><strong>MAX</strong>(值1, [值2, …])</code></td><td>返回數值數據集中的最大值。<span class="ex"><code>=MAX(A1:A5)</code> → <code>17</code></span></td></tr>
+<tr id="MINA"><td><code><strong>MINA</strong>(值1, [值2, …])</code></td><td>返回數據集中的最小數值。<span class="ex"><code>=MINA(A1:A5)</code> → <code>8</code></span></td></tr>
+<tr id="MAXA"><td><code><strong>MAXA</strong>(值1, [值2, ..., …])</code></td><td>返回數據集中的最大數值。<span class="ex"><code>=MAXA(A1:A5)</code> → <code>17</code></span></td></tr>
+<tr id="LARGE"><td><code><strong>LARGE</strong>(數據, n)</code></td><td>返回數據集中第 n 個最大元素<span class="ex"><code>=LARGE(A1:A5, 2)</code> → <code>15</code></span></td></tr>
+<tr id="SMALL"><td><code><strong>SMALL</strong>(陣列, k)</code></td><td>返回數據集中的第k個最小值。<span class="ex"><code>=SMALL(A1:A5, 2)</code> → <code>10</code></span></td></tr>
+<tr id="RANK"><td><code><strong>RANK</strong>(數值, 範圍, [順序])</code></td><td>數值在範圍中的排名，降序；順序為 1 時升序。<span class="ex"><code>=RANK(A2, A1:A5)</code> → <code>2</code></span></td></tr>
+<tr id="QUARTILE"><td><code><strong>QUARTILE</strong>(範圍, k)</code></td><td>四分位數：k 從 0（最小值）到 4（最大值）。<span class="ex"><code>=QUARTILE(A1:A5, 1)</code> → <code>10</code></span></td></tr>
+<tr id="QUARTILEEXC"><td><code><strong>QUARTILEEXC</strong>(範圍, k)</code></td><td>不含端點的四分位數：k 從 1 到 3。<span class="ex"><code>=QUARTILEEXC(A1:A5, 1)</code> → <code>9</code></span></td></tr>
+<tr id="PERCENTILEINC"><td><code><strong>PERCENTILEINC</strong>(範圍, k)</code></td><td>百分位數：k 從 0 到 1。<span class="ex"><code>=PERCENTILEINC(A1:A5, 0.9)</code> → <code>16.2</code></span></td></tr>
+<tr id="PERCENTILEEXC"><td><code><strong>PERCENTILEEXC</strong>(範圍, k)</code></td><td>不含端點的百分位數。<span class="ex"><code>=PERCENTILEEXC(A1:A5, 0.8)</code> → <code>16.6</code></span></td></tr>
+<tr id="PERCENTRANK"><td><code><strong>PERCENTRANK</strong>(範圍, 數值)</code></td><td>數值的百分比排名，從 0 到 1。<span class="ex"><code>=PERCENTRANK(A1:A5, 12)</code> → <code>0.5</code></span></td></tr>
+<tr id="STDEV"><td><code><strong>STDEV</strong>(值1, [值2, …])</code></td><td>樣本標準差（除以 n − 1）。<span class="ex"><code>=STDEV(A1:A5)</code> → <code>3.646916506</code></span></td></tr>
+<tr id="STDEVP"><td><code><strong>STDEVP</strong>(值1, [值2, ..., …])</code></td><td>母體標準差（除以 n）。<span class="ex"><code>=STDEVP(A1:A5)</code> → <code>3.261901286</code></span></td></tr>
+<tr id="STDEVA"><td><code><strong>STDEVA</strong>(值1, [值2,…, …])</code></td><td>基於樣本計算標準差<span class="ex"><code>=STDEVA(A1:A5)</code> → <code>3.646916506</code></span></td></tr>
+<tr id="STDEVPA"><td><code><strong>STDEVPA</strong>(值1, [值2, …])</code></td><td>母體標準差，文字按 0 計。<span class="ex"><code>=STDEVPA(A1:A5)</code> → <code>3.261901286</code></span></td></tr>
+<tr id="VAR"><td><code><strong>VAR</strong>(值1, [值2, …])</code></td><td>樣本變異數（除以 n − 1）。<span class="ex"><code>=VAR(A1:A5)</code> → <code>13.3</code></span></td></tr>
+<tr id="VARP"><td><code><strong>VARP</strong>(值1, [值2, …])</code></td><td>母體變異數（除以 n）。<span class="ex"><code>=VARP(A1:A5)</code> → <code>10.64</code></span></td></tr>
+<tr id="VARA"><td><code><strong>VARA</strong>(值1, [值2,..., …])</code></td><td>基于样本计算方差<span class="ex"><code>=VARA(A1:A5)</code> → <code>13.3</code></span></td></tr>
+<tr id="VARPA"><td><code><strong>VARPA</strong>(值1, [值2, ..., …])</code></td><td>基於樣本總體計算方差<span class="ex"><code>=VARPA(A1:A5)</code> → <code>10.64</code></span></td></tr>
+<tr id="AVEDEV"><td><code><strong>AVEDEV</strong>(值1, [值2, ..., …])</code></td><td>計算數據與數據集平均值之間的偏差大小的平均值。<span class="ex"><code>=AVEDEV(A1:A5)</code> → <code>2.88</code></span></td></tr>
+<tr id="DEVSQ"><td><code><strong>DEVSQ</strong>(值1, [值2, ..., …])</code></td><td>基於樣本計算其偏差的平方和。<span class="ex"><code>=DEVSQ(A1:A5)</code> → <code>53.2</code></span></td></tr>
+<tr id="SKEW"><td><code><strong>SKEW</strong>(值1, [值2, ..., …])</code></td><td>返回分佈的偏斜度。<span class="ex"><code>=SKEW(A1:A5)</code> → <code>0.136071281</code></span></td></tr>
+<tr id="SKEWP"><td><code><strong>SKEWP</strong>(範圍)</code></td><td>母體偏度。<span class="ex"><code>=SKEWP(A1:A5)</code> → <code>0.09127939</code></span></td></tr>
+<tr id="KURT"><td><code><strong>KURT</strong>(值1, [值2, ..., …])</code></td><td>計算數據集的峭度<span class="ex"><code>=KURT(A1:A5)</code> → <code>-1.629826446</code></span></td></tr>
+<tr id="STANDARDIZE"><td><code><strong>STANDARDIZE</strong>(x, 平均值, 標準差)</code></td><td>給定分佈的平均值和標準差,計算一個隨機變數正態化的相應值。<span class="ex"><code>=STANDARDIZE(12, 10, 2)</code> → <code>1</code></span></td></tr>
+<tr id="FREQUENCY"><td><code><strong>FREQUENCY</strong>(數據陣列, 分段陣列)</code></td><td>由清單劃分的各組的頻數，結果為清單。<span class="ex"><code>=FREQUENCY(A1:A5, [10, 15])</code> → <code>[2, 2, 1]</code></span></td></tr>
+<tr id="CORREL"><td><code><strong>CORREL</strong>(數據_y, 數據_x)</code></td><td>計算給定數據集的皮爾遜積矩相關係數 r。<span class="ex"><code>=CORREL(A1:A5, B1:B5)</code> → <code>-0.125607117</code></span></td></tr>
+<tr id="PEARSON"><td><code><strong>PEARSON</strong>(數據_x, 數據_y)</code></td><td>回皮爾生（Pearson）乘積矩相關係數 r。<span class="ex"><code>=PEARSON(A1:A5, B1:B5)</code> → <code>-0.125607117</code></span></td></tr>
+<tr id="RSQ"><td><code><strong>RSQ</strong>(數據_y, 數據_x)</code></td><td>返回皮爾生(Pearson)乘積矩相關係數r的平方。<span class="ex"><code>=RSQ(A1:A5, B1:B5)</code> → <code>0.015777148</code></span></td></tr>
+<tr id="COVARIANCEP"><td><code><strong>COVARIANCEP</strong>(y範圍, x範圍)</code></td><td>母體共變異數。<span class="ex"><code>=COVARIANCEP(A1:A5, B1:B5)</code> → <code>-1.28</code></span></td></tr>
+<tr id="COVARIANCES"><td><code><strong>COVARIANCES</strong>(y範圍, x範圍)</code></td><td>樣本共變異數。<span class="ex"><code>=COVARIANCES(A1:A5, B1:B5)</code> → <code>-1.6</code></span></td></tr>
+<tr id="SLOPE"><td><code><strong>SLOPE</strong>(數據_y, 數據_x)</code></td><td>計算通過數據集的線性回歸得到的直線的斜率。<span class="ex"><code>=SLOPE(A1:A5, B1:B5)</code> → <code>-0.131147541</code></span></td></tr>
+<tr id="INTERCEPT"><td><code><strong>INTERCEPT</strong>(數據_y, 數據_x)</code></td><td>計算數據集的線性回歸方程直線與 Y 軸的相交點（x=0）的y值。<span class="ex"><code>=INTERCEPT(A1:A5, B1:B5)</code> → <code>13.213114754</code></span></td></tr>
+<tr id="FORECAST"><td><code><strong>FORECAST</strong>(x, 數據_y, 數據_x)</code></td><td>基於數據集的線性回歸<span class="ex"><code>=FORECAST(10, A1:A5, B1:B5)</code> → <code>11.901639344</code></span></td></tr>
+<tr id="STEYX"><td><code><strong>STEYX</strong>(數據_y, 數據_x)</code></td><td>返回通過線性回歸法預測每個 x 的 y 值時所產生的標準誤差。<span class="ex"><code>=STEYX(A1:A5, B1:B5)</code> → <code>4.177744836</code></span></td></tr>
+<tr id="LINEST"><td><code><strong>LINEST</strong>(y範圍, x範圍)</code></td><td>最小二乘直線：斜率和截距的清單。<span class="ex"><code>=LINEST(A1:A5, B1:B5)</code> → <code>[-0.131147541, 13.213114754]</code></span></td></tr>
+<tr id="LOGEST"><td><code><strong>LOGEST</strong>(y範圍, x範圍)</code></td><td>擬合 y = b·mˣ：m 和 b 的清單。<span class="ex"><code>=LOGEST(A1:A5, B1:B5)</code> → <code>[0.986607, 13.003773]</code></span></td></tr>
+<tr id="TREND"><td><code><strong>TREND</strong>(y範圍, x範圍, 新x)</code></td><td>線性擬合的值，結果為清單。<span class="ex"><code>=TREND(A1:A5, B1:B5, [10])</code> → <code>[11.901639344]</code></span></td></tr>
+<tr id="GROWTH"><td><code><strong>GROWTH</strong>(y範圍, x範圍, 新x)</code></td><td>指數擬合的值，結果為清單。<span class="ex"><code>=GROWTH(A1:A5, B1:B5, [10])</code> → <code>[11.363432839]</code></span></td></tr>
+<tr id="PERMUT"><td><code><strong>PERMUT</strong>(數字, 選取數)</code></td><td>返回可從數位對象中選擇的給定數目對象的排列數。<span class="ex"><code>=PERMUT(5, 2)</code> → <code>20</code></span></td></tr>
+<tr id="PERMUTATIONA"><td><code><strong>PERMUTATIONA</strong>(n, k)</code></td><td>可重複的排列數。<span class="ex"><code>=PERMUTATIONA(5, 2)</code> → <code>25</code></span></td></tr>
+</tbody></table></div>
+<h2 id="proba">機率分布與檢驗</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="PROB"><td><code><strong>PROB</strong>(x數值區域, 機率範圍, 下限, [上限])</code></td><td>返回區域中的數值落在指定區間內的概率。<span class="ex"><code>=PROB(B1:B2, [0.4, 0.6], 2)</code> → <code>0.4</code></span></td></tr>
+<tr id="NORMDIST"><td><code><strong>NORMDIST</strong>(x, 平均值, 標準差, 累積)</code></td><td>正態分布：累積為真時為 P(X ≤ x)，否則為密度。<span class="ex"><code>=NORMDIST(12, 10, 2, TRUE())</code> → <code>0.841344746</code></span></td></tr>
+<tr id="NORMINV"><td><code><strong>NORMINV</strong>(機率, 平均值, 標準差)</code></td><td>使 P(X ≤ x) 等於該機率的 x，正態分布。<span class="ex"><code>=NORMINV(0.95, 10, 2)</code> → <code>13.289707254</code></span></td></tr>
+<tr id="NORMSDIST"><td><code><strong>NORMSDIST</strong>(z, 累積)</code></td><td>標準正態分布：累積為真時為 P(Z ≤ z)，否則為密度。<span class="ex"><code>=NORMSDIST(1.96, TRUE())</code> → <code>0.975002105</code></span></td></tr>
+<tr id="NORMSINV"><td><code><strong>NORMSINV</strong>(機率)</code></td><td>使 P(Z ≤ z) 等於該機率的 z。<span class="ex"><code>=NORMSINV(0.975)</code> → <code>1.959963985</code></span></td></tr>
+<tr id="GAUSS"><td><code><strong>GAUSS</strong>(z)</code></td><td>P(0 ≤ Z ≤ z)，標準正態分布。<span class="ex"><code>=GAUSS(1)</code> → <code>0.341344746</code></span></td></tr>
+<tr id="PHI"><td><code><strong>PHI</strong>(z)</code></td><td>標準正態分布的密度。<span class="ex"><code>=PHI(0)</code> → <code>0.39894228</code></span></td></tr>
+<tr id="BINOMDIST"><td><code><strong>BINOMDIST</strong>(k, n, p, 累積)</code></td><td>二項分布：累積為真時為 P(X ≤ k)，否則為 P(X = k)。<span class="ex"><code>=BINOMDIST(3, 10, 0.5, FALSE())</code> → <code>0.1171875</code></span></td></tr>
+<tr id="CRITBINOM"><td><code><strong>CRITBINOM</strong>(n, p, alpha)</code></td><td>使 P(X ≤ k) ≥ alpha 的最小 k，二項分布。<span class="ex"><code>=CRITBINOM(10, 0.5, 0.9)</code> → <code>7</code></span></td></tr>
+<tr id="NEGBINOMDIST"><td><code><strong>NEGBINOMDIST</strong>(失敗數, 成功數, p, 累積)</code></td><td>負二項分布。<span class="ex"><code>=NEGBINOMDIST(3, 2, 0.5, FALSE())</code> → <code>0.125</code></span></td></tr>
+<tr id="POISSON"><td><code><strong>POISSON</strong>(k, lambda, 累積)</code></td><td>泊松分布：累積為真時為 P(X ≤ k)，否則為 P(X = k)。<span class="ex"><code>=POISSON(2, 3, FALSE())</code> → <code>0.224041808</code></span></td></tr>
+<tr id="HYPGEOMDIST"><td><code><strong>HYPGEOMDIST</strong>(k, n, 成功數, 母體, 累積)</code></td><td>超幾何分布。<span class="ex"><code>=HYPGEOMDIST(1, 4, 8, 20, FALSE())</code> → <code>0.363261094</code></span></td></tr>
+<tr id="EXPONDIST"><td><code><strong>EXPONDIST</strong>(x, lambda, 累積)</code></td><td>指數分布。<span class="ex"><code>=EXPONDIST(1, 2, TRUE())</code> → <code>0.864664717</code></span></td></tr>
+<tr id="GAMMADIST"><td><code><strong>GAMMADIST</strong>(x, alpha, beta, 累積)</code></td><td>伽瑪分布。<span class="ex"><code>=GAMMADIST(2, 3, 2, TRUE())</code> → <code>0.080301397</code></span></td></tr>
+<tr id="GAMMAINV"><td><code><strong>GAMMAINV</strong>(機率, alpha, beta)</code></td><td>伽瑪分布的反函數。<span class="ex"><code>=GAMMAINV(0.5, 3, 2)</code> → <code>5.348120627</code></span></td></tr>
+<tr id="BETADIST"><td><code><strong>BETADIST</strong>(x, alpha, beta, 累積, a, b)</code></td><td>[a, b] 上的貝塔分布。<span class="ex"><code>=BETADIST(0.4, 2, 3, TRUE(), 0, 1)</code> → <code>0.5248</code></span></td></tr>
+<tr id="BETAINV"><td><code><strong>BETAINV</strong>(機率, alpha, beta)</code></td><td>貝塔分布的反函數。<span class="ex"><code>=BETAINV(0.5, 2, 3)</code> → <code>0.385727568</code></span></td></tr>
+<tr id="LOGNORMDIST"><td><code><strong>LOGNORMDIST</strong>(x, 平均值, 標準差, 累積)</code></td><td>對數正態分布。<span class="ex"><code>=LOGNORMDIST(4, 1, 0.5, TRUE())</code> → <code>0.78011709</code></span></td></tr>
+<tr id="LOGNORMINV"><td><code><strong>LOGNORMINV</strong>(機率, 平均值, 標準差)</code></td><td>對數正態分布的反函數。<span class="ex"><code>=LOGNORMINV(0.5, 1, 0.5)</code> → <code>2.718281828</code></span></td></tr>
+<tr id="WEIBULL"><td><code><strong>WEIBULL</strong>(x, alpha, beta, 累積)</code></td><td>韋布林分布。<span class="ex"><code>=WEIBULL(1, 2, 3, TRUE())</code> → <code>0.105160683</code></span></td></tr>
+<tr id="CHIDIST"><td><code><strong>CHIDIST</strong>(x, 自由度, 累積)</code></td><td>卡方分布：累積為真時為 P(X ≤ x)。<span class="ex"><code>=CHIDIST(3, 2, TRUE())</code> → <code>0.77686984</code></span></td></tr>
+<tr id="CHIDISTRT"><td><code><strong>CHIDISTRT</strong>(x, 自由度)</code></td><td>卡方分布：P(X &gt; x)。<span class="ex"><code>=CHIDISTRT(3, 2)</code> → <code>0.22313016</code></span></td></tr>
+<tr id="CHIINVRT"><td><code><strong>CHIINVRT</strong>(機率, 自由度)</code></td><td>使 P(X &gt; x) 等於該機率的 x，卡方分布。<span class="ex"><code>=CHIINVRT(0.05, 2)</code> → <code>5.991464547</code></span></td></tr>
+<tr id="FDIST"><td><code><strong>FDIST</strong>(x, 自由度1, 自由度2, 累積)</code></td><td>F 分布：累積為真時為 P(X ≤ x)。<span class="ex"><code>=FDIST(2, 3, 4, TRUE())</code> → <code>0.743612798</code></span></td></tr>
+<tr id="FDISTRT"><td><code><strong>FDISTRT</strong>(x, 自由度1, 自由度2)</code></td><td>F 分布：P(X &gt; x)。<span class="ex"><code>=FDISTRT(2, 3, 4)</code> → <code>0.256387202</code></span></td></tr>
+<tr id="TTEST"><td><code><strong>TTEST</strong>(範圍1, 範圍2)</code></td><td>兩個樣本的 t 檢驗機率。<span class="ex"><code>=TTEST(A1:A5, B1:B5)</code> → <code>0.025237456</code></span></td></tr>
+<tr id="CONFIDENCE"><td><code><strong>CONFIDENCE</strong>(alpha, 標準差, n)</code></td><td>平均值置信區間的半寬（正態分布）。<span class="ex"><code>=CONFIDENCE(0.05, 2, 50)</code> → <code>0.55436153</code></span></td></tr>
+<tr id="FISHER"><td><code><strong>FISHER</strong>(x)</code></td><td>返回指定數值的 Fisher 變換。<span class="ex"><code>=FISHER(0.5)</code> → <code>0.549306144</code></span></td></tr>
+<tr id="FISHERINV"><td><code><strong>FISHERINV</strong>(y)</code></td><td>返回指定數值的 Fisher 逆變換。<span class="ex"><code>=FISHERINV(0.5)</code> → <code>0.462117157</code></span></td></tr>
+<tr id="GAMMA"><td><code><strong>GAMMA</strong>(數值)</code></td><td>伽瑪函數。<span class="ex"><code>=GAMMA(5)</code> → <code>24</code></span></td></tr>
+<tr id="GAMMALN"><td><code><strong>GAMMALN</strong>(值)</code></td><td>返回指定伽瑪函數的以e（歐拉數）為底的對數。<span class="ex"><code>=GAMMALN(5)</code> → <code>3.17805383</code></span></td></tr>
+</tbody></table></div>
+<h2 id="lookup">尋找與清單</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="VLOOKUP"><td><code><strong>VLOOKUP</strong>(蒐索鍵值, 範圍, 索引, [已排序])</code></td><td>在範圍的第一欄中尋找值，返回同一列的儲存格。最後的引數為 0：精確匹配。<span class="ex"><code>=VLOOKUP("Paul", C1:C5, 1, 0)</code> → <code>Paul</code></span></td></tr>
+<tr id="HLOOKUP"><td><code><strong>HLOOKUP</strong>(蒐索鍵值, 範圍, 索引, [已排序])</code></td><td>在範圍的第一列中尋找值，返回同一欄的儲存格。最後的引數為 0：精確匹配。<span class="ex"><code>=HLOOKUP(1, F1:G2, 2, 0)</code> → <code>3</code></span></td></tr>
+<tr id="LOOKUP"><td><code><strong>LOOKUP</strong>(值, 已排序範圍, 結果範圍)</code></td><td>在已排序的範圍中尋找值，返回另一範圍中對應的值。<span class="ex"><code>=LOOKUP(6, B1:B5, A1:A5)</code> → <code>8</code></span></td></tr>
+<tr id="MATCH"><td><code><strong>MATCH</strong>(查詢值, 查詢陣列, [比對類型])</code></td><td>值在範圍中的位置。最後的引數為 0：精確匹配。<span class="ex"><code>=MATCH("Léa", C1:C5, 0)</code> → <code>3</code></span></td></tr>
+<tr id="INDEX"><td><code><strong>INDEX</strong>(陣列, 行號, 列號)</code></td><td>按位置取範圍的儲存格或清單的元素。<span class="ex"><code>=INDEX(A1:A5, MATCH("Léa", C1:C5, 0))</code> → <code>8</code></span></td></tr>
+<tr id="CHOOSE"><td><code><strong>CHOOSE</strong>(索引號, 值1, [值2, …])</code></td><td>基於索引返回選項清單中的元素。<span class="ex"><code>=CHOOSE(2, "a", "b", "c")</code> → <code>b</code></span></td></tr>
+<tr id="ROW"><td><code><strong>ROW</strong>([儲存格引用])</code></td><td>返回指定儲存格的行號<span class="ex"><code>=ROW(B7)</code> → <code>7</code></span></td></tr>
+<tr id="COLUMN"><td><code><strong>COLUMN</strong>([儲存格引用])</code></td><td>按照 `A=1` 的規則返回指定儲存格的列號。<span class="ex"><code>=COLUMN(B7)</code> → <code>2</code></span></td></tr>
+<tr id="ROWS"><td><code><strong>ROWS</strong>(陣列)</code></td><td>返回指定數組或範圍中的行數。<span class="ex"><code>=ROWS(A1:C5)</code> → <code>5</code></span></td></tr>
+<tr id="COLUMNS"><td><code><strong>COLUMNS</strong>(陣列)</code></td><td>返回指定數組或範圍中的列數。<span class="ex"><code>=COLUMNS(A1:C5)</code> → <code>3</code></span></td></tr>
+<tr id="TRANSPOSE"><td><code><strong>TRANSPOSE</strong>(陣列)</code></td><td>欄列互換；結果是一個儲存格中的列清單。<span class="ex"><code>=TRANSPOSE(F1:G2)</code> → <code>[[1, 3], [2, 4]]</code></span></td></tr>
+<tr id="FLATTEN"><td><code><strong>FLATTEN</strong>(範圍)</code></td><td>範圍的值按列排成的清單。<span class="ex"><code>=FLATTEN(F1:G2)</code> → <code>[1, 2, 3, 4]</code></span></td></tr>
+<tr id="UNIQUE"><td><code><strong>UNIQUE</strong>(值1, 值2, …)</code></td><td>去除重複的值的清單。<span class="ex"><code>=UNIQUE(1, 2, 2)</code> → <code>[1, 2]</code></span></td></tr>
+</tbody></table></div>
+<h2 id="text">文字</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="CONCATENATE"><td><code><strong>CONCATENATE</strong>(文字1, [文字2,..., …])</code></td><td>將兩個或多個文字字串聯接為一個字串。<span class="ex"><code>=CONCATENATE("成績：", A1)</code> → <code>成績：12</code></span></td></tr>
+<tr id="CONCAT"><td><code><strong>CONCAT</strong>(值1, 值2)</code></td><td>連接兩個文字。<span class="ex"><code>=CONCAT("a", "b")</code> → <code>ab</code></span></td></tr>
+<tr id="LEFT"><td><code><strong>LEFT</strong>(文字, 字元數)</code></td><td>從文字字串的第一個字元開始返回指定個數的字元。<span class="ex"><code>=LEFT("table", 3)</code> → <code>tab</code></span></td></tr>
+<tr id="RIGHT"><td><code><strong>RIGHT</strong>(文字, 字元數)</code></td><td>根據所指定的字元數返回文字字串中最後一個或多個字元。<span class="ex"><code>=RIGHT("table", 3)</code> → <code>ble</code></span></td></tr>
+<tr id="MID"><td><code><strong>MID</strong>(文字, 起始位置, 字元數)</code></td><td>返回文字字串中從指定位置開始的特定數目的字元。<span class="ex"><code>=MID("table", 2, 3)</code> → <code>abl</code></span></td></tr>
+<tr id="LEN"><td><code><strong>LEN</strong>(文字)</code></td><td>返回給定字串的長度。<span class="ex"><code>=LEN("table")</code> → <code>5</code></span></td></tr>
+<tr id="LOWER"><td><code><strong>LOWER</strong>(文字)</code></td><td>將指定字串中的字母轉換為小寫。<span class="ex"><code>=LOWER("ABC")</code> → <code>abc</code></span></td></tr>
+<tr id="UPPER"><td><code><strong>UPPER</strong>(文字)</code></td><td>將指定字串中的字母轉換為大寫。<span class="ex"><code>=UPPER("abc")</code> → <code>ABC</code></span></td></tr>
+<tr id="PROPER"><td><code><strong>PROPER</strong>(文字)</code></td><td>將指定字串中每個單詞的首字母轉為大寫。<span class="ex"><code>=PROPER("john smith")</code> → <code>John Smith</code></span></td></tr>
+<tr id="TRIM"><td><code><strong>TRIM</strong>(文字)</code></td><td>删除指定字串前後的空格。<span class="ex"><code>=TRIM(" a  b ")</code> → <code>a b</code></span></td></tr>
+<tr id="CLEAN"><td><code><strong>CLEAN</strong>(文字)</code></td><td>移除文字中的不可列印ASCII字元後將其返回。<span class="ex"><code>=CLEAN("abc")</code> → <code>abc</code></span></td></tr>
+<tr id="FIND"><td><code><strong>FIND</strong>(尋找文字, 搜尋範圍文字, [起始位置])</code></td><td>返回字串在文字中首次出現的位置（區分大小寫）。<span class="ex"><code>=FIND("b", "table")</code> → <code>3</code></span></td></tr>
+<tr id="SEARCH"><td><code><strong>SEARCH</strong>(尋找文字, 搜尋範圍文字, 起始位置)</code></td><td>返回字串在文字中首次出現的位置（不區分大小寫）。<span class="ex"><code>=SEARCH("B", "table")</code> → <code>3</code></span></td></tr>
+<tr id="REPLACE"><td><code><strong>REPLACE</strong>(原文字, 起始位置, 字元數, 新文字)</code></td><td>將文字字串的一部分替換為其他文字字串。<span class="ex"><code>=REPLACE("table", 1, 5, "X")</code> → <code>X</code></span></td></tr>
+<tr id="SUBSTITUTE"><td><code><strong>SUBSTITUTE</strong>(文字, 原文字, 新文字, 實例編號)</code></td><td>在文字字串中用new_text替換old_text。<span class="ex"><code>=SUBSTITUTE("a-b-c", "-", "+")</code> → <code>a+b+c</code></span></td></tr>
+<tr id="REPT"><td><code><strong>REPT</strong>(文字, 重複次數)</code></td><td>返回指定文字的多次重複。<span class="ex"><code>=REPT("ab", 3)</code> → <code>ababab</code></span></td></tr>
+<tr id="EXACT"><td><code><strong>EXACT</strong>(文字1, 文字2)</code></td><td>比較兩個字串是否相同。<span class="ex"><code>=EXACT("a", "A")</code> → <code>FALSE</code></span></td></tr>
+<tr id="SPLIT"><td><code><strong>SPLIT</strong>(文字, 分隔符)</code></td><td>將文字拆分為清單。<span class="ex"><code>=SPLIT("a-b", "-")</code> → <code>[a, b]</code></span></td></tr>
+<tr id="VALUE"><td><code><strong>VALUE</strong>(文字)</code></td><td>文字中以小數點書寫的數字。<span class="ex"><code>=VALUE("12")</code> → <code>12</code></span></td></tr>
+<tr id="CHAR"><td><code><strong>CHAR</strong>(數字)</code></td><td>按照當前Unicode編碼表,將數位轉換為對應的字元。<span class="ex"><code>=CHAR(65)</code> → <code>A</code></span></td></tr>
+<tr id="CODE"><td><code><strong>CODE</strong>(文字)</code></td><td>返回所提供的字串中首字元的Unicode映射值。<span class="ex"><code>=CODE("A")</code> → <code>65</code></span></td></tr>
+<tr id="UNICHAR"><td><code><strong>UNICHAR</strong>(代碼)</code></td><td>Unicode 代碼對應的字元。<span class="ex"><code>=UNICHAR(960)</code> → <code>π</code></span></td></tr>
+<tr id="UNICODE"><td><code><strong>UNICODE</strong>(文字)</code></td><td>第一個字元的 Unicode 代碼。<span class="ex"><code>=UNICODE("π")</code> → <code>960</code></span></td></tr>
+<tr id="REGEXMATCH"><td><code><strong>REGEXMATCH</strong>(文字, 正規表示式)</code></td><td>判斷一段文字是否與規則運算式相匹配。<span class="ex"><code>=REGEXMATCH("abc", "b")</code> → <code>TRUE</code></span></td></tr>
+<tr id="REGEXEXTRACT"><td><code><strong>REGEXEXTRACT</strong>(文字, 正規表示式)</code></td><td>按照規則運算式選取匹配的子串。<span class="ex"><code>=REGEXEXTRACT("ab12", "[0-9]+")</code> → <code>12</code></span></td></tr>
+<tr id="REGEXREPLACE"><td><code><strong>REGEXREPLACE</strong>(文字, 正規表示式, 取代文字)</code></td><td>使用規則運算式將文字字串中的一部分替換為其他文字字串。<span class="ex"><code>=REGEXREPLACE("ab12", "[0-9]+", "x")</code> → <code>abx</code></span></td></tr>
+</tbody></table></div>
+<h2 id="date">日期與時間</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="TODAY"><td><code><strong>TODAY</strong>()</code></td><td>今天的日期。要用它計算，請放在儲存格中。<span class="ex"><code>=TODAY()</code></span></td></tr>
+<tr id="NOW"><td><code><strong>NOW</strong>()</code></td><td>日期和時間，每次更改時重新計算。<span class="ex"><code>=NOW()</code></span></td></tr>
+<tr id="DATE"><td><code><strong>DATE</strong>(年, 月, 日)</code></td><td>由年、月、日構成的日期；請給儲存格設定日期格式。<span class="ex"><code>=DATE(2026, 11, 25)</code> → <code>46351</code></span></td></tr>
+<tr id="YEAR"><td><code><strong>YEAR</strong>(日期序號)</code></td><td>返回對應於某個日期的年份。Year作為 1900 - 9999 之間的整數返回。<span class="ex"><code>=YEAR(DATE(2026, 11, 25))</code> → <code>2026</code></span></td></tr>
+<tr id="MONTH"><td><code><strong>MONTH</strong>(日期序號)</code></td><td>返回日期（以序列數表示）中的月份。月份是介於1（一月）到12（十二月）之間的整數。<span class="ex"><code>=MONTH(DATE(2026, 11, 25))</code> → <code>11</code></span></td></tr>
+<tr id="DAY"><td><code><strong>DAY</strong>(日期序號)</code></td><td>以數位格式返回特定日期所在的當月幾號。<span class="ex"><code>=DAY(DATE(2026, 11, 25))</code> → <code>25</code></span></td></tr>
+<tr id="WEEKDAY"><td><code><strong>WEEKDAY</strong>(日期序號, [返回類型])</code></td><td>星期幾；類型為 2 時，從 1（星期一）到 7（星期日）。<span class="ex"><code>=WEEKDAY(DATE(2026, 11, 25), 2)</code> → <code>3</code></span></td></tr>
+<tr id="WEEKNUM"><td><code><strong>WEEKNUM</strong>(日期序號, [返回類型])</code></td><td>返回特定日期的周數。<span class="ex"><code>=WEEKNUM(DATE(2026, 11, 25))</code> → <code>48</code></span></td></tr>
+<tr id="ISOWEEKNUM"><td><code><strong>ISOWEEKNUM</strong>(日期)</code></td><td>返回給定日期在全年中的 ISO 周數。<span class="ex"><code>=ISOWEEKNUM(DATE(2026, 11, 25))</code> → <code>48</code></span></td></tr>
+<tr id="DAYS"><td><code><strong>DAYS</strong>(結束日期, 起始日期)</code></td><td>返回兩個日期之間的天數。<span class="ex"><code>=DAYS(DATE(2026, 12, 25), DATE(2026, 11, 25))</code> → <code>30</code></span></td></tr>
+<tr id="DAYS360"><td><code><strong>DAYS360</strong>(起始日期, 結束日期, [方法])</code></td><td>按照每年360天,返回兩個日期之間的差（用於計算利息）。<span class="ex"><code>=DAYS360(DATE(2026, 1, 1), DATE(2026, 11, 25))</code> → <code>324</code></span></td></tr>
+<tr id="DATEDIF"><td><code><strong>DATEDIF</strong>(起始日期, 結束日期, 組織)</code></td><td>兩個日期之間的時長，以年（"Y"）、月（"M"）或日（"D"）計。<span class="ex"><code>=DATEDIF(DATE(2020, 1, 1), DATE(2026, 11, 25), "Y")</code> → <code>6</code></span></td></tr>
+<tr id="YEARFRAC"><td><code><strong>YEARFRAC</strong>(起始日期, 結束日期, [日計數基準])</code></td><td>返回 start_date 和 end_date 之間的天數占全年天數的百分比。<span class="ex"><code>=YEARFRAC(DATE(2026, 1, 1), DATE(2026, 7, 1))</code> → <code>0.5</code></span></td></tr>
+<tr id="EDATE"><td><code><strong>EDATE</strong>(起始日期, 月數)</code></td><td>返回表示某個日期的序號<span class="ex"><code>=EDATE(DATE(2026, 11, 25), 2)</code> → <code>46412</code></span></td></tr>
+<tr id="EOMONTH"><td><code><strong>EOMONTH</strong>(起始日期, 月數)</code></td><td>返回某個月份最後一天的序號<span class="ex"><code>=EOMONTH(DATE(2026, 2, 1), 0)</code> → <code>46081</code></span></td></tr>
+<tr id="WORKDAY"><td><code><strong>WORKDAY</strong>(起始日期, 天數, [節假日])</code></td><td>指定工作日天數,計算結束日期。<span class="ex"><code>=WORKDAY(DATE(2026, 11, 25), 10)</code> → <code>46365</code></span></td></tr>
+<tr id="NETWORKDAYS"><td><code><strong>NETWORKDAYS</strong>(起始日期, 結束日期, [節假日])</code></td><td>返回所提供的兩個日期之間的淨工作日天數。<span class="ex"><code>=NETWORKDAYS(DATE(2026, 11, 25), DATE(2026, 12, 9))</code> → <code>11</code></span></td></tr>
+<tr id="TIME"><td><code><strong>TIME</strong>(小時, 分鐘, 秒)</code></td><td>時間，表示為一天的一部分；請給儲存格設定時間格式。<span class="ex"><code>=TIME(14, 30, 0)</code> → <code>0.604166667</code></span></td></tr>
+<tr id="HOUR"><td><code><strong>HOUR</strong>(時間)</code></td><td>時間的小時數。<span class="ex"><code>=HOUR(TIME(14, 30, 0))</code> → <code>14</code></span></td></tr>
+<tr id="MINUTE"><td><code><strong>MINUTE</strong>(時間)</code></td><td>時間的分鐘數。<span class="ex"><code>=MINUTE(TIME(14, 30, 0))</code> → <code>30</code></span></td></tr>
+<tr id="SECOND"><td><code><strong>SECOND</strong>(時間)</code></td><td>時間的秒數。<span class="ex"><code>=SECOND(TIME(14, 30, 12))</code> → <code>12</code></span></td></tr>
+</tbody></table></div>
+<h2 id="finance">財務</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="PMT"><td><code><strong>PMT</strong>(利率, 付款總期數, 現值, 未來值, 類型)</code></td><td>貸款的等額還款；本金記為負數。<span class="ex"><code>=PMT(0.02/12, 240, -100000)</code> → <code>505.883335045</code></span></td></tr>
+<tr id="IPMT"><td><code><strong>IPMT</strong>(利率, 期數, 付款總期數, 現值, 未來值, 類型)</code></td><td>基於固定利率及等額分期付款管道,返回給定期數內對投資的利息償還額。<span class="ex"><code>=IPMT(0.02/12, 1, 240, -100000)</code> → <code>166.666666667</code></span></td></tr>
+<tr id="PPMT"><td><code><strong>PPMT</strong>(利率, 期數, 付款總期數, 現值, [未來值], [類型])</code></td><td>返回根據定期固定付款和固定利率而定的投資在已知期間內的本金償付額。<span class="ex"><code>=PPMT(0.02/12, 1, 240, -100000)</code> → <code>339.216668378</code></span></td></tr>
+<tr id="CUMIPMT"><td><code><strong>CUMIPMT</strong>(利率, 付款總期數, 現值, 起始期數, 結束期數, 類型)</code></td><td>基於等額分期付款和固定利率,計算投資在一系列付款期內的累計利息。<span class="ex"><code>=CUMIPMT(0.02/12, 240, 100000, 1, 12, 0)</code> → <code>-1962.478087955</code></span></td></tr>
+<tr id="CUMPRINC"><td><code><strong>CUMPRINC</strong>(利率, 付款總期數, 現值, 起始期數, 結束期數, 類型)</code></td><td>基於等額分期付款和固定利率,計算投資在多個付款期內的累計本金償還額。<span class="ex"><code>=CUMPRINC(0.02/12, 240, 100000, 1, 12, 0)</code> → <code>-4108.121932587</code></span></td></tr>
+<tr id="PV"><td><code><strong>PV</strong>(利率, 付款總期數, 付款金額, [未來值], [類型])</code></td><td>基於等額分期付款和固定利率,計算年金投資的現值。<span class="ex"><code>=PV(0.02/12, 240, -500)</code> → <code>98837.017423279</code></span></td></tr>
+<tr id="FV"><td><code><strong>FV</strong>(利率, 付款總期數, 付款金額, 現值, 類型)</code></td><td>基於等額分期付款和固定利率,計算年金投資的未來價值。<span class="ex"><code>=FV(0.03, 10, -1000)</code> → <code>11463.879311471</code></span></td></tr>
+<tr id="FVSCHEDULE"><td><code><strong>FVSCHEDULE</strong>(現值, 利率表)</code></td><td>返回應用一系列複利率計算的初始本金的未來值。<span class="ex"><code>=FVSCHEDULE(1000, [0.1, 0.05])</code> → <code>1155</code></span></td></tr>
+<tr id="NPER"><td><code><strong>NPER</strong>(利率, 付款金額, 現值, [未來值], [類型])</code></td><td>基於固定利率及等額分期付款管道,返回某項投資的總期數。<span class="ex"><code>=NPER(0.01, -500, 10000)</code> → <code>22.425741878</code></span></td></tr>
+<tr id="RATE"><td><code><strong>RATE</strong>(付款總期數, 付款金額, 現值, [未來值], [類型], [預期利率])</code></td><td>返回年金每期的利率。<span class="ex"><code>=RATE(240, -505.88, 100000)</code> → <code>0.001666608</code></span></td></tr>
+<tr id="PDURATION"><td><code><strong>PDURATION</strong>(利率, 現值, 終值)</code></td><td>達到某值所需的期數。<span class="ex"><code>=PDURATION(0.05, 1000, 2000)</code> → <code>14.206699083</code></span></td></tr>
+<tr id="RRI"><td><code><strong>RRI</strong>(期數, 現值, 終值)</code></td><td>增長的等效利率。<span class="ex"><code>=RRI(10, 1000, 2000)</code> → <code>0.071773463</code></span></td></tr>
+<tr id="ISPMT"><td><code><strong>ISPMT</strong>(利率, 期, 期數, 本金)</code></td><td>等額本金貸款某期的利息。<span class="ex"><code>=ISPMT(0.1, 1, 3, 1000)</code> → <code>-66.666666667</code></span></td></tr>
+<tr id="NPV"><td><code><strong>NPV</strong>(利率, 值1, [值2,..., …])</code></td><td>使用貼現率和一系列未來支出（負值）和收益（正值）來計算一項投資的淨現值。<span class="ex"><code>=NPV(0.1, 60, 60)</code> → <code>104.132231405</code></span></td></tr>
+<tr id="XNPV"><td><code><strong>XNPV</strong>(利率, 數值陣列, 日期陣列)</code></td><td>返回一組現金流的淨現值,這些現金流不一定定期發生。<span class="ex"><code>=XNPV(0.1, [-100, 60, 60], [46000, 46100, 46400])</code> → <code>12.50275272</code></span></td></tr>
+<tr id="IRR"><td><code><strong>IRR</strong>(數值陣列, [預期利率])</code></td><td>返回由值中的數位表示的一系列現金流的內部收益率。 <span class="ex"><code>=IRR([-100, 60, 60])</code> → <code>0.130662386</code></span></td></tr>
+<tr id="MIRR"><td><code><strong>MIRR</strong>(數值陣列, 融資利率, 再投資收益率)</code></td><td>返回一系列定期現金流的修改後內部收益率。<span class="ex"><code>=MIRR([-100, 60, 60], 0.1, 0.12)</code> → <code>0.127829774</code></span></td></tr>
+<tr id="XIRR"><td><code><strong>XIRR</strong>(數值陣列, 日期陣列, [預期利率])</code></td><td>返回一組不一定定期發生的現金流的內部收益率。<span class="ex"><code>=XIRR([-100, 60, 60], [46000, 46100, 46400])</code> → <code>0.317227411</code></span></td></tr>
+<tr id="EFFECT"><td><code><strong>EFFECT</strong>(名義利率, 複利計算期數)</code></td><td>根據名義利率及每年的複利計息期數來計算實際年利率。<span class="ex"><code>=EFFECT(0.12, 12)</code> → <code>0.12682503</code></span></td></tr>
+<tr id="NOMINAL"><td><code><strong>NOMINAL</strong>(實際利率, 複利計算期數)</code></td><td>基於給定的實際利率和年複利期數,返回名義年利率。<span class="ex"><code>=NOMINAL(0.1268, 12)</code> → <code>0.119977565</code></span></td></tr>
+<tr id="SLN"><td><code><strong>SLN</strong>(成本, 殘值, 使用壽命)</code></td><td>返回一個期間內的資產的直線折舊。<span class="ex"><code>=SLN(10000, 1000, 5)</code> → <code>1800</code></span></td></tr>
+<tr id="SYD"><td><code><strong>SYD</strong>(成本, 殘值, 使用壽命, 折舊期)</code></td><td>返回在指定期間內資產按年限總和折舊法計算的折舊。<span class="ex"><code>=SYD(10000, 1000, 5, 1)</code> → <code>3000</code></span></td></tr>
+<tr id="DB"><td><code><strong>DB</strong>(成本, 殘值, 使用壽命, 折舊期, 月)</code></td><td>使用固定餘額遞減法,返回指定期間內某項固定資產的折舊值。<span class="ex"><code>=DB(10000, 1000, 5, 1)</code> → <code>3690</code></span></td></tr>
+<tr id="DDB"><td><code><strong>DDB</strong>(成本, 殘值, 使用壽命, 折舊期, 折舊係數)</code></td><td>用雙倍餘額遞減法,返回指定期間內某項固定資產的折舊值。<span class="ex"><code>=DDB(10000, 1000, 5, 1)</code> → <code>4000</code></span></td></tr>
+<tr id="DOLLARDE"><td><code><strong>DOLLARDE</strong>(分數價格, 分母)</code></td><td>將以整數部分和分數部分轉換為以小數部分表示的金額數位<span class="ex"><code>=DOLLARDE(1.02, 16)</code> → <code>1.125</code></span></td></tr>
+<tr id="DOLLARFR"><td><code><strong>DOLLARFR</strong>(小數價格, 分母)</code></td><td>將小數轉換為分數表示的金額數位。<span class="ex"><code>=DOLLARFR(1.125, 16)</code> → <code>1.02</code></span></td></tr>
+<tr id="TBILLEQ"><td><code><strong>TBILLEQ</strong>(結算日, 到期日, 貼現率)</code></td><td>基於貼現率計算美國政府短期債券的等效年化收益率。<span class="ex"><code>=TBILLEQ(46000, 46100, 0.05)</code> → <code>0.051408451</code></span></td></tr>
+<tr id="TBILLPRICE"><td><code><strong>TBILLPRICE</strong>(結算日, 到期日, 貼現率)</code></td><td>基於貼現率計算美國政府短期債券的價格。<span class="ex"><code>=TBILLPRICE(46000, 46100, 0.05)</code> → <code>98.611111111</code></span></td></tr>
+<tr id="TBILLYIELD"><td><code><strong>TBILLYIELD</strong>(結算日, 到期日, 購買價格)</code></td><td>基於價格計算美國政府短期債券的收益率。<span class="ex"><code>=TBILLYIELD(46000, 46100, 98)</code> → <code>0.073469388</code></span></td></tr>
+</tbody></table></div>
+<h2 id="engineering">進位制、單位、特殊函數</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="BIN2DEC"><td><code><strong>BIN2DEC</strong>(數字)</code></td><td>將二進位數轉換為十進位數。<span class="ex"><code>=BIN2DEC("1010")</code> → <code>10</code></span></td></tr>
+<tr id="BIN2HEX"><td><code><strong>BIN2HEX</strong>(數字, [有效位數])</code></td><td>將二進位數轉換為十六進位數。<span class="ex"><code>=BIN2HEX("1010")</code> → <code>a</code></span></td></tr>
+<tr id="BIN2OCT"><td><code><strong>BIN2OCT</strong>(數字, [有效位數])</code></td><td>二進位數轉換為八進制數。<span class="ex"><code>=BIN2OCT("1010")</code> → <code>12</code></span></td></tr>
+<tr id="DEC2BIN"><td><code><strong>DEC2BIN</strong>(數字, [有效位數])</code></td><td>將十進位數轉換為二進位數。<span class="ex"><code>=DEC2BIN(10)</code> → <code>1010</code></span></td></tr>
+<tr id="DEC2HEX"><td><code><strong>DEC2HEX</strong>(數字, [有效位數])</code></td><td>將十進位數轉換為十六進位數。<span class="ex"><code>=DEC2HEX(255)</code> → <code>ff</code></span></td></tr>
+<tr id="DEC2OCT"><td><code><strong>DEC2OCT</strong>(數字, [有效位數])</code></td><td>將十進位數轉換為八進制數。<span class="ex"><code>=DEC2OCT(8)</code> → <code>10</code></span></td></tr>
+<tr id="HEX2BIN"><td><code><strong>HEX2BIN</strong>(數字, [有效位數])</code></td><td>將十六進位數轉換為二進位數。<span class="ex"><code>=HEX2BIN("F")</code> → <code>1111</code></span></td></tr>
+<tr id="HEX2DEC"><td><code><strong>HEX2DEC</strong>(數字)</code></td><td>將十六進位數轉換為十進位數。<span class="ex"><code>=HEX2DEC("FF")</code> → <code>255</code></span></td></tr>
+<tr id="HEX2OCT"><td><code><strong>HEX2OCT</strong>(數字, [有效位數])</code></td><td>將十六進位數轉換為八進制數。<span class="ex"><code>=HEX2OCT("F")</code> → <code>17</code></span></td></tr>
+<tr id="OCT2BIN"><td><code><strong>OCT2BIN</strong>(數字, [有效位數])</code></td><td>將八進制數轉換為二進位數。<span class="ex"><code>=OCT2BIN("7")</code> → <code>111</code></span></td></tr>
+<tr id="OCT2DEC"><td><code><strong>OCT2DEC</strong>(數字)</code></td><td>將八進制數轉換為十進位數。<span class="ex"><code>=OCT2DEC("17")</code> → <code>15</code></span></td></tr>
+<tr id="OCT2HEX"><td><code><strong>OCT2HEX</strong>(數字, [有效位數])</code></td><td>將八進制數轉換為十六進位數。<span class="ex"><code>=OCT2HEX("17")</code> → <code>f</code></span></td></tr>
+<tr id="BITAND"><td><code><strong>BITAND</strong>(a, b)</code></td><td>按位與。<span class="ex"><code>=BITAND(6, 3)</code> → <code>2</code></span></td></tr>
+<tr id="BITOR"><td><code><strong>BITOR</strong>(a, b)</code></td><td>按位或。<span class="ex"><code>=BITOR(6, 3)</code> → <code>7</code></span></td></tr>
+<tr id="BITXOR"><td><code><strong>BITXOR</strong>(a, b)</code></td><td>按位異或。<span class="ex"><code>=BITXOR(6, 3)</code> → <code>5</code></span></td></tr>
+<tr id="BITLSHIFT"><td><code><strong>BITLSHIFT</strong>(數值, 位移)</code></td><td>位左移。<span class="ex"><code>=BITLSHIFT(1, 4)</code> → <code>16</code></span></td></tr>
+<tr id="BITRSHIFT"><td><code><strong>BITRSHIFT</strong>(數值, 位移)</code></td><td>位右移。<span class="ex"><code>=BITRSHIFT(16, 4)</code> → <code>1</code></span></td></tr>
+<tr id="CONVERT"><td><code><strong>CONVERT</strong>(數字, 原單位, 目標單位)</code></td><td>單位換算："m"、"km"、"mi"、"hr"、"mn"、"kg"… 不換算溫度。<span class="ex"><code>=CONVERT(1, "mi", "km")</code> → <code>1.609344</code></span></td></tr>
+<tr id="DELTA"><td><code><strong>DELTA</strong>(數字1, [數字2])</code></td><td>檢驗兩個值是否相等。如果 number1=number2,則返回1；否則返回0。<span class="ex"><code>=DELTA(3, 3)</code> → <code>1</code></span></td></tr>
+<tr id="GESTEP"><td><code><strong>GESTEP</strong>(數值, 閾值)</code></td><td>數值達到閾值時為 1，否則為 0。<span class="ex"><code>=GESTEP(5, 4)</code> → <code>1</code></span></td></tr>
+<tr id="ERF"><td><code><strong>ERF</strong>(x)</code></td><td>高斯誤差函數。<span class="ex"><code>=ERF(1)</code> → <code>0.842700793</code></span></td></tr>
+<tr id="ERFC"><td><code><strong>ERFC</strong>(z)</code></td><td>返回數值的互補高斯誤差函數。<span class="ex"><code>=ERFC(1)</code> → <code>0.157299207</code></span></td></tr>
+<tr id="BESSELJ"><td><code><strong>BESSELJ</strong>(x, n)</code></td><td>貝索函數 Jₙ。<span class="ex"><code>=BESSELJ(1, 0)</code> → <code>0.765197684</code></span></td></tr>
+<tr id="BESSELY"><td><code><strong>BESSELY</strong>(x, n)</code></td><td>貝索函數 Yₙ。<span class="ex"><code>=BESSELY(1, 0)</code> → <code>0.088256971</code></span></td></tr>
+<tr id="BESSELI"><td><code><strong>BESSELI</strong>(x, n)</code></td><td>修正貝索函數 Iₙ。<span class="ex"><code>=BESSELI(1, 0)</code> → <code>1.266065848</code></span></td></tr>
+<tr id="BESSELK"><td><code><strong>BESSELK</strong>(x, n)</code></td><td>修正貝索函數 Kₙ。<span class="ex"><code>=BESSELK(1, 0)</code> → <code>0.421024421</code></span></td></tr>
+</tbody></table></div>
+<h2 id="complex">文字形式的複數</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="COMPLEX"><td><code><strong>COMPLEX</strong>(實係數, 虛係數, [尾碼])</code></td><td>將實係數及虛係數轉換為 x+yi 或 x+yj 形式的複數。<span class="ex"><code>=COMPLEX(3, 4)</code> → <code>3+4i</code></span></td></tr>
+<tr id="IMREAL"><td><code><strong>IMREAL</strong>(複數)</code></td><td>返回以 x+yi 或 x+yj 文本格式表示的複數的實係數。<span class="ex"><code>=IMREAL("3+4i")</code> → <code>3</code></span></td></tr>
+<tr id="IMAGINARY"><td><code><strong>IMAGINARY</strong>(複數)</code></td><td>返回以 x+yi 或 x+yj 文本格式表示的複數的虛係數。<span class="ex"><code>=IMAGINARY("3+4i")</code> → <code>4</code></span></td></tr>
+<tr id="IMABS"><td><code><strong>IMABS</strong>(複數)</code></td><td>返回以 x+yi 或 x+yj 文本格式表示的複數的絕對值（模）。<span class="ex"><code>=IMABS("3+4i")</code> → <code>5</code></span></td></tr>
+<tr id="IMARGUMENT"><td><code><strong>IMARGUMENT</strong>(複數)</code></td><td>輻角，以弧度表示。<span class="ex"><code>=IMARGUMENT("1+i")</code> → <code>0.785398163</code></span></td></tr>
+<tr id="IMCONJUGATE"><td><code><strong>IMCONJUGATE</strong>(複數)</code></td><td>返回以 x+yi 或 x+yj 文本格式表示的複數的共軛複數。<span class="ex"><code>=IMCONJUGATE("3+4i")</code> → <code>3-4i</code></span></td></tr>
+<tr id="IMSUM"><td><code><strong>IMSUM</strong>(複數1, [複數2,..., …])</code></td><td>返回以 x+yi 或 x+yj 文本格式表示的 1 至 255 個複數的和。<span class="ex"><code>=IMSUM("3+4i", "1+i")</code> → <code>4+5i</code></span></td></tr>
+<tr id="IMSUB"><td><code><strong>IMSUB</strong>(複數1, 複數2)</code></td><td>返回以 x+yi 或 x+yj 文本格式表示的兩個複數的差。<span class="ex"><code>=IMSUB("3+4i", "1+i")</code> → <code>2+3i</code></span></td></tr>
+<tr id="IMPRODUCT"><td><code><strong>IMPRODUCT</strong>(複數1, [複數2,..., …])</code></td><td>返回以 x+yi 或 x+yj 文本格式表示的 1 至 255 個複數的乘積。<span class="ex"><code>=IMPRODUCT("3+4i", "1+i")</code> → <code>-1+7i</code></span></td></tr>
+<tr id="IMDIV"><td><code><strong>IMDIV</strong>(複數1, 複數2)</code></td><td>返回以 x+yi 或 x+yj 文本格式表示的兩個複數的商。<span class="ex"><code>=IMDIV("3+4i", "1+i")</code> → <code>3.5+0.5i</code></span></td></tr>
+<tr id="IMPOWER"><td><code><strong>IMPOWER</strong>(複數, 指數)</code></td><td>複數的冪。<span class="ex"><code>=IMPOWER("3+4i", 2)</code> → <code>-6.999999999999998+24.000000000000004i</code></span></td></tr>
+<tr id="IMSQRT"><td><code><strong>IMSQRT</strong>(複數)</code></td><td>複數的平方根。<span class="ex"><code>=IMSQRT("3+4i")</code> → <code>2+i</code></span></td></tr>
+<tr id="IMEXP"><td><code><strong>IMEXP</strong>(複數)</code></td><td>複數的指數。<span class="ex"><code>=IMEXP("i")</code> → <code>0.5403023058681398+0.8414709848078965i</code></span></td></tr>
+<tr id="IMLN"><td><code><strong>IMLN</strong>(複數)</code></td><td>複數的自然對數。<span class="ex"><code>=IMLN("3+4i")</code> → <code>1.6094379124341003+0.9272952180016122i</code></span></td></tr>
+<tr id="IMLOG10"><td><code><strong>IMLOG10</strong>(複數)</code></td><td>複數的常用對數。<span class="ex"><code>=IMLOG10("3+4i")</code> → <code>0.6989700043360187+0.4027191962733731i</code></span></td></tr>
+<tr id="IMLOG2"><td><code><strong>IMLOG2</strong>(複數)</code></td><td>複數以 2 為底的對數。<span class="ex"><code>=IMLOG2("3+4i")</code> → <code>2.321928094887362+1.3378042124509761i</code></span></td></tr>
+<tr id="IMSIN"><td><code><strong>IMSIN</strong>(複數)</code></td><td>複數的正弦。<span class="ex"><code>=IMSIN("i")</code> → <code>1.1752011936438014i</code></span></td></tr>
+<tr id="IMCOS"><td><code><strong>IMCOS</strong>(複數)</code></td><td>複數的餘弦。<span class="ex"><code>=IMCOS("i")</code> → <code>1.5430806348152437</code></span></td></tr>
+<tr id="IMTAN"><td><code><strong>IMTAN</strong>(複數)</code></td><td>複數的正切。<span class="ex"><code>=IMTAN("i")</code> → <code>0.7615941559557649i</code></span></td></tr>
+</tbody></table></div>
+<h2 id="info">資訊</h2>
+<div class="table"><table class="functions"><thead><tr><th>函數</th><th>說明與範例</th></tr></thead><tbody>
+<tr id="ISNUMBER"><td><code><strong>ISNUMBER</strong>(數值)</code></td><td>檢查某個值是否為數位。<span class="ex"><code>=ISNUMBER(A1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISTEXT"><td><code><strong>ISTEXT</strong>(數值)</code></td><td>檢查某個值是否為文字。<span class="ex"><code>=ISTEXT(C1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISNONTEXT"><td><code><strong>ISNONTEXT</strong>(數值)</code></td><td>檢查某個值是否為非文字。<span class="ex"><code>=ISNONTEXT(A1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISLOGICAL"><td><code><strong>ISLOGICAL</strong>(數值)</code></td><td>檢查某個值是TRUE還是FALSE。<span class="ex"><code>=ISLOGICAL(TRUE())</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISERROR"><td><code><strong>ISERROR</strong>(數值)</code></td><td>值為函數錯誤（#N/A、#NUM!）時為真。<span class="ex"><code>=ISERROR(NA())</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISERR"><td><code><strong>ISERR</strong>(數值)</code></td><td>值為除 #N/A 以外的函數錯誤時為真。<span class="ex"><code>=ISERR(NA())</code> → <code>FALSE</code></span></td></tr>
+<tr id="ISNA"><td><code><strong>ISNA</strong>(數值)</code></td><td>值為錯誤 #N/A 時為真。<span class="ex"><code>=ISNA(NA())</code> → <code>TRUE</code></span></td></tr>
+<tr id="NA"><td><code><strong>NA</strong>()</code></td><td>錯誤 #N/A。<span class="ex"><code>=NA()</code> → <code>#N/A</code></span></td></tr>
+<tr id="TYPE"><td><code><strong>TYPE</strong>(數值)</code></td><td>值的類型：1 數字、2 文字、4 邏輯、16 錯誤、64 清單。<span class="ex"><code>=TYPE(5)</code> → <code>1</code></span></td></tr>
+</tbody></table></div>
+<h2 id="non-calculees">不計算的函數</h2>
+<p>DocCells 的自動完成和公式庫也列出了一些不計算的函數：它們得 <code>#NAME?</code> 或 <code>#ERROR!</code>。Excel 的新函數也是如此。</p>
+<div class="table"><table><thead><tr><th>不計算</th><th>替代方法</th></tr></thead><tbody>
+<tr><td><code>TEXT</code>、<code>FIXED</code>、<code>DOLLAR</code></td><td>儲存格的<a href="nombres.html">數值格式</a></td></tr>
+<tr><td><code>XLOOKUP</code>、<code>OFFSET</code>、<code>INDIRECT</code>、<code>ADDRESS</code></td><td><code>INDEX</code> 和 <code>MATCH</code>、<code>VLOOKUP</code>、<code>CHOOSE</code></td></tr>
+<tr><td><code>FILTER</code>、<code>SORT</code>、<code>SEQUENCE</code>、<code>LET</code>、<code>LAMBDA</code></td><td><a href="tri-filtre.html">排序和篩選</a>；<a href="selection.html#recopier">填滿</a>公式</td></tr>
+<tr><td><code>MAXIFS</code>、<code>MINIFS</code>、<code>TEXTJOIN</code></td><td>篩選；<code>&amp;</code> 運算子</td></tr>
+<tr><td><code>MMULT</code>、<code>MDETERM</code>、<code>MINVERSE</code></td><td><code>SUMPRODUCT</code>，每個元素一個公式</td></tr>
+<tr><td><code>HYPERLINK</code></td><td><a href="images-liens.html#liens">插入連結</a></td></tr>
+<tr><td>Excel 中帶點的名稱：<code>RANK.EQ</code>、<code>VAR.S</code>、<code>NORM.DIST</code>…</td><td>不帶點的名稱或舊名稱：<code>RANK</code>、<code>VAR</code>、<code>NORMDIST</code></td></tr>
+<tr><td>資料庫函數（<code>DSUM</code>…）、票息與證券（<code>PRICE</code>、<code>COUPNUM</code>…）、<code>ISBLANK</code>、<code>CELL</code>、<code>ISFORMULA</code></td><td><code>SUMIFS</code>；空儲存格用 <code>=A1=""</code></td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

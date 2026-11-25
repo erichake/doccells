@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Excel compatibility — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Excel compatibility</h1>
+<p class="lead">DocCells reads and writes the Excel <code>.xlsx</code> format. The following is kept, both ways.</p>
+<h2 id="conserve">What is kept</h2>
+<div class="table"><table><thead><tr><th>Item</th><th>Remark</th></tr></thead><tbody>
+<tr><td>values, texts, dates, formulas</td><td>formulas are displayed in DocCells' language</td></tr>
+<tr><td><a href="nombres.html">number formats</a></td><td>including custom ones</td></tr>
+<tr><td>font, colors, alignment, rotation, wrapping</td><td></td></tr>
+<tr><td>borders, merged cells</td><td></td></tr>
+<tr><td>widths, heights, hidden rows and columns</td><td></td></tr>
+<tr><td><a href="lignes-colonnes.html#figer">frozen rows and columns</a>, gridlines</td><td></td></tr>
+<tr><td>several sheets</td><td></td></tr>
+<tr><td><a href="noms.html">named ranges</a></td><td></td></tr>
+<tr><td><a href="conditionnelle.html">conditional formatting</a></td><td>DocCells' rules, Excel's simple rules (comparison, text contained)</td></tr>
+<tr><td><a href="controles.html">checkboxes, drop-down lists</a></td><td></td></tr>
+<tr><td><a href="graphiques.html">charts</a></td><td>written as Excel charts; DocCells' are read back</td></tr>
+<tr><td><a href="images-liens.html">images</a></td><td></td></tr>
+<tr><td><a href="tri-filtre.html#filtrer">filters</a></td><td></td></tr>
+<tr><td><a href="protection.html">protection</a>, unlocked cells</td><td></td></tr>
+</tbody></table></div>
+<h2 id="perdu">What is not</h2>
+<div class="table"><table><thead><tr><th>Item</th><th>Becomes</th></tr></thead><tbody>
+<tr><td><a href="images-liens.html#liens">links</a></td><td>their text</td></tr>
+<tr><td><a href="listes.html">lists</a> in cells</td><td>a text, <code>[2, 1]</code></td></tr>
+<tr><td>sparklines of DocCells or Google Sheets</td><td>a <code>SPARKLINE</code> formula, read back by DocCells; unknown to Excel</td></tr>
+<tr><td>charts created in Excel</td><td>not kept</td></tr>
+<tr><td>pivot tables, macros, slicers, comments</td><td>not kept</td></tr>
+<tr><td>conditional formatting with color scales, bars, icons</td><td>not kept</td></tr>
+</tbody></table></div>
+<div class="tip"><p>Before replacing a complex Excel workbook, save it from DocCells under another name (<strong>Save as...</strong>).</p></div>
+<h2 id="listes">Lists</h2>
+<p>A list reopened from an <code>.xlsx</code> is a text: typing it again makes it a list. A list calculated by a formula is a list again when the formula is recalculated.</p>
+<h2 id="formules">Formulas</h2>
+<p>On opening, a formula generally keeps the result saved by Excel until one of its cells changes. A function <a href="fonctions.html#non-calculees">not computed by DocCells</a> then gives <code>#NAME?</code> or <code>#ERROR!</code>.</p>
+<h2 id="formats">Other formats</h2>
+<div class="table"><table><thead><tr><th>Format</th><th>How</th></tr></thead><tbody>
+<tr><td><code>.csv</code></td><td>open the file in a text editor, copy, paste in DocCells if the values are separated by tabs; otherwise, convert it to <code>.xlsx</code></td></tr>
+<tr><td><code>.ods</code>, <code>.xls</code></td><td>save them as <code>.xlsx</code> with LibreOffice or Excel</td></tr>
+<tr><td>Google Sheets</td><td><a href="partager.html#google">by its link</a>, or downloaded as <code>.xlsx</code></td></tr>
+<tr><td>PDF</td><td><a href="impression.html">print</a>, “Save as PDF”</td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

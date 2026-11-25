@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Πλαίσια ελέγχου, λίστες και ημερολόγιο — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Πλαίσια ελέγχου, λίστες και ημερολόγιο</h1>
+<figure><img src="img/controles.webp" alt="Πλαίσια ελέγχου, μια αναπτυσσόμενη λίστα και το ημερολόγιο μιας ημερομηνίας" width="1280" height="560" /></figure>
+<h2 id="cases">Πλαίσια ελέγχου</h2>
+<p>Επιλέξτε τα κελιά, <strong>Εισαγωγή › Πλαίσιο ελέγχου</strong>. Ένα κλικ σημειώνει ή ξεσημειώνει· το κελί έχει τιμή TRUE ή FALSE.</p>
+<pre><code>=IF(B2; "έγινε"; "απομένει")
+=SUMPRODUCT(B2:B6; C2:C6)
+=SUMPRODUCT(B2:B6; B2:B6)</code></pre>
+<p>Ο δεύτερος τύπος προσθέτει τις τιμές της στήλης C με σημειωμένο πλαίσιο· ο τρίτος μετρά τα σημειωμένα πλαίσια.</p>
+<h2 id="listes">Αναπτυσσόμενες λίστες</h2>
+<p>Επιλέξτε τα κελιά, <strong>Εισαγωγή › Αναπτυσσόμενη λίστα…</strong>.</p>
+<div class="table"><table><thead><tr><th>Πηγή</th><th>Περιεχόμενο</th></tr></thead><tbody>
+<tr><td><strong>Τιμές</strong></td><td>οι επιλογές, μία ανά πεδίο· <strong>Προσθήκη επιλογής</strong>· χωρίς κόμμα</td></tr>
+<tr><td><strong>Από περιοχή</strong></td><td>μια περιοχή με κελιά τις επιλογές: <code>Φύλλο2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>Μια περιοχή χωρίς <code>$</code> μετατοπίζεται από κελί σε κελί, όπως ένας συμπληρωμένος τύπος. Αν αλλάξουν τα κελιά της, οι επιλογές ακολουθούν.</p>
+<p>Το κελί δείχνει ένα βέλος· ένα κλικ ανοίγει τις επιλογές. Τιμή εκτός λίστας δεν γίνεται δεκτή.</p>
+<h2 id="calendrier">Ημερολόγιο</h2>
+<p>Διπλό κλικ σε κελί ημερομηνίας ανοίγει ημερολόγιο: επιλέξτε ημέρα, αλλάξτε μήνα με <strong><</strong> και <strong>></strong>, <strong>Σήμερα</strong> για τη σημερινή. Ανοίγει σε κάθε κελί με μορφή ημερομηνίας, και κενό, εκτός αν περιέχει τύπο ή είναι <a href="protection.html">κλειδωμένο</a>.</p>
+<div class="tip"><p>Για στήλη ημερομηνιών που συμπληρώνεται με το ημερολόγιο: επιλέξτε την και δώστε της τη μορφή <strong>Ημερομηνία</strong>.</p></div>
+<h2 id="retirer">Αφαίρεση</h2>
+<p>Το <kbd>Delete</kbd> αφαιρεί το πλαίσιο ή τη λίστα από το κελί, μαζί με την τιμή.</p>
+<p>Πλαίσια και λίστες αποθηκεύονται στο αρχείο Excel· τα πλαίσια είναι εκεί πλαίσια ελέγχου του Excel.</p>
+</main>
+</body>
+</html>

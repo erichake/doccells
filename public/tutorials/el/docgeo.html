@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Με το DocGeo — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Με το DocGeo</h1>
+<p class="lead">Το DocGeo, το λογισμικό δυναμικής γεωμετρίας του DocTools, περιέχει το DocCells: ένα φύλλο δίπλα σε ένα σχήμα, που διαβάζουν το ένα το άλλο.</p>
+<p>Στο DocGeo, το <strong>Αρχείο › Προβολή › Νέα προβολή υπολογιστικού φύλλου</strong> προσθέτει φύλλο δίπλα στο σχήμα· το <strong>Αρχείο › Καρτέλα › Νέα καρτέλα υπολογιστικού φύλλου</strong> το κάνει καρτέλα.</p>
+<h2 id="geo">Η συνάρτηση GEO</h2>
+<p>Σε ένα κελί, η <code>GEO</code> διαβάζει την τιμή ενός αντικειμένου του σχήματος, δοσμένου με το όνομά του σε εισαγωγικά.</p>
+<pre><code>=GEO("AB")
+=2*GEO("r")+1
+=GEO("'Σχήμα 1'!c")</code></pre>
+<ul>
+<li>Το κελί ακολουθεί το σχήμα όσο κινείται.</li>
+<li>Ένα σημείο διαβάζεται ως η <a href="listes.html">λίστα</a> των συντεταγμένων του: και το <code>=GEO("A")*2</code> είναι σημείο.</li>
+<li>Όσο γράφετε τύπο, κλικ σε αντικείμενο του σχήματος γράφει σε αυτόν <code>GEO</code> και το όνομά του.</li>
+<li>Ένα άγνωστο αντικείμενο δίνει <code>#N/A</code>. Εκτός DocGeo, η <code>GEO</code> δίνει πάντα <code>#N/A</code>.</li>
+<li>Η <code>GEO</code> έχει το ίδιο όνομα σε όλες τις γλώσσες.</li>
+</ul>
+<h2 id="figure">Το σχήμα διαβάζει τα κελιά</h2>
+<p>Σε τύπο του DocGeo, το <code>!B3</code> είναι κελί, το <code>!B2:B21</code> περιοχή.</p>
+<h2 id="differences">Διαφορές από το DocCells μόνο του</h2>
+<div class="table"><table><thead><tr><th>Στο DocGeo</th><th></th></tr></thead><tbody>
+<tr><td>Μενού και κουμπιά</td><td>στις γραμμές του DocGeo, όταν το φύλλο είναι ενεργό</td></tr>
+<tr><td>Αρχείο</td><td>του DocGeo: το φύλλο αποθηκεύεται στο <code>.dgo</code>, με λίστες και συνδέσμους</td></tr>
+<tr><td>Φύλλα</td><td>ένα ανά προβολή· πολλές καρτέλες υπολογιστικού φύλλου διαβάζουν η μία την άλλη</td></tr>
+<tr><td>Αναίρεση</td><td>το <kbd>Ctrl</kbd> <kbd>Z</kbd> στα κελιά αναιρεί μόνο τα κελιά</td></tr>
+</tbody></table></div>
+<p>Η σελίδα <a href="https://doctools.org/apps/docgeo/tutorials/el/tableur.html">Το υπολογιστικό φύλλο</a> του εγχειριδίου του DocGeo δίνει τις λεπτομέρειες.</p>
+</main>
+</body>
+</html>

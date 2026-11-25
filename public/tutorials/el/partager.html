@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Κοινοποίηση και ενσωμάτωση — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Κοινοποίηση και ενσωμάτωση</h1>
+<h2 id="url">Βιβλίο μέσω συνδέσμου</h2>
+<p>Το <code>?url=</code> ακολουθούμενο από τη διεύθυνση ενός αρχείου <code>.xlsx</code> στο διαδίκτυο το ανοίγει στο DocCells.</p>
+<pre><code>https://…/doccells/?url=https://example.org/marks.xlsx</code></pre>
+<p>Ο ιστότοπος του αρχείου πρέπει να επιτρέπει την ανάγνωση από άλλους (κεφαλίδα CORS)· ένα αρχείο δίπλα στο DocCells, στον ίδιο ιστότοπο, δεν έχει αυτόν τον περιορισμό. Καθένας ανοίγει το δικό του αντίγραφο: οι αλλαγές δεν επιστρέφουν στο αρχικό αρχείο.</p>
+<h2 id="google">Ένα Google Sheet</h2>
+<p>Γίνεται και με τη διεύθυνση ενός Google Sheet.</p>
+<pre><code>https://…/doccells/?url=https://docs.google.com/spreadsheets/d/…</code></pre>
+<ul>
+<li>Κοινοποιήστε το σε «Οποιονδήποτε διαθέτει τον σύνδεσμο».</li>
+<li>Το DocCells διαβάζει αντίγραφο σε μορφή Excel σε κάθε άνοιγμα: το έγγραφο Google δεν αλλάζει.</li>
+<li>Ο ιστότοπος του DocCells πρέπει να εκτελεί PHP· έως 25 MB.</li>
+</ul>
+<h2 id="options">Επιλογές της διεύθυνσης</h2>
+<div class="table"><table><thead><tr><th>Επιλογή</th><th>Αποτέλεσμα</th></tr></thead><tbody>
+<tr><td><code>url=…</code></td><td>ανοίγει βιβλίο ή Google Sheet</td></tr>
+<tr><td><code>mode=student</code></td><td><a href="protection.html#eleve">λειτουργία μαθητή</a></td></tr>
+<tr><td><code>lang=el</code></td><td>ορίζει τη γλώσσα: <code>de</code>, <code>el</code>, <code>en</code>, <code>es</code>, <code>fr</code>, <code>hi</code>, <code>it</code>, <code>nl</code>, <code>pt</code>, <code>ru</code>, <code>zh-CN</code>, <code>zh-TW</code></td></tr>
+</tbody></table></div>
+<p>Οι επιλογές γράφονται στη σειρά, χωρισμένες με <code>&amp;</code>: <code>?lang=el&amp;mode=student&amp;url=…</code>. Η πρώτη μπαίνει μετά το <code>?</code>.</p>
+<h2 id="integrer">Σε ιστοσελίδα</h2>
+<pre><code>&lt;iframe src="https://…/doccells/?url=https://example.org/marks.xlsx"
+    style="width:100%;height:500px;border:1px solid #ccc"&gt;&lt;/iframe&gt;</code></pre>
+<p>Σε πλαίσιο, το DocCells δεν έχει μενού, κουμπιά ανοίγματος και αποθήκευσης, ούτε αντίγραφο ανάκτησης: δείχνει τη γραμμή κουμπιών, τη γραμμή τύπων και το φύλλο.</p>
+<h2 id="programme">Με πρόγραμμα</h2>
+<p>Μια σελίδα μπορεί να οδηγεί το DocCells: να φορτώνει βιβλίο, να διαβάζει και να γράφει κελιά, να παρακολουθεί τις τιμές τους. Η επιλογή <code>embed</code> ανοίγει αυτή τη λειτουργία· περιγράφεται, για προγραμματιστές, στο αρχείο <a href="https://github.com/erichake/doccells/blob/main/EMBED.md">EMBED.md</a> του έργου (στα γαλλικά).</p>
+</main>
+</body>
+</html>

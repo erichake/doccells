@@ -1,0 +1,357 @@
+{
+    "de": {
+        "name": "Deutsch",
+        "keys": {
+            "Ctrl": "Strg",
+            "Enter": "Eingabe",
+            "Shift": "Umschalt",
+            "Delete": "Entf"
+        },
+        "docgeo": {
+            "gView": "Ansicht",
+            "gSheetView": "Neue Tabellenansicht",
+            "gTab": "Tab",
+            "gSheetTab": "Neuer Tabellen-Tab"
+        },
+        "ui": {
+            "manual": "Handbuch",
+            "title": "DocCells-Handbuch",
+            "toc": "Inhaltsverzeichnis",
+            "search": "Im Handbuch suchen",
+            "ctrl": "Strg",
+            "editor": "DocCells öffnen",
+            "apps": "Anwendungen",
+            "language": "Sprache",
+            "onPage": "Auf dieser Seite",
+            "anchor": "Link zu diesem Abschnitt",
+            "pager": "Benachbarte Seiten",
+            "previous": "← Zurück",
+            "next": "Weiter →",
+            "empty": "Keine Ergebnisse für „%“.",
+            "server": "Die Volltextsuche setzt voraus, dass das Handbuch über einen Webserver geöffnet wird.",
+            "zoom": "Vergrößerter Screenshot",
+            "copy": "Kopieren"
+        }
+    },
+    "en": {
+        "name": "English",
+        "keys": {},
+        "docgeo": {
+            "gView": "View",
+            "gSheetView": "New spreadsheet view",
+            "gTab": "Tab",
+            "gSheetTab": "New spreadsheet tab"
+        },
+        "ui": {
+            "manual": "Manual",
+            "title": "DocCells manual",
+            "toc": "Contents",
+            "search": "Search the manual",
+            "editor": "Open DocCells",
+            "apps": "Applications",
+            "language": "Language",
+            "onPage": "On this page",
+            "anchor": "Link to this section",
+            "pager": "Neighboring pages",
+            "previous": "← Previous",
+            "next": "Next →",
+            "empty": "No results for “%”.",
+            "server": "Searching the text requires the manual to be opened from a web server.",
+            "zoom": "Enlarged screenshot",
+            "copy": "Copy"
+        }
+    },
+    "es": {
+        "name": "Español",
+        "keys": {
+            "Enter": "Intro",
+            "Shift": "Mayús",
+            "Delete": "Supr"
+        },
+        "docgeo": {
+            "gView": "Vista",
+            "gSheetView": "Nueva vista de hoja de cálculo",
+            "gTab": "Pestaña",
+            "gSheetTab": "Nueva pestaña de hoja de cálculo"
+        },
+        "ui": {
+            "manual": "Manual",
+            "title": "Manual de DocCells",
+            "toc": "Índice",
+            "search": "Buscar en el manual",
+            "editor": "Abrir DocCells",
+            "apps": "Aplicaciones",
+            "language": "Idioma",
+            "onPage": "En esta página",
+            "anchor": "Enlace a esta sección",
+            "pager": "Páginas contiguas",
+            "previous": "← Anterior",
+            "next": "Siguiente →",
+            "empty": "Ningún resultado para «%».",
+            "server": "La búsqueda en el texto requiere abrir el manual desde un servidor web.",
+            "zoom": "Captura ampliada",
+            "copy": "Copiar"
+        }
+    },
+    "fr": {
+        "name": "Français",
+        "keys": {
+            "Enter": "Entrée",
+            "Shift": "Maj",
+            "Delete": "Suppr",
+            "Esc": "Échap"
+        },
+        "docgeo": {
+            "gView": "Vue",
+            "gSheetView": "Nouvelle vue tableur",
+            "gTab": "Onglet",
+            "gSheetTab": "Nouvel onglet tableur"
+        },
+        "ui": {
+            "manual": "Manuel",
+            "title": "Manuel DocCells",
+            "toc": "Table des matières",
+            "search": "Rechercher dans le manuel",
+            "editor": "Ouvrir DocCells",
+            "apps": "Applications",
+            "language": "Langue",
+            "onPage": "Sur cette page",
+            "anchor": "Lien vers cette section",
+            "pager": "Pages voisines",
+            "previous": "← Précédent",
+            "next": "Suivant →",
+            "empty": "Aucun résultat pour « % ».",
+            "server": "La recherche dans le texte demande que le manuel soit ouvert depuis un serveur web.",
+            "zoom": "Capture agrandie",
+            "copy": "Copier"
+        }
+    },
+    "el": {
+        "name": "Ελληνικά",
+        "keys": {},
+        "docgeo": {
+            "gView": "Προβολή",
+            "gSheetView": "Νέα προβολή υπολογιστικού φύλλου",
+            "gTab": "Καρτέλα",
+            "gSheetTab": "Νέα καρτέλα υπολογιστικού φύλλου"
+        },
+        "ui": {
+            "manual": "Εγχειρίδιο",
+            "title": "Εγχειρίδιο DocCells",
+            "toc": "Περιεχόμενα",
+            "search": "Αναζήτηση στο εγχειρίδιο",
+            "editor": "Άνοιγμα του DocCells",
+            "apps": "Εφαρμογές",
+            "language": "Γλώσσα",
+            "onPage": "Σε αυτή τη σελίδα",
+            "anchor": "Σύνδεσμος σε αυτή την ενότητα",
+            "pager": "Γειτονικές σελίδες",
+            "previous": "← Προηγούμενη",
+            "next": "Επόμενη →",
+            "empty": "Κανένα αποτέλεσμα για «%».",
+            "server": "Η αναζήτηση στο κείμενο απαιτεί να ανοίξει το εγχειρίδιο από διακομιστή ιστού.",
+            "zoom": "Μεγεθυμένο στιγμιότυπο",
+            "copy": "Αντιγραφή"
+        }
+    },
+    "it": {
+        "name": "Italiano",
+        "keys": {
+            "Enter": "Invio",
+            "Shift": "Maiusc",
+            "Delete": "Canc"
+        },
+        "docgeo": {
+            "gView": "Vista",
+            "gSheetView": "Nuova vista foglio di calcolo",
+            "gTab": "Scheda",
+            "gSheetTab": "Nuova scheda foglio di calcolo"
+        },
+        "ui": {
+            "manual": "Manuale",
+            "title": "Manuale di DocCells",
+            "toc": "Indice",
+            "search": "Cerca nel manuale",
+            "editor": "Apri DocCells",
+            "apps": "Applicazioni",
+            "language": "Lingua",
+            "onPage": "In questa pagina",
+            "anchor": "Link a questa sezione",
+            "pager": "Pagine vicine",
+            "previous": "← Precedente",
+            "next": "Successiva →",
+            "empty": "Nessun risultato per «%».",
+            "server": "La ricerca nel testo richiede che il manuale sia aperto da un server web.",
+            "zoom": "Schermata ingrandita",
+            "copy": "Copia"
+        }
+    },
+    "nl": {
+        "name": "Nederlands",
+        "keys": {},
+        "docgeo": {
+            "gView": "Weergave",
+            "gSheetView": "Nieuwe rekenbladweergave",
+            "gTab": "Tabblad",
+            "gSheetTab": "Nieuw rekenbladtabblad"
+        },
+        "ui": {
+            "manual": "Handleiding",
+            "title": "DocCells-handleiding",
+            "toc": "Inhoud",
+            "search": "Zoeken in de handleiding",
+            "editor": "DocCells openen",
+            "apps": "Toepassingen",
+            "language": "Taal",
+            "onPage": "Op deze pagina",
+            "anchor": "Link naar deze sectie",
+            "pager": "Naburige pagina’s",
+            "previous": "← Vorige",
+            "next": "Volgende →",
+            "empty": "Geen resultaten voor ‘%’.",
+            "server": "Zoeken in de tekst vereist dat de handleiding via een webserver wordt geopend.",
+            "zoom": "Vergrote schermafbeelding",
+            "copy": "Kopiëren"
+        }
+    },
+    "pt": {
+        "name": "Português",
+        "keys": {},
+        "docgeo": {
+            "gView": "Vista",
+            "gSheetView": "Nova vista de planilha",
+            "gTab": "Aba",
+            "gSheetTab": "Nova aba de planilha"
+        },
+        "ui": {
+            "manual": "Manual",
+            "title": "Manual do DocCells",
+            "toc": "Sumário",
+            "search": "Pesquisar no manual",
+            "editor": "Abrir o DocCells",
+            "apps": "Aplicativos",
+            "language": "Idioma",
+            "onPage": "Nesta página",
+            "anchor": "Link para esta seção",
+            "pager": "Páginas vizinhas",
+            "previous": "← Anterior",
+            "next": "Próxima →",
+            "empty": "Nenhum resultado para “%”.",
+            "server": "A pesquisa no texto exige que o manual seja aberto a partir de um servidor web.",
+            "zoom": "Captura ampliada",
+            "copy": "Copiar"
+        }
+    },
+    "ru": {
+        "name": "Русский",
+        "keys": {},
+        "docgeo": {
+            "gView": "View",
+            "gSheetView": "New spreadsheet view",
+            "gTab": "Tab",
+            "gSheetTab": "New spreadsheet tab"
+        },
+        "ui": {
+            "manual": "Руководство",
+            "title": "Руководство DocCells",
+            "toc": "Содержание",
+            "search": "Поиск в руководстве",
+            "editor": "Открыть DocCells",
+            "apps": "Приложения",
+            "language": "Язык",
+            "onPage": "На этой странице",
+            "anchor": "Ссылка на этот раздел",
+            "pager": "Соседние страницы",
+            "previous": "← Назад",
+            "next": "Далее →",
+            "empty": "Ничего не найдено по запросу «%».",
+            "server": "Для поиска по тексту руководство нужно открыть с веб-сервера.",
+            "zoom": "Увеличенный снимок",
+            "copy": "Копировать"
+        }
+    },
+    "hi": {
+        "name": "हिन्दी",
+        "keys": {},
+        "docgeo": {
+            "gView": "दृश्य",
+            "gSheetView": "नया स्प्रेडशीट दृश्य",
+            "gTab": "टैब",
+            "gSheetTab": "नया स्प्रेडशीट टैब"
+        },
+        "ui": {
+            "manual": "पुस्तिका",
+            "title": "DocCells पुस्तिका",
+            "toc": "विषय-सूची",
+            "search": "पुस्तिका में खोजें",
+            "editor": "DocCells खोलें",
+            "apps": "ऐप्लिकेशन",
+            "language": "भाषा",
+            "onPage": "इस पृष्ठ पर",
+            "anchor": "इस खंड का लिंक",
+            "pager": "आस-पास के पृष्ठ",
+            "previous": "← पिछला",
+            "next": "अगला →",
+            "empty": "“%” के लिए कोई परिणाम नहीं।",
+            "server": "पाठ में खोज के लिए पुस्तिका को किसी वेब सर्वर से खोलना आवश्यक है।",
+            "zoom": "बड़ा किया गया स्क्रीनशॉट",
+            "copy": "कॉपी करें"
+        }
+    },
+    "zh": {
+        "name": "中文",
+        "keys": {},
+        "docgeo": {
+            "gView": "视图",
+            "gSheetView": "新建电子表格视图",
+            "gTab": "标签页",
+            "gSheetTab": "新建电子表格标签页"
+        },
+        "ui": {
+            "manual": "手册",
+            "title": "DocCells 手册",
+            "toc": "目录",
+            "search": "搜索手册",
+            "editor": "打开 DocCells",
+            "apps": "应用",
+            "language": "语言",
+            "onPage": "本页内容",
+            "anchor": "链接到本节",
+            "pager": "相邻页面",
+            "previous": "← 上一页",
+            "next": "下一页 →",
+            "empty": "没有找到“%”的结果。",
+            "server": "全文搜索需要通过网页服务器打开手册。",
+            "zoom": "放大的截图",
+            "copy": "复制"
+        }
+    },
+    "zh-TW": {
+        "name": "繁體中文",
+        "keys": {},
+        "docgeo": {
+            "gView": "檢視",
+            "gSheetView": "新增試算表檢視",
+            "gTab": "分頁",
+            "gSheetTab": "新增試算表分頁"
+        },
+        "ui": {
+            "manual": "手冊",
+            "title": "DocCells 手冊",
+            "toc": "目錄",
+            "search": "搜尋手冊",
+            "editor": "開啟 DocCells",
+            "apps": "應用程式",
+            "language": "語言",
+            "onPage": "本頁內容",
+            "anchor": "連結到本節",
+            "pager": "相鄰頁面",
+            "previous": "← 上一頁",
+            "next": "下一頁 →",
+            "empty": "找不到「%」的結果。",
+            "server": "全文搜尋需要透過網頁伺服器開啟手冊。",
+            "zoom": "放大的截圖",
+            "copy": "複製"
+        }
+    }
+}

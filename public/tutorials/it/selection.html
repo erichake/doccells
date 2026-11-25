@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Selezionare, copiare, riempire — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Selezionare, copiare, riempire</h1>
+<h2 id="selectionner">Selezionare</h2>
+<div class="table"><table><thead><tr><th>Azione</th><th>Selezione</th></tr></thead><tbody>
+<tr><td>clic</td><td>una cella</td></tr>
+<tr><td>trascinare</td><td>un intervallo</td></tr>
+<tr><td>clic, poi <kbd>Maiusc</kbd> e clic</td><td>l’intervallo tra i due</td></tr>
+<tr><td><kbd>Maiusc</kbd> e freccia</td><td>estende l’intervallo</td></tr>
+<tr><td><kbd>Ctrl</kbd> e clic o trascinamento</td><td>un intervallo in più</td></tr>
+<tr><td>clic su una lettera, un numero</td><td>una colonna, una riga</td></tr>
+<tr><td>trascinare sulle lettere, sui numeri</td><td>più colonne, più righe</td></tr>
+<tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>tutto il foglio</td></tr>
+<tr><td>casella del nome, freccia</td><td>un <a href="noms.html">intervallo denominato</a></td></tr>
+</tbody></table></div>
+<p>L’indirizzo della selezione è nella casella del nome, a sinistra della barra della formula.</p>
+<h2 id="copier">Copiare, tagliare, incollare</h2>
+<p><kbd>Ctrl</kbd> <kbd>C</kbd>, <kbd>Ctrl</kbd> <kbd>X</kbd>, <kbd>Ctrl</kbd> <kbd>V</kbd>, o <strong>Copia</strong> e <strong>Incolla</strong> del clic destro.</p>
+<ul>
+<li><strong>Incolla</strong> del clic destro incolla i valori, senza le formule; <kbd>Ctrl</kbd> <kbd>V</kbd> incolla le formule.</li>
+<li>Una formula incollata segue il suo nuovo posto: <code>=B2</code> copiata una riga più in basso diventa <code>=B3</code>. Il segno <code>$</code> fissa una riga o una colonna (<a href="formules.html#references">riferimenti</a>).</li>
+<li>Una formula tagliata conserva i suoi riferimenti.</li>
+<li>Una tabella copiata da Excel, da Numbers, da una pagina web o da un testo separato da tabulazioni si incolla cella per cella; numeri con la virgola ed elenchi sono riconosciuti come alla tastiera.</li>
+<li>Non si tagliano né si incollano più intervalli insieme.</li>
+</ul>
+<h2 id="deplacer">Spostare</h2>
+<p>Trascinare il bordo della selezione: le celle si spostano, con la loro formattazione.</p>
+<h2 id="recopier">Riempire</h2>
+<p>Il quadratino blu, nell’angolo in basso a destra della selezione, si trascina in basso, in alto, a sinistra o a destra.</p>
+<div class="table"><table><thead><tr><th>Celle di partenza</th><th>Il quadratino dà</th></tr></thead><tbody>
+<tr><td>una formula</td><td>la formula, con i riferimenti spostati</td></tr>
+<tr><td>due numeri, 1 e 2</td><td>la serie: 3, 4, 5…</td></tr>
+<tr><td>un solo numero, testo o data</td><td>lo stesso valore</td></tr>
+<tr><td>due date</td><td>le date seguenti, con lo stesso passo</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="La serie 1, 2 proseguita con il quadratino" width="760" height="300" /></figure>
+<p>Senza mouse, o su un grande intervallo:</p>
+<div class="table"><table><thead><tr><th>Comando</th><th>Effetto</th></tr></thead><tbody>
+<tr><td><strong>Modifica › Riempi in basso</strong>, <kbd>Ctrl</kbd> <kbd>D</kbd></td><td>la prima riga dell’intervallo selezionato è copiata nelle seguenti</td></tr>
+<tr><td><strong>Modifica › Riempi a destra</strong>, <kbd>Ctrl</kbd> <kbd>R</kbd></td><td>la prima colonna è copiata nelle seguenti</td></tr>
+</tbody></table></div>
+<p>Se è selezionata una sola riga, <kbd>Ctrl</kbd> <kbd>D</kbd> vi copia quella sopra; se una sola colonna, <kbd>Ctrl</kbd> <kbd>R</kbd> vi copia quella a sinistra. Questi comandi copiano sempre, senza fare serie, con formati, bordi, caselle ed elenchi a discesa.</p>
+<div class="tip"><p>Per una formula in tutta una colonna: scriverla in alto, selezionare da quella cella all’ultima, <kbd>Ctrl</kbd> <kbd>D</kbd>.</p></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FAQ — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>FAQ</h1>
+<h2 id="saisie">Entry</h2>
+<h3>A date I typed is not recognized</h3>
+<p><code>11/25/2026</code> is a text for DocCells. Type <code>2026-11-25</code>, then choose the <strong>Date</strong> format (<a href="saisie.html#dates">dates</a>).</p>
+<h3>A number appears instead of a date</h3>
+<p>Dates are numbers of days: give the cells the <strong>Date</strong> format (<strong>Format › Number</strong>).</p>
+<h3>My numbers do not add up</h3>
+<p>Aligned left, they are texts. A unit typed in the cell, or a decimal comma, makes it a text (<a href="saisie.html#types">types</a>).</p>
+<h3>The zero at the beginning of a number disappears</h3>
+<p>Give the <strong>Plain text</strong> format before typing, or start with an apostrophe (<a href="saisie.html#textes">texts</a>).</p>
+<h3>Numbers expect a comma instead of a point</h3>
+<p>DocCells follows the browser's language. <code>?lang=en</code> sets it (<a href="demarrage.html#langue">language</a>).</p>
+<h2 id="formules">Formulas</h2>
+<h3><code>#NAME?</code> with TRUE or FALSE</h3>
+<p>Write <code>TRUE()</code> and <code>FALSE()</code>, or 1 and 0 (<a href="formules.html#conditions">conditions</a>).</p>
+<h3><code>#NAME?</code> with a function suggested by DocCells</h3>
+<p>Not all suggested functions are computed (<a href="fonctions.html#non-calculees">functions not computed</a>).</p>
+<h3>IFERROR lets DIV/0 through</h3>
+<p>Test the divisor: <code>=IF(B2, A2/B2, "")</code> (<a href="formules.html#erreurs">errors</a>).</p>
+<h3>Pasting does not keep my formulas</h3>
+<p><strong>Paste</strong> of the right-click menu pastes the values; <kbd>Ctrl</kbd> <kbd>V</kbd> pastes the formulas (<a href="selection.html#copier">copying</a>).</p>
+<h3>Writing the name of a month or formatting a number inside a text</h3>
+<p>The <code>TEXT</code> function is not computed: give a <a href="nombres.html">format</a> to a separate cell.</p>
+<h3>Counting the checked boxes</h3>
+<p><code>=SUMPRODUCT(B2:B6, B2:B6)</code> (<a href="controles.html#cases">checkboxes</a>).</p>
+<h3>TODAY()+1 gives #VALUE!</h3>
+<p>Put <code>=TODAY()</code> in a cell and add to that cell (<a href="formules.html#dates">dates</a>).</p>
+<h2 id="presentation">Presentation</h2>
+<h3>The color of a cell does not change</h3>
+<p>The cell is in the range of a <a href="conditionnelle.html#regles">conditional formatting</a> rule.</p>
+<h3>A button has disappeared</h3>
+<p>The window is narrow: it is behind <i data-i="more"></i>.</p>
+<h3>Sorting or filtering is refused</h3>
+<p>The range contains merged cells: unmerge them.</p>
+<h2 id="fichiers">Files</h2>
+<h3>Saving downloads a new file</h3>
+<p>This is the case in Firefox and Safari. Chrome and Edge write to the file (<a href="demarrage.html#enregistrer">saving</a>).</p>
+<h3>The page closed without saving</h3>
+<p>Open DocCells again in the same browser: it offers to restore the copy (<a href="demarrage.html#recuperer">recovering</a>).</p>
+<h3>My chart is not printed</h3>
+<p>Printing only shows the cells (<a href="impression.html">printing</a>).</p>
+<h3>A <code>?url=</code> link does not open my workbook</h3>
+<p>The file's site may refuse to be read by other sites. A Google Sheet must be shared by link (<a href="partager.html">sharing</a>).</p>
+<h3>My links have disappeared</h3>
+<p>They are not saved in the Excel format (<a href="excel.html#perdu">what is not kept</a>).</p>
+<h2 id="eleves">Students</h2>
+<h3>Can a student change the formulas?</h3>
+<p>Not in a protected workbook, outside the unlocked cells (<a href="protection.html">protecting</a>). Adding <code>mode=student</code> to the link removes the means of lifting the protection.</p>
+</main>
+</body>
+</html>

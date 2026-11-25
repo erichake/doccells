@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Защита — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Защита</h1>
+<p class="lead">Защищённую книгу можно изменять только в разблокированных ячейках: так готовят лист с заданием.</p>
+<h2 id="preparer">Подготовка листа для учеников</h2>
+<ol>
+<li>Выделить ячейки для заполнения, правая кнопка › <strong>Разблокировать ячейки</strong>.</li>
+<li><i data-i="protect"></i> или <strong>Инструменты › Защитить/снять защиту книги</strong>.</li>
+<li>Сохранить, затем <a href="partager.html">распространить файл или ссылку</a>.</li>
+</ol>
+<p>Вначале все ячейки заблокированы; блокировка действует только в защищённой книге. <strong>Заблокировать ячейки</strong> возвращает её.</p>
+<h2 id="effets">Что запрещает защита</h2>
+<div class="table"><table><thead><tr><th>В защищённой книге</th><th>Заблокированная ячейка</th><th>Разблокированная ячейка</th></tr></thead><tbody>
+<tr><td>ввод, стирание</td><td>нет</td><td>да</td></tr>
+<tr><td>календарь даты</td><td>нет</td><td>да</td></tr>
+<tr><td>ширина и высота</td><td>нет</td><td>нет</td></tr>
+<tr><td>чередующиеся цвета, вставка флажков и списков, заполнение из меню</td><td>нет</td><td>нет</td></tr>
+<tr><td>оформление, вставка строк и столбцов, диаграммы</td><td>да</td><td>да</td></tr>
+</tbody></table></div>
+<p>Защита действует на все листы. Она сохраняется в файле Excel вместе с разблокированными ячейками и читается DocCells и Excel.</p>
+<h2 id="eleve">Режим ученика</h2>
+<p><code>?mode=student</code> в адресе открывает DocCells без кнопки <i data-i="protect"></i> и без команд <strong>Разблокировать ячейки</strong> и <strong>Присвоить имя…</strong>; <strong>Защитить/снять защиту книги</strong> недоступна. Ученик не может снять защиту.</p>
+<pre><code>https://…/doccells/?mode=student&amp;url=https://…/zadanie.xlsx</code></pre>
+<div class="note"><p>Это защита без пароля: тот, кто откроет файл в другой программе или без <code>mode=student</code>, сможет её снять.</p></div>
+</main>
+</body>
+</html>

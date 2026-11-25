@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Protecting — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Protecting</h1>
+<p class="lead">A protected workbook can only be changed in its unlocked cells: this is how to prepare a worksheet.</p>
+<h2 id="preparer">Preparing a sheet for students</h2>
+<ol>
+<li>Select the cells to be filled in, right-click › <strong>Unlock cells</strong>.</li>
+<li><i data-i="protect"></i> or <strong>Tools › Protect / Unprotect workbook</strong>.</li>
+<li>Save, then <a href="partager.html">share the file or its link</a>.</li>
+</ol>
+<p>All cells are locked at first; locking only has an effect in a protected workbook. <strong>Lock cells</strong> reverts it.</p>
+<h2 id="effets">What protection blocks</h2>
+<div class="table"><table><thead><tr><th>In a protected workbook</th><th>Locked cell</th><th>Unlocked cell</th></tr></thead><tbody>
+<tr><td>typing, deleting</td><td>no</td><td>yes</td></tr>
+<tr><td>calendar of a date</td><td>no</td><td>yes</td></tr>
+<tr><td>widths and heights</td><td>no</td><td>no</td></tr>
+<tr><td>alternating colors, inserting checkboxes and lists, filling by menu</td><td>no</td><td>no</td></tr>
+<tr><td>formatting, inserting rows and columns, charts</td><td>yes</td><td>yes</td></tr>
+</tbody></table></div>
+<p>Protection covers all the sheets. It is saved in the Excel file, with the unlocked cells, and read back by DocCells and Excel.</p>
+<h2 id="eleve">Student mode</h2>
+<p><code>?mode=student</code> in the address opens DocCells without the <i data-i="protect"></i> button or the <strong>Unlock cells</strong> and <strong>Define name…</strong> commands; <strong>Protect / Unprotect workbook</strong> is grayed out. The student cannot remove the protection.</p>
+<pre><code>https://…/doccells/?mode=student&amp;url=https://…/exercise.xlsx</code></pre>
+<div class="note"><p>This is a protection of use, without a password: anyone who opens the file in another spreadsheet, or without <code>mode=student</code>, can remove it.</p></div>
+</main>
+</body>
+</html>

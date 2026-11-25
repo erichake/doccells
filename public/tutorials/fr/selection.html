@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sélectionner, copier, recopier — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Sélectionner, copier, recopier</h1>
+<h2 id="selectionner">Sélectionner</h2>
+<div class="table"><table><thead><tr><th>Action</th><th>Sélection</th></tr></thead><tbody>
+<tr><td>clic</td><td>une cellule</td></tr>
+<tr><td>glisser</td><td>une plage</td></tr>
+<tr><td>clic, puis <kbd>Maj</kbd> et clic</td><td>la plage entre les deux</td></tr>
+<tr><td><kbd>Maj</kbd> et flèche</td><td>agrandit la plage</td></tr>
+<tr><td><kbd>Ctrl</kbd> et clic ou glisser</td><td>une plage de plus</td></tr>
+<tr><td>clic sur une lettre, un numéro</td><td>une colonne, une ligne</td></tr>
+<tr><td>glisser sur les lettres, les numéros</td><td>plusieurs colonnes, plusieurs lignes</td></tr>
+<tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>toute la feuille</td></tr>
+<tr><td>zone de nom, flèche</td><td>une <a href="noms.html">plage nommée</a></td></tr>
+</tbody></table></div>
+<p>L’adresse de la sélection est dans la zone de nom, à gauche de la barre de formule.</p>
+<h2 id="copier">Copier, couper, coller</h2>
+<p><kbd>Ctrl</kbd> <kbd>C</kbd>, <kbd>Ctrl</kbd> <kbd>X</kbd>, <kbd>Ctrl</kbd> <kbd>V</kbd>, ou <strong>Copier</strong> et <strong>Coller</strong> du clic droit.</p>
+<ul>
+<li><strong>Coller</strong> du clic droit colle les valeurs, sans les formules ; <kbd>Ctrl</kbd> <kbd>V</kbd> colle les formules.</li>
+<li>Une formule collée suit sa nouvelle place : <code>=B2</code> copiée une ligne plus bas devient <code>=B3</code>. Le signe <code>$</code> fixe une ligne ou une colonne (<a href="formules.html#references">références</a>).</li>
+<li>Une formule coupée garde ses références.</li>
+<li>Un tableau copié d’Excel, de Numbers, d’une page web ou d’un texte séparé par des tabulations se colle cellule par cellule ; nombres à virgule et listes sont reconnus comme à la frappe.</li>
+<li>On ne coupe ni ne colle plusieurs plages à la fois.</li>
+</ul>
+<h2 id="deplacer">Déplacer</h2>
+<p>Tirer le bord de la sélection : les cellules se déplacent, avec leur mise en forme.</p>
+<h2 id="recopier">Recopier</h2>
+<p>La poignée bleue, au coin inférieur droit de la sélection, se tire vers le bas, le haut, la gauche ou la droite.</p>
+<div class="table"><table><thead><tr><th>Cellules de départ</th><th>La poignée donne</th></tr></thead><tbody>
+<tr><td>une formule</td><td>la formule, ses références décalées</td></tr>
+<tr><td>deux nombres, 1 et 2</td><td>la suite : 3, 4, 5…</td></tr>
+<tr><td>un nombre, un texte ou une date seuls</td><td>la même valeur</td></tr>
+<tr><td>deux dates</td><td>les dates suivantes, au même écart</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="La suite 1, 2 prolongée par la poignée" width="760" height="300" /></figure>
+<p>Sans la souris, ou sur une grande plage :</p>
+<div class="table"><table><thead><tr><th>Commande</th><th>Effet</th></tr></thead><tbody>
+<tr><td><strong>Édition › Recopier vers le bas</strong>, <kbd>Ctrl</kbd> <kbd>D</kbd></td><td>la première ligne de la plage sélectionnée est copiée dans les suivantes</td></tr>
+<tr><td><strong>Édition › Recopier à droite</strong>, <kbd>Ctrl</kbd> <kbd>R</kbd></td><td>la première colonne est copiée dans les suivantes</td></tr>
+</tbody></table></div>
+<p>Si une seule ligne est sélectionnée, <kbd>Ctrl</kbd> <kbd>D</kbd> y copie la ligne du dessus ; si une seule colonne l’est, <kbd>Ctrl</kbd> <kbd>R</kbd> y copie celle de gauche. Ces commandes copient toujours, sans faire de suite, avec formats, bordures, cases à cocher et listes déroulantes.</p>
+<div class="tip"><p>Pour une formule dans toute une colonne : la taper en haut, sélectionner de cette cellule à la dernière, <kbd>Ctrl</kbd> <kbd>D</kbd>.</p></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Met DocGeo — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Met DocGeo</h1>
+<p class="lead">DocGeo, de dynamische meetkundesoftware van DocTools, bevat DocCells: een blad naast een figuur, die elkaar lezen.</p>
+<p>In DocGeo voegt <strong>Bestand › Weergave › Nieuwe rekenbladweergave</strong> een blad naast de figuur toe; <strong>Bestand › Tabblad › Nieuw rekenbladtabblad</strong> maakt er een tabblad van.</p>
+<h2 id="geo">De functie GEO</h2>
+<p>In een cel leest <code>GEO</code> de waarde van een object van de figuur, aangeduid met zijn naam tussen aanhalingstekens.</p>
+<pre><code>=GEO("AB")
+=2*GEO("r")+1
+=GEO("'Figuur 1'!c")</code></pre>
+<ul>
+<li>De cel volgt de figuur terwijl die bewogen wordt.</li>
+<li>Een punt wordt gelezen als de <a href="listes.html">lijst</a> van zijn coördinaten: <code>=GEO("A")*2</code> is ook een punt.</li>
+<li>Tijdens het schrijven van een formule zet een klik op een object van de figuur er <code>GEO</code> en zijn naam in.</li>
+<li>Een onbekend object geeft <code>#N/A</code>. Buiten DocGeo geeft <code>GEO</code> altijd <code>#N/A</code>.</li>
+<li><code>GEO</code> heet in alle talen hetzelfde.</li>
+</ul>
+<h2 id="figure">De figuur leest de cellen</h2>
+<p>In een formule van DocGeo is <code>!B3</code> een cel, <code>!B2:B21</code> een bereik.</p>
+<h2 id="differences">Verschillen met DocCells alleen</h2>
+<div class="table"><table><thead><tr><th>In DocGeo</th><th></th></tr></thead><tbody>
+<tr><td>Menu’s en knoppen</td><td>in de balken van DocGeo, als het blad actief is</td></tr>
+<tr><td>Bestand</td><td>dat van DocGeo: het blad wordt in het <code>.dgo</code> opgeslagen, lijsten en links inbegrepen</td></tr>
+<tr><td>Bladen</td><td>één per weergave; meerdere rekenbladtabbladen lezen elkaar</td></tr>
+<tr><td>Ongedaan maken</td><td><kbd>Ctrl</kbd> <kbd>Z</kbd> in de cellen geldt alleen voor de cellen</td></tr>
+</tbody></table></div>
+<p>De pagina <a href="https://doctools.org/apps/docgeo/tutorials/nl/tableur.html">Het rekenblad</a> van de DocGeo-handleiding geeft de details.</p>
+</main>
+</body>
+</html>

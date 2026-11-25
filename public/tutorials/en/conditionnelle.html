@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Conditional formatting — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Conditional formatting</h1>
+<p class="lead">A rule changes the look of the cells of a range that meet a condition. It follows the values, typed or calculated.</p>
+<h2 id="creer">Creating a rule</h2>
+<ol>
+<li>Select the range, without its header.</li>
+<li><i data-i="conditional"></i> or <strong>Format › Conditional formatting</strong>.</li>
+<li>Choose the condition, the value to compare with, the colors or the style.</li>
+<li><strong>Add</strong>.</li>
+</ol>
+<figure><img src="img/conditionnelle.webp" alt="The conditional formatting window, with one rule applied" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Condition</th><th>The cell</th></tr></thead><tbody>
+<tr><td><code>&lt;</code></td><td>is less than</td></tr>
+<tr><td><code>&gt;</code></td><td>is greater than</td></tr>
+<tr><td><code>=</code></td><td>is equal to</td></tr>
+<tr><td><code>!=</code></td><td>is different from</td></tr>
+<tr><td><code>[]</code></td><td>is between two values, bounds included</td></tr>
+<tr><td><code>abc</code></td><td>contains a text, upper or lower case</td></tr>
+</tbody></table></div>
+<h2 id="comparer">What to compare with</h2>
+<div class="table"><table><thead><tr><th>Compare to</th><th>Example</th></tr></thead><tbody>
+<tr><td><strong>a fixed value</strong></td><td>marks below 10</td></tr>
+<tr><td><strong>a fixed cell</strong></td><td>marks below the threshold written in <code>F1</code></td></tr>
+<tr><td><strong>a same-row column</strong></td><td>in column C, values above those of column B, row by row</td></tr>
+</tbody></table></div>
+<h2 id="apparence">Look</h2>
+<p><strong>Text</strong> and <strong>Fill</strong> choose the colors, <strong>None</strong> removes them; <strong>B</strong>, <em>I</em>, <strong>U</strong> make the text bold, italic, underlined. At least one color or style is needed.</p>
+<h2 id="regles">Several rules</h2>
+<p>The column on the left lists the rules of the sheet: <strong>Edit</strong>, <strong>Delete</strong>. If several rules apply to a cell, the last one in the list prevails, color by color.</p>
+<div class="warn"><p>In a range covered by a rule, the text and fill colors given directly to the cells are no longer displayed.</p></div>
+<p>Rules are saved in the Excel file as Excel conditional formatting.</p>
+</main>
+</body>
+</html>

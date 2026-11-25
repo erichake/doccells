@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>核取方塊、清單與日曆 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>核取方塊、清單與日曆</h1>
+<figure><img src="img/controles.webp" alt="核取方塊、下拉式清單和日期的日曆" width="1280" height="560" /></figure>
+<h2 id="cases">核取方塊</h2>
+<p>選擇儲存格，<strong>插入 › 核取方塊</strong>。按一下可勾選或取消；儲存格的值為 TRUE 或 FALSE。</p>
+<pre><code>=IF(B2, "已完成", "待辦")
+=SUMPRODUCT(B2:B6, C2:C6)
+=SUMPRODUCT(B2:B6, B2:B6)</code></pre>
+<p>第二個公式對勾選列的 C 欄值求和；第三個公式統計勾選的數目。</p>
+<h2 id="listes">下拉式清單</h2>
+<p>選擇儲存格，<strong>插入 › 下拉式選單…</strong>。</p>
+<div class="table"><table><thead><tr><th>來源</th><th>內容</th></tr></thead><tbody>
+<tr><td><strong>值</strong></td><td>選項，每個輸入框一個；<strong>新增選項</strong>；不含逗號</td></tr>
+<tr><td><strong>來自範圍</strong></td><td>以其儲存格為選項的範圍：<code>工作表2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>不帶 <code>$</code> 的範圍會像填滿的公式一樣逐格移動。其儲存格變化時，選項隨之變化。</p>
+<p>儲存格顯示箭頭；按一下開啟選項。不接受清單以外的值。</p>
+<h2 id="calendrier">日曆</h2>
+<p>按兩下日期儲存格會開啟日曆：選擇日期，用 <strong><</strong> 和 <strong>></strong> 切換月份，<strong>今天</strong> 選擇今天。凡設有日期格式的儲存格（即使為空）都會開啟日曆，除非其中有公式或已<a href="protection.html">鎖定</a>。</p>
+<div class="tip"><p>要用日曆填寫一欄日期：選擇該欄並設定 <strong>日期</strong> 格式。</p></div>
+<h2 id="retirer">移除</h2>
+<p><kbd>Delete</kbd> 移除儲存格中的核取方塊或清單及其值。</p>
+<p>核取方塊和清單儲存在 Excel 檔案中；核取方塊在其中即為 Excel 核取方塊。</p>
+</main>
+</body>
+</html>

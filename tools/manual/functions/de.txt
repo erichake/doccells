@@ -1,0 +1,126 @@
+words|-|admis=bestanden; refusé=nicht bestanden; très bien=sehr gut; assez bien=befriedigend; un=eins; deux=zwei; autre=andere; absent=fehlt; Note : =Note: ; tableur=tabelle; jean dupont=max müller
+SUMIF|-|Summe der Zellen eines Bereichs, die ein Kriterium erfüllen (">=10", "Ana"), oder der entsprechenden Zellen eines anderen Bereichs.
+SUBTOTAL|-|Zusammenfassung eines Bereichs nach einem Code: 1 Mittelwert, 2 Anzahl, 4 Max, 5 Min, 9 Summe.
+AGGREGATE|Funktion; Option; Bereich|Zusammenfassung eines Bereichs nach einem Code: 1 Mittelwert, 2 Anzahl, 4 Max, 5 Min, 9 Summe. Optionen: 0 bis 7 wie in Excel.
+INT|-|Ganzzahliger Teil: die größte ganze Zahl, die kleiner oder gleich ist.
+COMBINA|n; k|Anzahl der Kombinationen mit Wiederholung.
+LOG|Zahl; Basis|Logarithmus zu einer Basis; die Basis ist Pflicht.
+BASE|Zahl; Basis; [Länge]|Schreibweise einer ganzen Zahl in einer Basis, als Text.
+DECIMAL|Text; Basis|Wert einer in einer Basis von 2 bis 10 geschriebenen Zahl.
+COT|Winkel|Kotangens eines Winkels im Bogenmaß.
+SEC|Winkel|Sekans eines Winkels im Bogenmaß.
+CSC|Winkel|Kosekans eines Winkels im Bogenmaß.
+ACOT|Zahl|Arkuskotangens im Bogenmaß.
+COTH|Zahl|Kotangens hyperbolicus.
+SECH|Zahl|Sekans hyperbolicus.
+CSCH|Zahl|Kosekans hyperbolicus.
+ACOTH|Zahl|Areakotangens hyperbolicus.
+IFS|Bedingung1; Wert1; [Bedingung2; Wert2; …]|Wert der ersten wahren Bedingung; #N/A, wenn keine wahr ist.
+SWITCH|Ausdruck; Fall1; Wert1; [Fall2; Wert2; …]; [sonst]|Wert des Falls, der dem Ausdruck gleicht.
+XOR|Wert1; Wert2; …|Wahr, wenn eine ungerade Anzahl von Werten wahr ist.
+TRUE|-|Der Wahrheitswert wahr, als TRUE angezeigt.
+FALSE|-|Der Wahrheitswert falsch, als FALSE angezeigt.
+IFERROR|Wert; Wert_bei_Fehler|Der Wert oder ein anderer beim Fehler einer Funktion (#N/A, #NUM!). Ersetzt weder DIV/0 noch #VALUE!.
+IFNA|Wert; Wert_bei_NV|Der Wert oder ein anderer beim Fehler #N/A.
+COUNTIF|-|Anzahl der Zellen, die ein Kriterium erfüllen: ">10", "<>0", "Ana". Die Platzhalter * und ? werden nicht erkannt.
+MODE|Bereich|Häufigster Wert.
+RANK|Zahl; Bereich; [Reihenfolge]|Rang einer Zahl in einem Bereich, absteigend; aufsteigend bei Reihenfolge 1.
+QUARTILE|Bereich; k|Quartil: k von 0 (Minimum) bis 4 (Maximum).
+QUARTILEEXC|Bereich; k|Quartil ohne Grenzen: k von 1 bis 3.
+PERCENTILEINC|Bereich; k|Quantil: k von 0 bis 1.
+PERCENTILEEXC|Bereich; k|Quantil ohne Grenzen.
+PERCENTRANK|Bereich; Zahl|Rang einer Zahl als Anteil von 0 bis 1.
+STDEV|Wert1; [Wert2; …]|Standardabweichung einer Stichprobe (Nenner n − 1).
+STDEVP|-|Standardabweichung einer Grundgesamtheit (Nenner n).
+STDEVPA|Wert1; [Wert2; …]|Standardabweichung einer Grundgesamtheit, Texte zählen 0.
+VAR|Wert1; [Wert2; …]|Varianz einer Stichprobe (Nenner n − 1).
+VARP|Wert1; [Wert2; …]|Varianz einer Grundgesamtheit (Nenner n).
+SKEWP|Bereich|Schiefe einer Grundgesamtheit.
+FREQUENCY|-|Häufigkeiten der durch eine Liste begrenzten Klassen, als Liste.
+COVARIANCEP|y_Bereich; x_Bereich|Kovarianz einer Grundgesamtheit.
+COVARIANCES|y_Bereich; x_Bereich|Kovarianz einer Stichprobe.
+LINEST|y_Bereich; x_Bereich|Ausgleichsgerade: die Liste aus Steigung und y-Achsenabschnitt.
+LOGEST|y_Bereich; x_Bereich|Anpassung y = b·mˣ: die Liste aus m und b.
+TREND|y_Bereich; x_Bereich; neue_x|Werte der linearen Anpassung, als Liste.
+GROWTH|y_Bereich; x_Bereich; neue_x|Werte der exponentiellen Anpassung, als Liste.
+PERMUTATIONA|n; k|Anzahl der Variationen mit Wiederholung.
+NORMDIST|x; Mittelwert; Standardabweichung; kumuliert|Normalverteilung: P(X ≤ x), wenn kumuliert wahr ist, sonst Dichte.
+NORMINV|Wahrscheinlichkeit; Mittelwert; Standardabweichung|x mit P(X ≤ x) gleich der Wahrscheinlichkeit, Normalverteilung.
+NORMSDIST|z; kumuliert|Standardnormalverteilung: P(Z ≤ z), wenn kumuliert wahr ist, sonst Dichte.
+NORMSINV|Wahrscheinlichkeit|z mit P(Z ≤ z) gleich der Wahrscheinlichkeit.
+GAUSS|z|P(0 ≤ Z ≤ z), Standardnormalverteilung.
+PHI|z|Dichte der Standardnormalverteilung.
+BINOMDIST|k; n; p; kumuliert|Binomialverteilung: P(X ≤ k), wenn kumuliert wahr ist, sonst P(X = k).
+CRITBINOM|n; p; alpha|Kleinstes k mit P(X ≤ k) ≥ alpha, Binomialverteilung.
+NEGBINOMDIST|Misserfolge; Erfolge; p; kumuliert|Negative Binomialverteilung.
+POISSON|k; lambda; kumuliert|Poisson-Verteilung: P(X ≤ k), wenn kumuliert wahr ist, sonst P(X = k).
+HYPGEOMDIST|k; n; Erfolge; Grundgesamtheit; kumuliert|Hypergeometrische Verteilung.
+EXPONDIST|x; lambda; kumuliert|Exponentialverteilung.
+GAMMADIST|x; alpha; beta; kumuliert|Gammaverteilung.
+GAMMAINV|Wahrscheinlichkeit; alpha; beta|Umkehrung der Gammaverteilung.
+BETADIST|x; alpha; beta; kumuliert; a; b|Betaverteilung auf [a, b].
+BETAINV|Wahrscheinlichkeit; alpha; beta|Umkehrung der Betaverteilung.
+LOGNORMDIST|x; Mittelwert; Standardabweichung; kumuliert|Lognormalverteilung.
+LOGNORMINV|Wahrscheinlichkeit; Mittelwert; Standardabweichung|Umkehrung der Lognormalverteilung.
+WEIBULL|x; alpha; beta; kumuliert|Weibull-Verteilung.
+CHIDIST|x; Freiheitsgrade; kumuliert|Chi-Quadrat-Verteilung: P(X ≤ x), wenn kumuliert wahr ist.
+CHIDISTRT|x; Freiheitsgrade|Chi-Quadrat-Verteilung: P(X > x).
+CHIINVRT|Wahrscheinlichkeit; Freiheitsgrade|x mit P(X > x) gleich der Wahrscheinlichkeit, Chi-Quadrat.
+FDIST|x; Freiheitsgrade1; Freiheitsgrade2; kumuliert|F-Verteilung: P(X ≤ x), wenn kumuliert wahr ist.
+FDISTRT|x; Freiheitsgrade1; Freiheitsgrade2|F-Verteilung: P(X > x).
+TTEST|Bereich1; Bereich2|Wahrscheinlichkeit des Student-t-Tests zweier Stichproben.
+CONFIDENCE|alpha; Standardabweichung; n|Halbe Breite des Konfidenzintervalls eines Mittelwerts (Normalverteilung).
+GAMMA|Zahl|Gammafunktion.
+VLOOKUP|-|Sucht einen Wert in der ersten Spalte eines Bereichs und gibt die Zelle derselben Zeile. Letztes Argument 0: genauer Wert.
+HLOOKUP|-|Sucht einen Wert in der ersten Zeile eines Bereichs und gibt die Zelle derselben Spalte. Letztes Argument 0: genauer Wert.
+LOOKUP|Wert; sortierter_Bereich; Ergebnisbereich|Sucht einen Wert in einem sortierten Bereich und gibt den entsprechenden Wert eines anderen.
+MATCH|-|Position eines Werts in einem Bereich. Letztes Argument 0: genauer Wert.
+INDEX|-|Zelle eines Bereichs oder Element einer Liste nach der Position.
+TRANSPOSE|-|Vertauscht Zeilen und Spalten; das Ergebnis ist eine Liste von Zeilen in einer Zelle.
+FLATTEN|Bereich|Die Werte eines Bereichs, Zeile für Zeile, als Liste.
+UNIQUE|Wert1; Wert2; …|Liste der Werte ohne Doppelte.
+SPLIT|Text; Trennzeichen|Zerlegt einen Text in eine Liste.
+CONCAT|Wert1; Wert2|Verkettet zwei Texte.
+VALUE|-|In einem Text mit Dezimalpunkt geschriebene Zahl.
+UNICHAR|Code|Zeichen eines Unicode-Codes.
+UNICODE|Text|Unicode-Code des ersten Zeichens.
+TODAY|-|Heutiges Datum. Um damit zu rechnen, es in eine Zelle setzen.
+NOW|-|Datum und Uhrzeit, bei jeder Änderung neu berechnet.
+DATE|-|Datum aus Jahr, Monat und Tag; der Zelle ein Datumsformat geben.
+WEEKDAY|-|Wochentag; mit Typ 2 von 1 (Montag) bis 7 (Sonntag).
+DATEDIF|-|Dauer zwischen zwei Daten in Jahren ("Y"), Monaten ("M") oder Tagen ("D").
+TIME|-|Uhrzeit als Bruchteil eines Tages; der Zelle ein Zeitformat geben.
+HOUR|-|Stunden einer Uhrzeit.
+MINUTE|-|Minuten einer Uhrzeit.
+SECOND|-|Sekunden einer Uhrzeit.
+PMT|-|Konstante Rate eines Darlehens; das Kapital zählt negativ.
+PDURATION|Zins; Barwert; Endwert|Anzahl der Perioden bis zu einem Wert.
+RRI|Perioden; Barwert; Endwert|Gleichwertiger Zinssatz eines Wachstums.
+ISPMT|Zins; Periode; Perioden; Kapital|Zinsen einer Periode bei konstanter Tilgung.
+BITAND|a; b|Bitweises UND.
+BITOR|a; b|Bitweises ODER.
+BITXOR|a; b|Bitweises exklusives ODER.
+BITLSHIFT|Zahl; Verschiebung|Verschiebt die Bits nach links.
+BITRSHIFT|Zahl; Verschiebung|Verschiebt die Bits nach rechts.
+CONVERT|-|Rechnet ein Maß in eine andere Einheit um: "m", "km", "mi", "hr", "mn", "kg"… Temperaturen werden nicht umgerechnet.
+GESTEP|Zahl; Schwelle|1, wenn die Zahl die Schwelle erreicht, sonst 0.
+ERF|x|Gaußsche Fehlerfunktion.
+BESSELJ|x; n|Bessel-Funktion Jₙ.
+BESSELY|x; n|Bessel-Funktion Yₙ.
+BESSELI|x; n|Modifizierte Bessel-Funktion Iₙ.
+BESSELK|x; n|Modifizierte Bessel-Funktion Kₙ.
+IMARGUMENT|komplexe_Zahl|Argument im Bogenmaß.
+IMPOWER|komplexe_Zahl; Exponent|Potenz einer komplexen Zahl.
+IMSQRT|komplexe_Zahl|Quadratwurzel einer komplexen Zahl.
+IMEXP|komplexe_Zahl|Exponentialfunktion einer komplexen Zahl.
+IMLN|komplexe_Zahl|Natürlicher Logarithmus einer komplexen Zahl.
+IMLOG10|komplexe_Zahl|Dekadischer Logarithmus einer komplexen Zahl.
+IMLOG2|komplexe_Zahl|Logarithmus zur Basis 2 einer komplexen Zahl.
+IMSIN|komplexe_Zahl|Sinus einer komplexen Zahl.
+IMCOS|komplexe_Zahl|Kosinus einer komplexen Zahl.
+IMTAN|komplexe_Zahl|Tangens einer komplexen Zahl.
+ISERROR|-|Wahr, wenn der Wert der Fehler einer Funktion ist (#N/A, #NUM!).
+ISERR|-|Wahr, wenn der Wert der Fehler einer Funktion außer #N/A ist.
+ISNA|-|Wahr, wenn der Wert der Fehler #N/A ist.
+NA|-|Der Fehler #N/A.
+TYPE|-|Typ eines Werts: 1 Zahl, 2 Text, 4 logisch, 16 Fehler, 64 Liste.

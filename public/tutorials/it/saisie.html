@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Immettere dati — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Immettere dati</h1>
+<h2 id="ecrire">Scrivere in una cella</h2>
+<div class="table"><table><thead><tr><th>Azione</th><th>Effetto</th></tr></thead><tbody>
+<tr><td>scrivere su una cella selezionata</td><td>sostituisce il suo contenuto</td></tr>
+<tr><td>doppio clic, <kbd>F2</kbd> o <kbd>Invio</kbd></td><td>modifica il suo contenuto</td></tr>
+<tr><td><kbd>Invio</kbd></td><td>conferma e scende di una cella</td></tr>
+<tr><td>clic in un’altra cella</td><td>conferma</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>abbandona l’immissione</td></tr>
+<tr><td><kbd>Alt</kbd> <kbd>Invio</kbd></td><td>va a capo nella cella</td></tr>
+<tr><td><kbd>Canc</kbd> o <kbd>⌫</kbd></td><td>svuota le celle selezionate, comprese caselle ed elenchi a discesa; la formattazione resta</td></tr>
+<tr><td>clic destro › <strong>Cancella contenuto</strong></td><td>lo stesso</td></tr>
+</tbody></table></div>
+<p>Durante un’immissione, le frecce spostano il cursore nel testo. Altrimenti le frecce, <kbd>Tab</kbd> e <kbd>Maiusc</kbd> <kbd>Tab</kbd> cambiano cella.</p>
+<h2 id="types">Ciò che DocCells riconosce</h2>
+<div class="table"><table><thead><tr><th>Si scrive</th><th>Si ottiene</th></tr></thead><tbody>
+<tr><td><code>12</code>, <code>-3</code>, <code>1e5</code></td><td>un numero, allineato a destra</td></tr>
+<tr><td><code>2,5</code></td><td>un numero decimale; la virgola è il separatore italiano</td></tr>
+<tr><td><code>1.234,5</code></td><td>il numero 1234,5; per mostrare il punto delle migliaia, scegliere un <a href="nombres.html">formato</a></td></tr>
+<tr><td><code>25%</code>, <code>2,5%</code></td><td>una percentuale</td></tr>
+<tr><td><code>2026-11-25</code>, <code>2026/11/25</code></td><td>una data</td></tr>
+<tr><td><code>2026-11-25 14:30</code></td><td>una data e un’ora</td></tr>
+<tr><td><code>TRUE</code>, <code>FALSE</code></td><td>un valore logico</td></tr>
+<tr><td><code>[2; 1]</code></td><td>un <a href="listes.html">elenco</a></td></tr>
+<tr><td><code>=A1+B1</code></td><td>una <a href="formules.html">formula</a></td></tr>
+<tr><td>qualsiasi altra cosa</td><td>un testo, allineato a sinistra</td></tr>
+</tbody></table></div>
+<h3 id="dates">Date</h3>
+<p>Una data si scrive con l’anno per primo: <code>2026-11-25</code>. <code>25/11/2026</code> resta un testo, con cui non si calcola. Per mostrarla all’italiana, scegliere <strong>Formato › Numero › Data</strong> (<code>29/11/2017</code>) o un <a href="nombres.html#personnalise">formato personalizzato</a>.</p>
+<p>Un doppio clic su una cella di data apre un <a href="controles.html#calendrier">calendario</a>. <code>=OGGI()</code> dà la data di oggi.</p>
+<h3 id="textes">Testi fatti di cifre</h3>
+<p>Un numero che comincia per zero perde quello zero: <code>007</code> diventa 7. Per conservarlo, dare prima alle celle il formato <strong>Testo semplice</strong> (<strong>Formato › Numero › Testo semplice</strong>), o cominciare con un apostrofo: <code>'007</code>.</p>
+<h2 id="erreurs">Errori di immissione frequenti</h2>
+<div class="table"><table><thead><tr><th>Si vede</th><th>Causa</th></tr></thead><tbody>
+<tr><td>un numero allineato a sinistra</td><td>è un testo: un punto decimale al posto della virgola, un’unità (<code>12 €</code>), uno spazio di troppo</td></tr>
+<tr><td><code>46351</code> invece di una data</td><td>una data in formato <strong>Automatico</strong>: darle il formato <strong>Data</strong></td></tr>
+<tr><td>il testo tagliato dalla cella vicina</td><td>allargare la <a href="lignes-colonnes.html#taille">colonna</a>, o scegliere <strong>A capo</strong></td></tr>
+</tbody></table></div>
+<p>Per un’unità, immettere solo il numero e dargli un <a href="nombres.html">formato</a>: valuta, o personalizzato come <code>0,00 "m"</code>.</p>
+</main>
+</body>
+</html>

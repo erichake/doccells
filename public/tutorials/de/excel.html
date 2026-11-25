@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Excel-Kompatibilität — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Excel-Kompatibilität</h1>
+<p class="lead">DocCells liest und schreibt das Excel-Format <code>.xlsx</code>. Folgendes wird in beide Richtungen übernommen.</p>
+<h2 id="conserve">Was erhalten bleibt</h2>
+<div class="table"><table><thead><tr><th>Element</th><th>Bemerkung</th></tr></thead><tbody>
+<tr><td>Werte, Texte, Daten, Formeln</td><td>Formeln werden in der Sprache von DocCells angezeigt</td></tr>
+<tr><td><a href="nombres.html">Zahlenformate</a></td><td>auch benutzerdefinierte</td></tr>
+<tr><td>Schrift, Farben, Ausrichtung, Drehung, Umbruch</td><td></td></tr>
+<tr><td>Rahmen, verbundene Zellen</td><td></td></tr>
+<tr><td>Breiten, Höhen, ausgeblendete Zeilen und Spalten</td><td></td></tr>
+<tr><td><a href="lignes-colonnes.html#figer">fixierte Zeilen und Spalten</a>, Gitternetzlinien</td><td></td></tr>
+<tr><td>mehrere Blätter</td><td></td></tr>
+<tr><td><a href="noms.html">benannte Bereiche</a></td><td></td></tr>
+<tr><td><a href="conditionnelle.html">bedingte Formatierung</a></td><td>die Regeln von DocCells, die einfachen Regeln von Excel (Vergleich, enthaltener Text)</td></tr>
+<tr><td><a href="controles.html">Kontrollkästchen, Drop-down-Listen</a></td><td></td></tr>
+<tr><td><a href="graphiques.html">Diagramme</a></td><td>als Excel-Diagramme geschrieben; die von DocCells werden wieder gelesen</td></tr>
+<tr><td><a href="images-liens.html">Bilder</a></td><td></td></tr>
+<tr><td><a href="tri-filtre.html#filtrer">Filter</a></td><td></td></tr>
+<tr><td><a href="protection.html">Schutz</a>, entsperrte Zellen</td><td></td></tr>
+</tbody></table></div>
+<h2 id="perdu">Was nicht erhalten bleibt</h2>
+<div class="table"><table><thead><tr><th>Element</th><th>Wird zu</th></tr></thead><tbody>
+<tr><td><a href="images-liens.html#liens">Links</a></td><td>ihrem Text</td></tr>
+<tr><td><a href="listes.html">Listen</a> in den Zellen</td><td>einem Text, <code>[2; 1]</code></td></tr>
+<tr><td>Sparklines von DocCells oder Google Sheets</td><td>einer Formel <code>SPARKLINE</code>, von DocCells wieder gelesen; Excel unbekannt</td></tr>
+<tr><td>in Excel erstellte Diagramme</td><td>nicht übernommen</td></tr>
+<tr><td>Pivot-Tabellen, Makros, Datenschnitte, Kommentare</td><td>nicht übernommen</td></tr>
+<tr><td>bedingte Formatierung mit Farbskalen, Balken, Symbolen</td><td>nicht übernommen</td></tr>
+</tbody></table></div>
+<div class="tip"><p>Vor dem Ersetzen einer komplexen Excel-Mappe sie aus DocCells unter einem anderen Namen speichern (<strong>Speichern unter...</strong>).</p></div>
+<h2 id="listes">Listen</h2>
+<p>Eine aus einer <code>.xlsx</code> wieder geöffnete Liste ist ein Text: sie neu zu tippen macht wieder eine Liste daraus. Eine von einer Formel berechnete Liste wird wieder eine Liste, sobald die Formel neu berechnet wird.</p>
+<h2 id="formules">Formeln</h2>
+<p>Beim Öffnen behält eine Formel in der Regel das von Excel gespeicherte Ergebnis, bis sich eine ihrer Zellen ändert. Eine <a href="fonctions.html#non-calculees">von DocCells nicht berechnete</a> Funktion ergibt dann <code>#NAME?</code> oder <code>#ERROR!</code>.</p>
+<h2 id="formats">Andere Formate</h2>
+<div class="table"><table><thead><tr><th>Format</th><th>Wie</th></tr></thead><tbody>
+<tr><td><code>.csv</code></td><td>die Datei in einem Texteditor öffnen, kopieren und in DocCells einfügen, wenn die Werte durch Tabulatoren getrennt sind; sonst in <code>.xlsx</code> umwandeln</td></tr>
+<tr><td><code>.ods</code>, <code>.xls</code></td><td>mit LibreOffice oder Excel als <code>.xlsx</code> speichern</td></tr>
+<tr><td>Google Sheets</td><td><a href="partager.html#google">über den Link</a> oder als <code>.xlsx</code> heruntergeladen</td></tr>
+<tr><td>PDF</td><td><a href="impression.html">drucken</a>, „Als PDF speichern“</td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

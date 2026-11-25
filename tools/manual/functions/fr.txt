@@ -1,0 +1,286 @@
+SUM|-|Somme de nombres et de plages.
+SUMIF|-|Somme des cellules d’une plage qui remplissent un critère (">=10", "Ana"), ou des cellules correspondantes de plage_somme.
+SUMIFS|-|Somme des cellules d’une plage qui remplissent plusieurs critères.
+SUMPRODUCT|-|Somme des produits terme à terme de plages de même taille.
+SERIESSUM|-|Somme d’une série entière : a₁xⁿ + a₂xⁿ⁺ᵐ + …
+SUBTOTAL|-|Synthèse d’une plage selon un code : 1 moyenne, 2 nombre, 4 max, 5 min, 9 somme.
+AGGREGATE|fonction; option; plage|Synthèse d’une plage selon un code : 1 moyenne, 2 nombre, 4 max, 5 min, 9 somme. Options : 0 à 7, comme Excel.
+PRODUCT|-|Produit de nombres et de plages.
+COUNTUNIQUE|-|Nombre de valeurs différentes d’une plage.
+SIGN|-|Signe d’un nombre : −1, 0 ou 1.
+INT|-|Partie entière : le plus grand entier inférieur ou égal.
+TRUNC|-|Coupe un nombre après ses premières décimales.
+ROUND|-|Arrondit à un nombre de décimales.
+ROUNDUP|-|Arrondit en s’éloignant de zéro.
+ROUNDDOWN|-|Arrondit en se rapprochant de zéro.
+MROUND|-|Arrondit au multiple le plus proche.
+CEILING|-|Arrondit au multiple supérieur.
+FLOOR|-|Arrondit au multiple inférieur.
+EVEN|-|Arrondit à l’entier pair supérieur.
+ODD|-|Arrondit à l’entier impair supérieur.
+ISEVEN|-|Vrai si le nombre est pair.
+ISODD|-|Vrai si le nombre est impair.
+MOD|-|Reste de la division.
+QUOTIENT|-|Quotient entier de la division.
+GCD|-|Plus grand commun diviseur.
+FACT|-|Factorielle.
+FACTDOUBLE|-|Factorielle double : produit d’un nombre sur deux.
+COMBIN|-|Nombre de combinaisons de k éléments parmi n.
+COMBINA|n; k|Nombre de combinaisons avec répétition.
+MULTINOMIAL|-|Coefficient multinomial.
+POWER|-|Puissance d’un nombre.
+SQRT|-|Racine carrée.
+SQRTPI|-|Racine carrée du nombre multiplié par π.
+EXP|-|Exponentielle.
+LN|-|Logarithme népérien.
+LOG|nombre; base|Logarithme dans une base ; la base est obligatoire.
+LOG10|-|Logarithme décimal.
+RAND|-|Nombre au hasard entre 0 et 1, tiré de nouveau à chaque recalcul.
+RANDBETWEEN|-|Entier au hasard entre deux bornes comprises, tiré de nouveau à chaque recalcul.
+BASE|nombre; base; [longueur]|Écriture d’un entier dans une base, en texte.
+DECIMAL|texte; base|Valeur d’un nombre écrit dans une base de 2 à 10.
+ROMAN|-|Écrit un nombre en chiffres romains.
+ARABIC|-|Valeur d’un nombre écrit en chiffres romains.
+RADIANS|-|Convertit des degrés en radians.
+DEGREES|-|Convertit des radians en degrés.
+COT|angle|Cotangente d’un angle en radians.
+SEC|angle|Sécante d’un angle en radians.
+CSC|angle|Cosécante d’un angle en radians.
+ASIN|-|Arc sinus, en radians.
+ACOS|-|Arc cosinus, en radians.
+ATAN|-|Arc tangente, en radians.
+ATAN2|-|Angle du vecteur (x, y), en radians.
+ACOT|nombre|Arc cotangente, en radians.
+SINH|-|Sinus hyperbolique.
+COSH|-|Cosinus hyperbolique.
+TANH|-|Tangente hyperbolique.
+COTH|nombre|Cotangente hyperbolique.
+SECH|nombre|Sécante hyperbolique.
+CSCH|nombre|Cosécante hyperbolique.
+ASINH|-|Argument sinus hyperbolique.
+ACOSH|-|Argument cosinus hyperbolique.
+ATANH|-|Argument tangente hyperbolique.
+ACOTH|nombre|Argument cotangente hyperbolique.
+IF|-|Une valeur si la condition est vraie, une autre sinon.
+IFS|condition1; valeur1; [condition2; valeur2; …]|Valeur de la première condition vraie ; #N/A si aucune ne l’est.
+SWITCH|expression; cas1; valeur1; [cas2; valeur2; …]; [défaut]|Valeur du cas égal à l’expression.
+AND|-|Vrai si toutes les conditions sont vraies.
+OR|-|Vrai si une condition au moins est vraie.
+XOR|valeur1; valeur2; …|Vrai si un nombre impair de valeurs sont vraies.
+NOT|-|Contraire d’une valeur logique.
+TRUE||La valeur logique vrai, affichée TRUE.
+FALSE||La valeur logique faux, affichée FALSE.
+IFERROR|valeur; valeur_si_erreur|La valeur, ou une autre si c’est l’erreur d’une fonction (#N/A, #NUM!). Ne remplace ni DIV/0 ni #VALUE!.
+IFNA|valeur; valeur_si_na|La valeur, ou une autre si c’est l’erreur #N/A.
+COUNT|-|Nombre de cellules qui contiennent un nombre.
+COUNTA|-|Nombre de cellules non vides.
+COUNTBLANK|-|Nombre de cellules vides.
+COUNTIF|-|Nombre de cellules qui remplissent un critère : ">10", "<>0", "Ana". Les jokers * et ? ne sont pas reconnus.
+COUNTIFS|-|Nombre de lignes qui remplissent plusieurs critères.
+AVERAGE|-|Moyenne des nombres ; les textes sont ignorés.
+AVERAGEA|-|Moyenne, les textes étant comptés 0.
+AVERAGEIF|-|Moyenne des cellules qui remplissent un critère.
+AVERAGEIFS|-|Moyenne des cellules qui remplissent plusieurs critères.
+GEOMEAN|-|Moyenne géométrique.
+HARMEAN|-|Moyenne harmonique.
+TRIMMEAN|-|Moyenne, une proportion des valeurs extrêmes étant écartée.
+MEDIAN|-|Médiane.
+MODE|plage|Valeur la plus fréquente.
+MIN|-|Plus petit nombre.
+MAX|-|Plus grand nombre.
+MINA|-|Plus petite valeur, les textes étant comptés 0.
+MAXA|-|Plus grande valeur, les textes étant comptés 0.
+LARGE|-|n-ième plus grand nombre.
+SMALL|-|n-ième plus petit nombre.
+RANK|nombre; plage; [ordre]|Rang d’un nombre dans une plage, décroissant ; croissant si ordre vaut 1.
+QUARTILE|plage; k|Quartile : k de 0 (minimum) à 4 (maximum).
+QUARTILEEXC|plage; k|Quartile, bornes exclues : k de 1 à 3.
+PERCENTILEINC|plage; k|Centile : k de 0 à 1.
+PERCENTILEEXC|plage; k|Centile, bornes exclues.
+PERCENTRANK|plage; nombre|Rang d’un nombre en proportion, de 0 à 1.
+STDEV|valeur1; [valeur2; …]|Écart-type d’un échantillon (dénominateur n − 1).
+STDEVP|-|Écart-type d’une population (dénominateur n).
+STDEVA|-|Écart-type d’un échantillon, textes comptés 0.
+STDEVPA|valeur1; [valeur2; …]|Écart-type d’une population, textes comptés 0.
+VAR|valeur1; [valeur2; …]|Variance d’un échantillon (dénominateur n − 1).
+VARP|valeur1; [valeur2; …]|Variance d’une population (dénominateur n).
+VARA|-|Variance d’un échantillon, textes comptés 0.
+VARPA|-|Variance d’une population, textes comptés 0.
+AVEDEV|-|Moyenne des écarts absolus à la moyenne.
+DEVSQ|-|Somme des carrés des écarts à la moyenne.
+SKEW|-|Coefficient d’asymétrie d’un échantillon.
+SKEWP|plage|Coefficient d’asymétrie d’une population.
+KURT|-|Coefficient d’aplatissement.
+STANDARDIZE|-|Valeur centrée et réduite.
+FREQUENCY|-|Effectifs des classes délimitées par une liste, en une liste.
+CORREL|-|Coefficient de corrélation linéaire.
+PEARSON|-|Coefficient de corrélation linéaire.
+RSQ|-|Carré du coefficient de corrélation.
+COVARIANCEP|plage_y; plage_x|Covariance d’une population.
+COVARIANCES|plage_y; plage_x|Covariance d’un échantillon.
+SLOPE|-|Pente de la droite des moindres carrés.
+INTERCEPT|-|Ordonnée à l’origine de la droite des moindres carrés.
+FORECAST|-|Valeur de y sur la droite des moindres carrés.
+STEYX|-|Erreur type de la régression linéaire.
+LINEST|plage_y; plage_x|Droite des moindres carrés : la liste [pente; ordonnée à l’origine].
+LOGEST|plage_y; plage_x|Ajustement y = b·mˣ : la liste [m; b].
+TREND|plage_y; plage_x; nouveaux_x|Valeurs de l’ajustement affine, en une liste.
+GROWTH|plage_y; plage_x; nouveaux_x|Valeurs de l’ajustement exponentiel, en une liste.
+PERMUT|-|Nombre d’arrangements de k éléments parmi n.
+PERMUTATIONA|n; k|Nombre de listes de k éléments parmi n, avec répétition.
+PROB|-|Probabilité que la valeur soit dans un intervalle.
+NORMDIST|x; moyenne; écart_type; cumul|Loi normale : P(X ≤ x) si cumul est vrai, densité sinon.
+NORMINV|probabilité; moyenne; écart_type|x tel que P(X ≤ x) soit la probabilité, loi normale.
+NORMSDIST|z; cumul|Loi normale centrée réduite : P(Z ≤ z) si cumul est vrai, densité sinon.
+NORMSINV|probabilité|z tel que P(Z ≤ z) soit la probabilité.
+GAUSS|z|P(0 ≤ Z ≤ z), loi normale centrée réduite.
+PHI|z|Densité de la loi normale centrée réduite.
+BINOMDIST|k; n; p; cumul|Loi binomiale : P(X ≤ k) si cumul est vrai, P(X = k) sinon.
+CRITBINOM|n; p; alpha|Plus petit k tel que P(X ≤ k) ≥ alpha, loi binomiale.
+NEGBINOMDIST|échecs; succès; p; cumul|Loi binomiale négative.
+POISSON|k; lambda; cumul|Loi de Poisson : P(X ≤ k) si cumul est vrai, P(X = k) sinon.
+HYPGEOMDIST|k; n; succès; population; cumul|Loi hypergéométrique.
+EXPONDIST|x; lambda; cumul|Loi exponentielle.
+GAMMADIST|x; alpha; bêta; cumul|Loi gamma.
+GAMMAINV|probabilité; alpha; bêta|Inverse de la loi gamma.
+BETADIST|x; alpha; bêta; cumul; a; b|Loi bêta sur [a, b].
+BETAINV|probabilité; alpha; bêta|Inverse de la loi bêta.
+LOGNORMDIST|x; moyenne; écart_type; cumul|Loi log-normale.
+LOGNORMINV|probabilité; moyenne; écart_type|Inverse de la loi log-normale.
+WEIBULL|x; alpha; bêta; cumul|Loi de Weibull.
+CHIDIST|x; degrés; cumul|Loi du khi-deux : P(X ≤ x) si cumul est vrai.
+CHIDISTRT|x; degrés|Loi du khi-deux : P(X > x).
+CHIINVRT|probabilité; degrés|x tel que P(X > x) soit la probabilité, loi du khi-deux.
+FDIST|x; degrés1; degrés2; cumul|Loi de Fisher-Snedecor : P(X ≤ x) si cumul est vrai.
+FDISTRT|x; degrés1; degrés2|Loi de Fisher-Snedecor : P(X > x).
+TTEST|plage1; plage2|Probabilité du test de Student sur deux échantillons.
+CONFIDENCE|alpha; écart_type; n|Demi-largeur de l’intervalle de confiance d’une moyenne (loi normale).
+FISHER|-|Transformation de Fisher.
+FISHERINV|-|Transformation de Fisher inverse.
+GAMMA|nombre|Fonction gamma.
+VLOOKUP|valeur; plage_triée; plage_résultat|Cherche une valeur dans la première colonne d’une plage, rend la cellule de la même ligne. Dernier argument 0 : valeur exacte.
+HLOOKUP|-|Cherche une valeur dans la première ligne d’une plage, rend la cellule de la même colonne. Dernier argument 0 : valeur exacte.
+LOOKUP|-|Cherche une valeur dans une plage triée, rend la valeur correspondante d’une autre plage.
+MATCH|-|Position d’une valeur dans une plage. Dernier argument 0 : valeur exacte.
+INDEX|-|Cellule d’une plage ou élément d’une liste, par sa position.
+CHOOSE|-|Valeur d’un rang donné parmi celles qui suivent.
+ROW|-|Numéro de ligne d’une cellule ; de la cellule courante, sans argument.
+COLUMN|-|Numéro de colonne d’une cellule ; de la cellule courante, sans argument.
+ROWS|-|Nombre de lignes d’une plage.
+COLUMNS|-|Nombre de colonnes d’une plage.
+TRANSPOSE|-|Échange lignes et colonnes ; le résultat est une liste de lignes, dans une cellule.
+FLATTEN|plage|Les valeurs d’une plage, ligne après ligne, en une liste.
+UNIQUE|valeur1; valeur2; …|Liste des valeurs sans doublon.
+CONCATENATE|-|Met bout à bout des textes.
+CONCAT|valeur1; valeur2|Met bout à bout deux textes.
+LEFT|-|Premiers caractères d’un texte.
+RIGHT|-|Derniers caractères d’un texte.
+MID|-|Caractères d’un texte à partir d’une position.
+LEN|-|Nombre de caractères.
+LOWER|-|Texte en minuscules.
+UPPER|-|Texte en majuscules.
+PROPER|-|Majuscule au début de chaque mot.
+TRIM|-|Retire les espaces superflues.
+CLEAN|-|Retire les caractères non imprimables.
+FIND|-|Position d’un texte dans un autre, en distinguant majuscules et minuscules.
+SEARCH|-|Position d’un texte dans un autre, sans distinguer majuscules et minuscules.
+REPLACE|-|Remplace des caractères désignés par leur position.
+SUBSTITUTE|-|Remplace un texte par un autre, partout.
+REPT|-|Répète un texte.
+EXACT|-|Vrai si deux textes sont identiques, majuscules comprises.
+SPLIT|texte; séparateur|Découpe un texte en liste.
+VALUE|-|Nombre écrit dans un texte, avec un point décimal.
+CHAR|-|Caractère d’un code.
+CODE|-|Code du premier caractère.
+UNICHAR|code|Caractère d’un code Unicode.
+UNICODE|texte|Code Unicode du premier caractère.
+REGEXMATCH|-|Vrai si le texte contient une expression régulière.
+REGEXEXTRACT|-|Première partie du texte reconnue par une expression régulière.
+REGEXREPLACE|-|Remplace ce que reconnaît une expression régulière.
+TODAY||Date du jour. Pour calculer avec elle, la placer dans une cellule.
+NOW||Date et heure, recalculées à chaque modification.
+DATE|-|Date d’une année, d’un mois et d’un jour ; donner un format de date à la cellule.
+YEAR|-|Année d’une date.
+MONTH|-|Mois d’une date.
+DAY|-|Jour du mois d’une date.
+WEEKDAY|-|Jour de la semaine ; avec le type 2, de 1 (lundi) à 7 (dimanche).
+DAYS360|-|Nombre de jours entre deux dates, en mois de 30 jours.
+DATEDIF|-|Durée entre deux dates, en années ("Y"), mois ("M") ou jours ("D").
+YEARFRAC|-|Durée entre deux dates, en années.
+EDATE|-|Date décalée d’un nombre de mois.
+EOMONTH|-|Dernier jour d’un mois.
+WORKDAY|-|Date atteinte après un nombre de jours ouvrés.
+NETWORKDAYS|-|Nombre de jours ouvrés entre deux dates comprises.
+TIME|-|Heure, comme fraction de jour ; donner un format d’heure à la cellule.
+HOUR|-|Heures d’une heure.
+MINUTE|-|Minutes d’une heure.
+SECOND|-|Secondes d’une heure.
+PMT|-|Mensualité constante d’un prêt ; le capital est compté négatif.
+IPMT|-|Part d’intérêt d’une mensualité.
+PPMT|-|Part de capital d’une mensualité.
+CUMIPMT|-|Intérêts versés entre deux périodes.
+CUMPRINC|-|Capital remboursé entre deux périodes.
+PV|-|Valeur actuelle d’une suite de versements.
+FV|-|Valeur future d’une suite de versements.
+FVSCHEDULE|-|Valeur future d’un capital à des taux successifs.
+NPER|-|Nombre de versements.
+RATE|-|Taux d’intérêt par période.
+PDURATION|taux; valeur_actuelle; valeur_future|Nombre de périodes pour atteindre une valeur.
+RRI|périodes; valeur_actuelle; valeur_future|Taux d’intérêt équivalent d’une croissance.
+ISPMT|taux; période; périodes; capital|Intérêt d’une période d’un prêt à amortissement constant.
+NPV|-|Valeur actuelle nette de flux périodiques.
+XNPV|-|Valeur actuelle nette de flux datés.
+IRR|-|Taux de rentabilité interne de flux périodiques.
+XIRR|-|Taux de rentabilité interne de flux datés.
+EFFECT|-|Taux annuel effectif.
+NOMINAL|-|Taux annuel nominal.
+SLN|-|Amortissement linéaire.
+SYD|-|Amortissement par la somme des années.
+DB|-|Amortissement dégressif à taux fixe.
+DDB|-|Amortissement dégressif double.
+DOLLARDE|-|Prix en fractions converti en décimal.
+DOLLARFR|-|Prix décimal converti en fractions.
+TBILLPRICE|-|Prix d’un bon du Trésor.
+TBILLYIELD|-|Rendement d’un bon du Trésor d’après son prix.
+BITAND|a; b|ET bit à bit.
+BITOR|a; b|OU bit à bit.
+BITXOR|a; b|OU exclusif bit à bit.
+BITLSHIFT|nombre; décalage|Décalage des bits vers la gauche.
+BITRSHIFT|nombre; décalage|Décalage des bits vers la droite.
+CONVERT|-|Convertit une mesure d’une unité à une autre : "m", "km", "mi", "hr", "mn", "kg"… Les températures ne sont pas converties.
+DELTA|-|1 si deux nombres sont égaux, 0 sinon.
+GESTEP|nombre; seuil|1 si le nombre atteint le seuil, 0 sinon.
+ERF|x|Fonction d’erreur de Gauss.
+ERFC|-|Complément à 1 de la fonction d’erreur.
+BESSELJ|x; n|Fonction de Bessel Jₙ.
+BESSELY|x; n|Fonction de Bessel Yₙ.
+BESSELI|x; n|Fonction de Bessel modifiée Iₙ.
+BESSELK|x; n|Fonction de Bessel modifiée Kₙ.
+COMPLEX|-|Nombre complexe en texte.
+IMREAL|-|Partie réelle.
+IMAGINARY|-|Partie imaginaire.
+IMABS|-|Module.
+IMARGUMENT|complexe|Argument, en radians.
+IMCONJUGATE|-|Conjugué.
+IMSUM|-|Somme.
+IMSUB|-|Différence.
+IMPRODUCT|-|Produit.
+IMDIV|-|Quotient.
+IMPOWER|complexe; exposant|Puissance d’un complexe.
+IMSQRT|complexe|Racine carrée d’un complexe.
+IMEXP|complexe|Exponentielle d’un complexe.
+IMLN|complexe|Logarithme népérien d’un complexe.
+IMLOG10|complexe|Logarithme décimal d’un complexe.
+IMLOG2|complexe|Logarithme en base 2 d’un complexe.
+IMSIN|complexe|Sinus d’un complexe.
+IMCOS|complexe|Cosinus d’un complexe.
+IMTAN|complexe|Tangente d’un complexe.
+ISNUMBER|-|Vrai si la valeur est un nombre.
+ISTEXT|-|Vrai si la valeur est un texte.
+ISNONTEXT|-|Vrai si la valeur n’est pas un texte.
+ISLOGICAL|-|Vrai si la valeur est logique.
+ISERROR|-|Vrai si la valeur est l’erreur d’une fonction (#N/A, #NUM!).
+ISERR|-|Vrai si la valeur est l’erreur d’une fonction autre que #N/A.
+ISNA|-|Vrai si la valeur est l’erreur #N/A.
+NA|-|L’erreur #N/A.
+TYPE|-|Type d’une valeur : 1 nombre, 2 texte, 4 logique, 16 erreur, 64 liste.

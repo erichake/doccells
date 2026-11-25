@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/pt.md: do not edit. -->
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formatação — Manual do DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Formatação</h1>
+<h2 id="texte">Texto</h2>
+<div class="table"><table><thead><tr><th>Comando</th><th>Acesso</th></tr></thead><tbody>
+<tr><td>negrito, itálico, sublinhado</td><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i>; <kbd>Ctrl</kbd> <kbd>B</kbd>, <kbd>Ctrl</kbd> <kbd>I</kbd>, <kbd>Ctrl</kbd> <kbd>U</kbd></td></tr>
+<tr><td>tipo de letra</td><td>lista <strong>Arial</strong>: treze tipos de letra</td></tr>
+<tr><td>tamanho</td><td>lista <strong>10</strong>, ou <strong>Formato › Tamanho da letra</strong>: 9 a 72</td></tr>
+<tr><td>cor do texto, do fundo</td><td><i data-i="font-color"></i> <i data-i="background"></i></td></tr>
+<tr><td>limpar a formatação</td><td><i data-i="clear-format"></i>, <strong>Formato › Limpar formato</strong></td></tr>
+</tbody></table></div>
+<p>Na paleta de uma cor, <strong>Repor cor</strong> retira-a; <strong>PERSONALIZADO</strong> abre o seletor do sistema.</p>
+<p>Enquanto se modifica uma célula, a formatação aplica-se à parte selecionada do texto.</p>
+<h2 id="alignement">Alinhamento</h2>
+<div class="table"><table><thead><tr><th>Comando</th><th>Opções</th></tr></thead><tbody>
+<tr><td><i data-i="align-left"></i> horizontal</td><td>esquerda, centro, direita</td></tr>
+<tr><td><i data-i="align-top"></i> vertical</td><td>em cima, ao meio, em baixo</td></tr>
+<tr><td><i data-i="text-rotation-none"></i> rotação</td><td>inclinada, vertical, empilhada</td></tr>
+<tr><td><i data-i="text-overflow"></i> moldagem</td><td><strong>Transbordar</strong>: sobre as células vazias vizinhas; <strong>Quebrar linha</strong>: em várias linhas; <strong>Cortar</strong>: cortado no limite</td></tr>
+</tbody></table></div>
+<p>Sem alinhamento escolhido, os números e as datas ficam à direita, o resto à esquerda.</p>
+<h2 id="bordures">Limites</h2>
+<p><i data-i="border-all"></i> traça o limite escolhido; a sua seta dá os lados (superior, exterior, interiores, todos, nenhum, diagonal), a <strong>cor</strong> e o <strong>estilo</strong> do traço. Escolher cor e estilo antes do lado.</p>
+<h2 id="fusion">Unir</h2>
+<p><i data-i="merge-all"></i> ou <strong>Formato › Unir células</strong>:</p>
+<div class="table"><table><thead><tr><th>Comando</th><th>Efeito</th></tr></thead><tbody>
+<tr><td><strong>Unir tudo</strong></td><td>uma só célula, que conserva um só conteúdo</td></tr>
+<tr><td><strong>Unir verticalmente</strong></td><td>uma célula por coluna</td></tr>
+<tr><td><strong>Unir horizontalmente</strong></td><td>uma célula por linha</td></tr>
+<tr><td><strong>Separar células</strong></td><td>devolve as células</td></tr>
+</tbody></table></div>
+<p>Um intervalo que contém células unidas não pode ser ordenado nem filtrado.</p>
+<h2 id="alternees">Cores alternadas</h2>
+<p><i data-i="alternating"></i> ou <strong>Formato › Cores alternadas...</strong> colore uma linha em cada duas do intervalo selecionado, com uma linha de cabeçalho se se quiser. As três cores escolhem-se.</p>
+<figure><img src="img/couleurs-alternees.webp" alt="A janela das cores alternadas" width="1280" height="760" /></figure>
+<p>São cores de fundo normais: não acompanham uma ordenação nem uma linha inserida. <strong>Remover cores</strong> apaga-as do intervalo.</p>
+<h2 id="quadrillage">Grelha</h2>
+<p><i data-i="gridlines"></i> ou <strong>Ver › Mostrar › Grelha</strong> oculta ou mostra as linhas cinzentas, em todas as folhas do livro. A <a href="impression.html">impressão</a> tem o seu próprio ajuste.</p>
+<p>Para uma cor que depende do valor, ver <a href="conditionnelle.html">Formatação condicional</a>.</p>
+</main>
+</body>
+</html>

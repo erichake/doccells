@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/pt.md: do not edit. -->
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Selecionar, copiar, preencher — Manual do DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Selecionar, copiar, preencher</h1>
+<h2 id="selectionner">Selecionar</h2>
+<div class="table"><table><thead><tr><th>Ação</th><th>Seleção</th></tr></thead><tbody>
+<tr><td>clique</td><td>uma célula</td></tr>
+<tr><td>arrastar</td><td>um intervalo</td></tr>
+<tr><td>clique, depois <kbd>Shift</kbd> e clique</td><td>o intervalo entre os dois</td></tr>
+<tr><td><kbd>Shift</kbd> e seta</td><td>alarga o intervalo</td></tr>
+<tr><td><kbd>Ctrl</kbd> e clique ou arrasto</td><td>mais um intervalo</td></tr>
+<tr><td>clique numa letra, num número</td><td>uma coluna, uma linha</td></tr>
+<tr><td>arrastar sobre as letras, os números</td><td>várias colunas, várias linhas</td></tr>
+<tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>toda a folha</td></tr>
+<tr><td>caixa de nome, seta</td><td>um <a href="noms.html">intervalo com nome</a></td></tr>
+</tbody></table></div>
+<p>O endereço da seleção está na caixa de nome, à esquerda da barra de fórmulas.</p>
+<h2 id="copier">Copiar, cortar, colar</h2>
+<p><kbd>Ctrl</kbd> <kbd>C</kbd>, <kbd>Ctrl</kbd> <kbd>X</kbd>, <kbd>Ctrl</kbd> <kbd>V</kbd>, ou <strong>Copiar</strong> e <strong>Colar</strong> do clique direito.</p>
+<ul>
+<li><strong>Colar</strong> do clique direito cola os valores, sem as fórmulas; <kbd>Ctrl</kbd> <kbd>V</kbd> cola as fórmulas.</li>
+<li>Uma fórmula colada segue o seu novo lugar: <code>=B2</code> copiada uma linha abaixo passa a <code>=B3</code>. O sinal <code>$</code> fixa uma linha ou uma coluna (<a href="formules.html#references">referências</a>).</li>
+<li>Uma fórmula cortada conserva as suas referências.</li>
+<li>Uma tabela copiada do Excel, do Numbers, de uma página web ou de um texto separado por tabulações cola-se célula a célula; números com vírgula e listas são reconhecidos como ao escrever.</li>
+<li>Não se cortam nem colam vários intervalos ao mesmo tempo.</li>
+</ul>
+<h2 id="deplacer">Mover</h2>
+<p>Arrastar o limite da seleção: as células movem-se, com a sua formatação.</p>
+<h2 id="recopier">Preencher</h2>
+<p>A alça azul, no canto inferior direito da seleção, arrasta-se para baixo, para cima, para a esquerda ou para a direita.</p>
+<div class="table"><table><thead><tr><th>Células de partida</th><th>A alça dá</th></tr></thead><tbody>
+<tr><td>uma fórmula</td><td>a fórmula, com as referências deslocadas</td></tr>
+<tr><td>dois números, 1 e 2</td><td>a série: 3, 4, 5…</td></tr>
+<tr><td>um só número, texto ou data</td><td>o mesmo valor</td></tr>
+<tr><td>duas datas</td><td>as datas seguintes, com o mesmo intervalo</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="A série 1, 2 prolongada com a alça" width="760" height="300" /></figure>
+<p>Sem o rato, ou num intervalo grande:</p>
+<div class="table"><table><thead><tr><th>Comando</th><th>Efeito</th></tr></thead><tbody>
+<tr><td><strong>Editar › Preencher para baixo</strong>, <kbd>Ctrl</kbd> <kbd>D</kbd></td><td>a primeira linha do intervalo selecionado é copiada nas seguintes</td></tr>
+<tr><td><strong>Editar › Preencher para a direita</strong>, <kbd>Ctrl</kbd> <kbd>R</kbd></td><td>a primeira coluna é copiada nas seguintes</td></tr>
+</tbody></table></div>
+<p>Se só uma linha está selecionada, <kbd>Ctrl</kbd> <kbd>D</kbd> copia nela a de cima; se só uma coluna, <kbd>Ctrl</kbd> <kbd>R</kbd> copia a da esquerda. Estes comandos copiam sempre, sem fazer séries, com formatos, limites, caixas e listas pendentes.</p>
+<div class="tip"><p>Para uma fórmula em toda uma coluna: escrevê-la em cima, selecionar dessa célula até à última, <kbd>Ctrl</kbd> <kbd>D</kbd>.</p></div>
+</main>
+</body>
+</html>

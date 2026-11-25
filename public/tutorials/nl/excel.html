@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Compatibiliteit met Excel — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Compatibiliteit met Excel</h1>
+<p class="lead">DocCells leest en schrijft het Excel-formaat <code>.xlsx</code>. Het volgende blijft behouden, in beide richtingen.</p>
+<h2 id="conserve">Wat behouden blijft</h2>
+<div class="table"><table><thead><tr><th>Element</th><th>Opmerking</th></tr></thead><tbody>
+<tr><td>waarden, teksten, datums, formules</td><td>formules worden in de taal van DocCells getoond</td></tr>
+<tr><td><a href="nombres.html">getalnotaties</a></td><td>ook aangepaste</td></tr>
+<tr><td>lettertype, kleuren, uitlijning, draaiing, terugloop</td><td></td></tr>
+<tr><td>randen, samengevoegde cellen</td><td></td></tr>
+<tr><td>breedtes, hoogtes, verborgen rijen en kolommen</td><td></td></tr>
+<tr><td><a href="lignes-colonnes.html#figer">geblokkeerde rijen en kolommen</a>, rasterlijnen</td><td></td></tr>
+<tr><td>meerdere bladen</td><td></td></tr>
+<tr><td><a href="noms.html">benoemde bereiken</a></td><td></td></tr>
+<tr><td><a href="conditionnelle.html">voorwaardelijke opmaak</a></td><td>de regels van DocCells, de eenvoudige regels van Excel (vergelijking, bevatte tekst)</td></tr>
+<tr><td><a href="controles.html">selectievakjes, keuzelijsten</a></td><td></td></tr>
+<tr><td><a href="graphiques.html">grafieken</a></td><td>als Excel-grafieken geschreven; die van DocCells worden weer gelezen</td></tr>
+<tr><td><a href="images-liens.html">afbeeldingen</a></td><td></td></tr>
+<tr><td><a href="tri-filtre.html#filtrer">filters</a></td><td></td></tr>
+<tr><td><a href="protection.html">beveiliging</a>, ontgrendelde cellen</td><td></td></tr>
+</tbody></table></div>
+<h2 id="perdu">Wat niet</h2>
+<div class="table"><table><thead><tr><th>Element</th><th>Wordt</th></tr></thead><tbody>
+<tr><td><a href="images-liens.html#liens">links</a></td><td>hun tekst</td></tr>
+<tr><td><a href="listes.html">lijsten</a> in de cellen</td><td>een tekst, <code>[2; 1]</code></td></tr>
+<tr><td>sparklines van DocCells of Google Sheets</td><td>een formule <code>SPARKLINE</code>, door DocCells weer gelezen; onbekend voor Excel</td></tr>
+<tr><td>in Excel gemaakte grafieken</td><td>niet behouden</td></tr>
+<tr><td>draaitabellen, macro’s, slicers, opmerkingen</td><td>niet behouden</td></tr>
+<tr><td>voorwaardelijke opmaak met kleurenschalen, balken, pictogrammen</td><td>niet behouden</td></tr>
+</tbody></table></div>
+<div class="tip"><p>Vóór het vervangen van een ingewikkelde Excel-werkmap, ze vanuit DocCells onder een andere naam opslaan (<strong>Opslaan als...</strong>).</p></div>
+<h2 id="listes">Lijsten</h2>
+<p>Een uit een <code>.xlsx</code> heropende lijst is een tekst: opnieuw typen maakt er weer een lijst van. Een door een formule berekende lijst wordt weer een lijst als de formule herberekend wordt.</p>
+<h2 id="formules">Formules</h2>
+<p>Bij het openen behoudt een formule meestal het door Excel opgeslagen resultaat tot een van haar cellen verandert. Een <a href="fonctions.html#non-calculees">niet door DocCells berekende</a> functie geeft dan <code>#NAME?</code> of <code>#ERROR!</code>.</p>
+<h2 id="formats">Andere formaten</h2>
+<div class="table"><table><thead><tr><th>Formaat</th><th>Hoe</th></tr></thead><tbody>
+<tr><td><code>.csv</code></td><td>het bestand in een teksteditor openen, kopiëren, in DocCells plakken als de waarden door tabs gescheiden zijn; anders naar <code>.xlsx</code> omzetten</td></tr>
+<tr><td><code>.ods</code>, <code>.xls</code></td><td>met LibreOffice of Excel als <code>.xlsx</code> opslaan</td></tr>
+<tr><td>Google Sheets</td><td><a href="partager.html#google">via de link</a>, of gedownload als <code>.xlsx</code></td></tr>
+<tr><td>Pdf</td><td><a href="impression.html">afdrukken</a>, „Opslaan als pdf”</td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

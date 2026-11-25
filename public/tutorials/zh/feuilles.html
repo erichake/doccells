@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>工作表 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>工作表</h1>
+<h2 id="ajouter">添加、切换</h2>
+<ul>
+<li><i data-i="plus"></i> 添加工作表，命名为“工作表2”“工作表3”…</li>
+<li>单击标签显示该表；<i data-i="all-sheets"></i> 列出所有工作表（包括隐藏的），并显示所选的表。</li>
+</ul>
+<h2 id="menu">标签的菜单</h2>
+<p>右键单击标签，或单击其箭头：</p>
+<div class="table"><table><thead><tr><th>命令</th><th>效果</th></tr></thead><tbody>
+<tr><td><strong>删除</strong></td><td>确认后删除；最后一张可见工作表不能删除</td></tr>
+<tr><td><strong>复制</strong></td><td>复制工作表</td></tr>
+<tr><td><strong>重命名</strong></td><td>或双击名称；不含 <code>[ ] : ? * / ' "</code></td></tr>
+<tr><td><strong>更改颜色</strong></td><td>标签颜色</td></tr>
+<tr><td><strong>隐藏</strong></td><td>公式仍可读取该表；<i data-i="all-sheets"></i> 重新显示它</td></tr>
+<tr><td><strong>向左移</strong>、<strong>向右移</strong></td><td>改变顺序；也可拖动标签</td></tr>
+</tbody></table></div>
+<h2 id="references">读取另一张工作表</h2>
+<p>工作表名、感叹号、地址。名称含空格或符号时放在撇号中。</p>
+<pre><code>=工作表2!B2*2
+='成绩 2'!B2
+=SUM('成绩 2'!B2:B6)</code></pre>
+<p>引用需要键入：输入公式时切换标签会放弃输入。</p>
+<p>要让所有工作表都能用名称读取某个区域，请以 <strong>工作簿</strong> 为范围<a href="noms.html">命名</a>。</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Con DocGeo — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Con DocGeo</h1>
+<p class="lead">DocGeo, il programma di geometria dinamica di DocTools, contiene DocCells: un foglio accanto a una figura, ciascuno che legge l’altro.</p>
+<p>In DocGeo, <strong>File › Vista › Nuova vista foglio di calcolo</strong> aggiunge un foglio accanto alla figura; <strong>File › Scheda › Nuova scheda foglio di calcolo</strong> ne fa una scheda.</p>
+<h2 id="geo">La funzione GEO</h2>
+<p>In una cella, <code>GEO</code> legge il valore di un oggetto della figura, indicato dal suo nome tra virgolette.</p>
+<pre><code>=GEO("AB")
+=2*GEO("r")+1
+=GEO("'Figura 1'!c")</code></pre>
+<ul>
+<li>La cella segue la figura mentre la si muove.</li>
+<li>Un punto si legge come l’<a href="listes.html">elenco</a> delle sue coordinate: anche <code>=GEO("A")*2</code> è un punto.</li>
+<li>Mentre si scrive una formula, un clic su un oggetto della figura vi scrive <code>GEO</code> e il suo nome.</li>
+<li>Un oggetto sconosciuto dà <code>#N/A</code>. Fuori da DocGeo, <code>GEO</code> dà sempre <code>#N/A</code>.</li>
+<li><code>GEO</code> ha lo stesso nome in tutte le lingue.</li>
+</ul>
+<h2 id="figure">La figura legge le celle</h2>
+<p>In una formula di DocGeo, <code>!B3</code> indica una cella, <code>!B2:B21</code> un intervallo.</p>
+<h2 id="differences">Differenze con DocCells da solo</h2>
+<div class="table"><table><thead><tr><th>In DocGeo</th><th></th></tr></thead><tbody>
+<tr><td>Menu e pulsanti</td><td>nelle barre di DocGeo, quando il foglio è attivo</td></tr>
+<tr><td>File</td><td>quello di DocGeo: il foglio è salvato nel <code>.dgo</code>, elenchi e link compresi</td></tr>
+<tr><td>Fogli</td><td>uno per vista; più schede di foglio di calcolo si leggono tra loro</td></tr>
+<tr><td>Annullare</td><td><kbd>Ctrl</kbd> <kbd>Z</kbd> nelle celle annulla solo le celle</td></tr>
+</tbody></table></div>
+<p>La pagina <a href="https://doctools.org/apps/docgeo/tutorials/it/tableur.html">Il foglio di calcolo</a> del manuale di DocGeo dà i dettagli.</p>
+</main>
+</body>
+</html>

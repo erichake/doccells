@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Werkbladen — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Werkbladen</h1>
+<h2 id="ajouter">Toevoegen, wisselen</h2>
+<ul>
+<li><i data-i="plus"></i> voegt een blad toe, „Blad2”, „Blad3”… genoemd.</li>
+<li>Een klik op een tab toont het blad; <i data-i="all-sheets"></i> somt de bladen op, ook de verborgen, en toont het gekozen blad.</li>
+</ul>
+<h2 id="menu">Het menu van een tab</h2>
+<p>Rechtsklikken op de tab, of de pijl ervan:</p>
+<div class="table"><table><thead><tr><th>Opdracht</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong>Verwijderen</strong></td><td>na bevestiging; het laatste zichtbare blad kan niet verwijderd worden</td></tr>
+<tr><td><strong>Kopiëren</strong></td><td>verdubbelt het blad</td></tr>
+<tr><td><strong>Naam wijzigen</strong></td><td>of dubbelklikken op de naam; zonder <code>[ ] : ? * / ' "</code></td></tr>
+<tr><td><strong>Change color</strong></td><td>kleur van de tab</td></tr>
+<tr><td><strong>Verbergen</strong></td><td>formules lezen het blad nog steeds; <i data-i="all-sheets"></i> toont het weer</td></tr>
+<tr><td><strong>Move left</strong>, <strong>Move right</strong></td><td>verandert de volgorde; de tab kan ook gesleept worden</td></tr>
+</tbody></table></div>
+<h2 id="references">Een ander blad lezen</h2>
+<p>De naam van het blad, een uitroepteken, het adres. De naam staat tussen apostrofs als hij een spatie of een teken bevat.</p>
+<pre><code>=Blad2!B2*2
+='Cijfers 2'!B2
+=SOM('Cijfers 2'!B2:B6)</code></pre>
+<p>De verwijzing wordt getypt: van tab wisselen tijdens het invoeren van een formule breekt de invoer af.</p>
+<p>Om een bereik vanuit alle bladen met een naam te lezen, het <a href="noms.html">benoemen</a> met <strong>Werkmap</strong> als bereik.</p>
+</main>
+</body>
+</html>

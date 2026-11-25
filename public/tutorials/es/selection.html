@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Seleccionar, copiar, rellenar — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Seleccionar, copiar, rellenar</h1>
+<h2 id="selectionner">Seleccionar</h2>
+<div class="table"><table><thead><tr><th>Acción</th><th>Selección</th></tr></thead><tbody>
+<tr><td>clic</td><td>una celda</td></tr>
+<tr><td>arrastrar</td><td>un rango</td></tr>
+<tr><td>clic, luego <kbd>Mayús</kbd> y clic</td><td>el rango entre ambos</td></tr>
+<tr><td><kbd>Mayús</kbd> y flecha</td><td>amplía el rango</td></tr>
+<tr><td><kbd>Ctrl</kbd> y clic o arrastre</td><td>un rango más</td></tr>
+<tr><td>clic en una letra, un número</td><td>una columna, una fila</td></tr>
+<tr><td>arrastrar sobre las letras, los números</td><td>varias columnas, varias filas</td></tr>
+<tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>toda la hoja</td></tr>
+<tr><td>cuadro de nombres, flecha</td><td>un <a href="noms.html">rango con nombre</a></td></tr>
+</tbody></table></div>
+<p>La dirección de la selección está en el cuadro de nombres, a la izquierda de la barra de fórmulas.</p>
+<h2 id="copier">Copiar, cortar, pegar</h2>
+<p><kbd>Ctrl</kbd> <kbd>C</kbd>, <kbd>Ctrl</kbd> <kbd>X</kbd>, <kbd>Ctrl</kbd> <kbd>V</kbd>, o <strong>Copiar</strong> y <strong>Pegar</strong> del clic derecho.</p>
+<ul>
+<li><strong>Pegar</strong> del clic derecho pega los valores, sin las fórmulas; <kbd>Ctrl</kbd> <kbd>V</kbd> pega las fórmulas.</li>
+<li>Una fórmula pegada sigue su nuevo lugar: <code>=B2</code> copiada una fila más abajo pasa a ser <code>=B3</code>. El signo <code>$</code> fija una fila o una columna (<a href="formules.html#references">referencias</a>).</li>
+<li>Una fórmula cortada conserva sus referencias.</li>
+<li>Una tabla copiada de Excel, de Numbers, de una página web o de un texto separado por tabulaciones se pega celda por celda; los números con coma y las listas se reconocen como al teclearlos.</li>
+<li>No se cortan ni se pegan varios rangos a la vez.</li>
+</ul>
+<h2 id="deplacer">Mover</h2>
+<p>Arrastrar el borde de la selección: las celdas se mueven, con su formato.</p>
+<h2 id="recopier">Rellenar</h2>
+<p>El controlador azul, en la esquina inferior derecha de la selección, se arrastra hacia abajo, arriba, la izquierda o la derecha.</p>
+<div class="table"><table><thead><tr><th>Celdas de partida</th><th>El controlador da</th></tr></thead><tbody>
+<tr><td>una fórmula</td><td>la fórmula, con sus referencias desplazadas</td></tr>
+<tr><td>dos números, 1 y 2</td><td>la serie: 3, 4, 5…</td></tr>
+<tr><td>un solo número, texto o fecha</td><td>el mismo valor</td></tr>
+<tr><td>dos fechas</td><td>las fechas siguientes, con el mismo intervalo</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="La serie 1, 2 prolongada con el controlador" width="760" height="300" /></figure>
+<p>Sin el ratón, o en un rango grande:</p>
+<div class="table"><table><thead><tr><th>Comando</th><th>Efecto</th></tr></thead><tbody>
+<tr><td><strong>Edición › Rellenar hacia abajo</strong>, <kbd>Ctrl</kbd> <kbd>D</kbd></td><td>la primera fila del rango seleccionado se copia en las siguientes</td></tr>
+<tr><td><strong>Edición › Rellenar hacia la derecha</strong>, <kbd>Ctrl</kbd> <kbd>R</kbd></td><td>la primera columna se copia en las siguientes</td></tr>
+</tbody></table></div>
+<p>Si hay una sola fila seleccionada, <kbd>Ctrl</kbd> <kbd>D</kbd> copia en ella la de arriba; si hay una sola columna, <kbd>Ctrl</kbd> <kbd>R</kbd> copia la de la izquierda. Estos comandos siempre copian, sin hacer series, con formatos, bordes, casillas y listas desplegables.</p>
+<div class="tip"><p>Para una fórmula en toda una columna: escribirla arriba, seleccionar desde esa celda hasta la última, <kbd>Ctrl</kbd> <kbd>D</kbd>.</p></div>
+</main>
+</body>
+</html>

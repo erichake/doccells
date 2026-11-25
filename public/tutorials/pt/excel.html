@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/pt.md: do not edit. -->
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Compatibilidade com o Excel — Manual do DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Compatibilidade com o Excel</h1>
+<p class="lead">O DocCells lê e escreve o formato Excel <code>.xlsx</code>. O seguinte conserva-se, nos dois sentidos.</p>
+<h2 id="conserve">O que se conserva</h2>
+<div class="table"><table><thead><tr><th>Elemento</th><th>Observação</th></tr></thead><tbody>
+<tr><td>valores, textos, datas, fórmulas</td><td>as fórmulas mostram-se no idioma do DocCells</td></tr>
+<tr><td><a href="nombres.html">formatos de número</a></td><td>incluindo os personalizados</td></tr>
+<tr><td>tipo de letra, cores, alinhamento, rotação, moldagem</td><td></td></tr>
+<tr><td>limites, células unidas</td><td></td></tr>
+<tr><td>larguras, alturas, linhas e colunas ocultas</td><td></td></tr>
+<tr><td><a href="lignes-colonnes.html#figer">linhas e colunas fixadas</a>, grelha</td><td></td></tr>
+<tr><td>várias folhas</td><td></td></tr>
+<tr><td><a href="noms.html">intervalos com nome</a></td><td></td></tr>
+<tr><td><a href="conditionnelle.html">formatação condicional</a></td><td>as regras do DocCells, as regras simples do Excel (comparação, texto contido)</td></tr>
+<tr><td><a href="controles.html">caixas, listas pendentes</a></td><td></td></tr>
+<tr><td><a href="graphiques.html">gráficos</a></td><td>escritos como gráficos do Excel; os do DocCells são relidos</td></tr>
+<tr><td><a href="images-liens.html">imagens</a></td><td></td></tr>
+<tr><td><a href="tri-filtre.html#filtrer">filtros</a></td><td></td></tr>
+<tr><td><a href="protection.html">proteção</a>, células desbloqueadas</td><td></td></tr>
+</tbody></table></div>
+<h2 id="perdu">O que não</h2>
+<div class="table"><table><thead><tr><th>Elemento</th><th>Passa a ser</th></tr></thead><tbody>
+<tr><td><a href="images-liens.html#liens">ligações</a></td><td>o seu texto</td></tr>
+<tr><td><a href="listes.html">listas</a> nas células</td><td>um texto, <code>[2; 1]</code></td></tr>
+<tr><td>sparklines do DocCells ou do Google Sheets</td><td>uma fórmula <code>SPARKLINE</code>, relida pelo DocCells; desconhecida do Excel</td></tr>
+<tr><td>gráficos criados no Excel</td><td>não conservados</td></tr>
+<tr><td>tabelas dinâmicas, macros, segmentações, comentários</td><td>não conservados</td></tr>
+<tr><td>formatação condicional com escalas de cor, barras, ícones</td><td>não conservada</td></tr>
+</tbody></table></div>
+<div class="tip"><p>Antes de substituir um livro Excel complexo, guardá-lo a partir do DocCells com outro nome (<strong>Guardar como...</strong>).</p></div>
+<h2 id="listes">Listas</h2>
+<p>Uma lista reaberta de um <code>.xlsx</code> é um texto: voltar a escrevê-la faz dela uma lista. Uma lista calculada por uma fórmula volta a ser uma lista quando a fórmula é recalculada.</p>
+<h2 id="formules">Fórmulas</h2>
+<p>Ao abrir, uma fórmula conserva em geral o resultado guardado pelo Excel até que uma das suas células mude. Uma função <a href="fonctions.html#non-calculees">não calculada pelo DocCells</a> dá então <code>#NAME?</code> ou <code>#ERROR!</code>.</p>
+<h2 id="formats">Outros formatos</h2>
+<div class="table"><table><thead><tr><th>Formato</th><th>Como</th></tr></thead><tbody>
+<tr><td><code>.csv</code></td><td>abrir o ficheiro num editor de texto, copiar, colar no DocCells se os valores estão separados por tabulações; senão, convertê-lo em <code>.xlsx</code></td></tr>
+<tr><td><code>.ods</code>, <code>.xls</code></td><td>guardá-los em <code>.xlsx</code> com o LibreOffice ou o Excel</td></tr>
+<tr><td>Google Sheets</td><td><a href="partager.html#google">pela sua ligação</a>, ou descarregado em <code>.xlsx</code></td></tr>
+<tr><td>PDF</td><td><a href="impression.html">imprimir</a>, «Guardar como PDF»</td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

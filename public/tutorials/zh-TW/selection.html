@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>選擇、複製、填滿 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>選擇、複製、填滿</h1>
+<h2 id="selectionner">選擇</h2>
+<div class="table"><table><thead><tr><th>操作</th><th>選區</th></tr></thead><tbody>
+<tr><td>按一下</td><td>一個儲存格</td></tr>
+<tr><td>拖曳</td><td>一個範圍</td></tr>
+<tr><td>按一下，再按 <kbd>Shift</kbd> 按一下</td><td>兩者之間的範圍</td></tr>
+<tr><td><kbd>Shift</kbd> 加方向鍵</td><td>擴展範圍</td></tr>
+<tr><td><kbd>Ctrl</kbd> 加按一下或拖曳</td><td>再加一個範圍</td></tr>
+<tr><td>按一下字母、數字</td><td>一欄、一列</td></tr>
+<tr><td>在字母、數字上拖曳</td><td>多欄、多列</td></tr>
+<tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>整張工作表</td></tr>
+<tr><td>名稱方塊的箭頭</td><td><a href="noms.html">已命名範圍</a></td></tr>
+</tbody></table></div>
+<p>選區的位址顯示在資料編輯列左側的名稱方塊中。</p>
+<h2 id="copier">複製、剪下、貼上</h2>
+<p><kbd>Ctrl</kbd> <kbd>C</kbd>、<kbd>Ctrl</kbd> <kbd>X</kbd>、<kbd>Ctrl</kbd> <kbd>V</kbd>，或右鍵功能表的 <strong>複製</strong> 和 <strong>粘貼</strong>。</p>
+<ul>
+<li>右鍵功能表的 <strong>粘貼</strong> 只貼上值，不含公式；<kbd>Ctrl</kbd> <kbd>V</kbd> 貼上公式。</li>
+<li>貼上的公式隨新位置變化：<code>=B2</code> 複製到下一列變成 <code>=B3</code>。<code>$</code> 符號固定列或欄（<a href="formules.html#references">參照</a>）。</li>
+<li>剪下的公式保留其參照。</li>
+<li>從 Excel、Numbers、網頁或定位字元分隔的文字複製的表格會逐個儲存格貼上；數字和清單像輸入時一樣被辨識。</li>
+<li>不能同時剪下或貼上多個範圍。</li>
+</ul>
+<h2 id="deplacer">移動</h2>
+<p>拖曳選區的邊框：儲存格連同格式一起移動。</p>
+<h2 id="recopier">填滿</h2>
+<p>選區右下角的藍色控點可向下、上、左、右拖曳。</p>
+<div class="table"><table><thead><tr><th>起始儲存格</th><th>控點給出</th></tr></thead><tbody>
+<tr><td>一個公式</td><td>參照相應移動的公式</td></tr>
+<tr><td>兩個數字 1 和 2</td><td>序列：3、4、5…</td></tr>
+<tr><td>單一數字、文字或日期</td><td>相同的值</td></tr>
+<tr><td>兩個日期</td><td>以相同間隔繼續的日期</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="用控點延續的序列 1、2" width="760" height="300" /></figure>
+<p>不用滑鼠，或範圍較大時：</p>
+<div class="table"><table><thead><tr><th>命令</th><th>效果</th></tr></thead><tbody>
+<tr><td><strong>編輯 › 向下填滿</strong>、<kbd>Ctrl</kbd> <kbd>D</kbd></td><td>將所選範圍的第一列複製到後續各列</td></tr>
+<tr><td><strong>編輯 › 向右填滿</strong>、<kbd>Ctrl</kbd> <kbd>R</kbd></td><td>將第一欄複製到後續各欄</td></tr>
+</tbody></table></div>
+<p>如果只選中一列，<kbd>Ctrl</kbd> <kbd>D</kbd> 將上一列複製進來；如果只選中一欄，<kbd>Ctrl</kbd> <kbd>R</kbd> 將左側一欄複製進來。這些命令總是複製，不生成序列，並包括格式、邊框、核取方塊和下拉式清單。</p>
+<div class="tip"><p>要在整欄中使用公式：在頂部輸入，從該儲存格選到最後一個，<kbd>Ctrl</kbd> <kbd>D</kbd>。</p></div>
+</main>
+</body>
+</html>

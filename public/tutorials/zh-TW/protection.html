@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>保護 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>保護</h1>
+<p class="lead">受保護的活頁簿只能在未鎖定的儲存格中修改：可用來準備練習表。</p>
+<h2 id="preparer">為學生準備工作表</h2>
+<ol>
+<li>選擇要填寫的儲存格，右鍵 › <strong>取消鎖定儲存格</strong>。</li>
+<li><i data-i="protect"></i> 或 <strong>工具 › 保護/取消保護活頁簿</strong>。</li>
+<li>儲存，然後<a href="partager.html">分發檔案或連結</a>。</li>
+</ol>
+<p>起初所有儲存格都是鎖定的；鎖定只在受保護的活頁簿中生效。<strong>鎖定儲存格</strong> 可恢復鎖定。</p>
+<h2 id="effets">保護阻止的操作</h2>
+<div class="table"><table><thead><tr><th>受保護的活頁簿中</th><th>鎖定的儲存格</th><th>未鎖定的儲存格</th></tr></thead><tbody>
+<tr><td>輸入、清除</td><td>否</td><td>是</td></tr>
+<tr><td>日期的日曆</td><td>否</td><td>是</td></tr>
+<tr><td>欄寬和列高</td><td>否</td><td>否</td></tr>
+<tr><td>交替色彩、插入核取方塊和清單、功能表填滿</td><td>否</td><td>否</td></tr>
+<tr><td>格式設定、插入欄列、圖表</td><td>是</td><td>是</td></tr>
+</tbody></table></div>
+<p>保護作用於所有工作表。它與未鎖定的儲存格一起儲存在 Excel 檔案中，DocCells 和 Excel 都可讀取。</p>
+<h2 id="eleve">學生模式</h2>
+<p>位址中的 <code>?mode=student</code> 開啟 DocCells 時沒有 <i data-i="protect"></i> 按鈕，也沒有 <strong>取消鎖定儲存格</strong> 和 <strong>定義名稱…</strong> 命令；<strong>保護/取消保護活頁簿</strong> 不可用。學生無法取消保護。</p>
+<pre><code>https://…/doccells/?mode=student&amp;url=https://…/exercise.xlsx</code></pre>
+<div class="note"><p>這是使用層面的保護，沒有密碼：用其他試算表開啟檔案，或不帶 <code>mode=student</code> 開啟，都可以取消保護。</p></div>
+</main>
+</body>
+</html>

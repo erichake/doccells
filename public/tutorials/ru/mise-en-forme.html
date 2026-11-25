@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Оформление — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Оформление</h1>
+<h2 id="texte">Текст</h2>
+<div class="table"><table><thead><tr><th>Команда</th><th>Где</th></tr></thead><tbody>
+<tr><td>полужирный, курсив, подчёркнутый</td><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i>; <kbd>Ctrl</kbd> <kbd>B</kbd>, <kbd>Ctrl</kbd> <kbd>I</kbd>, <kbd>Ctrl</kbd> <kbd>U</kbd></td></tr>
+<tr><td>шрифт</td><td>список <strong>Arial</strong>: тринадцать шрифтов</td></tr>
+<tr><td>размер</td><td>список <strong>10</strong> или <strong>Формат › Размер шрифта</strong>: от 9 до 72</td></tr>
+<tr><td>цвет текста, цвет фона</td><td><i data-i="font-color"></i> <i data-i="background"></i></td></tr>
+<tr><td>очистить оформление</td><td><i data-i="clear-format"></i>, <strong>Формат › Очистить формат</strong></td></tr>
+</tbody></table></div>
+<p>В палитре цвета <strong>Сбросить цвет</strong> убирает его; <strong>ПОЛЬЗОВАТЕЛЬСКИЙ</strong> открывает выбор цвета системы.</p>
+<p>При изменении ячейки оформление применяется к выделенной части текста.</p>
+<h2 id="alignement">Выравнивание</h2>
+<div class="table"><table><thead><tr><th>Команда</th><th>Варианты</th></tr></thead><tbody>
+<tr><td><i data-i="align-left"></i> по горизонтали</td><td>слева, по центру, справа</td></tr>
+<tr><td><i data-i="align-top"></i> по вертикали</td><td>сверху, посередине, снизу</td></tr>
+<tr><td><i data-i="text-rotation-none"></i> поворот</td><td>наклон, вертикально, столбиком</td></tr>
+<tr><td><i data-i="text-overflow"></i> перенос</td><td><strong>Переполнение</strong>: на пустые соседние ячейки; <strong>Перенос</strong>: на несколько строк; <strong>Обрезка</strong>: обрезано по границе</td></tr>
+</tbody></table></div>
+<p>Если выравнивание не выбрано, числа и даты стоят справа, остальное слева.</p>
+<h2 id="bordures">Границы</h2>
+<p><i data-i="border-all"></i> рисует выбранную границу; стрелка даёт стороны (верхняя, внешняя, внутренние, все, нет, диагональ), <strong>цвет</strong> и <strong>стиль</strong> линии. Цвет и стиль выбирают до стороны.</p>
+<h2 id="fusion">Объединение</h2>
+<p><i data-i="merge-all"></i> или <strong>Формат › Объединить ячейки</strong>:</p>
+<div class="table"><table><thead><tr><th>Команда</th><th>Результат</th></tr></thead><tbody>
+<tr><td><strong>Объединить все</strong></td><td>одна ячейка, в которой остаётся одно содержимое</td></tr>
+<tr><td><strong>Объединить вертикально</strong></td><td>одна ячейка на столбец</td></tr>
+<tr><td><strong>Объединить горизонтально</strong></td><td>одна ячейка на строку</td></tr>
+<tr><td><strong>Разъединить</strong></td><td>возвращает ячейки</td></tr>
+</tbody></table></div>
+<p>Диапазон с объединёнными ячейками нельзя сортировать или фильтровать.</p>
+<h2 id="alternees">Чередующиеся цвета</h2>
+<p><i data-i="alternating"></i> или <strong>Формат › Чередующиеся цвета...</strong> окрашивает каждую вторую строку выделенного диапазона, при желании со строкой заголовка. Три цвета можно выбрать.</p>
+<figure><img src="img/couleurs-alternees.webp" alt="Окно чередующихся цветов" width="1280" height="760" /></figure>
+<p>Это обычные цвета фона: они не следуют сортировке или вставленной строке. <strong>Удалить цвета</strong> убирает их из диапазона.</p>
+<h2 id="quadrillage">Сетка</h2>
+<p><i data-i="gridlines"></i> или <strong>Вид › Показать › Сетка</strong> скрывает или показывает серые линии на всех листах книги. У <a href="impression.html">печати</a> своя настройка.</p>
+<p>О цвете, зависящем от значения, см. <a href="conditionnelle.html">Условное форматирование</a>.</p>
+</main>
+</body>
+</html>

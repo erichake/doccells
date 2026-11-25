@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>साझा करना और एम्बेड करना — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>साझा करना और एम्बेड करना</h1>
+<h2 id="url">लिंक से वर्कबुक</h2>
+<p><code>?url=</code> के बाद किसी ऑनलाइन <code>.xlsx</code> फ़ाइल का पता उसे DocCells में खोलता है।</p>
+<pre><code>https://…/doccells/?url=https://example.org/marks.xlsx</code></pre>
+<p>फ़ाइल की साइट को दूसरी साइटों को पढ़ने देना चाहिए (CORS हेडर); DocCells के साथ उसी साइट पर रखी फ़ाइल पर यह बंधन नहीं। हर कोई अपनी प्रति खोलता है: बदलाव मूल फ़ाइल में नहीं जाते।</p>
+<h2 id="google">Google Sheet</h2>
+<p>Google Sheet का पता भी चलता है।</p>
+<pre><code>https://…/doccells/?url=https://docs.google.com/spreadsheets/d/…</code></pre>
+<ul>
+<li>उसे “लिंक रखने वाला कोई भी व्यक्ति” के साथ साझा करें।</li>
+<li>DocCells हर बार खुलने पर Excel प्रारूप की प्रति पढ़ता है: Google दस्तावेज़ नहीं बदलता।</li>
+<li>DocCells की साइट पर PHP चलना चाहिए; अधिकतम 25 MB।</li>
+</ul>
+<h2 id="options">पते के विकल्प</h2>
+<div class="table"><table><thead><tr><th>विकल्प</th><th>परिणाम</th></tr></thead><tbody>
+<tr><td><code>url=…</code></td><td>वर्कबुक या Google Sheet खोलता है</td></tr>
+<tr><td><code>mode=student</code></td><td><a href="protection.html#eleve">विद्यार्थी मोड</a></td></tr>
+<tr><td><code>lang=hi</code></td><td>भाषा तय करता है: <code>de</code>, <code>el</code>, <code>en</code>, <code>es</code>, <code>fr</code>, <code>hi</code>, <code>it</code>, <code>nl</code>, <code>pt</code>, <code>ru</code>, <code>zh-CN</code>, <code>zh-TW</code></td></tr>
+</tbody></table></div>
+<p>विकल्प एक के बाद एक, <code>&amp;</code> से अलग: <code>?lang=hi&amp;mode=student&amp;url=…</code>। पहला <code>?</code> के बाद आता है।</p>
+<h2 id="integrer">वेब पृष्ठ में</h2>
+<pre><code>&lt;iframe src="https://…/doccells/?url=https://example.org/marks.xlsx"
+    style="width:100%;height:500px;border:1px solid #ccc"&gt;&lt;/iframe&gt;</code></pre>
+<p>फ़्रेम में DocCells में मेनू, खोलने और सहेजने के बटन तथा पुनर्प्राप्ति प्रति नहीं होते: बटन पट्टी, सूत्र पट्टी और शीट दिखती हैं।</p>
+<h2 id="programme">प्रोग्राम से</h2>
+<p>कोई पृष्ठ DocCells को चला सकता है: वर्कबुक लोड करना, सेल पढ़ना और लिखना, उनके मानों पर नज़र रखना। <code>embed</code> विकल्प यह मोड खोलता है; डेवलपरों के लिए उसका वर्णन परियोजना की <a href="https://github.com/erichake/doccells/blob/main/EMBED.md">EMBED.md</a> फ़ाइल में है (फ़्रेंच में)।</p>
+</main>
+</body>
+</html>

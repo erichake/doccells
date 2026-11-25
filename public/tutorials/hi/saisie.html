@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>डेटा दर्ज करना — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>डेटा दर्ज करना</h1>
+<h2 id="ecrire">सेल में लिखना</h2>
+<div class="table"><table><thead><tr><th>क्रिया</th><th>परिणाम</th></tr></thead><tbody>
+<tr><td>चुने हुए सेल पर टाइप करना</td><td>उसकी सामग्री बदलता है</td></tr>
+<tr><td>डबल क्लिक, <kbd>F2</kbd> या <kbd>Enter</kbd></td><td>उसकी सामग्री संपादित करता है</td></tr>
+<tr><td><kbd>Enter</kbd></td><td>पुष्टि करके एक सेल नीचे जाता है</td></tr>
+<tr><td>दूसरे सेल पर क्लिक</td><td>पुष्टि करता है</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>प्रविष्टि छोड़ता है</td></tr>
+<tr><td><kbd>Alt</kbd> <kbd>Enter</kbd></td><td>सेल में नई पंक्ति</td></tr>
+<tr><td><kbd>Delete</kbd> या <kbd>⌫</kbd></td><td>चुने सेल खाली करता है, चेकबॉक्स और सूचियों सहित; फ़ॉर्मेटिंग रहती है</td></tr>
+<tr><td>दायाँ क्लिक › <strong>कॉन्टेंट साफ करें</strong></td><td>वही</td></tr>
+</tbody></table></div>
+<p>लिखते समय तीर कुंजियाँ टेक्स्ट में कर्सर चलाती हैं। अन्यथा तीर कुंजियाँ, <kbd>Tab</kbd> और <kbd>Shift</kbd> <kbd>Tab</kbd> सेल बदलती हैं।</p>
+<h2 id="types">DocCells क्या पहचानता है</h2>
+<div class="table"><table><thead><tr><th>आप टाइप करते हैं</th><th>मिलता है</th></tr></thead><tbody>
+<tr><td><code>12</code>, <code>-3</code>, <code>1e5</code></td><td>संख्या, दाएँ संरेखित</td></tr>
+<tr><td><code>2.5</code></td><td>दशमलव संख्या; चिह्न दशमलव बिंदु है</td></tr>
+<tr><td><code>25%</code>, <code>2.5%</code></td><td>प्रतिशत</td></tr>
+<tr><td><code>2026-11-25</code>, <code>2026/11/25</code></td><td>दिनांक</td></tr>
+<tr><td><code>2026-11-25 14:30</code></td><td>दिनांक और समय</td></tr>
+<tr><td><code>TRUE</code>, <code>FALSE</code></td><td>तार्किक मान</td></tr>
+<tr><td><code>[2, 1]</code></td><td><a href="listes.html">सूची</a></td></tr>
+<tr><td><code>=A1+B1</code></td><td><a href="formules.html">सूत्र</a></td></tr>
+<tr><td>बाकी सब</td><td>टेक्स्ट, बाएँ संरेखित</td></tr>
+</tbody></table></div>
+<h3 id="dates">दिनांक</h3>
+<p>दिनांक में वर्ष पहले लिखा जाता है: <code>2026-11-25</code>। <code>25/11/2026</code> टेक्स्ट ही रहता है, जिससे गणना नहीं होती। सामान्य रूप में दिखाने के लिए <strong>प्रारूप › संख्या › दिनांक</strong> (<code>29/11/2017</code>) या <a href="nombres.html#personnalise">कस्टम प्रारूप</a> चुनें।</p>
+<p>दिनांक वाले सेल पर डबल क्लिक <a href="controles.html#calendrier">कैलेंडर</a> खोलता है। <code>=TODAY()</code> आज की तारीख देता है।</p>
+<h3 id="textes">अंकों से बने टेक्स्ट</h3>
+<p>शून्य से शुरू होने वाली संख्या वह शून्य खो देती है: <code>007</code> का 7 हो जाता है। उसे रखने के लिए पहले सेल को <strong>सादा टेक्स्ट</strong> प्रारूप दें (<strong>प्रारूप › संख्या › सादा टेक्स्ट</strong>), या एपॉस्ट्रॉफ़ी से शुरू करें: <code>'007</code>।</p>
+<h2 id="erreurs">आम गलतियाँ</h2>
+<div class="table"><table><thead><tr><th>दिखता है</th><th>कारण</th></tr></thead><tbody>
+<tr><td>बाएँ संरेखित संख्या</td><td>वह टेक्स्ट है: दशमलव अल्पविराम, कोई इकाई (<code>12 ₹</code>), अतिरिक्त स्पेस</td></tr>
+<tr><td>दिनांक की जगह <code>46351</code></td><td>दिनांक <strong>स्वचालित</strong> प्रारूप में है: उसे <strong>दिनांक</strong> प्रारूप दें</td></tr>
+<tr><td>बगल के सेल से कटा टेक्स्ट</td><td><a href="lignes-colonnes.html#taille">कॉलम</a> चौड़ा करें, या <strong>रैप</strong> चुनें</td></tr>
+</tbody></table></div>
+<p>इकाई के लिए केवल संख्या लिखें और उसे <a href="nombres.html">प्रारूप</a> दें: मुद्रा, या कस्टम जैसे <code>0.00 "m"</code>।</p>
+</main>
+</body>
+</html>

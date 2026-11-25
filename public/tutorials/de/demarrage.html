@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Öffnen und Speichern — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Öffnen und Speichern</h1>
+<h2 id="nouveau">Beginnen</h2>
+<p>DocCells öffnet eine leere Arbeitsmappe mit einem Blatt. Um wieder mit einer leeren Mappe zu beginnen, die Seite neu laden oder DocCells in einem anderen Browser-Tab öffnen.</p>
+<h2 id="ouvrir">Eine Arbeitsmappe öffnen</h2>
+<div class="table"><table><thead><tr><th>Weg</th><th>Wirkung</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i>, <strong>Datei › Öffnen</strong>, <kbd>Strg</kbd> <kbd>O</kbd></td><td>eine <code>.xlsx</code>-Datei des Computers wählen</td></tr>
+<tr><td>Die Datei auf die Seite ziehen</td><td>ein Schleier zeigt, wo sie abzulegen ist; die Mappe ersetzt die geöffnete</td></tr>
+<tr><td><strong>Datei › Zuletzt verwendete Datei öffnen</strong></td><td>die letzten zehn geöffneten oder gespeicherten Dateien (Chrome und Edge)</td></tr>
+<tr><td>Ein Link <code>?url=…</code></td><td>eine Arbeitsmappe im Netz oder ein Google Sheet (<a href="partager.html#url">teilen</a>)</td></tr>
+</tbody></table></div>
+<p>Gelesen wird nur das Excel-Format <code>.xlsx</code>. Alte <code>.xls</code>-, <code>.ods</code>- und <code>.csv</code>-Dateien sind vorher umzuwandeln. Was aus einer Excel-Datei übernommen wird, steht unter <a href="excel.html">Excel-Kompatibilität</a>.</p>
+<div class="warn"><p>Das Öffnen einer Arbeitsmappe ersetzt die angezeigte: vorher die Änderungen speichern.</p></div>
+<h3 id="recents">Zuletzt verwendete Dateien</h3>
+<p>Der Browser kann erneut um Erlaubnis bitten, die Datei zu lesen. Eine verschobene, umbenannte oder gelöschte Datei wird aus der Liste entfernt. <strong>Liste leeren</strong> leert sie. Die Liste bleibt in diesem Browser auf diesem Computer.</p>
+<h2 id="enregistrer">Speichern</h2>
+<h3>Chrome und Edge</h3>
+<div class="table"><table><thead><tr><th>Befehl</th><th>Wirkung</th></tr></thead><tbody>
+<tr><td><i data-i="save"></i>, <strong>Datei › Speichern</strong>, <kbd>Strg</kbd> <kbd>S</kbd></td><td>fragt beim ersten Mal nach dem Speicherort; ersetzt die Datei danach ohne Nachfrage</td></tr>
+<tr><td><strong>Datei › Speichern unter...</strong></td><td>eine andere Datei wählen</td></tr>
+</tbody></table></div>
+<p>Eine mit <i data-i="open"></i>, aus der Liste oder durch Ablegen geöffnete Datei wird an ihrem Ort gespeichert; der Browser bittet einmal um Erlaubnis, sie zu ändern.</p>
+<p>Der Name der Arbeitsmappe steht am Ende der Menüleiste. Ein roter Punkt zeigt nicht gespeicherte Änderungen an; der Titel des Browser-Tabs beginnt dann mit ●.</p>
+<h3>Firefox, Safari</h3>
+<p>Diese Browser erlauben es nicht, in eine Datei zu schreiben. <strong>Datei › Exportieren</strong> oder <kbd>Strg</kbd> <kbd>S</kbd> lädt die Arbeitsmappe unter dem Namen der geöffneten Mappe herunter.</p>
+<h2 id="recuperer">Eine nicht gespeicherte Mappe wiederherstellen</h2>
+<p>Solange es nicht gespeicherte Änderungen gibt, hält DocCells im Browser eine Kopie, die weniger als eine Sekunde nach jeder Änderung aktualisiert wird. Wird die Seite ohne Speichern geschlossen, schlägt DocCells beim nächsten Öffnen mit dem Datum der Kopie vor, sie wiederherzustellen (<strong>Wiederherstellen</strong>) oder nicht (<strong>Ignorieren</strong>).</p>
+<ul>
+<li>Speichern, Exportieren oder das Öffnen einer anderen Mappe löscht diese Kopie.</li>
+<li>Die Kopie zu ignorieren löscht sie endgültig.</li>
+<li>Die Kopie wird nur angelegt, wenn DocCells die ganze Seite einnimmt, nicht wenn es in eine andere eingebettet ist.</li>
+</ul>
+<h2 id="langue">Sprache</h2>
+<p>DocCells nimmt die Sprache des Browsers unter den zwölf Sprachen seiner Oberfläche: Chinesisch (vereinfacht und traditionell), Deutsch, Englisch, Französisch, Griechisch, Hindi, Italienisch, Niederländisch, Portugiesisch, Russisch, Spanisch. Für die übrigen gilt Englisch. <code>?lang=de</code> in der Adresse legt eine Sprache fest.</p>
+<p>Die Sprache ändert die Menüs, die Funktionsnamen, das Dezimaltrennzeichen, das Währungssymbol und die Reihenfolge angezeigter Daten. Die gespeicherte Datei hängt nicht davon ab: eine französisch geschriebene Mappe öffnet sich auf Deutsch mit deutschen Formeln.</p>
+</main>
+</body>
+</html>

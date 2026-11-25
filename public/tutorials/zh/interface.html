@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>界面 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>界面</h1>
+<figure><img src="img/interface.webp" alt="DocCells 窗口" width="1280" height="760" /></figure>
+<p>从上到下：菜单栏、按钮栏、公式栏、工作表、工作表标签和缩放。</p>
+<h2 id="menus">菜单</h2>
+<div class="table"><table><thead><tr><th>菜单</th><th>内容</th></tr></thead><tbody>
+<tr><td><strong>文件</strong></td><td><a href="demarrage.html">打开、保存</a>，<a href="impression.html">打印</a></td></tr>
+<tr><td><strong>编辑</strong></td><td>撤销、重做，<a href="selection.html#recopier">向下、向右填充</a></td></tr>
+<tr><td><strong>查看</strong></td><td><a href="mise-en-forme.html#quadrillage">网格线</a>，<a href="lignes-colonnes.html#figer">冻结</a></td></tr>
+<tr><td><strong>插入</strong></td><td><a href="images-liens.html">图片</a>，<a href="graphiques.html">图表</a>，<a href="controles.html">复选框、下拉列表</a></td></tr>
+<tr><td><strong>格式</strong></td><td><a href="nombres.html">数字</a>，<a href="mise-en-forme.html">文本、对齐、合并</a>，<a href="mise-en-forme.html#alternees">交替颜色</a>，<a href="conditionnelle.html">条件格式</a></td></tr>
+<tr><td><strong>数据</strong></td><td><a href="tri-filtre.html">排序和筛选</a></td></tr>
+<tr><td><strong>工具</strong></td><td><a href="protection.html">保护</a>，本手册（<strong>用户手册</strong>），DocTools，源代码，版本（<strong>关于...</strong>）</td></tr>
+</tbody></table></div>
+<p>勾号表示已启用的选项：显示网格线、冻结单元格、粗体、筛选、受保护的工作簿。</p>
+<figure><img src="img/menus.webp" alt="格式菜单和数字格式" width="1280" height="620" /></figure>
+<h2 id="boutons">按钮栏</h2>
+<div class="table"><table><thead><tr><th>按钮</th><th>作用</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i> <i data-i="save"></i></td><td><a href="demarrage.html">打开、保存</a></td></tr>
+<tr><td><i data-i="gridlines"></i></td><td>显示或隐藏<a href="mise-en-forme.html#quadrillage">网格线</a></td></tr>
+<tr><td><i data-i="alternating"></i></td><td><a href="mise-en-forme.html#alternees">交替颜色</a></td></tr>
+<tr><td><i data-i="conditional"></i></td><td><a href="conditionnelle.html">条件格式</a></td></tr>
+<tr><td><i data-i="protect"></i></td><td><a href="protection.html">保护</a>；工作簿受保护时呈蓝色</td></tr>
+<tr><td><i data-i="chart"></i></td><td><a href="graphiques.html">插入图表</a></td></tr>
+<tr><td><i data-i="image"></i></td><td><a href="images-liens.html">插入图片</a></td></tr>
+<tr><td><i data-i="undo"></i> <i data-i="redo"></i></td><td>撤销、重做</td></tr>
+<tr><td><i data-i="clear-format"></i></td><td>清除格式</td></tr>
+<tr><td><i data-i="percentage-format"></i> <i data-i="number-decrease"></i> <i data-i="number-increase"></i></td><td><a href="nombres.html">百分比、减少或增加小数位</a></td></tr>
+<tr><td><strong>自动</strong>、<strong>Arial</strong>、<strong>10</strong></td><td>数字格式、字体、字号</td></tr>
+<tr><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i></td><td>粗体、斜体、下划线</td></tr>
+<tr><td><i data-i="font-color"></i> <i data-i="background"></i></td><td>文字颜色、填充颜色</td></tr>
+<tr><td><i data-i="border-all"></i> <i data-i="merge-all"></i></td><td><a href="mise-en-forme.html">边框、合并</a></td></tr>
+<tr><td><i data-i="align-left"></i> <i data-i="align-top"></i> <i data-i="text-rotation-none"></i> <i data-i="text-overflow"></i></td><td>对齐、旋转、换行</td></tr>
+<tr><td><i data-i="freeze-row-col"></i></td><td><a href="lignes-colonnes.html#figer">冻结</a></td></tr>
+<tr><td><i data-i="formula-sum"></i></td><td><a href="formules.html#somme">自动求和</a>及其他公式</td></tr>
+<tr><td><i data-i="filter"></i></td><td><a href="tri-filtre.html">排序和筛选</a></td></tr>
+</tbody></table></div>
+<p>按钮的小箭头打开其选项；按钮本身重复上一次的选择。窗口较窄时，最后几个按钮收在 <i data-i="more"></i> 后面。</p>
+<h2 id="barre">公式栏</h2>
+<ul>
+<li>左侧是<strong>名称框</strong>：选区的地址，或<a href="noms.html">区域的名称</a>。其箭头列出命名区域，并可打开名称管理器。</li>
+<li><em>fx</em> 右侧是单元格的内容，包括公式，可在此修改。</li>
+</ul>
+<h2 id="feuille">工作表</h2>
+<ul>
+<li>右键单击会根据位置打开不同的菜单：单元格、列标或行标、工作表标签。</li>
+<li>新工作表有 84 行 60 列（A 到 BH）。可通过右键 <strong>插入</strong> 添加（<a href="lignes-colonnes.html">行与列</a>）。</li>
+<li>选区角上的蓝色手柄用于<a href="selection.html#recopier">填充</a>。</li>
+</ul>
+<h2 id="zoom">标签与缩放</h2>
+<p>底部的 <i data-i="plus"></i> 添加工作表，<i data-i="all-sheets"></i> 列出所有工作表（<a href="feuilles.html">工作表</a>）。右侧的 <strong>−</strong> 和 <strong>+</strong> 调整缩放；单击百分比可选择 10% 到 400%。</p>
+<h2 id="annuler">撤销</h2>
+<p><i data-i="undo"></i> 或 <kbd>Ctrl</kbd> <kbd>Z</kbd> 撤销，<i data-i="redo"></i>、<kbd>Ctrl</kbd> <kbd>Y</kbd> 或 <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Z</kbd> 重做：输入、粘贴、格式设置、插入。打开工作簿、显示或隐藏网格线、保护工作簿、添加名称或条件格式规则时，历史记录重新开始。图表不在其中：用图表自己的按钮<a href="graphiques.html#modifier">修改或删除</a>。</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,126 @@
+words|-|admis=aprobado; refusé=suspenso; très bien=muy bien; assez bien=bien; un=uno; deux=dos; autre=otro; absent=ausente; Note : =Nota: ; tableur=tablero; jean dupont=juan pérez
+SUMIF|-|Suma de las celdas de un rango que cumplen un criterio (">=10", "Ana"), o de las celdas correspondientes de otro rango.
+SUBTOTAL|-|Resumen de un rango según un código: 1 promedio, 2 recuento, 4 máx., 5 mín., 9 suma.
+AGGREGATE|función; opción; rango|Resumen de un rango según un código: 1 promedio, 2 recuento, 4 máx., 5 mín., 9 suma. Opciones: 0 a 7, como en Excel.
+INT|-|Parte entera: el mayor entero menor o igual.
+COMBINA|n; k|Número de combinaciones con repetición.
+LOG|número; base|Logaritmo en una base; la base es obligatoria.
+BASE|número; base; [longitud]|Escritura de un entero en una base, como texto.
+DECIMAL|texto; base|Valor de un número escrito en una base de 2 a 10.
+COT|ángulo|Cotangente de un ángulo en radianes.
+SEC|ángulo|Secante de un ángulo en radianes.
+CSC|ángulo|Cosecante de un ángulo en radianes.
+ACOT|número|Arco cotangente, en radianes.
+COTH|número|Cotangente hiperbólica.
+SECH|número|Secante hiperbólica.
+CSCH|número|Cosecante hiperbólica.
+ACOTH|número|Cotangente hiperbólica inversa.
+IFS|condición1; valor1; [condición2; valor2; …]|Valor de la primera condición verdadera; #N/A si ninguna lo es.
+SWITCH|expresión; caso1; valor1; [caso2; valor2; …]; [por_defecto]|Valor del caso igual a la expresión.
+XOR|valor1; valor2; …|Verdadero si un número impar de valores son verdaderos.
+TRUE|-|El valor lógico verdadero, mostrado como TRUE.
+FALSE|-|El valor lógico falso, mostrado como FALSE.
+IFERROR|valor; valor_si_error|El valor, u otro si es el error de una función (#N/A, #NUM!). No sustituye DIV/0 ni #VALUE!.
+IFNA|valor; valor_si_na|El valor, u otro si es el error #N/A.
+COUNTIF|-|Número de celdas que cumplen un criterio: ">10", "<>0", "Ana". Los comodines * y ? no se reconocen.
+MODE|rango|Valor más frecuente.
+RANK|número; rango; [orden]|Posición de un número en un rango, descendente; ascendente si el orden es 1.
+QUARTILE|rango; k|Cuartil: k de 0 (mínimo) a 4 (máximo).
+QUARTILEEXC|rango; k|Cuartil, extremos excluidos: k de 1 a 3.
+PERCENTILEINC|rango; k|Percentil: k de 0 a 1.
+PERCENTILEEXC|rango; k|Percentil, extremos excluidos.
+PERCENTRANK|rango; número|Posición de un número en proporción, de 0 a 1.
+STDEV|valor1; [valor2; …]|Desviación estándar de una muestra (divisor n − 1).
+STDEVP|-|Desviación estándar de una población (divisor n).
+STDEVPA|valor1; [valor2; …]|Desviación estándar de una población, los textos cuentan 0.
+VAR|valor1; [valor2; …]|Varianza de una muestra (divisor n − 1).
+VARP|valor1; [valor2; …]|Varianza de una población (divisor n).
+SKEWP|rango|Coeficiente de asimetría de una población.
+FREQUENCY|-|Frecuencias de las clases delimitadas por una lista, en una lista.
+COVARIANCEP|rango_y; rango_x|Covarianza de una población.
+COVARIANCES|rango_y; rango_x|Covarianza de una muestra.
+LINEST|rango_y; rango_x|Recta de mínimos cuadrados: la lista de la pendiente y la ordenada en el origen.
+LOGEST|rango_y; rango_x|Ajuste y = b·mˣ: la lista de m y b.
+TREND|rango_y; rango_x; nuevos_x|Valores del ajuste lineal, en una lista.
+GROWTH|rango_y; rango_x; nuevos_x|Valores del ajuste exponencial, en una lista.
+PERMUTATIONA|n; k|Número de variaciones con repetición de k elementos entre n.
+NORMDIST|x; media; desviación; acumulado|Distribución normal: P(X ≤ x) si acumulado es verdadero, densidad si no.
+NORMINV|probabilidad; media; desviación|x tal que P(X ≤ x) sea la probabilidad, distribución normal.
+NORMSDIST|z; acumulado|Normal estándar: P(Z ≤ z) si acumulado es verdadero, densidad si no.
+NORMSINV|probabilidad|z tal que P(Z ≤ z) sea la probabilidad.
+GAUSS|z|P(0 ≤ Z ≤ z), normal estándar.
+PHI|z|Densidad de la normal estándar.
+BINOMDIST|k; n; p; acumulado|Distribución binomial: P(X ≤ k) si acumulado es verdadero, P(X = k) si no.
+CRITBINOM|n; p; alfa|Menor k tal que P(X ≤ k) ≥ alfa, distribución binomial.
+NEGBINOMDIST|fracasos; éxitos; p; acumulado|Distribución binomial negativa.
+POISSON|k; lambda; acumulado|Distribución de Poisson: P(X ≤ k) si acumulado es verdadero, P(X = k) si no.
+HYPGEOMDIST|k; n; éxitos; población; acumulado|Distribución hipergeométrica.
+EXPONDIST|x; lambda; acumulado|Distribución exponencial.
+GAMMADIST|x; alfa; beta; acumulado|Distribución gamma.
+GAMMAINV|probabilidad; alfa; beta|Inversa de la distribución gamma.
+BETADIST|x; alfa; beta; acumulado; a; b|Distribución beta en [a, b].
+BETAINV|probabilidad; alfa; beta|Inversa de la distribución beta.
+LOGNORMDIST|x; media; desviación; acumulado|Distribución lognormal.
+LOGNORMINV|probabilidad; media; desviación|Inversa de la distribución lognormal.
+WEIBULL|x; alfa; beta; acumulado|Distribución de Weibull.
+CHIDIST|x; grados; acumulado|Distribución ji cuadrado: P(X ≤ x) si acumulado es verdadero.
+CHIDISTRT|x; grados|Distribución ji cuadrado: P(X > x).
+CHIINVRT|probabilidad; grados|x tal que P(X > x) sea la probabilidad, ji cuadrado.
+FDIST|x; grados1; grados2; acumulado|Distribución F: P(X ≤ x) si acumulado es verdadero.
+FDISTRT|x; grados1; grados2|Distribución F: P(X > x).
+TTEST|rango1; rango2|Probabilidad de la prueba t de Student con dos muestras.
+CONFIDENCE|alfa; desviación; n|Semiamplitud del intervalo de confianza de una media (normal).
+GAMMA|número|Función gamma.
+VLOOKUP|-|Busca un valor en la primera columna de un rango y devuelve la celda de la misma fila. Último argumento 0: valor exacto.
+HLOOKUP|-|Busca un valor en la primera fila de un rango y devuelve la celda de la misma columna. Último argumento 0: valor exacto.
+LOOKUP|valor; rango_ordenado; rango_resultado|Busca un valor en un rango ordenado y devuelve el valor correspondiente de otro rango.
+MATCH|-|Posición de un valor en un rango. Último argumento 0: valor exacto.
+INDEX|-|Celda de un rango o elemento de una lista, por su posición.
+TRANSPOSE|-|Intercambia filas y columnas; el resultado es una lista de filas, en una celda.
+FLATTEN|rango|Los valores de un rango, fila tras fila, en una lista.
+UNIQUE|valor1; valor2; …|Lista de los valores sin duplicados.
+SPLIT|texto; separador|Divide un texto en una lista.
+CONCAT|valor1; valor2|Une dos textos.
+VALUE|-|Número escrito en un texto, con punto decimal.
+UNICHAR|código|Carácter de un código Unicode.
+UNICODE|texto|Código Unicode del primer carácter.
+TODAY|-|Fecha de hoy. Para calcular con ella, ponerla en una celda.
+NOW|-|Fecha y hora, recalculadas con cada cambio.
+DATE|-|Fecha de un año, un mes y un día; dar a la celda un formato de fecha.
+WEEKDAY|-|Día de la semana; con el tipo 2, de 1 (lunes) a 7 (domingo).
+DATEDIF|-|Duración entre dos fechas, en años ("Y"), meses ("M") o días ("D").
+TIME|-|Hora, como fracción de día; dar a la celda un formato de hora.
+HOUR|-|Horas de una hora.
+MINUTE|-|Minutos de una hora.
+SECOND|-|Segundos de una hora.
+PMT|-|Cuota constante de un préstamo; el capital se cuenta negativo.
+PDURATION|tasa; valor_actual; valor_futuro|Número de períodos para alcanzar un valor.
+RRI|períodos; valor_actual; valor_futuro|Tasa de interés equivalente de un crecimiento.
+ISPMT|tasa; período; períodos; capital|Interés de un período de un préstamo con amortización constante.
+BITAND|a; b|Y bit a bit.
+BITOR|a; b|O bit a bit.
+BITXOR|a; b|O exclusivo bit a bit.
+BITLSHIFT|número; desplazamiento|Desplaza los bits a la izquierda.
+BITRSHIFT|número; desplazamiento|Desplaza los bits a la derecha.
+CONVERT|-|Convierte una medida de una unidad a otra: "m", "km", "mi", "hr", "mn", "kg"… Las temperaturas no se convierten.
+GESTEP|número; umbral|1 si el número alcanza el umbral, 0 si no.
+ERF|x|Función de error de Gauss.
+BESSELJ|x; n|Función de Bessel Jₙ.
+BESSELY|x; n|Función de Bessel Yₙ.
+BESSELI|x; n|Función de Bessel modificada Iₙ.
+BESSELK|x; n|Función de Bessel modificada Kₙ.
+IMARGUMENT|complejo|Argumento, en radianes.
+IMPOWER|complejo; exponente|Potencia de un complejo.
+IMSQRT|complejo|Raíz cuadrada de un complejo.
+IMEXP|complejo|Exponencial de un complejo.
+IMLN|complejo|Logaritmo neperiano de un complejo.
+IMLOG10|complejo|Logaritmo decimal de un complejo.
+IMLOG2|complejo|Logaritmo en base 2 de un complejo.
+IMSIN|complejo|Seno de un complejo.
+IMCOS|complejo|Coseno de un complejo.
+IMTAN|complejo|Tangente de un complejo.
+ISERROR|-|Verdadero si el valor es el error de una función (#N/A, #NUM!).
+ISERR|-|Verdadero si el valor es el error de una función distinto de #N/A.
+ISNA|-|Verdadero si el valor es el error #N/A.
+NA|-|El error #N/A.
+TYPE|-|Tipo de un valor: 1 número, 2 texto, 4 lógico, 16 error, 64 lista.

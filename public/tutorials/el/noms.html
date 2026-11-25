@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ονομασμένες περιοχές — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Ονομασμένες περιοχές</h1>
+<h2 id="definir">Ορισμός ονόματος</h2>
+<ol>
+<li>Επιλέξτε το κελί ή την περιοχή.</li>
+<li>Δεξί κλικ › <strong>Ορισμός ονόματος…</strong> (ή το βέλος του πλαισίου ονόματος › <strong>Διαχείριση ονομάτων</strong>).</li>
+<li>Γράψτε το όνομα, επιλέξτε το πεδίο ισχύος, <strong>OK</strong>.</li>
+</ol>
+<figure><img src="img/noms.webp" alt="Το παράθυρο νέου ονόματος" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Πεδίο</th><th>Περιεχόμενο</th></tr></thead><tbody>
+<tr><td><strong>Όνομα</strong></td><td>αρχίζει με γράμμα ή <code>_</code>· γράμματα, ψηφία, <code>_</code> και <code>.</code>, χωρίς κενό· όχι διεύθυνση όπως <code>B2</code></td></tr>
+<tr><td><strong>Εμβέλεια</strong></td><td><strong>Βιβλίο εργασίας</strong>: διαβάζεται από όλα τα φύλλα· ένα φύλλο: διαβάζεται μόνο από αυτό, όπου υπερισχύει ονόματος του βιβλίου</td></tr>
+<tr><td><strong>Αναφορά σε</strong></td><td>ένα κελί ή μια περιοχή, με το φύλλο της: <code>'Φύλλο1'!$B$2:$B$6</code></td></tr>
+</tbody></table></div>
+<h2 id="utiliser">Χρήση ονόματος</h2>
+<pre><code>=AVERAGE(βαθμοί)
+=τιμή*(1+φπα)</code></pre>
+<ul>
+<li>Το βέλος του πλαισίου ονόματος απαριθμεί τα ονόματα: η επιλογή ενός επιλέγει την περιοχή του, στο φύλλο του.</li>
+<li>Όταν η επιλογή είναι ακριβώς μια ονομασμένη περιοχή, το πλαίσιο δείχνει το όνομά της.</li>
+<li>Μια <a href="controles.html#listes">αναπτυσσόμενη λίστα</a> μπορεί να διαβάζει μια περιοχή κελιών, δοσμένη με τη διεύθυνσή της.</li>
+</ul>
+<h2 id="gerer">Τροποποίηση, διαγραφή</h2>
+<p>Στο <strong>Διαχείριση ονομάτων</strong>, κλικ σε ένα όνομα επαναφέρει τα πεδία του για τροποποίηση· το <strong>Διαγραφή</strong> το διαγράφει· το <strong>Νέο</strong> επιστρέφει σε κενό όνομα. Πριν διαγράψετε ένα όνομα, αντικαταστήστε τους τύπους που το διαβάζουν: κρατούν την τελευταία τιμή τους και μετά δεν υπολογίζονται πια.</p>
+<p>Τα ονόματα αποθηκεύονται στο αρχείο Excel και διαβάζονται από αυτό.</p>
+</main>
+</body>
+</html>

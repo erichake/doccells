@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Auswählen, kopieren, ausfüllen — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Auswählen, kopieren, ausfüllen</h1>
+<h2 id="selectionner">Auswählen</h2>
+<div class="table"><table><thead><tr><th>Aktion</th><th>Auswahl</th></tr></thead><tbody>
+<tr><td>Klick</td><td>eine Zelle</td></tr>
+<tr><td>Ziehen</td><td>ein Bereich</td></tr>
+<tr><td>Klick, dann <kbd>Umschalt</kbd> und Klick</td><td>der Bereich dazwischen</td></tr>
+<tr><td><kbd>Umschalt</kbd> und Pfeiltaste</td><td>erweitert den Bereich</td></tr>
+<tr><td><kbd>Strg</kbd> und Klick oder Ziehen</td><td>ein weiterer Bereich</td></tr>
+<tr><td>Klick auf einen Buchstaben, eine Nummer</td><td>eine Spalte, eine Zeile</td></tr>
+<tr><td>Ziehen über Buchstaben, Nummern</td><td>mehrere Spalten, mehrere Zeilen</td></tr>
+<tr><td><kbd>Strg</kbd> <kbd>A</kbd></td><td>das ganze Blatt</td></tr>
+<tr><td>Namenfeld, Pfeil</td><td>ein <a href="noms.html">benannter Bereich</a></td></tr>
+</tbody></table></div>
+<p>Die Adresse der Auswahl steht im Namenfeld links von der Bearbeitungsleiste.</p>
+<h2 id="copier">Kopieren, ausschneiden, einfügen</h2>
+<p><kbd>Strg</kbd> <kbd>C</kbd>, <kbd>Strg</kbd> <kbd>X</kbd>, <kbd>Strg</kbd> <kbd>V</kbd> oder <strong>Kopieren</strong> und <strong>Einfügen</strong> des Rechtsklicks.</p>
+<ul>
+<li><strong>Einfügen</strong> des Rechtsklicks fügt die Werte ohne die Formeln ein; <kbd>Strg</kbd> <kbd>V</kbd> fügt die Formeln ein.</li>
+<li>Eine eingefügte Formel passt sich ihrem neuen Ort an: <code>=B2</code> eine Zeile tiefer kopiert wird <code>=B3</code>. Das Zeichen <code>$</code> hält eine Zeile oder Spalte fest (<a href="formules.html#references">Bezüge</a>).</li>
+<li>Eine ausgeschnittene Formel behält ihre Bezüge.</li>
+<li>Eine aus Excel, Numbers, einer Webseite oder einem tabulatorgetrennten Text kopierte Tabelle wird Zelle für Zelle eingefügt; Dezimalzahlen und Listen werden wie beim Tippen erkannt.</li>
+<li>Mehrere Bereiche können nicht zugleich ausgeschnitten oder eingefügt werden.</li>
+</ul>
+<h2 id="deplacer">Verschieben</h2>
+<p>Den Rand der Auswahl ziehen: die Zellen werden samt Formatierung verschoben.</p>
+<h2 id="recopier">Ausfüllen</h2>
+<p>Der blaue Anfasser unten rechts an der Auswahl wird nach unten, oben, links oder rechts gezogen.</p>
+<div class="table"><table><thead><tr><th>Ausgangszellen</th><th>Der Anfasser ergibt</th></tr></thead><tbody>
+<tr><td>eine Formel</td><td>die Formel mit verschobenen Bezügen</td></tr>
+<tr><td>zwei Zahlen, 1 und 2</td><td>die Reihe: 3, 4, 5…</td></tr>
+<tr><td>eine einzelne Zahl, ein Text oder ein Datum</td><td>denselben Wert</td></tr>
+<tr><td>zwei Daten</td><td>die folgenden Daten im selben Abstand</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="Die mit dem Anfasser fortgesetzte Reihe 1, 2" width="760" height="300" /></figure>
+<p>Ohne Maus oder für einen großen Bereich:</p>
+<div class="table"><table><thead><tr><th>Befehl</th><th>Wirkung</th></tr></thead><tbody>
+<tr><td><strong>Bearbeiten › Nach unten ausfüllen</strong>, <kbd>Strg</kbd> <kbd>D</kbd></td><td>die erste Zeile des ausgewählten Bereichs wird in die folgenden kopiert</td></tr>
+<tr><td><strong>Bearbeiten › Nach rechts ausfüllen</strong>, <kbd>Strg</kbd> <kbd>R</kbd></td><td>die erste Spalte wird in die folgenden kopiert</td></tr>
+</tbody></table></div>
+<p>Ist nur eine Zeile ausgewählt, kopiert <kbd>Strg</kbd> <kbd>D</kbd> die darüberliegende hinein; ist nur eine Spalte ausgewählt, kopiert <kbd>Strg</kbd> <kbd>R</kbd> die linke. Diese Befehle kopieren immer, ohne Reihe, mit Formaten, Rahmen, Kontrollkästchen und Drop-down-Listen.</p>
+<div class="tip"><p>Für eine Formel in einer ganzen Spalte: sie oben tippen, von dieser Zelle bis zur letzten auswählen, <kbd>Strg</kbd> <kbd>D</kbd>.</p></div>
+</main>
+</body>
+</html>

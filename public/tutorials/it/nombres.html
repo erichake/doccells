@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formati numerici — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Formati numerici</h1>
+<p class="lead">Un formato cambia come si mostra un numero, non il suo valore: i calcoli conservano tutti i decimali.</p>
+<h2 id="choisir">Scegliere un formato</h2>
+<p><strong>Formato › Numero</strong>, o l’elenco <strong>Automatico</strong> della barra dei pulsanti.</p>
+<div class="table"><table><thead><tr><th>Formato</th><th>Esempio</th></tr></thead><tbody>
+<tr><td><strong>Automatico</strong></td><td><code>1200,09</code></td></tr>
+<tr><td><strong>Testo semplice</strong></td><td><code>1200,09</code>, allineato a sinistra; l’immissione resta un testo</td></tr>
+<tr><td><strong>Numero</strong></td><td><code>1200,09</code></td></tr>
+<tr><td><strong>Percentuale</strong></td><td><code>120009,00%</code>; 0,25 diventa <code>25,00%</code></td></tr>
+<tr><td><strong>Scientifico</strong></td><td><code>1,20E+03</code></td></tr>
+<tr><td><strong>Contabilità</strong></td><td><code>(1.200,09) €</code></td></tr>
+<tr><td><strong>Valuta</strong></td><td><code>1.200,09 €</code></td></tr>
+<tr><td><strong>Data</strong>, <strong>Ora</strong>, <strong>Data e ora</strong></td><td>per le date: <code>29/11/2017</code>, <code>3:00 PM</code>, <code>15:00</code>…</td></tr>
+</tbody></table></div>
+<p>Il simbolo di valuta è quello della lingua dell’interfaccia.</p>
+<div class="table"><table><thead><tr><th>Pulsante</th><th>Effetto</th></tr></thead><tbody>
+<tr><td><i data-i="percentage-format"></i></td><td>percentuale</td></tr>
+<tr><td><i data-i="number-decrease"></i></td><td>un decimale in meno</td></tr>
+<tr><td><i data-i="number-increase"></i></td><td>un decimale in più</td></tr>
+</tbody></table></div>
+<p>Questi pulsanti valgono anche per i numeri di un <a href="listes.html">elenco</a>. Per arrotondare il valore stesso, usare <code>ARROTONDA</code>.</p>
+<h2 id="personnalise">Formato personalizzato</h2>
+<p><strong>Formato › Numero › Formato numerico personalizzato…</strong>: scegliere un formato suggerito, o scrivere un codice. L’anteprima mostra il risultato; <strong>Guida ai formati</strong> ricorda i segni; <strong>Applica</strong> lo dà alla selezione.</p>
+<figure><img src="img/format-personnalise.webp" alt="La finestra dei formati numerici personalizzati" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Segno</th><th>Funzione</th><th>Codice</th><th>1234,5 si mostra</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td>una cifra, zero compreso</td><td><code>0,00</code></td><td><code>1234,50</code></td></tr>
+<tr><td><code>#</code></td><td>una cifra se è utile</td><td><code>#,##</code></td><td><code>1234,5</code></td></tr>
+<tr><td><code>.</code></td><td>raggruppa le migliaia</td><td><code>#.##0</code></td><td><code>1.235</code></td></tr>
+<tr><td><code>%</code></td><td>percentuale</td><td><code>0%</code></td><td><code>123450%</code></td></tr>
+<tr><td><code>"testo"</code></td><td>un testo, un’unità</td><td><code>0,0 "m"</code></td><td><code>1234,5 m</code></td></tr>
+<tr><td><code>E+00</code></td><td>notazione scientifica</td><td><code>0,00E+00</code></td><td><code>1,23E+03</code></td></tr>
+<tr><td><code>;</code></td><td>formati di positivi, negativi, zeri, testi</td><td><code>0;-0;"nullo"</code></td><td><code>1235</code></td></tr>
+<tr><td><code>[Red]</code></td><td>colore</td><td><code>0;[Red]-0</code></td><td>negativi in rosso</td></tr>
+</tbody></table></div>
+<p>Il codice si scrive con i separatori della lingua; la finestra indica la forma in cui è salvato (<code>#,##0.00</code>), la stessa di Excel.</p>
+<h3 id="dates-heures">Date e ore</h3>
+<div class="table"><table><thead><tr><th>Codice</th><th>29 agosto 2026, ore 14:30</th></tr></thead><tbody>
+<tr><td><code>dd/MM/yyyy</code></td><td><code>29/08/2026</code></td></tr>
+<tr><td><code>d mmm yyyy</code></td><td><code>29 Aug 2026</code></td></tr>
+<tr><td><code>dddd d mmmm yyyy</code></td><td><code>Saturday 29 August 2026</code></td></tr>
+<tr><td><code>hh:mm</code></td><td><code>14:30</code></td></tr>
+<tr><td><code>dd/MM/yyyy hh:mm</code></td><td><code>29/08/2026 14:30</code></td></tr>
+</tbody></table></div>
+<p>I nomi dei mesi e dei giorni si mostrano in inglese.</p>
+<h3 id="unites">Unità</h3>
+<p>Sotto <strong>Unità</strong>, formati come <code>0,00 "V"</code>, <code>0,00 "Ω"</code>, <code>0,00 "mm"</code>: la cella resta un numero, con cui si calcola.</p>
+</main>
+</body>
+</html>

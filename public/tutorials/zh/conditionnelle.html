@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>条件格式 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>条件格式</h1>
+<p class="lead">规则改变区域中满足条件的单元格的外观，并随输入或计算的值而变化。</p>
+<h2 id="creer">创建规则</h2>
+<ol>
+<li>选择区域，不含标题。</li>
+<li><i data-i="conditional"></i> 或 <strong>格式 › 条件格式</strong>。</li>
+<li>选择条件、比较值、颜色或样式。</li>
+<li><strong>添加</strong>。</li>
+</ol>
+<figure><img src="img/conditionnelle.webp" alt="条件格式窗口，已应用一条规则" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>条件</th><th>单元格</th></tr></thead><tbody>
+<tr><td><code>&lt;</code></td><td>小于</td></tr>
+<tr><td><code>&gt;</code></td><td>大于</td></tr>
+<tr><td><code>=</code></td><td>等于</td></tr>
+<tr><td><code>!=</code></td><td>不等于</td></tr>
+<tr><td><code>[]</code></td><td>介于两个值之间（含端点）</td></tr>
+<tr><td><code>abc</code></td><td>包含某文本，不区分大小写</td></tr>
+</tbody></table></div>
+<h2 id="comparer">与什么比较</h2>
+<div class="table"><table><thead><tr><th>比较对象</th><th>示例</th></tr></thead><tbody>
+<tr><td><strong>固定值</strong></td><td>低于 10 的成绩</td></tr>
+<tr><td><strong>固定单元格</strong></td><td>低于 <code>F1</code> 中所写界限的成绩</td></tr>
+<tr><td><strong>同一行的列</strong></td><td>C 列中逐行大于 B 列的值</td></tr>
+</tbody></table></div>
+<h2 id="apparence">外观</h2>
+<p><strong>文本</strong> 和 <strong>背景</strong> 选择颜色，<strong>无</strong> 移除颜色；<strong>B</strong>、<em>I</em>、<strong>U</strong> 设为粗体、斜体、下划线。至少需要一种颜色或样式。</p>
+<h2 id="regles">多条规则</h2>
+<p>左栏列出工作表的规则：<strong>编辑</strong>、<strong>删除</strong>。如果多条规则适用于同一单元格，列表中最后一条按颜色逐项优先。</p>
+<div class="warn"><p>在规则覆盖的区域中，直接给单元格设置的文字和填充颜色不再显示。</p></div>
+<p>规则以 Excel 条件格式的形式保存在 Excel 文件中。</p>
+</main>
+</body>
+</html>

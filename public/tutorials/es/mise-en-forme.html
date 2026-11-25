@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formato — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Formato</h1>
+<h2 id="texte">Texto</h2>
+<div class="table"><table><thead><tr><th>Comando</th><th>Acceso</th></tr></thead><tbody>
+<tr><td>negrita, cursiva, subrayado</td><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i>; <kbd>Ctrl</kbd> <kbd>B</kbd>, <kbd>Ctrl</kbd> <kbd>I</kbd>, <kbd>Ctrl</kbd> <kbd>U</kbd></td></tr>
+<tr><td>fuente</td><td>lista <strong>Arial</strong>: trece fuentes</td></tr>
+<tr><td>tamaño</td><td>lista <strong>10</strong>, o <strong>Formato › Tamaño Fuente</strong>: 9 a 72</td></tr>
+<tr><td>color del texto, del fondo</td><td><i data-i="font-color"></i> <i data-i="background"></i></td></tr>
+<tr><td>borrar el formato</td><td><i data-i="clear-format"></i>, <strong>Formato › Borrar formato</strong></td></tr>
+</tbody></table></div>
+<p>En la paleta de un color, <strong>Reiniciar color</strong> lo retira; <strong>PERSONALIZADO</strong> abre el selector del sistema.</p>
+<p>Mientras se modifica una celda, el formato se aplica a la parte seleccionada del texto.</p>
+<h2 id="alignement">Alineación</h2>
+<div class="table"><table><thead><tr><th>Comando</th><th>Opciones</th></tr></thead><tbody>
+<tr><td><i data-i="align-left"></i> horizontal</td><td>izquierda, centro, derecha</td></tr>
+<tr><td><i data-i="align-top"></i> vertical</td><td>arriba, medio, abajo</td></tr>
+<tr><td><i data-i="text-rotation-none"></i> rotación</td><td>inclinada, vertical, apilada</td></tr>
+<tr><td><i data-i="text-overflow"></i> ajuste de texto</td><td><strong>Desbordar</strong>: sobre las celdas vacías vecinas; <strong>Ajustar</strong>: en varias líneas; <strong>Cortar</strong>: cortado en el borde</td></tr>
+</tbody></table></div>
+<p>Sin alineación elegida, los números y las fechas van a la derecha, lo demás a la izquierda.</p>
+<h2 id="bordures">Bordes</h2>
+<p><i data-i="border-all"></i> traza el borde elegido; su flecha da los lados (superior, exterior, interiores, todos, ninguno, diagonal), el <strong>color</strong> y el <strong>estilo</strong> del trazo. Elegir color y estilo antes que el lado.</p>
+<h2 id="fusion">Combinar</h2>
+<p><i data-i="merge-all"></i> o <strong>Formato › Juntar celdas</strong>:</p>
+<div class="table"><table><thead><tr><th>Comando</th><th>Efecto</th></tr></thead><tbody>
+<tr><td><strong>Unir todo</strong></td><td>una sola celda, que conserva un solo contenido</td></tr>
+<tr><td><strong>Verticalmente</strong></td><td>una celda por columna</td></tr>
+<tr><td><strong>Horizontalmente</strong></td><td>una celda por fila</td></tr>
+<tr><td><strong>Separar</strong></td><td>devuelve las celdas</td></tr>
+</tbody></table></div>
+<p>Un rango que contiene celdas combinadas no puede ordenarse ni filtrarse.</p>
+<h2 id="alternees">Colores alternos</h2>
+<p><i data-i="alternating"></i> o <strong>Formato › Colores alternos...</strong> colorea una fila de cada dos del rango seleccionado, con una fila de encabezado si se quiere. Los tres colores se pueden elegir.</p>
+<figure><img src="img/couleurs-alternees.webp" alt="La ventana de colores alternos" width="1280" height="760" /></figure>
+<p>Son colores de fondo corrientes: no siguen una ordenación ni una fila insertada. <strong>Quitar colores</strong> los borra del rango.</p>
+<h2 id="quadrillage">Cuadrícula</h2>
+<p><i data-i="gridlines"></i> o <strong>Ver › Mostrar › Cuadrícula</strong> oculta o muestra las líneas grises, en todas las hojas del libro. La <a href="impression.html">impresión</a> tiene su propio ajuste.</p>
+<p>Para un color que dependa del valor, véase <a href="conditionnelle.html">Formato condicional</a>.</p>
+</main>
+</body>
+</html>

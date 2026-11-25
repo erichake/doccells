@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formattazione — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Formattazione</h1>
+<h2 id="texte">Testo</h2>
+<div class="table"><table><thead><tr><th>Comando</th><th>Accesso</th></tr></thead><tbody>
+<tr><td>grassetto, corsivo, sottolineato</td><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i>; <kbd>Ctrl</kbd> <kbd>B</kbd>, <kbd>Ctrl</kbd> <kbd>I</kbd>, <kbd>Ctrl</kbd> <kbd>U</kbd></td></tr>
+<tr><td>carattere</td><td>elenco <strong>Arial</strong>: tredici caratteri</td></tr>
+<tr><td>dimensione</td><td>elenco <strong>10</strong>, o <strong>Formato › Dimensione carattere</strong>: da 9 a 72</td></tr>
+<tr><td>colore del testo, dello sfondo</td><td><i data-i="font-color"></i> <i data-i="background"></i></td></tr>
+<tr><td>cancellare la formattazione</td><td><i data-i="clear-format"></i>, <strong>Formato › Cancella formato</strong></td></tr>
+</tbody></table></div>
+<p>Nella tavolozza di un colore, <strong>Reset color</strong> lo toglie; <strong>Personalizzato</strong> apre il selettore del sistema.</p>
+<p>Mentre si modifica una cella, la formattazione si applica alla parte selezionata del testo.</p>
+<h2 id="alignement">Allineamento</h2>
+<div class="table"><table><thead><tr><th>Comando</th><th>Scelte</th></tr></thead><tbody>
+<tr><td><i data-i="align-left"></i> orizzontale</td><td>sinistra, centro, destra</td></tr>
+<tr><td><i data-i="align-top"></i> verticale</td><td>in alto, in mezzo, in basso</td></tr>
+<tr><td><i data-i="text-rotation-none"></i> rotazione</td><td>inclinata, verticale, impilata</td></tr>
+<tr><td><i data-i="text-overflow"></i> testo a capo</td><td><strong>Overflow</strong>: sulle celle vuote vicine; <strong>A capo</strong>: su più righe; <strong>Ritaglia</strong>: tagliato al bordo</td></tr>
+</tbody></table></div>
+<p>Senza allineamento scelto, numeri e date sono a destra, il resto a sinistra.</p>
+<h2 id="bordures">Bordi</h2>
+<p><i data-i="border-all"></i> traccia il bordo scelto; la sua freccia dà i lati (superiore, esterno, interni, tutti, nessuno, diagonale), il <strong>colore</strong> e lo <strong>stile</strong> della linea. Scegliere colore e stile prima del lato.</p>
+<h2 id="fusion">Unire</h2>
+<p><i data-i="merge-all"></i> o <strong>Formato › Unisci celle</strong>:</p>
+<div class="table"><table><thead><tr><th>Comando</th><th>Effetto</th></tr></thead><tbody>
+<tr><td><strong>Unisci tutto</strong></td><td>una sola cella, che conserva un solo contenuto</td></tr>
+<tr><td><strong>Unisci verticalmente</strong></td><td>una cella per colonna</td></tr>
+<tr><td><strong>Unisci orizzontalmente</strong></td><td>una cella per riga</td></tr>
+<tr><td><strong>Annulla unione</strong></td><td>restituisce le celle</td></tr>
+</tbody></table></div>
+<p>Un intervallo che contiene celle unite non si può ordinare né filtrare.</p>
+<h2 id="alternees">Colori alternati</h2>
+<p><i data-i="alternating"></i> o <strong>Formato › Colori alternati...</strong> colora una riga su due dell’intervallo selezionato, con una riga di intestazione se si vuole. I tre colori si scelgono.</p>
+<figure><img src="img/couleurs-alternees.webp" alt="La finestra dei colori alternati" width="1280" height="760" /></figure>
+<p>Sono normali colori di sfondo: non seguono un ordinamento né una riga inserita. <strong>Rimuovi colori</strong> li toglie dall’intervallo.</p>
+<h2 id="quadrillage">Griglia</h2>
+<p><i data-i="gridlines"></i> o <strong>Visualizza › Mostra › Griglia</strong> nasconde o mostra le linee grigie, in tutti i fogli della cartella. La <a href="impression.html">stampa</a> ha la sua impostazione.</p>
+<p>Per un colore che dipende dal valore, vedere <a href="conditionnelle.html">Formattazione condizionale</a>.</p>
+</main>
+</body>
+</html>

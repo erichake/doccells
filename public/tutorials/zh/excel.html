@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>与 Excel 的兼容性 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>与 Excel 的兼容性</h1>
+<p class="lead">DocCells 读写 Excel <code>.xlsx</code> 格式。以下内容在读写两个方向都会保留。</p>
+<h2 id="conserve">保留的内容</h2>
+<div class="table"><table><thead><tr><th>项目</th><th>说明</th></tr></thead><tbody>
+<tr><td>值、文本、日期、公式</td><td>公式以 DocCells 的语言显示</td></tr>
+<tr><td><a href="nombres.html">数字格式</a></td><td>包括自定义格式</td></tr>
+<tr><td>字体、颜色、对齐、旋转、换行</td><td></td></tr>
+<tr><td>边框、合并单元格</td><td></td></tr>
+<tr><td>列宽、行高、隐藏的行列</td><td></td></tr>
+<tr><td><a href="lignes-colonnes.html#figer">冻结的行列</a>、网格线</td><td></td></tr>
+<tr><td>多张工作表</td><td></td></tr>
+<tr><td><a href="noms.html">命名区域</a></td><td></td></tr>
+<tr><td><a href="conditionnelle.html">条件格式</a></td><td>DocCells 的规则，以及 Excel 的简单规则（比较、包含文本）</td></tr>
+<tr><td><a href="controles.html">复选框、下拉列表</a></td><td></td></tr>
+<tr><td><a href="graphiques.html">图表</a></td><td>写为 Excel 图表；DocCells 的图表可再次读取</td></tr>
+<tr><td><a href="images-liens.html">图片</a></td><td></td></tr>
+<tr><td><a href="tri-filtre.html#filtrer">筛选</a></td><td></td></tr>
+<tr><td><a href="protection.html">保护</a>、未锁定的单元格</td><td></td></tr>
+</tbody></table></div>
+<h2 id="perdu">不保留的内容</h2>
+<div class="table"><table><thead><tr><th>项目</th><th>变为</th></tr></thead><tbody>
+<tr><td><a href="images-liens.html#liens">链接</a></td><td>其文本</td></tr>
+<tr><td>单元格中的<a href="listes.html">列表</a></td><td>文本 <code>[2, 1]</code></td></tr>
+<tr><td>DocCells 或 Google 表格的迷你图</td><td><code>SPARKLINE</code> 公式，DocCells 可再次读取；Excel 不识别</td></tr>
+<tr><td>在 Excel 中创建的图表</td><td>不保留</td></tr>
+<tr><td>数据透视表、宏、切片器、批注</td><td>不保留</td></tr>
+<tr><td>使用色阶、数据条、图标的条件格式</td><td>不保留</td></tr>
+</tbody></table></div>
+<div class="tip"><p>替换复杂的 Excel 工作簿之前，请先在 DocCells 中以另一个名称保存（<strong>另存为...</strong>）。</p></div>
+<h2 id="listes">列表</h2>
+<p>从 <code>.xlsx</code> 重新打开的列表是文本：重新键入即可变回列表。由公式计算的列表在公式重新计算时恢复为列表。</p>
+<h2 id="formules">公式</h2>
+<p>打开时，公式一般保留 Excel 保存的结果，直到其某个单元格发生变化。<a href="fonctions.html#non-calculees">DocCells 不计算</a>的函数此时得 <code>#NAME?</code> 或 <code>#ERROR!</code>。</p>
+<h2 id="formats">其他格式</h2>
+<div class="table"><table><thead><tr><th>格式</th><th>方法</th></tr></thead><tbody>
+<tr><td><code>.csv</code></td><td>用文本编辑器打开并复制；如果值以制表符分隔，则粘贴到 DocCells；否则转换为 <code>.xlsx</code></td></tr>
+<tr><td><code>.ods</code>、<code>.xls</code></td><td>用 LibreOffice 或 Excel 另存为 <code>.xlsx</code></td></tr>
+<tr><td>Google 表格</td><td><a href="partager.html#google">通过链接</a>，或下载为 <code>.xlsx</code></td></tr>
+<tr><td>PDF</td><td><a href="impression.html">打印</a>，“另存为 PDF”</td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

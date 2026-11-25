@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>常見問題 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>常見問題</h1>
+<h2 id="saisie">輸入</h2>
+<h3>輸入的日期沒有被辨識</h3>
+<p>對 DocCells 而言，<code>11/25/2026</code> 是文字。請輸入 <code>2026-11-25</code>，然後選擇 <strong>日期</strong> 格式（<a href="saisie.html#dates">日期</a>）。</p>
+<h3>顯示數字而不是日期</h3>
+<p>日期是天數：給儲存格設定 <strong>日期</strong> 格式（<strong>格式 › 數位</strong>）。</p>
+<h3>數字沒有相加</h3>
+<p>左對齊的是文字。在儲存格中輸入單位或小數逗號會使其變為文字（<a href="saisie.html#types">類型</a>）。</p>
+<h3>編號開頭的零消失了</h3>
+<p>輸入前設定 <strong>純文字</strong> 格式，或以單引號開頭（<a href="saisie.html#textes">文字</a>）。</p>
+<h3>數字要求用逗號而不是小數點</h3>
+<p>DocCells 採用瀏覽器的語言。<code>?lang=zh-TW</code> 可指定語言（<a href="demarrage.html#langue">語言</a>）。</p>
+<h2 id="formules">公式</h2>
+<h3>TRUE 或 FALSE 得到 <code>#NAME?</code></h3>
+<p>請寫 <code>TRUE()</code> 和 <code>FALSE()</code>，或 1 和 0（<a href="formules.html#conditions">條件</a>）。</p>
+<h3>DocCells 建議的函數得到 <code>#NAME?</code></h3>
+<p>並非所有建議的函數都會計算（<a href="fonctions.html#non-calculees">不計算的函數</a>）。</p>
+<h3><code>IFERROR</code> 不處理 DIV/0</h3>
+<p>請檢查除數：<code>=IF(B2, A2/B2, "")</code>（<a href="formules.html#erreurs">錯誤</a>）。</p>
+<h3>貼上後公式沒有保留</h3>
+<p>右鍵功能表的 <strong>粘貼</strong> 貼上值；<kbd>Ctrl</kbd> <kbd>V</kbd> 貼上公式（<a href="selection.html#copier">複製</a>）。</p>
+<h3>寫出月份名稱，或在文字中設定數值格式</h3>
+<p><code>TEXT</code> 函數不計算：請給單獨的儲存格設定<a href="nombres.html">格式</a>。</p>
+<h3>統計勾選的核取方塊</h3>
+<p><code>=SUMPRODUCT(B2:B6, B2:B6)</code>（<a href="controles.html#cases">核取方塊</a>）。</p>
+<h3><code>=TODAY()+1</code> 得到 #VALUE!</h3>
+<p>將 <code>=TODAY()</code> 放在儲存格中，再對該儲存格相加（<a href="formules.html#dates">日期</a>）。</p>
+<h2 id="presentation">呈現</h2>
+<h3>儲存格的色彩不變</h3>
+<p>該儲存格在某條<a href="conditionnelle.html#regles">條件式格式</a>規則的範圍內。</p>
+<h3>某個按鈕不見了</h3>
+<p>視窗較窄：它在 <i data-i="more"></i> 後面。</p>
+<h3>無法排序或篩選</h3>
+<p>範圍中有合併儲存格：請取消合併。</p>
+<h2 id="fichiers">檔案</h2>
+<h3>儲存時下載了新檔案</h3>
+<p>在 Firefox 和 Safari 中是這樣。Chrome 和 Edge 會寫入檔案（<a href="demarrage.html#enregistrer">儲存</a>）。</p>
+<h3>頁面未儲存就關閉了</h3>
+<p>在同一瀏覽器中重新開啟 DocCells：它會詢問是否恢復副本（<a href="demarrage.html#recuperer">恢復</a>）。</p>
+<h3>圖表沒有列印</h3>
+<p>列印只包含儲存格（<a href="impression.html">列印</a>）。</p>
+<h3><code>?url=</code> 連結打不開活頁簿</h3>
+<p>存放檔案的網站可能不允許其他網站讀取。Google 試算表必須透過連結共用（<a href="partager.html">共用</a>）。</p>
+<h3>連結不見了</h3>
+<p>連結不儲存在 Excel 格式中（<a href="excel.html#perdu">不保留的內容</a>）。</p>
+<h2 id="eleves">學生</h2>
+<h3>學生能修改公式嗎？</h3>
+<p>在受保護的活頁簿中，除未鎖定的儲存格外不能修改（<a href="protection.html">保護</a>）。在連結中加入 <code>mode=student</code>，學生就無法取消保護。</p>
+</main>
+</body>
+</html>

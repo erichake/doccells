@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Listes et complexes — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Listes et complexes</h1>
+<p class="lead">Une cellule de DocCells peut contenir une liste de nombres. Une liste de deux nombres est aussi un point du plan, ou un nombre complexe.</p>
+<h2 id="ecrire">Écrire une liste</h2>
+<p>Entre crochets, éléments séparés par des points-virgules. Une liste peut contenir des listes.</p>
+<pre><code>[2; 1]
+[1,5; -3; 4]
+[[1; 2]; [3; 4]]
+=[2; 1]*3
+=[B2; C2]</code></pre>
+<p>Sans <code>=</code>, la liste est une valeur ; avec <code>=</code>, ses éléments peuvent être des calculs. Dans une langue à point décimal, les éléments se séparent par des virgules : <code>[2, 1]</code>.</p>
+<h2 id="operations">Opérations</h2>
+<div class="table"><table><thead><tr><th>Opération</th><th>Résultat</th></tr></thead><tbody>
+<tr><td><code>[1; 2; 3] + [1; 1; 1]</code></td><td><code>[2; 3; 4]</code> : terme à terme, longueurs égales</td></tr>
+<tr><td><code>[1; 2; 3] * 2</code>, <code>[2; 4; 6] / 2</code></td><td><code>[2; 4; 6]</code>, <code>[1; 2; 3]</code></td></tr>
+<tr><td><code>[2; 1] * [3; 2]</code></td><td><code>[4; 7]</code> : produit de complexes</td></tr>
+<tr><td><code>[4; 7] / [3; 2]</code></td><td><code>[2; 1]</code> : quotient de complexes</td></tr>
+<tr><td><code>[2; 1] + 3</code></td><td><code>[5; 1]</code> : 3 est un complexe réel</td></tr>
+<tr><td><code>[0; 1]^2</code></td><td><code>[-1; 0]</code>, à l’arrondi près</td></tr>
+<tr><td><code>[8; 0]^(1/3)</code></td><td>la liste des trois racines cubiques</td></tr>
+<tr><td><code>-[2; 1]</code></td><td><code>[-2; -1]</code></td></tr>
+</tbody></table></div>
+<p>Toute autre combinaison donne <code>#VALUE!</code> : produit de deux listes de trois nombres, longueurs différentes, texte.</p>
+<h2 id="fonctions">Listes et fonctions</h2>
+<p>Une fonction voit une liste comme une plage :</p>
+<pre><code>=SOMME([1; 2; 3])
+=MAX(A1)
+=INDEX(A1; 2)
+=MOYENNE([12; 15; 8])
+=SOMME([1; 2; 3] + [1; 1; 1]*2)</code></pre>
+<p><code>=INDEX(A1; 2)</code> donne le deuxième élément de la liste contenue en A1 : l’ordonnée d’un point, la partie imaginaire d’un complexe. Quelques <a href="fonctions.html">fonctions</a> rendent une liste : <code>FREQUENCE</code>, <code>DROITEREG</code>, <code>TRANSPOSE</code>, <code>UNIQUE</code>, <code>SPLIT</code>.</p>
+<h2 id="affichage">Affichage</h2>
+<p>Les boutons <i data-i="number-decrease"></i> <i data-i="number-increase"></i> et les <a href="nombres.html">formats de nombre</a> s’appliquent à chaque nombre de la liste : <code>[-0,14; 0,27]</code>. Les valeurs exactes restent.</p>
+<h2 id="exemple">Exemple : une suite complexe</h2>
+<p>L’orbite de 0 pour <em>z</em> ↦ <em>z</em>² + <em>c</em> : A1 contient <em>c</em>, A2 <code>[0; 0]</code>, A3 la formule ci-dessous, recopiée vers le bas.</p>
+<pre><code>=A2^2+$A$1</code></pre>
+<p>Dans <a href="docgeo.html">DocGeo</a>, une telle colonne se dessine dans la figure.</p>
+<div class="note"><p>Dans un fichier Excel, une liste est enregistrée comme un texte, et la valeur d’une formule qui donne une liste aussi (<a href="excel.html#listes">compatibilité</a>).</p></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Checkboxes, lists and calendar — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Checkboxes, lists and calendar</h1>
+<figure><img src="img/controles.webp" alt="Checkboxes, a drop-down list and the calendar of a date" width="1280" height="560" /></figure>
+<h2 id="cases">Checkboxes</h2>
+<p>Select the cells, <strong>Insert › Checkbox</strong>. A click checks or unchecks; the cell is TRUE or FALSE.</p>
+<pre><code>=IF(B2, "done", "to do")
+=SUMPRODUCT(B2:B6, C2:C6)
+=SUMPRODUCT(B2:B6, B2:B6)</code></pre>
+<p>The second formula adds up the values of column C whose box is checked; the third counts the checked boxes.</p>
+<h2 id="listes">Drop-down lists</h2>
+<p>Select the cells, <strong>Insert › Dropdown</strong>.</p>
+<div class="table"><table><thead><tr><th>Source</th><th>Content</th></tr></thead><tbody>
+<tr><td><strong>Values</strong></td><td>the options, one per field; <strong>Add option</strong>; no comma</td></tr>
+<tr><td><strong>From a range</strong></td><td>a range whose cells are the options: <code>Sheet2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>A range without <code>$</code> shifts from one cell to the next, like a filled formula. If its cells change, the options follow.</p>
+<p>The cell shows an arrow; a click opens the options. A value other than those of the list is not accepted.</p>
+<h2 id="calendrier">Calendar</h2>
+<p>A double click on a date cell opens a calendar: choose a day, change month with <strong><</strong> and <strong>></strong>, <strong>Today</strong> for today's date. It opens on any cell with a date format, even empty, unless it contains a formula or is <a href="protection.html">locked</a>.</p>
+<div class="tip"><p>For a column of dates to be filled in with the calendar: select it and give it the <strong>Date</strong> format.</p></div>
+<h2 id="retirer">Removing</h2>
+<p><kbd>Delete</kbd> removes the checkbox or the list from the cell, with its value.</p>
+<p>Checkboxes and lists are saved in the Excel file; the checkboxes are Excel checkboxes there.</p>
+</main>
+</body>
+</html>

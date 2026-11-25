@@ -1,0 +1,126 @@
+words|-|admis=及格; refusé=不及格; très bien=優秀; assez bien=良好; un=一; deux=二; autre=其他; absent=缺席; Note : =成績：; tableur=table; jean dupont=john smith
+SUMIF|-|對範圍中滿足條件（">=10"、"Ana"）的儲存格，或另一範圍中對應的儲存格求和。
+SUBTOTAL|-|按代碼彙總範圍：1 平平均值、2 計數、4 最大值、5 最小值、9 求和。
+AGGREGATE|函數; 選項; 範圍|按代碼彙總範圍：1 平平均值、2 計數、4 最大值、5 最小值、9 求和。選項：0 到 7，與 Excel 相同。
+INT|-|整數部分：不大於該數的最大整數。
+COMBINA|n; k|可重複的組合數。
+LOG|數值; 底數|以某數為底的對數；底數必填。
+BASE|數值; 基數; [長度]|整數在某進位制下的寫法，結果為文字。
+DECIMAL|文字; 基數|以 2 到 10 進位制書寫的數的值。
+COT|角度|弧度角的餘切。
+SEC|角度|弧度角的正割。
+CSC|角度|弧度角的餘割。
+ACOT|數值|反餘切，以弧度表示。
+COTH|數值|雙曲餘切。
+SECH|數值|雙曲正割。
+CSCH|數值|雙曲餘割。
+ACOTH|數值|反雙曲餘切。
+IFS|條件1; 值1; [條件2; 值2; …]|第一個為真的條件對應的值；都不為真則為 #N/A。
+SWITCH|表示式; 情形1; 值1; [情形2; 值2; …]; [預設值]|與表示式相等的情形對應的值。
+XOR|值1; 值2; …|為真的值有奇數個時為真。
+TRUE|-|邏輯值真，顯示為 TRUE。
+FALSE|-|邏輯值假，顯示為 FALSE。
+IFERROR|值; 出錯時的值|該值；若為函數錯誤（#N/A、#NUM!）則為另一個值。不替換 DIV/0 和 #VALUE!。
+IFNA|值; 為NA時的值|該值；若為錯誤 #N/A 則為另一個值。
+COUNTIF|-|滿足條件的儲存格數：">10"、"<>0"、"Ana"。不辨識萬用字元 * 和 ?。
+MODE|範圍|出現最多的值。
+RANK|數值; 範圍; [順序]|數值在範圍中的排名，降序；順序為 1 時升序。
+QUARTILE|範圍; k|四分位數：k 從 0（最小值）到 4（最大值）。
+QUARTILEEXC|範圍; k|不含端點的四分位數：k 從 1 到 3。
+PERCENTILEINC|範圍; k|百分位數：k 從 0 到 1。
+PERCENTILEEXC|範圍; k|不含端點的百分位數。
+PERCENTRANK|範圍; 數值|數值的百分比排名，從 0 到 1。
+STDEV|值1; [值2; …]|樣本標準差（除以 n − 1）。
+STDEVP|-|母體標準差（除以 n）。
+STDEVPA|值1; [值2; …]|母體標準差，文字按 0 計。
+VAR|值1; [值2; …]|樣本變異數（除以 n − 1）。
+VARP|值1; [值2; …]|母體變異數（除以 n）。
+SKEWP|範圍|母體偏度。
+FREQUENCY|-|由清單劃分的各組的頻數，結果為清單。
+COVARIANCEP|y範圍; x範圍|母體共變異數。
+COVARIANCES|y範圍; x範圍|樣本共變異數。
+LINEST|y範圍; x範圍|最小二乘直線：斜率和截距的清單。
+LOGEST|y範圍; x範圍|擬合 y = b·mˣ：m 和 b 的清單。
+TREND|y範圍; x範圍; 新x|線性擬合的值，結果為清單。
+GROWTH|y範圍; x範圍; 新x|指數擬合的值，結果為清單。
+PERMUTATIONA|n; k|可重複的排列數。
+NORMDIST|x; 平均值; 標準差; 累積|正態分布：累積為真時為 P(X ≤ x)，否則為密度。
+NORMINV|機率; 平均值; 標準差|使 P(X ≤ x) 等於該機率的 x，正態分布。
+NORMSDIST|z; 累積|標準正態分布：累積為真時為 P(Z ≤ z)，否則為密度。
+NORMSINV|機率|使 P(Z ≤ z) 等於該機率的 z。
+GAUSS|z|P(0 ≤ Z ≤ z)，標準正態分布。
+PHI|z|標準正態分布的密度。
+BINOMDIST|k; n; p; 累積|二項分布：累積為真時為 P(X ≤ k)，否則為 P(X = k)。
+CRITBINOM|n; p; alpha|使 P(X ≤ k) ≥ alpha 的最小 k，二項分布。
+NEGBINOMDIST|失敗數; 成功數; p; 累積|負二項分布。
+POISSON|k; lambda; 累積|泊松分布：累積為真時為 P(X ≤ k)，否則為 P(X = k)。
+HYPGEOMDIST|k; n; 成功數; 母體; 累積|超幾何分布。
+EXPONDIST|x; lambda; 累積|指數分布。
+GAMMADIST|x; alpha; beta; 累積|伽瑪分布。
+GAMMAINV|機率; alpha; beta|伽瑪分布的反函數。
+BETADIST|x; alpha; beta; 累積; a; b|[a, b] 上的貝塔分布。
+BETAINV|機率; alpha; beta|貝塔分布的反函數。
+LOGNORMDIST|x; 平均值; 標準差; 累積|對數正態分布。
+LOGNORMINV|機率; 平均值; 標準差|對數正態分布的反函數。
+WEIBULL|x; alpha; beta; 累積|韋布林分布。
+CHIDIST|x; 自由度; 累積|卡方分布：累積為真時為 P(X ≤ x)。
+CHIDISTRT|x; 自由度|卡方分布：P(X > x)。
+CHIINVRT|機率; 自由度|使 P(X > x) 等於該機率的 x，卡方分布。
+FDIST|x; 自由度1; 自由度2; 累積|F 分布：累積為真時為 P(X ≤ x)。
+FDISTRT|x; 自由度1; 自由度2|F 分布：P(X > x)。
+TTEST|範圍1; 範圍2|兩個樣本的 t 檢驗機率。
+CONFIDENCE|alpha; 標準差; n|平均值置信區間的半寬（正態分布）。
+GAMMA|數值|伽瑪函數。
+VLOOKUP|-|在範圍的第一欄中尋找值，返回同一列的儲存格。最後的引數為 0：精確匹配。
+HLOOKUP|-|在範圍的第一列中尋找值，返回同一欄的儲存格。最後的引數為 0：精確匹配。
+LOOKUP|值; 已排序範圍; 結果範圍|在已排序的範圍中尋找值，返回另一範圍中對應的值。
+MATCH|-|值在範圍中的位置。最後的引數為 0：精確匹配。
+INDEX|-|按位置取範圍的儲存格或清單的元素。
+TRANSPOSE|-|欄列互換；結果是一個儲存格中的列清單。
+FLATTEN|範圍|範圍的值按列排成的清單。
+UNIQUE|值1; 值2; …|去除重複的值的清單。
+SPLIT|文字; 分隔符|將文字拆分為清單。
+CONCAT|值1; 值2|連接兩個文字。
+VALUE|-|文字中以小數點書寫的數字。
+UNICHAR|代碼|Unicode 代碼對應的字元。
+UNICODE|文字|第一個字元的 Unicode 代碼。
+TODAY|-|今天的日期。要用它計算，請放在儲存格中。
+NOW|-|日期和時間，每次更改時重新計算。
+DATE|-|由年、月、日構成的日期；請給儲存格設定日期格式。
+WEEKDAY|-|星期幾；類型為 2 時，從 1（星期一）到 7（星期日）。
+DATEDIF|-|兩個日期之間的時長，以年（"Y"）、月（"M"）或日（"D"）計。
+TIME|-|時間，表示為一天的一部分；請給儲存格設定時間格式。
+HOUR|-|時間的小時數。
+MINUTE|-|時間的分鐘數。
+SECOND|-|時間的秒數。
+PMT|-|貸款的等額還款；本金記為負數。
+PDURATION|利率; 現值; 終值|達到某值所需的期數。
+RRI|期數; 現值; 終值|增長的等效利率。
+ISPMT|利率; 期; 期數; 本金|等額本金貸款某期的利息。
+BITAND|a; b|按位與。
+BITOR|a; b|按位或。
+BITXOR|a; b|按位異或。
+BITLSHIFT|數值; 位移|位左移。
+BITRSHIFT|數值; 位移|位右移。
+CONVERT|-|單位換算："m"、"km"、"mi"、"hr"、"mn"、"kg"… 不換算溫度。
+GESTEP|數值; 閾值|數值達到閾值時為 1，否則為 0。
+ERF|x|高斯誤差函數。
+BESSELJ|x; n|貝索函數 Jₙ。
+BESSELY|x; n|貝索函數 Yₙ。
+BESSELI|x; n|修正貝索函數 Iₙ。
+BESSELK|x; n|修正貝索函數 Kₙ。
+IMARGUMENT|複數|輻角，以弧度表示。
+IMPOWER|複數; 指數|複數的冪。
+IMSQRT|複數|複數的平方根。
+IMEXP|複數|複數的指數。
+IMLN|複數|複數的自然對數。
+IMLOG10|複數|複數的常用對數。
+IMLOG2|複數|複數以 2 為底的對數。
+IMSIN|複數|複數的正弦。
+IMCOS|複數|複數的餘弦。
+IMTAN|複數|複數的正切。
+ISERROR|-|值為函數錯誤（#N/A、#NUM!）時為真。
+ISERR|-|值為除 #N/A 以外的函數錯誤時為真。
+ISNA|-|值為錯誤 #N/A 時為真。
+NA|-|錯誤 #N/A。
+TYPE|-|值的類型：1 數字、2 文字、4 邏輯、16 錯誤、64 清單。

@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Условное форматирование — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Условное форматирование</h1>
+<p class="lead">Правило меняет вид ячеек диапазона, которые удовлетворяют условию. Оно следует значениям, введённым и вычисленным.</p>
+<h2 id="creer">Создание правила</h2>
+<ol>
+<li>Выделить диапазон без заголовка.</li>
+<li><i data-i="conditional"></i> или <strong>Формат › Условное форматирование</strong>.</li>
+<li>Выбрать условие, значение для сравнения, цвета или стиль.</li>
+<li><strong>Добавить</strong>.</li>
+</ol>
+<figure><img src="img/conditionnelle.webp" alt="Окно условного форматирования с применённым правилом" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Условие</th><th>Ячейка</th></tr></thead><tbody>
+<tr><td><code>&lt;</code></td><td>меньше</td></tr>
+<tr><td><code>&gt;</code></td><td>больше</td></tr>
+<tr><td><code>=</code></td><td>равна</td></tr>
+<tr><td><code>!=</code></td><td>не равна</td></tr>
+<tr><td><code>[]</code></td><td>между двумя значениями, включая границы</td></tr>
+<tr><td><code>abc</code></td><td>содержит текст, регистр не важен</td></tr>
+</tbody></table></div>
+<h2 id="comparer">С чем сравнивать</h2>
+<div class="table"><table><thead><tr><th>Сравнить с</th><th>Пример</th></tr></thead><tbody>
+<tr><td><strong>фиксированному значению</strong></td><td>оценки ниже 10</td></tr>
+<tr><td><strong>фиксированной ячейке</strong></td><td>оценки ниже порога, записанного в <code>F1</code></td></tr>
+<tr><td><strong>столбцу той же строки</strong></td><td>в столбце C — значения больше значений столбца B, построчно</td></tr>
+</tbody></table></div>
+<h2 id="apparence">Вид</h2>
+<p><strong>Текст</strong> и <strong>Заливка</strong> задают цвета, <strong>Нет</strong> убирает их; <strong>B</strong>, <em>I</em>, <strong>U</strong> — полужирный, курсив, подчёркнутый. Нужен хотя бы один цвет или стиль.</p>
+<h2 id="regles">Несколько правил</h2>
+<p>Левый столбец перечисляет правила листа: <strong>Изменить</strong>, <strong>Удалить</strong>. Если к ячейке применимо несколько правил, действует последнее в списке, цвет за цветом.</p>
+<div class="warn"><p>В диапазоне правила цвета текста и фона, заданные ячейкам напрямую, больше не показываются.</p></div>
+<p>Правила сохраняются в файле Excel как условное форматирование Excel.</p>
+</main>
+</body>
+</html>

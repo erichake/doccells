@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Entering data — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Entering data</h1>
+<h2 id="ecrire">Writing in a cell</h2>
+<div class="table"><table><thead><tr><th>Action</th><th>Effect</th></tr></thead><tbody>
+<tr><td>type on a selected cell</td><td>replaces its content</td></tr>
+<tr><td>double click, <kbd>F2</kbd> or <kbd>Enter</kbd></td><td>edits its content</td></tr>
+<tr><td><kbd>Enter</kbd></td><td>confirms and moves down one cell</td></tr>
+<tr><td>click in another cell</td><td>confirms</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>abandons the entry</td></tr>
+<tr><td><kbd>Alt</kbd> <kbd>Enter</kbd></td><td>new line inside the cell</td></tr>
+<tr><td><kbd>Delete</kbd> or <kbd>⌫</kbd></td><td>empties the selected cells, including checkboxes and drop-down lists; their formatting stays</td></tr>
+<tr><td>right-click › <strong>Clear content</strong></td><td>the same</td></tr>
+</tbody></table></div>
+<p>While typing, the arrow keys move the caret in the text. Otherwise the arrow keys, <kbd>Tab</kbd> and <kbd>Shift</kbd> <kbd>Tab</kbd> change cells.</p>
+<h2 id="types">What DocCells recognizes</h2>
+<div class="table"><table><thead><tr><th>You type</th><th>You get</th></tr></thead><tbody>
+<tr><td><code>12</code>, <code>-3</code>, <code>1e5</code></td><td>a number, aligned right</td></tr>
+<tr><td><code>2.5</code></td><td>a decimal number; the separator is the decimal point</td></tr>
+<tr><td><code>25%</code>, <code>2.5%</code></td><td>a percentage</td></tr>
+<tr><td><code>2026-11-25</code>, <code>2026/11/25</code></td><td>a date</td></tr>
+<tr><td><code>2026-11-25 14:30</code></td><td>a date and a time</td></tr>
+<tr><td><code>TRUE</code>, <code>FALSE</code></td><td>a logical value</td></tr>
+<tr><td><code>[2, 1]</code></td><td>a <a href="listes.html">list</a></td></tr>
+<tr><td><code>=A1+B1</code></td><td>a <a href="formules.html">formula</a></td></tr>
+<tr><td>anything else</td><td>text, aligned left</td></tr>
+</tbody></table></div>
+<h3 id="dates">Dates</h3>
+<p>A date is typed year first: <code>2026-11-25</code>. <code>11/25/2026</code> stays a text, which cannot be calculated with. To display it as usual, choose <strong>Format › Number › Date</strong> (<code>11/29/2017</code>) or a <a href="nombres.html#personnalise">custom format</a>.</p>
+<p>A double click on a date cell opens a <a href="controles.html#calendrier">calendar</a>. <code>=TODAY()</code> gives today's date.</p>
+<h3 id="textes">Texts made of digits</h3>
+<p>A number starting with zero loses that zero: <code>007</code> becomes 7. To keep it, first give the cells the <strong>Plain text</strong> format (<strong>Format › Number › Plain text</strong>), or start with an apostrophe: <code>'007</code>.</p>
+<h2 id="erreurs">Common entry problems</h2>
+<div class="table"><table><thead><tr><th>You see</th><th>Cause</th></tr></thead><tbody>
+<tr><td>a number aligned left</td><td>it is a text: a decimal comma, a unit (<code>12 $</code>), an extra space</td></tr>
+<tr><td><code>46351</code> instead of a date</td><td>a date in the <strong>Automatic</strong> format: give it the <strong>Date</strong> format</td></tr>
+<tr><td>the text cut off by the next cell</td><td>widen the <a href="lignes-colonnes.html#taille">column</a>, or choose <strong>Wrap</strong></td></tr>
+</tbody></table></div>
+<p>For a unit, enter the number alone and give it a <a href="nombres.html">format</a>: currency, or a custom one such as <code>0.00 "m"</code>.</p>
+</main>
+</body>
+</html>

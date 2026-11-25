@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Les formules — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Les formules</h1>
+<h2 id="ecrire">Écrire une formule</h2>
+<p>Une formule commence par <code>=</code>. Elle contient des nombres, des textes entre guillemets, des références à des cellules, des opérateurs et des <a href="fonctions.html">fonctions</a>.</p>
+<pre><code>=B2*2
+=(B2+C2+D2)/3
+=MOYENNE(B2:B6)
+="Total : "&amp;SOMME(B2:B6)</code></pre>
+<p>La cellule montre le résultat, la barre de formule la formule. Les cellules qui dépendent d’une cellule modifiée sont recalculées aussitôt.</p>
+<p>En français, la virgule est décimale et le point-virgule sépare les arguments : <code>=ARRONDI(3,14159; 2)</code>. Les noms de fonctions se tapent en minuscules ou en majuscules, en français ou en anglais : <code>=somme(B2:B6)</code> et <code>=SUM(B2:B6)</code> sont acceptés.</p>
+<h2 id="souris">Désigner les cellules à la souris</h2>
+<p>Pendant la saisie d’une formule, un clic sur une cellule de la feuille insère son adresse, un glissé insère la plage. Chaque référence a sa couleur, dans la formule comme sur la feuille.</p>
+<h2 id="completion">La complétion</h2>
+<p>Dès les premières lettres d’un nom, DocCells propose les fonctions qui les contiennent : <kbd>↑</kbd> <kbd>↓</kbd> pour parcourir, <kbd>Entrée</kbd>, <kbd>Tab</kbd> ou un clic pour choisir. Après la parenthèse ouvrante, une aide rappelle les arguments.</p>
+<figure><img src="img/completion.webp" alt="Les fonctions proposées après =SOM" width="760" height="560" /></figure>
+<figure><img src="img/aide-formule.webp" alt="L’aide de la fonction SOMME" width="760" height="560" /></figure>
+<h2 id="somme">La somme automatique</h2>
+<p><i data-i="formula-sum"></i> écrit une somme. Sa flèche propose <strong>Somme</strong>, <strong>Moyenne</strong>, <strong>Nombre</strong>, <strong>Max</strong>, <strong>Min</strong>, et <strong>Toutes les formules</strong> : la bibliothèque, où l’on cherche une fonction par son nom, sa description ou sa catégorie.</p>
+<figure><img src="img/bibliotheque.webp" alt="La bibliothèque de formules" width="1280" height="760" /></figure>
+<h2 id="operateurs">Opérateurs</h2>
+<div class="table"><table><thead><tr><th>Opérateur</th><th>Rôle</th></tr></thead><tbody>
+<tr><td><code>+</code> <code>-</code> <code>*</code> <code>/</code></td><td>quatre opérations</td></tr>
+<tr><td><code>^</code></td><td>puissance : <code>=2^10</code></td></tr>
+<tr><td><code>%</code></td><td>pourcentage : <code>=20%*B2</code></td></tr>
+<tr><td><code>&amp;</code></td><td>met bout à bout des textes : <code>=A2&amp;" "&amp;B2</code></td></tr>
+<tr><td><code>=</code> <code>&lt;&gt;</code></td><td>égal, différent</td></tr>
+<tr><td><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code></td><td>comparaisons</td></tr>
+<tr><td><code>( )</code></td><td>priorité</td></tr>
+</tbody></table></div>
+<p>Les puissances passent avant les produits et quotients, puis viennent les sommes et les comparaisons. <code>=-2^2</code> donne −4 (4 dans Excel).</p>
+<h2 id="references">Références</h2>
+<div class="table"><table><thead><tr><th>Écriture</th><th>Désigne</th></tr></thead><tbody>
+<tr><td><code>B2</code></td><td>une cellule ; suit la recopie</td></tr>
+<tr><td><code>$B$2</code></td><td>la même cellule, même recopiée</td></tr>
+<tr><td><code>B$2</code>, <code>$B2</code></td><td>ligne fixe, colonne fixe</td></tr>
+<tr><td><code>B2:D6</code></td><td>une plage</td></tr>
+<tr><td><code>B:B</code>, <code>2:2</code></td><td>une colonne, une ligne entière</td></tr>
+<tr><td><code>Feuille2!B2</code>, <code>'Notes 2'!B2</code></td><td>une cellule d’une <a href="feuilles.html#references">autre feuille</a></td></tr>
+<tr><td><code>notes</code></td><td>une <a href="noms.html">plage nommée</a></td></tr>
+</tbody></table></div>
+<p>Recopiée vers le bas, <code>=B2*$B$1</code> devient <code>=B3*$B$1</code>, <code>=B4*$B$1</code>…</p>
+<h2 id="conditions">Conditions</h2>
+<pre><code>=SI(B2&gt;=10; "admis"; "refusé")
+=SI(ET(B2&gt;=10; C2&gt;=10); "oui"; "non")
+=SI.MULTIPLE(A2; "a"; 1; "b"; 2; 0)
+=NB.SI(B2:B6; "&gt;10")
+=SOMME.SI(A2:A6; "Ana"; B2:B6)
+=MOYENNE.SI(B2:B6; "&lt;10")</code></pre>
+<ul>
+<li>Les valeurs logiques s’écrivent <code>VRAI()</code> et <code>FAUX()</code>, avec les parenthèses. Elles s’affichent TRUE et FALSE.</li>
+<li>Un critère est un texte : <code>"&gt;10"</code>, <code>"&lt;&gt;0"</code>, <code>"Ana"</code>. Les jokers <code>*</code> et <code>?</code> ne sont pas reconnus.</li>
+<li>Une cellule vide se reconnaît par <code>=B2=""</code> ; elle n’est pas égale à 0.</li>
+</ul>
+<h2 id="chercher">Chercher dans un tableau</h2>
+<pre><code>=RECHERCHEV("Léa"; A2:D6; 3; 0)
+=INDEX(A2:A6; EQUIV(MAX(B2:B6); B2:B6; 0))</code></pre>
+<p>La première cherche Léa dans la première colonne du tableau et rend la troisième ; le dernier argument 0 demande la valeur exacte. La seconde donne le nom de qui a la meilleure note.</p>
+<h2 id="dates">Dates et heures</h2>
+<p>Une date est un nombre de jours, une heure une fraction de jour : placées dans des cellules, elles s’additionnent et se soustraient.</p>
+<pre><code>=A2+7
+=A3-A2
+=JOURS(A3; A2)
+=JOURSEM(A2; 2)</code></pre>
+<p>Une date donnée par <code>DATE</code> ou <code>AUJOURDHUI</code> doit passer par une cellule pour être additionnée : <code>=AUJOURDHUI()+1</code> donne <code>#VALUE!</code>, mais si A1 contient <code>=AUJOURDHUI()</code>, <code>=A1+1</code> donne demain. Le résultat est un nombre : lui donner un format <strong>Date</strong>.</p>
+<h2 id="erreurs">Les erreurs</h2>
+<div class="table"><table><thead><tr><th>Affiché</th><th>Cause</th></tr></thead><tbody>
+<tr><td><code>#NAME?</code></td><td>nom inconnu : faute de frappe, fonction <a href="fonctions.html#non-calculees">non calculée</a>, <code>VRAI</code> sans parenthèses, texte sans guillemets</td></tr>
+<tr><td><code>#VALUE!</code></td><td>type inattendu : un texte là où il faut un nombre</td></tr>
+<tr><td><code>DIV/0</code></td><td>division par zéro ou par une cellule vide</td></tr>
+<tr><td><code>#N/A</code></td><td>valeur introuvable (<code>EQUIV</code>, <code>RECHERCHEV</code>), ou <code>GEO</code> hors de DocGeo</td></tr>
+<tr><td><code>#REF!</code></td><td>cellule ou feuille qui n’existe pas</td></tr>
+<tr><td><code>#NUM!</code></td><td>nombre hors du domaine : <code>RACINE(-1)</code></td></tr>
+<tr><td><code>#ERROR!</code></td><td>formule mal écrite, ou fonction non calculée</td></tr>
+</tbody></table></div>
+<p><code>SIERREUR</code> remplace l’erreur d’une fonction (<code>#N/A</code>, <code>#NUM!</code>) : <code>=SIERREUR(RECHERCHEV(E1; A2:D6; 2; 0); "absent")</code>. Elle ne remplace pas celle d’un calcul (<code>DIV/0</code>, <code>#VALUE!</code>) : contre une division par zéro, tester le diviseur, <code>=SI(B2; B3/B2; "")</code>, qui vaut pour un zéro comme pour une cellule vide.</p>
+</main>
+</body>
+</html>

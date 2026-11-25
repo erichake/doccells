@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>數值格式 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>數值格式</h1>
+<p class="lead">格式改變數字的顯示，不改變其值：計算保留所有小數位。</p>
+<h2 id="choisir">選擇格式</h2>
+<p><strong>格式 › 數位</strong>，或按鈕列的 <strong>自動</strong> 清單。</p>
+<div class="table"><table><thead><tr><th>格式</th><th>範例</th></tr></thead><tbody>
+<tr><td><strong>自動</strong></td><td><code>1200.09</code></td></tr>
+<tr><td><strong>純文字</strong></td><td><code>1200.09</code>，左對齊；輸入保持為文字</td></tr>
+<tr><td><strong>數位</strong></td><td><code>1200.09</code></td></tr>
+<tr><td><strong>百分比</strong></td><td><code>120009.00%</code>；0.25 變為 <code>25.00%</code></td></tr>
+<tr><td><strong>科學計數</strong></td><td><code>1.20E+03</code></td></tr>
+<tr><td><strong>會計</strong></td><td><code>NT$(1,200.09)</code></td></tr>
+<tr><td><strong>貨幣</strong></td><td><code>NT$1,200.09</code></td></tr>
+<tr><td><strong>日期</strong>、<strong>時間</strong>、<strong>日期時間</strong></td><td>用於日期：<code>2017-11-29</code>、<code>3:00 PM</code>、<code>15:00</code>…</td></tr>
+</tbody></table></div>
+<p>貨幣符號由介面語言決定。</p>
+<div class="table"><table><thead><tr><th>按鈕</th><th>效果</th></tr></thead><tbody>
+<tr><td><i data-i="percentage-format"></i></td><td>百分比</td></tr>
+<tr><td><i data-i="number-decrease"></i></td><td>減少一位小數</td></tr>
+<tr><td><i data-i="number-increase"></i></td><td>增加一位小數</td></tr>
+</tbody></table></div>
+<p>這些按鈕也適用於<a href="listes.html">清單</a>中的數字。要對值本身取整，請使用 <code>ROUND</code>。</p>
+<h2 id="personnalise">自訂格式</h2>
+<p><strong>格式 › 數位 › 自訂數字格式…</strong>：選擇建議的格式，或編寫代碼。預覽顯示結果；<strong>格式指南</strong> 說明各符號；<strong>套用</strong> 應用到選區。</p>
+<figure><img src="img/format-personnalise.webp" alt="自訂數值格式視窗" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>符號</th><th>作用</th><th>代碼</th><th>1234.5 顯示為</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td>一位數字，包括零</td><td><code>0.00</code></td><td><code>1234.50</code></td></tr>
+<tr><td><code>#</code></td><td>需要時才顯示的數字</td><td><code>#.##</code></td><td><code>1234.5</code></td></tr>
+<tr><td><code>,</code></td><td>千位分組</td><td><code>#,##0</code></td><td><code>1,235</code></td></tr>
+<tr><td><code>%</code></td><td>百分比</td><td><code>0%</code></td><td><code>123450%</code></td></tr>
+<tr><td><code>"文字"</code></td><td>文字、單位</td><td><code>0.0 "m"</code></td><td><code>1234.5 m</code></td></tr>
+<tr><td><code>E+00</code></td><td>科學記數法</td><td><code>0.00E+00</code></td><td><code>1.23E+03</code></td></tr>
+<tr><td><code>;</code></td><td>正數、負數、零、文字的格式</td><td><code>0;-0;"無"</code></td><td><code>1235</code></td></tr>
+<tr><td><code>[Red]</code></td><td>色彩</td><td><code>0;[Red]-0</code></td><td>負數為紅色</td></tr>
+</tbody></table></div>
+<p>代碼使用該語言的分隔符輸入；視窗顯示儲存時的形式（<code>#,##0.00</code>），與 Excel 相同。</p>
+<h3 id="dates-heures">日期與時間</h3>
+<div class="table"><table><thead><tr><th>代碼</th><th>2026 年 8 月 29 日 14:30</th></tr></thead><tbody>
+<tr><td><code>dd/MM/yyyy</code></td><td><code>29/08/2026</code></td></tr>
+<tr><td><code>d mmm yyyy</code></td><td><code>29 Aug 2026</code></td></tr>
+<tr><td><code>dddd d mmmm yyyy</code></td><td><code>Saturday 29 August 2026</code></td></tr>
+<tr><td><code>hh:mm</code></td><td><code>14:30</code></td></tr>
+<tr><td><code>dd/MM/yyyy hh:mm</code></td><td><code>29/08/2026 14:30</code></td></tr>
+</tbody></table></div>
+<p>月份和星期的名稱以英文顯示。</p>
+<h3 id="unites">單位</h3>
+<p>在 <strong>單位</strong> 下有 <code>0.00 "V"</code>、<code>0.00 "Ω"</code>、<code>0.00 "mm"</code> 等格式：儲存格仍是數字，可以參與計算。</p>
+</main>
+</body>
+</html>

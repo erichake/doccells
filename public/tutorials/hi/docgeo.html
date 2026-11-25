@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DocGeo के साथ — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>DocGeo के साथ</h1>
+<p class="lead">DocGeo, DocTools का गतिशील ज्यामिति सॉफ़्टवेयर, DocCells को शामिल करता है: आकृति के साथ एक शीट, दोनों एक-दूसरे को पढ़ते हैं।</p>
+<p>DocGeo में <strong>फ़ाइल › दृश्य › नया स्प्रेडशीट दृश्य</strong> आकृति के बगल में शीट जोड़ता है; <strong>फ़ाइल › टैब › नया स्प्रेडशीट टैब</strong> उसे टैब बनाता है।</p>
+<h2 id="geo">GEO फ़ंक्शन</h2>
+<p>सेल में <code>GEO</code> आकृति के किसी वस्तु का मान पढ़ता है, जिसका नाम उद्धरण चिह्नों में दिया जाता है।</p>
+<pre><code>=GEO("AB")
+=2*GEO("r")+1
+=GEO("'Figure 1'!c")</code></pre>
+<ul>
+<li>आकृति हिलाते समय सेल साथ चलता है।</li>
+<li>बिंदु अपने निर्देशांकों की <a href="listes.html">सूची</a> के रूप में पढ़ा जाता है: <code>=GEO("A")*2</code> भी एक बिंदु है।</li>
+<li>सूत्र लिखते समय आकृति की वस्तु पर क्लिक उसमें <code>GEO</code> और नाम लिखता है।</li>
+<li>अज्ञात वस्तु <code>#N/A</code> देती है। DocGeo के बाहर <code>GEO</code> हमेशा <code>#N/A</code> देता है।</li>
+<li><code>GEO</code> का नाम सभी भाषाओं में यही है।</li>
+</ul>
+<h2 id="figure">आकृति सेल पढ़ती है</h2>
+<p>DocGeo के सूत्र में <code>!B3</code> सेल है, <code>!B2:B21</code> रेंज।</p>
+<h2 id="differences">अकेले DocCells से अंतर</h2>
+<div class="table"><table><thead><tr><th>DocGeo में</th><th></th></tr></thead><tbody>
+<tr><td>मेनू और बटन</td><td>शीट सक्रिय हो तो DocGeo की पट्टियों में</td></tr>
+<tr><td>फ़ाइल</td><td>DocGeo की: शीट <code>.dgo</code> में सहेजी जाती है, सूचियों और लिंक सहित</td></tr>
+<tr><td>शीट</td><td>हर दृश्य में एक; कई स्प्रेडशीट टैब एक-दूसरे को पढ़ते हैं</td></tr>
+<tr><td>पूर्ववत</td><td>सेलों में <kbd>Ctrl</kbd> <kbd>Z</kbd> केवल सेलों को पूर्ववत करता है</td></tr>
+</tbody></table></div>
+<p>विवरण DocGeo पुस्तिका के <a href="https://doctools.org/apps/docgeo/tutorials/hi/tableur.html">स्प्रेडशीट</a> पृष्ठ पर है।</p>
+</main>
+</body>
+</html>

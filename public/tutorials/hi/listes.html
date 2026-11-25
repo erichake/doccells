@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>सूचियाँ और सम्मिश्र संख्याएँ — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>सूचियाँ और सम्मिश्र संख्याएँ</h1>
+<p class="lead">DocCells के सेल में संख्याओं की सूची हो सकती है। दो संख्याओं की सूची समतल का बिंदु या सम्मिश्र संख्या भी है।</p>
+<h2 id="ecrire">सूची लिखना</h2>
+<p>वर्ग कोष्ठकों में, अवयव अल्पविराम से अलग। सूची में सूचियाँ हो सकती हैं।</p>
+<pre><code>[2, 1]
+[1.5, -3, 4]
+[[1, 2], [3, 4]]
+=[2, 1]*3
+=[B2, C2]</code></pre>
+<p><code>=</code> के बिना सूची एक मान है; <code>=</code> के साथ उसके अवयव गणनाएँ हो सकते हैं। दशमलव अल्पविराम वाली भाषा में अवयव अर्धविराम से अलग होते हैं: <code>[2; 1]</code>।</p>
+<h2 id="operations">संक्रियाएँ</h2>
+<div class="table"><table><thead><tr><th>संक्रिया</th><th>परिणाम</th></tr></thead><tbody>
+<tr><td><code>[1, 2, 3] + [1, 1, 1]</code></td><td><code>[2, 3, 4]</code>: पद दर पद, समान लंबाई</td></tr>
+<tr><td><code>[1, 2, 3] * 2</code>, <code>[2, 4, 6] / 2</code></td><td><code>[2, 4, 6]</code>, <code>[1, 2, 3]</code></td></tr>
+<tr><td><code>[2, 1] * [3, 2]</code></td><td><code>[4, 7]</code>: सम्मिश्र गुणनफल</td></tr>
+<tr><td><code>[4, 7] / [3, 2]</code></td><td><code>[2, 1]</code>: सम्मिश्र भागफल</td></tr>
+<tr><td><code>[2, 1] + 3</code></td><td><code>[5, 1]</code>: 3 एक वास्तविक सम्मिश्र संख्या है</td></tr>
+<tr><td><code>[0, 1]^2</code></td><td><code>[-1, 0]</code>, पूर्णांकन की सीमा में</td></tr>
+<tr><td><code>[8, 0]^(1/3)</code></td><td>तीनों घनमूलों की सूची</td></tr>
+<tr><td><code>-[2, 1]</code></td><td><code>[-2, -1]</code></td></tr>
+</tbody></table></div>
+<p>कोई और मेल <code>#VALUE!</code> देता है: तीन संख्याओं की दो सूचियों का गुणनफल, अलग लंबाई, टेक्स्ट।</p>
+<h2 id="fonctions">सूचियाँ और फ़ंक्शन</h2>
+<p>फ़ंक्शन सूची को रेंज की तरह देखता है:</p>
+<pre><code>=SUM([1, 2, 3])
+=MAX(A1)
+=INDEX(A1, 2)
+=AVERAGE([12, 15, 8])
+=SUM([1, 2, 3] + [1, 1, 1]*2)</code></pre>
+<p><code>=INDEX(A1, 2)</code> A1 की सूची का दूसरा अवयव देता है: बिंदु की कोटि, सम्मिश्र संख्या का काल्पनिक भाग। कुछ <a href="fonctions.html">फ़ंक्शन</a> सूची लौटाते हैं: <code>FREQUENCY</code>, <code>LINEST</code>, <code>TRANSPOSE</code>, <code>UNIQUE</code>, <code>SPLIT</code>।</p>
+<h2 id="affichage">प्रदर्शन</h2>
+<p>बटन <i data-i="number-decrease"></i> <i data-i="number-increase"></i> और <a href="nombres.html">संख्या प्रारूप</a> सूची की हर संख्या पर लागू होते हैं: <code>[-0.14, 0.27]</code>। सटीक मान बने रहते हैं।</p>
+<h2 id="exemple">उदाहरण: सम्मिश्र अनुक्रम</h2>
+<p><em>z</em> ↦ <em>z</em>² + <em>c</em> में 0 की कक्षा: A1 में <em>c</em>, A2 में <code>[0, 0]</code>, A3 में नीचे का सूत्र, नीचे भरा हुआ।</p>
+<pre><code>=A2^2+$A$1</code></pre>
+<p><a href="docgeo.html">DocGeo</a> में ऐसा कॉलम आकृति में बनाया जा सकता है।</p>
+<div class="note"><p>Excel फ़ाइल में सूची टेक्स्ट के रूप में सहेजी जाती है, और सूची देने वाले सूत्र का मान भी (<a href="excel.html#listes">संगतता</a>)।</p></div>
+</main>
+</body>
+</html>

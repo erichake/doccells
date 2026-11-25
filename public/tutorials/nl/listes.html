@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lijsten en complexe getallen — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Lijsten en complexe getallen</h1>
+<p class="lead">Een cel van DocCells kan een lijst getallen bevatten. Een lijst van twee getallen is ook een punt van het vlak, of een complex getal.</p>
+<h2 id="ecrire">Een lijst schrijven</h2>
+<p>Tussen rechte haken, elementen gescheiden door puntkomma’s. Een lijst kan lijsten bevatten.</p>
+<pre><code>[2; 1]
+[1,5; -3; 4]
+[[1; 2]; [3; 4]]
+=[2; 1]*3
+=[B2; C2]</code></pre>
+<p>Zonder <code>=</code> is de lijst een waarde; met <code>=</code> kunnen de elementen berekeningen zijn. In een taal met decimale punt worden de elementen door komma’s gescheiden: <code>[2, 1]</code>.</p>
+<h2 id="operations">Bewerkingen</h2>
+<div class="table"><table><thead><tr><th>Bewerking</th><th>Resultaat</th></tr></thead><tbody>
+<tr><td><code>[1; 2; 3] + [1; 1; 1]</code></td><td><code>[2; 3; 4]</code>: term voor term, gelijke lengtes</td></tr>
+<tr><td><code>[1; 2; 3] * 2</code>, <code>[2; 4; 6] / 2</code></td><td><code>[2; 4; 6]</code>, <code>[1; 2; 3]</code></td></tr>
+<tr><td><code>[2; 1] * [3; 2]</code></td><td><code>[4; 7]</code>: product van complexe getallen</td></tr>
+<tr><td><code>[4; 7] / [3; 2]</code></td><td><code>[2; 1]</code>: quotiënt van complexe getallen</td></tr>
+<tr><td><code>[2; 1] + 3</code></td><td><code>[5; 1]</code>: 3 is een reëel complex getal</td></tr>
+<tr><td><code>[0; 1]^2</code></td><td><code>[-1; 0]</code>, op afronding na</td></tr>
+<tr><td><code>[8; 0]^(1/3)</code></td><td>de lijst van de drie derdemachtswortels</td></tr>
+<tr><td><code>-[2; 1]</code></td><td><code>[-2; -1]</code></td></tr>
+</tbody></table></div>
+<p>Elke andere combinatie geeft <code>#VALUE!</code>: product van twee lijsten van drie getallen, verschillende lengtes, tekst.</p>
+<h2 id="fonctions">Lijsten en functies</h2>
+<p>Een functie ziet een lijst als een bereik:</p>
+<pre><code>=SOM([1; 2; 3])
+=MAX(A1)
+=INDEX(A1; 2)
+=GEMIDDELDE([12; 15; 8])
+=SOM([1; 2; 3] + [1; 1; 1]*2)</code></pre>
+<p><code>=INDEX(A1; 2)</code> geeft het tweede element van de lijst in A1: de ordinaat van een punt, het imaginaire deel van een complex getal. Enkele <a href="fonctions.html">functies</a> geven een lijst terug: <code>INTERVAL</code>, <code>LIJNSCH</code>, <code>TRANSPONEREN</code>, <code>UNIEK</code>, <code>SPLIT</code>.</p>
+<h2 id="affichage">Weergave</h2>
+<p>De knoppen <i data-i="number-decrease"></i> <i data-i="number-increase"></i> en de <a href="nombres.html">getalnotaties</a> gelden voor elk getal van de lijst: <code>[-0,14; 0,27]</code>. De exacte waarden blijven.</p>
+<h2 id="exemple">Voorbeeld: een complexe rij</h2>
+<p>De baan van 0 onder <em>z</em> ↦ <em>z</em>² + <em>c</em>: A1 bevat <em>c</em>, A2 <code>[0; 0]</code>, A3 de formule hieronder, omlaag doorgevoerd.</p>
+<pre><code>=A2^2+$A$1</code></pre>
+<p>In <a href="docgeo.html">DocGeo</a> wordt zo’n kolom in de figuur getekend.</p>
+<div class="note"><p>In een Excel-bestand wordt een lijst als tekst opgeslagen, en ook de waarde van een formule die een lijst geeft (<a href="excel.html#listes">compatibiliteit</a>).</p></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/pt.md: do not edit. -->
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Perguntas frequentes — Manual do DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Perguntas frequentes</h1>
+<h2 id="saisie">Entrada</h2>
+<h3>Uma data que escrevi não é reconhecida</h3>
+<p><code>25/11/2026</code> é um texto para o DocCells. Escrever <code>2026-11-25</code>, depois escolher o formato <strong>Data</strong> (<a href="saisie.html#dates">datas</a>).</p>
+<h3>Aparece um número em vez de uma data</h3>
+<p>As datas são números de dias: dar às células o formato <strong>Data</strong> (<strong>Formato › Número</strong>).</p>
+<h3>Os meus números não se somam</h3>
+<p>Alinhados à esquerda, são textos. Em português, a vírgula é decimal; uma unidade escrita na célula faz dela um texto (<a href="saisie.html#types">tipos</a>).</p>
+<h3>O zero no início de um número desaparece</h3>
+<p>Dar o formato <strong>Texto simples</strong> antes de escrever, ou começar por um apóstrofo (<a href="saisie.html#textes">textos</a>).</p>
+<h3>Os números esperam um ponto em vez de uma vírgula</h3>
+<p>O DocCells segue o idioma do navegador. <code>?lang=pt</code> impõe-no (<a href="demarrage.html#langue">idioma</a>).</p>
+<h2 id="formules">Fórmulas</h2>
+<h3><code>#NAME?</code> com VERDADEIRO ou FALSO</h3>
+<p>Escrever <code>VERDADEIRO()</code> e <code>FALSO()</code>, ou 1 e 0 (<a href="formules.html#conditions">condições</a>).</p>
+<h3><code>#NAME?</code> com uma função proposta pelo DocCells</h3>
+<p>Nem todas as funções propostas são calculadas (<a href="fonctions.html#non-calculees">funções não calculadas</a>).</p>
+<h3><code>SE.ERRO</code> deixa passar DIV/0</h3>
+<p>Testar o divisor: <code>=SE(B2; A2/B2; "")</code> (<a href="formules.html#erreurs">erros</a>).</p>
+<h3>Colar não conserva as minhas fórmulas</h3>
+<p><strong>Colar</strong> do clique direito cola os valores; <kbd>Ctrl</kbd> <kbd>V</kbd> cola as fórmulas (<a href="selection.html#copier">copiar</a>).</p>
+<h3>Escrever o nome de um mês ou formatar um número num texto</h3>
+<p>A função <code>TEXTO</code> não é calculada: dar um <a href="nombres.html">formato</a> a uma célula à parte.</p>
+<h3>Contar as caixas marcadas</h3>
+<p><code>=SOMARPRODUTO(B2:B6; B2:B6)</code> (<a href="controles.html#cases">caixas</a>).</p>
+<h3><code>=HOJE()+1</code> dá #VALUE!</h3>
+<p>Pôr <code>=HOJE()</code> numa célula e somar a essa célula (<a href="formules.html#dates">datas</a>).</p>
+<h2 id="presentation">Apresentação</h2>
+<h3>A cor de uma célula não muda</h3>
+<p>A célula está no intervalo de uma regra de <a href="conditionnelle.html#regles">formatação condicional</a>.</p>
+<h3>Um botão desapareceu</h3>
+<p>A janela é estreita: está atrás de <i data-i="more"></i>.</p>
+<h3>Ordenar ou filtrar é recusado</h3>
+<p>O intervalo contém células unidas: separá-las.</p>
+<h2 id="fichiers">Ficheiros</h2>
+<h3>Guardar descarrega um novo ficheiro</h3>
+<p>É o caso no Firefox e no Safari. O Chrome e o Edge escrevem no ficheiro (<a href="demarrage.html#enregistrer">guardar</a>).</p>
+<h3>A página fechou sem guardar</h3>
+<p>Reabrir o DocCells no mesmo navegador: propõe restaurar a cópia (<a href="demarrage.html#recuperer">recuperar</a>).</p>
+<h3>O meu gráfico não é impresso</h3>
+<p>A impressão só mostra as células (<a href="impression.html">imprimir</a>).</p>
+<h3>Uma ligação <code>?url=</code> não abre o meu livro</h3>
+<p>O sítio do ficheiro talvez recuse a leitura por outros sítios. Um Google Sheet deve ser partilhado por ligação (<a href="partager.html">partilhar</a>).</p>
+<h3>As minhas ligações desapareceram</h3>
+<p>Não são guardadas no formato Excel (<a href="excel.html#perdu">o que não se conserva</a>).</p>
+<h2 id="eleves">Alunos</h2>
+<h3>Um aluno pode alterar as fórmulas?</h3>
+<p>Não num livro protegido, fora das células desbloqueadas (<a href="protection.html">proteger</a>). Acrescentar <code>mode=student</code> à ligação retira-lhe o meio de remover a proteção.</p>
+</main>
+</body>
+</html>

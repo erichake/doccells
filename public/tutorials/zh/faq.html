@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>常见问题 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>常见问题</h1>
+<h2 id="saisie">输入</h2>
+<h3>键入的日期没有被识别</h3>
+<p>对 DocCells 而言，<code>11/25/2026</code> 是文本。请键入 <code>2026-11-25</code>，然后选择 <strong>日期</strong> 格式（<a href="saisie.html#dates">日期</a>）。</p>
+<h3>显示数字而不是日期</h3>
+<p>日期是天数：给单元格设置 <strong>日期</strong> 格式（<strong>格式 › 数字</strong>）。</p>
+<h3>数字没有相加</h3>
+<p>左对齐的是文本。在单元格中键入单位或小数逗号会使其变为文本（<a href="saisie.html#types">类型</a>）。</p>
+<h3>编号开头的零消失了</h3>
+<p>键入前设置 <strong>纯文本</strong> 格式，或以撇号开头（<a href="saisie.html#textes">文本</a>）。</p>
+<h3>数字要求用逗号而不是小数点</h3>
+<p>DocCells 采用浏览器的语言。<code>?lang=zh-CN</code> 可指定语言（<a href="demarrage.html#langue">语言</a>）。</p>
+<h2 id="formules">公式</h2>
+<h3>TRUE 或 FALSE 得到 <code>#NAME?</code></h3>
+<p>请写 <code>TRUE()</code> 和 <code>FALSE()</code>，或 1 和 0（<a href="formules.html#conditions">条件</a>）。</p>
+<h3>DocCells 建议的函数得到 <code>#NAME?</code></h3>
+<p>并非所有建议的函数都会计算（<a href="fonctions.html#non-calculees">不计算的函数</a>）。</p>
+<h3><code>IFERROR</code> 不处理 DIV/0</h3>
+<p>请检查除数：<code>=IF(B2, A2/B2, "")</code>（<a href="formules.html#erreurs">错误</a>）。</p>
+<h3>粘贴后公式没有保留</h3>
+<p>右键菜单的 <strong>粘贴</strong> 粘贴值；<kbd>Ctrl</kbd> <kbd>V</kbd> 粘贴公式（<a href="selection.html#copier">复制</a>）。</p>
+<h3>写出月份名称，或在文本中设置数字格式</h3>
+<p><code>TEXT</code> 函数不计算：请给单独的单元格设置<a href="nombres.html">格式</a>。</p>
+<h3>统计勾选的复选框</h3>
+<p><code>=SUMPRODUCT(B2:B6, B2:B6)</code>（<a href="controles.html#cases">复选框</a>）。</p>
+<h3><code>=TODAY()+1</code> 得到 #VALUE!</h3>
+<p>将 <code>=TODAY()</code> 放在单元格中，再对该单元格相加（<a href="formules.html#dates">日期</a>）。</p>
+<h2 id="presentation">呈现</h2>
+<h3>单元格的颜色不变</h3>
+<p>该单元格在某条<a href="conditionnelle.html#regles">条件格式</a>规则的区域内。</p>
+<h3>某个按钮不见了</h3>
+<p>窗口较窄：它在 <i data-i="more"></i> 后面。</p>
+<h3>无法排序或筛选</h3>
+<p>区域中有合并单元格：请取消合并。</p>
+<h2 id="fichiers">文件</h2>
+<h3>保存时下载了新文件</h3>
+<p>在 Firefox 和 Safari 中是这样。Chrome 和 Edge 会写入文件（<a href="demarrage.html#enregistrer">保存</a>）。</p>
+<h3>页面未保存就关闭了</h3>
+<p>在同一浏览器中重新打开 DocCells：它会询问是否恢复副本（<a href="demarrage.html#recuperer">恢复</a>）。</p>
+<h3>图表没有打印</h3>
+<p>打印只包含单元格（<a href="impression.html">打印</a>）。</p>
+<h3><code>?url=</code> 链接打不开工作簿</h3>
+<p>存放文件的网站可能不允许其他网站读取。Google 表格必须通过链接共享（<a href="partager.html">共享</a>）。</p>
+<h3>链接不见了</h3>
+<p>链接不保存在 Excel 格式中（<a href="excel.html#perdu">不保留的内容</a>）。</p>
+<h2 id="eleves">学生</h2>
+<h3>学生能修改公式吗？</h3>
+<p>在受保护的工作簿中，除未锁定的单元格外不能修改（<a href="protection.html">保护</a>）。在链接中加入 <code>mode=student</code>，学生就无法取消保护。</p>
+</main>
+</body>
+</html>

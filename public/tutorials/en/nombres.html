@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Number formats — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Number formats</h1>
+<p class="lead">A format changes how a number is displayed, not its value: calculations keep all the decimals.</p>
+<h2 id="choisir">Choosing a format</h2>
+<p><strong>Format › Number</strong>, or the <strong>Automatic</strong> list of the toolbar.</p>
+<div class="table"><table><thead><tr><th>Format</th><th>Example</th></tr></thead><tbody>
+<tr><td><strong>Automatic</strong></td><td><code>1200.09</code></td></tr>
+<tr><td><strong>Plain text</strong></td><td><code>1200.09</code>, aligned left; the entry stays a text</td></tr>
+<tr><td><strong>Number</strong></td><td><code>1200.09</code></td></tr>
+<tr><td><strong>Percent</strong></td><td><code>120009.00%</code>; 0.25 becomes <code>25.00%</code></td></tr>
+<tr><td><strong>Scientific</strong></td><td><code>1.20E+03</code></td></tr>
+<tr><td><strong>Accounting</strong></td><td><code>$(1,200.09)</code></td></tr>
+<tr><td><strong>Currency</strong></td><td><code>$1,200.09</code></td></tr>
+<tr><td><strong>Date</strong>, <strong>Time</strong>, <strong>Date time</strong></td><td>for dates: <code>11/29/2017</code>, <code>3:00 PM</code>, <code>15:00</code>…</td></tr>
+</tbody></table></div>
+<p>The currency symbol is that of the interface's language.</p>
+<div class="table"><table><thead><tr><th>Button</th><th>Effect</th></tr></thead><tbody>
+<tr><td><i data-i="percentage-format"></i></td><td>percentage</td></tr>
+<tr><td><i data-i="number-decrease"></i></td><td>one decimal less</td></tr>
+<tr><td><i data-i="number-increase"></i></td><td>one decimal more</td></tr>
+</tbody></table></div>
+<p>These buttons also apply to the numbers of a <a href="listes.html">list</a>. To round the value itself, use <code>ROUND</code>.</p>
+<h2 id="personnalise">Custom format</h2>
+<p><strong>Format › Number › Custom number format…</strong>: choose a suggested format, or write a code. The preview shows the result; <strong>Format guide</strong> recalls the signs; <strong>Apply</strong> gives it to the selection.</p>
+<figure><img src="img/format-personnalise.webp" alt="The custom number formats window" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Sign</th><th>Role</th><th>Code</th><th>1234.5 is displayed</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td>a digit, zeros included</td><td><code>0.00</code></td><td><code>1234.50</code></td></tr>
+<tr><td><code>#</code></td><td>a digit if it is useful</td><td><code>#.##</code></td><td><code>1234.5</code></td></tr>
+<tr><td><code>,</code></td><td>groups thousands</td><td><code>#,##0</code></td><td><code>1,235</code></td></tr>
+<tr><td><code>%</code></td><td>percentage</td><td><code>0%</code></td><td><code>123450%</code></td></tr>
+<tr><td><code>"text"</code></td><td>a text, a unit</td><td><code>0.0 "m"</code></td><td><code>1234.5 m</code></td></tr>
+<tr><td><code>E+00</code></td><td>scientific notation</td><td><code>0.00E+00</code></td><td><code>1.23E+03</code></td></tr>
+<tr><td><code>;</code></td><td>formats for positive, negative, zero, text</td><td><code>0;-0;"none"</code></td><td><code>1235</code></td></tr>
+<tr><td><code>[Red]</code></td><td>color</td><td><code>0;[Red]-0</code></td><td>negative numbers in red</td></tr>
+</tbody></table></div>
+<p>The code is typed with the separators of the language; the window shows the form in which it is saved (<code>#,##0.00</code>), the same as Excel's.</p>
+<h3 id="dates-heures">Dates and times</h3>
+<div class="table"><table><thead><tr><th>Code</th><th>29 August 2026, 2:30 PM</th></tr></thead><tbody>
+<tr><td><code>dd/MM/yyyy</code></td><td><code>29/08/2026</code></td></tr>
+<tr><td><code>d mmm yyyy</code></td><td><code>29 Aug 2026</code></td></tr>
+<tr><td><code>dddd d mmmm yyyy</code></td><td><code>Saturday 29 August 2026</code></td></tr>
+<tr><td><code>hh:mm</code></td><td><code>14:30</code></td></tr>
+<tr><td><code>dd/MM/yyyy hh:mm</code></td><td><code>29/08/2026 14:30</code></td></tr>
+</tbody></table></div>
+<h3 id="unites">Units</h3>
+<p>Under <strong>Units</strong>, formats such as <code>0.00 "V"</code>, <code>0.00 "Ω"</code>, <code>0.00 "mm"</code>: the cell remains a number, which can be calculated with.</p>
+</main>
+</body>
+</html>

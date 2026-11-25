@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Condividere e incorporare — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Condividere e incorporare</h1>
+<h2 id="url">Una cartella tramite un link</h2>
+<p><code>?url=</code> seguito dall’indirizzo di un file <code>.xlsx</code> in rete lo apre in DocCells.</p>
+<pre><code>https://…/doccells/?url=https://esempio.org/voti.xlsx</code></pre>
+<p>Il sito che ospita il file deve autorizzarne la lettura da altri siti (intestazione CORS); un file posto accanto a DocCells, sullo stesso sito, non ha questo vincolo. Ognuno apre la propria copia: le modifiche non tornano nel file originale.</p>
+<h2 id="google">Un Google Sheet</h2>
+<p>Va bene anche l’indirizzo di un Google Sheet.</p>
+<pre><code>https://…/doccells/?url=https://docs.google.com/spreadsheets/d/…</code></pre>
+<ul>
+<li>Condividerlo con «Chiunque abbia il link».</li>
+<li>DocCells ne legge una copia in formato Excel a ogni apertura: il documento Google non è modificato.</li>
+<li>Il sito che ospita DocCells deve eseguire PHP; 25 MB al massimo.</li>
+</ul>
+<h2 id="options">Opzioni dell’indirizzo</h2>
+<div class="table"><table><thead><tr><th>Opzione</th><th>Effetto</th></tr></thead><tbody>
+<tr><td><code>url=…</code></td><td>apre una cartella o un Google Sheet</td></tr>
+<tr><td><code>mode=student</code></td><td><a href="protection.html#eleve">modalità studente</a></td></tr>
+<tr><td><code>lang=it</code></td><td>impone la lingua: <code>de</code>, <code>el</code>, <code>en</code>, <code>es</code>, <code>fr</code>, <code>hi</code>, <code>it</code>, <code>nl</code>, <code>pt</code>, <code>ru</code>, <code>zh-CN</code>, <code>zh-TW</code></td></tr>
+</tbody></table></div>
+<p>Le opzioni si susseguono, separate da <code>&amp;</code>: <code>?lang=it&amp;mode=student&amp;url=…</code>. La prima viene dopo <code>?</code>.</p>
+<h2 id="integrer">In una pagina web</h2>
+<pre><code>&lt;iframe src="https://…/doccells/?url=https://esempio.org/voti.xlsx"
+    style="width:100%;height:500px;border:1px solid #ccc"&gt;&lt;/iframe&gt;</code></pre>
+<p>In un riquadro, DocCells non ha menu, né pulsanti per aprire e salvare, né copia di recupero: mostra la barra dei pulsanti, la barra della formula e il foglio.</p>
+<h2 id="programme">Da programma</h2>
+<p>Una pagina può comandare DocCells: caricare una cartella, leggere e scrivere celle, seguirne i valori. L’opzione <code>embed</code> apre questa modalità; è descritta, per gli sviluppatori, nel file <a href="https://github.com/erichake/doccells/blob/main/EMBED.md">EMBED.md</a> del progetto (in francese).</p>
+</main>
+</body>
+</html>

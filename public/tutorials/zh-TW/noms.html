@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>已命名範圍 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>已命名範圍</h1>
+<h2 id="definir">命名</h2>
+<ol>
+<li>選擇儲存格或範圍。</li>
+<li>右鍵 › <strong>定義名稱…</strong>（或名稱方塊的箭頭 › <strong>名稱管理員</strong>）。</li>
+<li>輸入名稱，選擇範圍，<strong>確定</strong>。</li>
+</ol>
+<figure><img src="img/noms.webp" alt="新建名稱視窗" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>欄位</th><th>內容</th></tr></thead><tbody>
+<tr><td><strong>名稱</strong></td><td>以字母或 <code>_</code> 開頭；字母、數字、<code>_</code> 和 <code>.</code>，無空格；不能是 <code>B2</code> 這樣的位址</td></tr>
+<tr><td><strong>範圍</strong></td><td><strong>活頁簿</strong>：所有工作表都可讀取；某張工作表：僅該表可讀取，並優先於活頁簿的同名名稱</td></tr>
+<tr><td><strong>參照到</strong></td><td>儲存格或範圍，帶工作表：<code>'工作表1'!$B$2:$B$6</code></td></tr>
+</tbody></table></div>
+<h2 id="utiliser">使用名稱</h2>
+<pre><code>=AVERAGE(成績)
+=價格*(1+稅率)</code></pre>
+<ul>
+<li>名稱方塊的箭頭列出名稱：選擇一個即選中其所在工作表中的範圍。</li>
+<li>當選區恰好是已命名範圍時，名稱方塊顯示其名稱。</li>
+<li><a href="controles.html#listes">下拉式清單</a>可讀取由位址指定的儲存格範圍。</li>
+</ul>
+<h2 id="gerer">修改、刪除</h2>
+<p>在 <strong>名稱管理員</strong> 中，按一下名稱可重新編輯其欄位；<strong>刪除</strong> 刪除它；<strong>新增</strong> 回到空名稱。刪除名稱前，請替換讀取它的公式：它們會保留最後的值，之後不再計算。</p>
+<p>名稱儲存在 Excel 檔案中，並可從中讀取。</p>
+</main>
+</body>
+</html>

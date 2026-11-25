@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Les feuilles — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Les feuilles</h1>
+<h2 id="ajouter">Ajouter, changer de feuille</h2>
+<ul>
+<li><i data-i="plus"></i> ajoute une feuille, nommée « Feuille2 », « Feuille3 »…</li>
+<li>Un clic sur un onglet l’affiche ; <i data-i="all-sheets"></i> liste les feuilles, masquées comprises, et affiche celle qu’on choisit.</li>
+</ul>
+<h2 id="menu">Le menu d’un onglet</h2>
+<p>Clic droit sur l’onglet, ou sa flèche :</p>
+<div class="table"><table><thead><tr><th>Commande</th><th>Effet</th></tr></thead><tbody>
+<tr><td><strong>Supprimer</strong></td><td>après confirmation ; la dernière feuille visible ne peut pas l’être</td></tr>
+<tr><td><strong>Copier</strong></td><td>double la feuille</td></tr>
+<tr><td><strong>Renommer</strong></td><td>ou double clic sur le nom ; sans <code>[ ] : ? * / ' "</code></td></tr>
+<tr><td><strong>Changer la couleur</strong></td><td>couleur de l’onglet</td></tr>
+<tr><td><strong>Masquer</strong></td><td>la feuille reste lue par les formules ; <i data-i="all-sheets"></i> la rend</td></tr>
+<tr><td><strong>Déplacer à gauche</strong>, <strong>à droite</strong></td><td>change l’ordre ; on peut aussi tirer l’onglet</td></tr>
+</tbody></table></div>
+<h2 id="references">Lire une autre feuille</h2>
+<p>Le nom de la feuille, un point d’exclamation, l’adresse. Le nom se met entre apostrophes s’il contient une espace ou un signe.</p>
+<pre><code>=Feuille2!B2*2
+='Notes 2'!B2
+=SOMME('Notes 2'!B2:B6)</code></pre>
+<p>La référence se tape : changer d’onglet pendant la saisie d’une formule abandonne la saisie.</p>
+<p>Pour qu’une plage soit lue de toutes les feuilles par un nom, la <a href="noms.html">nommer</a> avec l’étendue <strong>Classeur</strong>.</p>
+</main>
+</body>
+</html>

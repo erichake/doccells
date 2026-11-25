@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/pt.md: do not edit. -->
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Proteger — Manual do DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Proteger</h1>
+<p class="lead">Um livro protegido só pode ser alterado nas células desbloqueadas: prepara-se assim uma folha de exercícios.</p>
+<h2 id="preparer">Preparar uma folha para alunos</h2>
+<ol>
+<li>Selecionar as células a preencher, clique direito › <strong>Desbloquear células</strong>.</li>
+<li><i data-i="protect"></i> ou <strong>Ferramentas › Proteger / Desproteger livro</strong>.</li>
+<li>Guardar, depois <a href="partager.html">divulgar o ficheiro ou a sua ligação</a>.</li>
+</ol>
+<p>No início todas as células estão bloqueadas; o bloqueio só tem efeito num livro protegido. <strong>Bloquear células</strong> anula-o.</p>
+<h2 id="effets">O que a proteção bloqueia</h2>
+<div class="table"><table><thead><tr><th>Num livro protegido</th><th>Célula bloqueada</th><th>Célula desbloqueada</th></tr></thead><tbody>
+<tr><td>escrever, apagar</td><td>não</td><td>sim</td></tr>
+<tr><td>calendário de uma data</td><td>não</td><td>sim</td></tr>
+<tr><td>larguras e alturas</td><td>não</td><td>não</td></tr>
+<tr><td>cores alternadas, inserção de caixas e listas, preenchimento por menu</td><td>não</td><td>não</td></tr>
+<tr><td>formatação, inserção de linhas e colunas, gráficos</td><td>sim</td><td>sim</td></tr>
+</tbody></table></div>
+<p>A proteção abrange todas as folhas. É guardada no ficheiro Excel, com as células desbloqueadas, e relida pelo DocCells e pelo Excel.</p>
+<h2 id="eleve">Modo aluno</h2>
+<p><code>?mode=student</code> no endereço abre o DocCells sem o botão <i data-i="protect"></i> nem os comandos <strong>Desbloquear células</strong> e <strong>Definir nome…</strong>; <strong>Proteger / Desproteger livro</strong> fica desativado. O aluno não pode retirar a proteção.</p>
+<pre><code>https://…/doccells/?mode=student&amp;url=https://…/exercicio.xlsx</code></pre>
+<div class="note"><p>É uma proteção de uso, sem palavra-passe: quem abrir o ficheiro noutra folha de cálculo, ou sem <code>mode=student</code>, pode retirá-la.</p></div>
+</main>
+</body>
+</html>

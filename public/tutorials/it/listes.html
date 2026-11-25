@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/it.md: do not edit. -->
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elenchi e complessi — Manuale di DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Elenchi e complessi</h1>
+<p class="lead">Una cella di DocCells può contenere un elenco di numeri. Un elenco di due numeri è anche un punto del piano, o un numero complesso.</p>
+<h2 id="ecrire">Scrivere un elenco</h2>
+<p>Tra parentesi quadre, elementi separati da punti e virgola. Un elenco può contenere elenchi.</p>
+<pre><code>[2; 1]
+[1,5; -3; 4]
+[[1; 2]; [3; 4]]
+=[2; 1]*3
+=[B2; C2]</code></pre>
+<p>Senza <code>=</code>, l’elenco è un valore; con <code>=</code>, i suoi elementi possono essere calcoli. In una lingua con il punto decimale, gli elementi si separano con virgole: <code>[2, 1]</code>.</p>
+<h2 id="operations">Operazioni</h2>
+<div class="table"><table><thead><tr><th>Operazione</th><th>Risultato</th></tr></thead><tbody>
+<tr><td><code>[1; 2; 3] + [1; 1; 1]</code></td><td><code>[2; 3; 4]</code>: termine a termine, lunghezze uguali</td></tr>
+<tr><td><code>[1; 2; 3] * 2</code>, <code>[2; 4; 6] / 2</code></td><td><code>[2; 4; 6]</code>, <code>[1; 2; 3]</code></td></tr>
+<tr><td><code>[2; 1] * [3; 2]</code></td><td><code>[4; 7]</code>: prodotto di complessi</td></tr>
+<tr><td><code>[4; 7] / [3; 2]</code></td><td><code>[2; 1]</code>: quoziente di complessi</td></tr>
+<tr><td><code>[2; 1] + 3</code></td><td><code>[5; 1]</code>: 3 è un complesso reale</td></tr>
+<tr><td><code>[0; 1]^2</code></td><td><code>[-1; 0]</code>, a meno di arrotondamenti</td></tr>
+<tr><td><code>[8; 0]^(1/3)</code></td><td>l’elenco delle tre radici cubiche</td></tr>
+<tr><td><code>-[2; 1]</code></td><td><code>[-2; -1]</code></td></tr>
+</tbody></table></div>
+<p>Ogni altra combinazione dà <code>#VALUE!</code>: prodotto di due elenchi di tre numeri, lunghezze diverse, testo.</p>
+<h2 id="fonctions">Elenchi e funzioni</h2>
+<p>Una funzione vede un elenco come un intervallo:</p>
+<pre><code>=SOMMA([1; 2; 3])
+=MAX(A1)
+=INDICE(A1; 2)
+=MEDIA([12; 15; 8])
+=SOMMA([1; 2; 3] + [1; 1; 1]*2)</code></pre>
+<p><code>=INDICE(A1; 2)</code> dà il secondo elemento dell’elenco contenuto in A1: l’ordinata di un punto, la parte immaginaria di un complesso. Alcune <a href="fonctions.html">funzioni</a> restituiscono un elenco: <code>FREQUENZA</code>, <code>REGR.LIN</code>, <code>MATR.TRASPOSTA</code>, <code>UNICI</code>, <code>SPLIT</code>.</p>
+<h2 id="affichage">Visualizzazione</h2>
+<p>I pulsanti <i data-i="number-decrease"></i> <i data-i="number-increase"></i> e i <a href="nombres.html">formati numerici</a> si applicano a ogni numero dell’elenco: <code>[-0,14; 0,27]</code>. I valori esatti restano.</p>
+<h2 id="exemple">Esempio: una successione complessa</h2>
+<p>L’orbita di 0 per <em>z</em> ↦ <em>z</em>² + <em>c</em>: A1 contiene <em>c</em>, A2 <code>[0; 0]</code>, A3 la formula seguente, riempita in basso.</p>
+<pre><code>=A2^2+$A$1</code></pre>
+<p>In <a href="docgeo.html">DocGeo</a>, una colonna così si disegna nella figura.</p>
+<div class="note"><p>In un file Excel, un elenco è salvato come testo, e così il valore di una formula che dà un elenco (<a href="excel.html#listes">compatibilità</a>).</p></div>
+</main>
+</body>
+</html>

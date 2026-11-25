@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Вопросы и ответы — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Вопросы и ответы</h1>
+<h2 id="saisie">Ввод</h2>
+<h3>Набранная дата не распознана</h3>
+<p><code>25.11.2026</code> для DocCells — текст. Наберите <code>2026-11-25</code>, затем выберите формат <strong>Дата</strong> (<a href="saisie.html#dates">даты</a>).</p>
+<h3>Вместо даты видно число</h3>
+<p>Даты — это числа дней: задайте ячейкам формат <strong>Дата</strong> (<strong>Формат › Число</strong>).</p>
+<h3>Числа не складываются</h3>
+<p>Выровненные влево — это тексты. Десятичный разделитель — запятая; единица, набранная в ячейке, превращает число в текст (<a href="saisie.html#types">типы</a>).</p>
+<h3>Исчезает ноль в начале номера</h3>
+<p>Задайте формат <strong>Обычный текст</strong> до набора или начните с апострофа (<a href="saisie.html#textes">тексты</a>).</p>
+<h3>Числа требуют точку вместо запятой</h3>
+<p>DocCells следует языку браузера. <code>?lang=ru</code> задаёт его (<a href="demarrage.html#langue">язык</a>).</p>
+<h2 id="formules">Формулы</h2>
+<h3><code>#NAME?</code> с ИСТИНА или ЛОЖЬ</h3>
+<p>Пишите <code>ИСТИНА()</code> и <code>ЛОЖЬ()</code> или 1 и 0 (<a href="formules.html#conditions">условия</a>).</p>
+<h3><code>#NAME?</code> с функцией, предложенной DocCells</h3>
+<p>Вычисляются не все предложенные функции (<a href="fonctions.html#non-calculees">невычисляемые функции</a>).</p>
+<h3><code>ЕСЛИОШИБКА</code> пропускает DIV/0</h3>
+<p>Проверяйте делитель: <code>=ЕСЛИ(B2; A2/B2; "")</code> (<a href="formules.html#erreurs">ошибки</a>).</p>
+<h3>При вставке пропадают формулы</h3>
+<p><strong>Вставить</strong> в меню правой кнопки вставляет значения; <kbd>Ctrl</kbd> <kbd>V</kbd> вставляет формулы (<a href="selection.html#copier">копирование</a>).</p>
+<h3>Как записать название месяца или оформить число в тексте</h3>
+<p>Функция <code>ТЕКСТ</code> не вычисляется: задайте <a href="nombres.html">формат</a> отдельной ячейке.</p>
+<h3>Подсчёт отмеченных флажков</h3>
+<p><code>=СУММПРОИЗВ(B2:B6; B2:B6)</code> (<a href="controles.html#cases">флажки</a>).</p>
+<h3><code>=СЕГОДНЯ()+1</code> даёт #VALUE!</h3>
+<p>Поместите <code>=СЕГОДНЯ()</code> в ячейку и прибавляйте к ней (<a href="formules.html#dates">даты</a>).</p>
+<h2 id="presentation">Оформление</h2>
+<h3>Цвет ячейки не меняется</h3>
+<p>Ячейка входит в диапазон правила <a href="conditionnelle.html#regles">условного форматирования</a>.</p>
+<h3>Пропала кнопка</h3>
+<p>Окно узкое: она за <i data-i="more"></i>.</p>
+<h3>Сортировка или фильтр невозможны</h3>
+<p>В диапазоне есть объединённые ячейки: отмените объединение.</p>
+<h2 id="fichiers">Файлы</h2>
+<h3>Сохранение скачивает новый файл</h3>
+<p>Так в Firefox и Safari. Chrome и Edge записывают в файл (<a href="demarrage.html#enregistrer">сохранение</a>).</p>
+<h3>Страница закрылась без сохранения</h3>
+<p>Снова откройте DocCells в том же браузере: он предложит восстановить копию (<a href="demarrage.html#recuperer">восстановление</a>).</p>
+<h3>Диаграмма не печатается</h3>
+<p>Печатаются только ячейки (<a href="impression.html">печать</a>).</p>
+<h3>Ссылка <code>?url=</code> не открывает книгу</h3>
+<p>Возможно, сайт файла запрещает чтение другим сайтам. К Google Таблице нужен доступ по ссылке (<a href="partager.html">публикация</a>).</p>
+<h3>Пропали ссылки</h3>
+<p>Они не сохраняются в формате Excel (<a href="excel.html#perdu">что не сохраняется</a>).</p>
+<h2 id="eleves">Ученики</h2>
+<h3>Может ли ученик изменить формулы?</h3>
+<p>В защищённой книге — только в разблокированных ячейках (<a href="protection.html">защита</a>). <code>mode=student</code> в ссылке лишает его возможности снять защиту.</p>
+</main>
+</body>
+</html>

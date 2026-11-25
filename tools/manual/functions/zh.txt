@@ -1,0 +1,126 @@
+words|-|admis=及格; refusé=不及格; très bien=优秀; assez bien=良好; un=一; deux=二; autre=其他; absent=缺席; Note : =成绩：; tableur=table; jean dupont=john smith
+SUMIF|-|对区域中满足条件（">=10"、"Ana"）的单元格，或另一区域中对应的单元格求和。
+SUBTOTAL|-|按代码汇总区域：1 平均值、2 计数、4 最大值、5 最小值、9 求和。
+AGGREGATE|函数; 选项; 区域|按代码汇总区域：1 平均值、2 计数、4 最大值、5 最小值、9 求和。选项：0 到 7，与 Excel 相同。
+INT|-|整数部分：不大于该数的最大整数。
+COMBINA|n; k|可重复的组合数。
+LOG|数值; 底数|以某数为底的对数；底数必填。
+BASE|数值; 基数; [长度]|整数在某进制下的写法，结果为文本。
+DECIMAL|文本; 基数|以 2 到 10 进制书写的数的值。
+COT|角度|弧度角的余切。
+SEC|角度|弧度角的正割。
+CSC|角度|弧度角的余割。
+ACOT|数值|反余切，以弧度表示。
+COTH|数值|双曲余切。
+SECH|数值|双曲正割。
+CSCH|数值|双曲余割。
+ACOTH|数值|反双曲余切。
+IFS|条件1; 值1; [条件2; 值2; …]|第一个为真的条件对应的值；都不为真则为 #N/A。
+SWITCH|表达式; 情形1; 值1; [情形2; 值2; …]; [默认值]|与表达式相等的情形对应的值。
+XOR|值1; 值2; …|为真的值有奇数个时为真。
+TRUE|-|逻辑值真，显示为 TRUE。
+FALSE|-|逻辑值假，显示为 FALSE。
+IFERROR|值; 出错时的值|该值；若为函数错误（#N/A、#NUM!）则为另一个值。不替换 DIV/0 和 #VALUE!。
+IFNA|值; 为NA时的值|该值；若为错误 #N/A 则为另一个值。
+COUNTIF|-|满足条件的单元格数：">10"、"<>0"、"Ana"。不识别通配符 * 和 ?。
+MODE|区域|出现最多的值。
+RANK|数值; 区域; [顺序]|数值在区域中的排名，降序；顺序为 1 时升序。
+QUARTILE|区域; k|四分位数：k 从 0（最小值）到 4（最大值）。
+QUARTILEEXC|区域; k|不含端点的四分位数：k 从 1 到 3。
+PERCENTILEINC|区域; k|百分位数：k 从 0 到 1。
+PERCENTILEEXC|区域; k|不含端点的百分位数。
+PERCENTRANK|区域; 数值|数值的百分比排名，从 0 到 1。
+STDEV|值1; [值2; …]|样本标准差（除以 n − 1）。
+STDEVP|-|总体标准差（除以 n）。
+STDEVPA|值1; [值2; …]|总体标准差，文本按 0 计。
+VAR|值1; [值2; …]|样本方差（除以 n − 1）。
+VARP|值1; [值2; …]|总体方差（除以 n）。
+SKEWP|区域|总体偏度。
+FREQUENCY|-|由列表划分的各组的频数，结果为列表。
+COVARIANCEP|y区域; x区域|总体协方差。
+COVARIANCES|y区域; x区域|样本协方差。
+LINEST|y区域; x区域|最小二乘直线：斜率和截距的列表。
+LOGEST|y区域; x区域|拟合 y = b·mˣ：m 和 b 的列表。
+TREND|y区域; x区域; 新x|线性拟合的值，结果为列表。
+GROWTH|y区域; x区域; 新x|指数拟合的值，结果为列表。
+PERMUTATIONA|n; k|可重复的排列数。
+NORMDIST|x; 均值; 标准差; 累积|正态分布：累积为真时为 P(X ≤ x)，否则为密度。
+NORMINV|概率; 均值; 标准差|使 P(X ≤ x) 等于该概率的 x，正态分布。
+NORMSDIST|z; 累积|标准正态分布：累积为真时为 P(Z ≤ z)，否则为密度。
+NORMSINV|概率|使 P(Z ≤ z) 等于该概率的 z。
+GAUSS|z|P(0 ≤ Z ≤ z)，标准正态分布。
+PHI|z|标准正态分布的密度。
+BINOMDIST|k; n; p; 累积|二项分布：累积为真时为 P(X ≤ k)，否则为 P(X = k)。
+CRITBINOM|n; p; alpha|使 P(X ≤ k) ≥ alpha 的最小 k，二项分布。
+NEGBINOMDIST|失败数; 成功数; p; 累积|负二项分布。
+POISSON|k; lambda; 累积|泊松分布：累积为真时为 P(X ≤ k)，否则为 P(X = k)。
+HYPGEOMDIST|k; n; 成功数; 总体; 累积|超几何分布。
+EXPONDIST|x; lambda; 累积|指数分布。
+GAMMADIST|x; alpha; beta; 累积|伽马分布。
+GAMMAINV|概率; alpha; beta|伽马分布的反函数。
+BETADIST|x; alpha; beta; 累积; a; b|[a, b] 上的贝塔分布。
+BETAINV|概率; alpha; beta|贝塔分布的反函数。
+LOGNORMDIST|x; 均值; 标准差; 累积|对数正态分布。
+LOGNORMINV|概率; 均值; 标准差|对数正态分布的反函数。
+WEIBULL|x; alpha; beta; 累积|韦布尔分布。
+CHIDIST|x; 自由度; 累积|卡方分布：累积为真时为 P(X ≤ x)。
+CHIDISTRT|x; 自由度|卡方分布：P(X > x)。
+CHIINVRT|概率; 自由度|使 P(X > x) 等于该概率的 x，卡方分布。
+FDIST|x; 自由度1; 自由度2; 累积|F 分布：累积为真时为 P(X ≤ x)。
+FDISTRT|x; 自由度1; 自由度2|F 分布：P(X > x)。
+TTEST|区域1; 区域2|两个样本的 t 检验概率。
+CONFIDENCE|alpha; 标准差; n|均值置信区间的半宽（正态分布）。
+GAMMA|数值|伽马函数。
+VLOOKUP|-|在区域的第一列中查找值，返回同一行的单元格。最后的参数为 0：精确匹配。
+HLOOKUP|-|在区域的第一行中查找值，返回同一列的单元格。最后的参数为 0：精确匹配。
+LOOKUP|值; 已排序区域; 结果区域|在已排序的区域中查找值，返回另一区域中对应的值。
+MATCH|-|值在区域中的位置。最后的参数为 0：精确匹配。
+INDEX|-|按位置取区域的单元格或列表的元素。
+TRANSPOSE|-|行列互换；结果是一个单元格中的行列表。
+FLATTEN|区域|区域的值按行排成的列表。
+UNIQUE|值1; 值2; …|去除重复的值的列表。
+SPLIT|文本; 分隔符|将文本拆分为列表。
+CONCAT|值1; 值2|连接两个文本。
+VALUE|-|文本中以小数点书写的数字。
+UNICHAR|代码|Unicode 代码对应的字符。
+UNICODE|文本|第一个字符的 Unicode 代码。
+TODAY|-|今天的日期。要用它计算，请放在单元格中。
+NOW|-|日期和时间，每次更改时重新计算。
+DATE|-|由年、月、日构成的日期；请给单元格设置日期格式。
+WEEKDAY|-|星期几；类型为 2 时，从 1（星期一）到 7（星期日）。
+DATEDIF|-|两个日期之间的时长，以年（"Y"）、月（"M"）或日（"D"）计。
+TIME|-|时间，表示为一天的一部分；请给单元格设置时间格式。
+HOUR|-|时间的小时数。
+MINUTE|-|时间的分钟数。
+SECOND|-|时间的秒数。
+PMT|-|贷款的等额还款；本金记为负数。
+PDURATION|利率; 现值; 终值|达到某值所需的期数。
+RRI|期数; 现值; 终值|增长的等效利率。
+ISPMT|利率; 期; 期数; 本金|等额本金贷款某期的利息。
+BITAND|a; b|按位与。
+BITOR|a; b|按位或。
+BITXOR|a; b|按位异或。
+BITLSHIFT|数值; 位移|位左移。
+BITRSHIFT|数值; 位移|位右移。
+CONVERT|-|单位换算："m"、"km"、"mi"、"hr"、"mn"、"kg"… 不换算温度。
+GESTEP|数值; 阈值|数值达到阈值时为 1，否则为 0。
+ERF|x|高斯误差函数。
+BESSELJ|x; n|贝塞尔函数 Jₙ。
+BESSELY|x; n|贝塞尔函数 Yₙ。
+BESSELI|x; n|修正贝塞尔函数 Iₙ。
+BESSELK|x; n|修正贝塞尔函数 Kₙ。
+IMARGUMENT|复数|辐角，以弧度表示。
+IMPOWER|复数; 指数|复数的幂。
+IMSQRT|复数|复数的平方根。
+IMEXP|复数|复数的指数。
+IMLN|复数|复数的自然对数。
+IMLOG10|复数|复数的常用对数。
+IMLOG2|复数|复数以 2 为底的对数。
+IMSIN|复数|复数的正弦。
+IMCOS|复数|复数的余弦。
+IMTAN|复数|复数的正切。
+ISERROR|-|值为函数错误（#N/A、#NUM!）时为真。
+ISERR|-|值为除 #N/A 以外的函数错误时为真。
+ISNA|-|值为错误 #N/A 时为真。
+NA|-|错误 #N/A。
+TYPE|-|值的类型：1 数字、2 文本、4 逻辑、16 错误、64 列表。

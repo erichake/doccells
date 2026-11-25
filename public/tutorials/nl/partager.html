@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Delen en insluiten — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Delen en insluiten</h1>
+<h2 id="url">Een werkmap via een link</h2>
+<p><code>?url=</code> gevolgd door het adres van een <code>.xlsx</code>-bestand op internet opent het in DocCells.</p>
+<pre><code>https://…/doccells/?url=https://voorbeeld.org/cijfers.xlsx</code></pre>
+<p>De site van het bestand moet lezen door andere sites toestaan (CORS-header); voor een bestand naast DocCells, op dezelfde site, geldt dat niet. Iedereen opent een eigen kopie: wijzigingen gaan niet terug naar het oorspronkelijke bestand.</p>
+<h2 id="google">Een Google Sheet</h2>
+<p>Het adres van een Google Sheet kan ook.</p>
+<pre><code>https://…/doccells/?url=https://docs.google.com/spreadsheets/d/…</code></pre>
+<ul>
+<li>Het delen met „Iedereen met de link”.</li>
+<li>DocCells leest bij elk openen een kopie in Excel-formaat: het Google-document wordt niet gewijzigd.</li>
+<li>De site met DocCells moet PHP uitvoeren; hoogstens 25 MB.</li>
+</ul>
+<h2 id="options">Opties van het adres</h2>
+<div class="table"><table><thead><tr><th>Optie</th><th>Effect</th></tr></thead><tbody>
+<tr><td><code>url=…</code></td><td>opent een werkmap of een Google Sheet</td></tr>
+<tr><td><code>mode=student</code></td><td><a href="protection.html#eleve">leerlingmodus</a></td></tr>
+<tr><td><code>lang=nl</code></td><td>legt de taal op: <code>de</code>, <code>el</code>, <code>en</code>, <code>es</code>, <code>fr</code>, <code>hi</code>, <code>it</code>, <code>nl</code>, <code>pt</code>, <code>ru</code>, <code>zh-CN</code>, <code>zh-TW</code></td></tr>
+</tbody></table></div>
+<p>De opties volgen elkaar, gescheiden door <code>&amp;</code>: <code>?lang=nl&amp;mode=student&amp;url=…</code>. De eerste komt na <code>?</code>.</p>
+<h2 id="integrer">In een webpagina</h2>
+<pre><code>&lt;iframe src="https://…/doccells/?url=https://voorbeeld.org/cijfers.xlsx"
+    style="width:100%;height:500px;border:1px solid #ccc"&gt;&lt;/iframe&gt;</code></pre>
+<p>In een kader heeft DocCells geen menu’s, geen knoppen om te openen en op te slaan, en geen herstelkopie: het toont de knoppenbalk, de formulebalk en het blad.</p>
+<h2 id="programme">Met een programma</h2>
+<p>Een pagina kan DocCells aansturen: een werkmap laden, cellen lezen en schrijven, hun waarden volgen. De optie <code>embed</code> opent deze modus; hij is voor ontwikkelaars beschreven in het bestand <a href="https://github.com/erichake/doccells/blob/main/EMBED.md">EMBED.md</a> van het project (in het Frans).</p>
+</main>
+</body>
+</html>

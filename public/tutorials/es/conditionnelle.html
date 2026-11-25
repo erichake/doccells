@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formato condicional — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Formato condicional</h1>
+<p class="lead">Una regla cambia el aspecto de las celdas de un rango que cumplen una condición. Sigue los valores, introducidos o calculados.</p>
+<h2 id="creer">Crear una regla</h2>
+<ol>
+<li>Seleccionar el rango, sin su encabezado.</li>
+<li><i data-i="conditional"></i> o <strong>Formato › Formato condicional</strong>.</li>
+<li>Elegir la condición, el valor de comparación, los colores o el estilo.</li>
+<li><strong>Agregar</strong>.</li>
+</ol>
+<figure><img src="img/conditionnelle.webp" alt="La ventana del formato condicional, con una regla aplicada" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Condición</th><th>La celda</th></tr></thead><tbody>
+<tr><td><code>&lt;</code></td><td>es menor que</td></tr>
+<tr><td><code>&gt;</code></td><td>es mayor que</td></tr>
+<tr><td><code>=</code></td><td>es igual a</td></tr>
+<tr><td><code>!=</code></td><td>es distinta de</td></tr>
+<tr><td><code>[]</code></td><td>está entre dos valores, incluidos los extremos</td></tr>
+<tr><td><code>abc</code></td><td>contiene un texto, en mayúsculas o minúsculas</td></tr>
+</tbody></table></div>
+<h2 id="comparer">Con qué comparar</h2>
+<div class="table"><table><thead><tr><th>Comparar con</th><th>Ejemplo</th></tr></thead><tbody>
+<tr><td><strong>un valor fijo</strong></td><td>las notas inferiores a 10</td></tr>
+<tr><td><strong>una celda fija</strong></td><td>las notas inferiores al umbral escrito en <code>F1</code></td></tr>
+<tr><td><strong>una columna de la misma fila</strong></td><td>en la columna C, los valores superiores a los de la columna B, fila por fila</td></tr>
+</tbody></table></div>
+<h2 id="apparence">Aspecto</h2>
+<p><strong>Texto</strong> y <strong>Fondo</strong> eligen los colores, <strong>Ninguno</strong> los retira; <strong>B</strong>, <em>I</em>, <strong>U</strong> ponen en negrita, cursiva, subrayado. Hace falta al menos un color o un estilo.</p>
+<h2 id="regles">Varias reglas</h2>
+<p>La columna de la izquierda lista las reglas de la hoja: <strong>Editar</strong>, <strong>Eliminar</strong>. Si varias reglas se aplican a una celda, prevalece la última de la lista, color por color.</p>
+<div class="warn"><p>En un rango cubierto por una regla, los colores de texto y de fondo dados directamente a las celdas dejan de mostrarse.</p></div>
+<p>Las reglas se guardan en el archivo de Excel como formatos condicionales de Excel.</p>
+</main>
+</body>
+</html>

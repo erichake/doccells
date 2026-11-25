@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>नामित रेंज — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>नामित रेंज</h1>
+<h2 id="definir">नाम देना</h2>
+<ol>
+<li>सेल या रेंज चुनें।</li>
+<li>दायाँ क्लिक › <strong>नाम निर्धारित करें…</strong> (या नाम बॉक्स का तीर › <strong>नाम प्रबंधक</strong>)।</li>
+<li>नाम लिखें, दायरा चुनें, <strong>ठीक है</strong>।</li>
+</ol>
+<figure><img src="img/noms.webp" alt="नए नाम की विंडो" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>फ़ील्ड</th><th>सामग्री</th></tr></thead><tbody>
+<tr><td><strong>नाम</strong></td><td>अक्षर या <code>_</code> से शुरू; अक्षर, अंक, <code>_</code> और <code>.</code>, बिना स्पेस; <code>B2</code> जैसा पता नहीं</td></tr>
+<tr><td><strong>क्षेत्र</strong></td><td><strong>कार्यपुस्तिका</strong>: सभी शीटों से पढ़ा जाता है; एक शीट: केवल उसी से, जहाँ वह वर्कबुक के नाम पर भारी है</td></tr>
+<tr><td><strong>संदर्भ</strong></td><td>सेल या रेंज, अपनी शीट सहित: <code>'शीट1'!$B$2:$B$6</code></td></tr>
+</tbody></table></div>
+<h2 id="utiliser">नाम का उपयोग</h2>
+<pre><code>=AVERAGE(marks)
+=price*(1+tax)</code></pre>
+<ul>
+<li>नाम बॉक्स का तीर नाम दिखाता है: नाम चुनने से उसकी शीट में रेंज चुन जाती है।</li>
+<li>चयन ठीक नामित रेंज हो तो नाम बॉक्स उसका नाम दिखाता है।</li>
+<li><a href="controles.html#listes">ड्रॉप-डाउन सूची</a> पते से दी गई सेल रेंज पढ़ सकती है।</li>
+</ul>
+<h2 id="gerer">बदलना, हटाना</h2>
+<p><strong>नाम प्रबंधक</strong> में नाम पर क्लिक उसके फ़ील्ड संपादन के लिए लाता है; <strong>हटाएँ</strong> उसे हटाता है; <strong>नया</strong> खाली नाम पर लौटाता है। नाम हटाने से पहले उसे पढ़ने वाले सूत्र बदलें: वे अंतिम मान रखते हैं, फिर नहीं गिने जाते।</p>
+<p>नाम Excel फ़ाइल में सहेजे और उससे पढ़े जाते हैं।</p>
+</main>
+</body>
+</html>

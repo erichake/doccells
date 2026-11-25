@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Selectievakjes, lijsten en kalender — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Selectievakjes, lijsten en kalender</h1>
+<figure><img src="img/controles.webp" alt="Selectievakjes, een keuzelijst en de kalender van een datum" width="1280" height="560" /></figure>
+<h2 id="cases">Selectievakjes</h2>
+<p>De cellen selecteren, <strong>Invoegen › Selectievakje</strong>. Een klik vinkt aan of uit; de cel is TRUE of FALSE.</p>
+<pre><code>=ALS(B2; "klaar"; "te doen")
+=SOMPRODUCT(B2:B6; C2:C6)
+=SOMPRODUCT(B2:B6; B2:B6)</code></pre>
+<p>De tweede formule telt de waarden van kolom C op waarvan het vakje is aangevinkt; de derde telt de aangevinkte vakjes.</p>
+<h2 id="listes">Keuzelijsten</h2>
+<p>De cellen selecteren, <strong>Invoegen › Vervolgkeuzelijst…</strong>.</p>
+<div class="table"><table><thead><tr><th>Bron</th><th>Inhoud</th></tr></thead><tbody>
+<tr><td><strong>Waarden</strong></td><td>de opties, één per veld; <strong>Optie toevoegen</strong>; zonder komma</td></tr>
+<tr><td><strong>Uit een bereik</strong></td><td>een bereik waarvan de cellen de opties zijn: <code>Blad2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>Een bereik zonder <code>$</code> verschuift van cel tot cel, zoals een doorgevoerde formule. Veranderen de cellen ervan, dan volgen de opties.</p>
+<p>De cel toont een pijl; een klik opent de opties. Een andere waarde dan die van de lijst wordt niet aanvaard.</p>
+<h2 id="calendrier">Kalender</h2>
+<p>Dubbelklikken op een datumcel opent een kalender: een dag kiezen, van maand wisselen met <strong><</strong> en <strong>></strong>, <strong>Vandaag</strong> voor de datum van vandaag. Hij opent op elke cel met een datumnotatie, ook een lege, behalve als ze een formule bevat of <a href="protection.html">vergrendeld</a> is.</p>
+<div class="tip"><p>Voor een datumkolom die met de kalender ingevuld wordt: ze selecteren en de notatie <strong>Datum</strong> geven.</p></div>
+<h2 id="retirer">Weghalen</h2>
+<p><kbd>Delete</kbd> haalt het vakje of de lijst uit de cel weg, met de waarde.</p>
+<p>Vakjes en lijsten worden in het Excel-bestand opgeslagen; de vakjes zijn er selectievakjes van Excel.</p>
+</main>
+</body>
+</html>

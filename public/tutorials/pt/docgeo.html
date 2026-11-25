@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/pt.md: do not edit. -->
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Com o DocGeo — Manual do DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Com o DocGeo</h1>
+<p class="lead">O DocGeo, o programa de geometria dinâmica do DocTools, contém o DocCells: uma folha ao lado de uma figura, cada uma a ler a outra.</p>
+<p>No DocGeo, <strong>Ficheiro › Vista › Nova vista de planilha</strong> acrescenta uma folha ao lado da figura; <strong>Ficheiro › Aba › Nova aba de planilha</strong> faz dela um separador.</p>
+<h2 id="geo">A função GEO</h2>
+<p>Numa célula, <code>GEO</code> lê o valor de um objeto da figura, indicado pelo seu nome entre aspas.</p>
+<pre><code>=GEO("AB")
+=2*GEO("r")+1
+=GEO("'Figura 1'!c")</code></pre>
+<ul>
+<li>A célula acompanha a figura enquanto é manipulada.</li>
+<li>Um ponto é lido como a <a href="listes.html">lista</a> das suas coordenadas: <code>=GEO("A")*2</code> também é um ponto.</li>
+<li>Ao escrever uma fórmula, um clique num objeto da figura escreve nela <code>GEO</code> e o seu nome.</li>
+<li>Um objeto desconhecido dá <code>#N/A</code>. Fora do DocGeo, <code>GEO</code> dá sempre <code>#N/A</code>.</li>
+<li><code>GEO</code> tem o mesmo nome em todos os idiomas.</li>
+</ul>
+<h2 id="figure">A figura lê as células</h2>
+<p>Numa fórmula do DocGeo, <code>!B3</code> designa uma célula, <code>!B2:B21</code> um intervalo.</p>
+<h2 id="differences">Diferenças em relação ao DocCells só</h2>
+<div class="table"><table><thead><tr><th>No DocGeo</th><th></th></tr></thead><tbody>
+<tr><td>Menus e botões</td><td>nas barras do DocGeo, quando a folha está ativa</td></tr>
+<tr><td>Ficheiro</td><td>o do DocGeo: a folha é guardada no <code>.dgo</code>, incluindo listas e ligações</td></tr>
+<tr><td>Folhas</td><td>uma por vista; vários separadores de folha de cálculo leem-se entre si</td></tr>
+<tr><td>Anular</td><td><kbd>Ctrl</kbd> <kbd>Z</kbd> nas células só anula as células</td></tr>
+</tbody></table></div>
+<p>A página <a href="https://doctools.org/apps/docgeo/tutorials/pt/tableur.html">A folha de cálculo</a> do manual do DocGeo dá os pormenores.</p>
+</main>
+</body>
+</html>

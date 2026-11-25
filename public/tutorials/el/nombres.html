@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Μορφές αριθμών — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Μορφές αριθμών</h1>
+<p class="lead">Μια μορφή αλλάζει την εμφάνιση ενός αριθμού, όχι την τιμή του: οι υπολογισμοί κρατούν όλα τα δεκαδικά.</p>
+<h2 id="choisir">Επιλογή μορφής</h2>
+<p><strong>Μορφή › Αριθμός</strong>, ή η λίστα <strong>Αυτόματο</strong> της γραμμής κουμπιών.</p>
+<div class="table"><table><thead><tr><th>Μορφή</th><th>Παράδειγμα</th></tr></thead><tbody>
+<tr><td><strong>Αυτόματο</strong></td><td><code>1200,09</code></td></tr>
+<tr><td><strong>Απλό κείμενο</strong></td><td><code>1200,09</code>, στοιχισμένο αριστερά· η εισαγωγή μένει κείμενο</td></tr>
+<tr><td><strong>Αριθμός</strong></td><td><code>1200,09</code></td></tr>
+<tr><td><strong>Ποσοστό</strong></td><td><code>120009,00%</code>· το 0,25 γίνεται <code>25,00%</code></td></tr>
+<tr><td><strong>Επιστημονική</strong></td><td><code>1,20E+03</code></td></tr>
+<tr><td><strong>Λογιστική</strong></td><td><code>(1.200,09) €</code></td></tr>
+<tr><td><strong>Νόμισμα</strong></td><td><code>1.200,09 €</code></td></tr>
+<tr><td><strong>Ημερομηνία</strong>, <strong>Ώρα</strong>, <strong>Ημερομηνία και ώρα</strong></td><td>για ημερομηνίες: <code>29/11/2017</code>, <code>3:00 PM</code>, <code>15:00</code>…</td></tr>
+</tbody></table></div>
+<p>Το σύμβολο νομίσματος είναι της γλώσσας του περιβάλλοντος.</p>
+<div class="table"><table><thead><tr><th>Κουμπί</th><th>Αποτέλεσμα</th></tr></thead><tbody>
+<tr><td><i data-i="percentage-format"></i></td><td>ποσοστό</td></tr>
+<tr><td><i data-i="number-decrease"></i></td><td>ένα δεκαδικό λιγότερο</td></tr>
+<tr><td><i data-i="number-increase"></i></td><td>ένα δεκαδικό περισσότερο</td></tr>
+</tbody></table></div>
+<p>Τα κουμπιά αυτά ισχύουν και για τους αριθμούς μιας <a href="listes.html">λίστας</a>. Για στρογγυλοποίηση της ίδιας της τιμής, χρησιμοποιήστε <code>ROUND</code>.</p>
+<h2 id="personnalise">Προσαρμοσμένη μορφή</h2>
+<p><strong>Μορφή › Αριθμός › Προσαρμοσμένη μορφή αριθμού…</strong>: επιλέξτε μια προτεινόμενη μορφή, ή γράψτε κώδικα. Η προεπισκόπηση δείχνει το αποτέλεσμα· το <strong>Οδηγός μορφών</strong> θυμίζει τα σύμβολα· το <strong>Εφαρμογή</strong> τη δίνει στην επιλογή.</p>
+<figure><img src="img/format-personnalise.webp" alt="Το παράθυρο προσαρμοσμένων μορφών αριθμών" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Σύμβολο</th><th>Ρόλος</th><th>Κώδικας</th><th>Το 1234,5 εμφανίζεται</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td>ένα ψηφίο, και το μηδέν</td><td><code>0,00</code></td><td><code>1234,50</code></td></tr>
+<tr><td><code>#</code></td><td>ένα ψηφίο αν χρειάζεται</td><td><code>#,##</code></td><td><code>1234,5</code></td></tr>
+<tr><td><code>.</code></td><td>ομαδοποιεί τις χιλιάδες</td><td><code>#.##0</code></td><td><code>1.235</code></td></tr>
+<tr><td><code>%</code></td><td>ποσοστό</td><td><code>0%</code></td><td><code>123450%</code></td></tr>
+<tr><td><code>"κείμενο"</code></td><td>ένα κείμενο, μια μονάδα</td><td><code>0,0 "m"</code></td><td><code>1234,5 m</code></td></tr>
+<tr><td><code>E+00</code></td><td>επιστημονική γραφή</td><td><code>0,00E+00</code></td><td><code>1,23E+03</code></td></tr>
+<tr><td><code>;</code></td><td>μορφές για θετικούς, αρνητικούς, μηδέν, κείμενα</td><td><code>0;-0;"μηδέν"</code></td><td><code>1235</code></td></tr>
+<tr><td><code>[Red]</code></td><td>χρώμα</td><td><code>0;[Red]-0</code></td><td>οι αρνητικοί με κόκκινο</td></tr>
+</tbody></table></div>
+<p>Ο κώδικας γράφεται με τα διαχωριστικά της γλώσσας· το παράθυρο δείχνει τη μορφή στην οποία αποθηκεύεται (<code>#,##0.00</code>), ίδια με του Excel.</p>
+<h3 id="dates-heures">Ημερομηνίες και ώρες</h3>
+<div class="table"><table><thead><tr><th>Κώδικας</th><th>29 Αυγούστου 2026, 14:30</th></tr></thead><tbody>
+<tr><td><code>dd/MM/yyyy</code></td><td><code>29/08/2026</code></td></tr>
+<tr><td><code>d mmm yyyy</code></td><td><code>29 Aug 2026</code></td></tr>
+<tr><td><code>dddd d mmmm yyyy</code></td><td><code>Saturday 29 August 2026</code></td></tr>
+<tr><td><code>hh:mm</code></td><td><code>14:30</code></td></tr>
+<tr><td><code>dd/MM/yyyy hh:mm</code></td><td><code>29/08/2026 14:30</code></td></tr>
+</tbody></table></div>
+<p>Τα ονόματα μηνών και ημερών εμφανίζονται στα αγγλικά.</p>
+<h3 id="unites">Μονάδες</h3>
+<p>Στο <strong>Μονάδες</strong>, μορφές όπως <code>0,00 "V"</code>, <code>0,00 "Ω"</code>, <code>0,00 "mm"</code>: το κελί μένει αριθμός, με τον οποίο γίνονται υπολογισμοί.</p>
+</main>
+</body>
+</html>

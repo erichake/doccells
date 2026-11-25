@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Selecteren, kopiëren, doorvoeren — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Selecteren, kopiëren, doorvoeren</h1>
+<h2 id="selectionner">Selecteren</h2>
+<div class="table"><table><thead><tr><th>Handeling</th><th>Selectie</th></tr></thead><tbody>
+<tr><td>klikken</td><td>een cel</td></tr>
+<tr><td>slepen</td><td>een bereik</td></tr>
+<tr><td>klikken, dan <kbd>Shift</kbd> en klikken</td><td>het bereik ertussen</td></tr>
+<tr><td><kbd>Shift</kbd> en pijltoets</td><td>breidt het bereik uit</td></tr>
+<tr><td><kbd>Ctrl</kbd> en klikken of slepen</td><td>een bereik erbij</td></tr>
+<tr><td>klikken op een letter, een nummer</td><td>een kolom, een rij</td></tr>
+<tr><td>slepen over de letters, de nummers</td><td>meerdere kolommen, meerdere rijen</td></tr>
+<tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>het hele blad</td></tr>
+<tr><td>naamvak, pijl</td><td>een <a href="noms.html">benoemd bereik</a></td></tr>
+</tbody></table></div>
+<p>Het adres van de selectie staat in het naamvak, links van de formulebalk.</p>
+<h2 id="copier">Kopiëren, knippen, plakken</h2>
+<p><kbd>Ctrl</kbd> <kbd>C</kbd>, <kbd>Ctrl</kbd> <kbd>X</kbd>, <kbd>Ctrl</kbd> <kbd>V</kbd>, of <strong>Kopiëren</strong> en <strong>Plakken</strong> van het rechtsklikmenu.</p>
+<ul>
+<li><strong>Plakken</strong> van het rechtsklikmenu plakt de waarden, zonder de formules; <kbd>Ctrl</kbd> <kbd>V</kbd> plakt de formules.</li>
+<li>Een geplakte formule volgt haar nieuwe plaats: <code>=B2</code> één rij lager gekopieerd wordt <code>=B3</code>. Het teken <code>$</code> zet een rij of kolom vast (<a href="formules.html#references">verwijzingen</a>).</li>
+<li>Een geknipte formule behoudt haar verwijzingen.</li>
+<li>Een tabel gekopieerd uit Excel, Numbers, een webpagina of een door tabs gescheiden tekst wordt cel per cel geplakt; decimale getallen en lijsten worden herkend zoals bij het typen.</li>
+<li>Meerdere bereiken kunnen niet tegelijk geknipt of geplakt worden.</li>
+</ul>
+<h2 id="deplacer">Verplaatsen</h2>
+<p>De rand van de selectie slepen: de cellen worden verplaatst, met hun opmaak.</p>
+<h2 id="recopier">Doorvoeren</h2>
+<p>De blauwe greep, rechtsonder aan de selectie, wordt omlaag, omhoog, naar links of naar rechts gesleept.</p>
+<div class="table"><table><thead><tr><th>Begincellen</th><th>De greep geeft</th></tr></thead><tbody>
+<tr><td>een formule</td><td>de formule, met verschoven verwijzingen</td></tr>
+<tr><td>twee getallen, 1 en 2</td><td>de reeks: 3, 4, 5…</td></tr>
+<tr><td>één getal, tekst of datum</td><td>dezelfde waarde</td></tr>
+<tr><td>twee datums</td><td>de volgende datums, met dezelfde stap</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="De met de greep voortgezette reeks 1, 2" width="760" height="300" /></figure>
+<p>Zonder muis, of voor een groot bereik:</p>
+<div class="table"><table><thead><tr><th>Opdracht</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong>Bewerken › Omlaag doorvoeren</strong>, <kbd>Ctrl</kbd> <kbd>D</kbd></td><td>de eerste rij van het geselecteerde bereik wordt in de volgende gekopieerd</td></tr>
+<tr><td><strong>Bewerken › Rechts doorvoeren</strong>, <kbd>Ctrl</kbd> <kbd>R</kbd></td><td>de eerste kolom wordt in de volgende gekopieerd</td></tr>
+</tbody></table></div>
+<p>Is er één rij geselecteerd, dan kopieert <kbd>Ctrl</kbd> <kbd>D</kbd> er die erboven in; is er één kolom geselecteerd, dan kopieert <kbd>Ctrl</kbd> <kbd>R</kbd> er die links van in. Deze opdrachten kopiëren altijd, zonder reeks, met notaties, randen, selectievakjes en keuzelijsten.</p>
+<div class="tip"><p>Voor een formule in een hele kolom: ze bovenaan typen, van die cel tot de laatste selecteren, <kbd>Ctrl</kbd> <kbd>D</kbd>.</p></div>
+</main>
+</body>
+</html>

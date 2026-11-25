@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Charts and sparklines — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Charts and sparklines</h1>
+<h2 id="creer">Creating a chart</h2>
+<ol>
+<li>Select the data.</li>
+<li><i data-i="chart"></i> or <strong>Insert › Insert chart</strong>.</li>
+<li>Choose the type and the options; the preview follows.</li>
+<li><strong>Add</strong>, then <strong>Close</strong>.</li>
+</ol>
+<figure><img src="img/graphique.webp" alt="The charts window" width="1280" height="900" /></figure>
+<div class="table"><table><thead><tr><th>Selection</th><th>Understood as</th></tr></thead><tbody>
+<tr><td>a column or a row of numbers</td><td>the data</td></tr>
+<tr><td>two columns</td><td>labels in the first, data in the second</td></tr>
+<tr><td>two rows</td><td>labels in the first, data in the second</td></tr>
+<tr><td>two separate columns, chosen with <kbd>Ctrl</kbd></td><td>the same</td></tr>
+</tbody></table></div>
+<p>A chart shows one series: a row or a column of data. Cells without a number, such as a header, are ignored.</p>
+<h2 id="types">Types</h2>
+<div class="table"><table><thead><tr><th>Type</th><th>For</th><th>Labels</th></tr></thead><tbody>
+<tr><td><strong>Bars</strong></td><td>comparing</td><td>under the bars</td></tr>
+<tr><td><strong>Line</strong></td><td>an evolution</td><td>on the x-axis</td></tr>
+<tr><td><strong>Scatter</strong></td><td>a relation between two quantities</td><td>they are the x-values, if they are numbers; otherwise 1, 2, 3…</td></tr>
+<tr><td><strong>Pie</strong></td><td>shares; positive values</td><td>in the legend or on the slices</td></tr>
+</tbody></table></div>
+<p>Up to 120 values, 24 for a pie.</p>
+<figure><img src="img/graphiques.webp" alt="The four types of charts" width="1280" height="640" /></figure>
+<h2 id="options">Options</h2>
+<div class="table"><table><thead><tr><th>Field</th><th>Content</th></tr></thead><tbody>
+<tr><td><strong>Title</strong></td><td>required; shown at the top of the chart</td></tr>
+<tr><td><strong>Color</strong></td><td>picker or code <code>#4F81BD</code>; slices have their own colors</td></tr>
+<tr><td><strong>Data</strong></td><td>the range: <code>B2:B6</code></td></tr>
+<tr><td><strong>Labels</strong></td><td><strong>None</strong>; <strong>Column on the same row</strong> (<code>A</code>); <strong>Row across the same columns</strong> (<code>1</code>); <strong>Custom range</strong>, of the same size as the data</td></tr>
+<tr><td><strong>Display</strong></td><td>values, legend, x-axis, y-axis, grid</td></tr>
+</tbody></table></div>
+<h2 id="modifier">Moving, editing</h2>
+<ul>
+<li>Dragging the title strip moves the chart; dragging its bottom right corner resizes it.</li>
+<li><strong>Edit</strong> reopens the window, <strong>Delete</strong> deletes it. The window also lists all the charts of the sheet.</li>
+<li>The chart follows the data of its cells.</li>
+</ul>
+<p>Charts are saved in the Excel file as real charts, and read back by DocCells. They are not <a href="impression.html">printed</a> with the sheet.</p>
+<h2 id="sparklines">Sparklines</h2>
+<p>The <code>SPARKLINE</code> function draws a miniature chart in the cell.</p>
+<pre><code>=SPARKLINE(B2:F2)
+=SPARKLINE(B2:F2, {"charttype"\"column"})
+=SPARKLINE(B2:F2, {"charttype"\"line", "color"\"#dc2626", "linewidth"\2})
+=SPARKLINE(B2:F2, {"charttype"\"bar", "max"\100})</code></pre>
+<figure><img src="img/sparklines.webp" alt="Line and column sparklines" width="900" height="300" /></figure>
+<p>Options are written between braces: the name, a backslash, the value; the separator of arguments between two options.</p>
+<div class="table"><table><thead><tr><th><code>charttype</code></th><th>Drawing</th><th>Own options</th></tr></thead><tbody>
+<tr><td><code>"line"</code> (default)</td><td>line</td><td><code>color</code>, <code>linewidth</code>, <code>xmin</code>, <code>xmax</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"bar"</code></td><td>stacked bars</td><td><code>max</code>, <code>color1</code>, <code>color2</code></td></tr>
+<tr><td><code>"column"</code></td><td>columns</td><td><code>color</code>, <code>negcolor</code>, <code>lowcolor</code>, <code>highcolor</code>, <code>firstcolor</code>, <code>lastcolor</code>, <code>axis</code>, <code>axiscolor</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"winloss"</code></td><td>wins and losses</td><td>the same, without <code>ymin</code> and <code>ymax</code></td></tr>
+</tbody></table></div>
+<p>Common options: <code>empty</code> (<code>"zero"</code> or <code>"ignore"</code>), <code>nan</code> (<code>"convert"</code> or <code>"ignore"</code>), <code>rtl</code> (right to left). The <a href="../../sparkline/en.html">SPARKLINE documentation</a> gives all the values, with examples.</p>
+<p>For a larger drawing, enlarge the row and the column, or merge cells.</p>
+</main>
+</body>
+</html>

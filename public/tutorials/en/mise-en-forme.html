@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formatting — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Formatting</h1>
+<h2 id="texte">Text</h2>
+<div class="table"><table><thead><tr><th>Command</th><th>Access</th></tr></thead><tbody>
+<tr><td>bold, italic, underlined</td><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i>; <kbd>Ctrl</kbd> <kbd>B</kbd>, <kbd>Ctrl</kbd> <kbd>I</kbd>, <kbd>Ctrl</kbd> <kbd>U</kbd></td></tr>
+<tr><td>font</td><td><strong>Arial</strong> list: thirteen fonts</td></tr>
+<tr><td>size</td><td><strong>10</strong> list, or <strong>Format › Font size</strong>: 9 to 72</td></tr>
+<tr><td>text color, fill color</td><td><i data-i="font-color"></i> <i data-i="background"></i></td></tr>
+<tr><td>clear the formatting</td><td><i data-i="clear-format"></i>, <strong>Format › Clear Format</strong></td></tr>
+</tbody></table></div>
+<p>In a color palette, <strong>Reset color</strong> removes it; <strong>CUSTOM</strong> opens the system's color picker.</p>
+<p>While a cell is being edited, the formatting applies to the selected part of the text.</p>
+<h2 id="alignement">Alignment</h2>
+<div class="table"><table><thead><tr><th>Command</th><th>Choices</th></tr></thead><tbody>
+<tr><td><i data-i="align-left"></i> horizontal</td><td>left, center, right</td></tr>
+<tr><td><i data-i="align-top"></i> vertical</td><td>top, middle, bottom</td></tr>
+<tr><td><i data-i="text-rotation-none"></i> rotation</td><td>tilted, vertical, stacked</td></tr>
+<tr><td><i data-i="text-overflow"></i> wrapping</td><td><strong>Overflow</strong>: over the empty cells nearby; <strong>Wrap</strong>: on several lines; <strong>Clip</strong>: cut at the border</td></tr>
+</tbody></table></div>
+<p>With no alignment chosen, numbers and dates are on the right, the rest on the left.</p>
+<h2 id="bordures">Borders</h2>
+<p><i data-i="border-all"></i> draws the chosen border; its arrow gives the sides (top, outside, inside, all, none, diagonal), the <strong>color</strong> and the <strong>style</strong> of the line. Choose color and style before the side.</p>
+<h2 id="fusion">Merging</h2>
+<p><i data-i="merge-all"></i> or <strong>Format › Merge cells</strong>:</p>
+<div class="table"><table><thead><tr><th>Command</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong>Merge all</strong></td><td>a single cell, which keeps a single content</td></tr>
+<tr><td><strong>Merge Vertically</strong></td><td>one cell per column</td></tr>
+<tr><td><strong>Merge Horizontally</strong></td><td>one cell per row</td></tr>
+<tr><td><strong>Unmerge</strong></td><td>gives the cells back</td></tr>
+</tbody></table></div>
+<p>A range that contains merged cells cannot be sorted or filtered.</p>
+<h2 id="alternees">Alternating colors</h2>
+<p><i data-i="alternating"></i> or <strong>Format › Alternating colors...</strong> colors every other row of the selected range, with a header row if wanted. The three colors can be chosen.</p>
+<figure><img src="img/couleurs-alternees.webp" alt="The alternating colors window" width="1280" height="760" /></figure>
+<p>They are ordinary fill colors: they do not follow a sort or an inserted row. <strong>Remove colors</strong> removes them from the range.</p>
+<h2 id="quadrillage">Gridlines</h2>
+<p><i data-i="gridlines"></i> or <strong>View › Show › Gridlines</strong> hides or shows the gray lines, in all the sheets of the workbook. <a href="impression.html">Printing</a> has its own setting.</p>
+<p>For a color that depends on the value, see <a href="conditionnelle.html">Conditional formatting</a>.</p>
+</main>
+</body>
+</html>

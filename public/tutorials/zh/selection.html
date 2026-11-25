@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>选择、复制、填充 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>选择、复制、填充</h1>
+<h2 id="selectionner">选择</h2>
+<div class="table"><table><thead><tr><th>操作</th><th>选区</th></tr></thead><tbody>
+<tr><td>单击</td><td>一个单元格</td></tr>
+<tr><td>拖动</td><td>一个区域</td></tr>
+<tr><td>单击，再按 <kbd>Shift</kbd> 单击</td><td>两者之间的区域</td></tr>
+<tr><td><kbd>Shift</kbd> 加方向键</td><td>扩展区域</td></tr>
+<tr><td><kbd>Ctrl</kbd> 加单击或拖动</td><td>再加一个区域</td></tr>
+<tr><td>单击字母、数字</td><td>一列、一行</td></tr>
+<tr><td>在字母、数字上拖动</td><td>多列、多行</td></tr>
+<tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>整张工作表</td></tr>
+<tr><td>名称框的箭头</td><td><a href="noms.html">命名区域</a></td></tr>
+</tbody></table></div>
+<p>选区的地址显示在公式栏左侧的名称框中。</p>
+<h2 id="copier">复制、剪切、粘贴</h2>
+<p><kbd>Ctrl</kbd> <kbd>C</kbd>、<kbd>Ctrl</kbd> <kbd>X</kbd>、<kbd>Ctrl</kbd> <kbd>V</kbd>，或右键菜单的 <strong>复制</strong> 和 <strong>粘贴</strong>。</p>
+<ul>
+<li>右键菜单的 <strong>粘贴</strong> 只粘贴值，不含公式；<kbd>Ctrl</kbd> <kbd>V</kbd> 粘贴公式。</li>
+<li>粘贴的公式随新位置变化：<code>=B2</code> 复制到下一行变成 <code>=B3</code>。<code>$</code> 符号固定行或列（<a href="formules.html#references">引用</a>）。</li>
+<li>剪切的公式保留其引用。</li>
+<li>从 Excel、Numbers、网页或制表符分隔的文本复制的表格会逐个单元格粘贴；数字和列表像键入时一样被识别。</li>
+<li>不能同时剪切或粘贴多个区域。</li>
+</ul>
+<h2 id="deplacer">移动</h2>
+<p>拖动选区的边框：单元格连同格式一起移动。</p>
+<h2 id="recopier">填充</h2>
+<p>选区右下角的蓝色手柄可向下、上、左、右拖动。</p>
+<div class="table"><table><thead><tr><th>起始单元格</th><th>手柄给出</th></tr></thead><tbody>
+<tr><td>一个公式</td><td>引用相应移动的公式</td></tr>
+<tr><td>两个数字 1 和 2</td><td>序列：3、4、5…</td></tr>
+<tr><td>单个数字、文本或日期</td><td>相同的值</td></tr>
+<tr><td>两个日期</td><td>以相同间隔继续的日期</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="用手柄延续的序列 1、2" width="760" height="300" /></figure>
+<p>不用鼠标，或区域较大时：</p>
+<div class="table"><table><thead><tr><th>命令</th><th>效果</th></tr></thead><tbody>
+<tr><td><strong>编辑 › 向下填充</strong>、<kbd>Ctrl</kbd> <kbd>D</kbd></td><td>将所选区域的第一行复制到后续各行</td></tr>
+<tr><td><strong>编辑 › 向右填充</strong>、<kbd>Ctrl</kbd> <kbd>R</kbd></td><td>将第一列复制到后续各列</td></tr>
+</tbody></table></div>
+<p>如果只选中一行，<kbd>Ctrl</kbd> <kbd>D</kbd> 将上一行复制进来；如果只选中一列，<kbd>Ctrl</kbd> <kbd>R</kbd> 将左侧一列复制进来。这些命令总是复制，不生成序列，并包括格式、边框、复选框和下拉列表。</p>
+<div class="tip"><p>要在整列中使用公式：在顶部键入，从该单元格选到最后一个，<kbd>Ctrl</kbd> <kbd>D</kbd>。</p></div>
+</main>
+</body>
+</html>

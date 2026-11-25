@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tabellenblätter — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Tabellenblätter</h1>
+<h2 id="ajouter">Hinzufügen, wechseln</h2>
+<ul>
+<li><i data-i="plus"></i> fügt ein Blatt hinzu, „Tabelle2“, „Tabelle3“… genannt.</li>
+<li>Ein Klick auf ein Register zeigt das Blatt; <i data-i="all-sheets"></i> listet die Blätter samt ausgeblendeten auf und zeigt das gewählte.</li>
+</ul>
+<h2 id="menu">Das Menü eines Registers</h2>
+<p>Rechtsklick auf das Register oder sein Pfeil:</p>
+<div class="table"><table><thead><tr><th>Befehl</th><th>Wirkung</th></tr></thead><tbody>
+<tr><td><strong>Löschen</strong></td><td>nach Bestätigung; das letzte sichtbare Blatt kann nicht gelöscht werden</td></tr>
+<tr><td><strong>Kopieren</strong></td><td>verdoppelt das Blatt</td></tr>
+<tr><td><strong>Umbenennen</strong></td><td>oder Doppelklick auf den Namen; ohne <code>[ ] : ? * / ' "</code></td></tr>
+<tr><td><strong>Farbe ändern</strong></td><td>Farbe des Registers</td></tr>
+<tr><td><strong>Ausblenden</strong></td><td>Formeln lesen das Blatt weiterhin; <i data-i="all-sheets"></i> zeigt es wieder</td></tr>
+<tr><td><strong>Nach links verschieben</strong>, <strong>Nach rechts verschieben</strong></td><td>ändert die Reihenfolge; das Register lässt sich auch ziehen</td></tr>
+</tbody></table></div>
+<h2 id="references">Ein anderes Blatt lesen</h2>
+<p>Der Name des Blatts, ein Ausrufezeichen, die Adresse. Der Name steht in Apostrophen, wenn er ein Leerzeichen oder ein Zeichen enthält.</p>
+<pre><code>=Tabelle2!B2*2
+='Noten 2'!B2
+=SUMME('Noten 2'!B2:B6)</code></pre>
+<p>Der Bezug wird getippt: ein Registerwechsel während der Eingabe einer Formel bricht sie ab.</p>
+<p>Damit ein Bereich von allen Blättern über einen Namen gelesen wird, ihn mit dem Gültigkeitsbereich <strong>Arbeitsmappe</strong> <a href="noms.html">benennen</a>.</p>
+</main>
+</body>
+</html>

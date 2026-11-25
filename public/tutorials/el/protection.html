@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Προστασία — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Προστασία</h1>
+<p class="lead">Ένα προστατευμένο βιβλίο αλλάζει μόνο στα ξεκλείδωτα κελιά του: έτσι ετοιμάζεται ένα φύλλο ασκήσεων.</p>
+<h2 id="preparer">Προετοιμασία φύλλου για μαθητές</h2>
+<ol>
+<li>Επιλέξτε τα κελιά προς συμπλήρωση, δεξί κλικ › <strong>Ξεκλείδωμα κελιών</strong>.</li>
+<li><i data-i="protect"></i> ή <strong>Εργαλεία › Προστασία / κατάργηση προστασίας βιβλίου εργασίας</strong>.</li>
+<li>Αποθηκεύστε, έπειτα <a href="partager.html">διαθέστε το αρχείο ή τον σύνδεσμό του</a>.</li>
+</ol>
+<p>Στην αρχή όλα τα κελιά είναι κλειδωμένα· το κλείδωμα ισχύει μόνο σε προστατευμένο βιβλίο. Το <strong>Κλείδωμα κελιών</strong> το επαναφέρει.</p>
+<h2 id="effets">Τι εμποδίζει η προστασία</h2>
+<div class="table"><table><thead><tr><th>Σε προστατευμένο βιβλίο</th><th>Κλειδωμένο κελί</th><th>Ξεκλείδωτο κελί</th></tr></thead><tbody>
+<tr><td>εισαγωγή, διαγραφή</td><td>όχι</td><td>ναι</td></tr>
+<tr><td>ημερολόγιο ημερομηνίας</td><td>όχι</td><td>ναι</td></tr>
+<tr><td>πλάτη και ύψη</td><td>όχι</td><td>όχι</td></tr>
+<tr><td>εναλλασσόμενα χρώματα, εισαγωγή πλαισίων και λιστών, συμπλήρωση από μενού</td><td>όχι</td><td>όχι</td></tr>
+<tr><td>μορφοποίηση, εισαγωγή γραμμών και στηλών, γραφήματα</td><td>ναι</td><td>ναι</td></tr>
+</tbody></table></div>
+<p>Η προστασία αφορά όλα τα φύλλα. Αποθηκεύεται στο αρχείο Excel, με τα ξεκλείδωτα κελιά, και διαβάζεται από το DocCells και το Excel.</p>
+<h2 id="eleve">Λειτουργία μαθητή</h2>
+<p>Το <code>?mode=student</code> στη διεύθυνση ανοίγει το DocCells χωρίς το κουμπί <i data-i="protect"></i> και χωρίς τις εντολές <strong>Ξεκλείδωμα κελιών</strong> και <strong>Ορισμός ονόματος…</strong>· το <strong>Προστασία / κατάργηση προστασίας βιβλίου εργασίας</strong> είναι ανενεργό. Ο μαθητής δεν μπορεί να άρει την προστασία.</p>
+<pre><code>https://…/doccells/?mode=student&amp;url=https://…/askisi.xlsx</code></pre>
+<div class="note"><p>Είναι προστασία χρήσης, χωρίς κωδικό: όποιος ανοίξει το αρχείο σε άλλο υπολογιστικό φύλλο, ή χωρίς <code>mode=student</code>, μπορεί να την άρει.</p></div>
+</main>
+</body>
+</html>

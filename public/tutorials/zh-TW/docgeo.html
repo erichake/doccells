@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>與 DocGeo 一起使用 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>與 DocGeo 一起使用</h1>
+<p class="lead">DocGeo 是 DocTools 的動態幾何軟體，其中包含 DocCells：圖形旁邊的工作表，兩者可互相讀取。</p>
+<p>在 DocGeo 中，<strong>檔案 › 檢視 › 新增試算表檢視</strong> 在圖形旁新增工作表；<strong>檔案 › 分頁 › 新增試算表分頁</strong> 將其作為分頁。</p>
+<h2 id="geo">GEO 函數</h2>
+<p>在儲存格中，<code>GEO</code> 讀取圖形中某個物件的值，物件名放在引號中。</p>
+<pre><code>=GEO("AB")
+=2*GEO("r")+1
+=GEO("'圖形 1'!c")</code></pre>
+<ul>
+<li>操作圖形時，儲存格隨之變化。</li>
+<li>點按其座標的<a href="listes.html">清單</a>讀取：<code>=GEO("A")*2</code> 也是一個點。</li>
+<li>輸入公式時，按一下圖形中的物件會寫入 <code>GEO</code> 及其名稱。</li>
+<li>未知物件得 <code>#N/A</code>。在 DocGeo 之外，<code>GEO</code> 總是得 <code>#N/A</code>。</li>
+<li><code>GEO</code> 在所有語言中名稱相同。</li>
+</ul>
+<h2 id="figure">圖形讀取儲存格</h2>
+<p>在 DocGeo 的公式中，<code>!B3</code> 表示儲存格，<code>!B2:B21</code> 表示範圍。</p>
+<h2 id="differences">與單獨使用 DocCells 的區別</h2>
+<div class="table"><table><thead><tr><th>在 DocGeo 中</th><th></th></tr></thead><tbody>
+<tr><td>功能表和按鈕</td><td>工作表處於活動狀態時，顯示在 DocGeo 的欄中</td></tr>
+<tr><td>檔案</td><td>DocGeo 的檔案：工作表儲存在 <code>.dgo</code> 中，包括清單和連結</td></tr>
+<tr><td>工作表</td><td>每個檢視一張；多個試算表分頁可互相讀取</td></tr>
+<tr><td>復原</td><td>儲存格中的 <kbd>Ctrl</kbd> <kbd>Z</kbd> 只復原儲存格的操作</td></tr>
+</tbody></table></div>
+<p>詳情見 DocGeo 手冊的<a href="https://doctools.org/apps/docgeo/tutorials/zh-TW/tableur.html">試算表</a>頁面。</p>
+</main>
+</body>
+</html>

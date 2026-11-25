@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Häufige Fragen — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Häufige Fragen</h1>
+<h2 id="saisie">Eingabe</h2>
+<h3>Ein eingegebenes Datum wird nicht erkannt</h3>
+<p><code>25.11.2026</code> ist für DocCells ein Text. <code>2026-11-25</code> tippen, dann das Format <strong>Datum</strong> wählen (<a href="saisie.html#dates">Datum</a>).</p>
+<h3>Statt eines Datums erscheint eine Zahl</h3>
+<p>Daten sind Anzahlen von Tagen: den Zellen das Format <strong>Datum</strong> geben (<strong>Format › Zahl</strong>).</p>
+<h3>Meine Zahlen werden nicht addiert</h3>
+<p>Linksbündig sind sie Texte. Im Deutschen ist das Komma das Dezimaltrennzeichen; eine in der Zelle getippte Einheit macht daraus einen Text (<a href="saisie.html#types">Typen</a>).</p>
+<h3>Die Null am Anfang einer Nummer verschwindet</h3>
+<p>Vor der Eingabe das Format <strong>Nur Text</strong> geben oder mit einem Apostroph beginnen (<a href="saisie.html#textes">Texte</a>).</p>
+<h3>Zahlen erwarten einen Punkt statt eines Kommas</h3>
+<p>DocCells folgt der Sprache des Browsers. <code>?lang=de</code> legt sie fest (<a href="demarrage.html#langue">Sprache</a>).</p>
+<h2 id="formules">Formeln</h2>
+<h3><code>#NAME?</code> bei WAHR oder FALSCH</h3>
+<p><code>WAHR()</code> und <code>FALSCH()</code> schreiben, oder 1 und 0 (<a href="formules.html#conditions">Bedingungen</a>).</p>
+<h3><code>#NAME?</code> bei einer von DocCells vorgeschlagenen Funktion</h3>
+<p>Nicht alle vorgeschlagenen Funktionen werden berechnet (<a href="fonctions.html#non-calculees">nicht berechnete Funktionen</a>).</p>
+<h3><code>WENNFEHLER</code> lässt DIV/0 durch</h3>
+<p>Den Divisor prüfen: <code>=WENN(B2; A2/B2; "")</code> (<a href="formules.html#erreurs">Fehler</a>).</p>
+<h3>Beim Einfügen gehen meine Formeln verloren</h3>
+<p><strong>Einfügen</strong> des Rechtsklicks fügt die Werte ein; <kbd>Strg</kbd> <kbd>V</kbd> fügt die Formeln ein (<a href="selection.html#copier">kopieren</a>).</p>
+<h3>Den Namen eines Monats schreiben oder eine Zahl in einem Text formatieren</h3>
+<p>Die Funktion <code>TEXT</code> wird nicht berechnet: einer eigenen Zelle ein <a href="nombres.html">Format</a> geben.</p>
+<h3>Aktivierte Kästchen zählen</h3>
+<p><code>=SUMMENPRODUKT(B2:B6; B2:B6)</code> (<a href="controles.html#cases">Kontrollkästchen</a>).</p>
+<h3><code>=HEUTE()+1</code> ergibt #VALUE!</h3>
+<p><code>=HEUTE()</code> in eine Zelle setzen und zu dieser Zelle addieren (<a href="formules.html#dates">Datum</a>).</p>
+<h2 id="presentation">Gestaltung</h2>
+<h3>Die Farbe einer Zelle ändert sich nicht</h3>
+<p>Die Zelle liegt im Bereich einer Regel der <a href="conditionnelle.html#regles">bedingten Formatierung</a>.</p>
+<h3>Eine Schaltfläche ist verschwunden</h3>
+<p>Das Fenster ist schmal: sie liegt hinter <i data-i="more"></i>.</p>
+<h3>Sortieren oder Filtern wird verweigert</h3>
+<p>Der Bereich enthält verbundene Zellen: die Verbindung aufheben.</p>
+<h2 id="fichiers">Dateien</h2>
+<h3>Speichern lädt eine neue Datei herunter</h3>
+<p>Das ist in Firefox und Safari der Fall. Chrome und Edge schreiben in die Datei (<a href="demarrage.html#enregistrer">speichern</a>).</p>
+<h3>Die Seite wurde ohne Speichern geschlossen</h3>
+<p>DocCells im selben Browser wieder öffnen: es schlägt vor, die Kopie wiederherzustellen (<a href="demarrage.html#recuperer">wiederherstellen</a>).</p>
+<h3>Mein Diagramm wird nicht gedruckt</h3>
+<p>Der Druck zeigt nur die Zellen (<a href="impression.html">drucken</a>).</p>
+<h3>Ein Link <code>?url=</code> öffnet meine Mappe nicht</h3>
+<p>Die Website der Datei verweigert vielleicht das Lesen durch andere Websites. Ein Google Sheet muss per Link freigegeben sein (<a href="partager.html">teilen</a>).</p>
+<h3>Meine Links sind verschwunden</h3>
+<p>Sie werden nicht im Excel-Format gespeichert (<a href="excel.html#perdu">was nicht erhalten bleibt</a>).</p>
+<h2 id="eleves">Schüler</h2>
+<h3>Können Schüler die Formeln ändern?</h3>
+<p>Nicht in einer geschützten Mappe außerhalb der entsperrten Zellen (<a href="protection.html">schützen</a>). <code>mode=student</code> im Link nimmt ihnen die Möglichkeit, den Schutz aufzuheben.</p>
+</main>
+</body>
+</html>

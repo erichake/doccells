@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Списки и комплексные числа — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Списки и комплексные числа</h1>
+<p class="lead">Ячейка DocCells может содержать список чисел. Список из двух чисел — это также точка плоскости или комплексное число.</p>
+<h2 id="ecrire">Запись списка</h2>
+<p>В квадратных скобках, элементы через точку с запятой. Список может содержать списки.</p>
+<pre><code>[2; 1]
+[1,5; -3; 4]
+[[1; 2]; [3; 4]]
+=[2; 1]*3
+=[B2; C2]</code></pre>
+<p>Без <code>=</code> список — значение; с <code>=</code> его элементы могут быть вычислениями. В языке с десятичной точкой элементы разделяют запятыми: <code>[2, 1]</code>.</p>
+<h2 id="operations">Действия</h2>
+<div class="table"><table><thead><tr><th>Действие</th><th>Результат</th></tr></thead><tbody>
+<tr><td><code>[1; 2; 3] + [1; 1; 1]</code></td><td><code>[2; 3; 4]</code>: почленно, равные длины</td></tr>
+<tr><td><code>[1; 2; 3] * 2</code>, <code>[2; 4; 6] / 2</code></td><td><code>[2; 4; 6]</code>, <code>[1; 2; 3]</code></td></tr>
+<tr><td><code>[2; 1] * [3; 2]</code></td><td><code>[4; 7]</code>: произведение комплексных чисел</td></tr>
+<tr><td><code>[4; 7] / [3; 2]</code></td><td><code>[2; 1]</code>: частное комплексных чисел</td></tr>
+<tr><td><code>[2; 1] + 3</code></td><td><code>[5; 1]</code>: 3 — действительное комплексное число</td></tr>
+<tr><td><code>[0; 1]^2</code></td><td><code>[-1; 0]</code>, с точностью до округления</td></tr>
+<tr><td><code>[8; 0]^(1/3)</code></td><td>список трёх кубических корней</td></tr>
+<tr><td><code>-[2; 1]</code></td><td><code>[-2; -1]</code></td></tr>
+</tbody></table></div>
+<p>Любое другое сочетание даёт <code>#VALUE!</code>: произведение двух списков из трёх чисел, разные длины, текст.</p>
+<h2 id="fonctions">Списки и функции</h2>
+<p>Для функции список — то же, что диапазон:</p>
+<pre><code>=СУММ([1; 2; 3])
+=МАКС(A1)
+=ИНДЕКС(A1; 2)
+=СРЗНАЧ([12; 15; 8])
+=СУММ([1; 2; 3] + [1; 1; 1]*2)</code></pre>
+<p><code>=ИНДЕКС(A1; 2)</code> даёт второй элемент списка в A1: ординату точки, мнимую часть комплексного числа. Некоторые <a href="fonctions.html">функции</a> возвращают список: <code>ЧАСТОТА</code>, <code>ЛИНЕЙН</code>, <code>ТРАНСП</code>, <code>УНИК</code>, <code>SPLIT</code>.</p>
+<h2 id="affichage">Отображение</h2>
+<p>Кнопки <i data-i="number-decrease"></i> <i data-i="number-increase"></i> и <a href="nombres.html">числовые форматы</a> применяются к каждому числу списка: <code>[-0,14; 0,27]</code>. Точные значения сохраняются.</p>
+<h2 id="exemple">Пример: комплексная последовательность</h2>
+<p>Орбита 0 при <em>z</em> ↦ <em>z</em>² + <em>c</em>: в A1 — <em>c</em>, в A2 — <code>[0; 0]</code>, в A3 — формула ниже, заполненная вниз.</p>
+<pre><code>=A2^2+$A$1</code></pre>
+<p>В <a href="docgeo.html">DocGeo</a> такой столбец рисуется на чертеже.</p>
+<div class="note"><p>В файле Excel список сохраняется как текст, как и значение формулы, дающей список (<a href="excel.html#listes">совместимость</a>).</p></div>
+</main>
+</body>
+</html>

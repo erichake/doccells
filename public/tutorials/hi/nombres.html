@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>संख्या प्रारूप — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>संख्या प्रारूप</h1>
+<p class="lead">प्रारूप संख्या का प्रदर्शन बदलता है, मान नहीं: गणनाएँ सभी दशमलव रखती हैं।</p>
+<h2 id="choisir">प्रारूप चुनना</h2>
+<p><strong>प्रारूप › संख्या</strong>, या बटन पट्टी की <strong>स्वचालित</strong> सूची।</p>
+<div class="table"><table><thead><tr><th>प्रारूप</th><th>उदाहरण</th></tr></thead><tbody>
+<tr><td><strong>स्वचालित</strong></td><td><code>1200.09</code></td></tr>
+<tr><td><strong>सादा टेक्स्ट</strong></td><td><code>1200.09</code>, बाएँ संरेखित; प्रविष्टि टेक्स्ट रहती है</td></tr>
+<tr><td><strong>संख्या</strong></td><td><code>1200.09</code></td></tr>
+<tr><td><strong>प्रतिशत</strong></td><td><code>120009.00%</code>; 0.25 का <code>25.00%</code> हो जाता है</td></tr>
+<tr><td><strong>वैज्ञानिक</strong></td><td><code>1.20E+03</code></td></tr>
+<tr><td><strong>लेखांकन</strong></td><td><code>₹(1,200.09)</code></td></tr>
+<tr><td><strong>मुद्रा</strong></td><td><code>₹1,200.09</code></td></tr>
+<tr><td><strong>दिनांक</strong>, <strong>समय</strong>, <strong>दिनांक समय</strong></td><td>दिनांक के लिए: <code>29/11/2017</code>, <code>3:00 PM</code>, <code>15:00</code>…</td></tr>
+</tbody></table></div>
+<p>मुद्रा चिह्न इंटरफ़ेस की भाषा का होता है।</p>
+<div class="table"><table><thead><tr><th>बटन</th><th>परिणाम</th></tr></thead><tbody>
+<tr><td><i data-i="percentage-format"></i></td><td>प्रतिशत</td></tr>
+<tr><td><i data-i="number-decrease"></i></td><td>एक दशमलव कम</td></tr>
+<tr><td><i data-i="number-increase"></i></td><td>एक दशमलव अधिक</td></tr>
+</tbody></table></div>
+<p>ये बटन <a href="listes.html">सूची</a> की संख्याओं पर भी चलते हैं। मान को ही पूर्णांकित करने के लिए <code>ROUND</code> का उपयोग करें।</p>
+<h2 id="personnalise">कस्टम प्रारूप</h2>
+<p><strong>प्रारूप › संख्या › कस्टम संख्या प्रारूप…</strong>: सुझाया प्रारूप चुनें या कोड लिखें। पूर्वावलोकन परिणाम दिखाता है; <strong>प्रारूप मार्गदर्शिका</strong> चिह्न याद दिलाता है; <strong>लागू करें</strong> उसे चयन को देता है।</p>
+<figure><img src="img/format-personnalise.webp" alt="कस्टम संख्या प्रारूप की विंडो" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>चिह्न</th><th>काम</th><th>कोड</th><th>1234.5 दिखता है</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td>एक अंक, शून्य भी</td><td><code>0.00</code></td><td><code>1234.50</code></td></tr>
+<tr><td><code>#</code></td><td>आवश्यक हो तो अंक</td><td><code>#.##</code></td><td><code>1234.5</code></td></tr>
+<tr><td><code>,</code></td><td>हज़ारों के समूह</td><td><code>#,##0</code></td><td><code>1,235</code></td></tr>
+<tr><td><code>%</code></td><td>प्रतिशत</td><td><code>0%</code></td><td><code>123450%</code></td></tr>
+<tr><td><code>"टेक्स्ट"</code></td><td>टेक्स्ट, इकाई</td><td><code>0.0 "m"</code></td><td><code>1234.5 m</code></td></tr>
+<tr><td><code>E+00</code></td><td>वैज्ञानिक संकेतन</td><td><code>0.00E+00</code></td><td><code>1.23E+03</code></td></tr>
+<tr><td><code>;</code></td><td>धनात्मक, ऋणात्मक, शून्य, टेक्स्ट के प्रारूप</td><td><code>0;-0;"शून्य"</code></td><td><code>1235</code></td></tr>
+<tr><td><code>[Red]</code></td><td>रंग</td><td><code>0;[Red]-0</code></td><td>ऋणात्मक लाल में</td></tr>
+</tbody></table></div>
+<p>कोड भाषा के चिह्नों से लिखा जाता है; विंडो वह रूप दिखाती है जिसमें वह सहेजा जाता है (<code>#,##0.00</code>), Excel जैसा ही।</p>
+<h3 id="dates-heures">दिनांक और समय</h3>
+<div class="table"><table><thead><tr><th>कोड</th><th>29 अगस्त 2026, 14:30</th></tr></thead><tbody>
+<tr><td><code>dd/MM/yyyy</code></td><td><code>29/08/2026</code></td></tr>
+<tr><td><code>d mmm yyyy</code></td><td><code>29 Aug 2026</code></td></tr>
+<tr><td><code>dddd d mmmm yyyy</code></td><td><code>Saturday 29 August 2026</code></td></tr>
+<tr><td><code>hh:mm</code></td><td><code>14:30</code></td></tr>
+<tr><td><code>dd/MM/yyyy hh:mm</code></td><td><code>29/08/2026 14:30</code></td></tr>
+</tbody></table></div>
+<p>महीनों और दिनों के नाम अंग्रेज़ी में दिखते हैं।</p>
+<h3 id="unites">इकाइयाँ</h3>
+<p><strong>इकाइयाँ</strong> में <code>0.00 "V"</code>, <code>0.00 "Ω"</code>, <code>0.00 "mm"</code> जैसे प्रारूप: सेल संख्या ही रहता है, जिससे गणना होती है।</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>排序、筛选、查找 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>排序、筛选、查找</h1>
+<h2 id="trier">排序</h2>
+<div class="table"><table><thead><tr><th>命令</th><th>效果</th></tr></thead><tbody>
+<tr><td><strong>数据 › 排序和筛选 › 升序</strong>、<strong>降序</strong></td><td>按选区的第一列排序；也可用 <i data-i="filter"></i> 和右键</td></tr>
+<tr><td>右键 › <strong>排序选区</strong></td><td>选择排序列、顺序，以及第一行是否为标题</td></tr>
+</tbody></table></div>
+<figure><img src="img/tri.webp" alt="区域排序窗口" width="1280" height="760" /></figure>
+<p>请选择整个表，而不是单独一列：各行必须保持完整。含合并单元格的区域不能排序。</p>
+<h2 id="filtrer">筛选</h2>
+<ol>
+<li>选择表，包括标题。</li>
+<li><strong>数据 › 排序和筛选 › 筛选</strong>，或 <i data-i="filter"></i>，或右键 › <strong>筛选选区</strong>。</li>
+<li>单击某列的箭头。</li>
+</ol>
+<figure><img src="img/filtre.webp" alt="某列的筛选" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>列的菜单</th><th>效果</th></tr></thead><tbody>
+<tr><td><strong>升序排列</strong>、<strong>降序排列</strong></td><td>对表的行排序</td></tr>
+<tr><td><strong>按颜色筛选</strong></td><td>按填充颜色或文字颜色</td></tr>
+<tr><td><strong>按值过滤</strong></td><td>勾选要保留的值；<strong>全选</strong>、<strong>清除</strong>、<strong>反选</strong>；输入框用于查找值</td></tr>
+<tr><td><strong>确 认</strong></td><td>应用</td></tr>
+<tr><td><strong>清除筛选</strong></td><td>移除表的筛选</td></tr>
+</tbody></table></div>
+<p>被排除的行只是隐藏，不会删除。多列的筛选同时生效。<strong>数据 › 排序和筛选 › 清除筛选</strong> 移除筛选。</p>
+<h2 id="rechercher">查找、替换</h2>
+<p><kbd>Ctrl</kbd> <kbd>F</kbd> 打开 <strong>查找</strong>，<kbd>Ctrl</kbd> <kbd>H</kbd> 打开 <strong>替换</strong>。</p>
+<figure><img src="img/rechercher.webp" alt="查找" width="1280" height="660" /></figure>
+<div class="table"><table><thead><tr><th>选项</th><th>效果</th></tr></thead><tbody>
+<tr><td><strong>正则表达式匹配</strong></td><td>查找的文本是正则表达式：<code>^A</code> 找到以 A 开头的内容</td></tr>
+<tr><td><strong>整词匹配</strong></td><td>整个单元格等于该文本</td></tr>
+<tr><td><strong>区分大小写匹配</strong></td><td>区分大小写</td></tr>
+<tr><td><strong>查找全部</strong></td><td>列出找到的单元格；单击一行即可跳转</td></tr>
+<tr><td><strong>查找下一个</strong></td><td>转到下一个</td></tr>
+<tr><td><strong>替换</strong>、<strong>全部替换</strong></td><td>一个单元格、全部</td></tr>
+</tbody></table></div>
+<p>查找范围是当前显示的工作表。</p>
+</main>
+</body>
+</html>

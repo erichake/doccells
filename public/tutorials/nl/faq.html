@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Veelgestelde vragen — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Veelgestelde vragen</h1>
+<h2 id="saisie">Invoer</h2>
+<h3>Een getypte datum wordt niet herkend</h3>
+<p><code>25-11-2026</code> is voor DocCells een tekst. <code>2026-11-25</code> typen, dan de notatie <strong>Datum</strong> kiezen (<a href="saisie.html#dates">datums</a>).</p>
+<h3>Er verschijnt een getal in plaats van een datum</h3>
+<p>Datums zijn aantallen dagen: geef de cellen de notatie <strong>Datum</strong> (<strong>Opmaak › Getal</strong>).</p>
+<h3>Mijn getallen worden niet opgeteld</h3>
+<p>Links uitgelijnd zijn het teksten. In het Nederlands is de komma decimaal; een in de cel getypte eenheid maakt er een tekst van (<a href="saisie.html#types">typen</a>).</p>
+<h3>De nul aan het begin van een nummer verdwijnt</h3>
+<p>Geef vóór het typen de notatie <strong>Platte tekst</strong>, of begin met een apostrof (<a href="saisie.html#textes">teksten</a>).</p>
+<h3>Getallen verwachten een punt in plaats van een komma</h3>
+<p>DocCells volgt de taal van de browser. <code>?lang=nl</code> legt ze op (<a href="demarrage.html#langue">taal</a>).</p>
+<h2 id="formules">Formules</h2>
+<h3><code>#NAME?</code> met WAAR of ONWAAR</h3>
+<p><code>WAAR()</code> en <code>ONWAAR()</code> schrijven, of 1 en 0 (<a href="formules.html#conditions">voorwaarden</a>).</p>
+<h3><code>#NAME?</code> met een door DocCells voorgestelde functie</h3>
+<p>Niet alle voorgestelde functies worden berekend (<a href="fonctions.html#non-calculees">niet berekende functies</a>).</p>
+<h3><code>ALS.FOUT</code> laat DIV/0 door</h3>
+<p>Test de deler: <code>=ALS(B2; A2/B2; "")</code> (<a href="formules.html#erreurs">fouten</a>).</p>
+<h3>Plakken behoudt mijn formules niet</h3>
+<p><strong>Plakken</strong> van het rechtsklikmenu plakt de waarden; <kbd>Ctrl</kbd> <kbd>V</kbd> plakt de formules (<a href="selection.html#copier">kopiëren</a>).</p>
+<h3>De naam van een maand schrijven of een getal in een tekst opmaken</h3>
+<p>De functie <code>TEKST</code> wordt niet berekend: geef een aparte cel een <a href="nombres.html">notatie</a>.</p>
+<h3>De aangevinkte vakjes tellen</h3>
+<p><code>=SOMPRODUCT(B2:B6; B2:B6)</code> (<a href="controles.html#cases">selectievakjes</a>).</p>
+<h3><code>=VANDAAG()+1</code> geeft #VALUE!</h3>
+<p>Zet <code>=VANDAAG()</code> in een cel en tel bij die cel op (<a href="formules.html#dates">datums</a>).</p>
+<h2 id="presentation">Presentatie</h2>
+<h3>De kleur van een cel verandert niet</h3>
+<p>De cel ligt in het bereik van een regel voor <a href="conditionnelle.html#regles">voorwaardelijke opmaak</a>.</p>
+<h3>Een knop is verdwenen</h3>
+<p>Het venster is smal: hij zit achter <i data-i="more"></i>.</p>
+<h3>Sorteren of filteren wordt geweigerd</h3>
+<p>Het bereik bevat samengevoegde cellen: maak de samenvoeging ongedaan.</p>
+<h2 id="fichiers">Bestanden</h2>
+<h3>Opslaan downloadt een nieuw bestand</h3>
+<p>Dat is zo in Firefox en Safari. Chrome en Edge schrijven in het bestand (<a href="demarrage.html#enregistrer">opslaan</a>).</p>
+<h3>De pagina sloot zonder op te slaan</h3>
+<p>Open DocCells opnieuw in dezelfde browser: het stelt voor de kopie te herstellen (<a href="demarrage.html#recuperer">herstellen</a>).</p>
+<h3>Mijn grafiek wordt niet afgedrukt</h3>
+<p>Het afdrukken toont alleen de cellen (<a href="impression.html">afdrukken</a>).</p>
+<h3>Een link <code>?url=</code> opent mijn werkmap niet</h3>
+<p>De site van het bestand weigert misschien lezen door andere sites. Een Google Sheet moet via een link gedeeld zijn (<a href="partager.html">delen</a>).</p>
+<h3>Mijn links zijn verdwenen</h3>
+<p>Ze worden niet in het Excel-formaat opgeslagen (<a href="excel.html#perdu">wat niet behouden blijft</a>).</p>
+<h2 id="eleves">Leerlingen</h2>
+<h3>Kan een leerling de formules wijzigen?</h3>
+<p>Niet in een beveiligde werkmap, buiten de ontgrendelde cellen (<a href="protection.html">beveiligen</a>). <code>mode=student</code> aan de link toevoegen ontneemt de mogelijkheid om de beveiliging op te heffen.</p>
+</main>
+</body>
+</html>

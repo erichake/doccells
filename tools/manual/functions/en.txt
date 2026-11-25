@@ -1,0 +1,126 @@
+words|-|admis=pass; refusé=fail; très bien=very good; assez bien=good; un=one; deux=two; autre=other; absent=absent; Note : =Mark: ; tableur=tables; jean dupont=john smith
+SUMIF|-|Sum of the cells of a range that meet a criterion (">=10", "Ana"), or of the matching cells of sum_range.
+SUBTOTAL|-|Summary of a range by a code: 1 average, 2 count, 4 max, 5 min, 9 sum.
+AGGREGATE|function; option; range|Summary of a range by a code: 1 average, 2 count, 4 max, 5 min, 9 sum. Options: 0 to 7, as in Excel.
+INT|-|Integer part: the greatest integer less than or equal.
+COMBINA|n; k|Number of combinations with repetition.
+LOG|number; base|Logarithm in a base; the base is required.
+BASE|number; base; [length]|An integer written in a base, as text.
+DECIMAL|text; base|Value of a number written in a base from 2 to 10.
+COT|angle|Cotangent of an angle in radians.
+SEC|angle|Secant of an angle in radians.
+CSC|angle|Cosecant of an angle in radians.
+ACOT|number|Arc cotangent, in radians.
+COTH|number|Hyperbolic cotangent.
+SECH|number|Hyperbolic secant.
+CSCH|number|Hyperbolic cosecant.
+ACOTH|number|Inverse hyperbolic cotangent.
+IFS|condition1; value1; [condition2; value2; …]|Value of the first true condition; #N/A if none is.
+SWITCH|expression; case1; value1; [case2; value2; …]; [default]|Value of the case equal to the expression.
+XOR|value1; value2; …|True if an odd number of values are true.
+TRUE|-|The logical value true, displayed as TRUE.
+FALSE|-|The logical value false, displayed as FALSE.
+IFERROR|value; value_if_error|The value, or another one if it is the error of a function (#N/A, #NUM!). Replaces neither DIV/0 nor #VALUE!.
+IFNA|value; value_if_na|The value, or another one if it is the #N/A error.
+COUNTIF|-|Number of cells that meet a criterion: ">10", "<>0", "Ana". The wildcards * and ? are not recognized.
+MODE|range|Most frequent value.
+RANK|number; range; [order]|Rank of a number in a range, descending; ascending if order is 1.
+QUARTILE|range; k|Quartile: k from 0 (minimum) to 4 (maximum).
+QUARTILEEXC|range; k|Quartile, bounds excluded: k from 1 to 3.
+PERCENTILEINC|range; k|Percentile: k from 0 to 1.
+PERCENTILEEXC|range; k|Percentile, bounds excluded.
+PERCENTRANK|range; number|Rank of a number as a proportion, from 0 to 1.
+STDEV|value1; [value2; …]|Standard deviation of a sample (divisor n − 1).
+STDEVP|-|Standard deviation of a population (divisor n).
+STDEVPA|value1; [value2; …]|Standard deviation of a population, texts counting as 0.
+VAR|value1; [value2; …]|Variance of a sample (divisor n − 1).
+VARP|value1; [value2; …]|Variance of a population (divisor n).
+SKEWP|range|Skewness of a population.
+FREQUENCY|-|Counts of the classes bounded by a list, as a list.
+COVARIANCEP|y_range; x_range|Covariance of a population.
+COVARIANCES|y_range; x_range|Covariance of a sample.
+LINEST|y_range; x_range|Least squares line: the list of the slope and the y-intercept.
+LOGEST|y_range; x_range|Fit y = b·mˣ: the list of m and b.
+TREND|y_range; x_range; new_x|Values of the linear fit, as a list.
+GROWTH|y_range; x_range; new_x|Values of the exponential fit, as a list.
+PERMUTATIONA|n; k|Number of k-tuples of n elements, with repetition.
+NORMDIST|x; mean; standard_deviation; cumulative|Normal distribution: P(X ≤ x) if cumulative is true, density otherwise.
+NORMINV|probability; mean; standard_deviation|x such that P(X ≤ x) is the probability, normal distribution.
+NORMSDIST|z; cumulative|Standard normal distribution: P(Z ≤ z) if cumulative is true, density otherwise.
+NORMSINV|probability|z such that P(Z ≤ z) is the probability.
+GAUSS|z|P(0 ≤ Z ≤ z), standard normal distribution.
+PHI|z|Density of the standard normal distribution.
+BINOMDIST|k; n; p; cumulative|Binomial distribution: P(X ≤ k) if cumulative is true, P(X = k) otherwise.
+CRITBINOM|n; p; alpha|Smallest k such that P(X ≤ k) ≥ alpha, binomial distribution.
+NEGBINOMDIST|failures; successes; p; cumulative|Negative binomial distribution.
+POISSON|k; lambda; cumulative|Poisson distribution: P(X ≤ k) if cumulative is true, P(X = k) otherwise.
+HYPGEOMDIST|k; n; successes; population; cumulative|Hypergeometric distribution.
+EXPONDIST|x; lambda; cumulative|Exponential distribution.
+GAMMADIST|x; alpha; beta; cumulative|Gamma distribution.
+GAMMAINV|probability; alpha; beta|Inverse of the gamma distribution.
+BETADIST|x; alpha; beta; cumulative; a; b|Beta distribution on [a, b].
+BETAINV|probability; alpha; beta|Inverse of the beta distribution.
+LOGNORMDIST|x; mean; standard_deviation; cumulative|Log-normal distribution.
+LOGNORMINV|probability; mean; standard_deviation|Inverse of the log-normal distribution.
+WEIBULL|x; alpha; beta; cumulative|Weibull distribution.
+CHIDIST|x; degrees; cumulative|Chi-squared distribution: P(X ≤ x) if cumulative is true.
+CHIDISTRT|x; degrees|Chi-squared distribution: P(X > x).
+CHIINVRT|probability; degrees|x such that P(X > x) is the probability, chi-squared distribution.
+FDIST|x; degrees1; degrees2; cumulative|F distribution: P(X ≤ x) if cumulative is true.
+FDISTRT|x; degrees1; degrees2|F distribution: P(X > x).
+TTEST|range1; range2|Probability of Student's t-test on two samples.
+CONFIDENCE|alpha; standard_deviation; n|Half-width of the confidence interval of a mean (normal distribution).
+GAMMA|number|Gamma function.
+VLOOKUP|-|Looks for a value in the first column of a range, returns the cell of the same row. Last argument 0: exact value.
+HLOOKUP|-|Looks for a value in the first row of a range, returns the cell of the same column. Last argument 0: exact value.
+LOOKUP|value; sorted_range; result_range|Looks for a value in a sorted range, returns the matching value of another range.
+MATCH|-|Position of a value in a range. Last argument 0: exact value.
+INDEX|-|Cell of a range or element of a list, by its position.
+TRANSPOSE|-|Swaps rows and columns; the result is a list of rows, in one cell.
+FLATTEN|range|The values of a range, row after row, as a list.
+UNIQUE|value1; value2; …|List of the values without duplicates.
+SPLIT|text; separator|Cuts a text into a list.
+CONCAT|value1; value2|Joins two texts.
+VALUE|-|Number written in a text, with a decimal point.
+UNICHAR|code|Character of a Unicode code.
+UNICODE|text|Unicode code of the first character.
+TODAY|-|Today's date. To calculate with it, put it in a cell.
+NOW|-|Date and time, recalculated at each change.
+DATE|-|Date of a year, a month and a day; give the cell a date format.
+WEEKDAY|-|Day of the week; with type 2, from 1 (Monday) to 7 (Sunday).
+DATEDIF|-|Duration between two dates, in years ("Y"), months ("M") or days ("D").
+TIME|-|Time, as a fraction of a day; give the cell a time format.
+HOUR|-|Hours of a time.
+MINUTE|-|Minutes of a time.
+SECOND|-|Seconds of a time.
+PMT|-|Constant payment of a loan; the capital is counted as negative.
+PDURATION|rate; present_value; future_value|Number of periods to reach a value.
+RRI|periods; present_value; future_value|Equivalent interest rate of a growth.
+ISPMT|rate; period; periods; capital|Interest of a period of a loan with constant principal.
+BITAND|a; b|Bitwise AND.
+BITOR|a; b|Bitwise OR.
+BITXOR|a; b|Bitwise exclusive OR.
+BITLSHIFT|number; shift|Shifts bits to the left.
+BITRSHIFT|number; shift|Shifts bits to the right.
+CONVERT|-|Converts a measure from one unit to another: "m", "km", "mi", "hr", "mn", "kg"… Temperatures are not converted.
+GESTEP|number; step|1 if the number reaches the step, 0 otherwise.
+ERF|x|Gauss error function.
+BESSELJ|x; n|Bessel function Jₙ.
+BESSELY|x; n|Bessel function Yₙ.
+BESSELI|x; n|Modified Bessel function Iₙ.
+BESSELK|x; n|Modified Bessel function Kₙ.
+IMARGUMENT|complex|Argument, in radians.
+IMPOWER|complex; exponent|Power of a complex number.
+IMSQRT|complex|Square root of a complex number.
+IMEXP|complex|Exponential of a complex number.
+IMLN|complex|Natural logarithm of a complex number.
+IMLOG10|complex|Decimal logarithm of a complex number.
+IMLOG2|complex|Base 2 logarithm of a complex number.
+IMSIN|complex|Sine of a complex number.
+IMCOS|complex|Cosine of a complex number.
+IMTAN|complex|Tangent of a complex number.
+ISERROR|-|True if the value is the error of a function (#N/A, #NUM!).
+ISERR|-|True if the value is the error of a function other than #N/A.
+ISNA|-|True if the value is the #N/A error.
+NA|-|The #N/A error.
+TYPE|-|Type of a value: 1 number, 2 text, 4 logical, 16 error, 64 list.

@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mit DocGeo — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Mit DocGeo</h1>
+<p class="lead">DocGeo, die dynamische Geometriesoftware von DocTools, enthält DocCells: ein Blatt neben einer Figur, die einander lesen.</p>
+<p>In DocGeo fügt <strong>Datei › Ansicht › Neue Tabellenansicht</strong> ein Blatt neben der Figur hinzu; <strong>Datei › Tab › Neuer Tabellen-Tab</strong> macht daraus einen Tab.</p>
+<h2 id="geo">Die Funktion GEO</h2>
+<p>In einer Zelle liest <code>GEO</code> den Wert eines Objekts der Figur, das durch seinen Namen in Anführungszeichen angegeben wird.</p>
+<pre><code>=GEO("AB")
+=2*GEO("r")+1
+=GEO("'Figur 1'!c")</code></pre>
+<ul>
+<li>Die Zelle folgt der Figur, während sie bewegt wird.</li>
+<li>Ein Punkt wird als <a href="listes.html">Liste</a> seiner Koordinaten gelesen: <code>=GEO("A")*2</code> ist auch ein Punkt.</li>
+<li>Beim Schreiben einer Formel trägt ein Klick auf ein Objekt der Figur <code>GEO</code> und seinen Namen ein.</li>
+<li>Ein unbekanntes Objekt ergibt <code>#N/A</code>. Außerhalb von DocGeo ergibt <code>GEO</code> immer <code>#N/A</code>.</li>
+<li><code>GEO</code> heißt in allen Sprachen gleich.</li>
+</ul>
+<h2 id="figure">Die Figur liest die Zellen</h2>
+<p>In einer DocGeo-Formel bezeichnet <code>!B3</code> eine Zelle, <code>!B2:B21</code> einen Bereich.</p>
+<h2 id="differences">Unterschiede zu DocCells allein</h2>
+<div class="table"><table><thead><tr><th>In DocGeo</th><th></th></tr></thead><tbody>
+<tr><td>Menüs und Schaltflächen</td><td>in den Leisten von DocGeo, wenn das Blatt aktiv ist</td></tr>
+<tr><td>Datei</td><td>die von DocGeo: das Blatt wird in der <code>.dgo</code> gespeichert, samt Listen und Links</td></tr>
+<tr><td>Blätter</td><td>eines pro Ansicht; mehrere Tabellen-Tabs lesen einander</td></tr>
+<tr><td>Rückgängig</td><td><kbd>Strg</kbd> <kbd>Z</kbd> in den Zellen betrifft nur die Zellen</td></tr>
+</tbody></table></div>
+<p>Die Seite <a href="https://doctools.org/apps/docgeo/tutorials/de/tableur.html">Die Tabellenkalkulation</a> des DocGeo-Handbuchs gibt die Einzelheiten.</p>
+</main>
+</body>
+</html>

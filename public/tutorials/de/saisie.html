@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Daten eingeben — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Daten eingeben</h1>
+<h2 id="ecrire">In eine Zelle schreiben</h2>
+<div class="table"><table><thead><tr><th>Aktion</th><th>Wirkung</th></tr></thead><tbody>
+<tr><td>auf einer ausgewählten Zelle tippen</td><td>ersetzt ihren Inhalt</td></tr>
+<tr><td>Doppelklick, <kbd>F2</kbd> oder <kbd>Eingabe</kbd></td><td>bearbeitet ihren Inhalt</td></tr>
+<tr><td><kbd>Eingabe</kbd></td><td>bestätigt und geht eine Zelle nach unten</td></tr>
+<tr><td>Klick in eine andere Zelle</td><td>bestätigt</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>bricht die Eingabe ab</td></tr>
+<tr><td><kbd>Alt</kbd> <kbd>Eingabe</kbd></td><td>neue Zeile in der Zelle</td></tr>
+<tr><td><kbd>Entf</kbd> oder <kbd>⌫</kbd></td><td>leert die ausgewählten Zellen samt Kontrollkästchen und Drop-down-Listen; ihre Formatierung bleibt</td></tr>
+<tr><td>Rechtsklick › <strong>Inhalte löschen</strong></td><td>ebenso</td></tr>
+</tbody></table></div>
+<p>Während einer Eingabe bewegen die Pfeiltasten den Cursor im Text. Sonst wechseln die Pfeiltasten, <kbd>Tab</kbd> und <kbd>Umschalt</kbd> <kbd>Tab</kbd> die Zelle.</p>
+<h2 id="types">Was DocCells erkennt</h2>
+<div class="table"><table><thead><tr><th>Eingabe</th><th>Ergebnis</th></tr></thead><tbody>
+<tr><td><code>12</code>, <code>-3</code>, <code>1e5</code></td><td>eine Zahl, rechtsbündig</td></tr>
+<tr><td><code>2,5</code></td><td>eine Dezimalzahl; das Komma ist das deutsche Trennzeichen</td></tr>
+<tr><td><code>1.234,5</code></td><td>die Zahl 1234,5; um den Tausenderpunkt anzuzeigen, ein <a href="nombres.html">Format</a> wählen</td></tr>
+<tr><td><code>25%</code>, <code>2,5%</code></td><td>ein Prozentsatz</td></tr>
+<tr><td><code>2026-11-25</code>, <code>2026/11/25</code></td><td>ein Datum</td></tr>
+<tr><td><code>2026-11-25 14:30</code></td><td>Datum und Uhrzeit</td></tr>
+<tr><td><code>TRUE</code>, <code>FALSE</code></td><td>ein Wahrheitswert</td></tr>
+<tr><td><code>[2; 1]</code></td><td>eine <a href="listes.html">Liste</a></td></tr>
+<tr><td><code>=A1+B1</code></td><td>eine <a href="formules.html">Formel</a></td></tr>
+<tr><td>alles andere</td><td>ein Text, linksbündig</td></tr>
+</tbody></table></div>
+<h3 id="dates">Datum</h3>
+<p>Ein Datum wird mit dem Jahr zuerst getippt: <code>2026-11-25</code>. <code>25.11.2026</code> bleibt ein Text, mit dem nicht gerechnet wird. Um es wie üblich anzuzeigen, <strong>Format › Zahl › Datum</strong> (<code>29.11.2017</code>) oder ein <a href="nombres.html#personnalise">benutzerdefiniertes Format</a> wählen.</p>
+<p>Ein Doppelklick auf eine Datumszelle öffnet einen <a href="controles.html#calendrier">Kalender</a>. <code>=HEUTE()</code> gibt das heutige Datum.</p>
+<h3 id="textes">Texte aus Ziffern</h3>
+<p>Eine Nummer, die mit Null beginnt, verliert diese Null: <code>007</code> wird 7. Um sie zu behalten, den Zellen vorher das Format <strong>Nur Text</strong> geben (<strong>Format › Zahl › Nur Text</strong>) oder mit einem Apostroph beginnen: <code>'007</code>.</p>
+<h2 id="erreurs">Häufige Eingabefehler</h2>
+<div class="table"><table><thead><tr><th>Man sieht</th><th>Ursache</th></tr></thead><tbody>
+<tr><td>eine linksbündige Zahl</td><td>es ist ein Text: ein Dezimalpunkt statt eines Kommas, eine Einheit (<code>12 €</code>), ein Leerzeichen zu viel</td></tr>
+<tr><td><code>46351</code> statt eines Datums</td><td>ein Datum im Format <strong>Automatisch</strong>: ihm das Format <strong>Datum</strong> geben</td></tr>
+<tr><td>der Text wird von der Nachbarzelle abgeschnitten</td><td>die <a href="lignes-colonnes.html#taille">Spalte</a> verbreitern oder <strong>Umbruch</strong> wählen</td></tr>
+</tbody></table></div>
+<p>Für eine Einheit nur die Zahl eingeben und ihr ein <a href="nombres.html">Format</a> geben: Währung oder benutzerdefiniert wie <code>0,00 "m"</code>.</p>
+</main>
+</body>
+</html>

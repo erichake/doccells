@@ -1,0 +1,392 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>फ़ंक्शन — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>फ़ंक्शन</h1>
+<p class="lead">DocCells द्वारा गिने जाने वाले 314 फ़ंक्शन, विषय अनुसार, हर एक का उदाहरण सहित।</p>
+<ul>
+<li>खोज: पृष्ठ के ऊपर के फ़ील्ड (<kbd>/</kbd>) में फ़ंक्शन का नाम लिखने से उसकी पंक्ति मिलती है।</li>
+<li>तर्क अल्पविराम से अलग होते हैं; वर्ग कोष्ठक <code>[ ]</code> वाले तर्क वैकल्पिक हैं।</li>
+<li><code>TRUE()</code> और <code>FALSE()</code> कोष्ठकों सहित लिखे जाते हैं; 1 और 0 भी लिख सकते हैं।</li>
+<li>“रेंज” तर्क <a href="listes.html">सूची</a> हो सकता है: <code>=AVERAGE([12, 15, 8])</code>।</li>
+<li><a href="formules.html">सूत्र</a> भी देखें: संकारक, संदर्भ, त्रुटियाँ।</li>
+</ul>
+<h2 id="exemples">उदाहरणों के सेल</h2>
+<p>उदाहरण यह शीट पढ़ते हैं:</p>
+<div class="table"><table class="cells"><tr><th></th><th>A</th><th>B</th><th>C</th><th>F</th><th>G</th></tr><tr><th>1</th><td class="num">12</td><td class="num">2</td><td>Ana</td><td class="num">1</td><td class="num">2</td></tr><tr><th>2</th><td class="num">15</td><td class="num">4</td><td>Paul</td><td class="num">3</td><td class="num">4</td></tr><tr><th>3</th><td class="num">8</td><td class="num">6</td><td>Léa</td><td></td><td></td></tr><tr><th>4</th><td class="num">17</td><td class="num">8</td><td>Tom</td><td></td><td></td></tr><tr><th>5</th><td class="num">10</td><td class="num">11</td><td>Zoé</td><td></td><td></td></tr></table></div>
+<h2 id="math">गणित</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="SUM"><td><code><strong>SUM</strong>(मान1, [मान2, …])</code></td><td>संख्याओं और/या कोशिकाओं की एक श्रृंखला का योग।<span class="ex"><code>=SUM(A1:A5)</code> → <code>62</code></span></td></tr>
+<tr id="SUMIF"><td><code><strong>SUMIF</strong>(श्रेणी, मानदंड, [योग_श्रेणी])</code></td><td>मानदंड ("&gt;=10", "Ana") पूरा करने वाले सेलों, या दूसरी रेंज के संगत सेलों का योग।<span class="ex"><code>=SUMIF(A1:A5, "&gt;=10")</code> → <code>54</code></span></td></tr>
+<tr id="SUMIFS"><td><code><strong>SUMIFS</strong>(योग_श्रेणी, मानदंड_श्रेणी1, मानदंड1, [मानदंड_श्रेणी2, …])</code></td><td>कई मानदंडों के आधार पर किसी श्रेणी का योग करता है।<span class="ex"><code>=SUMIFS(A1:A5, A1:A5, "&gt;9", B1:B5, "&lt;8")</code> → <code>27</code></span></td></tr>
+<tr id="SUMPRODUCT"><td><code><strong>SUMPRODUCT</strong>(सरणी1, [सरणी2, …])</code></td><td>दो सरणियों में तत्वों के गुणनफलों का योग।<span class="ex"><code>=SUMPRODUCT(A1:A5, B1:B5)</code> → <code>378</code></span></td></tr>
+<tr id="SUMSQ"><td><code><strong>SUMSQ</strong>(मान1, [मान2, …])</code></td><td>वर्गों का योग।<span class="ex"><code>=SUMSQ(B1:B3)</code> → <code>56</code></span></td></tr>
+<tr id="SUMX2MY2"><td><code><strong>SUMX2MY2</strong>(सरणी_x, सरणी_y)</code></td><td>वर्गों के अंतरों का योग।<span class="ex"><code>=SUMX2MY2(A1:A5, B1:B5)</code> → <code>581</code></span></td></tr>
+<tr id="SUMX2PY2"><td><code><strong>SUMX2PY2</strong>(सरणी_x, सरणी_y)</code></td><td>वर्गों के योगों का योग।<span class="ex"><code>=SUMX2PY2(A1:A5, B1:B5)</code> → <code>1063</code></span></td></tr>
+<tr id="SUMXMY2"><td><code><strong>SUMXMY2</strong>(सरणी_x, सरणी_y)</code></td><td>अंतरों के वर्गों का योग।<span class="ex"><code>=SUMXMY2(A1:A5, B1:B5)</code> → <code>307</code></span></td></tr>
+<tr id="SERIESSUM"><td><code><strong>SERIESSUM</strong>(x, n, m, a)</code></td><td>एक घात श्रेणी (पावर सीरीज) का योग।<span class="ex"><code>=SERIESSUM(2, 0, 1, [1, 1, 1])</code> → <code>7</code></span></td></tr>
+<tr id="SUBTOTAL"><td><code><strong>SUBTOTAL</strong>(फ़ंक्शन_कोड, श्रेणी1, [श्रेणी2, …])</code></td><td>कोड के अनुसार रेंज का सार: 1 औसत, 2 गिनती, 4 अधिकतम, 5 न्यूनतम, 9 योग।<span class="ex"><code>=SUBTOTAL(9, A1:A5)</code> → <code>62</code></span></td></tr>
+<tr id="AGGREGATE"><td><code><strong>AGGREGATE</strong>(फ़ंक्शन, विकल्प, रेंज)</code></td><td>कोड के अनुसार रेंज का सार: 1 औसत, 2 गिनती, 4 अधिकतम, 5 न्यूनतम, 9 योग। विकल्प: 0 से 7, Excel जैसे।<span class="ex"><code>=AGGREGATE(9, 0, A1:A5)</code> → <code>62</code></span></td></tr>
+<tr id="PRODUCT"><td><code><strong>PRODUCT</strong>(गुणक1, [गुणक2, …])</code></td><td>संख्याओं की एक श्रृंखला को आपस में गुणा करने का परिणाम।<span class="ex"><code>=PRODUCT(B1:B3)</code> → <code>48</code></span></td></tr>
+<tr id="COUNTUNIQUE"><td><code><strong>COUNTUNIQUE</strong>(मान1, [मान2])</code></td><td>किसी श्रेणी में अद्वितीय मानों की संख्या गिनता है।<span class="ex"><code>=COUNTUNIQUE(A1:A5)</code> → <code>5</code></span></td></tr>
+<tr id="ABS"><td><code><strong>ABS</strong>(मान)</code></td><td>किसी संख्या का निरपेक्ष मान।<span class="ex"><code>=ABS(-3)</code> → <code>3</code></span></td></tr>
+<tr id="SIGN"><td><code><strong>SIGN</strong>(मान)</code></td><td>दी गई संख्या का चिह्न (+/-/0)।<span class="ex"><code>=SIGN(-3)</code> → <code>-1</code></span></td></tr>
+<tr id="INT"><td><code><strong>INT</strong>(मान)</code></td><td>पूर्णांक भाग: संख्या से बड़ा न होने वाला सबसे बड़ा पूर्णांक।<span class="ex"><code>=INT(-3.2)</code> → <code>-4</code></span></td></tr>
+<tr id="TRUNC"><td><code><strong>TRUNC</strong>(मान, [दशमलव_स्थान])</code></td><td>किसी संख्या को छांटता है।<span class="ex"><code>=TRUNC(3.789, 1)</code> → <code>3.7</code></span></td></tr>
+<tr id="ROUND"><td><code><strong>ROUND</strong>(मान, दशमलव_स्थान)</code></td><td>मानक नियमों के अनुसार किसी संख्या को पूर्णांकित करता है।<span class="ex"><code>=ROUND(3.14159, 2)</code> → <code>3.14</code></span></td></tr>
+<tr id="ROUNDUP"><td><code><strong>ROUNDUP</strong>(मान, दशमलव_स्थान)</code></td><td>किसी संख्या को ऊपर की ओर पूर्णांकित करता है।<span class="ex"><code>=ROUNDUP(3.11, 1)</code> → <code>3.2</code></span></td></tr>
+<tr id="ROUNDDOWN"><td><code><strong>ROUNDDOWN</strong>(मान, दशमलव_स्थान)</code></td><td>किसी संख्या को नीचे की ओर पूर्णांकित करता है।<span class="ex"><code>=ROUNDDOWN(3.19, 1)</code> → <code>3.1</code></span></td></tr>
+<tr id="MROUND"><td><code><strong>MROUND</strong>(मान, गुणक)</code></td><td>किसी संख्या को निकटतम पूर्णांक गुणज तक पूर्णांकित करता है।<span class="ex"><code>=MROUND(17, 5)</code> → <code>15</code></span></td></tr>
+<tr id="CEILING"><td><code><strong>CEILING</strong>(मान, गुणक)</code></td><td>संख्या को किसी गुणक के निकटतम गुणज तक ऊपर पूर्णांकित करता है।<span class="ex"><code>=CEILING(12.3, 5)</code> → <code>15</code></span></td></tr>
+<tr id="FLOOR"><td><code><strong>FLOOR</strong>(मान, गुणक)</code></td><td>संख्या को किसी गुणक के निकटतम गुणज तक नीचे पूर्णांकित करता है।<span class="ex"><code>=FLOOR(12.3, 5)</code> → <code>10</code></span></td></tr>
+<tr id="EVEN"><td><code><strong>EVEN</strong>(मान)</code></td><td>किसी संख्या को निकटतम सम पूर्णांक तक ऊपर पूर्णांकित करता है।<span class="ex"><code>=EVEN(3)</code> → <code>4</code></span></td></tr>
+<tr id="ODD"><td><code><strong>ODD</strong>(मान)</code></td><td>किसी संख्या को निकटतम विषम पूर्णांक तक ऊपर पूर्णांकित करता है।<span class="ex"><code>=ODD(4)</code> → <code>5</code></span></td></tr>
+<tr id="ISEVEN"><td><code><strong>ISEVEN</strong>(मान)</code></td><td>क्या दिया गया मान सम है।<span class="ex"><code>=ISEVEN(4)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISODD"><td><code><strong>ISODD</strong>(मान)</code></td><td>क्या दिया गया मान विषम है।<span class="ex"><code>=ISODD(4)</code> → <code>FALSE</code></span></td></tr>
+<tr id="MOD"><td><code><strong>MOD</strong>(भाज्य, भाजक)</code></td><td>मॉड्यूलो (शेषफल) संक्रियक।<span class="ex"><code>=MOD(17, 5)</code> → <code>2</code></span></td></tr>
+<tr id="QUOTIENT"><td><code><strong>QUOTIENT</strong>(भाज्य, भाजक)</code></td><td>एक संख्या दूसरी से विभाजित।<span class="ex"><code>=QUOTIENT(17, 5)</code> → <code>3</code></span></td></tr>
+<tr id="GCD"><td><code><strong>GCD</strong>(मान1, [मान2, …])</code></td><td>एक या अधिक पूर्णांकों का महत्तम समापवर्तक।<span class="ex"><code>=GCD(24, 36)</code> → <code>12</code></span></td></tr>
+<tr id="LCM"><td><code><strong>LCM</strong>(मान1, [मान2, …])</code></td><td>एक या अधिक पूर्णांकों का लघुत्तम समापवर्त्य।<span class="ex"><code>=LCM(4, 6)</code> → <code>12</code></span></td></tr>
+<tr id="FACT"><td><code><strong>FACT</strong>(मान)</code></td><td>किसी संख्या का भाज्य।<span class="ex"><code>=FACT(5)</code> → <code>120</code></span></td></tr>
+<tr id="FACTDOUBLE"><td><code><strong>FACTDOUBLE</strong>(मान)</code></td><td>किसी संख्या का "दोहरा भाज्य"।<span class="ex"><code>=FACTDOUBLE(7)</code> → <code>105</code></span></td></tr>
+<tr id="COMBIN"><td><code><strong>COMBIN</strong>(n, k)</code></td><td>वस्तुओं के समूह से संयोजनों की संख्या।<span class="ex"><code>=COMBIN(5, 2)</code> → <code>10</code></span></td></tr>
+<tr id="COMBINA"><td><code><strong>COMBINA</strong>(n, k)</code></td><td>पुनरावृत्ति सहित संचयों की संख्या।<span class="ex"><code>=COMBINA(4, 2)</code> → <code>10</code></span></td></tr>
+<tr id="MULTINOMIAL"><td><code><strong>MULTINOMIAL</strong>(मान1, [मान2, …])</code></td><td>बहुपद वितरण फलन।<span class="ex"><code>=MULTINOMIAL(2, 3)</code> → <code>10</code></span></td></tr>
+<tr id="POWER"><td><code><strong>POWER</strong>(आधार, घातांक)</code></td><td>किसी घात तक बढ़ाई गई एक संख्या।<span class="ex"><code>=POWER(2, 10)</code> → <code>1024</code></span></td></tr>
+<tr id="SQRT"><td><code><strong>SQRT</strong>(मान)</code></td><td>किसी धनात्मक संख्या का धनात्मक वर्गमूल।<span class="ex"><code>=SQRT(16)</code> → <code>4</code></span></td></tr>
+<tr id="SQRTPI"><td><code><strong>SQRTPI</strong>(मान)</code></td><td>पाई और किसी संख्या के गुणनफल का वर्गमूल।<span class="ex"><code>=SQRTPI(2)</code> → <code>2.506628275</code></span></td></tr>
+<tr id="EXP"><td><code><strong>EXP</strong>(घातांक)</code></td><td>यूलर की संख्या e (~2.718), किसी घात तक बढ़ाई गई।<span class="ex"><code>=EXP(1)</code> → <code>2.718281828</code></span></td></tr>
+<tr id="LN"><td><code><strong>LN</strong>(मान)</code></td><td>आधार e (यूलर की संख्या) पर किसी संख्या का लघुगणक।<span class="ex"><code>=LN(10)</code> → <code>2.302585093</code></span></td></tr>
+<tr id="LOG"><td><code><strong>LOG</strong>(संख्या, आधार)</code></td><td>किसी आधार पर लघुगणक; आधार आवश्यक है।<span class="ex"><code>=LOG(8, 2)</code> → <code>3</code></span></td></tr>
+<tr id="LOG10"><td><code><strong>LOG10</strong>(मान)</code></td><td>आधार 10 पर किसी संख्या का लघुगणक।<span class="ex"><code>=LOG10(100)</code> → <code>2</code></span></td></tr>
+<tr id="RAND"><td><code><strong>RAND</strong>()</code></td><td>0 (सहित) और 1 (असहित) के बीच एक यादृच्छिक संख्या।<span class="ex"><code>=RAND()</code></span></td></tr>
+<tr id="RANDBETWEEN"><td><code><strong>RANDBETWEEN</strong>(निचली_सीमा, ऊपरी_सीमा)</code></td><td>दो मानों के बीच (दोनों सहित) एक यादृच्छिक पूर्णांक।<span class="ex"><code>=RANDBETWEEN(1, 6)</code></span></td></tr>
+<tr id="BASE"><td><code><strong>BASE</strong>(संख्या, आधार, [लंबाई])</code></td><td>पूर्णांक का किसी आधार में लेखन, टेक्स्ट में।<span class="ex"><code>=BASE(10, 2)</code> → <code>1010</code></span></td></tr>
+<tr id="DECIMAL"><td><code><strong>DECIMAL</strong>(टेक्स्ट, आधार)</code></td><td>2 से 10 आधार में लिखी संख्या का मान।<span class="ex"><code>=DECIMAL("1010", 2)</code> → <code>10</code></span></td></tr>
+<tr id="ROMAN"><td><code><strong>ROMAN</strong>(संख्या)</code></td><td>किसी संख्या को रोमन अंकों में प्रारूपित करता है।<span class="ex"><code>=ROMAN(2026)</code> → <code>MMXXVI</code></span></td></tr>
+<tr id="ARABIC"><td><code><strong>ARABIC</strong>(रोमन_अंक)</code></td><td>किसी रोमन अंक का मान परिकलित करता है।<span class="ex"><code>=ARABIC("MMXXVI")</code> → <code>2026</code></span></td></tr>
+</tbody></table></div>
+<h2 id="trig">त्रिकोणमिति</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="PI"><td><code><strong>PI</strong>()</code></td><td>पाई संख्या।<span class="ex"><code>=PI()</code> → <code>3.141592654</code></span></td></tr>
+<tr id="RADIANS"><td><code><strong>RADIANS</strong>(कोण)</code></td><td>डिग्री में किसी कोण के मान को रेडियन में बदलता है।<span class="ex"><code>=RADIANS(180)</code> → <code>3.141592654</code></span></td></tr>
+<tr id="DEGREES"><td><code><strong>DEGREES</strong>(कोण)</code></td><td>रेडियन में किसी कोण के मान को डिग्री में बदलता है।<span class="ex"><code>=DEGREES(PI())</code> → <code>180</code></span></td></tr>
+<tr id="SIN"><td><code><strong>SIN</strong>(कोण)</code></td><td>रेडियन में दिए गए कोण की ज्या।<span class="ex"><code>=SIN(PI()/2)</code> → <code>1</code></span></td></tr>
+<tr id="COS"><td><code><strong>COS</strong>(कोण)</code></td><td>रेडियन में दिए गए कोण की कोज्या।<span class="ex"><code>=COS(PI())</code> → <code>-1</code></span></td></tr>
+<tr id="TAN"><td><code><strong>TAN</strong>(कोण)</code></td><td>रेडियन में दिए गए कोण की स्पर्शरेखा।<span class="ex"><code>=TAN(1)</code> → <code>1.557407725</code></span></td></tr>
+<tr id="COT"><td><code><strong>COT</strong>(कोण)</code></td><td>रेडियन में कोण का कोटैंजेंट।<span class="ex"><code>=COT(1)</code> → <code>0.642092616</code></span></td></tr>
+<tr id="SEC"><td><code><strong>SEC</strong>(कोण)</code></td><td>रेडियन में कोण का सेकेंट।<span class="ex"><code>=SEC(1)</code> → <code>1.850815718</code></span></td></tr>
+<tr id="CSC"><td><code><strong>CSC</strong>(कोण)</code></td><td>रेडियन में कोण का कोसेकेंट।<span class="ex"><code>=CSC(1)</code> → <code>1.188395106</code></span></td></tr>
+<tr id="ASIN"><td><code><strong>ASIN</strong>(मान)</code></td><td>किसी मान का प्रतिलोम ज्या, रेडियन में।<span class="ex"><code>=ASIN(1)</code> → <code>1.570796327</code></span></td></tr>
+<tr id="ACOS"><td><code><strong>ACOS</strong>(मान)</code></td><td>किसी मान का प्रतिलोम कोज्या, रेडियन में।<span class="ex"><code>=ACOS(0)</code> → <code>1.570796327</code></span></td></tr>
+<tr id="ATAN"><td><code><strong>ATAN</strong>(मान)</code></td><td>किसी मान का प्रतिलोम स्पर्शरेखा, रेडियन में।<span class="ex"><code>=ATAN(1)</code> → <code>0.785398163</code></span></td></tr>
+<tr id="ATAN2"><td><code><strong>ATAN2</strong>(x, y)</code></td><td>किसी मान का आर्कटैंजेंट।<span class="ex"><code>=ATAN2(1, 1)</code> → <code>0.785398163</code></span></td></tr>
+<tr id="ACOT"><td><code><strong>ACOT</strong>(संख्या)</code></td><td>प्रतिलोम कोटैंजेंट, रेडियन में।<span class="ex"><code>=ACOT(1)</code> → <code>0.785398163</code></span></td></tr>
+<tr id="SINH"><td><code><strong>SINH</strong>(मान)</code></td><td>किसी भी वास्तविक संख्या की अतिपरवलयिक ज्या।<span class="ex"><code>=SINH(1)</code> → <code>1.175201194</code></span></td></tr>
+<tr id="COSH"><td><code><strong>COSH</strong>(मान)</code></td><td>किसी भी वास्तविक संख्या की अतिपरवलयिक कोज्या।<span class="ex"><code>=COSH(1)</code> → <code>1.543080635</code></span></td></tr>
+<tr id="TANH"><td><code><strong>TANH</strong>(मान)</code></td><td>किसी भी वास्तविक संख्या की अतिपरवलयिक स्पर्शरेखा।<span class="ex"><code>=TANH(1)</code> → <code>0.761594156</code></span></td></tr>
+<tr id="COTH"><td><code><strong>COTH</strong>(संख्या)</code></td><td>हाइपरबोलिक कोटैंजेंट।<span class="ex"><code>=COTH(1)</code> → <code>1.313035285</code></span></td></tr>
+<tr id="SECH"><td><code><strong>SECH</strong>(संख्या)</code></td><td>हाइपरबोलिक सेकेंट।<span class="ex"><code>=SECH(1)</code> → <code>0.648054274</code></span></td></tr>
+<tr id="CSCH"><td><code><strong>CSCH</strong>(संख्या)</code></td><td>हाइपरबोलिक कोसेकेंट।<span class="ex"><code>=CSCH(1)</code> → <code>0.850918128</code></span></td></tr>
+<tr id="ASINH"><td><code><strong>ASINH</strong>(मान)</code></td><td>किसी संख्या का प्रतिलोम अतिपरवलयिक ज्या।<span class="ex"><code>=ASINH(1)</code> → <code>0.881373587</code></span></td></tr>
+<tr id="ACOSH"><td><code><strong>ACOSH</strong>(मान)</code></td><td>किसी संख्या का प्रतिलोम अतिपरवलयिक कोज्या।<span class="ex"><code>=ACOSH(2)</code> → <code>1.316957897</code></span></td></tr>
+<tr id="ATANH"><td><code><strong>ATANH</strong>(मान)</code></td><td>किसी संख्या का प्रतिलोम अतिपरवलयिक स्पर्शरेखा।<span class="ex"><code>=ATANH(0.5)</code> → <code>0.549306144</code></span></td></tr>
+<tr id="ACOTH"><td><code><strong>ACOTH</strong>(संख्या)</code></td><td>प्रतिलोम हाइपरबोलिक कोटैंजेंट।<span class="ex"><code>=ACOTH(2)</code> → <code>0.549306144</code></span></td></tr>
+</tbody></table></div>
+<h2 id="logical">तर्क</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="IF"><td><code><strong>IF</strong>(तार्किक_अभिव्यक्ति, सत्य_होने_पर_मान, [असत्य_होने_पर_मान])</code></td><td>तार्किक अभिव्यक्ति के आधार पर मान लौटाता है।<span class="ex"><code>=IF(A1&gt;=10, "उत्तीर्ण", "अनुत्तीर्ण")</code> → <code>उत्तीर्ण</code></span></td></tr>
+<tr id="IFS"><td><code><strong>IFS</strong>(शर्त1, मान1, [शर्त2, मान2, …])</code></td><td>पहली सत्य शर्त का मान; कोई न हो तो #N/A।<span class="ex"><code>=IFS(A1&gt;=16, "बहुत अच्छा", A1&gt;=12, "अच्छा")</code> → <code>अच्छा</code></span></td></tr>
+<tr id="SWITCH"><td><code><strong>SWITCH</strong>(व्यंजक, स्थिति1, मान1, [स्थिति2, मान2, …], [अन्यथा])</code></td><td>व्यंजक के बराबर स्थिति का मान।<span class="ex"><code>=SWITCH(2, 1, "एक", 2, "दो", "अन्य")</code> → <code>दो</code></span></td></tr>
+<tr id="AND"><td><code><strong>AND</strong>(तार्किक_अभिव्यक्ति1, [तार्किक_अभिव्यक्ति2, …])</code></td><td>तार्किक "और" (AND) संक्रियक।<span class="ex"><code>=AND(A1&gt;10, B1&gt;1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="OR"><td><code><strong>OR</strong>(तार्किक_अभिव्यक्ति1, तार्किक_अभिव्यक्ति2)</code></td><td>तार्किक "या" (OR) संक्रियक।<span class="ex"><code>=OR(A1&gt;20, B1&gt;1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="XOR"><td><code><strong>XOR</strong>(मान1, मान2, …)</code></td><td>विषम संख्या में मान सत्य हों तो सत्य।<span class="ex"><code>=XOR(TRUE(), FALSE())</code> → <code>TRUE</code></span></td></tr>
+<tr id="NOT"><td><code><strong>NOT</strong>(तार्किक_अभिव्यक्ति)</code></td><td>दिए गए तार्किक मान का विपरीत देता है।<span class="ex"><code>=NOT(TRUE())</code> → <code>FALSE</code></span></td></tr>
+<tr id="TRUE"><td><code><strong>TRUE</strong>()</code></td><td>तार्किक मान सत्य, TRUE दिखता है।<span class="ex"><code>=TRUE()</code> → <code>TRUE</code></span></td></tr>
+<tr id="FALSE"><td><code><strong>FALSE</strong>()</code></td><td>तार्किक मान असत्य, FALSE दिखता है।<span class="ex"><code>=FALSE()</code> → <code>FALSE</code></span></td></tr>
+<tr id="IFERROR"><td><code><strong>IFERROR</strong>(मान, त्रुटि_पर_मान)</code></td><td>मान, या फ़ंक्शन की त्रुटि (#N/A, #NUM!) हो तो दूसरा। DIV/0 और #VALUE! नहीं बदलता।<span class="ex"><code>=IFERROR(NA(), "अनुपस्थित")</code> → <code>अनुपस्थित</code></span></td></tr>
+<tr id="IFNA"><td><code><strong>IFNA</strong>(मान, na_पर_मान)</code></td><td>मान, या त्रुटि #N/A हो तो दूसरा।<span class="ex"><code>=IFNA(NA(), "अनुपस्थित")</code> → <code>अनुपस्थित</code></span></td></tr>
+</tbody></table></div>
+<h2 id="stat">सांख्यिकी</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="COUNT"><td><code><strong>COUNT</strong>(मान1, [मान2, …])</code></td><td>डेटासेट में संख्यात्मक मानों की संख्या।<span class="ex"><code>=COUNT(A1:A5)</code> → <code>5</code></span></td></tr>
+<tr id="COUNTA"><td><code><strong>COUNTA</strong>(मान1, [मान2, …])</code></td><td>किसी डेटासेट में मानों की संख्या।<span class="ex"><code>=COUNTA(A1:C5)</code> → <code>15</code></span></td></tr>
+<tr id="COUNTBLANK"><td><code><strong>COUNTBLANK</strong>(मान1)</code></td><td>रिक्त मानों की संख्या।<span class="ex"><code>=COUNTBLANK(A1:E1)</code> → <code>2</code></span></td></tr>
+<tr id="COUNTIF"><td><code><strong>COUNTIF</strong>(श्रेणी, मानदंड)</code></td><td>मानदंड पूरा करने वाले सेलों की संख्या: "&gt;10", "&lt;&gt;0", "Ana"। * और ? नहीं पहचाने जाते।<span class="ex"><code>=COUNTIF(A1:A5, "&gt;10")</code> → <code>3</code></span></td></tr>
+<tr id="COUNTIFS"><td><code><strong>COUNTIFS</strong>(मानदंड_श्रेणी1, मानदंड1, [मानदंड_श्रेणी2, …])</code></td><td>कई मानदंडों के आधार पर मानों की गणना करता है।<span class="ex"><code>=COUNTIFS(A1:A5, "&gt;9", B1:B5, "&lt;8")</code> → <code>2</code></span></td></tr>
+<tr id="AVERAGE"><td><code><strong>AVERAGE</strong>(मान1, [मान2, …])</code></td><td>टेक्स्ट को अनदेखा करते हुए, डेटासेट में संख्यात्मक औसत मान।<span class="ex"><code>=AVERAGE(A1:A5)</code> → <code>12.4</code></span></td></tr>
+<tr id="AVERAGEA"><td><code><strong>AVERAGEA</strong>(मान1, [मान2, …])</code></td><td>डेटासेट में संख्यात्मक औसत मान।<span class="ex"><code>=AVERAGEA(A1:A5)</code> → <code>12.4</code></span></td></tr>
+<tr id="AVERAGEIF"><td><code><strong>AVERAGEIF</strong>(मानदंड_श्रेणी, मानदंड, [औसत_श्रेणी])</code></td><td>मानदंड के आधार पर मानों का औसत।<span class="ex"><code>=AVERAGEIF(A1:A5, "&gt;10")</code> → <code>14.666666667</code></span></td></tr>
+<tr id="AVERAGEIFS"><td><code><strong>AVERAGEIFS</strong>(औसत_श्रेणी, मानदंड_श्रेणी1, मानदंड1, मानदंड_श्रेणी2)</code></td><td>कई मानदंडों के आधार पर मानों का औसत।<span class="ex"><code>=AVERAGEIFS(A1:A5, B1:B5, "&gt;3")</code> → <code>12.5</code></span></td></tr>
+<tr id="GEOMEAN"><td><code><strong>GEOMEAN</strong>(मान1, [मान2, …])</code></td><td>किसी डेटासेट का गुणोत्तर माध्य।<span class="ex"><code>=GEOMEAN(A1:A5)</code> → <code>11.960856575</code></span></td></tr>
+<tr id="HARMEAN"><td><code><strong>HARMEAN</strong>(मान1, [मान2, …])</code></td><td>किसी डेटासेट का हरात्मक माध्य।<span class="ex"><code>=HARMEAN(A1:A5)</code> → <code>11.525423729</code></span></td></tr>
+<tr id="TRIMMEAN"><td><code><strong>TRIMMEAN</strong>(डेटा, अपवर्जित_अनुपात)</code></td><td>उच्च/निम्न सिरों को छोड़कर डेटासेट का माध्य।<span class="ex"><code>=TRIMMEAN(A1:A5, 0.4)</code> → <code>12.333333333</code></span></td></tr>
+<tr id="MEDIAN"><td><code><strong>MEDIAN</strong>(मान1, [मान2, …])</code></td><td>संख्यात्मक डेटासेट में मध्यिका मान।<span class="ex"><code>=MEDIAN(A1:A5)</code> → <code>12</code></span></td></tr>
+<tr id="MODE"><td><code><strong>MODE</strong>(रेंज)</code></td><td>सबसे अधिक बार आने वाला मान।<span class="ex"><code>=MODE([1, 2, 2, 3])</code> → <code>2</code></span></td></tr>
+<tr id="MIN"><td><code><strong>MIN</strong>(मान1, [मान2, …])</code></td><td>संख्यात्मक डेटासेट में न्यूनतम मान।<span class="ex"><code>=MIN(A1:A5)</code> → <code>8</code></span></td></tr>
+<tr id="MAX"><td><code><strong>MAX</strong>(मान1, [मान2, …])</code></td><td>संख्यात्मक डेटासेट में अधिकतम मान।<span class="ex"><code>=MAX(A1:A5)</code> → <code>17</code></span></td></tr>
+<tr id="MINA"><td><code><strong>MINA</strong>(मान1, [मान2, …])</code></td><td>डेटासेट में न्यूनतम संख्यात्मक मान।<span class="ex"><code>=MINA(A1:A5)</code> → <code>8</code></span></td></tr>
+<tr id="MAXA"><td><code><strong>MAXA</strong>(मान1, [मान2, …])</code></td><td>डेटासेट में अधिकतम संख्यात्मक मान।<span class="ex"><code>=MAXA(A1:A5)</code> → <code>17</code></span></td></tr>
+<tr id="LARGE"><td><code><strong>LARGE</strong>(डेटा, n)</code></td><td>किसी डेटा सेट से nवां सबसे बड़ा तत्व।<span class="ex"><code>=LARGE(A1:A5, 2)</code> → <code>15</code></span></td></tr>
+<tr id="SMALL"><td><code><strong>SMALL</strong>(डेटा, n)</code></td><td>किसी डेटा सेट में nवां सबसे छोटा तत्व।<span class="ex"><code>=SMALL(A1:A5, 2)</code> → <code>10</code></span></td></tr>
+<tr id="RANK"><td><code><strong>RANK</strong>(संख्या, रेंज, [क्रम])</code></td><td>रेंज में संख्या का स्थान, अवरोही; क्रम 1 हो तो आरोही।<span class="ex"><code>=RANK(A2, A1:A5)</code> → <code>2</code></span></td></tr>
+<tr id="QUARTILE"><td><code><strong>QUARTILE</strong>(रेंज, k)</code></td><td>चतुर्थक: k 0 (न्यूनतम) से 4 (अधिकतम)।<span class="ex"><code>=QUARTILE(A1:A5, 1)</code> → <code>10</code></span></td></tr>
+<tr id="QUARTILEEXC"><td><code><strong>QUARTILEEXC</strong>(रेंज, k)</code></td><td>सीमाओं के बिना चतुर्थक: k 1 से 3।<span class="ex"><code>=QUARTILEEXC(A1:A5, 1)</code> → <code>9</code></span></td></tr>
+<tr id="PERCENTILEINC"><td><code><strong>PERCENTILEINC</strong>(रेंज, k)</code></td><td>शतमक: k 0 से 1।<span class="ex"><code>=PERCENTILEINC(A1:A5, 0.9)</code> → <code>16.2</code></span></td></tr>
+<tr id="PERCENTILEEXC"><td><code><strong>PERCENTILEEXC</strong>(रेंज, k)</code></td><td>सीमाओं के बिना शतमक।<span class="ex"><code>=PERCENTILEEXC(A1:A5, 0.8)</code> → <code>16.6</code></span></td></tr>
+<tr id="PERCENTRANK"><td><code><strong>PERCENTRANK</strong>(रेंज, संख्या)</code></td><td>संख्या का स्थान अनुपात में, 0 से 1।<span class="ex"><code>=PERCENTRANK(A1:A5, 12)</code> → <code>0.5</code></span></td></tr>
+<tr id="STDEV"><td><code><strong>STDEV</strong>(मान1, [मान2, …])</code></td><td>प्रतिदर्श का मानक विचलन (भाजक n − 1)।<span class="ex"><code>=STDEV(A1:A5)</code> → <code>3.646916506</code></span></td></tr>
+<tr id="STDEVP"><td><code><strong>STDEVP</strong>(मान1, [मान2, …])</code></td><td>समष्टि का मानक विचलन (भाजक n)।<span class="ex"><code>=STDEVP(A1:A5)</code> → <code>3.261901286</code></span></td></tr>
+<tr id="STDEVA"><td><code><strong>STDEVA</strong>(मान1, [मान2, …])</code></td><td>नमूने का मानक विचलन (टेक्स्ट को 0 मानते हुए)।<span class="ex"><code>=STDEVA(A1:A5)</code> → <code>3.646916506</code></span></td></tr>
+<tr id="STDEVPA"><td><code><strong>STDEVPA</strong>(मान1, [मान2, …])</code></td><td>समष्टि का मानक विचलन, टेक्स्ट 0 गिने जाते हैं।<span class="ex"><code>=STDEVPA(A1:A5)</code> → <code>3.261901286</code></span></td></tr>
+<tr id="VAR"><td><code><strong>VAR</strong>(मान1, [मान2, …])</code></td><td>प्रतिदर्श का प्रसरण (भाजक n − 1)।<span class="ex"><code>=VAR(A1:A5)</code> → <code>13.3</code></span></td></tr>
+<tr id="VARP"><td><code><strong>VARP</strong>(मान1, [मान2, …])</code></td><td>समष्टि का प्रसरण (भाजक n)।<span class="ex"><code>=VARP(A1:A5)</code> → <code>10.64</code></span></td></tr>
+<tr id="VARA"><td><code><strong>VARA</strong>(मान1, [मान2, …])</code></td><td>नमूने का प्रसरण (टेक्स्ट को 0 मानते हुए)।<span class="ex"><code>=VARA(A1:A5)</code> → <code>13.3</code></span></td></tr>
+<tr id="VARPA"><td><code><strong>VARPA</strong>(मान1, [मान2, …])</code></td><td>संपूर्ण जनसंख्या का प्रसरण (टेक्स्ट को 0 मानते हुए)।<span class="ex"><code>=VARPA(A1:A5)</code> → <code>10.64</code></span></td></tr>
+<tr id="AVEDEV"><td><code><strong>AVEDEV</strong>(मान1, [मान2, …])</code></td><td>माध्य से विचलन की औसत मात्रा।<span class="ex"><code>=AVEDEV(A1:A5)</code> → <code>2.88</code></span></td></tr>
+<tr id="DEVSQ"><td><code><strong>DEVSQ</strong>(मान1, [मान2, …])</code></td><td>नमूने के आधार पर विचलनों के वर्गों का योग।<span class="ex"><code>=DEVSQ(A1:A5)</code> → <code>53.2</code></span></td></tr>
+<tr id="SKEW"><td><code><strong>SKEW</strong>(मान1, [मान2, …])</code></td><td>किसी डेटासेट की तिर्यकता।<span class="ex"><code>=SKEW(A1:A5)</code> → <code>0.136071281</code></span></td></tr>
+<tr id="SKEWP"><td><code><strong>SKEWP</strong>(रेंज)</code></td><td>समष्टि की विषमता।<span class="ex"><code>=SKEWP(A1:A5)</code> → <code>0.09127939</code></span></td></tr>
+<tr id="KURT"><td><code><strong>KURT</strong>(मान1, [मान2, …])</code></td><td>किसी डेटासेट की कुकुदता।<span class="ex"><code>=KURT(A1:A5)</code> → <code>-1.629826446</code></span></td></tr>
+<tr id="STANDARDIZE"><td><code><strong>STANDARDIZE</strong>(मान, माध्य, मानक_विचलन)</code></td><td>किसी यादृच्छिक चर का मानकीकृत समतुल्य।<span class="ex"><code>=STANDARDIZE(12, 10, 2)</code> → <code>1</code></span></td></tr>
+<tr id="FREQUENCY"><td><code><strong>FREQUENCY</strong>(डेटा, वर्ग)</code></td><td>सूची से बँटे वर्गों की बारंबारताएँ, सूची में।<span class="ex"><code>=FREQUENCY(A1:A5, [10, 15])</code> → <code>[2, 2, 1]</code></span></td></tr>
+<tr id="CORREL"><td><code><strong>CORREL</strong>(डेटा_y, डेटा_x)</code></td><td>पियर्सन प्रॉडक्ट-मोमेंट सहसंबंध गुणांक।<span class="ex"><code>=CORREL(A1:A5, B1:B5)</code> → <code>-0.125607117</code></span></td></tr>
+<tr id="PEARSON"><td><code><strong>PEARSON</strong>(डेटा_y, डेटा_x)</code></td><td>पियर्सन प्रॉडक्ट-मोमेंट सहसंबंध गुणांक।<span class="ex"><code>=PEARSON(A1:A5, B1:B5)</code> → <code>-0.125607117</code></span></td></tr>
+<tr id="RSQ"><td><code><strong>RSQ</strong>(डेटा_y, डेटा_x)</code></td><td>सहसंबंध गुणांक का वर्ग।<span class="ex"><code>=RSQ(A1:A5, B1:B5)</code> → <code>0.015777148</code></span></td></tr>
+<tr id="COVARIANCEP"><td><code><strong>COVARIANCEP</strong>(y_रेंज, x_रेंज)</code></td><td>समष्टि का सहप्रसरण।<span class="ex"><code>=COVARIANCEP(A1:A5, B1:B5)</code> → <code>-1.28</code></span></td></tr>
+<tr id="COVARIANCES"><td><code><strong>COVARIANCES</strong>(y_रेंज, x_रेंज)</code></td><td>प्रतिदर्श का सहप्रसरण।<span class="ex"><code>=COVARIANCES(A1:A5, B1:B5)</code> → <code>-1.6</code></span></td></tr>
+<tr id="SLOPE"><td><code><strong>SLOPE</strong>(डेटा_y, डेटा_x)</code></td><td>डेटा के रैखिक समाश्रयण से प्राप्त रेखा की प्रवणता।<span class="ex"><code>=SLOPE(A1:A5, B1:B5)</code> → <code>-0.131147541</code></span></td></tr>
+<tr id="INTERCEPT"><td><code><strong>INTERCEPT</strong>(डेटा_y, डेटा_x)</code></td><td>रैखिक समाश्रयण से प्राप्त रेखा का y-अंतःखंड।<span class="ex"><code>=INTERCEPT(A1:A5, B1:B5)</code> → <code>13.213114754</code></span></td></tr>
+<tr id="FORECAST"><td><code><strong>FORECAST</strong>(x, डेटा_y, डेटा_x)</code></td><td>रैखिक समाश्रयण पर आधारित अपेक्षित y-मान।<span class="ex"><code>=FORECAST(10, A1:A5, B1:B5)</code> → <code>11.901639344</code></span></td></tr>
+<tr id="STEYX"><td><code><strong>STEYX</strong>(डेटा_y, डेटा_x)</code></td><td>समाश्रयण में पूर्वानुमानित y-मानों की मानक त्रुटि।<span class="ex"><code>=STEYX(A1:A5, B1:B5)</code> → <code>4.177744836</code></span></td></tr>
+<tr id="LINEST"><td><code><strong>LINEST</strong>(y_रेंज, x_रेंज)</code></td><td>न्यूनतम वर्ग रेखा: ढाल और अंतःखंड की सूची।<span class="ex"><code>=LINEST(A1:A5, B1:B5)</code> → <code>[-0.131147541, 13.213114754]</code></span></td></tr>
+<tr id="LOGEST"><td><code><strong>LOGEST</strong>(y_रेंज, x_रेंज)</code></td><td>समंजन y = b·mˣ: m और b की सूची।<span class="ex"><code>=LOGEST(A1:A5, B1:B5)</code> → <code>[0.986607, 13.003773]</code></span></td></tr>
+<tr id="TREND"><td><code><strong>TREND</strong>(y_रेंज, x_रेंज, नए_x)</code></td><td>रैखिक समंजन के मान, सूची में।<span class="ex"><code>=TREND(A1:A5, B1:B5, [10])</code> → <code>[11.901639344]</code></span></td></tr>
+<tr id="GROWTH"><td><code><strong>GROWTH</strong>(y_रेंज, x_रेंज, नए_x)</code></td><td>घातांकी समंजन के मान, सूची में।<span class="ex"><code>=GROWTH(A1:A5, B1:B5, [10])</code> → <code>[11.363432839]</code></span></td></tr>
+<tr id="PERMUT"><td><code><strong>PERMUT</strong>(n, k)</code></td><td>वस्तुओं की संख्या से क्रमचयों (परम्यूटेशन) की संख्या।<span class="ex"><code>=PERMUT(5, 2)</code> → <code>20</code></span></td></tr>
+<tr id="PERMUTATIONA"><td><code><strong>PERMUTATIONA</strong>(n, k)</code></td><td>पुनरावृत्ति सहित क्रमचयों की संख्या।<span class="ex"><code>=PERMUTATIONA(5, 2)</code> → <code>25</code></span></td></tr>
+</tbody></table></div>
+<h2 id="proba">प्रायिकता बंटन और परीक्षण</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="PROB"><td><code><strong>PROB</strong>(डेटा, प्रायिकताएं, निचली_सीमा, [ऊपरी_सीमा])</code></td><td>मानों के किसी श्रेणी में होने की प्रायिकता।<span class="ex"><code>=PROB(B1:B2, [0.4, 0.6], 2)</code> → <code>0.4</code></span></td></tr>
+<tr id="NORMDIST"><td><code><strong>NORMDIST</strong>(x, माध्य, विचलन, संचयी)</code></td><td>प्रसामान्य बंटन: संचयी सत्य हो तो P(X ≤ x), नहीं तो घनत्व।<span class="ex"><code>=NORMDIST(12, 10, 2, TRUE())</code> → <code>0.841344746</code></span></td></tr>
+<tr id="NORMINV"><td><code><strong>NORMINV</strong>(प्रायिकता, माध्य, विचलन)</code></td><td>x जिसके लिए P(X ≤ x) वह प्रायिकता हो, प्रसामान्य।<span class="ex"><code>=NORMINV(0.95, 10, 2)</code> → <code>13.289707254</code></span></td></tr>
+<tr id="NORMSDIST"><td><code><strong>NORMSDIST</strong>(z, संचयी)</code></td><td>मानक प्रसामान्य: संचयी सत्य हो तो P(Z ≤ z), नहीं तो घनत्व।<span class="ex"><code>=NORMSDIST(1.96, TRUE())</code> → <code>0.975002105</code></span></td></tr>
+<tr id="NORMSINV"><td><code><strong>NORMSINV</strong>(प्रायिकता)</code></td><td>z जिसके लिए P(Z ≤ z) वह प्रायिकता हो।<span class="ex"><code>=NORMSINV(0.975)</code> → <code>1.959963985</code></span></td></tr>
+<tr id="GAUSS"><td><code><strong>GAUSS</strong>(z)</code></td><td>P(0 ≤ Z ≤ z), मानक प्रसामान्य।<span class="ex"><code>=GAUSS(1)</code> → <code>0.341344746</code></span></td></tr>
+<tr id="PHI"><td><code><strong>PHI</strong>(z)</code></td><td>मानक प्रसामान्य का घनत्व।<span class="ex"><code>=PHI(0)</code> → <code>0.39894228</code></span></td></tr>
+<tr id="BINOMDIST"><td><code><strong>BINOMDIST</strong>(k, n, p, संचयी)</code></td><td>द्विपद बंटन: संचयी सत्य हो तो P(X ≤ k), नहीं तो P(X = k)।<span class="ex"><code>=BINOMDIST(3, 10, 0.5, FALSE())</code> → <code>0.1171875</code></span></td></tr>
+<tr id="CRITBINOM"><td><code><strong>CRITBINOM</strong>(n, p, अल्फ़ा)</code></td><td>सबसे छोटा k जिसके लिए P(X ≤ k) ≥ अल्फ़ा, द्विपद।<span class="ex"><code>=CRITBINOM(10, 0.5, 0.9)</code> → <code>7</code></span></td></tr>
+<tr id="NEGBINOMDIST"><td><code><strong>NEGBINOMDIST</strong>(असफलताएँ, सफलताएँ, p, संचयी)</code></td><td>ऋणात्मक द्विपद बंटन।<span class="ex"><code>=NEGBINOMDIST(3, 2, 0.5, FALSE())</code> → <code>0.125</code></span></td></tr>
+<tr id="POISSON"><td><code><strong>POISSON</strong>(k, लैम्ब्डा, संचयी)</code></td><td>प्वासों बंटन: संचयी सत्य हो तो P(X ≤ k), नहीं तो P(X = k)।<span class="ex"><code>=POISSON(2, 3, FALSE())</code> → <code>0.224041808</code></span></td></tr>
+<tr id="HYPGEOMDIST"><td><code><strong>HYPGEOMDIST</strong>(k, n, सफलताएँ, समष्टि, संचयी)</code></td><td>अतिगुणोत्तर बंटन।<span class="ex"><code>=HYPGEOMDIST(1, 4, 8, 20, FALSE())</code> → <code>0.363261094</code></span></td></tr>
+<tr id="EXPONDIST"><td><code><strong>EXPONDIST</strong>(x, लैम्ब्डा, संचयी)</code></td><td>चरघातांकी बंटन।<span class="ex"><code>=EXPONDIST(1, 2, TRUE())</code> → <code>0.864664717</code></span></td></tr>
+<tr id="GAMMADIST"><td><code><strong>GAMMADIST</strong>(x, अल्फ़ा, बीटा, संचयी)</code></td><td>गामा बंटन।<span class="ex"><code>=GAMMADIST(2, 3, 2, TRUE())</code> → <code>0.080301397</code></span></td></tr>
+<tr id="GAMMAINV"><td><code><strong>GAMMAINV</strong>(प्रायिकता, अल्फ़ा, बीटा)</code></td><td>गामा बंटन का प्रतिलोम।<span class="ex"><code>=GAMMAINV(0.5, 3, 2)</code> → <code>5.348120627</code></span></td></tr>
+<tr id="BETADIST"><td><code><strong>BETADIST</strong>(x, अल्फ़ा, बीटा, संचयी, a, b)</code></td><td>[a, b] पर बीटा बंटन।<span class="ex"><code>=BETADIST(0.4, 2, 3, TRUE(), 0, 1)</code> → <code>0.5248</code></span></td></tr>
+<tr id="BETAINV"><td><code><strong>BETAINV</strong>(प्रायिकता, अल्फ़ा, बीटा)</code></td><td>बीटा बंटन का प्रतिलोम।<span class="ex"><code>=BETAINV(0.5, 2, 3)</code> → <code>0.385727568</code></span></td></tr>
+<tr id="LOGNORMDIST"><td><code><strong>LOGNORMDIST</strong>(x, माध्य, विचलन, संचयी)</code></td><td>लघुगणकीय प्रसामान्य बंटन।<span class="ex"><code>=LOGNORMDIST(4, 1, 0.5, TRUE())</code> → <code>0.78011709</code></span></td></tr>
+<tr id="LOGNORMINV"><td><code><strong>LOGNORMINV</strong>(प्रायिकता, माध्य, विचलन)</code></td><td>लघुगणकीय प्रसामान्य का प्रतिलोम।<span class="ex"><code>=LOGNORMINV(0.5, 1, 0.5)</code> → <code>2.718281828</code></span></td></tr>
+<tr id="WEIBULL"><td><code><strong>WEIBULL</strong>(x, अल्फ़ा, बीटा, संचयी)</code></td><td>वाइबुल बंटन।<span class="ex"><code>=WEIBULL(1, 2, 3, TRUE())</code> → <code>0.105160683</code></span></td></tr>
+<tr id="CHIDIST"><td><code><strong>CHIDIST</strong>(x, कोटि, संचयी)</code></td><td>काई-वर्ग बंटन: संचयी सत्य हो तो P(X ≤ x)।<span class="ex"><code>=CHIDIST(3, 2, TRUE())</code> → <code>0.77686984</code></span></td></tr>
+<tr id="CHIDISTRT"><td><code><strong>CHIDISTRT</strong>(x, कोटि)</code></td><td>काई-वर्ग बंटन: P(X &gt; x)।<span class="ex"><code>=CHIDISTRT(3, 2)</code> → <code>0.22313016</code></span></td></tr>
+<tr id="CHIINVRT"><td><code><strong>CHIINVRT</strong>(प्रायिकता, कोटि)</code></td><td>x जिसके लिए P(X &gt; x) वह प्रायिकता हो, काई-वर्ग।<span class="ex"><code>=CHIINVRT(0.05, 2)</code> → <code>5.991464547</code></span></td></tr>
+<tr id="FDIST"><td><code><strong>FDIST</strong>(x, कोटि1, कोटि2, संचयी)</code></td><td>F बंटन: संचयी सत्य हो तो P(X ≤ x)।<span class="ex"><code>=FDIST(2, 3, 4, TRUE())</code> → <code>0.743612798</code></span></td></tr>
+<tr id="FDISTRT"><td><code><strong>FDISTRT</strong>(x, कोटि1, कोटि2)</code></td><td>F बंटन: P(X &gt; x)।<span class="ex"><code>=FDISTRT(2, 3, 4)</code> → <code>0.256387202</code></span></td></tr>
+<tr id="TTEST"><td><code><strong>TTEST</strong>(रेंज1, रेंज2)</code></td><td>दो प्रतिदर्शों पर t परीक्षण की प्रायिकता।<span class="ex"><code>=TTEST(A1:A5, B1:B5)</code> → <code>0.025237456</code></span></td></tr>
+<tr id="CONFIDENCE"><td><code><strong>CONFIDENCE</strong>(अल्फ़ा, विचलन, n)</code></td><td>माध्य के विश्वास्यता अंतराल की आधी चौड़ाई (प्रसामान्य)।<span class="ex"><code>=CONFIDENCE(0.05, 2, 50)</code> → <code>0.55436153</code></span></td></tr>
+<tr id="FISHER"><td><code><strong>FISHER</strong>(मान)</code></td><td>किसी निर्दिष्ट मान का फ़िशर रूपांतरण।<span class="ex"><code>=FISHER(0.5)</code> → <code>0.549306144</code></span></td></tr>
+<tr id="FISHERINV"><td><code><strong>FISHERINV</strong>(मान)</code></td><td>किसी निर्दिष्ट मान का प्रतिलोम फ़िशर रूपांतरण।<span class="ex"><code>=FISHERINV(0.5)</code> → <code>0.462117157</code></span></td></tr>
+<tr id="GAMMA"><td><code><strong>GAMMA</strong>(संख्या)</code></td><td>गामा फलन।<span class="ex"><code>=GAMMA(5)</code> → <code>24</code></span></td></tr>
+<tr id="GAMMALN"><td><code><strong>GAMMALN</strong>(मान)</code></td><td>गामा फलन का लघुगणक।<span class="ex"><code>=GAMMALN(5)</code> → <code>3.17805383</code></span></td></tr>
+</tbody></table></div>
+<h2 id="lookup">खोज और सूचियाँ</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="VLOOKUP"><td><code><strong>VLOOKUP</strong>(खोज_कुंजी, श्रेणी, इंडेक्स, [क्या_क्रमबद्ध_है])</code></td><td>रेंज के पहले कॉलम में मान खोजता है, उसी पंक्ति का सेल देता है। अंतिम तर्क 0: सटीक मान।<span class="ex"><code>=VLOOKUP("Paul", C1:C5, 1, 0)</code> → <code>Paul</code></span></td></tr>
+<tr id="HLOOKUP"><td><code><strong>HLOOKUP</strong>(खोज_कुंजी, श्रेणी, इंडेक्स, [क्या_क्रमबद्ध_है])</code></td><td>रेंज की पहली पंक्ति में मान खोजता है, उसी कॉलम का सेल देता है। अंतिम तर्क 0: सटीक मान।<span class="ex"><code>=HLOOKUP(1, F1:G2, 2, 0)</code> → <code>3</code></span></td></tr>
+<tr id="LOOKUP"><td><code><strong>LOOKUP</strong>(मान, क्रमबद्ध_रेंज, परिणाम_रेंज)</code></td><td>क्रमबद्ध रेंज में मान खोजता है, दूसरी रेंज का संगत मान देता है।<span class="ex"><code>=LOOKUP(6, B1:B5, A1:A5)</code> → <code>8</code></span></td></tr>
+<tr id="MATCH"><td><code><strong>MATCH</strong>(खोज_कुंजी, श्रेणी, [खोज_प्रकार])</code></td><td>रेंज में मान का स्थान। अंतिम तर्क 0: सटीक मान।<span class="ex"><code>=MATCH("Léa", C1:C5, 0)</code> → <code>3</code></span></td></tr>
+<tr id="INDEX"><td><code><strong>INDEX</strong>(संदर्भ, पंक्ति, स्तंभ)</code></td><td>स्थान के अनुसार रेंज का सेल या सूची का अवयव।<span class="ex"><code>=INDEX(A1:A5, MATCH("Léa", C1:C5, 0))</code> → <code>8</code></span></td></tr>
+<tr id="CHOOSE"><td><code><strong>CHOOSE</strong>(इंडेक्स, विकल्प1, [विकल्प2, …])</code></td><td>सूचकांक के आधार पर विकल्पों की सूची से एक तत्व।<span class="ex"><code>=CHOOSE(2, "a", "b", "c")</code> → <code>b</code></span></td></tr>
+<tr id="ROW"><td><code><strong>ROW</strong>([सेल_संदर्भ])</code></td><td>निर्दिष्ट कोशिका की पंक्ति संख्या।<span class="ex"><code>=ROW(B7)</code> → <code>7</code></span></td></tr>
+<tr id="COLUMN"><td><code><strong>COLUMN</strong>([सेल_संदर्भ])</code></td><td>निर्दिष्ट कोशिका का स्तंभ क्रमांक।<span class="ex"><code>=COLUMN(B7)</code> → <code>2</code></span></td></tr>
+<tr id="ROWS"><td><code><strong>ROWS</strong>(श्रेणी)</code></td><td>निर्दिष्ट सरणी या श्रेणी में पंक्तियों की संख्या।<span class="ex"><code>=ROWS(A1:C5)</code> → <code>5</code></span></td></tr>
+<tr id="COLUMNS"><td><code><strong>COLUMNS</strong>(श्रेणी)</code></td><td>निर्दिष्ट सरणी या श्रेणी में स्तंभों की संख्या।<span class="ex"><code>=COLUMNS(A1:C5)</code> → <code>3</code></span></td></tr>
+<tr id="TRANSPOSE"><td><code><strong>TRANSPOSE</strong>(सरणी_या_श्रेणी)</code></td><td>पंक्तियाँ और कॉलम बदलता है; परिणाम एक सेल में पंक्तियों की सूची है।<span class="ex"><code>=TRANSPOSE(F1:G2)</code> → <code>[[1, 3], [2, 4]]</code></span></td></tr>
+<tr id="FLATTEN"><td><code><strong>FLATTEN</strong>(रेंज)</code></td><td>रेंज के मान, पंक्ति दर पंक्ति, सूची में।<span class="ex"><code>=FLATTEN(F1:G2)</code> → <code>[1, 2, 3, 4]</code></span></td></tr>
+<tr id="UNIQUE"><td><code><strong>UNIQUE</strong>(मान1, मान2, …)</code></td><td>बिना दोहराव के मानों की सूची।<span class="ex"><code>=UNIQUE(1, 2, 2)</code> → <code>[1, 2]</code></span></td></tr>
+</tbody></table></div>
+<h2 id="text">टेक्स्ट</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="CONCATENATE"><td><code><strong>CONCATENATE</strong>(स्ट्रिंग1, [स्ट्रिंग2, …])</code></td><td>स्ट्रिंग्स को एक-दूसरे में जोड़ता है।<span class="ex"><code>=CONCATENATE("अंक: ", A1)</code> → <code>अंक: 12</code></span></td></tr>
+<tr id="CONCAT"><td><code><strong>CONCAT</strong>(मान1, मान2)</code></td><td>दो टेक्स्ट जोड़ता है।<span class="ex"><code>=CONCAT("a", "b")</code> → <code>ab</code></span></td></tr>
+<tr id="LEFT"><td><code><strong>LEFT</strong>(स्ट्रिंग, वर्णों_की_संख्या)</code></td><td>निर्दिष्ट स्ट्रिंग की शुरुआत से उप-स्ट्रिंग।<span class="ex"><code>=LEFT("table", 3)</code> → <code>tab</code></span></td></tr>
+<tr id="RIGHT"><td><code><strong>RIGHT</strong>(स्ट्रिंग, वर्णों_की_संख्या)</code></td><td>निर्दिष्ट स्ट्रिंग के अंत से एक उप-स्ट्रिंग।<span class="ex"><code>=RIGHT("table", 3)</code> → <code>ble</code></span></td></tr>
+<tr id="MID"><td><code><strong>MID</strong>(स्ट्रिंग, यहां_से_आरंभ, निष्कर्षण_लंबाई)</code></td><td>किसी स्ट्रिंग का एक खंड।<span class="ex"><code>=MID("table", 2, 3)</code> → <code>abl</code></span></td></tr>
+<tr id="LEN"><td><code><strong>LEN</strong>(पाठ)</code></td><td>किसी स्ट्रिंग की लंबाई।<span class="ex"><code>=LEN("table")</code> → <code>5</code></span></td></tr>
+<tr id="LOWER"><td><code><strong>LOWER</strong>(पाठ)</code></td><td>किसी निर्दिष्ट स्ट्रिंग को लोअरकेस में बदलता है।<span class="ex"><code>=LOWER("ABC")</code> → <code>abc</code></span></td></tr>
+<tr id="UPPER"><td><code><strong>UPPER</strong>(पाठ)</code></td><td>किसी निर्दिष्ट स्ट्रिंग को अपरकेस में बदलता है।<span class="ex"><code>=UPPER("abc")</code> → <code>ABC</code></span></td></tr>
+<tr id="PROPER"><td><code><strong>PROPER</strong>(बड़े_अक्षरों_में_बदलने_का_पाठ)</code></td><td>किसी निर्दिष्ट स्ट्रिंग में प्रत्येक शब्द का पहला अक्षर बड़ा करता है।<span class="ex"><code>=PROPER("john smith")</code> → <code>John Smith</code></span></td></tr>
+<tr id="TRIM"><td><code><strong>TRIM</strong>(पाठ)</code></td><td>रिक्त स्थान वर्ण हटाता है।<span class="ex"><code>=TRIM(" a  b ")</code> → <code>a b</code></span></td></tr>
+<tr id="CLEAN"><td><code><strong>CLEAN</strong>(पाठ)</code></td><td>किसी टेक्स्ट से गैर-मुद्रण योग्य वर्ण हटाता है।<span class="ex"><code>=CLEAN("abc")</code> → <code>abc</code></span></td></tr>
+<tr id="FIND"><td><code><strong>FIND</strong>(खोजा_जाने_वाला_पाठ, खोजने_का_पाठ, [यहां_से_आरंभ])</code></td><td>टेक्स्ट में मिली स्ट्रिंग की पहली स्थिति, अक्षर-संवेदनशील।<span class="ex"><code>=FIND("b", "table")</code> → <code>3</code></span></td></tr>
+<tr id="SEARCH"><td><code><strong>SEARCH</strong>(खोजा_जाने_वाला_पाठ, खोजने_का_पाठ, यहां_से_आरंभ)</code></td><td>टेक्स्ट में मिली स्ट्रिंग की पहली स्थिति, बड़े-छोटे अक्षरों को अनदेखा करते हुए।<span class="ex"><code>=SEARCH("B", "table")</code> → <code>3</code></span></td></tr>
+<tr id="REPLACE"><td><code><strong>REPLACE</strong>(पाठ, स्थिति, लंबाई, नया_पाठ)</code></td><td>किसी टेक्स्ट स्ट्रिंग के एक भाग को दूसरे टेक्स्ट से बदलता है।<span class="ex"><code>=REPLACE("table", 1, 5, "X")</code> → <code>X</code></span></td></tr>
+<tr id="SUBSTITUTE"><td><code><strong>SUBSTITUTE</strong>(खोजने_का_पाठ, खोजा_जाने_वाला_पाठ, इससे_बदलें, घटना_संख्या)</code></td><td>किसी स्ट्रिंग में मौजूदा टेक्स्ट को नए टेक्स्ट से बदलता है।<span class="ex"><code>=SUBSTITUTE("a-b-c", "-", "+")</code> → <code>a+b+c</code></span></td></tr>
+<tr id="REPT"><td><code><strong>REPT</strong>(दोहराने_का_पाठ, पुनरावृत्तियों_की_संख्या)</code></td><td>निर्दिष्ट टेक्स्ट कई बार दोहराया गया।<span class="ex"><code>=REPT("ab", 3)</code> → <code>ababab</code></span></td></tr>
+<tr id="EXACT"><td><code><strong>EXACT</strong>(स्ट्रिंग1, स्ट्रिंग2)</code></td><td>जांचता है कि क्या दो स्ट्रिंग्स समान हैं।<span class="ex"><code>=EXACT("a", "A")</code> → <code>FALSE</code></span></td></tr>
+<tr id="SPLIT"><td><code><strong>SPLIT</strong>(टेक्स्ट, विभाजक)</code></td><td>टेक्स्ट को सूची में बाँटता है।<span class="ex"><code>=SPLIT("a-b", "-")</code> → <code>[a, b]</code></span></td></tr>
+<tr id="VALUE"><td><code><strong>VALUE</strong>(पाठ)</code></td><td>टेक्स्ट में दशमलव बिंदु से लिखी संख्या।<span class="ex"><code>=VALUE("12")</code> → <code>12</code></span></td></tr>
+<tr id="CHAR"><td><code><strong>CHAR</strong>(तालिका_संख्या)</code></td><td>संख्या से संबद्ध वर्ण प्राप्त करता है।<span class="ex"><code>=CHAR(65)</code> → <code>A</code></span></td></tr>
+<tr id="CODE"><td><code><strong>CODE</strong>(स्ट्रिंग)</code></td><td>किसी वर्ण का संख्यात्मक यूनिकोड मैप मान।<span class="ex"><code>=CODE("A")</code> → <code>65</code></span></td></tr>
+<tr id="UNICHAR"><td><code><strong>UNICHAR</strong>(कोड)</code></td><td>यूनिकोड कोड का वर्ण।<span class="ex"><code>=UNICHAR(960)</code> → <code>π</code></span></td></tr>
+<tr id="UNICODE"><td><code><strong>UNICODE</strong>(टेक्स्ट)</code></td><td>पहले वर्ण का यूनिकोड कोड।<span class="ex"><code>=UNICODE("π")</code> → <code>960</code></span></td></tr>
+<tr id="REGEXMATCH"><td><code><strong>REGEXMATCH</strong>(पाठ, रेगुलर_एक्सप्रेशन)</code></td><td>क्या कोई टेक्स्ट नियमित अभिव्यक्ति से मेल खाता है।<span class="ex"><code>=REGEXMATCH("abc", "b")</code> → <code>TRUE</code></span></td></tr>
+<tr id="REGEXEXTRACT"><td><code><strong>REGEXEXTRACT</strong>(पाठ, रेगुलर_एक्सप्रेशन)</code></td><td>नियमित अभिव्यक्ति के साथ मेल खाने वाली उप-स्ट्रिंग्स निकालता है।<span class="ex"><code>=REGEXEXTRACT("ab12", "[0-9]+")</code> → <code>12</code></span></td></tr>
+<tr id="REGEXREPLACE"><td><code><strong>REGEXREPLACE</strong>(पाठ, रेगुलर_एक्सप्रेशन, प्रतिस्थापन)</code></td><td>नियमित अभिव्यक्तियों के साथ टेक्स्ट बदलता है।<span class="ex"><code>=REGEXREPLACE("ab12", "[0-9]+", "x")</code> → <code>abx</code></span></td></tr>
+</tbody></table></div>
+<h2 id="date">दिनांक और समय</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="TODAY"><td><code><strong>TODAY</strong>()</code></td><td>आज की तारीख। गणना के लिए उसे सेल में रखें।<span class="ex"><code>=TODAY()</code></span></td></tr>
+<tr id="NOW"><td><code><strong>NOW</strong>()</code></td><td>दिनांक और समय, हर बदलाव पर फिर गिना जाता है।<span class="ex"><code>=NOW()</code></span></td></tr>
+<tr id="DATE"><td><code><strong>DATE</strong>(वर्ष, महीना, दिन)</code></td><td>वर्ष, माह और दिन का दिनांक; सेल को दिनांक प्रारूप दें।<span class="ex"><code>=DATE(2026, 11, 25)</code> → <code>46351</code></span></td></tr>
+<tr id="YEAR"><td><code><strong>YEAR</strong>(तारीख़)</code></td><td>दी गई तारीख द्वारा निर्दिष्ट वर्ष।<span class="ex"><code>=YEAR(DATE(2026, 11, 25))</code> → <code>2026</code></span></td></tr>
+<tr id="MONTH"><td><code><strong>MONTH</strong>(तारीख़)</code></td><td>दी गई तारीख जिस महीने में आती है।<span class="ex"><code>=MONTH(DATE(2026, 11, 25))</code> → <code>11</code></span></td></tr>
+<tr id="DAY"><td><code><strong>DAY</strong>(तारीख़)</code></td><td>किसी दी गई तारीख का महीने का दिन।<span class="ex"><code>=DAY(DATE(2026, 11, 25))</code> → <code>25</code></span></td></tr>
+<tr id="WEEKDAY"><td><code><strong>WEEKDAY</strong>(तारीख़, [प्रकार])</code></td><td>सप्ताह का दिन; प्रकार 2 में 1 (सोमवार) से 7 (रविवार)।<span class="ex"><code>=WEEKDAY(DATE(2026, 11, 25), 2)</code> → <code>3</code></span></td></tr>
+<tr id="WEEKNUM"><td><code><strong>WEEKNUM</strong>(तारीख़, [प्रकार])</code></td><td>वर्ष का सप्ताह क्रमांक।<span class="ex"><code>=WEEKNUM(DATE(2026, 11, 25))</code> → <code>48</code></span></td></tr>
+<tr id="ISOWEEKNUM"><td><code><strong>ISOWEEKNUM</strong>(तारीख़)</code></td><td>वर्ष का ISO सप्ताह क्रमांक।<span class="ex"><code>=ISOWEEKNUM(DATE(2026, 11, 25))</code> → <code>48</code></span></td></tr>
+<tr id="DAYS"><td><code><strong>DAYS</strong>(समाप्ति_तिथि, आरंभ_तिथि)</code></td><td>दो तारीखों के बीच दिनों की संख्या।<span class="ex"><code>=DAYS(DATE(2026, 12, 25), DATE(2026, 11, 25))</code> → <code>30</code></span></td></tr>
+<tr id="DAYS360"><td><code><strong>DAYS360</strong>(आरंभ_तिथि, समाप्ति_तिथि, [विधि])</code></td><td>360-दिन के वर्ष पर दो तारीखों के बीच के दिन।<span class="ex"><code>=DAYS360(DATE(2026, 1, 1), DATE(2026, 11, 25))</code> → <code>324</code></span></td></tr>
+<tr id="DATEDIF"><td><code><strong>DATEDIF</strong>(आरंभ_तिथि, समाप्ति_तिथि, इकाई)</code></td><td>दो दिनांकों के बीच अवधि, वर्षों ("Y"), महीनों ("M") या दिनों ("D") में।<span class="ex"><code>=DATEDIF(DATE(2020, 1, 1), DATE(2026, 11, 25), "Y")</code> → <code>6</code></span></td></tr>
+<tr id="YEARFRAC"><td><code><strong>YEARFRAC</strong>(आरंभ_तिथि, समाप्ति_तिथि, [दिन_गणना_परिपाटी])</code></td><td>दो तारीखों के बीच वर्षों की सटीक संख्या।<span class="ex"><code>=YEARFRAC(DATE(2026, 1, 1), DATE(2026, 7, 1))</code> → <code>0.5</code></span></td></tr>
+<tr id="EDATE"><td><code><strong>EDATE</strong>(आरंभ_तिथि, महीनों_की_संख्या)</code></td><td>किसी अन्य तारीख से पहले/बाद के महीनों की संख्या पर आधारित तारीख।<span class="ex"><code>=EDATE(DATE(2026, 11, 25), 2)</code> → <code>46412</code></span></td></tr>
+<tr id="EOMONTH"><td><code><strong>EOMONTH</strong>(आरंभ_तिथि, महीनों_की_संख्या)</code></td><td>किसी तारीख से पहले या बाद के महीने का अंतिम दिन।<span class="ex"><code>=EOMONTH(DATE(2026, 2, 1), 0)</code> → <code>46081</code></span></td></tr>
+<tr id="WORKDAY"><td><code><strong>WORKDAY</strong>(आरंभ_तिथि, दिनों_की_संख्या, [छुट्टियां])</code></td><td>प्रारंभ तिथि से कार्य दिवसों की संख्या।<span class="ex"><code>=WORKDAY(DATE(2026, 11, 25), 10)</code> → <code>46365</code></span></td></tr>
+<tr id="NETWORKDAYS"><td><code><strong>NETWORKDAYS</strong>(आरंभ_तिथि, समाप्ति_तिथि, [छुट्टियां])</code></td><td>दो दी गई तारीखों के बीच शुद्ध कार्य दिवस।<span class="ex"><code>=NETWORKDAYS(DATE(2026, 11, 25), DATE(2026, 12, 9))</code> → <code>11</code></span></td></tr>
+<tr id="TIME"><td><code><strong>TIME</strong>(घंटा, मिनट, सेकंड)</code></td><td>समय, दिन के अंश में; सेल को समय प्रारूप दें।<span class="ex"><code>=TIME(14, 30, 0)</code> → <code>0.604166667</code></span></td></tr>
+<tr id="HOUR"><td><code><strong>HOUR</strong>(समय)</code></td><td>समय के घंटे।<span class="ex"><code>=HOUR(TIME(14, 30, 0))</code> → <code>14</code></span></td></tr>
+<tr id="MINUTE"><td><code><strong>MINUTE</strong>(समय)</code></td><td>समय के मिनट।<span class="ex"><code>=MINUTE(TIME(14, 30, 0))</code> → <code>30</code></span></td></tr>
+<tr id="SECOND"><td><code><strong>SECOND</strong>(समय)</code></td><td>समय के सेकंड।<span class="ex"><code>=SECOND(TIME(14, 30, 12))</code> → <code>12</code></span></td></tr>
+</tbody></table></div>
+<h2 id="finance">वित्त</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="PMT"><td><code><strong>PMT</strong>(दर, अवधियों_की_संख्या, वर्तमान_मूल्य, भविष्य_मूल्य, अंत_या_आरंभ)</code></td><td>ऋण की समान किस्त; मूलधन ऋणात्मक गिना जाता है।<span class="ex"><code>=PMT(0.02/12, 240, -100000)</code> → <code>505.883335045</code></span></td></tr>
+<tr id="IPMT"><td><code><strong>IPMT</strong>(दर, अवधि, अवधियों_की_संख्या, वर्तमान_मूल्य, भविष्य_मूल्य, अंत_या_आरंभ)</code></td><td>किसी निवेश के लिए ब्याज पर भुगतान।<span class="ex"><code>=IPMT(0.02/12, 1, 240, -100000)</code> → <code>166.666666667</code></span></td></tr>
+<tr id="PPMT"><td><code><strong>PPMT</strong>(दर, अवधि, अवधियों_की_संख्या, वर्तमान_मूल्य, [भविष्य_मूल्य], [अंत_या_आरंभ])</code></td><td>किसी निवेश के मूलधन पर भुगतान।<span class="ex"><code>=PPMT(0.02/12, 1, 240, -100000)</code> → <code>339.216668378</code></span></td></tr>
+<tr id="CUMIPMT"><td><code><strong>CUMIPMT</strong>(दर, अवधियों_की_संख्या, वर्तमान_मूल्य, पहली_अवधि, अंतिम_अवधि, अंत_या_आरंभ)</code></td><td>अवधियों के एक समूह में भुगतान किया गया संचयी ब्याज।<span class="ex"><code>=CUMIPMT(0.02/12, 240, 100000, 1, 12, 0)</code> → <code>-1962.478087955</code></span></td></tr>
+<tr id="CUMPRINC"><td><code><strong>CUMPRINC</strong>(दर, अवधियों_की_संख्या, वर्तमान_मूल्य, पहली_अवधि, अंतिम_अवधि, अंत_या_आरंभ)</code></td><td>अवधियों के एक समूह में भुगतान किया गया संचयी मूलधन।<span class="ex"><code>=CUMPRINC(0.02/12, 240, 100000, 1, 12, 0)</code> → <code>-4108.121932587</code></span></td></tr>
+<tr id="PV"><td><code><strong>PV</strong>(दर, अवधियों_की_संख्या, भुगतान_राशि, [भविष्य_मूल्य], [अंत_या_आरंभ])</code></td><td>किसी वार्षिकी निवेश का वर्तमान मूल्य।<span class="ex"><code>=PV(0.02/12, 240, -500)</code> → <code>98837.017423279</code></span></td></tr>
+<tr id="FV"><td><code><strong>FV</strong>(दर, अवधियों_की_संख्या, भुगतान_राशि, वर्तमान_मूल्य, अंत_या_आरंभ)</code></td><td>किसी वार्षिकी निवेश का भविष्य मूल्य।<span class="ex"><code>=FV(0.03, 10, -1000)</code> → <code>11463.879311471</code></span></td></tr>
+<tr id="FVSCHEDULE"><td><code><strong>FVSCHEDULE</strong>(मूलधन, दर_अनुसूची)</code></td><td>दरों की एक श्रृंखला से मूलधन का भविष्य मूल्य।<span class="ex"><code>=FVSCHEDULE(1000, [0.1, 0.05])</code> → <code>1155</code></span></td></tr>
+<tr id="NPER"><td><code><strong>NPER</strong>(दर, भुगतान_राशि, वर्तमान_मूल्य, [भविष्य_मूल्य], [अंत_या_आरंभ])</code></td><td>किसी निवेश के लिए भुगतान अवधियों की संख्या।<span class="ex"><code>=NPER(0.01, -500, 10000)</code> → <code>22.425741878</code></span></td></tr>
+<tr id="RATE"><td><code><strong>RATE</strong>(अवधियों_की_संख्या, प्रति_अवधि_भुगतान, वर्तमान_मूल्य, [भविष्य_मूल्य], [अंत_या_आरंभ], [दर_अनुमान])</code></td><td>किसी वार्षिकी निवेश की ब्याज दर।<span class="ex"><code>=RATE(240, -505.88, 100000)</code> → <code>0.001666608</code></span></td></tr>
+<tr id="PDURATION"><td><code><strong>PDURATION</strong>(दर, वर्तमान_मूल्य, भावी_मूल्य)</code></td><td>किसी मूल्य तक पहुँचने की अवधियाँ।<span class="ex"><code>=PDURATION(0.05, 1000, 2000)</code> → <code>14.206699083</code></span></td></tr>
+<tr id="RRI"><td><code><strong>RRI</strong>(अवधियाँ, वर्तमान_मूल्य, भावी_मूल्य)</code></td><td>वृद्धि की तुल्य ब्याज दर।<span class="ex"><code>=RRI(10, 1000, 2000)</code> → <code>0.071773463</code></span></td></tr>
+<tr id="ISPMT"><td><code><strong>ISPMT</strong>(दर, अवधि, अवधियाँ, मूलधन)</code></td><td>समान मूलधन वाले ऋण की किसी अवधि का ब्याज।<span class="ex"><code>=ISPMT(0.1, 1, 3, 1000)</code> → <code>-66.666666667</code></span></td></tr>
+<tr id="NPV"><td><code><strong>NPV</strong>(छूट_दर, नकदी_प्रवाह1, [नकदी_प्रवाह2, …])</code></td><td>आवधिक नकदी प्रवाहों और एक छूट दर के आधार पर किसी निवेश का शुद्ध वर्तमान मूल्य।<span class="ex"><code>=NPV(0.1, 60, 60)</code> → <code>104.132231405</code></span></td></tr>
+<tr id="XNPV"><td><code><strong>XNPV</strong>(छूट_दर, नकदी_प्रवाह_राशियां, नकदी_प्रवाह_तिथियां)</code></td><td>गैर-आवधिक नकदी प्रवाहों को देखते हुए शुद्ध वर्तमान मूल्य।<span class="ex"><code>=XNPV(0.1, [-100, 60, 60], [46000, 46100, 46400])</code> → <code>12.50275272</code></span></td></tr>
+<tr id="IRR"><td><code><strong>IRR</strong>(नकदी_प्रवाह_राशियां, [दर_अनुमान])</code></td><td>आवधिक नकदी प्रवाहों को देखते हुए आंतरिक प्रतिफल दर।<span class="ex"><code>=IRR([-100, 60, 60])</code> → <code>0.130662386</code></span></td></tr>
+<tr id="MIRR"><td><code><strong>MIRR</strong>(नकदी_प्रवाह_राशियां, वित्तपोषण_दर, पुनर्निवेश_प्रतिफल_दर)</code></td><td>संशोधित आंतरिक प्रतिफल दर।<span class="ex"><code>=MIRR([-100, 60, 60], 0.1, 0.12)</code> → <code>0.127829774</code></span></td></tr>
+<tr id="XIRR"><td><code><strong>XIRR</strong>(नकदी_प्रवाह_राशियां, नकदी_प्रवाह_तिथियां, [दर_अनुमान])</code></td><td>गैर-आवधिक नकदी प्रवाहों को देखते हुए आंतरिक प्रतिफल दर।<span class="ex"><code>=XIRR([-100, 60, 60], [46000, 46100, 46400])</code> → <code>0.317227411</code></span></td></tr>
+<tr id="EFFECT"><td><code><strong>EFFECT</strong>(नाममात्र_दर, प्रति_वर्ष_अवधियां)</code></td><td>वार्षिक प्रभावी ब्याज दर।<span class="ex"><code>=EFFECT(0.12, 12)</code> → <code>0.12682503</code></span></td></tr>
+<tr id="NOMINAL"><td><code><strong>NOMINAL</strong>(प्रभावी_दर, प्रति_वर्ष_अवधियां)</code></td><td>वार्षिक नाममात्र ब्याज दर।<span class="ex"><code>=NOMINAL(0.1268, 12)</code> → <code>0.119977565</code></span></td></tr>
+<tr id="SLN"><td><code><strong>SLN</strong>(लागत, अवशिष्ट_मूल्य, उपयोगी_आयु)</code></td><td>सीधी-रेखा विधि से परिसंपत्ति का मूल्यह्रास।<span class="ex"><code>=SLN(10000, 1000, 5)</code> → <code>1800</code></span></td></tr>
+<tr id="SYD"><td><code><strong>SYD</strong>(लागत, अवशिष्ट_मूल्य, उपयोगी_आयु, अवधि)</code></td><td>वर्षों के अंकों के योग विधि द्वारा मूल्यह्रास।<span class="ex"><code>=SYD(10000, 1000, 5, 1)</code> → <code>3000</code></span></td></tr>
+<tr id="DB"><td><code><strong>DB</strong>(लागत, अवशिष्ट_मूल्य, उपयोगी_आयु, अवधि, महीना)</code></td><td>ह्रासमान शेष विधि द्वारा मूल्यह्रास।<span class="ex"><code>=DB(10000, 1000, 5, 1)</code> → <code>3690</code></span></td></tr>
+<tr id="DDB"><td><code><strong>DDB</strong>(लागत, अवशिष्ट_मूल्य, उपयोगी_आयु, अवधि, गुणक)</code></td><td>दोहरी-ह्रासमान शेष विधि द्वारा मूल्यह्रास।<span class="ex"><code>=DDB(10000, 1000, 5, 1)</code> → <code>4000</code></span></td></tr>
+<tr id="DOLLARDE"><td><code><strong>DOLLARDE</strong>(भिन्नात्मक_मूल्य, इकाई)</code></td><td>दशमलव भिन्न को दशमलव मान में बदलता है।<span class="ex"><code>=DOLLARDE(1.02, 16)</code> → <code>1.125</code></span></td></tr>
+<tr id="DOLLARFR"><td><code><strong>DOLLARFR</strong>(दशमलव_मूल्य, इकाई)</code></td><td>दशमलव मान को दशमलव भिन्न में बदलता है।<span class="ex"><code>=DOLLARFR(1.125, 16)</code> → <code>1.02</code></span></td></tr>
+<tr id="TBILLEQ"><td><code><strong>TBILLEQ</strong>(निपटान_तिथि, परिपक्वता, छूट_दर)</code></td><td>ट्रेजरी बिल के लिए समतुल्य प्रतिफल दर।<span class="ex"><code>=TBILLEQ(46000, 46100, 0.05)</code> → <code>0.051408451</code></span></td></tr>
+<tr id="TBILLPRICE"><td><code><strong>TBILLPRICE</strong>(निपटान_तिथि, परिपक्वता, छूट_दर)</code></td><td>अमेरिकी ट्रेजरी बिल का मूल्य।<span class="ex"><code>=TBILLPRICE(46000, 46100, 0.05)</code> → <code>98.611111111</code></span></td></tr>
+<tr id="TBILLYIELD"><td><code><strong>TBILLYIELD</strong>(निपटान_तिथि, परिपक्वता, मूल्य)</code></td><td>मूल्य के आधार पर अमेरिकी ट्रेजरी बिल की प्रतिफल दर।<span class="ex"><code>=TBILLYIELD(46000, 46100, 98)</code> → <code>0.073469388</code></span></td></tr>
+</tbody></table></div>
+<h2 id="engineering">संख्या पद्धतियाँ, इकाइयाँ, विशेष फ़ंक्शन</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="BIN2DEC"><td><code><strong>BIN2DEC</strong>(चिह्नित_द्विआधारी_संख्या)</code></td><td>किसी हस्ताक्षरित द्विआधारी संख्या को दशमलव प्रारूप में बदलता है।<span class="ex"><code>=BIN2DEC("1010")</code> → <code>10</code></span></td></tr>
+<tr id="BIN2HEX"><td><code><strong>BIN2HEX</strong>(चिह्नित_द्विआधारी_संख्या, [सार्थक_अंक])</code></td><td>किसी द्विआधारी संख्या को षोडश आधारी में बदलता है।<span class="ex"><code>=BIN2HEX("1010")</code> → <code>a</code></span></td></tr>
+<tr id="BIN2OCT"><td><code><strong>BIN2OCT</strong>(चिह्नित_द्विआधारी_संख्या, [सार्थक_अंक])</code></td><td>किसी द्विआधारी संख्या को अष्टाधारी में बदलता है।<span class="ex"><code>=BIN2OCT("1010")</code> → <code>12</code></span></td></tr>
+<tr id="DEC2BIN"><td><code><strong>DEC2BIN</strong>(दशमलव_संख्या, [सार्थक_अंक])</code></td><td>किसी दशमलव संख्या को हस्ताक्षरित द्विआधारी प्रारूप में बदलता है।<span class="ex"><code>=DEC2BIN(10)</code> → <code>1010</code></span></td></tr>
+<tr id="DEC2HEX"><td><code><strong>DEC2HEX</strong>(दशमलव_संख्या, [सार्थक_अंक])</code></td><td>किसी दशमलव संख्या को षोडश आधारी में बदलता है।<span class="ex"><code>=DEC2HEX(255)</code> → <code>ff</code></span></td></tr>
+<tr id="DEC2OCT"><td><code><strong>DEC2OCT</strong>(दशमलव_संख्या, [सार्थक_अंक])</code></td><td>किसी दशमलव संख्या को हस्ताक्षरित अष्टाधारी प्रारूप में बदलता है।<span class="ex"><code>=DEC2OCT(8)</code> → <code>10</code></span></td></tr>
+<tr id="HEX2BIN"><td><code><strong>HEX2BIN</strong>(चिह्नित_हेक्साडेसिमल_संख्या, [सार्थक_अंक])</code></td><td>किसी षोडश आधारी संख्या को द्विआधारी में बदलता है।<span class="ex"><code>=HEX2BIN("F")</code> → <code>1111</code></span></td></tr>
+<tr id="HEX2DEC"><td><code><strong>HEX2DEC</strong>(चिह्नित_हेक्साडेसिमल_संख्या)</code></td><td>किसी षोडश आधारी संख्या को दशमलव में बदलता है।<span class="ex"><code>=HEX2DEC("FF")</code> → <code>255</code></span></td></tr>
+<tr id="HEX2OCT"><td><code><strong>HEX2OCT</strong>(चिह्नित_हेक्साडेसिमल_संख्या, [सार्थक_अंक])</code></td><td>किसी षोडश आधारी संख्या को अष्टाधारी में बदलता है।<span class="ex"><code>=HEX2OCT("F")</code> → <code>17</code></span></td></tr>
+<tr id="OCT2BIN"><td><code><strong>OCT2BIN</strong>(चिह्नित_अष्टाधारी_संख्या, [सार्थक_अंक])</code></td><td>किसी अष्टाधारी संख्या को द्विआधारी में बदलता है।<span class="ex"><code>=OCT2BIN("7")</code> → <code>111</code></span></td></tr>
+<tr id="OCT2DEC"><td><code><strong>OCT2DEC</strong>(चिह्नित_अष्टाधारी_संख्या)</code></td><td>किसी हस्ताक्षरित अष्टाधारी संख्या को दशमलव प्रारूप में बदलता है।<span class="ex"><code>=OCT2DEC("17")</code> → <code>15</code></span></td></tr>
+<tr id="OCT2HEX"><td><code><strong>OCT2HEX</strong>(चिह्नित_अष्टाधारी_संख्या, [सार्थक_अंक])</code></td><td>किसी अष्टाधारी संख्या को षोडश आधारी में बदलता है।<span class="ex"><code>=OCT2HEX("17")</code> → <code>f</code></span></td></tr>
+<tr id="BITAND"><td><code><strong>BITAND</strong>(a, b)</code></td><td>बिटवार AND।<span class="ex"><code>=BITAND(6, 3)</code> → <code>2</code></span></td></tr>
+<tr id="BITOR"><td><code><strong>BITOR</strong>(a, b)</code></td><td>बिटवार OR।<span class="ex"><code>=BITOR(6, 3)</code> → <code>7</code></span></td></tr>
+<tr id="BITXOR"><td><code><strong>BITXOR</strong>(a, b)</code></td><td>बिटवार XOR।<span class="ex"><code>=BITXOR(6, 3)</code> → <code>5</code></span></td></tr>
+<tr id="BITLSHIFT"><td><code><strong>BITLSHIFT</strong>(संख्या, खिसकाव)</code></td><td>बिट बाईं ओर खिसकाता है।<span class="ex"><code>=BITLSHIFT(1, 4)</code> → <code>16</code></span></td></tr>
+<tr id="BITRSHIFT"><td><code><strong>BITRSHIFT</strong>(संख्या, खिसकाव)</code></td><td>बिट दाईं ओर खिसकाता है।<span class="ex"><code>=BITRSHIFT(16, 4)</code> → <code>1</code></span></td></tr>
+<tr id="CONVERT"><td><code><strong>CONVERT</strong>(मान, आरंभिक_इकाई, अंतिम_इकाई)</code></td><td>माप को एक इकाई से दूसरी में बदलता है: "m", "km", "mi", "hr", "mn", "kg"… तापमान नहीं बदलते।<span class="ex"><code>=CONVERT(1, "mi", "km")</code> → <code>1.609344</code></span></td></tr>
+<tr id="DELTA"><td><code><strong>DELTA</strong>(संख्या1, [संख्या2])</code></td><td>दो संख्यात्मक मानों की तुलना करता है।<span class="ex"><code>=DELTA(3, 3)</code> → <code>1</code></span></td></tr>
+<tr id="GESTEP"><td><code><strong>GESTEP</strong>(संख्या, सीमा)</code></td><td>संख्या सीमा तक पहुँचे तो 1, नहीं तो 0।<span class="ex"><code>=GESTEP(5, 4)</code> → <code>1</code></span></td></tr>
+<tr id="ERF"><td><code><strong>ERF</strong>(x)</code></td><td>गाउस त्रुटि फलन।<span class="ex"><code>=ERF(1)</code> → <code>0.842700793</code></span></td></tr>
+<tr id="ERFC"><td><code><strong>ERFC</strong>(z)</code></td><td>किसी मान का पूरक गॉस त्रुटि फलन।<span class="ex"><code>=ERFC(1)</code> → <code>0.157299207</code></span></td></tr>
+<tr id="BESSELJ"><td><code><strong>BESSELJ</strong>(x, n)</code></td><td>बेसेल फलन Jₙ।<span class="ex"><code>=BESSELJ(1, 0)</code> → <code>0.765197684</code></span></td></tr>
+<tr id="BESSELY"><td><code><strong>BESSELY</strong>(x, n)</code></td><td>बेसेल फलन Yₙ।<span class="ex"><code>=BESSELY(1, 0)</code> → <code>0.088256971</code></span></td></tr>
+<tr id="BESSELI"><td><code><strong>BESSELI</strong>(x, n)</code></td><td>रूपांतरित बेसेल फलन Iₙ।<span class="ex"><code>=BESSELI(1, 0)</code> → <code>1.266065848</code></span></td></tr>
+<tr id="BESSELK"><td><code><strong>BESSELK</strong>(x, n)</code></td><td>रूपांतरित बेसेल फलन Kₙ।<span class="ex"><code>=BESSELK(1, 0)</code> → <code>0.421024421</code></span></td></tr>
+</tbody></table></div>
+<h2 id="complex">टेक्स्ट में सम्मिश्र संख्याएँ</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="COMPLEX"><td><code><strong>COMPLEX</strong>(वास्तविक_भाग, काल्पनिक_भाग, [प्रत्यय])</code></td><td>एक सम्मिश्र संख्या बनाता है।<span class="ex"><code>=COMPLEX(3, 4)</code> → <code>3+4i</code></span></td></tr>
+<tr id="IMREAL"><td><code><strong>IMREAL</strong>(सम्मिश्र_संख्या)</code></td><td>किसी सम्मिश्र संख्या का वास्तविक गुणांक।<span class="ex"><code>=IMREAL("3+4i")</code> → <code>3</code></span></td></tr>
+<tr id="IMAGINARY"><td><code><strong>IMAGINARY</strong>(सम्मिश्र_संख्या)</code></td><td>किसी सम्मिश्र संख्या का काल्पनिक गुणांक।<span class="ex"><code>=IMAGINARY("3+4i")</code> → <code>4</code></span></td></tr>
+<tr id="IMABS"><td><code><strong>IMABS</strong>(संख्या)</code></td><td>किसी सम्मिश्र संख्या का निरपेक्ष मान।<span class="ex"><code>=IMABS("3+4i")</code> → <code>5</code></span></td></tr>
+<tr id="IMARGUMENT"><td><code><strong>IMARGUMENT</strong>(सम्मिश्र)</code></td><td>कोणांक, रेडियन में।<span class="ex"><code>=IMARGUMENT("1+i")</code> → <code>0.785398163</code></span></td></tr>
+<tr id="IMCONJUGATE"><td><code><strong>IMCONJUGATE</strong>(संख्या)</code></td><td>किसी संख्या का सम्मिश्र संयुग्मी।<span class="ex"><code>=IMCONJUGATE("3+4i")</code> → <code>3-4i</code></span></td></tr>
+<tr id="IMSUM"><td><code><strong>IMSUM</strong>(मान1, [मान2, …])</code></td><td>सम्मिश्र संख्याओं की एक श्रृंखला का योग।<span class="ex"><code>=IMSUM("3+4i", "1+i")</code> → <code>4+5i</code></span></td></tr>
+<tr id="IMSUB"><td><code><strong>IMSUB</strong>(पहली_संख्या, दूसरी_संख्या)</code></td><td>दो सम्मिश्र संख्याओं के बीच का अंतर।<span class="ex"><code>=IMSUB("3+4i", "1+i")</code> → <code>2+3i</code></span></td></tr>
+<tr id="IMPRODUCT"><td><code><strong>IMPRODUCT</strong>(गुणक1, [गुणक2, …])</code></td><td>सम्मिश्र संख्याओं की एक श्रृंखला को आपस में गुणा करने का परिणाम।<span class="ex"><code>=IMPRODUCT("3+4i", "1+i")</code> → <code>-1+7i</code></span></td></tr>
+<tr id="IMDIV"><td><code><strong>IMDIV</strong>(भाज्य, भाजक)</code></td><td>एक सम्मिश्र संख्या दूसरी से विभाजित।<span class="ex"><code>=IMDIV("3+4i", "1+i")</code> → <code>3.5+0.5i</code></span></td></tr>
+<tr id="IMPOWER"><td><code><strong>IMPOWER</strong>(सम्मिश्र, घातांक)</code></td><td>सम्मिश्र संख्या की घात।<span class="ex"><code>=IMPOWER("3+4i", 2)</code> → <code>-6.999999999999998+24.000000000000004i</code></span></td></tr>
+<tr id="IMSQRT"><td><code><strong>IMSQRT</strong>(सम्मिश्र)</code></td><td>सम्मिश्र संख्या का वर्गमूल।<span class="ex"><code>=IMSQRT("3+4i")</code> → <code>2+i</code></span></td></tr>
+<tr id="IMEXP"><td><code><strong>IMEXP</strong>(सम्मिश्र)</code></td><td>सम्मिश्र संख्या का चरघातांक।<span class="ex"><code>=IMEXP("i")</code> → <code>0.5403023058681398+0.8414709848078965i</code></span></td></tr>
+<tr id="IMLN"><td><code><strong>IMLN</strong>(सम्मिश्र)</code></td><td>सम्मिश्र संख्या का प्राकृतिक लघुगणक।<span class="ex"><code>=IMLN("3+4i")</code> → <code>1.6094379124341003+0.9272952180016122i</code></span></td></tr>
+<tr id="IMLOG10"><td><code><strong>IMLOG10</strong>(सम्मिश्र)</code></td><td>सम्मिश्र संख्या का दशमलव लघुगणक।<span class="ex"><code>=IMLOG10("3+4i")</code> → <code>0.6989700043360187+0.4027191962733731i</code></span></td></tr>
+<tr id="IMLOG2"><td><code><strong>IMLOG2</strong>(सम्मिश्र)</code></td><td>सम्मिश्र संख्या का 2 आधार लघुगणक।<span class="ex"><code>=IMLOG2("3+4i")</code> → <code>2.321928094887362+1.3378042124509761i</code></span></td></tr>
+<tr id="IMSIN"><td><code><strong>IMSIN</strong>(सम्मिश्र)</code></td><td>सम्मिश्र संख्या की ज्या।<span class="ex"><code>=IMSIN("i")</code> → <code>1.1752011936438014i</code></span></td></tr>
+<tr id="IMCOS"><td><code><strong>IMCOS</strong>(सम्मिश्र)</code></td><td>सम्मिश्र संख्या की कोज्या।<span class="ex"><code>=IMCOS("i")</code> → <code>1.5430806348152437</code></span></td></tr>
+<tr id="IMTAN"><td><code><strong>IMTAN</strong>(सम्मिश्र)</code></td><td>सम्मिश्र संख्या की स्पर्शज्या।<span class="ex"><code>=IMTAN("i")</code> → <code>0.7615941559557649i</code></span></td></tr>
+</tbody></table></div>
+<h2 id="info">जानकारी</h2>
+<div class="table"><table class="functions"><thead><tr><th>फ़ंक्शन</th><th>विवरण और उदाहरण</th></tr></thead><tbody>
+<tr id="ISNUMBER"><td><code><strong>ISNUMBER</strong>(मान)</code></td><td>क्या कोई मान एक संख्या है।<span class="ex"><code>=ISNUMBER(A1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISTEXT"><td><code><strong>ISTEXT</strong>(मान)</code></td><td>क्या कोई मान टेक्स्ट है।<span class="ex"><code>=ISTEXT(C1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISNONTEXT"><td><code><strong>ISNONTEXT</strong>(मान)</code></td><td>क्या कोई मान टेक्स्ट-रहित है।<span class="ex"><code>=ISNONTEXT(A1)</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISLOGICAL"><td><code><strong>ISLOGICAL</strong>(मान)</code></td><td>क्या कोई मान `TRUE` या `FALSE` है।<span class="ex"><code>=ISLOGICAL(TRUE())</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISERROR"><td><code><strong>ISERROR</strong>(मान)</code></td><td>मान फ़ंक्शन की त्रुटि (#N/A, #NUM!) हो तो सत्य।<span class="ex"><code>=ISERROR(NA())</code> → <code>TRUE</code></span></td></tr>
+<tr id="ISERR"><td><code><strong>ISERR</strong>(मान)</code></td><td>मान #N/A के अलावा फ़ंक्शन की त्रुटि हो तो सत्य।<span class="ex"><code>=ISERR(NA())</code> → <code>FALSE</code></span></td></tr>
+<tr id="ISNA"><td><code><strong>ISNA</strong>(मान)</code></td><td>मान त्रुटि #N/A हो तो सत्य।<span class="ex"><code>=ISNA(NA())</code> → <code>TRUE</code></span></td></tr>
+<tr id="NA"><td><code><strong>NA</strong>()</code></td><td>त्रुटि #N/A।<span class="ex"><code>=NA()</code> → <code>#N/A</code></span></td></tr>
+<tr id="TYPE"><td><code><strong>TYPE</strong>(मान)</code></td><td>मान का प्रकार: 1 संख्या, 2 टेक्स्ट, 4 तार्किक, 16 त्रुटि, 64 सूची।<span class="ex"><code>=TYPE(5)</code> → <code>1</code></span></td></tr>
+</tbody></table></div>
+<h2 id="non-calculees">न गिने जाने वाले फ़ंक्शन</h2>
+<p>DocCells की स्वतः पूर्ति और संग्रह ऐसे फ़ंक्शन भी दिखाते हैं जो गिने नहीं जाते: वे <code>#NAME?</code> या <code>#ERROR!</code> देते हैं। Excel के नए फ़ंक्शन भी ऐसे ही हैं।</p>
+<div class="table"><table><thead><tr><th>नहीं गिने जाते</th><th>उनकी जगह</th></tr></thead><tbody>
+<tr><td><code>TEXT</code>, <code>FIXED</code>, <code>DOLLAR</code></td><td>सेल का <a href="nombres.html">संख्या प्रारूप</a></td></tr>
+<tr><td><code>XLOOKUP</code>, <code>OFFSET</code>, <code>INDIRECT</code>, <code>ADDRESS</code></td><td><code>INDEX</code> और <code>MATCH</code>, <code>VLOOKUP</code>, <code>CHOOSE</code></td></tr>
+<tr><td><code>FILTER</code>, <code>SORT</code>, <code>SEQUENCE</code>, <code>LET</code>, <code>LAMBDA</code></td><td><a href="tri-filtre.html">क्रम और फ़िल्टर</a>; सूत्र <a href="selection.html#recopier">भरना</a></td></tr>
+<tr><td><code>MAXIFS</code>, <code>MINIFS</code>, <code>TEXTJOIN</code></td><td>फ़िल्टर; संकारक <code>&amp;</code></td></tr>
+<tr><td><code>MMULT</code>, <code>MDETERM</code>, <code>MINVERSE</code></td><td><code>SUMPRODUCT</code>, हर अवयव का एक सूत्र</td></tr>
+<tr><td><code>HYPERLINK</code></td><td><a href="images-liens.html#liens">लिंक डालना</a></td></tr>
+<tr><td>Excel के बिंदु वाले नाम: <code>RANK.EQ</code>, <code>VAR.S</code>, <code>NORM.DIST</code>…</td><td>बिना बिंदु का या पुराना नाम: <code>RANK</code>, <code>VAR</code>, <code>NORMDIST</code></td></tr>
+<tr><td>डेटाबेस फ़ंक्शन (<code>DSUM</code>…), कूपन और प्रतिभूतियाँ (<code>PRICE</code>, <code>COUPNUM</code>…), <code>ISBLANK</code>, <code>CELL</code>, <code>ISFORMULA</code></td><td><code>SUMIFS</code>; खाली सेल के लिए <code>=A1=""</code></td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

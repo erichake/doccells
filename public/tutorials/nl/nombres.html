@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Getalnotaties — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Getalnotaties</h1>
+<p class="lead">Een notatie verandert hoe een getal getoond wordt, niet zijn waarde: berekeningen behouden alle decimalen.</p>
+<h2 id="choisir">Een notatie kiezen</h2>
+<p><strong>Opmaak › Getal</strong>, of de lijst <strong>Automatisch</strong> van de knoppenbalk.</p>
+<div class="table"><table><thead><tr><th>Notatie</th><th>Voorbeeld</th></tr></thead><tbody>
+<tr><td><strong>Automatisch</strong></td><td><code>1200,09</code></td></tr>
+<tr><td><strong>Platte tekst</strong></td><td><code>1200,09</code>, links uitgelijnd; de invoer blijft een tekst</td></tr>
+<tr><td><strong>Getal</strong></td><td><code>1200,09</code></td></tr>
+<tr><td><strong>Percentage</strong></td><td><code>120009,00%</code>; 0,25 wordt <code>25,00%</code></td></tr>
+<tr><td><strong>Wetenschappelijk</strong></td><td><code>1,20E+03</code></td></tr>
+<tr><td><strong>Boekhouding</strong></td><td><code>€(1.200,09)</code></td></tr>
+<tr><td><strong>Valuta</strong></td><td><code>€1.200,09</code></td></tr>
+<tr><td><strong>Datum</strong>, <strong>Tijd</strong>, <strong>Datum en tijd</strong></td><td>voor datums: <code>29-11-2017</code>, <code>3:00 PM</code>, <code>15:00</code>…</td></tr>
+</tbody></table></div>
+<p>Het valutasymbool is dat van de taal van de interface.</p>
+<div class="table"><table><thead><tr><th>Knop</th><th>Effect</th></tr></thead><tbody>
+<tr><td><i data-i="percentage-format"></i></td><td>percentage</td></tr>
+<tr><td><i data-i="number-decrease"></i></td><td>een decimaal minder</td></tr>
+<tr><td><i data-i="number-increase"></i></td><td>een decimaal meer</td></tr>
+</tbody></table></div>
+<p>Deze knoppen gelden ook voor de getallen van een <a href="listes.html">lijst</a>. Om de waarde zelf af te ronden, <code>AFRONDEN</code> gebruiken.</p>
+<h2 id="personnalise">Aangepaste notatie</h2>
+<p><strong>Opmaak › Getal › Aangepaste getalnotatie…</strong>: een voorgestelde notatie kiezen, of een code schrijven. Het voorbeeld toont het resultaat; <strong>Notatiegids</strong> herinnert aan de tekens; <strong>Toepassen</strong> geeft ze aan de selectie.</p>
+<figure><img src="img/format-personnalise.webp" alt="Het venster van de aangepaste getalnotaties" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Teken</th><th>Rol</th><th>Code</th><th>1234,5 wordt getoond</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td>een cijfer, ook nul</td><td><code>0,00</code></td><td><code>1234,50</code></td></tr>
+<tr><td><code>#</code></td><td>een cijfer als het nodig is</td><td><code>#,##</code></td><td><code>1234,5</code></td></tr>
+<tr><td><code>.</code></td><td>groepeert de duizendtallen</td><td><code>#.##0</code></td><td><code>1.235</code></td></tr>
+<tr><td><code>%</code></td><td>percentage</td><td><code>0%</code></td><td><code>123450%</code></td></tr>
+<tr><td><code>"tekst"</code></td><td>een tekst, een eenheid</td><td><code>0,0 "m"</code></td><td><code>1234,5 m</code></td></tr>
+<tr><td><code>E+00</code></td><td>wetenschappelijke notatie</td><td><code>0,00E+00</code></td><td><code>1,23E+03</code></td></tr>
+<tr><td><code>;</code></td><td>notaties voor positief, negatief, nul, tekst</td><td><code>0;-0;"nul"</code></td><td><code>1235</code></td></tr>
+<tr><td><code>[Red]</code></td><td>kleur</td><td><code>0;[Red]-0</code></td><td>negatieve getallen in het rood</td></tr>
+</tbody></table></div>
+<p>De code wordt met de scheidingstekens van de taal getypt; het venster toont de vorm waarin ze wordt opgeslagen (<code>#,##0.00</code>), dezelfde als in Excel.</p>
+<h3 id="dates-heures">Datums en tijden</h3>
+<div class="table"><table><thead><tr><th>Code</th><th>29 augustus 2026, 14.30 uur</th></tr></thead><tbody>
+<tr><td><code>dd/MM/yyyy</code></td><td><code>29/08/2026</code></td></tr>
+<tr><td><code>d mmm yyyy</code></td><td><code>29 Aug 2026</code></td></tr>
+<tr><td><code>dddd d mmmm yyyy</code></td><td><code>Saturday 29 August 2026</code></td></tr>
+<tr><td><code>hh:mm</code></td><td><code>14:30</code></td></tr>
+<tr><td><code>dd/MM/yyyy hh:mm</code></td><td><code>29/08/2026 14:30</code></td></tr>
+</tbody></table></div>
+<p>Namen van maanden en dagen worden in het Engels getoond.</p>
+<h3 id="unites">Eenheden</h3>
+<p>Onder <strong>Eenheden</strong> notaties als <code>0,00 "V"</code>, <code>0,00 "Ω"</code>, <code>0,00 "mm"</code>: de cel blijft een getal, waarmee gerekend wordt.</p>
+</main>
+</body>
+</html>

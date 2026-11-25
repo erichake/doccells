@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Интерфейс — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Интерфейс</h1>
+<figure><img src="img/interface.webp" alt="Окно DocCells" width="1280" height="760" /></figure>
+<p>Сверху вниз: строка меню, панель кнопок, строка формул, лист, вкладки листов и масштаб.</p>
+<h2 id="menus">Меню</h2>
+<div class="table"><table><thead><tr><th>Меню</th><th>Содержание</th></tr></thead><tbody>
+<tr><td><strong>Файл</strong></td><td><a href="demarrage.html">открыть, сохранить</a>, <a href="impression.html">печать</a></td></tr>
+<tr><td><strong>Правка</strong></td><td>отменить, повторить, <a href="selection.html#recopier">заполнить вниз, вправо</a></td></tr>
+<tr><td><strong>Вид</strong></td><td><a href="mise-en-forme.html#quadrillage">сетка</a>, <a href="lignes-colonnes.html#figer">закрепить</a></td></tr>
+<tr><td><strong>Вставка</strong></td><td><a href="images-liens.html">изображение</a>, <a href="graphiques.html">диаграмма</a>, <a href="controles.html">флажок, раскрывающийся список</a></td></tr>
+<tr><td><strong>Формат</strong></td><td><a href="nombres.html">число</a>, <a href="mise-en-forme.html">текст, выравнивание, объединение</a>, <a href="mise-en-forme.html#alternees">чередующиеся цвета</a>, <a href="conditionnelle.html">условное форматирование</a></td></tr>
+<tr><td><strong>Данные</strong></td><td><a href="tri-filtre.html">сортировка и фильтр</a></td></tr>
+<tr><td><strong>Инструменты</strong></td><td><a href="protection.html">защита</a>, это руководство (<strong>Руководство пользователя</strong>), DocTools, исходный код, версия (<strong>About...</strong>)</td></tr>
+</tbody></table></div>
+<p>Галочка отмечает включённый параметр: видимая сетка, закреплённые ячейки, полужирный, фильтр, защищённая книга.</p>
+<figure><img src="img/menus.webp" alt="Меню формата и числовые форматы" width="1280" height="620" /></figure>
+<h2 id="boutons">Панель кнопок</h2>
+<div class="table"><table><thead><tr><th>Кнопка</th><th>Назначение</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i> <i data-i="save"></i></td><td><a href="demarrage.html">открыть, сохранить</a></td></tr>
+<tr><td><i data-i="gridlines"></i></td><td>показать или скрыть <a href="mise-en-forme.html#quadrillage">сетку</a></td></tr>
+<tr><td><i data-i="alternating"></i></td><td><a href="mise-en-forme.html#alternees">чередующиеся цвета</a></td></tr>
+<tr><td><i data-i="conditional"></i></td><td><a href="conditionnelle.html">условное форматирование</a></td></tr>
+<tr><td><i data-i="protect"></i></td><td><a href="protection.html">защита</a>; голубая, когда книга защищена</td></tr>
+<tr><td><i data-i="chart"></i></td><td><a href="graphiques.html">вставить диаграмму</a></td></tr>
+<tr><td><i data-i="image"></i></td><td><a href="images-liens.html">вставить изображение</a></td></tr>
+<tr><td><i data-i="undo"></i> <i data-i="redo"></i></td><td>отменить, повторить</td></tr>
+<tr><td><i data-i="clear-format"></i></td><td>очистить оформление</td></tr>
+<tr><td><i data-i="percentage-format"></i> <i data-i="number-decrease"></i> <i data-i="number-increase"></i></td><td><a href="nombres.html">процент, меньше или больше десятичных знаков</a></td></tr>
+<tr><td><strong>Автоматически</strong>, <strong>Arial</strong>, <strong>10</strong></td><td>числовой формат, шрифт, размер</td></tr>
+<tr><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i></td><td>полужирный, курсив, подчёркнутый</td></tr>
+<tr><td><i data-i="font-color"></i> <i data-i="background"></i></td><td>цвет текста, цвет фона</td></tr>
+<tr><td><i data-i="border-all"></i> <i data-i="merge-all"></i></td><td><a href="mise-en-forme.html">границы, объединение</a></td></tr>
+<tr><td><i data-i="align-left"></i> <i data-i="align-top"></i> <i data-i="text-rotation-none"></i> <i data-i="text-overflow"></i></td><td>выравнивание, поворот, перенос</td></tr>
+<tr><td><i data-i="freeze-row-col"></i></td><td><a href="lignes-colonnes.html#figer">закрепить</a></td></tr>
+<tr><td><i data-i="formula-sum"></i></td><td><a href="formules.html#somme">автосумма</a> и другие формулы</td></tr>
+<tr><td><i data-i="filter"></i></td><td><a href="tri-filtre.html">сортировка и фильтр</a></td></tr>
+</tbody></table></div>
+<p>Стрелка кнопки открывает её варианты; сама кнопка повторяет последний. В узком окне последние кнопки находятся за <i data-i="more"></i>.</p>
+<h2 id="barre">Строка формул</h2>
+<ul>
+<li>Слева <strong>поле имени</strong>: адрес выделения или <a href="noms.html">имя диапазона</a>. Его стрелка показывает именованные диапазоны и открывает диспетчер имён.</li>
+<li>Справа от <em>fx</em> — содержимое ячейки вместе с формулой: его можно изменить там же.</li>
+</ul>
+<h2 id="feuille">Лист</h2>
+<ul>
+<li>Щелчок правой кнопкой открывает меню в зависимости от места: ячейка, заголовок столбца или строки, вкладка листа.</li>
+<li>На новом листе 84 строки и 60 столбцов (от A до BH). Новые добавляются щелчком правой кнопкой, <strong>Вставить</strong> (<a href="lignes-colonnes.html">строки и столбцы</a>).</li>
+<li>Синий маркер в углу выделения <a href="selection.html#recopier">заполняет</a>.</li>
+</ul>
+<h2 id="zoom">Вкладки и масштаб</h2>
+<p>Внизу <i data-i="plus"></i> добавляет лист, <i data-i="all-sheets"></i> показывает все листы (<a href="feuilles.html">листы</a>). Справа <strong>−</strong> и <strong>+</strong> меняют масштаб; щелчок по проценту предлагает от 10 % до 400 %.</p>
+<h2 id="annuler">Отмена</h2>
+<p><i data-i="undo"></i> или <kbd>Ctrl</kbd> <kbd>Z</kbd> отменяет, <i data-i="redo"></i>, <kbd>Ctrl</kbd> <kbd>Y</kbd> или <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Z</kbd> повторяет: ввод, вставку, оформление, добавление строк. История начинается заново, когда открывают книгу, показывают или скрывают сетку, защищают книгу, добавляют имя или правило условного форматирования. Диаграммы в неё не входят: их <a href="graphiques.html#modifier">изменяют или удаляют</a> их кнопками.</p>
+</main>
+</body>
+</html>

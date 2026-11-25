@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>L’interface — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>L’interface</h1>
+<figure><img src="img/interface.webp" alt="La fenêtre de DocCells" width="1280" height="760" /></figure>
+<p>De haut en bas : la barre de menus, la barre de boutons, la barre de formule, la feuille, les onglets de feuilles et le zoom.</p>
+<h2 id="menus">Les menus</h2>
+<div class="table"><table><thead><tr><th>Menu</th><th>Contenu</th></tr></thead><tbody>
+<tr><td><strong>Fichier</strong></td><td><a href="demarrage.html">ouvrir, enregistrer</a>, <a href="impression.html">imprimer</a></td></tr>
+<tr><td><strong>Édition</strong></td><td>annuler, refaire, <a href="selection.html#recopier">recopier vers le bas, à droite</a></td></tr>
+<tr><td><strong>Affichage</strong></td><td><a href="mise-en-forme.html#quadrillage">quadrillage</a>, <a href="lignes-colonnes.html#figer">figer</a></td></tr>
+<tr><td><strong>Insertion</strong></td><td><a href="images-liens.html">image</a>, <a href="graphiques.html">graphique</a>, <a href="controles.html">case à cocher, liste déroulante</a></td></tr>
+<tr><td><strong>Format</strong></td><td><a href="nombres.html">nombre</a>, <a href="mise-en-forme.html">texte, alignement, fusion</a>, <a href="mise-en-forme.html#alternees">couleurs alternées</a>, <a href="conditionnelle.html">formatage conditionnel</a></td></tr>
+<tr><td><strong>Données</strong></td><td><a href="tri-filtre.html">trier et filtrer</a></td></tr>
+<tr><td><strong>Outils</strong></td><td><a href="protection.html">protéger</a>, ce manuel (<strong>Manuel d’utilisation</strong>), DocTools, code source, version (<strong>A propos...</strong>)</td></tr>
+</tbody></table></div>
+<p>Une coche marque une option active : quadrillage affiché, cellules figées, gras, filtre, classeur protégé.</p>
+<figure><img src="img/menus.webp" alt="Le menu Format et les formats de nombre" width="1280" height="620" /></figure>
+<h2 id="boutons">La barre de boutons</h2>
+<div class="table"><table><thead><tr><th>Bouton</th><th>Rôle</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i> <i data-i="save"></i></td><td><a href="demarrage.html">ouvrir, enregistrer</a></td></tr>
+<tr><td><i data-i="gridlines"></i></td><td>afficher ou masquer le <a href="mise-en-forme.html#quadrillage">quadrillage</a></td></tr>
+<tr><td><i data-i="alternating"></i></td><td><a href="mise-en-forme.html#alternees">couleurs alternées</a></td></tr>
+<tr><td><i data-i="conditional"></i></td><td><a href="conditionnelle.html">formatage conditionnel</a></td></tr>
+<tr><td><i data-i="protect"></i></td><td><a href="protection.html">protéger</a> ; bleuté quand le classeur est protégé</td></tr>
+<tr><td><i data-i="chart"></i></td><td><a href="graphiques.html">insérer un graphique</a></td></tr>
+<tr><td><i data-i="image"></i></td><td><a href="images-liens.html">insérer une image</a></td></tr>
+<tr><td><i data-i="undo"></i> <i data-i="redo"></i></td><td>annuler, refaire</td></tr>
+<tr><td><i data-i="clear-format"></i></td><td>effacer la mise en forme</td></tr>
+<tr><td><i data-i="percentage-format"></i> <i data-i="number-decrease"></i> <i data-i="number-increase"></i></td><td><a href="nombres.html">pourcentage, moins ou plus de décimales</a></td></tr>
+<tr><td><strong>Automatique</strong>, <strong>Arial</strong>, <strong>10</strong></td><td>format de nombre, police, taille</td></tr>
+<tr><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i></td><td>gras, italique, souligné</td></tr>
+<tr><td><i data-i="font-color"></i> <i data-i="background"></i></td><td>couleur du texte, du fond</td></tr>
+<tr><td><i data-i="border-all"></i> <i data-i="merge-all"></i></td><td><a href="mise-en-forme.html">bordures, fusion</a></td></tr>
+<tr><td><i data-i="align-left"></i> <i data-i="align-top"></i> <i data-i="text-rotation-none"></i> <i data-i="text-overflow"></i></td><td>alignements, rotation, renvoi à la ligne</td></tr>
+<tr><td><i data-i="freeze-row-col"></i></td><td><a href="lignes-colonnes.html#figer">figer</a></td></tr>
+<tr><td><i data-i="formula-sum"></i></td><td><a href="formules.html#somme">somme automatique</a> et autres formules</td></tr>
+<tr><td><i data-i="filter"></i></td><td><a href="tri-filtre.html">trier et filtrer</a></td></tr>
+</tbody></table></div>
+<p>La petite flèche d’un bouton ouvre ses choix ; le bouton lui-même refait le dernier. Dans une fenêtre étroite, les derniers boutons sont derrière <i data-i="more"></i>.</p>
+<h2 id="barre">La barre de formule</h2>
+<ul>
+<li>À gauche, la <strong>zone de nom</strong> : l’adresse de la sélection, ou le <a href="noms.html">nom de la plage</a>. Sa flèche liste les plages nommées et ouvre le gestionnaire de noms.</li>
+<li>À droite de <em>fx</em>, le contenu de la cellule, formule comprise : on peut l’y modifier.</li>
+</ul>
+<h2 id="feuille">La feuille</h2>
+<ul>
+<li>Le clic droit ouvre un menu selon l’endroit : cellule, en-tête de colonne ou de ligne, onglet de feuille.</li>
+<li>La feuille de départ a 84 lignes et 60 colonnes (A à BH). On en ajoute par le clic droit, <strong>Insérer</strong> (<a href="lignes-colonnes.html">lignes et colonnes</a>).</li>
+<li>La poignée bleue au coin de la sélection <a href="selection.html#recopier">recopie</a>.</li>
+</ul>
+<h2 id="zoom">Onglets et zoom</h2>
+<p>En bas, <i data-i="plus"></i> ajoute une feuille, <i data-i="all-sheets"></i> les liste toutes (<a href="feuilles.html">les feuilles</a>). À droite, <strong>−</strong> et <strong>+</strong> règlent le zoom ; un clic sur le pourcentage propose 10 % à 400 %.</p>
+<h2 id="annuler">Annuler</h2>
+<p><i data-i="undo"></i> ou <kbd>Ctrl</kbd> <kbd>Z</kbd> annule, <i data-i="redo"></i>, <kbd>Ctrl</kbd> <kbd>Y</kbd> ou <kbd>Ctrl</kbd> <kbd>Maj</kbd> <kbd>Z</kbd> refait : saisies, collages, mises en forme, insertions. L’historique repart de zéro quand on ouvre un classeur, qu’on l’affiche sans quadrillage, qu’on le protège, ou qu’on y ajoute un nom ou une règle de formatage conditionnel. Les graphiques ne passent pas par lui : on les <a href="graphiques.html#modifier">modifie ou supprime</a> par leurs boutons.</p>
+</main>
+</body>
+</html>

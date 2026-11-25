@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ввод данных — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Ввод данных</h1>
+<h2 id="ecrire">Запись в ячейку</h2>
+<div class="table"><table><thead><tr><th>Действие</th><th>Результат</th></tr></thead><tbody>
+<tr><td>набрать в выделенной ячейке</td><td>заменяет её содержимое</td></tr>
+<tr><td>двойной щелчок, <kbd>F2</kbd> или <kbd>Enter</kbd></td><td>изменяет её содержимое</td></tr>
+<tr><td><kbd>Enter</kbd></td><td>подтверждает и переходит на ячейку вниз</td></tr>
+<tr><td>щелчок по другой ячейке</td><td>подтверждает</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>отказ от ввода</td></tr>
+<tr><td><kbd>Alt</kbd> <kbd>Enter</kbd></td><td>новая строка внутри ячейки</td></tr>
+<tr><td><kbd>Delete</kbd> или <kbd>⌫</kbd></td><td>очищает выделенные ячейки вместе с флажками и списками; оформление остаётся</td></tr>
+<tr><td>правая кнопка › <strong>Очистить содержимое</strong></td><td>то же</td></tr>
+</tbody></table></div>
+<p>Во время ввода стрелки перемещают курсор в тексте. В остальное время стрелки, <kbd>Tab</kbd> и <kbd>Shift</kbd> <kbd>Tab</kbd> меняют ячейку.</p>
+<h2 id="types">Что распознаёт DocCells</h2>
+<div class="table"><table><thead><tr><th>Набирают</th><th>Получают</th></tr></thead><tbody>
+<tr><td><code>12</code>, <code>-3</code>, <code>1e5</code></td><td>число, выровненное вправо</td></tr>
+<tr><td><code>2,5</code></td><td>десятичное число; разделитель — запятая</td></tr>
+<tr><td><code>1 234,5</code></td><td>число 1234,5; чтобы показать пробел между тысячами, выберите <a href="nombres.html">формат</a></td></tr>
+<tr><td><code>25%</code>, <code>2,5%</code></td><td>процент</td></tr>
+<tr><td><code>2026-11-25</code>, <code>2026/11/25</code></td><td>дата</td></tr>
+<tr><td><code>2026-11-25 14:30</code></td><td>дата и время</td></tr>
+<tr><td><code>TRUE</code>, <code>FALSE</code></td><td>логическое значение</td></tr>
+<tr><td><code>[2; 1]</code></td><td><a href="listes.html">список</a></td></tr>
+<tr><td><code>=A1+B1</code></td><td><a href="formules.html">формула</a></td></tr>
+<tr><td>всё остальное</td><td>текст, выровненный влево</td></tr>
+</tbody></table></div>
+<h3 id="dates">Даты</h3>
+<p>Дата набирается начиная с года: <code>2026-11-25</code>. <code>25.11.2026</code> остаётся текстом, с которым нельзя вычислять. Чтобы изменить её вид, выберите <strong>Формат › Число › Дата</strong> (<code>2017-11-29</code>) или <a href="nombres.html#personnalise">пользовательский формат</a>.</p>
+<p>Двойной щелчок по ячейке с датой открывает <a href="controles.html#calendrier">календарь</a>. <code>=СЕГОДНЯ()</code> даёт сегодняшнюю дату.</p>
+<h3 id="textes">Тексты из цифр</h3>
+<p>Номер, начинающийся с нуля, теряет его: <code>007</code> становится 7. Чтобы сохранить ноль, заранее задайте ячейкам формат <strong>Обычный текст</strong> (<strong>Формат › Число › Обычный текст</strong>) или начните с апострофа: <code>'007</code>.</p>
+<h2 id="erreurs">Частые ошибки ввода</h2>
+<div class="table"><table><thead><tr><th>Видно</th><th>Причина</th></tr></thead><tbody>
+<tr><td>число выровнено влево</td><td>это текст: точка вместо запятой, единица (<code>12 ₽</code>), лишний пробел</td></tr>
+<tr><td><code>46351</code> вместо даты</td><td>дата в формате <strong>Автоматически</strong>: задайте ей формат <strong>Дата</strong></td></tr>
+<tr><td>текст обрезан соседней ячейкой</td><td>расширьте <a href="lignes-colonnes.html#taille">столбец</a> или выберите <strong>Перенос</strong></td></tr>
+</tbody></table></div>
+<p>Для единицы введите только число и задайте ему <a href="nombres.html">формат</a>: денежный или пользовательский, например <code>0,00 "m"</code>.</p>
+</main>
+</body>
+</html>

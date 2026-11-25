@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>保护 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>保护</h1>
+<p class="lead">受保护的工作簿只能在未锁定的单元格中修改：可用来准备练习表。</p>
+<h2 id="preparer">为学生准备工作表</h2>
+<ol>
+<li>选择要填写的单元格，右键 › <strong>取消锁定单元格</strong>。</li>
+<li><i data-i="protect"></i> 或 <strong>工具 › 保护/取消保护工作簿</strong>。</li>
+<li>保存，然后<a href="partager.html">分发文件或链接</a>。</li>
+</ol>
+<p>起初所有单元格都是锁定的；锁定只在受保护的工作簿中生效。<strong>锁定单元格</strong> 可恢复锁定。</p>
+<h2 id="effets">保护阻止的操作</h2>
+<div class="table"><table><thead><tr><th>受保护的工作簿中</th><th>锁定的单元格</th><th>未锁定的单元格</th></tr></thead><tbody>
+<tr><td>键入、清除</td><td>否</td><td>是</td></tr>
+<tr><td>日期的日历</td><td>否</td><td>是</td></tr>
+<tr><td>列宽和行高</td><td>否</td><td>否</td></tr>
+<tr><td>交替颜色、插入复选框和列表、菜单填充</td><td>否</td><td>否</td></tr>
+<tr><td>格式设置、插入行列、图表</td><td>是</td><td>是</td></tr>
+</tbody></table></div>
+<p>保护作用于所有工作表。它与未锁定的单元格一起保存在 Excel 文件中，DocCells 和 Excel 都可读取。</p>
+<h2 id="eleve">学生模式</h2>
+<p>地址中的 <code>?mode=student</code> 打开 DocCells 时没有 <i data-i="protect"></i> 按钮，也没有 <strong>取消锁定单元格</strong> 和 <strong>定义名称…</strong> 命令；<strong>保护/取消保护工作簿</strong> 不可用。学生无法取消保护。</p>
+<pre><code>https://…/doccells/?mode=student&amp;url=https://…/exercise.xlsx</code></pre>
+<div class="note"><p>这是使用层面的保护，没有密码：用其他电子表格打开文件，或不带 <code>mode=student</code> 打开，都可以取消保护。</p></div>
+</main>
+</body>
+</html>

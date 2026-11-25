@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>С DocGeo — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>С DocGeo</h1>
+<p class="lead">DocGeo, программа динамической геометрии DocTools, содержит DocCells: лист рядом с чертежом, они читают друг друга.</p>
+<p>Интерфейса DocGeo на русском языке нет; ниже даны его английские команды. <strong>File › View › New spreadsheet view</strong> добавляет лист рядом с чертежом; <strong>File › Tab › New spreadsheet tab</strong> делает его вкладкой.</p>
+<h2 id="geo">Функция GEO</h2>
+<p>В ячейке <code>GEO</code> читает значение объекта чертежа, указанного именем в кавычках.</p>
+<pre><code>=GEO("AB")
+=2*GEO("r")+1
+=GEO("'Figure 1'!c")</code></pre>
+<ul>
+<li>Ячейка следует за чертежом, пока его двигают.</li>
+<li>Точка читается как <a href="listes.html">список</a> координат: <code>=GEO("A")*2</code> — тоже точка.</li>
+<li>При наборе формулы щелчок по объекту чертежа вписывает в неё <code>GEO</code> и его имя.</li>
+<li>Неизвестный объект даёт <code>#N/A</code>. Вне DocGeo <code>GEO</code> всегда даёт <code>#N/A</code>.</li>
+<li><code>GEO</code> называется одинаково на всех языках.</li>
+</ul>
+<h2 id="figure">Чертёж читает ячейки</h2>
+<p>В формуле DocGeo <code>!B3</code> — ячейка, <code>!B2:B21</code> — диапазон.</p>
+<h2 id="differences">Отличия от отдельного DocCells</h2>
+<div class="table"><table><thead><tr><th>В DocGeo</th><th></th></tr></thead><tbody>
+<tr><td>Меню и кнопки</td><td>на панелях DocGeo, когда лист активен</td></tr>
+<tr><td>Файл</td><td>файл DocGeo: лист сохраняется в <code>.dgo</code> вместе со списками и ссылками</td></tr>
+<tr><td>Листы</td><td>по одному на вид; несколько вкладок с таблицами читают друг друга</td></tr>
+<tr><td>Отмена</td><td><kbd>Ctrl</kbd> <kbd>Z</kbd> в ячейках отменяет только ячейки</td></tr>
+</tbody></table></div>
+<p>Подробности — на странице <a href="https://doctools.org/apps/docgeo/tutorials/en/tableur.html">The spreadsheet</a> руководства DocGeo (по-английски).</p>
+</main>
+</body>
+</html>

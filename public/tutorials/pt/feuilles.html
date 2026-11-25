@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/pt.md: do not edit. -->
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>As folhas — Manual do DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>As folhas</h1>
+<h2 id="ajouter">Acrescentar, mudar de folha</h2>
+<ul>
+<li><i data-i="plus"></i> acrescenta uma folha, chamada «Folha2», «Folha3»…</li>
+<li>Um clique num separador mostra-a; <i data-i="all-sheets"></i> lista as folhas, incluindo as ocultas, e mostra a escolhida.</li>
+</ul>
+<h2 id="menu">O menu de um separador</h2>
+<p>Clique direito no separador, ou a sua seta:</p>
+<div class="table"><table><thead><tr><th>Comando</th><th>Efeito</th></tr></thead><tbody>
+<tr><td><strong>Eliminar</strong></td><td>após confirmação; a última folha visível não pode ser eliminada</td></tr>
+<tr><td><strong>Copiar</strong></td><td>duplica a folha</td></tr>
+<tr><td><strong>Mudar nome</strong></td><td>ou duplo clique no nome; sem <code>[ ] : ? * / ' "</code></td></tr>
+<tr><td><strong>Alterar cor</strong></td><td>cor do separador</td></tr>
+<tr><td><strong>Ocultar</strong></td><td>as fórmulas continuam a ler a folha; <i data-i="all-sheets"></i> volta a mostrá-la</td></tr>
+<tr><td><strong>Mover para a esquerda</strong>, <strong>Mover para a direita</strong></td><td>muda a ordem; também se pode arrastar o separador</td></tr>
+</tbody></table></div>
+<h2 id="references">Ler outra folha</h2>
+<p>O nome da folha, um ponto de exclamação, o endereço. O nome vai entre apóstrofos se contém um espaço ou um sinal.</p>
+<pre><code>=Folha2!B2*2
+='Notas 2'!B2
+=SOMA('Notas 2'!B2:B6)</code></pre>
+<p>A referência escreve-se: mudar de separador ao escrever uma fórmula abandona a entrada.</p>
+<p>Para que um intervalo seja lido de todas as folhas por um nome, <a href="noms.html">dar-lhe um nome</a> com o âmbito <strong>Livro</strong>.</p>
+</main>
+</body>
+</html>

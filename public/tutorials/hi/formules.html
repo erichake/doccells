@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>सूत्र — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>सूत्र</h1>
+<h2 id="ecrire">सूत्र लिखना</h2>
+<p>सूत्र <code>=</code> से शुरू होता है। उसमें संख्याएँ, उद्धरण चिह्नों में टेक्स्ट, सेल संदर्भ, संकारक और <a href="fonctions.html">फ़ंक्शन</a> होते हैं।</p>
+<pre><code>=B2*2
+=(B2+C2+D2)/3
+=AVERAGE(B2:B6)
+="कुल: "&amp;SUM(B2:B6)</code></pre>
+<p>सेल परिणाम दिखाता है, सूत्र पट्टी सूत्र। बदले गए सेल पर निर्भर सेल तुरंत फिर से गिने जाते हैं।</p>
+<p>दशमलव चिह्न बिंदु है और तर्क अल्पविराम से अलग होते हैं: <code>=ROUND(3.14159, 2)</code>। फ़ंक्शन के नाम छोटे या बड़े अक्षरों में लिखें: <code>=sum(B2:B6)</code> और <code>=SUM(B2:B6)</code> दोनों चलते हैं।</p>
+<h2 id="souris">माउस से सेल बताना</h2>
+<p>सूत्र लिखते समय शीट के सेल पर क्लिक उसका पता डालता है, खींचना रेंज डालता है। हर संदर्भ का सूत्र और शीट पर अपना रंग होता है।</p>
+<h2 id="completion">स्वतः पूर्ति</h2>
+<p>नाम के पहले अक्षरों से ही DocCells उन्हें रखने वाले फ़ंक्शन सुझाता है: देखने के लिए <kbd>↑</kbd> <kbd>↓</kbd>, चुनने के लिए <kbd>Enter</kbd>, <kbd>Tab</kbd> या क्लिक। खुलते कोष्ठक के बाद सहायता तर्क याद दिलाती है।</p>
+<figure><img src="img/completion.webp" alt="पहले अक्षरों के बाद सुझाए गए फ़ंक्शन" width="760" height="560" /></figure>
+<figure><img src="img/aide-formule.webp" alt="फ़ंक्शन की सहायता" width="760" height="560" /></figure>
+<h2 id="somme">स्वचालित योग</h2>
+<p><i data-i="formula-sum"></i> योग लिखता है। उसका तीर <strong>योग</strong>, <strong>औसत</strong>, <strong>गिनती</strong>, <strong>अधिकतम</strong>, <strong>न्यूनतम</strong> और <strong>सभी सूत्र</strong> देता है: वह संग्रह जहाँ फ़ंक्शन नाम, विवरण या श्रेणी से खोजा जाता है।</p>
+<figure><img src="img/bibliotheque.webp" alt="सूत्र संग्रह" width="1280" height="760" /></figure>
+<h2 id="operateurs">संकारक</h2>
+<div class="table"><table><thead><tr><th>संकारक</th><th>काम</th></tr></thead><tbody>
+<tr><td><code>+</code> <code>-</code> <code>*</code> <code>/</code></td><td>चार संक्रियाएँ</td></tr>
+<tr><td><code>^</code></td><td>घात: <code>=2^10</code></td></tr>
+<tr><td><code>%</code></td><td>प्रतिशत: <code>=20%*B2</code></td></tr>
+<tr><td><code>&amp;</code></td><td>टेक्स्ट जोड़ता है: <code>=A2&amp;" "&amp;B2</code></td></tr>
+<tr><td><code>=</code> <code>&lt;&gt;</code></td><td>बराबर, भिन्न</td></tr>
+<tr><td><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code></td><td>तुलना</td></tr>
+<tr><td><code>( )</code></td><td>प्राथमिकता</td></tr>
+</tbody></table></div>
+<p>घात पहले, फिर गुणा और भाग, फिर जोड़ और तुलना। <code>=-2^2</code> का मान −4 है (Excel में 4)।</p>
+<h2 id="references">संदर्भ</h2>
+<div class="table"><table><thead><tr><th>लिखावट</th><th>अर्थ</th></tr></thead><tbody>
+<tr><td><code>B2</code></td><td>एक सेल; भरने के साथ बदलता है</td></tr>
+<tr><td><code>$B$2</code></td><td>वही सेल, भरने पर भी</td></tr>
+<tr><td><code>B$2</code>, <code>$B2</code></td><td>स्थिर पंक्ति, स्थिर कॉलम</td></tr>
+<tr><td><code>B2:D6</code></td><td>एक रेंज</td></tr>
+<tr><td><code>B:B</code>, <code>2:2</code></td><td>पूरा कॉलम, पूरी पंक्ति</td></tr>
+<tr><td><code>शीट2!B2</code>, <code>'अंक 2'!B2</code></td><td><a href="feuilles.html#references">दूसरी शीट</a> का सेल</td></tr>
+<tr><td><code>marks</code></td><td><a href="noms.html">नामित रेंज</a></td></tr>
+</tbody></table></div>
+<p>नीचे भरने पर <code>=B2*$B$1</code> का <code>=B3*$B$1</code>, <code>=B4*$B$1</code>… हो जाता है।</p>
+<h2 id="conditions">शर्तें</h2>
+<pre><code>=IF(B2&gt;=10, "उत्तीर्ण", "अनुत्तीर्ण")
+=IF(AND(B2&gt;=10, C2&gt;=10), "हाँ", "नहीं")
+=SWITCH(A2, "a", 1, "b", 2, 0)
+=COUNTIF(B2:B6, "&gt;10")
+=SUMIF(A2:A6, "Ana", B2:B6)
+=AVERAGEIF(B2:B6, "&lt;10")</code></pre>
+<ul>
+<li>तार्किक मान <code>TRUE()</code> और <code>FALSE()</code> लिखे जाते हैं, कोष्ठकों सहित। वे TRUE और FALSE दिखते हैं।</li>
+<li>मानदंड एक टेक्स्ट है: <code>"&gt;10"</code>, <code>"&lt;&gt;0"</code>, <code>"Ana"</code>। वाइल्डकार्ड <code>*</code> और <code>?</code> नहीं पहचाने जाते।</li>
+<li>खाली सेल की जाँच <code>=B2=""</code> से होती है; वह 0 के बराबर नहीं है।</li>
+</ul>
+<h2 id="chercher">तालिका में खोजना</h2>
+<pre><code>=VLOOKUP("Léa", A2:D6, 3, 0)
+=INDEX(A2:A6, MATCH(MAX(B2:B6), B2:B6, 0))</code></pre>
+<p>पहला सूत्र तालिका के पहले कॉलम में Léa खोजता है और तीसरा कॉलम देता है; अंतिम तर्क 0 सटीक मान माँगता है। दूसरा सबसे अच्छे अंक वाले का नाम देता है।</p>
+<h2 id="dates">दिनांक और समय</h2>
+<p>दिनांक दिनों की संख्या है, समय दिन का अंश: सेलों में इन्हें जोड़ा-घटाया जाता है।</p>
+<pre><code>=A2+7
+=A3-A2
+=DAYS(A3, A2)
+=WEEKDAY(A2, 2)</code></pre>
+<p><code>DATE</code> या <code>TODAY</code> से मिला दिनांक जोड़ने से पहले सेल में रखना होता है: <code>=TODAY()+1</code> से <code>#VALUE!</code> मिलता है, पर यदि A1 में <code>=TODAY()</code> हो तो <code>=A1+1</code> कल की तारीख देता है। परिणाम संख्या है: उसे <strong>दिनांक</strong> प्रारूप दें।</p>
+<h2 id="erreurs">त्रुटियाँ</h2>
+<div class="table"><table><thead><tr><th>दिखता है</th><th>कारण</th></tr></thead><tbody>
+<tr><td><code>#NAME?</code></td><td>अज्ञात नाम: वर्तनी की भूल, <a href="fonctions.html#non-calculees">न गिना जाने वाला</a> फ़ंक्शन, बिना कोष्ठक <code>TRUE</code>, बिना उद्धरण टेक्स्ट</td></tr>
+<tr><td><code>#VALUE!</code></td><td>अनपेक्षित प्रकार: संख्या की जगह टेक्स्ट</td></tr>
+<tr><td><code>DIV/0</code></td><td>शून्य या खाली सेल से भाग</td></tr>
+<tr><td><code>#N/A</code></td><td>मान नहीं मिला (<code>MATCH</code>, <code>VLOOKUP</code>), या DocGeo के बाहर <code>GEO</code></td></tr>
+<tr><td><code>#REF!</code></td><td>सेल या शीट मौजूद नहीं</td></tr>
+<tr><td><code>#NUM!</code></td><td>प्रांत से बाहर की संख्या: <code>=SQRT(-1)</code></td></tr>
+<tr><td><code>#ERROR!</code></td><td>गलत लिखा सूत्र, या न गिना जाने वाला फ़ंक्शन</td></tr>
+</tbody></table></div>
+<p><code>IFERROR</code> फ़ंक्शन की त्रुटि (<code>#N/A</code>, <code>#NUM!</code>) बदलता है: <code>=IFERROR(VLOOKUP(E1, A2:D6, 2, 0), "अनुपस्थित")</code>। गणना की त्रुटि (<code>DIV/0</code>, <code>#VALUE!</code>) नहीं बदलता: शून्य से भाग रोकने के लिए भाजक जाँचें, <code>=IF(B2, B3/B2, "")</code>, जो शून्य और खाली सेल दोनों पर चलता है।</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gráficos y minigráficos — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Gráficos y minigráficos</h1>
+<h2 id="creer">Crear un gráfico</h2>
+<ol>
+<li>Seleccionar los datos.</li>
+<li><i data-i="chart"></i> o <strong>Insertar › Insertar gráfico</strong>.</li>
+<li>Elegir el tipo y las opciones; la vista previa sigue.</li>
+<li><strong>Agregar</strong>, luego <strong>Cerrar</strong>.</li>
+</ol>
+<figure><img src="img/graphique.webp" alt="La ventana de los gráficos" width="1280" height="900" /></figure>
+<div class="table"><table><thead><tr><th>Selección</th><th>Interpretación</th></tr></thead><tbody>
+<tr><td>una columna o una fila de números</td><td>los datos</td></tr>
+<tr><td>dos columnas</td><td>etiquetas en la primera, datos en la segunda</td></tr>
+<tr><td>dos filas</td><td>etiquetas en la primera, datos en la segunda</td></tr>
+<tr><td>dos columnas separadas, elegidas con <kbd>Ctrl</kbd></td><td>igual</td></tr>
+</tbody></table></div>
+<p>Un gráfico muestra una serie: una fila o una columna de datos. Las celdas sin número, como un encabezado, se ignoran.</p>
+<h2 id="types">Tipos</h2>
+<div class="table"><table><thead><tr><th>Tipo</th><th>Para</th><th>Etiquetas</th></tr></thead><tbody>
+<tr><td><strong>Barras</strong></td><td>comparar</td><td>bajo las barras</td></tr>
+<tr><td><strong>Línea</strong></td><td>una evolución</td><td>en el eje horizontal</td></tr>
+<tr><td><strong>Dispersión</strong></td><td>una relación entre dos magnitudes</td><td>son las abscisas, si son números; si no, 1, 2, 3…</td></tr>
+<tr><td><strong>Sectores</strong></td><td>partes; valores positivos</td><td>en la leyenda o sobre los sectores</td></tr>
+</tbody></table></div>
+<p>Hasta 120 valores, 24 para los sectores.</p>
+<figure><img src="img/graphiques.webp" alt="Los cuatro tipos de gráficos" width="1280" height="640" /></figure>
+<h2 id="options">Opciones</h2>
+<div class="table"><table><thead><tr><th>Campo</th><th>Contenido</th></tr></thead><tbody>
+<tr><td><strong>Título</strong></td><td>obligatorio; se muestra arriba del gráfico</td></tr>
+<tr><td><strong>Color</strong></td><td>selector o código <code>#4F81BD</code>; los sectores tienen sus propios colores</td></tr>
+<tr><td><strong>Datos</strong></td><td>el rango: <code>B2:B6</code></td></tr>
+<tr><td><strong>Etiquetas</strong></td><td><strong>Sin etiquetas</strong>; <strong>Columna de la misma fila</strong> (<code>A</code>); <strong>Fila de las mismas columnas</strong> (<code>1</code>); <strong>Rango personalizado</strong>, del mismo tamaño que los datos</td></tr>
+<tr><td><strong>Visualización</strong></td><td>valores, leyenda, abscisas, ordenadas, cuadrícula</td></tr>
+</tbody></table></div>
+<h2 id="modifier">Mover, modificar</h2>
+<ul>
+<li>Arrastrar la franja del título mueve el gráfico; arrastrar su esquina inferior derecha cambia su tamaño.</li>
+<li><strong>Editar</strong> vuelve a abrir la ventana, <strong>Eliminar</strong> lo elimina. La ventana lista también todos los gráficos de la hoja.</li>
+<li>El gráfico sigue los datos de sus celdas.</li>
+</ul>
+<p>Los gráficos se guardan en el archivo de Excel como verdaderos gráficos, y DocCells los vuelve a leer. No se <a href="impression.html">imprimen</a> con la hoja.</p>
+<h2 id="sparklines">Minigráficos</h2>
+<p>La función <code>SPARKLINE</code> dibuja un gráfico en miniatura en la celda.</p>
+<pre><code>=SPARKLINE(B2:F2)
+=SPARKLINE(B2:F2; {"charttype"\"column"})
+=SPARKLINE(B2:F2; {"charttype"\"line"; "color"\"#dc2626"; "linewidth"\2})
+=SPARKLINE(B2:F2; {"charttype"\"bar"; "max"\100})</code></pre>
+<figure><img src="img/sparklines.webp" alt="Minigráficos de líneas y de columnas" width="900" height="300" /></figure>
+<p>Las opciones se escriben entre llaves: el nombre, una barra invertida, el valor; un punto y coma entre dos opciones.</p>
+<div class="table"><table><thead><tr><th><code>charttype</code></th><th>Dibujo</th><th>Opciones propias</th></tr></thead><tbody>
+<tr><td><code>"line"</code> (por defecto)</td><td>línea</td><td><code>color</code>, <code>linewidth</code>, <code>xmin</code>, <code>xmax</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"bar"</code></td><td>barras apiladas</td><td><code>max</code>, <code>color1</code>, <code>color2</code></td></tr>
+<tr><td><code>"column"</code></td><td>columnas</td><td><code>color</code>, <code>negcolor</code>, <code>lowcolor</code>, <code>highcolor</code>, <code>firstcolor</code>, <code>lastcolor</code>, <code>axis</code>, <code>axiscolor</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"winloss"</code></td><td>ganancias y pérdidas</td><td>las mismas, sin <code>ymin</code> ni <code>ymax</code></td></tr>
+</tbody></table></div>
+<p>Opciones comunes: <code>empty</code> (<code>"zero"</code> o <code>"ignore"</code>), <code>nan</code> (<code>"convert"</code> o <code>"ignore"</code>), <code>rtl</code> (de derecha a izquierda). La <a href="../../sparkline/es.html">documentación de SPARKLINE</a> da todos los valores, con ejemplos.</p>
+<p>Para un dibujo mayor, agrandar la fila y la columna, o combinar celdas.</p>
+</main>
+</body>
+</html>

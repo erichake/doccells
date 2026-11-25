@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>与 DocGeo 一起使用 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>与 DocGeo 一起使用</h1>
+<p class="lead">DocGeo 是 DocTools 的动态几何软件，其中包含 DocCells：图形旁边的工作表，两者可互相读取。</p>
+<p>在 DocGeo 中，<strong>文件 › 视图 › 新建电子表格视图</strong> 在图形旁添加工作表；<strong>文件 › 标签页 › 新建电子表格标签页</strong> 将其作为标签页。</p>
+<h2 id="geo">GEO 函数</h2>
+<p>在单元格中，<code>GEO</code> 读取图形中某个对象的值，对象名放在引号中。</p>
+<pre><code>=GEO("AB")
+=2*GEO("r")+1
+=GEO("'图形 1'!c")</code></pre>
+<ul>
+<li>操作图形时，单元格随之变化。</li>
+<li>点按其坐标的<a href="listes.html">列表</a>读取：<code>=GEO("A")*2</code> 也是一个点。</li>
+<li>输入公式时，单击图形中的对象会写入 <code>GEO</code> 及其名称。</li>
+<li>未知对象得 <code>#N/A</code>。在 DocGeo 之外，<code>GEO</code> 总是得 <code>#N/A</code>。</li>
+<li><code>GEO</code> 在所有语言中名称相同。</li>
+</ul>
+<h2 id="figure">图形读取单元格</h2>
+<p>在 DocGeo 的公式中，<code>!B3</code> 表示单元格，<code>!B2:B21</code> 表示区域。</p>
+<h2 id="differences">与单独使用 DocCells 的区别</h2>
+<div class="table"><table><thead><tr><th>在 DocGeo 中</th><th></th></tr></thead><tbody>
+<tr><td>菜单和按钮</td><td>工作表处于活动状态时，显示在 DocGeo 的栏中</td></tr>
+<tr><td>文件</td><td>DocGeo 的文件：工作表保存在 <code>.dgo</code> 中，包括列表和链接</td></tr>
+<tr><td>工作表</td><td>每个视图一张；多个电子表格标签页可互相读取</td></tr>
+<tr><td>撤销</td><td>单元格中的 <kbd>Ctrl</kbd> <kbd>Z</kbd> 只撤销单元格的操作</td></tr>
+</tbody></table></div>
+<p>详情见 DocGeo 手册的<a href="https://doctools.org/apps/docgeo/tutorials/zh/tableur.html">电子表格</a>页面。</p>
+</main>
+</body>
+</html>

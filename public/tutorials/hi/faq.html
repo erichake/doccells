@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>अक्सर पूछे जाने वाले प्रश्न — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>अक्सर पूछे जाने वाले प्रश्न</h1>
+<h2 id="saisie">प्रविष्टि</h2>
+<h3>मेरा लिखा दिनांक नहीं पहचाना जाता</h3>
+<p><code>25/11/2026</code> DocCells के लिए टेक्स्ट है। <code>2026-11-25</code> लिखें, फिर <strong>दिनांक</strong> प्रारूप चुनें (<a href="saisie.html#dates">दिनांक</a>)।</p>
+<h3>दिनांक की जगह संख्या दिखती है</h3>
+<p>दिनांक दिनों की संख्या हैं: सेलों को <strong>दिनांक</strong> प्रारूप दें (<strong>प्रारूप › संख्या</strong>)।</p>
+<h3>मेरी संख्याएँ नहीं जुड़तीं</h3>
+<p>बाएँ संरेखित हों तो वे टेक्स्ट हैं। सेल में लिखी इकाई या दशमलव अल्पविराम उसे टेक्स्ट बना देता है (<a href="saisie.html#types">प्रकार</a>)।</p>
+<h3>संख्या के शुरू का शून्य गायब हो जाता है</h3>
+<p>लिखने से पहले <strong>सादा टेक्स्ट</strong> प्रारूप दें, या एपॉस्ट्रॉफ़ी से शुरू करें (<a href="saisie.html#textes">टेक्स्ट</a>)।</p>
+<h3>संख्याएँ बिंदु की जगह अल्पविराम माँगती हैं</h3>
+<p>DocCells ब्राउज़र की भाषा लेता है। <code>?lang=hi</code> भाषा तय करता है (<a href="demarrage.html#langue">भाषा</a>)।</p>
+<h2 id="formules">सूत्र</h2>
+<h3>TRUE या FALSE से <code>#NAME?</code></h3>
+<p><code>TRUE()</code> और <code>FALSE()</code> लिखें, या 1 और 0 (<a href="formules.html#conditions">शर्तें</a>)।</p>
+<h3>DocCells के सुझाए फ़ंक्शन से <code>#NAME?</code></h3>
+<p>सभी सुझाए फ़ंक्शन नहीं गिने जाते (<a href="fonctions.html#non-calculees">न गिने जाने वाले फ़ंक्शन</a>)।</p>
+<h3><code>IFERROR</code> DIV/0 को नहीं रोकता</h3>
+<p>भाजक जाँचें: <code>=IF(B2, A2/B2, "")</code> (<a href="formules.html#erreurs">त्रुटियाँ</a>)।</p>
+<h3>चिपकाने पर मेरे सूत्र नहीं रहते</h3>
+<p>दाएँ क्लिक का <strong>पेस्ट</strong> मान चिपकाता है; <kbd>Ctrl</kbd> <kbd>V</kbd> सूत्र चिपकाता है (<a href="selection.html#copier">कॉपी</a>)।</p>
+<h3>महीने का नाम लिखना या टेक्स्ट में संख्या सजाना</h3>
+<p><code>TEXT</code> फ़ंक्शन नहीं गिना जाता: अलग सेल को <a href="nombres.html">प्रारूप</a> दें।</p>
+<h3>निशान लगे चेकबॉक्स गिनना</h3>
+<p><code>=SUMPRODUCT(B2:B6, B2:B6)</code> (<a href="controles.html#cases">चेकबॉक्स</a>)।</p>
+<h3><code>=TODAY()+1</code> से #VALUE! मिलता है</h3>
+<p><code>=TODAY()</code> को सेल में रखें और उस सेल में जोड़ें (<a href="formules.html#dates">दिनांक</a>)।</p>
+<h2 id="presentation">प्रस्तुति</h2>
+<h3>सेल का रंग नहीं बदलता</h3>
+<p>सेल किसी <a href="conditionnelle.html#regles">सशर्त स्वरूपण</a> नियम की रेंज में है।</p>
+<h3>कोई बटन गायब है</h3>
+<p>विंडो सँकरी है: वह <i data-i="more"></i> के पीछे है।</p>
+<h3>क्रम या फ़िल्टर नहीं हो रहा</h3>
+<p>रेंज में मिले हुए सेल हैं: उन्हें अलग करें।</p>
+<h2 id="fichiers">फ़ाइलें</h2>
+<h3>सहेजने पर नई फ़ाइल डाउनलोड होती है</h3>
+<p>Firefox और Safari में ऐसा ही है। Chrome और Edge फ़ाइल में लिखते हैं (<a href="demarrage.html#enregistrer">सहेजना</a>)।</p>
+<h3>पृष्ठ बिना सहेजे बंद हो गया</h3>
+<p>उसी ब्राउज़र में DocCells फिर खोलें: वह प्रति वापस लाने को कहता है (<a href="demarrage.html#recuperer">वापस पाना</a>)।</p>
+<h3>मेरा चार्ट नहीं छपता</h3>
+<p>प्रिंट में केवल सेल होते हैं (<a href="impression.html">प्रिंट</a>)।</p>
+<h3><code>?url=</code> लिंक मेरी वर्कबुक नहीं खोलता</h3>
+<p>शायद फ़ाइल की साइट दूसरी साइटों को पढ़ने नहीं देती। Google Sheet लिंक से साझा होना चाहिए (<a href="partager.html">साझा करना</a>)।</p>
+<h3>मेरे लिंक गायब हो गए</h3>
+<p>वे Excel प्रारूप में नहीं सहेजे जाते (<a href="excel.html#perdu">क्या नहीं रहता</a>)।</p>
+<h2 id="eleves">विद्यार्थी</h2>
+<h3>क्या विद्यार्थी सूत्र बदल सकता है?</h3>
+<p>सुरक्षित वर्कबुक में अनलॉक सेलों के बाहर नहीं (<a href="protection.html">सुरक्षा</a>)। लिंक में <code>mode=student</code> जोड़ने से वह सुरक्षा नहीं हटा सकता।</p>
+</main>
+</body>
+</html>

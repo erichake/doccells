@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rangos con nombre — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Rangos con nombre</h1>
+<h2 id="definir">Dar un nombre</h2>
+<ol>
+<li>Seleccionar la celda o el rango.</li>
+<li>Clic derecho › <strong>Definir nombre…</strong> (o la flecha del cuadro de nombres › <strong>Administrador de nombres</strong>).</li>
+<li>Escribir el nombre, elegir el ámbito, <strong>Aceptar</strong>.</li>
+</ol>
+<figure><img src="img/noms.webp" alt="La ventana de un nombre nuevo" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Campo</th><th>Contenido</th></tr></thead><tbody>
+<tr><td><strong>Nombre</strong></td><td>empieza por una letra o <code>_</code>; letras, cifras, <code>_</code> y <code>.</code>, sin espacio; no una dirección como <code>B2</code></td></tr>
+<tr><td><strong>Ámbito</strong></td><td><strong>Libro</strong>: se lee desde todas las hojas; una hoja: solo se lee desde ella, donde prevalece sobre un nombre del libro</td></tr>
+<tr><td><strong>Se refiere a</strong></td><td>una celda o un rango, con su hoja: <code>'Hoja1'!$B$2:$B$6</code></td></tr>
+</tbody></table></div>
+<h2 id="utiliser">Usar un nombre</h2>
+<pre><code>=PROMEDIO(notas)
+=precio*(1+iva)</code></pre>
+<ul>
+<li>La flecha del cuadro de nombres lista los nombres: elegir uno selecciona su rango, en su hoja.</li>
+<li>Cuando la selección es exactamente un rango con nombre, el cuadro de nombres muestra su nombre.</li>
+<li>Una <a href="controles.html#listes">lista desplegable</a> puede leer un rango de celdas, indicado por su dirección.</li>
+</ul>
+<h2 id="gerer">Modificar, eliminar</h2>
+<p>En <strong>Administrador de nombres</strong>, hacer clic en un nombre vuelve a poner sus campos en modificación; <strong>Eliminar</strong> lo elimina; <strong>Nuevo</strong> vuelve a un nombre vacío. Antes de eliminar un nombre, sustituir las fórmulas que lo leen: conservan su último valor y después dejan de calcularse.</p>
+<p>Los nombres se guardan en el archivo de Excel y se leen de él.</p>
+</main>
+</body>
+</html>

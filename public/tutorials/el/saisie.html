@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Εισαγωγή δεδομένων — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Εισαγωγή δεδομένων</h1>
+<h2 id="ecrire">Γραφή σε κελί</h2>
+<div class="table"><table><thead><tr><th>Ενέργεια</th><th>Αποτέλεσμα</th></tr></thead><tbody>
+<tr><td>πληκτρολόγηση σε επιλεγμένο κελί</td><td>αντικαθιστά το περιεχόμενό του</td></tr>
+<tr><td>διπλό κλικ, <kbd>F2</kbd> ή <kbd>Enter</kbd></td><td>τροποποιεί το περιεχόμενό του</td></tr>
+<tr><td><kbd>Enter</kbd></td><td>επικυρώνει και κατεβαίνει ένα κελί</td></tr>
+<tr><td>κλικ σε άλλο κελί</td><td>επικυρώνει</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>εγκαταλείπει την εισαγωγή</td></tr>
+<tr><td><kbd>Alt</kbd> <kbd>Enter</kbd></td><td>νέα γραμμή μέσα στο κελί</td></tr>
+<tr><td><kbd>Delete</kbd> ή <kbd>⌫</kbd></td><td>αδειάζει τα επιλεγμένα κελιά, μαζί με πλαίσια ελέγχου και λίστες· η μορφοποίηση μένει</td></tr>
+<tr><td>δεξί κλικ › <strong>Εκκαθάριση περιεχομένων</strong></td><td>το ίδιο</td></tr>
+</tbody></table></div>
+<p>Κατά την εισαγωγή, τα βέλη μετακινούν τον δρομέα στο κείμενο. Αλλιώς τα βέλη, το <kbd>Tab</kbd> και το <kbd>Shift</kbd> <kbd>Tab</kbd> αλλάζουν κελί.</p>
+<h2 id="types">Τι αναγνωρίζει το DocCells</h2>
+<div class="table"><table><thead><tr><th>Γράφετε</th><th>Προκύπτει</th></tr></thead><tbody>
+<tr><td><code>12</code>, <code>-3</code>, <code>1e5</code></td><td>ένας αριθμός, στοιχισμένος δεξιά</td></tr>
+<tr><td><code>2,5</code></td><td>ένας δεκαδικός· το διαχωριστικό είναι το κόμμα</td></tr>
+<tr><td><code>1.234,5</code></td><td>ο αριθμός 1234,5· για να φαίνεται η τελεία των χιλιάδων, επιλέξτε μια <a href="nombres.html">μορφή</a></td></tr>
+<tr><td><code>25%</code>, <code>2,5%</code></td><td>ένα ποσοστό</td></tr>
+<tr><td><code>2026-11-25</code>, <code>2026/11/25</code></td><td>μια ημερομηνία</td></tr>
+<tr><td><code>2026-11-25 14:30</code></td><td>ημερομηνία και ώρα</td></tr>
+<tr><td><code>TRUE</code>, <code>FALSE</code></td><td>μια λογική τιμή</td></tr>
+<tr><td><code>[2; 1]</code></td><td>μια <a href="listes.html">λίστα</a></td></tr>
+<tr><td><code>=A1+B1</code></td><td>ένας <a href="formules.html">τύπος</a></td></tr>
+<tr><td>οτιδήποτε άλλο</td><td>κείμενο, στοιχισμένο αριστερά</td></tr>
+</tbody></table></div>
+<h3 id="dates">Ημερομηνίες</h3>
+<p>Μια ημερομηνία γράφεται με πρώτο το έτος: <code>2026-11-25</code>. Το <code>25/11/2026</code> μένει κείμενο, με το οποίο δεν γίνονται υπολογισμοί. Για τη συνηθισμένη εμφάνιση, επιλέξτε <strong>Μορφή › Αριθμός › Ημερομηνία</strong> (<code>29/11/2017</code>) ή μια <a href="nombres.html#personnalise">προσαρμοσμένη μορφή</a>.</p>
+<p>Διπλό κλικ σε κελί ημερομηνίας ανοίγει ένα <a href="controles.html#calendrier">ημερολόγιο</a>. Το <code>=TODAY()</code> δίνει τη σημερινή ημερομηνία.</p>
+<h3 id="textes">Κείμενα από ψηφία</h3>
+<p>Ένας αριθμός που αρχίζει από μηδέν το χάνει: το <code>007</code> γίνεται 7. Για να μείνει, δώστε πρώτα στα κελιά τη μορφή <strong>Απλό κείμενο</strong> (<strong>Μορφή › Αριθμός › Απλό κείμενο</strong>), ή αρχίστε με απόστροφο: <code>'007</code>.</p>
+<h2 id="erreurs">Συνηθισμένα λάθη εισαγωγής</h2>
+<div class="table"><table><thead><tr><th>Φαίνεται</th><th>Αιτία</th></tr></thead><tbody>
+<tr><td>ένας αριθμός στοιχισμένος αριστερά</td><td>είναι κείμενο: τελεία αντί για κόμμα, μονάδα (<code>12 €</code>), ένα κενό παραπάνω</td></tr>
+<tr><td><code>46351</code> αντί για ημερομηνία</td><td>ημερομηνία σε μορφή <strong>Αυτόματο</strong>: δώστε της τη μορφή <strong>Ημερομηνία</strong></td></tr>
+<tr><td>το κείμενο κομμένο από το διπλανό κελί</td><td>πλατύνετε τη <a href="lignes-colonnes.html#taille">στήλη</a>, ή επιλέξτε <strong>Αναδίπλωση</strong></td></tr>
+</tbody></table></div>
+<p>Για μια μονάδα, εισαγάγετε μόνο τον αριθμό και δώστε του μια <a href="nombres.html">μορφή</a>: νόμισμα, ή προσαρμοσμένη όπως <code>0,00 "m"</code>.</p>
+</main>
+</body>
+</html>

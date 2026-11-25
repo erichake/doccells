@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>इंटरफ़ेस — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>इंटरफ़ेस</h1>
+<figure><img src="img/interface.webp" alt="DocCells की विंडो" width="1280" height="760" /></figure>
+<p>ऊपर से नीचे: मेनू पट्टी, बटन पट्टी, सूत्र पट्टी, शीट, शीट टैब और ज़ूम।</p>
+<h2 id="menus">मेनू</h2>
+<div class="table"><table><thead><tr><th>मेनू</th><th>सामग्री</th></tr></thead><tbody>
+<tr><td><strong>फ़ाइल</strong></td><td><a href="demarrage.html">खोलना, सहेजना</a>, <a href="impression.html">प्रिंट</a></td></tr>
+<tr><td><strong>संपादन</strong></td><td>पूर्ववत, फिर से करना, <a href="selection.html#recopier">नीचे, दाईं ओर भरना</a></td></tr>
+<tr><td><strong>दृश्य</strong></td><td><a href="mise-en-forme.html#quadrillage">ग्रिडलाइन</a>, <a href="lignes-colonnes.html#figer">फ्रीज़</a></td></tr>
+<tr><td><strong>डालें</strong></td><td><a href="images-liens.html">चित्र</a>, <a href="graphiques.html">चार्ट</a>, <a href="controles.html">चेकबॉक्स, ड्रॉप-डाउन सूची</a></td></tr>
+<tr><td><strong>प्रारूप</strong></td><td><a href="nombres.html">संख्या</a>, <a href="mise-en-forme.html">टेक्स्ट, संरेखण, सेल मिलाना</a>, <a href="mise-en-forme.html#alternees">बारी-बारी रंग</a>, <a href="conditionnelle.html">सशर्त स्वरूपण</a></td></tr>
+<tr><td><strong>डेटा</strong></td><td><a href="tri-filtre.html">क्रम और फ़िल्टर</a></td></tr>
+<tr><td><strong>टूल</strong></td><td><a href="protection.html">सुरक्षा</a>, यह पुस्तिका (<strong>उपयोगकर्ता पुस्तिका</strong>), DocTools, स्रोत कोड, संस्करण (<strong>परिचय...</strong>)</td></tr>
+</tbody></table></div>
+<p>सही का निशान चालू विकल्प दिखाता है: दिखती ग्रिडलाइन, फ्रीज़ सेल, बोल्ड, फ़िल्टर, सुरक्षित वर्कबुक।</p>
+<figure><img src="img/menus.webp" alt="प्रारूप मेनू और संख्या प्रारूप" width="1280" height="620" /></figure>
+<h2 id="boutons">बटन पट्टी</h2>
+<div class="table"><table><thead><tr><th>बटन</th><th>काम</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i> <i data-i="save"></i></td><td><a href="demarrage.html">खोलना, सहेजना</a></td></tr>
+<tr><td><i data-i="gridlines"></i></td><td><a href="mise-en-forme.html#quadrillage">ग्रिडलाइन</a> दिखाना या छिपाना</td></tr>
+<tr><td><i data-i="alternating"></i></td><td><a href="mise-en-forme.html#alternees">बारी-बारी रंग</a></td></tr>
+<tr><td><i data-i="conditional"></i></td><td><a href="conditionnelle.html">सशर्त स्वरूपण</a></td></tr>
+<tr><td><i data-i="protect"></i></td><td><a href="protection.html">सुरक्षा</a>; वर्कबुक सुरक्षित हो तो नीला</td></tr>
+<tr><td><i data-i="chart"></i></td><td><a href="graphiques.html">चार्ट डालना</a></td></tr>
+<tr><td><i data-i="image"></i></td><td><a href="images-liens.html">चित्र डालना</a></td></tr>
+<tr><td><i data-i="undo"></i> <i data-i="redo"></i></td><td>पूर्ववत, फिर से करना</td></tr>
+<tr><td><i data-i="clear-format"></i></td><td>फ़ॉर्मेटिंग हटाना</td></tr>
+<tr><td><i data-i="percentage-format"></i> <i data-i="number-decrease"></i> <i data-i="number-increase"></i></td><td><a href="nombres.html">प्रतिशत, कम या अधिक दशमलव</a></td></tr>
+<tr><td><strong>स्वचालित</strong>, <strong>Arial</strong>, <strong>10</strong></td><td>संख्या प्रारूप, फ़ॉन्ट, आकार</td></tr>
+<tr><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i></td><td>बोल्ड, इटैलिक, रेखांकित</td></tr>
+<tr><td><i data-i="font-color"></i> <i data-i="background"></i></td><td>टेक्स्ट का रंग, पृष्ठभूमि का रंग</td></tr>
+<tr><td><i data-i="border-all"></i> <i data-i="merge-all"></i></td><td><a href="mise-en-forme.html">बॉर्डर, सेल मिलाना</a></td></tr>
+<tr><td><i data-i="align-left"></i> <i data-i="align-top"></i> <i data-i="text-rotation-none"></i> <i data-i="text-overflow"></i></td><td>संरेखण, घुमाव, रैप</td></tr>
+<tr><td><i data-i="freeze-row-col"></i></td><td><a href="lignes-colonnes.html#figer">फ्रीज़</a></td></tr>
+<tr><td><i data-i="formula-sum"></i></td><td><a href="formules.html#somme">स्वचालित योग</a> और अन्य सूत्र</td></tr>
+<tr><td><i data-i="filter"></i></td><td><a href="tri-filtre.html">क्रम और फ़िल्टर</a></td></tr>
+</tbody></table></div>
+<p>बटन का छोटा तीर उसके विकल्प खोलता है; बटन स्वयं पिछला विकल्प दोहराता है। सँकरी विंडो में अंतिम बटन <i data-i="more"></i> के पीछे होते हैं।</p>
+<h2 id="barre">सूत्र पट्टी</h2>
+<ul>
+<li>बाईं ओर <strong>नाम बॉक्स</strong>: चयन का पता, या <a href="noms.html">रेंज का नाम</a>। उसका तीर नामित रेंज दिखाता है और नाम प्रबंधक खोलता है।</li>
+<li><em>fx</em> के दाईं ओर सेल की सामग्री, सूत्र सहित: उसे वहीं बदला जा सकता है।</li>
+</ul>
+<h2 id="feuille">शीट</h2>
+<ul>
+<li>दायाँ क्लिक जगह के अनुसार मेनू खोलता है: सेल, कॉलम या पंक्ति शीर्षक, शीट टैब।</li>
+<li>नई शीट में 84 पंक्तियाँ और 60 कॉलम (A से BH) हैं। दाएँ क्लिक, <strong>डालें</strong> से और जोड़ें (<a href="lignes-colonnes.html">पंक्तियाँ और कॉलम</a>)।</li>
+<li>चयन के कोने का नीला हैंडल <a href="selection.html#recopier">भरता है</a>।</li>
+</ul>
+<h2 id="zoom">टैब और ज़ूम</h2>
+<p>नीचे <i data-i="plus"></i> शीट जोड़ता है, <i data-i="all-sheets"></i> सभी दिखाता है (<a href="feuilles.html">शीट</a>)। दाईं ओर <strong>−</strong> और <strong>+</strong> ज़ूम बदलते हैं; प्रतिशत पर क्लिक 10% से 400% तक देता है।</p>
+<h2 id="annuler">पूर्ववत</h2>
+<p><i data-i="undo"></i> या <kbd>Ctrl</kbd> <kbd>Z</kbd> पूर्ववत करता है; <i data-i="redo"></i>, <kbd>Ctrl</kbd> <kbd>Y</kbd> या <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Z</kbd> फिर से करता है: प्रविष्टि, चिपकाना, फ़ॉर्मेटिंग, जोड़ना। वर्कबुक खोलने, ग्रिडलाइन दिखाने या छिपाने, वर्कबुक सुरक्षित करने, या नाम या सशर्त नियम जोड़ने पर इतिहास नए सिरे से शुरू होता है। चार्ट इसमें नहीं हैं: वे अपने बटनों से <a href="graphiques.html#modifier">बदले या हटाए</a> जाते हैं।</p>
+</main>
+</body>
+</html>

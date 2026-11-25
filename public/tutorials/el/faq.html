@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Συχνές ερωτήσεις — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Συχνές ερωτήσεις</h1>
+<h2 id="saisie">Εισαγωγή</h2>
+<h3>Μια ημερομηνία που έγραψα δεν αναγνωρίζεται</h3>
+<p>Το <code>25/11/2026</code> είναι κείμενο για το DocCells. Γράψτε <code>2026-11-25</code>, έπειτα επιλέξτε τη μορφή <strong>Ημερομηνία</strong> (<a href="saisie.html#dates">ημερομηνίες</a>).</p>
+<h3>Εμφανίζεται αριθμός αντί για ημερομηνία</h3>
+<p>Οι ημερομηνίες είναι αριθμοί ημερών: δώστε στα κελιά τη μορφή <strong>Ημερομηνία</strong> (<strong>Μορφή › Αριθμός</strong>).</p>
+<h3>Οι αριθμοί μου δεν αθροίζονται</h3>
+<p>Στοιχισμένοι αριστερά, είναι κείμενα. Το δεκαδικό είναι το κόμμα· μια μονάδα γραμμένη στο κελί το κάνει κείμενο (<a href="saisie.html#types">τύποι</a>).</p>
+<h3>Το μηδέν στην αρχή ενός αριθμού χάνεται</h3>
+<p>Δώστε τη μορφή <strong>Απλό κείμενο</strong> πριν γράψετε, ή αρχίστε με απόστροφο (<a href="saisie.html#textes">κείμενα</a>).</p>
+<h3>Οι αριθμοί περιμένουν τελεία αντί για κόμμα</h3>
+<p>Το DocCells ακολουθεί τη γλώσσα του προγράμματος περιήγησης. Το <code>?lang=el</code> την ορίζει (<a href="demarrage.html#langue">γλώσσα</a>).</p>
+<h2 id="formules">Τύποι</h2>
+<h3><code>#NAME?</code> με TRUE ή FALSE</h3>
+<p>Γράψτε <code>TRUE()</code> και <code>FALSE()</code>, ή 1 και 0 (<a href="formules.html#conditions">συνθήκες</a>).</p>
+<h3><code>#NAME?</code> με συνάρτηση που προτείνει το DocCells</h3>
+<p>Δεν υπολογίζονται όλες οι προτεινόμενες (<a href="fonctions.html#non-calculees">συναρτήσεις που δεν υπολογίζονται</a>).</p>
+<h3>Η <code>IFERROR</code> αφήνει να περάσει το DIV/0</h3>
+<p>Ελέγξτε τον διαιρέτη: <code>=IF(B2; A2/B2; "")</code> (<a href="formules.html#erreurs">σφάλματα</a>).</p>
+<h3>Η επικόλληση δεν κρατά τους τύπους μου</h3>
+<p>Το <strong>Επικόλληση</strong> του δεξιού κλικ επικολλά τις τιμές· το <kbd>Ctrl</kbd> <kbd>V</kbd> επικολλά τους τύπους (<a href="selection.html#copier">αντιγραφή</a>).</p>
+<h3>Όνομα μήνα ή μορφοποιημένος αριθμός μέσα σε κείμενο</h3>
+<p>Η συνάρτηση <code>TEXT</code> δεν υπολογίζεται: δώστε <a href="nombres.html">μορφή</a> σε ξεχωριστό κελί.</p>
+<h3>Μέτρηση των σημειωμένων πλαισίων</h3>
+<p><code>=SUMPRODUCT(B2:B6; B2:B6)</code> (<a href="controles.html#cases">πλαίσια ελέγχου</a>).</p>
+<h3>Το <code>=TODAY()+1</code> δίνει #VALUE!</h3>
+<p>Βάλτε <code>=TODAY()</code> σε ένα κελί και προσθέστε σε εκείνο (<a href="formules.html#dates">ημερομηνίες</a>).</p>
+<h2 id="presentation">Παρουσίαση</h2>
+<h3>Το χρώμα ενός κελιού δεν αλλάζει</h3>
+<p>Το κελί ανήκει σε περιοχή κανόνα <a href="conditionnelle.html#regles">μορφοποίησης υπό όρους</a>.</p>
+<h3>Ένα κουμπί χάθηκε</h3>
+<p>Το παράθυρο είναι στενό: είναι πίσω από το <i data-i="more"></i>.</p>
+<h3>Η ταξινόμηση ή το φίλτρο δεν γίνεται</h3>
+<p>Η περιοχή περιέχει συγχωνευμένα κελιά: αναιρέστε τη συγχώνευση.</p>
+<h2 id="fichiers">Αρχεία</h2>
+<h3>Η αποθήκευση κατεβάζει νέο αρχείο</h3>
+<p>Έτσι γίνεται σε Firefox και Safari. Το Chrome και το Edge γράφουν στο αρχείο (<a href="demarrage.html#enregistrer">αποθήκευση</a>).</p>
+<h3>Η σελίδα έκλεισε χωρίς αποθήκευση</h3>
+<p>Ανοίξτε ξανά το DocCells στο ίδιο πρόγραμμα: προτείνει να αποκαταστήσει το αντίγραφο (<a href="demarrage.html#recuperer">ανάκτηση</a>).</p>
+<h3>Το γράφημά μου δεν εκτυπώνεται</h3>
+<p>Εκτυπώνονται μόνο τα κελιά (<a href="impression.html">εκτύπωση</a>).</p>
+<h3>Ένας σύνδεσμος <code>?url=</code> δεν ανοίγει το βιβλίο μου</h3>
+<p>Ο ιστότοπος του αρχείου ίσως δεν επιτρέπει ανάγνωση από άλλους. Ένα Google Sheet πρέπει να κοινοποιείται με σύνδεσμο (<a href="partager.html">κοινοποίηση</a>).</p>
+<h3>Οι σύνδεσμοί μου χάθηκαν</h3>
+<p>Δεν αποθηκεύονται στη μορφή Excel (<a href="excel.html#perdu">τι δεν διατηρείται</a>).</p>
+<h2 id="eleves">Μαθητές</h2>
+<h3>Μπορεί ένας μαθητής να αλλάξει τους τύπους;</h3>
+<p>Όχι σε προστατευμένο βιβλίο, εκτός από τα ξεκλείδωτα κελιά (<a href="protection.html">προστασία</a>). Το <code>mode=student</code> στον σύνδεσμο του αφαιρεί τη δυνατότητα να άρει την προστασία.</p>
+</main>
+</body>
+</html>

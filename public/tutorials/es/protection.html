@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Proteger — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Proteger</h1>
+<p class="lead">Un libro protegido solo puede modificarse en sus celdas desbloqueadas: así se prepara una hoja de ejercicios.</p>
+<h2 id="preparer">Preparar una hoja para alumnos</h2>
+<ol>
+<li>Seleccionar las celdas que se rellenarán, clic derecho › <strong>Desbloquear celdas</strong>.</li>
+<li><i data-i="protect"></i> o <strong>Herramientas › Proteger / Desproteger libro</strong>.</li>
+<li>Guardar, y <a href="partager.html">difundir el archivo o su enlace</a>.</li>
+</ol>
+<p>Todas las celdas están bloqueadas al principio; el bloqueo solo tiene efecto en un libro protegido. <strong>Bloquear celdas</strong> lo anula.</p>
+<h2 id="effets">Lo que bloquea la protección</h2>
+<div class="table"><table><thead><tr><th>En un libro protegido</th><th>Celda bloqueada</th><th>Celda desbloqueada</th></tr></thead><tbody>
+<tr><td>escribir, borrar</td><td>no</td><td>sí</td></tr>
+<tr><td>calendario de una fecha</td><td>no</td><td>sí</td></tr>
+<tr><td>anchuras y alturas</td><td>no</td><td>no</td></tr>
+<tr><td>colores alternos, inserción de casillas y listas, relleno por menú</td><td>no</td><td>no</td></tr>
+<tr><td>formato, inserción de filas y columnas, gráficos</td><td>sí</td><td>sí</td></tr>
+</tbody></table></div>
+<p>La protección afecta a todas las hojas. Se guarda en el archivo de Excel, con las celdas desbloqueadas, y la leen DocCells y Excel.</p>
+<h2 id="eleve">Modo alumno</h2>
+<p><code>?mode=student</code> en la dirección abre DocCells sin el botón <i data-i="protect"></i> ni los comandos <strong>Desbloquear celdas</strong> y <strong>Definir nombre…</strong>; <strong>Proteger / Desproteger libro</strong> aparece atenuado. El alumno no puede quitar la protección.</p>
+<pre><code>https://…/doccells/?mode=student&amp;url=https://…/ejercicio.xlsx</code></pre>
+<div class="note"><p>Es una protección de uso, sin contraseña: quien abra el archivo en otra hoja de cálculo, o sin <code>mode=student</code>, puede quitarla.</p></div>
+</main>
+</body>
+</html>

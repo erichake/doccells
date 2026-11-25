@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>命名区域 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>命名区域</h1>
+<h2 id="definir">命名</h2>
+<ol>
+<li>选择单元格或区域。</li>
+<li>右键 › <strong>定义名称…</strong>（或名称框的箭头 › <strong>名称管理器</strong>）。</li>
+<li>键入名称，选择范围，<strong>确定</strong>。</li>
+</ol>
+<figure><img src="img/noms.webp" alt="新建名称窗口" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>字段</th><th>内容</th></tr></thead><tbody>
+<tr><td><strong>名称</strong></td><td>以字母或 <code>_</code> 开头；字母、数字、<code>_</code> 和 <code>.</code>，无空格；不能是 <code>B2</code> 这样的地址</td></tr>
+<tr><td><strong>作用域</strong></td><td><strong>工作簿</strong>：所有工作表都可读取；某张工作表：仅该表可读取，并优先于工作簿的同名名称</td></tr>
+<tr><td><strong>引用位置</strong></td><td>单元格或区域，带工作表：<code>'工作表1'!$B$2:$B$6</code></td></tr>
+</tbody></table></div>
+<h2 id="utiliser">使用名称</h2>
+<pre><code>=AVERAGE(成绩)
+=价格*(1+税率)</code></pre>
+<ul>
+<li>名称框的箭头列出名称：选择一个即选中其所在工作表中的区域。</li>
+<li>当选区恰好是命名区域时，名称框显示其名称。</li>
+<li><a href="controles.html#listes">下拉列表</a>可读取由地址指定的单元格区域。</li>
+</ul>
+<h2 id="gerer">修改、删除</h2>
+<p>在 <strong>名称管理器</strong> 中，单击名称可重新编辑其字段；<strong>删除</strong> 删除它；<strong>新建</strong> 回到空名称。删除名称前，请替换读取它的公式：它们会保留最后的值，之后不再计算。</p>
+<p>名称保存在 Excel 文件中，并可从中读取。</p>
+</main>
+</body>
+</html>

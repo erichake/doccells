@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Plages nommées — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Plages nommées</h1>
+<h2 id="definir">Donner un nom</h2>
+<ol>
+<li>Sélectionner la cellule ou la plage.</li>
+<li>Clic droit › <strong>Définir un nom…</strong> (ou la flèche de la zone de nom › <strong>Gestionnaire de noms</strong>).</li>
+<li>Taper le nom, choisir l’étendue, <strong>OK</strong>.</li>
+</ol>
+<figure><img src="img/noms.webp" alt="La fenêtre Nouveau nom" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Champ</th><th>Contenu</th></tr></thead><tbody>
+<tr><td><strong>Nom</strong></td><td>commence par une lettre ou <code>_</code> ; lettres, chiffres, <code>_</code> et <code>.</code>, sans espace ; pas une adresse comme <code>B2</code></td></tr>
+<tr><td><strong>Étendue</strong></td><td><strong>Classeur</strong> : lu de toutes les feuilles ; une feuille : lu seulement d’elle, où il l’emporte sur un nom du classeur</td></tr>
+<tr><td><strong>Plage de données</strong></td><td>une cellule ou une plage, avec sa feuille : <code>'Feuille1'!$B$2:$B$6</code></td></tr>
+</tbody></table></div>
+<h2 id="utiliser">Utiliser un nom</h2>
+<pre><code>=MOYENNE(notes)
+=prix*(1+tva)</code></pre>
+<ul>
+<li>La flèche de la zone de nom liste les noms : en choisir un sélectionne sa plage, dans sa feuille.</li>
+<li>Quand la sélection est exactement une plage nommée, la zone de nom montre son nom.</li>
+<li>Une <a href="controles.html#listes">liste déroulante</a> peut lire une plage de cellules, désignée par son adresse.</li>
+</ul>
+<h2 id="gerer">Modifier, supprimer</h2>
+<p>Dans le <strong>Gestionnaire de noms</strong>, cliquer un nom remet ses champs en modification ; <strong>Supprimer</strong> l’efface ; <strong>Nouveau</strong> revient à un nom vide. Avant de supprimer un nom, remplacer les formules qui le lisent : elles gardent leur dernière valeur, puis ne se calculent plus.</p>
+<p>Les noms sont enregistrés dans le fichier Excel et lus de même.</p>
+</main>
+</body>
+</html>

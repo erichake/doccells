@@ -611,6 +611,19 @@ export const StandaloneMenuBar = ({
           },
           "divider",
           {
+            icon: "help",
+            label: texts.items.manual,
+            // Adresse complète : la barre peut être dans la page hôte.
+            command: () =>
+              openExternalPage(
+                new URL(
+                  `tutorials/index.html?lang=${encodeURIComponent(navigator.language)}`,
+                  document.baseURI,
+                ).href,
+              ),
+          },
+          "divider",
+          {
             icon: "docTools",
             label: "DocTools",
             command: () => openExternalPage("https://doctools.org"),
@@ -1031,6 +1044,12 @@ const icons = {
     <svg viewBox="0 0 24 24">
       <path d="M12 3.75 5.25 6.7v4.55c0 4.3 2.8 7.7 6.75 9 3.95-1.3 6.75-4.7 6.75-9V6.7Z" />
       <path d="M9.5 12.25 11.25 14 15 10.25" />
+    </svg>
+  ),
+  help: (
+    <svg viewBox="0 0 24 24">
+      <path d="M12 6.75c-1.6-1.2-4-1.75-7.25-1.75v12.5c3.25 0 5.65.55 7.25 1.75 1.6-1.2 4-1.75 7.25-1.75V5c-3.25 0-5.65.55-7.25 1.75Z" />
+      <path d="M12 6.75v12.5" />
     </svg>
   ),
   info: (

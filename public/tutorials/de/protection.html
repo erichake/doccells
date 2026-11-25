@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Schützen — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Schützen</h1>
+<p class="lead">Eine geschützte Arbeitsmappe ist nur in den entsperrten Zellen änderbar: so bereitet man ein Übungsblatt vor.</p>
+<h2 id="preparer">Ein Blatt für Schüler vorbereiten</h2>
+<ol>
+<li>Die auszufüllenden Zellen auswählen, Rechtsklick › <strong>Zellen entsperren</strong>.</li>
+<li><i data-i="protect"></i> oder <strong>Werkzeuge › Arbeitsmappe schützen / Schutz aufheben</strong>.</li>
+<li>Speichern, dann <a href="partager.html">die Datei oder ihren Link weitergeben</a>.</li>
+</ol>
+<p>Anfangs sind alle Zellen gesperrt; die Sperre wirkt nur in einer geschützten Mappe. <strong>Zellen sperren</strong> macht es rückgängig.</p>
+<h2 id="effets">Was der Schutz verhindert</h2>
+<div class="table"><table><thead><tr><th>In einer geschützten Mappe</th><th>Gesperrte Zelle</th><th>Entsperrte Zelle</th></tr></thead><tbody>
+<tr><td>eingeben, löschen</td><td>nein</td><td>ja</td></tr>
+<tr><td>Kalender eines Datums</td><td>nein</td><td>ja</td></tr>
+<tr><td>Breiten und Höhen</td><td>nein</td><td>nein</td></tr>
+<tr><td>abwechselnde Farben, Einfügen von Kästchen und Listen, Ausfüllen per Menü</td><td>nein</td><td>nein</td></tr>
+<tr><td>Formatierung, Einfügen von Zeilen und Spalten, Diagramme</td><td>ja</td><td>ja</td></tr>
+</tbody></table></div>
+<p>Der Schutz gilt für alle Blätter. Er wird samt den entsperrten Zellen in der Excel-Datei gespeichert und von DocCells und Excel gelesen.</p>
+<h2 id="eleve">Schülermodus</h2>
+<p><code>?mode=student</code> in der Adresse öffnet DocCells ohne die Schaltfläche <i data-i="protect"></i> und ohne die Befehle <strong>Zellen entsperren</strong> und <strong>Namen definieren…</strong>; <strong>Arbeitsmappe schützen / Schutz aufheben</strong> ist ausgegraut. Schüler können den Schutz nicht aufheben.</p>
+<pre><code>https://…/doccells/?mode=student&amp;url=https://…/uebung.xlsx</code></pre>
+<div class="note"><p>Es ist ein Schutz ohne Passwort: wer die Datei in einer anderen Tabellenkalkulation oder ohne <code>mode=student</code> öffnet, kann ihn aufheben.</p></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Числовые форматы — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Числовые форматы</h1>
+<p class="lead">Формат меняет вид числа, а не его значение: вычисления сохраняют все десятичные знаки.</p>
+<h2 id="choisir">Выбор формата</h2>
+<p><strong>Формат › Число</strong> или список <strong>Автоматически</strong> на панели кнопок.</p>
+<div class="table"><table><thead><tr><th>Формат</th><th>Пример</th></tr></thead><tbody>
+<tr><td><strong>Автоматически</strong></td><td><code>1200,09</code></td></tr>
+<tr><td><strong>Обычный текст</strong></td><td><code>1200,09</code>, выровнено влево; введённое остаётся текстом</td></tr>
+<tr><td><strong>Число</strong></td><td><code>1200,09</code></td></tr>
+<tr><td><strong>Процент</strong></td><td><code>120009,00%</code>; 0,25 становится <code>25,00%</code></td></tr>
+<tr><td><strong>Научный</strong></td><td><code>1,20E+03</code></td></tr>
+<tr><td><strong>Бухгалтерский</strong></td><td><code>₽(1200,09)</code></td></tr>
+<tr><td><strong>Валюта</strong></td><td><code>₽1200,09</code></td></tr>
+<tr><td><strong>Дата</strong>, <strong>Время</strong>, <strong>Дата и время</strong></td><td>для дат: <code>2017-11-29</code>, <code>3:00 PM</code>, <code>15:00</code>…</td></tr>
+</tbody></table></div>
+<p>Символ валюты соответствует языку интерфейса.</p>
+<div class="table"><table><thead><tr><th>Кнопка</th><th>Результат</th></tr></thead><tbody>
+<tr><td><i data-i="percentage-format"></i></td><td>процент</td></tr>
+<tr><td><i data-i="number-decrease"></i></td><td>на один знак меньше</td></tr>
+<tr><td><i data-i="number-increase"></i></td><td>на один знак больше</td></tr>
+</tbody></table></div>
+<p>Эти кнопки действуют и на числа <a href="listes.html">списка</a>. Чтобы округлить само значение, используйте <code>ОКРУГЛ</code>.</p>
+<h2 id="personnalise">Пользовательский формат</h2>
+<p><strong>Формат › Число › Пользовательский числовой формат…</strong>: выберите предложенный формат или напишите код. Образец показывает результат; <strong>Справка по форматам</strong> напоминает знаки; <strong>Применить</strong> задаёт формат выделению.</p>
+<figure><img src="img/format-personnalise.webp" alt="Окно пользовательских числовых форматов" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Знак</th><th>Назначение</th><th>Код</th><th>1234,5 показано как</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td>цифра, включая ноль</td><td><code>0,00</code></td><td><code>1234,50</code></td></tr>
+<tr><td><code>#</code></td><td>цифра, если она нужна</td><td><code>#,##</code></td><td><code>1234,5</code></td></tr>
+<tr><td>пробел</td><td>группирует тысячи</td><td><code># ##0</code></td><td><code>1 235</code></td></tr>
+<tr><td><code>%</code></td><td>процент</td><td><code>0%</code></td><td><code>123450%</code></td></tr>
+<tr><td><code>"текст"</code></td><td>текст, единица</td><td><code>0,0 "m"</code></td><td><code>1234,5 m</code></td></tr>
+<tr><td><code>E+00</code></td><td>научная запись</td><td><code>0,00E+00</code></td><td><code>1,23E+03</code></td></tr>
+<tr><td><code>;</code></td><td>форматы для положительных, отрицательных, нулей, текстов</td><td><code>0;-0;"нет"</code></td><td><code>1235</code></td></tr>
+<tr><td><code>[Red]</code></td><td>цвет</td><td><code>0;[Red]-0</code></td><td>отрицательные красным</td></tr>
+</tbody></table></div>
+<p>Код набирают с разделителями языка; окно показывает вид, в котором он сохраняется (<code>#,##0.00</code>), тот же, что в Excel.</p>
+<h3 id="dates-heures">Даты и время</h3>
+<div class="table"><table><thead><tr><th>Код</th><th>29 августа 2026 г., 14:30</th></tr></thead><tbody>
+<tr><td><code>dd/MM/yyyy</code></td><td><code>29/08/2026</code></td></tr>
+<tr><td><code>d mmm yyyy</code></td><td><code>29 Aug 2026</code></td></tr>
+<tr><td><code>dddd d mmmm yyyy</code></td><td><code>Saturday 29 August 2026</code></td></tr>
+<tr><td><code>hh:mm</code></td><td><code>14:30</code></td></tr>
+<tr><td><code>dd/MM/yyyy hh:mm</code></td><td><code>29/08/2026 14:30</code></td></tr>
+</tbody></table></div>
+<p>Названия месяцев и дней показываются по-английски.</p>
+<h3 id="unites">Единицы</h3>
+<p>В разделе <strong>Единицы измерения</strong> — форматы вроде <code>0,00 "V"</code>, <code>0,00 "Ω"</code>, <code>0,00 "mm"</code>: ячейка остаётся числом, с которым можно вычислять.</p>
+</main>
+</body>
+</html>

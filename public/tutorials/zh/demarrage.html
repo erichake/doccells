@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh.md: do not edit. -->
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>打开与保存 — DocCells 手册</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>打开与保存</h1>
+<h2 id="nouveau">开始</h2>
+<p>DocCells 打开时是一个只有一张工作表的空工作簿。要重新从空工作簿开始，请刷新页面，或在浏览器的另一个标签页中打开 DocCells。</p>
+<h2 id="ouvrir">打开工作簿</h2>
+<div class="table"><table><thead><tr><th>方式</th><th>效果</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i>、<strong>文件 › 打开</strong>、<kbd>Ctrl</kbd> <kbd>O</kbd></td><td>选择计算机上的 <code>.xlsx</code> 文件</td></tr>
+<tr><td>将文件拖到页面上</td><td>遮罩提示放置位置；该工作簿替换当前打开的工作簿</td></tr>
+<tr><td><strong>文件 › 打开最近的文件</strong></td><td>最近打开或保存的十个文件（Chrome 和 Edge）</td></tr>
+<tr><td><code>?url=…</code> 链接</td><td>在线工作簿或 Google 表格（<a href="partager.html#url">共享</a>）</td></tr>
+</tbody></table></div>
+<p>只读取 Excel <code>.xlsx</code> 格式。旧的 <code>.xls</code>、<code>.ods</code> 和 <code>.csv</code> 文件需先转换。从 Excel 文件中保留的内容见<a href="excel.html">与 Excel 的兼容性</a>。</p>
+<div class="warn"><p>打开工作簿会替换当前显示的工作簿：请先保存更改。</p></div>
+<h3 id="recents">最近文件</h3>
+<p>浏览器可能再次请求读取文件的权限。已移动、重命名或删除的文件会从列表中移除。<strong>清除列表</strong> 清空列表。列表保存在本计算机的此浏览器中。</p>
+<h2 id="enregistrer">保存</h2>
+<h3>Chrome 和 Edge</h3>
+<div class="table"><table><thead><tr><th>命令</th><th>效果</th></tr></thead><tbody>
+<tr><td><i data-i="save"></i>、<strong>文件 › 保存</strong>、<kbd>Ctrl</kbd> <kbd>S</kbd></td><td>第一次询问文件位置；之后直接替换，不再询问</td></tr>
+<tr><td><strong>文件 › 另存为...</strong></td><td>选择另一个文件</td></tr>
+</tbody></table></div>
+<p>用 <i data-i="open"></i>、从最近文件或通过拖放打开的文件会保存回原处；浏览器会请求一次修改权限。</p>
+<p>工作簿的名称在菜单栏末尾。红点表示有未保存的更改；此时浏览器标签页的标题以 ● 开头。</p>
+<h3>Firefox、Safari</h3>
+<p>这些浏览器不允许写入文件。<strong>文件 › 导出</strong> 或 <kbd>Ctrl</kbd> <kbd>S</kbd> 以当前工作簿的名称下载工作簿。</p>
+<h2 id="recuperer">恢复未保存的工作簿</h2>
+<p>只要有未保存的更改，DocCells 就在浏览器中保留一份副本，每次更改后不到一秒即更新。如果页面未保存就关闭，下次打开 DocCells 时会显示副本的日期，并询问是否恢复（<strong>恢复</strong> 或 <strong>忽略</strong>）。</p>
+<ul>
+<li>保存、导出或打开另一个工作簿会清除该副本。</li>
+<li>忽略副本会将其永久删除。</li>
+<li>仅当 DocCells 占据整个页面时才保留副本，嵌入其他页面时不保留。</li>
+</ul>
+<h2 id="langue">语言</h2>
+<p>DocCells 在其界面的十二种语言中采用浏览器的语言：德语、俄语、法语、荷兰语、葡萄牙语、西班牙语、希腊语、意大利语、印地语、英语、简体中文和繁体中文。其他语言使用英语。地址中的 <code>?lang=zh-CN</code> 可指定语言。</p>
+<p>语言会改变菜单、函数名、小数分隔符、货币符号和日期显示顺序。保存的文件与语言无关：用法语编写的工作簿在德语界面中打开时，公式显示为德语。</p>
+</main>
+</body>
+</html>

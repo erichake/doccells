@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Avec DocGeo — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Avec DocGeo</h1>
+<p class="lead">DocGeo, le logiciel de géométrie dynamique de DocTools, contient DocCells : une feuille à côté d’une figure, chacune lisant l’autre.</p>
+<p>Dans DocGeo, <strong>Fichier › Vue › Nouvelle vue tableur</strong> ajoute une feuille à côté de la figure ; <strong>Fichier › Onglet › Nouvel onglet tableur</strong> en fait un onglet.</p>
+<h2 id="geo">La fonction GEO</h2>
+<p>Dans une cellule, <code>GEO</code> lit la valeur d’un objet de la figure, désigné par son nom entre guillemets.</p>
+<pre><code>=GEO("AB")
+=2*GEO("r")+1
+=GEO("'Figure 1'!c")</code></pre>
+<ul>
+<li>La cellule suit la figure pendant qu’on la manipule.</li>
+<li>Un point est lu comme la <a href="listes.html">liste</a> de ses coordonnées : <code>=GEO("A")*2</code> est un point aussi.</li>
+<li>Pendant la saisie d’une formule, un clic sur un objet de la figure y écrit <code>GEO</code> et son nom.</li>
+<li>Un objet inconnu donne <code>#N/A</code>. Hors de DocGeo, <code>GEO</code> donne toujours <code>#N/A</code>.</li>
+<li><code>GEO</code> porte le même nom dans toutes les langues.</li>
+</ul>
+<h2 id="figure">La figure lit les cellules</h2>
+<p>Dans une formule de DocGeo, <code>!B3</code> désigne une cellule, <code>!B2:B21</code> une plage.</p>
+<h2 id="differences">Différences avec DocCells seul</h2>
+<div class="table"><table><thead><tr><th>Dans DocGeo</th><th></th></tr></thead><tbody>
+<tr><td>Menus et boutons</td><td>dans les barres de DocGeo, quand la feuille est active</td></tr>
+<tr><td>Fichier</td><td>celui de DocGeo : la feuille est enregistrée dans le <code>.dgo</code>, listes et liens compris</td></tr>
+<tr><td>Feuilles</td><td>une par vue ; plusieurs onglets tableur se lisent entre eux</td></tr>
+<tr><td>Annuler</td><td><kbd>Ctrl</kbd> <kbd>Z</kbd> dans les cellules n’annule que les cellules</td></tr>
+</tbody></table></div>
+<p>La page <a href="https://doctools.org/apps/docgeo/tutorials/fr/tableur.html">Le tableur</a> du manuel de DocGeo donne le détail.</p>
+</main>
+</body>
+</html>

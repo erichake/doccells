@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Benannte Bereiche — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Benannte Bereiche</h1>
+<h2 id="definir">Einen Namen vergeben</h2>
+<ol>
+<li>Die Zelle oder den Bereich auswählen.</li>
+<li>Rechtsklick › <strong>Namen definieren…</strong> (oder Pfeil des Namenfelds › <strong>Namens-Manager</strong>).</li>
+<li>Den Namen tippen, den Gültigkeitsbereich wählen, <strong>OK</strong>.</li>
+</ol>
+<figure><img src="img/noms.webp" alt="Das Fenster für einen neuen Namen" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Feld</th><th>Inhalt</th></tr></thead><tbody>
+<tr><td><strong>Name</strong></td><td>beginnt mit einem Buchstaben oder <code>_</code>; Buchstaben, Ziffern, <code>_</code> und <code>.</code>, ohne Leerzeichen; keine Adresse wie <code>B2</code></td></tr>
+<tr><td><strong>Gültigkeitsbereich</strong></td><td><strong>Arbeitsmappe</strong>: von allen Blättern lesbar; ein Blatt: nur von ihm lesbar, wo er Vorrang vor einem Namen der Mappe hat</td></tr>
+<tr><td><strong>Bezieht sich auf</strong></td><td>eine Zelle oder ein Bereich samt Blatt: <code>'Tabelle1'!$B$2:$B$6</code></td></tr>
+</tbody></table></div>
+<h2 id="utiliser">Einen Namen verwenden</h2>
+<pre><code>=MITTELWERT(noten)
+=preis*(1+mwst)</code></pre>
+<ul>
+<li>Der Pfeil des Namenfelds listet die Namen auf: einen zu wählen wählt seinen Bereich in seinem Blatt aus.</li>
+<li>Ist die Auswahl genau ein benannter Bereich, zeigt das Namenfeld seinen Namen.</li>
+<li>Eine <a href="controles.html#listes">Drop-down-Liste</a> kann einen durch seine Adresse angegebenen Zellbereich lesen.</li>
+</ul>
+<h2 id="gerer">Bearbeiten, löschen</h2>
+<p>Im <strong>Namens-Manager</strong> bringt ein Klick auf einen Namen seine Felder zur Bearbeitung zurück; <strong>Löschen</strong> löscht ihn; <strong>Neu</strong> kehrt zu einem leeren Namen zurück. Vor dem Löschen eines Namens die Formeln ersetzen, die ihn lesen: sie behalten ihren letzten Wert und werden dann nicht mehr berechnet.</p>
+<p>Namen werden in der Excel-Datei gespeichert und daraus gelesen.</p>
+</main>
+</body>
+</html>

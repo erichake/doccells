@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>圖表與走勢圖 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>圖表與走勢圖</h1>
+<h2 id="creer">建立圖表</h2>
+<ol>
+<li>選擇資料。</li>
+<li><i data-i="chart"></i> 或 <strong>插入 › 插入圖表</strong>。</li>
+<li>選擇類型和選項；預覽隨之變化。</li>
+<li><strong>加入</strong>，然後 <strong>關閉</strong>。</li>
+</ol>
+<figure><img src="img/graphique.webp" alt="圖表視窗" width="1280" height="900" /></figure>
+<div class="table"><table><thead><tr><th>選區</th><th>解釋為</th></tr></thead><tbody>
+<tr><td>一欄或一列數字</td><td>資料</td></tr>
+<tr><td>兩欄</td><td>第一欄為標籤，第二欄為資料</td></tr>
+<tr><td>兩列</td><td>第一列為標籤，第二列為資料</td></tr>
+<tr><td>用 <kbd>Ctrl</kbd> 選擇的兩個分開的欄</td><td>同上</td></tr>
+</tbody></table></div>
+<p>一個圖表顯示一個系列：一列或一欄資料。沒有數字的儲存格（如標題）會被忽略。</p>
+<h2 id="types">類型</h2>
+<div class="table"><table><thead><tr><th>類型</th><th>用於</th><th>標籤</th></tr></thead><tbody>
+<tr><td><strong>長條圖</strong></td><td>比較</td><td>在柱形下方</td></tr>
+<tr><td><strong>折線圖</strong></td><td>變化趨勢</td><td>在橫軸上</td></tr>
+<tr><td><strong>散佈圖</strong></td><td>兩個量的關係</td><td>若為數字，則是橫座標；否則為 1、2、3…</td></tr>
+<tr><td><strong>圓餅圖</strong></td><td>佔比；正值</td><td>在圖例或扇區上</td></tr>
+</tbody></table></div>
+<p>最多 120 個值，餅圖 24 個。</p>
+<figure><img src="img/graphiques.webp" alt="四種圖表" width="1280" height="640" /></figure>
+<h2 id="options">選項</h2>
+<div class="table"><table><thead><tr><th>欄位</th><th>內容</th></tr></thead><tbody>
+<tr><td><strong>標題</strong></td><td>必填；顯示在圖表頂部</td></tr>
+<tr><td><strong>顏色</strong></td><td>色彩選擇器或代碼 <code>#4F81BD</code>；扇區有各自的色彩</td></tr>
+<tr><td><strong>資料</strong></td><td>範圍：<code>B2:B6</code></td></tr>
+<tr><td><strong>標籤</strong></td><td><strong>無</strong>；<strong>同一列的欄</strong>（<code>A</code>）；<strong>同一欄範圍的列</strong>（<code>1</code>）；<strong>自訂範圍</strong>，與資料大小相同</td></tr>
+<tr><td><strong>顯示</strong></td><td>數值、圖例、橫軸、縱軸、網格</td></tr>
+</tbody></table></div>
+<h2 id="modifier">移動、修改</h2>
+<ul>
+<li>拖曳標題條可移動圖表；拖曳右下角可調整大小。</li>
+<li><strong>編輯</strong> 重新開啟視窗，<strong>刪除</strong> 刪除圖表。視窗中還列出工作表的所有圖表。</li>
+<li>圖表隨其儲存格的資料變化。</li>
+</ul>
+<p>圖表以真正的圖表儲存在 Excel 檔案中，DocCells 可再次讀取。它們不會隨工作表<a href="impression.html">列印</a>。</p>
+<h2 id="sparklines">走勢圖</h2>
+<p><code>SPARKLINE</code> 函數在儲存格中繪製微型圖表。</p>
+<pre><code>=SPARKLINE(B2:F2)
+=SPARKLINE(B2:F2, {"charttype"\"column"})
+=SPARKLINE(B2:F2, {"charttype"\"line", "color"\"#dc2626", "linewidth"\2})
+=SPARKLINE(B2:F2, {"charttype"\"bar", "max"\100})</code></pre>
+<figure><img src="img/sparklines.webp" alt="折線和柱形走勢圖" width="900" height="300" /></figure>
+<p>選項寫在花括號中：名稱、反斜槓、值；選項之間用逗號分隔。</p>
+<div class="table"><table><thead><tr><th><code>charttype</code></th><th>圖形</th><th>專用選項</th></tr></thead><tbody>
+<tr><td><code>"line"</code>（預設）</td><td>折線</td><td><code>color</code>、<code>linewidth</code>、<code>xmin</code>、<code>xmax</code>、<code>ymin</code>、<code>ymax</code></td></tr>
+<tr><td><code>"bar"</code></td><td>堆積條形</td><td><code>max</code>、<code>color1</code>、<code>color2</code></td></tr>
+<tr><td><code>"column"</code></td><td>柱形</td><td><code>color</code>、<code>negcolor</code>、<code>lowcolor</code>、<code>highcolor</code>、<code>firstcolor</code>、<code>lastcolor</code>、<code>axis</code>、<code>axiscolor</code>、<code>ymin</code>、<code>ymax</code></td></tr>
+<tr><td><code>"winloss"</code></td><td>盈虧</td><td>同上，但沒有 <code>ymin</code> 和 <code>ymax</code></td></tr>
+</tbody></table></div>
+<p>通用選項：<code>empty</code>（<code>"zero"</code> 或 <code>"ignore"</code>）、<code>nan</code>（<code>"convert"</code> 或 <code>"ignore"</code>）、<code>rtl</code>（從右到左）。<a href="../../sparkline/zh_tw.html">SPARKLINE 文件</a>給出所有取值及範例。</p>
+<p>要畫得更大，請加大列高和欄寬，或合併儲存格。</p>
+</main>
+</body>
+</html>

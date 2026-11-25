@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/pt.md: do not edit. -->
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Abrir e guardar — Manual do DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Abrir e guardar</h1>
+<h2 id="nouveau">Começar</h2>
+<p>O DocCells abre com um livro vazio de uma folha. Para recomeçar com um livro vazio, recarregar a página ou abrir o DocCells noutro separador do navegador.</p>
+<h2 id="ouvrir">Abrir um livro</h2>
+<div class="table"><table><thead><tr><th>Meio</th><th>Efeito</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i>, <strong>Ficheiro › Abrir</strong>, <kbd>Ctrl</kbd> <kbd>O</kbd></td><td>escolher um ficheiro <code>.xlsx</code> do computador</td></tr>
+<tr><td>Arrastar o ficheiro para a página</td><td>um véu indica onde largá-lo; o livro substitui o que estava aberto</td></tr>
+<tr><td><strong>Ficheiro › Abrir ficheiro recente</strong></td><td>os últimos dez ficheiros abertos ou guardados (Chrome e Edge)</td></tr>
+<tr><td>Uma ligação <code>?url=…</code></td><td>um livro em linha ou um Google Sheet (<a href="partager.html#url">partilhar</a>)</td></tr>
+</tbody></table></div>
+<p>O único formato lido é o Excel <code>.xlsx</code>. Os antigos <code>.xls</code>, os <code>.ods</code> e os <code>.csv</code> devem ser convertidos antes. O que se conserva de um ficheiro Excel está descrito em <a href="excel.html">Compatibilidade com o Excel</a>.</p>
+<div class="warn"><p>Abrir um livro substitui o que está visível: guardar antes as alterações.</p></div>
+<h3 id="recents">Ficheiros recentes</h3>
+<p>O navegador pode voltar a pedir autorização para ler o ficheiro. Um ficheiro movido, renomeado ou eliminado é retirado da lista. <strong>Limpar lista</strong> esvazia-a. A lista fica neste navegador, neste computador.</p>
+<h2 id="enregistrer">Guardar</h2>
+<h3>Chrome e Edge</h3>
+<div class="table"><table><thead><tr><th>Comando</th><th>Efeito</th></tr></thead><tbody>
+<tr><td><i data-i="save"></i>, <strong>Ficheiro › Guardar</strong>, <kbd>Ctrl</kbd> <kbd>S</kbd></td><td>da primeira vez, pergunta onde pôr o ficheiro; depois substitui-o sem perguntar</td></tr>
+<tr><td><strong>Ficheiro › Guardar como...</strong></td><td>escolher outro ficheiro</td></tr>
+</tbody></table></div>
+<p>Um ficheiro aberto com <i data-i="open"></i>, a partir dos recentes ou largado na página é guardado no seu lugar; o navegador pede uma vez autorização para o alterar.</p>
+<p>O nome do livro está no fim da barra de menus. Um ponto vermelho indica alterações não guardadas; o título do separador do navegador começa então por ●.</p>
+<h3>Firefox, Safari</h3>
+<p>Estes navegadores não permitem escrever num ficheiro. <strong>Ficheiro › Exportar</strong> ou <kbd>Ctrl</kbd> <kbd>S</kbd> descarrega o livro, com o nome do livro aberto.</p>
+<h2 id="recuperer">Recuperar um livro não guardado</h2>
+<p>Enquanto há alterações não guardadas, o DocCells mantém uma cópia no navegador, atualizada menos de um segundo após cada alteração. Se a página fechar sem guardar, a abertura seguinte do DocCells propõe, com a data da cópia, restaurá-la (<strong>Restaurar</strong>) ou não (<strong>Ignorar</strong>).</p>
+<ul>
+<li>Guardar, exportar ou abrir outro livro apaga esta cópia.</li>
+<li>Ignorar a cópia elimina-a definitivamente.</li>
+<li>A cópia só é feita quando o DocCells ocupa toda a página, não quando está integrado noutra.</li>
+</ul>
+<h2 id="langue">Idioma</h2>
+<p>O DocCells usa o idioma do navegador entre os doze da sua interface: alemão, chinês simplificado e tradicional, espanhol, francês, grego, hindi, inglês, italiano, neerlandês, português, russo. Para os outros usa-se o inglês. <code>?lang=pt</code> no endereço impõe um idioma.</p>
+<p>O idioma muda os menus, os nomes das funções, o separador decimal, o símbolo monetário e a ordem das datas mostradas. O ficheiro guardado não depende dele: um livro escrito em francês abre em alemão com as fórmulas em alemão.</p>
+</main>
+</body>
+</html>

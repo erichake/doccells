@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mise en forme — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Mise en forme</h1>
+<h2 id="texte">Texte</h2>
+<div class="table"><table><thead><tr><th>Commande</th><th>Accès</th></tr></thead><tbody>
+<tr><td>gras, italique, souligné</td><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i> ; <kbd>Ctrl</kbd> <kbd>B</kbd>, <kbd>Ctrl</kbd> <kbd>I</kbd>, <kbd>Ctrl</kbd> <kbd>U</kbd></td></tr>
+<tr><td>police</td><td>liste <strong>Arial</strong> : treize polices</td></tr>
+<tr><td>taille</td><td>liste <strong>10</strong>, ou <strong>Format › Taille de police</strong> : 9 à 72</td></tr>
+<tr><td>couleur du texte, du fond</td><td><i data-i="font-color"></i> <i data-i="background"></i></td></tr>
+<tr><td>effacer la mise en forme</td><td><i data-i="clear-format"></i>, <strong>Format › Effacer le format</strong></td></tr>
+</tbody></table></div>
+<p>Dans la palette d’une couleur, <strong>Réinitialiser la couleur</strong> la retire ; <strong>Personnalisé</strong> ouvre le sélecteur du système.</p>
+<p>Pendant la modification d’une cellule, la mise en forme s’applique à la partie sélectionnée du texte.</p>
+<h2 id="alignement">Alignement</h2>
+<div class="table"><table><thead><tr><th>Commande</th><th>Choix</th></tr></thead><tbody>
+<tr><td><i data-i="align-left"></i> horizontal</td><td>gauche, centre, droite</td></tr>
+<tr><td><i data-i="align-top"></i> vertical</td><td>haut, milieu, bas</td></tr>
+<tr><td><i data-i="text-rotation-none"></i> rotation</td><td>inclinée, verticale, empilée</td></tr>
+<tr><td><i data-i="text-overflow"></i> renvoi à la ligne</td><td><strong>Débordement</strong> : sur les cellules vides voisines ; <strong>Renvoi à la ligne</strong> : sur plusieurs lignes ; <strong>Rogner</strong> : coupé au bord</td></tr>
+</tbody></table></div>
+<p>Sans alignement choisi, les nombres et les dates sont à droite, le reste à gauche.</p>
+<h2 id="bordures">Bordures</h2>
+<p><i data-i="border-all"></i> trace la bordure choisie ; sa flèche donne les côtés (supérieure, extérieure, intérieures, toutes, aucune, diagonale), la <strong>couleur</strong> et le <strong>style</strong> du trait. Choisir couleur et style avant le côté.</p>
+<h2 id="fusion">Fusionner</h2>
+<p><i data-i="merge-all"></i> ou <strong>Format › Fusionner les cellules</strong> :</p>
+<div class="table"><table><thead><tr><th>Commande</th><th>Effet</th></tr></thead><tbody>
+<tr><td><strong>Fusionner tout</strong></td><td>une seule cellule, qui garde un seul contenu</td></tr>
+<tr><td><strong>Fusionner verticalement</strong></td><td>une cellule par colonne</td></tr>
+<tr><td><strong>Fusionner horizontalement</strong></td><td>une cellule par ligne</td></tr>
+<tr><td><strong>Annuler la fusion</strong></td><td>rend les cellules</td></tr>
+</tbody></table></div>
+<p>Une plage qui contient des cellules fusionnées ne peut pas être triée ni filtrée.</p>
+<h2 id="alternees">Couleurs alternées</h2>
+<p><i data-i="alternating"></i> ou <strong>Format › Couleurs alternées...</strong> colore une ligne sur deux de la plage sélectionnée, avec une ligne d’en-tête si l’on veut. Les trois couleurs se choisissent.</p>
+<figure><img src="img/couleurs-alternees.webp" alt="La fenêtre des couleurs alternées" width="1280" height="760" /></figure>
+<p>Ce sont des couleurs de fond ordinaires : elles ne suivent pas un tri ni une insertion de ligne. <strong>Retirer les couleurs</strong> les efface de la plage.</p>
+<h2 id="quadrillage">Quadrillage</h2>
+<p><i data-i="gridlines"></i> ou <strong>Affichage › Afficher › Quadrillage</strong> masque ou affiche les lignes grises, dans toutes les feuilles du classeur. L’<a href="impression.html">impression</a> a son propre réglage.</p>
+<p>Pour une couleur qui dépend de la valeur, voir <a href="conditionnelle.html">Formatage conditionnel</a>.</p>
+</main>
+</body>
+</html>

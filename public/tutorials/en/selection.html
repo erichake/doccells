@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Selecting, copying, filling — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Selecting, copying, filling</h1>
+<h2 id="selectionner">Selecting</h2>
+<div class="table"><table><thead><tr><th>Action</th><th>Selection</th></tr></thead><tbody>
+<tr><td>click</td><td>a cell</td></tr>
+<tr><td>drag</td><td>a range</td></tr>
+<tr><td>click, then <kbd>Shift</kbd> and click</td><td>the range between the two</td></tr>
+<tr><td><kbd>Shift</kbd> and an arrow key</td><td>extends the range</td></tr>
+<tr><td><kbd>Ctrl</kbd> and click or drag</td><td>one more range</td></tr>
+<tr><td>click on a letter, a number</td><td>a column, a row</td></tr>
+<tr><td>drag over the letters, the numbers</td><td>several columns, several rows</td></tr>
+<tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>the whole sheet</td></tr>
+<tr><td>name box, arrow</td><td>a <a href="noms.html">named range</a></td></tr>
+</tbody></table></div>
+<p>The address of the selection is in the name box, on the left of the formula bar.</p>
+<h2 id="copier">Copying, cutting, pasting</h2>
+<p><kbd>Ctrl</kbd> <kbd>C</kbd>, <kbd>Ctrl</kbd> <kbd>X</kbd>, <kbd>Ctrl</kbd> <kbd>V</kbd>, or <strong>Copy</strong> and <strong>Paste</strong> of the right-click menu.</p>
+<ul>
+<li><strong>Paste</strong> of the right-click menu pastes the values, without the formulas; <kbd>Ctrl</kbd> <kbd>V</kbd> pastes the formulas.</li>
+<li>A pasted formula follows its new place: <code>=B2</code> copied one row below becomes <code>=B3</code>. The <code>$</code> sign fixes a row or a column (<a href="formules.html#references">references</a>).</li>
+<li>A formula that is cut keeps its references.</li>
+<li>A table copied from Excel, Numbers, a web page or a tab-separated text is pasted cell by cell; numbers and lists are recognized as when typed.</li>
+<li>Several ranges cannot be cut or pasted at once.</li>
+</ul>
+<h2 id="deplacer">Moving</h2>
+<p>Drag the border of the selection: the cells move, with their formatting.</p>
+<h2 id="recopier">Filling</h2>
+<p>The blue handle, at the bottom right corner of the selection, is dragged down, up, left or right.</p>
+<div class="table"><table><thead><tr><th>Starting cells</th><th>The handle gives</th></tr></thead><tbody>
+<tr><td>a formula</td><td>the formula, its references shifted</td></tr>
+<tr><td>two numbers, 1 and 2</td><td>the series: 3, 4, 5…</td></tr>
+<tr><td>a single number, text or date</td><td>the same value</td></tr>
+<tr><td>two dates</td><td>the next dates, with the same step</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="The series 1, 2 continued with the handle" width="760" height="300" /></figure>
+<p>Without the mouse, or on a large range:</p>
+<div class="table"><table><thead><tr><th>Command</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong>Edit › Fill down</strong>, <kbd>Ctrl</kbd> <kbd>D</kbd></td><td>the first row of the selected range is copied into the next ones</td></tr>
+<tr><td><strong>Edit › Fill right</strong>, <kbd>Ctrl</kbd> <kbd>R</kbd></td><td>the first column is copied into the next ones</td></tr>
+</tbody></table></div>
+<p>If a single row is selected, <kbd>Ctrl</kbd> <kbd>D</kbd> copies the row above into it; if a single column is, <kbd>Ctrl</kbd> <kbd>R</kbd> copies the one on its left. These commands always copy, without making a series, with formats, borders, checkboxes and drop-down lists.</p>
+<div class="tip"><p>For a formula in a whole column: type it at the top, select from that cell to the last one, <kbd>Ctrl</kbd> <kbd>D</kbd>.</p></div>
+</main>
+</body>
+</html>

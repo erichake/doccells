@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Las fórmulas — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Las fórmulas</h1>
+<h2 id="ecrire">Escribir una fórmula</h2>
+<p>Una fórmula empieza por <code>=</code>. Contiene números, textos entre comillas, referencias a celdas, operadores y <a href="fonctions.html">funciones</a>.</p>
+<pre><code>=B2*2
+=(B2+C2+D2)/3
+=PROMEDIO(B2:B6)
+="Total: "&amp;SUMA(B2:B6)</code></pre>
+<p>La celda muestra el resultado, la barra de fórmulas la fórmula. Las celdas que dependen de una celda modificada se recalculan al instante.</p>
+<p>En español, la coma es decimal y el punto y coma separa los argumentos: <code>=REDONDEAR(3,14159; 2)</code>. Los nombres de funciones se escriben en minúsculas o mayúsculas, en español o en inglés: <code>=suma(B2:B6)</code> y <code>=SUM(B2:B6)</code> se aceptan.</p>
+<h2 id="souris">Señalar las celdas con el ratón</h2>
+<p>Al escribir una fórmula, un clic en una celda de la hoja inserta su dirección, un arrastre inserta el rango. Cada referencia tiene su color, en la fórmula y en la hoja.</p>
+<h2 id="completion">El autocompletado</h2>
+<p>Desde las primeras letras de un nombre, DocCells propone las funciones que las contienen: <kbd>↑</kbd> <kbd>↓</kbd> para recorrer, <kbd>Intro</kbd>, <kbd>Tab</kbd> o un clic para elegir. Tras el paréntesis de apertura, una ayuda recuerda los argumentos.</p>
+<figure><img src="img/completion.webp" alt="Las funciones propuestas tras las primeras letras" width="760" height="560" /></figure>
+<figure><img src="img/aide-formule.webp" alt="La ayuda de una función" width="760" height="560" /></figure>
+<h2 id="somme">La suma automática</h2>
+<p><i data-i="formula-sum"></i> escribe una suma. Su flecha propone <strong>Suma</strong>, <strong>Media</strong>, <strong>Contar</strong>, <strong>Máx</strong>, <strong>Mín</strong> y <strong>Todas las fórmulas</strong>: la biblioteca, donde se busca una función por su nombre, su descripción o su categoría.</p>
+<figure><img src="img/bibliotheque.webp" alt="La biblioteca de fórmulas" width="1280" height="760" /></figure>
+<h2 id="operateurs">Operadores</h2>
+<div class="table"><table><thead><tr><th>Operador</th><th>Función</th></tr></thead><tbody>
+<tr><td><code>+</code> <code>-</code> <code>*</code> <code>/</code></td><td>cuatro operaciones</td></tr>
+<tr><td><code>^</code></td><td>potencia: <code>=2^10</code></td></tr>
+<tr><td><code>%</code></td><td>porcentaje: <code>=20%*B2</code></td></tr>
+<tr><td><code>&amp;</code></td><td>une textos: <code>=A2&amp;" "&amp;B2</code></td></tr>
+<tr><td><code>=</code> <code>&lt;&gt;</code></td><td>igual, distinto</td></tr>
+<tr><td><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code></td><td>comparaciones</td></tr>
+<tr><td><code>( )</code></td><td>prioridad</td></tr>
+</tbody></table></div>
+<p>Las potencias van antes que los productos y cocientes, luego las sumas y las comparaciones. <code>=-2^2</code> da −4 (4 en Excel).</p>
+<h2 id="references">Referencias</h2>
+<div class="table"><table><thead><tr><th>Escritura</th><th>Designa</th></tr></thead><tbody>
+<tr><td><code>B2</code></td><td>una celda; sigue el relleno</td></tr>
+<tr><td><code>$B$2</code></td><td>la misma celda, aunque se rellene</td></tr>
+<tr><td><code>B$2</code>, <code>$B2</code></td><td>fila fija, columna fija</td></tr>
+<tr><td><code>B2:D6</code></td><td>un rango</td></tr>
+<tr><td><code>B:B</code>, <code>2:2</code></td><td>una columna, una fila entera</td></tr>
+<tr><td><code>Hoja2!B2</code>, <code>'Notas 2'!B2</code></td><td>una celda de <a href="feuilles.html#references">otra hoja</a></td></tr>
+<tr><td><code>notas</code></td><td>un <a href="noms.html">rango con nombre</a></td></tr>
+</tbody></table></div>
+<p>Rellenada hacia abajo, <code>=B2*$B$1</code> pasa a ser <code>=B3*$B$1</code>, <code>=B4*$B$1</code>…</p>
+<h2 id="conditions">Condiciones</h2>
+<pre><code>=SI(B2&gt;=10; "aprobado"; "suspenso")
+=SI(Y(B2&gt;=10; C2&gt;=10); "sí"; "no")
+=CAMBIAR(A2; "a"; 1; "b"; 2; 0)
+=CONTAR.SI(B2:B6; "&gt;10")
+=SUMAR.SI(A2:A6; "Ana"; B2:B6)
+=PROMEDIO.SI(B2:B6; "&lt;10")</code></pre>
+<ul>
+<li>Los valores lógicos se escriben <code>VERDADERO()</code> y <code>FALSO()</code>, con los paréntesis. Se muestran como TRUE y FALSE.</li>
+<li>Un criterio es un texto: <code>"&gt;10"</code>, <code>"&lt;&gt;0"</code>, <code>"Ana"</code>. Los comodines <code>*</code> y <code>?</code> no se reconocen.</li>
+<li>Una celda vacía se reconoce con <code>=B2=""</code>; no es igual a 0.</li>
+</ul>
+<h2 id="chercher">Buscar en una tabla</h2>
+<pre><code>=BUSCARV("Léa"; A2:D6; 3; 0)
+=INDICE(A2:A6; COINCIDIR(MAX(B2:B6); B2:B6; 0))</code></pre>
+<p>La primera busca Léa en la primera columna de la tabla y devuelve la tercera; el último argumento 0 pide el valor exacto. La segunda da el nombre de quien tiene la mejor nota.</p>
+<h2 id="dates">Fechas y horas</h2>
+<p>Una fecha es un número de días, una hora una fracción de día: en celdas, se suman y se restan.</p>
+<pre><code>=A2+7
+=A3-A2
+=DIAS(A3; A2)
+=DIASEM(A2; 2)</code></pre>
+<p>Una fecha dada por <code>FECHA</code> o <code>HOY</code> debe pasar por una celda para sumarle algo: <code>=HOY()+1</code> da <code>#VALUE!</code>, pero si A1 contiene <code>=HOY()</code>, <code>=A1+1</code> da mañana. El resultado es un número: darle un formato <strong>Fecha</strong>.</p>
+<h2 id="erreurs">Los errores</h2>
+<div class="table"><table><thead><tr><th>Se muestra</th><th>Causa</th></tr></thead><tbody>
+<tr><td><code>#NAME?</code></td><td>nombre desconocido: error de tecleo, función <a href="fonctions.html#non-calculees">no calculada</a>, <code>VERDADERO</code> sin paréntesis, texto sin comillas</td></tr>
+<tr><td><code>#VALUE!</code></td><td>tipo inesperado: un texto donde hace falta un número</td></tr>
+<tr><td><code>DIV/0</code></td><td>división por cero o por una celda vacía</td></tr>
+<tr><td><code>#N/A</code></td><td>valor no encontrado (<code>COINCIDIR</code>, <code>BUSCARV</code>), o <code>GEO</code> fuera de DocGeo</td></tr>
+<tr><td><code>#REF!</code></td><td>celda u hoja que no existe</td></tr>
+<tr><td><code>#NUM!</code></td><td>número fuera del dominio: <code>=RAIZ(-1)</code></td></tr>
+<tr><td><code>#ERROR!</code></td><td>fórmula mal escrita, o función no calculada</td></tr>
+</tbody></table></div>
+<p><code>SI.ERROR</code> sustituye el error de una función (<code>#N/A</code>, <code>#NUM!</code>): <code>=SI.ERROR(BUSCARV(E1; A2:D6; 2; 0); "ausente")</code>. No sustituye el de un cálculo (<code>DIV/0</code>, <code>#VALUE!</code>): contra una división por cero, comprobar el divisor, <code>=SI(B2; B3/B2; "")</code>, que sirve tanto para un cero como para una celda vacía.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>公式 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>公式</h1>
+<h2 id="ecrire">書寫公式</h2>
+<p>公式以 <code>=</code> 開頭，包含數字、引號中的文字、儲存格參照、運算子和<a href="fonctions.html">函數</a>。</p>
+<pre><code>=B2*2
+=(B2+C2+D2)/3
+=AVERAGE(B2:B6)
+="合計："&amp;SUM(B2:B6)</code></pre>
+<p>儲存格顯示結果，資料編輯列顯示公式。依賴於已更改儲存格的儲存格會立即重新計算。</p>
+<p>小數分隔符是小數點，引數之間用逗號分隔：<code>=ROUND(3.14159, 2)</code>。函數名可用小寫或大寫輸入：<code>=sum(B2:B6)</code> 和 <code>=SUM(B2:B6)</code> 都可以。</p>
+<h2 id="souris">用滑鼠指定儲存格</h2>
+<p>輸入公式時，按一下工作表的儲存格會插入其位址，拖曳會插入範圍。每個參照在公式和工作表中都有自己的色彩。</p>
+<h2 id="completion">自動完成</h2>
+<p>輸入名稱的前幾個字母後，DocCells 會列出包含這些字母的函數：<kbd>↑</kbd> <kbd>↓</kbd> 瀏覽，<kbd>Enter</kbd>、<kbd>Tab</kbd> 或按一下選擇。輸入左括號後，會顯示引數說明。</p>
+<figure><img src="img/completion.webp" alt="輸入前幾個字母後列出的函數" width="760" height="560" /></figure>
+<figure><img src="img/aide-formule.webp" alt="函數的說明" width="760" height="560" /></figure>
+<h2 id="somme">自動求和</h2>
+<p><i data-i="formula-sum"></i> 寫入求和公式。其箭頭提供 <strong>求和</strong>、<strong>平均值</strong>、<strong>計數</strong>、<strong>最大值</strong>、<strong>最小值</strong> 和 <strong>所有公式</strong>：在公式庫中，可按名稱、說明或類別尋找函數。</p>
+<figure><img src="img/bibliotheque.webp" alt="公式庫" width="1280" height="760" /></figure>
+<h2 id="operateurs">運算子</h2>
+<div class="table"><table><thead><tr><th>運算子</th><th>作用</th></tr></thead><tbody>
+<tr><td><code>+</code> <code>-</code> <code>*</code> <code>/</code></td><td>四則運算</td></tr>
+<tr><td><code>^</code></td><td>乘方：<code>=2^10</code></td></tr>
+<tr><td><code>%</code></td><td>百分比：<code>=20%*B2</code></td></tr>
+<tr><td><code>&amp;</code></td><td>連接文字：<code>=A2&amp;" "&amp;B2</code></td></tr>
+<tr><td><code>=</code> <code>&lt;&gt;</code></td><td>等於、不等於</td></tr>
+<tr><td><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code></td><td>比較</td></tr>
+<tr><td><code>( )</code></td><td>優先順序</td></tr>
+</tbody></table></div>
+<p>先乘方，再乘除，然後加減，最後比較。<code>=-2^2</code> 得 −4（Excel 中為 4）。</p>
+<h2 id="references">參照</h2>
+<div class="table"><table><thead><tr><th>寫法</th><th>含義</th></tr></thead><tbody>
+<tr><td><code>B2</code></td><td>儲存格；隨填滿變化</td></tr>
+<tr><td><code>$B$2</code></td><td>填滿時仍是同一儲存格</td></tr>
+<tr><td><code>B$2</code>、<code>$B2</code></td><td>固定列、固定欄</td></tr>
+<tr><td><code>B2:D6</code></td><td>範圍</td></tr>
+<tr><td><code>B:B</code>、<code>2:2</code></td><td>整欄、整列</td></tr>
+<tr><td><code>工作表2!B2</code>、<code>'成績 2'!B2</code></td><td><a href="feuilles.html#references">另一張工作表</a>的儲存格</td></tr>
+<tr><td><code>成績</code></td><td><a href="noms.html">已命名範圍</a></td></tr>
+</tbody></table></div>
+<p>向下填滿時，<code>=B2*$B$1</code> 變成 <code>=B3*$B$1</code>、<code>=B4*$B$1</code>…</p>
+<h2 id="conditions">條件</h2>
+<pre><code>=IF(B2&gt;=10, "及格", "不及格")
+=IF(AND(B2&gt;=10, C2&gt;=10), "是", "否")
+=SWITCH(A2, "a", 1, "b", 2, 0)
+=COUNTIF(B2:B6, "&gt;10")
+=SUMIF(A2:A6, "Ana", B2:B6)
+=AVERAGEIF(B2:B6, "&lt;10")</code></pre>
+<ul>
+<li>邏輯值寫作 <code>TRUE()</code> 和 <code>FALSE()</code>，帶括號。顯示為 TRUE 和 FALSE。</li>
+<li>條件是文字：<code>"&gt;10"</code>、<code>"&lt;&gt;0"</code>、<code>"Ana"</code>。不辨識萬用字元 <code>*</code> 和 <code>?</code>。</li>
+<li>空儲存格用 <code>=B2=""</code> 判斷；它不等於 0。</li>
+</ul>
+<h2 id="chercher">在表中尋找</h2>
+<pre><code>=VLOOKUP("Léa", A2:D6, 3, 0)
+=INDEX(A2:A6, MATCH(MAX(B2:B6), B2:B6, 0))</code></pre>
+<p>第一個公式在表的第一欄中尋找 Léa，返回第三欄；最後的引數 0 要求精確匹配。第二個公式給出成績最好的人的姓名。</p>
+<h2 id="dates">日期與時間</h2>
+<p>日期是天數，時間是一天的一部分：在儲存格中可以相加減。</p>
+<pre><code>=A2+7
+=A3-A2
+=DAYS(A3, A2)
+=WEEKDAY(A2, 2)</code></pre>
+<p>由 <code>DATE</code> 或 <code>TODAY</code> 給出的日期必須經過儲存格才能相加：<code>=TODAY()+1</code> 得 <code>#VALUE!</code>，但如果 A1 中是 <code>=TODAY()</code>，則 <code>=A1+1</code> 得明天的日期。結果是數字：請設定 <strong>日期</strong> 格式。</p>
+<h2 id="erreurs">錯誤</h2>
+<div class="table"><table><thead><tr><th>顯示</th><th>原因</th></tr></thead><tbody>
+<tr><td><code>#NAME?</code></td><td>未知名稱：拼寫錯誤、<a href="fonctions.html#non-calculees">不計算</a>的函數、<code>TRUE</code> 缺少括號、文字缺少引號</td></tr>
+<tr><td><code>#VALUE!</code></td><td>類型不符：需要數字處是文字</td></tr>
+<tr><td><code>DIV/0</code></td><td>除以零或空儲存格</td></tr>
+<tr><td><code>#N/A</code></td><td>找不到值（<code>MATCH</code>、<code>VLOOKUP</code>），或在 DocGeo 之外使用 <code>GEO</code></td></tr>
+<tr><td><code>#REF!</code></td><td>儲存格或工作表不存在</td></tr>
+<tr><td><code>#NUM!</code></td><td>數字超出定義域：<code>=SQRT(-1)</code></td></tr>
+<tr><td><code>#ERROR!</code></td><td>公式書寫有誤，或函數不計算</td></tr>
+</tbody></table></div>
+<p><code>IFERROR</code> 替換函數的錯誤（<code>#N/A</code>、<code>#NUM!</code>）：<code>=IFERROR(VLOOKUP(E1, A2:D6, 2, 0), "缺席")</code>。它不替換運算的錯誤（<code>DIV/0</code>、<code>#VALUE!</code>）：要避免除以零，請檢查除數，<code>=IF(B2, B3/B2, "")</code>，對零和空儲存格都適用。</p>
+</main>
+</body>
+</html>

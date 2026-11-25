@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>चुनना, कॉपी करना, भरना — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>चुनना, कॉपी करना, भरना</h1>
+<h2 id="selectionner">चुनना</h2>
+<div class="table"><table><thead><tr><th>क्रिया</th><th>चयन</th></tr></thead><tbody>
+<tr><td>क्लिक</td><td>एक सेल</td></tr>
+<tr><td>खींचना</td><td>एक रेंज</td></tr>
+<tr><td>क्लिक, फिर <kbd>Shift</kbd> और क्लिक</td><td>दोनों के बीच की रेंज</td></tr>
+<tr><td><kbd>Shift</kbd> और तीर</td><td>रेंज बढ़ाता है</td></tr>
+<tr><td><kbd>Ctrl</kbd> और क्लिक या खींचना</td><td>एक और रेंज</td></tr>
+<tr><td>अक्षर, संख्या पर क्लिक</td><td>एक कॉलम, एक पंक्ति</td></tr>
+<tr><td>अक्षरों, संख्याओं पर खींचना</td><td>कई कॉलम, कई पंक्तियाँ</td></tr>
+<tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>पूरी शीट</td></tr>
+<tr><td>नाम बॉक्स, तीर</td><td><a href="noms.html">नामित रेंज</a></td></tr>
+</tbody></table></div>
+<p>चयन का पता सूत्र पट्टी के बाईं ओर नाम बॉक्स में है।</p>
+<h2 id="copier">कॉपी, कट, पेस्ट</h2>
+<p><kbd>Ctrl</kbd> <kbd>C</kbd>, <kbd>Ctrl</kbd> <kbd>X</kbd>, <kbd>Ctrl</kbd> <kbd>V</kbd>, या दाएँ क्लिक के <strong>कॉपी</strong> और <strong>पेस्ट</strong>।</p>
+<ul>
+<li>दाएँ क्लिक का <strong>पेस्ट</strong> सूत्रों के बिना मान चिपकाता है; <kbd>Ctrl</kbd> <kbd>V</kbd> सूत्र चिपकाता है।</li>
+<li>चिपकाया गया सूत्र नई जगह के अनुसार बदलता है: एक पंक्ति नीचे कॉपी करने पर <code>=B2</code> का <code>=B3</code> हो जाता है। <code>$</code> चिह्न पंक्ति या कॉलम को स्थिर करता है (<a href="formules.html#references">संदर्भ</a>)।</li>
+<li>कट किया गया सूत्र अपने संदर्भ रखता है।</li>
+<li>Excel, Numbers, वेब पृष्ठ या टैब से अलग किए टेक्स्ट की तालिका सेल दर सेल चिपकती है; संख्याएँ और सूचियाँ टाइप करने जैसी पहचानी जाती हैं।</li>
+<li>एक साथ कई रेंज कट या पेस्ट नहीं होतीं।</li>
+</ul>
+<h2 id="deplacer">हटाना</h2>
+<p>चयन का किनारा खींचें: सेल अपनी फ़ॉर्मेटिंग सहित हट जाते हैं।</p>
+<h2 id="recopier">भरना</h2>
+<p>चयन के निचले दाएँ कोने का नीला हैंडल नीचे, ऊपर, बाएँ या दाएँ खींचा जाता है।</p>
+<div class="table"><table><thead><tr><th>शुरुआती सेल</th><th>हैंडल देता है</th></tr></thead><tbody>
+<tr><td>सूत्र</td><td>खिसके हुए संदर्भों वाला सूत्र</td></tr>
+<tr><td>दो संख्याएँ, 1 और 2</td><td>श्रृंखला: 3, 4, 5…</td></tr>
+<tr><td>अकेली संख्या, टेक्स्ट या दिनांक</td><td>वही मान</td></tr>
+<tr><td>दो दिनांक</td><td>उसी अंतर पर अगले दिनांक</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="हैंडल से बढ़ाई गई श्रृंखला 1, 2" width="760" height="300" /></figure>
+<p>माउस के बिना, या बड़ी रेंज पर:</p>
+<div class="table"><table><thead><tr><th>आदेश</th><th>परिणाम</th></tr></thead><tbody>
+<tr><td><strong>संपादन › नीचे भरें</strong>, <kbd>Ctrl</kbd> <kbd>D</kbd></td><td>चुनी रेंज की पहली पंक्ति अगली पंक्तियों में कॉपी होती है</td></tr>
+<tr><td><strong>संपादन › दाईं ओर भरें</strong>, <kbd>Ctrl</kbd> <kbd>R</kbd></td><td>पहला कॉलम अगले कॉलमों में कॉपी होता है</td></tr>
+</tbody></table></div>
+<p>एक ही पंक्ति चुनी हो तो <kbd>Ctrl</kbd> <kbd>D</kbd> उसमें ऊपर की पंक्ति कॉपी करता है; एक ही कॉलम हो तो <kbd>Ctrl</kbd> <kbd>R</kbd> बाईं ओर का। ये आदेश हमेशा कॉपी करते हैं, श्रृंखला नहीं बनाते, और प्रारूप, बॉर्डर, चेकबॉक्स व सूचियाँ भी ले जाते हैं।</p>
+<div class="tip"><p>पूरे कॉलम में सूत्र के लिए: उसे ऊपर लिखें, उस सेल से अंतिम तक चुनें, <kbd>Ctrl</kbd> <kbd>D</kbd>।</p></div>
+</main>
+</body>
+</html>

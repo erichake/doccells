@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sheets — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Sheets</h1>
+<h2 id="ajouter">Adding, switching sheets</h2>
+<ul>
+<li><i data-i="plus"></i> adds a sheet, named “Sheet2”, “Sheet3”…</li>
+<li>A click on a tab displays it; <i data-i="all-sheets"></i> lists the sheets, hidden ones included, and displays the one chosen.</li>
+</ul>
+<h2 id="menu">The menu of a tab</h2>
+<p>Right-click on the tab, or its arrow:</p>
+<div class="table"><table><thead><tr><th>Command</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong>Delete</strong></td><td>after confirmation; the last visible sheet cannot be deleted</td></tr>
+<tr><td><strong>Copy</strong></td><td>duplicates the sheet</td></tr>
+<tr><td><strong>Rename</strong></td><td>or double click on the name; without <code>[ ] : ? * / ' "</code></td></tr>
+<tr><td><strong>Change color</strong></td><td>color of the tab</td></tr>
+<tr><td><strong>Hide</strong></td><td>the sheet is still read by formulas; <i data-i="all-sheets"></i> shows it again</td></tr>
+<tr><td><strong>Move left</strong>, <strong>Move right</strong></td><td>changes the order; the tab can also be dragged</td></tr>
+</tbody></table></div>
+<h2 id="references">Reading another sheet</h2>
+<p>The name of the sheet, an exclamation mark, the address. The name goes between apostrophes if it contains a space or a sign.</p>
+<pre><code>=Sheet2!B2*2
+='Marks 2'!B2
+=SUM('Marks 2'!B2:B6)</code></pre>
+<p>The reference is typed: switching tabs while entering a formula abandons the entry.</p>
+<p>For a range to be read from all sheets by a name, <a href="noms.html">name it</a> with the <strong>Workbook</strong> scope.</p>
+</main>
+</body>
+</html>

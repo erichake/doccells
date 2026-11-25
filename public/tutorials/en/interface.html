@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The interface — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>The interface</h1>
+<figure><img src="img/interface.webp" alt="The DocCells window" width="1280" height="760" /></figure>
+<p>From top to bottom: the menu bar, the toolbar, the formula bar, the sheet, the sheet tabs and the zoom.</p>
+<h2 id="menus">Menus</h2>
+<div class="table"><table><thead><tr><th>Menu</th><th>Contents</th></tr></thead><tbody>
+<tr><td><strong>File</strong></td><td><a href="demarrage.html">open, save</a>, <a href="impression.html">print</a></td></tr>
+<tr><td><strong>Edit</strong></td><td>undo, redo, <a href="selection.html#recopier">fill down, right</a></td></tr>
+<tr><td><strong>View</strong></td><td><a href="mise-en-forme.html#quadrillage">gridlines</a>, <a href="lignes-colonnes.html#figer">freeze</a></td></tr>
+<tr><td><strong>Insert</strong></td><td><a href="images-liens.html">image</a>, <a href="graphiques.html">chart</a>, <a href="controles.html">checkbox, drop-down list</a></td></tr>
+<tr><td><strong>Format</strong></td><td><a href="nombres.html">number</a>, <a href="mise-en-forme.html">text, alignment, merging</a>, <a href="mise-en-forme.html#alternees">alternating colors</a>, <a href="conditionnelle.html">conditional formatting</a></td></tr>
+<tr><td><strong>Data</strong></td><td><a href="tri-filtre.html">sort and filter</a></td></tr>
+<tr><td><strong>Tools</strong></td><td><a href="protection.html">protect</a>, this manual (<strong>User manual</strong>), DocTools, source code, version (<strong>About...</strong>)</td></tr>
+</tbody></table></div>
+<p>A check mark shows an active option: gridlines shown, frozen cells, bold, filter, protected workbook.</p>
+<figure><img src="img/menus.webp" alt="The format menu and the number formats" width="1280" height="620" /></figure>
+<h2 id="boutons">The toolbar</h2>
+<div class="table"><table><thead><tr><th>Button</th><th>Role</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i> <i data-i="save"></i></td><td><a href="demarrage.html">open, save</a></td></tr>
+<tr><td><i data-i="gridlines"></i></td><td>show or hide the <a href="mise-en-forme.html#quadrillage">gridlines</a></td></tr>
+<tr><td><i data-i="alternating"></i></td><td><a href="mise-en-forme.html#alternees">alternating colors</a></td></tr>
+<tr><td><i data-i="conditional"></i></td><td><a href="conditionnelle.html">conditional formatting</a></td></tr>
+<tr><td><i data-i="protect"></i></td><td><a href="protection.html">protect</a>; bluish when the workbook is protected</td></tr>
+<tr><td><i data-i="chart"></i></td><td><a href="graphiques.html">insert a chart</a></td></tr>
+<tr><td><i data-i="image"></i></td><td><a href="images-liens.html">insert an image</a></td></tr>
+<tr><td><i data-i="undo"></i> <i data-i="redo"></i></td><td>undo, redo</td></tr>
+<tr><td><i data-i="clear-format"></i></td><td>clear the formatting</td></tr>
+<tr><td><i data-i="percentage-format"></i> <i data-i="number-decrease"></i> <i data-i="number-increase"></i></td><td><a href="nombres.html">percentage, fewer or more decimals</a></td></tr>
+<tr><td><strong>Automatic</strong>, <strong>Arial</strong>, <strong>10</strong></td><td>number format, font, size</td></tr>
+<tr><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i></td><td>bold, italic, underlined</td></tr>
+<tr><td><i data-i="font-color"></i> <i data-i="background"></i></td><td>text color, fill color</td></tr>
+<tr><td><i data-i="border-all"></i> <i data-i="merge-all"></i></td><td><a href="mise-en-forme.html">borders, merging</a></td></tr>
+<tr><td><i data-i="align-left"></i> <i data-i="align-top"></i> <i data-i="text-rotation-none"></i> <i data-i="text-overflow"></i></td><td>alignments, rotation, wrapping</td></tr>
+<tr><td><i data-i="freeze-row-col"></i></td><td><a href="lignes-colonnes.html#figer">freeze</a></td></tr>
+<tr><td><i data-i="formula-sum"></i></td><td><a href="formules.html#somme">automatic sum</a> and other formulas</td></tr>
+<tr><td><i data-i="filter"></i></td><td><a href="tri-filtre.html">sort and filter</a></td></tr>
+</tbody></table></div>
+<p>The small arrow of a button opens its choices; the button itself repeats the last one. In a narrow window, the last buttons are behind <i data-i="more"></i>.</p>
+<h2 id="barre">The formula bar</h2>
+<ul>
+<li>On the left, the <strong>name box</strong>: the address of the selection, or the <a href="noms.html">name of the range</a>. Its arrow lists the named ranges and opens the name manager.</li>
+<li>To the right of <em>fx</em>, the content of the cell, including its formula: it can be edited there.</li>
+</ul>
+<h2 id="feuille">The sheet</h2>
+<ul>
+<li>A right-click opens a menu that depends on the place: cell, column or row header, sheet tab.</li>
+<li>A new sheet has 84 rows and 60 columns (A to BH). More are added by right-click, <strong>Insert</strong> (<a href="lignes-colonnes.html">rows and columns</a>).</li>
+<li>The blue handle at the corner of the selection <a href="selection.html#recopier">fills</a>.</li>
+</ul>
+<h2 id="zoom">Tabs and zoom</h2>
+<p>At the bottom, <i data-i="plus"></i> adds a sheet, <i data-i="all-sheets"></i> lists them all (<a href="feuilles.html">sheets</a>). On the right, <strong>−</strong> and <strong>+</strong> set the zoom; a click on the percentage offers 10% to 400%.</p>
+<h2 id="annuler">Undo</h2>
+<p><i data-i="undo"></i> or <kbd>Ctrl</kbd> <kbd>Z</kbd> undoes, <i data-i="redo"></i>, <kbd>Ctrl</kbd> <kbd>Y</kbd> or <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Z</kbd> redoes: entries, pastes, formatting, insertions. The history starts afresh when a workbook is opened, when gridlines are shown or hidden, when the workbook is protected, or when a name or a conditional formatting rule is added. Charts are not part of it: they are <a href="graphiques.html#modifier">edited or deleted</a> with their own buttons.</p>
+</main>
+</body>
+</html>

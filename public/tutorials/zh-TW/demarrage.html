@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>開啟與儲存 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>開啟與儲存</h1>
+<h2 id="nouveau">開始</h2>
+<p>DocCells 開啟時是一個只有一張工作表的空活頁簿。要重新從空活頁簿開始，請重新整理頁面，或在瀏覽器的另一個分頁中開啟 DocCells。</p>
+<h2 id="ouvrir">開啟活頁簿</h2>
+<div class="table"><table><thead><tr><th>方式</th><th>效果</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i>、<strong>檔案 › 開啟</strong>、<kbd>Ctrl</kbd> <kbd>O</kbd></td><td>選擇計算機上的 <code>.xlsx</code> 檔案</td></tr>
+<tr><td>將檔案拖到頁面上</td><td>遮罩提示放置位置；該活頁簿替換當前開啟的活頁簿</td></tr>
+<tr><td><strong>檔案 › 開啟最近的檔案</strong></td><td>最近開啟或儲存的十個檔案（Chrome 和 Edge）</td></tr>
+<tr><td><code>?url=…</code> 連結</td><td>線上活頁簿或 Google 試算表（<a href="partager.html#url">共用</a>）</td></tr>
+</tbody></table></div>
+<p>只讀取 Excel <code>.xlsx</code> 格式。舊的 <code>.xls</code>、<code>.ods</code> 和 <code>.csv</code> 檔案需先轉換。從 Excel 檔案中保留的內容見<a href="excel.html">與 Excel 的相容性</a>。</p>
+<div class="warn"><p>開啟活頁簿會替換當前顯示的活頁簿：請先儲存更改。</p></div>
+<h3 id="recents">最近檔案</h3>
+<p>瀏覽器可能再次請求讀取檔案的許可權。已移動、重新命名或刪除的檔案會從清單中移除。<strong>清除清單</strong> 清空清單。清單儲存在本計算機的此瀏覽器中。</p>
+<h2 id="enregistrer">儲存</h2>
+<h3>Chrome 和 Edge</h3>
+<div class="table"><table><thead><tr><th>命令</th><th>效果</th></tr></thead><tbody>
+<tr><td><i data-i="save"></i>、<strong>檔案 › 儲存</strong>、<kbd>Ctrl</kbd> <kbd>S</kbd></td><td>第一次詢問檔案位置；之後直接替換，不再詢問</td></tr>
+<tr><td><strong>檔案 › 另存新檔...</strong></td><td>選擇另一個檔案</td></tr>
+</tbody></table></div>
+<p>用 <i data-i="open"></i>、從最近檔案或透過拖放開啟的檔案會儲存回原處；瀏覽器會請求一次修改許可權。</p>
+<p>活頁簿的名稱在功能表列末尾。紅點表示有未儲存的更改；此時瀏覽器分頁的標題以 ● 開頭。</p>
+<h3>Firefox、Safari</h3>
+<p>這些瀏覽器不允許寫入檔案。<strong>檔案 › 匯出</strong> 或 <kbd>Ctrl</kbd> <kbd>S</kbd> 以當前活頁簿的名稱下載活頁簿。</p>
+<h2 id="recuperer">恢復未儲存的活頁簿</h2>
+<p>只要有未儲存的更改，DocCells 就在瀏覽器中保留一份副本，每次更改後不到一秒即更新。如果頁面未儲存就關閉，下次開啟 DocCells 時會顯示副本的日期，並詢問是否恢復（<strong>還原</strong> 或 <strong>忽略</strong>）。</p>
+<ul>
+<li>儲存、匯出或開啟另一個活頁簿會清除該副本。</li>
+<li>忽略副本會將其永久刪除。</li>
+<li>僅當 DocCells 佔據整個頁面時才保留副本，嵌入其他頁面時不保留。</li>
+</ul>
+<h2 id="langue">語言</h2>
+<p>DocCells 在其介面的十二種語言中採用瀏覽器的語言：德語、俄語、法語、荷蘭語、葡萄牙語、西班牙語、希臘語、義大利語、印地語、英語、簡體中文和繁體中文。其他語言使用英語。位址中的 <code>?lang=zh-TW</code> 可指定語言。</p>
+<p>語言會改變功能表、函數名、小數分隔符、貨幣符號和日期顯示順序。儲存的檔案與語言無關：用法語編寫的活頁簿在德語介面中開啟時，公式顯示為德語。</p>
+</main>
+</body>
+</html>

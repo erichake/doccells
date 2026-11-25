@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Compatibilidad con Excel — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Compatibilidad con Excel</h1>
+<p class="lead">DocCells lee y escribe el formato Excel <code>.xlsx</code>. Lo siguiente se conserva, en ambos sentidos.</p>
+<h2 id="conserve">Lo que se conserva</h2>
+<div class="table"><table><thead><tr><th>Elemento</th><th>Observación</th></tr></thead><tbody>
+<tr><td>valores, textos, fechas, fórmulas</td><td>las fórmulas se muestran en el idioma de DocCells</td></tr>
+<tr><td><a href="nombres.html">formatos de número</a></td><td>incluidos los personalizados</td></tr>
+<tr><td>fuente, colores, alineación, rotación, ajuste de texto</td><td></td></tr>
+<tr><td>bordes, celdas combinadas</td><td></td></tr>
+<tr><td>anchuras, alturas, filas y columnas ocultas</td><td></td></tr>
+<tr><td><a href="lignes-colonnes.html#figer">filas y columnas inmovilizadas</a>, cuadrícula</td><td></td></tr>
+<tr><td>varias hojas</td><td></td></tr>
+<tr><td><a href="noms.html">rangos con nombre</a></td><td></td></tr>
+<tr><td><a href="conditionnelle.html">formato condicional</a></td><td>las reglas de DocCells, las reglas simples de Excel (comparación, texto contenido)</td></tr>
+<tr><td><a href="controles.html">casillas, listas desplegables</a></td><td></td></tr>
+<tr><td><a href="graphiques.html">gráficos</a></td><td>escritos como gráficos de Excel; los de DocCells se vuelven a leer</td></tr>
+<tr><td><a href="images-liens.html">imágenes</a></td><td></td></tr>
+<tr><td><a href="tri-filtre.html#filtrer">filtros</a></td><td></td></tr>
+<tr><td><a href="protection.html">protección</a>, celdas desbloqueadas</td><td></td></tr>
+</tbody></table></div>
+<h2 id="perdu">Lo que no</h2>
+<div class="table"><table><thead><tr><th>Elemento</th><th>Se convierte en</th></tr></thead><tbody>
+<tr><td><a href="images-liens.html#liens">enlaces</a></td><td>su texto</td></tr>
+<tr><td><a href="listes.html">listas</a> en las celdas</td><td>un texto, <code>[2; 1]</code></td></tr>
+<tr><td>minigráficos de DocCells o de Google Sheets</td><td>una fórmula <code>SPARKLINE</code>, que DocCells vuelve a leer; desconocida para Excel</td></tr>
+<tr><td>gráficos creados en Excel</td><td>no se conservan</td></tr>
+<tr><td>tablas dinámicas, macros, segmentaciones, comentarios</td><td>no se conservan</td></tr>
+<tr><td>formato condicional con escalas de color, barras, iconos</td><td>no se conserva</td></tr>
+</tbody></table></div>
+<div class="tip"><p>Antes de sustituir un libro de Excel complejo, guardarlo desde DocCells con otro nombre (<strong>Guardar como...</strong>).</p></div>
+<h2 id="listes">Listas</h2>
+<p>Una lista reabierta desde un <code>.xlsx</code> es un texto: volver a escribirla la convierte en lista. Una lista calculada por una fórmula vuelve a ser una lista cuando la fórmula se recalcula.</p>
+<h2 id="formules">Fórmulas</h2>
+<p>Al abrir, una fórmula conserva en general el resultado guardado por Excel hasta que cambia una de sus celdas. Una función <a href="fonctions.html#non-calculees">no calculada por DocCells</a> da entonces <code>#NAME?</code> o <code>#ERROR!</code>.</p>
+<h2 id="formats">Otros formatos</h2>
+<div class="table"><table><thead><tr><th>Formato</th><th>Cómo</th></tr></thead><tbody>
+<tr><td><code>.csv</code></td><td>abrir el archivo en un editor de texto, copiar, pegar en DocCells si los valores están separados por tabulaciones; si no, convertirlo a <code>.xlsx</code></td></tr>
+<tr><td><code>.ods</code>, <code>.xls</code></td><td>guardarlos como <code>.xlsx</code> con LibreOffice o Excel</td></tr>
+<tr><td>Google Sheets</td><td><a href="partager.html#google">por su enlace</a>, o descargado como <code>.xlsx</code></td></tr>
+<tr><td>PDF</td><td><a href="impression.html">imprimir</a>, «Guardar como PDF»</td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

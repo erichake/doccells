@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/pt.md: do not edit. -->
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intervalos com nome — Manual do DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Intervalos com nome</h1>
+<h2 id="definir">Dar um nome</h2>
+<ol>
+<li>Selecionar a célula ou o intervalo.</li>
+<li>Clique direito › <strong>Definir nome…</strong> (ou a seta da caixa de nome › <strong>Gestor de nomes</strong>).</li>
+<li>Escrever o nome, escolher o âmbito, <strong>OK</strong>.</li>
+</ol>
+<figure><img src="img/noms.webp" alt="A janela de um novo nome" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Campo</th><th>Conteúdo</th></tr></thead><tbody>
+<tr><td><strong>Nome</strong></td><td>começa por uma letra ou <code>_</code>; letras, algarismos, <code>_</code> e <code>.</code>, sem espaço; não um endereço como <code>B2</code></td></tr>
+<tr><td><strong>Âmbito</strong></td><td><strong>Livro</strong>: lido de todas as folhas; uma folha: lido só dela, onde prevalece sobre um nome do livro</td></tr>
+<tr><td><strong>Refere-se a</strong></td><td>uma célula ou um intervalo, com a sua folha: <code>'Folha1'!$B$2:$B$6</code></td></tr>
+</tbody></table></div>
+<h2 id="utiliser">Usar um nome</h2>
+<pre><code>=MÉDIA(notas)
+=preco*(1+iva)</code></pre>
+<ul>
+<li>A seta da caixa de nome lista os nomes: escolher um seleciona o seu intervalo, na sua folha.</li>
+<li>Quando a seleção é exatamente um intervalo com nome, a caixa de nome mostra-o.</li>
+<li>Uma <a href="controles.html#listes">lista pendente</a> pode ler um intervalo de células, indicado pelo seu endereço.</li>
+</ul>
+<h2 id="gerer">Modificar, eliminar</h2>
+<p>No <strong>Gestor de nomes</strong>, clicar num nome repõe os seus campos em modificação; <strong>Eliminar</strong> elimina-o; <strong>Novo</strong> volta a um nome vazio. Antes de eliminar um nome, substituir as fórmulas que o leem: conservam o último valor e depois deixam de se calcular.</p>
+<p>Os nomes são guardados no ficheiro Excel e lidos dele.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Συμβατότητα με το Excel — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Συμβατότητα με το Excel</h1>
+<p class="lead">Το DocCells διαβάζει και γράφει τη μορφή <code>.xlsx</code> του Excel. Τα παρακάτω διατηρούνται και προς τις δύο κατευθύνσεις.</p>
+<h2 id="conserve">Τι διατηρείται</h2>
+<div class="table"><table><thead><tr><th>Στοιχείο</th><th>Παρατήρηση</th></tr></thead><tbody>
+<tr><td>τιμές, κείμενα, ημερομηνίες, τύποι</td><td>οι τύποι εμφανίζονται στη γλώσσα του DocCells</td></tr>
+<tr><td><a href="nombres.html">μορφές αριθμών</a></td><td>και οι προσαρμοσμένες</td></tr>
+<tr><td>γραμματοσειρά, χρώματα, στοίχιση, περιστροφή, αναδίπλωση</td><td></td></tr>
+<tr><td>περιγράμματα, συγχωνευμένα κελιά</td><td></td></tr>
+<tr><td>πλάτη, ύψη, κρυφές γραμμές και στήλες</td><td></td></tr>
+<tr><td><a href="lignes-colonnes.html#figer">σταθεροποιημένες γραμμές και στήλες</a>, πλέγμα</td><td></td></tr>
+<tr><td>πολλά φύλλα</td><td></td></tr>
+<tr><td><a href="noms.html">ονομασμένες περιοχές</a></td><td></td></tr>
+<tr><td><a href="conditionnelle.html">μορφοποίηση υπό όρους</a></td><td>οι κανόνες του DocCells, οι απλοί κανόνες του Excel (σύγκριση, περιεχόμενο κείμενο)</td></tr>
+<tr><td><a href="controles.html">πλαίσια ελέγχου, αναπτυσσόμενες λίστες</a></td><td></td></tr>
+<tr><td><a href="graphiques.html">γραφήματα</a></td><td>γράφονται ως γραφήματα Excel· του DocCells ξαναδιαβάζονται</td></tr>
+<tr><td><a href="images-liens.html">εικόνες</a></td><td></td></tr>
+<tr><td><a href="tri-filtre.html#filtrer">φίλτρα</a></td><td></td></tr>
+<tr><td><a href="protection.html">προστασία</a>, ξεκλείδωτα κελιά</td><td></td></tr>
+</tbody></table></div>
+<h2 id="perdu">Τι δεν διατηρείται</h2>
+<div class="table"><table><thead><tr><th>Στοιχείο</th><th>Γίνεται</th></tr></thead><tbody>
+<tr><td><a href="images-liens.html#liens">σύνδεσμοι</a></td><td>το κείμενό τους</td></tr>
+<tr><td><a href="listes.html">λίστες</a> στα κελιά</td><td>κείμενο, <code>[2; 1]</code></td></tr>
+<tr><td>sparklines του DocCells ή του Google Sheets</td><td>τύπος <code>SPARKLINE</code>, που το DocCells ξαναδιαβάζει· άγνωστος στο Excel</td></tr>
+<tr><td>γραφήματα δημιουργημένα στο Excel</td><td>δεν διατηρούνται</td></tr>
+<tr><td>συγκεντρωτικοί πίνακες, μακροεντολές, αναλυτές, σχόλια</td><td>δεν διατηρούνται</td></tr>
+<tr><td>μορφοποίηση υπό όρους με κλίμακες χρώματος, ράβδους, εικονίδια</td><td>δεν διατηρείται</td></tr>
+</tbody></table></div>
+<div class="tip"><p>Πριν αντικαταστήσετε ένα σύνθετο βιβλίο Excel, αποθηκεύστε το από το DocCells με άλλο όνομα (<strong>Αποθήκευση ως...</strong>).</p></div>
+<h2 id="listes">Λίστες</h2>
+<p>Μια λίστα που ξανανοίγει από <code>.xlsx</code> είναι κείμενο: αν την ξαναγράψετε, γίνεται λίστα. Μια λίστα που υπολογίζει ένας τύπος ξαναγίνεται λίστα όταν ο τύπος υπολογιστεί ξανά.</p>
+<h2 id="formules">Τύποι</h2>
+<p>Στο άνοιγμα, ένας τύπος κρατά συνήθως το αποτέλεσμα που αποθήκευσε το Excel, ώσπου να αλλάξει ένα κελί του. Μια συνάρτηση που <a href="fonctions.html#non-calculees">δεν υπολογίζει το DocCells</a> δίνει τότε <code>#NAME?</code> ή <code>#ERROR!</code>.</p>
+<h2 id="formats">Άλλες μορφές</h2>
+<div class="table"><table><thead><tr><th>Μορφή</th><th>Πώς</th></tr></thead><tbody>
+<tr><td><code>.csv</code></td><td>ανοίξτε το αρχείο σε επεξεργαστή κειμένου, αντιγράψτε, επικολλήστε στο DocCells αν οι τιμές χωρίζονται με στηλοθέτες· αλλιώς μετατρέψτε το σε <code>.xlsx</code></td></tr>
+<tr><td><code>.ods</code>, <code>.xls</code></td><td>αποθηκεύστε τα ως <code>.xlsx</code> με LibreOffice ή Excel</td></tr>
+<tr><td>Google Sheets</td><td><a href="partager.html#google">με τον σύνδεσμό του</a>, ή κατεβασμένο ως <code>.xlsx</code></td></tr>
+<tr><td>PDF</td><td><a href="impression.html">εκτύπωση</a>, «Αποθήκευση ως PDF»</td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

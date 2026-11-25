@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Λίστες και μιγαδικοί — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Λίστες και μιγαδικοί</h1>
+<p class="lead">Ένα κελί του DocCells μπορεί να περιέχει λίστα αριθμών. Μια λίστα δύο αριθμών είναι και σημείο του επιπέδου, ή μιγαδικός αριθμός.</p>
+<h2 id="ecrire">Γραφή λίστας</h2>
+<p>Σε αγκύλες, με στοιχεία χωρισμένα με <code>;</code>. Μια λίστα μπορεί να περιέχει λίστες.</p>
+<pre><code>[2; 1]
+[1,5; -3; 4]
+[[1; 2]; [3; 4]]
+=[2; 1]*3
+=[B2; C2]</code></pre>
+<p>Χωρίς <code>=</code>, η λίστα είναι τιμή· με <code>=</code>, τα στοιχεία της μπορούν να είναι πράξεις. Σε γλώσσα με δεκαδική τελεία, τα στοιχεία χωρίζονται με κόμματα: <code>[2, 1]</code>.</p>
+<h2 id="operations">Πράξεις</h2>
+<div class="table"><table><thead><tr><th>Πράξη</th><th>Αποτέλεσμα</th></tr></thead><tbody>
+<tr><td><code>[1; 2; 3] + [1; 1; 1]</code></td><td><code>[2; 3; 4]</code>: όρο προς όρο, ίσα μήκη</td></tr>
+<tr><td><code>[1; 2; 3] * 2</code>, <code>[2; 4; 6] / 2</code></td><td><code>[2; 4; 6]</code>, <code>[1; 2; 3]</code></td></tr>
+<tr><td><code>[2; 1] * [3; 2]</code></td><td><code>[4; 7]</code>: γινόμενο μιγαδικών</td></tr>
+<tr><td><code>[4; 7] / [3; 2]</code></td><td><code>[2; 1]</code>: πηλίκο μιγαδικών</td></tr>
+<tr><td><code>[2; 1] + 3</code></td><td><code>[5; 1]</code>: το 3 είναι πραγματικός μιγαδικός</td></tr>
+<tr><td><code>[0; 1]^2</code></td><td><code>[-1; 0]</code>, με στρογγυλοποίηση</td></tr>
+<tr><td><code>[8; 0]^(1/3)</code></td><td>η λίστα των τριών κυβικών ριζών</td></tr>
+<tr><td><code>-[2; 1]</code></td><td><code>[-2; -1]</code></td></tr>
+</tbody></table></div>
+<p>Κάθε άλλος συνδυασμός δίνει <code>#VALUE!</code>: γινόμενο δύο λιστών τριών αριθμών, διαφορετικά μήκη, κείμενο.</p>
+<h2 id="fonctions">Λίστες και συναρτήσεις</h2>
+<p>Μια συνάρτηση βλέπει μια λίστα σαν περιοχή:</p>
+<pre><code>=SUM([1; 2; 3])
+=MAX(A1)
+=INDEX(A1; 2)
+=AVERAGE([12; 15; 8])
+=SUM([1; 2; 3] + [1; 1; 1]*2)</code></pre>
+<p>Το <code>=INDEX(A1; 2)</code> δίνει το δεύτερο στοιχείο της λίστας του A1: την τεταγμένη ενός σημείου, το φανταστικό μέρος ενός μιγαδικού. Μερικές <a href="fonctions.html">συναρτήσεις</a> επιστρέφουν λίστα: <code>FREQUENCY</code>, <code>LINEST</code>, <code>TRANSPOSE</code>, <code>UNIQUE</code>, <code>SPLIT</code>.</p>
+<h2 id="affichage">Εμφάνιση</h2>
+<p>Τα κουμπιά <i data-i="number-decrease"></i> <i data-i="number-increase"></i> και οι <a href="nombres.html">μορφές αριθμών</a> εφαρμόζονται σε κάθε αριθμό της λίστας: <code>[-0,14; 0,27]</code>. Οι ακριβείς τιμές μένουν.</p>
+<h2 id="exemple">Παράδειγμα: μια μιγαδική ακολουθία</h2>
+<p>Η τροχιά του 0 για <em>z</em> ↦ <em>z</em>² + <em>c</em>: το A1 περιέχει το <em>c</em>, το A2 <code>[0; 0]</code>, το A3 τον παρακάτω τύπο, συμπληρωμένο προς τα κάτω.</p>
+<pre><code>=A2^2+$A$1</code></pre>
+<p>Στο <a href="docgeo.html">DocGeo</a>, μια τέτοια στήλη σχεδιάζεται στο σχήμα.</p>
+<div class="note"><p>Σε αρχείο Excel, μια λίστα αποθηκεύεται ως κείμενο, όπως και η τιμή ενός τύπου που δίνει λίστα (<a href="excel.html#listes">συμβατότητα</a>).</p></div>
+</main>
+</body>
+</html>

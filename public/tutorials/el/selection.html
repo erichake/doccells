@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Επιλογή, αντιγραφή, συμπλήρωση — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Επιλογή, αντιγραφή, συμπλήρωση</h1>
+<h2 id="selectionner">Επιλογή</h2>
+<div class="table"><table><thead><tr><th>Ενέργεια</th><th>Επιλογή</th></tr></thead><tbody>
+<tr><td>κλικ</td><td>ένα κελί</td></tr>
+<tr><td>σύρσιμο</td><td>μια περιοχή</td></tr>
+<tr><td>κλικ, έπειτα <kbd>Shift</kbd> και κλικ</td><td>η περιοχή ανάμεσα</td></tr>
+<tr><td><kbd>Shift</kbd> και βέλος</td><td>επεκτείνει την περιοχή</td></tr>
+<tr><td><kbd>Ctrl</kbd> και κλικ ή σύρσιμο</td><td>μία ακόμη περιοχή</td></tr>
+<tr><td>κλικ σε γράμμα, σε αριθμό</td><td>μια στήλη, μια γραμμή</td></tr>
+<tr><td>σύρσιμο στα γράμματα, στους αριθμούς</td><td>πολλές στήλες, πολλές γραμμές</td></tr>
+<tr><td><kbd>Ctrl</kbd> <kbd>A</kbd></td><td>όλο το φύλλο</td></tr>
+<tr><td>πλαίσιο ονόματος, βέλος</td><td>μια <a href="noms.html">ονομασμένη περιοχή</a></td></tr>
+</tbody></table></div>
+<p>Η διεύθυνση της επιλογής είναι στο πλαίσιο ονόματος, αριστερά από τη γραμμή τύπων.</p>
+<h2 id="copier">Αντιγραφή, αποκοπή, επικόλληση</h2>
+<p><kbd>Ctrl</kbd> <kbd>C</kbd>, <kbd>Ctrl</kbd> <kbd>X</kbd>, <kbd>Ctrl</kbd> <kbd>V</kbd>, ή <strong>Αντιγραφή</strong> και <strong>Επικόλληση</strong> του δεξιού κλικ.</p>
+<ul>
+<li>Το <strong>Επικόλληση</strong> του δεξιού κλικ επικολλά τις τιμές, χωρίς τους τύπους· το <kbd>Ctrl</kbd> <kbd>V</kbd> επικολλά τους τύπους.</li>
+<li>Ένας επικολλημένος τύπος ακολουθεί τη νέα του θέση: το <code>=B2</code> μία γραμμή πιο κάτω γίνεται <code>=B3</code>. Το σύμβολο <code>$</code> σταθεροποιεί γραμμή ή στήλη (<a href="formules.html#references">αναφορές</a>).</li>
+<li>Ένας τύπος που αποκόπτεται κρατά τις αναφορές του.</li>
+<li>Ένας πίνακας από Excel, Numbers, ιστοσελίδα ή κείμενο με στηλοθέτες επικολλάται κελί προς κελί· οι δεκαδικοί και οι λίστες αναγνωρίζονται όπως στην πληκτρολόγηση.</li>
+<li>Δεν γίνεται αποκοπή ή επικόλληση πολλών περιοχών μαζί.</li>
+</ul>
+<h2 id="deplacer">Μετακίνηση</h2>
+<p>Σύρετε το περίγραμμα της επιλογής: τα κελιά μετακινούνται με τη μορφοποίησή τους.</p>
+<h2 id="recopier">Συμπλήρωση</h2>
+<p>Η μπλε λαβή, κάτω δεξιά στην επιλογή, σύρεται κάτω, πάνω, αριστερά ή δεξιά.</p>
+<div class="table"><table><thead><tr><th>Αρχικά κελιά</th><th>Η λαβή δίνει</th></tr></thead><tbody>
+<tr><td>ένας τύπος</td><td>τον τύπο με μετατοπισμένες αναφορές</td></tr>
+<tr><td>δύο αριθμοί, 1 και 2</td><td>τη σειρά: 3, 4, 5…</td></tr>
+<tr><td>ένας μόνο αριθμός, κείμενο ή ημερομηνία</td><td>την ίδια τιμή</td></tr>
+<tr><td>δύο ημερομηνίες</td><td>τις επόμενες, με το ίδιο βήμα</td></tr>
+</tbody></table></div>
+<figure><img src="img/recopie.webp" alt="Η σειρά 1, 2 συνεχισμένη με τη λαβή" width="760" height="300" /></figure>
+<p>Χωρίς ποντίκι, ή σε μεγάλη περιοχή:</p>
+<div class="table"><table><thead><tr><th>Εντολή</th><th>Αποτέλεσμα</th></tr></thead><tbody>
+<tr><td><strong>Επεξεργασία › Συμπλήρωση προς τα κάτω</strong>, <kbd>Ctrl</kbd> <kbd>D</kbd></td><td>η πρώτη γραμμή της επιλογής αντιγράφεται στις επόμενες</td></tr>
+<tr><td><strong>Επεξεργασία › Συμπλήρωση προς τα δεξιά</strong>, <kbd>Ctrl</kbd> <kbd>R</kbd></td><td>η πρώτη στήλη αντιγράφεται στις επόμενες</td></tr>
+</tbody></table></div>
+<p>Αν είναι επιλεγμένη μία γραμμή, το <kbd>Ctrl</kbd> <kbd>D</kbd> αντιγράφει σε αυτήν την από πάνω· αν μία στήλη, το <kbd>Ctrl</kbd> <kbd>R</kbd> αντιγράφει την αριστερή. Οι εντολές αυτές πάντα αντιγράφουν, χωρίς σειρά, με μορφές, περιγράμματα, πλαίσια ελέγχου και λίστες.</p>
+<div class="tip"><p>Για έναν τύπο σε ολόκληρη στήλη: γράψτε τον επάνω, επιλέξτε από εκείνο το κελί ως το τελευταίο, <kbd>Ctrl</kbd> <kbd>D</kbd>.</p></div>
+</main>
+</body>
+</html>

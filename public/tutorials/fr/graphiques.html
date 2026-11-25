@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Graphiques et sparklines — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Graphiques et sparklines</h1>
+<h2 id="creer">Créer un graphique</h2>
+<ol>
+<li>Sélectionner les données.</li>
+<li><i data-i="chart"></i> ou <strong>Insertion › Insérer un graphique</strong>.</li>
+<li>Choisir le type et les options ; l’aperçu suit.</li>
+<li><strong>Ajouter</strong>, puis <strong>Fermer</strong>.</li>
+</ol>
+<figure><img src="img/graphique.webp" alt="La fenêtre des graphiques" width="1280" height="900" /></figure>
+<div class="table"><table><thead><tr><th>Sélection</th><th>Interprétation</th></tr></thead><tbody>
+<tr><td>une colonne ou une ligne de nombres</td><td>les données</td></tr>
+<tr><td>deux colonnes</td><td>étiquettes dans la première, données dans la seconde</td></tr>
+<tr><td>deux lignes</td><td>étiquettes dans la première, données dans la seconde</td></tr>
+<tr><td>deux colonnes séparées, choisies avec <kbd>Ctrl</kbd></td><td>de même</td></tr>
+</tbody></table></div>
+<p>Un graphique montre une série : une ligne ou une colonne de données. Les cellules sans nombre, comme un en-tête, sont ignorées.</p>
+<h2 id="types">Types</h2>
+<div class="table"><table><thead><tr><th>Type</th><th>Pour</th><th>Étiquettes</th></tr></thead><tbody>
+<tr><td><strong>Barres</strong></td><td>comparer</td><td>sous les barres</td></tr>
+<tr><td><strong>Courbe</strong></td><td>une évolution</td><td>en abscisse</td></tr>
+<tr><td><strong>Nuage de points</strong></td><td>une relation entre deux grandeurs</td><td>ce sont les abscisses, si elles sont des nombres ; sinon 1, 2, 3…</td></tr>
+<tr><td><strong>Secteurs</strong></td><td>des parts ; valeurs positives</td><td>dans la légende ou sur les parts</td></tr>
+</tbody></table></div>
+<p>Jusqu’à 120 valeurs, 24 pour des secteurs.</p>
+<figure><img src="img/graphiques.webp" alt="Les quatre types de graphiques" width="1280" height="640" /></figure>
+<h2 id="options">Options</h2>
+<div class="table"><table><thead><tr><th>Champ</th><th>Contenu</th></tr></thead><tbody>
+<tr><td><strong>Titre</strong></td><td>obligatoire ; affiché en haut du graphique</td></tr>
+<tr><td><strong>Couleur</strong></td><td>sélecteur ou code <code>#4F81BD</code> ; les secteurs ont leurs propres couleurs</td></tr>
+<tr><td><strong>Données</strong></td><td>la plage : <code>B2:B6</code></td></tr>
+<tr><td><strong>Étiquettes</strong></td><td><strong>Sans</strong> ; <strong>Colonne d'une même ligne</strong> (<code>A</code>) ; <strong>Ligne d'une même colonne</strong> (<code>1</code>) ; <strong>Plage personnalisée</strong>, de même taille que les données</td></tr>
+<tr><td><strong>Affichage</strong></td><td>valeurs, légende, abscisses, ordonnées, grille</td></tr>
+</tbody></table></div>
+<h2 id="modifier">Déplacer, modifier</h2>
+<ul>
+<li>Tirer le bandeau du titre déplace le graphique ; tirer son coin inférieur droit le redimensionne.</li>
+<li><strong>Modifier</strong> rouvre la fenêtre, <strong>Supprimer</strong> l’efface. La fenêtre liste aussi tous les graphiques de la feuille.</li>
+<li>Le graphique suit les données de ses cellules.</li>
+</ul>
+<p>Les graphiques sont enregistrés dans le fichier Excel comme de vrais graphiques, et relus par DocCells. Ils ne sont pas <a href="impression.html">imprimés</a> avec la feuille.</p>
+<h2 id="sparklines">Sparklines</h2>
+<p>La fonction <code>SPARKLINE</code> dessine un graphique miniature dans la cellule.</p>
+<pre><code>=SPARKLINE(B2:F2)
+=SPARKLINE(B2:F2; {"charttype"\"column"})
+=SPARKLINE(B2:F2; {"charttype"\"line"; "color"\"#dc2626"; "linewidth"\2})
+=SPARKLINE(B2:F2; {"charttype"\"bar"; "max"\100})</code></pre>
+<figure><img src="img/sparklines.webp" alt="Des sparklines en courbe et en colonnes" width="900" height="300" /></figure>
+<p>Les options s’écrivent entre accolades : le nom, une barre oblique inverse, la valeur ; un point-virgule entre deux options.</p>
+<div class="table"><table><thead><tr><th><code>charttype</code></th><th>Dessin</th><th>Options propres</th></tr></thead><tbody>
+<tr><td><code>"line"</code> (défaut)</td><td>courbe</td><td><code>color</code>, <code>linewidth</code>, <code>xmin</code>, <code>xmax</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"bar"</code></td><td>barres empilées</td><td><code>max</code>, <code>color1</code>, <code>color2</code></td></tr>
+<tr><td><code>"column"</code></td><td>colonnes</td><td><code>color</code>, <code>negcolor</code>, <code>lowcolor</code>, <code>highcolor</code>, <code>firstcolor</code>, <code>lastcolor</code>, <code>axis</code>, <code>axiscolor</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"winloss"</code></td><td>gains et pertes</td><td>les mêmes, sans <code>ymin</code> ni <code>ymax</code></td></tr>
+</tbody></table></div>
+<p>Options communes : <code>empty</code> (<code>"zero"</code> ou <code>"ignore"</code>), <code>nan</code> (<code>"convert"</code> ou <code>"ignore"</code>), <code>rtl</code> (de droite à gauche). La <a href="../../sparkline/fr.html">documentation de SPARKLINE</a> donne toutes les valeurs, avec des exemples.</p>
+<p>Pour un dessin plus grand, agrandir la ligne et la colonne, ou fusionner des cellules.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kontrollkästchen, Listen und Kalender — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Kontrollkästchen, Listen und Kalender</h1>
+<figure><img src="img/controles.webp" alt="Kontrollkästchen, eine Drop-down-Liste und der Kalender eines Datums" width="1280" height="560" /></figure>
+<h2 id="cases">Kontrollkästchen</h2>
+<p>Die Zellen auswählen, <strong>Einfügen › Kontrollkästchen</strong>. Ein Klick aktiviert oder deaktiviert; die Zelle hat den Wert TRUE oder FALSE.</p>
+<pre><code>=WENN(B2; "erledigt"; "offen")
+=SUMMENPRODUKT(B2:B6; C2:C6)
+=SUMMENPRODUKT(B2:B6; B2:B6)</code></pre>
+<p>Die zweite Formel addiert die Werte der Spalte C, deren Kästchen aktiviert ist; die dritte zählt die aktivierten Kästchen.</p>
+<h2 id="listes">Drop-down-Listen</h2>
+<p>Die Zellen auswählen, <strong>Einfügen › Drop-down-Liste…</strong>.</p>
+<div class="table"><table><thead><tr><th>Quelle</th><th>Inhalt</th></tr></thead><tbody>
+<tr><td><strong>Werte</strong></td><td>die Optionen, eine pro Feld; <strong>Option hinzufügen</strong>; ohne Komma</td></tr>
+<tr><td><strong>Aus einem Bereich</strong></td><td>ein Bereich, dessen Zellen die Optionen sind: <code>Tabelle2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>Ein Bereich ohne <code>$</code> verschiebt sich von Zelle zu Zelle wie eine ausgefüllte Formel. Ändern sich seine Zellen, folgen die Optionen.</p>
+<p>Die Zelle zeigt einen Pfeil; ein Klick öffnet die Optionen. Ein anderer Wert als die der Liste wird nicht angenommen.</p>
+<h2 id="calendrier">Kalender</h2>
+<p>Ein Doppelklick auf eine Datumszelle öffnet einen Kalender: einen Tag wählen, den Monat mit <strong><</strong> und <strong>></strong> wechseln, <strong>Heute</strong> für das heutige Datum. Er öffnet sich auf jeder Zelle mit Datumsformat, auch einer leeren, außer sie enthält eine Formel oder ist <a href="protection.html">gesperrt</a>.</p>
+<div class="tip"><p>Für eine Datumsspalte, die mit dem Kalender ausgefüllt wird: sie auswählen und ihr das Format <strong>Datum</strong> geben.</p></div>
+<h2 id="retirer">Entfernen</h2>
+<p><kbd>Entf</kbd> entfernt das Kästchen oder die Liste aus der Zelle samt ihrem Wert.</p>
+<p>Kästchen und Listen werden in der Excel-Datei gespeichert; die Kästchen sind dort Excel-Kontrollkästchen.</p>
+</main>
+</body>
+</html>

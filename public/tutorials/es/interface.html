@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/es.md: do not edit. -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>La interfaz — Manual de DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>La interfaz</h1>
+<figure><img src="img/interface.webp" alt="La ventana de DocCells" width="1280" height="760" /></figure>
+<p>De arriba abajo: la barra de menús, la barra de botones, la barra de fórmulas, la hoja, las pestañas de hojas y el zoom.</p>
+<h2 id="menus">Los menús</h2>
+<div class="table"><table><thead><tr><th>Menú</th><th>Contenido</th></tr></thead><tbody>
+<tr><td><strong>Archivo</strong></td><td><a href="demarrage.html">abrir, guardar</a>, <a href="impression.html">imprimir</a></td></tr>
+<tr><td><strong>Edición</strong></td><td>deshacer, rehacer, <a href="selection.html#recopier">rellenar hacia abajo, hacia la derecha</a></td></tr>
+<tr><td><strong>Ver</strong></td><td><a href="mise-en-forme.html#quadrillage">cuadrícula</a>, <a href="lignes-colonnes.html#figer">inmovilizar</a></td></tr>
+<tr><td><strong>Insertar</strong></td><td><a href="images-liens.html">imagen</a>, <a href="graphiques.html">gráfico</a>, <a href="controles.html">casilla, lista desplegable</a></td></tr>
+<tr><td><strong>Formato</strong></td><td><a href="nombres.html">número</a>, <a href="mise-en-forme.html">texto, alineación, combinación</a>, <a href="mise-en-forme.html#alternees">colores alternos</a>, <a href="conditionnelle.html">formato condicional</a></td></tr>
+<tr><td><strong>Datos</strong></td><td><a href="tri-filtre.html">ordenar y filtrar</a></td></tr>
+<tr><td><strong>Herramientas</strong></td><td><a href="protection.html">proteger</a>, este manual (<strong>Manual de usuario</strong>), DocTools, código fuente, versión (<strong>Acerca de...</strong>)</td></tr>
+</tbody></table></div>
+<p>Una marca señala una opción activa: cuadrícula visible, celdas inmovilizadas, negrita, filtro, libro protegido.</p>
+<figure><img src="img/menus.webp" alt="El menú de formato y los formatos de número" width="1280" height="620" /></figure>
+<h2 id="boutons">La barra de botones</h2>
+<div class="table"><table><thead><tr><th>Botón</th><th>Función</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i> <i data-i="save"></i></td><td><a href="demarrage.html">abrir, guardar</a></td></tr>
+<tr><td><i data-i="gridlines"></i></td><td>mostrar u ocultar la <a href="mise-en-forme.html#quadrillage">cuadrícula</a></td></tr>
+<tr><td><i data-i="alternating"></i></td><td><a href="mise-en-forme.html#alternees">colores alternos</a></td></tr>
+<tr><td><i data-i="conditional"></i></td><td><a href="conditionnelle.html">formato condicional</a></td></tr>
+<tr><td><i data-i="protect"></i></td><td><a href="protection.html">proteger</a>; azulado cuando el libro está protegido</td></tr>
+<tr><td><i data-i="chart"></i></td><td><a href="graphiques.html">insertar un gráfico</a></td></tr>
+<tr><td><i data-i="image"></i></td><td><a href="images-liens.html">insertar una imagen</a></td></tr>
+<tr><td><i data-i="undo"></i> <i data-i="redo"></i></td><td>deshacer, rehacer</td></tr>
+<tr><td><i data-i="clear-format"></i></td><td>borrar el formato</td></tr>
+<tr><td><i data-i="percentage-format"></i> <i data-i="number-decrease"></i> <i data-i="number-increase"></i></td><td><a href="nombres.html">porcentaje, menos o más decimales</a></td></tr>
+<tr><td><strong>Automático</strong>, <strong>Arial</strong>, <strong>10</strong></td><td>formato de número, fuente, tamaño</td></tr>
+<tr><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i></td><td>negrita, cursiva, subrayado</td></tr>
+<tr><td><i data-i="font-color"></i> <i data-i="background"></i></td><td>color del texto, del fondo</td></tr>
+<tr><td><i data-i="border-all"></i> <i data-i="merge-all"></i></td><td><a href="mise-en-forme.html">bordes, combinación</a></td></tr>
+<tr><td><i data-i="align-left"></i> <i data-i="align-top"></i> <i data-i="text-rotation-none"></i> <i data-i="text-overflow"></i></td><td>alineaciones, rotación, ajuste de texto</td></tr>
+<tr><td><i data-i="freeze-row-col"></i></td><td><a href="lignes-colonnes.html#figer">inmovilizar</a></td></tr>
+<tr><td><i data-i="formula-sum"></i></td><td><a href="formules.html#somme">suma automática</a> y otras fórmulas</td></tr>
+<tr><td><i data-i="filter"></i></td><td><a href="tri-filtre.html">ordenar y filtrar</a></td></tr>
+</tbody></table></div>
+<p>La flechita de un botón abre sus opciones; el propio botón repite la última. En una ventana estrecha, los últimos botones están detrás de <i data-i="more"></i>.</p>
+<h2 id="barre">La barra de fórmulas</h2>
+<ul>
+<li>A la izquierda, el <strong>cuadro de nombres</strong>: la dirección de la selección, o el <a href="noms.html">nombre del rango</a>. Su flecha lista los rangos con nombre y abre el administrador de nombres.</li>
+<li>A la derecha de <em>fx</em>, el contenido de la celda, incluida la fórmula: puede modificarse ahí.</li>
+</ul>
+<h2 id="feuille">La hoja</h2>
+<ul>
+<li>El clic derecho abre un menú según el lugar: celda, encabezado de columna o de fila, pestaña de hoja.</li>
+<li>La hoja inicial tiene 84 filas y 60 columnas (A a BH). Se añaden más con el clic derecho, <strong>Insertar</strong> (<a href="lignes-colonnes.html">filas y columnas</a>).</li>
+<li>El controlador azul de la esquina de la selección <a href="selection.html#recopier">rellena</a>.</li>
+</ul>
+<h2 id="zoom">Pestañas y zoom</h2>
+<p>Abajo, <i data-i="plus"></i> añade una hoja, <i data-i="all-sheets"></i> las lista todas (<a href="feuilles.html">las hojas</a>). A la derecha, <strong>−</strong> y <strong>+</strong> ajustan el zoom; un clic en el porcentaje propone de 10 % a 400 %.</p>
+<h2 id="annuler">Deshacer</h2>
+<p><i data-i="undo"></i> o <kbd>Ctrl</kbd> <kbd>Z</kbd> deshace, <i data-i="redo"></i>, <kbd>Ctrl</kbd> <kbd>Y</kbd> o <kbd>Ctrl</kbd> <kbd>Mayús</kbd> <kbd>Z</kbd> rehace: entradas, pegados, formatos, inserciones. El historial empieza de cero al abrir un libro, al mostrar u ocultar la cuadrícula, al protegerlo, o al añadir un nombre o una regla de formato condicional. Los gráficos no forman parte de él: se <a href="graphiques.html#modifier">modifican o eliminan</a> con sus botones.</p>
+</main>
+</body>
+</html>

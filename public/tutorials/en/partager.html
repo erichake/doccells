@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sharing and embedding — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Sharing and embedding</h1>
+<h2 id="url">A workbook by a link</h2>
+<p><code>?url=</code> followed by the address of an online <code>.xlsx</code> file opens it in DocCells.</p>
+<pre><code>https://…/doccells/?url=https://example.org/marks.xlsx</code></pre>
+<p>The site that hosts the file must allow other sites to read it (CORS header); a file placed next to DocCells, on the same site, has no such constraint. Everyone opens their own copy: changes do not go back to the original file.</p>
+<h2 id="google">A Google Sheet</h2>
+<p>The address of a Google Sheet works too.</p>
+<pre><code>https://…/doccells/?url=https://docs.google.com/spreadsheets/d/…</code></pre>
+<ul>
+<li>Share it with “Anyone with the link”.</li>
+<li>DocCells reads a copy in Excel format each time it is opened: the Google document is not changed.</li>
+<li>The site that hosts DocCells must run PHP; 25 MB at most.</li>
+</ul>
+<h2 id="options">Address options</h2>
+<div class="table"><table><thead><tr><th>Option</th><th>Effect</th></tr></thead><tbody>
+<tr><td><code>url=…</code></td><td>opens a workbook or a Google Sheet</td></tr>
+<tr><td><code>mode=student</code></td><td><a href="protection.html#eleve">student mode</a></td></tr>
+<tr><td><code>lang=en</code></td><td>sets the language: <code>de</code>, <code>el</code>, <code>en</code>, <code>es</code>, <code>fr</code>, <code>hi</code>, <code>it</code>, <code>nl</code>, <code>pt</code>, <code>ru</code>, <code>zh-CN</code>, <code>zh-TW</code></td></tr>
+</tbody></table></div>
+<p>Options follow one another, separated by <code>&amp;</code>: <code>?lang=en&amp;mode=student&amp;url=…</code>. The first one comes after <code>?</code>.</p>
+<h2 id="integrer">In a web page</h2>
+<pre><code>&lt;iframe src="https://…/doccells/?url=https://example.org/marks.xlsx"
+    style="width:100%;height:500px;border:1px solid #ccc"&gt;&lt;/iframe&gt;</code></pre>
+<p>In a frame, DocCells has no menus, no buttons to open and save, no recovery copy: it shows the toolbar, the formula bar and the sheet.</p>
+<h2 id="programme">By program</h2>
+<p>A page can drive DocCells: load a workbook, read and write cells, follow their values. The <code>embed</code> option opens this mode; it is described, for developers, in the <a href="https://github.com/erichake/doccells/blob/main/EMBED.md">EMBED.md</a> file of the project (in French).</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/de.md: do not edit. -->
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Diagramme und Sparklines — DocCells-Handbuch</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Diagramme und Sparklines</h1>
+<h2 id="creer">Ein Diagramm erstellen</h2>
+<ol>
+<li>Die Daten auswählen.</li>
+<li><i data-i="chart"></i> oder <strong>Einfügen › Diagramm einfügen</strong>.</li>
+<li>Typ und Optionen wählen; die Vorschau folgt.</li>
+<li><strong>Hinzufügen</strong>, dann <strong>Schließen</strong>.</li>
+</ol>
+<figure><img src="img/graphique.webp" alt="Das Diagrammfenster" width="1280" height="900" /></figure>
+<div class="table"><table><thead><tr><th>Auswahl</th><th>Deutung</th></tr></thead><tbody>
+<tr><td>eine Spalte oder Zeile von Zahlen</td><td>die Daten</td></tr>
+<tr><td>zwei Spalten</td><td>Beschriftungen in der ersten, Daten in der zweiten</td></tr>
+<tr><td>zwei Zeilen</td><td>Beschriftungen in der ersten, Daten in der zweiten</td></tr>
+<tr><td>zwei getrennte Spalten, mit <kbd>Strg</kbd> gewählt</td><td>ebenso</td></tr>
+</tbody></table></div>
+<p>Ein Diagramm zeigt eine Reihe: eine Zeile oder Spalte von Daten. Zellen ohne Zahl, etwa ein Kopf, werden übergangen.</p>
+<h2 id="types">Typen</h2>
+<div class="table"><table><thead><tr><th>Typ</th><th>Für</th><th>Beschriftungen</th></tr></thead><tbody>
+<tr><td><strong>Balken</strong></td><td>Vergleiche</td><td>unter den Balken</td></tr>
+<tr><td><strong>Linie</strong></td><td>einen Verlauf</td><td>auf der x-Achse</td></tr>
+<tr><td><strong>Punkte</strong></td><td>eine Beziehung zwischen zwei Größen</td><td>sie sind die x-Werte, wenn es Zahlen sind; sonst 1, 2, 3…</td></tr>
+<tr><td><strong>Kreis</strong></td><td>Anteile; positive Werte</td><td>in der Legende oder auf den Sektoren</td></tr>
+</tbody></table></div>
+<p>Bis zu 120 Werte, 24 für Sektoren.</p>
+<figure><img src="img/graphiques.webp" alt="Die vier Diagrammtypen" width="1280" height="640" /></figure>
+<h2 id="options">Optionen</h2>
+<div class="table"><table><thead><tr><th>Feld</th><th>Inhalt</th></tr></thead><tbody>
+<tr><td><strong>Titel</strong></td><td>Pflicht; oben im Diagramm angezeigt</td></tr>
+<tr><td><strong>Farbe</strong></td><td>Auswahl oder Code <code>#4F81BD</code>; Sektoren haben eigene Farben</td></tr>
+<tr><td><strong>Daten</strong></td><td>der Bereich: <code>B2:B6</code></td></tr>
+<tr><td><strong>Beschriftungen</strong></td><td><strong>Keine</strong>; <strong>Spalte derselben Zeile</strong> (<code>A</code>); <strong>Zeile derselben Spalten</strong> (<code>1</code>); <strong>Benutzerdefinierter Bereich</strong>, ebenso groß wie die Daten</td></tr>
+<tr><td><strong>Anzeige</strong></td><td>Werte, Legende, x-Achse, y-Achse, Gitter</td></tr>
+</tbody></table></div>
+<h2 id="modifier">Verschieben, bearbeiten</h2>
+<ul>
+<li>Das Titelband ziehen verschiebt das Diagramm; seine untere rechte Ecke ziehen ändert die Größe.</li>
+<li><strong>Bearbeiten</strong> öffnet das Fenster wieder, <strong>Löschen</strong> löscht es. Das Fenster listet auch alle Diagramme des Blatts auf.</li>
+<li>Das Diagramm folgt den Daten seiner Zellen.</li>
+</ul>
+<p>Diagramme werden in der Excel-Datei als echte Diagramme gespeichert und von DocCells wieder gelesen. Sie werden nicht mit dem Blatt <a href="impression.html">gedruckt</a>.</p>
+<h2 id="sparklines">Sparklines</h2>
+<p>Die Funktion <code>SPARKLINE</code> zeichnet ein Miniaturdiagramm in der Zelle.</p>
+<pre><code>=SPARKLINE(B2:F2)
+=SPARKLINE(B2:F2; {"charttype"\"column"})
+=SPARKLINE(B2:F2; {"charttype"\"line"; "color"\"#dc2626"; "linewidth"\2})
+=SPARKLINE(B2:F2; {"charttype"\"bar"; "max"\100})</code></pre>
+<figure><img src="img/sparklines.webp" alt="Sparklines als Linien und Säulen" width="900" height="300" /></figure>
+<p>Die Optionen stehen in geschweiften Klammern: der Name, ein umgekehrter Schrägstrich, der Wert; ein Semikolon zwischen zwei Optionen.</p>
+<div class="table"><table><thead><tr><th><code>charttype</code></th><th>Zeichnung</th><th>Eigene Optionen</th></tr></thead><tbody>
+<tr><td><code>"line"</code> (Standard)</td><td>Linie</td><td><code>color</code>, <code>linewidth</code>, <code>xmin</code>, <code>xmax</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"bar"</code></td><td>gestapelte Balken</td><td><code>max</code>, <code>color1</code>, <code>color2</code></td></tr>
+<tr><td><code>"column"</code></td><td>Säulen</td><td><code>color</code>, <code>negcolor</code>, <code>lowcolor</code>, <code>highcolor</code>, <code>firstcolor</code>, <code>lastcolor</code>, <code>axis</code>, <code>axiscolor</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"winloss"</code></td><td>Gewinn und Verlust</td><td>dieselben, ohne <code>ymin</code> und <code>ymax</code></td></tr>
+</tbody></table></div>
+<p>Gemeinsame Optionen: <code>empty</code> (<code>"zero"</code> oder <code>"ignore"</code>), <code>nan</code> (<code>"convert"</code> oder <code>"ignore"</code>), <code>rtl</code> (von rechts nach links). Die <a href="../../sparkline/de.html">SPARKLINE-Dokumentation</a> gibt alle Werte mit Beispielen.</p>
+<p>Für eine größere Zeichnung Zeile und Spalte vergrößern oder Zellen verbinden.</p>
+</main>
+</body>
+</html>

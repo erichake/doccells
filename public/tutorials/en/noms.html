@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/en.md: do not edit. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Named ranges — DocCells manual</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Named ranges</h1>
+<h2 id="definir">Giving a name</h2>
+<ol>
+<li>Select the cell or the range.</li>
+<li>Right-click › <strong>Define name…</strong> (or the arrow of the name box › <strong>Name manager</strong>).</li>
+<li>Type the name, choose the scope, <strong>OK</strong>.</li>
+</ol>
+<figure><img src="img/noms.webp" alt="The new name window" width="1280" height="760" /></figure>
+<div class="table"><table><thead><tr><th>Field</th><th>Content</th></tr></thead><tbody>
+<tr><td><strong>Name</strong></td><td>starts with a letter or <code>_</code>; letters, digits, <code>_</code> and <code>.</code>, no space; not an address such as <code>B2</code></td></tr>
+<tr><td><strong>Scope</strong></td><td><strong>Workbook</strong>: read from all sheets; a sheet: read only from it, where it prevails over a name of the workbook</td></tr>
+<tr><td><strong>Refers to</strong></td><td>a cell or a range, with its sheet: <code>'Sheet1'!$B$2:$B$6</code></td></tr>
+</tbody></table></div>
+<h2 id="utiliser">Using a name</h2>
+<pre><code>=AVERAGE(marks)
+=price*(1+tax)</code></pre>
+<ul>
+<li>The arrow of the name box lists the names: choosing one selects its range, in its sheet.</li>
+<li>When the selection is exactly a named range, the name box shows its name.</li>
+<li>A <a href="controles.html#listes">drop-down list</a> can read a range of cells, given by its address.</li>
+</ul>
+<h2 id="gerer">Editing, deleting</h2>
+<p>In the <strong>Name manager</strong>, clicking a name brings its fields back for editing; <strong>Delete</strong> deletes it; <strong>New</strong> goes back to an empty name. Before deleting a name, replace the formulas that read it: they keep their last value, then no longer calculate.</p>
+<p>Names are saved in the Excel file and read from it.</p>
+</main>
+</body>
+</html>

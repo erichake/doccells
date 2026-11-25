@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/nl.md: do not edit. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Beveiligen — DocCells-handleiding</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Beveiligen</h1>
+<p class="lead">Een beveiligde werkmap kan alleen in de ontgrendelde cellen gewijzigd worden: zo bereid je een oefenblad voor.</p>
+<h2 id="preparer">Een blad voor leerlingen voorbereiden</h2>
+<ol>
+<li>De in te vullen cellen selecteren, rechtsklikken › <strong>Cellen ontgrendelen</strong>.</li>
+<li><i data-i="protect"></i> of <strong>Hulpmiddelen › Werkmap beveiligen / beveiliging opheffen</strong>.</li>
+<li>Opslaan, dan <a href="partager.html">het bestand of de link verspreiden</a>.</li>
+</ol>
+<p>In het begin zijn alle cellen vergrendeld; dat werkt alleen in een beveiligde werkmap. <strong>Cellen vergrendelen</strong> maakt het ongedaan.</p>
+<h2 id="effets">Wat de beveiliging blokkeert</h2>
+<div class="table"><table><thead><tr><th>In een beveiligde werkmap</th><th>Vergrendelde cel</th><th>Ontgrendelde cel</th></tr></thead><tbody>
+<tr><td>typen, wissen</td><td>nee</td><td>ja</td></tr>
+<tr><td>kalender van een datum</td><td>nee</td><td>ja</td></tr>
+<tr><td>breedtes en hoogtes</td><td>nee</td><td>nee</td></tr>
+<tr><td>afwisselende kleuren, invoegen van vakjes en lijsten, doorvoeren via het menu</td><td>nee</td><td>nee</td></tr>
+<tr><td>opmaak, invoegen van rijen en kolommen, grafieken</td><td>ja</td><td>ja</td></tr>
+</tbody></table></div>
+<p>De beveiliging geldt voor alle bladen. Ze wordt in het Excel-bestand opgeslagen, met de ontgrendelde cellen, en door DocCells en Excel gelezen.</p>
+<h2 id="eleve">Leerlingmodus</h2>
+<p><code>?mode=student</code> in het adres opent DocCells zonder de knop <i data-i="protect"></i> en zonder de opdrachten <strong>Cellen ontgrendelen</strong> en <strong>Naam definiëren…</strong>; <strong>Werkmap beveiligen / beveiliging opheffen</strong> is grijs. De leerling kan de beveiliging niet opheffen.</p>
+<pre><code>https://…/doccells/?mode=student&amp;url=https://…/oefening.xlsx</code></pre>
+<div class="note"><p>Het is een gebruiksbeveiliging, zonder wachtwoord: wie het bestand in een ander rekenblad opent, of zonder <code>mode=student</code>, kan ze opheffen.</p></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/zh-TW.md: do not edit. -->
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>介面 — DocCells 手冊</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>介面</h1>
+<figure><img src="img/interface.webp" alt="DocCells 視窗" width="1280" height="760" /></figure>
+<p>從上到下：功能表列、按鈕列、資料編輯列、工作表、工作表標籤和縮放。</p>
+<h2 id="menus">功能表</h2>
+<div class="table"><table><thead><tr><th>功能表</th><th>內容</th></tr></thead><tbody>
+<tr><td><strong>檔案</strong></td><td><a href="demarrage.html">開啟、儲存</a>，<a href="impression.html">列印</a></td></tr>
+<tr><td><strong>編輯</strong></td><td>復原、取消復原，<a href="selection.html#recopier">向下、向右填滿</a></td></tr>
+<tr><td><strong>檢視</strong></td><td><a href="mise-en-forme.html#quadrillage">格線</a>，<a href="lignes-colonnes.html#figer">凍結</a></td></tr>
+<tr><td><strong>插入</strong></td><td><a href="images-liens.html">圖片</a>，<a href="graphiques.html">圖表</a>，<a href="controles.html">核取方塊、下拉式清單</a></td></tr>
+<tr><td><strong>格式</strong></td><td><a href="nombres.html">數字</a>，<a href="mise-en-forme.html">文字、對齊、合併</a>，<a href="mise-en-forme.html#alternees">交替色彩</a>，<a href="conditionnelle.html">條件式格式</a></td></tr>
+<tr><td><strong>資料</strong></td><td><a href="tri-filtre.html">排序和篩選</a></td></tr>
+<tr><td><strong>工具</strong></td><td><a href="protection.html">保護</a>，本手冊（<strong>使用手冊</strong>），DocTools，原始碼，版本（<strong>關於...</strong>）</td></tr>
+</tbody></table></div>
+<p>勾號表示已啟用的選項：顯示格線、凍結儲存格、粗體、篩選、受保護的活頁簿。</p>
+<figure><img src="img/menus.webp" alt="格式功能表和數值格式" width="1280" height="620" /></figure>
+<h2 id="boutons">按鈕列</h2>
+<div class="table"><table><thead><tr><th>按鈕</th><th>作用</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i> <i data-i="save"></i></td><td><a href="demarrage.html">開啟、儲存</a></td></tr>
+<tr><td><i data-i="gridlines"></i></td><td>顯示或隱藏<a href="mise-en-forme.html#quadrillage">格線</a></td></tr>
+<tr><td><i data-i="alternating"></i></td><td><a href="mise-en-forme.html#alternees">交替色彩</a></td></tr>
+<tr><td><i data-i="conditional"></i></td><td><a href="conditionnelle.html">條件式格式</a></td></tr>
+<tr><td><i data-i="protect"></i></td><td><a href="protection.html">保護</a>；活頁簿受保護時呈藍色</td></tr>
+<tr><td><i data-i="chart"></i></td><td><a href="graphiques.html">插入圖表</a></td></tr>
+<tr><td><i data-i="image"></i></td><td><a href="images-liens.html">插入圖片</a></td></tr>
+<tr><td><i data-i="undo"></i> <i data-i="redo"></i></td><td>復原、取消復原</td></tr>
+<tr><td><i data-i="clear-format"></i></td><td>清除格式</td></tr>
+<tr><td><i data-i="percentage-format"></i> <i data-i="number-decrease"></i> <i data-i="number-increase"></i></td><td><a href="nombres.html">百分比、減少或增加小數位</a></td></tr>
+<tr><td><strong>自動</strong>、<strong>Arial</strong>、<strong>10</strong></td><td>數值格式、字型、字號</td></tr>
+<tr><td><i data-i="bold"></i> <i data-i="italic"></i> <i data-i="underline"></i></td><td>粗體、斜體、下劃線</td></tr>
+<tr><td><i data-i="font-color"></i> <i data-i="background"></i></td><td>文字色彩、填滿色彩</td></tr>
+<tr><td><i data-i="border-all"></i> <i data-i="merge-all"></i></td><td><a href="mise-en-forme.html">邊框、合併</a></td></tr>
+<tr><td><i data-i="align-left"></i> <i data-i="align-top"></i> <i data-i="text-rotation-none"></i> <i data-i="text-overflow"></i></td><td>對齊、旋轉、換行</td></tr>
+<tr><td><i data-i="freeze-row-col"></i></td><td><a href="lignes-colonnes.html#figer">凍結</a></td></tr>
+<tr><td><i data-i="formula-sum"></i></td><td><a href="formules.html#somme">自動求和</a>及其他公式</td></tr>
+<tr><td><i data-i="filter"></i></td><td><a href="tri-filtre.html">排序和篩選</a></td></tr>
+</tbody></table></div>
+<p>按鈕的小箭頭開啟其選項；按鈕本身重複上一次的選擇。視窗較窄時，最後幾個按鈕收在 <i data-i="more"></i> 後面。</p>
+<h2 id="barre">資料編輯列</h2>
+<ul>
+<li>左側是<strong>名稱方塊</strong>：選區的位址，或<a href="noms.html">範圍的名稱</a>。其箭頭列出已命名範圍，並可開啟名稱管理器。</li>
+<li><em>fx</em> 右側是儲存格的內容，包括公式，可在此修改。</li>
+</ul>
+<h2 id="feuille">工作表</h2>
+<ul>
+<li>按右鍵會根據位置開啟不同的功能表：儲存格、欄標題或列標題、工作表標籤。</li>
+<li>新工作表有 84 列 60 欄（A 到 BH）。可透過右鍵 <strong>插入</strong> 新增（<a href="lignes-colonnes.html">列與欄</a>）。</li>
+<li>選區角上的藍色控點用於<a href="selection.html#recopier">填滿</a>。</li>
+</ul>
+<h2 id="zoom">標籤與縮放</h2>
+<p>底部的 <i data-i="plus"></i> 新增工作表，<i data-i="all-sheets"></i> 列出所有工作表（<a href="feuilles.html">工作表</a>）。右側的 <strong>−</strong> 和 <strong>+</strong> 調整縮放；按一下百分比可選擇 10% 到 400%。</p>
+<h2 id="annuler">復原</h2>
+<p><i data-i="undo"></i> 或 <kbd>Ctrl</kbd> <kbd>Z</kbd> 復原，<i data-i="redo"></i>、<kbd>Ctrl</kbd> <kbd>Y</kbd> 或 <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Z</kbd> 取消復原：輸入、貼上、格式設定、插入。開啟活頁簿、顯示或隱藏格線、保護活頁簿、新增名稱或條件式格式規則時，歷史記錄重新開始。圖表不在其中：用圖表自己的按鈕<a href="graphiques.html#modifier">修改或刪除</a>。</p>
+</main>
+</body>
+</html>

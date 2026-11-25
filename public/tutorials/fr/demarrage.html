@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ouvrir et enregistrer — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Ouvrir et enregistrer</h1>
+<h2 id="nouveau">Commencer</h2>
+<p>DocCells s’ouvre sur un classeur vide, d’une feuille. Pour repartir d’un classeur vide, recharger la page ou ouvrir DocCells dans un autre onglet du navigateur.</p>
+<h2 id="ouvrir">Ouvrir un classeur</h2>
+<div class="table"><table><thead><tr><th>Moyen</th><th>Effet</th></tr></thead><tbody>
+<tr><td><i data-i="open"></i>, <strong>Fichier › Ouvrir</strong>, <kbd>Ctrl</kbd> <kbd>O</kbd></td><td>choisir un fichier <code>.xlsx</code> de l’ordinateur</td></tr>
+<tr><td>Glisser le fichier sur la page</td><td>un voile indique où le déposer ; le classeur remplace celui qui était ouvert</td></tr>
+<tr><td><strong>Fichier › Ouvrir un fichier récent</strong></td><td>les dix derniers fichiers ouverts ou enregistrés (Chrome et Edge)</td></tr>
+<tr><td>Un lien <code>?url=…</code></td><td>un classeur en ligne ou un Google Sheet (<a href="partager.html#url">partager</a>)</td></tr>
+</tbody></table></div>
+<p>Le seul format lu est Excel <code>.xlsx</code>. Les anciens <code>.xls</code>, les <code>.ods</code> et les <code>.csv</code> sont à convertir d’abord. Ce qui est repris d’un fichier Excel est décrit dans <a href="excel.html">Compatibilité Excel</a>.</p>
+<div class="warn"><p>Ouvrir un classeur remplace celui qui est affiché : enregistrer d’abord ses modifications.</p></div>
+<h3 id="recents">Fichiers récents</h3>
+<p>Le navigateur peut redemander l’autorisation de lire le fichier. Un fichier déplacé, renommé ou supprimé depuis est retiré de la liste. <strong>Effacer la liste</strong> la vide. La liste reste dans ce navigateur, sur cet ordinateur.</p>
+<h2 id="enregistrer">Enregistrer</h2>
+<h3>Chrome et Edge</h3>
+<div class="table"><table><thead><tr><th>Commande</th><th>Effet</th></tr></thead><tbody>
+<tr><td><i data-i="save"></i>, <strong>Fichier › Enregistrer</strong>, <kbd>Ctrl</kbd> <kbd>S</kbd></td><td>la première fois, demande où ranger le fichier ; ensuite, le remplace sans rien demander</td></tr>
+<tr><td><strong>Fichier › Enregistrer sous...</strong></td><td>choisir un autre fichier</td></tr>
+</tbody></table></div>
+<p>Un fichier ouvert par <i data-i="open"></i>, par la liste des récents ou déposé sur la page est réenregistré à sa place ; le navigateur demande une fois l’autorisation de le modifier.</p>
+<p>Le nom du classeur est au bout de la barre de menus. Une pastille rouge signale des modifications non enregistrées ; le titre de l’onglet du navigateur commence alors par ●.</p>
+<h3>Firefox, Safari</h3>
+<p>Ces navigateurs ne permettent pas d’écrire dans un fichier. <strong>Fichier › Exporter</strong> ou <kbd>Ctrl</kbd> <kbd>S</kbd> télécharge le classeur, sous le nom du classeur ouvert.</p>
+<h2 id="recuperer">Récupérer un classeur non enregistré</h2>
+<p>Tant qu’il y a des modifications non enregistrées, DocCells en garde une copie dans le navigateur, mise à jour moins d’une seconde après chaque modification. Si la page se ferme sans enregistrement, l’ouverture suivante de DocCells propose, avec la date de la copie, de la restaurer (<strong>Restaurer</strong>) ou non (<strong>Ignorer</strong>).</p>
+<ul>
+<li>Enregistrer, exporter ou ouvrir un autre classeur efface cette copie.</li>
+<li>Ignorer la copie la supprime définitivement.</li>
+<li>La copie n’est faite que lorsque DocCells occupe toute la page, pas quand il est intégré à une autre.</li>
+</ul>
+<h2 id="langue">Langue</h2>
+<p>DocCells prend la langue du navigateur parmi les douze de son interface : allemand, anglais, chinois simplifié et traditionnel, espagnol, français, grec, hindi, italien, néerlandais, portugais, russe. L’anglais est pris pour les autres. <code>?lang=fr</code> dans l’adresse impose une langue.</p>
+<p>La langue change les menus, les noms de fonctions, le séparateur décimal, le symbole monétaire et l’ordre des dates à l’affichage. Le fichier enregistré n’en dépend pas : un classeur écrit en français s’ouvre en allemand avec ses formules en allemand.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>चार्ट और स्पार्कलाइन — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>चार्ट और स्पार्कलाइन</h1>
+<h2 id="creer">चार्ट बनाना</h2>
+<ol>
+<li>डेटा चुनें।</li>
+<li><i data-i="chart"></i> या <strong>डालें › चार्ट डालें</strong>।</li>
+<li>प्रकार और विकल्प चुनें; पूर्वावलोकन साथ चलता है।</li>
+<li><strong>जोड़ें</strong>, फिर <strong>बंद करें</strong>।</li>
+</ol>
+<figure><img src="img/graphique.webp" alt="चार्ट की विंडो" width="1280" height="900" /></figure>
+<div class="table"><table><thead><tr><th>चयन</th><th>अर्थ</th></tr></thead><tbody>
+<tr><td>संख्याओं का कॉलम या पंक्ति</td><td>डेटा</td></tr>
+<tr><td>दो कॉलम</td><td>पहले में लेबल, दूसरे में डेटा</td></tr>
+<tr><td>दो पंक्तियाँ</td><td>पहली में लेबल, दूसरी में डेटा</td></tr>
+<tr><td><kbd>Ctrl</kbd> से चुने दो अलग कॉलम</td><td>वही</td></tr>
+</tbody></table></div>
+<p>चार्ट एक श्रृंखला दिखाता है: डेटा की एक पंक्ति या कॉलम। बिना संख्या के सेल, जैसे शीर्षक, छोड़ दिए जाते हैं।</p>
+<h2 id="types">प्रकार</h2>
+<div class="table"><table><thead><tr><th>प्रकार</th><th>किसके लिए</th><th>लेबल</th></tr></thead><tbody>
+<tr><td><strong>बार</strong></td><td>तुलना</td><td>स्तंभों के नीचे</td></tr>
+<tr><td><strong>रेखा</strong></td><td>बदलाव</td><td>क्षैतिज अक्ष पर</td></tr>
+<tr><td><strong>स्कैटर</strong></td><td>दो राशियों का संबंध</td><td>संख्याएँ हों तो वे भुज हैं; नहीं तो 1, 2, 3…</td></tr>
+<tr><td><strong>पाई</strong></td><td>हिस्से; धनात्मक मान</td><td>लेजेंड में या खंडों पर</td></tr>
+</tbody></table></div>
+<p>120 मान तक, पाई में 24।</p>
+<figure><img src="img/graphiques.webp" alt="चार्ट के चारों प्रकार" width="1280" height="640" /></figure>
+<h2 id="options">विकल्प</h2>
+<div class="table"><table><thead><tr><th>फ़ील्ड</th><th>सामग्री</th></tr></thead><tbody>
+<tr><td><strong>शीर्षक</strong></td><td>आवश्यक; चार्ट के ऊपर दिखता है</td></tr>
+<tr><td><strong>रंग</strong></td><td>चयनक या कोड <code>#4F81BD</code>; खंडों के अपने रंग हैं</td></tr>
+<tr><td><strong>डेटा</strong></td><td>रेंज: <code>B2:B6</code></td></tr>
+<tr><td><strong>लेबल</strong></td><td><strong>नहीं</strong>; <strong>उसी पंक्ति का स्तंभ</strong> (<code>A</code>); <strong>उन्हीं स्तंभों की पंक्ति</strong> (<code>1</code>); <strong>कस्टम रेंज</strong>, डेटा के समान आकार की</td></tr>
+<tr><td><strong>दिखावट</strong></td><td>मान, लेजेंड, क्षैतिज अक्ष, लंबवत अक्ष, ग्रिड</td></tr>
+</tbody></table></div>
+<h2 id="modifier">हटाना, बदलना</h2>
+<ul>
+<li>शीर्षक पट्टी खींचने से चार्ट हटता है; निचला दायाँ कोना खींचने से आकार बदलता है।</li>
+<li><strong>संपादित करें</strong> विंडो फिर खोलता है, <strong>हटाएँ</strong> चार्ट हटाता है। विंडो शीट के सभी चार्ट भी दिखाती है।</li>
+<li>चार्ट अपने सेलों के डेटा के साथ चलता है।</li>
+</ul>
+<p>चार्ट Excel फ़ाइल में वास्तविक चार्ट के रूप में सहेजे जाते हैं और DocCells उन्हें फिर पढ़ता है। वे शीट के साथ <a href="impression.html">प्रिंट</a> नहीं होते।</p>
+<h2 id="sparklines">स्पार्कलाइन</h2>
+<p><code>SPARKLINE</code> फ़ंक्शन सेल में छोटा चार्ट बनाता है।</p>
+<pre><code>=SPARKLINE(B2:F2)
+=SPARKLINE(B2:F2, {"charttype"\"column"})
+=SPARKLINE(B2:F2, {"charttype"\"line", "color"\"#dc2626", "linewidth"\2})
+=SPARKLINE(B2:F2, {"charttype"\"bar", "max"\100})</code></pre>
+<figure><img src="img/sparklines.webp" alt="रेखा और स्तंभ स्पार्कलाइन" width="900" height="300" /></figure>
+<p>विकल्प धनु कोष्ठकों में लिखे जाते हैं: नाम, बैकस्लैश, मान; दो विकल्पों के बीच अल्पविराम।</p>
+<div class="table"><table><thead><tr><th><code>charttype</code></th><th>चित्र</th><th>अपने विकल्प</th></tr></thead><tbody>
+<tr><td><code>"line"</code> (डिफ़ॉल्ट)</td><td>रेखा</td><td><code>color</code>, <code>linewidth</code>, <code>xmin</code>, <code>xmax</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"bar"</code></td><td>जुड़ी पट्टियाँ</td><td><code>max</code>, <code>color1</code>, <code>color2</code></td></tr>
+<tr><td><code>"column"</code></td><td>स्तंभ</td><td><code>color</code>, <code>negcolor</code>, <code>lowcolor</code>, <code>highcolor</code>, <code>firstcolor</code>, <code>lastcolor</code>, <code>axis</code>, <code>axiscolor</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"winloss"</code></td><td>जीत और हार</td><td>वही, <code>ymin</code> और <code>ymax</code> के बिना</td></tr>
+</tbody></table></div>
+<p>साझा विकल्प: <code>empty</code> (<code>"zero"</code> या <code>"ignore"</code>), <code>nan</code> (<code>"convert"</code> या <code>"ignore"</code>), <code>rtl</code> (दाएँ से बाएँ)। <a href="../../sparkline/hi.html">SPARKLINE का दस्तावेज़</a> सभी मान उदाहरणों सहित देता है।</p>
+<p>बड़े चित्र के लिए पंक्ति और कॉलम बड़े करें, या सेल मिलाएँ।</p>
+</main>
+</body>
+</html>

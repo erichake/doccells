@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/el.md: do not edit. -->
+<html lang="el">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Γραφήματα και sparklines — Εγχειρίδιο DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Γραφήματα και sparklines</h1>
+<h2 id="creer">Δημιουργία γραφήματος</h2>
+<ol>
+<li>Επιλέξτε τα δεδομένα.</li>
+<li><i data-i="chart"></i> ή <strong>Εισαγωγή › Εισαγωγή γραφήματος</strong>.</li>
+<li>Επιλέξτε τύπο και επιλογές· η προεπισκόπηση ακολουθεί.</li>
+<li><strong>Προσθήκη</strong>, έπειτα <strong>Κλείσιμο</strong>.</li>
+</ol>
+<figure><img src="img/graphique.webp" alt="Το παράθυρο γραφημάτων" width="1280" height="900" /></figure>
+<div class="table"><table><thead><tr><th>Επιλογή</th><th>Ερμηνεία</th></tr></thead><tbody>
+<tr><td>μια στήλη ή γραμμή αριθμών</td><td>τα δεδομένα</td></tr>
+<tr><td>δύο στήλες</td><td>ετικέτες στην πρώτη, δεδομένα στη δεύτερη</td></tr>
+<tr><td>δύο γραμμές</td><td>ετικέτες στην πρώτη, δεδομένα στη δεύτερη</td></tr>
+<tr><td>δύο χωριστές στήλες, επιλεγμένες με <kbd>Ctrl</kbd></td><td>το ίδιο</td></tr>
+</tbody></table></div>
+<p>Ένα γράφημα δείχνει μία σειρά: μια γραμμή ή στήλη δεδομένων. Κελιά χωρίς αριθμό, όπως μια κεφαλίδα, αγνοούνται.</p>
+<h2 id="types">Τύποι</h2>
+<div class="table"><table><thead><tr><th>Τύπος</th><th>Για</th><th>Ετικέτες</th></tr></thead><tbody>
+<tr><td><strong>Ράβδοι</strong></td><td>σύγκριση</td><td>κάτω από τις ράβδους</td></tr>
+<tr><td><strong>Γραμμή</strong></td><td>εξέλιξη</td><td>στον άξονα x</td></tr>
+<tr><td><strong>Διασπορά</strong></td><td>σχέση δύο μεγεθών</td><td>είναι οι τετμημένες, αν είναι αριθμοί· αλλιώς 1, 2, 3…</td></tr>
+<tr><td><strong>Πίτα</strong></td><td>μερίδια· θετικές τιμές</td><td>στο υπόμνημα ή στους τομείς</td></tr>
+</tbody></table></div>
+<p>Έως 120 τιμές, 24 για τομείς.</p>
+<figure><img src="img/graphiques.webp" alt="Οι τέσσερις τύποι γραφημάτων" width="1280" height="640" /></figure>
+<h2 id="options">Επιλογές</h2>
+<div class="table"><table><thead><tr><th>Πεδίο</th><th>Περιεχόμενο</th></tr></thead><tbody>
+<tr><td><strong>Τίτλος</strong></td><td>υποχρεωτικό· εμφανίζεται πάνω στο γράφημα</td></tr>
+<tr><td><strong>Χρώμα</strong></td><td>επιλογέας ή κώδικας <code>#4F81BD</code>· οι τομείς έχουν δικά τους χρώματα</td></tr>
+<tr><td><strong>Δεδομένα</strong></td><td>η περιοχή: <code>B2:B6</code></td></tr>
+<tr><td><strong>Ετικέτες</strong></td><td><strong>Χωρίς ετικέτες</strong>· <strong>Στήλη της ίδιας γραμμής</strong> (<code>A</code>)· <strong>Γραμμή των ίδιων στηλών</strong> (<code>1</code>)· <strong>Προσαρμοσμένη περιοχή</strong>, ίδιου μεγέθους με τα δεδομένα</td></tr>
+<tr><td><strong>Προβολή</strong></td><td>τιμές, υπόμνημα, άξονας x, άξονας y, πλέγμα</td></tr>
+</tbody></table></div>
+<h2 id="modifier">Μετακίνηση, τροποποίηση</h2>
+<ul>
+<li>Σύρσιμο της ταινίας τίτλου μετακινεί το γράφημα· σύρσιμο της κάτω δεξιάς γωνίας αλλάζει το μέγεθος.</li>
+<li>Το <strong>Επεξεργασία</strong> ανοίγει ξανά το παράθυρο, το <strong>Διαγραφή</strong> το διαγράφει. Το παράθυρο απαριθμεί και όλα τα γραφήματα του φύλλου.</li>
+<li>Το γράφημα ακολουθεί τα δεδομένα των κελιών του.</li>
+</ul>
+<p>Τα γραφήματα αποθηκεύονται στο αρχείο Excel ως πραγματικά γραφήματα και ξαναδιαβάζονται από το DocCells. Δεν <a href="impression.html">εκτυπώνονται</a> με το φύλλο.</p>
+<h2 id="sparklines">Sparklines</h2>
+<p>Η συνάρτηση <code>SPARKLINE</code> σχεδιάζει μικρογραφία γραφήματος στο κελί.</p>
+<pre><code>=SPARKLINE(B2:F2)
+=SPARKLINE(B2:F2; {"charttype"\"column"})
+=SPARKLINE(B2:F2; {"charttype"\"line"; "color"\"#dc2626"; "linewidth"\2})
+=SPARKLINE(B2:F2; {"charttype"\"bar"; "max"\100})</code></pre>
+<figure><img src="img/sparklines.webp" alt="Sparklines με γραμμή και στήλες" width="900" height="300" /></figure>
+<p>Οι επιλογές γράφονται σε άγκιστρα: το όνομα, μια ανάστροφη κάθετος, η τιμή· ένα <code>;</code> ανάμεσα σε δύο επιλογές.</p>
+<div class="table"><table><thead><tr><th><code>charttype</code></th><th>Σχέδιο</th><th>Δικές του επιλογές</th></tr></thead><tbody>
+<tr><td><code>"line"</code> (προεπιλογή)</td><td>γραμμή</td><td><code>color</code>, <code>linewidth</code>, <code>xmin</code>, <code>xmax</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"bar"</code></td><td>στοιβαγμένες ράβδοι</td><td><code>max</code>, <code>color1</code>, <code>color2</code></td></tr>
+<tr><td><code>"column"</code></td><td>στήλες</td><td><code>color</code>, <code>negcolor</code>, <code>lowcolor</code>, <code>highcolor</code>, <code>firstcolor</code>, <code>lastcolor</code>, <code>axis</code>, <code>axiscolor</code>, <code>ymin</code>, <code>ymax</code></td></tr>
+<tr><td><code>"winloss"</code></td><td>κέρδη και ζημίες</td><td>οι ίδιες, χωρίς <code>ymin</code> και <code>ymax</code></td></tr>
+</tbody></table></div>
+<p>Κοινές επιλογές: <code>empty</code> (<code>"zero"</code> ή <code>"ignore"</code>), <code>nan</code> (<code>"convert"</code> ή <code>"ignore"</code>), <code>rtl</code> (από δεξιά προς αριστερά). Η <a href="../../sparkline/el.html">τεκμηρίωση της SPARKLINE</a> δίνει όλες τις τιμές, με παραδείγματα.</p>
+<p>Για μεγαλύτερο σχέδιο, μεγαλώστε τη γραμμή και τη στήλη, ή συγχωνεύστε κελιά.</p>
+</main>
+</body>
+</html>

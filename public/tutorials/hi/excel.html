@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Excel के साथ संगतता — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Excel के साथ संगतता</h1>
+<p class="lead">DocCells Excel का <code>.xlsx</code> प्रारूप पढ़ता और लिखता है। नीचे की चीज़ें दोनों दिशाओं में बनी रहती हैं।</p>
+<h2 id="conserve">क्या रहता है</h2>
+<div class="table"><table><thead><tr><th>तत्व</th><th>टिप्पणी</th></tr></thead><tbody>
+<tr><td>मान, टेक्स्ट, दिनांक, सूत्र</td><td>सूत्र DocCells की भाषा में दिखते हैं</td></tr>
+<tr><td><a href="nombres.html">संख्या प्रारूप</a></td><td>कस्टम भी</td></tr>
+<tr><td>फ़ॉन्ट, रंग, संरेखण, घुमाव, रैप</td><td></td></tr>
+<tr><td>बॉर्डर, मिले हुए सेल</td><td></td></tr>
+<tr><td>चौड़ाई, ऊँचाई, छिपी पंक्तियाँ और कॉलम</td><td></td></tr>
+<tr><td><a href="lignes-colonnes.html#figer">फ्रीज़ पंक्तियाँ और कॉलम</a>, ग्रिडलाइन</td><td></td></tr>
+<tr><td>कई शीट</td><td></td></tr>
+<tr><td><a href="noms.html">नामित रेंज</a></td><td></td></tr>
+<tr><td><a href="conditionnelle.html">सशर्त स्वरूपण</a></td><td>DocCells के नियम, Excel के सरल नियम (तुलना, टेक्स्ट मौजूद)</td></tr>
+<tr><td><a href="controles.html">चेकबॉक्स, ड्रॉप-डाउन सूचियाँ</a></td><td></td></tr>
+<tr><td><a href="graphiques.html">चार्ट</a></td><td>Excel चार्ट के रूप में लिखे जाते हैं; DocCells के चार्ट फिर पढ़े जाते हैं</td></tr>
+<tr><td><a href="images-liens.html">चित्र</a></td><td></td></tr>
+<tr><td><a href="tri-filtre.html#filtrer">फ़िल्टर</a></td><td></td></tr>
+<tr><td><a href="protection.html">सुरक्षा</a>, अनलॉक सेल</td><td></td></tr>
+</tbody></table></div>
+<h2 id="perdu">क्या नहीं रहता</h2>
+<div class="table"><table><thead><tr><th>तत्व</th><th>बन जाता है</th></tr></thead><tbody>
+<tr><td><a href="images-liens.html#liens">लिंक</a></td><td>उनका टेक्स्ट</td></tr>
+<tr><td>सेलों की <a href="listes.html">सूचियाँ</a></td><td>टेक्स्ट, <code>[2, 1]</code></td></tr>
+<tr><td>DocCells या Google Sheets की स्पार्कलाइन</td><td><code>SPARKLINE</code> सूत्र, जिसे DocCells फिर पढ़ता है; Excel नहीं जानता</td></tr>
+<tr><td>Excel में बने चार्ट</td><td>नहीं रहते</td></tr>
+<tr><td>पिवट तालिकाएँ, मैक्रो, स्लाइसर, टिप्पणियाँ</td><td>नहीं रहतीं</td></tr>
+<tr><td>रंग पैमाने, पट्टियों, चिह्नों वाला सशर्त स्वरूपण</td><td>नहीं रहता</td></tr>
+</tbody></table></div>
+<div class="tip"><p>जटिल Excel वर्कबुक बदलने से पहले उसे DocCells से दूसरे नाम से सहेजें (<strong>इस रूप में सहेजें...</strong>)।</p></div>
+<h2 id="listes">सूचियाँ</h2>
+<p><code>.xlsx</code> से फिर खुली सूची टेक्स्ट है: दोबारा लिखने से वह सूची बनती है। सूत्र से गिनी सूची, सूत्र के फिर गिने जाने पर सूची बन जाती है।</p>
+<h2 id="formules">सूत्र</h2>
+<p>खुलते समय सूत्र सामान्यतः Excel का सहेजा परिणाम रखता है, जब तक उसका कोई सेल न बदले। <a href="fonctions.html#non-calculees">DocCells द्वारा न गिना जाने वाला</a> फ़ंक्शन तब <code>#NAME?</code> या <code>#ERROR!</code> देता है।</p>
+<h2 id="formats">अन्य प्रारूप</h2>
+<div class="table"><table><thead><tr><th>प्रारूप</th><th>तरीका</th></tr></thead><tbody>
+<tr><td><code>.csv</code></td><td>फ़ाइल को टेक्स्ट एडिटर में खोलें, कॉपी करें, मान टैब से अलग हों तो DocCells में चिपकाएँ; नहीं तो <code>.xlsx</code> में बदलें</td></tr>
+<tr><td><code>.ods</code>, <code>.xls</code></td><td>LibreOffice या Excel से <code>.xlsx</code> में सहेजें</td></tr>
+<tr><td>Google Sheets</td><td><a href="partager.html#google">लिंक से</a>, या <code>.xlsx</code> में डाउनलोड करके</td></tr>
+<tr><td>PDF</td><td><a href="impression.html">प्रिंट</a>, “PDF के रूप में सहेजें”</td></tr>
+</tbody></table></div>
+</main>
+</body>
+</html>

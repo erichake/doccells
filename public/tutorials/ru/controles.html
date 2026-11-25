@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Флажки, списки и календарь — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Флажки, списки и календарь</h1>
+<figure><img src="img/controles.webp" alt="Флажки, раскрывающийся список и календарь даты" width="1280" height="560" /></figure>
+<h2 id="cases">Флажки</h2>
+<p>Выделите ячейки, <strong>Вставка › Флажок</strong>. Щелчок ставит или снимает флажок; значение ячейки — TRUE или FALSE.</p>
+<pre><code>=ЕСЛИ(B2; "сделано"; "сделать")
+=СУММПРОИЗВ(B2:B6; C2:C6)
+=СУММПРОИЗВ(B2:B6; B2:B6)</code></pre>
+<p>Вторая формула складывает значения столбца C с отмеченным флажком; третья считает отмеченные флажки.</p>
+<h2 id="listes">Раскрывающиеся списки</h2>
+<p>Выделите ячейки, <strong>Вставка › Раскрывающийся список…</strong>.</p>
+<div class="table"><table><thead><tr><th>Источник</th><th>Содержание</th></tr></thead><tbody>
+<tr><td><strong>Значения</strong></td><td>варианты, по одному в поле; <strong>Добавить вариант</strong>; без запятых</td></tr>
+<tr><td><strong>Из диапазона</strong></td><td>диапазон, ячейки которого — варианты: <code>Лист2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>Диапазон без <code>$</code> сдвигается от ячейки к ячейке, как заполненная формула. Если его ячейки меняются, варианты следуют за ними.</p>
+<p>В ячейке видна стрелка; щелчок открывает варианты. Значение не из списка не принимается.</p>
+<h2 id="calendrier">Календарь</h2>
+<p>Двойной щелчок по ячейке с датой открывает календарь: выберите день, меняйте месяц кнопками <strong><</strong> и <strong>></strong>, <strong>Сегодня</strong> — сегодняшняя дата. Он открывается в любой ячейке с форматом даты, даже пустой, если в ней нет формулы и она не <a href="protection.html">заблокирована</a>.</p>
+<div class="tip"><p>Для столбца дат, который заполняют календарём: выделите его и задайте формат <strong>Дата</strong>.</p></div>
+<h2 id="retirer">Удаление</h2>
+<p><kbd>Delete</kbd> убирает из ячейки флажок или список вместе со значением.</p>
+<p>Флажки и списки сохраняются в файле Excel; флажки там — флажки Excel.</p>
+</main>
+</body>
+</html>

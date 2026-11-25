@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/fr.md: do not edit. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cases, listes et calendrier — Manuel DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Cases, listes et calendrier</h1>
+<figure><img src="img/controles.webp" alt="Des cases à cocher, une liste déroulante et le calendrier d’une date" width="1280" height="560" /></figure>
+<h2 id="cases">Cases à cocher</h2>
+<p>Sélectionner les cellules, <strong>Insertion › Case à cocher</strong>. Un clic coche ou décoche ; la cellule vaut TRUE ou FALSE.</p>
+<pre><code>=SI(B2; "fait"; "à faire")
+=SOMMEPROD(B2:B6; C2:C6)
+=SOMMEPROD(B2:B6; B2:B6)</code></pre>
+<p>La deuxième formule additionne les valeurs de la colonne C dont la case est cochée ; la troisième compte les cases cochées.</p>
+<h2 id="listes">Listes déroulantes</h2>
+<p>Sélectionner les cellules, <strong>Insertion › Liste déroulante…</strong>.</p>
+<div class="table"><table><thead><tr><th>Source</th><th>Contenu</th></tr></thead><tbody>
+<tr><td><strong>Valeurs</strong></td><td>les options, une par champ ; <strong>Ajouter une option</strong> ; sans virgule</td></tr>
+<tr><td><strong>Depuis une plage</strong></td><td>une plage dont les cellules sont les options : <code>Feuille2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>Une plage sans <code>$</code> se décale d’une cellule à l’autre, comme une formule recopiée. Si ses cellules changent, les options suivent.</p>
+<p>La cellule affiche une flèche ; un clic ouvre les options. Une autre valeur que celles de la liste n’est pas acceptée.</p>
+<h2 id="calendrier">Calendrier</h2>
+<p>Un double clic sur une cellule de date ouvre un calendrier : choisir un jour, changer de mois par <strong><</strong> et <strong>></strong>, <strong>Aujourd’hui</strong> pour la date du jour. Il s’ouvre sur toute cellule qui a un format de date, même vide, sauf si elle contient une formule ou si elle est <a href="protection.html">verrouillée</a>.</p>
+<div class="tip"><p>Pour une colonne de dates à remplir au calendrier : la sélectionner et lui donner le format <strong>Date</strong>.</p></div>
+<h2 id="retirer">Retirer</h2>
+<p><kbd>Suppr</kbd> retire la case ou la liste de la cellule, avec sa valeur.</p>
+<p>Cases et listes sont enregistrées dans le fichier Excel ; les cases y sont des cases à cocher d’Excel.</p>
+</main>
+</body>
+</html>

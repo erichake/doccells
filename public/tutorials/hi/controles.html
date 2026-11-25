@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/hi.md: do not edit. -->
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>चेकबॉक्स, सूचियाँ और कैलेंडर — DocCells पुस्तिका</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>चेकबॉक्स, सूचियाँ और कैलेंडर</h1>
+<figure><img src="img/controles.webp" alt="चेकबॉक्स, ड्रॉप-डाउन सूची और दिनांक का कैलेंडर" width="1280" height="560" /></figure>
+<h2 id="cases">चेकबॉक्स</h2>
+<p>सेल चुनें, <strong>डालें › चेकबॉक्स</strong>। क्लिक निशान लगाता या हटाता है; सेल का मान TRUE या FALSE है।</p>
+<pre><code>=IF(B2, "हो गया", "बाकी")
+=SUMPRODUCT(B2:B6, C2:C6)
+=SUMPRODUCT(B2:B6, B2:B6)</code></pre>
+<p>दूसरा सूत्र कॉलम C के उन मानों को जोड़ता है जिनके चेकबॉक्स पर निशान है; तीसरा निशान गिनता है।</p>
+<h2 id="listes">ड्रॉप-डाउन सूचियाँ</h2>
+<p>सेल चुनें, <strong>डालें › ड्रॉपडाउन…</strong>।</p>
+<div class="table"><table><thead><tr><th>स्रोत</th><th>सामग्री</th></tr></thead><tbody>
+<tr><td><strong>मान</strong></td><td>विकल्प, हर फ़ील्ड में एक; <strong>विकल्प जोड़ें</strong>; बिना अल्पविराम</td></tr>
+<tr><td><strong>किसी श्रेणी से</strong></td><td>रेंज जिसके सेल विकल्प हैं: <code>शीट2!$A$1:$A$10</code></td></tr>
+</tbody></table></div>
+<p>बिना <code>$</code> वाली रेंज भरे गए सूत्र की तरह सेल दर सेल खिसकती है। उसके सेल बदलें तो विकल्प भी बदलते हैं।</p>
+<p>सेल में तीर दिखता है; क्लिक विकल्प खोलता है। सूची से बाहर का मान स्वीकार नहीं होता।</p>
+<h2 id="calendrier">कैलेंडर</h2>
+<p>दिनांक वाले सेल पर डबल क्लिक कैलेंडर खोलता है: दिन चुनें, <strong><</strong> और <strong>></strong> से महीना बदलें, आज के लिए <strong>आज</strong>। यह दिनांक प्रारूप वाले हर सेल पर खुलता है, खाली पर भी, जब तक उसमें सूत्र न हो या वह <a href="protection.html">लॉक</a> न हो।</p>
+<div class="tip"><p>कैलेंडर से भरे जाने वाले दिनांक कॉलम के लिए: उसे चुनें और <strong>दिनांक</strong> प्रारूप दें।</p></div>
+<h2 id="retirer">हटाना</h2>
+<p><kbd>Delete</kbd> सेल से चेकबॉक्स या सूची, मान सहित, हटाता है।</p>
+<p>चेकबॉक्स और सूचियाँ Excel फ़ाइल में सहेजी जाती हैं; वहाँ चेकबॉक्स Excel के चेकबॉक्स होते हैं।</p>
+</main>
+</body>
+</html>

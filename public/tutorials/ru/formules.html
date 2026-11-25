@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Generated from tools/manual/pages/ru.md: do not edit. -->
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Формулы — Руководство DocCells</title>
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<link rel="stylesheet" href="../manual.css" />
+<script src="../icons.js" defer></script>
+<script src="../langs.js" defer></script>
+<script src="../manual.js" defer></script>
+</head>
+<body>
+<main>
+<h1>Формулы</h1>
+<h2 id="ecrire">Запись формулы</h2>
+<p>Формула начинается с <code>=</code>. В ней числа, тексты в кавычках, ссылки на ячейки, операторы и <a href="fonctions.html">функции</a>.</p>
+<pre><code>=B2*2
+=(B2+C2+D2)/3
+=СРЗНАЧ(B2:B6)
+="Итого: "&amp;СУММ(B2:B6)</code></pre>
+<p>Ячейка показывает результат, строка формул — формулу. Ячейки, зависящие от изменённой, пересчитываются сразу.</p>
+<p>По-русски запятая десятичная, а аргументы разделяет точка с запятой: <code>=ОКРУГЛ(3,14159; 2)</code>. Имена функций набирают строчными или прописными, по-русски или по-английски: <code>=сумм(B2:B6)</code> и <code>=SUM(B2:B6)</code> принимаются.</p>
+<h2 id="souris">Указание ячеек мышью</h2>
+<p>При наборе формулы щелчок по ячейке листа вставляет её адрес, протягивание — диапазон. У каждой ссылки свой цвет, в формуле и на листе.</p>
+<h2 id="completion">Подсказка имён</h2>
+<p>С первых букв имени DocCells предлагает функции, которые их содержат: <kbd>↑</kbd> <kbd>↓</kbd> для просмотра, <kbd>Enter</kbd>, <kbd>Tab</kbd> или щелчок для выбора. После открывающей скобки справка напоминает аргументы.</p>
+<figure><img src="img/completion.webp" alt="Функции, предложенные после первых букв" width="760" height="560" /></figure>
+<figure><img src="img/aide-formule.webp" alt="Справка по функции" width="760" height="560" /></figure>
+<h2 id="somme">Автосумма</h2>
+<p><i data-i="formula-sum"></i> записывает сумму. Стрелка предлагает <strong>Сумма</strong>, <strong>Среднее</strong>, <strong>Количество</strong>, <strong>Максимум</strong>, <strong>Минимум</strong> и <strong>Все формулы</strong>: библиотеку, где функцию ищут по имени, описанию или категории.</p>
+<figure><img src="img/bibliotheque.webp" alt="Библиотека формул" width="1280" height="760" /></figure>
+<h2 id="operateurs">Операторы</h2>
+<div class="table"><table><thead><tr><th>Оператор</th><th>Назначение</th></tr></thead><tbody>
+<tr><td><code>+</code> <code>-</code> <code>*</code> <code>/</code></td><td>четыре действия</td></tr>
+<tr><td><code>^</code></td><td>степень: <code>=2^10</code></td></tr>
+<tr><td><code>%</code></td><td>процент: <code>=20%*B2</code></td></tr>
+<tr><td><code>&amp;</code></td><td>соединяет тексты: <code>=A2&amp;" "&amp;B2</code></td></tr>
+<tr><td><code>=</code> <code>&lt;&gt;</code></td><td>равно, не равно</td></tr>
+<tr><td><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code></td><td>сравнения</td></tr>
+<tr><td><code>( )</code></td><td>порядок действий</td></tr>
+</tbody></table></div>
+<p>Степени идут раньше произведений и частных, затем суммы, затем сравнения. <code>=-2^2</code> даёт −4 (в Excel 4).</p>
+<h2 id="references">Ссылки</h2>
+<div class="table"><table><thead><tr><th>Запись</th><th>Значение</th></tr></thead><tbody>
+<tr><td><code>B2</code></td><td>ячейка; следует заполнению</td></tr>
+<tr><td><code>$B$2</code></td><td>та же ячейка и при заполнении</td></tr>
+<tr><td><code>B$2</code>, <code>$B2</code></td><td>закреплённая строка, закреплённый столбец</td></tr>
+<tr><td><code>B2:D6</code></td><td>диапазон</td></tr>
+<tr><td><code>B:B</code>, <code>2:2</code></td><td>весь столбец, вся строка</td></tr>
+<tr><td><code>Лист2!B2</code>, <code>'Оценки 2'!B2</code></td><td>ячейка <a href="feuilles.html#references">другого листа</a></td></tr>
+<tr><td><code>оценки</code></td><td><a href="noms.html">именованный диапазон</a></td></tr>
+</tbody></table></div>
+<p>При заполнении вниз <code>=B2*$B$1</code> становится <code>=B3*$B$1</code>, <code>=B4*$B$1</code>…</p>
+<h2 id="conditions">Условия</h2>
+<pre><code>=ЕСЛИ(B2&gt;=10; "сдал"; "не сдал")
+=ЕСЛИ(И(B2&gt;=10; C2&gt;=10); "да"; "нет")
+=ПЕРЕКЛЮЧ(A2; "a"; 1; "b"; 2; 0)
+=СЧЁТЕСЛИ(B2:B6; "&gt;10")
+=СУММЕСЛИ(A2:A6; "Ana"; B2:B6)
+=СРЗНАЧЕСЛИ(B2:B6; "&lt;10")</code></pre>
+<ul>
+<li>Логические значения пишутся <code>ИСТИНА()</code> и <code>ЛОЖЬ()</code>, со скобками. Показываются как TRUE и FALSE.</li>
+<li>Условие — это текст: <code>"&gt;10"</code>, <code>"&lt;&gt;0"</code>, <code>"Ana"</code>. Подстановочные знаки <code>*</code> и <code>?</code> не распознаются.</li>
+<li>Пустая ячейка определяется так: <code>=B2=""</code>; она не равна 0.</li>
+</ul>
+<h2 id="chercher">Поиск в таблице</h2>
+<pre><code>=ВПР("Léa"; A2:D6; 3; 0)
+=ИНДЕКС(A2:A6; ПОИСКПОЗ(МАКС(B2:B6); B2:B6; 0))</code></pre>
+<p>Первая ищет Léa в первом столбце таблицы и возвращает третий; последний аргумент 0 требует точного значения. Вторая даёт имя того, у кого лучшая оценка.</p>
+<h2 id="dates">Даты и время</h2>
+<p>Дата — это число дней, время — доля дня: в ячейках их можно складывать и вычитать.</p>
+<pre><code>=A2+7
+=A3-A2
+=ДНИ(A3; A2)
+=ДЕНЬНЕД(A2; 2)</code></pre>
+<p>Дата, которую дают <code>ДАТА</code> или <code>СЕГОДНЯ</code>, для сложения должна пройти через ячейку: <code>=СЕГОДНЯ()+1</code> даёт <code>#VALUE!</code>, но если в A1 стоит <code>=СЕГОДНЯ()</code>, то <code>=A1+1</code> даёт завтрашний день. Результат — число: задайте ему формат <strong>Дата</strong>.</p>
+<h2 id="erreurs">Ошибки</h2>
+<div class="table"><table><thead><tr><th>Показано</th><th>Причина</th></tr></thead><tbody>
+<tr><td><code>#NAME?</code></td><td>неизвестное имя: опечатка, <a href="fonctions.html#non-calculees">невычисляемая</a> функция, <code>ИСТИНА</code> без скобок, текст без кавычек</td></tr>
+<tr><td><code>#VALUE!</code></td><td>неожиданный тип: текст там, где нужно число</td></tr>
+<tr><td><code>DIV/0</code></td><td>деление на ноль или на пустую ячейку</td></tr>
+<tr><td><code>#N/A</code></td><td>значение не найдено (<code>ПОИСКПОЗ</code>, <code>ВПР</code>) или <code>GEO</code> вне DocGeo</td></tr>
+<tr><td><code>#REF!</code></td><td>ячейки или листа не существует</td></tr>
+<tr><td><code>#NUM!</code></td><td>число вне области определения: <code>=КОРЕНЬ(-1)</code></td></tr>
+<tr><td><code>#ERROR!</code></td><td>неверно записанная формула или невычисляемая функция</td></tr>
+</tbody></table></div>
+<p><code>ЕСЛИОШИБКА</code> заменяет ошибку функции (<code>#N/A</code>, <code>#NUM!</code>): <code>=ЕСЛИОШИБКА(ВПР(E1; A2:D6; 2; 0); "нет")</code>. Ошибку вычисления (<code>DIV/0</code>, <code>#VALUE!</code>) она не заменяет: от деления на ноль защищает проверка делителя, <code>=ЕСЛИ(B2; B3/B2; "")</code>, годная и для нуля, и для пустой ячейки.</p>
+</main>
+</body>
+</html>
