@@ -11,7 +11,9 @@
  *      functionHTMLGenerate, whose texts are escaped by 2 and 3).
  *   2. getInlineStringHTML escapes each part's text and cleans its style.
  *   3. functionHTML (formula colouring while editing) escapes the text of
- *      string literals and other operands.
+ *      string literals and other operands; findrangeindex counts the
+ *      characters of the text, not of its entities (typing "<" or ">" put the
+ *      caret out of the text, and the exception unmounted the application).
  *   4. handleFormulaInput: text copied to the formula bar is escaped.
  *   5. Range text (sheet names) inserted into the formula editor is escaped.
  *   6. Data validation hint and failure texts are escaped.
@@ -89,6 +91,9 @@ function __doccellsRestoreFormulaText(html) {
     })
     .replace(/\\uE000/g, "&lt;").replace(/\\uE001/g, "&gt;").replace(/\\uE002/g, "&amp;");
 }
+function __doccellsUnescapeFormulaText(text) {
+  return text.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+}
 `;
 
 const REACT_HELPERS = `
@@ -129,6 +134,24 @@ const coreReplacements = (lodash) => [
   [
     `  return "<span dir=\\"auto\\" class=\\"luckysheet-formula-text-color\\">=</span>".concat(functionHTML(txt));`,
     `  return __doccellsRestoreFormulaText("<span dir=\\"auto\\" class=\\"luckysheet-formula-text-color\\">=</span>".concat(functionHTML(txt)));`,
+  ],
+  // 3 bis. findrangeindex, qui place le curseur dans la formule coloriée,
+  // compte les caractères de ce HTML : une entité (&gt;) n'en vaut qu'un.
+  [
+    `  var v_a = v.replace(re, "").split("</span>");
+  var vp_a = vp.replace(re, "").split("</span>");`,
+    `  var v_a = v.replace(re, "").split("</span>").map(__doccellsUnescapeFormulaText);
+  var vp_a = vp.replace(re, "").split("</span>").map(__doccellsUnescapeFormulaText);`,
+  ],
+  // Place introuvable : curseur en fin de saisie. FortuneSheet y lisait
+  // rangeResizeTo, vide hors redimensionnement d'une plage : l'exception
+  // démontait toute l'application.
+  [
+    `    console.error(err);
+    moveToEnd(ctx.formulaCache.rangeResizeTo[0]);`,
+    `    console.error(err);
+    var doccellsEditor = textDom && textDom.closest("[contenteditable]");
+    if (doccellsEditor) moveToEnd(doccellsEditor);`,
   ],
   // 4. handleFormulaInput
   [
@@ -203,10 +226,17 @@ for (const { file, replacements, helpers } of BUNDLES) {
     }
     src = src.replace(old, () => next);
   }
-  // Fonctions ajoutées en fin de fichier : remplacées à chaque passage.
+  // Fonctions ajoutées en fin de fichier : remplacées à chaque passage. Ce
+  // qu'un autre correctif a ajouté après elles (un export) est gardé.
   const helpersAt = src.indexOf(`\n${MARKER}`);
-  if (helpersAt >= 0) src = src.slice(0, helpersAt);
-  src += helpers;
+  let after = "";
+  if (helpersAt >= 0) {
+    const rest = src.slice(helpersAt);
+    const exported = rest.search(/^exports?\b/m);
+    if (exported >= 0) after = rest.slice(exported);
+    src = src.slice(0, helpersAt);
+  }
+  src += helpers + after;
   if (!ok) {
     failures += 1;
     continue;
