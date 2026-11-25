@@ -2296,6 +2296,7 @@ const App = () => {
         <ChartLayer
           sheets={sheetDataRef.current}
           activeSheetIndex={activeSheetIndex}
+          texts={chartTexts}
           onEdit={editChartFromLayer}
           onDelete={deleteChart}
           onPositionChange={updateChartPosition}

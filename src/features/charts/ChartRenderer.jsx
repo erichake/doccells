@@ -565,6 +565,7 @@ export const ChartCard = ({
   sheet,
   sheetIndex,
   editable,
+  texts,
   onEdit,
   onDelete,
   onPositionChange,
@@ -732,10 +733,10 @@ export const ChartCard = ({
         {editable && (
           <div className="dc-chart-card-actions">
             <button type="button" onClick={() => onEdit(normalized, sheetIndex)}>
-              Modifier
+              {texts?.edit}
             </button>
             <button type="button" onClick={() => onDelete(normalized.id, sheetIndex)}>
-              Supprimer
+              {texts?.delete}
             </button>
           </div>
         )}
@@ -782,6 +783,7 @@ export const ChartCard = ({
 export const ChartLayer = ({
   sheets = [],
   activeSheetIndex = 0,
+  texts,
   onEdit,
   onDelete,
   onPositionChange,
@@ -875,6 +877,7 @@ export const ChartLayer = ({
           sheet={sheet}
           sheetIndex={sheetIndex}
           editable
+          texts={texts}
           onEdit={onEdit}
           onDelete={onDelete}
           onPositionChange={onPositionChange}
